@@ -5,9 +5,9 @@
 \title{The CreateTable operation adds a new table to your account}
 \usage{
 dynamodb_create_table(
-  AttributeDefinitions,
+  AttributeDefinitions = NULL,
   TableName,
-  KeySchema,
+  KeySchema = NULL,
   LocalSecondaryIndexes = NULL,
   GlobalSecondaryIndexes = NULL,
   BillingMode = NULL,
@@ -19,20 +19,17 @@ dynamodb_create_table(
   DeletionProtectionEnabled = NULL,
   WarmThroughput = NULL,
   ResourcePolicy = NULL,
-  OnDemandThroughput = NULL
+  OnDemandThroughput = NULL,
+  GlobalTableSourceArn = NULL,
+  GlobalTableSettingsReplicationMode = NULL
 )
 }
 \arguments{
-\item{AttributeDefinitions}{[required] An array of attributes that describe the key schema for the table and
-indexes.}
+\item{AttributeDefinitions}{An array of attributes that describe the key schema for the table and indexes.}
 
-\item{TableName}{[required] The name of the table to create. You can also provide the Amazon
-Resource Name (ARN) of the table in this parameter.}
+\item{TableName}{[required] The name of the table to create. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.}
 
-\item{KeySchema}{[required] Specifies the attributes that make up the primary key for a table or an
-index. The attributes in \code{KeySchema} must also be defined in the
-\code{AttributeDefinitions} array. For more information, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.html}{Data Model}
-in the \emph{Amazon DynamoDB Developer Guide}.
+\item{KeySchema}{Specifies the attributes that make up the primary key for a table or an index. The attributes in \code{KeySchema} must also be defined in the \code{AttributeDefinitions} array. For more information, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.html}{Data Model} in the \emph{Amazon DynamoDB Developer Guide}.
 
 Each \code{KeySchemaElement} in the array is composed of:
 \itemize{
@@ -44,182 +41,98 @@ Each \code{KeySchemaElement} in the array is composed of:
 }
 }
 
-The partition key of an item is also known as its \emph{hash attribute}. The
-term "hash attribute" derives from the DynamoDB usage of an internal
-hash function to evenly distribute data items across partitions, based
-on their partition key values.
+The partition key of an item is also known as its \emph{hash attribute}. The term "hash attribute" derives from the DynamoDB usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.
 
-The sort key of an item is also known as its \emph{range attribute}. The term
-"range attribute" derives from the way DynamoDB stores items with the
-same partition key physically close together, in sorted order by the
-sort key value.
+The sort key of an item is also known as its \emph{range attribute}. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.
 
-For a simple primary key (partition key), you must provide exactly one
-element with a \code{KeyType} of \code{HASH}.
+For a simple primary key (partition key), you must provide exactly one element with a \code{KeyType} of \code{HASH}.
 
-For a composite primary key (partition key and sort key), you must
-provide exactly two elements, in this order: The first element must have
-a \code{KeyType} of \code{HASH}, and the second element must have a \code{KeyType} of
-\code{RANGE}.
+For a composite primary key (partition key and sort key), you must provide exactly two elements, in this order: The first element must have a \code{KeyType} of \code{HASH}, and the second element must have a \code{KeyType} of \code{RANGE}.
 
-For more information, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key}{Working with Tables}
-in the \emph{Amazon DynamoDB Developer Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key}{Working with Tables} in the \emph{Amazon DynamoDB Developer Guide}.}
 
-\item{LocalSecondaryIndexes}{One or more local secondary indexes (the maximum is 5) to be created on
-the table. Each index is scoped to a given partition key value. There is
-a 10 GB size limit per partition key value; otherwise, the size of a
-local secondary index is unconstrained.
+\item{LocalSecondaryIndexes}{One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local secondary index is unconstrained.
 
 Each local secondary index in the array includes the following:
 \itemize{
-\item \code{IndexName} - The name of the local secondary index. Must be unique
-only for this table.
-\item \code{KeySchema} - Specifies the key schema for the local secondary
-index. The key schema must begin with the same partition key as the
-table.
-\item \code{Projection} - Specifies attributes that are copied (projected) from
-the table into the index. These are in addition to the primary key
-attributes and index key attributes, which are automatically
-projected. Each attribute specification is composed of:
+\item \code{IndexName} - The name of the local secondary index. Must be unique only for this table.
+\item \code{KeySchema} - Specifies the key schema for the local secondary index. The key schema must begin with the same partition key as the table.
+\item \code{Projection} - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:
 \itemize{
 \item \code{ProjectionType} - One of the following:
 \itemize{
-\item \code{KEYS_ONLY} - Only the index and primary keys are projected
-into the index.
-\item \code{INCLUDE} - Only the specified table attributes are
-projected into the index. The list of projected attributes
-is in \code{NonKeyAttributes}.
-\item \code{ALL} - All of the table attributes are projected into the
-index.
+\item \code{KEYS_ONLY} - Only the index and primary keys are projected into the index.
+\item \code{INCLUDE} - Only the specified table attributes are projected into the index. The list of projected attributes is in \code{NonKeyAttributes}.
+\item \code{ALL} - All of the table attributes are projected into the index.
 }
-\item \code{NonKeyAttributes} - A list of one or more non-key attribute
-names that are projected into the secondary index. The total
-count of attributes provided in \code{NonKeyAttributes}, summed
-across all of the secondary indexes, must not exceed 100. If you
-project the same attribute into two different indexes, this
-counts as two distinct attributes when determining the total.
-This limit only applies when you specify the ProjectionType of
-\code{INCLUDE}. You still can specify the ProjectionType of \code{ALL} to
-project all attributes from the source table, even if the table
-has more than 100 attributes.
+\item \code{NonKeyAttributes} - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in \code{NonKeyAttributes}, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total. This limit only applies when you specify the ProjectionType of \code{INCLUDE}. You still can specify the ProjectionType of \code{ALL} to project all attributes from the source table, even if the table has more than 100 attributes.
 }
 }}
 
-\item{GlobalSecondaryIndexes}{One or more global secondary indexes (the maximum is 20) to be created
-on the table. Each global secondary index in the array includes the
-following:
+\item{GlobalSecondaryIndexes}{One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index in the array includes the following:
 \itemize{
-\item \code{IndexName} - The name of the global secondary index. Must be unique
-only for this table.
-\item \code{KeySchema} - Specifies the key schema for the global secondary
-index.
-\item \code{Projection} - Specifies attributes that are copied (projected) from
-the table into the index. These are in addition to the primary key
-attributes and index key attributes, which are automatically
-projected. Each attribute specification is composed of:
+\item \code{IndexName} - The name of the global secondary index. Must be unique only for this table.
+\item \code{KeySchema} - Specifies the key schema for the global secondary index. Each global secondary index supports up to 4 partition keys and up to 4 sort keys.
+\item \code{Projection} - Specifies attributes that are copied (projected) from the table into the index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. Each attribute specification is composed of:
 \itemize{
 \item \code{ProjectionType} - One of the following:
 \itemize{
-\item \code{KEYS_ONLY} - Only the index and primary keys are projected
-into the index.
-\item \code{INCLUDE} - Only the specified table attributes are
-projected into the index. The list of projected attributes
-is in \code{NonKeyAttributes}.
-\item \code{ALL} - All of the table attributes are projected into the
-index.
+\item \code{KEYS_ONLY} - Only the index and primary keys are projected into the index.
+\item \code{INCLUDE} - Only the specified table attributes are projected into the index. The list of projected attributes is in \code{NonKeyAttributes}.
+\item \code{ALL} - All of the table attributes are projected into the index.
 }
-\item \code{NonKeyAttributes} - A list of one or more non-key attribute
-names that are projected into the secondary index. The total
-count of attributes provided in \code{NonKeyAttributes}, summed
-across all of the secondary indexes, must not exceed 100. If you
-project the same attribute into two different indexes, this
-counts as two distinct attributes when determining the total.
-This limit only applies when you specify the ProjectionType of
-\code{INCLUDE}. You still can specify the ProjectionType of \code{ALL} to
-project all attributes from the source table, even if the table
-has more than 100 attributes.
+\item \code{NonKeyAttributes} - A list of one or more non-key attribute names that are projected into the secondary index. The total count of attributes provided in \code{NonKeyAttributes}, summed across all of the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total. This limit only applies when you specify the ProjectionType of \code{INCLUDE}. You still can specify the ProjectionType of \code{ALL} to project all attributes from the source table, even if the table has more than 100 attributes.
 }
-\item \code{ProvisionedThroughput} - The provisioned throughput settings for
-the global secondary index, consisting of read and write capacity
-units.
+\item \code{ProvisionedThroughput} - The provisioned throughput settings for the global secondary index, consisting of read and write capacity units.
 }}
 
-\item{BillingMode}{Controls how you are charged for read and write throughput and how you
-manage capacity. This setting can be changed later.
+\item{BillingMode}{Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.
 \itemize{
-\item \code{PAY_PER_REQUEST} - We recommend using \code{PAY_PER_REQUEST} for most
-DynamoDB workloads. \code{PAY_PER_REQUEST} sets the billing mode to
-\href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html}{On-demand capacity mode}.
-\item \code{PROVISIONED} - We recommend using \code{PROVISIONED} for steady
-workloads with predictable growth where capacity requirements can be
-reliably forecasted. \code{PROVISIONED} sets the billing mode to
-\href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html}{Provisioned capacity mode}.
+\item \code{PAY_PER_REQUEST} - We recommend using \code{PAY_PER_REQUEST} for most DynamoDB workloads. \code{PAY_PER_REQUEST} sets the billing mode to \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html}{On-demand capacity mode}.
+\item \code{PROVISIONED} - We recommend using \code{PROVISIONED} for steady workloads with predictable growth where capacity requirements can be reliably forecasted. \code{PROVISIONED} sets the billing mode to \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html}{Provisioned capacity mode}.
 }}
 
-\item{ProvisionedThroughput}{Represents the provisioned throughput settings for a specified table or
-index. The settings can be modified using the
-\code{\link[=dynamodb_update_table]{update_table}} operation.
+\item{ProvisionedThroughput}{Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the \code{\link[=dynamodb_update_table]{update_table}} operation.
 
-If you set BillingMode as \code{PROVISIONED}, you must specify this property.
-If you set BillingMode as \code{PAY_PER_REQUEST}, you cannot specify this
-property.
+If you set BillingMode as \code{PROVISIONED}, you must specify this property. If you set BillingMode as \code{PAY_PER_REQUEST}, you cannot specify this property.
 
-For current minimum and maximum provisioned throughput values, see
-\href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ServiceQuotas.html}{Service, Account, and Table Quotas}
-in the \emph{Amazon DynamoDB Developer Guide}.}
+For current minimum and maximum provisioned throughput values, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ServiceQuotas.html}{Service, Account, and Table Quotas} in the \emph{Amazon DynamoDB Developer Guide}.}
 
-\item{StreamSpecification}{The settings for DynamoDB Streams on the table. These settings consist
-of:
+\item{StreamSpecification}{The settings for DynamoDB Streams on the table. These settings consist of:
 \itemize{
-\item \code{StreamEnabled} - Indicates whether DynamoDB Streams is to be
-enabled (true) or disabled (false).
-\item \code{StreamViewType} - When an item in the table is modified,
-\code{StreamViewType} determines what information is written to the
-table's stream. Valid values for \code{StreamViewType} are:
+\item \code{StreamEnabled} - Indicates whether DynamoDB Streams is to be enabled (true) or disabled (false).
+\item \code{StreamViewType} - When an item in the table is modified, \code{StreamViewType} determines what information is written to the table's stream. Valid values for \code{StreamViewType} are:
 \itemize{
-\item \code{KEYS_ONLY} - Only the key attributes of the modified item are
-written to the stream.
-\item \code{NEW_IMAGE} - The entire item, as it appears after it was
-modified, is written to the stream.
-\item \code{OLD_IMAGE} - The entire item, as it appeared before it was
-modified, is written to the stream.
-\item \code{NEW_AND_OLD_IMAGES} - Both the new and the old item images of
-the item are written to the stream.
+\item \code{KEYS_ONLY} - Only the key attributes of the modified item are written to the stream.
+\item \code{NEW_IMAGE} - The entire item, as it appears after it was modified, is written to the stream.
+\item \code{OLD_IMAGE} - The entire item, as it appeared before it was modified, is written to the stream.
+\item \code{NEW_AND_OLD_IMAGES} - Both the new and the old item images of the item are written to the stream.
 }
 }}
 
 \item{SSESpecification}{Represents the settings used to enable server-side encryption.}
 
-\item{Tags}{A list of key-value pairs to label the table. For more information, see
-\href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html}{Tagging for DynamoDB}.}
+\item{Tags}{A list of key-value pairs to label the table. For more information, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html}{Tagging for DynamoDB}.}
 
-\item{TableClass}{The table class of the new table. Valid values are \code{STANDARD} and
-\code{STANDARD_INFREQUENT_ACCESS}.}
+\item{TableClass}{The table class of the new table. Valid values are \code{STANDARD} and \code{STANDARD_INFREQUENT_ACCESS}.}
 
-\item{DeletionProtectionEnabled}{Indicates whether deletion protection is to be enabled (true) or
-disabled (false) on the table.}
+\item{DeletionProtectionEnabled}{Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.}
 
-\item{WarmThroughput}{Represents the warm throughput (in read units per second and write units
-per second) for creating a table.}
+\item{WarmThroughput}{Represents the warm throughput (in read units per second and write units per second) for creating a table.}
 
-\item{ResourcePolicy}{An Amazon Web Services resource-based policy document in JSON format
-that will be attached to the table.
+\item{ResourcePolicy}{An Amazon Web Services resource-based policy document in JSON format that will be attached to the table.
 
-When you attach a resource-based policy while creating a table, the
-policy application is \emph{strongly consistent}.
+When you attach a resource-based policy while creating a table, the policy application is \emph{strongly consistent}.
 
-The maximum size supported for a resource-based policy document is 20
-KB. DynamoDB counts whitespaces when calculating the size of a policy
-against this limit. For a full list of all considerations that apply for
-resource-based policies, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html}{Resource-based policy considerations}.
+The maximum size supported for a resource-based policy document is 20 KB. DynamoDB counts whitespaces when calculating the size of a policy against this limit. For a full list of all considerations that apply for resource-based policies, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/rbac-considerations.html}{Resource-based policy considerations}.
 
-You need to specify the \code{\link[=dynamodb_create_table]{create_table}} and
-\code{\link[=dynamodb_put_resource_policy]{put_resource_policy}} IAM actions for
-authorizing a user to create a table with a resource-based policy.}
+You need to specify the \code{\link[=dynamodb_create_table]{create_table}} and \code{\link[=dynamodb_put_resource_policy]{put_resource_policy}} IAM actions for authorizing a user to create a table with a resource-based policy.}
 
-\item{OnDemandThroughput}{Sets the maximum number of read and write units for the specified table
-in on-demand capacity mode. If you use this parameter, you must specify
-\code{MaxReadRequestUnits}, \code{MaxWriteRequestUnits}, or both.}
+\item{OnDemandThroughput}{Sets the maximum number of read and write units for the specified table in on-demand capacity mode. If you use this parameter, you must specify \code{MaxReadRequestUnits}, \code{MaxWriteRequestUnits}, or both.}
+
+\item{GlobalTableSourceArn}{The Amazon Resource Name (ARN) of the source table used for the creation of a multi-account global table.}
+
+\item{GlobalTableSettingsReplicationMode}{Controls the settings synchronization mode for the global table. For multi-account global tables, this parameter is required and the only supported value is ENABLED. For same-account global tables, this parameter is set to ENABLED_WITH_OVERRIDES.}
 }
 \description{
 The \code{\link[=dynamodb_create_table]{create_table}} operation adds a new table to your account. In an Amazon Web Services account, table names must be unique within each Region. That is, you can have two tables with same name if you create the tables in different Regions.

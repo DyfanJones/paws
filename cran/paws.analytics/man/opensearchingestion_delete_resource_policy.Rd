@@ -7,8 +7,7 @@
 opensearchingestion_delete_resource_policy(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource from which to delete the
-policy.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource from which to delete the policy.}
 }
 \description{
 Deletes a resource-based policy from an OpenSearch Ingestion resource.

@@ -154,8 +154,7 @@ frauddetector_batch_get_variable <- function(names) {
 #'
 #' @param jobId &#91;required&#93; The ID of an in-progress batch import job to cancel.
 #' 
-#' Amazon Fraud Detector will throw an error if the batch import job is in
-#' `FAILED`, `CANCELED`, or `COMPLETED` state.
+#' Amazon Fraud Detector will throw an error if the batch import job is in `FAILED`, `CANCELED`, or `COMPLETED` state.
 #'
 #' @return
 #' An empty list.
@@ -244,19 +243,13 @@ frauddetector_cancel_batch_prediction_job <- function(jobId) {
 #' frauddetector_create_batch_import_job(jobId, inputPath, outputPath,
 #'   eventTypeName, iamRoleArn, tags)
 #'
-#' @param jobId &#91;required&#93; The ID of the batch import job. The ID cannot be of a past job, unless
-#' the job exists in `CREATE_FAILED` state.
+#' @param jobId &#91;required&#93; The ID of the batch import job. The ID cannot be of a past job, unless the job exists in `CREATE_FAILED` state.
 #' @param inputPath &#91;required&#93; The URI that points to the Amazon S3 location of your data file.
 #' @param outputPath &#91;required&#93; The URI that points to the Amazon S3 location for storing your results.
 #' @param eventTypeName &#91;required&#93; The name of the event type.
-#' @param iamRoleArn &#91;required&#93; The ARN of the IAM role created for Amazon S3 bucket that holds your
-#' data file.
+#' @param iamRoleArn &#91;required&#93; The ARN of the IAM role created for Amazon S3 bucket that holds your data file.
 #' 
-#' The IAM role must have read permissions to your input S3 bucket and
-#' write permissions to your output S3 bucket. For more information about
-#' bucket permissions, see [User policy
-#' examples](https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html)
-#' in the *Amazon S3 User Guide*.
+#' The IAM role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket. For more information about bucket permissions, see [User policy examples](https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html) in the *Amazon S3 User Guide*.
 #' @param tags A collection of key-value pairs associated with this request.
 #'
 #' @return
@@ -320,11 +313,7 @@ frauddetector_create_batch_import_job <- function(jobId, inputPath, outputPath, 
 #' @param detectorVersion The detector version.
 #' @param iamRoleArn &#91;required&#93; The ARN of the IAM role to use for this job request.
 #' 
-#' The IAM Role must have read permissions to your input S3 bucket and
-#' write permissions to your output S3 bucket. For more information about
-#' bucket permissions, see [User policy
-#' examples](https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html)
-#' in the *Amazon S3 User Guide*.
+#' The IAM Role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket. For more information about bucket permissions, see [User policy examples](https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html) in the *Amazon S3 User Guide*.
 #' @param tags A collection of key and value pairs.
 #'
 #' @return
@@ -376,8 +365,7 @@ frauddetector_create_batch_prediction_job <- function(jobId, inputPath, outputPa
 #' Creates a detector version
 #'
 #' @description
-#' Creates a detector version. The detector version starts in a `DRAFT`
-#' status.
+#' Creates a detector version. The detector version starts in a `DRAFT` status.
 #'
 #' @usage
 #' frauddetector_create_detector_version(detectorId, description,
@@ -390,15 +378,11 @@ frauddetector_create_batch_prediction_job <- function(jobId, inputPath, outputPa
 #' @param modelVersions The model versions to include in the detector version.
 #' @param ruleExecutionMode The rule execution mode for the rules included in the detector version.
 #' 
-#' You can define and edit the rule mode at the detector version level,
-#' when it is in draft status.
+#' You can define and edit the rule mode at the detector version level, when it is in draft status.
 #' 
-#' If you specify `FIRST_MATCHED`, Amazon Fraud Detector evaluates rules
-#' sequentially, first to last, stopping at the first matched rule. Amazon
-#' Fraud dectector then provides the outcomes for that single rule.
+#' If you specify `FIRST_MATCHED`, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.
 #' 
-#' If you specifiy `ALL_MATCHED`, Amazon Fraud Detector evaluates all rules
-#' and returns the outcomes for all matched rules.
+#' If you specifiy `ALL_MATCHED`, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules.
 #' 
 #' The default behavior is `FIRST_MATCHED`.
 #' @param tags A collection of key and value pairs.
@@ -475,22 +459,15 @@ frauddetector_create_detector_version <- function(detectorId, description = NULL
 #' @description
 #' Creates a list.
 #' 
-#' List is a set of input data for a variable in your event dataset. You
-#' use the input data in a rule that's associated with your detector. For
-#' more information, see
-#' [Lists](https://docs.aws.amazon.com/frauddetector/latest/ug/lists.html).
+#' List is a set of input data for a variable in your event dataset. You use the input data in a rule that's associated with your detector. For more information, see [Lists](https://docs.aws.amazon.com/frauddetector/latest/ug/lists.html).
 #'
 #' @usage
 #' frauddetector_create_list(name, elements, variableType, description,
 #'   tags)
 #'
 #' @param name &#91;required&#93; The name of the list.
-#' @param elements The names of the elements, if providing. You can also create an empty
-#' list and add elements later using the
-#' [`update_list`][frauddetector_update_list] API.
-#' @param variableType The variable type of the list. You can only assign the variable type
-#' with String data type. For more information, see [Variable
-#' types](https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types).
+#' @param elements The names of the elements, if providing. You can also create an empty list and add elements later using the [`update_list`][frauddetector_update_list] API.
+#' @param variableType The variable type of the list. You can only assign the variable type with String data type. For more information, see [Variable types](https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types).
 #' @param description The description of the list.
 #' @param tags A collection of the key and value pairs.
 #'
@@ -601,8 +578,7 @@ frauddetector_create_model <- function(modelId, modelType, description = NULL, e
 #' id
 #'
 #' @description
-#' Creates a version of the model using the specified model type and model
-#' id.
+#' Creates a version of the model using the specified model type and model id.
 #'
 #' @usage
 #' frauddetector_create_model_version(modelId, modelType,
@@ -613,10 +589,8 @@ frauddetector_create_model <- function(modelId, modelType, description = NULL, e
 #' @param modelType &#91;required&#93; The model type.
 #' @param trainingDataSource &#91;required&#93; The training data source location in Amazon S3.
 #' @param trainingDataSchema &#91;required&#93; The training data schema.
-#' @param externalEventsDetail Details of the external events data used for model version training.
-#' Required if `trainingDataSource` is `EXTERNAL_EVENTS`.
-#' @param ingestedEventsDetail Details of the ingested events data used for model version training.
-#' Required if `trainingDataSource` is `INGESTED_EVENTS`.
+#' @param externalEventsDetail Details of the external events data used for model version training. Required if `trainingDataSource` is `EXTERNAL_EVENTS`.
+#' @param ingestedEventsDetail Details of the ingested events data used for model version training. Required if `trainingDataSource` is `INGESTED_EVENTS`.
 #' @param tags A collection of key and value pairs.
 #'
 #' @return
@@ -779,11 +753,9 @@ frauddetector_create_rule <- function(ruleId, detectorId, description = NULL, ex
 #' @param dataSource &#91;required&#93; The source of the data.
 #' @param defaultValue &#91;required&#93; The default value for the variable when no value is received.
 #' @param description The description.
-#' @param variableType The variable type. For more information see [Variable
-#' types](https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types).
+#' @param variableType The variable type. For more information see [Variable types](https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types).
 #' 
-#' Valid Values:
-#' `AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT`
+#' Valid Values: `AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT`
 #' @param tags A collection of key and value pairs.
 #'
 #' @return
@@ -834,8 +806,7 @@ frauddetector_create_variable <- function(name, dataType, dataSource, defaultVal
 #' Deletes the specified batch import job ID record
 #'
 #' @description
-#' Deletes the specified batch import job ID record. This action does not
-#' delete the data that was batch imported.
+#' Deletes the specified batch import job ID record. This action does not delete the data that was batch imported.
 #'
 #' @usage
 #' frauddetector_delete_batch_import_job(jobId)
@@ -923,11 +894,9 @@ frauddetector_delete_batch_prediction_job <- function(jobId) {
 #' Deletes the detector
 #'
 #' @description
-#' Deletes the detector. Before deleting a detector, you must first delete
-#' all detector versions and rule versions associated with the detector.
+#' Deletes the detector. Before deleting a detector, you must first delete all detector versions and rule versions associated with the detector.
 #' 
-#' When you delete a detector, Amazon Fraud Detector permanently deletes
-#' the detector and the data is no longer stored in Amazon Fraud Detector.
+#' When you delete a detector, Amazon Fraud Detector permanently deletes the detector and the data is no longer stored in Amazon Fraud Detector.
 #'
 #' @usage
 #' frauddetector_delete_detector(detectorId)
@@ -971,12 +940,9 @@ frauddetector_delete_detector <- function(detectorId) {
 #' Deletes the detector version
 #'
 #' @description
-#' Deletes the detector version. You cannot delete detector versions that
-#' are in `ACTIVE` status.
+#' Deletes the detector version. You cannot delete detector versions that are in `ACTIVE` status.
 #' 
-#' When you delete a detector version, Amazon Fraud Detector permanently
-#' deletes the detector and the data is no longer stored in Amazon Fraud
-#' Detector.
+#' When you delete a detector version, Amazon Fraud Detector permanently deletes the detector and the data is no longer stored in Amazon Fraud Detector.
 #'
 #' @usage
 #' frauddetector_delete_detector_version(detectorId, detectorVersionId)
@@ -1026,9 +992,7 @@ frauddetector_delete_detector_version <- function(detectorId, detectorVersionId)
 #' 
 #' You cannot delete an entity type that is included in an event type.
 #' 
-#' When you delete an entity type, Amazon Fraud Detector permanently
-#' deletes that entity type and the data is no longer stored in Amazon
-#' Fraud Detector.
+#' When you delete an entity type, Amazon Fraud Detector permanently deletes that entity type and the data is no longer stored in Amazon Fraud Detector.
 #'
 #' @usage
 #' frauddetector_delete_entity_type(name)
@@ -1074,18 +1038,14 @@ frauddetector_delete_entity_type <- function(name) {
 #' @description
 #' Deletes the specified event.
 #' 
-#' When you delete an event, Amazon Fraud Detector permanently deletes that
-#' event and the event data is no longer stored in Amazon Fraud Detector.
-#' If `deleteAuditHistory` is `True`, event data is available through
-#' search for up to 30 seconds after the delete operation is completed.
+#' When you delete an event, Amazon Fraud Detector permanently deletes that event and the event data is no longer stored in Amazon Fraud Detector. If `deleteAuditHistory` is `True`, event data is available through search for up to 30 seconds after the delete operation is completed.
 #'
 #' @usage
 #' frauddetector_delete_event(eventId, eventTypeName, deleteAuditHistory)
 #'
 #' @param eventId &#91;required&#93; The ID of the event to delete.
 #' @param eventTypeName &#91;required&#93; The name of the event type.
-#' @param deleteAuditHistory Specifies whether or not to delete any predictions associated with the
-#' event. If set to `True`,
+#' @param deleteAuditHistory Specifies whether or not to delete any predictions associated with the event. If set to `True`,
 #'
 #' @return
 #' An empty list.
@@ -1130,9 +1090,7 @@ frauddetector_delete_event <- function(eventId, eventTypeName, deleteAuditHistor
 #' 
 #' You cannot delete an event type that is used in a detector or a model.
 #' 
-#' When you delete an event type, Amazon Fraud Detector permanently deletes
-#' that event type and the data is no longer stored in Amazon Fraud
-#' Detector.
+#' When you delete an event type, Amazon Fraud Detector permanently deletes that event type and the data is no longer stored in Amazon Fraud Detector.
 #'
 #' @usage
 #' frauddetector_delete_event_type(name)
@@ -1228,9 +1186,7 @@ frauddetector_delete_events_by_event_type <- function(eventTypeName) {
 #' @description
 #' Removes a SageMaker model from Amazon Fraud Detector.
 #' 
-#' You can remove an Amazon SageMaker model if it is not associated with a
-#' detector version. Removing a SageMaker model disconnects it from Amazon
-#' Fraud Detector, but the model remains available in SageMaker.
+#' You can remove an Amazon SageMaker model if it is not associated with a detector version. Removing a SageMaker model disconnects it from Amazon Fraud Detector, but the model remains available in SageMaker.
 #'
 #' @usage
 #' frauddetector_delete_external_model(modelEndpoint)
@@ -1276,14 +1232,11 @@ frauddetector_delete_external_model <- function(modelEndpoint) {
 #' @description
 #' Deletes a label.
 #' 
-#' You cannot delete labels that are included in an event type in Amazon
-#' Fraud Detector.
+#' You cannot delete labels that are included in an event type in Amazon Fraud Detector.
 #' 
-#' You cannot delete a label assigned to an event ID. You must first delete
-#' the relevant event ID.
+#' You cannot delete a label assigned to an event ID. You must first delete the relevant event ID.
 #' 
-#' When you delete a label, Amazon Fraud Detector permanently deletes that
-#' label and the data is no longer stored in Amazon Fraud Detector.
+#' When you delete a label, Amazon Fraud Detector permanently deletes that label and the data is no longer stored in Amazon Fraud Detector.
 #'
 #' @usage
 #' frauddetector_delete_label(name)
@@ -1329,8 +1282,7 @@ frauddetector_delete_label <- function(name) {
 #' @description
 #' Deletes the list, provided it is not used in a rule.
 #' 
-#' When you delete a list, Amazon Fraud Detector permanently deletes that
-#' list and the elements in the list.
+#' When you delete a list, Amazon Fraud Detector permanently deletes that list and the elements in the list.
 #'
 #' @usage
 #' frauddetector_delete_list(name)
@@ -1376,11 +1328,9 @@ frauddetector_delete_list <- function(name) {
 #' @description
 #' Deletes a model.
 #' 
-#' You can delete models and model versions in Amazon Fraud Detector,
-#' provided that they are not associated with a detector version.
+#' You can delete models and model versions in Amazon Fraud Detector, provided that they are not associated with a detector version.
 #' 
-#' When you delete a model, Amazon Fraud Detector permanently deletes that
-#' model and the data is no longer stored in Amazon Fraud Detector.
+#' When you delete a model, Amazon Fraud Detector permanently deletes that model and the data is no longer stored in Amazon Fraud Detector.
 #'
 #' @usage
 #' frauddetector_delete_model(modelId, modelType)
@@ -1428,12 +1378,9 @@ frauddetector_delete_model <- function(modelId, modelType) {
 #' @description
 #' Deletes a model version.
 #' 
-#' You can delete models and model versions in Amazon Fraud Detector,
-#' provided that they are not associated with a detector version.
+#' You can delete models and model versions in Amazon Fraud Detector, provided that they are not associated with a detector version.
 #' 
-#' When you delete a model version, Amazon Fraud Detector permanently
-#' deletes that model version and the data is no longer stored in Amazon
-#' Fraud Detector.
+#' When you delete a model version, Amazon Fraud Detector permanently deletes that model version and the data is no longer stored in Amazon Fraud Detector.
 #'
 #' @usage
 #' frauddetector_delete_model_version(modelId, modelType,
@@ -1486,8 +1433,7 @@ frauddetector_delete_model_version <- function(modelId, modelType, modelVersionN
 #' 
 #' You cannot delete an outcome that is used in a rule version.
 #' 
-#' When you delete an outcome, Amazon Fraud Detector permanently deletes
-#' that outcome and the data is no longer stored in Amazon Fraud Detector.
+#' When you delete an outcome, Amazon Fraud Detector permanently deletes that outcome and the data is no longer stored in Amazon Fraud Detector.
 #'
 #' @usage
 #' frauddetector_delete_outcome(name)
@@ -1531,16 +1477,14 @@ frauddetector_delete_outcome <- function(name) {
 #' Deletes the rule
 #'
 #' @description
-#' Deletes the rule. You cannot delete a rule if it is used by an `ACTIVE`
-#' or `INACTIVE` detector version.
+#' Deletes the rule. You cannot delete a rule if it is used by an `ACTIVE` or `INACTIVE` detector version.
 #' 
-#' When you delete a rule, Amazon Fraud Detector permanently deletes that
-#' rule and the data is no longer stored in Amazon Fraud Detector.
+#' When you delete a rule, Amazon Fraud Detector permanently deletes that rule and the data is no longer stored in Amazon Fraud Detector.
 #'
 #' @usage
 #' frauddetector_delete_rule(rule)
 #'
-#' @param rule &#91;required&#93; 
+#' @param rule &#91;required&#93; A rule.
 #'
 #' @return
 #' An empty list.
@@ -1585,15 +1529,11 @@ frauddetector_delete_rule <- function(rule) {
 #' @description
 #' Deletes a variable.
 #' 
-#' You can't delete variables that are included in an event type in Amazon
-#' Fraud Detector.
+#' You can't delete variables that are included in an event type in Amazon Fraud Detector.
 #' 
-#' Amazon Fraud Detector automatically deletes model output variables and
-#' SageMaker model output variables when you delete the model. You can't
-#' delete these variables manually.
+#' Amazon Fraud Detector automatically deletes model output variables and SageMaker model output variables when you delete the model. You can't delete these variables manually.
 #' 
-#' When you delete a variable, Amazon Fraud Detector permanently deletes
-#' that variable and the data is no longer stored in Amazon Fraud Detector.
+#' When you delete a variable, Amazon Fraud Detector permanently deletes that variable and the data is no longer stored in Amazon Fraud Detector.
 #'
 #' @usage
 #' frauddetector_delete_variable(name)
@@ -1701,9 +1641,7 @@ frauddetector_describe_detector <- function(detectorId, nextToken = NULL, maxRes
 #' specified model type and model ID
 #'
 #' @description
-#' Gets all of the model versions for the specified model type or for the
-#' specified model type and model ID. You can also get details for a
-#' single, specified model version.
+#' Gets all of the model versions for the specified model type or for the specified model type and model ID. You can also get details for a single, specified model version.
 #'
 #' @usage
 #' frauddetector_describe_model_versions(modelId, modelVersionNumber,
@@ -1924,13 +1862,7 @@ frauddetector_describe_model_versions <- function(modelId = NULL, modelVersionNu
 #' Gets all batch import jobs or a specific job of the specified ID
 #'
 #' @description
-#' Gets all batch import jobs or a specific job of the specified ID. This
-#' is a paginated API. If you provide a null `maxResults`, this action
-#' retrieves a maximum of 50 records per page. If you provide a
-#' `maxResults`, the value must be between 1 and 50. To get the next page
-#' results, provide the pagination token from the
-#' `GetBatchImportJobsResponse` as part of your request. A null pagination
-#' token fetches the records from the beginning.
+#' Gets all batch import jobs or a specific job of the specified ID. This is a paginated API. If you provide a null `maxResults`, this action retrieves a maximum of 50 records per page. If you provide a `maxResults`, the value must be between 1 and 50. To get the next page results, provide the pagination token from the `GetBatchImportJobsResponse` as part of your request. A null pagination token fetches the records from the beginning.
 #'
 #' @usage
 #' frauddetector_get_batch_import_jobs(jobId, maxResults, nextToken)
@@ -2000,13 +1932,7 @@ frauddetector_get_batch_import_jobs <- function(jobId = NULL, maxResults = NULL,
 #' Gets all batch prediction jobs or a specific job if you specify a job ID
 #'
 #' @description
-#' Gets all batch prediction jobs or a specific job if you specify a job
-#' ID. This is a paginated API. If you provide a null maxResults, this
-#' action retrieves a maximum of 50 records per page. If you provide a
-#' maxResults, the value must be between 1 and 50. To get the next page
-#' results, provide the pagination token from the
-#' GetBatchPredictionJobsResponse as part of your request. A null
-#' pagination token fetches the records from the beginning.
+#' Gets all batch prediction jobs or a specific job if you specify a job ID. This is a paginated API. If you provide a null maxResults, this action retrieves a maximum of 50 records per page. If you provide a maxResults, the value must be between 1 and 50. To get the next page results, provide the pagination token from the GetBatchPredictionJobsResponse as part of your request. A null pagination token fetches the records from the beginning.
 #'
 #' @usage
 #' frauddetector_get_batch_prediction_jobs(jobId, maxResults, nextToken)
@@ -2078,9 +2004,7 @@ frauddetector_get_batch_prediction_jobs <- function(jobId = NULL, maxResults = N
 #' Retrieves the status of a DeleteEventsByEventType action
 #'
 #' @description
-#' Retrieves the status of a
-#' [`delete_events_by_event_type`][frauddetector_delete_events_by_event_type]
-#' action.
+#' Retrieves the status of a [`delete_events_by_event_type`][frauddetector_delete_events_by_event_type] action.
 #'
 #' @usage
 #' frauddetector_get_delete_events_by_event_type_status(eventTypeName)
@@ -2206,13 +2130,7 @@ frauddetector_get_detector_version <- function(detectorId, detectorVersionId) {
 #' Gets all detectors or a single detector if a detectorId is specified
 #'
 #' @description
-#' Gets all detectors or a single detector if a `detectorId` is specified.
-#' This is a paginated API. If you provide a null `maxResults`, this action
-#' retrieves a maximum of 10 records per page. If you provide a
-#' `maxResults`, the value must be between 5 and 10. To get the next page
-#' results, provide the pagination token from the `GetDetectorsResponse` as
-#' part of your request. A null pagination token fetches the records from
-#' the beginning.
+#' Gets all detectors or a single detector if a `detectorId` is specified. This is a paginated API. If you provide a null `maxResults`, this action retrieves a maximum of 10 records per page. If you provide a `maxResults`, the value must be between 5 and 10. To get the next page results, provide the pagination token from the `GetDetectorsResponse` as part of your request. A null pagination token fetches the records from the beginning.
 #'
 #' @usage
 #' frauddetector_get_detectors(detectorId, nextToken, maxResults)
@@ -2275,13 +2193,7 @@ frauddetector_get_detectors <- function(detectorId = NULL, nextToken = NULL, max
 #' Gets all entity types or a specific entity type if a name is specified
 #'
 #' @description
-#' Gets all entity types or a specific entity type if a name is specified.
-#' This is a paginated API. If you provide a null `maxResults`, this action
-#' retrieves a maximum of 10 records per page. If you provide a
-#' `maxResults`, the value must be between 5 and 10. To get the next page
-#' results, provide the pagination token from the `GetEntityTypesResponse`
-#' as part of your request. A null pagination token fetches the records
-#' from the beginning.
+#' Gets all entity types or a specific entity type if a name is specified. This is a paginated API. If you provide a null `maxResults`, this action retrieves a maximum of 10 records per page. If you provide a `maxResults`, the value must be between 5 and 10. To get the next page results, provide the pagination token from the `GetEntityTypesResponse` as part of your request. A null pagination token fetches the records from the beginning.
 #'
 #' @usage
 #' frauddetector_get_entity_types(name, nextToken, maxResults)
@@ -2343,8 +2255,7 @@ frauddetector_get_entity_types <- function(name = NULL, nextToken = NULL, maxRes
 #' Retrieves details of events stored with Amazon Fraud Detector
 #'
 #' @description
-#' Retrieves details of events stored with Amazon Fraud Detector. This
-#' action does not retrieve prediction results.
+#' Retrieves details of events stored with Amazon Fraud Detector. This action does not retrieve prediction results.
 #'
 #' @usage
 #' frauddetector_get_event(eventId, eventTypeName)
@@ -2410,8 +2321,7 @@ frauddetector_get_event <- function(eventId, eventTypeName) {
 #' Evaluates an event against a detector version
 #'
 #' @description
-#' Evaluates an event against a detector version. If a version ID is not
-#' provided, the detector’s (`ACTIVE`) version is used.
+#' Evaluates an event against a detector version. If a version ID is not provided, the detector’s (`ACTIVE`) version is used.
 #'
 #' @usage
 #' frauddetector_get_event_prediction(detectorId, detectorVersionId,
@@ -2421,37 +2331,22 @@ frauddetector_get_event <- function(eventId, eventTypeName) {
 #' @param detectorId &#91;required&#93; The detector ID.
 #' @param detectorVersionId The detector version ID.
 #' @param eventId &#91;required&#93; The unique ID used to identify the event.
-#' @param eventTypeName &#91;required&#93; The event type associated with the detector specified for the
-#' prediction.
-#' @param entities &#91;required&#93; The entity type (associated with the detector's event type) and specific
-#' entity ID representing who performed the event. If an entity id is not
-#' available, use "UNKNOWN."
-#' @param eventTimestamp &#91;required&#93; Timestamp that defines when the event under evaluation occurred. The
-#' timestamp must be specified using ISO 8601 standard in UTC.
-#' @param eventVariables &#91;required&#93; Names of the event type's variables you defined in Amazon Fraud Detector
-#' to represent data elements and their corresponding values for the event
-#' you are sending for evaluation.
+#' @param eventTypeName &#91;required&#93; The event type associated with the detector specified for the prediction.
+#' @param entities &#91;required&#93; The entity type (associated with the detector's event type) and specific entity ID representing who performed the event. If an entity id is not available, use "UNKNOWN."
+#' @param eventTimestamp &#91;required&#93; Timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.
+#' @param eventVariables &#91;required&#93; Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.
 #' 
 #' You must provide at least one eventVariable
 #' 
-#' To ensure most accurate fraud prediction and to simplify your data
-#' preparation, Amazon Fraud Detector will replace all missing variables or
-#' values as follows:
+#' To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:
 #' 
 #' **For Amazon Fraud Detector trained models:**
 #' 
-#' If a null value is provided explicitly for a variable or if a variable
-#' is missing, model will replace the null value or the missing variable
-#' (no variable name in the eventVariables map) with calculated default
-#' mean/medians for numeric variables and with special values for
-#' categorical variables.
+#' If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map) with calculated default mean/medians for numeric variables and with special values for categorical variables.
 #' 
 #' **For imported SageMaker models:**
 #' 
-#' If a null value is provided explicitly for a variable, the model and
-#' rules will use “null” as the value. If a variable is not provided (no
-#' variable name in the eventVariables map), model and rules will use the
-#' default value that is provided for the variable.
+#' If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable.
 #' @param externalModelEndpointDataBlobs The Amazon SageMaker model endpoint input data blobs.
 #'
 #' @return
@@ -2548,26 +2443,19 @@ frauddetector_get_event_prediction <- function(detectorId, detectorVersionId = N
 #' the specified time period
 #'
 #' @description
-#' Gets details of the past fraud predictions for the specified event ID,
-#' event type, detector ID, and detector version ID that was generated in
-#' the specified time period.
+#' Gets details of the past fraud predictions for the specified event ID, event type, detector ID, and detector version ID that was generated in the specified time period.
 #'
 #' @usage
 #' frauddetector_get_event_prediction_metadata(eventId, eventTypeName,
 #'   detectorId, detectorVersionId, predictionTimestamp)
 #'
 #' @param eventId &#91;required&#93; The event ID.
-#' @param eventTypeName &#91;required&#93; The event type associated with the detector specified for the
-#' prediction.
+#' @param eventTypeName &#91;required&#93; The event type associated with the detector specified for the prediction.
 #' @param detectorId &#91;required&#93; The detector ID.
 #' @param detectorVersionId &#91;required&#93; The detector version ID.
-#' @param predictionTimestamp &#91;required&#93; The timestamp that defines when the prediction was generated. The
-#' timestamp must be specified using ISO 8601 standard in UTC.
+#' @param predictionTimestamp &#91;required&#93; The timestamp that defines when the prediction was generated. The timestamp must be specified using ISO 8601 standard in UTC.
 #' 
-#' We recommend calling
-#' [`list_event_predictions`][frauddetector_list_event_predictions] first,
-#' and using the `predictionTimestamp` value in the response to provide an
-#' accurate prediction timestamp value.
+#' We recommend calling [`list_event_predictions`][frauddetector_list_event_predictions] first, and using the `predictionTimestamp` value in the response to provide an accurate prediction timestamp value.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2690,13 +2578,7 @@ frauddetector_get_event_prediction_metadata <- function(eventId, eventTypeName, 
 #' Gets all event types or a specific event type if name is provided
 #'
 #' @description
-#' Gets all event types or a specific event type if name is provided. This
-#' is a paginated API. If you provide a null `maxResults`, this action
-#' retrieves a maximum of 10 records per page. If you provide a
-#' `maxResults`, the value must be between 5 and 10. To get the next page
-#' results, provide the pagination token from the `GetEventTypesResponse`
-#' as part of your request. A null pagination token fetches the records
-#' from the beginning.
+#' Gets all event types or a specific event type if name is provided. This is a paginated API. If you provide a null `maxResults`, this action retrieves a maximum of 10 records per page. If you provide a `maxResults`, the value must be between 5 and 10. To get the next page results, provide the pagination token from the `GetEventTypesResponse` as part of your request. A null pagination token fetches the records from the beginning.
 #'
 #' @usage
 #' frauddetector_get_event_types(name, nextToken, maxResults)
@@ -2779,13 +2661,7 @@ frauddetector_get_event_types <- function(name = NULL, nextToken = NULL, maxResu
 #' imported into the service
 #'
 #' @description
-#' Gets the details for one or more Amazon SageMaker models that have been
-#' imported into the service. This is a paginated API. If you provide a
-#' null `maxResults`, this actions retrieves a maximum of 10 records per
-#' page. If you provide a `maxResults`, the value must be between 5 and 10.
-#' To get the next page results, provide the pagination token from the
-#' `GetExternalModelsResult` as part of your request. A null pagination
-#' token fetches the records from the beginning.
+#' Gets the details for one or more Amazon SageMaker models that have been imported into the service. This is a paginated API. If you provide a null `maxResults`, this actions retrieves a maximum of 10 records per page. If you provide a `maxResults`, the value must be between 5 and 10. To get the next page results, provide the pagination token from the `GetExternalModelsResult` as part of your request. A null pagination token fetches the records from the beginning.
 #'
 #' @usage
 #' frauddetector_get_external_models(modelEndpoint, nextToken, maxResults)
@@ -2866,8 +2742,7 @@ frauddetector_get_external_models <- function(modelEndpoint = NULL, nextToken = 
 #' encrypt content in Amazon Fraud Detector
 #'
 #' @description
-#' Gets the encryption key if a KMS key has been specified to be used to
-#' encrypt content in Amazon Fraud Detector.
+#' Gets the encryption key if a KMS key has been specified to be used to encrypt content in Amazon Fraud Detector.
 #'
 #' @usage
 #' frauddetector_get_kms_encryption_key()
@@ -2913,12 +2788,7 @@ frauddetector_get_kms_encryption_key <- function() {
 #' Gets all labels or a specific label if name is provided
 #'
 #' @description
-#' Gets all labels or a specific label if name is provided. This is a
-#' paginated API. If you provide a null `maxResults`, this action retrieves
-#' a maximum of 50 records per page. If you provide a `maxResults`, the
-#' value must be between 10 and 50. To get the next page results, provide
-#' the pagination token from the `GetGetLabelsResponse` as part of your
-#' request. A null pagination token fetches the records from the beginning.
+#' Gets all labels or a specific label if name is provided. This is a paginated API. If you provide a null `maxResults`, this action retrieves a maximum of 50 records per page. If you provide a `maxResults`, the value must be between 10 and 50. To get the next page results, provide the pagination token from the `GetGetLabelsResponse` as part of your request. A null pagination token fetches the records from the beginning.
 #'
 #' @usage
 #' frauddetector_get_labels(name, nextToken, maxResults)
@@ -3037,8 +2907,7 @@ frauddetector_get_list_elements <- function(name, nextToken = NULL, maxResults =
 #' specified list
 #'
 #' @description
-#' Gets the metadata of either all the lists under the account or the
-#' specified list.
+#' Gets the metadata of either all the lists under the account or the specified list.
 #'
 #' @usage
 #' frauddetector_get_lists_metadata(name, nextToken, maxResults)
@@ -3182,17 +3051,9 @@ frauddetector_get_model_version <- function(modelId, modelType, modelVersionNumb
 #' Gets one or more models
 #'
 #' @description
-#' Gets one or more models. Gets all models for the Amazon Web Services
-#' account if no model type and no model id provided. Gets all models for
-#' the Amazon Web Services account and model type, if the model type is
-#' specified but model id is not provided. Gets a specific model if (model
-#' type, model id) tuple is specified.
+#' Gets one or more models. Gets all models for the Amazon Web Services account if no model type and no model id provided. Gets all models for the Amazon Web Services account and model type, if the model type is specified but model id is not provided. Gets a specific model if (model type, model id) tuple is specified.
 #' 
-#' This is a paginated API. If you provide a null `maxResults`, this action
-#' retrieves a maximum of 10 records per page. If you provide a
-#' `maxResults`, the value must be between 1 and 10. To get the next page
-#' results, provide the pagination token from the response as part of your
-#' request. A null pagination token fetches the records from the beginning.
+#' This is a paginated API. If you provide a null `maxResults`, this action retrieves a maximum of 10 records per page. If you provide a `maxResults`, the value must be between 1 and 10. To get the next page results, provide the pagination token from the response as part of your request. A null pagination token fetches the records from the beginning.
 #'
 #' @usage
 #' frauddetector_get_models(modelId, modelType, nextToken, maxResults)
@@ -3258,12 +3119,7 @@ frauddetector_get_models <- function(modelId = NULL, modelType = NULL, nextToken
 #' Gets one or more outcomes
 #'
 #' @description
-#' Gets one or more outcomes. This is a paginated API. If you provide a
-#' null `maxResults`, this actions retrieves a maximum of 100 records per
-#' page. If you provide a `maxResults`, the value must be between 50 and
-#' 100. To get the next page results, provide the pagination token from the
-#' `GetOutcomesResult` as part of your request. A null pagination token
-#' fetches the records from the beginning.
+#' Gets one or more outcomes. This is a paginated API. If you provide a null `maxResults`, this actions retrieves a maximum of 100 records per page. If you provide a `maxResults`, the value must be between 50 and 100. To get the next page results, provide the pagination token from the `GetOutcomesResult` as part of your request. A null pagination token fetches the records from the beginning.
 #'
 #' @usage
 #' frauddetector_get_outcomes(name, nextToken, maxResults)
@@ -3326,16 +3182,9 @@ frauddetector_get_outcomes <- function(name = NULL, nextToken = NULL, maxResults
 #' not specified
 #'
 #' @description
-#' Get all rules for a detector (paginated) if `ruleId` and `ruleVersion`
-#' are not specified. Gets all rules for the detector and the `ruleId` if
-#' present (paginated). Gets a specific rule if both the `ruleId` and the
-#' `ruleVersion` are specified.
+#' Get all rules for a detector (paginated) if `ruleId` and `ruleVersion` are not specified. Gets all rules for the detector and the `ruleId` if present (paginated). Gets a specific rule if both the `ruleId` and the `ruleVersion` are specified.
 #' 
-#' This is a paginated API. Providing null maxResults results in retrieving
-#' maximum of 100 records per page. If you provide maxResults the value
-#' must be between 50 and 100. To get the next page result, a provide a
-#' pagination token from GetRulesResult as part of your request. Null
-#' pagination token fetches the records from the beginning.
+#' This is a paginated API. Providing null maxResults results in retrieving maximum of 100 records per page. If you provide maxResults the value must be between 50 and 100. To get the next page result, a provide a pagination token from GetRulesResult as part of your request. Null pagination token fetches the records from the beginning.
 #'
 #' @usage
 #' frauddetector_get_rules(ruleId, detectorId, ruleVersion, nextToken,
@@ -3409,12 +3258,7 @@ frauddetector_get_rules <- function(ruleId = NULL, detectorId, ruleVersion = NUL
 #' Gets all of the variables or the specific variable
 #'
 #' @description
-#' Gets all of the variables or the specific variable. This is a paginated
-#' API. Providing null `maxSizePerPage` results in retrieving maximum of
-#' 100 records per page. If you provide `maxSizePerPage` the value must be
-#' between 50 and 100. To get the next page result, a provide a pagination
-#' token from `GetVariablesResult` as part of your request. Null pagination
-#' token fetches the records from the beginning.
+#' Gets all of the variables or the specific variable. This is a paginated API. Providing null `maxSizePerPage` results in retrieving maximum of 100 records per page. If you provide `maxSizePerPage` the value must be between 50 and 100. To get the next page result, a provide a pagination token from `GetVariablesResult` as part of your request. Null pagination token fetches the records from the beginning.
 #'
 #' @usage
 #' frauddetector_get_variables(name, nextToken, maxResults)
@@ -3480,19 +3324,11 @@ frauddetector_get_variables <- function(name = NULL, nextToken = NULL, maxResult
 #' Gets a list of past predictions
 #'
 #' @description
-#' Gets a list of past predictions. The list can be filtered by detector
-#' ID, detector version ID, event ID, event type, or by specifying a time
-#' period. If filter is not specified, the most recent prediction is
-#' returned.
+#' Gets a list of past predictions. The list can be filtered by detector ID, detector version ID, event ID, event type, or by specifying a time period. If filter is not specified, the most recent prediction is returned.
 #' 
-#' For example, the following filter lists all past predictions for `xyz`
-#' event type - `{ "eventType":{ "value": "xyz" }” } `
+#' For example, the following filter lists all past predictions for `xyz` event type - `{ "eventType":{ "value": "xyz" }” } `
 #' 
-#' This is a paginated API. If you provide a null `maxResults`, this action
-#' will retrieve a maximum of 10 records per page. If you provide a
-#' `maxResults`, the value must be between 50 and 100. To get the next page
-#' results, provide the `nextToken` from the response as part of your
-#' request. A null `nextToken` fetches the records from the beginning.
+#' This is a paginated API. If you provide a null `maxResults`, this action will retrieve a maximum of 10 records per page. If you provide a `maxResults`, the value must be between 50 and 100. To get the next page results, provide the `nextToken` from the response as part of your request. A null `nextToken` fetches the records from the beginning.
 #'
 #' @usage
 #' frauddetector_list_event_predictions(eventId, eventType, detectorId,
@@ -3503,9 +3339,7 @@ frauddetector_get_variables <- function(name = NULL, nextToken = NULL, maxResult
 #' @param detectorId The detector ID.
 #' @param detectorVersionId The detector version ID.
 #' @param predictionTimeRange The time period for when the predictions were generated.
-#' @param nextToken Identifies the next page of results to return. Use the token to make the
-#' call again to retrieve the next page. Keep all other arguments
-#' unchanged. Each pagination token expires after 24 hours.
+#' @param nextToken Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.
 #' @param maxResults The maximum number of predictions to return for the request.
 #'
 #' @return
@@ -3577,10 +3411,7 @@ frauddetector_list_event_predictions <- function(eventId = NULL, eventType = NUL
 #' Lists all tags associated with the resource
 #'
 #' @description
-#' Lists all tags associated with the resource. This is a paginated API. To
-#' get the next page results, provide the pagination token from the
-#' response as part of your request. A null pagination token fetches the
-#' records from the beginning.
+#' Lists all tags associated with the resource. This is a paginated API. To get the next page results, provide the pagination token from the response as part of your request. A null pagination token fetches the records from the beginning.
 #'
 #' @usage
 #' frauddetector_list_tags_for_resource(resourceARN, nextToken, maxResults)
@@ -3694,11 +3525,7 @@ frauddetector_put_detector <- function(detectorId, description = NULL, eventType
 #' Creates or updates an entity type
 #'
 #' @description
-#' Creates or updates an entity type. An entity represents who is
-#' performing the event. As part of a fraud prediction, you pass the entity
-#' ID to indicate the specific entity who performed the event. An entity
-#' type classifies the entity. Example classifications include customer,
-#' merchant, or account.
+#' Creates or updates an entity type. An entity represents who is performing the event. As part of a fraud prediction, you pass the entity ID to indicate the specific entity who performed the event. An entity type classifies the entity. Example classifications include customer, merchant, or account.
 #'
 #' @usage
 #' frauddetector_put_entity_type(name, description, tags)
@@ -3751,13 +3578,7 @@ frauddetector_put_entity_type <- function(name, description = NULL, tags = NULL)
 #' Creates or updates an event type
 #'
 #' @description
-#' Creates or updates an event type. An event is a business activity that
-#' is evaluated for fraud risk. With Amazon Fraud Detector, you generate
-#' fraud predictions for events. An event type defines the structure for an
-#' event sent to Amazon Fraud Detector. This includes the variables sent as
-#' part of the event, the entity performing the event (such as a customer),
-#' and the labels that classify the event. Example event types include
-#' online payment transactions, account registrations, and authentications.
+#' Creates or updates an event type. An event is a business activity that is evaluated for fraud risk. With Amazon Fraud Detector, you generate fraud predictions for events. An event type defines the structure for an event sent to Amazon Fraud Detector. This includes the variables sent as part of the event, the entity performing the event (such as a customer), and the labels that classify the event. Example event types include online payment transactions, account registrations, and authentications.
 #'
 #' @usage
 #' frauddetector_put_event_type(name, description, eventVariables, labels,
@@ -3767,13 +3588,10 @@ frauddetector_put_entity_type <- function(name, description = NULL, tags = NULL)
 #' @param description The description of the event type.
 #' @param eventVariables &#91;required&#93; The event type variables.
 #' @param labels The event type labels.
-#' @param entityTypes &#91;required&#93; The entity type for the event type. Example entity types: customer,
-#' merchant, account.
+#' @param entityTypes &#91;required&#93; The entity type for the event type. Example entity types: customer, merchant, account.
 #' @param eventIngestion Specifies if ingestion is enabled or disabled.
 #' @param tags A collection of key and value pairs.
-#' @param eventOrchestration Enables or disables event orchestration. If enabled, you can send event
-#' predictions to select AWS services for downstream processing of the
-#' events.
+#' @param eventOrchestration Enables or disables event orchestration. If enabled, you can send event predictions to select AWS services for downstream processing of the events.
 #'
 #' @return
 #' An empty list.
@@ -3832,9 +3650,7 @@ frauddetector_put_event_type <- function(name, description = NULL, eventVariable
 #' Creates or updates an Amazon SageMaker model endpoint
 #'
 #' @description
-#' Creates or updates an Amazon SageMaker model endpoint. You can also use
-#' this action to update the configuration of the model endpoint, including
-#' the IAM role and/or the mapped variables.
+#' Creates or updates an Amazon SageMaker model endpoint. You can also use this action to update the configuration of the model endpoint, including the IAM role and/or the mapped variables.
 #'
 #' @usage
 #' frauddetector_put_external_model(modelEndpoint, modelSource,
@@ -3912,16 +3728,14 @@ frauddetector_put_external_model <- function(modelEndpoint, modelSource, invokeM
 #' Detector
 #'
 #' @description
-#' Specifies the KMS key to be used to encrypt content in Amazon Fraud
-#' Detector.
+#' Specifies the KMS key to be used to encrypt content in Amazon Fraud Detector.
 #'
 #' @usage
 #' frauddetector_put_kms_encryption_key(kmsEncryptionKeyArn)
 #'
 #' @param kmsEncryptionKeyArn &#91;required&#93; The KMS encryption key ARN.
 #' 
-#' The KMS key must be single-Region key. Amazon Fraud Detector does not
-#' support multi-Region KMS key.
+#' The KMS key must be single-Region key. Amazon Fraud Detector does not support multi-Region KMS key.
 #'
 #' @return
 #' An empty list.
@@ -3960,9 +3774,7 @@ frauddetector_put_kms_encryption_key <- function(kmsEncryptionKeyArn) {
 #' Creates or updates label
 #'
 #' @description
-#' Creates or updates label. A label classifies an event as fraudulent or
-#' legitimate. Labels are associated with event types and used to train
-#' supervised machine learning models in Amazon Fraud Detector.
+#' Creates or updates label. A label classifies an event as fraudulent or legitimate. Labels are associated with event types and used to train supervised machine learning models in Amazon Fraud Detector.
 #'
 #' @usage
 #' frauddetector_put_label(name, description, tags)
@@ -4069,10 +3881,7 @@ frauddetector_put_outcome <- function(name, description = NULL, tags = NULL) {
 #' predictions for those events
 #'
 #' @description
-#' Stores events in Amazon Fraud Detector without generating fraud
-#' predictions for those events. For example, you can use
-#' [`send_event`][frauddetector_send_event] to upload a historical dataset,
-#' which you can then later use to train a model.
+#' Stores events in Amazon Fraud Detector without generating fraud predictions for those events. For example, you can use [`send_event`][frauddetector_send_event] to upload a historical dataset, which you can then later use to train a model.
 #'
 #' @usage
 #' frauddetector_send_event(eventId, eventTypeName, eventTimestamp,
@@ -4080,15 +3889,10 @@ frauddetector_put_outcome <- function(name, description = NULL, tags = NULL) {
 #'
 #' @param eventId &#91;required&#93; The event ID to upload.
 #' @param eventTypeName &#91;required&#93; The event type name of the event.
-#' @param eventTimestamp &#91;required&#93; The timestamp that defines when the event under evaluation occurred. The
-#' timestamp must be specified using ISO 8601 standard in UTC.
-#' @param eventVariables &#91;required&#93; Names of the event type's variables you defined in Amazon Fraud Detector
-#' to represent data elements and their corresponding values for the event
-#' you are sending for evaluation.
-#' @param assignedLabel The label to associate with the event. Required if specifying
-#' `labelTimestamp`.
-#' @param labelTimestamp The timestamp associated with the label. Required if specifying
-#' `assignedLabel`.
+#' @param eventTimestamp &#91;required&#93; The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.
+#' @param eventVariables &#91;required&#93; Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.
+#' @param assignedLabel The label to associate with the event. Required if specifying `labelTimestamp`.
+#' @param labelTimestamp The timestamp associated with the label. Required if specifying `assignedLabel`.
 #' @param entities &#91;required&#93; An array of entities.
 #'
 #' @return
@@ -4240,9 +4044,7 @@ frauddetector_untag_resource <- function(resourceARN, tagKeys) {
 #' Updates a detector version
 #'
 #' @description
-#' Updates a detector version. The detector version attributes that you can
-#' update include models, external model endpoints, rules, rule execution
-#' mode, and description. You can only update a `DRAFT` detector version.
+#' Updates a detector version. The detector version attributes that you can update include models, external model endpoints, rules, rule execution mode, and description. You can only update a `DRAFT` detector version.
 #'
 #' @usage
 #' frauddetector_update_detector_version(detectorId, detectorVersionId,
@@ -4257,13 +4059,9 @@ frauddetector_untag_resource <- function(resourceARN, tagKeys) {
 #' @param modelVersions The model versions to include in the detector version.
 #' @param ruleExecutionMode The rule execution mode to add to the detector.
 #' 
-#' If you specify `FIRST_MATCHED`, Amazon Fraud Detector evaluates rules
-#' sequentially, first to last, stopping at the first matched rule. Amazon
-#' Fraud dectector then provides the outcomes for that single rule.
+#' If you specify `FIRST_MATCHED`, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.
 #' 
-#' If you specifiy `ALL_MATCHED`, Amazon Fraud Detector evaluates all rules
-#' and returns the outcomes for all matched rules. You can define and edit
-#' the rule mode at the detector version level, when it is in draft status.
+#' If you specifiy `ALL_MATCHED`, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.
 #' 
 #' The default behavior is `FIRST_MATCHED`.
 #'
@@ -4325,8 +4123,7 @@ frauddetector_update_detector_version <- function(detectorId, detectorVersionId,
 #' Updates the detector version's description
 #'
 #' @description
-#' Updates the detector version's description. You can update the metadata
-#' for any detector version (`DRAFT, ACTIVE,` or `INACTIVE`).
+#' Updates the detector version's description. You can update the metadata for any detector version (`DRAFT, ACTIVE,` or `INACTIVE`).
 #'
 #' @usage
 #' frauddetector_update_detector_version_metadata(detectorId,
@@ -4375,10 +4172,7 @@ frauddetector_update_detector_version_metadata <- function(detectorId, detectorV
 #' Updates the detector version’s status
 #'
 #' @description
-#' Updates the detector version’s status. You can perform the following
-#' promotions or demotions using
-#' [`update_detector_version_status`][frauddetector_update_detector_version_status]:
-#' `DRAFT` to `ACTIVE`, `ACTIVE` to `INACTIVE`, and `INACTIVE` to `ACTIVE`.
+#' Updates the detector version’s status. You can perform the following promotions or demotions using [`update_detector_version_status`][frauddetector_update_detector_version_status]: `DRAFT` to `ACTIVE`, `ACTIVE` to `INACTIVE`, and `INACTIVE` to `ACTIVE`.
 #'
 #' @usage
 #' frauddetector_update_detector_version_status(detectorId,
@@ -4438,8 +4232,7 @@ frauddetector_update_detector_version_status <- function(detectorId, detectorVer
 #' @param eventId &#91;required&#93; The ID of the event associated with the label to update.
 #' @param eventTypeName &#91;required&#93; The event type of the event associated with the label to update.
 #' @param assignedLabel &#91;required&#93; The new label to assign to the event.
-#' @param labelTimestamp &#91;required&#93; The timestamp associated with the label. The timestamp must be specified
-#' using ISO 8601 standard in UTC.
+#' @param labelTimestamp &#91;required&#93; The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC.
 #'
 #' @return
 #' An empty list.
@@ -4488,11 +4281,9 @@ frauddetector_update_event_label <- function(eventId, eventTypeName, assignedLab
 #'   variableType)
 #'
 #' @param name &#91;required&#93; The name of the list to update.
-#' @param elements One or more list elements to add or replace. If you are providing the
-#' elements, make sure to specify the `updateMode` to use.
+#' @param elements One or more list elements to add or replace. If you are providing the elements, make sure to specify the `updateMode` to use.
 #' 
-#' If you are deleting all elements from the list, use `REPLACE` for the
-#' `updateMode` and provide an empty list (0 elements).
+#' If you are deleting all elements from the list, use `REPLACE` for the `updateMode` and provide an empty list (0 elements).
 #' @param description The new description.
 #' @param updateMode The update mode (type).
 #' 
@@ -4503,9 +4294,7 @@ frauddetector_update_event_label <- function(eventId, eventTypeName, assignedLab
 #' -   Use `REMOVE` if you are removing elements from the list.
 #' @param variableType The variable type you want to assign to the list.
 #' 
-#' You cannot update a variable type of a list that already has a variable
-#' type assigned to it. You can assign a variable type to a list only if
-#' the list does not already have a variable type.
+#' You cannot update a variable type of a list that already has a variable type assigned to it. You can assign a variable type to a list only if the list does not already have a variable type.
 #'
 #' @return
 #' An empty list.
@@ -4598,12 +4387,7 @@ frauddetector_update_model <- function(modelId, modelType, description = NULL) {
 #' Updates a model version
 #'
 #' @description
-#' Updates a model version. Updating a model version retrains an existing
-#' model version using updated training data and produces a new minor
-#' version of the model. You can update the training data set location and
-#' data access role attributes using this action. This action creates and
-#' trains a new minor version of the model, for example version 1.01, 1.02,
-#' 1.03.
+#' Updates a model version. Updating a model version retrains an existing model version using updated training data and produces a new minor version of the model. You can update the training data set location and data access role attributes using this action. This action creates and trains a new minor version of the model, for example version 1.01, 1.02, 1.03.
 #'
 #' @usage
 #' frauddetector_update_model_version(modelId, modelType,
@@ -4612,10 +4396,8 @@ frauddetector_update_model <- function(modelId, modelType, description = NULL) {
 #' @param modelId &#91;required&#93; The model ID.
 #' @param modelType &#91;required&#93; The model type.
 #' @param majorVersionNumber &#91;required&#93; The major version number.
-#' @param externalEventsDetail The details of the external events data used for training the model
-#' version. Required if `trainingDataSource` is `EXTERNAL_EVENTS`.
-#' @param ingestedEventsDetail The details of the ingested event used for training the model version.
-#' Required if your `trainingDataSource` is `INGESTED_EVENTS`.
+#' @param externalEventsDetail The details of the external events data used for training the model version. Required if `trainingDataSource` is `EXTERNAL_EVENTS`.
+#' @param ingestedEventsDetail The details of the ingested event used for training the model version. Required if your `trainingDataSource` is `INGESTED_EVENTS`.
 #' @param tags A collection of key and value pairs.
 #'
 #' @return
@@ -4790,8 +4572,7 @@ frauddetector_update_rule_metadata <- function(rule, description) {
 #' Updates a rule version resulting in a new rule version
 #'
 #' @description
-#' Updates a rule version resulting in a new rule version. Updates a rule
-#' version resulting in a new rule version (version 1, 2, 3 ...).
+#' Updates a rule version resulting in a new rule version. Updates a rule version resulting in a new rule version (version 1, 2, 3 ...).
 #'
 #' @usage
 #' frauddetector_update_rule_version(rule, description, expression,
@@ -4875,8 +4656,7 @@ frauddetector_update_rule_version <- function(rule, description = NULL, expressi
 #' @param name &#91;required&#93; The name of the variable.
 #' @param defaultValue The new default value of the variable.
 #' @param description The new description.
-#' @param variableType The variable type. For more information see [Variable
-#' types](https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types).
+#' @param variableType The variable type. For more information see [Variable types](https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types).
 #'
 #' @return
 #' An empty list.

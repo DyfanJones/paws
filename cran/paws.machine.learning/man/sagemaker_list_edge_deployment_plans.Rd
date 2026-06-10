@@ -18,8 +18,7 @@ sagemaker_list_edge_deployment_plans(
 )
 }
 \arguments{
-\item{NextToken}{The response from the last list when returning a list large enough to
-need tokening.}
+\item{NextToken}{The response from the last list when returning a list large enough to need tokening.}
 
 \item{MaxResults}{The maximum number of results to select (50 by default).}
 
@@ -33,11 +32,9 @@ need tokening.}
 
 \item{NameContains}{Selects edge deployment plans with names containing this name.}
 
-\item{DeviceFleetNameContains}{Selects edge deployment plans with a device fleet name containing this
-name.}
+\item{DeviceFleetNameContains}{Selects edge deployment plans with a device fleet name containing this name.}
 
-\item{SortBy}{The column by which to sort the edge deployment plans. Can be one of
-\code{NAME}, \code{DEVICEFLEETNAME}, \code{CREATIONTIME}, \code{LASTMODIFIEDTIME}.}
+\item{SortBy}{The column by which to sort the edge deployment plans. Can be one of \code{NAME}, \code{DEVICEFLEETNAME}, \code{CREATIONTIME}, \code{LASTMODIFIEDTIME}.}
 
 \item{SortOrder}{The direction of the sorting (ascending or descending).}
 }

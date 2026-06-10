@@ -8,8 +8,7 @@ once}
 dynamodb_describe_table_replica_auto_scaling(TableName)
 }
 \arguments{
-\item{TableName}{[required] The name of the table. You can also provide the Amazon Resource Name
-(ARN) of the table in this parameter.}
+\item{TableName}{[required] The name of the table. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.}
 }
 \description{
 Describes auto scaling settings across replicas of the global table at once.

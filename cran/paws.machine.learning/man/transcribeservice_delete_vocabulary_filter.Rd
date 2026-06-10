@@ -7,8 +7,7 @@
 transcribeservice_delete_vocabulary_filter(VocabularyFilterName)
 }
 \arguments{
-\item{VocabularyFilterName}{[required] The name of the custom vocabulary filter you want to delete. Custom
-vocabulary filter names are case sensitive.}
+\item{VocabularyFilterName}{[required] The name of the custom vocabulary filter you want to delete. Custom vocabulary filter names are case sensitive.}
 }
 \description{
 Deletes a custom vocabulary filter. To use this operation, specify the name of the custom vocabulary filter you want to delete using \code{VocabularyFilterName}. Custom vocabulary filter names are case sensitive.

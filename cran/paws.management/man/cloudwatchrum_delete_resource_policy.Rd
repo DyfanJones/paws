@@ -9,11 +9,7 @@ cloudwatchrum_delete_resource_policy(Name, PolicyRevisionId = NULL)
 \arguments{
 \item{Name}{[required] The app monitor that you want to remove the resource policy from.}
 
-\item{PolicyRevisionId}{Specifies a specific policy revision to delete. Provide a
-\code{PolicyRevisionId} to ensure an atomic delete operation. If the revision
-ID that you provide doesn't match the latest policy revision ID, the
-request will be rejected with an \code{InvalidPolicyRevisionIdException}
-error.}
+\item{PolicyRevisionId}{Specifies a specific policy revision to delete. Provide a \code{PolicyRevisionId} to ensure an atomic delete operation. If the revision ID that you provide doesn't match the latest policy revision ID, the request will be rejected with an \code{InvalidPolicyRevisionIdException} error.}
 }
 \description{
 Removes the association of a resource-based policy from an app monitor.

@@ -15,24 +15,19 @@ sagemaker_list_resource_catalogs(
 )
 }
 \arguments{
-\item{NameContains}{A string that partially matches one or more \code{ResourceCatalog}s names.
-Filters \code{ResourceCatalog} by name.}
+\item{NameContains}{A string that partially matches one or more \code{ResourceCatalog}s names. Filters \code{ResourceCatalog} by name.}
 
-\item{CreationTimeAfter}{Use this parameter to search for \code{ResourceCatalog}s created after a
-specific date and time.}
+\item{CreationTimeAfter}{Use this parameter to search for \code{ResourceCatalog}s created after a specific date and time.}
 
-\item{CreationTimeBefore}{Use this parameter to search for \code{ResourceCatalog}s created before a
-specific date and time.}
+\item{CreationTimeBefore}{Use this parameter to search for \code{ResourceCatalog}s created before a specific date and time.}
 
 \item{SortOrder}{The order in which the resource catalogs are listed.}
 
 \item{SortBy}{The value on which the resource catalog list is sorted.}
 
-\item{MaxResults}{The maximum number of results returned by
-\code{\link[=sagemaker_list_resource_catalogs]{list_resource_catalogs}}.}
+\item{MaxResults}{The maximum number of results returned by \code{\link[=sagemaker_list_resource_catalogs]{list_resource_catalogs}}.}
 
-\item{NextToken}{A token to resume pagination of
-\code{\link[=sagemaker_list_resource_catalogs]{list_resource_catalogs}} results.}
+\item{NextToken}{A token to resume pagination of \code{\link[=sagemaker_list_resource_catalogs]{list_resource_catalogs}} results.}
 }
 \description{
 Lists Amazon SageMaker Catalogs based on given filters and orders. The maximum number of \code{ResourceCatalog}s viewable is 1000.

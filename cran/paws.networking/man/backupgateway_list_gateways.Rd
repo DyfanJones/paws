@@ -10,10 +10,7 @@ backupgateway_list_gateways(MaxResults = NULL, NextToken = NULL)
 \arguments{
 \item{MaxResults}{The maximum number of gateways to list.}
 
-\item{NextToken}{The next item following a partial list of returned resources. For
-example, if a request is made to return \code{MaxResults} number of
-resources, \code{NextToken} allows you to return more items in your list
-starting at the location pointed to by the next token.}
+\item{NextToken}{The next item following a partial list of returned resources. For example, if a request is made to return \code{MaxResults} number of resources, \code{NextToken} allows you to return more items in your list starting at the location pointed to by the next token.}
 }
 \description{
 Lists backup gateways owned by an Amazon Web Services account in an Amazon Web Services Region. The returned list is ordered by gateway Amazon Resource Name (ARN).

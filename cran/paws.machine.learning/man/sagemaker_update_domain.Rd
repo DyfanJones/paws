@@ -13,6 +13,7 @@ sagemaker_update_domain(
   SubnetIds = NULL,
   AppNetworkAccessType = NULL,
   TagPropagation = NULL,
+  HomeEfsFileSystemCreation = NULL,
   VpcId = NULL
 )
 }
@@ -23,45 +24,27 @@ sagemaker_update_domain(
 
 \item{DomainSettingsForUpdate}{A collection of \code{DomainSettings} configuration values to update.}
 
-\item{AppSecurityGroupManagement}{The entity that creates and manages the required security groups for
-inter-app communication in \code{VPCOnly} mode. Required when
-\code{CreateDomain.AppNetworkAccessType} is \code{VPCOnly} and
-\code{DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn}
-is provided. If setting up the domain for use with RStudio, this value
-must be set to \code{Service}.}
+\item{AppSecurityGroupManagement}{The entity that creates and manages the required security groups for inter-app communication in \code{VPCOnly} mode. Required when \code{CreateDomain.AppNetworkAccessType} is \code{VPCOnly} and \code{DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn} is provided. If setting up the domain for use with RStudio, this value must be set to \code{Service}.}
 
 \item{DefaultSpaceSettings}{The default settings for shared spaces that users create in the domain.}
 
 \item{SubnetIds}{The VPC subnets that Studio uses for communication.
 
-If removing subnets, ensure there are no apps in the \code{InService},
-\code{Pending}, or \code{Deleting} state.}
+If removing subnets, ensure there are no apps in the \code{InService}, \code{Pending}, or \code{Deleting} state.}
 
 \item{AppNetworkAccessType}{Specifies the VPC used for non-EFS traffic.
 \itemize{
-\item \code{PublicInternetOnly} - Non-EFS traffic is through a VPC managed by
-Amazon SageMaker AI, which allows direct internet access.
-\item \code{VpcOnly} - All Studio traffic is through the specified VPC and
-subnets.
+\item \code{PublicInternetOnly} - Non-EFS traffic is through a VPC managed by Amazon SageMaker AI, which allows direct internet access.
+\item \code{VpcOnly} - All Studio traffic is through the specified VPC and subnets.
 }
 
-This configuration can only be modified if there are no apps in the
-\code{InService}, \code{Pending}, or \code{Deleting} state. The configuration cannot be
-updated if
-\code{DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn}
-is already set or
-\code{DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn}
-is provided as part of the same request.}
+This configuration can only be modified if there are no apps in the \code{InService}, \code{Pending}, or \code{Deleting} state. The configuration cannot be updated if \code{DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn} is already set or \code{DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn} is provided as part of the same request.}
 
-\item{TagPropagation}{Indicates whether custom tag propagation is supported for the domain.
-Defaults to \code{DISABLED}.}
+\item{TagPropagation}{Indicates whether custom tag propagation is supported for the domain. Defaults to \code{DISABLED}.}
 
-\item{VpcId}{The identifier for the VPC used by the domain for network communication.
-Use this field only when adding VPC configuration to a SageMaker AI
-domain used in Amazon SageMaker Unified Studio that was created without
-VPC settings. SageMaker AI doesn't automatically apply VPC updates to
-existing applications. Stop and restart your applications to apply the
-changes.}
+\item{HomeEfsFileSystemCreation}{Indicates whether to create a home EFS file system for the domain. You can change from \code{Disabled} to \code{Enabled} to provision EFS on demand, but you cannot change from \code{Enabled} to \code{Disabled}.}
+
+\item{VpcId}{The identifier for the VPC used by the domain for network communication. Use this field only when adding VPC configuration to a SageMaker AI domain used in Amazon SageMaker Unified Studio that was created without VPC settings. SageMaker AI doesn't automatically apply VPC updates to existing applications. Stop and restart your applications to apply the changes.}
 }
 \description{
 Updates the default settings for new user profiles in the domain.

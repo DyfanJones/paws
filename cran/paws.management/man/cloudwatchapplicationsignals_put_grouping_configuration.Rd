@@ -9,9 +9,7 @@ cloudwatchapplicationsignals_put_grouping_configuration(
 )
 }
 \arguments{
-\item{GroupingAttributeDefinitions}{[required] An array of grouping attribute definitions that specify how services
-should be grouped. Each definition includes a friendly name, source keys
-to derive the grouping value from, and an optional default value.}
+\item{GroupingAttributeDefinitions}{[required] An array of grouping attribute definitions that specify how services should be grouped. Each definition includes a friendly name, source keys to derive the grouping value from, and an optional default value.}
 }
 \description{
 Creates or updates the grouping configuration for this account. This operation allows you to define custom grouping attributes that determine how services are logically grouped based on telemetry attributes, Amazon Web Services tags, or predefined mappings. These grouping attributes can then be used to organize and filter services in the Application Signals console and APIs.

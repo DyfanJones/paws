@@ -15,15 +15,13 @@ pricing_get_products(
 \arguments{
 \item{ServiceCode}{[required] The code for the service whose products you want to retrieve.}
 
-\item{Filters}{The list of filters that limit the returned products. only products that
-match all filters are returned.}
+\item{Filters}{The list of filters that limit the returned products. only products that match all filters are returned.}
 
 \item{FormatVersion}{The format version that you want the response to be in.
 
 Valid values are: \code{aws_v1}}
 
-\item{NextToken}{The pagination token that indicates the next set of results that you
-want to retrieve.}
+\item{NextToken}{The pagination token that indicates the next set of results that you want to retrieve.}
 
 \item{MaxResults}{The maximum number of results to return in the response.}
 }

@@ -12,8 +12,7 @@ networkfirewall_update_proxy_rule_group_priorities(
 )
 }
 \arguments{
-\item{ProxyConfigurationName}{The descriptive name of the proxy configuration. You can't change the
-name of a proxy configuration after you create it.
+\item{ProxyConfigurationName}{The descriptive name of the proxy configuration. You can't change the name of a proxy configuration after you create it.
 
 You must specify the ARN or the name, and you can specify both.}
 
@@ -23,17 +22,9 @@ You must specify the ARN or the name, and you can specify both.}
 
 \item{RuleGroups}{[required] proxy rule group resources to update to new positions.}
 
-\item{UpdateToken}{[required] A token used for optimistic locking. Network Firewall returns a token to
-your requests that access the proxy configuration. The token marks the
-state of the proxy configuration resource at the time of the request.
+\item{UpdateToken}{[required] A token used for optimistic locking. Network Firewall returns a token to your requests that access the proxy configuration. The token marks the state of the proxy configuration resource at the time of the request.
 
-To make changes to the proxy configuration, you provide the token in
-your request. Network Firewall uses the token to ensure that the proxy
-configuration hasn't changed since you last retrieved it. If it has
-changed, the operation fails with an \code{InvalidTokenException}. If this
-happens, retrieve the proxy configuration again to get a current copy of
-it with a current token. Reapply your changes as needed, then try the
-operation again using the new token.}
+To make changes to the proxy configuration, you provide the token in your request. Network Firewall uses the token to ensure that the proxy configuration hasn't changed since you last retrieved it. If it has changed, the operation fails with an \code{InvalidTokenException}. If this happens, retrieve the proxy configuration again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.}
 }
 \description{
 Updates proxy rule group priorities within a proxy configuration.

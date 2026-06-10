@@ -14,21 +14,17 @@ workdocs_describe_document_versions(
 )
 }
 \arguments{
-\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web
-Services administrator credentials to access the API.}
+\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.}
 
 \item{DocumentId}{[required] The ID of the document.}
 
-\item{Marker}{The marker for the next set of results. (You received this marker from a
-previous call.)}
+\item{Marker}{The marker for the next set of results. (You received this marker from a previous call.)}
 
 \item{Limit}{The maximum number of versions to return with this call.}
 
-\item{Include}{A comma-separated list of values. Specify "INITIALIZED" to include
-incomplete versions.}
+\item{Include}{A comma-separated list of values. Specify "INITIALIZED" to include incomplete versions.}
 
-\item{Fields}{Specify "SOURCE" to include initialized versions and a URL for the
-source document.}
+\item{Fields}{Specify "SOURCE" to include initialized versions and a URL for the source document.}
 }
 \description{
 Retrieves the document versions for the specified document.

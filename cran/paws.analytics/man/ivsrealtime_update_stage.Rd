@@ -15,8 +15,7 @@ ivsrealtime_update_stage(
 
 \item{name}{Name of the stage to be updated.}
 
-\item{autoParticipantRecordingConfiguration}{Configuration object for individual participant recording, to attach to
-the stage. Note that this cannot be updated while recording is active.}
+\item{autoParticipantRecordingConfiguration}{Configuration object for individual participant recording, to attach to the stage. Note that this cannot be updated while recording is active.}
 }
 \description{
 Updates a stage’s configuration.

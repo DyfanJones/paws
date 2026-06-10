@@ -7,8 +7,7 @@
 dynamodb_describe_import(ImportArn)
 }
 \arguments{
-\item{ImportArn}{[required] The Amazon Resource Name (ARN) associated with the table you're
-importing to.}
+\item{ImportArn}{[required] The Amazon Resource Name (ARN) associated with the table you're importing to.}
 }
 \description{
 Represents the properties of the import.

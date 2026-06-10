@@ -7,8 +7,7 @@
 controltower_update_enabled_control(parameters, enabledControlIdentifier)
 }
 \arguments{
-\item{parameters}{[required] A key/value pair, where \code{Key} is of type \code{String} and \code{Value} is of type
-\code{Document}.}
+\item{parameters}{[required] A key/value pair, where \code{Key} is of type \code{String} and \code{Value} is of type \code{Document}.}
 
 \item{enabledControlIdentifier}{[required] The ARN of the enabled control that will be updated.}
 }

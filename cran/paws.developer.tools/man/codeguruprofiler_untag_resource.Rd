@@ -7,11 +7,9 @@
 codeguruprofiler_untag_resource(resourceArn, tagKeys)
 }
 \arguments{
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource that contains the tags to
-remove.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource that contains the tags to remove.}
 
-\item{tagKeys}{[required] A list of tag keys. Existing tags of resources with keys in this list
-are removed from the specified resource.}
+\item{tagKeys}{[required] A list of tag keys. Existing tags of resources with keys in this list are removed from the specified resource.}
 }
 \description{
 Use to remove one or more tags from a resource.

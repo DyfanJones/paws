@@ -12,10 +12,7 @@ kendra_list_experience_entities(Id, IndexId, NextToken = NULL)
 
 \item{IndexId}{[required] The identifier of the index for your Amazon Kendra experience.}
 
-\item{NextToken}{If the previous response was incomplete (because there is more data to
-retrieve), Amazon Kendra returns a pagination token in the response. You
-can use this pagination token to retrieve the next set of users or
-groups.}
+\item{NextToken}{If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of users or groups.}
 }
 \description{
 Lists users or groups in your IAM Identity Center identity source that are granted access to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see \href{https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html}{Building a search experience with no code}.

@@ -12,10 +12,7 @@ keyspaces_get_type(keyspaceName, typeName)
 \arguments{
 \item{keyspaceName}{[required] The name of the keyspace that contains this type.}
 
-\item{typeName}{[required] The formatted name of the type. For example, if the name of the type was
-created without double quotes, Amazon Keyspaces saved the name in
-lower-case characters. If the name was created in double quotes, you
-must use double quotes to specify the type name.}
+\item{typeName}{[required] The formatted name of the type. For example, if the name of the type was created without double quotes, Amazon Keyspaces saved the name in lower-case characters. If the name was created in double quotes, you must use double quotes to specify the type name.}
 }
 \description{
 The \code{\link[=keyspaces_get_type]{get_type}} operation returns information about the type, for example the field definitions, the timestamp when the type was last modified, the level of nesting, the status, and details about if the type is used in other types and tables.

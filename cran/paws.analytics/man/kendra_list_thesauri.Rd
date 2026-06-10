@@ -9,10 +9,7 @@ kendra_list_thesauri(IndexId, NextToken = NULL, MaxResults = NULL)
 \arguments{
 \item{IndexId}{[required] The identifier of the index with one or more thesauri.}
 
-\item{NextToken}{If the previous response was incomplete (because there is more data to
-retrieve), Amazon Kendra returns a pagination token in the response. You
-can use this pagination token to retrieve the next set of thesauri
-(\code{ThesaurusSummaryItems}).}
+\item{NextToken}{If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of thesauri (\code{ThesaurusSummaryItems}).}
 
 \item{MaxResults}{The maximum number of thesauri to return.}
 }

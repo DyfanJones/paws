@@ -14,13 +14,11 @@ sagemaker_create_model_card_export_job(
 \arguments{
 \item{ModelCardName}{[required] The name or Amazon Resource Name (ARN) of the model card to export.}
 
-\item{ModelCardVersion}{The version of the model card to export. If a version is not provided,
-then the latest version of the model card is exported.}
+\item{ModelCardVersion}{The version of the model card to export. If a version is not provided, then the latest version of the model card is exported.}
 
 \item{ModelCardExportJobName}{[required] The name of the model card export job.}
 
-\item{OutputConfig}{[required] The model card output configuration that specifies the Amazon S3 path
-for exporting.}
+\item{OutputConfig}{[required] The model card output configuration that specifies the Amazon S3 path for exporting.}
 }
 \description{
 Creates an Amazon SageMaker Model Card export job.

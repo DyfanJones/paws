@@ -17,24 +17,17 @@ opensearchservice_create_application(
 \arguments{
 \item{clientToken}{Unique, case-sensitive identifier to ensure idempotency of the request.}
 
-\item{name}{[required] The unique name of the OpenSearch application. Names must be unique
-within an Amazon Web Services Region for each account.}
+\item{name}{[required] The unique name of the OpenSearch application. Names must be unique within an Amazon Web Services Region for each account.}
 
 \item{dataSources}{The data sources to link to the OpenSearch application.}
 
-\item{iamIdentityCenterOptions}{Configuration settings for integrating Amazon Web Services IAM Identity
-Center with the OpenSearch application.}
+\item{iamIdentityCenterOptions}{Configuration settings for integrating Amazon Web Services IAM Identity Center with the OpenSearch application.}
 
-\item{appConfigs}{Configuration settings for the OpenSearch application, including
-administrative options.}
+\item{appConfigs}{Configuration settings for the OpenSearch application, including administrative options.}
 
-\item{tagList}{}
+\item{tagList}{A list of tags attached to a domain.}
 
-\item{kmsKeyArn}{The Amazon Resource Name (ARN) of the KMS key used to encrypt the
-application's data at rest. If provided, the application uses your
-customer-managed key for encryption. If omitted, the application uses an
-AWS-managed key. The KMS key must be in the same region as the
-application.}
+\item{kmsKeyArn}{The Amazon Resource Name (ARN) of the KMS key used to encrypt the application's data at rest. If provided, the application uses your customer-managed key for encryption. If omitted, the application uses an AWS-managed key. The KMS key must be in the same region as the application.}
 }
 \description{
 Creates an OpenSearch UI application. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/application.html}{Using the OpenSearch user interface in Amazon OpenSearch Service}.

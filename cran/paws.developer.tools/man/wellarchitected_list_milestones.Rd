@@ -11,11 +11,11 @@ wellarchitected_list_milestones(
 )
 }
 \arguments{
-\item{WorkloadId}{[required]}
+\item{WorkloadId}{[required] The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.}
 
-\item{NextToken}{}
+\item{NextToken}{The token to use to retrieve the next set of results.}
 
-\item{MaxResults}{}
+\item{MaxResults}{The maximum number of results to return for this request.}
 }
 \description{
 List all milestones for an existing workload.

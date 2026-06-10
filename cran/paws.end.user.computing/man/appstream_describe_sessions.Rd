@@ -20,18 +20,13 @@ appstream_describe_sessions(
 
 \item{FleetName}{[required] The name of the fleet. This value is case-sensitive.}
 
-\item{UserId}{The user identifier (ID). If you specify a user ID, you must also
-specify the authentication type.}
+\item{UserId}{The user identifier (ID). If you specify a user ID, you must also specify the authentication type.}
 
-\item{NextToken}{The pagination token to use to retrieve the next page of results for
-this operation. If this value is null, it retrieves the first page.}
+\item{NextToken}{The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.}
 
-\item{Limit}{The size of each page of results. The default value is 20 and the
-maximum value is 50.}
+\item{Limit}{The size of each page of results. The default value is 20 and the maximum value is 50.}
 
-\item{AuthenticationType}{The authentication method. Specify \code{API} for a user authenticated using
-a streaming URL or \code{SAML} for a SAML federated user. The default is to
-authenticate users using a streaming URL.}
+\item{AuthenticationType}{The authentication method. Specify \code{API} for a user authenticated using a streaming URL or \code{SAML} for a SAML federated user. The default is to authenticate users using a streaming URL.}
 
 \item{InstanceId}{The identifier for the instance hosting the session.}
 }

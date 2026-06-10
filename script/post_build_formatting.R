@@ -1,4 +1,5 @@
 args <- commandArgs(trailingOnly = TRUE)
+options(paws.log_level = 3)
 
 library(make.paws)
 
@@ -7,6 +8,7 @@ in_dir <- args[2]
 
 before <- c(
   "ﬁ",
+  "μ",
   "\\\\\`U\\+0009`",
   "\\\\\`U\\+000A`",
   "\\\\\`U\\+000D`",
@@ -18,11 +20,13 @@ before <- c(
   "#' \\*arn:aws:iam:::role/pathA/pathB/ResourceName_1\\*",
   "#' \\*arn:aws:iam:::role/pathA/ResourceName_1\\*",
   "\u2028",
-  "http://docs.pythonboto.org"
+  "http://docs.pythonboto.org",
+  "\\*\\\\href\\{([^}]*)\\}\\{([^}]*)\\}(\\.?)\\*"
 )
 
 after <- c(
   "fi",
+  "\\\\code\\{u\\}",
   "``U+0009``",
   "``U+000A``",
   "``U+000D``",
@@ -34,14 +38,17 @@ after <- c(
   "#' \\\\emph\\{arn:aws:iam:::role/pathA/pathB/ResourceName_1\\}",
   "#' \\\\emph\\{arn:aws:iam:::role/pathA/ResourceName_1\\}",
   "",
-  "https://docs.pythonboto.org"
+  "https://docs.pythonboto.org",
+  "\\\\emph{\\\\href{\\1}{\\2}}\\3"
 )
 
-paws_gsub(root = root, before = before, after = after)
+# Format R + Rb files in cran + paws directory
+paws_post_build_format(
+  root = root,
+  patterns_before = before,
+  patterns_after = after
+)
 
-paws_unescape_latex_post_build(root = root)
-paws_fix_html_span(root = root)
-
-paws_unescape_latex_post_build(root = root)
+# Rebuild documentation (this will re-read source files to generate docs)
 paws_pkg_doc_build(in_dir = in_dir)
 paws_rd_links(in_dir = in_dir)

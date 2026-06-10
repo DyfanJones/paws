@@ -16,22 +16,16 @@ rds_describe_export_tasks(
 \arguments{
 \item{ExportTaskIdentifier}{The identifier of the snapshot or cluster export task to be described.}
 
-\item{SourceArn}{The Amazon Resource Name (ARN) of the snapshot or cluster exported to
-Amazon S3.}
+\item{SourceArn}{The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.}
 
-\item{Filters}{Filters specify one or more snapshot or cluster exports to describe. The
-filters are specified as name-value pairs that define what to include in
-the output. Filter names and values are case-sensitive.
+\item{Filters}{Filters specify one or more snapshot or cluster exports to describe. The filters are specified as name-value pairs that define what to include in the output. Filter names and values are case-sensitive.
 
 Supported filters include the following:
 \itemize{
-\item \code{export-task-identifier} - An identifier for the snapshot or cluster
-export task.
+\item \code{export-task-identifier} - An identifier for the snapshot or cluster export task.
 \item \code{s3-bucket} - The Amazon S3 bucket the data is exported to.
-\item \code{source-arn} - The Amazon Resource Name (ARN) of the snapshot or
-cluster exported to Amazon S3.
-\item \code{status} - The status of the export task. Must be lowercase. Valid
-statuses are the following:
+\item \code{source-arn} - The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.
+\item \code{status} - The status of the export task. Must be lowercase. Valid statuses are the following:
 \itemize{
 \item \code{canceled}
 \item \code{canceling}
@@ -42,16 +36,9 @@ statuses are the following:
 }
 }}
 
-\item{Marker}{An optional pagination token provided by a previous
-\code{\link[=rds_describe_export_tasks]{describe_export_tasks}} request. If you
-specify this parameter, the response includes only records beyond the
-marker, up to the value specified by the \code{MaxRecords} parameter.}
+\item{Marker}{An optional pagination token provided by a previous \code{\link[=rds_describe_export_tasks]{describe_export_tasks}} request. If you specify this parameter, the response includes only records beyond the marker, up to the value specified by the \code{MaxRecords} parameter.}
 
-\item{MaxRecords}{The maximum number of records to include in the response. If more
-records exist than the specified value, a pagination token called a
-marker is included in the response. You can use the marker in a later
-\code{\link[=rds_describe_export_tasks]{describe_export_tasks}} request to retrieve
-the remaining results.
+\item{MaxRecords}{The maximum number of records to include in the response. If more records exist than the specified value, a pagination token called a marker is included in the response. You can use the marker in a later \code{\link[=rds_describe_export_tasks]{describe_export_tasks}} request to retrieve the remaining results.
 
 Default: 100
 

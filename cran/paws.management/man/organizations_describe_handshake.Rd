@@ -9,9 +9,7 @@ organizations_describe_handshake(HandshakeId)
 \arguments{
 \item{HandshakeId}{[required] ID for the handshake that you want information about.
 
-The \href{https://en.wikipedia.org/wiki/Regex}{regex pattern} for handshake
-ID string requires "h-" followed by from 8 to 32 lowercase letters or
-digits.}
+The \href{https://en.wikipedia.org/wiki/Regex}{regex pattern} for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.}
 }
 \description{
 Returns details for a handshake. A handshake is the secure exchange of information between two Amazon Web Services accounts: a sender and a recipient.

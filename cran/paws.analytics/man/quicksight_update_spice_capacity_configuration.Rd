@@ -7,16 +7,12 @@
 quicksight_update_spice_capacity_configuration(AwsAccountId, PurchaseMode)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the SPICE
-configuration that you want to update.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the SPICE configuration that you want to update.}
 
-\item{PurchaseMode}{[required] Determines how SPICE capacity can be purchased. The following options
-are available.
+\item{PurchaseMode}{[required] Determines how SPICE capacity can be purchased. The following options are available.
 \itemize{
 \item \code{MANUAL}: SPICE capacity can only be purchased manually.
-\item \code{AUTO_PURCHASE}: Extra SPICE capacity is automatically purchased on
-your behalf as needed. SPICE capacity can also be purchased manually
-with this option.
+\item \code{AUTO_PURCHASE}: Extra SPICE capacity is automatically purchased on your behalf as needed. SPICE capacity can also be purchased manually with this option.
 }}
 }
 \description{

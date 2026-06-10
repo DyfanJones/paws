@@ -16,8 +16,7 @@ telconetworkbuilder_list_sol_network_operations(
 
 \item{nextToken}{The token for the next page of results.}
 
-\item{nsInstanceId}{Network instance id filter, to retrieve network operations associated to
-a network instance.}
+\item{nsInstanceId}{Network instance id filter, to retrieve network operations associated to a network instance.}
 }
 \description{
 Lists details for a network operation, including when the operation started and the status of the operation.

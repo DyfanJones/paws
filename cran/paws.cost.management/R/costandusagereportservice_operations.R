@@ -10,8 +10,7 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/costandusagereportservice_delete_report_definition/](https://www.paws-r-sdk.com/docs/costandusagereportservice_delete_report_definition/) for full documentation.
 #'
-#' @param ReportName &#91;required&#93; The name of the report that you want to delete. The name must be unique,
-#' is case sensitive, and can't include spaces.
+#' @param ReportName &#91;required&#93; The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.
 #'
 #' @keywords internal
 #'
@@ -43,8 +42,8 @@ costandusagereportservice_delete_report_definition <- function(ReportName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/costandusagereportservice_describe_report_definitions/](https://www.paws-r-sdk.com/docs/costandusagereportservice_describe_report_definitions/) for full documentation.
 #'
-#' @param MaxResults 
-#' @param NextToken 
+#' @param MaxResults The maximum number of results that Amazon Web Services returns for the operation.
+#' @param NextToken A generic string.
 #'
 #' @keywords internal
 #'
@@ -75,8 +74,7 @@ costandusagereportservice_describe_report_definitions <- function(MaxResults = N
 #'
 #' See [https://www.paws-r-sdk.com/docs/costandusagereportservice_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/costandusagereportservice_list_tags_for_resource/) for full documentation.
 #'
-#' @param ReportName &#91;required&#93; The report name of the report definition that tags are to be returned
-#' for.
+#' @param ReportName &#91;required&#93; The report name of the report definition that tags are to be returned for.
 #'
 #' @keywords internal
 #'
@@ -107,8 +105,8 @@ costandusagereportservice_list_tags_for_resource <- function(ReportName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/costandusagereportservice_modify_report_definition/](https://www.paws-r-sdk.com/docs/costandusagereportservice_modify_report_definition/) for full documentation.
 #'
-#' @param ReportName &#91;required&#93; 
-#' @param ReportDefinition &#91;required&#93; 
+#' @param ReportName &#91;required&#93; The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces.
+#' @param ReportDefinition &#91;required&#93; The definition of Amazon Web Services Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition.
 #'
 #' @keywords internal
 #'
@@ -139,8 +137,7 @@ costandusagereportservice_modify_report_definition <- function(ReportName, Repor
 #'
 #' See [https://www.paws-r-sdk.com/docs/costandusagereportservice_put_report_definition/](https://www.paws-r-sdk.com/docs/costandusagereportservice_put_report_definition/) for full documentation.
 #'
-#' @param ReportDefinition &#91;required&#93; Represents the output of the PutReportDefinition operation. The content
-#' consists of the detailed metadata and data file information.
+#' @param ReportDefinition &#91;required&#93; Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information.
 #' @param Tags The tags to be assigned to the report definition resource.
 #'
 #' @keywords internal
@@ -172,8 +169,7 @@ costandusagereportservice_put_report_definition <- function(ReportDefinition, Ta
 #'
 #' See [https://www.paws-r-sdk.com/docs/costandusagereportservice_tag_resource/](https://www.paws-r-sdk.com/docs/costandusagereportservice_tag_resource/) for full documentation.
 #'
-#' @param ReportName &#91;required&#93; The report name of the report definition that tags are to be associated
-#' with.
+#' @param ReportName &#91;required&#93; The report name of the report definition that tags are to be associated with.
 #' @param Tags &#91;required&#93; The tags to be assigned to the report definition resource.
 #'
 #' @keywords internal
@@ -205,8 +201,7 @@ costandusagereportservice_tag_resource <- function(ReportName, Tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/costandusagereportservice_untag_resource/](https://www.paws-r-sdk.com/docs/costandusagereportservice_untag_resource/) for full documentation.
 #'
-#' @param ReportName &#91;required&#93; The report name of the report definition that tags are to be
-#' disassociated from.
+#' @param ReportName &#91;required&#93; The report name of the report definition that tags are to be disassociated from.
 #' @param TagKeys &#91;required&#93; The tags to be disassociated from the report definition resource.
 #'
 #' @keywords internal

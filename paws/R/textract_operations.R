@@ -10,72 +10,38 @@ NULL
 #' 
 #' The types of information returned are as follows:
 #' 
-#' -   Form data (key-value pairs). The related information is returned in
-#'     two Block objects, each of type `KEY_VALUE_SET`: a KEY `Block`
-#'     object and a VALUE `Block` object. For example, *Name: Ana Silva
-#'     Carolina* contains a key and value. *Name:* is the key. *Ana Silva
-#'     Carolina* is the value.
+#' -   Form data (key-value pairs). The related information is returned in two Block objects, each of type `KEY_VALUE_SET`: a KEY `Block` object and a VALUE `Block` object. For example, *Name: Ana Silva Carolina* contains a key and value. *Name:* is the key. *Ana Silva Carolina* is the value.
 #' 
-#' -   Table and table cell data. A TABLE `Block` object contains
-#'     information about a detected table. A CELL `Block` object is
-#'     returned for each cell in a table.
+#' -   Table and table cell data. A TABLE `Block` object contains information about a detected table. A CELL `Block` object is returned for each cell in a table.
 #' 
-#' -   Lines and words of text. A LINE `Block` object contains one or more
-#'     WORD `Block` objects. All lines and words that are detected in the
-#'     document are returned (including text that doesn't have a
-#'     relationship with the value of `FeatureTypes`).
+#' -   Lines and words of text. A LINE `Block` object contains one or more WORD `Block` objects. All lines and words that are detected in the document are returned (including text that doesn't have a relationship with the value of `FeatureTypes`).
 #' 
-#' -   Signatures. A SIGNATURE `Block` object contains the location
-#'     information of a signature in a document. If used in conjunction
-#'     with forms or tables, a signature can be given a Key-Value pairing
-#'     or be detected in the cell of a table.
+#' -   Signatures. A SIGNATURE `Block` object contains the location information of a signature in a document. If used in conjunction with forms or tables, a signature can be given a Key-Value pairing or be detected in the cell of a table.
 #' 
-#' -   Query. A QUERY Block object contains the query text, alias and link
-#'     to the associated Query results block object.
+#' -   Query. A QUERY Block object contains the query text, alias and link to the associated Query results block object.
 #' 
-#' -   Query Result. A QUERY_RESULT Block object contains the answer to the
-#'     query and an ID that connects it to the query asked. This Block also
-#'     contains a confidence score.
+#' -   Query Result. A QUERY_RESULT Block object contains the answer to the query and an ID that connects it to the query asked. This Block also contains a confidence score.
 #' 
-#' Selection elements such as check boxes and option buttons (radio
-#' buttons) can be detected in form data and in tables. A SELECTION_ELEMENT
-#' `Block` object contains information about a selection element, including
-#' the selection status.
+#' Selection elements such as check boxes and option buttons (radio buttons) can be detected in form data and in tables. A SELECTION_ELEMENT `Block` object contains information about a selection element, including the selection status.
 #' 
-#' You can choose which type of analysis to perform by specifying the
-#' `FeatureTypes` list.
+#' You can choose which type of analysis to perform by specifying the `FeatureTypes` list.
 #' 
 #' The output is returned in a list of `Block` objects.
 #' 
-#' [`analyze_document`][textract_analyze_document] is a synchronous
-#' operation. To analyze documents asynchronously, use
-#' [`start_document_analysis`][textract_start_document_analysis].
+#' [`analyze_document`][textract_analyze_document] is a synchronous operation. To analyze documents asynchronously, use [`start_document_analysis`][textract_start_document_analysis].
 #' 
-#' For more information, see [Document Text
-#' Analysis](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html).
+#' For more information, see [Document Text Analysis](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html).
 #'
 #' @usage
 #' textract_analyze_document(Document, FeatureTypes, HumanLoopConfig,
 #'   QueriesConfig, AdaptersConfig)
 #'
-#' @param Document &#91;required&#93; The input document as base64-encoded bytes or an Amazon S3 object. If
-#' you use the AWS CLI to call Amazon Textract operations, you can't pass
-#' image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF
-#' format.
+#' @param Document &#91;required&#93; The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG, PNG, PDF, or TIFF format.
 #' 
-#' If you're using an AWS SDK to call Amazon Textract, you might not need
-#' to base64-encode image bytes that are passed using the `Bytes` field.
-#' @param FeatureTypes &#91;required&#93; A list of the types of analysis to perform. Add TABLES to the list to
-#' return information about the tables that are detected in the input
-#' document. Add FORMS to return detected form data. Add SIGNATURES to
-#' return the locations of detected signatures. Add LAYOUT to the list to
-#' return information about the layout of the document. All lines and words
-#' detected in the document are included in the response (including text
-#' that isn't related to the value of `FeatureTypes`).
-#' @param HumanLoopConfig Sets the configuration for the human in the loop workflow for analyzing
-#' documents.
-#' @param QueriesConfig Contains Queries and the alias for those Queries, as determined by the
-#' input.
+#' If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the `Bytes` field.
+#' @param FeatureTypes &#91;required&#93; A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. Add SIGNATURES to return the locations of detected signatures. Add LAYOUT to the list to return information about the layout of the document. All lines and words detected in the document are included in the response (including text that isn't related to the value of `FeatureTypes`).
+#' @param HumanLoopConfig Sets the configuration for the human in the loop workflow for analyzing documents.
+#' @param QueriesConfig Contains Queries and the alias for those Queries, as determined by the input.
 #' @param AdaptersConfig Specifies the adapter to be used when analyzing a document.
 #'
 #' @return
@@ -220,22 +186,28 @@ textract_analyze_document <- function(Document, FeatureTypes, HumanLoopConfig = 
 #' related relationships between text
 #'
 #' @description
-#' [`analyze_expense`][textract_analyze_expense] synchronously analyzes an
-#' input document for financially related relationships between text.
+#' [`analyze_expense`][textract_analyze_expense] synchronously analyzes an input document for financially related relationships between text.
 #' 
 #' Information is returned as `ExpenseDocuments` and seperated as follows:
 #' 
-#' -   `LineItemGroups`- A data set containing `LineItems` which store
-#'     information about the lines of text, such as an item purchased and
-#'     its price on a receipt.
+#' -   `LineItemGroups`- A data set containing `LineItems` which store information about the lines of text, such as an item purchased and its price on a receipt.
 #' 
-#' -   `SummaryFields`- Contains all other information a receipt, such as
-#'     header information or the vendors name.
+#' -   `SummaryFields`- Contains all other information a receipt, such as header information or the vendors name.
 #'
 #' @usage
 #' textract_analyze_expense(Document)
 #'
-#' @param Document &#91;required&#93; 
+#' @param Document &#91;required&#93; The input document, either as bytes or as an S3 object.
+#' 
+#' You pass image bytes to an Amazon Textract API operation by using the `Bytes` property. For example, you would use the `Bytes` property to pass a document loaded from a local file system. Image bytes passed by using the `Bytes` property must be base64 encoded. Your code might not need to encode document file bytes if you're using an AWS SDK to call Amazon Textract API operations.
+#' 
+#' You pass images stored in an S3 bucket to an Amazon Textract API operation by using the `S3Object` property. Documents stored in an S3 bucket don't need to be base64 encoded.
+#' 
+#' The AWS Region for the S3 bucket that contains the S3 object must match the AWS Region that you use for Amazon Textract operations.
+#' 
+#' If you use the AWS CLI to call Amazon Textract operations, passing image bytes using the Bytes property isn't supported. You must first upload the document to an Amazon S3 bucket, and then call the operation using the S3Object property.
+#' 
+#' For Amazon Textract to process an S3 object, the user must have permission to access the S3 object.
 #'
 #' @return
 #' A list with the following syntax:
@@ -468,11 +440,7 @@ textract_analyze_expense <- function(Document) {
 #' Analyzes identity documents for relevant information
 #'
 #' @description
-#' Analyzes identity documents for relevant information. This information
-#' is extracted and returned as `IdentityDocumentFields`, which records
-#' both the normalized field and value of the extracted text. Unlike other
-#' Amazon Textract operations, [`analyze_id`][textract_analyze_id] doesn't
-#' return any Geometry data.
+#' Analyzes identity documents for relevant information. This information is extracted and returned as `IdentityDocumentFields`, which records both the normalized field and value of the extracted text. Unlike other Amazon Textract operations, [`analyze_id`][textract_analyze_id] doesn't return any Geometry data.
 #'
 #' @usage
 #' textract_analyze_id(DocumentPages)
@@ -607,25 +575,16 @@ textract_analyze_id <- function(DocumentPages) {
 #' user provided documents
 #'
 #' @description
-#' Creates an adapter, which can be fine-tuned for enhanced performance on
-#' user provided documents. Takes an AdapterName and FeatureType. Currently
-#' the only supported feature type is `QUERIES`. You can also provide a
-#' Description, Tags, and a ClientRequestToken. You can choose whether or
-#' not the adapter should be AutoUpdated with the AutoUpdate argument. By
-#' default, AutoUpdate is set to DISABLED.
+#' Creates an adapter, which can be fine-tuned for enhanced performance on user provided documents. Takes an AdapterName and FeatureType. Currently the only supported feature type is `QUERIES`. You can also provide a Description, Tags, and a ClientRequestToken. You can choose whether or not the adapter should be AutoUpdated with the AutoUpdate argument. By default, AutoUpdate is set to DISABLED.
 #'
 #' @usage
 #' textract_create_adapter(AdapterName, ClientRequestToken, Description,
 #'   FeatureTypes, AutoUpdate, Tags)
 #'
 #' @param AdapterName &#91;required&#93; The name to be assigned to the adapter being created.
-#' @param ClientRequestToken Idempotent token is used to recognize the request. If the same token is
-#' used with multiple CreateAdapter requests, the same session is returned.
-#' This token is employed to avoid unintentionally creating the same
-#' session multiple times.
+#' @param ClientRequestToken Idempotent token is used to recognize the request. If the same token is used with multiple CreateAdapter requests, the same session is returned. This token is employed to avoid unintentionally creating the same session multiple times.
 #' @param Description The description to be assigned to the adapter being created.
-#' @param FeatureTypes &#91;required&#93; The type of feature that the adapter is being trained on. Currrenly,
-#' supported feature types are: `QUERIES`
+#' @param FeatureTypes &#91;required&#93; The type of feature that the adapter is being trained on. Currrenly, supported feature types are: `QUERIES`
 #' @param AutoUpdate Controls whether or not the adapter should automatically update.
 #' @param Tags A list of tags to be added to the adapter.
 #'
@@ -680,29 +639,24 @@ textract_create_adapter <- function(AdapterName, ClientRequestToken = NULL, Desc
 #' Creates a new version of an adapter
 #'
 #' @description
-#' Creates a new version of an adapter. Operates on a provided AdapterId
-#' and a specified dataset provided via the DatasetConfig argument.
-#' Requires that you specify an Amazon S3 bucket with the OutputConfig
-#' argument. You can provide an optional KMSKeyId, an optional
-#' ClientRequestToken, and optional tags.
+#' Creates a new version of an adapter. Operates on a provided AdapterId and a specified dataset provided via the DatasetConfig argument. Requires that you specify an Amazon S3 bucket with the OutputConfig argument. You can provide an optional KMSKeyId, an optional ClientRequestToken, and optional tags.
 #'
 #' @usage
 #' textract_create_adapter_version(AdapterId, ClientRequestToken,
 #'   DatasetConfig, KMSKeyId, OutputConfig, Tags)
 #'
-#' @param AdapterId &#91;required&#93; A string containing a unique ID for the adapter that will receive a new
-#' version.
-#' @param ClientRequestToken Idempotent token is used to recognize the request. If the same token is
-#' used with multiple CreateAdapterVersion requests, the same session is
-#' returned. This token is employed to avoid unintentionally creating the
-#' same session multiple times.
-#' @param DatasetConfig &#91;required&#93; Specifies a dataset used to train a new adapter version. Takes a
-#' ManifestS3Object as the value.
-#' @param KMSKeyId The identifier for your AWS Key Management Service key (AWS KMS key).
-#' Used to encrypt your documents.
-#' @param OutputConfig &#91;required&#93; 
-#' @param Tags A set of tags (key-value pairs) that you want to attach to the adapter
-#' version.
+#' @param AdapterId &#91;required&#93; A string containing a unique ID for the adapter that will receive a new version.
+#' @param ClientRequestToken Idempotent token is used to recognize the request. If the same token is used with multiple CreateAdapterVersion requests, the same session is returned. This token is employed to avoid unintentionally creating the same session multiple times.
+#' @param DatasetConfig &#91;required&#93; Specifies a dataset used to train a new adapter version. Takes a ManifestS3Object as the value.
+#' @param KMSKeyId The identifier for your AWS Key Management Service key (AWS KMS key). Used to encrypt your documents.
+#' @param OutputConfig &#91;required&#93; Sets whether or not your output will go to a user created bucket. Used to set the name of the bucket, and the prefix on the output file.
+#' 
+#' `OutputConfig` is an optional parameter which lets you adjust where your output will be placed. By default, Amazon Textract will store the results internally and can only be accessed by the Get API operations. With `OutputConfig` enabled, you can set the name of the bucket the output will be sent to the file prefix of the results where you can download your results. Additionally, you can set the `KMSKeyID` parameter to a customer master key (CMK) to encrypt your output. Without this parameter set Amazon Textract will encrypt server-side using the AWS managed CMK for Amazon S3.
+#' 
+#' Decryption of Customer Content is necessary for processing of the documents by Amazon Textract. If your account is opted out under an AI services opt out policy then all unencrypted Customer Content is immediately and permanently deleted after the Customer Content has been processed by the service. No copy of of the output is retained by Amazon Textract. For information about how to opt out, see [Managing AI services opt-out policy.](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html)
+#' 
+#' For more information on data privacy, see the [Data Privacy FAQ](https://aws.amazon.com/compliance/data-privacy-faq/).
+#' @param Tags A set of tags (key-value pairs) that you want to attach to the adapter version.
 #'
 #' @return
 #' A list with the following syntax:
@@ -763,8 +717,7 @@ textract_create_adapter_version <- function(AdapterId, ClientRequestToken = NULL
 #' Deletes an Amazon Textract adapter
 #'
 #' @description
-#' Deletes an Amazon Textract adapter. Takes an AdapterId and deletes the
-#' adapter specified by the ID.
+#' Deletes an Amazon Textract adapter. Takes an AdapterId and deletes the adapter specified by the ID.
 #'
 #' @usage
 #' textract_delete_adapter(AdapterId)
@@ -808,15 +761,12 @@ textract_delete_adapter <- function(AdapterId) {
 #' Deletes an Amazon Textract adapter version
 #'
 #' @description
-#' Deletes an Amazon Textract adapter version. Requires that you specify
-#' both an AdapterId and a AdapterVersion. Deletes the adapter version
-#' specified by the AdapterId and the AdapterVersion.
+#' Deletes an Amazon Textract adapter version. Requires that you specify both an AdapterId and a AdapterVersion. Deletes the adapter version specified by the AdapterId and the AdapterVersion.
 #'
 #' @usage
 #' textract_delete_adapter_version(AdapterId, AdapterVersion)
 #'
-#' @param AdapterId &#91;required&#93; A string containing a unique ID for the adapter version that will be
-#' deleted.
+#' @param AdapterId &#91;required&#93; A string containing a unique ID for the adapter version that will be deleted.
 #' @param AdapterVersion &#91;required&#93; Specifies the adapter version to be deleted.
 #'
 #' @return
@@ -857,34 +807,20 @@ textract_delete_adapter_version <- function(AdapterId, AdapterVersion) {
 #' Detects text in the input document
 #'
 #' @description
-#' Detects text in the input document. Amazon Textract can detect lines of
-#' text and the words that make up a line of text. The input document must
-#' be in one of the following image formats: JPEG, PNG, PDF, or TIFF.
-#' [`detect_document_text`][textract_detect_document_text] returns the
-#' detected text in an array of Block objects.
+#' Detects text in the input document. Amazon Textract can detect lines of text and the words that make up a line of text. The input document must be in one of the following image formats: JPEG, PNG, PDF, or TIFF. [`detect_document_text`][textract_detect_document_text] returns the detected text in an array of Block objects.
 #' 
-#' Each document page has as an associated `Block` of type PAGE. Each PAGE
-#' `Block` object is the parent of LINE `Block` objects that represent the
-#' lines of detected text on a page. A LINE `Block` object is a parent for
-#' each word that makes up the line. Words are represented by `Block`
-#' objects of type WORD.
+#' Each document page has as an associated `Block` of type PAGE. Each PAGE `Block` object is the parent of LINE `Block` objects that represent the lines of detected text on a page. A LINE `Block` object is a parent for each word that makes up the line. Words are represented by `Block` objects of type WORD.
 #' 
-#' [`detect_document_text`][textract_detect_document_text] is a synchronous
-#' operation. To analyze documents asynchronously, use
-#' [`start_document_text_detection`][textract_start_document_text_detection].
+#' [`detect_document_text`][textract_detect_document_text] is a synchronous operation. To analyze documents asynchronously, use [`start_document_text_detection`][textract_start_document_text_detection].
 #' 
-#' For more information, see [Document Text
-#' Detection](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html).
+#' For more information, see [Document Text Detection](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html).
 #'
 #' @usage
 #' textract_detect_document_text(Document)
 #'
-#' @param Document &#91;required&#93; The input document as base64-encoded bytes or an Amazon S3 object. If
-#' you use the AWS CLI to call Amazon Textract operations, you can't pass
-#' image bytes. The document must be an image in JPEG or PNG format.
+#' @param Document &#91;required&#93; The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The document must be an image in JPEG or PNG format.
 #' 
-#' If you're using an AWS SDK to call Amazon Textract, you might not need
-#' to base64-encode image bytes that are passed using the `Bytes` field.
+#' If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes that are passed using the `Bytes` field.
 #'
 #' @return
 #' A list with the following syntax:
@@ -988,9 +924,7 @@ textract_detect_document_text <- function(Document) {
 #' AutoUpdate status, and FeatureTypes
 #'
 #' @description
-#' Gets configuration information for an adapter specified by an AdapterId,
-#' returning information on AdapterName, Description, CreationTime,
-#' AutoUpdate status, and FeatureTypes.
+#' Gets configuration information for an adapter specified by an AdapterId, returning information on AdapterName, Description, CreationTime, AutoUpdate status, and FeatureTypes.
 #'
 #' @usage
 #' textract_get_adapter(AdapterId)
@@ -1054,18 +988,13 @@ textract_get_adapter <- function(AdapterId) {
 #' EvaluationMetrics
 #'
 #' @description
-#' Gets configuration information for the specified adapter version,
-#' including: AdapterId, AdapterVersion, FeatureTypes, Status,
-#' StatusMessage, DatasetConfig, KMSKeyId, OutputConfig, Tags and
-#' EvaluationMetrics.
+#' Gets configuration information for the specified adapter version, including: AdapterId, AdapterVersion, FeatureTypes, Status, StatusMessage, DatasetConfig, KMSKeyId, OutputConfig, Tags and EvaluationMetrics.
 #'
 #' @usage
 #' textract_get_adapter_version(AdapterId, AdapterVersion)
 #'
-#' @param AdapterId &#91;required&#93; A string specifying a unique ID for the adapter version you want to
-#' retrieve information for.
-#' @param AdapterVersion &#91;required&#93; A string specifying the adapter version you want to retrieve information
-#' for.
+#' @param AdapterId &#91;required&#93; A string specifying a unique ID for the adapter version you want to retrieve information for.
+#' @param AdapterVersion &#91;required&#93; A string specifying the adapter version you want to retrieve information for.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1150,85 +1079,36 @@ textract_get_adapter_version <- function(AdapterId, AdapterVersion) {
 #' analyzes text in a document
 #'
 #' @description
-#' Gets the results for an Amazon Textract asynchronous operation that
-#' analyzes text in a document.
+#' Gets the results for an Amazon Textract asynchronous operation that analyzes text in a document.
 #' 
-#' You start asynchronous text analysis by calling
-#' [`start_document_analysis`][textract_start_document_analysis], which
-#' returns a job identifier (`JobId`). When the text analysis operation
-#' finishes, Amazon Textract publishes a completion status to the Amazon
-#' Simple Notification Service (Amazon SNS) topic that's registered in the
-#' initial call to
-#' [`start_document_analysis`][textract_start_document_analysis]. To get
-#' the results of the text-detection operation, first check that the status
-#' value published to the Amazon SNS topic is `SUCCEEDED`. If so, call
-#' [`get_document_analysis`][textract_get_document_analysis], and pass the
-#' job identifier (`JobId`) from the initial call to
-#' [`start_document_analysis`][textract_start_document_analysis].
+#' You start asynchronous text analysis by calling [`start_document_analysis`][textract_start_document_analysis], which returns a job identifier (`JobId`). When the text analysis operation finishes, Amazon Textract publishes a completion status to the Amazon Simple Notification Service (Amazon SNS) topic that's registered in the initial call to [`start_document_analysis`][textract_start_document_analysis]. To get the results of the text-detection operation, first check that the status value published to the Amazon SNS topic is `SUCCEEDED`. If so, call [`get_document_analysis`][textract_get_document_analysis], and pass the job identifier (`JobId`) from the initial call to [`start_document_analysis`][textract_start_document_analysis].
 #' 
-#' [`get_document_analysis`][textract_get_document_analysis] returns an
-#' array of Block objects. The following types of information are returned:
+#' [`get_document_analysis`][textract_get_document_analysis] returns an array of Block objects. The following types of information are returned:
 #' 
-#' -   Form data (key-value pairs). The related information is returned in
-#'     two Block objects, each of type `KEY_VALUE_SET`: a KEY `Block`
-#'     object and a VALUE `Block` object. For example, *Name: Ana Silva
-#'     Carolina* contains a key and value. *Name:* is the key. *Ana Silva
-#'     Carolina* is the value.
+#' -   Form data (key-value pairs). The related information is returned in two Block objects, each of type `KEY_VALUE_SET`: a KEY `Block` object and a VALUE `Block` object. For example, *Name: Ana Silva Carolina* contains a key and value. *Name:* is the key. *Ana Silva Carolina* is the value.
 #' 
-#' -   Table and table cell data. A TABLE `Block` object contains
-#'     information about a detected table. A CELL `Block` object is
-#'     returned for each cell in a table.
+#' -   Table and table cell data. A TABLE `Block` object contains information about a detected table. A CELL `Block` object is returned for each cell in a table.
 #' 
-#' -   Lines and words of text. A LINE `Block` object contains one or more
-#'     WORD `Block` objects. All lines and words that are detected in the
-#'     document are returned (including text that doesn't have a
-#'     relationship with the value of the
-#'     [`start_document_analysis`][textract_start_document_analysis]
-#'     `FeatureTypes` input parameter).
+#' -   Lines and words of text. A LINE `Block` object contains one or more WORD `Block` objects. All lines and words that are detected in the document are returned (including text that doesn't have a relationship with the value of the [`start_document_analysis`][textract_start_document_analysis] `FeatureTypes` input parameter).
 #' 
-#' -   Query. A QUERY Block object contains the query text, alias and link
-#'     to the associated Query results block object.
+#' -   Query. A QUERY Block object contains the query text, alias and link to the associated Query results block object.
 #' 
-#' -   Query Results. A QUERY_RESULT Block object contains the answer to
-#'     the query and an ID that connects it to the query asked. This Block
-#'     also contains a confidence score.
+#' -   Query Results. A QUERY_RESULT Block object contains the answer to the query and an ID that connects it to the query asked. This Block also contains a confidence score.
 #' 
-#' While processing a document with queries, look out for
-#' `INVALID_REQUEST_PARAMETERS` output. This indicates that either the per
-#' page query limit has been exceeded or that the operation is trying to
-#' query a page in the document which doesn’t exist.
+#' While processing a document with queries, look out for `INVALID_REQUEST_PARAMETERS` output. This indicates that either the per page query limit has been exceeded or that the operation is trying to query a page in the document which doesn’t exist.
 #' 
-#' Selection elements such as check boxes and option buttons (radio
-#' buttons) can be detected in form data and in tables. A SELECTION_ELEMENT
-#' `Block` object contains information about a selection element, including
-#' the selection status.
+#' Selection elements such as check boxes and option buttons (radio buttons) can be detected in form data and in tables. A SELECTION_ELEMENT `Block` object contains information about a selection element, including the selection status.
 #' 
-#' Use the `MaxResults` parameter to limit the number of blocks that are
-#' returned. If there are more results than specified in `MaxResults`, the
-#' value of `NextToken` in the operation response contains a pagination
-#' token for getting the next set of results. To get the next page of
-#' results, call [`get_document_analysis`][textract_get_document_analysis],
-#' and populate the `NextToken` request parameter with the token value
-#' that's returned from the previous call to
-#' [`get_document_analysis`][textract_get_document_analysis].
+#' Use the `MaxResults` parameter to limit the number of blocks that are returned. If there are more results than specified in `MaxResults`, the value of `NextToken` in the operation response contains a pagination token for getting the next set of results. To get the next page of results, call [`get_document_analysis`][textract_get_document_analysis], and populate the `NextToken` request parameter with the token value that's returned from the previous call to [`get_document_analysis`][textract_get_document_analysis].
 #' 
-#' For more information, see [Document Text
-#' Analysis](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html).
+#' For more information, see [Document Text Analysis](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html).
 #'
 #' @usage
 #' textract_get_document_analysis(JobId, MaxResults, NextToken)
 #'
-#' @param JobId &#91;required&#93; A unique identifier for the text-detection job. The `JobId` is returned
-#' from [`start_document_analysis`][textract_start_document_analysis]. A
-#' `JobId` value is only valid for 7 days.
-#' @param MaxResults The maximum number of results to return per paginated call. The largest
-#' value that you can specify is 1,000. If you specify a value greater than
-#' 1,000, a maximum of 1,000 results is returned. The default value is
-#' 1,000.
-#' @param NextToken If the previous response was incomplete (because there are more blocks
-#' to retrieve), Amazon Textract returns a pagination token in the
-#' response. You can use this pagination token to retrieve the next set of
-#' blocks.
+#' @param JobId &#91;required&#93; A unique identifier for the text-detection job. The `JobId` is returned from [`start_document_analysis`][textract_start_document_analysis]. A `JobId` value is only valid for 7 days.
+#' @param MaxResults The maximum number of results to return per paginated call. The largest value that you can specify is 1,000. If you specify a value greater than 1,000, a maximum of 1,000 results is returned. The default value is 1,000.
+#' @param NextToken If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination token in the response. You can use this pagination token to retrieve the next set of blocks.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1337,61 +1217,24 @@ textract_get_document_analysis <- function(JobId, MaxResults = NULL, NextToken =
 #' detects text in a document
 #'
 #' @description
-#' Gets the results for an Amazon Textract asynchronous operation that
-#' detects text in a document. Amazon Textract can detect lines of text and
-#' the words that make up a line of text.
+#' Gets the results for an Amazon Textract asynchronous operation that detects text in a document. Amazon Textract can detect lines of text and the words that make up a line of text.
 #' 
-#' You start asynchronous text detection by calling
-#' [`start_document_text_detection`][textract_start_document_text_detection],
-#' which returns a job identifier (`JobId`). When the text detection
-#' operation finishes, Amazon Textract publishes a completion status to the
-#' Amazon Simple Notification Service (Amazon SNS) topic that's registered
-#' in the initial call to
-#' [`start_document_text_detection`][textract_start_document_text_detection].
-#' To get the results of the text-detection operation, first check that the
-#' status value published to the Amazon SNS topic is `SUCCEEDED`. If so,
-#' call
-#' [`get_document_text_detection`][textract_get_document_text_detection],
-#' and pass the job identifier (`JobId`) from the initial call to
-#' [`start_document_text_detection`][textract_start_document_text_detection].
+#' You start asynchronous text detection by calling [`start_document_text_detection`][textract_start_document_text_detection], which returns a job identifier (`JobId`). When the text detection operation finishes, Amazon Textract publishes a completion status to the Amazon Simple Notification Service (Amazon SNS) topic that's registered in the initial call to [`start_document_text_detection`][textract_start_document_text_detection]. To get the results of the text-detection operation, first check that the status value published to the Amazon SNS topic is `SUCCEEDED`. If so, call [`get_document_text_detection`][textract_get_document_text_detection], and pass the job identifier (`JobId`) from the initial call to [`start_document_text_detection`][textract_start_document_text_detection].
 #' 
-#' [`get_document_text_detection`][textract_get_document_text_detection]
-#' returns an array of Block objects.
+#' [`get_document_text_detection`][textract_get_document_text_detection] returns an array of Block objects.
 #' 
-#' Each document page has as an associated `Block` of type PAGE. Each PAGE
-#' `Block` object is the parent of LINE `Block` objects that represent the
-#' lines of detected text on a page. A LINE `Block` object is a parent for
-#' each word that makes up the line. Words are represented by `Block`
-#' objects of type WORD.
+#' Each document page has as an associated `Block` of type PAGE. Each PAGE `Block` object is the parent of LINE `Block` objects that represent the lines of detected text on a page. A LINE `Block` object is a parent for each word that makes up the line. Words are represented by `Block` objects of type WORD.
 #' 
-#' Use the MaxResults parameter to limit the number of blocks that are
-#' returned. If there are more results than specified in `MaxResults`, the
-#' value of `NextToken` in the operation response contains a pagination
-#' token for getting the next set of results. To get the next page of
-#' results, call
-#' [`get_document_text_detection`][textract_get_document_text_detection],
-#' and populate the `NextToken` request parameter with the token value
-#' that's returned from the previous call to
-#' [`get_document_text_detection`][textract_get_document_text_detection].
+#' Use the MaxResults parameter to limit the number of blocks that are returned. If there are more results than specified in `MaxResults`, the value of `NextToken` in the operation response contains a pagination token for getting the next set of results. To get the next page of results, call [`get_document_text_detection`][textract_get_document_text_detection], and populate the `NextToken` request parameter with the token value that's returned from the previous call to [`get_document_text_detection`][textract_get_document_text_detection].
 #' 
-#' For more information, see [Document Text
-#' Detection](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html).
+#' For more information, see [Document Text Detection](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html).
 #'
 #' @usage
 #' textract_get_document_text_detection(JobId, MaxResults, NextToken)
 #'
-#' @param JobId &#91;required&#93; A unique identifier for the text detection job. The `JobId` is returned
-#' from
-#' [`start_document_text_detection`][textract_start_document_text_detection].
-#' A `JobId` value is only valid for 7 days.
-#' @param MaxResults The maximum number of results to return per paginated call. The largest
-#' value you can specify is 1,000. If you specify a value greater than
-#' 1,000, a maximum of 1,000 results is returned. The default value is
-#' 1,000.
-#' @param NextToken If the previous response was incomplete (because there are more blocks
-#' to retrieve), Amazon Textract returns a pagination token in the
-#' response. You can use this pagination token to retrieve the next set of
-#' blocks.
+#' @param JobId &#91;required&#93; A unique identifier for the text detection job. The `JobId` is returned from [`start_document_text_detection`][textract_start_document_text_detection]. A `JobId` value is only valid for 7 days.
+#' @param MaxResults The maximum number of results to return per paginated call. The largest value you can specify is 1,000. If you specify a value greater than 1,000, a maximum of 1,000 results is returned. The default value is 1,000.
+#' @param NextToken If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination token in the response. You can use this pagination token to retrieve the next set of blocks.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1500,49 +1343,20 @@ textract_get_document_text_detection <- function(JobId, MaxResults = NULL, NextT
 #' analyzes invoices and receipts
 #'
 #' @description
-#' Gets the results for an Amazon Textract asynchronous operation that
-#' analyzes invoices and receipts. Amazon Textract finds contact
-#' information, items purchased, and vendor name, from input invoices and
-#' receipts.
+#' Gets the results for an Amazon Textract asynchronous operation that analyzes invoices and receipts. Amazon Textract finds contact information, items purchased, and vendor name, from input invoices and receipts.
 #' 
-#' You start asynchronous invoice/receipt analysis by calling
-#' [`start_expense_analysis`][textract_start_expense_analysis], which
-#' returns a job identifier (`JobId`). Upon completion of the
-#' invoice/receipt analysis, Amazon Textract publishes the completion
-#' status to the Amazon Simple Notification Service (Amazon SNS) topic.
-#' This topic must be registered in the initial call to
-#' [`start_expense_analysis`][textract_start_expense_analysis]. To get the
-#' results of the invoice/receipt analysis operation, first ensure that the
-#' status value published to the Amazon SNS topic is `SUCCEEDED`. If so,
-#' call [`get_expense_analysis`][textract_get_expense_analysis], and pass
-#' the job identifier (`JobId`) from the initial call to
-#' [`start_expense_analysis`][textract_start_expense_analysis].
+#' You start asynchronous invoice/receipt analysis by calling [`start_expense_analysis`][textract_start_expense_analysis], which returns a job identifier (`JobId`). Upon completion of the invoice/receipt analysis, Amazon Textract publishes the completion status to the Amazon Simple Notification Service (Amazon SNS) topic. This topic must be registered in the initial call to [`start_expense_analysis`][textract_start_expense_analysis]. To get the results of the invoice/receipt analysis operation, first ensure that the status value published to the Amazon SNS topic is `SUCCEEDED`. If so, call [`get_expense_analysis`][textract_get_expense_analysis], and pass the job identifier (`JobId`) from the initial call to [`start_expense_analysis`][textract_start_expense_analysis].
 #' 
-#' Use the MaxResults parameter to limit the number of blocks that are
-#' returned. If there are more results than specified in `MaxResults`, the
-#' value of `NextToken` in the operation response contains a pagination
-#' token for getting the next set of results. To get the next page of
-#' results, call [`get_expense_analysis`][textract_get_expense_analysis],
-#' and populate the `NextToken` request parameter with the token value
-#' that's returned from the previous call to
-#' [`get_expense_analysis`][textract_get_expense_analysis].
+#' Use the MaxResults parameter to limit the number of blocks that are returned. If there are more results than specified in `MaxResults`, the value of `NextToken` in the operation response contains a pagination token for getting the next set of results. To get the next page of results, call [`get_expense_analysis`][textract_get_expense_analysis], and populate the `NextToken` request parameter with the token value that's returned from the previous call to [`get_expense_analysis`][textract_get_expense_analysis].
 #' 
-#' For more information, see [Analyzing Invoices and
-#' Receipts](https://docs.aws.amazon.com/textract/latest/dg/invoices-receipts.html).
+#' For more information, see [Analyzing Invoices and Receipts](https://docs.aws.amazon.com/textract/latest/dg/invoices-receipts.html).
 #'
 #' @usage
 #' textract_get_expense_analysis(JobId, MaxResults, NextToken)
 #'
-#' @param JobId &#91;required&#93; A unique identifier for the text detection job. The `JobId` is returned
-#' from [`start_expense_analysis`][textract_start_expense_analysis]. A
-#' `JobId` value is only valid for 7 days.
-#' @param MaxResults The maximum number of results to return per paginated call. The largest
-#' value you can specify is 20. If you specify a value greater than 20, a
-#' maximum of 20 results is returned. The default value is 20.
-#' @param NextToken If the previous response was incomplete (because there are more blocks
-#' to retrieve), Amazon Textract returns a pagination token in the
-#' response. You can use this pagination token to retrieve the next set of
-#' blocks.
+#' @param JobId &#91;required&#93; A unique identifier for the text detection job. The `JobId` is returned from [`start_expense_analysis`][textract_start_expense_analysis]. A `JobId` value is only valid for 7 days.
+#' @param MaxResults The maximum number of results to return per paginated call. The largest value you can specify is 20. If you specify a value greater than 20, a maximum of 20 results is returned. The default value is 20.
+#' @param NextToken If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination token in the response. You can use this pagination token to retrieve the next set of blocks.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1783,36 +1597,18 @@ textract_get_expense_analysis <- function(JobId, MaxResults = NULL, NextToken = 
 #' analyzes text in a lending document
 #'
 #' @description
-#' Gets the results for an Amazon Textract asynchronous operation that
-#' analyzes text in a lending document.
+#' Gets the results for an Amazon Textract asynchronous operation that analyzes text in a lending document.
 #' 
-#' You start asynchronous text analysis by calling
-#' [`start_lending_analysis`][textract_start_lending_analysis], which
-#' returns a job identifier (`JobId`). When the text analysis operation
-#' finishes, Amazon Textract publishes a completion status to the Amazon
-#' Simple Notification Service (Amazon SNS) topic that's registered in the
-#' initial call to
-#' [`start_lending_analysis`][textract_start_lending_analysis].
+#' You start asynchronous text analysis by calling [`start_lending_analysis`][textract_start_lending_analysis], which returns a job identifier (`JobId`). When the text analysis operation finishes, Amazon Textract publishes a completion status to the Amazon Simple Notification Service (Amazon SNS) topic that's registered in the initial call to [`start_lending_analysis`][textract_start_lending_analysis].
 #' 
-#' To get the results of the text analysis operation, first check that the
-#' status value published to the Amazon SNS topic is SUCCEEDED. If so, call
-#' GetLendingAnalysis, and pass the job identifier (`JobId`) from the
-#' initial call to
-#' [`start_lending_analysis`][textract_start_lending_analysis].
+#' To get the results of the text analysis operation, first check that the status value published to the Amazon SNS topic is SUCCEEDED. If so, call GetLendingAnalysis, and pass the job identifier (`JobId`) from the initial call to [`start_lending_analysis`][textract_start_lending_analysis].
 #'
 #' @usage
 #' textract_get_lending_analysis(JobId, MaxResults, NextToken)
 #'
-#' @param JobId &#91;required&#93; A unique identifier for the lending or text-detection job. The `JobId`
-#' is returned from
-#' [`start_lending_analysis`][textract_start_lending_analysis]. A `JobId`
-#' value is only valid for 7 days.
-#' @param MaxResults The maximum number of results to return per paginated call. The largest
-#' value that you can specify is 30. If you specify a value greater than
-#' 30, a maximum of 30 results is returned. The default value is 30.
-#' @param NextToken If the previous response was incomplete, Amazon Textract returns a
-#' pagination token in the response. You can use this pagination token to
-#' retrieve the next set of lending results.
+#' @param JobId &#91;required&#93; A unique identifier for the lending or text-detection job. The `JobId` is returned from [`start_lending_analysis`][textract_start_lending_analysis]. A `JobId` value is only valid for 7 days.
+#' @param MaxResults The maximum number of results to return per paginated call. The largest value that you can specify is 30. If you specify a value greater than 30, a maximum of 30 results is returned. The default value is 30.
+#' @param NextToken If the previous response was incomplete, Amazon Textract returns a pagination token in the response. You can use this pagination token to retrieve the next set of lending results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2214,33 +2010,16 @@ textract_get_lending_analysis <- function(JobId, MaxResults = NULL, NextToken = 
 #' analyzes text in a lending document
 #'
 #' @description
-#' Gets summarized results for the
-#' [`start_lending_analysis`][textract_start_lending_analysis] operation,
-#' which analyzes text in a lending document. The returned summary consists
-#' of information about documents grouped together by a common document
-#' type. Information like detected signatures, page numbers, and split
-#' documents is returned with respect to the type of grouped document.
+#' Gets summarized results for the [`start_lending_analysis`][textract_start_lending_analysis] operation, which analyzes text in a lending document. The returned summary consists of information about documents grouped together by a common document type. Information like detected signatures, page numbers, and split documents is returned with respect to the type of grouped document.
 #' 
-#' You start asynchronous text analysis by calling
-#' [`start_lending_analysis`][textract_start_lending_analysis], which
-#' returns a job identifier (`JobId`). When the text analysis operation
-#' finishes, Amazon Textract publishes a completion status to the Amazon
-#' Simple Notification Service (Amazon SNS) topic that's registered in the
-#' initial call to
-#' [`start_lending_analysis`][textract_start_lending_analysis].
+#' You start asynchronous text analysis by calling [`start_lending_analysis`][textract_start_lending_analysis], which returns a job identifier (`JobId`). When the text analysis operation finishes, Amazon Textract publishes a completion status to the Amazon Simple Notification Service (Amazon SNS) topic that's registered in the initial call to [`start_lending_analysis`][textract_start_lending_analysis].
 #' 
-#' To get the results of the text analysis operation, first check that the
-#' status value published to the Amazon SNS topic is SUCCEEDED. If so, call
-#' [`get_lending_analysis_summary`][textract_get_lending_analysis_summary],
-#' and pass the job identifier (`JobId`) from the initial call to
-#' [`start_lending_analysis`][textract_start_lending_analysis].
+#' To get the results of the text analysis operation, first check that the status value published to the Amazon SNS topic is SUCCEEDED. If so, call [`get_lending_analysis_summary`][textract_get_lending_analysis_summary], and pass the job identifier (`JobId`) from the initial call to [`start_lending_analysis`][textract_start_lending_analysis].
 #'
 #' @usage
 #' textract_get_lending_analysis_summary(JobId)
 #'
-#' @param JobId &#91;required&#93; A unique identifier for the lending or text-detection job. The `JobId`
-#' is returned from StartLendingAnalysis. A `JobId` value is only valid for
-#' 7 days.
+#' @param JobId &#91;required&#93; A unique identifier for the lending or text-detection job. The `JobId` is returned from StartLendingAnalysis. A `JobId` value is only valid for 7 days.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2326,24 +2105,17 @@ textract_get_lending_analysis_summary <- function(JobId) {
 #' criteria
 #'
 #' @description
-#' List all version of an adapter that meet the specified filtration
-#' criteria.
+#' List all version of an adapter that meet the specified filtration criteria.
 #'
 #' @usage
 #' textract_list_adapter_versions(AdapterId, AfterCreationTime,
 #'   BeforeCreationTime, MaxResults, NextToken)
 #'
-#' @param AdapterId A string containing a unique ID for the adapter to match for when
-#' listing adapter versions.
-#' @param AfterCreationTime Specifies the lower bound for the ListAdapterVersions operation. Ensures
-#' ListAdapterVersions returns only adapter versions created after the
-#' specified creation time.
-#' @param BeforeCreationTime Specifies the upper bound for the ListAdapterVersions operation. Ensures
-#' ListAdapterVersions returns only adapter versions created after the
-#' specified creation time.
+#' @param AdapterId A string containing a unique ID for the adapter to match for when listing adapter versions.
+#' @param AfterCreationTime Specifies the lower bound for the ListAdapterVersions operation. Ensures ListAdapterVersions returns only adapter versions created after the specified creation time.
+#' @param BeforeCreationTime Specifies the upper bound for the ListAdapterVersions operation. Ensures ListAdapterVersions returns only adapter versions created after the specified creation time.
 #' @param MaxResults The maximum number of results to return when listing adapter versions.
-#' @param NextToken Identifies the next page of results to return when listing adapter
-#' versions.
+#' @param NextToken Identifies the next page of results to return when listing adapter versions.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2415,12 +2187,8 @@ textract_list_adapter_versions <- function(AdapterId = NULL, AfterCreationTime =
 #' textract_list_adapters(AfterCreationTime, BeforeCreationTime,
 #'   MaxResults, NextToken)
 #'
-#' @param AfterCreationTime Specifies the lower bound for the ListAdapters operation. Ensures
-#' ListAdapters returns only adapters created after the specified creation
-#' time.
-#' @param BeforeCreationTime Specifies the upper bound for the ListAdapters operation. Ensures
-#' ListAdapters returns only adapters created before the specified creation
-#' time.
+#' @param AfterCreationTime Specifies the lower bound for the ListAdapters operation. Ensures ListAdapters returns only adapters created after the specified creation time.
+#' @param BeforeCreationTime Specifies the upper bound for the ListAdapters operation. Ensures ListAdapters returns only adapters created before the specified creation time.
 #' @param MaxResults The maximum number of results to return when listing adapters.
 #' @param NextToken Identifies the next page of results to return when listing adapters.
 #'
@@ -2490,8 +2258,7 @@ textract_list_adapters <- function(AfterCreationTime = NULL, BeforeCreationTime 
 #' @usage
 #' textract_list_tags_for_resource(ResourceARN)
 #'
-#' @param ResourceARN &#91;required&#93; The Amazon Resource Name (ARN) that specifies the resource to list tags
-#' for.
+#' @param ResourceARN &#91;required&#93; The Amazon Resource Name (ARN) that specifies the resource to list tags for.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2539,28 +2306,13 @@ textract_list_tags_for_resource <- function(ResourceARN) {
 #' elements
 #'
 #' @description
-#' Starts the asynchronous analysis of an input document for relationships
-#' between detected items such as key-value pairs, tables, and selection
-#' elements.
+#' Starts the asynchronous analysis of an input document for relationships between detected items such as key-value pairs, tables, and selection elements.
 #' 
-#' [`start_document_analysis`][textract_start_document_analysis] can
-#' analyze text in documents that are in JPEG, PNG, TIFF, and PDF format.
-#' The documents are stored in an Amazon S3 bucket. Use DocumentLocation to
-#' specify the bucket name and file name of the document.
+#' [`start_document_analysis`][textract_start_document_analysis] can analyze text in documents that are in JPEG, PNG, TIFF, and PDF format. The documents are stored in an Amazon S3 bucket. Use DocumentLocation to specify the bucket name and file name of the document.
 #' 
-#' [`start_document_analysis`][textract_start_document_analysis] returns a
-#' job identifier (`JobId`) that you use to get the results of the
-#' operation. When text analysis is finished, Amazon Textract publishes a
-#' completion status to the Amazon Simple Notification Service (Amazon SNS)
-#' topic that you specify in `NotificationChannel`. To get the results of
-#' the text analysis operation, first check that the status value published
-#' to the Amazon SNS topic is `SUCCEEDED`. If so, call
-#' [`get_document_analysis`][textract_get_document_analysis], and pass the
-#' job identifier (`JobId`) from the initial call to
-#' [`start_document_analysis`][textract_start_document_analysis].
+#' [`start_document_analysis`][textract_start_document_analysis] returns a job identifier (`JobId`) that you use to get the results of the operation. When text analysis is finished, Amazon Textract publishes a completion status to the Amazon Simple Notification Service (Amazon SNS) topic that you specify in `NotificationChannel`. To get the results of the text analysis operation, first check that the status value published to the Amazon SNS topic is `SUCCEEDED`. If so, call [`get_document_analysis`][textract_get_document_analysis], and pass the job identifier (`JobId`) from the initial call to [`start_document_analysis`][textract_start_document_analysis].
 #' 
-#' For more information, see [Document Text
-#' Analysis](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html).
+#' For more information, see [Document Text Analysis](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html).
 #'
 #' @usage
 #' textract_start_document_analysis(DocumentLocation, FeatureTypes,
@@ -2568,33 +2320,12 @@ textract_list_tags_for_resource <- function(ResourceARN) {
 #'   QueriesConfig, AdaptersConfig)
 #'
 #' @param DocumentLocation &#91;required&#93; The location of the document to be processed.
-#' @param FeatureTypes &#91;required&#93; A list of the types of analysis to perform. Add TABLES to the list to
-#' return information about the tables that are detected in the input
-#' document. Add FORMS to return detected form data. To perform both types
-#' of analysis, add TABLES and FORMS to `FeatureTypes`. All lines and words
-#' detected in the document are included in the response (including text
-#' that isn't related to the value of `FeatureTypes`).
-#' @param ClientRequestToken The idempotent token that you use to identify the start request. If you
-#' use the same token with multiple
-#' [`start_document_analysis`][textract_start_document_analysis] requests,
-#' the same `JobId` is returned. Use `ClientRequestToken` to prevent the
-#' same job from being accidentally started more than once. For more
-#' information, see [Calling Amazon Textract Asynchronous
-#' Operations](https://docs.aws.amazon.com/textract/latest/dg/api-async.html).
-#' @param JobTag An identifier that you specify that's included in the completion
-#' notification published to the Amazon SNS topic. For example, you can use
-#' `JobTag` to identify the type of document that the completion
-#' notification corresponds to (such as a tax form or a receipt).
-#' @param NotificationChannel The Amazon SNS topic ARN that you want Amazon Textract to publish the
-#' completion status of the operation to.
-#' @param OutputConfig Sets if the output will go to a customer defined bucket. By default,
-#' Amazon Textract will save the results internally to be accessed by the
-#' GetDocumentAnalysis operation.
-#' @param KMSKeyId The KMS key used to encrypt the inference results. This can be in either
-#' Key ID or Key Alias format. When a KMS key is provided, the KMS key will
-#' be used for server-side encryption of the objects in the customer
-#' bucket. When this parameter is not enabled, the result will be encrypted
-#' server side,using SSE-S3.
+#' @param FeatureTypes &#91;required&#93; A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. To perform both types of analysis, add TABLES and FORMS to `FeatureTypes`. All lines and words detected in the document are included in the response (including text that isn't related to the value of `FeatureTypes`).
+#' @param ClientRequestToken The idempotent token that you use to identify the start request. If you use the same token with multiple [`start_document_analysis`][textract_start_document_analysis] requests, the same `JobId` is returned. Use `ClientRequestToken` to prevent the same job from being accidentally started more than once. For more information, see [Calling Amazon Textract Asynchronous Operations](https://docs.aws.amazon.com/textract/latest/dg/api-async.html).
+#' @param JobTag An identifier that you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use `JobTag` to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).
+#' @param NotificationChannel The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to.
+#' @param OutputConfig Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.
+#' @param KMSKeyId The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.
 #' @param QueriesConfig 
 #' @param AdaptersConfig Specifies the adapter to be used when analyzing a document.
 #'
@@ -2682,55 +2413,24 @@ textract_start_document_analysis <- function(DocumentLocation, FeatureTypes, Cli
 #' Starts the asynchronous detection of text in a document
 #'
 #' @description
-#' Starts the asynchronous detection of text in a document. Amazon Textract
-#' can detect lines of text and the words that make up a line of text.
+#' Starts the asynchronous detection of text in a document. Amazon Textract can detect lines of text and the words that make up a line of text.
 #' 
-#' [`start_document_text_detection`][textract_start_document_text_detection]
-#' can analyze text in documents that are in JPEG, PNG, TIFF, and PDF
-#' format. The documents are stored in an Amazon S3 bucket. Use
-#' DocumentLocation to specify the bucket name and file name of the
-#' document.
+#' [`start_document_text_detection`][textract_start_document_text_detection] can analyze text in documents that are in JPEG, PNG, TIFF, and PDF format. The documents are stored in an Amazon S3 bucket. Use DocumentLocation to specify the bucket name and file name of the document.
 #' 
-#' [`start_document_text_detection`][textract_start_document_text_detection]
-#' returns a job identifier (`JobId`) that you use to get the results of
-#' the operation. When text detection is finished, Amazon Textract
-#' publishes a completion status to the Amazon Simple Notification Service
-#' (Amazon SNS) topic that you specify in `NotificationChannel`. To get the
-#' results of the text detection operation, first check that the status
-#' value published to the Amazon SNS topic is `SUCCEEDED`. If so, call
-#' [`get_document_text_detection`][textract_get_document_text_detection],
-#' and pass the job identifier (`JobId`) from the initial call to
-#' [`start_document_text_detection`][textract_start_document_text_detection].
+#' [`start_document_text_detection`][textract_start_document_text_detection] returns a job identifier (`JobId`) that you use to get the results of the operation. When text detection is finished, Amazon Textract publishes a completion status to the Amazon Simple Notification Service (Amazon SNS) topic that you specify in `NotificationChannel`. To get the results of the text detection operation, first check that the status value published to the Amazon SNS topic is `SUCCEEDED`. If so, call [`get_document_text_detection`][textract_get_document_text_detection], and pass the job identifier (`JobId`) from the initial call to [`start_document_text_detection`][textract_start_document_text_detection].
 #' 
-#' For more information, see [Document Text
-#' Detection](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html).
+#' For more information, see [Document Text Detection](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html).
 #'
 #' @usage
 #' textract_start_document_text_detection(DocumentLocation,
 #'   ClientRequestToken, JobTag, NotificationChannel, OutputConfig, KMSKeyId)
 #'
 #' @param DocumentLocation &#91;required&#93; The location of the document to be processed.
-#' @param ClientRequestToken The idempotent token that's used to identify the start request. If you
-#' use the same token with multiple
-#' [`start_document_text_detection`][textract_start_document_text_detection]
-#' requests, the same `JobId` is returned. Use `ClientRequestToken` to
-#' prevent the same job from being accidentally started more than once. For
-#' more information, see [Calling Amazon Textract Asynchronous
-#' Operations](https://docs.aws.amazon.com/textract/latest/dg/api-async.html).
-#' @param JobTag An identifier that you specify that's included in the completion
-#' notification published to the Amazon SNS topic. For example, you can use
-#' `JobTag` to identify the type of document that the completion
-#' notification corresponds to (such as a tax form or a receipt).
-#' @param NotificationChannel The Amazon SNS topic ARN that you want Amazon Textract to publish the
-#' completion status of the operation to.
-#' @param OutputConfig Sets if the output will go to a customer defined bucket. By default
-#' Amazon Textract will save the results internally to be accessed with the
-#' GetDocumentTextDetection operation.
-#' @param KMSKeyId The KMS key used to encrypt the inference results. This can be in either
-#' Key ID or Key Alias format. When a KMS key is provided, the KMS key will
-#' be used for server-side encryption of the objects in the customer
-#' bucket. When this parameter is not enabled, the result will be encrypted
-#' server side,using SSE-S3.
+#' @param ClientRequestToken The idempotent token that's used to identify the start request. If you use the same token with multiple [`start_document_text_detection`][textract_start_document_text_detection] requests, the same `JobId` is returned. Use `ClientRequestToken` to prevent the same job from being accidentally started more than once. For more information, see [Calling Amazon Textract Asynchronous Operations](https://docs.aws.amazon.com/textract/latest/dg/api-async.html).
+#' @param JobTag An identifier that you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use `JobTag` to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).
+#' @param NotificationChannel The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to.
+#' @param OutputConfig Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.
+#' @param KMSKeyId The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2792,57 +2492,24 @@ textract_start_document_text_detection <- function(DocumentLocation, ClientReque
 #' contact information, items purchased, and vendor names
 #'
 #' @description
-#' Starts the asynchronous analysis of invoices or receipts for data like
-#' contact information, items purchased, and vendor names.
+#' Starts the asynchronous analysis of invoices or receipts for data like contact information, items purchased, and vendor names.
 #' 
-#' [`start_expense_analysis`][textract_start_expense_analysis] can analyze
-#' text in documents that are in JPEG, PNG, and PDF format. The documents
-#' must be stored in an Amazon S3 bucket. Use the DocumentLocation
-#' parameter to specify the name of your S3 bucket and the name of the
-#' document in that bucket.
+#' [`start_expense_analysis`][textract_start_expense_analysis] can analyze text in documents that are in JPEG, PNG, and PDF format. The documents must be stored in an Amazon S3 bucket. Use the DocumentLocation parameter to specify the name of your S3 bucket and the name of the document in that bucket.
 #' 
-#' [`start_expense_analysis`][textract_start_expense_analysis] returns a
-#' job identifier (`JobId`) that you will provide to
-#' [`get_expense_analysis`][textract_get_expense_analysis] to retrieve the
-#' results of the operation. When the analysis of the input
-#' invoices/receipts is finished, Amazon Textract publishes a completion
-#' status to the Amazon Simple Notification Service (Amazon SNS) topic that
-#' you provide to the `NotificationChannel`. To obtain the results of the
-#' invoice and receipt analysis operation, ensure that the status value
-#' published to the Amazon SNS topic is `SUCCEEDED`. If so, call
-#' [`get_expense_analysis`][textract_get_expense_analysis], and pass the
-#' job identifier (`JobId`) that was returned by your call to
-#' [`start_expense_analysis`][textract_start_expense_analysis].
+#' [`start_expense_analysis`][textract_start_expense_analysis] returns a job identifier (`JobId`) that you will provide to [`get_expense_analysis`][textract_get_expense_analysis] to retrieve the results of the operation. When the analysis of the input invoices/receipts is finished, Amazon Textract publishes a completion status to the Amazon Simple Notification Service (Amazon SNS) topic that you provide to the `NotificationChannel`. To obtain the results of the invoice and receipt analysis operation, ensure that the status value published to the Amazon SNS topic is `SUCCEEDED`. If so, call [`get_expense_analysis`][textract_get_expense_analysis], and pass the job identifier (`JobId`) that was returned by your call to [`start_expense_analysis`][textract_start_expense_analysis].
 #' 
-#' For more information, see [Analyzing Invoices and
-#' Receipts](https://docs.aws.amazon.com/textract/latest/dg/).
+#' For more information, see [Analyzing Invoices and Receipts](https://docs.aws.amazon.com/textract/latest/dg/).
 #'
 #' @usage
 #' textract_start_expense_analysis(DocumentLocation, ClientRequestToken,
 #'   JobTag, NotificationChannel, OutputConfig, KMSKeyId)
 #'
 #' @param DocumentLocation &#91;required&#93; The location of the document to be processed.
-#' @param ClientRequestToken The idempotent token that's used to identify the start request. If you
-#' use the same token with multiple
-#' [`start_document_text_detection`][textract_start_document_text_detection]
-#' requests, the same `JobId` is returned. Use `ClientRequestToken` to
-#' prevent the same job from being accidentally started more than once. For
-#' more information, see [Calling Amazon Textract Asynchronous
-#' Operations](https://docs.aws.amazon.com/textract/latest/dg/api-async.html)
-#' @param JobTag An identifier you specify that's included in the completion notification
-#' published to the Amazon SNS topic. For example, you can use `JobTag` to
-#' identify the type of document that the completion notification
-#' corresponds to (such as a tax form or a receipt).
-#' @param NotificationChannel The Amazon SNS topic ARN that you want Amazon Textract to publish the
-#' completion status of the operation to.
-#' @param OutputConfig Sets if the output will go to a customer defined bucket. By default,
-#' Amazon Textract will save the results internally to be accessed by the
-#' [`get_expense_analysis`][textract_get_expense_analysis] operation.
-#' @param KMSKeyId The KMS key used to encrypt the inference results. This can be in either
-#' Key ID or Key Alias format. When a KMS key is provided, the KMS key will
-#' be used for server-side encryption of the objects in the customer
-#' bucket. When this parameter is not enabled, the result will be encrypted
-#' server side,using SSE-S3.
+#' @param ClientRequestToken The idempotent token that's used to identify the start request. If you use the same token with multiple [`start_document_text_detection`][textract_start_document_text_detection] requests, the same `JobId` is returned. Use `ClientRequestToken` to prevent the same job from being accidentally started more than once. For more information, see [Calling Amazon Textract Asynchronous Operations](https://docs.aws.amazon.com/textract/latest/dg/api-async.html)
+#' @param JobTag An identifier you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use `JobTag` to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).
+#' @param NotificationChannel The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to.
+#' @param OutputConfig Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the [`get_expense_analysis`][textract_get_expense_analysis] operation.
+#' @param KMSKeyId The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2903,32 +2570,13 @@ textract_start_expense_analysis <- function(DocumentLocation, ClientRequestToken
 #' Starts the classification and analysis of an input document
 #'
 #' @description
-#' Starts the classification and analysis of an input document.
-#' [`start_lending_analysis`][textract_start_lending_analysis] initiates
-#' the classification and analysis of a packet of lending documents.
-#' [`start_lending_analysis`][textract_start_lending_analysis] operates on
-#' a document file located in an Amazon S3 bucket.
+#' Starts the classification and analysis of an input document. [`start_lending_analysis`][textract_start_lending_analysis] initiates the classification and analysis of a packet of lending documents. [`start_lending_analysis`][textract_start_lending_analysis] operates on a document file located in an Amazon S3 bucket.
 #' 
-#' [`start_lending_analysis`][textract_start_lending_analysis] can analyze
-#' text in documents that are in one of the following formats: JPEG, PNG,
-#' TIFF, PDF. Use `DocumentLocation` to specify the bucket name and the
-#' file name of the document.
+#' [`start_lending_analysis`][textract_start_lending_analysis] can analyze text in documents that are in one of the following formats: JPEG, PNG, TIFF, PDF. Use `DocumentLocation` to specify the bucket name and the file name of the document.
 #' 
-#' [`start_lending_analysis`][textract_start_lending_analysis] returns a
-#' job identifier (`JobId`) that you use to get the results of the
-#' operation. When the text analysis is finished, Amazon Textract publishes
-#' a completion status to the Amazon Simple Notification Service (Amazon
-#' SNS) topic that you specify in `NotificationChannel`. To get the results
-#' of the text analysis operation, first check that the status value
-#' published to the Amazon SNS topic is SUCCEEDED. If the status is
-#' SUCCEEDED you can call either
-#' [`get_lending_analysis`][textract_get_lending_analysis] or
-#' [`get_lending_analysis_summary`][textract_get_lending_analysis_summary]
-#' and provide the `JobId` to obtain the results of the analysis.
+#' [`start_lending_analysis`][textract_start_lending_analysis] returns a job identifier (`JobId`) that you use to get the results of the operation. When the text analysis is finished, Amazon Textract publishes a completion status to the Amazon Simple Notification Service (Amazon SNS) topic that you specify in `NotificationChannel`. To get the results of the text analysis operation, first check that the status value published to the Amazon SNS topic is SUCCEEDED. If the status is SUCCEEDED you can call either [`get_lending_analysis`][textract_get_lending_analysis] or [`get_lending_analysis_summary`][textract_get_lending_analysis_summary] and provide the `JobId` to obtain the results of the analysis.
 #' 
-#' If using `OutputConfig` to specify an Amazon S3 bucket, the output will
-#' be contained within the specified prefix in a directory labeled with the
-#' job-id. In the directory there are 3 sub-directories:
+#' If using `OutputConfig` to specify an Amazon S3 bucket, the output will be contained within the specified prefix in a directory labeled with the job-id. In the directory there are 3 sub-directories:
 #' 
 #' -   detailedResponse (contains the GetLendingAnalysis response)
 #' 
@@ -2940,25 +2588,20 @@ textract_start_expense_analysis <- function(DocumentLocation, ClientRequestToken
 #' textract_start_lending_analysis(DocumentLocation, ClientRequestToken,
 #'   JobTag, NotificationChannel, OutputConfig, KMSKeyId)
 #'
-#' @param DocumentLocation &#91;required&#93; 
-#' @param ClientRequestToken The idempotent token that you use to identify the start request. If you
-#' use the same token with multiple
-#' [`start_lending_analysis`][textract_start_lending_analysis] requests,
-#' the same `JobId` is returned. Use `ClientRequestToken` to prevent the
-#' same job from being accidentally started more than once. For more
-#' information, see [Calling Amazon Textract Asynchronous
-#' Operations](https://docs.aws.amazon.com/textract/latest/dg/).
-#' @param JobTag An identifier that you specify to be included in the completion
-#' notification published to the Amazon SNS topic. For example, you can use
-#' `JobTag` to identify the type of document that the completion
-#' notification corresponds to (such as a tax form or a receipt).
-#' @param NotificationChannel 
-#' @param OutputConfig 
-#' @param KMSKeyId The KMS key used to encrypt the inference results. This can be in either
-#' Key ID or Key Alias format. When a KMS key is provided, the KMS key will
-#' be used for server-side encryption of the objects in the customer
-#' bucket. When this parameter is not enabled, the result will be encrypted
-#' server side, using SSE-S3.
+#' @param DocumentLocation &#91;required&#93; The Amazon S3 bucket that contains the document to be processed. It's used by asynchronous operations.
+#' 
+#' The input document can be an image file in JPEG or PNG format. It can also be a file in PDF format.
+#' @param ClientRequestToken The idempotent token that you use to identify the start request. If you use the same token with multiple [`start_lending_analysis`][textract_start_lending_analysis] requests, the same `JobId` is returned. Use `ClientRequestToken` to prevent the same job from being accidentally started more than once. For more information, see [Calling Amazon Textract Asynchronous Operations](https://docs.aws.amazon.com/textract/latest/dg/).
+#' @param JobTag An identifier that you specify to be included in the completion notification published to the Amazon SNS topic. For example, you can use `JobTag` to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).
+#' @param NotificationChannel The Amazon Simple Notification Service (Amazon SNS) topic to which Amazon Textract publishes the completion status of an asynchronous document operation.
+#' @param OutputConfig Sets whether or not your output will go to a user created bucket. Used to set the name of the bucket, and the prefix on the output file.
+#' 
+#' `OutputConfig` is an optional parameter which lets you adjust where your output will be placed. By default, Amazon Textract will store the results internally and can only be accessed by the Get API operations. With `OutputConfig` enabled, you can set the name of the bucket the output will be sent to the file prefix of the results where you can download your results. Additionally, you can set the `KMSKeyID` parameter to a customer master key (CMK) to encrypt your output. Without this parameter set Amazon Textract will encrypt server-side using the AWS managed CMK for Amazon S3.
+#' 
+#' Decryption of Customer Content is necessary for processing of the documents by Amazon Textract. If your account is opted out under an AI services opt out policy then all unencrypted Customer Content is immediately and permanently deleted after the Customer Content has been processed by the service. No copy of of the output is retained by Amazon Textract. For information about how to opt out, see [Managing AI services opt-out policy.](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html)
+#' 
+#' For more information on data privacy, see the [Data Privacy FAQ](https://aws.amazon.com/compliance/data-privacy-faq/).
+#' @param KMSKeyId The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side, using SSE-S3.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3072,10 +2715,8 @@ textract_tag_resource <- function(ResourceARN, Tags) {
 #' @usage
 #' textract_untag_resource(ResourceARN, TagKeys)
 #'
-#' @param ResourceARN &#91;required&#93; The Amazon Resource Name (ARN) that specifies the resource to be
-#' untagged.
-#' @param TagKeys &#91;required&#93; Specifies the tags to be removed from the resource specified by the
-#' ResourceARN.
+#' @param ResourceARN &#91;required&#93; The Amazon Resource Name (ARN) that specifies the resource to be untagged.
+#' @param TagKeys &#91;required&#93; Specifies the tags to be removed from the resource specified by the ResourceARN.
 #'
 #' @return
 #' An empty list.
@@ -3117,9 +2758,7 @@ textract_untag_resource <- function(ResourceARN, TagKeys) {
 #' Update the configuration for an adapter
 #'
 #' @description
-#' Update the configuration for an adapter. FeatureTypes configurations
-#' cannot be updated. At least one new parameter must be specified as an
-#' argument.
+#' Update the configuration for an adapter. FeatureTypes configurations cannot be updated. At least one new parameter must be specified as an argument.
 #'
 #' @usage
 #' textract_update_adapter(AdapterId, Description, AdapterName, AutoUpdate)

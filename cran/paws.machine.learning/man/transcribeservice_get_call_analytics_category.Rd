@@ -7,8 +7,7 @@
 transcribeservice_get_call_analytics_category(CategoryName)
 }
 \arguments{
-\item{CategoryName}{[required] The name of the Call Analytics category you want information about.
-Category names are case sensitive.}
+\item{CategoryName}{[required] The name of the Call Analytics category you want information about. Category names are case sensitive.}
 }
 \description{
 Provides information about the specified Call Analytics category.

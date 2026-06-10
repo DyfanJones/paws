@@ -14,8 +14,7 @@ quicksight_update_user_custom_permission(
 \arguments{
 \item{UserName}{[required] The username of the user that you want to update custom permissions for.}
 
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the custom
-permission configuration that you want to update.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the custom permission configuration that you want to update.}
 
 \item{Namespace}{[required] The namespace that the user belongs to.}
 

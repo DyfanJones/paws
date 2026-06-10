@@ -22,26 +22,17 @@ bedrock_list_model_copy_jobs(
 
 \item{creationTimeBefore}{Filters for model copy jobs created before the specified time.}
 
-\item{statusEquals}{Filters for model copy jobs whose status matches the value that you
-specify.}
+\item{statusEquals}{Filters for model copy jobs whose status matches the value that you specify.}
 
-\item{sourceAccountEquals}{Filters for model copy jobs in which the account that the source model
-belongs to is equal to the value that you specify.}
+\item{sourceAccountEquals}{Filters for model copy jobs in which the account that the source model belongs to is equal to the value that you specify.}
 
-\item{sourceModelArnEquals}{Filters for model copy jobs in which the Amazon Resource Name (ARN) of
-the source model to is equal to the value that you specify.}
+\item{sourceModelArnEquals}{Filters for model copy jobs in which the Amazon Resource Name (ARN) of the source model to is equal to the value that you specify.}
 
-\item{targetModelNameContains}{Filters for model copy jobs in which the name of the copied model
-contains the string that you specify.}
+\item{targetModelNameContains}{Filters for model copy jobs in which the name of the copied model contains the string that you specify.}
 
-\item{maxResults}{The maximum number of results to return in the response. If the total
-number of results is greater than this value, use the token returned in
-the response in the \code{nextToken} field when making another request to
-return the next batch of results.}
+\item{maxResults}{The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the \code{nextToken} field when making another request to return the next batch of results.}
 
-\item{nextToken}{If the total number of results is greater than the \code{maxResults} value
-provided in the request, enter the token returned in the \code{nextToken}
-field in the response in this field to return the next batch of results.}
+\item{nextToken}{If the total number of results is greater than the \code{maxResults} value provided in the request, enter the token returned in the \code{nextToken} field in the response in this field to return the next batch of results.}
 
 \item{sortBy}{The field to sort by in the returned list of model copy jobs.}
 

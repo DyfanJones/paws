@@ -18,92 +18,54 @@ forecastservice_create_dataset_import_job(
 )
 }
 \arguments{
-\item{DatasetImportJobName}{[required] The name for the dataset import job. We recommend including the current
-timestamp in the name, for example, \verb{20190721DatasetImport}. This can
-help you avoid getting a \code{ResourceAlreadyExistsException} exception.}
+\item{DatasetImportJobName}{[required] The name for the dataset import job. We recommend including the current timestamp in the name, for example, \verb{20190721DatasetImport}. This can help you avoid getting a \code{ResourceAlreadyExistsException} exception.}
 
-\item{DatasetArn}{[required] The Amazon Resource Name (ARN) of the Amazon Forecast dataset that you
-want to import data to.}
+\item{DatasetArn}{[required] The Amazon Resource Name (ARN) of the Amazon Forecast dataset that you want to import data to.}
 
-\item{DataSource}{[required] The location of the training data to import and an Identity and Access
-Management (IAM) role that Amazon Forecast can assume to access the
-data. The training data must be stored in an Amazon S3 bucket.
+\item{DataSource}{[required] The location of the training data to import and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.
 
-If encryption is used, \code{DataSource} must include an Key Management
-Service (KMS) key and the IAM role must allow Amazon Forecast permission
-to access the key. The KMS key and IAM role must match those specified
-in the \code{EncryptionConfig} parameter of the
-\code{\link[=forecastservice_create_dataset]{create_dataset}} operation.}
+If encryption is used, \code{DataSource} must include an Key Management Service (KMS) key and the IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match those specified in the \code{EncryptionConfig} parameter of the \code{\link[=forecastservice_create_dataset]{create_dataset}} operation.}
 
-\item{TimestampFormat}{The format of timestamps in the dataset. The format that you specify
-depends on the \code{DataFrequency} specified when the dataset was created.
-The following formats are supported
+\item{TimestampFormat}{The format of timestamps in the dataset. The format that you specify depends on the \code{DataFrequency} specified when the dataset was created. The following formats are supported
 \itemize{
 \item "yyyy-MM-dd"
 
 For the following data frequencies: Y, M, W, and D
 \item "yyyy-MM-dd HH:mm:ss"
 
-For the following data frequencies: H, 30min, 15min, and 1min; and
-optionally, for: Y, M, W, and D
+For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D
 }
 
-If the format isn't specified, Amazon Forecast expects the format to be
-"yyyy-MM-dd HH:mm:ss".}
+If the format isn't specified, Amazon Forecast expects the format to be "yyyy-MM-dd HH:mm:ss".}
 
-\item{TimeZone}{A single time zone for every item in your dataset. This option is ideal
-for datasets with all timestamps within a single time zone, or if all
-timestamps are normalized to a single time zone.
+\item{TimeZone}{A single time zone for every item in your dataset. This option is ideal for datasets with all timestamps within a single time zone, or if all timestamps are normalized to a single time zone.
 
-Refer to the \href{https://joda-time.sourceforge.net/timezones.html}{Joda-Time API} for a complete
-list of valid time zone names.}
+Refer to the \href{https://joda-time.sourceforge.net/timezones.html}{Joda-Time API} for a complete list of valid time zone names.}
 
-\item{UseGeolocationForTimeZone}{Automatically derive time zone information from the geolocation
-attribute. This option is ideal for datasets that contain timestamps in
-multiple time zones and those timestamps are expressed in local time.}
+\item{UseGeolocationForTimeZone}{Automatically derive time zone information from the geolocation attribute. This option is ideal for datasets that contain timestamps in multiple time zones and those timestamps are expressed in local time.}
 
-\item{GeolocationFormat}{The format of the geolocation attribute. The geolocation attribute can
-be formatted in one of two ways:
+\item{GeolocationFormat}{The format of the geolocation attribute. The geolocation attribute can be formatted in one of two ways:
 \itemize{
-\item \code{LAT_LONG} - the latitude and longitude in decimal format (Example:
-47.61_-122.33).
-\item \code{CC_POSTALCODE} (US Only) - the country code (US), followed by the
-5-digit ZIP code (Example: US_98121).
+\item \code{LAT_LONG} - the latitude and longitude in decimal format (Example: 47.61_-122.33).
+\item \code{CC_POSTALCODE} (US Only) - the country code (US), followed by the 5-digit ZIP code (Example: US_98121).
 }}
 
-\item{Tags}{The optional metadata that you apply to the dataset import job to help
-you categorize and organize them. Each tag consists of a key and an
-optional value, both of which you define.
+\item{Tags}{The optional metadata that you apply to the dataset import job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.
 
 The following basic restrictions apply to tags:
 \itemize{
 \item Maximum number of tags per resource - 50.
-\item For each resource, each tag key must be unique, and each tag key can
-have only one value.
+\item For each resource, each tag key must be unique, and each tag key can have only one value.
 \item Maximum key length - 128 Unicode characters in UTF-8.
 \item Maximum value length - 256 Unicode characters in UTF-8.
-\item If your tagging schema is used across multiple services and
-resources, remember that other services may have restrictions on
-allowed characters. Generally allowed characters are: letters,
-numbers, and spaces representable in UTF-8, and the following
-characters: + - = . _ : / @.
+\item If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.
 \item Tag keys and values are case sensitive.
-\item Do not use \verb{aws:}, \verb{AWS:}, or any upper or lowercase combination of
-such as a prefix for keys as it is reserved for Amazon Web Services
-use. You cannot edit or delete tag keys with this prefix. Values can
-have this prefix. If a tag value has \code{aws} as its prefix but the key
-does not, then Forecast considers it to be a user tag and will count
-against the limit of 50 tags. Tags with only the key prefix of \code{aws}
-do not count against your tags per resource limit.
+\item Do not use \verb{aws:}, \verb{AWS:}, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has \code{aws} as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of \code{aws} do not count against your tags per resource limit.
 }}
 
-\item{Format}{The format of the imported data, CSV or PARQUET. The default value is
-CSV.}
+\item{Format}{The format of the imported data, CSV or PARQUET. The default value is CSV.}
 
-\item{ImportMode}{Specifies whether the dataset import job is a \code{FULL} or \code{INCREMENTAL}
-import. A \code{FULL} dataset import replaces all of the existing data with
-the newly imported data. An \code{INCREMENTAL} import appends the imported
-data to the existing data.}
+\item{ImportMode}{Specifies whether the dataset import job is a \code{FULL} or \code{INCREMENTAL} import. A \code{FULL} dataset import replaces all of the existing data with the newly imported data. An \code{INCREMENTAL} import appends the imported data to the existing data.}
 }
 \description{
 Imports your training data to an Amazon Forecast dataset. You provide the location of your training data in an Amazon Simple Storage Service (Amazon S3) bucket and the Amazon Resource Name (ARN) of the dataset that you want to import the data to.

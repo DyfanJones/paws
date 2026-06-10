@@ -14,29 +14,22 @@ quicksight_update_iam_policy_assignment(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the IAM policy
-assignment.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the IAM policy assignment.}
 
-\item{AssignmentName}{[required] The name of the assignment, also called a rule. The name must be unique
-within the Amazon Web Services account.}
+\item{AssignmentName}{[required] The name of the assignment, also called a rule. The name must be unique within the Amazon Web Services account.}
 
 \item{Namespace}{[required] The namespace of the assignment.}
 
 \item{AssignmentStatus}{The status of the assignment. Possible values are as follows:
 \itemize{
-\item \code{ENABLED} - Anything specified in this assignment is used when
-creating the data source.
-\item \code{DISABLED} - This assignment isn't used when creating the data
-source.
-\item \code{DRAFT} - This assignment is an unfinished draft and isn't used when
-creating the data source.
+\item \code{ENABLED} - Anything specified in this assignment is used when creating the data source.
+\item \code{DISABLED} - This assignment isn't used when creating the data source.
+\item \code{DRAFT} - This assignment is an unfinished draft and isn't used when creating the data source.
 }}
 
-\item{PolicyArn}{The ARN for the IAM policy to apply to the Amazon Quick Sight users and
-groups specified in this assignment.}
+\item{PolicyArn}{The ARN for the IAM policy to apply to the Amazon Quick Sight users and groups specified in this assignment.}
 
-\item{Identities}{The Amazon Quick Sight users, groups, or both that you want to assign
-the policy to.}
+\item{Identities}{The Amazon Quick Sight users, groups, or both that you want to assign the policy to.}
 }
 \description{
 Updates an existing IAM policy assignment. This operation updates only the optional parameter or parameters that are specified in the request. This overwrites all of the users included in \code{Identities}.

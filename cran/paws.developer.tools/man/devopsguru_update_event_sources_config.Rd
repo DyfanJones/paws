@@ -8,8 +8,7 @@ with DevOps Guru}
 devopsguru_update_event_sources_config(EventSources = NULL)
 }
 \arguments{
-\item{EventSources}{Configuration information about the integration of DevOps Guru as the
-Consumer via EventBridge with another AWS Service.}
+\item{EventSources}{Configuration information about the integration of DevOps Guru as the Consumer via EventBridge with another AWS Service.}
 }
 \description{
 Enables or disables integration with a service that can be integrated with DevOps Guru. The one service that can be integrated with DevOps Guru is Amazon CodeGuru Profiler, which can produce proactive recommendations which can be stored and viewed in DevOps Guru.

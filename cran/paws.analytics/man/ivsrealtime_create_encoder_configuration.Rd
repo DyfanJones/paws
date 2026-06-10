@@ -13,15 +13,9 @@ ivsrealtime_create_encoder_configuration(
 \arguments{
 \item{name}{Optional name to identify the resource.}
 
-\item{video}{Video configuration. Default: video resolution 1280x720, bitrate 2500
-kbps, 30 fps.}
+\item{video}{Video configuration. Default: video resolution 1280x720, bitrate 2500 kbps, 30 fps.}
 
-\item{tags}{Tags attached to the resource. Array of maps, each of the form
-\code{string:string (key:value)}. See \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html}{Best practices and strategies}
-in \emph{Tagging AWS Resources and Tag Editor} for details, including
-restrictions that apply to tags and "Tag naming limits and
-requirements"; Amazon IVS has no constraints on tags beyond what is
-documented there.}
+\item{tags}{Tags attached to the resource. Array of maps, each of the form \code{string:string (key:value)}. See \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html}{Best practices and strategies} in \emph{Tagging AWS Resources and Tag Editor} for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.}
 }
 \description{
 Creates an EncoderConfiguration object.

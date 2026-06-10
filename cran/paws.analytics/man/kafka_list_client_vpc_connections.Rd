@@ -13,12 +13,10 @@ kafka_list_client_vpc_connections(
 \arguments{
 \item{ClusterArn}{[required] The Amazon Resource Name (ARN) of the cluster.}
 
-\item{MaxResults}{The maximum number of results to return in the response. If there are
-more results, the response includes a NextToken parameter.}
+\item{MaxResults}{The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.}
 
-\item{NextToken}{The paginated results marker. When the result of the operation is
-truncated, the call returns NextToken in the response. To get the next
-batch, provide this token in your next request.}
+\item{NextToken}{The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
+To get the next batch, provide this token in your next request.}
 }
 \description{
 Returns a list of all the VPC connections in this Region.

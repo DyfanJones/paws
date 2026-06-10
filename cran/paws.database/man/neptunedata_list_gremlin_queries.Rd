@@ -7,8 +7,7 @@
 neptunedata_list_gremlin_queries(includeWaiting = NULL)
 }
 \arguments{
-\item{includeWaiting}{If set to \code{TRUE}, the list returned includes waiting queries. The
-default is \code{FALSE};}
+\item{includeWaiting}{If set to \code{TRUE}, the list returned includes waiting queries. The default is \code{FALSE};}
 }
 \description{
 Lists active Gremlin queries. See \href{https://docs.aws.amazon.com/neptune/latest/userguide/gremlin-api-status.html}{Gremlin query status API} for details about the output.

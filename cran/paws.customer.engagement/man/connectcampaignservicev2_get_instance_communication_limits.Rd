@@ -7,7 +7,7 @@
 connectcampaignservicev2_get_instance_communication_limits(connectInstanceId)
 }
 \arguments{
-\item{connectInstanceId}{[required]}
+\item{connectInstanceId}{[required] Amazon Connect Instance Id}
 }
 \description{
 Get the instance communication limits.

@@ -11,13 +11,11 @@ codebuild_create_report_group(name, type, exportConfig, tags = NULL)
 
 \item{type}{[required] The type of report group.}
 
-\item{exportConfig}{[required] A \code{ReportExportConfig} object that contains information about where the
-report group test results are exported.}
+\item{exportConfig}{[required] A \code{ReportExportConfig} object that contains information about where the report group test results are exported.}
 
 \item{tags}{A list of tag key and value pairs associated with this report group.
 
-These tags are available for use by Amazon Web Services services that
-support CodeBuild report group tags.}
+These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.}
 }
 \description{
 Creates a report group. A report group contains a collection of reports.

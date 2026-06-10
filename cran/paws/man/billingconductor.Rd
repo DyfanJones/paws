@@ -53,22 +53,9 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Billing Conductor is a fully managed service that you can use to
-customize a \href{https://docs.aws.amazon.com/billingconductor/latest/userguide/#eb-other-definitions}{pro forma}
-version of your billing data each month, to accurately show or
-chargeback your end customers. Billing Conductor doesn't change the way
-you're billed by Amazon Web Services each month by design. Instead, it
-provides you with a mechanism to configure, generate, and display rates
-to certain customers over a given billing period. You can also analyze
-the difference between the rates you apply to your accounting groupings
-relative to your actual rates from Amazon Web Services. As a result of
-your Billing Conductor configuration, the payer account can also see the
-custom rate applied on the billing details page of the Billing console,
-or configure a cost and usage report per billing group.
+Billing Conductor is a fully managed service that you can use to customize a \href{https://docs.aws.amazon.com/billingconductor/latest/userguide/#eb-other-definitions}{pro forma} version of your billing data each month, to accurately show or chargeback your end customers. Billing Conductor doesn't change the way you're billed by Amazon Web Services each month by design. Instead, it provides you with a mechanism to configure, generate, and display rates to certain customers over a given billing period. You can also analyze the difference between the rates you apply to your accounting groupings relative to your actual rates from Amazon Web Services. As a result of your Billing Conductor configuration, the payer account can also see the custom rate applied on the billing details page of the Billing console, or configure a cost and usage report per billing group.
 
-This documentation shows how you can configure Billing Conductor by
-using its API. For more information about using the Billing Conductor
-user interface, see the \href{https://docs.aws.amazon.com/billingconductor/latest/userguide/what-is-billingconductor.html}{Billing Conductor User Guide}.
+This documentation shows how you can configure Billing Conductor by using its API. For more information about using the Billing Conductor user interface, see the \href{https://docs.aws.amazon.com/billingconductor/latest/userguide/what-is-billingconductor.html}{Billing Conductor User Guide}.
 }
 \section{Service syntax}{
 

@@ -8,8 +8,7 @@ address}
 appfabric_start_user_access_tasks(appBundleIdentifier, email)
 }
 \arguments{
-\item{appBundleIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-the app bundle to use for the request.}
+\item{appBundleIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.}
 
 \item{email}{[required] The email address of the target user.}
 }

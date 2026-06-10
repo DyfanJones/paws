@@ -8,11 +8,7 @@ Region}
 timestreamquery_list_scheduled_queries(MaxResults = NULL, NextToken = NULL)
 }
 \arguments{
-\item{MaxResults}{The maximum number of items to return in the output. If the total number
-of items available is more than the value specified, a \code{NextToken} is
-provided in the output. To resume pagination, provide the \code{NextToken}
-value as the argument to the subsequent call to
-\code{ListScheduledQueriesRequest}.}
+\item{MaxResults}{The maximum number of items to return in the output. If the total number of items available is more than the value specified, a \code{NextToken} is provided in the output. To resume pagination, provide the \code{NextToken} value as the argument to the subsequent call to \code{ListScheduledQueriesRequest}.}
 
 \item{NextToken}{A pagination token to resume pagination.}
 }

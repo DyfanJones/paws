@@ -7,9 +7,7 @@
 comprehend_list_flywheels(Filter = NULL, NextToken = NULL, MaxResults = NULL)
 }
 \arguments{
-\item{Filter}{Filters the flywheels that are returned. You can filter flywheels on
-their status, or the date and time that they were submitted. You can
-only set one filter at a time.}
+\item{Filter}{Filters the flywheels that are returned. You can filter flywheels on their status, or the date and time that they were submitted. You can only set one filter at a time.}
 
 \item{NextToken}{Identifies the next page of results to return.}
 

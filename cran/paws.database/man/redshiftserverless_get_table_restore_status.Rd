@@ -7,9 +7,7 @@
 redshiftserverless_get_table_restore_status(tableRestoreRequestId)
 }
 \arguments{
-\item{tableRestoreRequestId}{[required] The ID of the
-\code{\link[=redshiftserverless_restore_table_from_snapshot]{restore_table_from_snapshot}}
-request to return status for.}
+\item{tableRestoreRequestId}{[required] The ID of the \code{\link[=redshiftserverless_restore_table_from_snapshot]{restore_table_from_snapshot}} request to return status for.}
 }
 \description{
 Returns information about a \code{TableRestoreStatus} object.

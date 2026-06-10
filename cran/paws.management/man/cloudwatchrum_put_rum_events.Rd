@@ -19,19 +19,13 @@ cloudwatchrum_put_rum_events(
 
 \item{BatchId}{[required] A unique identifier for this batch of RUM event data.}
 
-\item{AppMonitorDetails}{[required] A structure that contains information about the app monitor that
-collected this telemetry information.}
+\item{AppMonitorDetails}{[required] A structure that contains information about the app monitor that collected this telemetry information.}
 
-\item{UserDetails}{[required] A structure that contains information about the user session that this
-batch of events was collected from.}
+\item{UserDetails}{[required] A structure that contains information about the user session that this batch of events was collected from.}
 
 \item{RumEvents}{[required] An array of structures that contain the telemetry event data.}
 
-\item{Alias}{If the app monitor uses a resource-based policy that requires
-\code{\link[=cloudwatchrum_put_rum_events]{put_rum_events}} requests to specify a
-certain alias, specify that alias here. This alias will be compared to
-the \code{rum:alias} context key in the resource-based policy. For more
-information, see \href{https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-resource-policies.html}{Using resource-based policies with CloudWatch RUM}.}
+\item{Alias}{If the app monitor uses a resource-based policy that requires \code{\link[=cloudwatchrum_put_rum_events]{put_rum_events}} requests to specify a certain alias, specify that alias here. This alias will be compared to the \code{rum:alias} context key in the resource-based policy. For more information, see \href{https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-resource-policies.html}{Using resource-based policies with CloudWatch RUM}.}
 }
 \description{
 Sends telemetry events about your application performance and user behavior to CloudWatch RUM. The code snippet that RUM generates for you to add to your application includes \code{\link[=cloudwatchrum_put_rum_events]{put_rum_events}} operations to send this data to RUM.

@@ -12,19 +12,15 @@ elasticache_create_cache_parameter_group(
 )
 }
 \arguments{
-\item{CacheParameterGroupName}{[required] A user-specified name for the cache parameter group.}
+\item{CacheParameterGroupName}{[required] A user-specified name for the cache parameter group. This value is stored as a lowercase string.}
 
-\item{CacheParameterGroupFamily}{[required] The name of the cache parameter group family that the cache parameter
-group can be used with.
+\item{CacheParameterGroupFamily}{[required] The name of the cache parameter group family that the cache parameter group can be used with.
 
-Valid values are: \code{valkey8} | \code{valkey7} | \code{memcached1.4} |
-\code{memcached1.5} | \code{memcached1.6} | \code{redis2.6} | \code{redis2.8} | \code{redis3.2} |
-\code{redis4.0} | \code{redis5.0} | \code{redis6.x} | \code{redis7}}
+Valid values are: \code{valkey8} | \code{valkey7} | \code{memcached1.4} | \code{memcached1.5} | \code{memcached1.6} | \code{redis2.6} | \code{redis2.8} | \code{redis3.2} | \code{redis4.0} | \code{redis5.0} | \code{redis6.x} | \code{redis7}}
 
 \item{Description}{[required] A user-specified description for the cache parameter group.}
 
-\item{Tags}{A list of tags to be added to this resource. A tag is a key-value pair.
-A tag key must be accompanied by a tag value, although null is accepted.}
+\item{Tags}{A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.}
 }
 \description{
 Creates a new Amazon ElastiCache cache parameter group. An ElastiCache cache parameter group is a collection of parameters and their values that are applied to all of the nodes in any cluster or replication group using the CacheParameterGroup.

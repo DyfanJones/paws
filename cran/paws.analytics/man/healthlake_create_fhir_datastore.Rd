@@ -17,14 +17,11 @@ healthlake_create_fhir_datastore(
 \arguments{
 \item{DatastoreName}{The data store name (user-generated).}
 
-\item{DatastoreTypeVersion}{[required] The FHIR release version supported by the data store. Current support is
-for version \code{R4}.}
+\item{DatastoreTypeVersion}{[required] The FHIR release version supported by the data store. Current support is for version \code{R4}.}
 
-\item{SseConfiguration}{The server-side encryption key configuration for a customer-provided
-encryption key specified for creating a data store.}
+\item{SseConfiguration}{The server-side encryption key configuration for a customer-provided encryption key specified for creating a data store.}
 
-\item{PreloadDataConfig}{An optional parameter to preload (import) open source Synthea FHIR data
-upon creation of the data store.}
+\item{PreloadDataConfig}{An optional parameter to preload (import) open source Synthea FHIR data upon creation of the data store.}
 
 \item{ClientToken}{An optional user-provided token to ensure API idempotency.}
 

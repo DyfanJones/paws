@@ -12,25 +12,13 @@ transcribeservice_list_call_analytics_jobs(
 )
 }
 \arguments{
-\item{Status}{Returns only Call Analytics jobs with the specified status. Jobs are
-ordered by creation date, with the newest job first. If you do not
-include \code{Status}, all Call Analytics jobs are returned.}
+\item{Status}{Returns only Call Analytics jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you do not include \code{Status}, all Call Analytics jobs are returned.}
 
-\item{JobNameContains}{Returns only the Call Analytics jobs that contain the specified string.
-The search is not case sensitive.}
+\item{JobNameContains}{Returns only the Call Analytics jobs that contain the specified string. The search is not case sensitive.}
 
-\item{NextToken}{If your
-\code{\link[=transcribeservice_list_call_analytics_jobs]{list_call_analytics_jobs}}
-request returns more results than can be displayed, \code{NextToken} is
-displayed in the response with an associated string. To get the next
-page of results, copy this string and repeat your request, including
-\code{NextToken} with the value of the copied string. Repeat as needed to
-view all your results.}
+\item{NextToken}{If your \code{\link[=transcribeservice_list_call_analytics_jobs]{list_call_analytics_jobs}} request returns more results than can be displayed, \code{NextToken} is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including \code{NextToken} with the value of the copied string. Repeat as needed to view all your results.}
 
-\item{MaxResults}{The maximum number of Call Analytics jobs to return in each page of
-results. If there are fewer results than the value that you specify,
-only the actual results are returned. If you do not specify a value, a
-default of 5 is used.}
+\item{MaxResults}{The maximum number of Call Analytics jobs to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you do not specify a value, a default of 5 is used.}
 }
 \description{
 Provides a list of Call Analytics jobs that match the specified criteria. If no criteria are specified, all Call Analytics jobs are returned.

@@ -24,11 +24,9 @@ frauddetector_create_model_version(
 
 \item{trainingDataSchema}{[required] The training data schema.}
 
-\item{externalEventsDetail}{Details of the external events data used for model version training.
-Required if \code{trainingDataSource} is \code{EXTERNAL_EVENTS}.}
+\item{externalEventsDetail}{Details of the external events data used for model version training. Required if \code{trainingDataSource} is \code{EXTERNAL_EVENTS}.}
 
-\item{ingestedEventsDetail}{Details of the ingested events data used for model version training.
-Required if \code{trainingDataSource} is \code{INGESTED_EVENTS}.}
+\item{ingestedEventsDetail}{Details of the ingested events data used for model version training. Required if \code{trainingDataSource} is \code{INGESTED_EVENTS}.}
 
 \item{tags}{A collection of key and value pairs.}
 }

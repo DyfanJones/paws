@@ -7,80 +7,37 @@ NULL
 #' CloudWatch RUM app monitor to send to a destination
 #'
 #' @description
-#' Specifies the extended metrics and custom metrics that you want a
-#' CloudWatch RUM app monitor to send to a destination. Valid destinations
-#' include CloudWatch and Evidently.
+#' Specifies the extended metrics and custom metrics that you want a CloudWatch RUM app monitor to send to a destination. Valid destinations include CloudWatch and Evidently.
 #' 
-#' By default, RUM app monitors send some metrics to CloudWatch. These
-#' default metrics are listed in [CloudWatch metrics that you can collect
-#' with CloudWatch
-#' RUM](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-metrics.html).
+#' By default, RUM app monitors send some metrics to CloudWatch. These default metrics are listed in [CloudWatch metrics that you can collect with CloudWatch RUM](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-metrics.html).
 #' 
-#' In addition to these default metrics, you can choose to send extended
-#' metrics, custom metrics, or both.
+#' In addition to these default metrics, you can choose to send extended metrics, custom metrics, or both.
 #' 
-#' -   Extended metrics let you send metrics with additional dimensions
-#'     that aren't included in the default metrics. You can also send
-#'     extended metrics to both Evidently and CloudWatch. The valid
-#'     dimension names for the additional dimensions for extended metrics
-#'     are `BrowserName`, `CountryCode`, `DeviceType`, `FileType`,
-#'     `OSName`, and `PageId`. For more information, see [Extended metrics
-#'     that you can send to CloudWatch and CloudWatch
-#'     Evidently](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/).
+#' -   Extended metrics let you send metrics with additional dimensions that aren't included in the default metrics. You can also send extended metrics to both Evidently and CloudWatch. The valid dimension names for the additional dimensions for extended metrics are `BrowserName`, `CountryCode`, `DeviceType`, `FileType`, `OSName`, and `PageId`. For more information, see [Extended metrics that you can send to CloudWatch and CloudWatch Evidently](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/).
 #' 
-#' -   Custom metrics are metrics that you define. You can send custom
-#'     metrics to CloudWatch. CloudWatch Evidently, or both. With custom
-#'     metrics, you can use any metric name and namespace. To derive the
-#'     metrics, you can use any custom events, built-in events, custom
-#'     attributes, or default attributes.
+#' -   Custom metrics are metrics that you define. You can send custom metrics to CloudWatch. CloudWatch Evidently, or both. With custom metrics, you can use any metric name and namespace. To derive the metrics, you can use any custom events, built-in events, custom attributes, or default attributes.
 #' 
-#'     You can't send custom metrics to the `AWS/RUM` namespace. You must
-#'     send custom metrics to a custom namespace that you define. The
-#'     namespace that you use can't start with `AWS/`. CloudWatch RUM
-#'     prepends `RUM/CustomMetrics/` to the custom namespace that you
-#'     define, so the final namespace for your metrics in CloudWatch is
-#'     `RUM/CustomMetrics/your-custom-namespace `.
+#'     You can't send custom metrics to the `AWS/RUM` namespace. You must send custom metrics to a custom namespace that you define. The namespace that you use can't start with `AWS/`. CloudWatch RUM prepends `RUM/CustomMetrics/` to the custom namespace that you define, so the final namespace for your metrics in CloudWatch is `RUM/CustomMetrics/your-custom-namespace `.
 #' 
-#' The maximum number of metric definitions that you can specify in one
-#' [`batch_create_rum_metric_definitions`][cloudwatchrum_batch_create_rum_metric_definitions]
-#' operation is 200.
+#' The maximum number of metric definitions that you can specify in one [`batch_create_rum_metric_definitions`][cloudwatchrum_batch_create_rum_metric_definitions] operation is 200.
 #' 
-#' The maximum number of metric definitions that one destination can
-#' contain is 2000.
+#' The maximum number of metric definitions that one destination can contain is 2000.
 #' 
-#' Extended metrics sent to CloudWatch and RUM custom metrics are charged
-#' as CloudWatch custom metrics. Each combination of additional dimension
-#' name and dimension value counts as a custom metric. For more
-#' information, see [Amazon CloudWatch
-#' Pricing](https://aws.amazon.com/cloudwatch/pricing/).
+#' Extended metrics sent to CloudWatch and RUM custom metrics are charged as CloudWatch custom metrics. Each combination of additional dimension name and dimension value counts as a custom metric. For more information, see [Amazon CloudWatch Pricing](https://aws.amazon.com/cloudwatch/pricing/).
 #' 
-#' You must have already created a destination for the metrics before you
-#' send them. For more information, see
-#' [`put_rum_metrics_destination`][cloudwatchrum_put_rum_metrics_destination].
+#' You must have already created a destination for the metrics before you send them. For more information, see [`put_rum_metrics_destination`][cloudwatchrum_put_rum_metrics_destination].
 #' 
-#' If some metric definitions specified in a
-#' [`batch_create_rum_metric_definitions`][cloudwatchrum_batch_create_rum_metric_definitions]
-#' operations are not valid, those metric definitions fail and return
-#' errors, but all valid metric definitions in the same operation still
-#' succeed.
+#' If some metric definitions specified in a [`batch_create_rum_metric_definitions`][cloudwatchrum_batch_create_rum_metric_definitions] operations are not valid, those metric definitions fail and return errors, but all valid metric definitions in the same operation still succeed.
 #'
 #' @usage
 #' cloudwatchrum_batch_create_rum_metric_definitions(AppMonitorName,
 #'   Destination, DestinationArn, MetricDefinitions)
 #'
 #' @param AppMonitorName &#91;required&#93; The name of the CloudWatch RUM app monitor that is to send the metrics.
-#' @param Destination &#91;required&#93; The destination to send the metrics to. Valid values are `CloudWatch`
-#' and `Evidently`. If you specify `Evidently`, you must also specify the
-#' Amazon Resource Name (ARN) of the CloudWatchEvidently experiment that
-#' will receive the metrics and an IAM role that has permission to write to
-#' the experiment.
-#' @param DestinationArn This parameter is required if `Destination` is `Evidently`. If
-#' `Destination` is `CloudWatch`, do not use this parameter.
+#' @param Destination &#91;required&#93; The destination to send the metrics to. Valid values are `CloudWatch` and `Evidently`. If you specify `Evidently`, you must also specify the Amazon Resource Name (ARN) of the CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write to the experiment.
+#' @param DestinationArn This parameter is required if `Destination` is `Evidently`. If `Destination` is `CloudWatch`, do not use this parameter.
 #' 
-#' This parameter specifies the ARN of the Evidently experiment that is to
-#' receive the metrics. You must have already defined this experiment as a
-#' valid destination. For more information, see
-#' [`put_rum_metrics_destination`][cloudwatchrum_put_rum_metrics_destination].
+#' This parameter specifies the ARN of the Evidently experiment that is to receive the metrics. You must have already defined this experiment as a valid destination. For more information, see [`put_rum_metrics_destination`][cloudwatchrum_put_rum_metrics_destination].
 #' @param MetricDefinitions &#91;required&#93; An array of structures which define the metrics that you want to send.
 #'
 #' @return
@@ -168,37 +125,22 @@ cloudwatchrum_batch_create_rum_metric_definitions <- function(AppMonitorName, De
 #' destination
 #'
 #' @description
-#' Removes the specified metrics from being sent to an extended metrics
-#' destination.
+#' Removes the specified metrics from being sent to an extended metrics destination.
 #' 
-#' If some metric definition IDs specified in a
-#' [`batch_delete_rum_metric_definitions`][cloudwatchrum_batch_delete_rum_metric_definitions]
-#' operations are not valid, those metric definitions fail and return
-#' errors, but all valid metric definition IDs in the same operation are
-#' still deleted.
+#' If some metric definition IDs specified in a [`batch_delete_rum_metric_definitions`][cloudwatchrum_batch_delete_rum_metric_definitions] operations are not valid, those metric definitions fail and return errors, but all valid metric definition IDs in the same operation are still deleted.
 #' 
-#' The maximum number of metric definitions that you can specify in one
-#' [`batch_delete_rum_metric_definitions`][cloudwatchrum_batch_delete_rum_metric_definitions]
-#' operation is 200.
+#' The maximum number of metric definitions that you can specify in one [`batch_delete_rum_metric_definitions`][cloudwatchrum_batch_delete_rum_metric_definitions] operation is 200.
 #'
 #' @usage
 #' cloudwatchrum_batch_delete_rum_metric_definitions(AppMonitorName,
 #'   Destination, DestinationArn, MetricDefinitionIds)
 #'
-#' @param AppMonitorName &#91;required&#93; The name of the CloudWatch RUM app monitor that is sending these
-#' metrics.
-#' @param Destination &#91;required&#93; Defines the destination where you want to stop sending the specified
-#' metrics. Valid values are `CloudWatch` and `Evidently`. If you specify
-#' `Evidently`, you must also specify the ARN of the CloudWatchEvidently
-#' experiment that is to be the destination and an IAM role that has
-#' permission to write to the experiment.
-#' @param DestinationArn This parameter is required if `Destination` is `Evidently`. If
-#' `Destination` is `CloudWatch`, do not use this parameter.
+#' @param AppMonitorName &#91;required&#93; The name of the CloudWatch RUM app monitor that is sending these metrics.
+#' @param Destination &#91;required&#93; Defines the destination where you want to stop sending the specified metrics. Valid values are `CloudWatch` and `Evidently`. If you specify `Evidently`, you must also specify the ARN of the CloudWatchEvidently experiment that is to be the destination and an IAM role that has permission to write to the experiment.
+#' @param DestinationArn This parameter is required if `Destination` is `Evidently`. If `Destination` is `CloudWatch`, do not use this parameter.
 #' 
-#' This parameter specifies the ARN of the Evidently experiment that was
-#' receiving the metrics that are being deleted.
-#' @param MetricDefinitionIds &#91;required&#93; An array of structures which define the metrics that you want to stop
-#' sending.
+#' This parameter specifies the ARN of the Evidently experiment that was receiving the metrics that are being deleted.
+#' @param MetricDefinitionIds &#91;required&#93; An array of structures which define the metrics that you want to stop sending.
 #'
 #' @return
 #' A list with the following syntax:
@@ -257,28 +199,21 @@ cloudwatchrum_batch_delete_rum_metric_definitions <- function(AppMonitorName, De
 #' sending to a single destination
 #'
 #' @description
-#' Retrieves the list of metrics and dimensions that a RUM app monitor is
-#' sending to a single destination.
+#' Retrieves the list of metrics and dimensions that a RUM app monitor is sending to a single destination.
 #'
 #' @usage
 #' cloudwatchrum_batch_get_rum_metric_definitions(AppMonitorName,
 #'   Destination, DestinationArn, MaxResults, NextToken)
 #'
 #' @param AppMonitorName &#91;required&#93; The name of the CloudWatch RUM app monitor that is sending the metrics.
-#' @param Destination &#91;required&#93; The type of destination that you want to view metrics for. Valid values
-#' are `CloudWatch` and `Evidently`.
-#' @param DestinationArn This parameter is required if `Destination` is `Evidently`. If
-#' `Destination` is `CloudWatch`, do not use this parameter.
+#' @param Destination &#91;required&#93; The type of destination that you want to view metrics for. Valid values are `CloudWatch` and `Evidently`.
+#' @param DestinationArn This parameter is required if `Destination` is `Evidently`. If `Destination` is `CloudWatch`, do not use this parameter.
 #' 
-#' This parameter specifies the ARN of the Evidently experiment that
-#' corresponds to the destination.
-#' @param MaxResults The maximum number of results to return in one operation. The default is
-#' 50. The maximum that you can specify is 100.
+#' This parameter specifies the ARN of the Evidently experiment that corresponds to the destination.
+#' @param MaxResults The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.
 #' 
-#' To retrieve the remaining results, make another call with the returned
-#' `NextToken` value.
-#' @param NextToken Use the token returned by the previous operation to request the next
-#' page of results.
+#' To retrieve the remaining results, make another call with the returned `NextToken` value.
+#' @param NextToken Use the token returned by the previous operation to request the next page of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -340,19 +275,11 @@ cloudwatchrum_batch_get_rum_metric_definitions <- function(AppMonitorName, Desti
 #' data from your application and sends that data to RUM
 #'
 #' @description
-#' Creates a Amazon CloudWatch RUM app monitor, which collects telemetry
-#' data from your application and sends that data to RUM. The data includes
-#' performance and reliability information such as page load time,
-#' client-side errors, and user behavior.
+#' Creates a Amazon CloudWatch RUM app monitor, which collects telemetry data from your application and sends that data to RUM. The data includes performance and reliability information such as page load time, client-side errors, and user behavior.
 #' 
-#' You use this operation only to create a new app monitor. To update an
-#' existing app monitor, use
-#' [`update_app_monitor`][cloudwatchrum_update_app_monitor] instead.
+#' You use this operation only to create a new app monitor. To update an existing app monitor, use [`update_app_monitor`][cloudwatchrum_update_app_monitor] instead.
 #' 
-#' After you create an app monitor, sign in to the CloudWatch RUM console
-#' to get the JavaScript code snippet to add to your web application. For
-#' more information, see [How do I find a code snippet that I've already
-#' generated?](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-find-code-snippet.html)
+#' After you create an app monitor, sign in to the CloudWatch RUM console to get the JavaScript code snippet to add to your web application. For more information, see [How do I find a code snippet that I've already generated?](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-find-code-snippet.html)
 #'
 #' @usage
 #' cloudwatchrum_create_app_monitor(Name, Domain, DomainList, Tags,
@@ -360,53 +287,28 @@ cloudwatchrum_batch_get_rum_metric_definitions <- function(AppMonitorName, Desti
 #'   DeobfuscationConfiguration, Platform)
 #'
 #' @param Name &#91;required&#93; A name for the app monitor.
-#' @param Domain The top-level internet domain name for which your application has
-#' administrative authority.
-#' @param DomainList List the domain names for which your application has administrative
-#' authority. The [`create_app_monitor`][cloudwatchrum_create_app_monitor]
-#' requires either the domain or the domain list.
+#' @param Domain The top-level internet domain name for which your application has administrative authority.
+#' @param DomainList List the domain names for which your application has administrative authority. The [`create_app_monitor`][cloudwatchrum_create_app_monitor] requires either the domain or the domain list.
 #' @param Tags Assigns one or more tags (key-value pairs) to the app monitor.
 #' 
-#' Tags can help you organize and categorize your resources. You can also
-#' use them to scope user permissions by granting a user permission to
-#' access or change only resources with certain tag values.
+#' Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.
 #' 
-#' Tags don't have any semantic meaning to Amazon Web Services and are
-#' interpreted strictly as strings of characters.
+#' Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.
 #' 
 #' You can associate as many as 50 tags with an app monitor.
 #' 
-#' For more information, see [Tagging Amazon Web Services
-#' resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html).
-#' @param AppMonitorConfiguration A structure that contains much of the configuration data for the app
-#' monitor. If you are using Amazon Cognito for authorization, you must
-#' include this structure in your request, and it must include the ID of
-#' the Amazon Cognito identity pool to use for authorization. If you don't
-#' include `AppMonitorConfiguration`, you must set up your own
-#' authorization method. For more information, see [Authorize your
-#' application to send data to Amazon Web
-#' Services](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-get-started-authorization.html).
+#' For more information, see [Tagging Amazon Web Services resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html).
+#' @param AppMonitorConfiguration A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include `AppMonitorConfiguration`, you must set up your own authorization method. For more information, see [Authorize your application to send data to Amazon Web Services](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-get-started-authorization.html).
 #' 
-#' If you omit this argument, the sample rate used for RUM is set to 10% of
-#' the user sessions.
-#' @param CwLogEnabled Data collected by RUM is kept by RUM for 30 days and then deleted. This
-#' parameter specifies whether RUM sends a copy of this telemetry data to
-#' Amazon CloudWatch Logs in your account. This enables you to keep the
-#' telemetry data for more than 30 days, but it does incur Amazon
-#' CloudWatch Logs charges.
+#' If you omit this argument, the sample rate used for RUM is set to 10% of the user sessions.
+#' @param CwLogEnabled Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.
 #' 
 #' If you omit this parameter, the default is `false`.
-#' @param CustomEvents Specifies whether this app monitor allows the web client to define and
-#' send custom events. If you omit this parameter, custom events are
-#' `DISABLED`.
+#' @param CustomEvents Specifies whether this app monitor allows the web client to define and send custom events. If you omit this parameter, custom events are `DISABLED`.
 #' 
-#' For more information about custom events, see [Send custom
-#' events](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html).
-#' @param DeobfuscationConfiguration A structure that contains the configuration for how an app monitor can
-#' deobfuscate stack traces.
-#' @param Platform The platform type for the app monitor. Valid values are `Web` for web
-#' applications, `Android` for Android applications, and `iOS` for IOS
-#' applications. If you omit this parameter, the default is `Web`.
+#' For more information about custom events, see [Send custom events](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html).
+#' @param DeobfuscationConfiguration A structure that contains the configuration for how an app monitor can deobfuscate stack traces.
+#' @param Platform The platform type for the app monitor. Valid values are `Web` for web applications, `Android` for Android applications, and `iOS` for IOS applications. If you omit this parameter, the default is `Web`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -487,8 +389,7 @@ cloudwatchrum_create_app_monitor <- function(Name, Domain = NULL, DomainList = N
 #' Deletes an existing app monitor
 #'
 #' @description
-#' Deletes an existing app monitor. This immediately stops the collection
-#' of data.
+#' Deletes an existing app monitor. This immediately stops the collection of data.
 #'
 #' @usage
 #' cloudwatchrum_delete_app_monitor(Name)
@@ -538,11 +439,7 @@ cloudwatchrum_delete_app_monitor <- function(Name) {
 #' cloudwatchrum_delete_resource_policy(Name, PolicyRevisionId)
 #'
 #' @param Name &#91;required&#93; The app monitor that you want to remove the resource policy from.
-#' @param PolicyRevisionId Specifies a specific policy revision to delete. Provide a
-#' `PolicyRevisionId` to ensure an atomic delete operation. If the revision
-#' ID that you provide doesn't match the latest policy revision ID, the
-#' request will be rejected with an `InvalidPolicyRevisionIdException`
-#' error.
+#' @param PolicyRevisionId Specifies a specific policy revision to delete. Provide a `PolicyRevisionId` to ensure an atomic delete operation. If the revision ID that you provide doesn't match the latest policy revision ID, the request will be rejected with an `InvalidPolicyRevisionIdException` error.
 #'
 #' @return
 #' A list with the following syntax:
@@ -588,22 +485,15 @@ cloudwatchrum_delete_resource_policy <- function(Name, PolicyRevisionId = NULL) 
 #' specified app monitor stops sending extended metrics to that destination
 #'
 #' @description
-#' Deletes a destination for CloudWatch RUM extended metrics, so that the
-#' specified app monitor stops sending extended metrics to that
-#' destination.
+#' Deletes a destination for CloudWatch RUM extended metrics, so that the specified app monitor stops sending extended metrics to that destination.
 #'
 #' @usage
 #' cloudwatchrum_delete_rum_metrics_destination(AppMonitorName,
 #'   Destination, DestinationArn)
 #'
-#' @param AppMonitorName &#91;required&#93; The name of the app monitor that is sending metrics to the destination
-#' that you want to delete.
-#' @param Destination &#91;required&#93; The type of destination to delete. Valid values are `CloudWatch` and
-#' `Evidently`.
-#' @param DestinationArn This parameter is required if `Destination` is `Evidently`. If
-#' `Destination` is `CloudWatch`, do not use this parameter. This parameter
-#' specifies the ARN of the Evidently experiment that corresponds to the
-#' destination to delete.
+#' @param AppMonitorName &#91;required&#93; The name of the app monitor that is sending metrics to the destination that you want to delete.
+#' @param Destination &#91;required&#93; The type of destination to delete. Valid values are `CloudWatch` and `Evidently`.
+#' @param DestinationArn This parameter is required if `Destination` is `Evidently`. If `Destination` is `CloudWatch`, do not use this parameter. This parameter specifies the ARN of the Evidently experiment that corresponds to the destination to delete.
 #'
 #' @return
 #' An empty list.
@@ -743,23 +633,17 @@ cloudwatchrum_get_app_monitor <- function(Name) {
 #' this data
 #'
 #' @description
-#' Retrieves the raw performance events that RUM has collected from your
-#' web application, so that you can do your own processing or analysis of
-#' this data.
+#' Retrieves the raw performance events that RUM has collected from your web application, so that you can do your own processing or analysis of this data.
 #'
 #' @usage
 #' cloudwatchrum_get_app_monitor_data(Name, TimeRange, Filters, MaxResults,
 #'   NextToken)
 #'
-#' @param Name &#91;required&#93; The name of the app monitor that collected the data that you want to
-#' retrieve.
-#' @param TimeRange &#91;required&#93; A structure that defines the time range that you want to retrieve
-#' results from.
-#' @param Filters An array of structures that you can use to filter the results to those
-#' that match one or more sets of key-value pairs that you specify.
+#' @param Name &#91;required&#93; The name of the app monitor that collected the data that you want to retrieve.
+#' @param TimeRange &#91;required&#93; A structure that defines the time range that you want to retrieve results from.
+#' @param Filters An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.
 #' @param MaxResults The maximum number of results to return in one operation.
-#' @param NextToken Use the token returned by the previous operation to request the next
-#' page of results.
+#' @param NextToken Use the token returned by the previous operation to request the next page of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -821,14 +705,12 @@ cloudwatchrum_get_app_monitor_data <- function(Name, TimeRange, Filters = NULL, 
 #' that is attached to an app monitor
 #'
 #' @description
-#' Use this operation to retrieve information about a resource-based policy
-#' that is attached to an app monitor.
+#' Use this operation to retrieve information about a resource-based policy that is attached to an app monitor.
 #'
 #' @usage
 #' cloudwatchrum_get_resource_policy(Name)
 #'
-#' @param Name &#91;required&#93; The name of the app monitor that is associated with the resource-based
-#' policy that you want to view.
+#' @param Name &#91;required&#93; The name of the app monitor that is associated with the resource-based policy that you want to view.
 #'
 #' @return
 #' A list with the following syntax:
@@ -878,10 +760,8 @@ cloudwatchrum_get_resource_policy <- function(Name) {
 #' @usage
 #' cloudwatchrum_list_app_monitors(MaxResults, NextToken)
 #'
-#' @param MaxResults The maximum number of results to return in one operation. The default is
-#' 50. The maximum that you can specify is 100.
-#' @param NextToken Use the token returned by the previous operation to request the next
-#' page of results.
+#' @param MaxResults The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.
+#' @param NextToken Use the token returned by the previous operation to request the next page of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -937,25 +817,19 @@ cloudwatchrum_list_app_monitors <- function(MaxResults = NULL, NextToken = NULL)
 #' extended metrics, for the specified app monitor
 #'
 #' @description
-#' Returns a list of destinations that you have created to receive RUM
-#' extended metrics, for the specified app monitor.
+#' Returns a list of destinations that you have created to receive RUM extended metrics, for the specified app monitor.
 #' 
-#' For more information about extended metrics, see
-#' [AddRumMetrics](https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/).
+#' For more information about extended metrics, see [AddRumMetrics](https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/).
 #'
 #' @usage
 #' cloudwatchrum_list_rum_metrics_destinations(AppMonitorName, MaxResults,
 #'   NextToken)
 #'
-#' @param AppMonitorName &#91;required&#93; The name of the app monitor associated with the destinations that you
-#' want to retrieve.
-#' @param MaxResults The maximum number of results to return in one operation. The default is
-#' 50. The maximum that you can specify is 100.
+#' @param AppMonitorName &#91;required&#93; The name of the app monitor associated with the destinations that you want to retrieve.
+#' @param MaxResults The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.
 #' 
-#' To retrieve the remaining results, make another call with the returned
-#' `NextToken` value.
-#' @param NextToken Use the token returned by the previous operation to request the next
-#' page of results.
+#' To retrieve the remaining results, make another call with the returned `NextToken` value.
+#' @param NextToken Use the token returned by the previous operation to request the next page of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1061,31 +935,17 @@ cloudwatchrum_list_tags_for_resource <- function(ResourceArn) {
 #' app monitor to control access to it
 #'
 #' @description
-#' Use this operation to assign a resource-based policy to a CloudWatch RUM
-#' app monitor to control access to it. Each app monitor can have one
-#' resource-based policy. The maximum size of the policy is 4 KB. To learn
-#' more about using resource policies with RUM, see [Using resource-based
-#' policies with CloudWatch
-#' RUM](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-resource-policies.html).
+#' Use this operation to assign a resource-based policy to a CloudWatch RUM app monitor to control access to it. Each app monitor can have one resource-based policy. The maximum size of the policy is 4 KB. To learn more about using resource policies with RUM, see [Using resource-based policies with CloudWatch RUM](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-resource-policies.html).
 #'
 #' @usage
 #' cloudwatchrum_put_resource_policy(Name, PolicyDocument,
 #'   PolicyRevisionId)
 #'
-#' @param Name &#91;required&#93; The name of the app monitor that you want to apply this resource-based
-#' policy to. To find the names of your app monitors, you can use the
-#' [`list_app_monitors`][cloudwatchrum_list_app_monitors] operation.
-#' @param PolicyDocument &#91;required&#93; The JSON to use as the resource policy. The document can be up to 4 KB
-#' in size. For more information about the contents and syntax for this
-#' policy, see [Using resource-based policies with CloudWatch
-#' RUM](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-resource-policies.html).
-#' @param PolicyRevisionId A string value that you can use to conditionally update your policy. You
-#' can provide the revision ID of your existing policy to make mutating
-#' requests against that policy.
+#' @param Name &#91;required&#93; The name of the app monitor that you want to apply this resource-based policy to. To find the names of your app monitors, you can use the [`list_app_monitors`][cloudwatchrum_list_app_monitors] operation.
+#' @param PolicyDocument &#91;required&#93; The JSON to use as the resource policy. The document can be up to 4 KB in size. For more information about the contents and syntax for this policy, see [Using resource-based policies with CloudWatch RUM](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-resource-policies.html).
+#' @param PolicyRevisionId A string value that you can use to conditionally update your policy. You can provide the revision ID of your existing policy to make mutating requests against that policy.
 #' 
-#' When you assign a policy revision ID, then later requests about that
-#' policy will be rejected with an `InvalidPolicyRevisionIdException` error
-#' if they don't provide the correct current revision ID.
+#' When you assign a policy revision ID, then later requests about that policy will be rejected with an `InvalidPolicyRevisionIdException` error if they don't provide the correct current revision ID.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1133,14 +993,9 @@ cloudwatchrum_put_resource_policy <- function(Name, PolicyDocument, PolicyRevisi
 #' behavior to CloudWatch RUM
 #'
 #' @description
-#' Sends telemetry events about your application performance and user
-#' behavior to CloudWatch RUM. The code snippet that RUM generates for you
-#' to add to your application includes
-#' [`put_rum_events`][cloudwatchrum_put_rum_events] operations to send this
-#' data to RUM.
+#' Sends telemetry events about your application performance and user behavior to CloudWatch RUM. The code snippet that RUM generates for you to add to your application includes [`put_rum_events`][cloudwatchrum_put_rum_events] operations to send this data to RUM.
 #' 
-#' Each [`put_rum_events`][cloudwatchrum_put_rum_events] operation can send
-#' a batch of events from one user session.
+#' Each [`put_rum_events`][cloudwatchrum_put_rum_events] operation can send a batch of events from one user session.
 #'
 #' @usage
 #' cloudwatchrum_put_rum_events(Id, BatchId, AppMonitorDetails,
@@ -1148,17 +1003,10 @@ cloudwatchrum_put_resource_policy <- function(Name, PolicyDocument, PolicyRevisi
 #'
 #' @param Id &#91;required&#93; The ID of the app monitor that is sending this data.
 #' @param BatchId &#91;required&#93; A unique identifier for this batch of RUM event data.
-#' @param AppMonitorDetails &#91;required&#93; A structure that contains information about the app monitor that
-#' collected this telemetry information.
-#' @param UserDetails &#91;required&#93; A structure that contains information about the user session that this
-#' batch of events was collected from.
+#' @param AppMonitorDetails &#91;required&#93; A structure that contains information about the app monitor that collected this telemetry information.
+#' @param UserDetails &#91;required&#93; A structure that contains information about the user session that this batch of events was collected from.
 #' @param RumEvents &#91;required&#93; An array of structures that contain the telemetry event data.
-#' @param Alias If the app monitor uses a resource-based policy that requires
-#' [`put_rum_events`][cloudwatchrum_put_rum_events] requests to specify a
-#' certain alias, specify that alias here. This alias will be compared to
-#' the `rum:alias` context key in the resource-based policy. For more
-#' information, see [Using resource-based policies with CloudWatch
-#' RUM](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-resource-policies.html).
+#' @param Alias If the app monitor uses a resource-based policy that requires [`put_rum_events`][cloudwatchrum_put_rum_events] requests to specify a certain alias, specify that alias here. This alias will be compared to the `rum:alias` context key in the resource-based policy. For more information, see [Using resource-based policies with CloudWatch RUM](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-resource-policies.html).
 #'
 #' @return
 #' An empty list.
@@ -1220,38 +1068,22 @@ cloudwatchrum_put_rum_events <- function(Id, BatchId, AppMonitorDetails, UserDet
 #' CloudWatch RUM
 #'
 #' @description
-#' Creates or updates a destination to receive extended metrics from
-#' CloudWatch RUM. You can send extended metrics to CloudWatch or to a
-#' CloudWatch Evidently experiment.
+#' Creates or updates a destination to receive extended metrics from CloudWatch RUM. You can send extended metrics to CloudWatch or to a CloudWatch Evidently experiment.
 #' 
-#' For more information about extended metrics, see
-#' [`batch_create_rum_metric_definitions`][cloudwatchrum_batch_create_rum_metric_definitions].
+#' For more information about extended metrics, see [`batch_create_rum_metric_definitions`][cloudwatchrum_batch_create_rum_metric_definitions].
 #'
 #' @usage
 #' cloudwatchrum_put_rum_metrics_destination(AppMonitorName, Destination,
 #'   DestinationArn, IamRoleArn)
 #'
 #' @param AppMonitorName &#91;required&#93; The name of the CloudWatch RUM app monitor that will send the metrics.
-#' @param Destination &#91;required&#93; Defines the destination to send the metrics to. Valid values are
-#' `CloudWatch` and `Evidently`. If you specify `Evidently`, you must also
-#' specify the ARN of the CloudWatchEvidently experiment that is to be the
-#' destination and an IAM role that has permission to write to the
-#' experiment.
-#' @param DestinationArn Use this parameter only if `Destination` is `Evidently`. This parameter
-#' specifies the ARN of the Evidently experiment that will receive the
-#' extended metrics.
-#' @param IamRoleArn This parameter is required if `Destination` is `Evidently`. If
-#' `Destination` is `CloudWatch`, don't use this parameter.
+#' @param Destination &#91;required&#93; Defines the destination to send the metrics to. Valid values are `CloudWatch` and `Evidently`. If you specify `Evidently`, you must also specify the ARN of the CloudWatchEvidently experiment that is to be the destination and an IAM role that has permission to write to the experiment.
+#' @param DestinationArn Use this parameter only if `Destination` is `Evidently`. This parameter specifies the ARN of the Evidently experiment that will receive the extended metrics.
+#' @param IamRoleArn This parameter is required if `Destination` is `Evidently`. If `Destination` is `CloudWatch`, don't use this parameter.
 #' 
-#' This parameter specifies the ARN of an IAM role that RUM will assume to
-#' write to the Evidently experiment that you are sending metrics to. This
-#' role must have permission to write to that experiment.
+#' This parameter specifies the ARN of an IAM role that RUM will assume to write to the Evidently experiment that you are sending metrics to. This role must have permission to write to that experiment.
 #' 
-#' If you specify this parameter, you must be signed on to a role that has
-#' [PassRole](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html)
-#' permissions attached to it, to allow the role to be passed. The
-#' [CloudWatchAmazonCloudWatchRUMFullAccess](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html#managed-policies-cloudwatch-RUM)
-#' policy doesn't include `PassRole` permissions.
+#' If you specify this parameter, you must be signed on to a role that has [PassRole](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html) permissions attached to it, to allow the role to be passed. The [CloudWatchAmazonCloudWatchRUMFullAccess](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html#managed-policies-cloudwatch-RUM) policy doesn't include `PassRole` permissions.
 #'
 #' @return
 #' An empty list.
@@ -1294,28 +1126,17 @@ cloudwatchrum_put_rum_metrics_destination <- function(AppMonitorName, Destinatio
 #' RUM resource
 #'
 #' @description
-#' Assigns one or more tags (key-value pairs) to the specified CloudWatch
-#' RUM resource. Currently, the only resources that can be tagged app
-#' monitors.
+#' Assigns one or more tags (key-value pairs) to the specified CloudWatch RUM resource. Currently, the only resources that can be tagged app monitors.
 #' 
-#' Tags can help you organize and categorize your resources. You can also
-#' use them to scope user permissions by granting a user permission to
-#' access or change only resources with certain tag values.
+#' Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.
 #' 
-#' Tags don't have any semantic meaning to Amazon Web Services and are
-#' interpreted strictly as strings of characters.
+#' Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.
 #' 
-#' You can use the [`tag_resource`][cloudwatchrum_tag_resource] action with
-#' a resource that already has tags. If you specify a new tag key for the
-#' resource, this tag is appended to the list of tags associated with the
-#' alarm. If you specify a tag key that is already associated with the
-#' resource, the new tag value that you specify replaces the previous value
-#' for that tag.
+#' You can use the [`tag_resource`][cloudwatchrum_tag_resource] action with a resource that already has tags. If you specify a new tag key for the resource, this tag is appended to the list of tags associated with the alarm. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag.
 #' 
 #' You can associate as many as 50 tags with a resource.
 #' 
-#' For more information, see [Tagging Amazon Web Services
-#' resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html).
+#' For more information, see [Tagging Amazon Web Services resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html).
 #'
 #' @usage
 #' cloudwatchrum_tag_resource(ResourceArn, Tags)
@@ -1411,23 +1232,13 @@ cloudwatchrum_untag_resource <- function(ResourceArn, TagKeys) {
 #' Updates the configuration of an existing app monitor
 #'
 #' @description
-#' Updates the configuration of an existing app monitor. When you use this
-#' operation, only the parts of the app monitor configuration that you
-#' specify in this operation are changed. For any parameters that you omit,
-#' the existing values are kept.
+#' Updates the configuration of an existing app monitor. When you use this operation, only the parts of the app monitor configuration that you specify in this operation are changed. For any parameters that you omit, the existing values are kept.
 #' 
-#' You can't use this operation to change the tags of an existing app
-#' monitor. To change the tags of an existing app monitor, use
-#' [`tag_resource`][cloudwatchrum_tag_resource].
+#' You can't use this operation to change the tags of an existing app monitor. To change the tags of an existing app monitor, use [`tag_resource`][cloudwatchrum_tag_resource].
 #' 
-#' To create a new app monitor, use
-#' [`create_app_monitor`][cloudwatchrum_create_app_monitor].
+#' To create a new app monitor, use [`create_app_monitor`][cloudwatchrum_create_app_monitor].
 #' 
-#' After you update an app monitor, sign in to the CloudWatch RUM console
-#' to get the updated JavaScript code snippet to add to your web
-#' application. For more information, see [How do I find a code snippet
-#' that I've already
-#' generated?](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-find-code-snippet.html)
+#' After you update an app monitor, sign in to the CloudWatch RUM console to get the updated JavaScript code snippet to add to your web application. For more information, see [How do I find a code snippet that I've already generated?](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-find-code-snippet.html)
 #'
 #' @usage
 #' cloudwatchrum_update_app_monitor(Name, Domain, DomainList,
@@ -1435,31 +1246,14 @@ cloudwatchrum_untag_resource <- function(ResourceArn, TagKeys) {
 #'   DeobfuscationConfiguration)
 #'
 #' @param Name &#91;required&#93; The name of the app monitor to update.
-#' @param Domain The top-level internet domain name for which your application has
-#' administrative authority.
-#' @param DomainList List the domain names for which your application has administrative
-#' authority. The [`update_app_monitor`][cloudwatchrum_update_app_monitor]
-#' allows either the domain or the domain list.
-#' @param AppMonitorConfiguration A structure that contains much of the configuration data for the app
-#' monitor. If you are using Amazon Cognito for authorization, you must
-#' include this structure in your request, and it must include the ID of
-#' the Amazon Cognito identity pool to use for authorization. If you don't
-#' include `AppMonitorConfiguration`, you must set up your own
-#' authorization method. For more information, see [Authorize your
-#' application to send data to Amazon Web
-#' Services](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-get-started-authorization.html).
-#' @param CwLogEnabled Data collected by RUM is kept by RUM for 30 days and then deleted. This
-#' parameter specifies whether RUM sends a copy of this telemetry data to
-#' Amazon CloudWatch Logs in your account. This enables you to keep the
-#' telemetry data for more than 30 days, but it does incur Amazon
-#' CloudWatch Logs charges.
-#' @param CustomEvents Specifies whether this app monitor allows the web client to define and
-#' send custom events. The default is for custom events to be `DISABLED`.
+#' @param Domain The top-level internet domain name for which your application has administrative authority.
+#' @param DomainList List the domain names for which your application has administrative authority. The [`update_app_monitor`][cloudwatchrum_update_app_monitor] allows either the domain or the domain list.
+#' @param AppMonitorConfiguration A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include `AppMonitorConfiguration`, you must set up your own authorization method. For more information, see [Authorize your application to send data to Amazon Web Services](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-get-started-authorization.html).
+#' @param CwLogEnabled Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.
+#' @param CustomEvents Specifies whether this app monitor allows the web client to define and send custom events. The default is for custom events to be `DISABLED`.
 #' 
-#' For more information about custom events, see [Send custom
-#' events](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html).
-#' @param DeobfuscationConfiguration A structure that contains the configuration for how an app monitor can
-#' deobfuscate stack traces.
+#' For more information about custom events, see [Send custom events](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html).
+#' @param DeobfuscationConfiguration A structure that contains the configuration for how an app monitor can deobfuscate stack traces.
 #'
 #' @return
 #' An empty list.
@@ -1532,28 +1326,18 @@ cloudwatchrum_update_app_monitor <- function(Name, Domain = NULL, DomainList = N
 #' metrics
 #'
 #' @description
-#' Modifies one existing metric definition for CloudWatch RUM extended
-#' metrics. For more information about extended metrics, see
-#' [BatchCreateRumMetricsDefinitions](https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/).
+#' Modifies one existing metric definition for CloudWatch RUM extended metrics. For more information about extended metrics, see [BatchCreateRumMetricsDefinitions](https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/).
 #'
 #' @usage
 #' cloudwatchrum_update_rum_metric_definition(AppMonitorName, Destination,
 #'   DestinationArn, MetricDefinition, MetricDefinitionId)
 #'
 #' @param AppMonitorName &#91;required&#93; The name of the CloudWatch RUM app monitor that sends these metrics.
-#' @param Destination &#91;required&#93; The destination to send the metrics to. Valid values are `CloudWatch`
-#' and `Evidently`. If you specify `Evidently`, you must also specify the
-#' ARN of the CloudWatchEvidently experiment that will receive the metrics
-#' and an IAM role that has permission to write to the experiment.
-#' @param DestinationArn This parameter is required if `Destination` is `Evidently`. If
-#' `Destination` is `CloudWatch`, do not use this parameter.
+#' @param Destination &#91;required&#93; The destination to send the metrics to. Valid values are `CloudWatch` and `Evidently`. If you specify `Evidently`, you must also specify the ARN of the CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write to the experiment.
+#' @param DestinationArn This parameter is required if `Destination` is `Evidently`. If `Destination` is `CloudWatch`, do not use this parameter.
 #' 
-#' This parameter specifies the ARN of the Evidently experiment that is to
-#' receive the metrics. You must have already defined this experiment as a
-#' valid destination. For more information, see
-#' [`put_rum_metrics_destination`][cloudwatchrum_put_rum_metrics_destination].
-#' @param MetricDefinition &#91;required&#93; A structure that contains the new definition that you want to use for
-#' this metric.
+#' This parameter specifies the ARN of the Evidently experiment that is to receive the metrics. You must have already defined this experiment as a valid destination. For more information, see [`put_rum_metrics_destination`][cloudwatchrum_put_rum_metrics_destination].
+#' @param MetricDefinition &#91;required&#93; A structure that contains the new definition that you want to use for this metric.
 #' @param MetricDefinitionId &#91;required&#93; The ID of the metric definition to update.
 #'
 #' @return

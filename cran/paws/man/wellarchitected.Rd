@@ -55,10 +55,7 @@ Operations section.
 \description{
 Well-Architected Tool
 
-This is the \emph{Well-Architected Tool API Reference}. The WA Tool API
-provides programmatic access to the \href{https://aws.amazon.com/well-architected-tool/}{Well-Architected Tool} in the Amazon Web
-Services Management Console. For information about the Well-Architected
-Tool, see the \href{https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html}{Well-Architected Tool User Guide}.
+This is the \emph{Well-Architected Tool API Reference}. The WA Tool API provides programmatic access to the \href{https://aws.amazon.com/well-architected-tool/}{Well-Architected Tool} in the Amazon Web Services Management Console. For information about the Well-Architected Tool, see the \href{https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html}{Well-Architected Tool User Guide}.
 }
 \section{Service syntax}{
 

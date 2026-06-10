@@ -12,9 +12,7 @@ rds_describe_blue_green_deployments(
 )
 }
 \arguments{
-\item{BlueGreenDeploymentIdentifier}{The blue/green deployment identifier. If you specify this parameter, the
-response only includes information about the specific blue/green
-deployment. This parameter isn't case-sensitive.
+\item{BlueGreenDeploymentIdentifier}{The blue/green deployment identifier. If you specify this parameter, the response only includes information about the specific blue/green deployment. This parameter isn't case-sensitive.
 
 Constraints:
 \itemize{
@@ -25,30 +23,15 @@ Constraints:
 
 Valid Values:
 \itemize{
-\item \code{blue-green-deployment-identifier} - Accepts system-generated
-identifiers for blue/green deployments. The results list only
-includes information about the blue/green deployments with the
-specified identifiers.
-\item \code{blue-green-deployment-name} - Accepts user-supplied names for
-blue/green deployments. The results list only includes information
-about the blue/green deployments with the specified names.
-\item \code{source} - Accepts source databases for a blue/green deployment. The
-results list only includes information about the blue/green
-deployments with the specified source databases.
-\item \code{target} - Accepts target databases for a blue/green deployment. The
-results list only includes information about the blue/green
-deployments with the specified target databases.
+\item \code{blue-green-deployment-identifier} - Accepts system-generated identifiers for blue/green deployments. The results list only includes information about the blue/green deployments with the specified identifiers.
+\item \code{blue-green-deployment-name} - Accepts user-supplied names for blue/green deployments. The results list only includes information about the blue/green deployments with the specified names.
+\item \code{source} - Accepts source databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified source databases.
+\item \code{target} - Accepts target databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified target databases.
 }}
 
-\item{Marker}{An optional pagination token provided by a previous
-\code{\link[=rds_describe_blue_green_deployments]{describe_blue_green_deployments}}
-request. If you specify this parameter, the response only includes
-records beyond the marker, up to the value specified by \code{MaxRecords}.}
+\item{Marker}{An optional pagination token provided by a previous \code{\link[=rds_describe_blue_green_deployments]{describe_blue_green_deployments}} request. If you specify this parameter, the response only includes records beyond the marker, up to the value specified by \code{MaxRecords}.}
 
-\item{MaxRecords}{The maximum number of records to include in the response. If more
-records exist than the specified \code{MaxRecords} value, a pagination token
-called a marker is included in the response so you can retrieve the
-remaining results.
+\item{MaxRecords}{The maximum number of records to include in the response. If more records exist than the specified \code{MaxRecords} value, a pagination token called a marker is included in the response so you can retrieve the remaining results.
 
 Default: 100
 

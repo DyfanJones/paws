@@ -4,16 +4,21 @@
 \alias{cloudfront_create_key_value_store}
 \title{Specifies the key value store resource to add to your account}
 \usage{
-cloudfront_create_key_value_store(Name, Comment = NULL, ImportSource = NULL)
+cloudfront_create_key_value_store(
+  Name,
+  Comment = NULL,
+  ImportSource = NULL,
+  Tags = NULL
+)
 }
 \arguments{
-\item{Name}{[required] The name of the key value store. The minimum length is 1 character and
-the maximum length is 64 characters.}
+\item{Name}{[required] The name of the key value store. The minimum length is 1 character and the maximum length is 64 characters.}
 
 \item{Comment}{The comment of the key value store.}
 
-\item{ImportSource}{The S3 bucket that provides the source for the import. The source must
-be in a valid JSON format.}
+\item{ImportSource}{The S3 bucket that provides the source for the import. The source must be in a valid JSON format.}
+
+\item{Tags}{A complex type that contains zero or more \code{Tag} elements.}
 }
 \description{
 Specifies the key value store resource to add to your account. In your account, the key value store names must be unique. You can also import key value store data in JSON format from an S3 bucket by providing a valid \code{ImportSource} that you own.

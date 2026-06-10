@@ -15,35 +15,17 @@ servicediscovery_discover_instances(
 )
 }
 \arguments{
-\item{NamespaceName}{[required] The \code{HttpName} name of the namespace. The \code{HttpName} is found in the
-\code{HttpProperties} member of the \code{Properties} member of the namespace. In
-most cases, \code{Name} and \code{HttpName} match. However, if you reuse \code{Name}
-for namespace creation, a generated hash is added to \code{HttpName} to
-distinguish the two.}
+\item{NamespaceName}{[required] The \code{HttpName} name of the namespace. The \code{HttpName} is found in the \code{HttpProperties} member of the \code{Properties} member of the namespace. In most cases, \code{Name} and \code{HttpName} match. However, if you reuse \code{Name} for namespace creation, a generated hash is added to \code{HttpName} to distinguish the two.}
 
-\item{ServiceName}{[required] The name of the service that you specified when you registered the
-instance.}
+\item{ServiceName}{[required] The name of the service that you specified when you registered the instance.}
 
-\item{MaxResults}{The maximum number of instances that you want Cloud Map to return in the
-response to a
-\code{\link[=servicediscovery_discover_instances]{discover_instances}} request. If
-you don't specify a value for \code{MaxResults}, Cloud Map returns up to 100
-instances.}
+\item{MaxResults}{The maximum number of instances that you want Cloud Map to return in the response to a \code{\link[=servicediscovery_discover_instances]{discover_instances}} request. If you don't specify a value for \code{MaxResults}, Cloud Map returns up to 100 instances.}
 
-\item{QueryParameters}{Filters to scope the results based on custom attributes for the instance
-(for example, \verb{\{version=v1, az=1a\}}). Only instances that match all the
-specified key-value pairs are returned.}
+\item{QueryParameters}{Filters to scope the results based on custom attributes for the instance (for example, \verb{\{version=v1, az=1a\}}). Only instances that match all the specified key-value pairs are returned.}
 
-\item{OptionalParameters}{Opportunistic filters to scope the results based on custom attributes.
-If there are instances that match both the filters specified in both the
-\code{QueryParameters} parameter and this parameter, all of these instances
-are returned. Otherwise, the filters are ignored, and only instances
-that match the filters that are specified in the \code{QueryParameters}
-parameter are returned.}
+\item{OptionalParameters}{Opportunistic filters to scope the results based on custom attributes. If there are instances that match both the filters specified in both the \code{QueryParameters} parameter and this parameter, all of these instances are returned. Otherwise, the filters are ignored, and only instances that match the filters that are specified in the \code{QueryParameters} parameter are returned.}
 
-\item{HealthStatus}{The health status of the instances that you want to discover. This
-parameter is ignored for services that don't have a health check
-configured, and all instances are returned.
+\item{HealthStatus}{The health status of the instances that you want to discover. This parameter is ignored for services that don't have a health check configured, and all instances are returned.
 
 \strong{HEALTHY}
 
@@ -59,13 +41,9 @@ Returns all instances.
 
 \strong{HEALTHY_OR_ELSE_ALL}
 
-Returns healthy instances, unless none are reporting a healthy state. In
-that case, return all instances. This is also called failing open.}
+Returns healthy instances, unless none are reporting a healthy state. In that case, return all instances. This is also called failing open.}
 
-\item{OwnerAccount}{The ID of the Amazon Web Services account that owns the namespace
-associated with the instance, as specified in the namespace
-\code{ResourceOwner} field. For instances associated with namespaces that are
-shared with your account, you must specify an \code{OwnerAccount}.}
+\item{OwnerAccount}{The ID of the Amazon Web Services account that owns the namespace associated with the instance, as specified in the namespace \code{ResourceOwner} field. For instances associated with namespaces that are shared with your account, you must specify an \code{OwnerAccount}.}
 }
 \description{
 Discovers registered instances for a specified namespace and service. You can use \code{\link[=servicediscovery_discover_instances]{discover_instances}} to discover instances for any type of namespace. \code{\link[=servicediscovery_discover_instances]{discover_instances}} returns a randomized list of instances allowing customers to distribute traffic evenly across instances. For public and private DNS namespaces, you can also use DNS queries to discover instances.

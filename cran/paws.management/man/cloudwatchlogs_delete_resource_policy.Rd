@@ -13,11 +13,9 @@ cloudwatchlogs_delete_resource_policy(
 \arguments{
 \item{policyName}{The name of the policy to be revoked. This parameter is required.}
 
-\item{resourceArn}{The ARN of the CloudWatch Logs resource for which the resource policy
-needs to be deleted}
+\item{resourceArn}{The ARN of the CloudWatch Logs resource for which the resource policy needs to be deleted}
 
-\item{expectedRevisionId}{The expected revision ID of the resource policy. Required when deleting
-a resource-scoped policy to prevent concurrent modifications.}
+\item{expectedRevisionId}{The expected revision ID of the resource policy. Required when deleting a resource-scoped policy to prevent concurrent modifications.}
 }
 \description{
 Deletes a resource policy from this account. This revokes the access of the identities in that policy to put log events to this account.

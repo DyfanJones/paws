@@ -8,8 +8,7 @@ to the End User Messaging SMS resource}
 pinpointsmsvoicev2_get_resource_policy(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the End User Messaging SMS resource
-attached to the resource-based policy.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the End User Messaging SMS resource attached to the resource-based policy.}
 }
 \description{
 Retrieves the JSON text of the resource-based policy document attached to the End User Messaging SMS resource. A shared resource can be a Pool, Opt-out list, Sender Id, or Phone number.

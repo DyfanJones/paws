@@ -9,8 +9,7 @@ rekognition_create_collection(CollectionId, Tags = NULL)
 \arguments{
 \item{CollectionId}{[required] ID for the collection that you are creating.}
 
-\item{Tags}{A set of tags (key-value pairs) that you want to attach to the
-collection.}
+\item{Tags}{A set of tags (key-value pairs) that you want to attach to the collection.}
 }
 \description{
 Creates a collection in an AWS Region. You can add faces to the collection using the \code{\link[=rekognition_index_faces]{index_faces}} operation.

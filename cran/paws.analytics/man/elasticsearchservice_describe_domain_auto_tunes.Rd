@@ -15,11 +15,9 @@ elasticsearchservice_describe_domain_auto_tunes(
 \arguments{
 \item{DomainName}{[required] Specifies the domain name for which you want Auto-Tune action details.}
 
-\item{MaxResults}{Set this value to limit the number of results returned. If not
-specified, defaults to 100.}
+\item{MaxResults}{Set this value to limit the number of results returned. If not specified, defaults to 100.}
 
-\item{NextToken}{NextToken is sent in case the earlier API call results contain the
-NextToken. It is used for pagination.}
+\item{NextToken}{NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.}
 }
 \description{
 Provides scheduled Auto-Tune action details for the Elasticsearch domain, such as Auto-Tune action type, description, severity, and scheduled date.

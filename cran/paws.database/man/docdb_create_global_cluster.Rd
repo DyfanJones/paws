@@ -18,19 +18,15 @@ docdb_create_global_cluster(
 \arguments{
 \item{GlobalClusterIdentifier}{[required] The cluster identifier of the new global cluster.}
 
-\item{SourceDBClusterIdentifier}{The Amazon Resource Name (ARN) to use as the primary cluster of the
-global cluster. This parameter is optional.}
+\item{SourceDBClusterIdentifier}{The Amazon Resource Name (ARN) to use as the primary cluster of the global cluster. This parameter is optional.}
 
 \item{Engine}{The name of the database engine to be used for this cluster.}
 
 \item{EngineVersion}{The engine version of the global cluster.}
 
-\item{DeletionProtection}{The deletion protection setting for the new global cluster. The global
-cluster can't be deleted when deletion protection is enabled.}
+\item{DeletionProtection}{The deletion protection setting for the new global cluster. The global cluster can't be deleted when deletion protection is enabled.}
 
-\item{DatabaseName}{The name for your database of up to 64 alpha-numeric characters. If you
-do not provide a name, Amazon DocumentDB will not create a database in
-the global cluster you are creating.}
+\item{DatabaseName}{The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon DocumentDB will not create a database in the global cluster you are creating.}
 
 \item{StorageEncrypted}{The storage encryption setting for the new global cluster.}
 }

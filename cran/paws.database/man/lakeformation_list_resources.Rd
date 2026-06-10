@@ -11,13 +11,11 @@ lakeformation_list_resources(
 )
 }
 \arguments{
-\item{FilterConditionList}{Any applicable row-level and/or column-level filtering conditions for
-the resources.}
+\item{FilterConditionList}{Any applicable row-level and/or column-level filtering conditions for the resources.}
 
 \item{MaxResults}{The maximum number of resource results.}
 
-\item{NextToken}{A continuation token, if this is not the first call to retrieve these
-resources.}
+\item{NextToken}{A continuation token, if this is not the first call to retrieve these resources.}
 }
 \description{
 Lists the resources registered to be managed by the Data Catalog.

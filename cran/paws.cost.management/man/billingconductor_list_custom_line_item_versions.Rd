@@ -16,11 +16,9 @@ billingconductor_list_custom_line_item_versions(
 
 \item{MaxResults}{The maximum number of custom line item versions to retrieve.}
 
-\item{NextToken}{The pagination token that's used on subsequent calls to retrieve custom
-line item versions.}
+\item{NextToken}{The pagination token that's used on subsequent calls to retrieve custom line item versions.}
 
-\item{Filters}{A \code{ListCustomLineItemVersionsFilter} that specifies the billing period
-range in which the custom line item versions are applied.}
+\item{Filters}{A \code{ListCustomLineItemVersionsFilter} that specifies the billing period range in which the custom line item versions are applied.}
 }
 \description{
 A paginated call to get a list of all custom line item versions.

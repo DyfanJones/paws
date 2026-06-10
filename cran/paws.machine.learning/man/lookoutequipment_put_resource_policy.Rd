@@ -12,15 +12,13 @@ lookoutequipment_put_resource_policy(
 )
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource for which the policy is
-being created.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource for which the policy is being created.}
 
 \item{ResourcePolicy}{[required] The JSON-formatted resource policy to create.}
 
 \item{PolicyRevisionId}{A unique identifier for a revision of the resource policy.}
 
-\item{ClientToken}{[required] A unique identifier for the request. If you do not set the client
-request token, Amazon Lookout for Equipment generates one.}
+\item{ClientToken}{[required] A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.}
 }
 \description{
 Creates a resource control policy for a given resource.

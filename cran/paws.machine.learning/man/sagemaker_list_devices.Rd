@@ -13,15 +13,13 @@ sagemaker_list_devices(
 )
 }
 \arguments{
-\item{NextToken}{The response from the last list when returning a list large enough to
-need tokening.}
+\item{NextToken}{The response from the last list when returning a list large enough to need tokening.}
 
 \item{MaxResults}{Maximum number of results to select.}
 
 \item{LatestHeartbeatAfter}{Select fleets where the job was updated after X}
 
-\item{ModelName}{A filter that searches devices that contains this name in any of their
-models.}
+\item{ModelName}{A filter that searches devices that contains this name in any of their models.}
 
 \item{DeviceFleetName}{Filter for fleets containing this name in their device fleet name.}
 }

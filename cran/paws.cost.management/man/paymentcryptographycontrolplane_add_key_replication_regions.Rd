@@ -12,18 +12,13 @@ paymentcryptographycontrolplane_add_key_replication_regions(
 )
 }
 \arguments{
-\item{KeyIdentifier}{[required] The key identifier (ARN or alias) of the key for which to add
-replication regions.
+\item{KeyIdentifier}{[required] The key identifier (ARN or alias) of the key for which to add replication regions.
 
 This key must exist and be in a valid state for replication operations.}
 
-\item{ReplicationRegions}{[required] The list of Amazon Web Services Regions to add to the key's replication
-configuration.
+\item{ReplicationRegions}{[required] The list of Amazon Web Services Regions to add to the key's replication configuration.
 
-Each region must be a valid Amazon Web Services Region where Amazon Web
-Services Payment Cryptography is available. The key will be replicated
-to these regions, allowing cryptographic operations to be performed
-closer to your applications.}
+Each region must be a valid Amazon Web Services Region where Amazon Web Services Payment Cryptography is available. The key will be replicated to these regions, allowing cryptographic operations to be performed closer to your applications.}
 }
 \description{
 Adds replication Amazon Web Services Regions to an existing Amazon Web Services Payment Cryptography key, enabling the key to be used for cryptographic operations in additional Amazon Web Services Regions.

@@ -8,8 +8,7 @@ CreatePredictor}
 forecastservice_describe_predictor(PredictorArn)
 }
 \arguments{
-\item{PredictorArn}{[required] The Amazon Resource Name (ARN) of the predictor that you want
-information about.}
+\item{PredictorArn}{[required] The Amazon Resource Name (ARN) of the predictor that you want information about.}
 }
 \description{
 This operation is only valid for legacy predictors created with CreatePredictor. If you are not using a legacy predictor, use \code{\link[=forecastservice_describe_auto_predictor]{describe_auto_predictor}}.

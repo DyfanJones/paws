@@ -16,20 +16,29 @@ wellarchitected_update_answer(
 )
 }
 \arguments{
-\item{WorkloadId}{[required]}
+\item{WorkloadId}{[required] The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.}
 
-\item{LensAlias}{[required]}
+\item{LensAlias}{[required] The alias of the lens.
 
-\item{QuestionId}{[required]}
+For Amazon Web Services official lenses, this is either the lens alias, such as \code{serverless}, or the lens ARN, such as \verb{arn:aws:wellarchitected:us-east-1::lens/serverless}. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.
 
-\item{SelectedChoices}{}
+For custom lenses, this is the lens ARN, such as \verb{arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef}.
 
-\item{ChoiceUpdates}{A list of choices to update on a question in your workload. The String
-key corresponds to the choice ID to be updated.}
+Each lens is identified by its LensSummary$LensAlias.}
 
-\item{Notes}{}
+\item{QuestionId}{[required] The ID of the question.}
 
-\item{IsApplicable}{}
+\item{SelectedChoices}{List of selected choice IDs in a question answer.
+
+The values entered replace the previously selected choices.}
+
+\item{ChoiceUpdates}{A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be updated.}
+
+\item{Notes}{The notes associated with the workload.
+
+For a review template, these are the notes that will be associated with the workload when the template is applied.}
+
+\item{IsApplicable}{Defines whether this question is applicable to a lens review.}
 
 \item{Reason}{The reason why a question is not applicable to your workload.}
 }

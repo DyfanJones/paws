@@ -8,13 +8,9 @@ information about them}
 comprehend_batch_detect_entities(TextList, LanguageCode)
 }
 \arguments{
-\item{TextList}{[required] A list containing the UTF-8 encoded text of the input documents. The
-list can contain a maximum of 25 documents. The maximum size of each
-document is 5 KB.}
+\item{TextList}{[required] A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.}
 
-\item{LanguageCode}{[required] The language of the input documents. You can specify any of the primary
-languages supported by Amazon Comprehend. All documents must be in the
-same language.}
+\item{LanguageCode}{[required] The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.}
 }
 \description{
 Inspects the text of a batch of documents for named entities and returns information about them. For more information about named entities, see \href{https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html}{Entities} in the Comprehend Developer Guide.

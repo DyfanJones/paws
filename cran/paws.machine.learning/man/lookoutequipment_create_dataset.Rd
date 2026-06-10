@@ -15,14 +15,11 @@ lookoutequipment_create_dataset(
 \arguments{
 \item{DatasetName}{[required] The name of the dataset being created.}
 
-\item{DatasetSchema}{A JSON description of the data that is in each time series dataset,
-including names, column names, and data types.}
+\item{DatasetSchema}{A JSON description of the data that is in each time series dataset, including names, column names, and data types.}
 
-\item{ServerSideKmsKeyId}{Provides the identifier of the KMS key used to encrypt dataset data by
-Amazon Lookout for Equipment.}
+\item{ServerSideKmsKeyId}{Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment.}
 
-\item{ClientToken}{[required] A unique identifier for the request. If you do not set the client
-request token, Amazon Lookout for Equipment generates one.}
+\item{ClientToken}{[required] A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.}
 
 \item{Tags}{Any tags associated with the ingested data described in the dataset.}
 }

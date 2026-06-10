@@ -53,19 +53,11 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Amazon Transcribe offers three main types of batch transcription:
-\strong{Standard}, \strong{Medical}, and \strong{Call Analytics}.
+Amazon Transcribe offers three main types of batch transcription: \strong{Standard}, \strong{Medical}, and \strong{Call Analytics}.
 \itemize{
-\item \strong{Standard transcriptions} are the most common option. Refer to for
-details.
-\item \strong{Medical transcriptions} are tailored to medical professionals and
-incorporate medical terms. A common use case for this service is
-transcribing doctor-patient dialogue into after-visit notes. Refer
-to for details.
-\item \strong{Call Analytics transcriptions} are designed for use with call
-center audio on two different channels; if you're looking for
-insight into customer service calls, use this option. Refer to for
-details.
+\item \strong{Standard transcriptions} are the most common option. Refer to for details.
+\item \strong{Medical transcriptions} are tailored to medical professionals and incorporate medical terms. A common use case for this service is transcribing doctor-patient dialogue into after-visit notes. Refer to for details.
+\item \strong{Call Analytics transcriptions} are designed for use with call center audio on two different channels; if you're looking for insight into customer service calls, use this option. Refer to for details.
 }
 }
 \section{Service syntax}{

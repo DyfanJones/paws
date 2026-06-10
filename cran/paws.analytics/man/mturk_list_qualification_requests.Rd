@@ -14,7 +14,7 @@ mturk_list_qualification_requests(
 \arguments{
 \item{QualificationTypeId}{The ID of the QualificationType.}
 
-\item{NextToken}{}
+\item{NextToken}{If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.}
 
 \item{MaxResults}{The maximum number of results to return in a single call.}
 }

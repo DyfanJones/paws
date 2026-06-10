@@ -12,14 +12,11 @@ mturk_approve_assignment(
 )
 }
 \arguments{
-\item{AssignmentId}{[required] The ID of the assignment. The assignment must correspond to a HIT
-created by the Requester.}
+\item{AssignmentId}{[required] The ID of the assignment. The assignment must correspond to a HIT created by the Requester.}
 
-\item{RequesterFeedback}{A message for the Worker, which the Worker can see in the Status section
-of the web site.}
+\item{RequesterFeedback}{A message for the Worker, which the Worker can see in the Status section of the web site.}
 
-\item{OverrideRejection}{A flag indicating that an assignment should be approved even if it was
-previously rejected. Defaults to \code{False}.}
+\item{OverrideRejection}{A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to \code{False}.}
 }
 \description{
 The \code{\link[=mturk_approve_assignment]{approve_assignment}} operation approves the results of a completed assignment.

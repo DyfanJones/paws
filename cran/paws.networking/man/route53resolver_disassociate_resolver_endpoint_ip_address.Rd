@@ -10,8 +10,7 @@ route53resolver_disassociate_resolver_endpoint_ip_address(
 )
 }
 \arguments{
-\item{ResolverEndpointId}{[required] The ID of the Resolver endpoint that you want to disassociate an IP
-address from.}
+\item{ResolverEndpointId}{[required] The ID of the Resolver endpoint that you want to disassociate an IP address from.}
 
 \item{IpAddress}{[required] The IPv4 address that you want to remove from a Resolver endpoint.}
 }

@@ -28,8 +28,7 @@ workspacesweb_list_sessions(
 
 \item{maxResults}{The maximum number of results to be included in the next page.}
 
-\item{nextToken}{The pagination token used to retrieve the next page of results for this
-operation.}
+\item{nextToken}{The pagination token used to retrieve the next page of results for this operation.}
 }
 \description{
 Lists information for multiple secure browser sessions from a specific portal.

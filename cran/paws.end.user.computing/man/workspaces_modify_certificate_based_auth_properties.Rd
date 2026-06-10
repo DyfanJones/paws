@@ -16,8 +16,7 @@ workspaces_modify_certificate_based_auth_properties(
 
 \item{CertificateBasedAuthProperties}{The properties of the certificate-based authentication.}
 
-\item{PropertiesToDelete}{The properties of the certificate-based authentication you want to
-delete.}
+\item{PropertiesToDelete}{The properties of the certificate-based authentication you want to delete.}
 }
 \description{
 Modifies the properties of the certificate-based authentication you want to use with your WorkSpaces.

@@ -11,11 +11,9 @@ s3_delete_bucket_metadata_table_configuration(
 )
 }
 \arguments{
-\item{Bucket}{[required] The general purpose bucket that you want to remove the metadata table
-configuration from.}
+\item{Bucket}{[required] The general purpose bucket that you want to remove the metadata table configuration from.}
 
-\item{ExpectedBucketOwner}{The expected bucket owner of the general purpose bucket that you want to
-remove the metadata table configuration from.}
+\item{ExpectedBucketOwner}{The expected bucket owner of the general purpose bucket that you want to remove the metadata table configuration from.}
 }
 \description{
 We recommend that you delete your S3 Metadata configurations by using the V2 \code{\link[=s3_delete_bucket_metadata_table_configuration]{delete_bucket_metadata_table_configuration}} API operation. We no longer recommend using the V1 \code{\link[=s3_delete_bucket_metadata_table_configuration]{delete_bucket_metadata_table_configuration}} API operation.

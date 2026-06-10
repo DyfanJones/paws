@@ -16,9 +16,7 @@ sagemaker_send_pipeline_execution_step_success(
 
 \item{OutputParameters}{A list of the output parameters of the callback step.}
 
-\item{ClientRequestToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the operation. An idempotent operation completes no more
-than one time.}
+\item{ClientRequestToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.}
 }
 \description{
 Notifies the pipeline that the execution of a callback step succeeded and provides a list of the step's output parameters. When a callback step is run, the pipeline generates a callback token and includes the token in a message sent to Amazon Simple Queue Service (Amazon SQS).

@@ -20,12 +20,13 @@ wellarchitected_update_review_template(
 
 \item{Description}{The review template description.}
 
-\item{Notes}{}
+\item{Notes}{The notes associated with the workload.
+
+For a review template, these are the notes that will be associated with the workload when the template is applied.}
 
 \item{LensesToAssociate}{A list of lens aliases or ARNs to apply to the review template.}
 
-\item{LensesToDisassociate}{A list of lens aliases or ARNs to unapply to the review template. The
-\code{wellarchitected} lens cannot be unapplied.}
+\item{LensesToDisassociate}{A list of lens aliases or ARNs to unapply to the review template. The \code{wellarchitected} lens cannot be unapplied.}
 }
 \description{
 Update a review template.

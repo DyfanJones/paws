@@ -9,15 +9,11 @@ cloudfront_update_function(Name, IfMatch, FunctionConfig, FunctionCode)
 \arguments{
 \item{Name}{[required] The name of the function that you are updating.}
 
-\item{IfMatch}{[required] The current version (\code{ETag} value) of the function that you are
-updating, which you can get using
-\code{\link[=cloudfront_describe_function]{describe_function}}.}
+\item{IfMatch}{[required] The current version (\code{ETag} value) of the function that you are updating, which you can get using \code{\link[=cloudfront_describe_function]{describe_function}}.}
 
 \item{FunctionConfig}{[required] Configuration information about the function.}
 
-\item{FunctionCode}{[required] The function code. For more information about writing a CloudFront
-function, see \href{https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html}{Writing function code for CloudFront Functions}
-in the \emph{Amazon CloudFront Developer Guide}.}
+\item{FunctionCode}{[required] The function code. For more information about writing a CloudFront function, see \href{https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html}{Writing function code for CloudFront Functions} in the \emph{Amazon CloudFront Developer Guide}.}
 }
 \description{
 Updates a CloudFront function.

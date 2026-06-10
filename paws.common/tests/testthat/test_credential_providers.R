@@ -47,6 +47,16 @@ test_that("bearer_token_env_provider", {
   expect_null(creds)
 })
 
+test_that("bearer_service_token_env_provider", {
+  Sys.setenv("AWS_BEARER_TOKEN_BEDROCK" = "test-token-abc")
+  creds <- bearer_token_env_provider("bedrock")
+  expect_equal(creds$access_token, "test-token-abc")
+  expect_equal(creds$expiration, Inf)
+  expect_equal(creds$provider_name, "BearerTokenServiceProvider")
+  Sys.unsetenv(c("AWS_BEARER_TOKEN_BEDROCK"))
+  paws_reset_cache() # Clear cache after unsetting env var
+})
+
 test_that("get_bearer_token_for_service", {
   # Test service-specific token takes precedence
   Sys.setenv(

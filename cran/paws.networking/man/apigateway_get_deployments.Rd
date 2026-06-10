@@ -11,8 +11,7 @@ apigateway_get_deployments(restApiId, position = NULL, limit = NULL)
 
 \item{position}{The current pagination position in the paged result set.}
 
-\item{limit}{The maximum number of returned results per page. The default value is 25
-and the maximum value is 500.}
+\item{limit}{The maximum number of returned results per page. The default value is 25 and the maximum value is 500.}
 }
 \description{
 Gets information about a Deployments collection.

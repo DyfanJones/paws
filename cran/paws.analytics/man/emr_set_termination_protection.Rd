@@ -9,13 +9,9 @@ API call, or in the event of a job-flow error}
 emr_set_termination_protection(JobFlowIds, TerminationProtected)
 }
 \arguments{
-\item{JobFlowIds}{[required] A list of strings that uniquely identify the clusters to protect. This
-identifier is returned by \code{\link[=emr_run_job_flow]{run_job_flow}} and can
-also be obtained from \code{\link[=emr_describe_job_flows]{describe_job_flows}} .}
+\item{JobFlowIds}{[required] A list of strings that uniquely identify the clusters to protect. This identifier is returned by \code{\link[=emr_run_job_flow]{run_job_flow}} and can also be obtained from \code{\link[=emr_describe_job_flows]{describe_job_flows}} .}
 
-\item{TerminationProtected}{[required] A Boolean that indicates whether to protect the cluster and prevent the
-Amazon EC2 instances in the cluster from shutting down due to API calls,
-user intervention, or job-flow error.}
+\item{TerminationProtected}{[required] A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error.}
 }
 \description{
 SetTerminationProtection locks a cluster (job flow) so the Amazon EC2 instances in the cluster cannot be terminated by user intervention, an API call, or in the event of a job-flow error. The cluster still terminates upon successful completion of the job flow. Calling \code{\link[=emr_set_termination_protection]{set_termination_protection}} on a cluster is similar to calling the Amazon EC2 \code{DisableAPITermination} API on all Amazon EC2 instances in a cluster.

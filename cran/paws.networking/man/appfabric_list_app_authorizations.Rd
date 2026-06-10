@@ -11,21 +11,13 @@ appfabric_list_app_authorizations(
 )
 }
 \arguments{
-\item{appBundleIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-the app bundle to use for the request.}
+\item{appBundleIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.}
 
-\item{maxResults}{The maximum number of results that are returned per call. You can use
-\code{nextToken} to obtain further pages of results.
+\item{maxResults}{The maximum number of results that are returned per call. You can use \code{nextToken} to obtain further pages of results.
 
-This is only an upper limit. The actual number of results returned per
-call might be fewer than the specified maximum.}
+This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.}
 
-\item{nextToken}{If \code{nextToken} is returned, there are more results available. The value
-of \code{nextToken} is a unique pagination token for each page. Make the call
-again using the returned token to retrieve the next page. Keep all other
-arguments unchanged. Each pagination token expires after 24 hours. Using
-an expired pagination token will return an \emph{HTTP 400 InvalidToken
-error}.}
+\item{nextToken}{If \code{nextToken} is returned, there are more results available. The value of \code{nextToken} is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an \emph{HTTP 400 InvalidToken error}.}
 }
 \description{
 Returns a list of all app authorizations configured for an app bundle.

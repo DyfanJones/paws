@@ -10,8 +10,7 @@ route53resolver_disassociate_resolver_rule(VPCId, ResolverRuleId)
 \arguments{
 \item{VPCId}{[required] The ID of the VPC that you want to disassociate the Resolver rule from.}
 
-\item{ResolverRuleId}{[required] The ID of the Resolver rule that you want to disassociate from the
-specified VPC.}
+\item{ResolverRuleId}{[required] The ID of the Resolver rule that you want to disassociate from the specified VPC.}
 }
 \description{
 Removes the association between a specified Resolver rule and a specified VPC.

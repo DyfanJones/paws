@@ -7,8 +7,7 @@
 healthlake_tag_resource(ResourceARN, Tags)
 }
 \arguments{
-\item{ResourceARN}{[required] The Amazon Resource Name (ARN) that grants access to the data store tags
-are being added to.}
+\item{ResourceARN}{[required] The Amazon Resource Name (ARN) that grants access to the data store tags are being added to.}
 
 \item{Tags}{[required] The user-specified key and value pair tags being added to a data store.}
 }

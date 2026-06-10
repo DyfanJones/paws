@@ -15,22 +15,16 @@ sagemaker_create_model_card(
 \arguments{
 \item{ModelCardName}{[required] The unique name of the model card.}
 
-\item{SecurityConfig}{An optional Key Management Service key to encrypt, decrypt, and
-re-encrypt model card content for regulated workloads with highly
-sensitive data.}
+\item{SecurityConfig}{An optional Key Management Service key to encrypt, decrypt, and re-encrypt model card content for regulated workloads with highly sensitive data.}
 
-\item{Content}{[required] The content of the model card. Content must be in \href{https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema}{model card JSON schema}
-and provided as a string.}
+\item{Content}{[required] The content of the model card. Content must be in \href{https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema}{model card JSON schema} and provided as a string.}
 
-\item{ModelCardStatus}{[required] The approval status of the model card within your organization.
-Different organizations might have different criteria for model card
-review and approval.
+\item{ModelCardStatus}{[required] The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.
 \itemize{
 \item \code{Draft}: The model card is a work in progress.
 \item \code{PendingReview}: The model card is pending review.
 \item \code{Approved}: The model card is approved.
-\item \code{Archived}: The model card is archived. No more updates should be
-made to the model card, but it can still be exported.
+\item \code{Archived}: The model card is archived. No more updates should be made to the model card, but it can still be exported.
 }}
 
 \item{Tags}{Key-value pairs used to manage metadata for model cards.}

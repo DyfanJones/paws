@@ -15,8 +15,7 @@ batch_update_service_environment(
 
 \item{state}{The state of the service environment.}
 
-\item{capacityLimits}{The capacity limits for the service environment. This defines the
-maximum resources that can be used by service jobs in this environment.}
+\item{capacityLimits}{The capacity limits for the service environment. This defines the maximum resources that can be used by service jobs in this environment.}
 }
 \description{
 Updates a service environment. You can update the state of a service environment from \code{ENABLED} to \code{DISABLED} to prevent new service jobs from being placed in the service environment.

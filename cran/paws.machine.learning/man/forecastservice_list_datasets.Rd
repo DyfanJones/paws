@@ -7,9 +7,7 @@
 forecastservice_list_datasets(NextToken = NULL, MaxResults = NULL)
 }
 \arguments{
-\item{NextToken}{If the result of the previous request was truncated, the response
-includes a \code{NextToken}. To retrieve the next set of results, use the
-token in the next request. Tokens expire after 24 hours.}
+\item{NextToken}{If the result of the previous request was truncated, the response includes a \code{NextToken}. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.}
 
 \item{MaxResults}{The number of items to return in the response.}
 }

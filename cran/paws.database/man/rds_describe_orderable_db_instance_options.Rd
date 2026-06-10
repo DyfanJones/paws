@@ -42,47 +42,33 @@ Valid Values:
 \item \code{sqlserver-web}
 }}
 
-\item{EngineVersion}{A filter to include only the available options for the specified engine
-version.}
+\item{EngineVersion}{A filter to include only the available options for the specified engine version.}
 
-\item{DBInstanceClass}{A filter to include only the available options for the specified DB
-instance class.}
+\item{DBInstanceClass}{A filter to include only the available options for the specified DB instance class.}
 
-\item{LicenseModel}{A filter to include only the available options for the specified license
-model.
+\item{LicenseModel}{A filter to include only the available options for the specified license model.
 
 RDS Custom supports only the BYOL licensing model.}
 
-\item{AvailabilityZoneGroup}{The Availability Zone group associated with a Local Zone. Specify this
-parameter to retrieve available options for the Local Zones in the
-group.
+\item{AvailabilityZoneGroup}{The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available options for the Local Zones in the group.
 
-Omit this parameter to show the available options in the specified
-Amazon Web Services Region.
+Omit this parameter to show the available options in the specified Amazon Web Services Region.
 
 This setting doesn't apply to RDS Custom DB instances.}
 
-\item{Vpc}{Specifies whether to show only VPC or non-VPC offerings. RDS Custom
-supports only VPC offerings.
+\item{Vpc}{Specifies whether to show only VPC or non-VPC offerings. RDS Custom supports only VPC offerings.
 
-RDS Custom supports only VPC offerings. If you describe non-VPC
-offerings for RDS Custom, the output shows VPC offerings.}
+RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output shows VPC offerings.}
 
 \item{Filters}{This parameter isn't currently supported.}
 
-\item{MaxRecords}{The maximum number of records to include in the response. If more
-records exist than the specified \code{MaxRecords} value, a pagination token
-called a marker is included in the response so that you can retrieve the
-remaining results.
+\item{MaxRecords}{The maximum number of records to include in the response. If more records exist than the specified \code{MaxRecords} value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.
 
 Default: 100
 
 Constraints: Minimum 20, maximum 1000.}
 
-\item{Marker}{An optional pagination token provided by a previous
-DescribeOrderableDBInstanceOptions request. If this parameter is
-specified, the response includes only records beyond the marker, up to
-the value specified by \code{MaxRecords}.}
+\item{Marker}{An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by \code{MaxRecords}.}
 }
 \description{
 Describes the orderable DB instance options for a specified DB engine.

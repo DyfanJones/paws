@@ -13,8 +13,7 @@ rds_backtrack_db_cluster(
 )
 }
 \arguments{
-\item{DBClusterIdentifier}{[required] The DB cluster identifier of the DB cluster to be backtracked. This
-parameter is stored as a lowercase string.
+\item{DBClusterIdentifier}{[required] The DB cluster identifier of the DB cluster to be backtracked. This parameter is stored as a lowercase string.
 
 Constraints:
 \itemize{
@@ -25,12 +24,9 @@ Constraints:
 
 Example: \code{my-cluster1}}
 
-\item{BacktrackTo}{[required] The timestamp of the time to backtrack the DB cluster to, specified in
-ISO 8601 format. For more information about ISO 8601, see the \href{https://en.wikipedia.org/wiki/ISO_8601}{ISO8601 Wikipedia page.}
+\item{BacktrackTo}{[required] The timestamp of the time to backtrack the DB cluster to, specified in ISO 8601 format. For more information about ISO 8601, see the \href{https://en.wikipedia.org/wiki/ISO_8601}{ISO8601 Wikipedia page.}
 
-If the specified time isn't a consistent time for the DB cluster, Aurora
-automatically chooses the nearest possible consistent time for the DB
-cluster.
+If the specified time isn't a consistent time for the DB cluster, Aurora automatically chooses the nearest possible consistent time for the DB cluster.
 
 Constraints:
 \itemize{
@@ -40,15 +36,9 @@ Constraints:
 
 Example: \verb{2017-07-08T18:00Z}}
 
-\item{Force}{Specifies whether to force the DB cluster to backtrack when binary
-logging is enabled. Otherwise, an error occurs when binary logging is
-enabled.}
+\item{Force}{Specifies whether to force the DB cluster to backtrack when binary logging is enabled. Otherwise, an error occurs when binary logging is enabled.}
 
-\item{UseEarliestTimeOnPointInTimeUnavailable}{Specifies whether to backtrack the DB cluster to the earliest possible
-backtrack time when \emph{BacktrackTo} is set to a timestamp earlier than the
-earliest backtrack time. When this parameter is disabled and
-\emph{BacktrackTo} is set to a timestamp earlier than the earliest backtrack
-time, an error occurs.}
+\item{UseEarliestTimeOnPointInTimeUnavailable}{Specifies whether to backtrack the DB cluster to the earliest possible backtrack time when \emph{BacktrackTo} is set to a timestamp earlier than the earliest backtrack time. When this parameter is disabled and \emph{BacktrackTo} is set to a timestamp earlier than the earliest backtrack time, an error occurs.}
 }
 \description{
 Backtracks a DB cluster to a specific time, without creating a new DB cluster.

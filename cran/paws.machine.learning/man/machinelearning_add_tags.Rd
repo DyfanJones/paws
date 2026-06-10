@@ -7,9 +7,7 @@
 machinelearning_add_tags(Tags, ResourceId, ResourceType)
 }
 \arguments{
-\item{Tags}{[required] The key-value pairs to use to create tags. If you specify a key without
-specifying a value, Amazon ML creates a tag with the specified key and a
-value of null.}
+\item{Tags}{[required] The key-value pairs to use to create tags. If you specify a key without specifying a value, Amazon ML creates a tag with the specified key and a value of null.}
 
 \item{ResourceId}{[required] The ID of the ML object to tag. For example, \code{exampleModelId}.}
 

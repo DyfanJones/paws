@@ -19,13 +19,9 @@ codepipeline_list_deploy_action_execution_targets(
 
 \item{filters}{Filters the targets for a specified deploy action.}
 
-\item{maxResults}{The maximum number of results to return in a single call. To retrieve
-the remaining results, make another call with the returned nextToken
-value.}
+\item{maxResults}{The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value.}
 
-\item{nextToken}{An identifier that was returned from the previous list action types
-call, which can be used to return the next set of action types in the
-list.}
+\item{nextToken}{An identifier that was returned from the previous list action types call, which can be used to return the next set of action types in the list.}
 }
 \description{
 Lists the targets for the deploy action.

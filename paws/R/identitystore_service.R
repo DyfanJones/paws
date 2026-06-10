@@ -5,20 +5,11 @@ NULL
 #' AWS SSO Identity Store
 #'
 #' @description
-#' The Identity Store service used by IAM Identity Center provides a single
-#' place to retrieve all of your identities (users and groups). For more
-#' information, see the [IAM Identity Center User
-#' Guide](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html).
+#' The Identity Store service used by IAM Identity Center provides a single place to retrieve all of your identities (users and groups). For more information, see the [IAM Identity Center User Guide](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html).
 #' 
-#' This reference guide describes the identity store operations that you
-#' can call programmatically and includes detailed information about data
-#' types and errors.
+#' This reference guide describes the identity store operations that you can call programmatically and includes detailed information about data types and errors.
 #' 
-#' IAM Identity Center uses the `sso`, `sso-directory`, and `identitystore`
-#' API namespaces. The `sso-directory` and `identitystore` namespaces
-#' authorize access to data in the Identity Store. Make sure your policies
-#' with IAM actions from these two namespaces are consistent to avoid
-#' conflicting authorization to the same data.
+#' IAM Identity Center uses the `sso`, `sso-directory`, and `identitystore` API namespaces. The `sso-directory` and `identitystore` namespaces authorize access to data in the Identity Store. Make sure your policies with IAM actions from these two namespaces are consistent to avoid conflicting authorization to the same data.
 #'
 #' @param
 #' config

@@ -11,17 +11,13 @@ lexmodelsv2_delete_resource_policy_statement(
 )
 }
 \arguments{
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the bot or bot alias that the resource
-policy is attached to.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.}
 
 \item{statementId}{[required] The name of the statement (SID) to delete from the policy.}
 
-\item{expectedRevisionId}{The identifier of the revision of the policy to delete the statement
-from. If this revision ID doesn't match the current revision ID, Amazon
-Lex throws an exception.
+\item{expectedRevisionId}{The identifier of the revision of the policy to delete the statement from. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.
 
-If you don't specify a revision, Amazon Lex removes the current contents
-of the statement.}
+If you don't specify a revision, Amazon Lex removes the current contents of the statement.}
 }
 \description{
 Deletes a policy statement from a resource policy. If you delete the last statement from a policy, the policy is deleted. If you specify a statement ID that doesn't exist in the policy, or if the bot or bot alias doesn't have a policy attached, Amazon Lex returns an exception.

@@ -16,8 +16,7 @@ redshift_modify_cluster_subnet_group(
 
 \item{Description}{A text description of the subnet group to be modified.}
 
-\item{SubnetIds}{[required] An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a
-single request.}
+\item{SubnetIds}{[required] An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.}
 }
 \description{
 Modifies a cluster subnet group to include the specified list of VPC subnets. The operation replaces the existing list of subnets with the new list of subnets.

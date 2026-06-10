@@ -48,13 +48,9 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Amazon Polly is a web service that makes it easy to synthesize speech
-from text.
+Amazon Polly is a web service that makes it easy to synthesize speech from text.
 
-The Amazon Polly service provides API operations for synthesizing
-high-quality speech from plain text and Speech Synthesis Markup Language
-(SSML), along with managing pronunciations lexicons that enable you to
-get the best results for your application domain.
+The Amazon Polly service provides API operations for synthesizing high-quality speech from plain text and Speech Synthesis Markup Language (SSML), along with managing pronunciations lexicons that enable you to get the best results for your application domain.
 }
 \section{Service syntax}{
 
@@ -102,6 +98,7 @@ get the best results for your application domain.
 \link[=polly_list_lexicons]{list_lexicons} \tab Returns a list of pronunciation lexicons stored in an Amazon Web Services Region\cr
 \link[=polly_list_speech_synthesis_tasks]{list_speech_synthesis_tasks} \tab Returns a list of SpeechSynthesisTask objects ordered by their creation date\cr
 \link[=polly_put_lexicon]{put_lexicon} \tab Stores a pronunciation lexicon in an Amazon Web Services Region\cr
+\link[=polly_start_speech_synthesis_stream]{start_speech_synthesis_stream} \tab Synthesizes UTF-8 input, plain text, or SSML over a bidirectional streaming connection\cr
 \link[=polly_start_speech_synthesis_task]{start_speech_synthesis_task} \tab Allows the creation of an asynchronous synthesis task, by starting a new SpeechSynthesisTask\cr
 \link[=polly_synthesize_speech]{synthesize_speech} \tab Synthesizes UTF-8 input, plain text or SSML, to a stream of bytes
 }

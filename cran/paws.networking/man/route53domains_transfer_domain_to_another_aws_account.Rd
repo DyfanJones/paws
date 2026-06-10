@@ -8,11 +8,9 @@ another Amazon Web Services account}
 route53domains_transfer_domain_to_another_aws_account(DomainName, AccountId)
 }
 \arguments{
-\item{DomainName}{[required] The name of the domain that you want to transfer from the current Amazon
-Web Services account to another account.}
+\item{DomainName}{[required] The name of the domain that you want to transfer from the current Amazon Web Services account to another account.}
 
-\item{AccountId}{[required] The account ID of the Amazon Web Services account that you want to
-transfer the domain to, for example, \code{111122223333}.}
+\item{AccountId}{[required] The account ID of the Amazon Web Services account that you want to transfer the domain to, for example, \code{111122223333}.}
 }
 \description{
 Transfers a domain from the current Amazon Web Services account to another Amazon Web Services account. Note the following:

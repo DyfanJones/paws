@@ -7,8 +7,7 @@
 billingconductor_disassociate_accounts(Arn, AccountIds)
 }
 \arguments{
-\item{Arn}{[required] The Amazon Resource Name (ARN) of the billing group that the array of
-account IDs will disassociate from.}
+\item{Arn}{[required] The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from.}
 
 \item{AccountIds}{[required] The array of account IDs to disassociate.}
 }

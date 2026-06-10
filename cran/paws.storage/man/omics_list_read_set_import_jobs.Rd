@@ -15,8 +15,7 @@ omics_list_read_set_import_jobs(
 \arguments{
 \item{maxResults}{The maximum number of jobs to return in one page of results.}
 
-\item{nextToken}{Specify the pagination token from a previous request to retrieve the
-next page of results.}
+\item{nextToken}{Specify the pagination token from a previous request to retrieve the next page of results.}
 
 \item{sequenceStoreId}{[required] The jobs' sequence store ID.}
 

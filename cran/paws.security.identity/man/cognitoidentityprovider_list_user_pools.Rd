@@ -8,15 +8,9 @@ account}
 cognitoidentityprovider_list_user_pools(NextToken = NULL, MaxResults)
 }
 \arguments{
-\item{NextToken}{This API operation returns a limited number of results. The pagination
-token is an identifier that you can present in an additional API request
-with the same parameters. When you include the pagination token, Amazon
-Cognito returns the next set of items after the current list. Subsequent
-requests return a new pagination token. By use of this token, you can
-paginate through the full list of items.}
+\item{NextToken}{This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.}
 
-\item{MaxResults}{[required] The maximum number of user pools that you want Amazon Cognito to return
-in the response.}
+\item{MaxResults}{[required] The maximum number of user pools that you want Amazon Cognito to return in the response.}
 }
 \description{
 Lists user pools and their details in the current Amazon Web Services account.

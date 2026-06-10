@@ -22,8 +22,7 @@ networkmanager_update_device(
 
 \item{DeviceId}{[required] The ID of the device.}
 
-\item{AWSLocation}{The Amazon Web Services location of the device, if applicable. For an
-on-premises device, you can omit this parameter.}
+\item{AWSLocation}{The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.}
 
 \item{Description}{A description of the device.
 
@@ -43,7 +42,7 @@ Constraints: Maximum length of 128 characters.}
 
 Constraints: Maximum length of 128 characters.}
 
-\item{Location}{}
+\item{Location}{Describes a location.}
 
 \item{SiteId}{The ID of the site.}
 }

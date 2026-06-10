@@ -7,15 +7,12 @@ NULL
 #' view
 #'
 #' @description
-#' Associates one or more source billing views with an existing billing
-#' view. This allows creating aggregate billing views that combine data
-#' from multiple sources.
+#' Associates one or more source billing views with an existing billing view. This allows creating aggregate billing views that combine data from multiple sources.
 #'
 #' @usage
 #' billing_associate_source_views(arn, sourceViews)
 #'
-#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) of the billing view to associate source
-#' views with.
+#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) of the billing view to associate source views with.
 #' @param sourceViews &#91;required&#93; A list of ARNs of the source billing views to associate.
 #'
 #' @return
@@ -71,18 +68,10 @@ billing_associate_source_views <- function(arn, sourceViews) {
 #'
 #' @param name &#91;required&#93; The name of the billing view.
 #' @param description The description of the billing view.
-#' @param sourceViews &#91;required&#93; A list of billing views used as the data source for the custom billing
-#' view.
-#' @param dataFilterExpression See
-#' [Expression](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html).
-#' Billing view only supports `LINKED_ACCOUNT` and `Tags`.
-#' @param clientToken A unique, case-sensitive identifier you specify to ensure idempotency of
-#' the request. Idempotency ensures that an API request completes no more
-#' than one time. If the original request completes successfully, any
-#' subsequent retries complete successfully without performing any further
-#' actions with an idempotent request.
-#' @param resourceTags A list of key value map specifying tags associated to the billing view
-#' being created.
+#' @param sourceViews &#91;required&#93; A list of billing views used as the data source for the custom billing view.
+#' @param dataFilterExpression See [Expression](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html). Billing view only supports `LINKED_ACCOUNT`, `Tags`, and `CostCategories`.
+#' @param clientToken A unique, case-sensitive identifier you specify to ensure idempotency of the request. Idempotency ensures that an API request completes no more than one time. If the original request completes successfully, any subsequent retries complete successfully without performing any further actions with an idempotent request.
+#' @param resourceTags A list of key value map specifying tags associated to the billing view being created.
 #'
 #' @return
 #' A list with the following syntax:
@@ -111,6 +100,12 @@ billing_associate_source_views <- function(arn, sourceViews) {
 #'       )
 #'     ),
 #'     tags = list(
+#'       key = "string",
+#'       values = list(
+#'         "string"
+#'       )
+#'     ),
+#'     costCategories = list(
 #'       key = "string",
 #'       values = list(
 #'         "string"
@@ -167,11 +162,8 @@ billing_create_billing_view <- function(name, description = NULL, sourceViews, d
 #' @usage
 #' billing_delete_billing_view(arn, force)
 #'
-#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) that can be used to uniquely identify the
-#' billing view.
-#' @param force If set to true, forces deletion of the billing view even if it has
-#' derived resources (e.g. other billing views or budgets). Use with
-#' caution as this may break dependent resources.
+#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.
+#' @param force If set to true, forces deletion of the billing view even if it has derived resources (e.g. other billing views or budgets). Use with caution as this may break dependent resources.
 #'
 #' @return
 #' A list with the following syntax:
@@ -217,15 +209,12 @@ billing_delete_billing_view <- function(arn, force = NULL) {
 #' existing billing view
 #'
 #' @description
-#' Removes the association between one or more source billing views and an
-#' existing billing view. This allows modifying the composition of
-#' aggregate billing views.
+#' Removes the association between one or more source billing views and an existing billing view. This allows modifying the composition of aggregate billing views.
 #'
 #' @usage
 #' billing_disassociate_source_views(arn, sourceViews)
 #'
-#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) of the billing view to disassociate
-#' source views from.
+#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) of the billing view to disassociate source views from.
 #' @param sourceViews &#91;required&#93; A list of ARNs of the source billing views to disassociate.
 #'
 #' @return
@@ -278,8 +267,7 @@ billing_disassociate_source_views <- function(arn, sourceViews) {
 #' @usage
 #' billing_get_billing_view(arn)
 #'
-#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) that can be used to uniquely identify the
-#' billing view.
+#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.
 #'
 #' @return
 #' A list with the following syntax:
@@ -300,6 +288,12 @@ billing_disassociate_source_views <- function(arn, sourceViews) {
 #'         )
 #'       ),
 #'       tags = list(
+#'         key = "string",
+#'         values = list(
+#'           "string"
+#'         )
+#'       ),
+#'       costCategories = list(
 #'         key = "string",
 #'         values = list(
 #'           "string"
@@ -370,14 +364,12 @@ billing_get_billing_view <- function(arn) {
 #' JSON format
 #'
 #' @description
-#' Returns the resource-based policy document attached to the resource in
-#' `JSON` format.
+#' Returns the resource-based policy document attached to the resource in `JSON` format.
 #'
 #' @usage
 #' billing_get_resource_policy(resourceArn)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the billing view resource to which the
-#' policy is attached to.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the billing view resource to which the policy is attached to.
 #'
 #' @return
 #' A list with the following syntax:
@@ -424,31 +416,20 @@ billing_get_resource_policy <- function(resourceArn) {
 #' @description
 #' Lists the billing views available for a given time period.
 #' 
-#' Every Amazon Web Services account has a unique `PRIMARY` billing view
-#' that represents the billing data available by default. Accounts that use
-#' Billing Conductor also have `BILLING_GROUP` billing views representing
-#' pro forma costs associated with each created billing group.
+#' Every Amazon Web Services account has a unique `PRIMARY` billing view that represents the billing data available by default. Accounts that use Billing Conductor also have `BILLING_GROUP` billing views representing pro forma costs associated with each created billing group.
 #'
 #' @usage
 #' billing_list_billing_views(activeTimeRange, arns, billingViewTypes,
 #'   names, ownerAccountId, sourceAccountId, maxResults, nextToken)
 #'
-#' @param activeTimeRange The time range for the billing views listed. `PRIMARY` billing view is
-#' always listed. `BILLING_GROUP` billing views are listed for time ranges
-#' when the associated billing group resource in Billing Conductor is
-#' active. The time range must be within one calendar month.
-#' @param arns The Amazon Resource Name (ARN) that can be used to uniquely identify the
-#' billing view.
+#' @param activeTimeRange The time range for the billing views listed. `PRIMARY` billing view is always listed. `BILLING_GROUP` billing views are listed for time ranges when the associated billing group resource in Billing Conductor is active. The time range must be within one calendar month.
+#' @param arns The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.
 #' @param billingViewTypes The type of billing view.
-#' @param names Filters the list of billing views by name. You can specify search
-#' criteria to match billing view names based on the search option
-#' provided.
+#' @param names Filters the list of billing views by name. You can specify search criteria to match billing view names based on the search option provided.
 #' @param ownerAccountId The list of owners of the billing view.
-#' @param sourceAccountId Filters the results to include only billing views that use the specified
-#' account as a source.
+#' @param sourceAccountId Filters the results to include only billing views that use the specified account as a source.
 #' @param maxResults The maximum number of billing views to retrieve. Default is 100.
-#' @param nextToken The pagination token that is used on subsequent calls to list billing
-#' views.
+#' @param nextToken The pagination token that is used on subsequent calls to list billing views.
 #'
 #' @return
 #' A list with the following syntax:
@@ -532,17 +513,14 @@ billing_list_billing_views <- function(activeTimeRange = NULL, arns = NULL, bill
 #' associated with the billing view
 #'
 #' @description
-#' Lists the source views (managed Amazon Web Services billing views)
-#' associated with the billing view.
+#' Lists the source views (managed Amazon Web Services billing views) associated with the billing view.
 #'
 #' @usage
 #' billing_list_source_views_for_billing_view(arn, maxResults, nextToken)
 #'
-#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) that can be used to uniquely identify the
-#' billing view.
+#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.
 #' @param maxResults The number of entries a paginated response contains.
-#' @param nextToken The pagination token that is used on subsequent calls to list billing
-#' views.
+#' @param nextToken The pagination token that is used on subsequent calls to list billing views.
 #'
 #' @return
 #' A list with the following syntax:
@@ -646,8 +624,7 @@ billing_list_tags_for_resource <- function(resourceArn) {
 #' resource
 #'
 #' @description
-#' An API operation for adding one or more tags (key-value pairs) to a
-#' resource.
+#' An API operation for adding one or more tags (key-value pairs) to a resource.
 #'
 #' @usage
 #' billing_tag_resource(resourceArn, resourceTags)
@@ -698,8 +675,7 @@ billing_tag_resource <- function(resourceArn, resourceTags) {
 #' Removes one or more tags from a resource
 #'
 #' @description
-#' Removes one or more tags from a resource. Specify only tag keys in your
-#' request. Don't specify the value.
+#' Removes one or more tags from a resource. Specify only tag keys in your request. Don't specify the value.
 #'
 #' @usage
 #' billing_untag_resource(resourceArn, resourceTagKeys)
@@ -753,13 +729,10 @@ billing_untag_resource <- function(resourceArn, resourceTagKeys) {
 #' billing_update_billing_view(arn, name, description,
 #'   dataFilterExpression)
 #'
-#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) that can be used to uniquely identify the
-#' billing view.
+#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.
 #' @param name The name of the billing view.
 #' @param description The description of the billing view.
-#' @param dataFilterExpression See
-#' [Expression](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html).
-#' Billing view only supports `LINKED_ACCOUNT` and `Tags`.
+#' @param dataFilterExpression See [Expression](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html). Billing view only supports `LINKED_ACCOUNT`, `Tags`, and `CostCategories`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -786,6 +759,12 @@ billing_untag_resource <- function(resourceArn, resourceTagKeys) {
 #'       )
 #'     ),
 #'     tags = list(
+#'       key = "string",
+#'       values = list(
+#'         "string"
+#'       )
+#'     ),
+#'     costCategories = list(
 #'       key = "string",
 #'       values = list(
 #'         "string"

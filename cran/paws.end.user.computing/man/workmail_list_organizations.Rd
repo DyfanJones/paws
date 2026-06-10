@@ -7,8 +7,7 @@
 workmail_list_organizations(NextToken = NULL, MaxResults = NULL)
 }
 \arguments{
-\item{NextToken}{The token to use to retrieve the next page of results. The first call
-does not contain any tokens.}
+\item{NextToken}{The token to use to retrieve the next page of results. The first call does not contain any tokens.}
 
 \item{MaxResults}{The maximum number of results to return in a single call.}
 }

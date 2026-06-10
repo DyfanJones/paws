@@ -16,54 +16,31 @@ sagemaker_list_clusters(
 )
 }
 \arguments{
-\item{CreationTimeAfter}{Set a start time for the time range during which you want to list
-SageMaker HyperPod clusters. Timestamps are formatted according to the
-ISO 8601 standard.
+\item{CreationTimeAfter}{Set a start time for the time range during which you want to list SageMaker HyperPod clusters. Timestamps are formatted according to the ISO 8601 standard.
 
 Acceptable formats include:
 \itemize{
-\item \code{YYYY-MM-DDThh:mm:ss.sssTZD} (UTC), for example,
-\verb{2014-10-01T20:30:00.000Z}
-\item \code{YYYY-MM-DDThh:mm:ss.sssTZD} (with offset), for example,
-\verb{2014-10-01T12:30:00.000-08:00}
+\item \code{YYYY-MM-DDThh:mm:ss.sssTZD} (UTC), for example, \verb{2014-10-01T20:30:00.000Z}
+\item \code{YYYY-MM-DDThh:mm:ss.sssTZD} (with offset), for example, \verb{2014-10-01T12:30:00.000-08:00}
 \item \code{YYYY-MM-DD}, for example, \code{2014-10-01}
-\item Unix time in seconds, for example, \code{1412195400}. This is also
-referred to as Unix Epoch time and represents the number of seconds
-since midnight, January 1, 1970 UTC.
+\item Unix time in seconds, for example, \code{1412195400}. This is also referred to as Unix Epoch time and represents the number of seconds since midnight, January 1, 1970 UTC.
 }
 
-For more information about the timestamp format, see
-\href{https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp}{Timestamp}
-in the \emph{Amazon Web Services Command Line Interface User Guide}.}
+For more information about the timestamp format, see \href{https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp}{Timestamp} in the \emph{Amazon Web Services Command Line Interface User Guide}.}
 
-\item{CreationTimeBefore}{Set an end time for the time range during which you want to list
-SageMaker HyperPod clusters. A filter that returns nodes in a SageMaker
-HyperPod cluster created before the specified time. The acceptable
-formats are the same as the timestamp formats for \code{CreationTimeAfter}.
-For more information about the timestamp format, see
-\href{https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp}{Timestamp}
-in the \emph{Amazon Web Services Command Line Interface User Guide}.}
+\item{CreationTimeBefore}{Set an end time for the time range during which you want to list SageMaker HyperPod clusters. A filter that returns nodes in a SageMaker HyperPod cluster created before the specified time. The acceptable formats are the same as the timestamp formats for \code{CreationTimeAfter}. For more information about the timestamp format, see \href{https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp}{Timestamp} in the \emph{Amazon Web Services Command Line Interface User Guide}.}
 
-\item{MaxResults}{Specifies the maximum number of clusters to evaluate for the operation
-(not necessarily the number of matching items). After SageMaker
-processes the number of clusters up to \code{MaxResults}, it stops the
-operation and returns the matching clusters up to that point. If all the
-matching clusters are desired, SageMaker will go through all the
-clusters until \code{NextToken} is empty.}
+\item{MaxResults}{Specifies the maximum number of clusters to evaluate for the operation (not necessarily the number of matching items). After SageMaker processes the number of clusters up to \code{MaxResults}, it stops the operation and returns the matching clusters up to that point. If all the matching clusters are desired, SageMaker will go through all the clusters until \code{NextToken} is empty.}
 
 \item{NameContains}{Set the maximum number of instances to print in the list.}
 
 \item{NextToken}{Set the next token to retrieve the list of SageMaker HyperPod clusters.}
 
-\item{SortBy}{The field by which to sort results. The default value is
-\code{CREATION_TIME}.}
+\item{SortBy}{The field by which to sort results. The default value is \code{CREATION_TIME}.}
 
 \item{SortOrder}{The sort order for results. The default value is \code{Ascending}.}
 
-\item{TrainingPlanArn}{The Amazon Resource Name (ARN); of the training plan to filter clusters
-by. For more information about reserving GPU capacity for your SageMaker
-HyperPod clusters using Amazon SageMaker Training Plan, see
-\code{\link[=sagemaker_create_training_plan]{create_training_plan}}.}
+\item{TrainingPlanArn}{The Amazon Resource Name (ARN); of the training plan to filter clusters by. For more information about reserving GPU capacity for your SageMaker HyperPod clusters using Amazon SageMaker Training Plan, see \code{\link[=sagemaker_create_training_plan]{create_training_plan}}.}
 }
 \description{
 Retrieves the list of SageMaker HyperPod clusters.

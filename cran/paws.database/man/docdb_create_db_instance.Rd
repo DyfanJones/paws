@@ -32,8 +32,7 @@ Constraints:
 
 Example: \code{mydbinstance}}
 
-\item{DBInstanceClass}{[required] The compute and memory capacity of the instance; for example,
-\code{db.r5.large}.}
+\item{DBInstanceClass}{[required] The compute and memory capacity of the instance; for example, \code{db.r5.large}.}
 
 \item{Engine}{[required] The name of the database engine to be used for this instance.
 
@@ -41,64 +40,47 @@ Valid value: \code{docdb}}
 
 \item{AvailabilityZone}{The Amazon EC2 Availability Zone that the instance is created in.
 
-Default: A random, system-chosen Availability Zone in the endpoint's
-Amazon Web Services Region.
+Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.
 
 Example: \verb{us-east-1d}}
 
-\item{PreferredMaintenanceWindow}{The time range each week during which system maintenance can occur, in
-Universal Coordinated Time (UTC).
+\item{PreferredMaintenanceWindow}{The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC).
 
 Format: \code{ddd:hh24:mi-ddd:hh24:mi}
 
-The default is a 30-minute window selected at random from an 8-hour
-block of time for each Amazon Web Services Region, occurring on a random
-day of the week.
+The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.
 
 Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
 
 Constraints: Minimum 30-minute window.}
 
-\item{AutoMinorVersionUpgrade}{This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB
-does not perform minor version upgrades regardless of the value set.
+\item{AutoMinorVersionUpgrade}{This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does not perform minor version upgrades regardless of the value set.
 
 Default: \code{false}}
 
-\item{Tags}{The tags to be assigned to the instance. You can assign up to 10 tags to
-an instance.}
+\item{Tags}{The tags to be assigned to the instance. You can assign up to 10 tags to an instance.}
 
 \item{DBClusterIdentifier}{[required] The identifier of the cluster that the instance will belong to.}
 
-\item{CopyTagsToSnapshot}{A value that indicates whether to copy tags from the DB instance to
-snapshots of the DB instance. By default, tags are not copied.}
+\item{CopyTagsToSnapshot}{A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.}
 
-\item{PromotionTier}{A value that specifies the order in which an Amazon DocumentDB replica
-is promoted to the primary instance after a failure of the existing
-primary instance.
+\item{PromotionTier}{A value that specifies the order in which an Amazon DocumentDB replica is promoted to the primary instance after a failure of the existing primary instance.
 
 Default: 1
 
 Valid values: 0-15}
 
-\item{EnablePerformanceInsights}{A value that indicates whether to enable Performance Insights for the DB
-Instance. For more information, see \href{https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html}{Using Amazon Performance Insights}.}
+\item{EnablePerformanceInsights}{A value that indicates whether to enable Performance Insights for the DB Instance. For more information, see \href{https://docs.aws.amazon.com/documentdb/latest/devguide/performance-insights.html}{Using Amazon Performance Insights}.}
 
 \item{PerformanceInsightsKMSKeyId}{The KMS key identifier for encryption of Performance Insights data.
 
-The KMS key identifier is the key ARN, key ID, alias ARN, or alias name
-for the KMS key.
+The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.
 
-If you do not specify a value for PerformanceInsightsKMSKeyId, then
-Amazon DocumentDB uses your default KMS key. There is a default KMS key
-for your Amazon Web Services account. Your Amazon Web Services account
-has a different default KMS key for each Amazon Web Services region.}
+If you do not specify a value for PerformanceInsightsKMSKeyId, then Amazon DocumentDB uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services region.}
 
-\item{CACertificateIdentifier}{The CA certificate identifier to use for the DB instance's server
-certificate.
+\item{CACertificateIdentifier}{The CA certificate identifier to use for the DB instance's server certificate.
 
-For more information, see \href{https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html}{Updating Your Amazon DocumentDB TLS Certificates}
-and \href{https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html}{Encrypting Data in Transit}
-in the \emph{Amazon DocumentDB Developer Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/documentdb/latest/devguide/ca_cert_rotation.html}{Updating Your Amazon DocumentDB TLS Certificates} and \href{https://docs.aws.amazon.com/documentdb/latest/devguide/security.encryption.ssl.html}{Encrypting Data in Transit} in the \emph{Amazon DocumentDB Developer Guide}.}
 }
 \description{
 Creates a new instance.

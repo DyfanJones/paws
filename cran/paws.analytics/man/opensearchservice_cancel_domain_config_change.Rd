@@ -8,10 +8,9 @@ domain}
 opensearchservice_cancel_domain_config_change(DomainName, DryRun = NULL)
 }
 \arguments{
-\item{DomainName}{[required]}
+\item{DomainName}{[required] The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.}
 
-\item{DryRun}{When set to \code{True}, returns the list of change IDs and properties that
-will be cancelled without actually cancelling the change.}
+\item{DryRun}{When set to \code{True}, returns the list of change IDs and properties that will be cancelled without actually cancelling the change.}
 }
 \description{
 Cancels a pending configuration change on an Amazon OpenSearch Service domain.

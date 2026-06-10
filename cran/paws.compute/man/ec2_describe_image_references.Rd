@@ -17,16 +17,9 @@ ec2_describe_image_references(
 \arguments{
 \item{ImageIds}{[required] The IDs of the images to check for resource references.}
 
-\item{IncludeAllResourceTypes}{Specifies whether to check all supported Amazon Web Services resource
-types for image references. When specified, default values are applied
-for \code{ResourceTypeOptions}. For the default values, see \href{https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-references.html#how-ami-references-works}{How AMI reference checks work}
-in the \emph{Amazon EC2 User Guide}. If you also specify \code{ResourceTypes} with
-\code{ResourceTypeOptions}, your specified values override the default
-values.
+\item{IncludeAllResourceTypes}{Specifies whether to check all supported Amazon Web Services resource types for image references. When specified, default values are applied for \code{ResourceTypeOptions}. For the default values, see \href{https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-ami-references.html#how-ami-references-works}{How AMI reference checks work} in the \emph{Amazon EC2 User Guide}. If you also specify \code{ResourceTypes} with \code{ResourceTypeOptions}, your specified values override the default values.
 
-Supported resource types: \code{ec2:Instance} | \code{ec2:LaunchTemplate} |
-\code{ssm:Parameter} | \code{imagebuilder:ImageRecipe} |
-\code{imagebuilder:ContainerRecipe}
+Supported resource types: \code{ec2:Instance} | \code{ec2:LaunchTemplate} | \code{ssm:Parameter} | \code{imagebuilder:ImageRecipe} | \code{imagebuilder:ContainerRecipe}
 
 Either \code{IncludeAllResourceTypes} or \code{ResourceTypes} must be specified.}
 
@@ -34,18 +27,11 @@ Either \code{IncludeAllResourceTypes} or \code{ResourceTypes} must be specified.
 
 Either \code{IncludeAllResourceTypes} or \code{ResourceTypes} must be specified.}
 
-\item{NextToken}{The token returned from a previous paginated request. Pagination
-continues from the end of the items returned by the previous request.}
+\item{NextToken}{The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
-\item{MaxResults}{The maximum number of items to return for this request. To get the next
-page of items, make another request with the token returned in the
-output. For more information, see
-\href{https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination}{Pagination}.}
+\item{MaxResults}{The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/Query-Requests.html#api-pagination}{Pagination}.}
 }
 \description{
 Describes your Amazon Web Services resources that are referencing the specified images.

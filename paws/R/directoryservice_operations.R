@@ -7,14 +7,12 @@ NULL
 #' owner account
 #'
 #' @description
-#' Accepts a directory sharing request that was sent from the directory
-#' owner account.
+#' Accepts a directory sharing request that was sent from the directory owner account.
 #'
 #' @usage
 #' directoryservice_accept_shared_directory(SharedDirectoryId)
 #'
-#' @param SharedDirectoryId &#91;required&#93; Identifier of the shared directory in the directory consumer account.
-#' This identifier is different for each directory owner account.
+#' @param SharedDirectoryId &#91;required&#93; Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.
 #'
 #' @return
 #' A list with the following syntax:
@@ -74,92 +72,59 @@ directoryservice_accept_shared_directory <- function(SharedDirectoryId) {
 #' route traffic to and from your Microsoft AD on Amazon Web Services
 #'
 #' @description
-#' If the DNS server for your self-managed domain uses a publicly
-#' addressable IP address, you must add a CIDR address block to correctly
-#' route traffic to and from your Microsoft AD on Amazon Web Services.
-#' *AddIpRoutes* adds this address block. You can also use *AddIpRoutes* to
-#' facilitate routing traffic that uses public IP ranges from your
-#' Microsoft AD on Amazon Web Services to a peer VPC.
+#' If the DNS server for your self-managed domain uses a publicly addressable IP address, you must add a CIDR address block to correctly route traffic to and from your Microsoft AD on Amazon Web Services. *AddIpRoutes* adds this address block. You can also use *AddIpRoutes* to facilitate routing traffic that uses public IP ranges from your Microsoft AD on Amazon Web Services to a peer VPC.
 #' 
-#' Before you call *AddIpRoutes*, ensure that all of the required
-#' permissions have been explicitly granted through a policy. For details
-#' about what permissions are required to run the *AddIpRoutes* operation,
-#' see [Directory Service API Permissions: Actions, Resources, and
-#' Conditions
-#' Reference](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html).
+#' Before you call *AddIpRoutes*, ensure that all of the required permissions have been explicitly granted through a policy. For details about what permissions are required to run the *AddIpRoutes* operation, see [Directory Service API Permissions: Actions, Resources, and Conditions Reference](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html).
 #'
 #' @usage
 #' directoryservice_add_ip_routes(DirectoryId, IpRoutes,
 #'   UpdateSecurityGroupForDirectoryControllers)
 #'
 #' @param DirectoryId &#91;required&#93; Identifier (ID) of the directory to which to add the address block.
-#' @param IpRoutes &#91;required&#93; IP address blocks, using CIDR format, of the traffic to route. This is
-#' often the IP address block of the DNS server used for your self-managed
-#' domain.
-#' @param UpdateSecurityGroupForDirectoryControllers If set to true, updates the inbound and outbound rules of the security
-#' group that has the description: "Amazon Web Services created security
-#' group for *directory ID* directory controllers." Following are the new
-#' rules:
+#' @param IpRoutes &#91;required&#93; IP address blocks, using CIDR format, of the traffic to route. This is often the IP address block of the DNS server used for your self-managed domain.
+#' @param UpdateSecurityGroupForDirectoryControllers If set to true, updates the inbound and outbound rules of the security group that has the description: "Amazon Web Services created security group for *directory ID* directory controllers." Following are the new rules:
 #' 
 #' Inbound:
 #' 
-#' -   Type: Custom UDP Rule, Protocol: UDP, Range: 88, Source: Managed
-#'     Microsoft AD VPC IPv4 CIDR
+#' -   Type: Custom UDP Rule, Protocol: UDP, Range: 88, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: Custom UDP Rule, Protocol: UDP, Range: 123, Source: Managed
-#'     Microsoft AD VPC IPv4 CIDR
+#' -   Type: Custom UDP Rule, Protocol: UDP, Range: 123, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: Custom UDP Rule, Protocol: UDP, Range: 138, Source: Managed
-#'     Microsoft AD VPC IPv4 CIDR
+#' -   Type: Custom UDP Rule, Protocol: UDP, Range: 138, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: Custom UDP Rule, Protocol: UDP, Range: 389, Source: Managed
-#'     Microsoft AD VPC IPv4 CIDR
+#' -   Type: Custom UDP Rule, Protocol: UDP, Range: 389, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: Custom UDP Rule, Protocol: UDP, Range: 464, Source: Managed
-#'     Microsoft AD VPC IPv4 CIDR
+#' -   Type: Custom UDP Rule, Protocol: UDP, Range: 464, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: Custom UDP Rule, Protocol: UDP, Range: 445, Source: Managed
-#'     Microsoft AD VPC IPv4 CIDR
+#' -   Type: Custom UDP Rule, Protocol: UDP, Range: 445, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: Custom TCP Rule, Protocol: TCP, Range: 88, Source: Managed
-#'     Microsoft AD VPC IPv4 CIDR
+#' -   Type: Custom TCP Rule, Protocol: TCP, Range: 88, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: Custom TCP Rule, Protocol: TCP, Range: 135, Source: Managed
-#'     Microsoft AD VPC IPv4 CIDR
+#' -   Type: Custom TCP Rule, Protocol: TCP, Range: 135, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: Custom TCP Rule, Protocol: TCP, Range: 445, Source: Managed
-#'     Microsoft AD VPC IPv4 CIDR
+#' -   Type: Custom TCP Rule, Protocol: TCP, Range: 445, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: Custom TCP Rule, Protocol: TCP, Range: 464, Source: Managed
-#'     Microsoft AD VPC IPv4 CIDR
+#' -   Type: Custom TCP Rule, Protocol: TCP, Range: 464, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: Custom TCP Rule, Protocol: TCP, Range: 636, Source: Managed
-#'     Microsoft AD VPC IPv4 CIDR
+#' -   Type: Custom TCP Rule, Protocol: TCP, Range: 636, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: Custom TCP Rule, Protocol: TCP, Range: 1024-65535, Source:
-#'     Managed Microsoft AD VPC IPv4 CIDR
+#' -   Type: Custom TCP Rule, Protocol: TCP, Range: 1024-65535, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: Custom TCP Rule, Protocol: TCP, Range: 3268-33269, Source:
-#'     Managed Microsoft AD VPC IPv4 CIDR
+#' -   Type: Custom TCP Rule, Protocol: TCP, Range: 3268-33269, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: DNS (UDP), Protocol: UDP, Range: 53, Source: Managed Microsoft
-#'     AD VPC IPv4 CIDR
+#' -   Type: DNS (UDP), Protocol: UDP, Range: 53, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: DNS (TCP), Protocol: TCP, Range: 53, Source: Managed Microsoft
-#'     AD VPC IPv4 CIDR
+#' -   Type: DNS (TCP), Protocol: TCP, Range: 53, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: LDAP, Protocol: TCP, Range: 389, Source: Managed Microsoft AD
-#'     VPC IPv4 CIDR
+#' -   Type: LDAP, Protocol: TCP, Range: 389, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
-#' -   Type: All ICMP, Protocol: All, Range: N/A, Source: Managed Microsoft
-#'     AD VPC IPv4 CIDR
+#' -   Type: All ICMP, Protocol: All, Range: N/A, Source: Managed Microsoft AD VPC IPv4 CIDR
 #' 
 #' Outbound:
 #' 
 #' -   Type: All traffic, Protocol: All, Range: All, Destination: 0.0.0.0/0
 #' 
-#' These security rules impact an internal network interface that is not
-#' exposed publicly.
+#' These security rules impact an internal network interface that is not exposed publicly.
 #'
 #' @return
 #' An empty list.
@@ -207,17 +172,14 @@ directoryservice_add_ip_routes <- function(DirectoryId, IpRoutes, UpdateSecurity
 #' directory
 #'
 #' @description
-#' Adds two domain controllers in the specified Region for the specified
-#' directory.
+#' Adds two domain controllers in the specified Region for the specified directory.
 #'
 #' @usage
 #' directoryservice_add_region(DirectoryId, RegionName, VPCSettings)
 #'
-#' @param DirectoryId &#91;required&#93; The identifier of the directory to which you want to add Region
-#' replication.
-#' @param RegionName &#91;required&#93; The name of the Region where you want to add domain controllers for
-#' replication. For example, `us-east-1`.
-#' @param VPCSettings &#91;required&#93; 
+#' @param DirectoryId &#91;required&#93; The identifier of the directory to which you want to add Region replication.
+#' @param RegionName &#91;required&#93; The name of the Region where you want to add domain controllers for replication. For example, `us-east-1`.
+#' @param VPCSettings &#91;required&#93; Contains VPC information for the [`create_directory`][directoryservice_create_directory], [`create_microsoft_ad`][directoryservice_create_microsoft_ad], or [`create_hybrid_ad`][directoryservice_create_hybrid_ad] operation.
 #'
 #' @return
 #' An empty list.
@@ -263,9 +225,7 @@ directoryservice_add_region <- function(DirectoryId, RegionName, VPCSettings) {
 #' Adds or overwrites one or more tags for the specified directory
 #'
 #' @description
-#' Adds or overwrites one or more tags for the specified directory. Each
-#' directory can have a maximum of 50 tags. Each tag consists of a key and
-#' optional value. Tag keys must be unique to each resource.
+#' Adds or overwrites one or more tags for the specified directory. Each directory can have a maximum of 50 tags. Each tag consists of a key and optional value. Tag keys must be unique to each resource.
 #'
 #' @usage
 #' directoryservice_add_tags_to_resource(ResourceId, Tags)
@@ -316,11 +276,7 @@ directoryservice_add_tags_to_resource <- function(ResourceId, Tags) {
 #' Cancels an in-progress schema extension to a Microsoft AD directory
 #'
 #' @description
-#' Cancels an in-progress schema extension to a Microsoft AD directory.
-#' Once a schema extension has started replicating to all domain
-#' controllers, the task can no longer be canceled. A schema extension can
-#' be canceled during any of the following states; `Initializing`,
-#' `CreatingSnapshot`, and `UpdatingSchema`.
+#' Cancels an in-progress schema extension to a Microsoft AD directory. Once a schema extension has started replicating to all domain controllers, the task can no longer be canceled. A schema extension can be canceled during any of the following states; `Initializing`, `CreatingSnapshot`, and `UpdatingSchema`.
 #'
 #' @usage
 #' directoryservice_cancel_schema_extension(DirectoryId, SchemaExtensionId)
@@ -368,29 +324,20 @@ directoryservice_cancel_schema_extension <- function(DirectoryId, SchemaExtensio
 #' @description
 #' Creates an AD Connector to connect to a self-managed directory.
 #' 
-#' Before you call
-#' [`connect_directory`][directoryservice_connect_directory], ensure that
-#' all of the required permissions have been explicitly granted through a
-#' policy. For details about what permissions are required to run the
-#' [`connect_directory`][directoryservice_connect_directory] operation, see
-#' [Directory Service API Permissions: Actions, Resources, and Conditions
-#' Reference](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html).
+#' Before you call [`connect_directory`][directoryservice_connect_directory], ensure that all of the required permissions have been explicitly granted through a policy. For details about what permissions are required to run the [`connect_directory`][directoryservice_connect_directory] operation, see [Directory Service API Permissions: Actions, Resources, and Conditions Reference](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html).
 #'
 #' @usage
 #' directoryservice_connect_directory(Name, ShortName, Password,
 #'   Description, Size, ConnectSettings, Tags, NetworkType)
 #'
-#' @param Name &#91;required&#93; The fully qualified name of your self-managed directory, such as
-#' `corp.example.com`.
+#' @param Name &#91;required&#93; The fully qualified name of your self-managed directory, such as `corp.example.com`.
 #' @param ShortName The NetBIOS name of your self-managed directory, such as `CORP`.
 #' @param Password &#91;required&#93; The password for your self-managed user account.
 #' @param Description A description for the directory.
 #' @param Size &#91;required&#93; The size of the directory.
-#' @param ConnectSettings &#91;required&#93; A DirectoryConnectSettings object that contains additional information
-#' for the operation.
+#' @param ConnectSettings &#91;required&#93; A DirectoryConnectSettings object that contains additional information for the operation.
 #' @param Tags The tags to be assigned to AD Connector.
-#' @param NetworkType The network type for your directory. The default value is `IPv4` or
-#' `IPv6` based on the provided subnet capabilities.
+#' @param NetworkType The network type for your directory. The default value is `IPv4` or `IPv6` based on the provided subnet capabilities.
 #'
 #' @return
 #' A list with the following syntax:
@@ -458,12 +405,9 @@ directoryservice_connect_directory <- function(Name, ShortName = NULL, Password,
 #' Creates an alias for a directory and assigns the alias to the directory
 #'
 #' @description
-#' Creates an alias for a directory and assigns the alias to the directory.
-#' The alias is used to construct the access URL for the directory, such as
-#' `http://<alias>.awsapps.com`.
+#' Creates an alias for a directory and assigns the alias to the directory. The alias is used to construct the access URL for the directory, such as `http://<alias>.awsapps.com`.
 #' 
-#' After an alias has been created, it cannot be deleted or reused, so this
-#' operation should only be used when absolutely necessary.
+#' After an alias has been created, it cannot be deleted or reused, so this operation should only be used when absolutely necessary.
 #'
 #' @usage
 #' directoryservice_create_alias(DirectoryId, Alias)
@@ -471,9 +415,7 @@ directoryservice_connect_directory <- function(Name, ShortName = NULL, Password,
 #' @param DirectoryId &#91;required&#93; The identifier of the directory for which to create the alias.
 #' @param Alias &#91;required&#93; The requested alias.
 #' 
-#' The alias must be unique amongst all aliases in Amazon Web Services.
-#' This operation throws an `EntityAlreadyExistsException` error if the
-#' alias already exists.
+#' The alias must be unique amongst all aliases in Amazon Web Services. This operation throws an `EntityAlreadyExistsException` error if the alias already exists.
 #'
 #' @return
 #' A list with the following syntax:
@@ -527,12 +469,9 @@ directoryservice_create_alias <- function(DirectoryId, Alias) {
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory in which to create the computer account.
 #' @param ComputerName &#91;required&#93; The name of the computer account.
-#' @param Password &#91;required&#93; A one-time password that is used to join the computer to the directory.
-#' You should generate a random, strong password to use for this parameter.
-#' @param OrganizationalUnitDistinguishedName The fully-qualified distinguished name of the organizational unit to
-#' place the computer account in.
-#' @param ComputerAttributes An array of Attribute objects that contain any LDAP attributes to apply
-#' to the computer account.
+#' @param Password &#91;required&#93; A one-time password that is used to join the computer to the directory. You should generate a random, strong password to use for this parameter.
+#' @param OrganizationalUnitDistinguishedName The fully-qualified distinguished name of the organizational unit to place the computer account in.
+#' @param ComputerAttributes An array of Attribute objects that contain any LDAP attributes to apply to the computer account.
 #'
 #' @return
 #' A list with the following syntax:
@@ -595,23 +534,16 @@ directoryservice_create_computer <- function(DirectoryId, ComputerName, Password
 #' directory
 #'
 #' @description
-#' Creates a conditional forwarder associated with your Amazon Web Services
-#' directory. Conditional forwarders are required in order to set up a
-#' trust relationship with another domain. The conditional forwarder points
-#' to the trusted domain.
+#' Creates a conditional forwarder associated with your Amazon Web Services directory. Conditional forwarders are required in order to set up a trust relationship with another domain. The conditional forwarder points to the trusted domain.
 #'
 #' @usage
 #' directoryservice_create_conditional_forwarder(DirectoryId,
 #'   RemoteDomainName, DnsIpAddrs, DnsIpv6Addrs)
 #'
-#' @param DirectoryId &#91;required&#93; The directory ID of the Amazon Web Services directory for which you are
-#' creating the conditional forwarder.
-#' @param RemoteDomainName &#91;required&#93; The fully qualified domain name (FQDN) of the remote domain with which
-#' you will set up a trust relationship.
-#' @param DnsIpAddrs The IP addresses of the remote DNS server associated with
-#' RemoteDomainName.
-#' @param DnsIpv6Addrs The IPv6 addresses of the remote DNS server associated with
-#' RemoteDomainName.
+#' @param DirectoryId &#91;required&#93; The directory ID of the Amazon Web Services directory for which you are creating the conditional forwarder.
+#' @param RemoteDomainName &#91;required&#93; The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.
+#' @param DnsIpAddrs The IP addresses of the remote DNS server associated with RemoteDomainName.
+#' @param DnsIpv6Addrs The IPv6 addresses of the remote DNS server associated with RemoteDomainName.
 #'
 #' @return
 #' An empty list.
@@ -657,17 +589,9 @@ directoryservice_create_conditional_forwarder <- function(DirectoryId, RemoteDom
 #' Creates a Simple AD directory
 #'
 #' @description
-#' Creates a Simple AD directory. For more information, see [Simple Active
-#' Directory](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_simple_ad.html)
-#' in the *Directory Service Admin Guide*.
+#' Creates a Simple AD directory. For more information, see [Simple Active Directory](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_simple_ad.html) in the *Directory Service Admin Guide*.
 #' 
-#' Before you call [`create_directory`][directoryservice_create_directory],
-#' ensure that all of the required permissions have been explicitly granted
-#' through a policy. For details about what permissions are required to run
-#' the [`create_directory`][directoryservice_create_directory] operation,
-#' see [Directory Service API Permissions: Actions, Resources, and
-#' Conditions
-#' Reference](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html).
+#' Before you call [`create_directory`][directoryservice_create_directory], ensure that all of the required permissions have been explicitly granted through a policy. For details about what permissions are required to run the [`create_directory`][directoryservice_create_directory] operation, see [Directory Service API Permissions: Actions, Resources, and Conditions Reference](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html).
 #'
 #' @usage
 #' directoryservice_create_directory(Name, ShortName, Password,
@@ -675,45 +599,30 @@ directoryservice_create_conditional_forwarder <- function(DirectoryId, RemoteDom
 #'
 #' @param Name &#91;required&#93; The fully qualified name for the directory, such as `corp.example.com`.
 #' @param ShortName The NetBIOS name of the directory, such as `CORP`.
-#' @param Password &#91;required&#93; The password for the directory administrator. The directory creation
-#' process creates a directory administrator account with the user name
-#' `Administrator` and this password.
+#' @param Password &#91;required&#93; The password for the directory administrator. The directory creation process creates a directory administrator account with the user name `Administrator` and this password.
 #' 
-#' If you need to change the password for the administrator account, you
-#' can use the
-#' [`reset_user_password`][directoryservice_reset_user_password] API call.
+#' If you need to change the password for the administrator account, you can use the [`reset_user_password`][directoryservice_reset_user_password] API call.
 #' 
-#' The regex pattern for this string is made up of the following
-#' conditions:
+#' The regex pattern for this string is made up of the following conditions:
 #' 
 #' -   Length (?=^.\{8,64\}$) – Must be between 8 and 64 characters
 #' 
-#' AND any 3 of the following password complexity rules required by Active
-#' Directory:
+#' AND any 3 of the following password complexity rules required by Active Directory:
 #' 
-#' -   Numbers and upper case and lowercase
-#'     (?=.*\\d)(?=.*\[A-Z\])(?=.*\[a-z\])
+#' -   Numbers and upper case and lowercase (?=.*\\d)(?=.*\[A-Z\])(?=.*\[a-z\])
 #' 
-#' -   Numbers and special characters and lower case
-#'     (?=.*\\d)(?=.*\[^A-Za-z0-9\\s\])(?=.*\[a-z\])
+#' -   Numbers and special characters and lower case (?=.*\\d)(?=.*\[^A-Za-z0-9\\s\])(?=.*\[a-z\])
 #' 
-#' -   Special characters and upper case and lower case
-#'     (?=.*\[^A-Za-z0-9\\s\])(?=.*\[A-Z\])(?=.*\[a-z\])
+#' -   Special characters and upper case and lower case (?=.*\[^A-Za-z0-9\\s\])(?=.*\[A-Z\])(?=.*\[a-z\])
 #' 
-#' -   Numbers and upper case and special characters
-#'     (?=.*\\d)(?=.*\[A-Z\])(?=.*\[^A-Za-z0-9\\s\])
+#' -   Numbers and upper case and special characters (?=.*\\d)(?=.*\[A-Z\])(?=.*\[^A-Za-z0-9\\s\])
 #' 
-#' For additional information about how Active Directory passwords are
-#' enforced, see [Password must meet complexity
-#' requirements](https://learn.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements)
-#' on the Microsoft website.
+#' For additional information about how Active Directory passwords are enforced, see [Password must meet complexity requirements](https://learn.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements) on the Microsoft website.
 #' @param Description A description for the directory.
 #' @param Size &#91;required&#93; The size of the directory.
-#' @param VpcSettings A DirectoryVpcSettings object that contains additional information for
-#' the operation.
+#' @param VpcSettings A DirectoryVpcSettings object that contains additional information for the operation.
 #' @param Tags The tags to be assigned to the Simple AD directory.
-#' @param NetworkType The network type for your directory. Simple AD supports IPv4 and
-#' Dual-stack only.
+#' @param NetworkType The network type for your directory. Simple AD supports IPv4 and Dual-stack only.
 #'
 #' @return
 #' A list with the following syntax:
@@ -775,34 +684,20 @@ directoryservice_create_directory <- function(Name, ShortName = NULL, Password, 
 #' Directory (AD) infrastructure and Amazon Web Services
 #'
 #' @description
-#' Creates a hybrid directory that connects your self-managed Active
-#' Directory (AD) infrastructure and Amazon Web Services.
+#' Creates a hybrid directory that connects your self-managed Active Directory (AD) infrastructure and Amazon Web Services.
 #' 
-#' You must have a successful directory assessment using
-#' [`start_ad_assessment`][directoryservice_start_ad_assessment] to
-#' validate your environment compatibility before you use this operation.
+#' You must have a successful directory assessment using [`start_ad_assessment`][directoryservice_start_ad_assessment] to validate your environment compatibility before you use this operation.
 #' 
-#' Updates are applied asynchronously. Use
-#' [`describe_directories`][directoryservice_describe_directories] to
-#' monitor the progress of directory creation.
+#' Updates are applied asynchronously. Use [`describe_directories`][directoryservice_describe_directories] to monitor the progress of directory creation.
 #'
 #' @usage
 #' directoryservice_create_hybrid_ad(SecretArn, AssessmentId, Tags)
 #'
-#' @param SecretArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon Web Services Secrets
-#' Manager secret that contains the credentials for the service account
-#' used to join hybrid domain controllers to your self-managed AD domain.
-#' This secret is used once and not stored.
+#' @param SecretArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials for the service account used to join hybrid domain controllers to your self-managed AD domain. This secret is used once and not stored.
 #' 
-#' The secret must contain key-value pairs with keys matching
-#' `customerAdAdminDomainUsername` and `customerAdAdminDomainPassword`. For
-#' example:
-#' `{"customerAdAdminDomainUsername":"carlos_salazar","customerAdAdminDomainPassword":"ExamplePassword123!"}`.
-#' @param AssessmentId &#91;required&#93; The unique identifier of the successful directory assessment that
-#' validates your self-managed AD environment. You must have a successful
-#' directory assessment before you create a hybrid directory.
-#' @param Tags The tags to be assigned to the directory. Each tag consists of a key and
-#' value pair. You can specify multiple tags as a list.
+#' The secret must contain key-value pairs with keys matching `customerAdAdminDomainUsername` and `customerAdAdminDomainPassword`. For example: `{"customerAdAdminDomainUsername":"carlos_salazar","customerAdAdminDomainPassword":"ExamplePassword123!"}`.
+#' @param AssessmentId &#91;required&#93; The unique identifier of the successful directory assessment that validates your self-managed AD environment. You must have a successful directory assessment before you create a hybrid directory.
+#' @param Tags The tags to be assigned to the directory. Each tag consists of a key and value pair. You can specify multiple tags as a list.
 #'
 #' @return
 #' A list with the following syntax:
@@ -855,17 +750,13 @@ directoryservice_create_hybrid_ad <- function(SecretArn, AssessmentId, Tags = NU
 #' your Amazon Web Services account
 #'
 #' @description
-#' Creates a subscription to forward real-time Directory Service domain
-#' controller security logs to the specified Amazon CloudWatch log group in
-#' your Amazon Web Services account.
+#' Creates a subscription to forward real-time Directory Service domain controller security logs to the specified Amazon CloudWatch log group in your Amazon Web Services account.
 #'
 #' @usage
 #' directoryservice_create_log_subscription(DirectoryId, LogGroupName)
 #'
-#' @param DirectoryId &#91;required&#93; Identifier of the directory to which you want to subscribe and receive
-#' real-time logs to your specified CloudWatch log group.
-#' @param LogGroupName &#91;required&#93; The name of the CloudWatch log group where the real-time domain
-#' controller logs are forwarded.
+#' @param DirectoryId &#91;required&#93; Identifier of the directory to which you want to subscribe and receive real-time logs to your specified CloudWatch log group.
+#' @param LogGroupName &#91;required&#93; The name of the CloudWatch log group where the real-time domain controller logs are forwarded.
 #'
 #' @return
 #' An empty list.
@@ -905,44 +796,24 @@ directoryservice_create_log_subscription <- function(DirectoryId, LogGroupName) 
 #' Creates a Microsoft AD directory in the Amazon Web Services Cloud
 #'
 #' @description
-#' Creates a Microsoft AD directory in the Amazon Web Services Cloud. For
-#' more information, see [Managed Microsoft
-#' AD](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html)
-#' in the *Directory Service Admin Guide*.
+#' Creates a Microsoft AD directory in the Amazon Web Services Cloud. For more information, see [Managed Microsoft AD](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html) in the *Directory Service Admin Guide*.
 #' 
-#' Before you call *CreateMicrosoftAD*, ensure that all of the required
-#' permissions have been explicitly granted through a policy. For details
-#' about what permissions are required to run the *CreateMicrosoftAD*
-#' operation, see [Directory Service API Permissions: Actions, Resources,
-#' and Conditions
-#' Reference](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html).
+#' Before you call *CreateMicrosoftAD*, ensure that all of the required permissions have been explicitly granted through a policy. For details about what permissions are required to run the *CreateMicrosoftAD* operation, see [Directory Service API Permissions: Actions, Resources, and Conditions Reference](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html).
 #'
 #' @usage
 #' directoryservice_create_microsoft_ad(Name, ShortName, Password,
 #'   Description, VpcSettings, Edition, Tags, NetworkType)
 #'
-#' @param Name &#91;required&#93; The fully qualified domain name for the Managed Microsoft AD directory,
-#' such as `corp.example.com`. This name will resolve inside your VPC only.
-#' It does not need to be publicly resolvable.
-#' @param ShortName The NetBIOS name for your domain, such as `CORP`. If you don't specify a
-#' NetBIOS name, it will default to the first part of your directory DNS.
-#' For example, `CORP` for the directory DNS `corp.example.com`.
+#' @param Name &#91;required&#93; The fully qualified domain name for the Managed Microsoft AD directory, such as `corp.example.com`. This name will resolve inside your VPC only. It does not need to be publicly resolvable.
+#' @param ShortName The NetBIOS name for your domain, such as `CORP`. If you don't specify a NetBIOS name, it will default to the first part of your directory DNS. For example, `CORP` for the directory DNS `corp.example.com`.
 #' @param Password &#91;required&#93; The password for the default administrative user named `Admin`.
 #' 
-#' If you need to change the password for the administrator account, you
-#' can use the
-#' [`reset_user_password`][directoryservice_reset_user_password] API call.
-#' @param Description A description for the directory. This label will appear on the Amazon
-#' Web Services console `Directory Details` page after the directory is
-#' created.
-#' @param VpcSettings &#91;required&#93; Contains VPC information for the
-#' [`create_directory`][directoryservice_create_directory] or
-#' [`create_microsoft_ad`][directoryservice_create_microsoft_ad] operation.
-#' @param Edition Managed Microsoft AD is available in two editions: `Standard` and
-#' `Enterprise`. `Enterprise` is the default.
+#' If you need to change the password for the administrator account, you can use the [`reset_user_password`][directoryservice_reset_user_password] API call.
+#' @param Description A description for the directory. This label will appear on the Amazon Web Services console `Directory Details` page after the directory is created.
+#' @param VpcSettings &#91;required&#93; Contains VPC information for the [`create_directory`][directoryservice_create_directory] or [`create_microsoft_ad`][directoryservice_create_microsoft_ad] operation.
+#' @param Edition Managed Microsoft AD is available in two editions: `Standard` and `Enterprise`. `Enterprise` is the default.
 #' @param Tags The tags to be assigned to the Managed Microsoft AD directory.
-#' @param NetworkType The network type for your domain. The default value is `IPv4` or `IPv6`
-#' based on the provided subnet capabilities.
+#' @param NetworkType The network type for your domain. The default value is `IPv4` or `IPv6` based on the provided subnet capabilities.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1004,8 +875,7 @@ directoryservice_create_microsoft_ad <- function(Name, ShortName = NULL, Passwor
 #' Amazon Web Services cloud
 #'
 #' @description
-#' Creates a snapshot of a Simple AD or Microsoft AD directory in the
-#' Amazon Web Services cloud.
+#' Creates a snapshot of a Simple AD or Microsoft AD directory in the Amazon Web Services cloud.
 #' 
 #' You cannot take snapshots of AD Connector directories.
 #'
@@ -1059,34 +929,22 @@ directoryservice_create_snapshot <- function(DirectoryId, Name = NULL) {
 #' trust relationships
 #'
 #' @description
-#' Directory Service for Microsoft Active Directory allows you to configure
-#' trust relationships. For example, you can establish a trust between your
-#' Managed Microsoft AD directory, and your existing self-managed Microsoft
-#' Active Directory. This would allow you to provide users and groups
-#' access to resources in either domain, with a single set of credentials.
+#' Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example, you can establish a trust between your Managed Microsoft AD directory, and your existing self-managed Microsoft Active Directory. This would allow you to provide users and groups access to resources in either domain, with a single set of credentials.
 #' 
-#' This action initiates the creation of the Amazon Web Services side of a
-#' trust relationship between an Managed Microsoft AD directory and an
-#' external domain. You can create either a forest trust or an external
-#' trust.
+#' This action initiates the creation of the Amazon Web Services side of a trust relationship between an Managed Microsoft AD directory and an external domain. You can create either a forest trust or an external trust.
 #'
 #' @usage
 #' directoryservice_create_trust(DirectoryId, RemoteDomainName,
 #'   TrustPassword, TrustDirection, TrustType, ConditionalForwarderIpAddrs,
 #'   ConditionalForwarderIpv6Addrs, SelectiveAuth)
 #'
-#' @param DirectoryId &#91;required&#93; The Directory ID of the Managed Microsoft AD directory for which to
-#' establish the trust relationship.
-#' @param RemoteDomainName &#91;required&#93; The Fully Qualified Domain Name (FQDN) of the external domain for which
-#' to create the trust relationship.
-#' @param TrustPassword &#91;required&#93; The trust password. The trust password must be the same password that
-#' was used when creating the trust relationship on the external domain.
+#' @param DirectoryId &#91;required&#93; The Directory ID of the Managed Microsoft AD directory for which to establish the trust relationship.
+#' @param RemoteDomainName &#91;required&#93; The Fully Qualified Domain Name (FQDN) of the external domain for which to create the trust relationship.
+#' @param TrustPassword &#91;required&#93; The trust password. The trust password must be the same password that was used when creating the trust relationship on the external domain.
 #' @param TrustDirection &#91;required&#93; The direction of the trust relationship.
 #' @param TrustType The trust relationship type. `Forest` is the default.
-#' @param ConditionalForwarderIpAddrs The IP addresses of the remote DNS server associated with
-#' RemoteDomainName.
-#' @param ConditionalForwarderIpv6Addrs The IPv6 addresses of the remote DNS server associated with
-#' RemoteDomainName.
+#' @param ConditionalForwarderIpAddrs The IP addresses of the remote DNS server associated with RemoteDomainName.
+#' @param ConditionalForwarderIpv6Addrs The IPv6 addresses of the remote DNS server associated with RemoteDomainName.
 #' @param SelectiveAuth Optional parameter to enable selective authentication for the trust.
 #'
 #' @return
@@ -1142,12 +1000,9 @@ directoryservice_create_trust <- function(DirectoryId, RemoteDomainName, TrustPa
 #' Deletes a directory assessment and all associated data
 #'
 #' @description
-#' Deletes a directory assessment and all associated data. This operation
-#' permanently removes the assessment results, validation reports, and
-#' configuration information.
+#' Deletes a directory assessment and all associated data. This operation permanently removes the assessment results, validation reports, and configuration information.
 #' 
-#' You cannot delete system-initiated assessments. You can delete
-#' customer-created assessments even if they are in progress.
+#' You cannot delete system-initiated assessments. You can delete customer-created assessments even if they are in progress.
 #'
 #' @usage
 #' directoryservice_delete_ad_assessment(AssessmentId)
@@ -1197,16 +1052,14 @@ directoryservice_delete_ad_assessment <- function(AssessmentId) {
 #' Services directory
 #'
 #' @description
-#' Deletes a conditional forwarder that has been set up for your Amazon Web
-#' Services directory.
+#' Deletes a conditional forwarder that has been set up for your Amazon Web Services directory.
 #'
 #' @usage
 #' directoryservice_delete_conditional_forwarder(DirectoryId,
 #'   RemoteDomainName)
 #'
 #' @param DirectoryId &#91;required&#93; The directory ID for which you are deleting the conditional forwarder.
-#' @param RemoteDomainName &#91;required&#93; The fully qualified domain name (FQDN) of the remote domain with which
-#' you are deleting the conditional forwarder.
+#' @param RemoteDomainName &#91;required&#93; The fully qualified domain name (FQDN) of the remote domain with which you are deleting the conditional forwarder.
 #'
 #' @return
 #' An empty list.
@@ -1248,13 +1101,7 @@ directoryservice_delete_conditional_forwarder <- function(DirectoryId, RemoteDom
 #' @description
 #' Deletes an Directory Service directory.
 #' 
-#' Before you call [`delete_directory`][directoryservice_delete_directory],
-#' ensure that all of the required permissions have been explicitly granted
-#' through a policy. For details about what permissions are required to run
-#' the [`delete_directory`][directoryservice_delete_directory] operation,
-#' see [Directory Service API Permissions: Actions, Resources, and
-#' Conditions
-#' Reference](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html).
+#' Before you call [`delete_directory`][directoryservice_delete_directory], ensure that all of the required permissions have been explicitly granted through a policy. For details about what permissions are required to run the [`delete_directory`][directoryservice_delete_directory] operation, see [Directory Service API Permissions: Actions, Resources, and Conditions Reference](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html).
 #'
 #' @usage
 #' directoryservice_delete_directory(DirectoryId)
@@ -1397,8 +1244,7 @@ directoryservice_delete_snapshot <- function(SnapshotId) {
 #' directory and an external domain
 #'
 #' @description
-#' Deletes an existing trust relationship between your Managed Microsoft AD
-#' directory and an external domain.
+#' Deletes an existing trust relationship between your Managed Microsoft AD directory and an external domain.
 #'
 #' @usage
 #' directoryservice_delete_trust(TrustId,
@@ -1451,8 +1297,7 @@ directoryservice_delete_trust <- function(TrustId, DeleteAssociatedConditionalFo
 #' LDAP or client certificate authentication
 #'
 #' @description
-#' Deletes from the system the certificate that was registered for secure
-#' LDAP or client certificate authentication.
+#' Deletes from the system the certificate that was registered for secure LDAP or client certificate authentication.
 #'
 #' @usage
 #' directoryservice_deregister_certificate(DirectoryId, CertificateId)
@@ -1499,16 +1344,13 @@ directoryservice_deregister_certificate <- function(DirectoryId, CertificateId) 
 #' SNS topic
 #'
 #' @description
-#' Removes the specified directory as a publisher to the specified Amazon
-#' SNS topic.
+#' Removes the specified directory as a publisher to the specified Amazon SNS topic.
 #'
 #' @usage
 #' directoryservice_deregister_event_topic(DirectoryId, TopicName)
 #'
-#' @param DirectoryId &#91;required&#93; The Directory ID to remove as a publisher. This directory will no longer
-#' send messages to the specified Amazon SNS topic.
-#' @param TopicName &#91;required&#93; The name of the Amazon SNS topic from which to remove the directory as a
-#' publisher.
+#' @param DirectoryId &#91;required&#93; The Directory ID to remove as a publisher. This directory will no longer send messages to the specified Amazon SNS topic.
+#' @param TopicName &#91;required&#93; The name of the Amazon SNS topic from which to remove the directory as a publisher.
 #'
 #' @return
 #' An empty list.
@@ -1549,9 +1391,7 @@ directoryservice_deregister_event_topic <- function(DirectoryId, TopicName) {
 #' its current status, validation results, and configuration details
 #'
 #' @description
-#' Retrieves detailed information about a directory assessment, including
-#' its current status, validation results, and configuration details. Use
-#' this operation to monitor assessment progress and review results.
+#' Retrieves detailed information about a directory assessment, including its current status, validation results, and configuration details. Use this operation to monitor assessment progress and review results.
 #'
 #' @usage
 #' directoryservice_describe_ad_assessment(AssessmentId)
@@ -1649,16 +1489,12 @@ directoryservice_describe_ad_assessment <- function(AssessmentId) {
 #' enrollment policy for the specified directory
 #'
 #' @description
-#' Retrieves detailed information about the certificate authority (CA)
-#' enrollment policy for the specified directory. This policy determines
-#' how client certificates are automatically enrolled and managed through
-#' Amazon Web Services Private Certificate Authority.
+#' Retrieves detailed information about the certificate authority (CA) enrollment policy for the specified directory. This policy determines how client certificates are automatically enrolled and managed through Amazon Web Services Private Certificate Authority.
 #'
 #' @usage
 #' directoryservice_describe_ca_enrollment_policy(DirectoryId)
 #'
-#' @param DirectoryId &#91;required&#93; The identifier of the directory for which to retrieve the CA enrollment
-#' policy information.
+#' @param DirectoryId &#91;required&#93; The identifier of the directory for which to retrieve the CA enrollment policy information.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1709,8 +1545,7 @@ directoryservice_describe_ca_enrollment_policy <- function(DirectoryId) {
 #' client certificate authentication
 #'
 #' @description
-#' Displays information about the certificate registered for secure LDAP or
-#' client certificate authentication.
+#' Displays information about the certificate registered for secure LDAP or client certificate authentication.
 #'
 #' @usage
 #' directoryservice_describe_certificate(DirectoryId, CertificateId)
@@ -1777,27 +1612,16 @@ directoryservice_describe_certificate <- function(DirectoryId, CertificateId) {
 #' specified directory, if the type is specified
 #'
 #' @description
-#' Retrieves information about the type of client authentication for the
-#' specified directory, if the type is specified. If no type is specified,
-#' information about all client authentication types that are supported for
-#' the specified directory is retrieved. Currently, only `SmartCard` is
-#' supported.
+#' Retrieves information about the type of client authentication for the specified directory, if the type is specified. If no type is specified, information about all client authentication types that are supported for the specified directory is retrieved. Currently, only `SmartCard` is supported.
 #'
 #' @usage
 #' directoryservice_describe_client_authentication_settings(DirectoryId,
 #'   Type, NextToken, Limit)
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory for which to retrieve information.
-#' @param Type The type of client authentication for which to retrieve information. If
-#' no type is specified, a list of all client authentication types that are
-#' supported for the specified directory is retrieved.
-#' @param NextToken The *DescribeClientAuthenticationSettingsResult.NextToken* value from a
-#' previous call to
-#' [`describe_client_authentication_settings`][directoryservice_describe_client_authentication_settings].
-#' Pass null if this is the first call.
-#' @param Limit The maximum number of items to return. If this value is zero, the
-#' maximum number of items is specified by the limitations of the
-#' operation.
+#' @param Type The type of client authentication for which to retrieve information. If no type is specified, a list of all client authentication types that are supported for the specified directory is retrieved.
+#' @param NextToken The *DescribeClientAuthenticationSettingsResult.NextToken* value from a previous call to [`describe_client_authentication_settings`][directoryservice_describe_client_authentication_settings]. Pass null if this is the first call.
+#' @param Limit The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1855,18 +1679,14 @@ directoryservice_describe_client_authentication_settings <- function(DirectoryId
 #' @description
 #' Obtains information about the conditional forwarders for this account.
 #' 
-#' If no input parameters are provided for RemoteDomainNames, this request
-#' describes all conditional forwarders for the specified directory ID.
+#' If no input parameters are provided for RemoteDomainNames, this request describes all conditional forwarders for the specified directory ID.
 #'
 #' @usage
 #' directoryservice_describe_conditional_forwarders(DirectoryId,
 #'   RemoteDomainNames)
 #'
-#' @param DirectoryId &#91;required&#93; The directory ID for which to get the list of associated conditional
-#' forwarders.
-#' @param RemoteDomainNames The fully qualified domain names (FQDN) of the remote domains for which
-#' to get the list of associated conditional forwarders. If this member is
-#' null, all conditional forwarders are returned.
+#' @param DirectoryId &#91;required&#93; The directory ID for which to get the list of associated conditional forwarders.
+#' @param RemoteDomainNames The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated conditional forwarders. If this member is null, all conditional forwarders are returned.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1926,34 +1746,20 @@ directoryservice_describe_conditional_forwarders <- function(DirectoryId, Remote
 #' @description
 #' Obtains information about the directories that belong to this account.
 #' 
-#' You can retrieve information about specific directories by passing the
-#' directory identifiers in the `DirectoryIds` parameter. Otherwise, all
-#' directories that belong to the current account are returned.
+#' You can retrieve information about specific directories by passing the directory identifiers in the `DirectoryIds` parameter. Otherwise, all directories that belong to the current account are returned.
 #' 
-#' This operation supports pagination with the use of the `NextToken`
-#' request and response parameters. If more results are available, the
-#' `DescribeDirectoriesResult.NextToken` member contains a token that you
-#' pass in the next call to
-#' [`describe_directories`][directoryservice_describe_directories] to
-#' retrieve the next set of items.
+#' This operation supports pagination with the use of the `NextToken` request and response parameters. If more results are available, the `DescribeDirectoriesResult.NextToken` member contains a token that you pass in the next call to [`describe_directories`][directoryservice_describe_directories] to retrieve the next set of items.
 #' 
-#' You can also specify a maximum number of return results with the `Limit`
-#' parameter.
+#' You can also specify a maximum number of return results with the `Limit` parameter.
 #'
 #' @usage
 #' directoryservice_describe_directories(DirectoryIds, NextToken, Limit)
 #'
-#' @param DirectoryIds A list of identifiers of the directories for which to obtain the
-#' information. If this member is null, all directories that belong to the
-#' current account are returned.
+#' @param DirectoryIds A list of identifiers of the directories for which to obtain the information. If this member is null, all directories that belong to the current account are returned.
 #' 
 #' An empty list results in an `InvalidParameterException` being thrown.
-#' @param NextToken The `DescribeDirectoriesResult.NextToken` value from a previous call to
-#' [`describe_directories`][directoryservice_describe_directories]. Pass
-#' null if this is the first call.
-#' @param Limit The maximum number of items to return. If this value is zero, the
-#' maximum number of items is specified by the limitations of the
-#' operation.
+#' @param NextToken The `DescribeDirectoriesResult.NextToken` value from a previous call to [`describe_directories`][directoryservice_describe_directories]. Pass null if this is the first call.
+#' @param Limit The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2130,8 +1936,7 @@ directoryservice_describe_directories <- function(DirectoryIds = NULL, NextToken
 #' Service Data API for the specified directory
 #'
 #' @description
-#' Obtains status of directory data access enablement through the Directory
-#' Service Data API for the specified directory.
+#' Obtains status of directory data access enablement through the Directory Service Data API for the specified directory.
 #'
 #' @usage
 #' directoryservice_describe_directory_data_access(DirectoryId)
@@ -2186,13 +1991,9 @@ directoryservice_describe_directory_data_access <- function(DirectoryId) {
 #' directoryservice_describe_domain_controllers(DirectoryId,
 #'   DomainControllerIds, NextToken, Limit)
 #'
-#' @param DirectoryId &#91;required&#93; Identifier of the directory for which to retrieve the domain controller
-#' information.
-#' @param DomainControllerIds A list of identifiers for the domain controllers whose information will
-#' be provided.
-#' @param NextToken The *DescribeDomainControllers.NextToken* value from a previous call to
-#' [`describe_domain_controllers`][directoryservice_describe_domain_controllers].
-#' Pass null if this is the first call.
+#' @param DirectoryId &#91;required&#93; Identifier of the directory for which to retrieve the domain controller information.
+#' @param DomainControllerIds A list of identifiers for the domain controllers whose information will be provided.
+#' @param NextToken The *DescribeDomainControllers.NextToken* value from a previous call to [`describe_domain_controllers`][directoryservice_describe_domain_controllers]. Pass null if this is the first call.
 #' @param Limit The maximum number of items to return.
 #'
 #' @return
@@ -2262,21 +2063,15 @@ directoryservice_describe_domain_controllers <- function(DirectoryId, DomainCont
 #' messages from the specified directory
 #'
 #' @description
-#' Obtains information about which Amazon SNS topics receive status
-#' messages from the specified directory.
+#' Obtains information about which Amazon SNS topics receive status messages from the specified directory.
 #' 
-#' If no input parameters are provided, such as DirectoryId or TopicName,
-#' this request describes all of the associations in the account.
+#' If no input parameters are provided, such as DirectoryId or TopicName, this request describes all of the associations in the account.
 #'
 #' @usage
 #' directoryservice_describe_event_topics(DirectoryId, TopicNames)
 #'
-#' @param DirectoryId The Directory ID for which to get the list of associated Amazon SNS
-#' topics. If this member is null, associations for all Directory IDs are
-#' returned.
-#' @param TopicNames A list of Amazon SNS topic names for which to obtain the information. If
-#' this member is null, all associations for the specified Directory ID are
-#' returned.
+#' @param DirectoryId The Directory ID for which to get the list of associated Amazon SNS topics. If this member is null, associations for all Directory IDs are returned.
+#' @param TopicNames A list of Amazon SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.
 #' 
 #' An empty list results in an `InvalidParameterException` being thrown.
 #'
@@ -2335,22 +2130,15 @@ directoryservice_describe_event_topics <- function(DirectoryId = NULL, TopicName
 #' Retrieves information about update activities for a hybrid directory
 #'
 #' @description
-#' Retrieves information about update activities for a hybrid directory.
-#' This operation provides details about configuration changes,
-#' administrator account updates, and self-managed instance settings (IDs
-#' and DNS IPs).
+#' Retrieves information about update activities for a hybrid directory. This operation provides details about configuration changes, administrator account updates, and self-managed instance settings (IDs and DNS IPs).
 #'
 #' @usage
 #' directoryservice_describe_hybrid_ad_update(DirectoryId, UpdateType,
 #'   NextToken)
 #'
-#' @param DirectoryId &#91;required&#93; The identifier of the hybrid directory for which to retrieve update
-#' information.
-#' @param UpdateType The type of update activities to retrieve. Valid values include
-#' `SelfManagedInstances` and `HybridAdministratorAccount`.
-#' @param NextToken The pagination token from a previous request to
-#' [`describe_hybrid_ad_update`][directoryservice_describe_hybrid_ad_update].
-#' Pass null if this is the first request.
+#' @param DirectoryId &#91;required&#93; The identifier of the hybrid directory for which to retrieve update information.
+#' @param UpdateType The type of update activities to retrieve. Valid values include `SelfManagedInstances` and `HybridAdministratorAccount`.
+#' @param NextToken The pagination token from a previous request to [`describe_hybrid_ad_update`][directoryservice_describe_hybrid_ad_update]. Pass null if this is the first request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2465,8 +2253,7 @@ directoryservice_describe_hybrid_ad_update <- function(DirectoryId, UpdateType =
 #'   Limit)
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory.
-#' @param Type The type of LDAP security to enable. Currently only the value `Client`
-#' is supported.
+#' @param Type The type of LDAP security to enable. Currently only the value `Client` is supported.
 #' @param NextToken The type of next token used for pagination.
 #' @param Limit Specifies the number of items that should be displayed on one page.
 #'
@@ -2525,17 +2312,14 @@ directoryservice_describe_ldaps_settings <- function(DirectoryId, Type = NULL, N
 #' multi-Region replication
 #'
 #' @description
-#' Provides information about the Regions that are configured for
-#' multi-Region replication.
+#' Provides information about the Regions that are configured for multi-Region replication.
 #'
 #' @usage
 #' directoryservice_describe_regions(DirectoryId, RegionName, NextToken)
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory.
 #' @param RegionName The name of the Region. For example, `us-east-1`.
-#' @param NextToken The `DescribeRegionsResult.NextToken` value from a previous call to
-#' [`describe_regions`][directoryservice_describe_regions]. Pass null if
-#' this is the first call.
+#' @param NextToken The `DescribeRegionsResult.NextToken` value from a previous call to [`describe_regions`][directoryservice_describe_regions]. Pass null if this is the first call.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2606,17 +2390,14 @@ directoryservice_describe_regions <- function(DirectoryId, RegionName = NULL, Ne
 #' directory
 #'
 #' @description
-#' Retrieves information about the configurable settings for the specified
-#' directory.
+#' Retrieves information about the configurable settings for the specified directory.
 #'
 #' @usage
 #' directoryservice_describe_settings(DirectoryId, Status, NextToken)
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory for which to retrieve information.
 #' @param Status The status of the directory settings for which to retrieve information.
-#' @param NextToken The `DescribeSettingsResult.NextToken` value from a previous call to
-#' [`describe_settings`][directoryservice_describe_settings]. Pass null if
-#' this is the first call.
+#' @param NextToken The `DescribeSettingsResult.NextToken` value from a previous call to [`describe_settings`][directoryservice_describe_settings]. Pass null if this is the first call.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2692,10 +2473,7 @@ directoryservice_describe_settings <- function(DirectoryId, Status = NULL, NextT
 #'
 #' @param OwnerDirectoryId &#91;required&#93; Returns the identifier of the directory in the directory owner account.
 #' @param SharedDirectoryIds A list of identifiers of all shared directories in your account.
-#' @param NextToken The `DescribeSharedDirectoriesResult.NextToken` value from a previous
-#' call to
-#' [`describe_shared_directories`][directoryservice_describe_shared_directories].
-#' Pass null if this is the first call.
+#' @param NextToken The `DescribeSharedDirectoriesResult.NextToken` value from a previous call to [`describe_shared_directories`][directoryservice_describe_shared_directories]. Pass null if this is the first call.
 #' @param Limit The number of shared directories to return in the response object.
 #'
 #' @return
@@ -2763,31 +2541,19 @@ directoryservice_describe_shared_directories <- function(OwnerDirectoryId, Share
 #' account
 #'
 #' @description
-#' Obtains information about the directory snapshots that belong to this
-#' account.
+#' Obtains information about the directory snapshots that belong to this account.
 #' 
-#' This operation supports pagination with the use of the *NextToken*
-#' request and response parameters. If more results are available, the
-#' *DescribeSnapshots.NextToken* member contains a token that you pass in
-#' the next call to
-#' [`describe_snapshots`][directoryservice_describe_snapshots] to retrieve
-#' the next set of items.
+#' This operation supports pagination with the use of the *NextToken* request and response parameters. If more results are available, the *DescribeSnapshots.NextToken* member contains a token that you pass in the next call to [`describe_snapshots`][directoryservice_describe_snapshots] to retrieve the next set of items.
 #' 
-#' You can also specify a maximum number of return results with the *Limit*
-#' parameter.
+#' You can also specify a maximum number of return results with the *Limit* parameter.
 #'
 #' @usage
 #' directoryservice_describe_snapshots(DirectoryId, SnapshotIds, NextToken,
 #'   Limit)
 #'
-#' @param DirectoryId The identifier of the directory for which to retrieve snapshot
-#' information.
-#' @param SnapshotIds A list of identifiers of the snapshots to obtain the information for. If
-#' this member is null or empty, all snapshots are returned using the
-#' *Limit* and *NextToken* members.
-#' @param NextToken The *DescribeSnapshotsResult.NextToken* value from a previous call to
-#' [`describe_snapshots`][directoryservice_describe_snapshots]. Pass null
-#' if this is the first call.
+#' @param DirectoryId The identifier of the directory for which to retrieve snapshot information.
+#' @param SnapshotIds A list of identifiers of the snapshots to obtain the information for. If this member is null or empty, all snapshots are returned using the *Limit* and *NextToken* members.
+#' @param NextToken The *DescribeSnapshotsResult.NextToken* value from a previous call to [`describe_snapshots`][directoryservice_describe_snapshots]. Pass null if this is the first call.
 #' @param Limit The maximum number of objects to return.
 #'
 #' @return
@@ -2851,24 +2617,17 @@ directoryservice_describe_snapshots <- function(DirectoryId = NULL, SnapshotIds 
 #' @description
 #' Obtains information about the trust relationships for this account.
 #' 
-#' If no input parameters are provided, such as DirectoryId or TrustIds,
-#' this request describes all the trust relationships belonging to the
-#' account.
+#' If no input parameters are provided, such as DirectoryId or TrustIds, this request describes all the trust relationships belonging to the account.
 #'
 #' @usage
 #' directoryservice_describe_trusts(DirectoryId, TrustIds, NextToken,
 #'   Limit)
 #'
-#' @param DirectoryId The Directory ID of the Amazon Web Services directory that is a part of
-#' the requested trust relationship.
-#' @param TrustIds A list of identifiers of the trust relationships for which to obtain the
-#' information. If this member is null, all trust relationships that belong
-#' to the current account are returned.
+#' @param DirectoryId The Directory ID of the Amazon Web Services directory that is a part of the requested trust relationship.
+#' @param TrustIds A list of identifiers of the trust relationships for which to obtain the information. If this member is null, all trust relationships that belong to the current account are returned.
 #' 
 #' An empty list results in an `InvalidParameterException` being thrown.
-#' @param NextToken The *DescribeTrustsResult.NextToken* value from a previous call to
-#' [`describe_trusts`][directoryservice_describe_trusts]. Pass null if this
-#' is the first call.
+#' @param NextToken The *DescribeTrustsResult.NextToken* value from a previous call to [`describe_trusts`][directoryservice_describe_trusts]. Pass null if this is the first call.
 #' @param Limit The maximum number of objects to return.
 #'
 #' @return
@@ -2948,10 +2707,7 @@ directoryservice_describe_trusts <- function(DirectoryId = NULL, TrustIds = NULL
 #' @param DirectoryId &#91;required&#93; The unique identifier of the directory.
 #' @param UpdateType &#91;required&#93; The type of updates you want to describe for the directory.
 #' @param RegionName The name of the Region.
-#' @param NextToken The `DescribeUpdateDirectoryResult`. NextToken value from a previous
-#' call to
-#' [`describe_update_directory`][directoryservice_describe_update_directory].
-#' Pass null if this is the first call.
+#' @param NextToken The `DescribeUpdateDirectoryResult`. NextToken value from a previous call to [`describe_update_directory`][directoryservice_describe_update_directory]. Pass null if this is the first call.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3023,20 +2779,14 @@ directoryservice_describe_update_directory <- function(DirectoryId, UpdateType, 
 #' specified directory
 #'
 #' @description
-#' Disables the certificate authority (CA) enrollment policy for the
-#' specified directory. This stops automatic certificate enrollment and
-#' management for domain-joined clients, but does not affect existing
-#' certificates.
+#' Disables the certificate authority (CA) enrollment policy for the specified directory. This stops automatic certificate enrollment and management for domain-joined clients, but does not affect existing certificates.
 #' 
-#' Disabling the CA enrollment policy prevents new certificates from being
-#' automatically enrolled, but existing certificates remain valid and
-#' functional until they expire.
+#' Disabling the CA enrollment policy prevents new certificates from being automatically enrolled, but existing certificates remain valid and functional until they expire.
 #'
 #' @usage
 #' directoryservice_disable_ca_enrollment_policy(DirectoryId)
 #'
-#' @param DirectoryId &#91;required&#93; The identifier of the directory for which to disable the CA enrollment
-#' policy.
+#' @param DirectoryId &#91;required&#93; The identifier of the directory for which to disable the CA enrollment policy.
 #'
 #' @return
 #' An empty list.
@@ -3076,15 +2826,13 @@ directoryservice_disable_ca_enrollment_policy <- function(DirectoryId) {
 #' directory
 #'
 #' @description
-#' Disables alternative client authentication methods for the specified
-#' directory.
+#' Disables alternative client authentication methods for the specified directory.
 #'
 #' @usage
 #' directoryservice_disable_client_authentication(DirectoryId, Type)
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory
-#' @param Type &#91;required&#93; The type of client authentication to disable. Currently the only
-#' parameter `"SmartCard"` is supported.
+#' @param Type &#91;required&#93; The type of client authentication to disable. Currently the only parameter `"SmartCard"` is supported.
 #'
 #' @return
 #' An empty list.
@@ -3125,10 +2873,7 @@ directoryservice_disable_client_authentication <- function(DirectoryId, Type) {
 #' for the specified directory
 #'
 #' @description
-#' Deactivates access to directory data via the Directory Service Data API
-#' for the specified directory. For more information, see [Directory
-#' Service Data API
-#' Reference](https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/Welcome.html).
+#' Deactivates access to directory data via the Directory Service Data API for the specified directory. For more information, see [Directory Service Data API Reference](https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/Welcome.html).
 #'
 #' @usage
 #' directoryservice_disable_directory_data_access(DirectoryId)
@@ -3178,8 +2923,7 @@ directoryservice_disable_directory_data_access <- function(DirectoryId) {
 #' directoryservice_disable_ldaps(DirectoryId, Type)
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory.
-#' @param Type &#91;required&#93; The type of LDAP security to enable. Currently only the value `Client`
-#' is supported.
+#' @param Type &#91;required&#93; The type of LDAP security to enable. Currently only the value `Client` is supported.
 #'
 #' @return
 #' An empty list.
@@ -3221,9 +2965,7 @@ directoryservice_disable_ldaps <- function(DirectoryId, Type) {
 #' or Microsoft AD directory
 #'
 #' @description
-#' Disables multi-factor authentication (MFA) with the Remote
-#' Authentication Dial In User Service (RADIUS) server for an AD Connector
-#' or Microsoft AD directory.
+#' Disables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server for an AD Connector or Microsoft AD directory.
 #'
 #' @usage
 #' directoryservice_disable_radius(DirectoryId)
@@ -3273,18 +3015,10 @@ directoryservice_disable_radius <- function(DirectoryId) {
 #' directoryservice_disable_sso(DirectoryId, UserName, Password)
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory for which to disable single-sign on.
-#' @param UserName The username of an alternate account to use to disable single-sign on.
-#' This is only used for AD Connector directories. This account must have
-#' privileges to remove a service principal name.
+#' @param UserName The username of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. This account must have privileges to remove a service principal name.
 #' 
-#' If the AD Connector service account does not have privileges to remove a
-#' service principal name, you can specify an alternate account with the
-#' *UserName* and *Password* parameters. These credentials are only used to
-#' disable single sign-on and are not stored by the service. The AD
-#' Connector service account is not changed.
-#' @param Password The password of an alternate account to use to disable single-sign on.
-#' This is only used for AD Connector directories. For more information,
-#' see the *UserName* parameter.
+#' If the AD Connector service account does not have privileges to remove a service principal name, you can specify an alternate account with the *UserName* and *Password* parameters. These credentials are only used to disable single sign-on and are not stored by the service. The AD Connector service account is not changed.
+#' @param Password The password of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. For more information, see the *UserName* parameter.
 #'
 #' @return
 #' An empty list.
@@ -3326,27 +3060,18 @@ directoryservice_disable_sso <- function(DirectoryId, UserName = NULL, Password 
 #' directory
 #'
 #' @description
-#' Enables certificate authority (CA) enrollment policy for the specified
-#' directory. This allows domain-joined clients to automatically request
-#' and receive certificates from the specified Amazon Web Services Private
-#' Certificate Authority.
+#' Enables certificate authority (CA) enrollment policy for the specified directory. This allows domain-joined clients to automatically request and receive certificates from the specified Amazon Web Services Private Certificate Authority.
 #' 
-#' Before enabling CA enrollment, ensure that the PCA connector is properly
-#' configured and accessible from the directory. The connector must be in
-#' an active state and have the necessary permissions.
+#' Before enabling CA enrollment, ensure that the PCA connector is properly configured and accessible from the directory. The connector must be in an active state and have the necessary permissions.
 #'
 #' @usage
 #' directoryservice_enable_ca_enrollment_policy(DirectoryId,
 #'   PcaConnectorArn)
 #'
-#' @param DirectoryId &#91;required&#93; The identifier of the directory for which to enable the CA enrollment
-#' policy.
-#' @param PcaConnectorArn &#91;required&#93; The Amazon Resource Name (ARN) of the Private Certificate Authority
-#' (PCA) connector to use for automatic certificate enrollment. This
-#' connector must be properly configured and accessible from the directory.
+#' @param DirectoryId &#91;required&#93; The identifier of the directory for which to enable the CA enrollment policy.
+#' @param PcaConnectorArn &#91;required&#93; The Amazon Resource Name (ARN) of the Private Certificate Authority (PCA) connector to use for automatic certificate enrollment. This connector must be properly configured and accessible from the directory.
 #' 
-#' The ARN format is:
-#' `arn:aws:pca-connector-ad:region:account-id:connector/connector-id `
+#' The ARN format is: `arn:aws:pca-connector-ad:region:account-id:connector/connector-id `
 #'
 #' @return
 #' An empty list.
@@ -3387,17 +3112,13 @@ directoryservice_enable_ca_enrollment_policy <- function(DirectoryId, PcaConnect
 #' directory
 #'
 #' @description
-#' Enables alternative client authentication methods for the specified
-#' directory.
+#' Enables alternative client authentication methods for the specified directory.
 #'
 #' @usage
 #' directoryservice_enable_client_authentication(DirectoryId, Type)
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the specified directory.
-#' @param Type &#91;required&#93; The type of client authentication to enable. Currently only the value
-#' `SmartCard` is supported. Smart card authentication in AD Connector
-#' requires that you enable Kerberos Constrained Delegation for the Service
-#' User to the LDAP service in your self-managed AD.
+#' @param Type &#91;required&#93; The type of client authentication to enable. Currently only the value `SmartCard` is supported. Smart card authentication in AD Connector requires that you enable Kerberos Constrained Delegation for the Service User to the LDAP service in your self-managed AD.
 #'
 #' @return
 #' An empty list.
@@ -3438,10 +3159,7 @@ directoryservice_enable_client_authentication <- function(DirectoryId, Type) {
 #' the specified directory
 #'
 #' @description
-#' Enables access to directory data via the Directory Service Data API for
-#' the specified directory. For more information, see [Directory Service
-#' Data API
-#' Reference](https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/Welcome.html).
+#' Enables access to directory data via the Directory Service Data API for the specified directory. For more information, see [Directory Service Data API Reference](https://docs.aws.amazon.com/directoryservicedata/latest/DirectoryServiceDataAPIReference/Welcome.html).
 #'
 #' @usage
 #' directoryservice_enable_directory_data_access(DirectoryId)
@@ -3486,15 +3204,13 @@ directoryservice_enable_directory_data_access <- function(DirectoryId) {
 #' secure calls
 #'
 #' @description
-#' Activates the switch for the specific directory to always use LDAP
-#' secure calls.
+#' Activates the switch for the specific directory to always use LDAP secure calls.
 #'
 #' @usage
 #' directoryservice_enable_ldaps(DirectoryId, Type)
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory.
-#' @param Type &#91;required&#93; The type of LDAP security to enable. Currently only the value `Client`
-#' is supported.
+#' @param Type &#91;required&#93; The type of LDAP security to enable. Currently only the value `Client` is supported.
 #'
 #' @return
 #' An empty list.
@@ -3536,16 +3252,13 @@ directoryservice_enable_ldaps <- function(DirectoryId, Type) {
 #' directory
 #'
 #' @description
-#' Enables multi-factor authentication (MFA) with the Remote Authentication
-#' Dial In User Service (RADIUS) server for an AD Connector or Microsoft AD
-#' directory.
+#' Enables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server for an AD Connector or Microsoft AD directory.
 #'
 #' @usage
 #' directoryservice_enable_radius(DirectoryId, RadiusSettings)
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory for which to enable MFA.
-#' @param RadiusSettings &#91;required&#93; A RadiusSettings object that contains information about the RADIUS
-#' server.
+#' @param RadiusSettings &#91;required&#93; A RadiusSettings object that contains information about the RADIUS server.
 #'
 #' @return
 #' An empty list.
@@ -3599,27 +3312,16 @@ directoryservice_enable_radius <- function(DirectoryId, RadiusSettings) {
 #' Enables single sign-on for a directory
 #'
 #' @description
-#' Enables single sign-on for a directory. Single sign-on allows users in
-#' your directory to access certain Amazon Web Services services from a
-#' computer joined to the directory without having to enter their
-#' credentials separately.
+#' Enables single sign-on for a directory. Single sign-on allows users in your directory to access certain Amazon Web Services services from a computer joined to the directory without having to enter their credentials separately.
 #'
 #' @usage
 #' directoryservice_enable_sso(DirectoryId, UserName, Password)
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory for which to enable single-sign on.
-#' @param UserName The username of an alternate account to use to enable single-sign on.
-#' This is only used for AD Connector directories. This account must have
-#' privileges to add a service principal name.
+#' @param UserName The username of an alternate account to use to enable single-sign on. This is only used for AD Connector directories. This account must have privileges to add a service principal name.
 #' 
-#' If the AD Connector service account does not have privileges to add a
-#' service principal name, you can specify an alternate account with the
-#' *UserName* and *Password* parameters. These credentials are only used to
-#' enable single sign-on and are not stored by the service. The AD
-#' Connector service account is not changed.
-#' @param Password The password of an alternate account to use to enable single-sign on.
-#' This is only used for AD Connector directories. For more information,
-#' see the *UserName* parameter.
+#' If the AD Connector service account does not have privileges to add a service principal name, you can specify an alternate account with the *UserName* and *Password* parameters. These credentials are only used to enable single sign-on and are not stored by the service. The AD Connector service account is not changed.
+#' @param Password The password of an alternate account to use to enable single-sign on. This is only used for AD Connector directories. For more information, see the *UserName* parameter.
 #'
 #' @return
 #' An empty list.
@@ -3771,18 +3473,13 @@ directoryservice_get_snapshot_limits <- function(DirectoryId) {
 #' all assessments in your account
 #'
 #' @description
-#' Retrieves a list of directory assessments for the specified directory or
-#' all assessments in your account. Use this operation to monitor
-#' assessment status and manage multiple assessments.
+#' Retrieves a list of directory assessments for the specified directory or all assessments in your account. Use this operation to monitor assessment status and manage multiple assessments.
 #'
 #' @usage
 #' directoryservice_list_ad_assessments(DirectoryId, NextToken, Limit)
 #'
-#' @param DirectoryId The identifier of the directory for which to list assessments. If not
-#' specified, all assessments in your account are returned.
-#' @param NextToken The pagination token from a previous request to
-#' [`list_ad_assessments`][directoryservice_list_ad_assessments]. Pass null
-#' if this is the first request.
+#' @param DirectoryId The identifier of the directory for which to list assessments. If not specified, all assessments in your account are returned.
+#' @param NextToken The pagination token from a previous request to [`list_ad_assessments`][directoryservice_list_ad_assessments]. Pass null if this is the first request.
 #' @param Limit The maximum number of assessment summaries to return.
 #'
 #' @return
@@ -3848,17 +3545,13 @@ directoryservice_list_ad_assessments <- function(DirectoryId = NULL, NextToken =
 #' secure LDAP or client certificate authentication
 #'
 #' @description
-#' For the specified directory, lists all the certificates registered for a
-#' secure LDAP or client certificate authentication.
+#' For the specified directory, lists all the certificates registered for a secure LDAP or client certificate authentication.
 #'
 #' @usage
 #' directoryservice_list_certificates(DirectoryId, NextToken, Limit)
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory.
-#' @param NextToken A token for requesting another page of certificates if the `NextToken`
-#' response element indicates that more certificates are available. Use the
-#' value of the returned `NextToken` element in your request until the
-#' token comes back as `null`. Pass `null` if this is the first call.
+#' @param NextToken A token for requesting another page of certificates if the `NextToken` response element indicates that more certificates are available. Use the value of the returned `NextToken` element in your request until the token comes back as `null`. Pass `null` if this is the first call.
 #' @param Limit The number of items that should show up on one page
 #'
 #' @return
@@ -3921,13 +3614,9 @@ directoryservice_list_certificates <- function(DirectoryId, NextToken = NULL, Li
 #' @usage
 #' directoryservice_list_ip_routes(DirectoryId, NextToken, Limit)
 #'
-#' @param DirectoryId &#91;required&#93; Identifier (ID) of the directory for which you want to retrieve the IP
-#' addresses.
-#' @param NextToken The *ListIpRoutes.NextToken* value from a previous call to
-#' [`list_ip_routes`][directoryservice_list_ip_routes]. Pass null if this
-#' is the first call.
-#' @param Limit Maximum number of items to return. If this value is zero, the maximum
-#' number of items is specified by the limitations of the operation.
+#' @param DirectoryId &#91;required&#93; Identifier (ID) of the directory for which you want to retrieve the IP addresses.
+#' @param NextToken The *ListIpRoutes.NextToken* value from a previous call to [`list_ip_routes`][directoryservice_list_ip_routes]. Pass null if this is the first call.
+#' @param Limit Maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3991,11 +3680,7 @@ directoryservice_list_ip_routes <- function(DirectoryId, NextToken = NULL, Limit
 #' @usage
 #' directoryservice_list_log_subscriptions(DirectoryId, NextToken, Limit)
 #'
-#' @param DirectoryId If a *DirectoryID* is provided, lists only the log subscription
-#' associated with that directory. If no *DirectoryId* is provided, lists
-#' all log subscriptions associated with your Amazon Web Services account.
-#' If there are no log subscriptions for the Amazon Web Services account or
-#' the directory, an empty list will be returned.
+#' @param DirectoryId If a *DirectoryID* is provided, lists only the log subscription associated with that directory. If no *DirectoryId* is provided, lists all log subscriptions associated with your Amazon Web Services account. If there are no log subscriptions for the Amazon Web Services account or the directory, an empty list will be returned.
 #' @param NextToken The token for the next set of items to return.
 #' @param Limit The maximum number of items returned.
 #'
@@ -4057,11 +3742,8 @@ directoryservice_list_log_subscriptions <- function(DirectoryId = NULL, NextToke
 #' @usage
 #' directoryservice_list_schema_extensions(DirectoryId, NextToken, Limit)
 #'
-#' @param DirectoryId &#91;required&#93; The identifier of the directory from which to retrieve the schema
-#' extension information.
-#' @param NextToken The `ListSchemaExtensions.NextToken` value from a previous call to
-#' [`list_schema_extensions`][directoryservice_list_schema_extensions].
-#' Pass null if this is the first call.
+#' @param DirectoryId &#91;required&#93; The identifier of the directory from which to retrieve the schema extension information.
+#' @param NextToken The `ListSchemaExtensions.NextToken` value from a previous call to [`list_schema_extensions`][directoryservice_list_schema_extensions]. Pass null if this is the first call.
 #' @param Limit The maximum number of items to return.
 #'
 #' @return
@@ -4183,8 +3865,7 @@ directoryservice_list_tags_for_resource <- function(ResourceId, NextToken = NULL
 #' authentication
 #'
 #' @description
-#' Registers a certificate for a secure LDAP or client certificate
-#' authentication.
+#' Registers a certificate for a secure LDAP or client certificate authentication.
 #'
 #' @usage
 #' directoryservice_register_certificate(DirectoryId, CertificateData,
@@ -4192,11 +3873,8 @@ directoryservice_list_tags_for_resource <- function(ResourceId, NextToken = NULL
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory.
 #' @param CertificateData &#91;required&#93; The certificate PEM string that needs to be registered.
-#' @param Type The function that the registered certificate performs. Valid values
-#' include `ClientLDAPS` or `ClientCertAuth`. The default value is
-#' `ClientLDAPS`.
-#' @param ClientCertAuthSettings A `ClientCertAuthSettings` object that contains client certificate
-#' authentication settings.
+#' @param Type The function that the registered certificate performs. Valid values include `ClientLDAPS` or `ClientCertAuth`. The default value is `ClientLDAPS`.
+#' @param ClientCertAuthSettings A `ClientCertAuthSettings` object that contains client certificate authentication settings.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4245,21 +3923,13 @@ directoryservice_register_certificate <- function(DirectoryId, CertificateData, 
 #' Associates a directory with an Amazon SNS topic
 #'
 #' @description
-#' Associates a directory with an Amazon SNS topic. This establishes the
-#' directory as a publisher to the specified Amazon SNS topic. You can then
-#' receive email or text (SMS) messages when the status of your directory
-#' changes. You get notified if your directory goes from an Active status
-#' to an Impaired or Inoperable status. You also receive a notification
-#' when the directory returns to an Active status.
+#' Associates a directory with an Amazon SNS topic. This establishes the directory as a publisher to the specified Amazon SNS topic. You can then receive email or text (SMS) messages when the status of your directory changes. You get notified if your directory goes from an Active status to an Impaired or Inoperable status. You also receive a notification when the directory returns to an Active status.
 #'
 #' @usage
 #' directoryservice_register_event_topic(DirectoryId, TopicName)
 #'
-#' @param DirectoryId &#91;required&#93; The Directory ID that will publish status messages to the Amazon SNS
-#' topic.
-#' @param TopicName &#91;required&#93; The Amazon SNS topic name to which the directory will publish status
-#' messages. This Amazon SNS topic must be in the same region as the
-#' specified Directory ID.
+#' @param DirectoryId &#91;required&#93; The Directory ID that will publish status messages to the Amazon SNS topic.
+#' @param TopicName &#91;required&#93; The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS topic must be in the same region as the specified Directory ID.
 #'
 #' @return
 #' An empty list.
@@ -4300,14 +3970,12 @@ directoryservice_register_event_topic <- function(DirectoryId, TopicName) {
 #' owner account
 #'
 #' @description
-#' Rejects a directory sharing request that was sent from the directory
-#' owner account.
+#' Rejects a directory sharing request that was sent from the directory owner account.
 #'
 #' @usage
 #' directoryservice_reject_shared_directory(SharedDirectoryId)
 #'
-#' @param SharedDirectoryId &#91;required&#93; Identifier of the shared directory in the directory consumer account.
-#' This identifier is different for each directory owner account.
+#' @param SharedDirectoryId &#91;required&#93; Identifier of the shared directory in the directory consumer account. This identifier is different for each directory owner account.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4356,8 +4024,7 @@ directoryservice_reject_shared_directory <- function(SharedDirectoryId) {
 #' @usage
 #' directoryservice_remove_ip_routes(DirectoryId, CidrIps, CidrIpv6s)
 #'
-#' @param DirectoryId &#91;required&#93; Identifier (ID) of the directory from which you want to remove the IP
-#' addresses.
+#' @param DirectoryId &#91;required&#93; Identifier (ID) of the directory from which you want to remove the IP addresses.
 #' @param CidrIps IP address blocks that you want to remove.
 #' @param CidrIpv6s IPv6 address blocks that you want to remove.
 #'
@@ -4405,16 +4072,12 @@ directoryservice_remove_ip_routes <- function(DirectoryId, CidrIps = NULL, CidrI
 #' specified Region
 #'
 #' @description
-#' Stops all replication and removes the domain controllers from the
-#' specified Region. You cannot remove the primary Region with this
-#' operation. Instead, use the
-#' [`delete_directory`][directoryservice_delete_directory] API.
+#' Stops all replication and removes the domain controllers from the specified Region. You cannot remove the primary Region with this operation. Instead, use the [`delete_directory`][directoryservice_delete_directory] API.
 #'
 #' @usage
 #' directoryservice_remove_region(DirectoryId)
 #'
-#' @param DirectoryId &#91;required&#93; The identifier of the directory for which you want to remove Region
-#' replication.
+#' @param DirectoryId &#91;required&#93; The identifier of the directory for which you want to remove Region replication.
 #'
 #' @return
 #' An empty list.
@@ -4502,31 +4165,18 @@ directoryservice_remove_tags_from_resource <- function(ResourceId, TagKeys) {
 #' AD directory
 #'
 #' @description
-#' Resets the password for any user in your Managed Microsoft AD or Simple
-#' AD directory. Disabled users will become enabled and can be
-#' authenticated following the API call.
+#' Resets the password for any user in your Managed Microsoft AD or Simple AD directory. Disabled users will become enabled and can be authenticated following the API call.
 #' 
-#' You can reset the password for any user in your directory with the
-#' following exceptions:
+#' You can reset the password for any user in your directory with the following exceptions:
 #' 
-#' -   For Simple AD, you cannot reset the password for any user that is a
-#'     member of either the **Domain Admins** or **Enterprise Admins**
-#'     group except for the administrator user.
+#' -   For Simple AD, you cannot reset the password for any user that is a member of either the **Domain Admins** or **Enterprise Admins** group except for the administrator user.
 #' 
-#' -   For Managed Microsoft AD, you can only reset the password for a user
-#'     that is in an OU based off of the NetBIOS name that you typed when
-#'     you created your directory. For example, you cannot reset the
-#'     password for a user in the **Amazon Web Services Reserved** OU. For
-#'     more information about the OU structure for an Managed Microsoft AD
-#'     directory, see [What Gets
-#'     Created](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_getting_started_what_gets_created.html)
-#'     in the *Directory Service Administration Guide*.
+#' -   For Managed Microsoft AD, you can only reset the password for a user that is in an OU based off of the NetBIOS name that you typed when you created your directory. For example, you cannot reset the password for a user in the **Amazon Web Services Reserved** OU. For more information about the OU structure for an Managed Microsoft AD directory, see [What Gets Created](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_getting_started_what_gets_created.html) in the *Directory Service Administration Guide*.
 #'
 #' @usage
 #' directoryservice_reset_user_password(DirectoryId, UserName, NewPassword)
 #'
-#' @param DirectoryId &#91;required&#93; Identifier of the Managed Microsoft AD or Simple AD directory in which
-#' the user resides.
+#' @param DirectoryId &#91;required&#93; Identifier of the Managed Microsoft AD or Simple AD directory in which the user resides.
 #' @param UserName &#91;required&#93; The user name of the user whose password will be reset.
 #' @param NewPassword &#91;required&#93; The new password that will be reset.
 #'
@@ -4571,15 +4221,9 @@ directoryservice_reset_user_password <- function(DirectoryId, UserName, NewPassw
 #' @description
 #' Restores a directory using an existing directory snapshot.
 #' 
-#' When you restore a directory from a snapshot, any changes made to the
-#' directory after the snapshot date are overwritten.
+#' When you restore a directory from a snapshot, any changes made to the directory after the snapshot date are overwritten.
 #' 
-#' This action returns as soon as the restore operation is initiated. You
-#' can monitor the progress of the restore operation by calling the
-#' [`describe_directories`][directoryservice_describe_directories]
-#' operation with the directory identifier. When the
-#' **DirectoryDescription.Stage** value changes to `Active`, the restore
-#' operation is complete.
+#' This action returns as soon as the restore operation is initiated. You can monitor the progress of the restore operation by calling the [`describe_directories`][directoryservice_describe_directories] operation with the directory identifier. When the **DirectoryDescription.Stage** value changes to `Active`, the restore operation is complete.
 #'
 #' @usage
 #' directoryservice_restore_from_snapshot(SnapshotId)
@@ -4625,43 +4269,22 @@ directoryservice_restore_from_snapshot <- function(SnapshotId) {
 #' (directory consumer)
 #'
 #' @description
-#' Shares a specified directory (`DirectoryId`) in your Amazon Web Services
-#' account (directory owner) with another Amazon Web Services account
-#' (directory consumer). With this operation you can use your directory
-#' from any Amazon Web Services account and from any Amazon VPC within an
-#' Amazon Web Services Region.
+#' Shares a specified directory (`DirectoryId`) in your Amazon Web Services account (directory owner) with another Amazon Web Services account (directory consumer). With this operation you can use your directory from any Amazon Web Services account and from any Amazon VPC within an Amazon Web Services Region.
 #' 
-#' When you share your Managed Microsoft AD directory, Directory Service
-#' creates a shared directory in the directory consumer account. This
-#' shared directory contains the metadata to provide access to the
-#' directory within the directory owner account. The shared directory is
-#' visible in all VPCs in the directory consumer account.
+#' When you share your Managed Microsoft AD directory, Directory Service creates a shared directory in the directory consumer account. This shared directory contains the metadata to provide access to the directory within the directory owner account. The shared directory is visible in all VPCs in the directory consumer account.
 #' 
-#' The `ShareMethod` parameter determines whether the specified directory
-#' can be shared between Amazon Web Services accounts inside the same
-#' Amazon Web Services organization (`ORGANIZATIONS`). It also determines
-#' whether you can share the directory with any other Amazon Web Services
-#' account either inside or outside of the organization (`HANDSHAKE`).
+#' The `ShareMethod` parameter determines whether the specified directory can be shared between Amazon Web Services accounts inside the same Amazon Web Services organization (`ORGANIZATIONS`). It also determines whether you can share the directory with any other Amazon Web Services account either inside or outside of the organization (`HANDSHAKE`).
 #' 
-#' The `ShareNotes` parameter is only used when `HANDSHAKE` is called,
-#' which sends a directory sharing request to the directory consumer.
+#' The `ShareNotes` parameter is only used when `HANDSHAKE` is called, which sends a directory sharing request to the directory consumer.
 #'
 #' @usage
 #' directoryservice_share_directory(DirectoryId, ShareNotes, ShareTarget,
 #'   ShareMethod)
 #'
-#' @param DirectoryId &#91;required&#93; Identifier of the Managed Microsoft AD directory that you want to share
-#' with other Amazon Web Services accounts.
-#' @param ShareNotes A directory share request that is sent by the directory owner to the
-#' directory consumer. The request includes a typed message to help the
-#' directory consumer administrator determine whether to approve or reject
-#' the share invitation.
-#' @param ShareTarget &#91;required&#93; Identifier for the directory consumer account with whom the directory is
-#' to be shared.
-#' @param ShareMethod &#91;required&#93; The method used when sharing a directory to determine whether the
-#' directory should be shared within your Amazon Web Services organization
-#' (`ORGANIZATIONS`) or with any Amazon Web Services account by sending a
-#' directory sharing request (`HANDSHAKE`).
+#' @param DirectoryId &#91;required&#93; Identifier of the Managed Microsoft AD directory that you want to share with other Amazon Web Services accounts.
+#' @param ShareNotes A directory share request that is sent by the directory owner to the directory consumer. The request includes a typed message to help the directory consumer administrator determine whether to approve or reject the share invitation.
+#' @param ShareTarget &#91;required&#93; Identifier for the directory consumer account with whom the directory is to be shared.
+#' @param ShareMethod &#91;required&#93; The method used when sharing a directory to determine whether the directory should be shared within your Amazon Web Services organization (`ORGANIZATIONS`) or with any Amazon Web Services account by sending a directory sharing request (`HANDSHAKE`).
 #'
 #' @return
 #' A list with the following syntax:
@@ -4712,40 +4335,22 @@ directoryservice_share_directory <- function(DirectoryId, ShareNotes = NULL, Sha
 #' environment for hybrid domain join
 #'
 #' @description
-#' Initiates a directory assessment to validate your self-managed AD
-#' environment for hybrid domain join. The assessment checks compatibility
-#' and connectivity of the self-managed AD environment.
+#' Initiates a directory assessment to validate your self-managed AD environment for hybrid domain join. The assessment checks compatibility and connectivity of the self-managed AD environment.
 #' 
-#' A directory assessment is automatically created when you create a hybrid
-#' directory. There are two types of assessments: `CUSTOMER` and `SYSTEM`.
-#' Your Amazon Web Services account has a limit of 100 `CUSTOMER` directory
-#' assessments.
+#' A directory assessment is automatically created when you create a hybrid directory. There are two types of assessments: `CUSTOMER` and `SYSTEM`. Your Amazon Web Services account has a limit of 100 `CUSTOMER` directory assessments.
 #' 
-#' The assessment process typically takes 30 minutes or more to complete.
-#' The assessment process is asynchronous and you can monitor it with
-#' [`describe_ad_assessment`][directoryservice_describe_ad_assessment].
+#' The assessment process typically takes 30 minutes or more to complete. The assessment process is asynchronous and you can monitor it with [`describe_ad_assessment`][directoryservice_describe_ad_assessment].
 #' 
-#' The `InstanceIds` must have a one-to-one correspondence with
-#' `CustomerDnsIps`, meaning that if the IP address for instance i-10243410
-#' is 10.24.34.100 and the IP address for instance i-10243420 is
-#' 10.24.34.200, then the input arrays must maintain the same order
-#' relationship, either \[10.24.34.100, 10.24.34.200\] paired with
-#' \[i-10243410, i-10243420\] or \[10.24.34.200, 10.24.34.100\] paired with
-#' \[i-10243420, i-10243410\].
+#' The `InstanceIds` must have a one-to-one correspondence with `CustomerDnsIps`, meaning that if the IP address for instance i-10243410 is 10.24.34.100 and the IP address for instance i-10243420 is 10.24.34.200, then the input arrays must maintain the same order relationship, either \[10.24.34.100, 10.24.34.200\] paired with \[i-10243410, i-10243420\] or \[10.24.34.200, 10.24.34.100\] paired with \[i-10243420, i-10243410\].
 #' 
-#' Note: You must provide exactly one `DirectoryId` or
-#' `AssessmentConfiguration`.
+#' Note: You must provide exactly one `DirectoryId` or `AssessmentConfiguration`.
 #'
 #' @usage
 #' directoryservice_start_ad_assessment(AssessmentConfiguration,
 #'   DirectoryId)
 #'
-#' @param AssessmentConfiguration Configuration parameters for the directory assessment, including DNS
-#' server information, domain name, Amazon VPC subnet, and Amazon Web
-#' Services System Manager managed node details.
-#' @param DirectoryId The identifier of the directory for which to perform the assessment.
-#' This should be an existing directory. If the assessment is not for an
-#' existing directory, this parameter should be omitted.
+#' @param AssessmentConfiguration Configuration parameters for the directory assessment, including DNS server information, domain name, Amazon VPC subnet, and Amazon Web Services System Manager managed node details.
+#' @param DirectoryId The identifier of the directory for which to perform the assessment. This should be an existing directory. If the assessment is not for an existing directory, this parameter should be omitted.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4813,14 +4418,9 @@ directoryservice_start_ad_assessment <- function(AssessmentConfiguration = NULL,
 #' directoryservice_start_schema_extension(DirectoryId,
 #'   CreateSnapshotBeforeSchemaExtension, LdifContent, Description)
 #'
-#' @param DirectoryId &#91;required&#93; The identifier of the directory for which the schema extension will be
-#' applied to.
-#' @param CreateSnapshotBeforeSchemaExtension &#91;required&#93; If true, creates a snapshot of the directory before applying the schema
-#' extension.
-#' @param LdifContent &#91;required&#93; The LDIF file represented as a string. To construct the LdifContent
-#' string, precede each line as it would be formatted in an ldif file with
-#' \\n. See the example request below for more details. The file size can
-#' be no larger than 1MB.
+#' @param DirectoryId &#91;required&#93; The identifier of the directory for which the schema extension will be applied to.
+#' @param CreateSnapshotBeforeSchemaExtension &#91;required&#93; If true, creates a snapshot of the directory before applying the schema extension.
+#' @param LdifContent &#91;required&#93; The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \\n. See the example request below for more details. The file size can be no larger than 1MB.
 #' @param Description &#91;required&#93; A description of the schema extension.
 #'
 #' @return
@@ -4869,16 +4469,13 @@ directoryservice_start_schema_extension <- function(DirectoryId, CreateSnapshotB
 #' accounts
 #'
 #' @description
-#' Stops the directory sharing between the directory owner and consumer
-#' accounts.
+#' Stops the directory sharing between the directory owner and consumer accounts.
 #'
 #' @usage
 #' directoryservice_unshare_directory(DirectoryId, UnshareTarget)
 #'
-#' @param DirectoryId &#91;required&#93; The identifier of the Managed Microsoft AD directory that you want to
-#' stop sharing.
-#' @param UnshareTarget &#91;required&#93; Identifier for the directory consumer account with whom the directory
-#' has to be unshared.
+#' @param DirectoryId &#91;required&#93; The identifier of the Managed Microsoft AD directory that you want to stop sharing.
+#' @param UnshareTarget &#91;required&#93; Identifier for the directory consumer account with whom the directory has to be unshared.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4927,21 +4524,16 @@ directoryservice_unshare_directory <- function(DirectoryId, UnshareTarget) {
 #' Services directory
 #'
 #' @description
-#' Updates a conditional forwarder that has been set up for your Amazon Web
-#' Services directory.
+#' Updates a conditional forwarder that has been set up for your Amazon Web Services directory.
 #'
 #' @usage
 #' directoryservice_update_conditional_forwarder(DirectoryId,
 #'   RemoteDomainName, DnsIpAddrs, DnsIpv6Addrs)
 #'
-#' @param DirectoryId &#91;required&#93; The directory ID of the Amazon Web Services directory for which to
-#' update the conditional forwarder.
-#' @param RemoteDomainName &#91;required&#93; The fully qualified domain name (FQDN) of the remote domain with which
-#' you will set up a trust relationship.
-#' @param DnsIpAddrs The updated IP addresses of the remote DNS server associated with the
-#' conditional forwarder.
-#' @param DnsIpv6Addrs The updated IPv6 addresses of the remote DNS server associated with the
-#' conditional forwarder.
+#' @param DirectoryId &#91;required&#93; The directory ID of the Amazon Web Services directory for which to update the conditional forwarder.
+#' @param RemoteDomainName &#91;required&#93; The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.
+#' @param DnsIpAddrs The updated IP addresses of the remote DNS server associated with the conditional forwarder.
+#' @param DnsIpv6Addrs The updated IPv6 addresses of the remote DNS server associated with the conditional forwarder.
 #'
 #' @return
 #' An empty list.
@@ -4996,12 +4588,10 @@ directoryservice_update_conditional_forwarder <- function(DirectoryId, RemoteDom
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory to update.
 #' @param UpdateType &#91;required&#93; The type of update to perform on the directory.
-#' @param OSUpdateSettings Operating system configuration to apply during the directory update
-#' operation.
+#' @param OSUpdateSettings Operating system configuration to apply during the directory update operation.
 #' @param DirectorySizeUpdateSettings Directory size configuration to apply during the update operation.
 #' @param NetworkUpdateSettings Network configuration to apply during the directory update operation.
-#' @param CreateSnapshotBeforeUpdate Specifies whether to create a directory snapshot before performing the
-#' update.
+#' @param CreateSnapshotBeforeUpdate Specifies whether to create a directory snapshot before performing the update.
 #'
 #' @return
 #' An empty list.
@@ -5054,47 +4644,25 @@ directoryservice_update_directory_setup <- function(DirectoryId, UpdateType, OSU
 #' Updates the configuration of an existing hybrid directory
 #'
 #' @description
-#' Updates the configuration of an existing hybrid directory. You can
-#' recover hybrid directory administrator account or modify self-managed
-#' instance settings.
+#' Updates the configuration of an existing hybrid directory. You can recover hybrid directory administrator account or modify self-managed instance settings.
 #' 
-#' Updates are applied asynchronously. Use
-#' [`describe_hybrid_ad_update`][directoryservice_describe_hybrid_ad_update]
-#' to monitor the progress of configuration changes.
+#' Updates are applied asynchronously. Use [`describe_hybrid_ad_update`][directoryservice_describe_hybrid_ad_update] to monitor the progress of configuration changes.
 #' 
-#' The `InstanceIds` must have a one-to-one correspondence with
-#' `CustomerDnsIps`, meaning that if the IP address for instance i-10243410
-#' is 10.24.34.100 and the IP address for instance i-10243420 is
-#' 10.24.34.200, then the input arrays must maintain the same order
-#' relationship, either \[10.24.34.100, 10.24.34.200\] paired with
-#' \[i-10243410, i-10243420\] or \[10.24.34.200, 10.24.34.100\] paired with
-#' \[i-10243420, i-10243410\].
+#' The `InstanceIds` must have a one-to-one correspondence with `CustomerDnsIps`, meaning that if the IP address for instance i-10243410 is 10.24.34.100 and the IP address for instance i-10243420 is 10.24.34.200, then the input arrays must maintain the same order relationship, either \[10.24.34.100, 10.24.34.200\] paired with \[i-10243410, i-10243420\] or \[10.24.34.200, 10.24.34.100\] paired with \[i-10243420, i-10243410\].
 #' 
-#' You must provide at least one update to
-#' UpdateHybridADRequest$HybridAdministratorAccountUpdate or
-#' UpdateHybridADRequest$SelfManagedInstancesSettings.
+#' You must provide at least one update to UpdateHybridADRequest$HybridAdministratorAccountUpdate or UpdateHybridADRequest$SelfManagedInstancesSettings.
 #'
 #' @usage
 #' directoryservice_update_hybrid_ad(DirectoryId,
 #'   HybridAdministratorAccountUpdate, SelfManagedInstancesSettings)
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the hybrid directory to update.
-#' @param HybridAdministratorAccountUpdate We create a hybrid directory administrator account when we create a
-#' hybrid directory. Use `HybridAdministratorAccountUpdate` to recover the
-#' hybrid directory administrator account if you have deleted it.
+#' @param HybridAdministratorAccountUpdate We create a hybrid directory administrator account when we create a hybrid directory. Use `HybridAdministratorAccountUpdate` to recover the hybrid directory administrator account if you have deleted it.
 #' 
-#' To recover your hybrid directory administrator account, we need
-#' temporary access to a user in your self-managed AD with administrator
-#' permissions in the form of a secret from Amazon Web Services Secrets
-#' Manager. We use these credentials once during recovery and don't store
-#' them.
+#' To recover your hybrid directory administrator account, we need temporary access to a user in your self-managed AD with administrator permissions in the form of a secret from Amazon Web Services Secrets Manager. We use these credentials once during recovery and don't store them.
 #' 
-#' If your hybrid directory administrator account exists, then you don’t
-#' need to use `HybridAdministratorAccountUpdate`, even if you have updated
-#' your self-managed AD administrator user.
-#' @param SelfManagedInstancesSettings Updates to the self-managed AD configuration, including DNS server IP
-#' addresses and Amazon Web Services System Manager managed node
-#' identifiers.
+#' If your hybrid directory administrator account exists, then you don’t need to use `HybridAdministratorAccountUpdate`, even if you have updated your self-managed AD administrator user.
+#' @param SelfManagedInstancesSettings Updates to the self-managed AD configuration, including DNS server IP addresses and Amazon Web Services System Manager managed node identifiers.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5150,19 +4718,13 @@ directoryservice_update_hybrid_ad <- function(DirectoryId, HybridAdministratorAc
 #' Adds or removes domain controllers to or from the directory
 #'
 #' @description
-#' Adds or removes domain controllers to or from the directory. Based on
-#' the difference between current value and new value (provided through
-#' this API call), domain controllers will be added or removed. It may take
-#' up to 45 minutes for any new domain controllers to become fully active
-#' once the requested number of domain controllers is updated. During this
-#' time, you cannot make another update request.
+#' Adds or removes domain controllers to or from the directory. Based on the difference between current value and new value (provided through this API call), domain controllers will be added or removed. It may take up to 45 minutes for any new domain controllers to become fully active once the requested number of domain controllers is updated. During this time, you cannot make another update request.
 #'
 #' @usage
 #' directoryservice_update_number_of_domain_controllers(DirectoryId,
 #'   DesiredNumber)
 #'
-#' @param DirectoryId &#91;required&#93; Identifier of the directory to which the domain controllers will be
-#' added or removed.
+#' @param DirectoryId &#91;required&#93; Identifier of the directory to which the domain controllers will be added or removed.
 #' @param DesiredNumber &#91;required&#93; The number of domain controllers desired in the directory.
 #'
 #' @return
@@ -5204,16 +4766,13 @@ directoryservice_update_number_of_domain_controllers <- function(DirectoryId, De
 #' information for an AD Connector or Microsoft AD directory
 #'
 #' @description
-#' Updates the Remote Authentication Dial In User Service (RADIUS) server
-#' information for an AD Connector or Microsoft AD directory.
+#' Updates the Remote Authentication Dial In User Service (RADIUS) server information for an AD Connector or Microsoft AD directory.
 #'
 #' @usage
 #' directoryservice_update_radius(DirectoryId, RadiusSettings)
 #'
-#' @param DirectoryId &#91;required&#93; The identifier of the directory for which to update the RADIUS server
-#' information.
-#' @param RadiusSettings &#91;required&#93; A RadiusSettings object that contains information about the RADIUS
-#' server.
+#' @param DirectoryId &#91;required&#93; The identifier of the directory for which to update the RADIUS server information.
+#' @param RadiusSettings &#91;required&#93; A RadiusSettings object that contains information about the RADIUS server.
 #'
 #' @return
 #' An empty list.
@@ -5324,8 +4883,7 @@ directoryservice_update_settings <- function(DirectoryId, Settings) {
 #' directory and an self-managed Active Directory
 #'
 #' @description
-#' Updates the trust that has been set up between your Managed Microsoft AD
-#' directory and an self-managed Active Directory.
+#' Updates the trust that has been set up between your Managed Microsoft AD directory and an self-managed Active Directory.
 #'
 #' @usage
 #' directoryservice_update_trust(TrustId, SelectiveAuth)
@@ -5378,11 +4936,9 @@ directoryservice_update_trust <- function(TrustId, SelectiveAuth = NULL) {
 #' and verify trust relationships
 #'
 #' @description
-#' Directory Service for Microsoft Active Directory allows you to configure
-#' and verify trust relationships.
+#' Directory Service for Microsoft Active Directory allows you to configure and verify trust relationships.
 #' 
-#' This action verifies a trust relationship between your Managed Microsoft
-#' AD directory and an external domain.
+#' This action verifies a trust relationship between your Managed Microsoft AD directory and an external domain.
 #'
 #' @usage
 #' directoryservice_verify_trust(TrustId)

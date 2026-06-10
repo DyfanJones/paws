@@ -7,11 +7,9 @@
 quicksight_describe_topic_permissions(AwsAccountId, TopicId)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the topic that
-you want described.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the topic that you want described.}
 
-\item{TopicId}{[required] The ID of the topic that you want to describe. This ID is unique per
-Amazon Web Services Region for each Amazon Web Services account.}
+\item{TopicId}{[required] The ID of the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.}
 }
 \description{
 Describes the permissions of a topic.

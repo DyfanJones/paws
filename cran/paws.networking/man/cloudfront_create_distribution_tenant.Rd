@@ -17,37 +17,23 @@ cloudfront_create_distribution_tenant(
 )
 }
 \arguments{
-\item{DistributionId}{[required] The ID of the multi-tenant distribution to use for creating the
-distribution tenant.}
+\item{DistributionId}{[required] The ID of the multi-tenant distribution to use for creating the distribution tenant.}
 
-\item{Name}{[required] The name of the distribution tenant. Enter a friendly identifier that is
-unique within your Amazon Web Services account. This name can't be
-updated after you create the distribution tenant.}
+\item{Name}{[required] The name of the distribution tenant. Enter a friendly identifier that is unique within your Amazon Web Services account. This name can't be updated after you create the distribution tenant.}
 
-\item{Domains}{[required] The domains associated with the distribution tenant. You must specify at
-least one domain in the request.}
+\item{Domains}{[required] The domains associated with the distribution tenant. You must specify at least one domain in the request.}
 
-\item{Tags}{}
+\item{Tags}{A complex type that contains zero or more \code{Tag} elements.}
 
-\item{Customizations}{Customizations for the distribution tenant. For each distribution
-tenant, you can specify the geographic restrictions, and the Amazon
-Resource Names (ARNs) for the ACM certificate and WAF web ACL. These are
-specific values that you can override or disable from the multi-tenant
-distribution that was used to create the distribution tenant.}
+\item{Customizations}{Customizations for the distribution tenant. For each distribution tenant, you can specify the geographic restrictions, and the Amazon Resource Names (ARNs) for the ACM certificate and WAF web ACL. These are specific values that you can override or disable from the multi-tenant distribution that was used to create the distribution tenant.}
 
-\item{Parameters}{A list of parameter values to add to the resource. A parameter is
-specified as a key-value pair. A valid parameter value must exist for
-any parameter that is marked as required in the multi-tenant
-distribution.}
+\item{Parameters}{A list of parameter values to add to the resource. A parameter is specified as a key-value pair. A valid parameter value must exist for any parameter that is marked as required in the multi-tenant distribution.}
 
-\item{ConnectionGroupId}{The ID of the connection group to associate with the distribution
-tenant.}
+\item{ConnectionGroupId}{The ID of the connection group to associate with the distribution tenant.}
 
 \item{ManagedCertificateRequest}{The configuration for the CloudFront managed ACM certificate request.}
 
-\item{Enabled}{Indicates whether the distribution tenant should be enabled when
-created. If the distribution tenant is disabled, the distribution tenant
-won't serve traffic.}
+\item{Enabled}{Indicates whether the distribution tenant should be enabled when created. If the distribution tenant is disabled, the distribution tenant won't serve traffic.}
 }
 \description{
 Creates a distribution tenant.

@@ -12,15 +12,11 @@ redshiftserverless_list_managed_workgroups(
 )
 }
 \arguments{
-\item{maxResults}{An optional parameter that specifies the maximum number of results to
-return. You can use nextToken to display the next page of results.}
+\item{maxResults}{An optional parameter that specifies the maximum number of results to return. You can use nextToken to display the next page of results.}
 
-\item{nextToken}{If your initial ListManagedWorkgroups operation returns a nextToken, you
-can include the returned nextToken in following ListManagedWorkgroups
-operations, which returns results in the next page.}
+\item{nextToken}{If your initial ListManagedWorkgroups operation returns a nextToken, you can include the returned nextToken in following ListManagedWorkgroups operations, which returns results in the next page.}
 
-\item{sourceArn}{The Amazon Resource Name (ARN) for the managed workgroup in the Glue
-Data Catalog.}
+\item{sourceArn}{The Amazon Resource Name (ARN) for the managed workgroup in the Glue Data Catalog.}
 }
 \description{
 Returns information about a list of specified managed workgroups in your account.

@@ -8,10 +8,9 @@ packages with a domain simultaneously}
 opensearchservice_associate_packages(PackageList, DomainName)
 }
 \arguments{
-\item{PackageList}{[required] A list of packages and their prerequisites to be associated with a
-domain.}
+\item{PackageList}{[required] A list of packages and their prerequisites to be associated with a domain.}
 
-\item{DomainName}{[required]}
+\item{DomainName}{[required] The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.}
 }
 \description{
 Operation in the Amazon OpenSearch Service API for associating multiple packages with a domain simultaneously.

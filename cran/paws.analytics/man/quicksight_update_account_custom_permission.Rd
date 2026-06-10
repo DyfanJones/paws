@@ -10,11 +10,9 @@ quicksight_update_account_custom_permission(
 )
 }
 \arguments{
-\item{CustomPermissionsName}{[required] The name of the custom permissions profile that you want to apply to an
-account.}
+\item{CustomPermissionsName}{[required] The name of the custom permissions profile that you want to apply to an account.}
 
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account for which you want to apply a
-custom permissions profile.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account for which you want to apply a custom permissions profile.}
 }
 \description{
 Applies a custom permissions profile to an account.

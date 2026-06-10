@@ -7,8 +7,7 @@
 kafka_describe_vpc_connection(Arn)
 }
 \arguments{
-\item{Arn}{[required] The Amazon Resource Name (ARN) that uniquely identifies a MSK VPC
-connection.}
+\item{Arn}{[required] The Amazon Resource Name (ARN) that uniquely identifies a MSK VPC connection.}
 }
 \description{
 Returns a description of this MSK VPC connection.

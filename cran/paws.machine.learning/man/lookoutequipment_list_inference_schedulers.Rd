@@ -14,15 +14,13 @@ lookoutequipment_list_inference_schedulers(
 )
 }
 \arguments{
-\item{NextToken}{An opaque pagination token indicating where to continue the listing of
-inference schedulers.}
+\item{NextToken}{An opaque pagination token indicating where to continue the listing of inference schedulers.}
 
 \item{MaxResults}{Specifies the maximum number of inference schedulers to list.}
 
 \item{InferenceSchedulerNameBeginsWith}{The beginning of the name of the inference schedulers to be listed.}
 
-\item{ModelName}{The name of the machine learning model used by the inference scheduler
-to be listed.}
+\item{ModelName}{The name of the machine learning model used by the inference scheduler to be listed.}
 
 \item{Status}{Specifies the current status of the inference schedulers.}
 }

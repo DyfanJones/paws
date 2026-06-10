@@ -7,18 +7,9 @@
 quicksight_list_namespaces(AwsAccountId, NextToken = NULL, MaxResults = NULL)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that contains the Quick Sight
-namespaces that you want to list.}
+\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that contains the Quick Sight namespaces that you want to list.}
 
-\item{NextToken}{A unique pagination token that can be used in a subsequent request. You
-will receive a pagination token in the response body of a previous
-\code{ListNameSpaces} API call if there is more data that can be returned. To
-receive the data, make another
-\code{\link[=quicksight_list_namespaces]{list_namespaces}} API call with the
-returned token to retrieve the next page of data. Each token is valid
-for 24 hours. If you try to make a
-\code{\link[=quicksight_list_namespaces]{list_namespaces}} API call with an expired
-token, you will receive a \verb{HTTP 400 InvalidNextTokenException} error.}
+\item{NextToken}{A unique pagination token that can be used in a subsequent request. You will receive a pagination token in the response body of a previous \code{ListNameSpaces} API call if there is more data that can be returned. To receive the data, make another \code{\link[=quicksight_list_namespaces]{list_namespaces}} API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a \code{\link[=quicksight_list_namespaces]{list_namespaces}} API call with an expired token, you will receive a \verb{HTTP 400 InvalidNextTokenException} error.}
 
 \item{MaxResults}{The maximum number of results to return.}
 }

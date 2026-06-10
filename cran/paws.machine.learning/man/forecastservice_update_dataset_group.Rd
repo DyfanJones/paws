@@ -9,8 +9,7 @@ forecastservice_update_dataset_group(DatasetGroupArn, DatasetArns)
 \arguments{
 \item{DatasetGroupArn}{[required] The ARN of the dataset group.}
 
-\item{DatasetArns}{[required] An array of the Amazon Resource Names (ARNs) of the datasets to add to
-the dataset group.}
+\item{DatasetArns}{[required] An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset group.}
 }
 \description{
 Replaces the datasets in a dataset group with the specified datasets.

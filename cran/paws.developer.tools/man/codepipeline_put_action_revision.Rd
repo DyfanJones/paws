@@ -12,11 +12,9 @@ codepipeline_put_action_revision(
 )
 }
 \arguments{
-\item{pipelineName}{[required] The name of the pipeline that starts processing the revision to the
-source.}
+\item{pipelineName}{[required] The name of the pipeline that starts processing the revision to the source.}
 
-\item{stageName}{[required] The name of the stage that contains the action that acts on the
-revision.}
+\item{stageName}{[required] The name of the stage that contains the action that acts on the revision.}
 
 \item{actionName}{[required] The name of the action that processes the revision.}
 

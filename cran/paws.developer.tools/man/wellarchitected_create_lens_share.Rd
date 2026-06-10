@@ -7,11 +7,21 @@
 wellarchitected_create_lens_share(LensAlias, SharedWith, ClientRequestToken)
 }
 \arguments{
-\item{LensAlias}{[required]}
+\item{LensAlias}{[required] The alias of the lens.
 
-\item{SharedWith}{[required]}
+For Amazon Web Services official lenses, this is either the lens alias, such as \code{serverless}, or the lens ARN, such as \verb{arn:aws:wellarchitected:us-east-1::lens/serverless}. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.
 
-\item{ClientRequestToken}{[required]}
+For custom lenses, this is the lens ARN, such as \verb{arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef}.
+
+Each lens is identified by its LensSummary$LensAlias.}
+
+\item{SharedWith}{[required] The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload, lens, profile, or review template is shared.}
+
+\item{ClientRequestToken}{[required] A unique case-sensitive string used to ensure that this request is idempotent (executes only once).
+
+You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.
+
+This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.}
 }
 \description{
 Create a lens share.

@@ -12,14 +12,13 @@ wellarchitected_list_profiles(
 )
 }
 \arguments{
-\item{ProfileNamePrefix}{An optional string added to the beginning of each profile name returned
-in the results.}
+\item{ProfileNamePrefix}{An optional string added to the beginning of each profile name returned in the results.}
 
 \item{ProfileOwnerType}{Profile owner type.}
 
-\item{NextToken}{}
+\item{NextToken}{The token to use to retrieve the next set of results.}
 
-\item{MaxResults}{}
+\item{MaxResults}{The maximum number of results to return for this request.}
 }
 \description{
 List profiles.

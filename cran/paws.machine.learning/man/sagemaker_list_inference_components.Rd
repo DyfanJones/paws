@@ -20,43 +20,29 @@ sagemaker_list_inference_components(
 )
 }
 \arguments{
-\item{SortBy}{The field by which to sort the inference components in the response. The
-default is \code{CreationTime}.}
+\item{SortBy}{The field by which to sort the inference components in the response. The default is \code{CreationTime}.}
 
 \item{SortOrder}{The sort order for results. The default is \code{Descending}.}
 
-\item{NextToken}{A token that you use to get the next set of results following a
-truncated response. If the response to the previous request was
-truncated, that response provides the value for this token.}
+\item{NextToken}{A token that you use to get the next set of results following a truncated response. If the response to the previous request was truncated, that response provides the value for this token.}
 
-\item{MaxResults}{The maximum number of inference components to return in the response.
-This value defaults to 10.}
+\item{MaxResults}{The maximum number of inference components to return in the response. This value defaults to 10.}
 
-\item{NameContains}{Filters the results to only those inference components with a name that
-contains the specified string.}
+\item{NameContains}{Filters the results to only those inference components with a name that contains the specified string.}
 
-\item{CreationTimeBefore}{Filters the results to only those inference components that were created
-before the specified time.}
+\item{CreationTimeBefore}{Filters the results to only those inference components that were created before the specified time.}
 
-\item{CreationTimeAfter}{Filters the results to only those inference components that were created
-after the specified time.}
+\item{CreationTimeAfter}{Filters the results to only those inference components that were created after the specified time.}
 
-\item{LastModifiedTimeBefore}{Filters the results to only those inference components that were updated
-before the specified time.}
+\item{LastModifiedTimeBefore}{Filters the results to only those inference components that were updated before the specified time.}
 
-\item{LastModifiedTimeAfter}{Filters the results to only those inference components that were updated
-after the specified time.}
+\item{LastModifiedTimeAfter}{Filters the results to only those inference components that were updated after the specified time.}
 
-\item{StatusEquals}{Filters the results to only those inference components with the
-specified status.}
+\item{StatusEquals}{Filters the results to only those inference components with the specified status.}
 
-\item{EndpointNameEquals}{An endpoint name to filter the listed inference components. The response
-includes only those inference components that are hosted at the
-specified endpoint.}
+\item{EndpointNameEquals}{An endpoint name to filter the listed inference components. The response includes only those inference components that are hosted at the specified endpoint.}
 
-\item{VariantNameEquals}{A production variant name to filter the listed inference components. The
-response includes only those inference components that are hosted at the
-specified variant.}
+\item{VariantNameEquals}{A production variant name to filter the listed inference components. The response includes only those inference components that are hosted at the specified variant.}
 }
 \description{
 Lists the inference components in your account and their properties.

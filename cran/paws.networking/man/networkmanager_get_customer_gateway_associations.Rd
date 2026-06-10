@@ -15,8 +15,7 @@ networkmanager_get_customer_gateway_associations(
 \arguments{
 \item{GlobalNetworkId}{[required] The ID of the global network.}
 
-\item{CustomerGatewayArns}{One or more customer gateway Amazon Resource Names (ARNs). The maximum
-is 10.}
+\item{CustomerGatewayArns}{One or more customer gateway Amazon Resource Names (ARNs). The maximum is 10.}
 
 \item{MaxResults}{The maximum number of results to return.}
 

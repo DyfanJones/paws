@@ -14,24 +14,23 @@ textract_create_adapter_version(
 )
 }
 \arguments{
-\item{AdapterId}{[required] A string containing a unique ID for the adapter that will receive a new
-version.}
+\item{AdapterId}{[required] A string containing a unique ID for the adapter that will receive a new version.}
 
-\item{ClientRequestToken}{Idempotent token is used to recognize the request. If the same token is
-used with multiple CreateAdapterVersion requests, the same session is
-returned. This token is employed to avoid unintentionally creating the
-same session multiple times.}
+\item{ClientRequestToken}{Idempotent token is used to recognize the request. If the same token is used with multiple CreateAdapterVersion requests, the same session is returned. This token is employed to avoid unintentionally creating the same session multiple times.}
 
-\item{DatasetConfig}{[required] Specifies a dataset used to train a new adapter version. Takes a
-ManifestS3Object as the value.}
+\item{DatasetConfig}{[required] Specifies a dataset used to train a new adapter version. Takes a ManifestS3Object as the value.}
 
-\item{KMSKeyId}{The identifier for your AWS Key Management Service key (AWS KMS key).
-Used to encrypt your documents.}
+\item{KMSKeyId}{The identifier for your AWS Key Management Service key (AWS KMS key). Used to encrypt your documents.}
 
-\item{OutputConfig}{[required]}
+\item{OutputConfig}{[required] Sets whether or not your output will go to a user created bucket. Used to set the name of the bucket, and the prefix on the output file.
 
-\item{Tags}{A set of tags (key-value pairs) that you want to attach to the adapter
-version.}
+\code{OutputConfig} is an optional parameter which lets you adjust where your output will be placed. By default, Amazon Textract will store the results internally and can only be accessed by the Get API operations. With \code{OutputConfig} enabled, you can set the name of the bucket the output will be sent to the file prefix of the results where you can download your results. Additionally, you can set the \code{KMSKeyID} parameter to a customer master key (CMK) to encrypt your output. Without this parameter set Amazon Textract will encrypt server-side using the AWS managed CMK for Amazon S3.
+
+Decryption of Customer Content is necessary for processing of the documents by Amazon Textract. If your account is opted out under an AI services opt out policy then all unencrypted Customer Content is immediately and permanently deleted after the Customer Content has been processed by the service. No copy of of the output is retained by Amazon Textract. For information about how to opt out, see \href{https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html}{Managing AI services opt-out policy.}
+
+For more information on data privacy, see the \href{https://aws.amazon.com/compliance/data-privacy-faq/}{Data Privacy FAQ}.}
+
+\item{Tags}{A set of tags (key-value pairs) that you want to attach to the adapter version.}
 }
 \description{
 Creates a new version of an adapter. Operates on a provided AdapterId and a specified dataset provided via the DatasetConfig argument. Requires that you specify an Amazon S3 bucket with the OutputConfig argument. You can provide an optional KMSKeyId, an optional ClientRequestToken, and optional tags.

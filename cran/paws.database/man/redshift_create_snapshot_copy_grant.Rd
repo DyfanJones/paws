@@ -13,8 +13,7 @@ redshift_create_snapshot_copy_grant(
 )
 }
 \arguments{
-\item{SnapshotCopyGrantName}{[required] The name of the snapshot copy grant. This name must be unique in the
-region for the Amazon Web Services account.
+\item{SnapshotCopyGrantName}{[required] The name of the snapshot copy grant. This name must be unique in the region for the Amazon Web Services account.
 
 Constraints:
 \itemize{
@@ -22,13 +21,10 @@ Constraints:
 \item Alphabetic characters must be lowercase.
 \item First character must be a letter.
 \item Cannot end with a hyphen or contain two consecutive hyphens.
-\item Must be unique for all clusters within an Amazon Web Services
-account.
+\item Must be unique for all clusters within an Amazon Web Services account.
 }}
 
-\item{KmsKeyId}{The unique identifier of the encrypted symmetric key to which to grant
-Amazon Redshift permission. If no key is specified, the default key is
-used.}
+\item{KmsKeyId}{The unique identifier of the encrypted symmetric key to which to grant Amazon Redshift permission. If no key is specified, the default key is used.}
 
 \item{Tags}{A list of tag instances.}
 }

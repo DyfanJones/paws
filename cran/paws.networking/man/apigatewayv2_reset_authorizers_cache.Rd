@@ -9,9 +9,7 @@ apigatewayv2_reset_authorizers_cache(ApiId, StageName)
 \arguments{
 \item{ApiId}{[required] The API identifier.}
 
-\item{StageName}{[required] The stage name. Stage names can contain only alphanumeric characters,
-hyphens, and underscores, or be $default. Maximum length is 128
-characters.}
+\item{StageName}{[required] The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default. Maximum length is 128 characters.}
 }
 \description{
 Resets all authorizer cache entries on a stage. Supported only for HTTP APIs.

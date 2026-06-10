@@ -7,8 +7,7 @@
 kendraranking_list_tags_for_resource(ResourceARN)
 }
 \arguments{
-\item{ResourceARN}{[required] The Amazon Resource Name (ARN) of the rescore execution plan to get a
-list of tags for.}
+\item{ResourceARN}{[required] The Amazon Resource Name (ARN) of the rescore execution plan to get a list of tags for.}
 }
 \description{
 Gets a list of tags associated with a specified resource. A rescore execution plan is an example of a resource that can have tags associated with it.

@@ -16,11 +16,9 @@ eks_update_cluster_version(
 
 \item{version}{[required] The desired Kubernetes version following a successful update.}
 
-\item{clientRequestToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request.}
+\item{clientRequestToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.}
 
-\item{force}{Set this value to \code{true} to override upgrade-blocking readiness checks
-when updating a cluster.}
+\item{force}{Set this value to \code{true} to override upgrade-blocking readiness checks when updating a cluster.}
 }
 \description{
 Updates an Amazon EKS cluster to the specified Kubernetes version. Your cluster continues to function during the update. The response output includes an update ID that you can use to track the status of your cluster update with the \href{https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeUpdate.html}{\code{describe_update}} API operation.

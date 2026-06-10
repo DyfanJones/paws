@@ -8,9 +8,7 @@ with DevOps Guru}
 devopsguru_update_service_integration(ServiceIntegration)
 }
 \arguments{
-\item{ServiceIntegration}{[required] An \code{IntegratedServiceConfig} object used to specify the integrated
-service you want to update, and whether you want to update it to enabled
-or disabled.}
+\item{ServiceIntegration}{[required] An \code{IntegratedServiceConfig} object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled.}
 }
 \description{
 Enables or disables integration with a service that can be integrated with DevOps Guru. The one service that can be integrated with DevOps Guru is Amazon Web Services Systems Manager, which can be used to create an OpsItem for each generated insight.

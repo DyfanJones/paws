@@ -7,17 +7,16 @@
 kinesis_disable_enhanced_monitoring(
   StreamName = NULL,
   ShardLevelMetrics,
-  StreamARN = NULL
+  StreamARN = NULL,
+  StreamId = NULL
 )
 }
 \arguments{
-\item{StreamName}{The name of the Kinesis data stream for which to disable enhanced
-monitoring.}
+\item{StreamName}{The name of the Kinesis data stream for which to disable enhanced monitoring.}
 
 \item{ShardLevelMetrics}{[required] List of shard-level metrics to disable.
 
-The following are the valid shard-level metrics. The value "\code{ALL}"
-disables every metric.
+The following are the valid shard-level metrics. The value "\code{ALL}" disables every metric.
 \itemize{
 \item \code{IncomingBytes}
 \item \code{IncomingRecords}
@@ -29,10 +28,11 @@ disables every metric.
 \item \code{ALL}
 }
 
-For more information, see \href{https://docs.aws.amazon.com/streams/latest/dev/monitoring-with-cloudwatch.html}{Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch}
-in the \emph{Amazon Kinesis Data Streams Developer Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/streams/latest/dev/monitoring-with-cloudwatch.html}{Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch} in the \emph{Amazon Kinesis Data Streams Developer Guide}.}
 
 \item{StreamARN}{The ARN of the stream.}
+
+\item{StreamId}{Not Implemented. Reserved for future use.}
 }
 \description{
 Disables enhanced monitoring.

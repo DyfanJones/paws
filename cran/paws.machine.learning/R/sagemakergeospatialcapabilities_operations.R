@@ -10,8 +10,7 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/sagemakergeospatialcapabilities_delete_earth_observation_job/](https://www.paws-r-sdk.com/docs/sagemakergeospatialcapabilities_delete_earth_observation_job/) for full documentation.
 #'
-#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) of the Earth Observation job being
-#' deleted.
+#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) of the Earth Observation job being deleted.
 #'
 #' @keywords internal
 #'
@@ -42,8 +41,7 @@ sagemakergeospatialcapabilities_delete_earth_observation_job <- function(Arn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/sagemakergeospatialcapabilities_delete_vector_enrichment_job/](https://www.paws-r-sdk.com/docs/sagemakergeospatialcapabilities_delete_vector_enrichment_job/) for full documentation.
 #'
-#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) of the Vector Enrichment job being
-#' deleted.
+#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) of the Vector Enrichment job being deleted.
 #'
 #' @keywords internal
 #'
@@ -76,11 +74,9 @@ sagemakergeospatialcapabilities_delete_vector_enrichment_job <- function(Arn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/sagemakergeospatialcapabilities_export_earth_observation_job/](https://www.paws-r-sdk.com/docs/sagemakergeospatialcapabilities_export_earth_observation_job/) for full documentation.
 #'
-#' @param Arn &#91;required&#93; The input Amazon Resource Name (ARN) of the Earth Observation job being
-#' exported.
+#' @param Arn &#91;required&#93; The input Amazon Resource Name (ARN) of the Earth Observation job being exported.
 #' @param ClientToken A unique token that guarantees that the call to this API is idempotent.
-#' @param ExecutionRoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role that you specified for
-#' the job.
+#' @param ExecutionRoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role that you specified for the job.
 #' @param ExportSourceImages The source images provided to the Earth Observation job being exported.
 #' @param OutputConfig &#91;required&#93; An object containing information about the output file.
 #'
@@ -116,8 +112,7 @@ sagemakergeospatialcapabilities_export_earth_observation_job <- function(Arn, Cl
 #'
 #' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) of the Vector Enrichment job.
 #' @param ClientToken A unique token that guarantees that the call to this API is idempotent.
-#' @param ExecutionRoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM rolewith permission to upload
-#' to the location in OutputConfig.
+#' @param ExecutionRoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM rolewith permission to upload to the location in OutputConfig.
 #' @param OutputConfig &#91;required&#93; Output location information for exporting Vector Enrichment Job results.
 #'
 #' @keywords internal
@@ -216,11 +211,9 @@ sagemakergeospatialcapabilities_get_raster_data_collection <- function(Arn) {
 #' @param ImageAssets &#91;required&#93; The particular assets or bands to tile.
 #' @param ImageMask Determines whether or not to return a valid data mask.
 #' @param OutputDataType The output data type of the tile operation.
-#' @param OutputFormat The data format of the output tile. The formats include .npy, .png and
-#' .jpg.
+#' @param OutputFormat The data format of the output tile. The formats include .npy, .png and .jpg.
 #' @param PropertyFilters Property filters for the imagery to tile.
-#' @param Target &#91;required&#93; Determines what part of the Earth Observation job to tile. 'INPUT' or
-#' 'OUTPUT' are the valid options.
+#' @param Target &#91;required&#93; Determines what part of the Earth Observation job to tile. 'INPUT' or 'OUTPUT' are the valid options.
 #' @param TimeRangeFilter Time range filter applied to imagery to find the images to tile.
 #' @param x &#91;required&#93; The x coordinate of the tile input.
 #' @param y &#91;required&#93; The y coordinate of the tile input.
@@ -289,11 +282,9 @@ sagemakergeospatialcapabilities_get_vector_enrichment_job <- function(Arn) {
 #' See [https://www.paws-r-sdk.com/docs/sagemakergeospatialcapabilities_list_earth_observation_jobs/](https://www.paws-r-sdk.com/docs/sagemakergeospatialcapabilities_list_earth_observation_jobs/) for full documentation.
 #'
 #' @param MaxResults The total number of items to return.
-#' @param NextToken If the previous response was truncated, you receive this token. Use it
-#' in your next request to receive the next set of results.
+#' @param NextToken If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.
 #' @param SortBy The parameter by which to sort the results.
-#' @param SortOrder An optional value that specifies whether you want the results sorted in
-#' `Ascending` or `Descending` order.
+#' @param SortOrder An optional value that specifies whether you want the results sorted in `Ascending` or `Descending` order.
 #' @param StatusEquals A filter that retrieves only jobs with a specific status.
 #'
 #' @keywords internal
@@ -326,8 +317,7 @@ sagemakergeospatialcapabilities_list_earth_observation_jobs <- function(MaxResul
 #' See [https://www.paws-r-sdk.com/docs/sagemakergeospatialcapabilities_list_raster_data_collections/](https://www.paws-r-sdk.com/docs/sagemakergeospatialcapabilities_list_raster_data_collections/) for full documentation.
 #'
 #' @param MaxResults The total number of items to return.
-#' @param NextToken If the previous response was truncated, you receive this token. Use it
-#' in your next request to receive the next set of results.
+#' @param NextToken If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.
 #'
 #' @keywords internal
 #'
@@ -390,11 +380,9 @@ sagemakergeospatialcapabilities_list_tags_for_resource <- function(ResourceArn) 
 #' See [https://www.paws-r-sdk.com/docs/sagemakergeospatialcapabilities_list_vector_enrichment_jobs/](https://www.paws-r-sdk.com/docs/sagemakergeospatialcapabilities_list_vector_enrichment_jobs/) for full documentation.
 #'
 #' @param MaxResults The maximum number of items to return.
-#' @param NextToken If the previous response was truncated, you receive this token. Use it
-#' in your next request to receive the next set of results.
+#' @param NextToken If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.
 #' @param SortBy The parameter by which to sort the results.
-#' @param SortOrder An optional value that specifies whether you want the results sorted in
-#' `Ascending` or `Descending` order.
+#' @param SortOrder An optional value that specifies whether you want the results sorted in `Ascending` or `Descending` order.
 #' @param StatusEquals A filter that retrieves only jobs with a specific status.
 #'
 #' @keywords internal
@@ -428,15 +416,8 @@ sagemakergeospatialcapabilities_list_vector_enrichment_jobs <- function(MaxResul
 #' See [https://www.paws-r-sdk.com/docs/sagemakergeospatialcapabilities_search_raster_data_collection/](https://www.paws-r-sdk.com/docs/sagemakergeospatialcapabilities_search_raster_data_collection/) for full documentation.
 #'
 #' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) of the raster data collection.
-#' @param NextToken If the previous response was truncated, you receive this token. Use it
-#' in your next request to receive the next set of results.
-#' @param RasterDataCollectionQuery &#91;required&#93; RasterDataCollectionQuery consisting of
-#' [AreaOfInterest(AOI)](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_AreaOfInterest.html),
-#' [PropertyFilters](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_PropertyFilter.html)
-#' and
-#' [TimeRangeFilterInput](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_TimeRangeFilterInput.html)
-#' used in
-#' [`search_raster_data_collection`][sagemakergeospatialcapabilities_search_raster_data_collection].
+#' @param NextToken If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.
+#' @param RasterDataCollectionQuery &#91;required&#93; RasterDataCollectionQuery consisting of [AreaOfInterest(AOI)](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_AreaOfInterest.html), [PropertyFilters](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_PropertyFilter.html) and [TimeRangeFilterInput](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_TimeRangeFilterInput.html) used in [`search_raster_data_collection`][sagemakergeospatialcapabilities_search_raster_data_collection].
 #'
 #' @keywords internal
 #'
@@ -468,8 +449,7 @@ sagemakergeospatialcapabilities_search_raster_data_collection <- function(Arn, N
 #' See [https://www.paws-r-sdk.com/docs/sagemakergeospatialcapabilities_start_earth_observation_job/](https://www.paws-r-sdk.com/docs/sagemakergeospatialcapabilities_start_earth_observation_job/) for full documentation.
 #'
 #' @param ClientToken A unique token that guarantees that the call to this API is idempotent.
-#' @param ExecutionRoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role that you specified for
-#' the job.
+#' @param ExecutionRoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role that you specified for the job.
 #' @param InputConfig &#91;required&#93; Input configuration information for the Earth Observation job.
 #' @param JobConfig &#91;required&#93; An object containing information about the job configuration.
 #' @param KmsKeyId The Key Management Service key ID for server-side encryption.
@@ -506,8 +486,7 @@ sagemakergeospatialcapabilities_start_earth_observation_job <- function(ClientTo
 #' See [https://www.paws-r-sdk.com/docs/sagemakergeospatialcapabilities_start_vector_enrichment_job/](https://www.paws-r-sdk.com/docs/sagemakergeospatialcapabilities_start_vector_enrichment_job/) for full documentation.
 #'
 #' @param ClientToken A unique token that guarantees that the call to this API is idempotent.
-#' @param ExecutionRoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role that you specified for
-#' the job.
+#' @param ExecutionRoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role that you specified for the job.
 #' @param InputConfig &#91;required&#93; Input configuration information for the Vector Enrichment job.
 #' @param JobConfig &#91;required&#93; An object containing information about the job configuration.
 #' @param KmsKeyId The Key Management Service key ID for server-side encryption.
@@ -543,8 +522,7 @@ sagemakergeospatialcapabilities_start_vector_enrichment_job <- function(ClientTo
 #'
 #' See [https://www.paws-r-sdk.com/docs/sagemakergeospatialcapabilities_stop_earth_observation_job/](https://www.paws-r-sdk.com/docs/sagemakergeospatialcapabilities_stop_earth_observation_job/) for full documentation.
 #'
-#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) of the Earth Observation job being
-#' stopped.
+#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) of the Earth Observation job being stopped.
 #'
 #' @keywords internal
 #'

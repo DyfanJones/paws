@@ -7,8 +7,7 @@
 kafkaconnect_delete_custom_plugin(customPluginArn)
 }
 \arguments{
-\item{customPluginArn}{[required] The Amazon Resource Name (ARN) of the custom plugin that you want to
-delete.}
+\item{customPluginArn}{[required] The Amazon Resource Name (ARN) of the custom plugin that you want to delete.}
 }
 \description{
 Deletes a custom plugin.

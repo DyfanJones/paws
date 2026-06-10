@@ -7,8 +7,7 @@
 transcribeservice_get_transcription_job(TranscriptionJobName)
 }
 \arguments{
-\item{TranscriptionJobName}{[required] The name of the transcription job you want information about. Job names
-are case sensitive.}
+\item{TranscriptionJobName}{[required] The name of the transcription job you want information about. Job names are case sensitive.}
 }
 \description{
 Provides information about the specified transcription job.

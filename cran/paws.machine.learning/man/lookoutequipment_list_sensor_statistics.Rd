@@ -15,15 +15,11 @@ lookoutequipment_list_sensor_statistics(
 \arguments{
 \item{DatasetName}{[required] The name of the dataset associated with the list of Sensor Statistics.}
 
-\item{IngestionJobId}{The ingestion job id associated with the list of Sensor Statistics. To
-get sensor statistics for a particular ingestion job id, both dataset
-name and ingestion job id must be submitted as inputs.}
+\item{IngestionJobId}{The ingestion job id associated with the list of Sensor Statistics. To get sensor statistics for a particular ingestion job id, both dataset name and ingestion job id must be submitted as inputs.}
 
-\item{MaxResults}{Specifies the maximum number of sensors for which to retrieve
-statistics.}
+\item{MaxResults}{Specifies the maximum number of sensors for which to retrieve statistics.}
 
-\item{NextToken}{An opaque pagination token indicating where to continue the listing of
-sensor statistics.}
+\item{NextToken}{An opaque pagination token indicating where to continue the listing of sensor statistics.}
 }
 \description{
 Lists statistics about the data collected for each of the sensors that have been successfully ingested in the particular dataset. Can also be used to retreive Sensor Statistics for a previous ingestion job.

@@ -12,12 +12,9 @@ personalize_list_data_deletion_jobs(
 )
 }
 \arguments{
-\item{datasetGroupArn}{The Amazon Resource Name (ARN) of the dataset group to list data
-deletion jobs for.}
+\item{datasetGroupArn}{The Amazon Resource Name (ARN) of the dataset group to list data deletion jobs for.}
 
-\item{nextToken}{A token returned from the previous call to
-\code{\link[=personalize_list_data_deletion_jobs]{list_data_deletion_jobs}} for
-getting the next set of jobs (if they exist).}
+\item{nextToken}{A token returned from the previous call to \code{\link[=personalize_list_data_deletion_jobs]{list_data_deletion_jobs}} for getting the next set of jobs (if they exist).}
 
 \item{maxResults}{The maximum number of data deletion jobs to return.}
 }

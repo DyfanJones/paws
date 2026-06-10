@@ -13,24 +13,15 @@ rds_describe_db_proxy_endpoints(
 )
 }
 \arguments{
-\item{DBProxyName}{The name of the DB proxy whose endpoints you want to describe. If you
-omit this parameter, the output includes information about all DB proxy
-endpoints associated with all your DB proxies.}
+\item{DBProxyName}{The name of the DB proxy whose endpoints you want to describe. If you omit this parameter, the output includes information about all DB proxy endpoints associated with all your DB proxies.}
 
-\item{DBProxyEndpointName}{The name of a DB proxy endpoint to describe. If you omit this parameter,
-the output includes information about all DB proxy endpoints associated
-with the specified proxy.}
+\item{DBProxyEndpointName}{The name of a DB proxy endpoint to describe. If you omit this parameter, the output includes information about all DB proxy endpoints associated with the specified proxy.}
 
 \item{Filters}{This parameter is not currently supported.}
 
-\item{Marker}{An optional pagination token provided by a previous request. If this
-parameter is specified, the response includes only records beyond the
-marker, up to the value specified by \code{MaxRecords}.}
+\item{Marker}{An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by \code{MaxRecords}.}
 
-\item{MaxRecords}{The maximum number of records to include in the response. If more
-records exist than the specified \code{MaxRecords} value, a pagination token
-called a marker is included in the response so that the remaining
-results can be retrieved.
+\item{MaxRecords}{The maximum number of records to include in the response. If more records exist than the specified \code{MaxRecords} value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.
 
 Default: 100
 

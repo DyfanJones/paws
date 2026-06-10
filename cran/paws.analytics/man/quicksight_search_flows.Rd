@@ -12,14 +12,11 @@ quicksight_search_flows(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account where you are searching for
-flows from.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account where you are searching for flows from.}
 
-\item{Filters}{[required] The filters applied to the search when searching for flows in the Amazon
-Web Services account.}
+\item{Filters}{[required] The filters applied to the search when searching for flows in the Amazon Web Services account.}
 
-\item{NextToken}{The token to request the next set of results, or null if you want to
-retrieve the first set.}
+\item{NextToken}{The token to request the next set of results, or null if you want to retrieve the first set.}
 
 \item{MaxResults}{The maximum number of results to be returned per request.}
 }

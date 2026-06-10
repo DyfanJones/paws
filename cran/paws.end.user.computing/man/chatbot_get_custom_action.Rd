@@ -7,8 +7,7 @@
 chatbot_get_custom_action(CustomActionArn)
 }
 \arguments{
-\item{CustomActionArn}{[required] Returns the fully defined Amazon Resource Name (ARN) of the custom
-action.}
+\item{CustomActionArn}{[required] Returns the fully defined Amazon Resource Name (ARN) of the custom action.}
 }
 \description{
 Returns a custom action.

@@ -7,8 +7,7 @@
 acm_revoke_certificate(CertificateArn, RevocationReason)
 }
 \arguments{
-\item{CertificateArn}{[required] The Amazon Resource Name (ARN) of the public or private certificate that
-will be revoked. The ARN must have the following form:
+\item{CertificateArn}{[required] The Amazon Resource Name (ARN) of the public or private certificate that will be revoked. The ARN must have the following form:
 
 \code{arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012}}
 

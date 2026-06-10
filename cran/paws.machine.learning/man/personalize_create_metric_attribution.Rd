@@ -14,14 +14,9 @@ personalize_create_metric_attribution(
 \arguments{
 \item{name}{[required] A name for the metric attribution.}
 
-\item{datasetGroupArn}{[required] The Amazon Resource Name (ARN) of the destination dataset group for the
-metric attribution.}
+\item{datasetGroupArn}{[required] The Amazon Resource Name (ARN) of the destination dataset group for the metric attribution.}
 
-\item{metrics}{[required] A list of metric attributes for the metric attribution. Each metric
-attribute specifies an event type to track and a function. Available
-functions are \code{SUM()} or \code{SAMPLECOUNT()}. For SUM() functions, provide
-the dataset type (either Interactions or Items) and column to sum as a
-parameter. For example SUM(Items.PRICE).}
+\item{metrics}{[required] A list of metric attributes for the metric attribution. Each metric attribute specifies an event type to track and a function. Available functions are \code{SUM()} or \code{SAMPLECOUNT()}. For SUM() functions, provide the dataset type (either Interactions or Items) and column to sum as a parameter. For example SUM(Items.PRICE).}
 
 \item{metricsOutputConfig}{[required] The output configuration details for the metric attribution.}
 }

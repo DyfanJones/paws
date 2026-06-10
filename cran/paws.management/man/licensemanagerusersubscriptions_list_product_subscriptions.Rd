@@ -16,8 +16,7 @@ licensemanagerusersubscriptions_list_product_subscriptions(
 \arguments{
 \item{Product}{The name of the user-based subscription product.
 
-Valid values: \code{VISUAL_STUDIO_ENTERPRISE} | \code{VISUAL_STUDIO_PROFESSIONAL}
-| \code{OFFICE_PROFESSIONAL_PLUS} | \code{REMOTE_DESKTOP_SERVICES}}
+Valid values: \code{VISUAL_STUDIO_ENTERPRISE} | \code{VISUAL_STUDIO_PROFESSIONAL} | \code{OFFICE_PROFESSIONAL_PLUS} | \code{REMOTE_DESKTOP_SERVICES}}
 
 \item{IdentityProvider}{[required] An object that specifies details for the identity provider.}
 
@@ -30,8 +29,7 @@ Valid values: \code{VISUAL_STUDIO_ENTERPRISE} | \code{VISUAL_STUDIO_PROFESSIONAL
 \item Domain
 }}
 
-\item{NextToken}{A token to specify where to start paginating. This is the nextToken from
-a previously truncated response.}
+\item{NextToken}{A token to specify where to start paginating. This is the nextToken from a previously truncated response.}
 }
 \description{
 Lists the user-based subscription products available from an identity provider.

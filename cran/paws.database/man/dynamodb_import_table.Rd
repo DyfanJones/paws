@@ -14,29 +14,19 @@ dynamodb_import_table(
 )
 }
 \arguments{
-\item{ClientToken}{Providing a \code{ClientToken} makes the call to \code{ImportTableInput}
-idempotent, meaning that multiple identical calls have the same effect
-as one single call.
+\item{ClientToken}{Providing a \code{ClientToken} makes the call to \code{ImportTableInput} idempotent, meaning that multiple identical calls have the same effect as one single call.
 
-A client token is valid for 8 hours after the first request that uses it
-is completed. After 8 hours, any request with the same client token is
-treated as a new request. Do not resubmit the same request with the same
-client token for more than 8 hours, or the result might not be
-idempotent.
+A client token is valid for 8 hours after the first request that uses it is completed. After 8 hours, any request with the same client token is treated as a new request. Do not resubmit the same request with the same client token for more than 8 hours, or the result might not be idempotent.
 
-If you submit a request with the same client token but a change in other
-parameters within the 8-hour idempotency window, DynamoDB returns an
-\code{IdempotentParameterMismatch} exception.}
+If you submit a request with the same client token but a change in other parameters within the 8-hour idempotency window, DynamoDB returns an \code{IdempotentParameterMismatch} exception.}
 
 \item{S3BucketSource}{[required] The S3 bucket that provides the source for the import.}
 
-\item{InputFormat}{[required] The format of the source data. Valid values for \code{ImportFormat} are
-\code{CSV}, \code{DYNAMODB_JSON} or \code{ION}.}
+\item{InputFormat}{[required] The format of the source data. Valid values for \code{ImportFormat} are \code{CSV}, \code{DYNAMODB_JSON} or \code{ION}.}
 
 \item{InputFormatOptions}{Additional properties that specify how the input is formatted,}
 
-\item{InputCompressionType}{Type of compression to be used on the input coming from the imported
-table.}
+\item{InputCompressionType}{Type of compression to be used on the input coming from the imported table.}
 
 \item{TableCreationParameters}{[required] Parameters for the table to import the data into.}
 }

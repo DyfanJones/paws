@@ -13,8 +13,7 @@ prometheusservice_delete_scraper_logging_configuration(
 \arguments{
 \item{scraperId}{[required] The ID of the scraper whose logging configuration will be deleted.}
 
-\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the
-request is processed exactly once.}
+\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the request is processed exactly once.}
 }
 \description{
 Deletes the logging configuration for a Amazon Managed Service for Prometheus scraper.

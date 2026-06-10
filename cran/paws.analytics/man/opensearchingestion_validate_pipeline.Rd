@@ -8,10 +8,7 @@ prior to creation}
 opensearchingestion_validate_pipeline(PipelineConfigurationBody)
 }
 \arguments{
-\item{PipelineConfigurationBody}{[required] The pipeline configuration in YAML format. The command accepts the
-pipeline configuration as a string or within a .yaml file. If you
-provide the configuration as a string, each new line must be escaped
-with \verb{\\\\n}.}
+\item{PipelineConfigurationBody}{[required] The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \verb{\\\\n}.}
 }
 \description{
 Checks whether an OpenSearch Ingestion pipeline configuration is valid prior to creation. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/creating-pipeline.html}{Creating Amazon OpenSearch Ingestion pipelines}.

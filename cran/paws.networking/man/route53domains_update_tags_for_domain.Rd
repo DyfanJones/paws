@@ -9,9 +9,7 @@ route53domains_update_tags_for_domain(DomainName, TagsToUpdate = NULL)
 \arguments{
 \item{DomainName}{[required] The domain for which you want to add or update tags.}
 
-\item{TagsToUpdate}{A list of the tag keys and values that you want to add or update. If you
-specify a key that already exists, the corresponding value will be
-replaced.}
+\item{TagsToUpdate}{A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced.}
 }
 \description{
 This operation adds or updates tags for a specified domain.

@@ -13,16 +13,11 @@ cloudfront_list_conflicting_aliases(
 )
 }
 \arguments{
-\item{DistributionId}{[required] The ID of a standard distribution in your account that has an attached
-TLS certificate that includes the provided alias.}
+\item{DistributionId}{[required] The ID of a standard distribution in your account that has an attached TLS certificate that includes the provided alias.}
 
 \item{Alias}{[required] The alias (also called a CNAME) to search for conflicting aliases.}
 
-\item{Marker}{Use this field when paginating results to indicate where to begin in the
-list of conflicting aliases. The response includes conflicting aliases
-in the list that occur after the marker. To get the next page of the
-list, set this field's value to the value of \code{NextMarker} from the
-current page's response.}
+\item{Marker}{Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field's value to the value of \code{NextMarker} from the current page's response.}
 
 \item{MaxItems}{The maximum number of conflicting aliases that you want in the response.}
 }

@@ -13,26 +13,17 @@ glue_create_workflow(
 )
 }
 \arguments{
-\item{Name}{[required] The name to be assigned to the workflow. It should be unique within your
-account.}
+\item{Name}{[required] The name to be assigned to the workflow. It should be unique within your account.}
 
 \item{Description}{A description of the workflow.}
 
-\item{DefaultRunProperties}{A collection of properties to be used as part of each execution of the
-workflow.
+\item{DefaultRunProperties}{A collection of properties to be used as part of each execution of the workflow.
 
-Run properties may be logged. Do not pass plaintext secrets as
-properties. Retrieve secrets from a Glue Connection, Amazon Web Services
-Secrets Manager or other secret management mechanism if you intend to
-use them within the workflow run.}
+Run properties may be logged. Do not pass plaintext secrets as properties. Retrieve secrets from a Glue Connection, Amazon Web Services Secrets Manager or other secret management mechanism if you intend to use them within the workflow run.}
 
 \item{Tags}{The tags to be used with this workflow.}
 
-\item{MaxConcurrentRuns}{You can use this parameter to prevent unwanted multiple updates to data,
-to control costs, or in some cases, to prevent exceeding the maximum
-number of concurrent runs of any of the component jobs. If you leave
-this parameter blank, there is no limit to the number of concurrent
-workflow runs.}
+\item{MaxConcurrentRuns}{You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.}
 }
 \description{
 Creates a new workflow.

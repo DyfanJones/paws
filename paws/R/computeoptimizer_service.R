@@ -5,21 +5,7 @@ NULL
 #' AWS Compute Optimizer
 #'
 #' @description
-#' Compute Optimizer is a service that analyzes the configuration and
-#' utilization metrics of your Amazon Web Services compute resources, such
-#' as Amazon EC2 instances, Amazon EC2 Auto Scaling groups, Lambda
-#' functions, Amazon EBS volumes, and Amazon ECS services on Fargate. It
-#' reports whether your resources are optimal, and generates optimization
-#' recommendations to reduce the cost and improve the performance of your
-#' workloads. Compute Optimizer also provides recent utilization metric
-#' data, in addition to projected utilization metric data for the
-#' recommendations, which you can use to evaluate which recommendation
-#' provides the best price-performance trade-off. The analysis of your
-#' usage patterns can help you decide when to move or resize your running
-#' resources, and still meet your performance and capacity requirements.
-#' For more information about Compute Optimizer, including the required
-#' permissions to use the service, see the [Compute Optimizer User
-#' Guide](https://docs.aws.amazon.com/compute-optimizer/latest/ug/).
+#' Compute Optimizer is a service that analyzes the configuration and utilization metrics of your Amazon Web Services compute resources, such as Amazon EC2 instances, Amazon EC2 Auto Scaling groups, Lambda functions, Amazon EBS volumes, and Amazon ECS services on Fargate. It reports whether your resources are optimal, and generates optimization recommendations to reduce the cost and improve the performance of your workloads. Compute Optimizer also provides recent utilization metric data, in addition to projected utilization metric data for the recommendations, which you can use to evaluate which recommendation provides the best price-performance trade-off. The analysis of your usage patterns can help you decide when to move or resize your running resources, and still meet your performance and capacity requirements. For more information about Compute Optimizer, including the required permissions to use the service, see the [Compute Optimizer User Guide](https://docs.aws.amazon.com/compute-optimizer/latest/ug/).
 #'
 #' @param
 #' config
@@ -106,7 +92,7 @@ NULL
 #' \tabular{ll}{
 #'  \link[=computeoptimizer_delete_recommendation_preferences]{delete_recommendation_preferences} \tab Deletes a recommendation preference, such as enhanced infrastructure metrics\cr
 #'  \link[=computeoptimizer_describe_recommendation_export_jobs]{describe_recommendation_export_jobs} \tab Describes recommendation export jobs created in the last seven days\cr
-#'  \link[=computeoptimizer_export_auto_scaling_group_recommendations]{export_auto_scaling_group_recommendations} \tab Exports optimization recommendations for Amazon EC2 Auto Scaling groups\cr
+#'  \link[=computeoptimizer_export_auto_scaling_group_recommendations]{export_auto_scaling_group_recommendations} \tab Exports optimization recommendations for Auto Scaling groups\cr
 #'  \link[=computeoptimizer_export_ebs_volume_recommendations]{export_ebs_volume_recommendations} \tab Exports optimization recommendations for Amazon EBS volumes\cr
 #'  \link[=computeoptimizer_export_ec2_instance_recommendations]{export_ec2_instance_recommendations} \tab Exports optimization recommendations for Amazon EC2 instances\cr
 #'  \link[=computeoptimizer_export_ecs_service_recommendations]{export_ecs_service_recommendations} \tab Exports optimization recommendations for Amazon ECS services on Fargate\cr
@@ -114,7 +100,7 @@ NULL
 #'  \link[=computeoptimizer_export_lambda_function_recommendations]{export_lambda_function_recommendations} \tab Exports optimization recommendations for Lambda functions\cr
 #'  \link[=computeoptimizer_export_license_recommendations]{export_license_recommendations} \tab Export optimization recommendations for your licenses\cr
 #'  \link[=computeoptimizer_export_rds_database_recommendations]{export_rds_database_recommendations} \tab Export optimization recommendations for your Amazon Aurora and Amazon Relational Database Service (Amazon RDS) databases\cr
-#'  \link[=computeoptimizer_get_auto_scaling_group_recommendations]{get_auto_scaling_group_recommendations} \tab Returns Amazon EC2 Auto Scaling group recommendations\cr
+#'  \link[=computeoptimizer_get_auto_scaling_group_recommendations]{get_auto_scaling_group_recommendations} \tab Returns Auto Scaling group recommendations\cr
 #'  \link[=computeoptimizer_get_ebs_volume_recommendations]{get_ebs_volume_recommendations} \tab Returns Amazon Elastic Block Store (Amazon EBS) volume recommendations\cr
 #'  \link[=computeoptimizer_get_ec2_instance_recommendations]{get_ec2_instance_recommendations} \tab Returns Amazon EC2 instance recommendations\cr
 #'  \link[=computeoptimizer_get_ec2_recommendation_projected_metrics]{get_ec2_recommendation_projected_metrics} \tab Returns the projected utilization metrics of Amazon EC2 instance recommendations\cr
@@ -172,6 +158,6 @@ computeoptimizer <- function(config = list(), credentials = list(), endpoint = N
 )
 
 .computeoptimizer$service <- function(config = list(), op = NULL) {
-  handlers <- new_handlers("jsonrpc", "v4")
+  handlers <- new_handlers("smithyrpcv2cbor", "v4")
   new_service(.computeoptimizer$metadata, handlers, config, op)
 }

@@ -8,6 +8,7 @@ sagemaker_create_cluster(
   ClusterName,
   InstanceGroups = NULL,
   RestrictedInstanceGroups = NULL,
+  RestrictedInstanceGroupsConfig = NULL,
   VpcConfig = NULL,
   Tags = NULL,
   Orchestrator = NULL,
@@ -23,78 +24,43 @@ sagemaker_create_cluster(
 
 \item{InstanceGroups}{The instance groups to be created in the SageMaker HyperPod cluster.}
 
-\item{RestrictedInstanceGroups}{The specialized instance groups for training models like Amazon Nova to
-be created in the SageMaker HyperPod cluster.}
+\item{RestrictedInstanceGroups}{The specialized instance groups for training models like Amazon Nova to be created in the SageMaker HyperPod cluster.}
 
-\item{VpcConfig}{Specifies the Amazon Virtual Private Cloud (VPC) that is associated with
-the Amazon SageMaker HyperPod cluster. You can control access to and
-from your resources by configuring your VPC. For more information, see
-\href{https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html}{Give SageMaker access to resources in your Amazon VPC}.
+\item{RestrictedInstanceGroupsConfig}{The configuration for the restricted instance groups (RIG) in the SageMaker HyperPod cluster.}
 
-When your Amazon VPC and subnets support IPv6, network communications
-differ based on the cluster orchestration platform:
+\item{VpcConfig}{Specifies the Amazon Virtual Private Cloud (VPC) that is associated with the Amazon SageMaker HyperPod cluster. You can control access to and from your resources by configuring your VPC. For more information, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html}{Give SageMaker access to resources in your Amazon VPC}.
+
+When your Amazon VPC and subnets support IPv6, network communications differ based on the cluster orchestration platform:
 \itemize{
-\item Slurm-orchestrated clusters automatically configure nodes with dual
-IPv6 and IPv4 addresses, allowing immediate IPv6 network
-communications.
-\item In Amazon EKS-orchestrated clusters, nodes receive dual-stack
-addressing, but pods can only use IPv6 when the Amazon EKS cluster
-is explicitly IPv6-enabled. For information about deploying an IPv6
-Amazon EKS cluster, see \href{https://docs.aws.amazon.com/eks/latest/userguide/deploy-ipv6-cluster.html#_deploy_an_ipv6_cluster_with_eksctl}{Amazon EKS IPv6 Cluster Deployment}.
+\item Slurm-orchestrated clusters automatically configure nodes with dual IPv6 and IPv4 addresses, allowing immediate IPv6 network communications.
+\item In Amazon EKS-orchestrated clusters, nodes receive dual-stack addressing, but pods can only use IPv6 when the Amazon EKS cluster is explicitly IPv6-enabled. For information about deploying an IPv6 Amazon EKS cluster, see \href{https://docs.aws.amazon.com/eks/latest/userguide/deploy-ipv6-cluster.html#_deploy_an_ipv6_cluster_with_eksctl}{Amazon EKS IPv6 Cluster Deployment}.
 }
 
 Additional resources for IPv6 configuration:
 \itemize{
 \item For information about adding IPv6 support to your VPC, see to \href{https://docs.aws.amazon.com/vpc/latest/userguide/vpc-migrate-ipv6.html}{IPv6 Support for VPC}.
-\item For information about creating a new IPv6-compatible VPC, see
-\href{https://docs.aws.amazon.com/vpc/latest/userguide/create-vpc.html}{Amazon VPC Creation Guide}.
-\item To configure SageMaker HyperPod with a custom Amazon VPC, see
-\href{https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-prerequisites.html#sagemaker-hyperpod-prerequisites-optional-vpc}{Custom Amazon VPC Setup for SageMaker HyperPod}.
+\item For information about creating a new IPv6-compatible VPC, see \href{https://docs.aws.amazon.com/vpc/latest/userguide/create-vpc.html}{Amazon VPC Creation Guide}.
+\item To configure SageMaker HyperPod with a custom Amazon VPC, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-prerequisites.html#sagemaker-hyperpod-prerequisites-optional-vpc}{Custom Amazon VPC Setup for SageMaker HyperPod}.
 }}
 
-\item{Tags}{Custom tags for managing the SageMaker HyperPod cluster as an Amazon Web
-Services resource. You can add tags to your cluster in the same way you
-add them in other Amazon Web Services services that support tagging. To
-learn more about tagging Amazon Web Services resources in general, see
-\href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web Services Resources User Guide}.}
+\item{Tags}{Custom tags for managing the SageMaker HyperPod cluster as an Amazon Web Services resource. You can add tags to your cluster in the same way you add them in other Amazon Web Services services that support tagging. To learn more about tagging Amazon Web Services resources in general, see \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web Services Resources User Guide}.}
 
-\item{Orchestrator}{The type of orchestrator to use for the SageMaker HyperPod cluster.
-Currently, the only supported value is \code{"eks"}, which is to use an
-Amazon Elastic Kubernetes Service cluster as the orchestrator.}
+\item{Orchestrator}{The type of orchestrator to use for the SageMaker HyperPod cluster. Currently, supported values are \code{"Eks"} and \code{"Slurm"}, which is to use an Amazon Elastic Kubernetes Service or Slurm cluster as the orchestrator.
 
-\item{NodeRecovery}{The node recovery mode for the SageMaker HyperPod cluster. When set to
-\code{Automatic}, SageMaker HyperPod will automatically reboot or replace
-faulty nodes when issues are detected. When set to \code{None}, cluster
-administrators will need to manually manage any faulty cluster
-instances.}
+If you specify the \code{Orchestrator} field, you must provide exactly one orchestrator configuration: either \code{Eks} or \code{Slurm}. Specifying both or providing an empty configuration returns a validation error.}
 
-\item{TieredStorageConfig}{The configuration for managed tier checkpointing on the HyperPod
-cluster. When enabled, this feature uses a multi-tier storage approach
-for storing model checkpoints, providing faster checkpoint operations
-and improved fault tolerance across cluster nodes.}
+\item{NodeRecovery}{The node recovery mode for the SageMaker HyperPod cluster. When set to \code{Automatic}, SageMaker HyperPod will automatically reboot or replace faulty nodes when issues are detected. When set to \code{None}, cluster administrators will need to manually manage any faulty cluster instances.}
 
-\item{NodeProvisioningMode}{The mode for provisioning nodes in the cluster. You can specify the
-following modes:
+\item{TieredStorageConfig}{The configuration for managed tier checkpointing on the HyperPod cluster. When enabled, this feature uses a multi-tier storage approach for storing model checkpoints, providing faster checkpoint operations and improved fault tolerance across cluster nodes.}
+
+\item{NodeProvisioningMode}{The mode for provisioning nodes in the cluster. You can specify the following modes:
 \itemize{
-\item \strong{Continuous}: Scaling behavior that enables 1) concurrent
-operation execution within instance groups, 2) continuous retry
-mechanisms for failed operations, 3) enhanced customer visibility
-into cluster events through detailed event streams, 4) partial
-provisioning capabilities. Your clusters and instance groups remain
-\code{InService} while scaling. This mode is only supported for EKS
-orchestrated clusters.
+\item \strong{Continuous}: Scaling behavior that enables 1) concurrent operation execution within instance groups, 2) continuous retry mechanisms for failed operations, 3) enhanced customer visibility into cluster events through detailed event streams, 4) partial provisioning capabilities. Your clusters and instance groups remain \code{InService} while scaling. This mode is only supported for EKS orchestrated clusters.
 }}
 
-\item{ClusterRole}{The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes to
-perform cluster autoscaling operations. This role must have permissions
-for \code{sagemaker:BatchAddClusterNodes} and
-\code{sagemaker:BatchDeleteClusterNodes}. This is only required when
-autoscaling is enabled and when HyperPod is performing autoscaling
-operations.}
+\item{ClusterRole}{The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes to perform cluster autoscaling operations. This role must have permissions for \code{sagemaker:BatchAddClusterNodes} and \code{sagemaker:BatchDeleteClusterNodes}. This is only required when autoscaling is enabled and when HyperPod is performing autoscaling operations.}
 
-\item{AutoScaling}{The autoscaling configuration for the cluster. Enables automatic scaling
-of cluster nodes based on workload demand using a Karpenter-based
-system.}
+\item{AutoScaling}{The autoscaling configuration for the cluster. Enables automatic scaling of cluster nodes based on workload demand using a Karpenter-based system.}
 }
 \description{
 Creates an Amazon SageMaker HyperPod cluster. SageMaker HyperPod is a capability of SageMaker for creating and managing persistent clusters for developing large machine learning models, such as large language models (LLMs) and diffusion models. To learn more, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod.html}{Amazon SageMaker HyperPod} in the \emph{Amazon SageMaker Developer Guide}.

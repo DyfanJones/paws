@@ -7,16 +7,13 @@
 glue_batch_update_partition(CatalogId = NULL, DatabaseName, TableName, Entries)
 }
 \arguments{
-\item{CatalogId}{The ID of the catalog in which the partition is to be updated.
-Currently, this should be the Amazon Web Services account ID.}
+\item{CatalogId}{The ID of the catalog in which the partition is to be updated. Currently, this should be the Amazon Web Services account ID.}
 
-\item{DatabaseName}{[required] The name of the metadata database in which the partition is to be
-updated.}
+\item{DatabaseName}{[required] The name of the metadata database in which the partition is to be updated.}
 
 \item{TableName}{[required] The name of the metadata table in which the partition is to be updated.}
 
-\item{Entries}{[required] A list of up to 100 \code{BatchUpdatePartitionRequestEntry} objects to
-update.}
+\item{Entries}{[required] A list of up to 100 \code{BatchUpdatePartitionRequestEntry} objects to update.}
 }
 \description{
 Updates one or more partitions in a batch operation.

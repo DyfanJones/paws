@@ -7,8 +7,7 @@
 globalaccelerator_list_tags_for_resource(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the accelerator to list tags for. An
-ARN uniquely identifies an accelerator.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the accelerator to list tags for. An ARN uniquely identifies an accelerator.}
 }
 \description{
 List all tags for an accelerator.

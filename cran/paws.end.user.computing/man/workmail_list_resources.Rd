@@ -14,13 +14,11 @@ workmail_list_resources(
 \arguments{
 \item{OrganizationId}{[required] The identifier for the organization under which the resources exist.}
 
-\item{NextToken}{The token to use to retrieve the next page of results. The first call
-does not contain any tokens.}
+\item{NextToken}{The token to use to retrieve the next page of results. The first call does not contain any tokens.}
 
 \item{MaxResults}{The maximum number of results to return in a single call.}
 
-\item{Filters}{Limit the resource search results based on the filter criteria. You can
-only use one filter per request.}
+\item{Filters}{Limit the resource search results based on the filter criteria. You can only use one filter per request.}
 }
 \description{
 Returns summaries of the organization's resources.

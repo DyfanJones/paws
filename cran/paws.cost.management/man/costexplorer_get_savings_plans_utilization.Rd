@@ -13,20 +13,13 @@ costexplorer_get_savings_plans_utilization(
 )
 }
 \arguments{
-\item{TimePeriod}{[required] The time period that you want the usage and costs for. The \code{Start} date
-must be within 13 months. The \code{End} date must be after the \code{Start} date,
-and before the current date. Future dates can't be used as an \code{End}
-date.}
+\item{TimePeriod}{[required] The time period that you want the usage and costs for. The \code{Start} date must be within 13 months. The \code{End} date must be after the \code{Start} date, and before the current date. Future dates can't be used as an \code{End} date.}
 
-\item{Granularity}{The granularity of the Amazon Web Services utillization data for your
-Savings Plans.
+\item{Granularity}{The granularity of the Amazon Web Services utillization data for your Savings Plans.
 
-The
-\code{\link[=costexplorer_get_savings_plans_utilization]{get_savings_plans_utilization}}
-operation supports only \code{DAILY} and \code{MONTHLY} granularities.}
+The \code{\link[=costexplorer_get_savings_plans_utilization]{get_savings_plans_utilization}} operation supports only \code{DAILY} and \code{MONTHLY} granularities.}
 
-\item{Filter}{Filters Savings Plans utilization coverage data for active Savings Plans
-dimensions. You can filter data with the following dimensions:
+\item{Filter}{Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:
 \itemize{
 \item \code{LINKED_ACCOUNT}
 \item \code{SAVINGS_PLAN_ARN}
@@ -36,11 +29,7 @@ dimensions. You can filter data with the following dimensions:
 \item \code{INSTANCE_TYPE_FAMILY}
 }
 
-\code{\link[=costexplorer_get_savings_plans_utilization]{get_savings_plans_utilization}}
-uses the same
-\href{https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html}{Expression}
-object as the other operations, but only \code{AND} is supported among each
-dimension.}
+\code{\link[=costexplorer_get_savings_plans_utilization]{get_savings_plans_utilization}} uses the same \href{https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html}{Expression} object as the other operations, but only \code{AND} is supported among each dimension.}
 
 \item{SortBy}{The value that you want to sort the data by.
 

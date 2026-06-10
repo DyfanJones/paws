@@ -9,8 +9,7 @@ rds_stop_db_instance(DBInstanceIdentifier, DBSnapshotIdentifier = NULL)
 \arguments{
 \item{DBInstanceIdentifier}{[required] The user-supplied instance identifier.}
 
-\item{DBSnapshotIdentifier}{The user-supplied instance identifier of the DB Snapshot created
-immediately before the DB instance is stopped.}
+\item{DBSnapshotIdentifier}{The user-supplied instance identifier of the DB Snapshot created immediately before the DB instance is stopped.}
 }
 \description{
 Stops an Amazon RDS DB instance temporarily. When you stop a DB instance, Amazon RDS retains the DB instance's metadata, including its endpoint, DB parameter group, and option group membership. Amazon RDS also retains the transaction logs so you can do a point-in-time restore if necessary. The instance restarts automatically after 7 days.

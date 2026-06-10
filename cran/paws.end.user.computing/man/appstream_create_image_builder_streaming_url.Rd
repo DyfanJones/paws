@@ -9,8 +9,7 @@ appstream_create_image_builder_streaming_url(Name, Validity = NULL)
 \arguments{
 \item{Name}{[required] The name of the image builder.}
 
-\item{Validity}{The time that the streaming URL will be valid, in seconds. Specify a
-value between 1 and 604800 seconds. The default is 3600 seconds.}
+\item{Validity}{The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.}
 }
 \description{
 Creates a URL to start an image builder streaming session.

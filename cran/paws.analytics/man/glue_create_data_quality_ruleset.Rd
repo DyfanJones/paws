@@ -20,19 +20,15 @@ glue_create_data_quality_ruleset(
 
 \item{Description}{A description of the data quality ruleset.}
 
-\item{Ruleset}{[required] A Data Quality Definition Language (DQDL) ruleset. For more information,
-see the Glue developer guide.}
+\item{Ruleset}{[required] A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.}
 
 \item{Tags}{A list of tags applied to the data quality ruleset.}
 
 \item{TargetTable}{A target table associated with the data quality ruleset.}
 
-\item{DataQualitySecurityConfiguration}{The name of the security configuration created with the data quality
-encryption option.}
+\item{DataQualitySecurityConfiguration}{The name of the security configuration created with the data quality encryption option.}
 
-\item{ClientToken}{Used for idempotency and is recommended to be set to a random ID (such
-as a UUID) to avoid creating or starting multiple instances of the same
-resource.}
+\item{ClientToken}{Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.}
 }
 \description{
 Creates a data quality ruleset with DQDL rules applied to a specified Glue table.

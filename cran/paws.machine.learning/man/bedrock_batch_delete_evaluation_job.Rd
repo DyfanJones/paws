@@ -7,8 +7,7 @@
 bedrock_batch_delete_evaluation_job(jobIdentifiers)
 }
 \arguments{
-\item{jobIdentifiers}{[required] A list of one or more evaluation job Amazon Resource Names (ARNs) you
-want to delete.}
+\item{jobIdentifiers}{[required] A list of one or more evaluation job Amazon Resource Names (ARNs) you want to delete.}
 }
 \description{
 Deletes a batch of evaluation jobs. An evaluation job can only be deleted if it has following status \code{FAILED}, \code{COMPLETED}, and \code{STOPPED}. You can request up to 25 model evaluation jobs be deleted in a single request.

@@ -20,11 +20,9 @@ customerprofiles_put_domain_object_type(
 
 \item{Description}{The description of the domain object type.}
 
-\item{EncryptionKey}{The customer provided KMS key used to encrypt this type of domain
-object.}
+\item{EncryptionKey}{The customer provided KMS key used to encrypt this type of domain object.}
 
-\item{Fields}{[required] A map of field names to their corresponding domain object type field
-definitions.}
+\item{Fields}{[required] A map of field names to their corresponding domain object type field definitions.}
 
 \item{Tags}{The tags used to organize, track, or control access for this resource.}
 }

@@ -58,17 +58,14 @@ rds_restore_db_instance_from_s3(
   DedicatedLogVolume = NULL,
   CACertificateIdentifier = NULL,
   EngineLifecycleSupport = NULL,
-  TagSpecifications = NULL,
-  AdditionalStorageVolumes = NULL
+  AdditionalStorageVolumes = NULL,
+  TagSpecifications = NULL
 )
 }
 \arguments{
-\item{DBName}{The name of the database to create when the DB instance is created.
-Follow the naming rules specified in
-\code{\link[=rds_create_db_instance]{create_db_instance}}.}
+\item{DBName}{The name of the database to create when the DB instance is created. Follow the naming rules specified in \code{\link[=rds_create_db_instance]{create_db_instance}}.}
 
-\item{DBInstanceIdentifier}{[required] The DB instance identifier. This parameter is stored as a lowercase
-string.
+\item{DBInstanceIdentifier}{[required] The DB instance identifier. This parameter is stored as a lowercase string.
 
 Constraints:
 \itemize{
@@ -79,24 +76,15 @@ Constraints:
 
 Example: \code{mydbinstance}}
 
-\item{AllocatedStorage}{The amount of storage (in gibibytes) to allocate initially for the DB
-instance. Follow the allocation rules specified in
-\code{\link[=rds_create_db_instance]{create_db_instance}}.
+\item{AllocatedStorage}{The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in \code{\link[=rds_create_db_instance]{create_db_instance}}.
 
 This setting isn't valid for RDS for SQL Server.
 
-Be sure to allocate enough storage for your new DB instance so that the
-restore operation can succeed. You can also allocate additional storage
-for future growth.}
+Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.}
 
-\item{DBInstanceClass}{[required] The compute and memory capacity of the DB instance, for example
-db.m4.large. Not all DB instance classes are available in all Amazon Web
-Services Regions, or for all database engines. For the full list of DB
-instance classes, and availability for your engine, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html}{DB Instance Class}
-in the \emph{Amazon RDS User Guide.}
+\item{DBInstanceClass}{[required] The compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html}{DB Instance Class} in the \emph{Amazon RDS User Guide.}
 
-Importing from Amazon S3 isn't supported on the db.t2.micro DB instance
-class.}
+Importing from Amazon S3 isn't supported on the db.t2.micro DB instance class.}
 
 \item{Engine}{[required] The name of the database engine to be used for this instance.
 
@@ -116,17 +104,14 @@ Constraints:
 Constraints:
 \itemize{
 \item Can't be specified if \code{ManageMasterUserPassword} is turned on.
-\item Can include any printable ASCII character except "/", """, or "@".
-For RDS for Oracle, can't include the "&" (ampersand) or the "'"
-(single quotes) character.
+\item Can include any printable ASCII character except "/", """, or "@". For RDS for Oracle, can't include the "&" (ampersand) or the "'" (single quotes) character.
 }
 
 Length Constraints:
 \itemize{
 \item RDS for Db2 - Must contain from 8 to 128 characters.
 \item RDS for MariaDB - Must contain from 8 to 41 characters.
-\item RDS for Microsoft SQL Server - Must contain from 8 to 128
-characters.
+\item RDS for Microsoft SQL Server - Must contain from 8 to 128 characters.
 \item RDS for MySQL - Must contain from 8 to 41 characters.
 \item RDS for Oracle - Must contain from 8 to 30 characters.
 \item RDS for PostgreSQL - Must contain from 8 to 128 characters.
@@ -138,30 +123,21 @@ Default: The default DB security group for the database engine.}
 
 \item{VpcSecurityGroupIds}{A list of VPC security groups to associate with this DB instance.}
 
-\item{AvailabilityZone}{The Availability Zone that the DB instance is created in. For
-information about Amazon Web Services Regions and Availability Zones,
-see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html}{Regions and Availability Zones}
-in the \emph{Amazon RDS User Guide.}
+\item{AvailabilityZone}{The Availability Zone that the DB instance is created in. For information about Amazon Web Services Regions and Availability Zones, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html}{Regions and Availability Zones} in the \emph{Amazon RDS User Guide.}
 
-Default: A random, system-chosen Availability Zone in the endpoint's
-Amazon Web Services Region.
+Default: A random, system-chosen Availability Zone in the endpoint's Amazon Web Services Region.
 
 Example: \verb{us-east-1d}
 
-Constraint: The \code{AvailabilityZone} parameter can't be specified if the
-DB instance is a Multi-AZ deployment. The specified Availability Zone
-must be in the same Amazon Web Services Region as the current endpoint.}
+Constraint: The \code{AvailabilityZone} parameter can't be specified if the DB instance is a Multi-AZ deployment. The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.}
 
 \item{DBSubnetGroupName}{A DB subnet group to associate with this DB instance.
 
-Constraints: If supplied, must match the name of an existing
-DBSubnetGroup.
+Constraints: If supplied, must match the name of an existing DBSubnetGroup.
 
 Example: \code{mydbsubnetgroup}}
 
-\item{PreferredMaintenanceWindow}{The time range each week during which system maintenance can occur, in
-Universal Coordinated Time (UTC). For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance}{Amazon RDS Maintenance Window}
-in the \emph{Amazon RDS User Guide.}
+\item{PreferredMaintenanceWindow}{The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC). For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance}{Amazon RDS Maintenance Window} in the \emph{Amazon RDS User Guide.}
 
 Constraints:
 \itemize{
@@ -174,16 +150,11 @@ Constraints:
 
 \item{DBParameterGroupName}{The name of the DB parameter group to associate with this DB instance.
 
-If you do not specify a value for \code{DBParameterGroupName}, then the
-default \code{DBParameterGroup} for the specified DB engine is used.}
+If you do not specify a value for \code{DBParameterGroupName}, then the default \code{DBParameterGroup} for the specified DB engine is used.}
 
-\item{BackupRetentionPeriod}{The number of days for which automated backups are retained. Setting
-this parameter to a positive number enables backups. For more
-information, see \code{\link[=rds_create_db_instance]{create_db_instance}}.}
+\item{BackupRetentionPeriod}{The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. For more information, see \code{\link[=rds_create_db_instance]{create_db_instance}}.}
 
-\item{PreferredBackupWindow}{The time range each day during which automated backups are created if
-automated backups are enabled. For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow}{Backup window}
-in the \emph{Amazon RDS User Guide.}
+\item{PreferredBackupWindow}{The time range each day during which automated backups are created if automated backups are enabled. For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow}{Backup window} in the \emph{Amazon RDS User Guide.}
 
 Constraints:
 \itemize{
@@ -201,63 +172,39 @@ Valid Values: \code{1150}-\code{65535}
 
 Default: \code{3306}}
 
-\item{MultiAZ}{Specifies whether the DB instance is a Multi-AZ deployment. If the DB
-instance is a Multi-AZ deployment, you can't set the \code{AvailabilityZone}
-parameter.}
+\item{MultiAZ}{Specifies whether the DB instance is a Multi-AZ deployment. If the DB instance is a Multi-AZ deployment, you can't set the \code{AvailabilityZone} parameter.}
 
-\item{EngineVersion}{The version number of the database engine to use. Choose the latest
-minor version of your database engine. For information about engine
-versions, see \code{\link[=rds_create_db_instance]{create_db_instance}}, or call
-\code{\link[=rds_describe_db_engine_versions]{describe_db_engine_versions}}.}
+\item{EngineVersion}{The version number of the database engine to use. Choose the latest minor version of your database engine. For information about engine versions, see \code{\link[=rds_create_db_instance]{create_db_instance}}, or call \code{\link[=rds_describe_db_engine_versions]{describe_db_engine_versions}}.}
 
-\item{AutoMinorVersionUpgrade}{Specifies whether to automatically apply minor engine upgrades to the DB
-instance during the maintenance window. By default, minor engine
-upgrades are not applied automatically.
+\item{AutoMinorVersionUpgrade}{Specifies whether to automatically apply minor engine upgrades to the DB instance during the maintenance window. By default, minor engine upgrades are not applied automatically.
 
-For more information about automatic minor version upgrades, see
-\href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades}{Automatically upgrading the minor engine version}.}
+For more information about automatic minor version upgrades, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades}{Automatically upgrading the minor engine version}.}
 
 \item{LicenseModel}{The license model for this DB instance. Use \code{general-public-license}.}
 
-\item{Iops}{The amount of Provisioned IOPS (input/output operations per second) to
-allocate initially for the DB instance. For information about valid IOPS
-values, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS}{Amazon RDS Provisioned IOPS storage}
-in the \emph{Amazon RDS User Guide.}}
+\item{Iops}{The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB instance. For information about valid IOPS values, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS}{Amazon RDS Provisioned IOPS storage} in the \emph{Amazon RDS User Guide.}}
 
 \item{StorageThroughput}{Specifies the storage throughput value for the DB instance.
 
 This setting doesn't apply to RDS Custom or Amazon Aurora.}
 
-\item{OptionGroupName}{The name of the option group to associate with this DB instance. If this
-argument is omitted, the default option group for the specified engine
-is used.}
+\item{OptionGroupName}{The name of the option group to associate with this DB instance. If this argument is omitted, the default option group for the specified engine is used.}
 
 \item{PubliclyAccessible}{Specifies whether the DB instance is publicly accessible.
 
-When the DB instance is publicly accessible, its Domain Name System
-(DNS) endpoint resolves to the private IP address from within the DB
-instance's virtual private cloud (VPC). It resolves to the public IP
-address from outside of the DB instance's VPC. Access to the DB instance
-is ultimately controlled by the security group it uses. That public
-access is not permitted if the security group assigned to the DB
-instance doesn't permit it.
+When the DB instance is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB instance's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB instance's VPC. Access to the DB instance is ultimately controlled by the security group it uses. That public access is not permitted if the security group assigned to the DB instance doesn't permit it.
 
-When the DB instance isn't publicly accessible, it is an internal DB
-instance with a DNS name that resolves to a private IP address.
+When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.
 
-For more information, see
-\code{\link[=rds_create_db_instance]{create_db_instance}}.}
+For more information, see \code{\link[=rds_create_db_instance]{create_db_instance}}.}
 
-\item{Tags}{A list of tags to associate with this DB instance. For more information,
-see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html}{Tagging Amazon RDS Resources}
-in the \emph{Amazon RDS User Guide.}}
+\item{Tags}{A list of tags to associate with this DB instance. For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html}{Tagging Amazon RDS Resources} in the \emph{Amazon RDS User Guide.}}
 
 \item{StorageType}{Specifies the storage type to be associated with the DB instance.
 
 Valid Values: \code{gp2 | gp3 | io1 | io2 | standard}
 
-If you specify \code{io1}, \code{io2}, or \code{gp3}, you must also include a value for
-the \code{Iops} parameter.
+If you specify \code{io1}, \code{io2}, or \code{gp3}, you must also include a value for the \code{Iops} parameter.
 
 Default: \code{io1} if the \code{Iops} parameter is specified; otherwise \code{gp2}}
 
@@ -265,45 +212,27 @@ Default: \code{io1} if the \code{Iops} parameter is specified; otherwise \code{g
 
 \item{KmsKeyId}{The Amazon Web Services KMS key identifier for an encrypted DB instance.
 
-The Amazon Web Services KMS key identifier is the key ARN, key ID, alias
-ARN, or alias name for the KMS key. To use a KMS key in a different
-Amazon Web Services account, specify the key ARN or alias ARN.
+The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.
 
-If the \code{StorageEncrypted} parameter is enabled, and you do not specify a
-value for the \code{KmsKeyId} parameter, then Amazon RDS will use your
-default KMS key. There is a default KMS key for your Amazon Web Services
-account. Your Amazon Web Services account has a different default KMS
-key for each Amazon Web Services Region.}
+If the \code{StorageEncrypted} parameter is enabled, and you do not specify a value for the \code{KmsKeyId} parameter, then Amazon RDS will use your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.}
 
-\item{CopyTagsToSnapshot}{Specifies whether to copy all tags from the DB instance to snapshots of
-the DB instance. By default, tags are not copied.}
+\item{CopyTagsToSnapshot}{Specifies whether to copy all tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.}
 
-\item{MonitoringInterval}{The interval, in seconds, between points when Enhanced Monitoring
-metrics are collected for the DB instance. To disable collecting
-Enhanced Monitoring metrics, specify 0.
+\item{MonitoringInterval}{The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0.
 
-If \code{MonitoringRoleArn} is specified, then you must also set
-\code{MonitoringInterval} to a value other than 0.
+If \code{MonitoringRoleArn} is specified, then you must also set \code{MonitoringInterval} to a value other than 0.
 
 Valid Values: 0, 1, 5, 10, 15, 30, 60
 
 Default: \code{0}}
 
-\item{MonitoringRoleArn}{The ARN for the IAM role that permits RDS to send enhanced monitoring
-metrics to Amazon CloudWatch Logs. For example,
-\code{arn:aws:iam:123456789012:role/emaccess}. For information on creating a
-monitoring role, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling}{Setting Up and Enabling Enhanced Monitoring}
-in the \emph{Amazon RDS User Guide.}
+\item{MonitoringRoleArn}{The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, \code{arn:aws:iam:123456789012:role/emaccess}. For information on creating a monitoring role, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling}{Setting Up and Enabling Enhanced Monitoring} in the \emph{Amazon RDS User Guide.}
 
-If \code{MonitoringInterval} is set to a value other than 0, then you must
-supply a \code{MonitoringRoleArn} value.}
+If \code{MonitoringInterval} is set to a value other than 0, then you must supply a \code{MonitoringRoleArn} value.}
 
-\item{EnableIAMDatabaseAuthentication}{Specifies whether to enable mapping of Amazon Web Services Identity and
-Access Management (IAM) accounts to database accounts. By default,
-mapping isn't enabled.
+\item{EnableIAMDatabaseAuthentication}{Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.
 
-For more information about IAM database authentication, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html}{IAM Database Authentication for MySQL and PostgreSQL}
-in the \emph{Amazon RDS User Guide.}}
+For more information about IAM database authentication, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html}{IAM Database Authentication for MySQL and PostgreSQL} in the \emph{Amazon RDS User Guide.}}
 
 \item{SourceEngine}{[required] The name of the engine of your source database.
 
@@ -315,39 +244,27 @@ MySQL versions 5.6 and 5.7 are supported.
 
 Example: \verb{5.6.40}}
 
-\item{S3BucketName}{[required] The name of your Amazon S3 bucket that contains your database backup
-file.}
+\item{S3BucketName}{[required] The name of your Amazon S3 bucket that contains your database backup file.}
 
 \item{S3Prefix}{The prefix of your Amazon S3 bucket.}
 
-\item{S3IngestionRoleArn}{[required] An Amazon Web Services Identity and Access Management (IAM) role with a
-trust policy and a permissions policy that allows Amazon RDS to access
-your Amazon S3 bucket. For information about this role, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html#MySQL.Procedural.Importing.Enabling.IAM}{Creating an IAM role manually}
-in the \emph{Amazon RDS User Guide.}}
+\item{S3IngestionRoleArn}{[required] An Amazon Web Services Identity and Access Management (IAM) role with a trust policy and a permissions policy that allows Amazon RDS to access your Amazon S3 bucket. For information about this role, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html#MySQL.Procedural.Importing.Enabling.IAM}{Creating an IAM role manually} in the \emph{Amazon RDS User Guide.}}
 
 \item{DatabaseInsightsMode}{Specifies the mode of Database Insights to enable for the DB instance.
 
-Aurora DB instances inherit this value from the DB cluster, so you can't
-change this value.}
+Aurora DB instances inherit this value from the DB cluster, so you can't change this value.}
 
 \item{EnablePerformanceInsights}{Specifies whether to enable Performance Insights for the DB instance.
 
-For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html}{Using Amazon Performance Insights}
-in the \emph{Amazon RDS User Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html}{Using Amazon Performance Insights} in the \emph{Amazon RDS User Guide}.}
 
-\item{PerformanceInsightsKMSKeyId}{The Amazon Web Services KMS key identifier for encryption of Performance
-Insights data.
+\item{PerformanceInsightsKMSKeyId}{The Amazon Web Services KMS key identifier for encryption of Performance Insights data.
 
-The Amazon Web Services KMS key identifier is the key ARN, key ID, alias
-ARN, or alias name for the KMS key.
+The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.
 
-If you do not specify a value for \code{PerformanceInsightsKMSKeyId}, then
-Amazon RDS uses your default KMS key. There is a default KMS key for
-your Amazon Web Services account. Your Amazon Web Services account has a
-different default KMS key for each Amazon Web Services Region.}
+If you do not specify a value for \code{PerformanceInsightsKMSKeyId}, then Amazon RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.}
 
-\item{PerformanceInsightsRetentionPeriod}{The number of days to retain Performance Insights data. The default is 7
-days. The following values are valid:
+\item{PerformanceInsightsRetentionPeriod}{The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
 \itemize{
 \item 7
 \item \emph{month} * 31, where \emph{month} is a number of months from 1-23
@@ -362,31 +279,19 @@ For example, the following values are valid:
 \item 731
 }
 
-If you specify a retention period such as 94, which isn't a valid value,
-RDS issues an error.}
+If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.}
 
-\item{EnableCloudwatchLogsExports}{The list of logs that the restored DB instance is to export to
-CloudWatch Logs. The values in the list depend on the DB engine being
-used. For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch}{Publishing Database Logs to Amazon CloudWatch Logs}
-in the \emph{Amazon RDS User Guide}.}
+\item{EnableCloudwatchLogsExports}{The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on the DB engine being used. For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch}{Publishing Database Logs to Amazon CloudWatch Logs} in the \emph{Amazon RDS User Guide}.}
 
-\item{ProcessorFeatures}{The number of CPU cores and the number of threads per core for the DB
-instance class of the DB instance.}
+\item{ProcessorFeatures}{The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.}
 
-\item{UseDefaultProcessorFeatures}{Specifies whether the DB instance class of the DB instance uses its
-default processor features.}
+\item{UseDefaultProcessorFeatures}{Specifies whether the DB instance class of the DB instance uses its default processor features.}
 
-\item{DeletionProtection}{Specifies whether to enable deletion protection for the DB instance. The
-database can't be deleted when deletion protection is enabled. By
-default, deletion protection isn't enabled. For more information, see
-\href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html}{Deleting a DB Instance}.}
+\item{DeletionProtection}{Specifies whether to enable deletion protection for the DB instance. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html}{Deleting a DB Instance}.}
 
-\item{MaxAllocatedStorage}{The upper limit in gibibytes (GiB) to which Amazon RDS can automatically
-scale the storage of the DB instance.
+\item{MaxAllocatedStorage}{The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.
 
-For more information about this setting, including limitations that
-apply to it, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling}{Managing capacity automatically with Amazon RDS storage autoscaling}
-in the \emph{Amazon RDS User Guide}.}
+For more information about this setting, including limitations that apply to it, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling}{Managing capacity automatically with Amazon RDS storage autoscaling} in the \emph{Amazon RDS User Guide}.}
 
 \item{NetworkType}{The network type of the DB instance.
 
@@ -396,82 +301,50 @@ Valid Values:
 \item \code{DUAL}
 }
 
-The network type is determined by the \code{DBSubnetGroup} specified for the
-DB instance. A \code{DBSubnetGroup} can support only the IPv4 protocol or the
-IPv4 and the IPv6 protocols (\code{DUAL}).
+The network type is determined by the \code{DBSubnetGroup} specified for the DB instance. A \code{DBSubnetGroup} can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (\code{DUAL}).
 
-For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html}{Working with a DB instance in a VPC}
-in the \emph{Amazon RDS User Guide.}}
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html}{Working with a DB instance in a VPC} in the \emph{Amazon RDS User Guide.}}
 
-\item{ManageMasterUserPassword}{Specifies whether to manage the master user password with Amazon Web
-Services Secrets Manager.
+\item{ManageMasterUserPassword}{Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.
 
-For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html}{Password management with Amazon Web Services Secrets Manager}
-in the \emph{Amazon RDS User Guide.}
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html}{Password management with Amazon Web Services Secrets Manager} in the \emph{Amazon RDS User Guide.}
 
 Constraints:
 \itemize{
-\item Can't manage the master user password with Amazon Web Services
-Secrets Manager if \code{MasterUserPassword} is specified.
+\item Can't manage the master user password with Amazon Web Services Secrets Manager if \code{MasterUserPassword} is specified.
 }}
 
-\item{MasterUserSecretKmsKeyId}{The Amazon Web Services KMS key identifier to encrypt a secret that is
-automatically generated and managed in Amazon Web Services Secrets
-Manager.
+\item{MasterUserSecretKmsKeyId}{The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.
 
-This setting is valid only if the master user password is managed by RDS
-in Amazon Web Services Secrets Manager for the DB instance.
+This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance.
 
-The Amazon Web Services KMS key identifier is the key ARN, key ID, alias
-ARN, or alias name for the KMS key. To use a KMS key in a different
-Amazon Web Services account, specify the key ARN or alias ARN.
+The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.
 
-If you don't specify \code{MasterUserSecretKmsKeyId}, then the
-\code{aws/secretsmanager} KMS key is used to encrypt the secret. If the
-secret is in a different Amazon Web Services account, then you can't use
-the \code{aws/secretsmanager} KMS key to encrypt the secret, and you must use
-a customer managed KMS key.
+If you don't specify \code{MasterUserSecretKmsKeyId}, then the \code{aws/secretsmanager} KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the \code{aws/secretsmanager} KMS key to encrypt the secret, and you must use a customer managed KMS key.
 
-There is a default KMS key for your Amazon Web Services account. Your
-Amazon Web Services account has a different default KMS key for each
-Amazon Web Services Region.}
+There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.}
 
-\item{DedicatedLogVolume}{Specifies whether to enable a dedicated log volume (DLV) for the DB
-instance.}
+\item{DedicatedLogVolume}{Specifies whether to enable a dedicated log volume (DLV) for the DB instance.}
 
-\item{CACertificateIdentifier}{The CA certificate identifier to use for the DB instance's server
-certificate.
+\item{CACertificateIdentifier}{The CA certificate identifier to use for the DB instance's server certificate.
 
 This setting doesn't apply to RDS Custom DB instances.
 
-For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html}{Using SSL/TLS to encrypt a connection to a DB instance}
-in the \emph{Amazon RDS User Guide} and \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html}{Using SSL/TLS to encrypt a connection to a DB cluster}
-in the \emph{Amazon Aurora User Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html}{Using SSL/TLS to encrypt a connection to a DB instance} in the \emph{Amazon RDS User Guide} and \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html}{Using SSL/TLS to encrypt a connection to a DB cluster} in the \emph{Amazon Aurora User Guide}.}
 
 \item{EngineLifecycleSupport}{The life cycle type for this DB instance.
 
-By default, this value is set to \code{open-source-rds-extended-support},
-which enrolls your DB instance into Amazon RDS Extended Support. At the
-end of standard support, you can avoid charges for Extended Support by
-setting the value to \code{open-source-rds-extended-support-disabled}. In
-this case, RDS automatically upgrades your restored DB instance to a
-higher engine version, if the major engine version is past its end of
-standard support date.
+By default, this value is set to \code{open-source-rds-extended-support}, which enrolls your DB instance into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for Extended Support by setting the value to \code{open-source-rds-extended-support-disabled}. In this case, RDS automatically upgrades your restored DB instance to a higher engine version, if the major engine version is past its end of standard support date.
 
-You can use this setting to enroll your DB instance into Amazon RDS
-Extended Support. With RDS Extended Support, you can run the selected
-major engine version on your DB instance past the end of standard
-support for that engine version. For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html}{Amazon RDS Extended Support Amazon RDS}
-in the \emph{Amazon RDS User Guide}.
+You can use this setting to enroll your DB instance into Amazon RDS Extended Support. With RDS Extended Support, you can run the selected major engine version on your DB instance past the end of standard support for that engine version. For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html}{Amazon RDS Extended Support Amazon RDS} in the \emph{Amazon RDS User Guide}.
 
-This setting applies only to RDS for MySQL and RDS for PostgreSQL. For
-Amazon Aurora DB instances, the life cycle type is managed by the DB
-cluster.
+This setting applies only to RDS for MySQL and RDS for PostgreSQL. For Amazon Aurora DB instances, the life cycle type is managed by the DB cluster.
 
-Valid Values:
-\code{open-source-rds-extended-support | open-source-rds-extended-support-disabled}
+Valid Values: \code{open-source-rds-extended-support | open-source-rds-extended-support-disabled}
 
 Default: \code{open-source-rds-extended-support}}
+
+\item{AdditionalStorageVolumes}{A list of additional storage volumes to modify or delete for the DB instance. You can modify or delete up to three additional storage volumes using the names \code{rdsdbdata2}, \code{rdsdbdata3}, and \code{rdsdbdata4}. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.}
 
 \item{TagSpecifications}{Tags to assign to resources associated with the DB instance.
 
@@ -479,12 +352,6 @@ Valid Values:
 \itemize{
 \item \code{auto-backup} - The DB instance's automated backup.
 }}
-
-\item{AdditionalStorageVolumes}{A list of additional storage volumes to modify or delete for the DB
-instance. You can modify or delete up to three additional storage
-volumes using the names \code{rdsdbdata2}, \code{rdsdbdata3}, and \code{rdsdbdata4}.
-Additional storage volumes are supported for RDS for Oracle and RDS for
-SQL Server DB instances only.}
 }
 \description{
 Amazon Relational Database Service (Amazon RDS) supports importing MySQL databases by using backup files. You can create a backup of your on-premises database, store it on Amazon Simple Storage Service (Amazon S3), and then restore the backup file onto a new Amazon RDS DB instance running MySQL. For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html}{Restoring a backup into an Amazon RDS for MySQL DB instance} in the \emph{Amazon RDS User Guide.}

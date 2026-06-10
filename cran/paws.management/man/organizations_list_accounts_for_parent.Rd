@@ -12,18 +12,11 @@ organizations_list_accounts_for_parent(
 )
 }
 \arguments{
-\item{ParentId}{[required] The unique identifier (ID) for the parent root or organization unit (OU)
-whose accounts you want to list.}
+\item{ParentId}{[required] The unique identifier (ID) for the parent root or organization unit (OU) whose accounts you want to list.}
 
-\item{NextToken}{The parameter for receiving additional results if you receive a
-\code{NextToken} response in a previous request. A \code{NextToken} response
-indicates that more output is available. Set this parameter to the value
-of the previous call's \code{NextToken} response to indicate where the output
-should continue from.}
+\item{NextToken}{The parameter for receiving additional results if you receive a \code{NextToken} response in a previous request. A \code{NextToken} response indicates that more output is available. Set this parameter to the value of the previous call's \code{NextToken} response to indicate where the output should continue from.}
 
-\item{MaxResults}{The maximum number of items to return in the response. If more results
-exist than the specified \code{MaxResults} value, a token is included in the
-response so that you can retrieve the remaining results.}
+\item{MaxResults}{The maximum number of items to return in the response. If more results exist than the specified \code{MaxResults} value, a token is included in the response so that you can retrieve the remaining results.}
 }
 \description{
 Lists the accounts in an organization that are contained by the specified target root or organizational unit (OU). If you specify the root, you get a list of all the accounts that aren't in any OU. If you specify an OU, you get a list of all the accounts in only that OU and not in any child OUs. To get a list of all accounts in the organization, use the \code{\link[=organizations_list_accounts]{list_accounts}} operation.

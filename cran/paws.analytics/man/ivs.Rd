@@ -50,20 +50,13 @@ Operations section.
 \description{
 \strong{Introduction}
 
-The Amazon Interactive Video Service (IVS) API is REST compatible, using
-a standard HTTP API and an Amazon Web Services EventBridge event stream
-for responses. JSON is used for both requests and responses, including
-errors.
+The Amazon Interactive Video Service (IVS) API is REST compatible, using a standard HTTP API and an Amazon Web Services EventBridge event stream for responses. JSON is used for both requests and responses, including errors.
 
-The API is an Amazon Web Services regional service. For a list of
-supported regions and Amazon IVS HTTPS service endpoints, see the
-\href{https://docs.aws.amazon.com/general/latest/gr/ivs.html}{Amazon IVS page} in the
-\emph{Amazon Web Services General Reference}.
+The API is an Amazon Web Services regional service. For a list of supported regions and Amazon IVS HTTPS service endpoints, see the \href{https://docs.aws.amazon.com/general/latest/gr/ivs.html}{Amazon IVS page} in the \emph{Amazon Web Services General Reference}.
 
 *All API request parameters and URLs are case sensitive. *
 
-For a summary of notable documentation changes in each release, see
-\href{https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/doc-history.html}{Document History}.
+For a summary of notable documentation changes in each release, see \href{https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/doc-history.html}{Document History}.
 
 \strong{Allowed Header Values}
 \itemize{
@@ -74,48 +67,22 @@ For a summary of notable documentation changes in each release, see
 
 \strong{Key Concepts}
 \itemize{
-\item \strong{Channel} — Stores configuration data related to your live stream.
-You first create a channel and then use the channel’s stream key to
-start your live stream.
-\item \strong{Stream key} — An identifier assigned by Amazon IVS when you
-create a channel, which is then used to authorize streaming. \emph{Treat
-the stream key like a secret, since it allows anyone to stream to
-the channel.}
-\item \strong{Playback key pair} — Video playback may be restricted using
-playback-authorization tokens, which use public-key encryption. A
-playback key pair is the public-private pair of keys used to sign
-and validate the playback-authorization token.
-\item \strong{Recording configuration} — Stores configuration related to
-recording a live stream and where to store the recorded content.
-Multiple channels can reference the same recording configuration.
-\item \strong{Playback restriction policy} — Restricts playback by countries
-and/or origin sites.
+\item \strong{Channel} — Stores configuration data related to your live stream. You first create a channel and then use the channel’s stream key to start your live stream.
+\item \strong{Stream key} — An identifier assigned by Amazon IVS when you create a channel, which is then used to authorize streaming. \emph{Treat the stream key like a secret, since it allows anyone to stream to the channel.}
+\item \strong{Playback key pair} — Video playback may be restricted using playback-authorization tokens, which use public-key encryption. A playback key pair is the public-private pair of keys used to sign and validate the playback-authorization token.
+\item \strong{Recording configuration} — Stores configuration related to recording a live stream and where to store the recorded content. Multiple channels can reference the same recording configuration.
+\item \strong{Playback restriction policy} — Restricts playback by countries and/or origin sites.
 }
 
 For more information about your IVS live stream, also see \href{https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/getting-started.html}{Getting Started with IVS Low-Latency Streaming}.
 
 \strong{Tagging}
 
-A \emph{tag} is a metadata label that you assign to an Amazon Web Services
-resource. A tag comprises a \emph{key} and a \emph{value}, both set by you. For
-example, you might set a tag as \code{topic:nature} to label a particular
-video category. See \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html}{Best practices and strategies}
-in \emph{Tagging Amazon Web Services Resources and Tag Editor} for details,
-including restrictions that apply to tags and "Tag naming limits and
-requirements"; Amazon IVS has no service-specific constraints beyond
-what is documented there.
+A \emph{tag} is a metadata label that you assign to an Amazon Web Services resource. A tag comprises a \emph{key} and a \emph{value}, both set by you. For example, you might set a tag as \code{topic:nature} to label a particular video category. See \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html}{Best practices and strategies} in \emph{Tagging Amazon Web Services Resources and Tag Editor} for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
 
-Tags can help you identify and organize your Amazon Web Services
-resources. For example, you can use the same tag for different resources
-to indicate that they are related. You can also use tags to manage
-access (see \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html}{Access Tags}).
+Tags can help you identify and organize your Amazon Web Services resources. For example, you can use the same tag for different resources to indicate that they are related. You can also use tags to manage access (see \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html}{Access Tags}).
 
-The Amazon IVS API has these tag-related operations:
-\code{\link[=ivs_tag_resource]{tag_resource}},
-\code{\link[=ivs_untag_resource]{untag_resource}}, and
-\code{\link[=ivs_list_tags_for_resource]{list_tags_for_resource}}. The following
-resources support tagging: Channels, Stream Keys, Playback Key Pairs,
-and Recording Configurations.
+The Amazon IVS API has these tag-related operations: \code{\link[=ivs_tag_resource]{tag_resource}}, \code{\link[=ivs_untag_resource]{untag_resource}}, and \code{\link[=ivs_list_tags_for_resource]{list_tags_for_resource}}. The following resources support tagging: Channels, Stream Keys, Playback Key Pairs, and Recording Configurations.
 
 At most 50 tags can be applied to a resource.
 
@@ -123,42 +90,25 @@ At most 50 tags can be applied to a resource.
 
 Note the differences between these concepts:
 \itemize{
-\item \emph{Authentication} is about verifying identity. You need to be
-authenticated to sign Amazon IVS API requests.
-\item \emph{Authorization} is about granting permissions. Your IAM roles need
-to have permissions for Amazon IVS API requests. In addition,
-authorization is needed to view \href{https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels.html}{Amazon IVS private channels}.
-(Private channels are channels that are enabled for "playback
-authorization.")
+\item \emph{Authentication} is about verifying identity. You need to be authenticated to sign Amazon IVS API requests.
+\item \emph{Authorization} is about granting permissions. Your IAM roles need to have permissions for Amazon IVS API requests. In addition, authorization is needed to view \href{https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels.html}{Amazon IVS private channels}. (Private channels are channels that are enabled for "playback authorization.")
 }
 
 \strong{Authentication}
 
-All Amazon IVS API requests must be authenticated with a signature. The
-Amazon Web Services Command-Line Interface (CLI) and Amazon IVS Player
-SDKs take care of signing the underlying API calls for you. However, if
-your application calls the Amazon IVS API directly, it’s your
-responsibility to sign the requests.
+All Amazon IVS API requests must be authenticated with a signature. The Amazon Web Services Command-Line Interface (CLI) and Amazon IVS Player SDKs take care of signing the underlying API calls for you. However, if your application calls the Amazon IVS API directly, it’s your responsibility to sign the requests.
 
-You generate a signature using valid Amazon Web Services credentials
-that have permission to perform the requested action. For example, you
-must sign PutMetadata requests with a signature generated from a user
-account that has the \code{ivs:PutMetadata} permission.
+You generate a signature using valid Amazon Web Services credentials that have permission to perform the requested action. For example, you must sign PutMetadata requests with a signature generated from a user account that has the \code{ivs:PutMetadata} permission.
 
 For more information:
 \itemize{
-\item Authentication and generating signatures — See \href{https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html}{Authenticating Requests (Amazon Web Services Signature Version 4)}
-in the \emph{Amazon Web Services General Reference}.
-\item Managing Amazon IVS permissions — See \href{https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/security-iam.html}{Identity and Access Management}
-on the Security page of the \emph{Amazon IVS User Guide}.
+\item Authentication and generating signatures — See \href{https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html}{Authenticating Requests (Amazon Web Services Signature Version 4)} in the \emph{Amazon Web Services General Reference}.
+\item Managing Amazon IVS permissions — See \href{https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/security-iam.html}{Identity and Access Management} on the Security page of the \emph{Amazon IVS User Guide}.
 }
 
 \strong{Amazon Resource Names (ARNs)}
 
-ARNs uniquely identify AWS resources. An ARN is required when you need
-to specify a resource unambiguously across all of AWS, such as in IAM
-policies and API calls. For more information, see \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html}{Amazon Resource Names}
-in the \emph{AWS General Reference}.
+ARNs uniquely identify AWS resources. An ARN is required when you need to specify a resource unambiguously across all of AWS, such as in IAM policies and API calls. For more information, see \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html}{Amazon Resource Names} in the \emph{AWS General Reference}.
 }
 \section{Service syntax}{
 
@@ -202,15 +152,18 @@ in the \emph{AWS General Reference}.
 \link[=ivs_batch_get_channel]{batch_get_channel} \tab Performs GetChannel on multiple ARNs simultaneously\cr
 \link[=ivs_batch_get_stream_key]{batch_get_stream_key} \tab Performs GetStreamKey on multiple ARNs simultaneously\cr
 \link[=ivs_batch_start_viewer_session_revocation]{batch_start_viewer_session_revocation} \tab Performs StartViewerSessionRevocation on multiple channel ARN and viewer ID pairs simultaneously\cr
+\link[=ivs_create_ad_configuration]{create_ad_configuration} \tab Creates a new ad configuration to be used for server-side ad insertion\cr
 \link[=ivs_create_channel]{create_channel} \tab Creates a new channel and an associated stream key to start streaming\cr
 \link[=ivs_create_playback_restriction_policy]{create_playback_restriction_policy} \tab Creates a new playback restriction policy, for constraining playback by countries and/or origins\cr
 \link[=ivs_create_recording_configuration]{create_recording_configuration} \tab Creates a new recording configuration, used to enable recording to Amazon S3\cr
 \link[=ivs_create_stream_key]{create_stream_key} \tab Creates a stream key, used to initiate a stream, for the specified channel ARN\cr
+\link[=ivs_delete_ad_configuration]{delete_ad_configuration} \tab Deletes the specified ad configuration\cr
 \link[=ivs_delete_channel]{delete_channel} \tab Deletes the specified channel and its associated stream keys\cr
 \link[=ivs_delete_playback_key_pair]{delete_playback_key_pair} \tab Deletes a specified authorization key pair\cr
 \link[=ivs_delete_playback_restriction_policy]{delete_playback_restriction_policy} \tab Deletes the specified playback restriction policy\cr
 \link[=ivs_delete_recording_configuration]{delete_recording_configuration} \tab Deletes the recording configuration for the specified ARN\cr
 \link[=ivs_delete_stream_key]{delete_stream_key} \tab Deletes the stream key for the specified ARN, so it can no longer be used to stream\cr
+\link[=ivs_get_ad_configuration]{get_ad_configuration} \tab Gets the ad configuration represented by the specified ARN\cr
 \link[=ivs_get_channel]{get_channel} \tab Gets the channel configuration for the specified channel ARN\cr
 \link[=ivs_get_playback_key_pair]{get_playback_key_pair} \tab Gets a specified playback authorization key pair and returns the arn and fingerprint\cr
 \link[=ivs_get_playback_restriction_policy]{get_playback_restriction_policy} \tab Gets the specified playback restriction policy\cr
@@ -219,6 +172,8 @@ in the \emph{AWS General Reference}.
 \link[=ivs_get_stream_key]{get_stream_key} \tab Gets stream-key information for a specified ARN\cr
 \link[=ivs_get_stream_session]{get_stream_session} \tab Gets metadata on a specified stream\cr
 \link[=ivs_import_playback_key_pair]{import_playback_key_pair} \tab Imports the public portion of a new key pair and returns its arn and fingerprint\cr
+\link[=ivs_insert_ad_break]{insert_ad_break} \tab Inserts an ad marker in the playlist for the specified channel and duration using the ad configuration associated with the channel\cr
+\link[=ivs_list_ad_configurations]{list_ad_configurations} \tab Gets summary information about all ad configurations in your account, in the AWS region where the API request is processed\cr
 \link[=ivs_list_channels]{list_channels} \tab Gets summary information about all channels in your account, in the Amazon Web Services region where the API request is processed\cr
 \link[=ivs_list_playback_key_pairs]{list_playback_key_pairs} \tab Gets summary information about playback key pairs\cr
 \link[=ivs_list_playback_restriction_policies]{list_playback_restriction_policies} \tab Gets summary information about playback restriction policies\cr

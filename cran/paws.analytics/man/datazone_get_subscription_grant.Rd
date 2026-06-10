@@ -7,8 +7,7 @@
 datazone_get_subscription_grant(domainIdentifier, identifier)
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the subscription grant
-exists.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the subscription grant exists.}
 
 \item{identifier}{[required] The ID of the subscription grant.}
 }

@@ -5,23 +5,15 @@ NULL
 #' Amazon Connect Customer Profiles
 #'
 #' @description
-#' -   [Customer Profiles
-#'     actions](https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Customer_Profiles.html)
+#' Connect Customer Customer Profiles
 #' 
-#' -   [Customer Profiles data
-#'     types](https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Customer_Profiles.html)
+#' -   [Customer Profiles actions](https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Customer_Profiles.html)
 #' 
-#' Amazon Connect Customer Profiles is a unified customer profile for your
-#' contact center that has pre-built connectors powered by AppFlow that
-#' make it easy to combine customer information from third party
-#' applications, such as Salesforce (CRM), ServiceNow (ITSM), and your
-#' enterprise resource planning (ERP), with contact history from your
-#' Amazon Connect contact center.
+#' -   [Customer Profiles data types](https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Customer_Profiles.html)
 #' 
-#' For more information about the Amazon Connect Customer Profiles feature,
-#' see [Use Customer
-#' Profiles](https://docs.aws.amazon.com/connect/latest/adminguide/customer-profiles.html)
-#' in the *Amazon Connect Administrator's Guide*.
+#' Connect Customer Customer Profiles is a unified customer profile for your contact center that has pre-built connectors powered by AppFlow that make it easy to combine customer information from third party applications, such as Salesforce (CRM), ServiceNow (ITSM), and your enterprise resource planning (ERP), with contact history from your Connect Customer contact center.
+#' 
+#' For more information about the Connect Customer Customer Profiles feature, see [Use Customer Profiles](https://docs.aws.amazon.com/connect/latest/adminguide/customer-profiles.html) in the *Connect Customer Administrator's Guide*.
 #'
 #' @param
 #' config
@@ -112,11 +104,13 @@ NULL
 #'  \link[=customerprofiles_create_calculated_attribute_definition]{create_calculated_attribute_definition} \tab Creates a new calculated attribute definition\cr
 #'  \link[=customerprofiles_create_domain]{create_domain} \tab Creates a domain, which is a container for all customer data, such as customer profile attributes, object types, profile keys, and encryption keys\cr
 #'  \link[=customerprofiles_create_domain_layout]{create_domain_layout} \tab Creates the layout to view data for a specific domain\cr
-#'  \link[=customerprofiles_create_event_stream]{create_event_stream} \tab Creates an event stream, which is a subscription to real-time events, such as when profiles are created and updated through Amazon Connect Customer Profiles\cr
+#'  \link[=customerprofiles_create_event_stream]{create_event_stream} \tab Creates an event stream, which is a subscription to real-time events, such as when profiles are created and updated through Connect Customer Customer Profiles\cr
 #'  \link[=customerprofiles_create_event_trigger]{create_event_trigger} \tab Creates an event trigger, which specifies the rules when to perform action based on customer's ingested data\cr
 #'  \link[=customerprofiles_create_integration_workflow]{create_integration_workflow} \tab Creates an integration workflow\cr
 #'  \link[=customerprofiles_create_profile]{create_profile} \tab Creates a standard profile\cr
 #'  \link[=customerprofiles_create_recommender]{create_recommender} \tab Creates a recommender\cr
+#'  \link[=customerprofiles_create_recommender_filter]{create_recommender_filter} \tab Creates a recommender filter\cr
+#'  \link[=customerprofiles_create_recommender_schema]{create_recommender_schema} \tab Creates a recommender schema\cr
 #'  \link[=customerprofiles_create_segment_definition]{create_segment_definition} \tab Creates a segment definition associated to the given domain\cr
 #'  \link[=customerprofiles_create_segment_estimate]{create_segment_estimate} \tab Creates a segment estimate query\cr
 #'  \link[=customerprofiles_create_segment_snapshot]{create_segment_snapshot} \tab Triggers a job to export a segment to a specified destination\cr
@@ -133,6 +127,8 @@ NULL
 #'  \link[=customerprofiles_delete_profile_object]{delete_profile_object} \tab Removes an object associated with a profile of a given ProfileObjectType\cr
 #'  \link[=customerprofiles_delete_profile_object_type]{delete_profile_object_type} \tab Removes a ProfileObjectType from a specific domain as well as removes all the ProfileObjects of that type\cr
 #'  \link[=customerprofiles_delete_recommender]{delete_recommender} \tab Deletes a recommender\cr
+#'  \link[=customerprofiles_delete_recommender_filter]{delete_recommender_filter} \tab Deletes a recommender filter from a domain\cr
+#'  \link[=customerprofiles_delete_recommender_schema]{delete_recommender_schema} \tab Deletes a recommender schema from a domain\cr
 #'  \link[=customerprofiles_delete_segment_definition]{delete_segment_definition} \tab Deletes a segment definition from the domain\cr
 #'  \link[=customerprofiles_delete_workflow]{delete_workflow} \tab Deletes the specified workflow and all its corresponding resources\cr
 #'  \link[=customerprofiles_detect_profile_object_type]{detect_profile_object_type} \tab The process of detecting profile object type mapping by using given objects\cr
@@ -153,6 +149,8 @@ NULL
 #'  \link[=customerprofiles_get_profile_object_type_template]{get_profile_object_type_template} \tab Returns the template information for a specific object type\cr
 #'  \link[=customerprofiles_get_profile_recommendations]{get_profile_recommendations} \tab Fetches the recommendations for a profile in the input Customer Profiles domain\cr
 #'  \link[=customerprofiles_get_recommender]{get_recommender} \tab Retrieves a recommender\cr
+#'  \link[=customerprofiles_get_recommender_filter]{get_recommender_filter} \tab Retrieves information about a specific recommender filter in a domain\cr
+#'  \link[=customerprofiles_get_recommender_schema]{get_recommender_schema} \tab Retrieves information about a specific recommender schema in a domain\cr
 #'  \link[=customerprofiles_get_segment_definition]{get_segment_definition} \tab Gets a segment definition from the domain\cr
 #'  \link[=customerprofiles_get_segment_estimate]{get_segment_estimate} \tab Gets the result of a segment estimate query\cr
 #'  \link[=customerprofiles_get_segment_membership]{get_segment_membership} \tab Determines if the given profiles are within a segment\cr
@@ -179,8 +177,10 @@ NULL
 #'  \link[=customerprofiles_list_profile_objects]{list_profile_objects} \tab Returns a list of objects associated with a profile of a given ProfileObjectType\cr
 #'  \link[=customerprofiles_list_profile_object_types]{list_profile_object_types} \tab Lists all of the templates available within the service\cr
 #'  \link[=customerprofiles_list_profile_object_type_templates]{list_profile_object_type_templates} \tab Lists all of the template information for object types\cr
+#'  \link[=customerprofiles_list_recommender_filters]{list_recommender_filters} \tab Returns a list of recommender filters in the specified domain\cr
 #'  \link[=customerprofiles_list_recommender_recipes]{list_recommender_recipes} \tab Returns a list of available recommender recipes that can be used to create recommenders\cr
 #'  \link[=customerprofiles_list_recommenders]{list_recommenders} \tab Returns a list of recommenders in the specified domain\cr
+#'  \link[=customerprofiles_list_recommender_schemas]{list_recommender_schemas} \tab Returns a list of recommender schemas in the specified domain\cr
 #'  \link[=customerprofiles_list_rule_based_matches]{list_rule_based_matches} \tab Returns a set of MatchIds that belong to the given domain\cr
 #'  \link[=customerprofiles_list_segment_definitions]{list_segment_definitions} \tab Lists all segment definitions under a domain\cr
 #'  \link[=customerprofiles_list_tags_for_resource]{list_tags_for_resource} \tab Displays the tags associated with an Amazon Connect Customer Profiles resource\cr

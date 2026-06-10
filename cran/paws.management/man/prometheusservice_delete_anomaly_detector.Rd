@@ -11,13 +11,11 @@ prometheusservice_delete_anomaly_detector(
 )
 }
 \arguments{
-\item{workspaceId}{[required] The identifier of the workspace containing the anomaly detector to
-delete.}
+\item{workspaceId}{[required] The identifier of the workspace containing the anomaly detector to delete.}
 
 \item{anomalyDetectorId}{[required] The identifier of the anomaly detector to delete.}
 
-\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request.}
+\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.}
 }
 \description{
 Removes an anomaly detector from a workspace. This operation is idempotent.

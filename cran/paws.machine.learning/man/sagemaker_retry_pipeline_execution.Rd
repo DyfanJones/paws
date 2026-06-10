@@ -13,12 +13,9 @@ sagemaker_retry_pipeline_execution(
 \arguments{
 \item{PipelineExecutionArn}{[required] The Amazon Resource Name (ARN) of the pipeline execution.}
 
-\item{ClientRequestToken}{[required] A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the operation. An idempotent operation completes no more
-than once.}
+\item{ClientRequestToken}{[required] A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.}
 
-\item{ParallelismConfiguration}{This configuration, if specified, overrides the parallelism
-configuration of the parent pipeline.}
+\item{ParallelismConfiguration}{This configuration, if specified, overrides the parallelism configuration of the parent pipeline.}
 }
 \description{
 Retry the execution of the pipeline.

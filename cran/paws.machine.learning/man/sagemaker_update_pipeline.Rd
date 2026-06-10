@@ -21,9 +21,7 @@ sagemaker_update_pipeline(
 
 \item{PipelineDefinition}{The JSON pipeline definition.}
 
-\item{PipelineDefinitionS3Location}{The location of the pipeline definition stored in Amazon S3. If
-specified, SageMaker will retrieve the pipeline definition from this
-location.}
+\item{PipelineDefinitionS3Location}{The location of the pipeline definition stored in Amazon S3. If specified, SageMaker will retrieve the pipeline definition from this location.}
 
 \item{PipelineDescription}{The description of the pipeline.}
 

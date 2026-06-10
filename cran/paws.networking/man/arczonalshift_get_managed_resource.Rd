@@ -9,11 +9,9 @@ Region}
 arczonalshift_get_managed_resource(resourceIdentifier)
 }
 \arguments{
-\item{resourceIdentifier}{[required] The identifier for the resource that Amazon Web Services shifts traffic
-for. The identifier is the Amazon Resource Name (ARN) for the resource.
+\item{resourceIdentifier}{[required] The identifier for the resource that Amazon Web Services shifts traffic for. The identifier is the Amazon Resource Name (ARN) for the resource.
 
-Amazon Application Recovery Controller currently supports enabling the
-following resources for zonal shift and zonal autoshift:
+Amazon Application Recovery Controller currently supports enabling the following resources for zonal shift and zonal autoshift:
 \itemize{
 \item \href{https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.ec2-auto-scaling-groups.html}{Amazon EC2 Auto Scaling groups}
 \item \href{https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.eks.html}{Amazon Elastic Kubernetes Service}

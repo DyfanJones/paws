@@ -11,14 +11,9 @@ servicediscovery_update_private_dns_namespace(
 )
 }
 \arguments{
-\item{Id}{[required] The ID or Amazon Resource Name (ARN) of the namespace that you want to
-update.}
+\item{Id}{[required] The ID or Amazon Resource Name (ARN) of the namespace that you want to update.}
 
-\item{UpdaterRequestId}{A unique string that identifies the request and that allows failed
-\code{\link[=servicediscovery_update_private_dns_namespace]{update_private_dns_namespace}}
-requests to be retried without the risk of running the operation twice.
-\code{UpdaterRequestId} can be any unique string (for example, a
-date/timestamp).}
+\item{UpdaterRequestId}{A unique string that identifies the request and that allows failed \code{\link[=servicediscovery_update_private_dns_namespace]{update_private_dns_namespace}} requests to be retried without the risk of running the operation twice. \code{UpdaterRequestId} can be any unique string (for example, a date/timestamp).}
 
 \item{Namespace}{[required] Updated properties for the private DNS namespace.}
 }

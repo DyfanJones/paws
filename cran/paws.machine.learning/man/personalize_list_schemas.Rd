@@ -7,9 +7,7 @@
 personalize_list_schemas(nextToken = NULL, maxResults = NULL)
 }
 \arguments{
-\item{nextToken}{A token returned from the previous call to
-\code{\link[=personalize_list_schemas]{list_schemas}} for getting the next set of
-schemas (if they exist).}
+\item{nextToken}{A token returned from the previous call to \code{\link[=personalize_list_schemas]{list_schemas}} for getting the next set of schemas (if they exist).}
 
 \item{maxResults}{The maximum number of schemas to return.}
 }

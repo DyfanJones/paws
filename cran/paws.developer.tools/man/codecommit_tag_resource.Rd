@@ -7,8 +7,7 @@
 codecommit_tag_resource(resourceArn, tags)
 }
 \arguments{
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource to which you want to add
-or update tags.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.}
 
 \item{tags}{[required] The key-value pair to use when tagging this repository.}
 }

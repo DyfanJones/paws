@@ -7,19 +7,11 @@
 route53profiles_create_profile(ClientToken, Name, Tags = NULL)
 }
 \arguments{
-\item{ClientToken}{[required] \code{ClientToken} is an idempotency token that ensures a call to
-\code{\link[=route53profiles_create_profile]{create_profile}} completes only once.
-You choose the value to pass. For example, an issue might prevent you
-from getting a response from
-\code{\link[=route53profiles_create_profile]{create_profile}}. In this case, safely
-retry your call to \code{\link[=route53profiles_create_profile]{create_profile}} by
-using the same \code{\link[=route53profiles_create_profile]{create_profile}}
-parameter value.}
+\item{ClientToken}{[required] \code{ClientToken} is an idempotency token that ensures a call to \code{\link[=route53profiles_create_profile]{create_profile}} completes only once. You choose the value to pass. For example, an issue might prevent you from getting a response from \code{\link[=route53profiles_create_profile]{create_profile}}. In this case, safely retry your call to \code{\link[=route53profiles_create_profile]{create_profile}} by using the same \code{\link[=route53profiles_create_profile]{create_profile}} parameter value.}
 
 \item{Name}{[required] A name for the Profile.}
 
-\item{Tags}{A list of the tag keys and values that you want to associate with the
-Route 53 Profile.}
+\item{Tags}{A list of the tag keys and values that you want to associate with the Route 53 Profile.}
 }
 \description{
 Creates an empty Route 53 Profile.

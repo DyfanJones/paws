@@ -9,8 +9,7 @@ provider}
 codepipeline_get_action_type(category, owner, provider, version)
 }
 \arguments{
-\item{category}{[required] Defines what kind of action can be taken in the stage. The following are
-the valid values:
+\item{category}{[required] Defines what kind of action can be taken in the stage. The following are the valid values:
 \itemize{
 \item \code{Source}
 \item \code{Build}
@@ -21,11 +20,9 @@ the valid values:
 \item \code{Compute}
 }}
 
-\item{owner}{[required] The creator of an action type that was created with any supported
-integration model. There are two valid values: \code{AWS} and \code{ThirdParty}.}
+\item{owner}{[required] The creator of an action type that was created with any supported integration model. There are two valid values: \code{AWS} and \code{ThirdParty}.}
 
-\item{provider}{[required] The provider of the action type being called. The provider name is
-specified when the action type is created.}
+\item{provider}{[required] The provider of the action type being called. The provider name is specified when the action type is created.}
 
 \item{version}{[required] A string that describes the action type version.}
 }

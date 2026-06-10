@@ -15,16 +15,13 @@ cloudformation_describe_events(
 \arguments{
 \item{StackName}{The name or unique stack ID for which you want to retrieve events.}
 
-\item{ChangeSetName}{The name or Amazon Resource Name (ARN) of the change set for which you
-want to retrieve events.}
+\item{ChangeSetName}{The name or Amazon Resource Name (ARN) of the change set for which you want to retrieve events.}
 
-\item{OperationId}{The unique identifier of the operation for which you want to retrieve
-events.}
+\item{OperationId}{The unique identifier of the operation for which you want to retrieve events.}
 
 \item{Filters}{Filters to apply when retrieving events.}
 
-\item{NextToken}{The token for the next set of items to return. (You received this token
-from a previous call.)}
+\item{NextToken}{The token for the next set of items to return. (You received this token from a previous call.)}
 }
 \description{
 Returns CloudFormation events based on flexible query criteria. Groups events by operation ID, enabling you to focus on individual stack operations during deployment.

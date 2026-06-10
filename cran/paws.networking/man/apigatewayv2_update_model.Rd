@@ -24,8 +24,7 @@ apigatewayv2_update_model(
 
 \item{Name}{The name of the model.}
 
-\item{Schema}{The schema for the model. For application/json models, this should be
-JSON schema draft 4 model.}
+\item{Schema}{The schema for the model. For application/json models, this should be JSON schema draft 4 model.}
 }
 \description{
 Updates a Model.

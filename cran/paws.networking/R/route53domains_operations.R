@@ -11,13 +11,8 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53domains_accept_domain_transfer_from_another_aws_account/](https://www.paws-r-sdk.com/docs/route53domains_accept_domain_transfer_from_another_aws_account/) for full documentation.
 #'
-#' @param DomainName &#91;required&#93; The name of the domain that was specified when another Amazon Web
-#' Services account submitted a
-#' [`transfer_domain_to_another_aws_account`][route53domains_transfer_domain_to_another_aws_account]
-#' request.
-#' @param Password &#91;required&#93; The password that was returned by the
-#' [`transfer_domain_to_another_aws_account`][route53domains_transfer_domain_to_another_aws_account]
-#' request.
+#' @param DomainName &#91;required&#93; The name of the domain that was specified when another Amazon Web Services account submitted a [`transfer_domain_to_another_aws_account`][route53domains_transfer_domain_to_another_aws_account] request.
+#' @param Password &#91;required&#93; The password that was returned by the [`transfer_domain_to_another_aws_account`][route53domains_transfer_domain_to_another_aws_account] request.
 #'
 #' @keywords internal
 #'
@@ -50,8 +45,7 @@ route53domains_accept_domain_transfer_from_another_aws_account <- function(Domai
 #' See [https://www.paws-r-sdk.com/docs/route53domains_associate_delegation_signer_to_domain/](https://www.paws-r-sdk.com/docs/route53domains_associate_delegation_signer_to_domain/) for full documentation.
 #'
 #' @param DomainName &#91;required&#93; The name of the domain.
-#' @param SigningAttributes &#91;required&#93; The information about a key, including the algorithm, public key-value,
-#' and flags.
+#' @param SigningAttributes &#91;required&#93; The information about a key, including the algorithm, public key-value, and flags.
 #'
 #' @keywords internal
 #'
@@ -83,8 +77,7 @@ route53domains_associate_delegation_signer_to_domain <- function(DomainName, Sig
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53domains_cancel_domain_transfer_to_another_aws_account/](https://www.paws-r-sdk.com/docs/route53domains_cancel_domain_transfer_to_another_aws_account/) for full documentation.
 #'
-#' @param DomainName &#91;required&#93; The name of the domain for which you want to cancel the transfer to
-#' another Amazon Web Services account.
+#' @param DomainName &#91;required&#93; The name of the domain for which you want to cancel the transfer to another Amazon Web Services account.
 #'
 #' @keywords internal
 #'
@@ -115,12 +108,7 @@ route53domains_cancel_domain_transfer_to_another_aws_account <- function(DomainN
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53domains_check_domain_availability/](https://www.paws-r-sdk.com/docs/route53domains_check_domain_availability/) for full documentation.
 #'
-#' @param DomainName &#91;required&#93; The name of the domain that you want to get availability for. The
-#' top-level domain (TLD), such as .com, must be a TLD that Route 53
-#' supports. For a list of supported TLDs, see [Domains that You Can
-#' Register with Amazon Route
-#' 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html)
-#' in the *Amazon Route 53 Developer Guide*.
+#' @param DomainName &#91;required&#93; The name of the domain that you want to get availability for. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see [Domains that You Can Register with Amazon Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html) in the *Amazon Route 53 Developer Guide*.
 #' 
 #' The domain name can contain only the following characters:
 #' 
@@ -128,19 +116,11 @@ route53domains_cancel_domain_transfer_to_another_aws_account <- function(DomainN
 #' 
 #' -   Numbers 0 through 9.
 #' 
-#' -   Hyphen (-). You can't specify a hyphen at the beginning or end of a
-#'     label.
+#' -   Hyphen (-). You can't specify a hyphen at the beginning or end of a label.
 #' 
-#' -   Period (.) to separate the labels in the name, such as the `.` in
-#'     `example.com`.
+#' -   Period (.) to separate the labels in the name, such as the `.` in `example.com`.
 #' 
-#' Internationalized domain names are not supported for some top-level
-#' domains. To determine whether the TLD that you want to use supports
-#' internationalized domain names, see [Domains that You Can Register with
-#' Amazon Route
-#' 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html).
-#' For more information, see [Formatting Internationalized Domain
-#' Names](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns).
+#' Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see [Domains that You Can Register with Amazon Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html). For more information, see [Formatting Internationalized Domain Names](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns).
 #' @param IdnLangCode Reserved for future use.
 #'
 #' @keywords internal
@@ -172,12 +152,7 @@ route53domains_check_domain_availability <- function(DomainName, IdnLangCode = N
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53domains_check_domain_transferability/](https://www.paws-r-sdk.com/docs/route53domains_check_domain_transferability/) for full documentation.
 #'
-#' @param DomainName &#91;required&#93; The name of the domain that you want to transfer to Route 53. The
-#' top-level domain (TLD), such as .com, must be a TLD that Route 53
-#' supports. For a list of supported TLDs, see [Domains that You Can
-#' Register with Amazon Route
-#' 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html)
-#' in the *Amazon Route 53 Developer Guide*.
+#' @param DomainName &#91;required&#93; The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see [Domains that You Can Register with Amazon Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html) in the *Amazon Route 53 Developer Guide*.
 #' 
 #' The domain name can contain only the following characters:
 #' 
@@ -185,14 +160,10 @@ route53domains_check_domain_availability <- function(DomainName, IdnLangCode = N
 #' 
 #' -   Numbers 0 through 9.
 #' 
-#' -   Hyphen (-). You can't specify a hyphen at the beginning or end of a
-#'     label.
+#' -   Hyphen (-). You can't specify a hyphen at the beginning or end of a label.
 #' 
-#' -   Period (.) to separate the labels in the name, such as the `.` in
-#'     `example.com`.
-#' @param AuthCode If the registrar for the top-level domain (TLD) requires an
-#' authorization code to transfer the domain, the code that you got from
-#' the current registrar for the domain.
+#' -   Period (.) to separate the labels in the name, such as the `.` in `example.com`.
+#' @param AuthCode If the registrar for the top-level domain (TLD) requires an authorization code to transfer the domain, the code that you got from the current registrar for the domain.
 #'
 #' @keywords internal
 #'
@@ -352,9 +323,7 @@ route53domains_disable_domain_transfer_lock <- function(DomainName) {
 #' See [https://www.paws-r-sdk.com/docs/route53domains_disassociate_delegation_signer_from_domain/](https://www.paws-r-sdk.com/docs/route53domains_disassociate_delegation_signer_from_domain/) for full documentation.
 #'
 #' @param DomainName &#91;required&#93; Name of the domain.
-#' @param Id &#91;required&#93; An internal identification number assigned to each DS record after it’s
-#' created. You can retrieve it as part of DNSSEC information returned by
-#' [`get_domain_detail`][route53domains_get_domain_detail].
+#' @param Id &#91;required&#93; An internal identification number assigned to each DS record after it’s created. You can retrieve it as part of DNSSEC information returned by [`get_domain_detail`][route53domains_get_domain_detail].
 #'
 #' @keywords internal
 #'
@@ -452,8 +421,7 @@ route53domains_enable_domain_transfer_lock <- function(DomainName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53domains_get_contact_reachability_status/](https://www.paws-r-sdk.com/docs/route53domains_get_contact_reachability_status/) for full documentation.
 #'
-#' @param domainName The name of the domain for which you want to know whether the registrant
-#' contact has confirmed that the email address is valid.
+#' @param domainName The name of the domain for which you want to know whether the registrant contact has confirmed that the email address is valid.
 #'
 #' @keywords internal
 #'
@@ -517,12 +485,7 @@ route53domains_get_domain_detail <- function(DomainName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53domains_get_domain_suggestions/](https://www.paws-r-sdk.com/docs/route53domains_get_domain_suggestions/) for full documentation.
 #'
-#' @param DomainName &#91;required&#93; A domain name that you want to use as the basis for a list of possible
-#' domain names. The top-level domain (TLD), such as .com, must be a TLD
-#' that Route 53 supports. For a list of supported TLDs, see [Domains that
-#' You Can Register with Amazon Route
-#' 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html)
-#' in the *Amazon Route 53 Developer Guide*.
+#' @param DomainName &#91;required&#93; A domain name that you want to use as the basis for a list of possible domain names. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see [Domains that You Can Register with Amazon Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html) in the *Amazon Route 53 Developer Guide*.
 #' 
 #' The domain name can contain only the following characters:
 #' 
@@ -530,24 +493,13 @@ route53domains_get_domain_detail <- function(DomainName) {
 #' 
 #' -   Numbers 0 through 9.
 #' 
-#' -   Hyphen (-). You can't specify a hyphen at the beginning or end of a
-#'     label.
+#' -   Hyphen (-). You can't specify a hyphen at the beginning or end of a label.
 #' 
-#' -   Period (.) to separate the labels in the name, such as the `.` in
-#'     `example.com`.
+#' -   Period (.) to separate the labels in the name, such as the `.` in `example.com`.
 #' 
-#' Internationalized domain names are not supported for some top-level
-#' domains. To determine whether the TLD that you want to use supports
-#' internationalized domain names, see [Domains that You Can Register with
-#' Amazon Route
-#' 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html).
-#' @param SuggestionCount &#91;required&#93; The number of suggested domain names that you want Route 53 to return.
-#' Specify a value between 1 and 50.
-#' @param OnlyAvailable &#91;required&#93; If `OnlyAvailable` is `true`, Route 53 returns only domain names that
-#' are available. If `OnlyAvailable` is `false`, Route 53 returns domain
-#' names without checking whether they're available to be registered. To
-#' determine whether the domain is available, you can call
-#' `checkDomainAvailability` for each suggestion.
+#' Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see [Domains that You Can Register with Amazon Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html).
+#' @param SuggestionCount &#91;required&#93; The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50. Note that fewer than the requested number might be returned.
+#' @param OnlyAvailable &#91;required&#93; If `OnlyAvailable` is `true`, Route 53 returns only domain names that are available. If `OnlyAvailable` is `false`, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, you can call `checkDomainAvailability` for each suggestion.
 #'
 #' @keywords internal
 #'
@@ -579,9 +531,7 @@ route53domains_get_domain_suggestions <- function(DomainName, SuggestionCount, O
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53domains_get_operation_detail/](https://www.paws-r-sdk.com/docs/route53domains_get_operation_detail/) for full documentation.
 #'
-#' @param OperationId &#91;required&#93; The identifier for the operation for which you want to get the status.
-#' Route 53 returned the identifier in the response to the original
-#' request.
+#' @param OperationId &#91;required&#93; The identifier for the operation for which you want to get the status. Route 53 returned the identifier in the response to the original request.
 #'
 #' @keywords internal
 #'
@@ -614,21 +564,11 @@ route53domains_get_operation_detail <- function(OperationId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53domains_list_domains/](https://www.paws-r-sdk.com/docs/route53domains_list_domains/) for full documentation.
 #'
-#' @param FilterConditions A complex type that contains information about the filters applied
-#' during the [`list_domains`][route53domains_list_domains] request. The
-#' filter conditions can include domain name and domain expiration.
-#' @param SortCondition A complex type that contains information about the requested ordering of
-#' domains in the returned list.
-#' @param Marker For an initial request for a list of domains, omit this element. If the
-#' number of domains that are associated with the current Amazon Web
-#' Services account is greater than the value that you specified for
-#' `MaxItems`, you can use `Marker` to return additional domains. Get the
-#' value of `NextPageMarker` from the previous response, and submit another
-#' request that includes the value of `NextPageMarker` in the `Marker`
-#' element.
+#' @param FilterConditions A complex type that contains information about the filters applied during the [`list_domains`][route53domains_list_domains] request. The filter conditions can include domain name and domain expiration.
+#' @param SortCondition A complex type that contains information about the requested ordering of domains in the returned list.
+#' @param Marker For an initial request for a list of domains, omit this element. If the number of domains that are associated with the current Amazon Web Services account is greater than the value that you specified for `MaxItems`, you can use `Marker` to return additional domains. Get the value of `NextPageMarker` from the previous response, and submit another request that includes the value of `NextPageMarker` in the `Marker` element.
 #' 
-#' Constraints: The marker must match the value specified in the previous
-#' request.
+#' Constraints: The marker must match the value specified in the previous request.
 #' @param MaxItems Number of domains to be returned.
 #' 
 #' Default: 20
@@ -664,16 +604,8 @@ route53domains_list_domains <- function(FilterConditions = NULL, SortCondition =
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53domains_list_operations/](https://www.paws-r-sdk.com/docs/route53domains_list_operations/) for full documentation.
 #'
-#' @param SubmittedSince An optional parameter that lets you get information about all the
-#' operations that you submitted after a specified date and time. Specify
-#' the date and time in Unix time format and Coordinated Universal time
-#' (UTC).
-#' @param Marker For an initial request for a list of operations, omit this element. If
-#' the number of operations that are not yet complete is greater than the
-#' value that you specified for `MaxItems`, you can use `Marker` to return
-#' additional operations. Get the value of `NextPageMarker` from the
-#' previous response, and submit another request that includes the value of
-#' `NextPageMarker` in the `Marker` element.
+#' @param SubmittedSince An optional parameter that lets you get information about all the operations that you submitted after a specified date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).
+#' @param Marker For an initial request for a list of operations, omit this element. If the number of operations that are not yet complete is greater than the value that you specified for `MaxItems`, you can use `Marker` to return additional operations. Get the value of `NextPageMarker` from the previous response, and submit another request that includes the value of `NextPageMarker` in the `Marker` element.
 #' @param MaxItems Number of domains to be returned.
 #' 
 #' Default: 20
@@ -712,23 +644,15 @@ route53domains_list_operations <- function(SubmittedSince = NULL, Marker = NULL,
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53domains_list_prices/](https://www.paws-r-sdk.com/docs/route53domains_list_prices/) for full documentation.
 #'
-#' @param Tld The TLD for which you want to receive the pricing information. For
-#' example. `.net`.
+#' @param Tld The TLD for which you want to receive the pricing information. For example. `.net`.
 #' 
-#' If a `Tld` value is not provided, a list of prices for all TLDs
-#' supported by Route 53 is returned.
-#' @param Marker For an initial request for a list of prices, omit this element. If the
-#' number of prices that are not yet complete is greater than the value
-#' that you specified for `MaxItems`, you can use `Marker` to return
-#' additional prices. Get the value of `NextPageMarker` from the previous
-#' response, and submit another request that includes the value of
-#' `NextPageMarker` in the `Marker` element.
+#' If a `Tld` value is not provided, a list of prices for all TLDs supported by Route 53 is returned.
+#' @param Marker For an initial request for a list of prices, omit this element. If the number of prices that are not yet complete is greater than the value that you specified for `MaxItems`, you can use `Marker` to return additional prices. Get the value of `NextPageMarker` from the previous response, and submit another request that includes the value of `NextPageMarker` in the `Marker` element.
 #' 
 #' Used only for all TLDs. If you specify a TLD, don't specify a `Marker`.
 #' @param MaxItems Number of `Prices` to be returned.
 #' 
-#' Used only for all TLDs. If you specify a TLD, don't specify a
-#' `MaxItems`.
+#' Used only for all TLDs. If you specify a TLD, don't specify a `MaxItems`.
 #'
 #' @keywords internal
 #'
@@ -823,11 +747,7 @@ route53domains_push_domain <- function(DomainName, Target) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53domains_register_domain/](https://www.paws-r-sdk.com/docs/route53domains_register_domain/) for full documentation.
 #'
-#' @param DomainName &#91;required&#93; The domain name that you want to register. The top-level domain (TLD),
-#' such as .com, must be a TLD that Route 53 supports. For a list of
-#' supported TLDs, see [Domains that You Can Register with Amazon Route
-#' 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html)
-#' in the *Amazon Route 53 Developer Guide*.
+#' @param DomainName &#91;required&#93; The domain name that you want to register. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see [Domains that You Can Register with Amazon Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html) in the *Amazon Route 53 Developer Guide*.
 #' 
 #' The domain name can contain only the following characters:
 #' 
@@ -835,83 +755,40 @@ route53domains_push_domain <- function(DomainName, Target) {
 #' 
 #' -   Numbers 0 through 9.
 #' 
-#' -   Hyphen (-). You can't specify a hyphen at the beginning or end of a
-#'     label.
+#' -   Hyphen (-). You can't specify a hyphen at the beginning or end of a label.
 #' 
-#' -   Period (.) to separate the labels in the name, such as the `.` in
-#'     `example.com`.
+#' -   Period (.) to separate the labels in the name, such as the `.` in `example.com`.
 #' 
-#' Internationalized domain names are not supported for some top-level
-#' domains. To determine whether the TLD that you want to use supports
-#' internationalized domain names, see [Domains that You Can Register with
-#' Amazon Route
-#' 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html).
-#' For more information, see [Formatting Internationalized Domain
-#' Names](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns).
+#' Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see [Domains that You Can Register with Amazon Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html). For more information, see [Formatting Internationalized Domain Names](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns).
 #' @param IdnLangCode Reserved for future use.
-#' @param DurationInYears &#91;required&#93; The number of years that you want to register the domain for. Domains
-#' are registered for a minimum of one year. The maximum period depends on
-#' the top-level domain. For the range of valid values for your domain, see
-#' [Domains that You Can Register with Amazon Route
-#' 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html)
-#' in the *Amazon Route 53 Developer Guide*.
+#' @param DurationInYears &#91;required&#93; The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain. For the range of valid values for your domain, see [Domains that You Can Register with Amazon Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html) in the *Amazon Route 53 Developer Guide*.
 #' 
 #' Default: 1
-#' @param AutoRenew Indicates whether the domain will be automatically renewed (`true`) or
-#' not (`false`). Auto renewal only takes effect after the account is
-#' charged.
+#' @param AutoRenew Indicates whether the domain will be automatically renewed (`true`) or not (`false`). Auto renewal only takes effect after the account is charged.
 #' 
 #' Default: `true`
-#' @param AdminContact &#91;required&#93; Provides detailed contact information. For information about the values
-#' that you specify for each element, see
-#' [ContactDetail](https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html).
-#' @param RegistrantContact &#91;required&#93; Provides detailed contact information. For information about the values
-#' that you specify for each element, see
-#' [ContactDetail](https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html).
-#' @param TechContact &#91;required&#93; Provides detailed contact information. For information about the values
-#' that you specify for each element, see
-#' [ContactDetail](https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html).
-#' @param PrivacyProtectAdminContact Whether you want to conceal contact information from WHOIS queries. If
-#' you specify `true`, WHOIS ("who is") queries return contact information
-#' either for Amazon Registrar or for our registrar associate, Gandi. If
-#' you specify `false`, WHOIS queries return the information that you
-#' entered for the admin contact.
+#' @param AdminContact &#91;required&#93; Provides detailed contact information. For information about the values that you specify for each element, see [ContactDetail](https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html).
+#' @param RegistrantContact &#91;required&#93; Provides detailed contact information. For information about the values that you specify for each element, see [ContactDetail](https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html).
+#' @param TechContact &#91;required&#93; Provides detailed contact information. For information about the values that you specify for each element, see [ContactDetail](https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html).
+#' @param PrivacyProtectAdminContact Whether you want to conceal contact information from WHOIS queries. If you specify `true`, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify `false`, WHOIS queries return the information that you entered for the admin contact.
 #' 
-#' You must specify the same privacy setting for the administrative,
-#' billing, registrant, and technical contacts.
+#' You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.
 #' 
 #' Default: `true`
-#' @param PrivacyProtectRegistrantContact Whether you want to conceal contact information from WHOIS queries. If
-#' you specify `true`, WHOIS ("who is") queries return contact information
-#' either for Amazon Registrar or for our registrar associate, Gandi. If
-#' you specify `false`, WHOIS queries return the information that you
-#' entered for the registrant contact (the domain owner).
+#' @param PrivacyProtectRegistrantContact Whether you want to conceal contact information from WHOIS queries. If you specify `true`, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify `false`, WHOIS queries return the information that you entered for the registrant contact (the domain owner).
 #' 
-#' You must specify the same privacy setting for the administrative,
-#' billing, registrant, and technical contacts.
+#' You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.
 #' 
 #' Default: `true`
-#' @param PrivacyProtectTechContact Whether you want to conceal contact information from WHOIS queries. If
-#' you specify `true`, WHOIS ("who is") queries return contact information
-#' either for Amazon Registrar or for our registrar associate, Gandi. If
-#' you specify `false`, WHOIS queries return the information that you
-#' entered for the technical contact.
+#' @param PrivacyProtectTechContact Whether you want to conceal contact information from WHOIS queries. If you specify `true`, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify `false`, WHOIS queries return the information that you entered for the technical contact.
 #' 
-#' You must specify the same privacy setting for the administrative,
-#' billing, registrant, and technical contacts.
+#' You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.
 #' 
 #' Default: `true`
-#' @param BillingContact Provides detailed contact information. For information about the values
-#' that you specify for each element, see
-#' [ContactDetail](https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html).
-#' @param PrivacyProtectBillingContact Whether you want to conceal contact information from WHOIS queries. If
-#' you specify `true`, WHOIS ("who is") queries return contact information
-#' either for Amazon Registrar or for our registrar associate, Gandi. If
-#' you specify `false`, WHOIS queries return the information that you
-#' entered for the billing contact.
+#' @param BillingContact Provides detailed contact information. For information about the values that you specify for each element, see [ContactDetail](https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html).
+#' @param PrivacyProtectBillingContact Whether you want to conceal contact information from WHOIS queries. If you specify `true`, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify `false`, WHOIS queries return the information that you entered for the billing contact.
 #' 
-#' You must specify the same privacy setting for the administrative,
-#' billing, registrant, and technical contacts.
+#' You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.
 #'
 #' @keywords internal
 #'
@@ -943,10 +820,7 @@ route53domains_register_domain <- function(DomainName, IdnLangCode = NULL, Durat
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53domains_reject_domain_transfer_from_another_aws_account/](https://www.paws-r-sdk.com/docs/route53domains_reject_domain_transfer_from_another_aws_account/) for full documentation.
 #'
-#' @param DomainName &#91;required&#93; The name of the domain that was specified when another Amazon Web
-#' Services account submitted a
-#' [`transfer_domain_to_another_aws_account`][route53domains_transfer_domain_to_another_aws_account]
-#' request.
+#' @param DomainName &#91;required&#93; The name of the domain that was specified when another Amazon Web Services account submitted a [`transfer_domain_to_another_aws_account`][route53domains_transfer_domain_to_another_aws_account] request.
 #'
 #' @keywords internal
 #'
@@ -978,16 +852,10 @@ route53domains_reject_domain_transfer_from_another_aws_account <- function(Domai
 #' See [https://www.paws-r-sdk.com/docs/route53domains_renew_domain/](https://www.paws-r-sdk.com/docs/route53domains_renew_domain/) for full documentation.
 #'
 #' @param DomainName &#91;required&#93; The name of the domain that you want to renew.
-#' @param DurationInYears The number of years that you want to renew the domain for. The maximum
-#' number of years depends on the top-level domain. For the range of valid
-#' values for your domain, see [Domains that You Can Register with Amazon
-#' Route
-#' 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html)
-#' in the *Amazon Route 53 Developer Guide*.
+#' @param DurationInYears The number of years that you want to renew the domain for. The maximum number of years depends on the top-level domain. For the range of valid values for your domain, see [Domains that You Can Register with Amazon Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html) in the *Amazon Route 53 Developer Guide*.
 #' 
 #' Default: 1
-#' @param CurrentExpiryYear &#91;required&#93; The year when the registration for the domain is set to expire. This
-#' value must match the current expiration date for the domain.
+#' @param CurrentExpiryYear &#91;required&#93; The year when the registration for the domain is set to expire. This value must match the current expiration date for the domain.
 #'
 #' @keywords internal
 #'
@@ -1021,8 +889,7 @@ route53domains_renew_domain <- function(DomainName, DurationInYears = NULL, Curr
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53domains_resend_contact_reachability_email/](https://www.paws-r-sdk.com/docs/route53domains_resend_contact_reachability_email/) for full documentation.
 #'
-#' @param domainName The name of the domain for which you want Route 53 to resend a
-#' confirmation email to the registrant contact.
+#' @param domainName The name of the domain for which you want Route 53 to resend a confirmation email to the registrant contact.
 #'
 #' @keywords internal
 #'
@@ -1115,12 +982,7 @@ route53domains_retrieve_domain_auth_code <- function(DomainName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53domains_transfer_domain/](https://www.paws-r-sdk.com/docs/route53domains_transfer_domain/) for full documentation.
 #'
-#' @param DomainName &#91;required&#93; The name of the domain that you want to transfer to Route 53. The
-#' top-level domain (TLD), such as .com, must be a TLD that Route 53
-#' supports. For a list of supported TLDs, see [Domains that You Can
-#' Register with Amazon Route
-#' 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html)
-#' in the *Amazon Route 53 Developer Guide*.
+#' @param DomainName &#91;required&#93; The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see [Domains that You Can Register with Amazon Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html) in the *Amazon Route 53 Developer Guide*.
 #' 
 #' The domain name can contain only the following characters:
 #' 
@@ -1128,70 +990,47 @@ route53domains_retrieve_domain_auth_code <- function(DomainName) {
 #' 
 #' -   Numbers 0 through 9.
 #' 
-#' -   Hyphen (-). You can't specify a hyphen at the beginning or end of a
-#'     label.
+#' -   Hyphen (-). You can't specify a hyphen at the beginning or end of a label.
 #' 
-#' -   Period (.) to separate the labels in the name, such as the `.` in
-#'     `example.com`.
+#' -   Period (.) to separate the labels in the name, such as the `.` in `example.com`.
 #' @param IdnLangCode Reserved for future use.
-#' @param DurationInYears &#91;required&#93; The number of years that you want to register the domain for. Domains
-#' are registered for a minimum of one year. The maximum period depends on
-#' the top-level domain.
+#' @param DurationInYears Reserved for future use.
+#' 
+#' Currently, the effect of a domain transfer on the registration period varies by TLD. For information about how transferring a domain affects the expiration date, see the Transfer Term column in the pricing information at [Amazon Route 53 Pricing](https://aws.amazon.com/route53/pricing/).
 #' 
 #' Default: 1
 #' @param Nameservers Contains details for the host and glue IP addresses.
-#' @param AuthCode The authorization code for the domain. You get this value from the
-#' current registrar.
-#' @param AutoRenew Indicates whether the domain will be automatically renewed (true) or not
-#' (false). Auto renewal only takes effect after the account is charged.
+#' @param AuthCode The authorization code for the domain. You get this value from the current registrar.
+#' @param AutoRenew Indicates whether the domain will be automatically renewed (true) or not (false). Auto renewal only takes effect after the account is charged.
 #' 
 #' Default: true
 #' @param AdminContact &#91;required&#93; Provides detailed contact information.
 #' @param RegistrantContact &#91;required&#93; Provides detailed contact information.
 #' @param TechContact &#91;required&#93; Provides detailed contact information.
-#' @param PrivacyProtectAdminContact Whether you want to conceal contact information from WHOIS queries. If
-#' you specify `true`, WHOIS ("who is") queries return contact information
-#' for the registrar, the phrase "REDACTED FOR PRIVACY", or "On behalf of
-#' \<domain name\> owner.".
+#' @param PrivacyProtectAdminContact Whether you want to conceal contact information from WHOIS queries. If you specify `true`, WHOIS ("who is") queries return contact information for the registrar, the phrase "REDACTED FOR PRIVACY", or "On behalf of \<domain name\> owner.".
 #' 
-#' While some domains may allow different privacy settings per contact, we
-#' recommend specifying the same privacy setting for all contacts.
+#' While some domains may allow different privacy settings per contact, we recommend specifying the same privacy setting for all contacts.
 #' 
 #' Default: `true`
-#' @param PrivacyProtectRegistrantContact Whether you want to conceal contact information from WHOIS queries. If
-#' you specify `true`, WHOIS ("who is") queries return contact information
-#' either for Amazon Registrar or for our registrar associate, Gandi. If
-#' you specify `false`, WHOIS queries return the information that you
-#' entered for the registrant contact (domain owner).
+#' @param PrivacyProtectRegistrantContact Whether you want to conceal contact information from WHOIS queries. If you specify `true`, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify `false`, WHOIS queries return the information that you entered for the registrant contact (domain owner).
 #' 
-#' You must specify the same privacy setting for the administrative,
-#' billing, registrant, and technical contacts.
+#' You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.
 #' 
 #' Default: `true`
-#' @param PrivacyProtectTechContact Whether you want to conceal contact information from WHOIS queries. If
-#' you specify `true`, WHOIS ("who is") queries return contact information
-#' either for Amazon Registrar or for our registrar associate, Gandi. If
-#' you specify `false`, WHOIS queries return the information that you
-#' entered for the technical contact.
+#' @param PrivacyProtectTechContact Whether you want to conceal contact information from WHOIS queries. If you specify `true`, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify `false`, WHOIS queries return the information that you entered for the technical contact.
 #' 
-#' You must specify the same privacy setting for the administrative,
-#' billing, registrant, and technical contacts.
+#' You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.
 #' 
 #' Default: `true`
 #' @param BillingContact Provides detailed contact information.
-#' @param PrivacyProtectBillingContact Whether you want to conceal contact information from WHOIS queries. If
-#' you specify `true`, WHOIS ("who is") queries return contact information
-#' either for Amazon Registrar or for our registrar associate, Gandi. If
-#' you specify `false`, WHOIS queries return the information that you
-#' entered for the billing contact.
+#' @param PrivacyProtectBillingContact Whether you want to conceal contact information from WHOIS queries. If you specify `true`, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify `false`, WHOIS queries return the information that you entered for the billing contact.
 #' 
-#' You must specify the same privacy setting for the administrative,
-#' billing, registrant, and technical contacts.
+#' You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.
 #'
 #' @keywords internal
 #'
 #' @rdname route53domains_transfer_domain
-route53domains_transfer_domain <- function(DomainName, IdnLangCode = NULL, DurationInYears, Nameservers = NULL, AuthCode = NULL, AutoRenew = NULL, AdminContact, RegistrantContact, TechContact, PrivacyProtectAdminContact = NULL, PrivacyProtectRegistrantContact = NULL, PrivacyProtectTechContact = NULL, BillingContact = NULL, PrivacyProtectBillingContact = NULL) {
+route53domains_transfer_domain <- function(DomainName, IdnLangCode = NULL, DurationInYears = NULL, Nameservers = NULL, AuthCode = NULL, AutoRenew = NULL, AdminContact, RegistrantContact, TechContact, PrivacyProtectAdminContact = NULL, PrivacyProtectRegistrantContact = NULL, PrivacyProtectTechContact = NULL, BillingContact = NULL, PrivacyProtectBillingContact = NULL) {
   op <- new_operation(
     name = "TransferDomain",
     http_method = "POST",
@@ -1218,10 +1057,8 @@ route53domains_transfer_domain <- function(DomainName, IdnLangCode = NULL, Durat
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53domains_transfer_domain_to_another_aws_account/](https://www.paws-r-sdk.com/docs/route53domains_transfer_domain_to_another_aws_account/) for full documentation.
 #'
-#' @param DomainName &#91;required&#93; The name of the domain that you want to transfer from the current Amazon
-#' Web Services account to another account.
-#' @param AccountId &#91;required&#93; The account ID of the Amazon Web Services account that you want to
-#' transfer the domain to, for example, `111122223333`.
+#' @param DomainName &#91;required&#93; The name of the domain that you want to transfer from the current Amazon Web Services account to another account.
+#' @param AccountId &#91;required&#93; The account ID of the Amazon Web Services account that you want to transfer the domain to, for example, `111122223333`.
 #'
 #' @keywords internal
 #'
@@ -1256,8 +1093,7 @@ route53domains_transfer_domain_to_another_aws_account <- function(DomainName, Ac
 #' @param AdminContact Provides detailed contact information.
 #' @param RegistrantContact Provides detailed contact information.
 #' @param TechContact Provides detailed contact information.
-#' @param Consent Customer's consent for the owner change request. Required if the domain
-#' is not free (consent price is more than $0.00).
+#' @param Consent Customer's consent for the owner change request. Required if the domain is not free (consent price is more than $0.00).
 #' @param BillingContact Provides detailed contact information.
 #'
 #' @keywords internal
@@ -1290,38 +1126,18 @@ route53domains_update_domain_contact <- function(DomainName, AdminContact = NULL
 #' See [https://www.paws-r-sdk.com/docs/route53domains_update_domain_contact_privacy/](https://www.paws-r-sdk.com/docs/route53domains_update_domain_contact_privacy/) for full documentation.
 #'
 #' @param DomainName &#91;required&#93; The name of the domain that you want to update the privacy setting for.
-#' @param AdminPrivacy Whether you want to conceal contact information from WHOIS queries. If
-#' you specify `true`, WHOIS ("who is") queries return contact information
-#' either for Amazon Registrar or for our registrar associate, Gandi. If
-#' you specify `false`, WHOIS queries return the information that you
-#' entered for the admin contact.
+#' @param AdminPrivacy Whether you want to conceal contact information from WHOIS queries. If you specify `true`, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify `false`, WHOIS queries return the information that you entered for the admin contact.
 #' 
-#' You must specify the same privacy setting for the administrative,
-#' billing, registrant, and technical contacts.
-#' @param RegistrantPrivacy Whether you want to conceal contact information from WHOIS queries. If
-#' you specify `true`, WHOIS ("who is") queries return contact information
-#' either for Amazon Registrar or for our registrar associate, Gandi. If
-#' you specify `false`, WHOIS queries return the information that you
-#' entered for the registrant contact (domain owner).
+#' You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.
+#' @param RegistrantPrivacy Whether you want to conceal contact information from WHOIS queries. If you specify `true`, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify `false`, WHOIS queries return the information that you entered for the registrant contact (domain owner).
 #' 
-#' You must specify the same privacy setting for the administrative,
-#' billing, registrant, and technical contacts.
-#' @param TechPrivacy Whether you want to conceal contact information from WHOIS queries. If
-#' you specify `true`, WHOIS ("who is") queries return contact information
-#' either for Amazon Registrar or for our registrar associate, Gandi. If
-#' you specify `false`, WHOIS queries return the information that you
-#' entered for the technical contact.
+#' You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.
+#' @param TechPrivacy Whether you want to conceal contact information from WHOIS queries. If you specify `true`, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify `false`, WHOIS queries return the information that you entered for the technical contact.
 #' 
-#' You must specify the same privacy setting for the administrative,
-#' billing, registrant, and technical contacts.
-#' @param BillingPrivacy Whether you want to conceal contact information from WHOIS queries. If
-#' you specify `true`, WHOIS ("who is") queries return contact information
-#' either for Amazon Registrar or for our registrar associate, Gandi. If
-#' you specify `false`, WHOIS queries return the information that you
-#' entered for the billing contact.
+#' You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.
+#' @param BillingPrivacy Whether you want to conceal contact information from WHOIS queries. If you specify `true`, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify `false`, WHOIS queries return the information that you entered for the billing contact.
 #' 
-#' You must specify the same privacy setting for the administrative,
-#' billing, registrant, and technical contacts.
+#' You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.
 #'
 #' @keywords internal
 #'
@@ -1387,9 +1203,7 @@ route53domains_update_domain_nameservers <- function(DomainName, FIAuthKey = NUL
 #' See [https://www.paws-r-sdk.com/docs/route53domains_update_tags_for_domain/](https://www.paws-r-sdk.com/docs/route53domains_update_tags_for_domain/) for full documentation.
 #'
 #' @param DomainName &#91;required&#93; The domain for which you want to add or update tags.
-#' @param TagsToUpdate A list of the tag keys and values that you want to add or update. If you
-#' specify a key that already exists, the corresponding value will be
-#' replaced.
+#' @param TagsToUpdate A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced.
 #'
 #' @keywords internal
 #'
@@ -1421,22 +1235,11 @@ route53domains_update_tags_for_domain <- function(DomainName, TagsToUpdate = NUL
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53domains_view_billing/](https://www.paws-r-sdk.com/docs/route53domains_view_billing/) for full documentation.
 #'
-#' @param Start The beginning date and time for the time period for which you want a
-#' list of billing records. Specify the date and time in Unix time format
-#' and Coordinated Universal time (UTC).
-#' @param End The end date and time for the time period for which you want a list of
-#' billing records. Specify the date and time in Unix time format and
-#' Coordinated Universal time (UTC).
-#' @param Marker For an initial request for a list of billing records, omit this element.
-#' If the number of billing records that are associated with the current
-#' Amazon Web Services account during the specified period is greater than
-#' the value that you specified for `MaxItems`, you can use `Marker` to
-#' return additional billing records. Get the value of `NextPageMarker`
-#' from the previous response, and submit another request that includes the
-#' value of `NextPageMarker` in the `Marker` element.
+#' @param Start The beginning date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).
+#' @param End The end date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).
+#' @param Marker For an initial request for a list of billing records, omit this element. If the number of billing records that are associated with the current Amazon Web Services account during the specified period is greater than the value that you specified for `MaxItems`, you can use `Marker` to return additional billing records. Get the value of `NextPageMarker` from the previous response, and submit another request that includes the value of `NextPageMarker` in the `Marker` element.
 #' 
-#' Constraints: The marker must match the value of `NextPageMarker` that
-#' was returned in the previous response.
+#' Constraints: The marker must match the value of `NextPageMarker` that was returned in the previous response.
 #' @param MaxItems The number of billing records to be returned.
 #' 
 #' Default: 20

@@ -5,14 +5,7 @@ NULL
 #' AWS Comprehend Medical
 #'
 #' @description
-#' Amazon Comprehend Medical extracts structured information from
-#' unstructured clinical text. Use these actions to gain insight in your
-#' documents. Amazon Comprehend Medical only detects entities in English
-#' language texts. Amazon Comprehend Medical places limits on the sizes of
-#' files allowed for different API operations. To learn more, see
-#' [Guidelines and
-#' quotas](https://docs.aws.amazon.com/comprehend-medical/latest/dev/comprehendmedical-quotas.html)
-#' in the *Amazon Comprehend Medical Developer Guide*.
+#' Amazon Comprehend Medical extracts structured information from unstructured clinical text. Use these actions to gain insight in your documents. Amazon Comprehend Medical only detects entities in English language texts. Amazon Comprehend Medical places limits on the sizes of files allowed for different API operations. To learn more, see [Guidelines and quotas](https://docs.aws.amazon.com/comprehend-medical/latest/dev/comprehendmedical-quotas.html) in the *Amazon Comprehend Medical Developer Guide*.
 #'
 #' @param
 #' config
@@ -163,6 +156,6 @@ comprehendmedical <- function(config = list(), credentials = list(), endpoint = 
 )
 
 .comprehendmedical$service <- function(config = list(), op = NULL) {
-  handlers <- new_handlers("jsonrpc", "v4")
+  handlers <- new_handlers("smithyrpcv2cbor", "v4")
   new_service(.comprehendmedical$metadata, handlers, config, op)
 }

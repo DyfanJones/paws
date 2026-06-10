@@ -15,18 +15,13 @@ codeartifact_list_package_groups(
 \arguments{
 \item{domain}{[required] The domain for which you want to list package groups.}
 
-\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns
-the domain. It does not include dashes or spaces.}
+\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.}
 
 \item{maxResults}{The maximum number of results to return per page.}
 
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
-\item{prefix}{A prefix for which to search package groups. When included,
-\code{\link[=codeartifact_list_package_groups]{list_package_groups}} will return
-only package groups with patterns that match the prefix.}
+\item{prefix}{A prefix for which to search package groups. When included, \code{\link[=codeartifact_list_package_groups]{list_package_groups}} will return only package groups with patterns that match the prefix.}
 }
 \description{
 Returns a list of package groups in the requested domain.

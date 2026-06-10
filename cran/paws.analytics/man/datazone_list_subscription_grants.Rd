@@ -7,16 +7,17 @@
 datazone_list_subscription_grants(
   domainIdentifier,
   environmentId = NULL,
-  maxResults = NULL,
-  nextToken = NULL,
-  owningGroupId = NULL,
-  owningProjectId = NULL,
-  owningUserId = NULL,
-  sortBy = NULL,
-  sortOrder = NULL,
+  subscriptionTargetId = NULL,
   subscribedListingId = NULL,
   subscriptionId = NULL,
-  subscriptionTargetId = NULL
+  owningProjectId = NULL,
+  owningIamPrincipalArn = NULL,
+  owningUserId = NULL,
+  owningGroupId = NULL,
+  sortBy = NULL,
+  sortOrder = NULL,
+  maxResults = NULL,
+  nextToken = NULL
 )
 }
 \arguments{
@@ -24,37 +25,27 @@ datazone_list_subscription_grants(
 
 \item{environmentId}{The identifier of the Amazon DataZone environment.}
 
-\item{maxResults}{The maximum number of subscription grants to return in a single call to
-\code{\link[=datazone_list_subscription_grants]{list_subscription_grants}}. When
-the number of subscription grants to be listed is greater than the value
-of \code{MaxResults}, the response contains a \code{NextToken} value that you can
-use in a subsequent call to
-\code{\link[=datazone_list_subscription_grants]{list_subscription_grants}} to list
-the next set of subscription grants.}
-
-\item{nextToken}{When the number of subscription grants is greater than the default value
-for the \code{MaxResults} parameter, or if you explicitly specify a value for
-\code{MaxResults} that is less than the number of subscription grants, the
-response includes a pagination token named \code{NextToken}. You can specify
-this \code{NextToken} value in a subsequent call to
-\code{\link[=datazone_list_subscription_grants]{list_subscription_grants}} to list
-the next set of subscription grants.}
-
-\item{owningGroupId}{The ID of the owning group.}
-
-\item{owningProjectId}{The ID of the owning project of the subscription grants.}
-
-\item{owningUserId}{The ID of the owning user.}
-
-\item{sortBy}{Specifies the way of sorting the results of this action.}
-
-\item{sortOrder}{Specifies the sort order of this action.}
+\item{subscriptionTargetId}{The identifier of the subscription target.}
 
 \item{subscribedListingId}{The identifier of the subscribed listing.}
 
 \item{subscriptionId}{The identifier of the subscription.}
 
-\item{subscriptionTargetId}{The identifier of the subscription target.}
+\item{owningProjectId}{The ID of the owning project of the subscription grants.}
+
+\item{owningIamPrincipalArn}{The ARN of the owning IAM principal.}
+
+\item{owningUserId}{The ID of the owning user.}
+
+\item{owningGroupId}{The ID of the owning group.}
+
+\item{sortBy}{Specifies the way of sorting the results of this action.}
+
+\item{sortOrder}{Specifies the sort order of this action.}
+
+\item{maxResults}{The maximum number of subscription grants to return in a single call to \code{\link[=datazone_list_subscription_grants]{list_subscription_grants}}. When the number of subscription grants to be listed is greater than the value of \code{MaxResults}, the response contains a \code{NextToken} value that you can use in a subsequent call to \code{\link[=datazone_list_subscription_grants]{list_subscription_grants}} to list the next set of subscription grants.}
+
+\item{nextToken}{When the number of subscription grants is greater than the default value for the \code{MaxResults} parameter, or if you explicitly specify a value for \code{MaxResults} that is less than the number of subscription grants, the response includes a pagination token named \code{NextToken}. You can specify this \code{NextToken} value in a subsequent call to \code{\link[=datazone_list_subscription_grants]{list_subscription_grants}} to list the next set of subscription grants.}
 }
 \description{
 Lists subscription grants.

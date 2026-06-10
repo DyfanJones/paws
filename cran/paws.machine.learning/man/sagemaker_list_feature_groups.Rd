@@ -17,28 +17,23 @@ sagemaker_list_feature_groups(
 )
 }
 \arguments{
-\item{NameContains}{A string that partially matches one or more \code{FeatureGroup}s names.
-Filters \code{FeatureGroup}s by name.}
+\item{NameContains}{A string that partially matches one or more \code{FeatureGroup}s names. Filters \code{FeatureGroup}s by name.}
 
 \item{FeatureGroupStatusEquals}{A \code{FeatureGroup} status. Filters by \code{FeatureGroup} status.}
 
 \item{OfflineStoreStatusEquals}{An \code{OfflineStore} status. Filters by \code{OfflineStore} status.}
 
-\item{CreationTimeAfter}{Use this parameter to search for \code{FeatureGroups}s created after a
-specific date and time.}
+\item{CreationTimeAfter}{Use this parameter to search for \code{FeatureGroups}s created after a specific date and time.}
 
-\item{CreationTimeBefore}{Use this parameter to search for \code{FeatureGroups}s created before a
-specific date and time.}
+\item{CreationTimeBefore}{Use this parameter to search for \code{FeatureGroups}s created before a specific date and time.}
 
 \item{SortOrder}{The order in which feature groups are listed.}
 
 \item{SortBy}{The value on which the feature group list is sorted.}
 
-\item{MaxResults}{The maximum number of results returned by
-\code{\link[=sagemaker_list_feature_groups]{list_feature_groups}}.}
+\item{MaxResults}{The maximum number of results returned by \code{\link[=sagemaker_list_feature_groups]{list_feature_groups}}.}
 
-\item{NextToken}{A token to resume pagination of
-\code{\link[=sagemaker_list_feature_groups]{list_feature_groups}} results.}
+\item{NextToken}{A token to resume pagination of \code{\link[=sagemaker_list_feature_groups]{list_feature_groups}} results.}
 }
 \description{
 List \code{FeatureGroup}s based on given filter and order.

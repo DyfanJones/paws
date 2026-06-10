@@ -114,14 +114,18 @@ make_doc_params <- function(operation, api) {
     shapes <- api$shapes
     shape <- shapes[[operation$input$shape]]
     inputs <- get_inputs(shape)
+    pkg_name <- package_name(api)
+    links <- get_links(api)
     params <- lapply(inputs, function(input) {
       param <- input$member_name
       required <- input$required
-      documentation <- convert(
-        input$documentation,
-        package_name(api),
-        links = get_links(api)
-      )
+      # First attempt, get documentation from input parameters
+      # Second attempt, get documentation from global parameters
+      # Finally attempt, get documentation from generic parameters
+      docs <- (input$documentation %||%
+        shapes[[param]]$documentation %||%
+        shapes[[input$shape]]$documentation)
+      documentation <- convert(docs, pkg_name, links)
       documentation <- convert_headings_to_bold(documentation)
       documentation <- glue::glue_collapse(documentation, sep = "\n")
       if (required) {
@@ -541,7 +545,9 @@ escape_unmatched_chars <- function(x, chars) {
 
 escape_unmatched_pairs <- function(x, pairs) {
   result <- x
-  count <- function(string, char) stringr::str_count(string, stringr::fixed(char))
+  count <- function(string, char) {
+    stringr::str_count(string, stringr::fixed(char))
+  }
   for (i in seq_along(pairs)) {
     a <- names(pairs)[i]
     b <- pairs[i]
@@ -597,6 +603,12 @@ clean_markdown <- function(markdown) {
   result <- gsub("\\\\{2,}", "\\\\\\\\", result, perl = TRUE)
 
   result <- fix_internal_links(result)
+
+  # remove tailing whitespace
+  result <- sub("[ \t\r\n]+$", "", result, perl = TRUE)
+
+  # remove horizontal rules:
+  result <- result[!grepl("^\\#+$", result, perl = TRUE)]
 
   return(result)
 }
@@ -745,7 +757,11 @@ clean_example <- function(s) {
       # Add new line after every comma
 
       indents <- paste0(rep(tab_string, max(length(open_perens) - 1, 0)), collapse = "")
-      space_number <- (if (substr(s, i + 1, i + 1) == " ") num_spaces - 1 else num_spaces)
+      space_number <- (if (substr(s, i + 1, i + 1) == " ") {
+        num_spaces - 1
+      } else {
+        num_spaces
+      })
       final_tab <- paste0(rep(" ", space_number), collapse = "")
       cleaned[[i]] <- paste0(",\n", indents, final_tab)
     } else {

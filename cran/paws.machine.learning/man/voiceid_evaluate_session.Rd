@@ -10,8 +10,7 @@ voiceid_evaluate_session(DomainId, SessionNameOrId)
 \arguments{
 \item{DomainId}{[required] The identifier of the domain where the session started.}
 
-\item{SessionNameOrId}{[required] The session identifier, or name of the session, that you want to
-evaluate. In Voice ID integration, this is the Contact-Id.}
+\item{SessionNameOrId}{[required] The session identifier, or name of the session, that you want to evaluate. In Voice ID integration, this is the Contact-Id.}
 }
 \description{
 Evaluates a specified session based on audio data accumulated during a streaming Amazon Connect Voice ID call.

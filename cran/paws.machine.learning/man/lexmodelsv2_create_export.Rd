@@ -11,14 +11,11 @@ lexmodelsv2_create_export(
 )
 }
 \arguments{
-\item{resourceSpecification}{[required] Specifies the type of resource to export, either a bot or a bot locale.
-You can only specify one type of resource to export.}
+\item{resourceSpecification}{[required] Specifies the type of resource to export, either a bot or a bot locale. You can only specify one type of resource to export.}
 
 \item{fileFormat}{[required] The file format of the bot or bot locale definition files.}
 
-\item{filePassword}{An password to use to encrypt the exported archive. Using a password is
-optional, but you should encrypt the archive to protect the data in
-transit between Amazon Lex and your local computer.}
+\item{filePassword}{An password to use to encrypt the exported archive. Using a password is optional, but you should encrypt the archive to protect the data in transit between Amazon Lex and your local computer.}
 }
 \description{
 Creates a zip archive containing the contents of a bot or a bot locale. The archive contains a directory structure that contains JSON files that define the bot.

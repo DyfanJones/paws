@@ -7,25 +7,16 @@ NULL
 #' repository in a public registry
 #'
 #' @description
-#' Checks the availability of one or more image layers that are within a
-#' repository in a public registry. When an image is pushed to a
-#' repository, each image layer is checked to verify if it has been
-#' uploaded before. If it has been uploaded, then the image layer is
-#' skipped.
+#' Checks the availability of one or more image layers that are within a repository in a public registry. When an image is pushed to a repository, each image layer is checked to verify if it has been uploaded before. If it has been uploaded, then the image layer is skipped.
 #' 
-#' This operation is used by the Amazon ECR proxy and is not generally used
-#' by customers for pulling and pushing images. In most cases, you should
-#' use the `docker` CLI to pull, tag, and push images.
+#' This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the `docker` CLI to pull, tag, and push images.
 #'
 #' @usage
 #' ecrpublic_batch_check_layer_availability(registryId, repositoryName,
 #'   layerDigests)
 #'
-#' @param registryId The Amazon Web Services account ID, or registry alias, associated with
-#' the public registry that contains the image layers to check. If you do
-#' not specify a registry, the default public registry is assumed.
-#' @param repositoryName &#91;required&#93; The name of the repository that's associated with the image layers to
-#' check.
+#' @param registryId The Amazon Web Services account ID, or registry alias, associated with the public registry that contains the image layers to check. If you do not specify a registry, the default public registry is assumed.
+#' @param repositoryName &#91;required&#93; The name of the repository that's associated with the image layers to check.
 #' @param layerDigests &#91;required&#93; The digests of the image layers to check.
 #'
 #' @return
@@ -89,27 +80,18 @@ ecrpublic_batch_check_layer_availability <- function(registryId = NULL, reposito
 #' public registry
 #'
 #' @description
-#' Deletes a list of specified images that are within a repository in a
-#' public registry. Images are specified with either an `imageTag` or
-#' `imageDigest`.
+#' Deletes a list of specified images that are within a repository in a public registry. Images are specified with either an `imageTag` or `imageDigest`.
 #' 
-#' You can remove a tag from an image by specifying the image's tag in your
-#' request. When you remove the last tag from an image, the image is
-#' deleted from your repository.
+#' You can remove a tag from an image by specifying the image's tag in your request. When you remove the last tag from an image, the image is deleted from your repository.
 #' 
-#' You can completely delete an image (and all of its tags) by specifying
-#' the digest of the image in your request.
+#' You can completely delete an image (and all of its tags) by specifying the digest of the image in your request.
 #'
 #' @usage
 #' ecrpublic_batch_delete_image(registryId, repositoryName, imageIds)
 #'
-#' @param registryId The Amazon Web Services account ID, or registry alias, that's associated
-#' with the registry that contains the image to delete. If you do not
-#' specify a registry, the default public registry is assumed.
+#' @param registryId The Amazon Web Services account ID, or registry alias, that's associated with the registry that contains the image to delete. If you do not specify a registry, the default public registry is assumed.
 #' @param repositoryName &#91;required&#93; The repository in a public registry that contains the image to delete.
-#' @param imageIds &#91;required&#93; A list of image ID references that correspond to images to delete. The
-#' format of the `imageIds` reference is `imageTag=tag` or
-#' `imageDigest=digest`.
+#' @param imageIds &#91;required&#93; A list of image ID references that correspond to images to delete. The format of the `imageIds` reference is `imageTag=tag` or `imageDigest=digest`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -176,30 +158,19 @@ ecrpublic_batch_delete_image <- function(registryId = NULL, repositoryName, imag
 #' specified public registry, repository name, and upload ID
 #'
 #' @description
-#' Informs Amazon ECR that the image layer upload is complete for a
-#' specified public registry, repository name, and upload ID. You can
-#' optionally provide a `sha256` digest of the image layer for data
-#' validation purposes.
+#' Informs Amazon ECR that the image layer upload is complete for a specified public registry, repository name, and upload ID. You can optionally provide a `sha256` digest of the image layer for data validation purposes.
 #' 
-#' When an image is pushed, the CompleteLayerUpload API is called once for
-#' each new image layer to verify that the upload is complete.
+#' When an image is pushed, the CompleteLayerUpload API is called once for each new image layer to verify that the upload is complete.
 #' 
-#' This operation is used by the Amazon ECR proxy and is not generally used
-#' by customers for pulling and pushing images. In most cases, you should
-#' use the `docker` CLI to pull, tag, and push images.
+#' This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the `docker` CLI to pull, tag, and push images.
 #'
 #' @usage
 #' ecrpublic_complete_layer_upload(registryId, repositoryName, uploadId,
 #'   layerDigests)
 #'
-#' @param registryId The Amazon Web Services account ID, or registry alias, associated with
-#' the registry where layers are uploaded. If you do not specify a
-#' registry, the default public registry is assumed.
-#' @param repositoryName &#91;required&#93; The name of the repository in a public registry to associate with the
-#' image layer.
-#' @param uploadId &#91;required&#93; The upload ID from a previous
-#' [`initiate_layer_upload`][ecrpublic_initiate_layer_upload] operation to
-#' associate with the image layer.
+#' @param registryId The Amazon Web Services account ID, or registry alias, associated with the registry where layers are uploaded. If you do not specify a registry, the default public registry is assumed.
+#' @param repositoryName &#91;required&#93; The name of the repository in a public registry to associate with the image layer.
+#' @param uploadId &#91;required&#93; The upload ID from a previous [`initiate_layer_upload`][ecrpublic_initiate_layer_upload] operation to associate with the image layer.
 #' @param layerDigests &#91;required&#93; The `sha256` digest of the image layer.
 #'
 #' @return
@@ -252,25 +223,14 @@ ecrpublic_complete_layer_upload <- function(registryId = NULL, repositoryName, u
 #' Creates a repository in a public registry
 #'
 #' @description
-#' Creates a repository in a public registry. For more information, see
-#' [Amazon ECR
-#' repositories](https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html)
-#' in the *Amazon Elastic Container Registry User Guide*.
+#' Creates a repository in a public registry. For more information, see [Amazon ECR repositories](https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html) in the *Amazon Elastic Container Registry User Guide*.
 #'
 #' @usage
 #' ecrpublic_create_repository(repositoryName, catalogData, tags)
 #'
-#' @param repositoryName &#91;required&#93; The name to use for the repository. This appears publicly in the Amazon
-#' ECR Public Gallery. The repository name can be specified on its own (for
-#' example `nginx-web-app`) or prepended with a namespace to group the
-#' repository into a category (for example `project-a/nginx-web-app`).
-#' @param catalogData The details about the repository that are publicly visible in the Amazon
-#' ECR Public Gallery.
-#' @param tags The metadata that you apply to each repository to help categorize and
-#' organize your repositories. Each tag consists of a key and an optional
-#' value. You define both of them. Tag keys can have a maximum character
-#' length of 128 characters, and tag values can have a maximum length of
-#' 256 characters.
+#' @param repositoryName &#91;required&#93; The name to use for the repository. This appears publicly in the Amazon ECR Public Gallery. The repository name can be specified on its own (for example `nginx-web-app`) or prepended with a namespace to group the repository into a category (for example `project-a/nginx-web-app`).
+#' @param catalogData The details about the repository that are publicly visible in the Amazon ECR Public Gallery.
+#' @param tags The metadata that you apply to each repository to help categorize and organize your repositories. Each tag consists of a key and an optional value. You define both of them. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
 #'
 #' @return
 #' A list with the following syntax:
@@ -353,21 +313,14 @@ ecrpublic_create_repository <- function(repositoryName, catalogData = NULL, tags
 #' Deletes a repository in a public registry
 #'
 #' @description
-#' Deletes a repository in a public registry. If the repository contains
-#' images, you must either manually delete all images in the repository or
-#' use the `force` option. This option deletes all images on your behalf
-#' before deleting the repository.
+#' Deletes a repository in a public registry. If the repository contains images, you must either manually delete all images in the repository or use the `force` option. This option deletes all images on your behalf before deleting the repository.
 #'
 #' @usage
 #' ecrpublic_delete_repository(registryId, repositoryName, force)
 #'
-#' @param registryId The Amazon Web Services account ID that's associated with the public
-#' registry that contains the repository to delete. If you do not specify a
-#' registry, the default public registry is assumed.
+#' @param registryId The Amazon Web Services account ID that's associated with the public registry that contains the repository to delete. If you do not specify a registry, the default public registry is assumed.
 #' @param repositoryName &#91;required&#93; The name of the repository to delete.
-#' @param force The force option can be used to delete a repository that contains
-#' images. If the force option is not used, the repository must be empty
-#' prior to deletion.
+#' @param force The force option can be used to delete a repository that contains images. If the force option is not used, the repository must be empty prior to deletion.
 #'
 #' @return
 #' A list with the following syntax:
@@ -422,17 +375,13 @@ ecrpublic_delete_repository <- function(registryId = NULL, repositoryName, force
 #' repository
 #'
 #' @description
-#' Deletes the repository policy that's associated with the specified
-#' repository.
+#' Deletes the repository policy that's associated with the specified repository.
 #'
 #' @usage
 #' ecrpublic_delete_repository_policy(registryId, repositoryName)
 #'
-#' @param registryId The Amazon Web Services account ID that's associated with the public
-#' registry that contains the repository policy to delete. If you do not
-#' specify a registry, the default public registry is assumed.
-#' @param repositoryName &#91;required&#93; The name of the repository that's associated with the repository policy
-#' to delete.
+#' @param registryId The Amazon Web Services account ID that's associated with the public registry that contains the repository policy to delete. If you do not specify a registry, the default public registry is assumed.
+#' @param repositoryName &#91;required&#93; The name of the repository that's associated with the repository policy to delete.
 #'
 #' @return
 #' A list with the following syntax:
@@ -485,30 +434,10 @@ ecrpublic_delete_repository_policy <- function(registryId = NULL, repositoryName
 #' ecrpublic_describe_image_tags(registryId, repositoryName, nextToken,
 #'   maxResults)
 #'
-#' @param registryId The Amazon Web Services account ID that's associated with the public
-#' registry that contains the repository where images are described. If you
-#' do not specify a registry, the default public registry is assumed.
-#' @param repositoryName &#91;required&#93; The name of the repository that contains the image tag details to
-#' describe.
-#' @param nextToken The `nextToken` value that's returned from a previous paginated
-#' [`describe_image_tags`][ecrpublic_describe_image_tags] request where
-#' `maxResults` was used and the results exceeded the value of that
-#' parameter. Pagination continues from the end of the previous results
-#' that returned the `nextToken` value. If there are no more results to
-#' return, this value is `null`. If you specify images with `imageIds`, you
-#' can't use this option.
-#' @param maxResults The maximum number of repository results that's returned by
-#' [`describe_image_tags`][ecrpublic_describe_image_tags] in paginated
-#' output. When this parameter is used,
-#' [`describe_image_tags`][ecrpublic_describe_image_tags] only returns
-#' `maxResults` results in a single page along with a `nextToken` response
-#' element. You can see the remaining results of the initial request by
-#' sending another [`describe_image_tags`][ecrpublic_describe_image_tags]
-#' request with the returned `nextToken` value. This value can be between 1
-#' and 1000. If this parameter isn't used, then
-#' [`describe_image_tags`][ecrpublic_describe_image_tags] returns up to 100
-#' results and a `nextToken` value, if applicable. If you specify images
-#' with `imageIds`, you can't use this option.
+#' @param registryId The Amazon Web Services account ID that's associated with the public registry that contains the repository where images are described. If you do not specify a registry, the default public registry is assumed.
+#' @param repositoryName &#91;required&#93; The name of the repository that contains the image tag details to describe.
+#' @param nextToken The `nextToken` value that's returned from a previous paginated [`describe_image_tags`][ecrpublic_describe_image_tags] request where `maxResults` was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the `nextToken` value. If there are no more results to return, this value is `null`. If you specify images with `imageIds`, you can't use this option.
+#' @param maxResults The maximum number of repository results that's returned by [`describe_image_tags`][ecrpublic_describe_image_tags] in paginated output. When this parameter is used, [`describe_image_tags`][ecrpublic_describe_image_tags] only returns `maxResults` results in a single page along with a `nextToken` response element. You can see the remaining results of the initial request by sending another [`describe_image_tags`][ecrpublic_describe_image_tags] request with the returned `nextToken` value. This value can be between 1 and 1000. If this parameter isn't used, then [`describe_image_tags`][ecrpublic_describe_image_tags] returns up to 100 results and a `nextToken` value, if applicable. If you specify images with `imageIds`, you can't use this option.
 #'
 #' @return
 #' A list with the following syntax:
@@ -573,43 +502,19 @@ ecrpublic_describe_image_tags <- function(registryId = NULL, repositoryName, nex
 #' public registry
 #'
 #' @description
-#' Returns metadata that's related to the images in a repository in a
-#' public registry.
+#' Returns metadata that's related to the images in a repository in a public registry.
 #' 
-#' Beginning with Docker version 1.9, the Docker client compresses image
-#' layers before pushing them to a V2 Docker registry. The output of the
-#' `docker images` command shows the uncompressed image size. Therefore, it
-#' might return a larger image size than the image sizes that are returned
-#' by [`describe_images`][ecrpublic_describe_images].
+#' Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the `docker images` command shows the uncompressed image size. Therefore, it might return a larger image size than the image sizes that are returned by [`describe_images`][ecrpublic_describe_images].
 #'
 #' @usage
 #' ecrpublic_describe_images(registryId, repositoryName, imageIds,
 #'   nextToken, maxResults)
 #'
-#' @param registryId The Amazon Web Services account ID that's associated with the public
-#' registry that contains the repository where images are described. If you
-#' do not specify a registry, the default public registry is assumed.
+#' @param registryId The Amazon Web Services account ID that's associated with the public registry that contains the repository where images are described. If you do not specify a registry, the default public registry is assumed.
 #' @param repositoryName &#91;required&#93; The repository that contains the images to describe.
 #' @param imageIds The list of image IDs for the requested repository.
-#' @param nextToken The `nextToken` value that's returned from a previous paginated
-#' [`describe_images`][ecrpublic_describe_images] request where
-#' `maxResults` was used and the results exceeded the value of that
-#' parameter. Pagination continues from the end of the previous results
-#' that returned the `nextToken` value. If there are no more results to
-#' return, this value is `null`. If you specify images with `imageIds`, you
-#' can't use this option.
-#' @param maxResults The maximum number of repository results that's returned by
-#' [`describe_images`][ecrpublic_describe_images] in paginated output. When
-#' this parameter is used, [`describe_images`][ecrpublic_describe_images]
-#' only returns `maxResults` results in a single page along with a
-#' `nextToken` response element. You can see the remaining results of the
-#' initial request by sending another
-#' [`describe_images`][ecrpublic_describe_images] request with the returned
-#' `nextToken` value. This value can be between 1 and 1000. If this
-#' parameter isn't used, then
-#' [`describe_images`][ecrpublic_describe_images] returns up to 100 results
-#' and a `nextToken` value, if applicable. If you specify images with
-#' `imageIds`, you can't use this option.
+#' @param nextToken The `nextToken` value that's returned from a previous paginated [`describe_images`][ecrpublic_describe_images] request where `maxResults` was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the `nextToken` value. If there are no more results to return, this value is `null`. If you specify images with `imageIds`, you can't use this option.
+#' @param maxResults The maximum number of repository results that's returned by [`describe_images`][ecrpublic_describe_images] in paginated output. When this parameter is used, [`describe_images`][ecrpublic_describe_images] only returns `maxResults` results in a single page along with a `nextToken` response element. You can see the remaining results of the initial request by sending another [`describe_images`][ecrpublic_describe_images] request with the returned `nextToken` value. This value can be between 1 and 1000. If this parameter isn't used, then [`describe_images`][ecrpublic_describe_images] returns up to 100 results and a `nextToken` value, if applicable. If you specify images with `imageIds`, you can't use this option.
 #'
 #' @return
 #' A list with the following syntax:
@@ -683,27 +588,10 @@ ecrpublic_describe_images <- function(registryId = NULL, repositoryName, imageId
 #' @usage
 #' ecrpublic_describe_registries(nextToken, maxResults)
 #'
-#' @param nextToken The `nextToken` value that's returned from a previous paginated
-#' [`describe_registries`][ecrpublic_describe_registries] request where
-#' `maxResults` was used and the results exceeded the value of that
-#' parameter. Pagination continues from the end of the previous results
-#' that returned the `nextToken` value. If there are no more results to
-#' return, this value is `null`.
+#' @param nextToken The `nextToken` value that's returned from a previous paginated [`describe_registries`][ecrpublic_describe_registries] request where `maxResults` was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the `nextToken` value. If there are no more results to return, this value is `null`.
 #' 
-#' This token should be treated as an opaque identifier that is only used
-#' to retrieve the next items in a list and not for other programmatic
-#' purposes.
-#' @param maxResults The maximum number of repository results that's returned by
-#' [`describe_registries`][ecrpublic_describe_registries] in paginated
-#' output. When this parameter is used,
-#' [`describe_registries`][ecrpublic_describe_registries] only returns
-#' `maxResults` results in a single page along with a `nextToken` response
-#' element. The remaining results of the initial request can be seen by
-#' sending another [`describe_registries`][ecrpublic_describe_registries]
-#' request with the returned `nextToken` value. This value can be between 1
-#' and 1000. If this parameter isn't used, then
-#' [`describe_registries`][ecrpublic_describe_registries] returns up to 100
-#' results and a `nextToken` value, if applicable.
+#' This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.
+#' @param maxResults The maximum number of repository results that's returned by [`describe_registries`][ecrpublic_describe_registries] in paginated output. When this parameter is used, [`describe_registries`][ecrpublic_describe_registries] only returns `maxResults` results in a single page along with a `nextToken` response element. The remaining results of the initial request can be seen by sending another [`describe_registries`][ecrpublic_describe_registries] request with the returned `nextToken` value. This value can be between 1 and 1000. If this parameter isn't used, then [`describe_registries`][ecrpublic_describe_registries] returns up to 100 results and a `nextToken` value, if applicable.
 #'
 #' @return
 #' A list with the following syntax:
@@ -770,35 +658,12 @@ ecrpublic_describe_registries <- function(nextToken = NULL, maxResults = NULL) {
 #' ecrpublic_describe_repositories(registryId, repositoryNames, nextToken,
 #'   maxResults)
 #'
-#' @param registryId The Amazon Web Services account ID that's associated with the registry
-#' that contains the repositories to be described. If you do not specify a
-#' registry, the default public registry is assumed.
-#' @param repositoryNames A list of repositories to describe. If this parameter is omitted, then
-#' all repositories in a registry are described.
-#' @param nextToken The `nextToken` value that's returned from a previous paginated
-#' [`describe_repositories`][ecrpublic_describe_repositories] request where
-#' `maxResults` was used and the results exceeded the value of that
-#' parameter. Pagination continues from the end of the previous results
-#' that returned the `nextToken` value. If there are no more results to
-#' return, this value is `null`. If you specify repositories with
-#' `repositoryNames`, you can't use this option.
+#' @param registryId The Amazon Web Services account ID that's associated with the registry that contains the repositories to be described. If you do not specify a registry, the default public registry is assumed.
+#' @param repositoryNames A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.
+#' @param nextToken The `nextToken` value that's returned from a previous paginated [`describe_repositories`][ecrpublic_describe_repositories] request where `maxResults` was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the `nextToken` value. If there are no more results to return, this value is `null`. If you specify repositories with `repositoryNames`, you can't use this option.
 #' 
-#' This token should be treated as an opaque identifier that is only used
-#' to retrieve the next items in a list and not for other programmatic
-#' purposes.
-#' @param maxResults The maximum number of repository results that's returned by
-#' [`describe_repositories`][ecrpublic_describe_repositories] in paginated
-#' output. When this parameter is used,
-#' [`describe_repositories`][ecrpublic_describe_repositories] only returns
-#' `maxResults` results in a single page along with a `nextToken` response
-#' element. You can see the remaining results of the initial request by
-#' sending another
-#' [`describe_repositories`][ecrpublic_describe_repositories] request with
-#' the returned `nextToken` value. This value can be between 1 and 1000. If
-#' this parameter isn't used, then
-#' [`describe_repositories`][ecrpublic_describe_repositories] returns up to
-#' 100 results and a `nextToken` value, if applicable. If you specify
-#' repositories with `repositoryNames`, you can't use this option.
+#' This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.
+#' @param maxResults The maximum number of repository results that's returned by [`describe_repositories`][ecrpublic_describe_repositories] in paginated output. When this parameter is used, [`describe_repositories`][ecrpublic_describe_repositories] only returns `maxResults` results in a single page along with a `nextToken` response element. You can see the remaining results of the initial request by sending another [`describe_repositories`][ecrpublic_describe_repositories] request with the returned `nextToken` value. This value can be between 1 and 1000. If this parameter isn't used, then [`describe_repositories`][ecrpublic_describe_repositories] returns up to 100 results and a `nextToken` value, if applicable. If you specify repositories with `repositoryNames`, you can't use this option.
 #'
 #' @return
 #' A list with the following syntax:
@@ -858,12 +723,7 @@ ecrpublic_describe_repositories <- function(registryId = NULL, repositoryNames =
 #' Retrieves an authorization token
 #'
 #' @description
-#' Retrieves an authorization token. An authorization token represents your
-#' IAM authentication credentials. You can use it to access any Amazon ECR
-#' registry that your IAM principal has access to. The authorization token
-#' is valid for 12 hours. This API requires the
-#' `ecr-public:GetAuthorizationToken` and `sts:GetServiceBearerToken`
-#' permissions.
+#' Retrieves an authorization token. An authorization token represents your IAM authentication credentials. You can use it to access any Amazon ECR registry that your IAM principal has access to. The authorization token is valid for 12 hours. This API requires the `ecr-public:GetAuthorizationToken` and `sts:GetServiceBearerToken` permissions.
 #'
 #' @usage
 #' ecrpublic_get_authorization_token()
@@ -964,15 +824,12 @@ ecrpublic_get_registry_catalog_data <- function() {
 #' Retrieve catalog metadata for a repository in a public registry
 #'
 #' @description
-#' Retrieve catalog metadata for a repository in a public registry. This
-#' metadata is displayed publicly in the Amazon ECR Public Gallery.
+#' Retrieve catalog metadata for a repository in a public registry. This metadata is displayed publicly in the Amazon ECR Public Gallery.
 #'
 #' @usage
 #' ecrpublic_get_repository_catalog_data(registryId, repositoryName)
 #'
-#' @param registryId The Amazon Web Services account ID that's associated with the registry
-#' that contains the repositories to be described. If you do not specify a
-#' registry, the default public registry is assumed.
+#' @param registryId The Amazon Web Services account ID that's associated with the registry that contains the repositories to be described. If you do not specify a registry, the default public registry is assumed.
 #' @param repositoryName &#91;required&#93; The name of the repository to retrieve the catalog metadata for.
 #'
 #' @return
@@ -1035,9 +892,7 @@ ecrpublic_get_repository_catalog_data <- function(registryId = NULL, repositoryN
 #' @usage
 #' ecrpublic_get_repository_policy(registryId, repositoryName)
 #'
-#' @param registryId The Amazon Web Services account ID that's associated with the public
-#' registry that contains the repository. If you do not specify a registry,
-#' the default public registry is assumed.
+#' @param registryId The Amazon Web Services account ID that's associated with the public registry that contains the repository. If you do not specify a registry, the default public registry is assumed.
 #' @param repositoryName &#91;required&#93; The name of the repository with the policy to retrieve.
 #'
 #' @return
@@ -1087,21 +942,14 @@ ecrpublic_get_repository_policy <- function(registryId = NULL, repositoryName) {
 #' @description
 #' Notifies Amazon ECR that you intend to upload an image layer.
 #' 
-#' When an image is pushed, the InitiateLayerUpload API is called once for
-#' each image layer that hasn't already been uploaded. Whether an image
-#' layer uploads is determined by the BatchCheckLayerAvailability API
-#' action.
+#' When an image is pushed, the InitiateLayerUpload API is called once for each image layer that hasn't already been uploaded. Whether an image layer uploads is determined by the BatchCheckLayerAvailability API action.
 #' 
-#' This operation is used by the Amazon ECR proxy and is not generally used
-#' by customers for pulling and pushing images. In most cases, you should
-#' use the `docker` CLI to pull, tag, and push images.
+#' This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the `docker` CLI to pull, tag, and push images.
 #'
 #' @usage
 #' ecrpublic_initiate_layer_upload(registryId, repositoryName)
 #'
-#' @param registryId The Amazon Web Services account ID, or registry alias, that's associated
-#' with the registry to which you intend to upload layers. If you do not
-#' specify a registry, the default public registry is assumed.
+#' @param registryId The Amazon Web Services account ID, or registry alias, that's associated with the registry to which you intend to upload layers. If you do not specify a registry, the default public registry is assumed.
 #' @param repositoryName &#91;required&#93; The name of the repository that you want to upload layers to.
 #'
 #' @return
@@ -1153,9 +1001,7 @@ ecrpublic_initiate_layer_upload <- function(registryId = NULL, repositoryName) {
 #' @usage
 #' ecrpublic_list_tags_for_resource(resourceArn)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the resource to list the
-#' tags for. Currently, the supported resource is an Amazon ECR Public
-#' repository.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resource is an Amazon ECR Public repository.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1205,33 +1051,21 @@ ecrpublic_list_tags_for_resource <- function(resourceArn) {
 #' an image
 #'
 #' @description
-#' Creates or updates the image manifest and tags that are associated with
-#' an image.
+#' Creates or updates the image manifest and tags that are associated with an image.
 #' 
-#' When an image is pushed and all new image layers have been uploaded, the
-#' PutImage API is called once to create or update the image manifest and
-#' the tags that are associated with the image.
+#' When an image is pushed and all new image layers have been uploaded, the PutImage API is called once to create or update the image manifest and the tags that are associated with the image.
 #' 
-#' This operation is used by the Amazon ECR proxy and is not generally used
-#' by customers for pulling and pushing images. In most cases, you should
-#' use the `docker` CLI to pull, tag, and push images.
+#' This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the `docker` CLI to pull, tag, and push images.
 #'
 #' @usage
 #' ecrpublic_put_image(registryId, repositoryName, imageManifest,
 #'   imageManifestMediaType, imageTag, imageDigest)
 #'
-#' @param registryId The Amazon Web Services account ID, or registry alias, that's associated
-#' with the public registry that contains the repository where the image is
-#' put. If you do not specify a registry, the default public registry is
-#' assumed.
+#' @param registryId The Amazon Web Services account ID, or registry alias, that's associated with the public registry that contains the repository where the image is put. If you do not specify a registry, the default public registry is assumed.
 #' @param repositoryName &#91;required&#93; The name of the repository where the image is put.
 #' @param imageManifest &#91;required&#93; The image manifest that corresponds to the image to be uploaded.
-#' @param imageManifestMediaType The media type of the image manifest. If you push an image manifest that
-#' doesn't contain the `mediaType` field, you must specify the
-#' `imageManifestMediaType` in the request.
-#' @param imageTag The tag to associate with the image. This parameter is required for
-#' images that use the Docker Image Manifest V2 Schema 2 or Open Container
-#' Initiative (OCI) formats.
+#' @param imageManifestMediaType The media type of the image manifest. If you push an image manifest that doesn't contain the `mediaType` field, you must specify the `imageManifestMediaType` in the request.
+#' @param imageTag The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.
 #' @param imageDigest The image digest of the image manifest that corresponds to the image.
 #'
 #' @return
@@ -1295,11 +1129,9 @@ ecrpublic_put_image <- function(registryId = NULL, repositoryName, imageManifest
 #' @usage
 #' ecrpublic_put_registry_catalog_data(displayName)
 #'
-#' @param displayName The display name for a public registry. The display name is shown as the
-#' repository author in the Amazon ECR Public Gallery.
+#' @param displayName The display name for a public registry. The display name is shown as the repository author in the Amazon ECR Public Gallery.
 #' 
-#' The registry display name is only publicly visible in the Amazon ECR
-#' Public Gallery for verified accounts.
+#' The registry display name is only publicly visible in the Amazon ECR Public Gallery for verified accounts.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1346,19 +1178,15 @@ ecrpublic_put_registry_catalog_data <- function(displayName = NULL) {
 #' registry
 #'
 #' @description
-#' Creates or updates the catalog data for a repository in a public
-#' registry.
+#' Creates or updates the catalog data for a repository in a public registry.
 #'
 #' @usage
 #' ecrpublic_put_repository_catalog_data(registryId, repositoryName,
 #'   catalogData)
 #'
-#' @param registryId The Amazon Web Services account ID that's associated with the public
-#' registry the repository is in. If you do not specify a registry, the
-#' default public registry is assumed.
+#' @param registryId The Amazon Web Services account ID that's associated with the public registry the repository is in. If you do not specify a registry, the default public registry is assumed.
 #' @param repositoryName &#91;required&#93; The name of the repository to create or update the catalog data for.
-#' @param catalogData &#91;required&#93; An object containing the catalog data for a repository. This data is
-#' publicly visible in the Amazon ECR Public Gallery.
+#' @param catalogData &#91;required&#93; An object containing the catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1428,28 +1256,16 @@ ecrpublic_put_repository_catalog_data <- function(registryId = NULL, repositoryN
 #' control access permissions
 #'
 #' @description
-#' Applies a repository policy to the specified public repository to
-#' control access permissions. For more information, see [Amazon ECR
-#' Repository
-#' Policies](https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policies.html)
-#' in the *Amazon Elastic Container Registry User Guide*.
+#' Applies a repository policy to the specified public repository to control access permissions. For more information, see [Amazon ECR Repository Policies](https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policies.html) in the *Amazon Elastic Container Registry User Guide*.
 #'
 #' @usage
 #' ecrpublic_set_repository_policy(registryId, repositoryName, policyText,
 #'   force)
 #'
-#' @param registryId The Amazon Web Services account ID that's associated with the registry
-#' that contains the repository. If you do not specify a registry, the
-#' default public registry is assumed.
+#' @param registryId The Amazon Web Services account ID that's associated with the registry that contains the repository. If you do not specify a registry, the default public registry is assumed.
 #' @param repositoryName &#91;required&#93; The name of the repository to receive the policy.
-#' @param policyText &#91;required&#93; The JSON repository policy text to apply to the repository. For more
-#' information, see [Amazon ECR Repository
-#' Policies](https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html)
-#' in the *Amazon Elastic Container Registry User Guide*.
-#' @param force If the policy that you want to set on a repository policy would prevent
-#' you from setting another policy in the future, you must force the
-#' [`set_repository_policy`][ecrpublic_set_repository_policy] operation.
-#' This prevents accidental repository lockouts.
+#' @param policyText &#91;required&#93; The JSON repository policy text to apply to the repository. For more information, see [Amazon ECR Repository Policies](https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html) in the *Amazon Elastic Container Registry User Guide*.
+#' @param force If the policy that you want to set on a repository policy would prevent you from setting another policy in the future, you must force the [`set_repository_policy`][ecrpublic_set_repository_policy] operation. This prevents accidental repository lockouts.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1499,19 +1315,13 @@ ecrpublic_set_repository_policy <- function(registryId = NULL, repositoryName, p
 #' resourceArn
 #'
 #' @description
-#' Associates the specified tags to a resource with the specified
-#' `resourceArn`. If existing tags on a resource aren't specified in the
-#' request parameters, they aren't changed. When a resource is deleted, the
-#' tags associated with that resource are also deleted.
+#' Associates the specified tags to a resource with the specified `resourceArn`. If existing tags on a resource aren't specified in the request parameters, they aren't changed. When a resource is deleted, the tags associated with that resource are also deleted.
 #'
 #' @usage
 #' ecrpublic_tag_resource(resourceArn, tags)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource to add tags to.
-#' Currently, the supported resource is an Amazon ECR Public repository.
-#' @param tags &#91;required&#93; The tags to add to the resource. A tag is an array of key-value pairs.
-#' Tag keys can have a maximum character length of 128 characters, and tag
-#' values can have a maximum length of 256 characters.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource to add tags to. Currently, the supported resource is an Amazon ECR Public repository.
+#' @param tags &#91;required&#93; The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
 #'
 #' @return
 #' An empty list.
@@ -1561,8 +1371,7 @@ ecrpublic_tag_resource <- function(resourceArn, tags) {
 #' @usage
 #' ecrpublic_untag_resource(resourceArn, tagKeys)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource to delete tags from.
-#' Currently, the supported resource is an Amazon ECR Public repository.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the supported resource is an Amazon ECR Public repository.
 #' @param tagKeys &#91;required&#93; The keys of the tags to be removed.
 #'
 #' @return
@@ -1607,30 +1416,19 @@ ecrpublic_untag_resource <- function(resourceArn, tagKeys) {
 #' @description
 #' Uploads an image layer part to Amazon ECR.
 #' 
-#' When an image is pushed, each new image layer is uploaded in parts. The
-#' maximum size of each image layer part can be 20971520 bytes (about
-#' 20MB). The UploadLayerPart API is called once for each new image layer
-#' part.
+#' When an image is pushed, each new image layer is uploaded in parts. The maximum size of each image layer part can be 20971520 bytes (about 20MB). The UploadLayerPart API is called once for each new image layer part.
 #' 
-#' This operation is used by the Amazon ECR proxy and is not generally used
-#' by customers for pulling and pushing images. In most cases, you should
-#' use the `docker` CLI to pull, tag, and push images.
+#' This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the `docker` CLI to pull, tag, and push images.
 #'
 #' @usage
 #' ecrpublic_upload_layer_part(registryId, repositoryName, uploadId,
 #'   partFirstByte, partLastByte, layerPartBlob)
 #'
-#' @param registryId The Amazon Web Services account ID, or registry alias, that's associated
-#' with the registry that you're uploading layer parts to. If you do not
-#' specify a registry, the default public registry is assumed.
+#' @param registryId The Amazon Web Services account ID, or registry alias, that's associated with the registry that you're uploading layer parts to. If you do not specify a registry, the default public registry is assumed.
 #' @param repositoryName &#91;required&#93; The name of the repository that you're uploading layer parts to.
-#' @param uploadId &#91;required&#93; The upload ID from a previous
-#' [`initiate_layer_upload`][ecrpublic_initiate_layer_upload] operation to
-#' associate with the layer part upload.
-#' @param partFirstByte &#91;required&#93; The position of the first byte of the layer part witin the overall image
-#' layer.
-#' @param partLastByte &#91;required&#93; The position of the last byte of the layer part within the overall image
-#' layer.
+#' @param uploadId &#91;required&#93; The upload ID from a previous [`initiate_layer_upload`][ecrpublic_initiate_layer_upload] operation to associate with the layer part upload.
+#' @param partFirstByte &#91;required&#93; The position of the first byte of the layer part witin the overall image layer.
+#' @param partLastByte &#91;required&#93; The position of the last byte of the layer part within the overall image layer.
 #' @param layerPartBlob &#91;required&#93; The base64-encoded layer part payload.
 #'
 #' @return

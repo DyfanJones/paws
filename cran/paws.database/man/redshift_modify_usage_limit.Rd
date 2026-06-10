@@ -9,11 +9,9 @@ redshift_modify_usage_limit(UsageLimitId, Amount = NULL, BreachAction = NULL)
 \arguments{
 \item{UsageLimitId}{[required] The identifier of the usage limit to modify.}
 
-\item{Amount}{The new limit amount. For more information about this parameter, see
-UsageLimit.}
+\item{Amount}{The new limit amount. For more information about this parameter, see UsageLimit.}
 
-\item{BreachAction}{The new action that Amazon Redshift takes when the limit is reached. For
-more information about this parameter, see UsageLimit.}
+\item{BreachAction}{The new action that Amazon Redshift takes when the limit is reached. For more information about this parameter, see UsageLimit.}
 }
 \description{
 Modifies a usage limit in a cluster. You can't modify the feature type or period of a usage limit.

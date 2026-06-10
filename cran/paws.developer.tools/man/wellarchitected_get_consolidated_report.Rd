@@ -14,12 +14,11 @@ wellarchitected_get_consolidated_report(
 \arguments{
 \item{Format}{[required] The format of the consolidated report.
 
-For \code{PDF}, \code{Base64String} is returned. For \code{JSON}, \code{Metrics} is
-returned.}
+For \code{PDF}, \code{Base64String} is returned. For \code{JSON}, \code{Metrics} is returned.}
 
 \item{IncludeSharedResources}{Set to \code{true} to have shared resources included in the report.}
 
-\item{NextToken}{}
+\item{NextToken}{The token to use to retrieve the next set of results.}
 
 \item{MaxResults}{The maximum number of results to return for this request.}
 }

@@ -15,13 +15,9 @@ ssoadmin_delete_account_assignment(
 )
 }
 \arguments{
-\item{InstanceArn}{[required] The ARN of the IAM Identity Center instance under which the operation
-will be executed. For more information about ARNs, see Amazon Resource
-Names (ARNs) and Amazon Web Services Service Namespaces in the \emph{Amazon
-Web Services General Reference}.}
+\item{InstanceArn}{[required] The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces in the \emph{Amazon Web Services General Reference}.}
 
-\item{TargetId}{[required] TargetID is an Amazon Web Services account identifier, (For example,
-123456789012).}
+\item{TargetId}{[required] TargetID is an Amazon Web Services account identifier, (For example, 123456789012).}
 
 \item{TargetType}{[required] The entity type for which the assignment will be deleted.}
 
@@ -29,11 +25,7 @@ Web Services General Reference}.}
 
 \item{PrincipalType}{[required] The entity type for which the assignment will be deleted.}
 
-\item{PrincipalId}{[required] An identifier for an object in IAM Identity Center, such as a user or
-group. PrincipalIds are GUIDs (For example,
-f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about
-PrincipalIds in IAM Identity Center, see the IAM Identity Center
-Identity Store API Reference.}
+\item{PrincipalId}{[required] An identifier for an object in IAM Identity Center, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in IAM Identity Center, see the IAM Identity Center Identity Store API Reference.}
 }
 \description{
 Deletes a principal's access from a specified Amazon Web Services account using a specified permission set.

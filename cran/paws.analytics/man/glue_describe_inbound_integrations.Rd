@@ -14,13 +14,11 @@ glue_describe_inbound_integrations(
 \arguments{
 \item{IntegrationArn}{The Amazon Resource Name (ARN) of the integration.}
 
-\item{Marker}{A token to specify where to start paginating. This is the marker from a
-previously truncated response.}
+\item{Marker}{A token to specify where to start paginating. This is the marker from a previously truncated response.}
 
 \item{MaxRecords}{The total number of items to return in the output.}
 
-\item{TargetArn}{The Amazon Resource Name (ARN) of the target resource in the
-integration.}
+\item{TargetArn}{The Amazon Resource Name (ARN) of the target resource in the integration.}
 }
 \description{
 Returns a list of inbound integrations for the specified integration.

@@ -46,11 +46,12 @@ bedrockdataautomationruntime_get_data_automation_status <- function(invocationAr
 #' @param blueprints Blueprint list.
 #' @param dataAutomationProfileArn &#91;required&#93; Data automation profile ARN
 #' @param encryptionConfiguration Encryption configuration.
+#' @param outputConfiguration Output configuration.
 #'
 #' @keywords internal
 #'
 #' @rdname bedrockdataautomationruntime_invoke_data_automation
-bedrockdataautomationruntime_invoke_data_automation <- function(inputConfiguration, dataAutomationConfiguration = NULL, blueprints = NULL, dataAutomationProfileArn, encryptionConfiguration = NULL) {
+bedrockdataautomationruntime_invoke_data_automation <- function(inputConfiguration, dataAutomationConfiguration = NULL, blueprints = NULL, dataAutomationProfileArn, encryptionConfiguration = NULL, outputConfiguration = NULL) {
   op <- new_operation(
     name = "InvokeDataAutomation",
     http_method = "POST",
@@ -59,7 +60,7 @@ bedrockdataautomationruntime_invoke_data_automation <- function(inputConfigurati
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .bedrockdataautomationruntime$invoke_data_automation_input(inputConfiguration = inputConfiguration, dataAutomationConfiguration = dataAutomationConfiguration, blueprints = blueprints, dataAutomationProfileArn = dataAutomationProfileArn, encryptionConfiguration = encryptionConfiguration)
+  input <- .bedrockdataautomationruntime$invoke_data_automation_input(inputConfiguration = inputConfiguration, dataAutomationConfiguration = dataAutomationConfiguration, blueprints = blueprints, dataAutomationProfileArn = dataAutomationProfileArn, encryptionConfiguration = encryptionConfiguration, outputConfiguration = outputConfiguration)
   output <- .bedrockdataautomationruntime$invoke_data_automation_output()
   config <- get_config()
   svc <- .bedrockdataautomationruntime$service(config, op)
@@ -115,7 +116,7 @@ bedrockdataautomationruntime_invoke_data_automation_async <- function(clientToke
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockdataautomationruntime_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/bedrockdataautomationruntime_list_tags_for_resource/) for full documentation.
 #'
-#' @param resourceARN &#91;required&#93; 
+#' @param resourceARN &#91;required&#93; ARN of a taggable resource
 #'
 #' @keywords internal
 #'
@@ -146,8 +147,8 @@ bedrockdataautomationruntime_list_tags_for_resource <- function(resourceARN) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockdataautomationruntime_tag_resource/](https://www.paws-r-sdk.com/docs/bedrockdataautomationruntime_tag_resource/) for full documentation.
 #'
-#' @param resourceARN &#91;required&#93; 
-#' @param tags &#91;required&#93; 
+#' @param resourceARN &#91;required&#93; ARN of a taggable resource
+#' @param tags &#91;required&#93; List of tags
 #'
 #' @keywords internal
 #'
@@ -178,8 +179,8 @@ bedrockdataautomationruntime_tag_resource <- function(resourceARN, tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/bedrockdataautomationruntime_untag_resource/](https://www.paws-r-sdk.com/docs/bedrockdataautomationruntime_untag_resource/) for full documentation.
 #'
-#' @param resourceARN &#91;required&#93; 
-#' @param tagKeys &#91;required&#93; 
+#' @param resourceARN &#91;required&#93; ARN of a taggable resource
+#' @param tagKeys &#91;required&#93; List of tag keys
 #'
 #' @keywords internal
 #'

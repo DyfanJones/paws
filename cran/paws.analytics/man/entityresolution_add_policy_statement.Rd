@@ -14,28 +14,19 @@ entityresolution_add_policy_statement(
 )
 }
 \arguments{
-\item{arn}{[required] The Amazon Resource Name (ARN) of the resource that will be accessed by
-the principal.}
+\item{arn}{[required] The Amazon Resource Name (ARN) of the resource that will be accessed by the principal.}
 
-\item{statementId}{[required] A statement identifier that differentiates the statement from others in
-the same policy.}
+\item{statementId}{[required] A statement identifier that differentiates the statement from others in the same policy.}
 
-\item{effect}{[required] Determines whether the permissions specified in the policy are to be
-allowed (\code{Allow}) or denied (\code{Deny}).
+\item{effect}{[required] Determines whether the permissions specified in the policy are to be allowed (\code{Allow}) or denied (\code{Deny}).
 
-If you set the value of the \code{effect} parameter to \code{Deny} for the
-\code{\link[=entityresolution_add_policy_statement]{add_policy_statement}}
-operation, you must also set the value of the \code{effect} parameter in the
-\code{policy} to \code{Deny} for the \code{\link[=entityresolution_put_policy]{put_policy}}
-operation.}
+If you set the value of the \code{effect} parameter to \code{Deny} for the \code{\link[=entityresolution_add_policy_statement]{add_policy_statement}} operation, you must also set the value of the \code{effect} parameter in the \code{policy} to \code{Deny} for the \code{\link[=entityresolution_put_policy]{put_policy}} operation.}
 
 \item{action}{[required] The action that the principal can use on the resource.
 
-For example, \code{entityresolution:GetIdMappingJob},
-\code{entityresolution:GetMatchingJob}.}
+For example, \code{entityresolution:GetIdMappingJob}, \code{entityresolution:GetMatchingJob}.}
 
-\item{principal}{[required] The Amazon Web Services service or Amazon Web Services account that can
-access the resource defined as ARN.}
+\item{principal}{[required] The Amazon Web Services service or Amazon Web Services account that can access the resource defined as ARN.}
 
 \item{condition}{A set of condition keys that you can use in key policies.}
 }

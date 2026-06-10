@@ -17,10 +17,7 @@ sagemaker_list_training_jobs_for_hyper_parameter_tuning_job(
 \arguments{
 \item{HyperParameterTuningJobName}{[required] The name of the tuning job whose training jobs you want to list.}
 
-\item{NextToken}{If the result of the previous
-\code{\link[=sagemaker_list_training_jobs_for_hyper_parameter_tuning_job]{list_training_jobs_for_hyper_parameter_tuning_job}}
-request was truncated, the response includes a \code{NextToken}. To retrieve
-the next set of training jobs, use the token in the next request.}
+\item{NextToken}{If the result of the previous \code{\link[=sagemaker_list_training_jobs_for_hyper_parameter_tuning_job]{list_training_jobs_for_hyper_parameter_tuning_job}} request was truncated, the response includes a \code{NextToken}. To retrieve the next set of training jobs, use the token in the next request.}
 
 \item{MaxResults}{The maximum number of training jobs to return. The default value is 10.}
 
@@ -28,8 +25,7 @@ the next set of training jobs, use the token in the next request.}
 
 \item{SortBy}{The field to sort results by. The default is \code{Name}.
 
-If the value of this field is \code{FinalObjectiveMetricValue}, any training
-jobs that did not return an objective metric are not listed.}
+If the value of this field is \code{FinalObjectiveMetricValue}, any training jobs that did not return an objective metric are not listed.}
 
 \item{SortOrder}{The sort order for results. The default is \code{Ascending}.}
 }

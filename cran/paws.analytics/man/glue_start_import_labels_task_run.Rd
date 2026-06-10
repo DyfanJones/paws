@@ -14,8 +14,7 @@ glue_start_import_labels_task_run(
 \arguments{
 \item{TransformId}{[required] The unique identifier of the machine learning transform.}
 
-\item{InputS3Path}{[required] The Amazon Simple Storage Service (Amazon S3) path from where you import
-the labels.}
+\item{InputS3Path}{[required] The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.}
 
 \item{ReplaceAllLabels}{Indicates whether to overwrite your existing labels.}
 }

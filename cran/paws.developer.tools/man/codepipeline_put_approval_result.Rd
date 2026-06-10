@@ -21,17 +21,9 @@ codepipeline_put_approval_result(
 
 \item{result}{[required] Represents information about the result of the approval request.}
 
-\item{token}{[required] The system-generated token used to identify a unique approval request.
-The token for each open approval request can be obtained using the
-\code{\link[=codepipeline_get_pipeline_state]{get_pipeline_state}} action. It is
-used to validate that the approval request corresponding to this token
-is still valid.
+\item{token}{[required] The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the \code{\link[=codepipeline_get_pipeline_state]{get_pipeline_state}} action. It is used to validate that the approval request corresponding to this token is still valid.
 
-For a pipeline where the execution mode is set to PARALLEL, the token
-required to approve/reject an approval request as detailed above is not
-available. Instead, use the \code{externalExecutionId} in the response output
-from the \code{\link[=codepipeline_list_action_executions]{list_action_executions}}
-action as the token in the approval request.}
+For a pipeline where the execution mode is set to PARALLEL, the token required to approve/reject an approval request as detailed above is not available. Instead, use the \code{externalExecutionId} in the response output from the \code{\link[=codepipeline_list_action_executions]{list_action_executions}} action as the token in the approval request.}
 }
 \description{
 Provides the response to a manual approval request to CodePipeline. Valid responses include Approved and Rejected.

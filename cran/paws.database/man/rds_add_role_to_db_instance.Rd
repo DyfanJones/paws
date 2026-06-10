@@ -10,12 +10,9 @@ rds_add_role_to_db_instance(DBInstanceIdentifier, RoleArn, FeatureName)
 \arguments{
 \item{DBInstanceIdentifier}{[required] The name of the DB instance to associate the IAM role with.}
 
-\item{RoleArn}{[required] The Amazon Resource Name (ARN) of the IAM role to associate with the DB
-instance, for example \verb{arn:aws:iam::123456789012:role/AccessRole}.}
+\item{RoleArn}{[required] The Amazon Resource Name (ARN) of the IAM role to associate with the DB instance, for example \verb{arn:aws:iam::123456789012:role/AccessRole}.}
 
-\item{FeatureName}{[required] The name of the feature for the DB instance that the IAM role is to be
-associated with. For information about supported feature names, see
-DBEngineVersion.}
+\item{FeatureName}{[required] The name of the feature for the DB instance that the IAM role is to be associated with. For information about supported feature names, see DBEngineVersion.}
 }
 \description{
 Associates an Amazon Web Services Identity and Access Management (IAM) role with a DB instance.

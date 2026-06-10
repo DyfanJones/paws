@@ -4,18 +4,16 @@
 \alias{kinesis_tag_resource}
 \title{Adds or updates tags for the specified Kinesis resource}
 \usage{
-kinesis_tag_resource(Tags, ResourceARN)
+kinesis_tag_resource(Tags, ResourceARN, StreamId = NULL)
 }
 \arguments{
-\item{Tags}{[required] An array of tags to be added to the Kinesis resource. A tag consists of
-a required key and an optional value. You can add up to 50 tags per
-resource.
+\item{Tags}{[required] An array of tags to be added to the Kinesis resource. A tag consists of a required key and an optional value. You can add up to 50 tags per resource.
 
-Tags may only contain Unicode letters, digits, white space, or these
-symbols: _ . : / = + - @.}
+Tags may only contain Unicode letters, digits, white space, or these symbols: _ . : / = + - @.}
 
-\item{ResourceARN}{[required] The Amazon Resource Name (ARN) of the Kinesis resource to which to add
-tags.}
+\item{ResourceARN}{[required] The Amazon Resource Name (ARN) of the Kinesis resource to which to add tags.}
+
+\item{StreamId}{Not Implemented. Reserved for future use.}
 }
 \description{
 Adds or updates tags for the specified Kinesis resource. Each tag is a label consisting of a user-defined key and value. Tags can help you manage, identify, organize, search for, and filter resources. You can assign up to 50 tags to a Kinesis resource.

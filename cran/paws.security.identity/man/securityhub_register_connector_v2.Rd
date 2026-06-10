@@ -8,11 +8,9 @@ parameters}
 securityhub_register_connector_v2(AuthCode, AuthState)
 }
 \arguments{
-\item{AuthCode}{[required] The authCode retrieved from authUrl to complete the OAuth 2.0
-authorization code flow.}
+\item{AuthCode}{[required] The authCode retrieved from authUrl to complete the OAuth 2.0 authorization code flow.}
 
-\item{AuthState}{[required] The authState retrieved from authUrl to complete the OAuth 2.0
-authorization code flow.}
+\item{AuthState}{[required] The authState retrieved from authUrl to complete the OAuth 2.0 authorization code flow.}
 }
 \description{
 Grants permission to complete the authorization based on input parameters.

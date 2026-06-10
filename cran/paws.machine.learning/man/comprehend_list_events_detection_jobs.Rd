@@ -11,9 +11,7 @@ comprehend_list_events_detection_jobs(
 )
 }
 \arguments{
-\item{Filter}{Filters the jobs that are returned. You can filter jobs on their name,
-status, or the date and time that they were submitted. You can only set
-one filter at a time.}
+\item{Filter}{Filters the jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.}
 
 \item{NextToken}{Identifies the next page of results to return.}
 

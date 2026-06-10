@@ -7,8 +7,7 @@
 route53_get_traffic_policy_instance(Id)
 }
 \arguments{
-\item{Id}{[required] The ID of the traffic policy instance that you want to get information
-about.}
+\item{Id}{[required] The ID of the traffic policy instance that you want to get information about.}
 }
 \description{
 Gets information about a specified traffic policy instance.

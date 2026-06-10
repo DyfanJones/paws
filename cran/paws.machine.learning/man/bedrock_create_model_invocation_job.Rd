@@ -13,36 +13,30 @@ bedrock_create_model_invocation_job(
   outputDataConfig,
   vpcConfig = NULL,
   timeoutDurationInHours = NULL,
-  tags = NULL
+  tags = NULL,
+  modelInvocationType = NULL
 )
 }
 \arguments{
 \item{jobName}{[required] A name to give the batch inference job.}
 
-\item{roleArn}{[required] The Amazon Resource Name (ARN) of the service role with permissions to
-carry out and manage batch inference. You can use the console to create
-a default service role or follow the steps at \href{https://docs.aws.amazon.com/bedrock/latest/userguide/batch-iam-sr.html}{Create a service role for batch inference}.}
+\item{roleArn}{[required] The Amazon Resource Name (ARN) of the service role with permissions to carry out and manage batch inference. You can use the console to create a default service role or follow the steps at \href{https://docs.aws.amazon.com/bedrock/latest/userguide/batch-iam-sr.html}{Create a service role for batch inference}.}
 
-\item{clientRequestToken}{A unique, case-sensitive identifier to ensure that the API request
-completes no more than one time. If this token matches a previous
-request, Amazon Bedrock ignores the request, but does not return an
-error. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
+\item{clientRequestToken}{A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
 
-\item{modelId}{[required] The unique identifier of the foundation model to use for the batch
-inference job.}
+\item{modelId}{[required] The unique identifier of the foundation model to use for the batch inference job.}
 
 \item{inputDataConfig}{[required] Details about the location of the input to the batch inference job.}
 
 \item{outputDataConfig}{[required] Details about the location of the output of the batch inference job.}
 
-\item{vpcConfig}{The configuration of the Virtual Private Cloud (VPC) for the data in the
-batch inference job. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/batch-vpc.html}{Protect batch inference jobs using a VPC}.}
+\item{vpcConfig}{The configuration of the Virtual Private Cloud (VPC) for the data in the batch inference job. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/batch-vpc.html}{Protect batch inference jobs using a VPC}.}
 
-\item{timeoutDurationInHours}{The number of hours after which to force the batch inference job to time
-out.}
+\item{timeoutDurationInHours}{The number of hours after which to force the batch inference job to time out.}
 
-\item{tags}{Any tags to associate with the batch inference job. For more
-information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html}{Tagging Amazon Bedrock resources}.}
+\item{tags}{Any tags to associate with the batch inference job. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html}{Tagging Amazon Bedrock resources}.}
+
+\item{modelInvocationType}{The invocation endpoint for ModelInvocationJob}
 }
 \description{
 Creates a batch inference job to invoke a model on multiple prompts. Format your data according to \href{https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-data.html}{Format your inference data} and upload it to an Amazon S3 bucket. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference.html}{Process multiple prompts with batch inference}.

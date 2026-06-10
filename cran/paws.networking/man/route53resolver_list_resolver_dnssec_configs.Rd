@@ -12,22 +12,13 @@ route53resolver_list_resolver_dnssec_configs(
 )
 }
 \arguments{
-\item{MaxResults}{\emph{Optional}: An integer that specifies the maximum number of DNSSEC
-configuration results that you want Amazon Route 53 to return. If you
-don't specify a value for \code{MaxResults}, Route 53 returns up to 100
-configuration per page.}
+\item{MaxResults}{\emph{Optional}: An integer that specifies the maximum number of DNSSEC configuration results that you want Amazon Route 53 to return. If you don't specify a value for \code{MaxResults}, Route 53 returns up to 100 configuration per page.}
 
-\item{NextToken}{(Optional) If the current Amazon Web Services account has more than
-\code{MaxResults} DNSSEC configurations, use \code{NextToken} to get the second
-and subsequent pages of results.
+\item{NextToken}{(Optional) If the current Amazon Web Services account has more than \code{MaxResults} DNSSEC configurations, use \code{NextToken} to get the second and subsequent pages of results.
 
-For the first
-\code{\link[=route53resolver_list_resolver_dnssec_configs]{list_resolver_dnssec_configs}}
-request, omit this value.
+For the first \code{\link[=route53resolver_list_resolver_dnssec_configs]{list_resolver_dnssec_configs}} request, omit this value.
 
-For the second and subsequent requests, get the value of \code{NextToken}
-from the previous response and specify that value for \code{NextToken} in the
-request.}
+For the second and subsequent requests, get the value of \code{NextToken} from the previous response and specify that value for \code{NextToken} in the request.}
 
 \item{Filters}{An optional specification to return a subset of objects.}
 }

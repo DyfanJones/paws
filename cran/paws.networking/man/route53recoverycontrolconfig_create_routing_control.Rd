@@ -12,15 +12,11 @@ route53recoverycontrolconfig_create_routing_control(
 )
 }
 \arguments{
-\item{ClientToken}{A unique, case-sensitive string of up to 64 ASCII characters. To make an
-idempotent API request with an action, specify a client token in the
-request.}
+\item{ClientToken}{A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.}
 
-\item{ClusterArn}{[required] The Amazon Resource Name (ARN) of the cluster that includes the routing
-control.}
+\item{ClusterArn}{[required] The Amazon Resource Name (ARN) of the cluster that includes the routing control.}
 
-\item{ControlPanelArn}{The Amazon Resource Name (ARN) of the control panel that includes the
-routing control.}
+\item{ControlPanelArn}{The Amazon Resource Name (ARN) of the control panel that includes the routing control.}
 
 \item{RoutingControlName}{[required] The name of the routing control.}
 }

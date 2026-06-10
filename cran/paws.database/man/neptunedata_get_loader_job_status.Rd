@@ -15,20 +15,15 @@ neptunedata_get_loader_job_status(
 \arguments{
 \item{loadId}{[required] The load ID of the load job to get the status of.}
 
-\item{details}{Flag indicating whether or not to include details beyond the overall
-status (\code{TRUE} or \code{FALSE}; the default is \code{FALSE}).}
+\item{details}{Flag indicating whether or not to include details beyond the overall status (\code{TRUE} or \code{FALSE}; the default is \code{FALSE}).}
 
-\item{errors}{Flag indicating whether or not to include a list of errors encountered
-(\code{TRUE} or \code{FALSE}; the default is \code{FALSE}).
+\item{errors}{Flag indicating whether or not to include a list of errors encountered (\code{TRUE} or \code{FALSE}; the default is \code{FALSE}).
 
-The list of errors is paged. The \code{page} and \code{errorsPerPage} parameters
-allow you to page through all the errors.}
+The list of errors is paged. The \code{page} and \code{errorsPerPage} parameters allow you to page through all the errors.}
 
-\item{page}{The error page number (a positive integer; the default is \code{1}). Only
-valid when the \code{errors} parameter is set to \code{TRUE}.}
+\item{page}{The error page number (a positive integer; the default is \code{1}). Only valid when the \code{errors} parameter is set to \code{TRUE}.}
 
-\item{errorsPerPage}{The number of errors returned in each page (a positive integer; the
-default is \code{10}). Only valid when the \code{errors} parameter set to \code{TRUE}.}
+\item{errorsPerPage}{The number of errors returned in each page (a positive integer; the default is \code{10}). Only valid when the \code{errors} parameter set to \code{TRUE}.}
 }
 \description{
 Gets status information about a specified load job. Neptune keeps track of the most recent 1,024 bulk load jobs, and stores the last 10,000 error details per job.

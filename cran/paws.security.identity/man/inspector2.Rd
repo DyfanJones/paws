@@ -53,9 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Amazon Inspector is a vulnerability discovery service that automates
-continuous scanning for security vulnerabilities within your Amazon EC2,
-Amazon ECR, and Amazon Web Services Lambda environments.
+Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2, Amazon ECR, and Amazon Web Services Lambda environments.
 }
 \section{Service syntax}{
 

@@ -9,10 +9,7 @@ rekognition_list_media_analysis_jobs(NextToken = NULL, MaxResults = NULL)
 \arguments{
 \item{NextToken}{Pagination token, if the previous response was incomplete.}
 
-\item{MaxResults}{The maximum number of results to return per paginated call. The largest
-value user can specify is 100. If user specifies a value greater than
-100, an \code{InvalidParameterException} error occurs. The default value is
-100.}
+\item{MaxResults}{The maximum number of results to return per paginated call. The largest value user can specify is 100. If user specifies a value greater than 100, an \code{InvalidParameterException} error occurs. The default value is 100.}
 }
 \description{
 Returns a list of media analysis jobs. Results are sorted by \code{CreationTimestamp} in descending order.

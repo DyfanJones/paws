@@ -8,8 +8,7 @@ Amazon Web Services resource}
 codeconnections_get_resource_sync_status(ResourceName, SyncType)
 }
 \arguments{
-\item{ResourceName}{[required] The name of the Amazon Web Services resource for the sync status with
-the Git repository.}
+\item{ResourceName}{[required] The name of the Amazon Web Services resource for the sync status with the Git repository.}
 
 \item{SyncType}{[required] The sync type for the sync status with the Git repository.}
 }

@@ -7,8 +7,7 @@
 docdb_list_tags_for_resource(ResourceName, Filters = NULL)
 }
 \arguments{
-\item{ResourceName}{[required] The Amazon DocumentDB resource with tags to be listed. This value is an
-Amazon Resource Name (ARN).}
+\item{ResourceName}{[required] The Amazon DocumentDB resource with tags to be listed. This value is an Amazon Resource Name (ARN).}
 
 \item{Filters}{This parameter is not currently supported.}
 }

@@ -16,24 +16,19 @@ comprehendmedical_start_snomedct_inference_job(
 )
 }
 \arguments{
-\item{InputDataConfig}{[required]}
+\item{InputDataConfig}{[required] The input properties for an entities detection job. This includes the name of the S3 bucket and the path to the files to be analyzed.}
 
-\item{OutputDataConfig}{[required]}
+\item{OutputDataConfig}{[required] The output properties for a detection job.}
 
-\item{DataAccessRoleArn}{[required] The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-(IAM) role that grants Amazon Comprehend Medical read access to your
-input data.}
+\item{DataAccessRoleArn}{[required] The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data.}
 
 \item{JobName}{The user generated name the asynchronous InferSNOMEDCT job.}
 
-\item{ClientRequestToken}{A unique identifier for the request. If you don't set the client request
-token, Amazon Comprehend Medical generates one.}
+\item{ClientRequestToken}{A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.}
 
-\item{KMSKey}{An AWS Key Management Service key used to encrypt your output files. If
-you do not specify a key, the files are written in plain text.}
+\item{KMSKey}{An AWS Key Management Service key used to encrypt your output files. If you do not specify a key, the files are written in plain text.}
 
-\item{LanguageCode}{[required] The language of the input documents. All documents must be in the same
-language.}
+\item{LanguageCode}{[required] The language of the input documents. All documents must be in the same language.}
 }
 \description{
 Starts an asynchronous job to detect medical concepts and link them to the SNOMED-CT ontology. Use the DescribeSNOMEDCTInferenceJob operation to track the status of a job.

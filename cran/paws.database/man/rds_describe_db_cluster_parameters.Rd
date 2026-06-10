@@ -14,13 +14,11 @@ rds_describe_db_cluster_parameters(
 )
 }
 \arguments{
-\item{DBClusterParameterGroupName}{[required] The name of a specific DB cluster parameter group to return parameter
-details for.
+\item{DBClusterParameterGroupName}{[required] The name of a specific DB cluster parameter group to return parameter details for.
 
 Constraints:
 \itemize{
-\item If supplied, must match the name of an existing
-DBClusterParameterGroup.
+\item If supplied, must match the name of an existing DBClusterParameterGroup.
 }}
 
 \item{Source}{A specific source to return parameters for.
@@ -34,22 +32,15 @@ Valid Values:
 
 \item{Filters}{A filter that specifies one or more DB cluster parameters to describe.
 
-The only supported filter is \code{parameter-name}. The results list only
-includes information about the DB cluster parameters with these names.}
+The only supported filter is \code{parameter-name}. The results list only includes information about the DB cluster parameters with these names.}
 
-\item{MaxRecords}{The maximum number of records to include in the response. If more
-records exist than the specified \code{MaxRecords} value, a pagination token
-called a marker is included in the response so you can retrieve the
-remaining results.
+\item{MaxRecords}{The maximum number of records to include in the response. If more records exist than the specified \code{MaxRecords} value, a pagination token called a marker is included in the response so you can retrieve the remaining results.
 
 Default: 100
 
 Constraints: Minimum 20, maximum 100.}
 
-\item{Marker}{An optional pagination token provided by a previous
-\code{\link[=rds_describe_db_cluster_parameters]{describe_db_cluster_parameters}}
-request. If this parameter is specified, the response includes only
-records beyond the marker, up to the value specified by \code{MaxRecords}.}
+\item{Marker}{An optional pagination token provided by a previous \code{\link[=rds_describe_db_cluster_parameters]{describe_db_cluster_parameters}} request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by \code{MaxRecords}.}
 }
 \description{
 Returns the detailed parameter list for a particular DB cluster parameter group.

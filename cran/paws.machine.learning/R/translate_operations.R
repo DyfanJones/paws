@@ -11,17 +11,12 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/translate_create_parallel_data/](https://www.paws-r-sdk.com/docs/translate_create_parallel_data/) for full documentation.
 #'
-#' @param Name &#91;required&#93; A custom name for the parallel data resource in Amazon Translate. You
-#' must assign a name that is unique in the account and region.
+#' @param Name &#91;required&#93; A custom name for the parallel data resource in Amazon Translate. You must assign a name that is unique in the account and region.
 #' @param Description A custom description for the parallel data resource in Amazon Translate.
 #' @param ParallelDataConfig &#91;required&#93; Specifies the format and S3 location of the parallel data input file.
-#' @param EncryptionKey 
-#' @param ClientToken &#91;required&#93; A unique identifier for the request. This token is automatically
-#' generated when you use Amazon Translate through an AWS SDK.
-#' @param Tags Tags to be associated with this resource. A tag is a key-value pair that
-#' adds metadata to a resource. Each tag key for the resource must be
-#' unique. For more information, see [Tagging your
-#' resources](https://docs.aws.amazon.com/translate/latest/dg/tagging.html).
+#' @param EncryptionKey The encryption key used to encrypt this object.
+#' @param ClientToken &#91;required&#93; A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.
+#' @param Tags Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag key for the resource must be unique. For more information, see [Tagging your resources](https://docs.aws.amazon.com/translate/latest/dg/tagging.html).
 #'
 #' @keywords internal
 #'
@@ -116,9 +111,7 @@ translate_delete_terminology <- function(Name) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/translate_describe_text_translation_job/](https://www.paws-r-sdk.com/docs/translate_describe_text_translation_job/) for full documentation.
 #'
-#' @param JobId &#91;required&#93; The identifier that Amazon Translate generated for the job. The
-#' [`start_text_translation_job`][translate_start_text_translation_job]
-#' operation returns this identifier in its response.
+#' @param JobId &#91;required&#93; The identifier that Amazon Translate generated for the job. The [`start_text_translation_job`][translate_start_text_translation_job] operation returns this identifier in its response.
 #'
 #' @keywords internal
 #'
@@ -183,14 +176,9 @@ translate_get_parallel_data <- function(Name) {
 #' @param Name &#91;required&#93; The name of the custom terminology being retrieved.
 #' @param TerminologyDataFormat The data format of the custom terminology being retrieved.
 #' 
-#' If you don't specify this parameter, Amazon Translate returns a file
-#' with the same format as the file that was imported to create the
-#' terminology.
+#' If you don't specify this parameter, Amazon Translate returns a file with the same format as the file that was imported to create the terminology.
 #' 
-#' If you specify this parameter when you retrieve a multi-directional
-#' terminology resource, you must specify the same format as the input file
-#' that was imported to create it. Otherwise, Amazon Translate throws an
-#' error.
+#' If you specify this parameter when you retrieve a multi-directional terminology resource, you must specify the same format as the input file that was imported to create it. Otherwise, Amazon Translate throws an error.
 #'
 #' @keywords internal
 #'
@@ -223,17 +211,11 @@ translate_get_terminology <- function(Name, TerminologyDataFormat = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/translate_import_terminology/](https://www.paws-r-sdk.com/docs/translate_import_terminology/) for full documentation.
 #'
 #' @param Name &#91;required&#93; The name of the custom terminology being imported.
-#' @param MergeStrategy &#91;required&#93; The merge strategy of the custom terminology being imported. Currently,
-#' only the OVERWRITE merge strategy is supported. In this case, the
-#' imported terminology will overwrite an existing terminology of the same
-#' name.
+#' @param MergeStrategy &#91;required&#93; The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE merge strategy is supported. In this case, the imported terminology will overwrite an existing terminology of the same name.
 #' @param Description The description of the custom terminology being imported.
 #' @param TerminologyData &#91;required&#93; The terminology data for the custom terminology being imported.
 #' @param EncryptionKey The encryption key for the custom terminology being imported.
-#' @param Tags Tags to be associated with this resource. A tag is a key-value pair that
-#' adds metadata to a resource. Each tag key for the resource must be
-#' unique. For more information, see [Tagging your
-#' resources](https://docs.aws.amazon.com/translate/latest/dg/tagging.html).
+#' @param Tags Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag key for the resource must be unique. For more information, see [Tagging your resources](https://docs.aws.amazon.com/translate/latest/dg/tagging.html).
 #'
 #' @keywords internal
 #'
@@ -265,10 +247,8 @@ translate_import_terminology <- function(Name, MergeStrategy, Description = NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/translate_list_languages/](https://www.paws-r-sdk.com/docs/translate_list_languages/) for full documentation.
 #'
-#' @param DisplayLanguageCode The language code for the language to use to display the language names
-#' in the response. The language code is `en` by default.
-#' @param NextToken Include the NextToken value to fetch the next group of supported
-#' languages.
+#' @param DisplayLanguageCode The language code for the language to use to display the language names in the response. The language code is `en` by default.
+#' @param NextToken Include the NextToken value to fetch the next group of supported languages.
 #' @param MaxResults The maximum number of results to return in each response.
 #'
 #' @keywords internal
@@ -300,8 +280,7 @@ translate_list_languages <- function(DisplayLanguageCode = NULL, NextToken = NUL
 #'
 #' See [https://www.paws-r-sdk.com/docs/translate_list_parallel_data/](https://www.paws-r-sdk.com/docs/translate_list_parallel_data/) for full documentation.
 #'
-#' @param NextToken A string that specifies the next page of results to return in a
-#' paginated response.
+#' @param NextToken A string that specifies the next page of results to return in a paginated response.
 #' @param MaxResults The maximum number of parallel data resources returned for each request.
 #'
 #' @keywords internal
@@ -333,8 +312,7 @@ translate_list_parallel_data <- function(NextToken = NULL, MaxResults = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/translate_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/translate_list_tags_for_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the given Amazon Translate resource
-#' you are querying.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the given Amazon Translate resource you are querying.
 #'
 #' @keywords internal
 #'
@@ -365,8 +343,7 @@ translate_list_tags_for_resource <- function(ResourceArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/translate_list_terminologies/](https://www.paws-r-sdk.com/docs/translate_list_terminologies/) for full documentation.
 #'
-#' @param NextToken If the result of the request to ListTerminologies was truncated, include
-#' the NextToken to fetch the next group of custom terminologies.
+#' @param NextToken If the result of the request to ListTerminologies was truncated, include the NextToken to fetch the next group of custom terminologies.
 #' @param MaxResults The maximum number of custom terminologies returned per list request.
 #'
 #' @keywords internal
@@ -398,12 +375,9 @@ translate_list_terminologies <- function(NextToken = NULL, MaxResults = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/translate_list_text_translation_jobs/](https://www.paws-r-sdk.com/docs/translate_list_text_translation_jobs/) for full documentation.
 #'
-#' @param Filter The parameters that specify which batch translation jobs to retrieve.
-#' Filters include job name, job status, and submission time. You can only
-#' set one filter at a time.
+#' @param Filter The parameters that specify which batch translation jobs to retrieve. Filters include job name, job status, and submission time. You can only set one filter at a time.
 #' @param NextToken The token to request the next page of results.
-#' @param MaxResults The maximum number of results to return in each page. The default value
-#' is 100.
+#' @param MaxResults The maximum number of results to return in each page. The default value is 100.
 #'
 #' @keywords internal
 #'
@@ -435,72 +409,41 @@ translate_list_text_translation_jobs <- function(Filter = NULL, NextToken = NULL
 #' See [https://www.paws-r-sdk.com/docs/translate_start_text_translation_job/](https://www.paws-r-sdk.com/docs/translate_start_text_translation_job/) for full documentation.
 #'
 #' @param JobName The name of the batch translation job to be performed.
-#' @param InputDataConfig &#91;required&#93; Specifies the format and location of the input documents for the
-#' translation job.
+#' @param InputDataConfig &#91;required&#93; Specifies the format and location of the input documents for the translation job.
 #' @param OutputDataConfig &#91;required&#93; Specifies the S3 folder to which your job output will be saved.
-#' @param DataAccessRoleArn &#91;required&#93; The Amazon Resource Name (ARN) of an AWS Identity Access and Management
-#' (IAM) role that grants Amazon Translate read access to your input data.
-#' For more information, see [Identity and access
-#' management](https://docs.aws.amazon.com/translate/latest/dg/) .
-#' @param SourceLanguageCode &#91;required&#93; The language code of the input language. Specify the language if all
-#' input documents share the same language. If you don't know the language
-#' of the source files, or your input documents contains different source
-#' languages, select `auto`. Amazon Translate auto detects the source
-#' language for each input document. For a list of supported language
-#' codes, see [Supported
-#' languages](https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html).
-#' @param TargetLanguageCodes &#91;required&#93; The target languages of the translation job. Enter up to 10 language
-#' codes. Each input file is translated into each target language.
+#' @param DataAccessRoleArn &#91;required&#93; The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon Translate read access to your input data. For more information, see [Identity and access management](https://docs.aws.amazon.com/translate/latest/dg/) .
+#' @param SourceLanguageCode &#91;required&#93; The language code of the input language. Specify the language if all input documents share the same language. If you don't know the language of the source files, or your input documents contains different source languages, select `auto`. Amazon Translate auto detects the source language for each input document. For a list of supported language codes, see [Supported languages](https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html).
+#' @param TargetLanguageCodes &#91;required&#93; The target languages of the translation job. Enter up to 10 language codes. Each input file is translated into each target language.
 #' 
-#' Each language code is 2 or 5 characters long. For a list of language
-#' codes, see [Supported
-#' languages](https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html).
-#' @param TerminologyNames The name of a custom terminology resource to add to the translation job.
-#' This resource lists examples source terms and the desired translation
-#' for each term.
+#' Each language code is 2 or 5 characters long. For a list of language codes, see [Supported languages](https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html).
+#' @param TerminologyNames The name of a custom terminology resource to add to the translation job. This resource lists examples source terms and the desired translation for each term.
 #' 
 #' This parameter accepts only one custom terminology resource.
 #' 
-#' If you specify multiple target languages for the job, translate uses the
-#' designated terminology for each requested target language that has an
-#' entry for the source term in the terminology file.
+#' If you specify multiple target languages for the job, translate uses the designated terminology for each requested target language that has an entry for the source term in the terminology file.
 #' 
-#' For a list of available custom terminology resources, use the
-#' [`list_terminologies`][translate_list_terminologies] operation.
+#' For a list of available custom terminology resources, use the [`list_terminologies`][translate_list_terminologies] operation.
 #' 
-#' For more information, see [Custom
-#' terminology](https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html).
-#' @param ParallelDataNames The name of a parallel data resource to add to the translation job. This
-#' resource consists of examples that show how you want segments of text to
-#' be translated. If you specify multiple target languages for the job, the
-#' parallel data file must include translations for all the target
-#' languages.
+#' For more information, see [Custom terminology](https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html).
+#' @param ParallelDataNames The name of a parallel data resource to add to the translation job. This resource consists of examples that show how you want segments of text to be translated. If you specify multiple target languages for the job, the parallel data file must include translations for all the target languages.
 #' 
-#' When you add parallel data to a translation job, you create an *Active
-#' Custom Translation* job.
+#' When you add parallel data to a translation job, you create an *Active Custom Translation* job.
 #' 
 #' This parameter accepts only one parallel data resource.
 #' 
-#' Active Custom Translation jobs are priced at a higher rate than other
-#' jobs that don't use parallel data. For more information, see [Amazon
-#' Translate pricing](https://aws.amazon.com/translate/pricing/).
+#' Active Custom Translation jobs are priced at a higher rate than other jobs that don't use parallel data. For more information, see [Amazon Translate pricing](https://aws.amazon.com/translate/pricing/).
 #' 
-#' For a list of available parallel data resources, use the
-#' [`list_parallel_data`][translate_list_parallel_data] operation.
+#' For a list of available parallel data resources, use the [`list_parallel_data`][translate_list_parallel_data] operation.
 #' 
-#' For more information, see [Customizing your translations with parallel
-#' data](https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html).
-#' @param ClientToken &#91;required&#93; A unique identifier for the request. This token is generated for you
-#' when using the Amazon Translate SDK.
-#' @param Settings Settings to configure your translation output. You can configure the
-#' following options:
+#' For more information, see [Customizing your translations with parallel data](https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html).
+#' @param ClientToken &#91;required&#93; A unique identifier for the request. This token is generated for you when using the Amazon Translate SDK.
+#' @param Settings Settings to configure your translation output. You can configure the following options:
 #' 
 #' -   Brevity: not supported.
 #' 
 #' -   Formality: sets the formality level of the output text.
 #' 
-#' -   Profanity: masks profane words and phrases in your translation
-#'     output.
+#' -   Profanity: masks profane words and phrases in your translation output.
 #'
 #' @keywords internal
 #'
@@ -562,11 +505,8 @@ translate_stop_text_translation_job <- function(JobId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/translate_tag_resource/](https://www.paws-r-sdk.com/docs/translate_tag_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the given Amazon Translate resource to
-#' which you want to associate the tags.
-#' @param Tags &#91;required&#93; Tags being associated with a specific Amazon Translate resource. There
-#' can be a maximum of 50 tags (both existing and pending) associated with
-#' a specific resource.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the given Amazon Translate resource to which you want to associate the tags.
+#' @param Tags &#91;required&#93; Tags being associated with a specific Amazon Translate resource. There can be a maximum of 50 tags (both existing and pending) associated with a specific resource.
 #'
 #' @keywords internal
 #'
@@ -598,44 +538,25 @@ translate_tag_resource <- function(ResourceArn, Tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/translate_translate_document/](https://www.paws-r-sdk.com/docs/translate_translate_document/) for full documentation.
 #'
-#' @param Document &#91;required&#93; The content and content type for the document to be translated. The
-#' document size must not exceed 100 KB.
-#' @param TerminologyNames The name of a terminology list file to add to the translation job. This
-#' file provides source terms and the desired translation for each term. A
-#' terminology list can contain a maximum of 256 terms. You can use one
-#' custom terminology resource in your translation request.
+#' @param Document &#91;required&#93; The content and content type for the document to be translated. The document size must not exceed 100 KB.
+#' @param TerminologyNames The name of a terminology list file to add to the translation job. This file provides source terms and the desired translation for each term. A terminology list can contain a maximum of 256 terms. You can use one custom terminology resource in your translation request.
 #' 
-#' Use the [`list_terminologies`][translate_list_terminologies] operation
-#' to get the available terminology lists.
+#' Use the [`list_terminologies`][translate_list_terminologies] operation to get the available terminology lists.
 #' 
-#' For more information about custom terminology lists, see [Custom
-#' terminology](https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html).
-#' @param SourceLanguageCode &#91;required&#93; The language code for the language of the source text. For a list of
-#' supported language codes, see [Supported
-#' languages](https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html).
+#' For more information about custom terminology lists, see [Custom terminology](https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html).
+#' @param SourceLanguageCode &#91;required&#93; The language code for the language of the source text. For a list of supported language codes, see [Supported languages](https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html).
 #' 
-#' To have Amazon Translate determine the source language of your text, you
-#' can specify `auto` in the `SourceLanguageCode` field. If you specify
-#' `auto`, Amazon Translate will call [Amazon
-#' Comprehend](https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html)
-#' to determine the source language.
+#' To have Amazon Translate determine the source language of your text, you can specify `auto` in the `SourceLanguageCode` field. If you specify `auto`, Amazon Translate will call [Amazon Comprehend](https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html) to determine the source language.
 #' 
-#' If you specify `auto`, you must send the
-#' [`translate_document`][translate_translate_document] request in a region
-#' that supports Amazon Comprehend. Otherwise, the request returns an error
-#' indicating that autodetect is not supported.
-#' @param TargetLanguageCode &#91;required&#93; The language code requested for the translated document. For a list of
-#' supported language codes, see [Supported
-#' languages](https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html).
-#' @param Settings Settings to configure your translation output. You can configure the
-#' following options:
+#' If you specify `auto`, you must send the [`translate_document`][translate_translate_document] request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported.
+#' @param TargetLanguageCode &#91;required&#93; The language code requested for the translated document. For a list of supported language codes, see [Supported languages](https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html).
+#' @param Settings Settings to configure your translation output. You can configure the following options:
 #' 
 #' -   Brevity: not supported.
 #' 
 #' -   Formality: sets the formality level of the output text.
 #' 
-#' -   Profanity: masks profane words and phrases in your translation
-#'     output.
+#' -   Profanity: masks profane words and phrases in your translation output.
 #'
 #' @keywords internal
 #'
@@ -666,46 +587,25 @@ translate_translate_document <- function(Document, TerminologyNames = NULL, Sour
 #'
 #' See [https://www.paws-r-sdk.com/docs/translate_translate_text/](https://www.paws-r-sdk.com/docs/translate_translate_text/) for full documentation.
 #'
-#' @param Text &#91;required&#93; The text to translate. The text string can be a maximum of 10,000 bytes
-#' long. Depending on your character set, this may be fewer than 10,000
-#' characters.
-#' @param TerminologyNames The name of a terminology list file to add to the translation job. This
-#' file provides source terms and the desired translation for each term. A
-#' terminology list can contain a maximum of 256 terms. You can use one
-#' custom terminology resource in your translation request.
+#' @param Text &#91;required&#93; The text to translate. The text string can be a maximum of 10,000 bytes long. Depending on your character set, this may be fewer than 10,000 characters.
+#' @param TerminologyNames The name of a terminology list file to add to the translation job. This file provides source terms and the desired translation for each term. A terminology list can contain a maximum of 256 terms. You can use one custom terminology resource in your translation request.
 #' 
-#' Use the [`list_terminologies`][translate_list_terminologies] operation
-#' to get the available terminology lists.
+#' Use the [`list_terminologies`][translate_list_terminologies] operation to get the available terminology lists.
 #' 
-#' For more information about custom terminology lists, see [Custom
-#' terminology](https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html).
-#' @param SourceLanguageCode &#91;required&#93; The language code for the language of the source text. For a list of
-#' language codes, see [Supported
-#' languages](https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html).
+#' For more information about custom terminology lists, see [Custom terminology](https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html).
+#' @param SourceLanguageCode &#91;required&#93; The language code for the language of the source text. For a list of language codes, see [Supported languages](https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html).
 #' 
-#' To have Amazon Translate determine the source language of your text, you
-#' can specify `auto` in the `SourceLanguageCode` field. If you specify
-#' `auto`, Amazon Translate will call [Amazon
-#' Comprehend](https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html)
-#' to determine the source language.
+#' To have Amazon Translate determine the source language of your text, you can specify `auto` in the `SourceLanguageCode` field. If you specify `auto`, Amazon Translate will call [Amazon Comprehend](https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html) to determine the source language.
 #' 
-#' If you specify `auto`, you must send the
-#' [`translate_text`][translate_translate_text] request in a region that
-#' supports Amazon Comprehend. Otherwise, the request returns an error
-#' indicating that autodetect is not supported.
-#' @param TargetLanguageCode &#91;required&#93; The language code requested for the language of the target text. For a
-#' list of language codes, see [Supported
-#' languages](https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html).
-#' @param Settings Settings to configure your translation output. You can configure the
-#' following options:
+#' If you specify `auto`, you must send the [`translate_text`][translate_translate_text] request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported.
+#' @param TargetLanguageCode &#91;required&#93; The language code requested for the language of the target text. For a list of language codes, see [Supported languages](https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html).
+#' @param Settings Settings to configure your translation output. You can configure the following options:
 #' 
-#' -   Brevity: reduces the length of the translated output for most
-#'     translations.
+#' -   Brevity: reduces the length of the translated output for most translations.
 #' 
 #' -   Formality: sets the formality level of the output text.
 #' 
-#' -   Profanity: masks profane words and phrases in your translation
-#'     output.
+#' -   Profanity: masks profane words and phrases in your translation output.
 #'
 #' @keywords internal
 #'
@@ -736,11 +636,8 @@ translate_translate_text <- function(Text, TerminologyNames = NULL, SourceLangua
 #'
 #' See [https://www.paws-r-sdk.com/docs/translate_untag_resource/](https://www.paws-r-sdk.com/docs/translate_untag_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the given Amazon Translate resource
-#' from which you want to remove the tags.
-#' @param TagKeys &#91;required&#93; The initial part of a key-value pair that forms a tag being removed from
-#' a given resource. Keys must be unique and cannot be duplicated for a
-#' particular resource.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the given Amazon Translate resource from which you want to remove the tags.
+#' @param TagKeys &#91;required&#93; The initial part of a key-value pair that forms a tag being removed from a given resource. Keys must be unique and cannot be duplicated for a particular resource.
 #'
 #' @keywords internal
 #'
@@ -775,8 +672,7 @@ translate_untag_resource <- function(ResourceArn, TagKeys) {
 #' @param Name &#91;required&#93; The name of the parallel data resource being updated.
 #' @param Description A custom description for the parallel data resource in Amazon Translate.
 #' @param ParallelDataConfig &#91;required&#93; Specifies the format and S3 location of the parallel data input file.
-#' @param ClientToken &#91;required&#93; A unique identifier for the request. This token is automatically
-#' generated when you use Amazon Translate through an AWS SDK.
+#' @param ClientToken &#91;required&#93; A unique identifier for the request. This token is automatically generated when you use Amazon Translate through an AWS SDK.
 #'
 #' @keywords internal
 #'

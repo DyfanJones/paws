@@ -13,22 +13,13 @@ rekognition_get_celebrity_recognition(
 )
 }
 \arguments{
-\item{JobId}{[required] Job identifier for the required celebrity recognition analysis. You can
-get the job identifer from a call to
-\code{\link[=rekognition_start_celebrity_recognition]{start_celebrity_recognition}}.}
+\item{JobId}{[required] Job identifier for the required celebrity recognition analysis. You can get the job identifer from a call to \code{\link[=rekognition_start_celebrity_recognition]{start_celebrity_recognition}}.}
 
-\item{MaxResults}{Maximum number of results to return per paginated call. The largest
-value you can specify is 1000. If you specify a value greater than 1000,
-a maximum of 1000 results is returned. The default value is 1000.}
+\item{MaxResults}{Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.}
 
-\item{NextToken}{If the previous response was incomplete (because there is more
-recognized celebrities to retrieve), Amazon Rekognition Video returns a
-pagination token in the response. You can use this pagination token to
-retrieve the next set of celebrities.}
+\item{NextToken}{If the previous response was incomplete (because there is more recognized celebrities to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of celebrities.}
 
-\item{SortBy}{Sort to use for celebrities returned in \code{Celebrities} field. Specify
-\code{ID} to sort by the celebrity identifier, specify \code{TIMESTAMP} to sort by
-the time the celebrity was recognized.}
+\item{SortBy}{Sort to use for celebrities returned in \code{Celebrities} field. Specify \code{ID} to sort by the celebrity identifier, specify \code{TIMESTAMP} to sort by the time the celebrity was recognized.}
 }
 \description{
 Gets the celebrity recognition results for a Amazon Rekognition Video analysis started by \code{\link[=rekognition_start_celebrity_recognition]{start_celebrity_recognition}}.

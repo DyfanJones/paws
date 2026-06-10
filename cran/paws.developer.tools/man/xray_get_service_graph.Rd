@@ -20,8 +20,7 @@ xray_get_service_graph(
 
 \item{GroupName}{The name of a group based on which you want to generate a graph.}
 
-\item{GroupARN}{The Amazon Resource Name (ARN) of a group based on which you want to
-generate a graph.}
+\item{GroupARN}{The Amazon Resource Name (ARN) of a group based on which you want to generate a graph.}
 
 \item{NextToken}{Pagination token.}
 }

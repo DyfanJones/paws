@@ -12,24 +12,14 @@ NULL
 #' See [https://www.paws-r-sdk.com/docs/iamrolesanywhere_create_profile/](https://www.paws-r-sdk.com/docs/iamrolesanywhere_create_profile/) for full documentation.
 #'
 #' @param name &#91;required&#93; The name of the profile.
-#' @param requireInstanceProperties Unused, saved for future use. Will likely specify whether instance
-#' properties are required in temporary credential requests with this
-#' profile.
-#' @param sessionPolicy A session policy that applies to the trust boundary of the vended
-#' session credentials.
-#' @param roleArns &#91;required&#93; A list of IAM roles that this profile can assume in a temporary
-#' credential request.
-#' @param managedPolicyArns A list of managed policy ARNs that apply to the vended session
-#' credentials.
-#' @param durationSeconds Used to determine how long sessions vended using this profile are valid
-#' for. See the `Expiration` section of the [CreateSession API
-#' documentation](https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object)
-#' page for more details. In requests, if this value is not provided, the
-#' default value will be 3600.
+#' @param requireInstanceProperties Unused, saved for future use. Will likely specify whether instance properties are required in temporary credential requests with this profile.
+#' @param sessionPolicy A session policy that applies to the trust boundary of the vended session credentials.
+#' @param roleArns &#91;required&#93; A list of IAM roles that this profile can assume in a temporary credential request.
+#' @param managedPolicyArns A list of managed policy ARNs that apply to the vended session credentials.
+#' @param durationSeconds Used to determine how long sessions vended using this profile are valid for. See the `Expiration` section of the [CreateSession API documentation](https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object) page for more details. In requests, if this value is not provided, the default value will be 3600.
 #' @param enabled Specifies whether the profile is enabled.
 #' @param tags The tags to attach to the profile.
-#' @param acceptRoleSessionName Used to determine if a custom role session name will be accepted in a
-#' temporary credential request.
+#' @param acceptRoleSessionName Used to determine if a custom role session name will be accepted in a temporary credential request.
 #'
 #' @keywords internal
 #'
@@ -99,8 +89,7 @@ iamrolesanywhere_create_trust_anchor <- function(name, source, enabled = NULL, t
 #'
 #' @param profileId &#91;required&#93; The unique identifier of the profile.
 #' @param certificateField &#91;required&#93; Fields (x509Subject, x509Issuer and x509SAN) within X.509 certificates.
-#' @param specifiers A list of specifiers of a certificate field; for example, CN, OU, UID
-#' from a Subject.
+#' @param specifiers A list of specifiers of a certificate field; for example, CN, OU, UID from a Subject.
 #'
 #' @keywords internal
 #'
@@ -539,8 +528,7 @@ iamrolesanywhere_get_trust_anchor <- function(trustAnchorId) {
 #' @param crlData &#91;required&#93; The x509 v3 specified certificate revocation list (CRL).
 #' @param enabled Specifies whether the certificate revocation list (CRL) is enabled.
 #' @param tags A list of tags to attach to the certificate revocation list (CRL).
-#' @param trustAnchorArn &#91;required&#93; The ARN of the TrustAnchor the certificate revocation list (CRL) will
-#' provide revocation for.
+#' @param trustAnchorArn &#91;required&#93; The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for.
 #'
 #' @keywords internal
 #'
@@ -572,9 +560,7 @@ iamrolesanywhere_import_crl <- function(name, crlData, enabled = NULL, tags = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/iamrolesanywhere_list_crls/](https://www.paws-r-sdk.com/docs/iamrolesanywhere_list_crls/) for full documentation.
 #'
-#' @param nextToken A token that indicates where the output should continue from, if a
-#' previous request did not show all results. To get the next results, make
-#' the request again with this value.
+#' @param nextToken A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.
 #' @param pageSize The number of resources in the paginated list.
 #'
 #' @keywords internal
@@ -607,9 +593,7 @@ iamrolesanywhere_list_crls <- function(nextToken = NULL, pageSize = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/iamrolesanywhere_list_profiles/](https://www.paws-r-sdk.com/docs/iamrolesanywhere_list_profiles/) for full documentation.
 #'
-#' @param nextToken A token that indicates where the output should continue from, if a
-#' previous request did not show all results. To get the next results, make
-#' the request again with this value.
+#' @param nextToken A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.
 #' @param pageSize The number of resources in the paginated list.
 #'
 #' @keywords internal
@@ -642,9 +626,7 @@ iamrolesanywhere_list_profiles <- function(nextToken = NULL, pageSize = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/iamrolesanywhere_list_subjects/](https://www.paws-r-sdk.com/docs/iamrolesanywhere_list_subjects/) for full documentation.
 #'
-#' @param nextToken A token that indicates where the output should continue from, if a
-#' previous request did not show all results. To get the next results, make
-#' the request again with this value.
+#' @param nextToken A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.
 #' @param pageSize The number of resources in the paginated list.
 #'
 #' @keywords internal
@@ -708,9 +690,7 @@ iamrolesanywhere_list_tags_for_resource <- function(resourceArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/iamrolesanywhere_list_trust_anchors/](https://www.paws-r-sdk.com/docs/iamrolesanywhere_list_trust_anchors/) for full documentation.
 #'
-#' @param nextToken A token that indicates where the output should continue from, if a
-#' previous request did not show all results. To get the next results, make
-#' the request again with this value.
+#' @param nextToken A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.
 #' @param pageSize The number of resources in the paginated list.
 #'
 #' @keywords internal
@@ -810,8 +790,7 @@ iamrolesanywhere_put_notification_settings <- function(trustAnchorId, notificati
 #' See [https://www.paws-r-sdk.com/docs/iamrolesanywhere_reset_notification_settings/](https://www.paws-r-sdk.com/docs/iamrolesanywhere_reset_notification_settings/) for full documentation.
 #'
 #' @param trustAnchorId &#91;required&#93; The unique identifier of the trust anchor.
-#' @param notificationSettingKeys &#91;required&#93; A list of notification setting keys to reset. A notification setting key
-#' includes the event and the channel.
+#' @param notificationSettingKeys &#91;required&#93; A list of notification setting keys to reset. A notification setting key includes the event and the channel.
 #'
 #' @keywords internal
 #'
@@ -942,19 +921,11 @@ iamrolesanywhere_update_crl <- function(crlId, name = NULL, crlData = NULL) {
 #'
 #' @param profileId &#91;required&#93; The unique identifier of the profile.
 #' @param name The name of the profile.
-#' @param sessionPolicy A session policy that applies to the trust boundary of the vended
-#' session credentials.
-#' @param roleArns A list of IAM roles that this profile can assume in a temporary
-#' credential request.
-#' @param managedPolicyArns A list of managed policy ARNs that apply to the vended session
-#' credentials.
-#' @param durationSeconds Used to determine how long sessions vended using this profile are valid
-#' for. See the `Expiration` section of the [CreateSession API
-#' documentation](https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object)
-#' page for more details. In requests, if this value is not provided, the
-#' default value will be 3600.
-#' @param acceptRoleSessionName Used to determine if a custom role session name will be accepted in a
-#' temporary credential request.
+#' @param sessionPolicy A session policy that applies to the trust boundary of the vended session credentials.
+#' @param roleArns A list of IAM roles that this profile can assume in a temporary credential request.
+#' @param managedPolicyArns A list of managed policy ARNs that apply to the vended session credentials.
+#' @param durationSeconds Used to determine how long sessions vended using this profile are valid for. See the `Expiration` section of the [CreateSession API documentation](https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object) page for more details. In requests, if this value is not provided, the default value will be 3600.
+#' @param acceptRoleSessionName Used to determine if a custom role session name will be accepted in a temporary credential request.
 #'
 #' @keywords internal
 #'

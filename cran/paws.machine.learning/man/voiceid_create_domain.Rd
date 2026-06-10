@@ -14,18 +14,13 @@ voiceid_create_domain(
 )
 }
 \arguments{
-\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If not provided, the Amazon Web Services SDK
-populates this field. For more information about idempotency, see
-\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
+\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see \href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
 
 \item{Description}{A brief description of this domain.}
 
 \item{Name}{[required] The name of the domain.}
 
-\item{ServerSideEncryptionConfiguration}{[required] The configuration, containing the KMS key identifier, to be used by
-Voice ID for the server-side encryption of your data. Refer to \href{https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid}{Amazon Connect Voice ID encryption at rest}
-for more details on how the KMS key is used.}
+\item{ServerSideEncryptionConfiguration}{[required] The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of your data. Refer to \href{https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid}{Amazon Connect Voice ID encryption at rest} for more details on how the KMS key is used.}
 
 \item{Tags}{A list of tags you want added to the domain.}
 }

@@ -8,8 +8,7 @@ request}
 networkfirewall_delete_resource_policy(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the rule group or firewall policy
-whose resource policy you want to delete.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource policy you want to delete.}
 }
 \description{
 Deletes a resource policy that you created in a \code{\link[=networkfirewall_put_resource_policy]{put_resource_policy}} request.

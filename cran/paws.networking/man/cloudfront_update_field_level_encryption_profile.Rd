@@ -15,8 +15,7 @@ cloudfront_update_field_level_encryption_profile(
 
 \item{Id}{[required] The ID of the field-level encryption profile request.}
 
-\item{IfMatch}{The value of the \code{ETag} header that you received when retrieving the
-profile identity to update. For example: \code{E2QWRUHAPOMQZL}.}
+\item{IfMatch}{The value of the \code{ETag} header that you received when retrieving the profile identity to update. For example: \code{E2QWRUHAPOMQZL}.}
 }
 \description{
 Update a field-level encryption profile.

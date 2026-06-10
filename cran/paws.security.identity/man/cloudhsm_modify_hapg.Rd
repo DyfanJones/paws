@@ -11,8 +11,7 @@ cloudhsm_modify_hapg(HapgArn, Label = NULL, PartitionSerialList = NULL)
 
 \item{Label}{The new label for the high-availability partition group.}
 
-\item{PartitionSerialList}{The list of partition serial numbers to make members of the
-high-availability partition group.}
+\item{PartitionSerialList}{The list of partition serial numbers to make members of the high-availability partition group.}
 }
 \description{
 This is documentation for \strong{AWS CloudHSM Classic}. For more information, see \href{https://aws.amazon.com/cloudhsm/faqs/}{AWS CloudHSM Classic FAQs}, the AWS CloudHSM Classic User Guide, and the AWS CloudHSM Classic API Reference.

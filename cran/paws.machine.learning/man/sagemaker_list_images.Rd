@@ -17,27 +17,19 @@ sagemaker_list_images(
 )
 }
 \arguments{
-\item{CreationTimeAfter}{A filter that returns only images created on or after the specified
-time.}
+\item{CreationTimeAfter}{A filter that returns only images created on or after the specified time.}
 
-\item{CreationTimeBefore}{A filter that returns only images created on or before the specified
-time.}
+\item{CreationTimeBefore}{A filter that returns only images created on or before the specified time.}
 
-\item{LastModifiedTimeAfter}{A filter that returns only images modified on or after the specified
-time.}
+\item{LastModifiedTimeAfter}{A filter that returns only images modified on or after the specified time.}
 
-\item{LastModifiedTimeBefore}{A filter that returns only images modified on or before the specified
-time.}
+\item{LastModifiedTimeBefore}{A filter that returns only images modified on or before the specified time.}
 
-\item{MaxResults}{The maximum number of images to return in the response. The default
-value is 10.}
+\item{MaxResults}{The maximum number of images to return in the response. The default value is 10.}
 
-\item{NameContains}{A filter that returns only images whose name contains the specified
-string.}
+\item{NameContains}{A filter that returns only images whose name contains the specified string.}
 
-\item{NextToken}{If the previous call to \code{\link[=sagemaker_list_images]{list_images}} didn't
-return the full set of images, the call returns a token for getting the
-next set of images.}
+\item{NextToken}{If the previous call to \code{\link[=sagemaker_list_images]{list_images}} didn't return the full set of images, the call returns a token for getting the next set of images.}
 
 \item{SortBy}{The property used to sort results. The default value is \code{CREATION_TIME}.}
 

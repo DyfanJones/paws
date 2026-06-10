@@ -18,19 +18,13 @@ kendra_list_data_source_sync_jobs(
 
 \item{IndexId}{[required] The identifier of the index used with the data source connector.}
 
-\item{NextToken}{If the previous response was incomplete (because there is more data to
-retrieve), Amazon Kendra returns a pagination token in the response. You
-can use this pagination token to retrieve the next set of jobs.}
+\item{NextToken}{If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of jobs.}
 
-\item{MaxResults}{The maximum number of synchronization jobs to return in the response. If
-there are fewer results in the list, this response contains only the
-actual results.}
+\item{MaxResults}{The maximum number of synchronization jobs to return in the response. If there are fewer results in the list, this response contains only the actual results.}
 
-\item{StartTimeFilter}{When specified, the synchronization jobs returned in the list are
-limited to jobs between the specified dates.}
+\item{StartTimeFilter}{When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates.}
 
-\item{StatusFilter}{Only returns synchronization jobs with the \code{Status} field equal to the
-specified status.}
+\item{StatusFilter}{Only returns synchronization jobs with the \code{Status} field equal to the specified status.}
 }
 \description{
 Gets statistics about synchronizing a data source connector.

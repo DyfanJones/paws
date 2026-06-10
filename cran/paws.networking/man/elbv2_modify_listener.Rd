@@ -18,32 +18,19 @@ elbv2_modify_listener(
 \arguments{
 \item{ListenerArn}{[required] The Amazon Resource Name (ARN) of the listener.}
 
-\item{Port}{The port for connections from clients to the load balancer. You can't
-specify a port for a Gateway Load Balancer.}
+\item{Port}{The port for connections from clients to the load balancer. You can't specify a port for a Gateway Load Balancer.}
 
-\item{Protocol}{The protocol for connections from clients to the load balancer.
-Application Load Balancers support the HTTP and HTTPS protocols. Network
-Load Balancers support the TCP, TLS, UDP, TCP_UDP, QUIC, and TCP_QUIC
-protocols. You can’t change the protocol to UDP, TCP_UDP, QUIC, or
-TCP_QUIC if dual-stack mode is enabled. You can't specify a protocol for
-a Gateway Load Balancer.}
+\item{Protocol}{The protocol for connections from clients to the load balancer. Application Load Balancers support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS, UDP, TCP_UDP, QUIC, and TCP_QUIC protocols. You can’t change the protocol to UDP, TCP_UDP, QUIC, or TCP_QUIC if dual-stack mode is enabled. You can't specify a protocol for a Gateway Load Balancer.}
 
-\item{SslPolicy}{[HTTPS and TLS listeners] The security policy that defines which
-protocols and ciphers are supported.
+\item{SslPolicy}{[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.
 
-For more information, see \href{https://docs.aws.amazon.com/elasticloadbalancing/latest/application/describe-ssl-policies.html}{Security policies}
-in the \emph{Application Load Balancers Guide} or \href{https://docs.aws.amazon.com/elasticloadbalancing/latest/network/describe-ssl-policies.html}{Security policies}
-in the \emph{Network Load Balancers Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/elasticloadbalancing/latest/application/describe-ssl-policies.html}{Security policies} in the \emph{Application Load Balancers Guide} or \href{https://docs.aws.amazon.com/elasticloadbalancing/latest/network/describe-ssl-policies.html}{Security policies} in the \emph{Network Load Balancers Guide}.}
 
-\item{Certificates}{[HTTPS and TLS listeners] The default certificate for the listener.
-You must provide exactly one certificate. Set \code{CertificateArn} to the
-certificate ARN but do not set \code{IsDefault}.}
+\item{Certificates}{[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set \code{CertificateArn} to the certificate ARN but do not set \code{IsDefault}.}
 
 \item{DefaultActions}{The actions for the default rule.}
 
-\item{AlpnPolicy}{[TLS listeners] The name of the Application-Layer Protocol Negotiation
-(ALPN) policy. You can specify one policy name. The following are the
-possible values:
+\item{AlpnPolicy}{[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:
 \itemize{
 \item \code{HTTP1Only}
 \item \code{HTTP2Only}
@@ -52,8 +39,7 @@ possible values:
 \item \code{None}
 }
 
-For more information, see \href{https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html#alpn-policies}{ALPN policies}
-in the \emph{Network Load Balancers Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html#alpn-policies}{ALPN policies} in the \emph{Network Load Balancers Guide}.}
 
 \item{MutualAuthentication}{[HTTPS listeners] The mutual authentication configuration information.}
 }

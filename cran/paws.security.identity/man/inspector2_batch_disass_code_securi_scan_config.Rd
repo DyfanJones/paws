@@ -10,8 +10,7 @@ inspector2_batch_disassociate_code_security_scan_configuration(
 )
 }
 \arguments{
-\item{disassociateConfigurationRequests}{[required] A list of code repositories to disassociate from the specified scan
-configuration.}
+\item{disassociateConfigurationRequests}{[required] A list of code repositories to disassociate from the specified scan configuration.}
 }
 \description{
 Disassociates multiple code repositories from an Amazon Inspector code security scan configuration.

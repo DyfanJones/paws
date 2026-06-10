@@ -13,16 +13,13 @@ rekognition_search_users(
 )
 }
 \arguments{
-\item{CollectionId}{[required] The ID of an existing collection containing the UserID, used with a
-UserId or FaceId. If a FaceId is provided, UserId isn’t required to be
-present in the Collection.}
+\item{CollectionId}{[required] The ID of an existing collection containing the UserID, used with a UserId or FaceId. If a FaceId is provided, UserId isn’t required to be present in the Collection.}
 
 \item{UserId}{ID for the existing User.}
 
 \item{FaceId}{ID for the existing face.}
 
-\item{UserMatchThreshold}{Optional value that specifies the minimum confidence in the matched
-UserID to return. Default value of 80.}
+\item{UserMatchThreshold}{Optional value that specifies the minimum confidence in the matched UserID to return. Default value of 80.}
 
 \item{MaxUsers}{Maximum number of identities to return.}
 }

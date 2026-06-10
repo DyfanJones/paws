@@ -12,7 +12,9 @@ route53resolver_update_resolver_endpoint(
   UpdateIpAddresses = NULL,
   Protocols = NULL,
   RniEnhancedMetricsEnabled = NULL,
-  TargetNameServerMetricsEnabled = NULL
+  TargetNameServerMetricsEnabled = NULL,
+  Dns64Enabled = NULL,
+  Ipv6InternetAccessEnabled = NULL
 )
 }
 \arguments{
@@ -20,17 +22,13 @@ route53resolver_update_resolver_endpoint(
 
 \item{Name}{The name of the Resolver endpoint that you want to update.}
 
-\item{ResolverEndpointType}{Specifies the endpoint type for what type of IP address the endpoint
-uses to forward DNS queries.
+\item{ResolverEndpointType}{Specifies the endpoint type for what type of IP address the endpoint uses to forward DNS queries.
 
 Updating to \code{IPV6} type isn't currently supported.}
 
-\item{UpdateIpAddresses}{Specifies the IPv6 address when you update the Resolver endpoint from
-IPv4 to dual-stack. If you don't specify an IPv6 address, one will be
-automatically chosen from your subnet.}
+\item{UpdateIpAddresses}{Specifies the IPv6 address when you update the Resolver endpoint from IPv4 to dual-stack. If you don't specify an IPv6 address, one will be automatically chosen from your subnet.}
 
-\item{Protocols}{The protocols you want to use for the endpoint. DoH-FIPS is applicable
-for default inbound endpoints only.
+\item{Protocols}{The protocols you want to use for the endpoint. DoH-FIPS is applicable for default inbound endpoints only.
 
 For a default inbound endpoint you can apply the protocols as follows:
 \itemize{
@@ -52,31 +50,21 @@ For an outbound endpoint you can apply the protocols as follows:
 \item None, which is treated as Do53.
 }
 
-You can't change the protocol of an inbound endpoint directly from only
-Do53 to only DoH, or DoH-FIPS. This is to prevent a sudden disruption to
-incoming traffic that relies on Do53. To change the protocol from Do53
-to DoH, or DoH-FIPS, you must first enable both Do53 and DoH, or Do53
-and DoH-FIPS, to make sure that all incoming traffic has transferred to
-using the DoH protocol, or DoH-FIPS, and then remove the Do53.}
+You can't change the protocol of an inbound endpoint directly from only Do53 to only DoH, or DoH-FIPS. This is to prevent a sudden disruption to incoming traffic that relies on Do53. To change the protocol from Do53 to DoH, or DoH-FIPS, you must first enable both Do53 and DoH, or Do53 and DoH-FIPS, to make sure that all incoming traffic has transferred to using the DoH protocol, or DoH-FIPS, and then remove the Do53.}
 
-\item{RniEnhancedMetricsEnabled}{Updates whether RNI enhanced metrics are enabled for the Resolver
-endpoints. When set to true, one-minute granular metrics are published
-in CloudWatch for each RNI associated with this endpoint. When set to
-false, metrics are not published.
+\item{RniEnhancedMetricsEnabled}{Updates whether RNI enhanced metrics are enabled for the Resolver endpoints. When set to true, one-minute granular metrics are published in CloudWatch for each RNI associated with this endpoint. When set to false, metrics are not published.
 
-Standard CloudWatch pricing and charges are applied for using the Route
-53 Resolver endpoint RNI enhanced metrics. For more information, see
-\href{https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/monitoring-resolver-with-cloudwatch.html}{Detailed metrics}.}
+Standard CloudWatch pricing and charges are applied for using the Route 53 Resolver endpoint RNI enhanced metrics. For more information, see \href{https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/monitoring-resolver-with-cloudwatch.html}{Detailed metrics}.}
 
-\item{TargetNameServerMetricsEnabled}{Updates whether target name server metrics are enabled for the outbound
-Resolver endpoints. When set to true, one-minute granular metrics are
-published in CloudWatch for each target name server associated with this
-endpoint. When set to false, metrics are not published. This setting is
-not supported for inbound Resolver endpoints.
+\item{TargetNameServerMetricsEnabled}{Updates whether target name server metrics are enabled for the outbound Resolver endpoints. When set to true, one-minute granular metrics are published in CloudWatch for each target name server associated with this endpoint. When set to false, metrics are not published. This setting is not supported for inbound Resolver endpoints.
 
-Standard CloudWatch pricing and charges are applied for using the Route
-53 Resolver endpoint target name server metrics. For more information,
-see \href{https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/monitoring-resolver-with-cloudwatch.html}{Detailed metrics}.}
+Standard CloudWatch pricing and charges are applied for using the Route 53 Resolver endpoint target name server metrics. For more information, see \href{https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/monitoring-resolver-with-cloudwatch.html}{Detailed metrics}.}
+
+\item{Dns64Enabled}{Specifies whether DNS64 is enabled for the inbound Resolver endpoint. When set to \code{true}, Route 53 Resolver synthesizes AAAA (IPv6) records for IPv4-only services by prepending the \verb{64:ff9b::/96} prefix to the IPv4 address. This enables IPv6-only clients that send queries through the inbound endpoint to reach IPv4-only services. DNS64 works with NAT64 to provide complete IPv6-to-IPv4 translation.}
+
+\item{Ipv6InternetAccessEnabled}{Specifies whether IPv6 internet access is enabled for the outbound Resolver endpoint. When set to \code{true}, the endpoint elastic network interfaces (ENIs) can forward DNS queries to public IPv6 targets through an internet gateway.
+
+When you enable IPv6 internet access, use network controls like security groups, NACLs, or egress-only internet gateways to protect the endpoint ENIs from unsolicited ingress traffic. Be aware that some network controls can affect DNS query throughput due to connection tracking. For more information, see Amazon EC2 security group connection tracking and \href{https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/best-practices-resolver-endpoint-scaling.html}{Resolver endpoint scaling}.}
 }
 \description{
 Updates the name, or endpoint type for an inbound or an outbound Resolver endpoint. You can only update between IPV4 and DUALSTACK, IPV6 endpoint type can't be updated to other type.

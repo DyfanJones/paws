@@ -10,8 +10,7 @@ responded}
 route53domains_get_contact_reachability_status(domainName = NULL)
 }
 \arguments{
-\item{domainName}{The name of the domain for which you want to know whether the registrant
-contact has confirmed that the email address is valid.}
+\item{domainName}{The name of the domain for which you want to know whether the registrant contact has confirmed that the email address is valid.}
 }
 \description{
 For operations that require confirmation that the email address for the registrant contact is valid, such as registering a new domain, this operation returns information about whether the registrant contact has responded.

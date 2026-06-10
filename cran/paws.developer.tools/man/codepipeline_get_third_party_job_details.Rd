@@ -9,9 +9,7 @@ codepipeline_get_third_party_job_details(jobId, clientToken)
 \arguments{
 \item{jobId}{[required] The unique system-generated ID used for identifying the job.}
 
-\item{clientToken}{[required] The clientToken portion of the clientId and clientToken pair used to
-verify that the calling entity is allowed access to the job and its
-details.}
+\item{clientToken}{[required] The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.}
 }
 \description{
 Requests the details of a job for a third party action. Used for partner actions only.

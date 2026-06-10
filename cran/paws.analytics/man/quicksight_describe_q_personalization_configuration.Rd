@@ -7,8 +7,7 @@
 quicksight_describe_q_personalization_configuration(AwsAccountId)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the
-personalization configuration that the user wants described.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the personalization configuration that the user wants described.}
 }
 \description{
 Describes a personalization configuration.

@@ -12,27 +12,17 @@ rekognition_detect_moderation_labels(
 )
 }
 \arguments{
-\item{Image}{[required] The input image as base64-encoded bytes or an S3 object. If you use the
-AWS CLI to call Amazon Rekognition operations, passing base64-encoded
-image bytes is not supported.
+\item{Image}{[required] The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported.
 
-If you are using an AWS SDK to call Amazon Rekognition, you might not
-need to base64-encode image bytes passed using the \code{Bytes} field. For
-more information, see Images in the Amazon Rekognition developer guide.}
+If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the \code{Bytes} field. For more information, see Images in the Amazon Rekognition developer guide.}
 
-\item{MinConfidence}{Specifies the minimum confidence level for the labels to return. Amazon
-Rekognition doesn't return any labels with a confidence level lower than
-this specified value.
+\item{MinConfidence}{Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any labels with a confidence level lower than this specified value.
 
-If you don't specify \code{MinConfidence}, the operation returns labels with
-confidence values greater than or equal to 50 percent.}
+If you don't specify \code{MinConfidence}, the operation returns labels with confidence values greater than or equal to 50 percent.}
 
-\item{HumanLoopConfig}{Sets up the configuration for human evaluation, including the
-FlowDefinition the image will be sent to.}
+\item{HumanLoopConfig}{Sets up the configuration for human evaluation, including the FlowDefinition the image will be sent to.}
 
-\item{ProjectVersion}{Identifier for the custom adapter. Expects the ProjectVersionArn as a
-value. Use the CreateProject or CreateProjectVersion APIs to create a
-custom adapter.}
+\item{ProjectVersion}{Identifier for the custom adapter. Expects the ProjectVersionArn as a value. Use the CreateProject or CreateProjectVersion APIs to create a custom adapter.}
 }
 \description{
 Detects unsafe content in a specified JPEG or PNG format image. Use \code{\link[=rekognition_detect_moderation_labels]{detect_moderation_labels}} to moderate images depending on your requirements. For example, you might want to filter images that contain nudity, but not images containing suggestive content.

@@ -13,23 +13,18 @@ workmail_list_mailbox_permissions(
 )
 }
 \arguments{
-\item{OrganizationId}{[required] The identifier of the organization under which the user, group, or
-resource exists.}
+\item{OrganizationId}{[required] The identifier of the organization under which the user, group, or resource exists.}
 
-\item{EntityId}{[required] The identifier of the user, or resource for which to list mailbox
-permissions.
+\item{EntityId}{[required] The identifier of the user, or resource for which to list mailbox permissions.
 
-The entity ID can accept \emph{UserId or ResourceId}, \emph{Username or
-Resourcename}, or \emph{email}.
+The entity ID can accept \emph{UserId or ResourceId}, \emph{Username or Resourcename}, or \emph{email}.
 \itemize{
-\item Entity ID: 12345678-1234-1234-1234-123456789012, or
-r-0123456789a0123456789b0123456789
+\item Entity ID: 12345678-1234-1234-1234-123456789012, or r-0123456789a0123456789b0123456789
 \item Email address: entity@domain.tld
 \item Entity name: entity
 }}
 
-\item{NextToken}{The token to use to retrieve the next page of results. The first call
-does not contain any tokens.}
+\item{NextToken}{The token to use to retrieve the next page of results. The first call does not contain any tokens.}
 
 \item{MaxResults}{The maximum number of results to return in a single call.}
 }

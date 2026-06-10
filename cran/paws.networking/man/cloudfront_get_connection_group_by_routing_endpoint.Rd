@@ -8,8 +8,7 @@ specify}
 cloudfront_get_connection_group_by_routing_endpoint(RoutingEndpoint)
 }
 \arguments{
-\item{RoutingEndpoint}{[required] The routing endpoint for the target connection group, such as
-d111111abcdef8.cloudfront.net.}
+\item{RoutingEndpoint}{[required] The routing endpoint for the target connection group, such as d111111abcdef8.cloudfront.net.}
 }
 \description{
 Gets information about a connection group by using the endpoint that you specify.

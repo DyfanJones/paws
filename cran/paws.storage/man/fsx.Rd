@@ -48,8 +48,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Amazon FSx is a fully managed service that makes it easy for storage and
-application administrators to launch and use shared file storage.
+Amazon FSx is a fully managed service that makes it easy for storage and application administrators to launch and use shared file storage.
 }
 \section{Service syntax}{
 

@@ -7,8 +7,7 @@
 rds_failover_db_cluster(DBClusterIdentifier, TargetDBInstanceIdentifier = NULL)
 }
 \arguments{
-\item{DBClusterIdentifier}{[required] The identifier of the DB cluster to force a failover for. This parameter
-isn't case-sensitive.
+\item{DBClusterIdentifier}{[required] The identifier of the DB cluster to force a failover for. This parameter isn't case-sensitive.
 
 Constraints:
 \itemize{
@@ -17,8 +16,7 @@ Constraints:
 
 \item{TargetDBInstanceIdentifier}{The name of the DB instance to promote to the primary DB instance.
 
-Specify the DB instance identifier for an Aurora Replica or a Multi-AZ
-readable standby in the DB cluster, for example \code{mydbcluster-replica1}.
+Specify the DB instance identifier for an Aurora Replica or a Multi-AZ readable standby in the DB cluster, for example \code{mydbcluster-replica1}.
 
 This setting isn't supported for RDS for MySQL Multi-AZ DB clusters.}
 }

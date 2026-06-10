@@ -13,20 +13,13 @@ elasticache_create_serverless_cache_snapshot(
 )
 }
 \arguments{
-\item{ServerlessCacheSnapshotName}{[required] The name for the snapshot being created. Must be unique for the customer
-account. Available for Valkey, Redis OSS and Serverless Memcached only.
-Must be between 1 and 255 characters.}
+\item{ServerlessCacheSnapshotName}{[required] The name for the snapshot being created. Must be unique for the customer account. Available for Valkey, Redis OSS and Serverless Memcached only. Must be between 1 and 255 characters. This value is stored as a lowercase string.}
 
-\item{ServerlessCacheName}{[required] The name of an existing serverless cache. The snapshot is created from
-this cache. Available for Valkey, Redis OSS and Serverless Memcached
-only.}
+\item{ServerlessCacheName}{[required] The name of an existing serverless cache. The snapshot is created from this cache. Available for Valkey, Redis OSS and Serverless Memcached only.}
 
-\item{KmsKeyId}{The ID of the KMS key used to encrypt the snapshot. Available for
-Valkey, Redis OSS and Serverless Memcached only. Default: NULL}
+\item{KmsKeyId}{The ID of the KMS key used to encrypt the snapshot. Available for Valkey, Redis OSS and Serverless Memcached only. Default: NULL}
 
-\item{Tags}{A list of tags to be added to the snapshot resource. A tag is a
-key-value pair. Available for Valkey, Redis OSS and Serverless Memcached
-only.}
+\item{Tags}{A list of tags to be added to the snapshot resource. A tag is a key-value pair. Available for Valkey, Redis OSS and Serverless Memcached only.}
 }
 \description{
 This API creates a copy of an entire ServerlessCache at a specific moment in time. Available for Valkey, Redis OSS and Serverless Memcached only.

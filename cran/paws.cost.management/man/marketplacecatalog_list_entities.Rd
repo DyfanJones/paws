@@ -19,37 +19,21 @@ marketplacecatalog_list_entities(
 \arguments{
 \item{Catalog}{[required] The catalog related to the request. Fixed value: \code{AWSMarketplace}}
 
-\item{EntityType}{[required] The type of entities to retrieve. Valid values are: \code{AmiProduct},
-\code{ContainerProduct}, \code{DataProduct}, \code{SaaSProduct}, \code{ProcurementPolicy},
-\code{Experience}, \code{Audience}, \code{BrandingSettings}, \code{Offer}, \code{OfferSet},
-\code{Seller}, \code{ResaleAuthorization}, \code{Solution}.}
+\item{EntityType}{[required] The type of entities to retrieve. Valid values are: \code{AmiProduct}, \code{ContainerProduct}, \code{DataProduct}, \code{SaaSProduct}, \code{ProcurementPolicy}, \code{Experience}, \code{Audience}, \code{BrandingSettings}, \code{Offer}, \code{OfferSet}, \code{Seller}, \code{ResaleAuthorization}, \code{Solution}.}
 
-\item{FilterList}{An array of filter objects. Each filter object contains two attributes,
-\code{filterName} and \code{filterValues}.}
+\item{FilterList}{An array of filter objects. Each filter object contains two attributes, \code{filterName} and \code{filterValues}.}
 
 \item{Sort}{An object that contains two attributes, \code{SortBy} and \code{SortOrder}.}
 
-\item{NextToken}{The value of the next token, if it exists. Null if there are no more
-results.}
+\item{NextToken}{The value of the next token, if it exists. Null if there are no more results.}
 
-\item{MaxResults}{Specifies the upper limit of the elements on a single page. If a value
-isn't provided, the default value is 20.}
+\item{MaxResults}{Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.}
 
-\item{OwnershipType}{Filters the returned set of entities based on their owner. The default
-is \code{SELF}. To list entities shared with you through AWS Resource Access
-Manager (AWS RAM), set to \code{SHARED}. Entities shared through the AWS
-Marketplace Catalog API
-\code{\link[=marketplacecatalog_put_resource_policy]{put_resource_policy}}
-operation can't be discovered through the \code{SHARED} parameter.}
+\item{OwnershipType}{Filters the returned set of entities based on their owner. The default is \code{SELF}. To list entities shared with you through AWS Resource Access Manager (AWS RAM), set to \code{SHARED}. Entities shared through the AWS Marketplace Catalog API \code{\link[=marketplacecatalog_put_resource_policy]{put_resource_policy}} operation can't be discovered through the \code{SHARED} parameter.}
 
-\item{EntityTypeFilters}{A Union object containing filter shapes for all \code{EntityType}s. Each
-\code{EntityTypeFilter} shape will have filters applicable for that
-\code{EntityType} that can be used to search or filter entities.}
+\item{EntityTypeFilters}{A Union object containing filter shapes for all \code{EntityType}s. Each \code{EntityTypeFilter} shape will have filters applicable for that \code{EntityType} that can be used to search or filter entities.}
 
-\item{EntityTypeSort}{A Union object containing \code{Sort} shapes for all \code{EntityType}s. Each
-\code{EntityTypeSort} shape will have \code{SortBy} and \code{SortOrder} applicable for
-fields on that \code{EntityType}. This can be used to sort the results of the
-filter query.}
+\item{EntityTypeSort}{A Union object containing \code{Sort} shapes for all \code{EntityType}s. Each \code{EntityTypeSort} shape will have \code{SortBy} and \code{SortOrder} applicable for fields on that \code{EntityType}. This can be used to sort the results of the filter query.}
 }
 \description{
 Provides the list of entities of a given type.

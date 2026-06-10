@@ -13,18 +13,13 @@ elasticsearchservice_list_elasticsearch_instance_types(
 )
 }
 \arguments{
-\item{ElasticsearchVersion}{[required] Version of Elasticsearch for which list of supported elasticsearch
-instance types are needed.}
+\item{ElasticsearchVersion}{[required] Version of Elasticsearch for which list of supported elasticsearch instance types are needed.}
 
-\item{DomainName}{DomainName represents the name of the Domain that we are trying to
-modify. This should be present only if we are querying for list of
-available Elasticsearch instance types when modifying existing domain.}
+\item{DomainName}{DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain.}
 
-\item{MaxResults}{Set this value to limit the number of results returned. Value provided
-must be greater than 30 else it wont be honored.}
+\item{MaxResults}{Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored.}
 
-\item{NextToken}{NextToken should be sent in case if earlier API call produced result
-containing NextToken. It is used for pagination.}
+\item{NextToken}{NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.}
 }
 \description{
 List all Elasticsearch instance types that are supported for given ElasticsearchVersion

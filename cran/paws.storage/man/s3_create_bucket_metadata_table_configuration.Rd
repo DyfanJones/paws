@@ -14,8 +14,7 @@ s3_create_bucket_metadata_table_configuration(
 )
 }
 \arguments{
-\item{Bucket}{[required] The general purpose bucket that you want to create the metadata table
-configuration for.}
+\item{Bucket}{[required] The general purpose bucket that you want to create the metadata table configuration for.}
 
 \item{ContentMD5}{The \code{Content-MD5} header for the metadata table configuration.}
 
@@ -23,8 +22,7 @@ configuration for.}
 
 \item{MetadataTableConfiguration}{[required] The contents of your metadata table configuration.}
 
-\item{ExpectedBucketOwner}{The expected owner of the general purpose bucket that corresponds to
-your metadata table configuration.}
+\item{ExpectedBucketOwner}{The expected owner of the general purpose bucket that corresponds to your metadata table configuration.}
 }
 \description{
 We recommend that you create your S3 Metadata configurations by using the V2 \code{\link[=s3_create_bucket_metadata_configuration]{create_bucket_metadata_configuration}} API operation. We no longer recommend using the V1 \code{\link[=s3_create_bucket_metadata_table_configuration]{create_bucket_metadata_table_configuration}} API operation.

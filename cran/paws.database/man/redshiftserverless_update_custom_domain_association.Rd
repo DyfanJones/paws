@@ -12,8 +12,7 @@ redshiftserverless_update_custom_domain_association(
 )
 }
 \arguments{
-\item{customDomainCertificateArn}{[required] The custom domain name’s certificate Amazon resource name (ARN). This is
-optional.}
+\item{customDomainCertificateArn}{[required] The custom domain name’s certificate Amazon resource name (ARN). This is optional.}
 
 \item{customDomainName}{[required] The custom domain name associated with the workgroup.}
 

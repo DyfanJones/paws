@@ -13,8 +13,7 @@ elbv2_describe_trust_store_associations(
 \arguments{
 \item{TrustStoreArn}{[required] The Amazon Resource Name (ARN) of the trust store.}
 
-\item{Marker}{The marker for the next set of results. (You received this marker from a
-previous call.)}
+\item{Marker}{The marker for the next set of results. (You received this marker from a previous call.)}
 
 \item{PageSize}{The maximum number of results to return with this call.}
 }

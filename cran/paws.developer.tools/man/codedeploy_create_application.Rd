@@ -11,15 +11,11 @@ codedeploy_create_application(
 )
 }
 \arguments{
-\item{applicationName}{[required] The name of the application. This name must be unique with the
-applicable user or Amazon Web Services account.}
+\item{applicationName}{[required] The name of the application. This name must be unique with the applicable user or Amazon Web Services account.}
 
-\item{computePlatform}{The destination platform type for the deployment (\code{Lambda}, \code{Server}, or
-\code{ECS}).}
+\item{computePlatform}{The destination platform type for the deployment (\code{Lambda}, \code{Server}, or \code{ECS}).}
 
-\item{tags}{The metadata that you apply to CodeDeploy applications to help you
-organize and categorize them. Each tag consists of a key and an optional
-value, both of which you define.}
+\item{tags}{The metadata that you apply to CodeDeploy applications to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define.}
 }
 \description{
 Creates an application.

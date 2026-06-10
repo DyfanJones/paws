@@ -17,13 +17,12 @@ neptunedata_start_loader_job(
   updateSingleCardinalityProperties = NULL,
   queueRequest = NULL,
   dependencies = NULL,
-  userProvidedEdgeIds = NULL
+  userProvidedEdgeIds = NULL,
+  edgeOnlyLoad = NULL
 )
 }
 \arguments{
-\item{source}{[required] The \code{source} parameter accepts an S3 URI that identifies a single file,
-multiple files, a folder, or multiple folders. Neptune loads every data
-file in any folder that is specified.
+\item{source}{[required] The \code{source} parameter accepts an S3 URI that identifies a single file, multiple files, a folder, or multiple folders. Neptune loads every data file in any folder that is specified.
 
 The URI can be in any of the following formats.
 \itemize{
@@ -32,19 +31,11 @@ The URI can be in any of the following formats.
 \item \verb{https://s3.us-east-1.amazonaws.com/(bucket_name)/(object-key-name)}
 }
 
-The \code{object-key-name} element of the URI is equivalent to the
-\href{https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html#API_ListObjects_RequestParameters}{prefix}
-parameter in an S3
-\href{https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html}{ListObjects}
-API call. It identifies all the objects in the specified S3 bucket whose
-names begin with that prefix. That can be a single file or folder, or
-multiple files and/or folders.
+The \code{object-key-name} element of the URI is equivalent to the \href{https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html#API_ListObjects_RequestParameters}{prefix} parameter in an S3 \href{https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html}{ListObjects} API call. It identifies all the objects in the specified S3 bucket whose names begin with that prefix. That can be a single file or folder, or multiple files and/or folders.
 
-The specified folder or folders can contain multiple vertex files and
-multiple edge files.}
+The specified folder or folders can contain multiple vertex files and multiple edge files.}
 
-\item{format}{[required] The format of the data. For more information about data formats for the
-Neptune \code{Loader} command, see \href{https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format.html}{Load Data Formats}.
+\item{format}{[required] The format of the data. For more information about data formats for the Neptune \code{Loader} command, see \href{https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format.html}{Load Data Formats}.
 
 \strong{Allowed values}
 \itemize{
@@ -56,12 +47,9 @@ Neptune \code{Loader} command, see \href{https://docs.aws.amazon.com/neptune/lat
 \item \strong{\code{turtle}} for the \href{https://www.w3.org/TR/turtle/}{Turtle RDF data format}.
 }}
 
-\item{s3BucketRegion}{[required] The Amazon region of the S3 bucket. This must match the Amazon Region of
-the DB cluster.}
+\item{s3BucketRegion}{[required] The Amazon region of the S3 bucket. This must match the Amazon Region of the DB cluster.}
 
-\item{iamRoleArn}{[required] The Amazon Resource Name (ARN) for an IAM role to be assumed by the
-Neptune DB instance for access to the S3 bucket. The IAM role ARN
-provided here should be attached to the DB cluster (see \href{https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-IAM-add-role-cluster.html}{Adding the IAM Role to an Amazon Neptune Cluster}.}
+\item{iamRoleArn}{[required] The Amazon Resource Name (ARN) for an IAM role to be assumed by the Neptune DB instance for access to the S3 bucket. The IAM role ARN provided here should be attached to the DB cluster (see \href{https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-IAM-add-role-cluster.html}{Adding the IAM Role to an Amazon Neptune Cluster}.}
 
 \item{mode}{The load job mode.
 
@@ -69,173 +57,103 @@ provided here should be attached to the DB cluster (see \href{https://docs.aws.a
 
 \emph{Default value}: \code{AUTO}.
 \itemize{
-\item \code{RESUME}   –   In RESUME mode, the loader looks for a previous load
-from this source, and if it finds one, resumes that load job. If no
-previous load job is found, the loader stops.
+\item \code{RESUME} - In RESUME mode, the loader looks for a previous load from this source, and if it finds one, resumes that load job. If no previous load job is found, the loader stops.
 
-The loader avoids reloading files that were successfully loaded in a
-previous job. It only tries to process failed files. If you dropped
-previously loaded data from your Neptune cluster, that data is not
-reloaded in this mode. If a previous load job loaded all files from
-the same source successfully, nothing is reloaded, and the loader
-returns success.
-\item \code{NEW}   –   In NEW mode, the creates a new load request regardless
-of any previous loads. You can use this mode to reload all the data
-from a source after dropping previously loaded data from your
-Neptune cluster, or to load new data available at the same source.
-\item \code{AUTO}   –   In AUTO mode, the loader looks for a previous load job
-from the same source, and if it finds one, resumes that job, just as
-in \code{RESUME} mode.
+The loader avoids reloading files that were successfully loaded in a previous job. It only tries to process failed files. If you dropped previously loaded data from your Neptune cluster, that data is not reloaded in this mode. If a previous load job loaded all files from the same source successfully, nothing is reloaded, and the loader returns success.
+\item \code{NEW} - In NEW mode, the creates a new load request regardless of any previous loads. You can use this mode to reload all the data from a source after dropping previously loaded data from your Neptune cluster, or to load new data available at the same source.
+\item \code{AUTO} - In AUTO mode, the loader looks for a previous load job from the same source, and if it finds one, resumes that job, just as in \code{RESUME} mode.
 
-If the loader doesn't find a previous load job from the same source,
-it loads all data from the source, just as in \code{NEW} mode.
+If the loader doesn't find a previous load job from the same source, it loads all data from the source, just as in \code{NEW} mode.
 }}
 
-\item{failOnError}{\strong{\code{failOnError}}   –   A flag to toggle a complete stop on an error.
+\item{failOnError}{\strong{\code{failOnError}} - A flag to toggle a complete stop on an error.
 
 \emph{Allowed values}: \code{"TRUE"}, \code{"FALSE"}.
 
 \emph{Default value}: \code{"TRUE"}.
 
-When this parameter is set to \code{"FALSE"}, the loader tries to load all
-the data in the location specified, skipping any entries with errors.
+When this parameter is set to \code{"FALSE"}, the loader tries to load all the data in the location specified, skipping any entries with errors.
 
-When this parameter is set to \code{"TRUE"}, the loader stops as soon as it
-encounters an error. Data loaded up to that point persists.}
+When this parameter is set to \code{"TRUE"}, the loader stops as soon as it encounters an error. Data loaded up to that point persists.}
 
-\item{parallelism}{The optional \code{parallelism} parameter can be set to reduce the number of
-threads used by the bulk load process.
+\item{parallelism}{The optional \code{parallelism} parameter can be set to reduce the number of threads used by the bulk load process.
 
 \emph{Allowed values}:
 \itemize{
-\item \code{LOW} –   The number of threads used is the number of available
-vCPUs divided by 8.
-\item \code{MEDIUM} –   The number of threads used is the number of available
-vCPUs divided by 2.
-\item \code{HIGH} –   The number of threads used is the same as the number of
-available vCPUs.
-\item \code{OVERSUBSCRIBE} –   The number of threads used is the number of
-available vCPUs multiplied by 2. If this value is used, the bulk
-loader takes up all available resources.
+\item \code{LOW} –   The number of threads used is the number of available vCPUs divided by 8.
+\item \code{MEDIUM} –   The number of threads used is the number of available vCPUs divided by 2.
+\item \code{HIGH} –   The number of threads used is the same as the number of available vCPUs.
+\item \code{OVERSUBSCRIBE} –   The number of threads used is the number of available vCPUs multiplied by 2. If this value is used, the bulk loader takes up all available resources.
 
-This does not mean, however, that the \code{OVERSUBSCRIBE} setting
-results in 100\% CPU utilization. Because the load operation is I/O
-bound, the highest CPU utilization to expect is in the 60\% to 70\%
-range.
+This does not mean, however, that the \code{OVERSUBSCRIBE} setting results in 100\% CPU utilization. Because the load operation is I/O bound, the highest CPU utilization to expect is in the 60\% to 70\% range.
 }
 
 \emph{Default value}: \code{HIGH}
 
-The \code{parallelism} setting can sometimes result in a deadlock between
-threads when loading openCypher data. When this happens, Neptune returns
-the \code{LOAD_DATA_DEADLOCK} error. You can generally fix the issue by
-setting \code{parallelism} to a lower setting and retrying the load command.}
+The \code{parallelism} setting can sometimes result in a deadlock between threads when loading openCypher data. When this happens, Neptune returns the \code{LOAD_DATA_DEADLOCK} error. You can generally fix the issue by setting \code{parallelism} to a lower setting and retrying the load command.}
 
-\item{parserConfiguration}{\strong{\code{parserConfiguration}}   –   An optional object with additional
-parser configuration values. Each of the child parameters is also
-optional:
+\item{parserConfiguration}{\strong{\code{parserConfiguration}}   –   An optional object with additional parser configuration values. Each of the child parameters is also optional:
 \itemize{
-\item \strong{\code{namedGraphUri}}   –   The default graph for all RDF formats when
-no graph is specified (for non-quads formats and NQUAD entries with
-no graph).
+\item \strong{\code{namedGraphUri}} - The default graph for all RDF formats when no graph is specified (for non-quads formats and NQUAD entries with no graph).
 
-The default is
-\verb{https://aws.amazon.com/neptune/vocab/v01/DefaultNamedGraph}.
-\item \strong{\code{baseUri}}   –   The base URI for RDF/XML and Turtle formats.
+The default is \verb{https://aws.amazon.com/neptune/vocab/v01/DefaultNamedGraph}.
+\item \strong{\code{baseUri}} - The base URI for RDF/XML and Turtle formats.
 
 The default is \verb{https://aws.amazon.com/neptune/default}.
-\item \strong{\code{allowEmptyStrings}}   –   Gremlin users need to be able to pass
-empty string values("") as node and edge properties when loading CSV
-data. If \code{allowEmptyStrings} is set to \code{false} (the default), such
-empty strings are treated as nulls and are not loaded.
+\item \strong{\code{allowEmptyStrings}} - Gremlin users need to be able to pass empty string values("") as node and edge properties when loading CSV data. If \code{allowEmptyStrings} is set to \code{false} (the default), such empty strings are treated as nulls and are not loaded.
 
-If \code{allowEmptyStrings} is set to \code{true}, the loader treats empty
-strings as valid property values and loads them accordingly.
+If \code{allowEmptyStrings} is set to \code{true}, the loader treats empty strings as valid property values and loads them accordingly.
 }}
 
-\item{updateSingleCardinalityProperties}{\code{updateSingleCardinalityProperties} is an optional parameter that
-controls how the bulk loader treats a new value for single-cardinality
-vertex or edge properties. This is not supported for loading openCypher
-data.
+\item{updateSingleCardinalityProperties}{\code{updateSingleCardinalityProperties} is an optional parameter that controls how the bulk loader treats a new value for single-cardinality vertex or edge properties. This is not supported for loading openCypher data.
 
 \emph{Allowed values}: \code{"TRUE"}, \code{"FALSE"}.
 
 \emph{Default value}: \code{"FALSE"}.
 
-By default, or when \code{updateSingleCardinalityProperties} is explicitly
-set to \code{"FALSE"}, the loader treats a new value as an error, because it
-violates single cardinality.
+By default, or when \code{updateSingleCardinalityProperties} is explicitly set to \code{"FALSE"}, the loader treats a new value as an error, because it violates single cardinality.
 
-When \code{updateSingleCardinalityProperties} is set to \code{"TRUE"}, on the
-other hand, the bulk loader replaces the existing value with the new
-one. If multiple edge or single-cardinality vertex property values are
-provided in the source file(s) being loaded, the final value at the end
-of the bulk load could be any one of those new values. The loader only
-guarantees that the existing value has been replaced by one of the new
-ones.}
+When \code{updateSingleCardinalityProperties} is set to \code{"TRUE"}, on the other hand, the bulk loader replaces the existing value with the new one. If multiple edge or single-cardinality vertex property values are provided in the source file(s) being loaded, the final value at the end of the bulk load could be any one of those new values. The loader only guarantees that the existing value has been replaced by one of the new ones.}
 
-\item{queueRequest}{This is an optional flag parameter that indicates whether the load
-request can be queued up or not.
+\item{queueRequest}{This is an optional flag parameter that indicates whether the load request can be queued up or not.
 
-You don't have to wait for one load job to complete before issuing the
-next one, because Neptune can queue up as many as 64 jobs at a time,
-provided that their \code{queueRequest} parameters are all set to \code{"TRUE"}.
-The queue order of the jobs will be first-in-first-out (FIFO).
+You don't have to wait for one load job to complete before issuing the next one, because Neptune can queue up as many as 64 jobs at a time, provided that their \code{queueRequest} parameters are all set to \code{"TRUE"}. The queue order of the jobs will be first-in-first-out (FIFO).
 
-If the \code{queueRequest} parameter is omitted or set to \code{"FALSE"}, the load
-request will fail if another load job is already running.
+If the \code{queueRequest} parameter is omitted or set to \code{"FALSE"}, the load request will fail if another load job is already running.
 
 \emph{Allowed values}: \code{"TRUE"}, \code{"FALSE"}.
 
 \emph{Default value}: \code{"FALSE"}.}
 
-\item{dependencies}{This is an optional parameter that can make a queued load request
-contingent on the successful completion of one or more previous jobs in
-the queue.
+\item{dependencies}{This is an optional parameter that can make a queued load request contingent on the successful completion of one or more previous jobs in the queue.
 
-Neptune can queue up as many as 64 load requests at a time, if their
-\code{queueRequest} parameters are set to \code{"TRUE"}. The \code{dependencies}
-parameter lets you make execution of such a queued request dependent on
-the successful completion of one or more specified previous requests in
-the queue.
+Neptune can queue up as many as 64 load requests at a time, if their \code{queueRequest} parameters are set to \code{"TRUE"}. The \code{dependencies} parameter lets you make execution of such a queued request dependent on the successful completion of one or more specified previous requests in the queue.
 
-For example, if load \code{Job-A} and \code{Job-B} are independent of each other,
-but load \code{Job-C} needs \code{Job-A} and \code{Job-B} to be finished before it
-begins, proceed as follows:
+For example, if load \code{Job-A} and \code{Job-B} are independent of each other, but load \code{Job-C} needs \code{Job-A} and \code{Job-B} to be finished before it begins, proceed as follows:
 \enumerate{
-\item Submit \code{load-job-A} and \code{load-job-B} one after another in any order,
-and save their load-ids.
-\item Submit \code{load-job-C} with the load-ids of the two jobs in its
-\code{dependencies} field:
+\item Submit \code{load-job-A} and \code{load-job-B} one after another in any order, and save their load-ids.
+\item Submit \code{load-job-C} with the load-ids of the two jobs in its \code{dependencies} field:
 }
 
-Because of the \code{dependencies} parameter, the bulk loader will not start
-\code{Job-C} until \code{Job-A} and \code{Job-B} have completed successfully. If either
-one of them fails, Job-C will not be executed, and its status will be
-set to \code{LOAD_FAILED_BECAUSE_DEPENDENCY_NOT_SATISFIED}.
+Because of the \code{dependencies} parameter, the bulk loader will not start \code{Job-C} until \code{Job-A} and \code{Job-B} have completed successfully. If either one of them fails, Job-C will not be executed, and its status will be set to \code{LOAD_FAILED_BECAUSE_DEPENDENCY_NOT_SATISFIED}.
 
-You can set up multiple levels of dependency in this way, so that the
-failure of one job will cause all requests that are directly or
-indirectly dependent on it to be cancelled.}
+You can set up multiple levels of dependency in this way, so that the failure of one job will cause all requests that are directly or indirectly dependent on it to be cancelled.}
 
-\item{userProvidedEdgeIds}{This parameter is required only when loading openCypher data that
-contains relationship IDs. It must be included and set to \code{True} when
-openCypher relationship IDs are explicitly provided in the load data
-(recommended).
+\item{userProvidedEdgeIds}{This parameter is required only when loading openCypher data that contains relationship IDs. It must be included and set to \code{True} when openCypher relationship IDs are explicitly provided in the load data (recommended).
 
-When \code{userProvidedEdgeIds} is absent or set to \code{True}, an \verb{:ID} column
-must be present in every relationship file in the load.
+When \code{userProvidedEdgeIds} is absent or set to \code{True}, an \verb{:ID} column must be present in every relationship file in the load.
 
-When \code{userProvidedEdgeIds} is present and set to \code{False}, relationship
-files in the load \strong{must not} contain an \verb{:ID} column. Instead, the
-Neptune loader automatically generates an ID for each relationship.
+When \code{userProvidedEdgeIds} is present and set to \code{False}, relationship files in the load \strong{must not} contain an \verb{:ID} column. Instead, the Neptune loader automatically generates an ID for each relationship.
 
-It's useful to provide relationship IDs explicitly so that the loader
-can resume loading after error in the CSV data have been fixed, without
-having to reload any relationships that have already been loaded. If
-relationship IDs have not been explicitly assigned, the loader cannot
-resume a failed load if any relationship file has had to be corrected,
-and must instead reload all the relationships.}
+It's useful to provide relationship IDs explicitly so that the loader can resume loading after error in the CSV data have been fixed, without having to reload any relationships that have already been loaded. If relationship IDs have not been explicitly assigned, the loader cannot resume a failed load if any relationship file has had to be corrected, and must instead reload all the relationships.}
+
+\item{edgeOnlyLoad}{\strong{\code{edgeOnlyLoad}} - A flag that controls file processing order during bulk loading.
+
+\emph{Allowed values}: \code{"TRUE"}, \code{"FALSE"}.
+
+\emph{Default value}: \code{"FALSE"}.
+
+When this parameter is set to "FALSE", the loader automatically loads vertex files first, then edge files afterwards. It does this by first scanning all files to determine their contents (vertices or edges). When this parameter is set to "TRUE", the loader skips the initial scanning phase and immediately loads all files in the order they appear.}
 }
 \description{
 Starts a Neptune bulk loader job to load data from an Amazon S3 bucket into a Neptune DB instance. See \href{https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load.html}{Using the Amazon Neptune Bulk Loader to Ingest Data}.

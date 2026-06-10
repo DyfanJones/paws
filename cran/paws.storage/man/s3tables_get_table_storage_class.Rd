@@ -7,8 +7,7 @@
 s3tables_get_table_storage_class(tableBucketARN, namespace, name)
 }
 \arguments{
-\item{tableBucketARN}{[required] The Amazon Resource Name (ARN) of the table bucket that contains the
-table.}
+\item{tableBucketARN}{[required] The Amazon Resource Name (ARN) of the table bucket that contains the table.}
 
 \item{namespace}{[required] The namespace associated with the table.}
 

@@ -30,28 +30,23 @@ workmail_create_mobile_device_access_rule(
 
 \item{Description}{The rule description.}
 
-\item{Effect}{[required] The effect of the rule when it matches. Allowed values are \code{ALLOW} or
-\code{DENY}.}
+\item{Effect}{[required] The effect of the rule when it matches. Allowed values are \code{ALLOW} or \code{DENY}.}
 
 \item{DeviceTypes}{Device types that the rule will match.}
 
-\item{NotDeviceTypes}{Device types that the rule \strong{will not} match. All other device types
-will match.}
+\item{NotDeviceTypes}{Device types that the rule \strong{will not} match. All other device types will match.}
 
 \item{DeviceModels}{Device models that the rule will match.}
 
-\item{NotDeviceModels}{Device models that the rule \strong{will not} match. All other device models
-will match.}
+\item{NotDeviceModels}{Device models that the rule \strong{will not} match. All other device models will match.}
 
 \item{DeviceOperatingSystems}{Device operating systems that the rule will match.}
 
-\item{NotDeviceOperatingSystems}{Device operating systems that the rule \strong{will not} match. All other
-device operating systems will match.}
+\item{NotDeviceOperatingSystems}{Device operating systems that the rule \strong{will not} match. All other device operating systems will match.}
 
 \item{DeviceUserAgents}{Device user agents that the rule will match.}
 
-\item{NotDeviceUserAgents}{Device user agents that the rule \strong{will not} match. All other device
-user agents will match.}
+\item{NotDeviceUserAgents}{Device user agents that the rule \strong{will not} match. All other device user agents will match.}
 }
 \description{
 Creates a new mobile device access rule for the specified WorkMail organization.

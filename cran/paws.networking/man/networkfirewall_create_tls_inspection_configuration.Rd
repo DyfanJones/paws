@@ -13,33 +13,19 @@ networkfirewall_create_tls_inspection_configuration(
 )
 }
 \arguments{
-\item{TLSInspectionConfigurationName}{[required] The descriptive name of the TLS inspection configuration. You can't
-change the name of a TLS inspection configuration after you create it.}
+\item{TLSInspectionConfigurationName}{[required] The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.}
 
-\item{TLSInspectionConfiguration}{[required] The object that defines a TLS inspection configuration. This, along with
-TLSInspectionConfigurationResponse, define the TLS inspection
-configuration. You can retrieve all objects for a TLS inspection
-configuration by calling
-\code{\link[=networkfirewall_describe_tls_inspection_configuration]{describe_tls_inspection_configuration}}.
+\item{TLSInspectionConfiguration}{[required] The object that defines a TLS inspection configuration. This, along with TLSInspectionConfigurationResponse, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling \code{\link[=networkfirewall_describe_tls_inspection_configuration]{describe_tls_inspection_configuration}}.
 
-Network Firewall uses a TLS inspection configuration to decrypt traffic.
-Network Firewall re-encrypts the traffic before sending it to its
-destination.
+Network Firewall uses a TLS inspection configuration to decrypt traffic. Network Firewall re-encrypts the traffic before sending it to its destination.
 
-To use a TLS inspection configuration, you add it to a new Network
-Firewall firewall policy, then you apply the firewall policy to a
-firewall. Network Firewall acts as a proxy service to decrypt and
-inspect the traffic traveling through your firewalls. You can reference
-a TLS inspection configuration from more than one firewall policy, and
-you can use a firewall policy in more than one firewall. For more
-information about using TLS inspection configurations, see \href{https://docs.aws.amazon.com/network-firewall/latest/developerguide/}{Inspecting SSL/TLS traffic with TLS inspection configurations}
-in the \emph{Network Firewall Developer Guide}.}
+To use a TLS inspection configuration, you add it to a new Network Firewall firewall policy, then you apply the firewall policy to a firewall. Network Firewall acts as a proxy service to decrypt and inspect the traffic traveling through your firewalls. You can reference a TLS inspection configuration from more than one firewall policy, and you can use a firewall policy in more than one firewall. For more information about using TLS inspection configurations, see \href{https://docs.aws.amazon.com/network-firewall/latest/developerguide/}{Inspecting SSL/TLS traffic with TLS inspection configurations} in the \emph{Network Firewall Developer Guide}.}
 
 \item{Description}{A description of the TLS inspection configuration.}
 
 \item{Tags}{The key:value pairs to associate with the resource.}
 
-\item{EncryptionConfiguration}{}
+\item{EncryptionConfiguration}{A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see \href{https://docs.aws.amazon.com/kms/latest/developerguide/}{Encryption at rest with Amazon Web Services Key Managment Service} in the \emph{Network Firewall Developer Guide}.}
 }
 \description{
 Creates an Network Firewall TLS inspection configuration. Network Firewall uses TLS inspection configurations to decrypt your firewall's inbound and outbound SSL/TLS traffic. After decryption, Network Firewall inspects the traffic according to your firewall policy's stateful rules, and then re-encrypts it before sending it to its destination. You can enable inspection of your firewall's inbound traffic, outbound traffic, or both. To use TLS inspection with your firewall, you must first import or provision certificates using ACM, create a TLS inspection configuration, add that configuration to a new firewall policy, and then associate that policy with your firewall.

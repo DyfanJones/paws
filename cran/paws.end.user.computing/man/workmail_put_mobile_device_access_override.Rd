@@ -16,17 +16,14 @@ workmail_put_mobile_device_access_override(
 \arguments{
 \item{OrganizationId}{[required] Identifies the WorkMail organization for which you create the override.}
 
-\item{UserId}{[required] The WorkMail user for which you create the override. Accepts the
-following types of user identities:
+\item{UserId}{[required] The WorkMail user for which you create the override. Accepts the following types of user identities:
 \itemize{
-\item User ID: \code{12345678-1234-1234-1234-123456789012} or
-\code{S-1-1-12-1234567890-123456789-123456789-1234}
+\item User ID: \code{12345678-1234-1234-1234-123456789012} or \code{S-1-1-12-1234567890-123456789-123456789-1234}
 \item Email address: \code{user@domain.tld}
 \item User name: \code{user}
 }}
 
-\item{DeviceId}{[required] The mobile device for which you create the override. \code{DeviceId} is case
-insensitive.}
+\item{DeviceId}{[required] The mobile device for which you create the override. \code{DeviceId} is case insensitive.}
 
 \item{Effect}{[required] The effect of the override, \code{ALLOW} or \code{DENY}.}
 

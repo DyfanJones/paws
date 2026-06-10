@@ -19,19 +19,15 @@ glue_start_column_statistics_task_run(
 
 \item{TableName}{[required] The name of the table to generate statistics.}
 
-\item{ColumnNameList}{A list of the column names to generate statistics. If none is supplied,
-all column names for the table will be used by default.}
+\item{ColumnNameList}{A list of the column names to generate statistics. If none is supplied, all column names for the table will be used by default.}
 
 \item{Role}{[required] The IAM role that the service assumes to generate statistics.}
 
-\item{SampleSize}{The percentage of rows used to generate statistics. If none is supplied,
-the entire table will be used to generate stats.}
+\item{SampleSize}{The percentage of rows used to generate statistics. If none is supplied, the entire table will be used to generate stats.}
 
-\item{CatalogID}{The ID of the Data Catalog where the table reside. If none is supplied,
-the Amazon Web Services account ID is used by default.}
+\item{CatalogID}{The ID of the Data Catalog where the table reside. If none is supplied, the Amazon Web Services account ID is used by default.}
 
-\item{SecurityConfiguration}{Name of the security configuration that is used to encrypt CloudWatch
-logs for the column stats task run.}
+\item{SecurityConfiguration}{Name of the security configuration that is used to encrypt CloudWatch logs for the column stats task run.}
 }
 \description{
 Starts a column statistics task run, for a specified table and columns.

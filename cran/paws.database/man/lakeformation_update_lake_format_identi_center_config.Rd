@@ -13,32 +13,21 @@ lakeformation_update_lake_formation_identity_center_configuration(
 )
 }
 \arguments{
-\item{CatalogId}{The identifier for the Data Catalog. By default, the account ID. The
-Data Catalog is the persistent metadata store. It contains database
-definitions, table definitions, view definitions, and other control
-information to manage your Lake Formation environment.}
+\item{CatalogId}{The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, view definitions, and other control information to manage your Lake Formation environment.}
 
-\item{ShareRecipients}{A list of Amazon Web Services account IDs or Amazon Web Services
-organization/organizational unit ARNs that are allowed to access to
-access data managed by Lake Formation.
+\item{ShareRecipients}{A list of Amazon Web Services account IDs or Amazon Web Services organization/organizational unit ARNs that are allowed to access to access data managed by Lake Formation.
 
-If the \code{ShareRecipients} list includes valid values, then the resource
-share is updated with the principals you want to have access to the
-resources.
+If the \code{ShareRecipients} list includes valid values, then the resource share is updated with the principals you want to have access to the resources.
 
-If the \code{ShareRecipients} value is null, both the list of share
-recipients and the resource share remain unchanged.
+If the \code{ShareRecipients} value is null, both the list of share recipients and the resource share remain unchanged.
 
-If the \code{ShareRecipients} value is an empty list, then the existing share
-recipients list will be cleared, and the resource share will be deleted.}
+If the \code{ShareRecipients} value is an empty list, then the existing share recipients list will be cleared, and the resource share will be deleted.}
 
-\item{ServiceIntegrations}{A list of service integrations for enabling trusted identity propagation
-with external services such as Redshift.}
+\item{ServiceIntegrations}{A list of service integrations for enabling trusted identity propagation with external services such as Redshift.}
 
 \item{ApplicationStatus}{Allows to enable or disable the IAM Identity Center connection.}
 
-\item{ExternalFiltering}{A list of the account IDs of Amazon Web Services accounts of third-party
-applications that are allowed to access data managed by Lake Formation.}
+\item{ExternalFiltering}{A list of the account IDs of Amazon Web Services accounts of third-party applications that are allowed to access data managed by Lake Formation.}
 }
 \description{
 Updates the IAM Identity Center connection parameters.

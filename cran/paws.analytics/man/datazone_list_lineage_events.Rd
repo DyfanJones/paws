@@ -7,36 +7,27 @@
 datazone_list_lineage_events(
   domainIdentifier,
   maxResults = NULL,
-  nextToken = NULL,
+  timestampAfter = NULL,
+  timestampBefore = NULL,
   processingStatus = NULL,
   sortOrder = NULL,
-  timestampAfter = NULL,
-  timestampBefore = NULL
+  nextToken = NULL
 )
 }
 \arguments{
 \item{domainIdentifier}{[required] The ID of the domain where you want to list lineage events.}
 
-\item{maxResults}{The maximum number of lineage events to return in a single call to
-ListLineageEvents. When the number of lineage events to be listed is
-greater than the value of MaxResults, the response contains a NextToken
-value that you can use in a subsequent call to ListLineageEvents to list
-the next set of lineage events.}
+\item{maxResults}{The maximum number of lineage events to return in a single call to ListLineageEvents. When the number of lineage events to be listed is greater than the value of MaxResults, the response contains a NextToken value that you can use in a subsequent call to ListLineageEvents to list the next set of lineage events.}
 
-\item{nextToken}{When the number of lineage events is greater than the default value for
-the MaxResults parameter, or if you explicitly specify a value for
-MaxResults that is less than the number of lineage events, the response
-includes a pagination token named NextToken. You can specify this
-NextToken value in a subsequent call to ListLineageEvents to list the
-next set of lineage events.}
+\item{timestampAfter}{The after timestamp of a lineage event.}
+
+\item{timestampBefore}{The before timestamp of a lineage event.}
 
 \item{processingStatus}{The processing status of a lineage event.}
 
 \item{sortOrder}{The sort order of the lineage events.}
 
-\item{timestampAfter}{The after timestamp of a lineage event.}
-
-\item{timestampBefore}{The before timestamp of a lineage event.}
+\item{nextToken}{When the number of lineage events is greater than the default value for the MaxResults parameter, or if you explicitly specify a value for MaxResults that is less than the number of lineage events, the response includes a pagination token named NextToken. You can specify this NextToken value in a subsequent call to ListLineageEvents to list the next set of lineage events.}
 }
 \description{
 Lists lineage events.

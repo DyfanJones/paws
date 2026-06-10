@@ -13,8 +13,7 @@ route53profiles_associate_profile(Name, ProfileId, ResourceId, Tags = NULL)
 
 \item{ResourceId}{[required] The ID of the VPC.}
 
-\item{Tags}{A list of the tag keys and values that you want to identify the Profile
-association.}
+\item{Tags}{A list of the tag keys and values that you want to identify the Profile association.}
 }
 \description{
 Associates a Route 53 Profiles profile with a VPC. A VPC can have only one Profile associated with it, but a Profile can be associated with 1000 of VPCs (and you can request a higher quota). For more information, see \url{https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities}.

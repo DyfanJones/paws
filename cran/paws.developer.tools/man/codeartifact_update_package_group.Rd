@@ -15,13 +15,11 @@ codeartifact_update_package_group(
 \arguments{
 \item{domain}{[required] The name of the domain which contains the package group to be updated.}
 
-\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns
-the domain. It does not include dashes or spaces.}
+\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.}
 
 \item{packageGroup}{[required] The pattern of the package group to be updated.}
 
-\item{contactInfo}{Contact information which you want to update the requested package group
-with.}
+\item{contactInfo}{Contact information which you want to update the requested package group with.}
 
 \item{description}{The description you want to update the requested package group with.}
 }

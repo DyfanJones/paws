@@ -16,15 +16,9 @@ elasticache_decrease_replica_count(
 )
 }
 \arguments{
-\item{ReplicationGroupId}{[required] The id of the replication group from which you want to remove replica
-nodes.}
+\item{ReplicationGroupId}{[required] The id of the replication group from which you want to remove replica nodes.}
 
-\item{NewReplicaCount}{The number of read replica nodes you want at the completion of this
-operation. For Valkey or Redis OSS (cluster mode disabled) replication
-groups, this is the number of replica nodes in the replication group.
-For Valkey or Redis OSS (cluster mode enabled) replication groups, this
-is the number of replica nodes in each of the replication group's node
-groups.
+\item{NewReplicaCount}{The number of read replica nodes you want at the completion of this operation. For Valkey or Redis OSS (cluster mode disabled) replication groups, this is the number of replica nodes in the replication group. For Valkey or Redis OSS (cluster mode enabled) replication groups, this is the number of replica nodes in each of the replication group's node groups.
 
 The minimum number of replicas in a shard or replication group is:
 \itemize{
@@ -33,20 +27,14 @@ The minimum number of replicas in a shard or replication group is:
 \item If Multi-AZ is enabled: 1
 \item If Multi-AZ is not enabled: 0
 }
-\item Valkey or Redis OSS (cluster mode enabled): 0 (though you will not
-be able to failover to a replica if your primary node fails)
+\item Valkey or Redis OSS (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)
 }}
 
-\item{ReplicaConfiguration}{A list of \code{ConfigureShard} objects that can be used to configure each
-shard in a Valkey or Redis OSS replication group. The \code{ConfigureShard}
-has three members: \code{NewReplicaCount}, \code{NodeGroupId}, and
-\code{PreferredAvailabilityZones}.}
+\item{ReplicaConfiguration}{A list of \code{ConfigureShard} objects that can be used to configure each shard in a Valkey or Redis OSS replication group. The \code{ConfigureShard} has three members: \code{NewReplicaCount}, \code{NodeGroupId}, and \code{PreferredAvailabilityZones}.}
 
-\item{ReplicasToRemove}{A list of the node ids to remove from the replication group or node
-group (shard).}
+\item{ReplicasToRemove}{A list of the node ids to remove from the replication group or node group (shard).}
 
-\item{ApplyImmediately}{[required] If \code{True}, the number of replica nodes is decreased immediately.
-\code{ApplyImmediately=False} is not currently supported.}
+\item{ApplyImmediately}{[required] If \code{True}, the number of replica nodes is decreased immediately. \code{ApplyImmediately=False} is not currently supported.}
 }
 \description{
 Dynamically decreases the number of replicas in a Valkey or Redis OSS (cluster mode disabled) replication group or the number of replica nodes in one or more node groups (shards) of a Valkey or Redis OSS (cluster mode enabled) replication group. This operation is performed with no cluster down time.

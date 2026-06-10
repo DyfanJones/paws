@@ -13,16 +13,13 @@ quicksight_create_namespace(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that you want to create the
-Quick Sight namespace in.}
+\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that you want to create the Quick Sight namespace in.}
 
 \item{Namespace}{[required] The name that you want to use to describe the new namespace.}
 
-\item{IdentityStore}{[required] Specifies the type of your user identity directory. Currently, this
-supports users with an identity type of \code{QUICKSIGHT}.}
+\item{IdentityStore}{[required] Specifies the type of your user identity directory. Currently, this supports users with an identity type of \code{QUICKSIGHT}.}
 
-\item{Tags}{The tags that you want to associate with the namespace that you're
-creating.}
+\item{Tags}{The tags that you want to associate with the namespace that you're creating.}
 }
 \description{
 (Enterprise edition only) Creates a new namespace for you to use with Amazon Quick Sight.

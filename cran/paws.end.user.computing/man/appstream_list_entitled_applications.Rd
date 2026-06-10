@@ -16,8 +16,7 @@ appstream_list_entitled_applications(
 
 \item{EntitlementName}{[required] The name of the entitlement.}
 
-\item{NextToken}{The pagination token used to retrieve the next page of results for this
-operation.}
+\item{NextToken}{The pagination token used to retrieve the next page of results for this operation.}
 
 \item{MaxResults}{The maximum size of each page of results.}
 }

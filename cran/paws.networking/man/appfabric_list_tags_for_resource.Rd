@@ -7,8 +7,7 @@
 appfabric_list_tags_for_resource(resourceArn)
 }
 \arguments{
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource for which you want to
-retrieve tags.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource for which you want to retrieve tags.}
 }
 \description{
 Returns a list of tags for a resource.

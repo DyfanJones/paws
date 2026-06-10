@@ -22,10 +22,9 @@ kendra_update_thesaurus(
 
 \item{Description}{A new description for the thesaurus.}
 
-\item{RoleArn}{An IAM role that gives Amazon Kendra permissions to access thesaurus
-file specified in \code{SourceS3Path}.}
+\item{RoleArn}{An IAM role that gives Amazon Kendra permissions to access thesaurus file specified in \code{SourceS3Path}.}
 
-\item{SourceS3Path}{}
+\item{SourceS3Path}{Information required to find a specific file in an Amazon S3 bucket.}
 }
 \description{
 Updates a thesaurus for an index.

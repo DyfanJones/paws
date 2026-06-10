@@ -13,13 +13,9 @@ apigatewayv2_create_routing_rule(
 )
 }
 \arguments{
-\item{Actions}{[required] Represents a routing rule action. The only supported action is
-invokeApi.}
+\item{Actions}{[required] Represents a routing rule action. The only supported action is invokeApi.}
 
-\item{Conditions}{[required] Represents a condition. Conditions can contain up to two matchHeaders
-conditions and one matchBasePaths conditions. API Gateway evaluates
-header conditions and base path conditions together. You can only use
-AND between header and base path conditions.}
+\item{Conditions}{[required] Represents a condition. Conditions can contain up to two matchHeaders conditions and one matchBasePaths conditions. API Gateway evaluates header conditions and base path conditions together. You can only use AND between header and base path conditions.}
 
 \item{DomainName}{[required] The domain name.}
 

@@ -9,8 +9,7 @@ codeartifact_delete_repository(domain, domainOwner = NULL, repository)
 \arguments{
 \item{domain}{[required] The name of the domain that contains the repository to delete.}
 
-\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns
-the domain. It does not include dashes or spaces.}
+\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.}
 
 \item{repository}{[required] The name of the repository to delete.}
 }

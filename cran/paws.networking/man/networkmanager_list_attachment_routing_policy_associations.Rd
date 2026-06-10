@@ -12,11 +12,9 @@ networkmanager_list_attachment_routing_policy_associations(
 )
 }
 \arguments{
-\item{CoreNetworkId}{[required] The ID of the core network to list attachment routing policy
-associations for.}
+\item{CoreNetworkId}{[required] The ID of the core network to list attachment routing policy associations for.}
 
-\item{AttachmentId}{The ID of a specific attachment to filter the routing policy
-associations.}
+\item{AttachmentId}{The ID of a specific attachment to filter the routing policy associations.}
 
 \item{MaxResults}{The maximum number of results to return in a single page.}
 

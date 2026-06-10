@@ -6,36 +6,22 @@
 \usage{
 datazone_list_environment_blueprints(
   domainIdentifier,
-  managed = NULL,
   maxResults = NULL,
+  nextToken = NULL,
   name = NULL,
-  nextToken = NULL
+  managed = NULL
 )
 }
 \arguments{
 \item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain.}
 
-\item{managed}{Specifies whether the environment blueprint is managed by Amazon
-DataZone.}
+\item{maxResults}{The maximum number of blueprints to return in a single call to \code{\link[=datazone_list_environment_blueprints]{list_environment_blueprints}}. When the number of blueprints to be listed is greater than the value of \code{MaxResults}, the response contains a \code{NextToken} value that you can use in a subsequent call to \code{\link[=datazone_list_environment_blueprints]{list_environment_blueprints}} to list the next set of blueprints.}
 
-\item{maxResults}{The maximum number of blueprints to return in a single call to
-\code{\link[=datazone_list_environment_blueprints]{list_environment_blueprints}}.
-When the number of blueprints to be listed is greater than the value of
-\code{MaxResults}, the response contains a \code{NextToken} value that you can use
-in a subsequent call to
-\code{\link[=datazone_list_environment_blueprints]{list_environment_blueprints}} to
-list the next set of blueprints.}
+\item{nextToken}{When the number of blueprints in the environment is greater than the default value for the \code{MaxResults} parameter, or if you explicitly specify a value for \code{MaxResults} that is less than the number of blueprints in the environment, the response includes a pagination token named \code{NextToken}. You can specify this \code{NextToken} value in a subsequent call to \code{\link[=datazone_list_environment_blueprints]{list_environment_blueprints}}to list the next set of blueprints.}
 
 \item{name}{The name of the Amazon DataZone environment.}
 
-\item{nextToken}{When the number of blueprints in the environment is greater than the
-default value for the \code{MaxResults} parameter, or if you explicitly
-specify a value for \code{MaxResults} that is less than the number of
-blueprints in the environment, the response includes a pagination token
-named \code{NextToken}. You can specify this \code{NextToken} value in a
-subsequent call to
-\code{\link[=datazone_list_environment_blueprints]{list_environment_blueprints}}to
-list the next set of blueprints.}
+\item{managed}{Specifies whether the environment blueprint is managed by Amazon DataZone.}
 }
 \description{
 Lists blueprints in an Amazon DataZone environment.

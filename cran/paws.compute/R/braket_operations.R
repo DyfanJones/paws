@@ -73,38 +73,19 @@ braket_cancel_quantum_task <- function(quantumTaskArn, clientToken) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/braket_create_job/](https://www.paws-r-sdk.com/docs/braket_create_job/) for full documentation.
 #'
-#' @param clientToken &#91;required&#93; The client token associated with this request that guarantees that the
-#' request is idempotent.
-#' @param algorithmSpecification &#91;required&#93; Definition of the Amazon Braket job to be created. Specifies the
-#' container image the job uses and information about the Python scripts
-#' used for entry and training.
-#' @param inputDataConfig A list of parameters that specify the name and type of input data and
-#' where it is located.
-#' @param outputDataConfig &#91;required&#93; The path to the S3 location where you want to store hybrid job artifacts
-#' and the encryption key used to store them.
+#' @param clientToken &#91;required&#93; The client token associated with this request that guarantees that the request is idempotent.
+#' @param algorithmSpecification &#91;required&#93; Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information about the Python scripts used for entry and training.
+#' @param inputDataConfig A list of parameters that specify the name and type of input data and where it is located.
+#' @param outputDataConfig &#91;required&#93; The path to the S3 location where you want to store hybrid job artifacts and the encryption key used to store them.
 #' @param checkpointConfig Information about the output locations for hybrid job checkpoint data.
 #' @param jobName &#91;required&#93; The name of the Amazon Braket hybrid job.
-#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can
-#' assume to perform tasks on behalf of a user. It can access user
-#' resources, run an Amazon Braket job container on behalf of user, and
-#' output results and hybrid job details to the users' s3 buckets.
-#' @param stoppingCondition The user-defined criteria that specifies when a hybrid job stops
-#' running.
-#' @param instanceConfig &#91;required&#93; Configuration of the resource instances to use while running the hybrid
-#' job on Amazon Braket.
-#' @param hyperParameters Algorithm-specific parameters used by an Amazon Braket hybrid job that
-#' influence the quality of the training job. The values are set with a map
-#' of JSON key:value pairs, where the key is the name of the hyperparameter
-#' and the value is the value of the hyperparameter.
+#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output results and hybrid job details to the users' s3 buckets.
+#' @param stoppingCondition The user-defined criteria that specifies when a hybrid job stops running.
+#' @param instanceConfig &#91;required&#93; Configuration of the resource instances to use while running the hybrid job on Amazon Braket.
+#' @param hyperParameters Algorithm-specific parameters used by an Amazon Braket hybrid job that influence the quality of the training job. The values are set with a map of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of the hyperparameter.
 #' 
-#' Do not include any security-sensitive information including account
-#' access IDs, secrets, or tokens in any hyperparameter fields. As part of
-#' the shared responsibility model, you are responsible for any potential
-#' exposure, unauthorized access, or compromise of your sensitive data if
-#' caused by security-sensitive information included in the request
-#' hyperparameter variable or plain text fields.
-#' @param deviceConfig &#91;required&#93; The quantum processing unit (QPU) or simulator used to create an Amazon
-#' Braket hybrid job.
+#' Do not include any security-sensitive information including account access IDs, secrets, or tokens in any hyperparameter fields. As part of the shared responsibility model, you are responsible for any potential exposure, unauthorized access, or compromise of your sensitive data if caused by security-sensitive information included in the request hyperparameter variable or plain text fields.
+#' @param deviceConfig &#91;required&#93; The quantum processing unit (QPU) or simulator used to create an Amazon Braket hybrid job.
 #' @param tags Tags to be added to the hybrid job you're creating.
 #' @param associations The list of Amazon Braket resources associated with the hybrid job.
 #'
@@ -142,12 +123,10 @@ braket_create_job <- function(clientToken, algorithmSpecification, inputDataConf
 #' @param deviceParameters The parameters for the device to run the quantum task on.
 #' @param shots &#91;required&#93; The number of shots to use for the quantum task.
 #' @param outputS3Bucket &#91;required&#93; The S3 bucket to store quantum task result files in.
-#' @param outputS3KeyPrefix &#91;required&#93; The key prefix for the location in the S3 bucket to store quantum task
-#' results in.
+#' @param outputS3KeyPrefix &#91;required&#93; The key prefix for the location in the S3 bucket to store quantum task results in.
 #' @param action &#91;required&#93; The action associated with the quantum task.
 #' @param tags Tags to be added to the quantum task you're creating.
-#' @param jobToken The token for an Amazon Braket hybrid job that associates it with the
-#' quantum task.
+#' @param jobToken The token for an Amazon Braket hybrid job that associates it with the quantum task.
 #' @param associations The list of Amazon Braket resources associated with the quantum task.
 #' @param experimentalCapabilities Enable experimental capabilities for the quantum task.
 #'
@@ -180,17 +159,11 @@ braket_create_quantum_task <- function(clientToken, deviceArn, deviceParameters 
 #'
 #' See [https://www.paws-r-sdk.com/docs/braket_create_spending_limit/](https://www.paws-r-sdk.com/docs/braket_create_spending_limit/) for full documentation.
 #'
-#' @param clientToken &#91;required&#93; A unique, case-sensitive identifier to ensure that the operation
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Braket ignores the request, but does not return an
-#' error.
-#' @param deviceArn &#91;required&#93; The Amazon Resource Name (ARN) of the quantum device to apply the
-#' spending limit to.
+#' @param clientToken &#91;required&#93; A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Braket ignores the request, but does not return an error.
+#' @param deviceArn &#91;required&#93; The Amazon Resource Name (ARN) of the quantum device to apply the spending limit to.
 #' @param spendingLimit &#91;required&#93; The maximum amount that can be spent on the specified device, in USD.
-#' @param timePeriod The time period during which the spending limit is active, including
-#' start and end dates.
-#' @param tags The tags to apply to the spending limit. Each tag consists of a key and
-#' an optional value.
+#' @param timePeriod The time period during which the spending limit is active, including start and end dates.
+#' @param tags The tags to apply to the spending limit. Each tag consists of a key and an optional value.
 #'
 #' @keywords internal
 #'
@@ -284,8 +257,7 @@ braket_get_device <- function(deviceArn) {
 #' See [https://www.paws-r-sdk.com/docs/braket_get_job/](https://www.paws-r-sdk.com/docs/braket_get_job/) for full documentation.
 #'
 #' @param jobArn &#91;required&#93; The ARN of the hybrid job to retrieve.
-#' @param additionalAttributeNames A list of attributes to return additional information for. Only the
-#' QueueInfo additional attribute name is currently supported.
+#' @param additionalAttributeNames A list of attributes to return additional information for. Only the QueueInfo additional attribute name is currently supported.
 #'
 #' @keywords internal
 #'
@@ -317,8 +289,7 @@ braket_get_job <- function(jobArn, additionalAttributeNames = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/braket_get_quantum_task/](https://www.paws-r-sdk.com/docs/braket_get_quantum_task/) for full documentation.
 #'
 #' @param quantumTaskArn &#91;required&#93; The ARN of the quantum task to retrieve.
-#' @param additionalAttributeNames A list of attributes to return additional information for. Only the
-#' QueueInfo additional attribute name is currently supported.
+#' @param additionalAttributeNames A list of attributes to return additional information for. Only the QueueInfo additional attribute name is currently supported.
 #'
 #' @keywords internal
 #'
@@ -380,9 +351,7 @@ braket_list_tags_for_resource <- function(resourceArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/braket_search_devices/](https://www.paws-r-sdk.com/docs/braket_search_devices/) for full documentation.
 #'
-#' @param nextToken A token used for pagination of results returned in the response. Use the
-#' token returned from the previous request to continue search where the
-#' previous request ended.
+#' @param nextToken A token used for pagination of results returned in the response. Use the token returned from the previous request to continue search where the previous request ended.
 #' @param maxResults The maximum number of results to return in the response.
 #' @param filters &#91;required&#93; Array of SearchDevicesFilter objects to use when searching for devices.
 #'
@@ -416,9 +385,7 @@ braket_search_devices <- function(nextToken = NULL, maxResults = NULL, filters) 
 #'
 #' See [https://www.paws-r-sdk.com/docs/braket_search_jobs/](https://www.paws-r-sdk.com/docs/braket_search_jobs/) for full documentation.
 #'
-#' @param nextToken A token used for pagination of results returned in the response. Use the
-#' token returned from the previous request to continue search where the
-#' previous request ended.
+#' @param nextToken A token used for pagination of results returned in the response. Use the token returned from the previous request to continue search where the previous request ended.
 #' @param maxResults The maximum number of results to return in the response.
 #' @param filters &#91;required&#93; Array of SearchJobsFilter objects to use when searching for hybrid jobs.
 #'
@@ -451,12 +418,9 @@ braket_search_jobs <- function(nextToken = NULL, maxResults = NULL, filters) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/braket_search_quantum_tasks/](https://www.paws-r-sdk.com/docs/braket_search_quantum_tasks/) for full documentation.
 #'
-#' @param nextToken A token used for pagination of results returned in the response. Use the
-#' token returned from the previous request to continue search where the
-#' previous request ended.
+#' @param nextToken A token used for pagination of results returned in the response. Use the token returned from the previous request to continue search where the previous request ended.
 #' @param maxResults Maximum number of results to return in the response.
-#' @param filters &#91;required&#93; Array of `SearchQuantumTasksFilter` objects to use when searching for
-#' quantum tasks.
+#' @param filters &#91;required&#93; Array of `SearchQuantumTasksFilter` objects to use when searching for quantum tasks.
 #'
 #' @keywords internal
 #'
@@ -487,13 +451,9 @@ braket_search_quantum_tasks <- function(nextToken = NULL, maxResults = NULL, fil
 #'
 #' See [https://www.paws-r-sdk.com/docs/braket_search_spending_limits/](https://www.paws-r-sdk.com/docs/braket_search_spending_limits/) for full documentation.
 #'
-#' @param nextToken The token to retrieve the next page of results. This value is returned
-#' from a previous call to SearchSpendingLimits when there are more results
-#' available.
-#' @param maxResults The maximum number of results to return in a single call. Minimum value
-#' of 1, maximum value of 100. Default is 20.
-#' @param filters The filters to apply when searching for spending limits. Use filters to
-#' narrow down the results based on specific criteria.
+#' @param nextToken The token to retrieve the next page of results. This value is returned from a previous call to SearchSpendingLimits when there are more results available.
+#' @param maxResults The maximum number of results to return in a single call. Minimum value of 1, maximum value of 100. Default is 20.
+#' @param filters The filters to apply when searching for spending limits. Use filters to narrow down the results based on specific criteria.
 #'
 #' @keywords internal
 #'
@@ -525,8 +485,7 @@ braket_search_spending_limits <- function(nextToken = NULL, maxResults = NULL, f
 #' See [https://www.paws-r-sdk.com/docs/braket_tag_resource/](https://www.paws-r-sdk.com/docs/braket_tag_resource/) for full documentation.
 #'
 #' @param resourceArn &#91;required&#93; Specify the `resourceArn` of the resource to which a tag will be added.
-#' @param tags &#91;required&#93; Specify the tags to add to the resource. Tags can be specified as a
-#' key-value map.
+#' @param tags &#91;required&#93; Specify the tags to add to the resource. Tags can be specified as a key-value map.
 #'
 #' @keywords internal
 #'
@@ -557,8 +516,7 @@ braket_tag_resource <- function(resourceArn, tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/braket_untag_resource/](https://www.paws-r-sdk.com/docs/braket_untag_resource/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; Specify the `resourceArn` for the resource from which to remove the
-#' tags.
+#' @param resourceArn &#91;required&#93; Specify the `resourceArn` for the resource from which to remove the tags.
 #' @param tagKeys &#91;required&#93; Specify the keys for the tags to remove from the resource.
 #'
 #' @keywords internal
@@ -591,14 +549,9 @@ braket_untag_resource <- function(resourceArn, tagKeys) {
 #' See [https://www.paws-r-sdk.com/docs/braket_update_spending_limit/](https://www.paws-r-sdk.com/docs/braket_update_spending_limit/) for full documentation.
 #'
 #' @param spendingLimitArn &#91;required&#93; The Amazon Resource Name (ARN) of the spending limit to update.
-#' @param clientToken &#91;required&#93; A unique, case-sensitive identifier to ensure that the operation
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Braket ignores the request, but does not return an
-#' error.
-#' @param spendingLimit The new maximum amount that can be spent on the specified device, in
-#' USD.
-#' @param timePeriod The new time period during which the spending limit is active, including
-#' start and end dates.
+#' @param clientToken &#91;required&#93; A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Braket ignores the request, but does not return an error.
+#' @param spendingLimit The new maximum amount that can be spent on the specified device, in USD.
+#' @param timePeriod The new time period during which the spending limit is active, including start and end dates.
 #'
 #' @keywords internal
 #'

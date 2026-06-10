@@ -25,20 +25,15 @@ bedrock_list_custom_model_deployments(
 
 \item{maxResults}{The maximum number of results to return in a single call.}
 
-\item{nextToken}{The token for the next set of results. Use this token to retrieve
-additional results when the response is truncated.}
+\item{nextToken}{The token for the next set of results. Use this token to retrieve additional results when the response is truncated.}
 
-\item{sortBy}{The field to sort the results by. The only supported value is
-\code{CreationTime}.}
+\item{sortBy}{The field to sort the results by. The only supported value is \code{CreationTime}.}
 
-\item{sortOrder}{The sort order for the results. Valid values are \code{Ascending} and
-\code{Descending}. Default is \code{Descending}.}
+\item{sortOrder}{The sort order for the results. Valid values are \code{Ascending} and \code{Descending}. Default is \code{Descending}.}
 
-\item{statusEquals}{Filters deployments by status. Valid values are \code{CREATING}, \code{ACTIVE},
-and \code{FAILED}.}
+\item{statusEquals}{Filters deployments by status. Valid values are \code{CREATING}, \code{ACTIVE}, and \code{FAILED}.}
 
-\item{modelArnEquals}{Filters deployments by the Amazon Resource Name (ARN) of the associated
-custom model.}
+\item{modelArnEquals}{Filters deployments by the Amazon Resource Name (ARN) of the associated custom model.}
 }
 \description{
 Lists custom model deployments in your account. You can filter the results by creation time, name, status, and associated model. Use this operation to manage and monitor your custom model deployments.

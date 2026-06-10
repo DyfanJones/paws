@@ -7,8 +7,7 @@
 chatbot_get_microsoft_teams_channel_configuration(ChatConfigurationArn)
 }
 \arguments{
-\item{ChatConfigurationArn}{[required] The Amazon Resource Name (ARN) of the MicrosoftTeamsChannelConfiguration
-to retrieve.}
+\item{ChatConfigurationArn}{[required] The Amazon Resource Name (ARN) of the MicrosoftTeamsChannelConfiguration to retrieve.}
 }
 \description{
 Returns a Microsoft Teams channel configuration in an AWS account.

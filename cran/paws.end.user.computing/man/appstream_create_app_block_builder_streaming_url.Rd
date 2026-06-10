@@ -12,8 +12,7 @@ appstream_create_app_block_builder_streaming_url(
 \arguments{
 \item{AppBlockBuilderName}{[required] The name of the app block builder.}
 
-\item{Validity}{The time that the streaming URL will be valid, in seconds. Specify a
-value between 1 and 604800 seconds. The default is 3600 seconds.}
+\item{Validity}{The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.}
 }
 \description{
 Creates a URL to start a create app block builder streaming session.

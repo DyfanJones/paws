@@ -5,41 +5,41 @@
 \title{Puts a resource launch action}
 \usage{
 drs_put_launch_action(
+  resourceId,
   actionCode,
-  actionId,
-  actionVersion,
-  active,
-  category,
-  description,
-  name,
-  optional,
   order,
+  actionId,
+  optional,
+  active,
+  name,
+  actionVersion,
+  category,
   parameters = NULL,
-  resourceId
+  description
 )
 }
 \arguments{
+\item{resourceId}{[required] Launch configuration template Id or Source Server Id}
+
 \item{actionCode}{[required] Launch action code.}
 
-\item{actionId}{[required]}
+\item{order}{[required] Launch action order.}
 
-\item{actionVersion}{[required]}
-
-\item{active}{[required] Whether the launch action is active.}
-
-\item{category}{[required]}
-
-\item{description}{[required]}
-
-\item{name}{[required]}
+\item{actionId}{[required] Launch action Id.}
 
 \item{optional}{[required] Whether the launch will not be marked as failed if this action fails.}
 
-\item{order}{[required]}
+\item{active}{[required] Whether the launch action is active.}
 
-\item{parameters}{}
+\item{name}{[required] Launch action name.}
 
-\item{resourceId}{[required]}
+\item{actionVersion}{[required] Launch action version.}
+
+\item{category}{[required] Launch action category.}
+
+\item{parameters}{Launch action parameters.}
+
+\item{description}{[required] Launch action description.}
 }
 \description{
 Puts a resource launch action.

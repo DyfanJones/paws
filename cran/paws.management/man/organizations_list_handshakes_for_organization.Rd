@@ -11,18 +11,11 @@ organizations_list_handshakes_for_organization(
 )
 }
 \arguments{
-\item{Filter}{A \code{HandshakeFilter} object. Contains the filer used to select the
-handshakes for an operation.}
+\item{Filter}{A \code{HandshakeFilter} object. Contains the filer used to select the handshakes for an operation.}
 
-\item{NextToken}{The parameter for receiving additional results if you receive a
-\code{NextToken} response in a previous request. A \code{NextToken} response
-indicates that more output is available. Set this parameter to the value
-of the previous call's \code{NextToken} response to indicate where the output
-should continue from.}
+\item{NextToken}{The parameter for receiving additional results if you receive a \code{NextToken} response in a previous request. A \code{NextToken} response indicates that more output is available. Set this parameter to the value of the previous call's \code{NextToken} response to indicate where the output should continue from.}
 
-\item{MaxResults}{The maximum number of items to return in the response. If more results
-exist than the specified \code{MaxResults} value, a token is included in the
-response so that you can retrieve the remaining results.}
+\item{MaxResults}{The maximum number of items to return in the response. If more results exist than the specified \code{MaxResults} value, a token is included in the response so that you can retrieve the remaining results.}
 }
 \description{
 Lists the recent handshakes that you have sent.

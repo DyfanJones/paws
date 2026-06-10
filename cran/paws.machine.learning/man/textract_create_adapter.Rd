@@ -17,15 +17,11 @@ textract_create_adapter(
 \arguments{
 \item{AdapterName}{[required] The name to be assigned to the adapter being created.}
 
-\item{ClientRequestToken}{Idempotent token is used to recognize the request. If the same token is
-used with multiple CreateAdapter requests, the same session is returned.
-This token is employed to avoid unintentionally creating the same
-session multiple times.}
+\item{ClientRequestToken}{Idempotent token is used to recognize the request. If the same token is used with multiple CreateAdapter requests, the same session is returned. This token is employed to avoid unintentionally creating the same session multiple times.}
 
 \item{Description}{The description to be assigned to the adapter being created.}
 
-\item{FeatureTypes}{[required] The type of feature that the adapter is being trained on. Currrenly,
-supported feature types are: \code{QUERIES}}
+\item{FeatureTypes}{[required] The type of feature that the adapter is being trained on. Currrenly, supported feature types are: \code{QUERIES}}
 
 \item{AutoUpdate}{Controls whether or not the adapter should automatically update.}
 

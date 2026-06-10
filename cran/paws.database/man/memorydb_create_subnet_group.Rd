@@ -18,8 +18,7 @@ memorydb_create_subnet_group(
 
 \item{SubnetIds}{[required] A list of VPC subnet IDs for the subnet group.}
 
-\item{Tags}{A list of tags to be added to this resource. A tag is a key-value pair.
-A tag key must be accompanied by a tag value, although null is accepted.}
+\item{Tags}{A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.}
 }
 \description{
 Creates a subnet group. A subnet group is a collection of subnets (typically private) that you can designate for your clusters running in an Amazon Virtual Private Cloud (VPC) environment. When you create a cluster in an Amazon VPC, you must specify a subnet group. MemoryDB uses that subnet group to choose a subnet and IP addresses within that subnet to associate with your nodes. For more information, see \href{https://docs.aws.amazon.com/memorydb/latest/devguide/subnetgroups.html}{Subnets and subnet groups}.

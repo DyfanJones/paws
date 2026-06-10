@@ -9,11 +9,7 @@ sagemaker_update_code_repository(CodeRepositoryName, GitConfig = NULL)
 \arguments{
 \item{CodeRepositoryName}{[required] The name of the Git repository to update.}
 
-\item{GitConfig}{The configuration of the git repository, including the URL and the
-Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
-secret that contains the credentials used to access the repository. The
-secret must have a staging label of \code{AWSCURRENT} and must be in the
-following format:
+\item{GitConfig}{The configuration of the git repository, including the URL and the Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials used to access the repository. The secret must have a staging label of \code{AWSCURRENT} and must be in the following format:
 
 \verb{\{"username": UserName, "password": Password\}}}
 }

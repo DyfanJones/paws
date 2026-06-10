@@ -48,33 +48,15 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-A load balancer can distribute incoming traffic across your EC2
-instances. This enables you to increase the availability of your
-application. The load balancer also monitors the health of its
-registered instances and ensures that it routes traffic only to healthy
-instances. You configure your load balancer to accept incoming traffic
-by specifying one or more listeners, which are configured with a
-protocol and port number for connections from clients to the load
-balancer and a protocol and port number for connections from the load
-balancer to the instances.
+A load balancer can distribute incoming traffic across your EC2 instances. This enables you to increase the availability of your application. The load balancer also monitors the health of its registered instances and ensures that it routes traffic only to healthy instances. You configure your load balancer to accept incoming traffic by specifying one or more listeners, which are configured with a protocol and port number for connections from clients to the load balancer and a protocol and port number for connections from the load balancer to the instances.
 
-Elastic Load Balancing supports three types of load balancers:
-Application Load Balancers, Network Load Balancers, and Classic Load
-Balancers. You can select a load balancer based on your application
-needs. For more information, see the \href{https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/}{Elastic Load Balancing User Guide}.
+Elastic Load Balancing supports three types of load balancers: Application Load Balancers, Network Load Balancers, and Classic Load Balancers. You can select a load balancer based on your application needs. For more information, see the \href{https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/}{Elastic Load Balancing User Guide}.
 
-This reference covers the 2012-06-01 API, which supports Classic Load
-Balancers. The 2015-12-01 API supports Application Load Balancers and
-Network Load Balancers.
+This reference covers the 2012-06-01 API, which supports Classic Load Balancers. The 2015-12-01 API supports Application Load Balancers and Network Load Balancers.
 
-To get started, create a load balancer with one or more listeners using
-\code{\link[=elb_create_load_balancer]{create_load_balancer}}. Register your
-instances with the load balancer using
-\code{\link[=elb_register_instances_with_load_balancer]{register_instances_with_load_balancer}}.
+To get started, create a load balancer with one or more listeners using \code{\link[=elb_create_load_balancer]{create_load_balancer}}. Register your instances with the load balancer using \code{\link[=elb_register_instances_with_load_balancer]{register_instances_with_load_balancer}}.
 
-All Elastic Load Balancing operations are \emph{idempotent}, which means that
-they complete at most one time. If you repeat an operation, it succeeds
-with a 200 OK response code.
+All Elastic Load Balancing operations are \emph{idempotent}, which means that they complete at most one time. If you repeat an operation, it succeeds with a 200 OK response code.
 }
 \section{Service syntax}{
 

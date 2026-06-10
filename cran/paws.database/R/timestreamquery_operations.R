@@ -10,8 +10,7 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/timestreamquery_cancel_query/](https://www.paws-r-sdk.com/docs/timestreamquery_cancel_query/) for full documentation.
 #'
-#' @param QueryId &#91;required&#93; The ID of the query that needs to be cancelled. `QueryID` is returned as
-#' part of the query result.
+#' @param QueryId &#91;required&#93; The ID of the query that needs to be cancelled. `QueryID` is returned as part of the query result.
 #'
 #' @keywords internal
 #'
@@ -44,45 +43,23 @@ timestreamquery_cancel_query <- function(QueryId) {
 #' See [https://www.paws-r-sdk.com/docs/timestreamquery_create_scheduled_query/](https://www.paws-r-sdk.com/docs/timestreamquery_create_scheduled_query/) for full documentation.
 #'
 #' @param Name &#91;required&#93; Name of the scheduled query.
-#' @param QueryString &#91;required&#93; The query string to run. Parameter names can be specified in the query
-#' string `@@` character followed by an identifier. The named Parameter
-#' `@@scheduled_runtime` is reserved and can be used in the query to get the
-#' time at which the query is scheduled to run.
+#' @param QueryString &#91;required&#93; The query string to run. Parameter names can be specified in the query string `@@` character followed by an identifier. The named Parameter `@@scheduled_runtime` is reserved and can be used in the query to get the time at which the query is scheduled to run.
 #' 
-#' The timestamp calculated according to the ScheduleConfiguration
-#' parameter, will be the value of `@@scheduled_runtime` paramater for each
-#' query run. For example, consider an instance of a scheduled query
-#' executing on 2021-12-01 00:00:00. For this instance, the
-#' `@@scheduled_runtime` parameter is initialized to the timestamp
-#' 2021-12-01 00:00:00 when invoking the query.
+#' The timestamp calculated according to the ScheduleConfiguration parameter, will be the value of `@@scheduled_runtime` paramater for each query run. For example, consider an instance of a scheduled query executing on 2021-12-01 00:00:00. For this instance, the `@@scheduled_runtime` parameter is initialized to the timestamp 2021-12-01 00:00:00 when invoking the query.
 #' @param ScheduleConfiguration &#91;required&#93; The schedule configuration for the query.
-#' @param NotificationConfiguration &#91;required&#93; Notification configuration for the scheduled query. A notification is
-#' sent by Timestream when a query run finishes, when the state is updated
-#' or when you delete it.
+#' @param NotificationConfiguration &#91;required&#93; Notification configuration for the scheduled query. A notification is sent by Timestream when a query run finishes, when the state is updated or when you delete it.
 #' @param TargetConfiguration Configuration used for writing the result of a query.
-#' @param ClientToken Using a ClientToken makes the call to CreateScheduledQuery idempotent,
-#' in other words, making the same request repeatedly will produce the same
-#' result. Making multiple identical CreateScheduledQuery requests has the
-#' same effect as making a single request.
+#' @param ClientToken Using a ClientToken makes the call to CreateScheduledQuery idempotent, in other words, making the same request repeatedly will produce the same result. Making multiple identical CreateScheduledQuery requests has the same effect as making a single request.
 #' 
-#' -   If CreateScheduledQuery is called without a `ClientToken`, the Query
-#'     SDK generates a `ClientToken` on your behalf.
+#' -   If CreateScheduledQuery is called without a `ClientToken`, the Query SDK generates a `ClientToken` on your behalf.
 #' 
-#' -   After 8 hours, any request with the same `ClientToken` is treated as
-#'     a new request.
-#' @param ScheduledQueryExecutionRoleArn &#91;required&#93; The ARN for the IAM role that Timestream will assume when running the
-#' scheduled query.
+#' -   After 8 hours, any request with the same `ClientToken` is treated as a new request.
+#' @param ScheduledQueryExecutionRoleArn &#91;required&#93; The ARN for the IAM role that Timestream will assume when running the scheduled query.
 #' @param Tags A list of key-value pairs to label the scheduled query.
-#' @param KmsKeyId The Amazon KMS key used to encrypt the scheduled query resource,
-#' at-rest. If the Amazon KMS key is not specified, the scheduled query
-#' resource will be encrypted with a Timestream owned Amazon KMS key. To
-#' specify a KMS key, use the key ID, key ARN, alias name, or alias ARN.
-#' When using an alias name, prefix the name with *alias/*
+#' @param KmsKeyId The Amazon KMS key used to encrypt the scheduled query resource, at-rest. If the Amazon KMS key is not specified, the scheduled query resource will be encrypted with a Timestream owned Amazon KMS key. To specify a KMS key, use the key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix the name with *alias/*
 #' 
-#' If ErrorReportConfiguration uses `SSE_KMS` as encryption type, the same
-#' KmsKeyId is used to encrypt the error report at rest.
-#' @param ErrorReportConfiguration &#91;required&#93; Configuration for error reporting. Error reports will be generated when
-#' a problem is encountered when writing the query results.
+#' If ErrorReportConfiguration uses `SSE_KMS` as encryption type, the same KmsKeyId is used to encrypt the error report at rest.
+#' @param ErrorReportConfiguration &#91;required&#93; Configuration for error reporting. Error reports will be generated when a problem is encountered when writing the query results.
 #'
 #' @keywords internal
 #'
@@ -241,14 +218,11 @@ timestreamquery_describe_scheduled_query <- function(ScheduledQueryArn) {
 #' See [https://www.paws-r-sdk.com/docs/timestreamquery_execute_scheduled_query/](https://www.paws-r-sdk.com/docs/timestreamquery_execute_scheduled_query/) for full documentation.
 #'
 #' @param ScheduledQueryArn &#91;required&#93; ARN of the scheduled query.
-#' @param InvocationTime &#91;required&#93; The timestamp in UTC. Query will be run as if it was invoked at this
-#' timestamp.
+#' @param InvocationTime &#91;required&#93; The timestamp in UTC. Query will be run as if it was invoked at this timestamp.
 #' @param ClientToken Not used.
 #' @param QueryInsights Encapsulates settings for enabling `QueryInsights`.
 #' 
-#' Enabling `QueryInsights` returns insights and metrics as a part of the
-#' Amazon SNS notification for the query that you executed. You can use
-#' `QueryInsights` to tune your query performance and cost.
+#' Enabling `QueryInsights` returns insights and metrics as a part of the Amazon SNS notification for the query that you executed. You can use `QueryInsights` to tune your query performance and cost.
 #'
 #' @keywords internal
 #'
@@ -280,11 +254,7 @@ timestreamquery_execute_scheduled_query <- function(ScheduledQueryArn, Invocatio
 #'
 #' See [https://www.paws-r-sdk.com/docs/timestreamquery_list_scheduled_queries/](https://www.paws-r-sdk.com/docs/timestreamquery_list_scheduled_queries/) for full documentation.
 #'
-#' @param MaxResults The maximum number of items to return in the output. If the total number
-#' of items available is more than the value specified, a `NextToken` is
-#' provided in the output. To resume pagination, provide the `NextToken`
-#' value as the argument to the subsequent call to
-#' `ListScheduledQueriesRequest`.
+#' @param MaxResults The maximum number of items to return in the output. If the total number of items available is more than the value specified, a `NextToken` is provided in the output. To resume pagination, provide the `NextToken` value as the argument to the subsequent call to `ListScheduledQueriesRequest`.
 #' @param NextToken A pagination token to resume pagination.
 #'
 #' @keywords internal
@@ -316,8 +286,7 @@ timestreamquery_list_scheduled_queries <- function(MaxResults = NULL, NextToken 
 #'
 #' See [https://www.paws-r-sdk.com/docs/timestreamquery_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/timestreamquery_list_tags_for_resource/) for full documentation.
 #'
-#' @param ResourceARN &#91;required&#93; The Timestream resource with tags to be listed. This value is an Amazon
-#' Resource Name (ARN).
+#' @param ResourceARN &#91;required&#93; The Timestream resource with tags to be listed. This value is an Amazon Resource Name (ARN).
 #' @param MaxResults The maximum number of tags to return.
 #' @param NextToken A pagination token to resume pagination.
 #'
@@ -351,12 +320,8 @@ timestreamquery_list_tags_for_resource <- function(ResourceARN, MaxResults = NUL
 #'
 #' See [https://www.paws-r-sdk.com/docs/timestreamquery_prepare_query/](https://www.paws-r-sdk.com/docs/timestreamquery_prepare_query/) for full documentation.
 #'
-#' @param QueryString &#91;required&#93; The Timestream query string that you want to use as a prepared
-#' statement. Parameter names can be specified in the query string `@@`
-#' character followed by an identifier.
-#' @param ValidateOnly By setting this value to `true`, Timestream will only validate that the
-#' query string is a valid Timestream query, and not store the prepared
-#' query for later use.
+#' @param QueryString &#91;required&#93; The Timestream query string that you want to use as a prepared statement. Parameter names can be specified in the query string `@@` character followed by an identifier.
+#' @param ValidateOnly By setting this value to `true`, Timestream will only validate that the query string is a valid Timestream query, and not store the prepared query for later use.
 #'
 #' @keywords internal
 #'
@@ -389,85 +354,42 @@ timestreamquery_prepare_query <- function(QueryString, ValidateOnly = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/timestreamquery_query/](https://www.paws-r-sdk.com/docs/timestreamquery_query/) for full documentation.
 #'
 #' @param QueryString &#91;required&#93; The query to be run by Timestream.
-#' @param ClientToken Unique, case-sensitive string of up to 64 ASCII characters specified
-#' when a [`query`][timestreamquery_query] request is made. Providing a
-#' `ClientToken` makes the call to [`query`][timestreamquery_query]
-#' *idempotent*. This means that running the same query repeatedly will
-#' produce the same result. In other words, making multiple identical
-#' [`query`][timestreamquery_query] requests has the same effect as making
-#' a single request. When using `ClientToken` in a query, note the
-#' following:
+#' @param ClientToken Unique, case-sensitive string of up to 64 ASCII characters specified when a [`query`][timestreamquery_query] request is made. Providing a `ClientToken` makes the call to [`query`][timestreamquery_query] *idempotent*. This means that running the same query repeatedly will produce the same result. In other words, making multiple identical [`query`][timestreamquery_query] requests has the same effect as making a single request. When using `ClientToken` in a query, note the following:
 #' 
-#' -   If the Query API is instantiated without a `ClientToken`, the Query
-#'     SDK generates a `ClientToken` on your behalf.
+#' -   If the Query API is instantiated without a `ClientToken`, the Query SDK generates a `ClientToken` on your behalf.
 #' 
-#' -   If the [`query`][timestreamquery_query] invocation only contains the
-#'     `ClientToken` but does not include a `NextToken`, that invocation of
-#'     [`query`][timestreamquery_query] is assumed to be a new query run.
+#' -   If the [`query`][timestreamquery_query] invocation only contains the `ClientToken` but does not include a `NextToken`, that invocation of [`query`][timestreamquery_query] is assumed to be a new query run.
 #' 
-#' -   If the invocation contains `NextToken`, that particular invocation
-#'     is assumed to be a subsequent invocation of a prior call to the
-#'     Query API, and a result set is returned.
+#' -   If the invocation contains `NextToken`, that particular invocation is assumed to be a subsequent invocation of a prior call to the Query API, and a result set is returned.
 #' 
-#' -   After 4 hours, any request with the same `ClientToken` is treated as
-#'     a new request.
-#' @param NextToken A pagination token used to return a set of results. When the
-#' [`query`][timestreamquery_query] API is invoked using `NextToken`, that
-#' particular invocation is assumed to be a subsequent invocation of a
-#' prior call to [`query`][timestreamquery_query], and a result set is
-#' returned. However, if the [`query`][timestreamquery_query] invocation
-#' only contains the `ClientToken`, that invocation of
-#' [`query`][timestreamquery_query] is assumed to be a new query run.
+#' -   After 4 hours, any request with the same `ClientToken` is treated as a new request.
+#' @param NextToken A pagination token used to return a set of results. When the [`query`][timestreamquery_query] API is invoked using `NextToken`, that particular invocation is assumed to be a subsequent invocation of a prior call to [`query`][timestreamquery_query], and a result set is returned. However, if the [`query`][timestreamquery_query] invocation only contains the `ClientToken`, that invocation of [`query`][timestreamquery_query] is assumed to be a new query run.
 #' 
 #' Note the following when using NextToken in a query:
 #' 
-#' -   A pagination token can be used for up to five
-#'     [`query`][timestreamquery_query] invocations, OR for a duration of
-#'     up to 1 hour – whichever comes first.
+#' -   A pagination token can be used for up to five [`query`][timestreamquery_query] invocations, OR for a duration of up to 1 hour – whichever comes first.
 #' 
-#' -   Using the same `NextToken` will return the same set of records. To
-#'     keep paginating through the result set, you must to use the most
-#'     recent `nextToken`.
+#' -   Using the same `NextToken` will return the same set of records. To keep paginating through the result set, you must to use the most recent `nextToken`.
 #' 
-#' -   Suppose a [`query`][timestreamquery_query] invocation returns two
-#'     `NextToken` values, `TokenA` and `TokenB`. If `TokenB` is used in a
-#'     subsequent [`query`][timestreamquery_query] invocation, then
-#'     `TokenA` is invalidated and cannot be reused.
+#' -   Suppose a [`query`][timestreamquery_query] invocation returns two `NextToken` values, `TokenA` and `TokenB`. If `TokenB` is used in a subsequent [`query`][timestreamquery_query] invocation, then `TokenA` is invalidated and cannot be reused.
 #' 
-#' -   To request a previous result set from a query after pagination has
-#'     begun, you must re-invoke the Query API.
+#' -   To request a previous result set from a query after pagination has begun, you must re-invoke the Query API.
 #' 
-#' -   The latest `NextToken` should be used to paginate until `null` is
-#'     returned, at which point a new `NextToken` should be used.
+#' -   The latest `NextToken` should be used to paginate until `null` is returned, at which point a new `NextToken` should be used.
 #' 
-#' -   If the IAM principal of the query initiator and the result reader
-#'     are not the same and/or the query initiator and the result reader do
-#'     not have the same query string in the query requests, the query will
-#'     fail with an `Invalid pagination token` error.
-#' @param MaxRows The total number of rows to be returned in the
-#' [`query`][timestreamquery_query] output. The initial run of
-#' [`query`][timestreamquery_query] with a `MaxRows` value specified will
-#' return the result set of the query in two cases:
+#' -   If the IAM principal of the query initiator and the result reader are not the same and/or the query initiator and the result reader do not have the same query string in the query requests, the query will fail with an `Invalid pagination token` error.
+#' @param MaxRows The total number of rows to be returned in the [`query`][timestreamquery_query] output. The initial run of [`query`][timestreamquery_query] with a `MaxRows` value specified will return the result set of the query in two cases:
 #' 
 #' -   The size of the result is less than `1MB`.
 #' 
-#' -   The number of rows in the result set is less than the value of
-#'     `maxRows`.
+#' -   The number of rows in the result set is less than the value of `maxRows`.
 #' 
-#' Otherwise, the initial invocation of [`query`][timestreamquery_query]
-#' only returns a `NextToken`, which can then be used in subsequent calls
-#' to fetch the result set. To resume pagination, provide the `NextToken`
-#' value in the subsequent command.
+#' Otherwise, the initial invocation of [`query`][timestreamquery_query] only returns a `NextToken`, which can then be used in subsequent calls to fetch the result set. To resume pagination, provide the `NextToken` value in the subsequent command.
 #' 
-#' If the row size is large (e.g. a row has many columns), Timestream may
-#' return fewer rows to keep the response size from exceeding the 1 MB
-#' limit. If `MaxRows` is not provided, Timestream will send the necessary
-#' number of rows to meet the 1 MB limit.
+#' If the row size is large (e.g. a row has many columns), Timestream may return fewer rows to keep the response size from exceeding the 1 MB limit. If `MaxRows` is not provided, Timestream will send the necessary number of rows to meet the 1 MB limit.
 #' @param QueryInsights Encapsulates settings for enabling `QueryInsights`.
 #' 
-#' Enabling `QueryInsights` returns insights and metrics in addition to
-#' query results for the query that you executed. You can use
-#' `QueryInsights` to tune your query performance.
+#' Enabling `QueryInsights` returns insights and metrics in addition to query results for the query that you executed. You can use `QueryInsights` to tune your query performance.
 #'
 #' @keywords internal
 #'
@@ -498,8 +420,7 @@ timestreamquery_query <- function(QueryString, ClientToken = NULL, NextToken = N
 #'
 #' See [https://www.paws-r-sdk.com/docs/timestreamquery_tag_resource/](https://www.paws-r-sdk.com/docs/timestreamquery_tag_resource/) for full documentation.
 #'
-#' @param ResourceARN &#91;required&#93; Identifies the Timestream resource to which tags should be added. This
-#' value is an Amazon Resource Name (ARN).
+#' @param ResourceARN &#91;required&#93; Identifies the Timestream resource to which tags should be added. This value is an Amazon Resource Name (ARN).
 #' @param Tags &#91;required&#93; The tags to be assigned to the Timestream resource.
 #'
 #' @keywords internal
@@ -531,10 +452,8 @@ timestreamquery_tag_resource <- function(ResourceARN, Tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/timestreamquery_untag_resource/](https://www.paws-r-sdk.com/docs/timestreamquery_untag_resource/) for full documentation.
 #'
-#' @param ResourceARN &#91;required&#93; The Timestream resource that the tags will be removed from. This value
-#' is an Amazon Resource Name (ARN).
-#' @param TagKeys &#91;required&#93; A list of tags keys. Existing tags of the resource whose keys are
-#' members of this list will be removed from the Timestream resource.
+#' @param ResourceARN &#91;required&#93; The Timestream resource that the tags will be removed from. This value is an Amazon Resource Name (ARN).
+#' @param TagKeys &#91;required&#93; A list of tags keys. Existing tags of the resource whose keys are members of this list will be removed from the Timestream resource.
 #'
 #' @keywords internal
 #'
@@ -566,31 +485,15 @@ timestreamquery_untag_resource <- function(ResourceARN, TagKeys) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/timestreamquery_update_account_settings/](https://www.paws-r-sdk.com/docs/timestreamquery_update_account_settings/) for full documentation.
 #'
-#' @param MaxQueryTCU The maximum number of compute units the service will use at any point in
-#' time to serve your queries. To run queries, you must set a minimum
-#' capacity of 4 TCU. You can set the maximum number of TCU in multiples of
-#' 4, for example, 4, 8, 16, 32, and so on. The maximum value supported for
-#' `MaxQueryTCU` is 1000. To request an increase to this soft limit,
-#' contact Amazon Web Services Support. For information about the default
-#' quota for maxQueryTCU, see Default quotas. This configuration is
-#' applicable only for on-demand usage of Timestream Compute Units (TCUs).
+#' @param MaxQueryTCU The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on. The maximum value supported for `MaxQueryTCU` is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see Default quotas. This configuration is applicable only for on-demand usage of Timestream Compute Units (TCUs).
 #' 
-#' The maximum value supported for `MaxQueryTCU` is 1000. To request an
-#' increase to this soft limit, contact Amazon Web Services Support. For
-#' information about the default quota for `maxQueryTCU`, see [Default
-#' quotas](https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default).
+#' The maximum value supported for `MaxQueryTCU` is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for `maxQueryTCU`, see [Default quotas](https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default).
 #' @param QueryPricingModel The pricing model for queries in an account.
 #' 
-#' The `QueryPricingModel` parameter is used by several Timestream
-#' operations; however, the
-#' [`update_account_settings`][timestreamquery_update_account_settings] API
-#' operation doesn't recognize any values other than `COMPUTE_UNITS`.
-#' @param QueryCompute Modifies the query compute settings configured in your account,
-#' including the query pricing model and provisioned Timestream Compute
-#' Units (TCUs) in your account.
+#' The `QueryPricingModel` parameter is used by several Timestream operations; however, the [`update_account_settings`][timestreamquery_update_account_settings] API operation doesn't recognize any values other than `COMPUTE_UNITS`.
+#' @param QueryCompute Modifies the query compute settings configured in your account, including the query pricing model and provisioned Timestream Compute Units (TCUs) in your account.
 #' 
-#' This API is idempotent, meaning that making the same request multiple
-#' times will have the same effect as making the request once.
+#' This API is idempotent, meaning that making the same request multiple times will have the same effect as making the request once.
 #'
 #' @keywords internal
 #'

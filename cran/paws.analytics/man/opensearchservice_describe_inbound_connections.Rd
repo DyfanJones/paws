@@ -12,18 +12,11 @@ opensearchservice_describe_inbound_connections(
 )
 }
 \arguments{
-\item{Filters}{A list of filters used to match properties for inbound cross-cluster
-connections.}
+\item{Filters}{A list of filters used to match properties for inbound cross-cluster connections.}
 
-\item{MaxResults}{An optional parameter that specifies the maximum number of results to
-return. You can use \code{nextToken} to get the next page of results.}
+\item{MaxResults}{An optional parameter that specifies the maximum number of results to return. You can use \code{nextToken} to get the next page of results.}
 
-\item{NextToken}{If your initial
-\code{\link[=opensearchservice_describe_inbound_connections]{describe_inbound_connections}}
-operation returns a \code{nextToken}, you can include the returned
-\code{nextToken} in subsequent
-\code{\link[=opensearchservice_describe_inbound_connections]{describe_inbound_connections}}
-operations, which returns results in the next page.}
+\item{NextToken}{If your initial \code{\link[=opensearchservice_describe_inbound_connections]{describe_inbound_connections}} operation returns a \code{nextToken}, you can include the returned \code{nextToken} in subsequent \code{\link[=opensearchservice_describe_inbound_connections]{describe_inbound_connections}} operations, which returns results in the next page.}
 }
 \description{
 Lists all the inbound cross-cluster search connections for a destination (remote) Amazon OpenSearch Service domain. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html}{Cross-cluster search for Amazon OpenSearch Service}.

@@ -6,10 +6,7 @@ NULL
 #' Returns metadata and content for multiple entities
 #'
 #' @description
-#' Returns metadata and content for multiple entities. This is the Batch
-#' version of the [`describe_entity`][marketplacecatalog_describe_entity]
-#' API and uses the same IAM permission action as
-#' [`describe_entity`][marketplacecatalog_describe_entity] API.
+#' Returns metadata and content for multiple entities. This is the Batch version of the [`describe_entity`][marketplacecatalog_describe_entity] API and uses the same IAM permission action as [`describe_entity`][marketplacecatalog_describe_entity] API.
 #'
 #' @usage
 #' marketplacecatalog_batch_describe_entities(EntityRequestList)
@@ -77,19 +74,13 @@ marketplacecatalog_batch_describe_entities <- function(EntityRequestList) {
 #' Used to cancel an open change request
 #'
 #' @description
-#' Used to cancel an open change request. Must be sent before the status of
-#' the request changes to `APPLYING`, the final stage of completing your
-#' change request. You can describe a change during the 60-day request
-#' history retention period for API calls.
+#' Used to cancel an open change request. Must be sent before the status of the request changes to `APPLYING`, the final stage of completing your change request. You can describe a change during the 60-day request history retention period for API calls.
 #'
 #' @usage
 #' marketplacecatalog_cancel_change_set(Catalog, ChangeSetId)
 #'
-#' @param Catalog &#91;required&#93; Required. The catalog related to the request. Fixed value:
-#' `AWSMarketplace`.
-#' @param ChangeSetId &#91;required&#93; Required. The unique identifier of the
-#' [`start_change_set`][marketplacecatalog_start_change_set] request that
-#' you want to cancel.
+#' @param Catalog &#91;required&#93; Required. The catalog related to the request. Fixed value: `AWSMarketplace`.
+#' @param ChangeSetId &#91;required&#93; Required. The unique identifier of the [`start_change_set`][marketplacecatalog_start_change_set] request that you want to cancel.
 #'
 #' @return
 #' A list with the following syntax:
@@ -136,14 +127,12 @@ marketplacecatalog_cancel_change_set <- function(Catalog, ChangeSetId) {
 #' resource ARN
 #'
 #' @description
-#' Deletes a resource-based policy on an entity that is identified by its
-#' resource ARN.
+#' Deletes a resource-based policy on an entity that is identified by its resource ARN.
 #'
 #' @usage
 #' marketplacecatalog_delete_resource_policy(ResourceArn)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the entity resource that is associated
-#' with the resource policy.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the entity resource that is associated with the resource policy.
 #'
 #' @return
 #' An empty list.
@@ -187,11 +176,8 @@ marketplacecatalog_delete_resource_policy <- function(ResourceArn) {
 #' @usage
 #' marketplacecatalog_describe_change_set(Catalog, ChangeSetId)
 #'
-#' @param Catalog &#91;required&#93; Required. The catalog related to the request. Fixed value:
-#' `AWSMarketplace`
-#' @param ChangeSetId &#91;required&#93; Required. The unique identifier for the
-#' [`start_change_set`][marketplacecatalog_start_change_set] request that
-#' you want to describe the details for.
+#' @param Catalog &#91;required&#93; Required. The catalog related to the request. Fixed value: `AWSMarketplace`
+#' @param ChangeSetId &#91;required&#93; Required. The unique identifier for the [`start_change_set`][marketplacecatalog_start_change_set] request that you want to describe the details for.
 #'
 #' @return
 #' A list with the following syntax:
@@ -267,8 +253,7 @@ marketplacecatalog_describe_change_set <- function(Catalog, ChangeSetId) {
 #' @usage
 #' marketplacecatalog_describe_entity(Catalog, EntityId)
 #'
-#' @param Catalog &#91;required&#93; Required. The catalog related to the request. Fixed value:
-#' `AWSMarketplace`
+#' @param Catalog &#91;required&#93; Required. The catalog related to the request. Fixed value: `AWSMarketplace`
 #' @param EntityId &#91;required&#93; Required. The unique ID of the entity to describe.
 #'
 #' @return
@@ -320,14 +305,12 @@ marketplacecatalog_describe_entity <- function(Catalog, EntityId) {
 #' resource ARN
 #'
 #' @description
-#' Gets a resource-based policy of an entity that is identified by its
-#' resource ARN.
+#' Gets a resource-based policy of an entity that is identified by its resource ARN.
 #'
 #' @usage
 #' marketplacecatalog_get_resource_policy(ResourceArn)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the entity resource that is associated
-#' with the resource policy.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the entity resource that is associated with the resource policy.
 #'
 #' @return
 #' A list with the following syntax:
@@ -372,13 +355,9 @@ marketplacecatalog_get_resource_policy <- function(ResourceArn) {
 #' the call
 #'
 #' @description
-#' Returns the list of change sets owned by the account being used to make
-#' the call. You can filter this list by providing any combination of
-#' `entityId`, `ChangeSetName`, and status. If you provide more than one
-#' filter, the API operation applies a logical AND between the filters.
+#' Returns the list of change sets owned by the account being used to make the call. You can filter this list by providing any combination of `entityId`, `ChangeSetName`, and status. If you provide more than one filter, the API operation applies a logical AND between the filters.
 #' 
-#' You can describe a change during the 60-day request history retention
-#' period for API calls.
+#' You can describe a change during the 60-day request history retention period for API calls.
 #'
 #' @usage
 #' marketplacecatalog_list_change_sets(Catalog, FilterList, Sort,
@@ -387,11 +366,8 @@ marketplacecatalog_get_resource_policy <- function(ResourceArn) {
 #' @param Catalog &#91;required&#93; The catalog related to the request. Fixed value: `AWSMarketplace`
 #' @param FilterList An array of filter objects.
 #' @param Sort An object that contains two attributes, `SortBy` and `SortOrder`.
-#' @param MaxResults The maximum number of results returned by a single call. This value must
-#' be provided in the next call to retrieve the next set of results. By
-#' default, this value is 20.
-#' @param NextToken The token value retrieved from a previous call to access the next page
-#' of results.
+#' @param MaxResults The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.
+#' @param NextToken The token value retrieved from a previous call to access the next page of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -470,30 +446,14 @@ marketplacecatalog_list_change_sets <- function(Catalog, FilterList = NULL, Sort
 #'   NextToken, MaxResults, OwnershipType, EntityTypeFilters, EntityTypeSort)
 #'
 #' @param Catalog &#91;required&#93; The catalog related to the request. Fixed value: `AWSMarketplace`
-#' @param EntityType &#91;required&#93; The type of entities to retrieve. Valid values are: `AmiProduct`,
-#' `ContainerProduct`, `DataProduct`, `SaaSProduct`, `ProcurementPolicy`,
-#' `Experience`, `Audience`, `BrandingSettings`, `Offer`, `OfferSet`,
-#' `Seller`, `ResaleAuthorization`, `Solution`.
-#' @param FilterList An array of filter objects. Each filter object contains two attributes,
-#' `filterName` and `filterValues`.
+#' @param EntityType &#91;required&#93; The type of entities to retrieve. Valid values are: `AmiProduct`, `ContainerProduct`, `DataProduct`, `SaaSProduct`, `ProcurementPolicy`, `Experience`, `Audience`, `BrandingSettings`, `Offer`, `OfferSet`, `Seller`, `ResaleAuthorization`, `Solution`.
+#' @param FilterList An array of filter objects. Each filter object contains two attributes, `filterName` and `filterValues`.
 #' @param Sort An object that contains two attributes, `SortBy` and `SortOrder`.
-#' @param NextToken The value of the next token, if it exists. Null if there are no more
-#' results.
-#' @param MaxResults Specifies the upper limit of the elements on a single page. If a value
-#' isn't provided, the default value is 20.
-#' @param OwnershipType Filters the returned set of entities based on their owner. The default
-#' is `SELF`. To list entities shared with you through AWS Resource Access
-#' Manager (AWS RAM), set to `SHARED`. Entities shared through the AWS
-#' Marketplace Catalog API
-#' [`put_resource_policy`][marketplacecatalog_put_resource_policy]
-#' operation can't be discovered through the `SHARED` parameter.
-#' @param EntityTypeFilters A Union object containing filter shapes for all `EntityType`s. Each
-#' `EntityTypeFilter` shape will have filters applicable for that
-#' `EntityType` that can be used to search or filter entities.
-#' @param EntityTypeSort A Union object containing `Sort` shapes for all `EntityType`s. Each
-#' `EntityTypeSort` shape will have `SortBy` and `SortOrder` applicable for
-#' fields on that `EntityType`. This can be used to sort the results of the
-#' filter query.
+#' @param NextToken The value of the next token, if it exists. Null if there are no more results.
+#' @param MaxResults Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.
+#' @param OwnershipType Filters the returned set of entities based on their owner. The default is `SELF`. To list entities shared with you through AWS Resource Access Manager (AWS RAM), set to `SHARED`. Entities shared through the AWS Marketplace Catalog API [`put_resource_policy`][marketplacecatalog_put_resource_policy] operation can't be discovered through the `SHARED` parameter.
+#' @param EntityTypeFilters A Union object containing filter shapes for all `EntityType`s. Each `EntityTypeFilter` shape will have filters applicable for that `EntityType` that can be used to search or filter entities.
+#' @param EntityTypeSort A Union object containing `Sort` shapes for all `EntityType`s. Each `EntityTypeSort` shape will have `SortBy` and `SortOrder` applicable for fields on that `EntityType`. This can be used to sort the results of the filter query.
 #'
 #' @return
 #' A list with the following syntax:
@@ -958,16 +918,12 @@ marketplacecatalog_list_entities <- function(Catalog, EntityType, FilterList = N
 #' change set)
 #'
 #' @description
-#' Lists all tags that have been added to a resource (either an
-#' [entity](https://docs.aws.amazon.com/marketplace/latest/APIReference/catalog-apis.html#catalog-api-entities)
-#' or [change
-#' set](https://docs.aws.amazon.com/marketplace/latest/APIReference/catalog-apis.html#working-with-change-sets)).
+#' Lists all tags that have been added to a resource (either an [entity](https://docs.aws.amazon.com/marketplace/latest/APIReference/catalog-apis.html#catalog-api-entities) or [change set](https://docs.aws.amazon.com/marketplace/latest/APIReference/catalog-apis.html#working-with-change-sets)).
 #'
 #' @usage
 #' marketplacecatalog_list_tags_for_resource(ResourceArn)
 #'
-#' @param ResourceArn &#91;required&#93; Required. The Amazon Resource Name (ARN) associated with the resource
-#' you want to list tags on.
+#' @param ResourceArn &#91;required&#93; Required. The Amazon Resource Name (ARN) associated with the resource you want to list tags on.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1017,14 +973,12 @@ marketplacecatalog_list_tags_for_resource <- function(ResourceArn) {
 #' Attaches a resource-based policy to an entity
 #'
 #' @description
-#' Attaches a resource-based policy to an entity. Examples of an entity
-#' include: `AmiProduct` and `ContainerProduct`.
+#' Attaches a resource-based policy to an entity. Examples of an entity include: `AmiProduct` and `ContainerProduct`.
 #'
 #' @usage
 #' marketplacecatalog_put_resource_policy(ResourceArn, Policy)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the entity resource you want to
-#' associate with a resource policy.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the entity resource you want to associate with a resource policy.
 #' @param Policy &#91;required&#93; The policy document to set; formatted in JSON.
 #'
 #' @return
@@ -1065,34 +1019,13 @@ marketplacecatalog_put_resource_policy <- function(ResourceArn, Policy) {
 #' Allows you to request changes for your entities
 #'
 #' @description
-#' Allows you to request changes for your entities. Within a single
-#' `ChangeSet`, you can't start the same change type against the same
-#' entity multiple times. Additionally, when a `ChangeSet` is running, all
-#' the entities targeted by the different changes are locked until the
-#' change set has completed (either succeeded, cancelled, or failed). If
-#' you try to start a change set containing a change against an entity that
-#' is already locked, you will receive a `ResourceInUseException` error.
+#' Allows you to request changes for your entities. Within a single `ChangeSet`, you can't start the same change type against the same entity multiple times. Additionally, when a `ChangeSet` is running, all the entities targeted by the different changes are locked until the change set has completed (either succeeded, cancelled, or failed). If you try to start a change set containing a change against an entity that is already locked, you will receive a `ResourceInUseException` error.
 #' 
-#' For example, you can't start the `ChangeSet` described in the
-#' [example](https://docs.aws.amazon.com/marketplace/latest/APIReference/API_StartChangeSet.html#API_StartChangeSet_Examples)
-#' later in this topic because it contains two changes to run the same
-#' change type (`AddRevisions`) against the same entity (`entity-id@@1`).
+#' For example, you can't start the `ChangeSet` described in the [example](https://docs.aws.amazon.com/marketplace/latest/APIReference/API_StartChangeSet.html#API_StartChangeSet_Examples) later in this topic because it contains two changes to run the same change type (`AddRevisions`) against the same entity (`entity-id@@1`).
 #' 
-#' For more information about working with change sets, see [Working with
-#' change
-#' sets](https://docs.aws.amazon.com/marketplace/latest/APIReference/catalog-apis.html#working-with-change-sets).
-#' For information about change types for single-AMI products, see [Working
-#' with single-AMI
-#' products](https://docs.aws.amazon.com/marketplace/latest/APIReference/work-with-single-ami-products.html#working-with-single-AMI-products).
-#' Also, for more information about change types available for
-#' container-based products, see [Working with container
-#' products](https://docs.aws.amazon.com/marketplace/latest/APIReference/work-with-container-products.html#working-with-container-products).
+#' For more information about working with change sets, see [Working with change sets](https://docs.aws.amazon.com/marketplace/latest/APIReference/catalog-apis.html#working-with-change-sets). For information about change types for single-AMI products, see [Working with single-AMI products](https://docs.aws.amazon.com/marketplace/latest/APIReference/work-with-single-ami-products.html#working-with-single-AMI-products). Also, for more information about change types available for container-based products, see [Working with container products](https://docs.aws.amazon.com/marketplace/latest/APIReference/work-with-container-products.html#working-with-container-products).
 #' 
-#' To download "DetailsDocument" shapes, see
-#' [Python](https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-python)
-#' and
-#' [Java](https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-java/tree/main)
-#' shapes on GitHub.
+#' To download "DetailsDocument" shapes, see [Python](https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-python) and [Java](https://github.com/awslabs/aws-marketplace-catalog-api-shapes-for-java/tree/main) shapes on GitHub.
 #'
 #' @usage
 #' marketplacecatalog_start_change_set(Catalog, ChangeSet, ChangeSetName,
@@ -1100,16 +1033,10 @@ marketplacecatalog_put_resource_policy <- function(ResourceArn, Policy) {
 #'
 #' @param Catalog &#91;required&#93; The catalog related to the request. Fixed value: `AWSMarketplace`
 #' @param ChangeSet &#91;required&#93; Array of `change` object.
-#' @param ChangeSetName Optional case sensitive string of up to 100 ASCII characters. The change
-#' set name can be used to filter the list of change sets.
+#' @param ChangeSetName Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets.
 #' @param ClientRequestToken A unique token to identify the request to ensure idempotency.
-#' @param ChangeSetTags A list of objects specifying each key name and value for the
-#' `ChangeSetTags` property.
-#' @param Intent The intent related to the request. The default is `APPLY`. To test your
-#' request before applying changes to your entities, use `VALIDATE`. This
-#' feature is currently available for adding versions to single-AMI
-#' products. For more information, see [Add a new
-#' version](https://docs.aws.amazon.com/marketplace/latest/APIReference/work-with-single-ami-products.html#ami-add-version).
+#' @param ChangeSetTags A list of objects specifying each key name and value for the `ChangeSetTags` property.
+#' @param Intent The intent related to the request. The default is `APPLY`. To test your request before applying changes to your entities, use `VALIDATE`. This feature is currently available for adding versions to single-AMI products. For more information, see [Add a new version](https://docs.aws.amazon.com/marketplace/latest/APIReference/work-with-single-ami-products.html#ami-add-version).
 #'
 #' @return
 #' A list with the following syntax:
@@ -1181,18 +1108,13 @@ marketplacecatalog_start_change_set <- function(Catalog, ChangeSet, ChangeSetNam
 #' Tags a resource (either an entity or change set)
 #'
 #' @description
-#' Tags a resource (either an
-#' [entity](https://docs.aws.amazon.com/marketplace/latest/APIReference/catalog-apis.html#catalog-api-entities)
-#' or [change
-#' set](https://docs.aws.amazon.com/marketplace/latest/APIReference/catalog-apis.html#working-with-change-sets)).
+#' Tags a resource (either an [entity](https://docs.aws.amazon.com/marketplace/latest/APIReference/catalog-apis.html#catalog-api-entities) or [change set](https://docs.aws.amazon.com/marketplace/latest/APIReference/catalog-apis.html#working-with-change-sets)).
 #'
 #' @usage
 #' marketplacecatalog_tag_resource(ResourceArn, Tags)
 #'
-#' @param ResourceArn &#91;required&#93; Required. The Amazon Resource Name (ARN) associated with the resource
-#' you want to tag.
-#' @param Tags &#91;required&#93; Required. A list of objects specifying each key name and value. Number
-#' of objects allowed: 1-50.
+#' @param ResourceArn &#91;required&#93; Required. The Amazon Resource Name (ARN) associated with the resource you want to tag.
+#' @param Tags &#91;required&#93; Required. A list of objects specifying each key name and value. Number of objects allowed: 1-50.
 #'
 #' @return
 #' An empty list.
@@ -1238,18 +1160,13 @@ marketplacecatalog_tag_resource <- function(ResourceArn, Tags) {
 #' change set)
 #'
 #' @description
-#' Removes a tag or list of tags from a resource (either an
-#' [entity](https://docs.aws.amazon.com/marketplace/latest/APIReference/catalog-apis.html#catalog-api-entities)
-#' or [change
-#' set](https://docs.aws.amazon.com/marketplace/latest/APIReference/catalog-apis.html#working-with-change-sets)).
+#' Removes a tag or list of tags from a resource (either an [entity](https://docs.aws.amazon.com/marketplace/latest/APIReference/catalog-apis.html#catalog-api-entities) or [change set](https://docs.aws.amazon.com/marketplace/latest/APIReference/catalog-apis.html#working-with-change-sets)).
 #'
 #' @usage
 #' marketplacecatalog_untag_resource(ResourceArn, TagKeys)
 #'
-#' @param ResourceArn &#91;required&#93; Required. The Amazon Resource Name (ARN) associated with the resource
-#' you want to remove the tag from.
-#' @param TagKeys &#91;required&#93; Required. A list of key names of tags to be removed. Number of strings
-#' allowed: 0-256.
+#' @param ResourceArn &#91;required&#93; Required. The Amazon Resource Name (ARN) associated with the resource you want to remove the tag from.
+#' @param TagKeys &#91;required&#93; Required. A list of key names of tags to be removed. Number of strings allowed: 0-256.
 #'
 #' @return
 #' An empty list.

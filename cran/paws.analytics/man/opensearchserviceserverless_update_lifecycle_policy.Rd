@@ -24,8 +24,7 @@ opensearchserviceserverless_update_lifecycle_policy(
 
 \item{policy}{The JSON policy document to use as the content for the lifecycle policy.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the
-request.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the request.}
 }
 \description{
 Updates an OpenSearch Serverless access policy. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-update}{Updating data lifecycle policies}.

@@ -18,9 +18,7 @@ Example: \verb{438012d3-4052-4cc7-b2e3-8d3372e0e706}}
 
 \item{ReservedCacheNodeId}{A customer-specified identifier to track this reservation.
 
-The Reserved Cache Node ID is an unique customer-specified identifier to
-track this reservation. If this parameter is not specified, ElastiCache
-automatically generates an identifier for the reservation.
+The Reserved Cache Node ID is an unique customer-specified identifier to track this reservation. If this parameter is not specified, ElastiCache automatically generates an identifier for the reservation.
 
 Example: myreservationID}
 
@@ -28,8 +26,7 @@ Example: myreservationID}
 
 Default: \code{1}}
 
-\item{Tags}{A list of tags to be added to this resource. A tag is a key-value pair.
-A tag key must be accompanied by a tag value, although null is accepted.}
+\item{Tags}{A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.}
 }
 \description{
 Allows you to purchase a reserved cache node offering. Reserved nodes are not eligible for cancellation and are non-refundable. For more information, see \href{https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/}{Managing Costs with Reserved Nodes}.

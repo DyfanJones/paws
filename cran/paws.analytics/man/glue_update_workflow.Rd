@@ -16,19 +16,11 @@ glue_update_workflow(
 
 \item{Description}{The description of the workflow.}
 
-\item{DefaultRunProperties}{A collection of properties to be used as part of each execution of the
-workflow.
+\item{DefaultRunProperties}{A collection of properties to be used as part of each execution of the workflow.
 
-Run properties may be logged. Do not pass plaintext secrets as
-properties. Retrieve secrets from a Glue Connection, Amazon Web Services
-Secrets Manager or other secret management mechanism if you intend to
-use them within the workflow run.}
+Run properties may be logged. Do not pass plaintext secrets as properties. Retrieve secrets from a Glue Connection, Amazon Web Services Secrets Manager or other secret management mechanism if you intend to use them within the workflow run.}
 
-\item{MaxConcurrentRuns}{You can use this parameter to prevent unwanted multiple updates to data,
-to control costs, or in some cases, to prevent exceeding the maximum
-number of concurrent runs of any of the component jobs. If you leave
-this parameter blank, there is no limit to the number of concurrent
-workflow runs.}
+\item{MaxConcurrentRuns}{You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.}
 }
 \description{
 Updates an existing workflow.

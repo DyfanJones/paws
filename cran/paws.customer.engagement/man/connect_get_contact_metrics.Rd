@@ -2,20 +2,19 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_get_contact_metrics}
 \alias{connect_get_contact_metrics}
-\title{Retrieves the position of the contact in the queue}
+\title{Retrieves contact metric data for a specified contact}
 \usage{
 connect_get_contact_metrics(InstanceId, ContactId, Metrics)
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{ContactId}{[required] The identifier of the contact in this instance of Amazon Connect.}
+\item{ContactId}{[required] The identifier of the contact in this instance of Connect Customer.}
 
-\item{Metrics}{[required] A list of contact-level metrics to retrieve.}
+\item{Metrics}{[required] A list of contact level metrics to retrieve.Supported metrics include POSITION_IN_QUEUE (the contact's current position in the queue) and ESTIMATED_WAIT_TIME (the predicted time in seconds until the contact is connected to an agent)}
 }
 \description{
-Retrieves the position of the contact in the queue.
+Retrieves contact metric data for a specified contact.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_get_contact_metrics/} for full documentation.
 }

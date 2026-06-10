@@ -6,36 +6,25 @@
 \usage{
 datazone_list_policy_grants(
   domainIdentifier,
-  entityIdentifier,
   entityType,
+  entityIdentifier,
+  policyType,
   maxResults = NULL,
-  nextToken = NULL,
-  policyType
+  nextToken = NULL
 )
 }
 \arguments{
 \item{domainIdentifier}{[required] The ID of the domain where you want to list policy grants.}
 
-\item{entityIdentifier}{[required] The ID of the entity for which you want to list policy grants.}
-
 \item{entityType}{[required] The type of entity for which you want to list policy grants.}
 
-\item{maxResults}{The maximum number of grants to return in a single call to
-\code{\link[=datazone_list_policy_grants]{list_policy_grants}}. When the number of
-grants to be listed is greater than the value of \code{MaxResults}, the
-response contains a \code{NextToken} value that you can use in a subsequent
-call to \code{\link[=datazone_list_policy_grants]{list_policy_grants}} to list the
-next set of grants.}
-
-\item{nextToken}{When the number of grants is greater than the default value for the
-\code{MaxResults} parameter, or if you explicitly specify a value for
-\code{MaxResults} that is less than the number of grants, the response
-includes a pagination token named \code{NextToken}. You can specify this
-\code{NextToken} value in a subsequent call to
-\code{\link[=datazone_list_policy_grants]{list_policy_grants}} to list the next set
-of grants.}
+\item{entityIdentifier}{[required] The ID of the entity for which you want to list policy grants.}
 
 \item{policyType}{[required] The type of policy that you want to list.}
+
+\item{maxResults}{The maximum number of grants to return in a single call to \code{\link[=datazone_list_policy_grants]{list_policy_grants}}. When the number of grants to be listed is greater than the value of \code{MaxResults}, the response contains a \code{NextToken} value that you can use in a subsequent call to \code{\link[=datazone_list_policy_grants]{list_policy_grants}} to list the next set of grants.}
+
+\item{nextToken}{When the number of grants is greater than the default value for the \code{MaxResults} parameter, or if you explicitly specify a value for \code{MaxResults} that is less than the number of grants, the response includes a pagination token named \code{NextToken}. You can specify this \code{NextToken} value in a subsequent call to \code{\link[=datazone_list_policy_grants]{list_policy_grants}} to list the next set of grants.}
 }
 \description{
 Lists policy grants.

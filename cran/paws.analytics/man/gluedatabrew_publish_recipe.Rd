@@ -7,8 +7,7 @@
 gluedatabrew_publish_recipe(Description = NULL, Name)
 }
 \arguments{
-\item{Description}{A description of the recipe to be published, for this version of the
-recipe.}
+\item{Description}{A description of the recipe to be published, for this version of the recipe.}
 
 \item{Name}{[required] The name of the recipe to be published.}
 }

@@ -13,41 +13,17 @@ ecs_describe_capacity_providers(
 )
 }
 \arguments{
-\item{capacityProviders}{The short name or full Amazon Resource Name (ARN) of one or more
-capacity providers. Up to \code{100} capacity providers can be described in
-an action.}
+\item{capacityProviders}{The short name or full Amazon Resource Name (ARN) of one or more capacity providers. Up to \code{100} capacity providers can be described in an action.}
 
-\item{cluster}{The name of the cluster to describe capacity providers for. When
-specified, only capacity providers associated with this cluster are
-returned, including Amazon ECS Managed Instances capacity providers.}
+\item{cluster}{The name of the cluster to describe capacity providers for. When specified, only capacity providers associated with this cluster are returned, including Amazon ECS Managed Instances capacity providers.}
 
-\item{include}{Specifies whether or not you want to see the resource tags for the
-capacity provider. If \code{TAGS} is specified, the tags are included in the
-response. If this field is omitted, tags aren't included in the
-response.}
+\item{include}{Specifies whether or not you want to see the resource tags for the capacity provider. If \code{TAGS} is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.}
 
-\item{maxResults}{The maximum number of account setting results returned by
-\code{\link[=ecs_describe_capacity_providers]{describe_capacity_providers}} in
-paginated output. When this parameter is used,
-\code{\link[=ecs_describe_capacity_providers]{describe_capacity_providers}} only
-returns \code{maxResults} results in a single page along with a \code{nextToken}
-response element. The remaining results of the initial request can be
-seen by sending another
-\code{\link[=ecs_describe_capacity_providers]{describe_capacity_providers}} request
-with the returned \code{nextToken} value. This value can be between 1 and 10.
-If this parameter is not used, then
-\code{\link[=ecs_describe_capacity_providers]{describe_capacity_providers}} returns
-up to 10 results and a \code{nextToken} value if applicable.}
+\item{maxResults}{The maximum number of account setting results returned by \code{\link[=ecs_describe_capacity_providers]{describe_capacity_providers}} in paginated output. When this parameter is used, \code{\link[=ecs_describe_capacity_providers]{describe_capacity_providers}} only returns \code{maxResults} results in a single page along with a \code{nextToken} response element. The remaining results of the initial request can be seen by sending another \code{\link[=ecs_describe_capacity_providers]{describe_capacity_providers}} request with the returned \code{nextToken} value. This value can be between 1 and 10. If this parameter is not used, then \code{\link[=ecs_describe_capacity_providers]{describe_capacity_providers}} returns up to 10 results and a \code{nextToken} value if applicable.}
 
-\item{nextToken}{The \code{nextToken} value returned from a previous paginated
-\code{\link[=ecs_describe_capacity_providers]{describe_capacity_providers}} request
-where \code{maxResults} was used and the results exceeded the value of that
-parameter. Pagination continues from the end of the previous results
-that returned the \code{nextToken} value.
+\item{nextToken}{The \code{nextToken} value returned from a previous paginated \code{\link[=ecs_describe_capacity_providers]{describe_capacity_providers}} request where \code{maxResults} was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the \code{nextToken} value.
 
-This token should be treated as an opaque identifier that is only used
-to retrieve the next items in a list and not for other programmatic
-purposes.}
+This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.}
 }
 \description{
 Describes one or more of your capacity providers.

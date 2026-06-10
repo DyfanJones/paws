@@ -10,8 +10,7 @@ inspector2_batch_associate_code_security_scan_configuration(
 )
 }
 \arguments{
-\item{associateConfigurationRequests}{[required] A list of code repositories to associate with the specified scan
-configuration.}
+\item{associateConfigurationRequests}{[required] A list of code repositories to associate with the specified scan configuration.}
 }
 \description{
 Associates multiple code repositories with an Amazon Inspector code security scan configuration.

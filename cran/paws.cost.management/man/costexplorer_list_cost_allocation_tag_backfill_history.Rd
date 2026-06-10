@@ -11,9 +11,7 @@ costexplorer_list_cost_allocation_tag_backfill_history(
 )
 }
 \arguments{
-\item{NextToken}{The token to retrieve the next set of results. Amazon Web Services
-provides the token when the response from a previous call has more
-results than the maximum page size.}
+\item{NextToken}{The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.}
 
 \item{MaxResults}{The maximum number of objects that are returned for this request.}
 }

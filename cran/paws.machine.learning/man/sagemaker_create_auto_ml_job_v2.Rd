@@ -20,73 +20,40 @@ sagemaker_create_auto_ml_job_v2(
 )
 }
 \arguments{
-\item{AutoMLJobName}{[required] Identifies an Autopilot job. The name must be unique to your account and
-is case insensitive.}
+\item{AutoMLJobName}{[required] Identifies an Autopilot job. The name must be unique to your account and is case insensitive.}
 
-\item{AutoMLJobInputDataConfig}{[required] An array of channel objects describing the input data and their
-location. Each channel is a named input source. Similar to the
-\href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig}{InputDataConfig}
-attribute in the \code{\link[=sagemaker_create_auto_ml_job]{create_auto_ml_job}}
-input parameters. The supported formats depend on the problem type:
+\item{AutoMLJobInputDataConfig}{[required] An array of channel objects describing the input data and their location. Each channel is a named input source. Similar to the \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig}{InputDataConfig} attribute in the \code{\link[=sagemaker_create_auto_ml_job]{create_auto_ml_job}} input parameters. The supported formats depend on the problem type:
 \itemize{
 \item For tabular problem types: \code{S3Prefix}, \code{ManifestFile}.
-\item For image classification: \code{S3Prefix}, \code{ManifestFile},
-\code{AugmentedManifestFile}.
+\item For image classification: \code{S3Prefix}, \code{ManifestFile}, \code{AugmentedManifestFile}.
 \item For text classification: \code{S3Prefix}.
 \item For time-series forecasting: \code{S3Prefix}.
 \item For text generation (LLMs fine-tuning): \code{S3Prefix}.
 }}
 
-\item{OutputDataConfig}{[required] Provides information about encryption and the Amazon S3 output path
-needed to store artifacts from an AutoML job.}
+\item{OutputDataConfig}{[required] Provides information about encryption and the Amazon S3 output path needed to store artifacts from an AutoML job.}
 
-\item{AutoMLProblemTypeConfig}{[required] Defines the configuration settings of one of the supported problem
-types.}
+\item{AutoMLProblemTypeConfig}{[required] Defines the configuration settings of one of the supported problem types.}
 
 \item{RoleArn}{[required] The ARN of the role that is used to access the data.}
 
-\item{Tags}{An array of key-value pairs. You can use tags to categorize your Amazon
-Web Services resources in different ways, such as by purpose, owner, or
-environment. For more information, see \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web ServicesResources}.
-Tag keys must be unique per resource.}
+\item{Tags}{An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, such as by purpose, owner, or environment. For more information, see \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web ServicesResources}. Tag keys must be unique per resource.}
 
-\item{SecurityConfig}{The security configuration for traffic encryption or Amazon VPC
-settings.}
+\item{SecurityConfig}{The security configuration for traffic encryption or Amazon VPC settings.}
 
-\item{AutoMLJobObjective}{Specifies a metric to minimize or maximize as the objective of a job. If
-not specified, the default objective metric depends on the problem type.
-For the list of default values per problem type, see
-\href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html}{AutoMLJobObjective}.
+\item{AutoMLJobObjective}{Specifies a metric to minimize or maximize as the objective of a job. If not specified, the default objective metric depends on the problem type. For the list of default values per problem type, see \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html}{AutoMLJobObjective}.
 \itemize{
-\item For tabular problem types: You must either provide both the
-\code{AutoMLJobObjective} and indicate the type of supervised learning
-problem in \code{AutoMLProblemTypeConfig}
-(\code{TabularJobConfig.ProblemType}), or none at all.
-\item For text generation problem types (LLMs fine-tuning): Fine-tuning
-language models in Autopilot does not require setting the
-\code{AutoMLJobObjective} field. Autopilot fine-tunes LLMs without
-requiring multiple candidates to be trained and evaluated. Instead,
-using your dataset, Autopilot directly fine-tunes your target model
-to enhance a default objective metric, the cross-entropy loss. After
-fine-tuning a language model, you can evaluate the quality of its
-generated text using different metrics. For a list of the available
-metrics, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-metrics.html}{Metrics for fine-tuning LLMs in Autopilot}.
+\item For tabular problem types: You must either provide both the \code{AutoMLJobObjective} and indicate the type of supervised learning problem in \code{AutoMLProblemTypeConfig} (\code{TabularJobConfig.ProblemType}), or none at all.
+\item For text generation problem types (LLMs fine-tuning): Fine-tuning language models in Autopilot does not require setting the \code{AutoMLJobObjective} field. Autopilot fine-tunes LLMs without requiring multiple candidates to be trained and evaluated. Instead, using your dataset, Autopilot directly fine-tunes your target model to enhance a default objective metric, the cross-entropy loss. After fine-tuning a language model, you can evaluate the quality of its generated text using different metrics. For a list of the available metrics, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-metrics.html}{Metrics for fine-tuning LLMs in Autopilot}.
 }}
 
-\item{ModelDeployConfig}{Specifies how to generate the endpoint name for an automatic one-click
-Autopilot model deployment.}
+\item{ModelDeployConfig}{Specifies how to generate the endpoint name for an automatic one-click Autopilot model deployment.}
 
-\item{DataSplitConfig}{This structure specifies how to split the data into train and validation
-datasets.
+\item{DataSplitConfig}{This structure specifies how to split the data into train and validation datasets.
 
-The validation and training datasets must contain the same headers. For
-jobs created by calling
-\code{\link[=sagemaker_create_auto_ml_job]{create_auto_ml_job}}, the validation
-dataset must be less than 2 GB in size.
+The validation and training datasets must contain the same headers. For jobs created by calling \code{\link[=sagemaker_create_auto_ml_job]{create_auto_ml_job}}, the validation dataset must be less than 2 GB in size.
 
-This attribute must not be set for the time-series forecasting problem
-type, as Autopilot automatically splits the input dataset into training
-and validation sets.}
+This attribute must not be set for the time-series forecasting problem type, as Autopilot automatically splits the input dataset into training and validation sets.}
 
 \item{AutoMLComputeConfig}{Specifies the compute configuration for the AutoML job V2.}
 }

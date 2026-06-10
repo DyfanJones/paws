@@ -11,29 +11,22 @@ docdb_delete_db_cluster(
 )
 }
 \arguments{
-\item{DBClusterIdentifier}{[required] The cluster identifier for the cluster to be deleted. This parameter
-isn't case sensitive.
+\item{DBClusterIdentifier}{[required] The cluster identifier for the cluster to be deleted. This parameter isn't case sensitive.
 
 Constraints:
 \itemize{
 \item Must match an existing \code{DBClusterIdentifier}.
 }}
 
-\item{SkipFinalSnapshot}{Determines whether a final cluster snapshot is created before the
-cluster is deleted. If \code{true} is specified, no cluster snapshot is
-created. If \code{false} is specified, a cluster snapshot is created before
-the DB cluster is deleted.
+\item{SkipFinalSnapshot}{Determines whether a final cluster snapshot is created before the cluster is deleted. If \code{true} is specified, no cluster snapshot is created. If \code{false} is specified, a cluster snapshot is created before the DB cluster is deleted.
 
-If \code{SkipFinalSnapshot} is \code{false}, you must specify a
-\code{FinalDBSnapshotIdentifier} parameter.
+If \code{SkipFinalSnapshot} is \code{false}, you must specify a \code{FinalDBSnapshotIdentifier} parameter.
 
 Default: \code{false}}
 
-\item{FinalDBSnapshotIdentifier}{The cluster snapshot identifier of the new cluster snapshot created when
-\code{SkipFinalSnapshot} is set to \code{false}.
+\item{FinalDBSnapshotIdentifier}{The cluster snapshot identifier of the new cluster snapshot created when \code{SkipFinalSnapshot} is set to \code{false}.
 
-Specifying this parameter and also setting the \code{SkipFinalShapshot}
-parameter to \code{true} results in an error.
+Specifying this parameter and also setting the \code{SkipFinalShapshot} parameter to \code{true} results in an error.
 
 Constraints:
 \itemize{

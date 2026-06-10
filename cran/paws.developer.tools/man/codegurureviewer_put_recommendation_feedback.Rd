@@ -11,15 +11,11 @@ codegurureviewer_put_recommendation_feedback(
 )
 }
 \arguments{
-\item{CodeReviewArn}{[required] The Amazon Resource Name (ARN) of the
-\href{https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html}{CodeReview}
-object.}
+\item{CodeReviewArn}{[required] The Amazon Resource Name (ARN) of the \href{https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html}{CodeReview} object.}
 
-\item{RecommendationId}{[required] The recommendation ID that can be used to track the provided
-recommendations and then to collect the feedback.}
+\item{RecommendationId}{[required] The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.}
 
-\item{Reactions}{[required] List for storing reactions. Reactions are utf-8 text code for emojis. If
-you send an empty list it clears all your feedback.}
+\item{Reactions}{[required] List for storing reactions. Reactions are utf-8 text code for emojis. If you send an empty list it clears all your feedback.}
 }
 \description{
 Stores customer feedback for a CodeGuru Reviewer recommendation. When this API is called again with different reactions the previous feedback is overwritten.

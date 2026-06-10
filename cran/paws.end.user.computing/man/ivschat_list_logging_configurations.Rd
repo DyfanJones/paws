@@ -8,8 +8,7 @@ AWS region where the API request is processed}
 ivschat_list_logging_configurations(nextToken = NULL, maxResults = NULL)
 }
 \arguments{
-\item{nextToken}{The first logging configurations to retrieve. This is used for
-pagination; see the \code{nextToken} response field.}
+\item{nextToken}{The first logging configurations to retrieve. This is used for pagination; see the \code{nextToken} response field.}
 
 \item{maxResults}{Maximum number of logging configurations to return. Default: 50.}
 }

@@ -9,12 +9,9 @@ athena_list_tags_for_resource(ResourceARN, NextToken = NULL, MaxResults = NULL)
 \arguments{
 \item{ResourceARN}{[required] Lists the tags for the resource with the specified ARN.}
 
-\item{NextToken}{The token for the next set of results, or null if there are no
-additional results for this request, where the request lists the tags
-for the resource with the specified ARN.}
+\item{NextToken}{The token for the next set of results, or null if there are no additional results for this request, where the request lists the tags for the resource with the specified ARN.}
 
-\item{MaxResults}{The maximum number of results to be returned per request that lists the
-tags for the resource.}
+\item{MaxResults}{The maximum number of results to be returned per request that lists the tags for the resource.}
 }
 \description{
 Lists the tags associated with an Athena resource.

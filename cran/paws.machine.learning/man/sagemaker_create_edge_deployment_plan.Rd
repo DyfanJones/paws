@@ -19,8 +19,7 @@ sagemaker_create_edge_deployment_plan(
 
 \item{DeviceFleetName}{[required] The device fleet used for this edge deployment plan.}
 
-\item{Stages}{List of stages of the edge deployment plan. The number of stages is
-limited to 10 per deployment.}
+\item{Stages}{List of stages of the edge deployment plan. The number of stages is limited to 10 per deployment.}
 
 \item{Tags}{List of tags with which to tag the edge deployment plan.}
 }

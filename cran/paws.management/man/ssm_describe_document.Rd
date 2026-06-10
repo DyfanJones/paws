@@ -10,16 +10,11 @@ ssm_describe_document(Name, DocumentVersion = NULL, VersionName = NULL)
 \arguments{
 \item{Name}{[required] The name of the SSM document.
 
-If you're calling a shared SSM document from a different Amazon Web
-Services account, \code{Name} is the full Amazon Resource Name (ARN) of the
-document.}
+If you're calling a shared SSM document from a different Amazon Web Services account, \code{Name} is the full Amazon Resource Name (ARN) of the document.}
 
-\item{DocumentVersion}{The document version for which you want information. Can be a specific
-version or the default version.}
+\item{DocumentVersion}{The document version for which you want information. Can be a specific version or the default version.}
 
-\item{VersionName}{An optional field specifying the version of the artifact associated with
-the document. For example, 12.6. This value is unique across all
-versions of a document, and can't be changed.}
+\item{VersionName}{An optional field specifying the version of the artifact associated with the document. For example, 12.6. This value is unique across all versions of a document, and can't be changed.}
 }
 \description{
 Describes the specified Amazon Web Services Systems Manager document (SSM document).

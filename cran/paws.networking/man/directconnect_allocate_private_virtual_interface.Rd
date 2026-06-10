@@ -12,11 +12,9 @@ directconnect_allocate_private_virtual_interface(
 )
 }
 \arguments{
-\item{connectionId}{[required] The ID of the connection on which the private virtual interface is
-provisioned.}
+\item{connectionId}{[required] The ID of the connection on which the private virtual interface is provisioned.}
 
-\item{ownerAccount}{[required] The ID of the Amazon Web Services account that owns the virtual private
-interface.}
+\item{ownerAccount}{[required] The ID of the Amazon Web Services account that owns the virtual private interface.}
 
 \item{newPrivateVirtualInterfaceAllocation}{[required] Information about the private virtual interface.}
 }

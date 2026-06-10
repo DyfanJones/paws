@@ -5,8 +5,7 @@ NULL
 #' Amazon Bedrock Runtime
 #'
 #' @description
-#' Describes the API operations for running inference using Amazon Bedrock
-#' models.
+#' Describes the API operations for running inference using Amazon Bedrock models.
 #'
 #' @param
 #' config

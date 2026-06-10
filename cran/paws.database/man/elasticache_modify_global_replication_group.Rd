@@ -18,27 +18,19 @@ elasticache_modify_global_replication_group(
 \arguments{
 \item{GlobalReplicationGroupId}{[required] The name of the Global datastore}
 
-\item{ApplyImmediately}{[required] This parameter causes the modifications in this request and any pending
-modifications to be applied, asynchronously and as soon as possible.
-Modifications to Global Replication Groups cannot be requested to be
-applied in PreferredMaintenceWindow.}
+\item{ApplyImmediately}{[required] This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be applied in PreferredMaintenceWindow.}
 
 \item{CacheNodeType}{A valid cache node type that you want to scale this Global datastore to.}
 
-\item{Engine}{Modifies the engine listed in a global replication group message. The
-options are redis, memcached or valkey.}
+\item{Engine}{Modifies the engine listed in a global replication group message. The options are valkey, memcached or redis.}
 
-\item{EngineVersion}{The upgraded version of the cache engine to be run on the clusters in
-the Global datastore.}
+\item{EngineVersion}{The upgraded version of the cache engine to be run on the clusters in the Global datastore.}
 
-\item{CacheParameterGroupName}{The name of the cache parameter group to use with the Global datastore.
-It must be compatible with the major engine version used by the Global
-datastore.}
+\item{CacheParameterGroupName}{The name of the cache parameter group to use with the Global datastore. It must be compatible with the major engine version used by the Global datastore.}
 
 \item{GlobalReplicationGroupDescription}{A description of the Global datastore}
 
-\item{AutomaticFailoverEnabled}{Determines whether a read replica is automatically promoted to
-read/write primary if the existing primary encounters a failure.}
+\item{AutomaticFailoverEnabled}{Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure.}
 }
 \description{
 Modifies the settings for a Global datastore.

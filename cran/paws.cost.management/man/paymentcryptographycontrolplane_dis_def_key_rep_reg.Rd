@@ -11,12 +11,9 @@ paymentcryptographycontrolplane_disable_default_key_replication_regions(
 )
 }
 \arguments{
-\item{ReplicationRegions}{[required] The list of Amazon Web Services Regions to remove from the account's
-default replication regions.
+\item{ReplicationRegions}{[required] The list of Amazon Web Services Regions to remove from the account's default replication regions.
 
-New keys created after this operation will not automatically be
-replicated to these regions, though existing keys with replication to
-these regions will be unaffected.}
+New keys created after this operation will not automatically be replicated to these regions, though existing keys with replication to these regions will be unaffected.}
 }
 \description{
 Disables \href{https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html}{Multi-Region key replication} settings for the specified Amazon Web Services Regions in your Amazon Web Services account, preventing new keys from being automatically replicated to those regions.

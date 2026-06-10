@@ -12,6 +12,7 @@ lexmodelsv2_update_bot_locale(
   nluIntentConfidenceThreshold,
   voiceSettings = NULL,
   unifiedSpeechSettings = NULL,
+  audioFillerSettings = NULL,
   speechRecognitionSettings = NULL,
   generativeAISettings = NULL,
   speechDetectionSensitivity = NULL
@@ -20,34 +21,25 @@ lexmodelsv2_update_bot_locale(
 \arguments{
 \item{botId}{[required] The unique identifier of the bot that contains the locale.}
 
-\item{botVersion}{[required] The version of the bot that contains the locale to be updated. The
-version can only be the \code{DRAFT} version.}
+\item{botVersion}{[required] The version of the bot that contains the locale to be updated. The version can only be the \code{DRAFT} version.}
 
-\item{localeId}{[required] The identifier of the language and locale to update. The string must
-match one of the supported locales. For more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
+\item{localeId}{[required] The identifier of the language and locale to update. The string must match one of the supported locales. For more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
 
 \item{description}{The new description of the locale.}
 
-\item{nluIntentConfidenceThreshold}{[required] The new confidence threshold where Amazon Lex inserts the
-\code{AMAZON.FallbackIntent} and \code{AMAZON.KendraSearchIntent} intents in the
-list of possible intents for an utterance.}
+\item{nluIntentConfidenceThreshold}{[required] The new confidence threshold where Amazon Lex inserts the \code{AMAZON.FallbackIntent} and \code{AMAZON.KendraSearchIntent} intents in the list of possible intents for an utterance.}
 
-\item{voiceSettings}{The new Amazon Polly voice Amazon Lex should use for voice interaction
-with the user.}
+\item{voiceSettings}{The new Amazon Polly voice Amazon Lex should use for voice interaction with the user.}
 
 \item{unifiedSpeechSettings}{Updated unified speech settings to apply to the bot locale.}
 
+\item{audioFillerSettings}{Updated audio filler settings to apply to the bot locale. When enabled, requires \code{unifiedSpeechSettings} (speech-to-speech) to be configured on the bot locale.}
+
 \item{speechRecognitionSettings}{Updated speech-to-text settings to apply to the bot locale.}
 
-\item{generativeAISettings}{Contains settings for generative AI features powered by Amazon Bedrock
-for your bot locale. Use this object to turn generative AI features on
-and off. Pricing may differ if you turn a feature on. For more
-information, see LINK.}
+\item{generativeAISettings}{Contains settings for generative AI features powered by Amazon Bedrock for your bot locale. Use this object to turn generative AI features on and off. Pricing may differ if you turn a feature on. For more information, see LINK.}
 
-\item{speechDetectionSensitivity}{The new sensitivity level for voice activity detection (VAD) in the bot
-locale. This setting helps optimize speech recognition accuracy by
-adjusting how the system responds to background noise during voice
-interactions.}
+\item{speechDetectionSensitivity}{The new sensitivity level for voice activity detection (VAD) in the bot locale. This setting helps optimize speech recognition accuracy by adjusting how the system responds to background noise during voice interactions.}
 }
 \description{
 Updates the settings that a bot has for a specific locale.

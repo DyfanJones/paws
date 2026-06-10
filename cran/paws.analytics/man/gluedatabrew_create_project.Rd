@@ -16,15 +16,13 @@ gluedatabrew_create_project(
 \arguments{
 \item{DatasetName}{[required] The name of an existing dataset to associate this project with.}
 
-\item{Name}{[required] A unique name for the new project. Valid characters are alphanumeric
-(A-Z, a-z, 0-9), hyphen (-), period (.), and space.}
+\item{Name}{[required] A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.}
 
 \item{RecipeName}{[required] The name of an existing recipe to associate with the project.}
 
-\item{Sample}{}
+\item{Sample}{Represents the sample size and sampling type for DataBrew to use for interactive data analysis.}
 
-\item{RoleArn}{[required] The Amazon Resource Name (ARN) of the Identity and Access Management
-(IAM) role to be assumed for this request.}
+\item{RoleArn}{[required] The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be assumed for this request.}
 
 \item{Tags}{Metadata tags to apply to this project.}
 }

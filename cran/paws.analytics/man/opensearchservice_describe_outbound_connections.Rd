@@ -14,15 +14,9 @@ opensearchservice_describe_outbound_connections(
 \arguments{
 \item{Filters}{List of filter names and values that you can use for requests.}
 
-\item{MaxResults}{An optional parameter that specifies the maximum number of results to
-return. You can use \code{nextToken} to get the next page of results.}
+\item{MaxResults}{An optional parameter that specifies the maximum number of results to return. You can use \code{nextToken} to get the next page of results.}
 
-\item{NextToken}{If your initial
-\code{\link[=opensearchservice_describe_outbound_connections]{describe_outbound_connections}}
-operation returns a \code{nextToken}, you can include the returned
-\code{nextToken} in subsequent
-\code{\link[=opensearchservice_describe_outbound_connections]{describe_outbound_connections}}
-operations, which returns results in the next page.}
+\item{NextToken}{If your initial \code{\link[=opensearchservice_describe_outbound_connections]{describe_outbound_connections}} operation returns a \code{nextToken}, you can include the returned \code{nextToken} in subsequent \code{\link[=opensearchservice_describe_outbound_connections]{describe_outbound_connections}} operations, which returns results in the next page.}
 }
 \description{
 Lists all the outbound cross-cluster connections for a local (source) Amazon OpenSearch Service domain. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html}{Cross-cluster search for Amazon OpenSearch Service}.

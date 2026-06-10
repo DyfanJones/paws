@@ -18,7 +18,7 @@ codecatalyst_start_dev_environment_session(
 
 \item{id}{[required] The system-generated unique ID of the Dev Environment.}
 
-\item{sessionConfiguration}{[required]}
+\item{sessionConfiguration}{[required] Information about the configuration of a Dev Environment session.}
 }
 \description{
 Starts a session for a specified Dev Environment.

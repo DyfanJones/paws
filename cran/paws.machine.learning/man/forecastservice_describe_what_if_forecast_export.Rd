@@ -8,8 +8,7 @@ CreateWhatIfForecastExport operation}
 forecastservice_describe_what_if_forecast_export(WhatIfForecastExportArn)
 }
 \arguments{
-\item{WhatIfForecastExportArn}{[required] The Amazon Resource Name (ARN) of the what-if forecast export that you
-are interested in.}
+\item{WhatIfForecastExportArn}{[required] The Amazon Resource Name (ARN) of the what-if forecast export that you are interested in.}
 }
 \description{
 Describes the what-if forecast export created using the \code{\link[=forecastservice_create_what_if_forecast_export]{create_what_if_forecast_export}} operation.

@@ -7,8 +7,7 @@
 elasticsearchservice_cancel_elasticsearch_service_software_update(DomainName)
 }
 \arguments{
-\item{DomainName}{[required] The name of the domain that you want to stop the latest service software
-update on.}
+\item{DomainName}{[required] The name of the domain that you want to stop the latest service software update on.}
 }
 \description{
 Cancels a scheduled service software update for an Amazon ES domain. You can only perform this operation before the \code{AutomatedUpdateDate} and when the \code{UpdateStatus} is in the \code{PENDING_UPDATE} state.

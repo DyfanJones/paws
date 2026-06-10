@@ -15,7 +15,7 @@ kendra_batch_delete_document(
 
 \item{DocumentIdList}{[required] One or more identifiers for documents to delete from the index.}
 
-\item{DataSourceSyncJobMetricTarget}{}
+\item{DataSourceSyncJobMetricTarget}{Maps a particular data source sync job to a particular data source.}
 }
 \description{
 Removes one or more documents from an index. The documents must have been added with the \code{\link[=kendra_batch_put_document]{batch_put_document}} API.

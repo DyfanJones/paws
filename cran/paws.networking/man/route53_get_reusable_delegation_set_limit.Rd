@@ -8,9 +8,7 @@ specified reusable delegation set}
 route53_get_reusable_delegation_set_limit(Type, DelegationSetId)
 }
 \arguments{
-\item{Type}{[required] Specify \code{MAX_ZONES_BY_REUSABLE_DELEGATION_SET} to get the maximum number
-of hosted zones that you can associate with the specified reusable
-delegation set.}
+\item{Type}{[required] Specify \code{MAX_ZONES_BY_REUSABLE_DELEGATION_SET} to get the maximum number of hosted zones that you can associate with the specified reusable delegation set.}
 
 \item{DelegationSetId}{[required] The ID of the delegation set that you want to get the limit for.}
 }

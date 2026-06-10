@@ -5,8 +5,7 @@ NULL
 #' Amazon Sagemaker Edge Manager
 #'
 #' @description
-#' SageMaker Edge Manager dataplane service for communicating with active
-#' agents.
+#' SageMaker Edge Manager dataplane service for communicating with active agents.
 #'
 #' @param
 #' config

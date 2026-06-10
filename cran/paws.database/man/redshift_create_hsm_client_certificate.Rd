@@ -12,9 +12,7 @@ redshift_create_hsm_client_certificate(
 )
 }
 \arguments{
-\item{HsmClientCertificateIdentifier}{[required] The identifier to be assigned to the new HSM client certificate that the
-cluster will use to connect to the HSM to use the database encryption
-keys.}
+\item{HsmClientCertificateIdentifier}{[required] The identifier to be assigned to the new HSM client certificate that the cluster will use to connect to the HSM to use the database encryption keys.}
 
 \item{Tags}{A list of tag instances.}
 }

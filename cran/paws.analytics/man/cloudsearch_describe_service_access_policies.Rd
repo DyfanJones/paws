@@ -10,8 +10,7 @@ cloudsearch_describe_service_access_policies(DomainName, Deployed = NULL)
 \arguments{
 \item{DomainName}{[required] The name of the domain you want to describe.}
 
-\item{Deployed}{Whether to display the deployed configuration (\code{true}) or include any
-pending changes (\code{false}). Defaults to \code{false}.}
+\item{Deployed}{Whether to display the deployed configuration (\code{true}) or include any pending changes (\code{false}). Defaults to \code{false}.}
 }
 \description{
 Gets information about the access policies that control access to the domain's document and search endpoints. By default, shows the configuration with any pending changes. Set the \code{Deployed} option to \code{true} to show the active configuration and exclude pending changes. For more information, see \if{html}{\out{<a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">}}Configuring Access for a Search Domain\if{html}{\out{</a>}} in the \emph{Amazon CloudSearch Developer Guide}.

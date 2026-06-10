@@ -7,11 +7,7 @@
 cloudfront_list_key_groups(Marker = NULL, MaxItems = NULL)
 }
 \arguments{
-\item{Marker}{Use this field when paginating results to indicate where to begin in
-your list of key groups. The response includes key groups in the list
-that occur after the marker. To get the next page of the list, set this
-field's value to the value of \code{NextMarker} from the current page's
-response.}
+\item{Marker}{Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field's value to the value of \code{NextMarker} from the current page's response.}
 
 \item{MaxItems}{The maximum number of key groups that you want in the response.}
 }

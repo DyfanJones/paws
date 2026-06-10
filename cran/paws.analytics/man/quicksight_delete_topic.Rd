@@ -7,11 +7,9 @@
 quicksight_delete_topic(AwsAccountId, TopicId)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the topic that
-you want to delete.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the topic that you want to delete.}
 
-\item{TopicId}{[required] The ID of the topic that you want to delete. This ID is unique per
-Amazon Web Services Region for each Amazon Web Services account.}
+\item{TopicId}{[required] The ID of the topic that you want to delete. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.}
 }
 \description{
 Deletes a topic.

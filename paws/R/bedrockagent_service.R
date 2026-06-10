@@ -5,8 +5,7 @@ NULL
 #' Agents for Amazon Bedrock
 #'
 #' @description
-#' Describes the API operations for creating and managing Amazon Bedrock
-#' agents.
+#' Describes the API operations for creating and managing Amazon Bedrock agents.
 #'
 #' @param
 #' config

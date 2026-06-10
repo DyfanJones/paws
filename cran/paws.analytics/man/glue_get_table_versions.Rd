@@ -10,22 +10,22 @@ glue_get_table_versions(
   DatabaseName,
   TableName,
   NextToken = NULL,
-  MaxResults = NULL
+  MaxResults = NULL,
+  AuditContext = NULL
 )
 }
 \arguments{
-\item{CatalogId}{The ID of the Data Catalog where the tables reside. If none is provided,
-the Amazon Web Services account ID is used by default.}
+\item{CatalogId}{The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.}
 
-\item{DatabaseName}{[required] The database in the catalog in which the table resides. For Hive
-compatibility, this name is entirely lowercase.}
+\item{DatabaseName}{[required] The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.}
 
-\item{TableName}{[required] The name of the table. For Hive compatibility, this name is entirely
-lowercase.}
+\item{TableName}{[required] The name of the table. For Hive compatibility, this name is entirely lowercase.}
 
 \item{NextToken}{A continuation token, if this is not the first call.}
 
 \item{MaxResults}{The maximum number of table versions to return in one response.}
+
+\item{AuditContext}{A structure containing the Lake Formation audit context.}
 }
 \description{
 Retrieves a list of strings that identify available versions of a specified table.

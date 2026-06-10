@@ -14,23 +14,15 @@ glue_get_user_defined_functions(
 )
 }
 \arguments{
-\item{CatalogId}{The ID of the Data Catalog where the functions to be retrieved are
-located. If none is provided, the Amazon Web Services account ID is used
-by default.}
+\item{CatalogId}{The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the Amazon Web Services account ID is used by default.}
 
-\item{DatabaseName}{The name of the catalog database where the functions are located. If
-none is provided, functions from all the databases across the catalog
-will be returned.}
+\item{DatabaseName}{The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.}
 
-\item{Pattern}{[required] An optional function-name pattern string that filters the function
-definitions returned.}
+\item{Pattern}{[required] An optional function-name pattern string that filters the function definitions returned.}
 
-\item{FunctionType}{An optional function-type pattern string that filters the function
-definitions returned from Amazon Redshift Federated Permissions Catalog.
+\item{FunctionType}{An optional function-type pattern string that filters the function definitions returned from Amazon Redshift Federated Permissions Catalog.
 
-Specify a value of \code{REGULAR_FUNCTION} or \code{STORED_PROCEDURE}. The
-\code{STORED_PROCEDURE} function type is only compatible with Amazon Redshift
-Federated Permissions Catalog.}
+Specify a value of \code{REGULAR_FUNCTION} or \code{STORED_PROCEDURE}. The \code{STORED_PROCEDURE} function type is only compatible with Amazon Redshift Federated Permissions Catalog.}
 
 \item{NextToken}{A continuation token, if this is a continuation call.}
 

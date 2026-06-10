@@ -23,8 +23,7 @@ networkmanager_create_vpc_attachment(
 
 \item{Options}{Options for the VPC attachment.}
 
-\item{RoutingPolicyLabel}{The routing policy label to apply to the VPC attachment for traffic
-routing decisions.}
+\item{RoutingPolicyLabel}{The routing policy label to apply to the VPC attachment for traffic routing decisions.}
 
 \item{Tags}{The key-value tags associated with the request.}
 

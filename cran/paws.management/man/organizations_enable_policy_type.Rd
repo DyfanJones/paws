@@ -7,19 +7,15 @@
 organizations_enable_policy_type(RootId, PolicyType)
 }
 \arguments{
-\item{RootId}{[required] ID for the root in which you want to enable a policy type. You can get
-the ID from the \code{\link[=organizations_list_roots]{list_roots}} operation.
+\item{RootId}{[required] ID for the root in which you want to enable a policy type. You can get the ID from the \code{\link[=organizations_list_roots]{list_roots}} operation.
 
-The \href{https://en.wikipedia.org/wiki/Regex}{regex pattern} for a root ID
-string requires "r-" followed by from 4 to 32 lowercase letters or
-digits.}
+The \href{https://en.wikipedia.org/wiki/Regex}{regex pattern} for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.}
 
-\item{PolicyType}{[required] The policy type that you want to enable. You can specify one of the
-following values:
+\item{PolicyType}{[required] The policy type that you want to enable. You can specify one of the following values:
 \itemize{
 \item \href{https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html}{SERVICE_CONTROL_POLICY}
 \item \href{https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_rcps.html}{RESOURCE_CONTROL_POLICY}
-\item \href{https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_declarative.html}{DECLARATIVE_POLICY_EC2}
+\item \href{https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_declarative_policies.html}{DECLARATIVE_POLICY_EC2}
 \item \href{https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html}{BACKUP_POLICY}
 \item \href{https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html}{TAG_POLICY}
 \item \href{https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_chatbot.html}{CHATBOT_POLICY}

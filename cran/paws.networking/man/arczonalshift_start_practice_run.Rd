@@ -8,17 +8,11 @@ Recovery Controller}
 arczonalshift_start_practice_run(resourceIdentifier, awayFrom, comment)
 }
 \arguments{
-\item{resourceIdentifier}{[required] The identifier for the resource that you want to start a practice run
-zonal shift for. The identifier is the Amazon Resource Name (ARN) for
-the resource.}
+\item{resourceIdentifier}{[required] The identifier for the resource that you want to start a practice run zonal shift for. The identifier is the Amazon Resource Name (ARN) for the resource.}
 
-\item{awayFrom}{[required] The Availability Zone (for example, \code{use1-az1}) that traffic is shifted
-away from for the resource that you specify for the practice run.}
+\item{awayFrom}{[required] The Availability Zone (for example, \code{use1-az1}) that traffic is shifted away from for the resource that you specify for the practice run.}
 
-\item{comment}{[required] The initial comment that you enter about the practice run. Be aware that
-this comment can be overwritten by Amazon Web Services if the automatic
-check for balanced capacity fails. For more information, see \href{https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.how-it-works.capacity-check.html}{Capacity checks for practice runs}
-in the Amazon Application Recovery Controller Developer Guide.}
+\item{comment}{[required] The initial comment that you enter about the practice run. Be aware that this comment can be overwritten by Amazon Web Services if the automatic check for balanced capacity fails. For more information, see \href{https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.how-it-works.capacity-check.html}{Capacity checks for practice runs} in the Amazon Application Recovery Controller Developer Guide.}
 }
 \description{
 Start an on-demand practice run zonal shift in Amazon Application Recovery Controller. With zonal autoshift enabled, you can start an on-demand practice run to verify preparedness at any time. Amazon Web Services also runs automated practice runs about weekly when you have enabled zonal autoshift.

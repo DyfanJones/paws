@@ -11,17 +11,11 @@ ec2_enable_capacity_manager(
 )
 }
 \arguments{
-\item{OrganizationsAccess}{Specifies whether to enable cross-account access for Amazon Web Services
-Organizations. When enabled, Capacity Manager can aggregate data from
-all accounts in your organization. Default is false.}
+\item{OrganizationsAccess}{Specifies whether to enable cross-account access for Amazon Web Services Organizations. When enabled, Capacity Manager can aggregate data from all accounts in your organization. Default is false.}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
-\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request.}
+\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.}
 }
 \description{
 Enables EC2 Capacity Manager for your account. This starts data ingestion for your EC2 capacity usage across On-Demand, Spot, and Capacity Reservations. Initial data processing may take several hours to complete.

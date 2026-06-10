@@ -13,22 +13,15 @@ rekognition_start_text_detection(
 )
 }
 \arguments{
-\item{Video}{[required]}
+\item{Video}{[required] Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as \code{\link[=rekognition_start_label_detection]{start_label_detection}} use \code{Video} to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.}
 
-\item{ClientRequestToken}{Idempotent token used to identify the start request. If you use the same
-token with multiple
-\code{\link[=rekognition_start_text_detection]{start_text_detection}} requests, the
-same \code{JobId} is returned. Use \code{ClientRequestToken} to prevent the same
-job from being accidentaly started more than once.}
+\item{ClientRequestToken}{Idempotent token used to identify the start request. If you use the same token with multiple \code{\link[=rekognition_start_text_detection]{start_text_detection}} requests, the same \code{JobId} is returned. Use \code{ClientRequestToken} to prevent the same job from being accidentaly started more than once.}
 
-\item{NotificationChannel}{}
+\item{NotificationChannel}{The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see \href{https://docs.aws.amazon.com/rekognition/latest/dg/api-video.html}{Calling Amazon Rekognition Video operations}. Note that the Amazon SNS topic must have a topic name that begins with \emph{AmazonRekognition} if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see \href{https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics}{Giving access to multiple Amazon SNS topics}.}
 
-\item{JobTag}{An identifier returned in the completion status published by your Amazon
-Simple Notification Service topic. For example, you can use \code{JobTag} to
-group related jobs and identify them in the completion notification.}
+\item{JobTag}{An identifier returned in the completion status published by your Amazon Simple Notification Service topic. For example, you can use \code{JobTag} to group related jobs and identify them in the completion notification.}
 
-\item{Filters}{Optional parameters that let you set criteria the text must meet to be
-included in your response.}
+\item{Filters}{Optional parameters that let you set criteria the text must meet to be included in your response.}
 }
 \description{
 Starts asynchronous detection of text in a stored video.

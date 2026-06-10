@@ -12,12 +12,11 @@ budgets_describe_budget_notifications_for_account(
 )
 }
 \arguments{
-\item{AccountId}{[required]}
+\item{AccountId}{[required] The account ID of the user. It's a 12-digit number.}
 
-\item{MaxResults}{An integer that represents how many budgets a paginated response
-contains. The default is 50.}
+\item{MaxResults}{An integer that represents how many budgets a paginated response contains. The default is 50.}
 
-\item{NextToken}{}
+\item{NextToken}{A generic string.}
 }
 \description{
 Lists the budget names and notifications that are associated with an account.

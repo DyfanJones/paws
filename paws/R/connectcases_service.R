@@ -5,19 +5,11 @@ NULL
 #' Amazon Connect Cases
 #'
 #' @description
-#' -   [Cases
-#'     actions](https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Cases.html)
+#' -   [Cases actions](https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Cases.html)
 #' 
-#' -   [Cases data
-#'     types](https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Cases.html)
+#' -   [Cases data types](https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Cases.html)
 #' 
-#' With Amazon Connect Cases, your agents can track and manage customer
-#' issues that require multiple interactions, follow-up tasks, and teams in
-#' your contact center. A case represents a customer issue. It records the
-#' issue, the steps and interactions taken to resolve the issue, and the
-#' outcome. For more information, see [Amazon Connect
-#' Cases](https://docs.aws.amazon.com/connect/latest/adminguide/cases.html)
-#' in the *Amazon Connect Administrator Guide*.
+#' With Amazon Connect Cases, your agents can track and manage customer issues that require multiple interactions, follow-up tasks, and teams in your contact center. A case represents a customer issue. It records the issue, the steps and interactions taken to resolve the issue, and the outcome. For more information, see [Amazon Connect Cases](https://docs.aws.amazon.com/connect/latest/adminguide/cases.html) in the *Amazon Connect Administrator Guide*.
 #'
 #' @param
 #' config
@@ -143,6 +135,7 @@ NULL
 #'  \link[=connectcases_update_case_rule]{update_case_rule} \tab Updates a case rule\cr
 #'  \link[=connectcases_update_field]{update_field} \tab Updates the properties of an existing field\cr
 #'  \link[=connectcases_update_layout]{update_layout} \tab Updates the attributes of an existing layout\cr
+#'  \link[=connectcases_update_related_item]{update_related_item} \tab Updates the content of a related item associated with a case\cr
 #'  \link[=connectcases_update_template]{update_template} \tab Updates the attributes of an existing template
 #' }
 #'

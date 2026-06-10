@@ -7,8 +7,7 @@
 emr_put_auto_termination_policy(ClusterId, AutoTerminationPolicy = NULL)
 }
 \arguments{
-\item{ClusterId}{[required] Specifies the ID of the Amazon EMR cluster to which the auto-termination
-policy will be attached.}
+\item{ClusterId}{[required] Specifies the ID of the Amazon EMR cluster to which the auto-termination policy will be attached.}
 
 \item{AutoTerminationPolicy}{Specifies the auto-termination policy to attach to the cluster.}
 }

@@ -14,27 +14,15 @@ rekognition_get_label_detection(
 )
 }
 \arguments{
-\item{JobId}{[required] Job identifier for the label detection operation for which you want
-results returned. You get the job identifer from an initial call to
-\code{StartlabelDetection}.}
+\item{JobId}{[required] Job identifier for the label detection operation for which you want results returned. You get the job identifer from an initial call to \code{StartlabelDetection}.}
 
-\item{MaxResults}{Maximum number of results to return per paginated call. The largest
-value you can specify is 1000. If you specify a value greater than 1000,
-a maximum of 1000 results is returned. The default value is 1000.}
+\item{MaxResults}{Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.}
 
-\item{NextToken}{If the previous response was incomplete (because there are more labels
-to retrieve), Amazon Rekognition Video returns a pagination token in the
-response. You can use this pagination token to retrieve the next set of
-labels.}
+\item{NextToken}{If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of labels.}
 
-\item{SortBy}{Sort to use for elements in the \code{Labels} array. Use \code{TIMESTAMP} to sort
-array elements by the time labels are detected. Use \code{NAME} to
-alphabetically group elements for a label together. Within each label
-group, the array element are sorted by detection confidence. The default
-sort is by \code{TIMESTAMP}.}
+\item{SortBy}{Sort to use for elements in the \code{Labels} array. Use \code{TIMESTAMP} to sort array elements by the time labels are detected. Use \code{NAME} to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by \code{TIMESTAMP}.}
 
-\item{AggregateBy}{Defines how to aggregate the returned results. Results can be aggregated
-by timestamps or segments.}
+\item{AggregateBy}{Defines how to aggregate the returned results. Results can be aggregated by timestamps or segments.}
 }
 \description{
 Gets the label detection results of a Amazon Rekognition Video analysis started by \code{\link[=rekognition_start_label_detection]{start_label_detection}}.

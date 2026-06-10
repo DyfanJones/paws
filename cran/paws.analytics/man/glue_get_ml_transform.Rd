@@ -8,8 +8,7 @@ corresponding metadata}
 glue_get_ml_transform(TransformId)
 }
 \arguments{
-\item{TransformId}{[required] The unique identifier of the transform, generated at the time that the
-transform was created.}
+\item{TransformId}{[required] The unique identifier of the transform, generated at the time that the transform was created.}
 }
 \description{
 Gets an Glue machine learning transform artifact and all its corresponding metadata. Machine learning transforms are a special type of transform that use machine learning to learn the details of the transformation to be performed by learning from examples provided by humans. These transformations are then saved by Glue. You can retrieve their metadata by calling \code{\link[=glue_get_ml_transform]{get_ml_transform}}.

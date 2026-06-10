@@ -9,16 +9,11 @@ cloudfront_test_function(Name, IfMatch, Stage = NULL, EventObject)
 \arguments{
 \item{Name}{[required] The name of the function that you are testing.}
 
-\item{IfMatch}{[required] The current version (\code{ETag} value) of the function that you are testing,
-which you can get using
-\code{\link[=cloudfront_describe_function]{describe_function}}.}
+\item{IfMatch}{[required] The current version (\code{ETag} value) of the function that you are testing, which you can get using \code{\link[=cloudfront_describe_function]{describe_function}}.}
 
-\item{Stage}{The stage of the function that you are testing, either \code{DEVELOPMENT} or
-\code{LIVE}.}
+\item{Stage}{The stage of the function that you are testing, either \code{DEVELOPMENT} or \code{LIVE}.}
 
-\item{EventObject}{[required] The event object to test the function with. For more information about
-the structure of the event object, see \href{https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/create-function.html#test-function}{Testing functions}
-in the \emph{Amazon CloudFront Developer Guide}.}
+\item{EventObject}{[required] The event object to test the function with. For more information about the structure of the event object, see \href{https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/create-function.html#test-function}{Testing functions} in the \emph{Amazon CloudFront Developer Guide}.}
 }
 \description{
 Tests a CloudFront function.

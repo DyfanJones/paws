@@ -10,8 +10,7 @@ lambda_get_function_scaling_config(FunctionName, Qualifier)
 \arguments{
 \item{FunctionName}{[required] The name or ARN of the Lambda function.}
 
-\item{Qualifier}{[required] Specify a version or alias to get the scaling configuration for a
-published version of the function.}
+\item{Qualifier}{[required] Specify a version or alias to get the scaling configuration for a published version of the function.}
 }
 \description{
 Retrieves the scaling configuration for a Lambda Managed Instances function.

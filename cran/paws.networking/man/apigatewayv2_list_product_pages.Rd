@@ -14,8 +14,7 @@ apigatewayv2_list_product_pages(
 \arguments{
 \item{MaxResults}{The maximum number of elements to be returned for this resource.}
 
-\item{NextToken}{The next page of elements from this collection. Not valid for the last
-element of the collection.}
+\item{NextToken}{The next page of elements from this collection. Not valid for the last element of the collection.}
 
 \item{PortalProductId}{[required] The portal product identifier.}
 

@@ -9,8 +9,7 @@ neptunedata_execute_open_cypher_query(openCypherQuery, parameters = NULL)
 \arguments{
 \item{openCypherQuery}{[required] The openCypher query string to be executed.}
 
-\item{parameters}{The openCypher query parameters for query execution. See \href{https://docs.aws.amazon.com/neptune/latest/userguide/opencypher-parameterized-queries.html}{Examples of openCypher parameterized queries}
-for more information.}
+\item{parameters}{The openCypher query parameters for query execution. See \href{https://docs.aws.amazon.com/neptune/latest/userguide/opencypher-parameterized-queries.html}{Examples of openCypher parameterized queries} for more information.}
 }
 \description{
 Executes an openCypher query. See \href{https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-opencypher.html}{Accessing the Neptune Graph with openCypher} for more information.

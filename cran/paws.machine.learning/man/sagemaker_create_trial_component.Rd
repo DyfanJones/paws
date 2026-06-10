@@ -18,12 +18,9 @@ sagemaker_create_trial_component(
 )
 }
 \arguments{
-\item{TrialComponentName}{[required] The name of the component. The name must be unique in your Amazon Web
-Services account and is not case-sensitive.}
+\item{TrialComponentName}{[required] The name of the component. The name must be unique in your Amazon Web Services account and is not case-sensitive.}
 
-\item{DisplayName}{The name of the component as displayed. The name doesn't need to be
-unique. If \code{DisplayName} isn't specified, \code{TrialComponentName} is
-displayed.}
+\item{DisplayName}{The name of the component as displayed. The name doesn't need to be unique. If \code{DisplayName} isn't specified, \code{TrialComponentName} is displayed.}
 
 \item{Status}{The status of the component. States include:
 \itemize{
@@ -38,16 +35,13 @@ displayed.}
 
 \item{Parameters}{The hyperparameters for the component.}
 
-\item{InputArtifacts}{The input artifacts for the component. Examples of input artifacts are
-datasets, algorithms, hyperparameters, source code, and instance types.}
+\item{InputArtifacts}{The input artifacts for the component. Examples of input artifacts are datasets, algorithms, hyperparameters, source code, and instance types.}
 
-\item{OutputArtifacts}{The output artifacts for the component. Examples of output artifacts are
-metrics, snapshots, logs, and images.}
+\item{OutputArtifacts}{The output artifacts for the component. Examples of output artifacts are metrics, snapshots, logs, and images.}
 
-\item{MetadataProperties}{}
+\item{MetadataProperties}{Metadata properties of the tracking entity, trial, or trial component.}
 
-\item{Tags}{A list of tags to associate with the component. You can use
-\code{\link[=sagemaker_search]{search}} API to search on the tags.}
+\item{Tags}{A list of tags to associate with the component. You can use \code{\link[=sagemaker_search]{search}} API to search on the tags.}
 }
 \description{
 Creates a \emph{trial component}, which is a stage of a machine learning \emph{trial}. A trial is composed of one or more trial components. A trial component can be used in multiple trials.

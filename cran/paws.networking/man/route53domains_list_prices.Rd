@@ -8,25 +8,17 @@ Route 53, or the specified TLD:}
 route53domains_list_prices(Tld = NULL, Marker = NULL, MaxItems = NULL)
 }
 \arguments{
-\item{Tld}{The TLD for which you want to receive the pricing information. For
-example. \code{.net}.
+\item{Tld}{The TLD for which you want to receive the pricing information. For example. \code{.net}.
 
-If a \code{Tld} value is not provided, a list of prices for all TLDs
-supported by Route 53 is returned.}
+If a \code{Tld} value is not provided, a list of prices for all TLDs supported by Route 53 is returned.}
 
-\item{Marker}{For an initial request for a list of prices, omit this element. If the
-number of prices that are not yet complete is greater than the value
-that you specified for \code{MaxItems}, you can use \code{Marker} to return
-additional prices. Get the value of \code{NextPageMarker} from the previous
-response, and submit another request that includes the value of
-\code{NextPageMarker} in the \code{Marker} element.
+\item{Marker}{For an initial request for a list of prices, omit this element. If the number of prices that are not yet complete is greater than the value that you specified for \code{MaxItems}, you can use \code{Marker} to return additional prices. Get the value of \code{NextPageMarker} from the previous response, and submit another request that includes the value of \code{NextPageMarker} in the \code{Marker} element.
 
 Used only for all TLDs. If you specify a TLD, don't specify a \code{Marker}.}
 
 \item{MaxItems}{Number of \code{Prices} to be returned.
 
-Used only for all TLDs. If you specify a TLD, don't specify a
-\code{MaxItems}.}
+Used only for all TLDs. If you specify a TLD, don't specify a \code{MaxItems}.}
 }
 \description{
 Lists the following prices for either all the TLDs supported by Route 53, or the specified TLD:

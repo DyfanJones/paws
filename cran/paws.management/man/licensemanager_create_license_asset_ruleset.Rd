@@ -21,8 +21,7 @@ licensemanager_create_license_asset_ruleset(
 
 \item{Tags}{Tags to add to the license asset ruleset.}
 
-\item{ClientToken}{[required] Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request.}
+\item{ClientToken}{[required] Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.}
 }
 \description{
 Creates a license asset ruleset.

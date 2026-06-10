@@ -7,9 +7,7 @@
 bedrock_export_automated_reasoning_policy_version(policyArn)
 }
 \arguments{
-\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy to
-export. Can be either the unversioned ARN for the draft policy or a
-versioned ARN for a specific policy version.}
+\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy to export. Can be either the unversioned ARN for the draft policy or a versioned ARN for a specific policy version.}
 }
 \description{
 Exports the policy definition for an Automated Reasoning policy version. Returns the complete policy definition including rules, variables, and custom variable types in a structured format.

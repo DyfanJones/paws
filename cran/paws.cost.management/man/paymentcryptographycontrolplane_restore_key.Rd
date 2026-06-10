@@ -7,8 +7,7 @@
 paymentcryptographycontrolplane_restore_key(KeyIdentifier)
 }
 \arguments{
-\item{KeyIdentifier}{[required] The \code{KeyARN} of the key to be restored within Amazon Web Services
-Payment Cryptography.}
+\item{KeyIdentifier}{[required] The \code{KeyARN} of the key to be restored within Amazon Web Services Payment Cryptography.}
 }
 \description{
 Cancels a scheduled key deletion during the waiting period. Use this operation to restore a \code{Key} that is scheduled for deletion.

@@ -12,9 +12,9 @@ wellarchitected_list_notifications(
 )
 }
 \arguments{
-\item{WorkloadId}{}
+\item{WorkloadId}{The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.}
 
-\item{NextToken}{}
+\item{NextToken}{The token to use to retrieve the next set of results.}
 
 \item{MaxResults}{The maximum number of results to return for this request.}
 

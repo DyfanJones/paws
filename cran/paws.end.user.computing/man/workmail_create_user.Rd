@@ -20,8 +20,7 @@ workmail_create_user(
 \arguments{
 \item{OrganizationId}{[required] The identifier of the organization for which the user is created.}
 
-\item{Name}{[required] The name for the new user. WorkMail directory user names have a maximum
-length of 64. All others have a maximum length of 20.}
+\item{Name}{[required] The name for the new user. WorkMail directory user names have a maximum length of 64. All others have a maximum length of 20.}
 
 \item{DisplayName}{[required] The display name for the new user.}
 
@@ -29,20 +28,15 @@ length of 64. All others have a maximum length of 20.}
 
 \item{Role}{The role of the new user.
 
-You cannot pass \emph{SYSTEM_USER} or \emph{RESOURCE} role in a single request.
-When a user role is not selected, the default role of \emph{USER} is
-selected.}
+You cannot pass \emph{SYSTEM_USER} or \emph{RESOURCE} role in a single request. When a user role is not selected, the default role of \emph{USER} is selected.}
 
 \item{FirstName}{The first name of the new user.}
 
 \item{LastName}{The last name of the new user.}
 
-\item{HiddenFromGlobalAddressList}{If this parameter is enabled, the user will be hidden from the address
-book.}
+\item{HiddenFromGlobalAddressList}{If this parameter is enabled, the user will be hidden from the address book.}
 
-\item{IdentityProviderUserId}{User ID from the IAM Identity Center. If this parameter is empty it will
-be updated automatically when the user logs in for the first time to the
-mailbox associated with WorkMail.}
+\item{IdentityProviderUserId}{User ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.}
 }
 \description{
 Creates a user who can be used in WorkMail by calling the \code{\link[=workmail_register_to_work_mail]{register_to_work_mail}} operation.

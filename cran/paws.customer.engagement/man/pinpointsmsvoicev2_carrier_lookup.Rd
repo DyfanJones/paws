@@ -8,10 +8,7 @@ the number type and whether it is valid, the carrier, and more}
 pinpointsmsvoicev2_carrier_lookup(PhoneNumber)
 }
 \arguments{
-\item{PhoneNumber}{[required] The phone number that you want to retrieve information about. You can
-provide the phone number in various formats including special characters
-such as parentheses, brackets, spaces, hyphens, periods, and commas. The
-service automatically converts the input to E164 format for processing.}
+\item{PhoneNumber}{[required] The phone number that you want to retrieve information about. You can provide the phone number in various formats including special characters such as parentheses, brackets, spaces, hyphens, periods, and commas. The service automatically converts the input to E164 format for processing.}
 }
 \description{
 Returns information about a destination phone number, including whether the number type and whether it is valid, the carrier, and more.

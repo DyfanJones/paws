@@ -10,10 +10,8 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_associate_alias/](https://www.paws-r-sdk.com/docs/cloudfront_associate_alias/) for full documentation.
 #'
-#' @param TargetDistributionId &#91;required&#93; The ID of the standard distribution that you're associating the alias
-#' with.
-#' @param Alias &#91;required&#93; The alias (also known as a CNAME) to add to the target standard
-#' distribution.
+#' @param TargetDistributionId &#91;required&#93; The ID of the standard distribution that you're associating the alias with.
+#' @param Alias &#91;required&#93; The alias (also known as a CNAME) to add to the target standard distribution.
 #'
 #' @keywords internal
 #'
@@ -46,10 +44,7 @@ cloudfront_associate_alias <- function(TargetDistributionId, Alias) {
 #'
 #' @param Id &#91;required&#93; The ID of the distribution tenant.
 #' @param WebACLArn &#91;required&#93; The Amazon Resource Name (ARN) of the WAF web ACL to associate.
-#' @param IfMatch The current `ETag` of the distribution tenant. This value is returned in
-#' the response of the
-#' [`get_distribution_tenant`][cloudfront_get_distribution_tenant] API
-#' operation.
+#' @param IfMatch The current `ETag` of the distribution tenant. This value is returned in the response of the [`get_distribution_tenant`][cloudfront_get_distribution_tenant] API operation.
 #'
 #' @keywords internal
 #'
@@ -82,8 +77,7 @@ cloudfront_associate_distribution_tenant_web_acl <- function(Id, WebACLArn, IfMa
 #'
 #' @param Id &#91;required&#93; The ID of the distribution.
 #' @param WebACLArn &#91;required&#93; The Amazon Resource Name (ARN) of the WAF web ACL to associate.
-#' @param IfMatch The value of the `ETag` header that you received when retrieving the
-#' distribution that you're associating with the WAF web ACL.
+#' @param IfMatch The value of the `ETag` header that you received when retrieving the distribution that you're associating with the WAF web ACL.
 #'
 #' @keywords internal
 #'
@@ -115,23 +109,11 @@ cloudfront_associate_distribution_web_acl <- function(Id, WebACLArn, IfMatch = N
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_copy_distribution/](https://www.paws-r-sdk.com/docs/cloudfront_copy_distribution/) for full documentation.
 #'
-#' @param PrimaryDistributionId &#91;required&#93; The identifier of the primary distribution whose configuration you are
-#' copying. To get a distribution ID, use
-#' [`list_distributions`][cloudfront_list_distributions].
-#' @param Staging The type of distribution that your primary distribution will be copied
-#' to. The only valid value is `True`, indicating that you are copying to a
-#' staging distribution.
-#' @param IfMatch The version identifier of the primary distribution whose configuration
-#' you are copying. This is the `ETag` value returned in the response to
-#' [`get_distribution`][cloudfront_get_distribution] and
-#' [`get_distribution_config`][cloudfront_get_distribution_config].
-#' @param CallerReference &#91;required&#93; A value that uniquely identifies a request to create a resource. This
-#' helps to prevent CloudFront from creating a duplicate resource if you
-#' accidentally resubmit an identical request.
-#' @param Enabled A Boolean flag to specify the state of the staging distribution when
-#' it's created. When you set this value to `True`, the staging
-#' distribution is enabled. When you set this value to `False`, the staging
-#' distribution is disabled.
+#' @param PrimaryDistributionId &#91;required&#93; The identifier of the primary distribution whose configuration you are copying. To get a distribution ID, use [`list_distributions`][cloudfront_list_distributions].
+#' @param Staging The type of distribution that your primary distribution will be copied to. The only valid value is `True`, indicating that you are copying to a staging distribution.
+#' @param IfMatch The version identifier of the primary distribution whose configuration you are copying. This is the `ETag` value returned in the response to [`get_distribution`][cloudfront_get_distribution] and [`get_distribution_config`][cloudfront_get_distribution_config].
+#' @param CallerReference &#91;required&#93; A value that uniquely identifies a request to create a resource. This helps to prevent CloudFront from creating a duplicate resource if you accidentally resubmit an identical request.
+#' @param Enabled A Boolean flag to specify the state of the staging distribution when it's created. When you set this value to `True`, the staging distribution is enabled. When you set this value to `False`, the staging distribution is disabled.
 #' 
 #' If you omit this field, the default value is `True`.
 #'
@@ -165,19 +147,16 @@ cloudfront_copy_distribution <- function(PrimaryDistributionId, Staging = NULL, 
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_create_anycast_ip_list/](https://www.paws-r-sdk.com/docs/cloudfront_create_anycast_ip_list/) for full documentation.
 #'
 #' @param Name &#91;required&#93; Name of the Anycast static IP list.
-#' @param IpCount &#91;required&#93; The number of static IP addresses that are allocated to the Anycast
-#' static IP list. Valid values: 21 or 3.
-#' @param Tags 
-#' @param IpAddressType The IP address type for the Anycast static IP list. You can specify one
-#' of the following options:
+#' @param IpCount &#91;required&#93; The number of static IP addresses that are allocated to the Anycast static IP list. Valid values: 21 or 3.
+#' @param Tags A complex type that contains zero or more `Tag` elements.
+#' @param IpAddressType The IP address type for the Anycast static IP list. You can specify one of the following options:
 #' 
 #' -   `ipv4` only
 #' 
 #' -   `ipv6` only
 #' 
 #' -   `dualstack` - Allocate a list of both IPv4 and IPv6 addresses
-#' @param IpamCidrConfigs A list of IPAM CIDR configurations that specify the IP address ranges
-#' and IPAM pool settings for creating the Anycast static IP list.
+#' @param IpamCidrConfigs A list of IPAM CIDR configurations that specify the IP address ranges and IPAM pool settings for creating the Anycast static IP list.
 #'
 #' @keywords internal
 #'
@@ -271,9 +250,9 @@ cloudfront_create_cloud_front_origin_access_identity <- function(CloudFrontOrigi
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_create_connection_function/](https://www.paws-r-sdk.com/docs/cloudfront_create_connection_function/) for full documentation.
 #'
 #' @param Name &#91;required&#93; A name for the connection function.
-#' @param ConnectionFunctionConfig &#91;required&#93; 
+#' @param ConnectionFunctionConfig &#91;required&#93; Contains configuration information about a CloudFront function.
 #' @param ConnectionFunctionCode &#91;required&#93; The code for the connection function.
-#' @param Tags 
+#' @param Tags A complex type that contains zero or more `Tag` elements.
 #'
 #' @keywords internal
 #'
@@ -304,14 +283,9 @@ cloudfront_create_connection_function <- function(Name, ConnectionFunctionConfig
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_create_connection_group/](https://www.paws-r-sdk.com/docs/cloudfront_create_connection_group/) for full documentation.
 #'
-#' @param Name &#91;required&#93; The name of the connection group. Enter a friendly identifier that is
-#' unique within your Amazon Web Services account. This name can't be
-#' updated after you create the connection group.
-#' @param Ipv6Enabled Enable IPv6 for the connection group. The default is `true`. For more
-#' information, see [Enable
-#' IPv6](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesEnableIPv6)
-#' in the *Amazon CloudFront Developer Guide*.
-#' @param Tags 
+#' @param Name &#91;required&#93; The name of the connection group. Enter a friendly identifier that is unique within your Amazon Web Services account. This name can't be updated after you create the connection group.
+#' @param Ipv6Enabled Enable IPv6 for the connection group. The default is `true`. For more information, see [Enable IPv6](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesEnableIPv6) in the *Amazon CloudFront Developer Guide*.
+#' @param Tags A complex type that contains zero or more `Tag` elements.
 #' @param AnycastIpListId The ID of the Anycast static IP list.
 #' @param Enabled Enable the connection group.
 #'
@@ -407,29 +381,15 @@ cloudfront_create_distribution <- function(DistributionConfig) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_create_distribution_tenant/](https://www.paws-r-sdk.com/docs/cloudfront_create_distribution_tenant/) for full documentation.
 #'
-#' @param DistributionId &#91;required&#93; The ID of the multi-tenant distribution to use for creating the
-#' distribution tenant.
-#' @param Name &#91;required&#93; The name of the distribution tenant. Enter a friendly identifier that is
-#' unique within your Amazon Web Services account. This name can't be
-#' updated after you create the distribution tenant.
-#' @param Domains &#91;required&#93; The domains associated with the distribution tenant. You must specify at
-#' least one domain in the request.
-#' @param Tags 
-#' @param Customizations Customizations for the distribution tenant. For each distribution
-#' tenant, you can specify the geographic restrictions, and the Amazon
-#' Resource Names (ARNs) for the ACM certificate and WAF web ACL. These are
-#' specific values that you can override or disable from the multi-tenant
-#' distribution that was used to create the distribution tenant.
-#' @param Parameters A list of parameter values to add to the resource. A parameter is
-#' specified as a key-value pair. A valid parameter value must exist for
-#' any parameter that is marked as required in the multi-tenant
-#' distribution.
-#' @param ConnectionGroupId The ID of the connection group to associate with the distribution
-#' tenant.
+#' @param DistributionId &#91;required&#93; The ID of the multi-tenant distribution to use for creating the distribution tenant.
+#' @param Name &#91;required&#93; The name of the distribution tenant. Enter a friendly identifier that is unique within your Amazon Web Services account. This name can't be updated after you create the distribution tenant.
+#' @param Domains &#91;required&#93; The domains associated with the distribution tenant. You must specify at least one domain in the request.
+#' @param Tags A complex type that contains zero or more `Tag` elements.
+#' @param Customizations Customizations for the distribution tenant. For each distribution tenant, you can specify the geographic restrictions, and the Amazon Resource Names (ARNs) for the ACM certificate and WAF web ACL. These are specific values that you can override or disable from the multi-tenant distribution that was used to create the distribution tenant.
+#' @param Parameters A list of parameter values to add to the resource. A parameter is specified as a key-value pair. A valid parameter value must exist for any parameter that is marked as required in the multi-tenant distribution.
+#' @param ConnectionGroupId The ID of the connection group to associate with the distribution tenant.
 #' @param ManagedCertificateRequest The configuration for the CloudFront managed ACM certificate request.
-#' @param Enabled Indicates whether the distribution tenant should be enabled when
-#' created. If the distribution tenant is disabled, the distribution tenant
-#' won't serve traffic.
+#' @param Enabled Indicates whether the distribution tenant should be enabled when created. If the distribution tenant is disabled, the distribution tenant won't serve traffic.
 #'
 #' @keywords internal
 #'
@@ -554,17 +514,14 @@ cloudfront_create_field_level_encryption_profile <- function(FieldLevelEncryptio
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_create_function/](https://www.paws-r-sdk.com/docs/cloudfront_create_function/) for full documentation.
 #'
 #' @param Name &#91;required&#93; A name to identify the function.
-#' @param FunctionConfig &#91;required&#93; Configuration information about the function, including an optional
-#' comment and the function's runtime.
-#' @param FunctionCode &#91;required&#93; The function code. For more information about writing a CloudFront
-#' function, see [Writing function code for CloudFront
-#' Functions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html)
-#' in the *Amazon CloudFront Developer Guide*.
+#' @param FunctionConfig &#91;required&#93; Configuration information about the function, including an optional comment and the function's runtime.
+#' @param FunctionCode &#91;required&#93; The function code. For more information about writing a CloudFront function, see [Writing function code for CloudFront Functions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html) in the *Amazon CloudFront Developer Guide*.
+#' @param Tags A complex type that contains zero or more `Tag` elements.
 #'
 #' @keywords internal
 #'
 #' @rdname cloudfront_create_function
-cloudfront_create_function <- function(Name, FunctionConfig, FunctionCode) {
+cloudfront_create_function <- function(Name, FunctionConfig, FunctionCode, Tags = NULL) {
   op <- new_operation(
     name = "CreateFunction",
     http_method = "POST",
@@ -573,7 +530,7 @@ cloudfront_create_function <- function(Name, FunctionConfig, FunctionCode) {
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .cloudfront$create_function_input(Name = Name, FunctionConfig = FunctionConfig, FunctionCode = FunctionCode)
+  input <- .cloudfront$create_function_input(Name = Name, FunctionConfig = FunctionConfig, FunctionCode = FunctionCode, Tags = Tags)
   output <- .cloudfront$create_function_output()
   config <- get_config()
   svc <- .cloudfront$service(config, op)
@@ -623,7 +580,7 @@ cloudfront_create_invalidation <- function(DistributionId, InvalidationBatch) {
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_create_invalidation_for_distribution_tenant/](https://www.paws-r-sdk.com/docs/cloudfront_create_invalidation_for_distribution_tenant/) for full documentation.
 #'
 #' @param Id &#91;required&#93; The ID of the distribution tenant.
-#' @param InvalidationBatch &#91;required&#93; 
+#' @param InvalidationBatch &#91;required&#93; An invalidation batch.
 #'
 #' @keywords internal
 #'
@@ -686,16 +643,15 @@ cloudfront_create_key_group <- function(KeyGroupConfig) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_create_key_value_store/](https://www.paws-r-sdk.com/docs/cloudfront_create_key_value_store/) for full documentation.
 #'
-#' @param Name &#91;required&#93; The name of the key value store. The minimum length is 1 character and
-#' the maximum length is 64 characters.
+#' @param Name &#91;required&#93; The name of the key value store. The minimum length is 1 character and the maximum length is 64 characters.
 #' @param Comment The comment of the key value store.
-#' @param ImportSource The S3 bucket that provides the source for the import. The source must
-#' be in a valid JSON format.
+#' @param ImportSource The S3 bucket that provides the source for the import. The source must be in a valid JSON format.
+#' @param Tags A complex type that contains zero or more `Tag` elements.
 #'
 #' @keywords internal
 #'
 #' @rdname cloudfront_create_key_value_store
-cloudfront_create_key_value_store <- function(Name, Comment = NULL, ImportSource = NULL) {
+cloudfront_create_key_value_store <- function(Name, Comment = NULL, ImportSource = NULL, Tags = NULL) {
   op <- new_operation(
     name = "CreateKeyValueStore",
     http_method = "POST",
@@ -704,7 +660,7 @@ cloudfront_create_key_value_store <- function(Name, Comment = NULL, ImportSource
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .cloudfront$create_key_value_store_input(Name = Name, Comment = Comment, ImportSource = ImportSource)
+  input <- .cloudfront$create_key_value_store_input(Name = Name, Comment = Comment, ImportSource = ImportSource, Tags = Tags)
   output <- .cloudfront$create_key_value_store_output()
   config <- get_config()
   svc <- .cloudfront$service(config, op)
@@ -723,9 +679,7 @@ cloudfront_create_key_value_store <- function(Name, Comment = NULL, ImportSource
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_create_monitoring_subscription/](https://www.paws-r-sdk.com/docs/cloudfront_create_monitoring_subscription/) for full documentation.
 #'
 #' @param DistributionId &#91;required&#93; The ID of the distribution that you are enabling metrics for.
-#' @param MonitoringSubscription &#91;required&#93; A monitoring subscription. This structure contains information about
-#' whether additional CloudWatch metrics are enabled for a given CloudFront
-#' distribution.
+#' @param MonitoringSubscription &#91;required&#93; A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.
 #'
 #' @keywords internal
 #'
@@ -850,17 +804,12 @@ cloudfront_create_public_key <- function(PublicKeyConfig) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_create_realtime_log_config/](https://www.paws-r-sdk.com/docs/cloudfront_create_realtime_log_config/) for full documentation.
 #'
-#' @param EndPoints &#91;required&#93; Contains information about the Amazon Kinesis data stream where you are
-#' sending real-time log data.
+#' @param EndPoints &#91;required&#93; Contains information about the Amazon Kinesis data stream where you are sending real-time log data.
 #' @param Fields &#91;required&#93; A list of fields to include in each real-time log record.
 #' 
-#' For more information about fields, see [Real-time log configuration
-#' fields](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields)
-#' in the *Amazon CloudFront Developer Guide*.
+#' For more information about fields, see [Real-time log configuration fields](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields) in the *Amazon CloudFront Developer Guide*.
 #' @param Name &#91;required&#93; A unique name to identify this real-time log configuration.
-#' @param SamplingRate &#91;required&#93; The sampling rate for this real-time log configuration. You can specify
-#' a whole number between 1 and 100 (inclusive) to determine the percentage
-#' of viewer requests that are represented in the real-time log data.
+#' @param SamplingRate &#91;required&#93; The sampling rate for this real-time log configuration. You can specify a whole number between 1 and 100 (inclusive) to determine the percentage of viewer requests that are represented in the real-time log data.
 #'
 #' @keywords internal
 #'
@@ -891,8 +840,7 @@ cloudfront_create_realtime_log_config <- function(EndPoints, Fields, Name, Sampl
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_create_response_headers_policy/](https://www.paws-r-sdk.com/docs/cloudfront_create_response_headers_policy/) for full documentation.
 #'
-#' @param ResponseHeadersPolicyConfig &#91;required&#93; Contains metadata about the response headers policy, and a set of
-#' configurations that specify the HTTP headers.
+#' @param ResponseHeadersPolicyConfig &#91;required&#93; Contains metadata about the response headers policy, and a set of configurations that specify the HTTP headers.
 #'
 #' @keywords internal
 #'
@@ -987,12 +935,13 @@ cloudfront_create_streaming_distribution_with_tags <- function(StreamingDistribu
 #'
 #' @param Name &#91;required&#93; A name for the trust store.
 #' @param CaCertificatesBundleSource &#91;required&#93; The CA certificates bundle source for the trust store.
-#' @param Tags 
+#' @param UseClientCertificateOCSPEndpoint A Boolean that determines whether to use the CA certificate's OCSP endpoint to check certificate revocation status.
+#' @param Tags A complex type that contains zero or more `Tag` elements.
 #'
 #' @keywords internal
 #'
 #' @rdname cloudfront_create_trust_store
-cloudfront_create_trust_store <- function(Name, CaCertificatesBundleSource, Tags = NULL) {
+cloudfront_create_trust_store <- function(Name, CaCertificatesBundleSource, UseClientCertificateOCSPEndpoint = NULL, Tags = NULL) {
   op <- new_operation(
     name = "CreateTrustStore",
     http_method = "POST",
@@ -1001,7 +950,7 @@ cloudfront_create_trust_store <- function(Name, CaCertificatesBundleSource, Tags
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .cloudfront$create_trust_store_input(Name = Name, CaCertificatesBundleSource = CaCertificatesBundleSource, Tags = Tags)
+  input <- .cloudfront$create_trust_store_input(Name = Name, CaCertificatesBundleSource = CaCertificatesBundleSource, UseClientCertificateOCSPEndpoint = UseClientCertificateOCSPEndpoint, Tags = Tags)
   output <- .cloudfront$create_trust_store_output()
   config <- get_config()
   svc <- .cloudfront$service(config, op)
@@ -1019,7 +968,7 @@ cloudfront_create_trust_store <- function(Name, CaCertificatesBundleSource, Tags
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_create_vpc_origin/](https://www.paws-r-sdk.com/docs/cloudfront_create_vpc_origin/) for full documentation.
 #'
 #' @param VpcOriginEndpointConfig &#91;required&#93; The VPC origin endpoint configuration.
-#' @param Tags 
+#' @param Tags A complex type that contains zero or more `Tag` elements.
 #'
 #' @keywords internal
 #'
@@ -1051,8 +1000,7 @@ cloudfront_create_vpc_origin <- function(VpcOriginEndpointConfig, Tags = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_delete_anycast_ip_list/](https://www.paws-r-sdk.com/docs/cloudfront_delete_anycast_ip_list/) for full documentation.
 #'
 #' @param Id &#91;required&#93; The ID of the Anycast static IP list.
-#' @param IfMatch &#91;required&#93; The current version (`ETag` value) of the Anycast static IP list that
-#' you are deleting.
+#' @param IfMatch &#91;required&#93; The current version (`ETag` value) of the Anycast static IP list that you are deleting.
 #'
 #' @keywords internal
 #'
@@ -1083,14 +1031,8 @@ cloudfront_delete_anycast_ip_list <- function(Id, IfMatch) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_delete_cache_policy/](https://www.paws-r-sdk.com/docs/cloudfront_delete_cache_policy/) for full documentation.
 #'
-#' @param Id &#91;required&#93; The unique identifier for the cache policy that you are deleting. To get
-#' the identifier, you can use
-#' [`list_cache_policies`][cloudfront_list_cache_policies].
-#' @param IfMatch The version of the cache policy that you are deleting. The version is
-#' the cache policy's `ETag` value, which you can get using
-#' [`list_cache_policies`][cloudfront_list_cache_policies],
-#' [`get_cache_policy`][cloudfront_get_cache_policy], or
-#' [`get_cache_policy_config`][cloudfront_get_cache_policy_config].
+#' @param Id &#91;required&#93; The unique identifier for the cache policy that you are deleting. To get the identifier, you can use [`list_cache_policies`][cloudfront_list_cache_policies].
+#' @param IfMatch The version of the cache policy that you are deleting. The version is the cache policy's `ETag` value, which you can get using [`list_cache_policies`][cloudfront_list_cache_policies], [`get_cache_policy`][cloudfront_get_cache_policy], or [`get_cache_policy_config`][cloudfront_get_cache_policy_config].
 #'
 #' @keywords internal
 #'
@@ -1122,8 +1064,7 @@ cloudfront_delete_cache_policy <- function(Id, IfMatch = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_delete_cloud_front_origin_access_identity/](https://www.paws-r-sdk.com/docs/cloudfront_delete_cloud_front_origin_access_identity/) for full documentation.
 #'
 #' @param Id &#91;required&#93; The origin access identity's ID.
-#' @param IfMatch The value of the `ETag` header you received from a previous `GET` or
-#' `PUT` request. For example: `E2QWRUHAPOMQZL`.
+#' @param IfMatch The value of the `ETag` header you received from a previous `GET` or `PUT` request. For example: `E2QWRUHAPOMQZL`.
 #'
 #' @keywords internal
 #'
@@ -1155,8 +1096,7 @@ cloudfront_delete_cloud_front_origin_access_identity <- function(Id, IfMatch = N
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_delete_connection_function/](https://www.paws-r-sdk.com/docs/cloudfront_delete_connection_function/) for full documentation.
 #'
 #' @param Id &#91;required&#93; The connection function's ID.
-#' @param IfMatch &#91;required&#93; The current version (`ETag` value) of the connection function you are
-#' deleting.
+#' @param IfMatch &#91;required&#93; The current version (`ETag` value) of the connection function you are deleting.
 #'
 #' @keywords internal
 #'
@@ -1188,8 +1128,7 @@ cloudfront_delete_connection_function <- function(Id, IfMatch) {
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_delete_connection_group/](https://www.paws-r-sdk.com/docs/cloudfront_delete_connection_group/) for full documentation.
 #'
 #' @param Id &#91;required&#93; The ID of the connection group to delete.
-#' @param IfMatch &#91;required&#93; The value of the `ETag` header that you received when retrieving the
-#' connection group to delete.
+#' @param IfMatch &#91;required&#93; The value of the `ETag` header that you received when retrieving the connection group to delete.
 #'
 #' @keywords internal
 #'
@@ -1220,10 +1159,8 @@ cloudfront_delete_connection_group <- function(Id, IfMatch) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_delete_continuous_deployment_policy/](https://www.paws-r-sdk.com/docs/cloudfront_delete_continuous_deployment_policy/) for full documentation.
 #'
-#' @param Id &#91;required&#93; The identifier of the continuous deployment policy that you are
-#' deleting.
-#' @param IfMatch The current version (`ETag` value) of the continuous deployment policy
-#' that you are deleting.
+#' @param Id &#91;required&#93; The identifier of the continuous deployment policy that you are deleting.
+#' @param IfMatch The current version (`ETag` value) of the continuous deployment policy that you are deleting.
 #'
 #' @keywords internal
 #'
@@ -1255,8 +1192,7 @@ cloudfront_delete_continuous_deployment_policy <- function(Id, IfMatch = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_delete_distribution/](https://www.paws-r-sdk.com/docs/cloudfront_delete_distribution/) for full documentation.
 #'
 #' @param Id &#91;required&#93; The distribution ID.
-#' @param IfMatch The value of the `ETag` header that you received when you disabled the
-#' distribution. For example: `E2QWRUHAPOMQZL`.
+#' @param IfMatch The value of the `ETag` header that you received when you disabled the distribution. For example: `E2QWRUHAPOMQZL`.
 #'
 #' @keywords internal
 #'
@@ -1288,10 +1224,7 @@ cloudfront_delete_distribution <- function(Id, IfMatch = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_delete_distribution_tenant/](https://www.paws-r-sdk.com/docs/cloudfront_delete_distribution_tenant/) for full documentation.
 #'
 #' @param Id &#91;required&#93; The ID of the distribution tenant to delete.
-#' @param IfMatch &#91;required&#93; The value of the `ETag` header that you received when retrieving the
-#' distribution tenant. This value is returned in the response of the
-#' [`get_distribution_tenant`][cloudfront_get_distribution_tenant] API
-#' operation.
+#' @param IfMatch &#91;required&#93; The value of the `ETag` header that you received when retrieving the distribution tenant. This value is returned in the response of the [`get_distribution_tenant`][cloudfront_get_distribution_tenant] API operation.
 #'
 #' @keywords internal
 #'
@@ -1323,8 +1256,7 @@ cloudfront_delete_distribution_tenant <- function(Id, IfMatch) {
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_delete_field_level_encryption_config/](https://www.paws-r-sdk.com/docs/cloudfront_delete_field_level_encryption_config/) for full documentation.
 #'
 #' @param Id &#91;required&#93; The ID of the configuration you want to delete from CloudFront.
-#' @param IfMatch The value of the `ETag` header that you received when retrieving the
-#' configuration identity to delete. For example: `E2QWRUHAPOMQZL`.
+#' @param IfMatch The value of the `ETag` header that you received when retrieving the configuration identity to delete. For example: `E2QWRUHAPOMQZL`.
 #'
 #' @keywords internal
 #'
@@ -1356,8 +1288,7 @@ cloudfront_delete_field_level_encryption_config <- function(Id, IfMatch = NULL) 
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_delete_field_level_encryption_profile/](https://www.paws-r-sdk.com/docs/cloudfront_delete_field_level_encryption_profile/) for full documentation.
 #'
 #' @param Id &#91;required&#93; Request the ID of the profile you want to delete from CloudFront.
-#' @param IfMatch The value of the `ETag` header that you received when retrieving the
-#' profile to delete. For example: `E2QWRUHAPOMQZL`.
+#' @param IfMatch The value of the `ETag` header that you received when retrieving the profile to delete. For example: `E2QWRUHAPOMQZL`.
 #'
 #' @keywords internal
 #'
@@ -1389,9 +1320,7 @@ cloudfront_delete_field_level_encryption_profile <- function(Id, IfMatch = NULL)
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_delete_function/](https://www.paws-r-sdk.com/docs/cloudfront_delete_function/) for full documentation.
 #'
 #' @param Name &#91;required&#93; The name of the function that you are deleting.
-#' @param IfMatch &#91;required&#93; The current version (`ETag` value) of the function that you are
-#' deleting, which you can get using
-#' [`describe_function`][cloudfront_describe_function].
+#' @param IfMatch &#91;required&#93; The current version (`ETag` value) of the function that you are deleting, which you can get using [`describe_function`][cloudfront_describe_function].
 #'
 #' @keywords internal
 #'
@@ -1422,12 +1351,8 @@ cloudfront_delete_function <- function(Name, IfMatch) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_delete_key_group/](https://www.paws-r-sdk.com/docs/cloudfront_delete_key_group/) for full documentation.
 #'
-#' @param Id &#91;required&#93; The identifier of the key group that you are deleting. To get the
-#' identifier, use [`list_key_groups`][cloudfront_list_key_groups].
-#' @param IfMatch The version of the key group that you are deleting. The version is the
-#' key group's `ETag` value. To get the `ETag`, use
-#' [`get_key_group`][cloudfront_get_key_group] or
-#' [`get_key_group_config`][cloudfront_get_key_group_config].
+#' @param Id &#91;required&#93; The identifier of the key group that you are deleting. To get the identifier, use [`list_key_groups`][cloudfront_list_key_groups].
+#' @param IfMatch The version of the key group that you are deleting. The version is the key group's `ETag` value. To get the `ETag`, use [`get_key_group`][cloudfront_get_key_group] or [`get_key_group_config`][cloudfront_get_key_group_config].
 #'
 #' @keywords internal
 #'
@@ -1522,10 +1447,8 @@ cloudfront_delete_monitoring_subscription <- function(DistributionId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_delete_origin_access_control/](https://www.paws-r-sdk.com/docs/cloudfront_delete_origin_access_control/) for full documentation.
 #'
-#' @param Id &#91;required&#93; The unique identifier of the origin access control that you are
-#' deleting.
-#' @param IfMatch The current version (`ETag` value) of the origin access control that you
-#' are deleting.
+#' @param Id &#91;required&#93; The unique identifier of the origin access control that you are deleting.
+#' @param IfMatch The current version (`ETag` value) of the origin access control that you are deleting.
 #'
 #' @keywords internal
 #'
@@ -1556,15 +1479,8 @@ cloudfront_delete_origin_access_control <- function(Id, IfMatch = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_delete_origin_request_policy/](https://www.paws-r-sdk.com/docs/cloudfront_delete_origin_request_policy/) for full documentation.
 #'
-#' @param Id &#91;required&#93; The unique identifier for the origin request policy that you are
-#' deleting. To get the identifier, you can use
-#' [`list_origin_request_policies`][cloudfront_list_origin_request_policies].
-#' @param IfMatch The version of the origin request policy that you are deleting. The
-#' version is the origin request policy's `ETag` value, which you can get
-#' using
-#' [`list_origin_request_policies`][cloudfront_list_origin_request_policies],
-#' [`get_origin_request_policy`][cloudfront_get_origin_request_policy], or
-#' [`get_origin_request_policy_config`][cloudfront_get_origin_request_policy_config].
+#' @param Id &#91;required&#93; The unique identifier for the origin request policy that you are deleting. To get the identifier, you can use [`list_origin_request_policies`][cloudfront_list_origin_request_policies].
+#' @param IfMatch The version of the origin request policy that you are deleting. The version is the origin request policy's `ETag` value, which you can get using [`list_origin_request_policies`][cloudfront_list_origin_request_policies], [`get_origin_request_policy`][cloudfront_get_origin_request_policy], or [`get_origin_request_policy_config`][cloudfront_get_origin_request_policy_config].
 #'
 #' @keywords internal
 #'
@@ -1596,8 +1512,7 @@ cloudfront_delete_origin_request_policy <- function(Id, IfMatch = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_delete_public_key/](https://www.paws-r-sdk.com/docs/cloudfront_delete_public_key/) for full documentation.
 #'
 #' @param Id &#91;required&#93; The ID of the public key you want to remove from CloudFront.
-#' @param IfMatch The value of the `ETag` header that you received when retrieving the
-#' public key identity to delete. For example: `E2QWRUHAPOMQZL`.
+#' @param IfMatch The value of the `ETag` header that you received when retrieving the public key identity to delete. For example: `E2QWRUHAPOMQZL`.
 #'
 #' @keywords internal
 #'
@@ -1629,8 +1544,7 @@ cloudfront_delete_public_key <- function(Id, IfMatch = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_delete_realtime_log_config/](https://www.paws-r-sdk.com/docs/cloudfront_delete_realtime_log_config/) for full documentation.
 #'
 #' @param Name The name of the real-time log configuration to delete.
-#' @param ARN The Amazon Resource Name (ARN) of the real-time log configuration to
-#' delete.
+#' @param ARN The Amazon Resource Name (ARN) of the real-time log configuration to delete.
 #'
 #' @keywords internal
 #'
@@ -1661,8 +1575,7 @@ cloudfront_delete_realtime_log_config <- function(Name = NULL, ARN = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_delete_resource_policy/](https://www.paws-r-sdk.com/docs/cloudfront_delete_resource_policy/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the CloudFront resource for which the
-#' resource policy should be deleted.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the CloudFront resource for which the resource policy should be deleted.
 #'
 #' @keywords internal
 #'
@@ -1695,16 +1608,10 @@ cloudfront_delete_resource_policy <- function(ResourceArn) {
 #'
 #' @param Id &#91;required&#93; The identifier for the response headers policy that you are deleting.
 #' 
-#' To get the identifier, you can use
-#' [`list_response_headers_policies`][cloudfront_list_response_headers_policies].
+#' To get the identifier, you can use [`list_response_headers_policies`][cloudfront_list_response_headers_policies].
 #' @param IfMatch The version of the response headers policy that you are deleting.
 #' 
-#' The version is the response headers policy's `ETag` value, which you can
-#' get using
-#' [`list_response_headers_policies`][cloudfront_list_response_headers_policies],
-#' [`get_response_headers_policy`][cloudfront_get_response_headers_policy],
-#' or
-#' [`get_response_headers_policy_config`][cloudfront_get_response_headers_policy_config].
+#' The version is the response headers policy's `ETag` value, which you can get using [`list_response_headers_policies`][cloudfront_list_response_headers_policies], [`get_response_headers_policy`][cloudfront_get_response_headers_policy], or [`get_response_headers_policy_config`][cloudfront_get_response_headers_policy_config].
 #'
 #' @keywords internal
 #'
@@ -1736,8 +1643,7 @@ cloudfront_delete_response_headers_policy <- function(Id, IfMatch = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_delete_streaming_distribution/](https://www.paws-r-sdk.com/docs/cloudfront_delete_streaming_distribution/) for full documentation.
 #'
 #' @param Id &#91;required&#93; The distribution ID.
-#' @param IfMatch The value of the `ETag` header that you received when you disabled the
-#' streaming distribution. For example: `E2QWRUHAPOMQZL`.
+#' @param IfMatch The value of the `ETag` header that you received when you disabled the streaming distribution. For example: `E2QWRUHAPOMQZL`.
 #'
 #' @keywords internal
 #'
@@ -1801,9 +1707,7 @@ cloudfront_delete_trust_store <- function(Id, IfMatch) {
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_delete_vpc_origin/](https://www.paws-r-sdk.com/docs/cloudfront_delete_vpc_origin/) for full documentation.
 #'
 #' @param Id &#91;required&#93; The VPC origin ID.
-#' @param IfMatch &#91;required&#93; The version identifier of the VPC origin to delete. This is the `ETag`
-#' value returned in the response to
-#' [`get_vpc_origin`][cloudfront_get_vpc_origin].
+#' @param IfMatch &#91;required&#93; The version identifier of the VPC origin to delete. This is the `ETag` value returned in the response to [`get_vpc_origin`][cloudfront_get_vpc_origin].
 #'
 #' @keywords internal
 #'
@@ -1931,11 +1835,7 @@ cloudfront_describe_key_value_store <- function(Name) {
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_disassociate_distribution_tenant_web_acl/](https://www.paws-r-sdk.com/docs/cloudfront_disassociate_distribution_tenant_web_acl/) for full documentation.
 #'
 #' @param Id &#91;required&#93; The ID of the distribution tenant.
-#' @param IfMatch The current version of the distribution tenant that you're
-#' disassociating from the WAF web ACL. This is the `ETag` value returned
-#' in the response to the
-#' [`get_distribution_tenant`][cloudfront_get_distribution_tenant] API
-#' operation.
+#' @param IfMatch The current version of the distribution tenant that you're disassociating from the WAF web ACL. This is the `ETag` value returned in the response to the [`get_distribution_tenant`][cloudfront_get_distribution_tenant] API operation.
 #'
 #' @keywords internal
 #'
@@ -1967,8 +1867,7 @@ cloudfront_disassociate_distribution_tenant_web_acl <- function(Id, IfMatch = NU
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_disassociate_distribution_web_acl/](https://www.paws-r-sdk.com/docs/cloudfront_disassociate_distribution_web_acl/) for full documentation.
 #'
 #' @param Id &#91;required&#93; The ID of the distribution.
-#' @param IfMatch The value of the `ETag` header that you received when retrieving the
-#' distribution that you're disassociating from the WAF web ACL.
+#' @param IfMatch The value of the `ETag` header that you received when retrieving the distribution that you're disassociating from the WAF web ACL.
 #'
 #' @keywords internal
 #'
@@ -2030,12 +1929,7 @@ cloudfront_get_anycast_ip_list <- function(Id) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_get_cache_policy/](https://www.paws-r-sdk.com/docs/cloudfront_get_cache_policy/) for full documentation.
 #'
-#' @param Id &#91;required&#93; The unique identifier for the cache policy. If the cache policy is
-#' attached to a distribution's cache behavior, you can get the policy's
-#' identifier using [`list_distributions`][cloudfront_list_distributions]
-#' or [`get_distribution`][cloudfront_get_distribution]. If the cache
-#' policy is not attached to a cache behavior, you can get the identifier
-#' using [`list_cache_policies`][cloudfront_list_cache_policies].
+#' @param Id &#91;required&#93; The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using [`list_distributions`][cloudfront_list_distributions] or [`get_distribution`][cloudfront_get_distribution]. If the cache policy is not attached to a cache behavior, you can get the identifier using [`list_cache_policies`][cloudfront_list_cache_policies].
 #'
 #' @keywords internal
 #'
@@ -2066,12 +1960,7 @@ cloudfront_get_cache_policy <- function(Id) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_get_cache_policy_config/](https://www.paws-r-sdk.com/docs/cloudfront_get_cache_policy_config/) for full documentation.
 #'
-#' @param Id &#91;required&#93; The unique identifier for the cache policy. If the cache policy is
-#' attached to a distribution's cache behavior, you can get the policy's
-#' identifier using [`list_distributions`][cloudfront_list_distributions]
-#' or [`get_distribution`][cloudfront_get_distribution]. If the cache
-#' policy is not attached to a cache behavior, you can get the identifier
-#' using [`list_cache_policies`][cloudfront_list_cache_policies].
+#' @param Id &#91;required&#93; The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using [`list_distributions`][cloudfront_list_distributions] or [`get_distribution`][cloudfront_get_distribution]. If the cache policy is not attached to a cache behavior, you can get the identifier using [`list_cache_policies`][cloudfront_list_cache_policies].
 #'
 #' @keywords internal
 #'
@@ -2228,8 +2117,7 @@ cloudfront_get_connection_group <- function(Identifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_get_connection_group_by_routing_endpoint/](https://www.paws-r-sdk.com/docs/cloudfront_get_connection_group_by_routing_endpoint/) for full documentation.
 #'
-#' @param RoutingEndpoint &#91;required&#93; The routing endpoint for the target connection group, such as
-#' d111111abcdef8.cloudfront.net.
+#' @param RoutingEndpoint &#91;required&#93; The routing endpoint for the target connection group, such as d111111abcdef8.cloudfront.net.
 #'
 #' @keywords internal
 #'
@@ -2292,8 +2180,7 @@ cloudfront_get_continuous_deployment_policy <- function(Id) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_get_continuous_deployment_policy_config/](https://www.paws-r-sdk.com/docs/cloudfront_get_continuous_deployment_policy_config/) for full documentation.
 #'
-#' @param Id &#91;required&#93; The identifier of the continuous deployment policy whose configuration
-#' you are getting.
+#' @param Id &#91;required&#93; The identifier of the continuous deployment policy whose configuration you are getting.
 #'
 #' @keywords internal
 #'
@@ -2324,8 +2211,7 @@ cloudfront_get_continuous_deployment_policy_config <- function(Id) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_get_distribution/](https://www.paws-r-sdk.com/docs/cloudfront_get_distribution/) for full documentation.
 #'
-#' @param Id &#91;required&#93; The distribution's ID. If the ID is empty, an empty distribution
-#' configuration is returned.
+#' @param Id &#91;required&#93; The distribution's ID. If the ID is empty, an empty distribution configuration is returned.
 #'
 #' @keywords internal
 #'
@@ -2356,8 +2242,7 @@ cloudfront_get_distribution <- function(Id) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_get_distribution_config/](https://www.paws-r-sdk.com/docs/cloudfront_get_distribution_config/) for full documentation.
 #'
-#' @param Id &#91;required&#93; The distribution's ID. If the ID is empty, an empty distribution
-#' configuration is returned.
+#' @param Id &#91;required&#93; The distribution's ID. If the ID is empty, an empty distribution configuration is returned.
 #'
 #' @keywords internal
 #'
@@ -2388,8 +2273,7 @@ cloudfront_get_distribution_config <- function(Id) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_get_distribution_tenant/](https://www.paws-r-sdk.com/docs/cloudfront_get_distribution_tenant/) for full documentation.
 #'
-#' @param Identifier &#91;required&#93; The identifier of the distribution tenant. You can specify the ARN, ID,
-#' or name of the distribution tenant.
+#' @param Identifier &#91;required&#93; The identifier of the distribution tenant. You can specify the ARN, ID, or name of the distribution tenant.
 #'
 #' @keywords internal
 #'
@@ -2544,8 +2428,7 @@ cloudfront_get_field_level_encryption_profile <- function(Id) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_get_field_level_encryption_profile_config/](https://www.paws-r-sdk.com/docs/cloudfront_get_field_level_encryption_profile_config/) for full documentation.
 #'
-#' @param Id &#91;required&#93; Get the ID for the field-level encryption profile configuration
-#' information.
+#' @param Id &#91;required&#93; Get the ID for the field-level encryption profile configuration information.
 #'
 #' @keywords internal
 #'
@@ -2609,8 +2492,7 @@ cloudfront_get_function <- function(Name, Stage = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_get_invalidation/](https://www.paws-r-sdk.com/docs/cloudfront_get_invalidation/) for full documentation.
 #'
 #' @param DistributionId &#91;required&#93; The distribution's ID.
-#' @param Id &#91;required&#93; The identifier for the invalidation request, for example,
-#' `IDFDVBD632BHDS5`.
+#' @param Id &#91;required&#93; The identifier for the invalidation request, for example, `IDFDVBD632BHDS5`.
 #'
 #' @keywords internal
 #'
@@ -2674,8 +2556,7 @@ cloudfront_get_invalidation_for_distribution_tenant <- function(DistributionTena
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_get_key_group/](https://www.paws-r-sdk.com/docs/cloudfront_get_key_group/) for full documentation.
 #'
-#' @param Id &#91;required&#93; The identifier of the key group that you are getting. To get the
-#' identifier, use [`list_key_groups`][cloudfront_list_key_groups].
+#' @param Id &#91;required&#93; The identifier of the key group that you are getting. To get the identifier, use [`list_key_groups`][cloudfront_list_key_groups].
 #'
 #' @keywords internal
 #'
@@ -2706,8 +2587,7 @@ cloudfront_get_key_group <- function(Id) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_get_key_group_config/](https://www.paws-r-sdk.com/docs/cloudfront_get_key_group_config/) for full documentation.
 #'
-#' @param Id &#91;required&#93; The identifier of the key group whose configuration you are getting. To
-#' get the identifier, use [`list_key_groups`][cloudfront_list_key_groups].
+#' @param Id &#91;required&#93; The identifier of the key group whose configuration you are getting. To get the identifier, use [`list_key_groups`][cloudfront_list_key_groups].
 #'
 #' @keywords internal
 #'
@@ -2738,8 +2618,7 @@ cloudfront_get_key_group_config <- function(Id) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_get_managed_certificate_details/](https://www.paws-r-sdk.com/docs/cloudfront_get_managed_certificate_details/) for full documentation.
 #'
-#' @param Identifier &#91;required&#93; The identifier of the distribution tenant. You can specify the ARN, ID,
-#' or name of the distribution tenant.
+#' @param Identifier &#91;required&#93; The identifier of the distribution tenant. You can specify the ARN, ID, or name of the distribution tenant.
 #'
 #' @keywords internal
 #'
@@ -2864,14 +2743,7 @@ cloudfront_get_origin_access_control_config <- function(Id) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_get_origin_request_policy/](https://www.paws-r-sdk.com/docs/cloudfront_get_origin_request_policy/) for full documentation.
 #'
-#' @param Id &#91;required&#93; The unique identifier for the origin request policy. If the origin
-#' request policy is attached to a distribution's cache behavior, you can
-#' get the policy's identifier using
-#' [`list_distributions`][cloudfront_list_distributions] or
-#' [`get_distribution`][cloudfront_get_distribution]. If the origin request
-#' policy is not attached to a cache behavior, you can get the identifier
-#' using
-#' [`list_origin_request_policies`][cloudfront_list_origin_request_policies].
+#' @param Id &#91;required&#93; The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using [`list_distributions`][cloudfront_list_distributions] or [`get_distribution`][cloudfront_get_distribution]. If the origin request policy is not attached to a cache behavior, you can get the identifier using [`list_origin_request_policies`][cloudfront_list_origin_request_policies].
 #'
 #' @keywords internal
 #'
@@ -2902,14 +2774,7 @@ cloudfront_get_origin_request_policy <- function(Id) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_get_origin_request_policy_config/](https://www.paws-r-sdk.com/docs/cloudfront_get_origin_request_policy_config/) for full documentation.
 #'
-#' @param Id &#91;required&#93; The unique identifier for the origin request policy. If the origin
-#' request policy is attached to a distribution's cache behavior, you can
-#' get the policy's identifier using
-#' [`list_distributions`][cloudfront_list_distributions] or
-#' [`get_distribution`][cloudfront_get_distribution]. If the origin request
-#' policy is not attached to a cache behavior, you can get the identifier
-#' using
-#' [`list_origin_request_policies`][cloudfront_list_origin_request_policies].
+#' @param Id &#91;required&#93; The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using [`list_distributions`][cloudfront_list_distributions] or [`get_distribution`][cloudfront_get_distribution]. If the origin request policy is not attached to a cache behavior, you can get the identifier using [`list_origin_request_policies`][cloudfront_list_origin_request_policies].
 #'
 #' @keywords internal
 #'
@@ -3003,8 +2868,7 @@ cloudfront_get_public_key_config <- function(Id) {
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_get_realtime_log_config/](https://www.paws-r-sdk.com/docs/cloudfront_get_realtime_log_config/) for full documentation.
 #'
 #' @param Name The name of the real-time log configuration to get.
-#' @param ARN The Amazon Resource Name (ARN) of the real-time log configuration to
-#' get.
+#' @param ARN The Amazon Resource Name (ARN) of the real-time log configuration to get.
 #'
 #' @keywords internal
 #'
@@ -3036,8 +2900,7 @@ cloudfront_get_realtime_log_config <- function(Name = NULL, ARN = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_get_resource_policy/](https://www.paws-r-sdk.com/docs/cloudfront_get_resource_policy/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the CloudFront resource that is
-#' associated with the resource policy.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the CloudFront resource that is associated with the resource policy.
 #'
 #' @keywords internal
 #'
@@ -3071,13 +2934,7 @@ cloudfront_get_resource_policy <- function(ResourceArn) {
 #'
 #' @param Id &#91;required&#93; The identifier for the response headers policy.
 #' 
-#' If the response headers policy is attached to a distribution's cache
-#' behavior, you can get the policy's identifier using
-#' [`list_distributions`][cloudfront_list_distributions] or
-#' [`get_distribution`][cloudfront_get_distribution]. If the response
-#' headers policy is not attached to a cache behavior, you can get the
-#' identifier using
-#' [`list_response_headers_policies`][cloudfront_list_response_headers_policies].
+#' If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using [`list_distributions`][cloudfront_list_distributions] or [`get_distribution`][cloudfront_get_distribution]. If the response headers policy is not attached to a cache behavior, you can get the identifier using [`list_response_headers_policies`][cloudfront_list_response_headers_policies].
 #'
 #' @keywords internal
 #'
@@ -3110,13 +2967,7 @@ cloudfront_get_response_headers_policy <- function(Id) {
 #'
 #' @param Id &#91;required&#93; The identifier for the response headers policy.
 #' 
-#' If the response headers policy is attached to a distribution's cache
-#' behavior, you can get the policy's identifier using
-#' [`list_distributions`][cloudfront_list_distributions] or
-#' [`get_distribution`][cloudfront_get_distribution]. If the response
-#' headers policy is not attached to a cache behavior, you can get the
-#' identifier using
-#' [`list_response_headers_policies`][cloudfront_list_response_headers_policies].
+#' If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using [`list_distributions`][cloudfront_list_distributions] or [`get_distribution`][cloudfront_get_distribution]. If the response headers policy is not attached to a cache behavior, you can get the identifier using [`list_response_headers_policies`][cloudfront_list_response_headers_policies].
 #'
 #' @keywords internal
 #'
@@ -3272,12 +3123,8 @@ cloudfront_get_vpc_origin <- function(Id) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_anycast_ip_lists/](https://www.paws-r-sdk.com/docs/cloudfront_list_anycast_ip_lists/) for full documentation.
 #'
-#' @param Marker Use this field when paginating results to indicate where to begin in
-#' your list. The response includes items in the list that occur after the
-#' marker. To get the next page of the list, set this field's value to the
-#' value of `NextMarker` from the current page's response.
-#' @param MaxItems The maximum number of Anycast static IP lists that you want returned in
-#' the response.
+#' @param Marker Use this field when paginating results to indicate where to begin in your list. The response includes items in the list that occur after the marker. To get the next page of the list, set this field's value to the value of `NextMarker` from the current page's response.
+#' @param MaxItems The maximum number of Anycast static IP lists that you want returned in the response.
 #'
 #' @keywords internal
 #'
@@ -3308,19 +3155,12 @@ cloudfront_list_anycast_ip_lists <- function(Marker = NULL, MaxItems = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_cache_policies/](https://www.paws-r-sdk.com/docs/cloudfront_list_cache_policies/) for full documentation.
 #'
-#' @param Type A filter to return only the specified kinds of cache policies. Valid
-#' values are:
+#' @param Type A filter to return only the specified kinds of cache policies. Valid values are:
 #' 
-#' -   `managed` – Returns only the managed policies created by Amazon Web
-#'     Services.
+#' -   `managed` – Returns only the managed policies created by Amazon Web Services.
 #' 
-#' -   `custom` – Returns only the custom policies created in your Amazon
-#'     Web Services account.
-#' @param Marker Use this field when paginating results to indicate where to begin in
-#' your list of cache policies. The response includes cache policies in the
-#' list that occur after the marker. To get the next page of the list, set
-#' this field's value to the value of `NextMarker` from the current page's
-#' response.
+#' -   `custom` – Returns only the custom policies created in your Amazon Web Services account.
+#' @param Marker Use this field when paginating results to indicate where to begin in your list of cache policies. The response includes cache policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of `NextMarker` from the current page's response.
 #' @param MaxItems The maximum number of cache policies that you want in the response.
 #'
 #' @keywords internal
@@ -3352,13 +3192,8 @@ cloudfront_list_cache_policies <- function(Type = NULL, Marker = NULL, MaxItems 
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_cloud_front_origin_access_identities/](https://www.paws-r-sdk.com/docs/cloudfront_list_cloud_front_origin_access_identities/) for full documentation.
 #'
-#' @param Marker Use this when paginating results to indicate where to begin in your list
-#' of origin access identities. The results include identities in the list
-#' that occur after the marker. To get the next page of results, set the
-#' `Marker` to the value of the `NextMarker` from the current page's
-#' response (which is also the ID of the last identity on that page).
-#' @param MaxItems The maximum number of origin access identities you want in the response
-#' body.
+#' @param Marker Use this when paginating results to indicate where to begin in your list of origin access identities. The results include identities in the list that occur after the marker. To get the next page of results, set the `Marker` to the value of the `NextMarker` from the current page's response (which is also the ID of the last identity on that page).
+#' @param MaxItems The maximum number of origin access identities you want in the response body.
 #'
 #' @keywords internal
 #'
@@ -3390,14 +3225,9 @@ cloudfront_list_cloud_front_origin_access_identities <- function(Marker = NULL, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_conflicting_aliases/](https://www.paws-r-sdk.com/docs/cloudfront_list_conflicting_aliases/) for full documentation.
 #'
-#' @param DistributionId &#91;required&#93; The ID of a standard distribution in your account that has an attached
-#' TLS certificate that includes the provided alias.
+#' @param DistributionId &#91;required&#93; The ID of a standard distribution in your account that has an attached TLS certificate that includes the provided alias.
 #' @param Alias &#91;required&#93; The alias (also called a CNAME) to search for conflicting aliases.
-#' @param Marker Use this field when paginating results to indicate where to begin in the
-#' list of conflicting aliases. The response includes conflicting aliases
-#' in the list that occur after the marker. To get the next page of the
-#' list, set this field's value to the value of `NextMarker` from the
-#' current page's response.
+#' @param Marker Use this field when paginating results to indicate where to begin in the list of conflicting aliases. The response includes conflicting aliases in the list that occur after the marker. To get the next page of the list, set this field's value to the value of `NextMarker` from the current page's response.
 #' @param MaxItems The maximum number of conflicting aliases that you want in the response.
 #'
 #' @keywords internal
@@ -3429,12 +3259,8 @@ cloudfront_list_conflicting_aliases <- function(DistributionId, Alias, Marker = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_connection_functions/](https://www.paws-r-sdk.com/docs/cloudfront_list_connection_functions/) for full documentation.
 #'
-#' @param Marker Use this field when paginating results to indicate where to begin in
-#' your list. The response includes items in the list that occur after the
-#' marker. To get the next page of the list, set this field's value to the
-#' value of `NextMarker` from the current page's response.
-#' @param MaxItems The maximum number of connection functions that you want returned in the
-#' response.
+#' @param Marker Use this field when paginating results to indicate where to begin in your list. The response includes items in the list that occur after the marker. To get the next page of the list, set this field's value to the value of `NextMarker` from the current page's response.
+#' @param MaxItems The maximum number of connection functions that you want returned in the response.
 #' @param Stage The connection function's stage.
 #'
 #' @keywords internal
@@ -3500,13 +3326,8 @@ cloudfront_list_connection_groups <- function(AssociationFilter = NULL, Marker =
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_continuous_deployment_policies/](https://www.paws-r-sdk.com/docs/cloudfront_list_continuous_deployment_policies/) for full documentation.
 #'
-#' @param Marker Use this field when paginating results to indicate where to begin in
-#' your list of continuous deployment policies. The response includes
-#' policies in the list that occur after the marker. To get the next page
-#' of the list, set this field's value to the value of `NextMarker` from
-#' the current page's response.
-#' @param MaxItems The maximum number of continuous deployment policies that you want
-#' returned in the response.
+#' @param Marker Use this field when paginating results to indicate where to begin in your list of continuous deployment policies. The response includes policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of `NextMarker` from the current page's response.
+#' @param MaxItems The maximum number of continuous deployment policies that you want returned in the response.
 #'
 #' @keywords internal
 #'
@@ -3537,7 +3358,7 @@ cloudfront_list_continuous_deployment_policies <- function(Marker = NULL, MaxIte
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_distribution_tenants/](https://www.paws-r-sdk.com/docs/cloudfront_list_distribution_tenants/) for full documentation.
 #'
-#' @param AssociationFilter 
+#' @param AssociationFilter Filter by the associated distribution ID or connection group ID.
 #' @param Marker The marker for the next set of results.
 #' @param MaxItems The maximum number of distribution tenants to return.
 #'
@@ -3573,8 +3394,7 @@ cloudfront_list_distribution_tenants <- function(AssociationFilter = NULL, Marke
 #' @param WebACLArn Filter by the ARN of the associated WAF web ACL.
 #' @param CertificateArn Filter by the ARN of the associated ACM certificate.
 #' @param Marker The marker for the next set of results.
-#' @param MaxItems The maximum number of distribution tenants to return by the specified
-#' customization.
+#' @param MaxItems The maximum number of distribution tenants to return by the specified customization.
 #'
 #' @keywords internal
 #'
@@ -3605,11 +3425,7 @@ cloudfront_list_distribution_tenants_by_customization <- function(WebACLArn = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_distributions/](https://www.paws-r-sdk.com/docs/cloudfront_list_distributions/) for full documentation.
 #'
-#' @param Marker Use this when paginating results to indicate where to begin in your list
-#' of distributions. The results include distributions in the list that
-#' occur after the marker. To get the next page of results, set the
-#' `Marker` to the value of the `NextMarker` from the current page's
-#' response (which is also the ID of the last distribution on that page).
+#' @param Marker Use this when paginating results to indicate where to begin in your list of distributions. The results include distributions in the list that occur after the marker. To get the next page of results, set the `Marker` to the value of the `NextMarker` from the current page's response (which is also the ID of the last distribution on that page).
 #' @param MaxItems The maximum number of distributions you want in the response body.
 #'
 #' @keywords internal
@@ -3642,12 +3458,8 @@ cloudfront_list_distributions <- function(Marker = NULL, MaxItems = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_distributions_by_anycast_ip_list_id/](https://www.paws-r-sdk.com/docs/cloudfront_list_distributions_by_anycast_ip_list_id/) for full documentation.
 #'
-#' @param Marker Use this field when paginating results to indicate where to begin in
-#' your list. The response includes items in the list that occur after the
-#' marker. To get the next page of the list, set this field's value to the
-#' value of `NextMarker` from the current page's response.
-#' @param MaxItems The maximum number of distributions that you want returned in the
-#' response.
+#' @param Marker Use this field when paginating results to indicate where to begin in your list. The response includes items in the list that occur after the marker. To get the next page of the list, set this field's value to the value of `NextMarker` from the current page's response.
+#' @param MaxItems The maximum number of distributions that you want returned in the response.
 #' @param AnycastIpListId &#91;required&#93; The ID of the Anycast static IP list.
 #'
 #' @keywords internal
@@ -3680,14 +3492,9 @@ cloudfront_list_distributions_by_anycast_ip_list_id <- function(Marker = NULL, M
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_distributions_by_cache_policy_id/](https://www.paws-r-sdk.com/docs/cloudfront_list_distributions_by_cache_policy_id/) for full documentation.
 #'
-#' @param Marker Use this field when paginating results to indicate where to begin in
-#' your list of distribution IDs. The response includes distribution IDs in
-#' the list that occur after the marker. To get the next page of the list,
-#' set this field's value to the value of `NextMarker` from the current
-#' page's response.
+#' @param Marker Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of `NextMarker` from the current page's response.
 #' @param MaxItems The maximum number of distribution IDs that you want in the response.
-#' @param CachePolicyId &#91;required&#93; The ID of the cache policy whose associated distribution IDs you want to
-#' list.
+#' @param CachePolicyId &#91;required&#93; The ID of the cache policy whose associated distribution IDs you want to list.
 #'
 #' @keywords internal
 #'
@@ -3718,12 +3525,8 @@ cloudfront_list_distributions_by_cache_policy_id <- function(Marker = NULL, MaxI
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_distributions_by_connection_function/](https://www.paws-r-sdk.com/docs/cloudfront_list_distributions_by_connection_function/) for full documentation.
 #'
-#' @param Marker Use this field when paginating results to indicate where to begin in
-#' your list. The response includes items in the list that occur after the
-#' marker. To get the next page of the list, set this field's value to the
-#' value of `NextMarker` from the current page's response.
-#' @param MaxItems The maximum number of distributions that you want returned in the
-#' response.
+#' @param Marker Use this field when paginating results to indicate where to begin in your list. The response includes items in the list that occur after the marker. To get the next page of the list, set this field's value to the value of `NextMarker` from the current page's response.
+#' @param MaxItems The maximum number of distributions that you want returned in the response.
 #' @param ConnectionFunctionIdentifier &#91;required&#93; The distributions by connection function identifier.
 #'
 #' @keywords internal
@@ -3757,9 +3560,7 @@ cloudfront_list_distributions_by_connection_function <- function(Marker = NULL, 
 #'
 #' @param Marker The marker for the next set of distributions to retrieve.
 #' @param MaxItems The maximum number of distributions to return.
-#' @param ConnectionMode &#91;required&#93; This field specifies whether the connection mode is through a standard
-#' distribution (direct) or a multi-tenant distribution with distribution
-#' tenants (tenant-only).
+#' @param ConnectionMode &#91;required&#93; This field specifies whether the connection mode is through a standard distribution (direct) or a multi-tenant distribution with distribution tenants (tenant-only).
 #'
 #' @keywords internal
 #'
@@ -3791,14 +3592,9 @@ cloudfront_list_distributions_by_connection_mode <- function(Marker = NULL, MaxI
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_distributions_by_key_group/](https://www.paws-r-sdk.com/docs/cloudfront_list_distributions_by_key_group/) for full documentation.
 #'
-#' @param Marker Use this field when paginating results to indicate where to begin in
-#' your list of distribution IDs. The response includes distribution IDs in
-#' the list that occur after the marker. To get the next page of the list,
-#' set this field's value to the value of `NextMarker` from the current
-#' page's response.
+#' @param Marker Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of `NextMarker` from the current page's response.
 #' @param MaxItems The maximum number of distribution IDs that you want in the response.
-#' @param KeyGroupId &#91;required&#93; The ID of the key group whose associated distribution IDs you are
-#' listing.
+#' @param KeyGroupId &#91;required&#93; The ID of the key group whose associated distribution IDs you are listing.
 #'
 #' @keywords internal
 #'
@@ -3830,14 +3626,9 @@ cloudfront_list_distributions_by_key_group <- function(Marker = NULL, MaxItems =
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_distributions_by_origin_request_policy_id/](https://www.paws-r-sdk.com/docs/cloudfront_list_distributions_by_origin_request_policy_id/) for full documentation.
 #'
-#' @param Marker Use this field when paginating results to indicate where to begin in
-#' your list of distribution IDs. The response includes distribution IDs in
-#' the list that occur after the marker. To get the next page of the list,
-#' set this field's value to the value of `NextMarker` from the current
-#' page's response.
+#' @param Marker Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of `NextMarker` from the current page's response.
 #' @param MaxItems The maximum number of distribution IDs that you want in the response.
-#' @param OriginRequestPolicyId &#91;required&#93; The ID of the origin request policy whose associated distribution IDs
-#' you want to list.
+#' @param OriginRequestPolicyId &#91;required&#93; The ID of the origin request policy whose associated distribution IDs you want to list.
 #'
 #' @keywords internal
 #'
@@ -3869,13 +3660,8 @@ cloudfront_list_distributions_by_origin_request_policy_id <- function(Marker = N
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_distributions_by_owned_resource/](https://www.paws-r-sdk.com/docs/cloudfront_list_distributions_by_owned_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The ARN of the CloudFront resource that you've shared with other Amazon
-#' Web Services accounts.
-#' @param Marker Use this field when paginating results to indicate where to begin in
-#' your list of distributions. The response includes distributions in the
-#' list that occur after the marker. To get the next page of the list, set
-#' this field's value to the value of `NextMarker` from the current page's
-#' response.
+#' @param ResourceArn &#91;required&#93; The ARN of the CloudFront resource that you've shared with other Amazon Web Services accounts.
+#' @param Marker Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of `NextMarker` from the current page's response.
 #' @param MaxItems The maximum number of distributions to return.
 #'
 #' @keywords internal
@@ -3908,16 +3694,10 @@ cloudfront_list_distributions_by_owned_resource <- function(ResourceArn, Marker 
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_distributions_by_realtime_log_config/](https://www.paws-r-sdk.com/docs/cloudfront_list_distributions_by_realtime_log_config/) for full documentation.
 #'
-#' @param Marker Use this field when paginating results to indicate where to begin in
-#' your list of distributions. The response includes distributions in the
-#' list that occur after the marker. To get the next page of the list, set
-#' this field's value to the value of `NextMarker` from the current page's
-#' response.
+#' @param Marker Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of `NextMarker` from the current page's response.
 #' @param MaxItems The maximum number of distributions that you want in the response.
-#' @param RealtimeLogConfigName The name of the real-time log configuration whose associated
-#' distributions you want to list.
-#' @param RealtimeLogConfigArn The Amazon Resource Name (ARN) of the real-time log configuration whose
-#' associated distributions you want to list.
+#' @param RealtimeLogConfigName The name of the real-time log configuration whose associated distributions you want to list.
+#' @param RealtimeLogConfigArn The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.
 #'
 #' @keywords internal
 #'
@@ -3949,15 +3729,9 @@ cloudfront_list_distributions_by_realtime_log_config <- function(Marker = NULL, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_distributions_by_response_headers_policy_id/](https://www.paws-r-sdk.com/docs/cloudfront_list_distributions_by_response_headers_policy_id/) for full documentation.
 #'
-#' @param Marker Use this field when paginating results to indicate where to begin in
-#' your list of distribution IDs. The response includes distribution IDs in
-#' the list that occur after the marker. To get the next page of the list,
-#' set this field's value to the value of `NextMarker` from the current
-#' page's response.
-#' @param MaxItems The maximum number of distribution IDs that you want to get in the
-#' response.
-#' @param ResponseHeadersPolicyId &#91;required&#93; The ID of the response headers policy whose associated distribution IDs
-#' you want to list.
+#' @param Marker Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of `NextMarker` from the current page's response.
+#' @param MaxItems The maximum number of distribution IDs that you want to get in the response.
+#' @param ResponseHeadersPolicyId &#91;required&#93; The ID of the response headers policy whose associated distribution IDs you want to list.
 #'
 #' @keywords internal
 #'
@@ -3989,12 +3763,8 @@ cloudfront_list_distributions_by_response_headers_policy_id <- function(Marker =
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_distributions_by_trust_store/](https://www.paws-r-sdk.com/docs/cloudfront_list_distributions_by_trust_store/) for full documentation.
 #'
 #' @param TrustStoreIdentifier &#91;required&#93; The distributions by trust store identifier.
-#' @param Marker Use this field when paginating results to indicate where to begin in
-#' your list. The response includes items in the list that occur after the
-#' marker. To get the next page of the list, set this field's value to the
-#' value of `NextMarker` from the current page's response.
-#' @param MaxItems The maximum number of distributions that you want returned in the
-#' response.
+#' @param Marker Use this field when paginating results to indicate where to begin in your list. The response includes items in the list that occur after the marker. To get the next page of the list, set this field's value to the value of `NextMarker` from the current page's response.
+#' @param MaxItems The maximum number of distributions that you want returned in the response.
 #'
 #' @keywords internal
 #'
@@ -4058,23 +3828,13 @@ cloudfront_list_distributions_by_vpc_origin_id <- function(Marker = NULL, MaxIte
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_distributions_by_web_acl_id/](https://www.paws-r-sdk.com/docs/cloudfront_list_distributions_by_web_acl_id/) for full documentation.
 #'
-#' @param Marker Use `Marker` and `MaxItems` to control pagination of results. If you
-#' have more than `MaxItems` distributions that satisfy the request, the
-#' response includes a `NextMarker` element. To get the next page of
-#' results, submit another request. For the value of `Marker`, specify the
-#' value of `NextMarker` from the last response. (For the first request,
-#' omit `Marker`.)
-#' @param MaxItems The maximum number of distributions that you want CloudFront to return
-#' in the response body. The maximum and default values are both 100.
-#' @param WebACLId &#91;required&#93; The ID of the WAF web ACL that you want to list the associated
-#' distributions. If you specify "null" for the ID, the request returns a
-#' list of the distributions that aren't associated with a web ACL.
+#' @param Marker Use `Marker` and `MaxItems` to control pagination of results. If you have more than `MaxItems` distributions that satisfy the request, the response includes a `NextMarker` element. To get the next page of results, submit another request. For the value of `Marker`, specify the value of `NextMarker` from the last response. (For the first request, omit `Marker`.)
+#' @param MaxItems The maximum number of distributions that you want CloudFront to return in the response body. The maximum and default values are both 100.
+#' @param WebACLId &#91;required&#93; The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for the ID, the request returns a list of the distributions that aren't associated with a web ACL.
 #' 
-#' For WAFV2, this is the ARN of the web ACL, such as
-#' `arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111`.
+#' For WAFV2, this is the ARN of the web ACL, such as `arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111`.
 #' 
-#' For WAF Classic, this is the ID of the web ACL, such as
-#' `a1b2c3d4-5678-90ab-cdef-EXAMPLE11111`.
+#' For WAF Classic, this is the ID of the web ACL, such as `a1b2c3d4-5678-90ab-cdef-EXAMPLE11111`.
 #'
 #' @keywords internal
 #'
@@ -4108,9 +3868,7 @@ cloudfront_list_distributions_by_web_acl_id <- function(Marker = NULL, MaxItems 
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_domain_conflicts/](https://www.paws-r-sdk.com/docs/cloudfront_list_domain_conflicts/) for full documentation.
 #'
 #' @param Domain &#91;required&#93; The domain to check for conflicts.
-#' @param DomainControlValidationResource &#91;required&#93; The distribution resource identifier. This can be the standard
-#' distribution or distribution tenant that has a valid certificate, which
-#' covers the domain that you specify.
+#' @param DomainControlValidationResource &#91;required&#93; The distribution resource identifier. This can be the standard distribution or distribution tenant that has a valid certificate, which covers the domain that you specify.
 #' @param MaxItems The maximum number of domain conflicts to return.
 #' @param Marker The marker for the next set of domain conflicts.
 #'
@@ -4144,13 +3902,8 @@ cloudfront_list_domain_conflicts <- function(Domain, DomainControlValidationReso
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_field_level_encryption_configs/](https://www.paws-r-sdk.com/docs/cloudfront_list_field_level_encryption_configs/) for full documentation.
 #'
-#' @param Marker Use this when paginating results to indicate where to begin in your list
-#' of configurations. The results include configurations in the list that
-#' occur after the marker. To get the next page of results, set the
-#' `Marker` to the value of the `NextMarker` from the current page's
-#' response (which is also the ID of the last configuration on that page).
-#' @param MaxItems The maximum number of field-level encryption configurations you want in
-#' the response body.
+#' @param Marker Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the `Marker` to the value of the `NextMarker` from the current page's response (which is also the ID of the last configuration on that page).
+#' @param MaxItems The maximum number of field-level encryption configurations you want in the response body.
 #'
 #' @keywords internal
 #'
@@ -4182,13 +3935,8 @@ cloudfront_list_field_level_encryption_configs <- function(Marker = NULL, MaxIte
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_field_level_encryption_profiles/](https://www.paws-r-sdk.com/docs/cloudfront_list_field_level_encryption_profiles/) for full documentation.
 #'
-#' @param Marker Use this when paginating results to indicate where to begin in your list
-#' of profiles. The results include profiles in the list that occur after
-#' the marker. To get the next page of results, set the `Marker` to the
-#' value of the `NextMarker` from the current page's response (which is
-#' also the ID of the last profile on that page).
-#' @param MaxItems The maximum number of field-level encryption profiles you want in the
-#' response body.
+#' @param Marker Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that occur after the marker. To get the next page of results, set the `Marker` to the value of the `NextMarker` from the current page's response (which is also the ID of the last profile on that page).
+#' @param MaxItems The maximum number of field-level encryption profiles you want in the response body.
 #'
 #' @keywords internal
 #'
@@ -4220,14 +3968,9 @@ cloudfront_list_field_level_encryption_profiles <- function(Marker = NULL, MaxIt
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_functions/](https://www.paws-r-sdk.com/docs/cloudfront_list_functions/) for full documentation.
 #'
-#' @param Marker Use this field when paginating results to indicate where to begin in
-#' your list of functions. The response includes functions in the list that
-#' occur after the marker. To get the next page of the list, set this
-#' field's value to the value of `NextMarker` from the current page's
-#' response.
+#' @param Marker Use this field when paginating results to indicate where to begin in your list of functions. The response includes functions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of `NextMarker` from the current page's response.
 #' @param MaxItems The maximum number of functions that you want in the response.
-#' @param Stage An optional filter to return only the functions that are in the
-#' specified stage, either `DEVELOPMENT` or `LIVE`.
+#' @param Stage An optional filter to return only the functions that are in the specified stage, either `DEVELOPMENT` or `LIVE`.
 #'
 #' @keywords internal
 #'
@@ -4259,15 +4002,8 @@ cloudfront_list_functions <- function(Marker = NULL, MaxItems = NULL, Stage = NU
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_invalidations/](https://www.paws-r-sdk.com/docs/cloudfront_list_invalidations/) for full documentation.
 #'
 #' @param DistributionId &#91;required&#93; The distribution's ID.
-#' @param Marker Use this parameter when paginating results to indicate where to begin in
-#' your list of invalidation batches. Because the results are returned in
-#' decreasing order from most recent to oldest, the most recent results are
-#' on the first page, the second page will contain earlier results, and so
-#' on. To get the next page of results, set `Marker` to the value of the
-#' `NextMarker` from the current page's response. This value is the same as
-#' the ID of the last invalidation batch on that page.
-#' @param MaxItems The maximum number of invalidation batches that you want in the response
-#' body.
+#' @param Marker Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set `Marker` to the value of the `NextMarker` from the current page's response. This value is the same as the ID of the last invalidation batch on that page.
+#' @param MaxItems The maximum number of invalidation batches that you want in the response body.
 #'
 #' @keywords internal
 #'
@@ -4299,15 +4035,8 @@ cloudfront_list_invalidations <- function(DistributionId, Marker = NULL, MaxItem
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_invalidations_for_distribution_tenant/](https://www.paws-r-sdk.com/docs/cloudfront_list_invalidations_for_distribution_tenant/) for full documentation.
 #'
 #' @param Id &#91;required&#93; The ID of the distribution tenant.
-#' @param Marker Use this parameter when paginating results to indicate where to begin in
-#' your list of invalidation batches. Because the results are returned in
-#' decreasing order from most recent to oldest, the most recent results are
-#' on the first page, the second page will contain earlier results, and so
-#' on. To get the next page of results, set `Marker` to the value of the
-#' `NextMarker` from the current page's response. This value is the same as
-#' the ID of the last invalidation batch on that page.
-#' @param MaxItems The maximum number of invalidations to return for the distribution
-#' tenant.
+#' @param Marker Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set `Marker` to the value of the `NextMarker` from the current page's response. This value is the same as the ID of the last invalidation batch on that page.
+#' @param MaxItems The maximum number of invalidations to return for the distribution tenant.
 #'
 #' @keywords internal
 #'
@@ -4338,11 +4067,7 @@ cloudfront_list_invalidations_for_distribution_tenant <- function(Id, Marker = N
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_key_groups/](https://www.paws-r-sdk.com/docs/cloudfront_list_key_groups/) for full documentation.
 #'
-#' @param Marker Use this field when paginating results to indicate where to begin in
-#' your list of key groups. The response includes key groups in the list
-#' that occur after the marker. To get the next page of the list, set this
-#' field's value to the value of `NextMarker` from the current page's
-#' response.
+#' @param Marker Use this field when paginating results to indicate where to begin in your list of key groups. The response includes key groups in the list that occur after the marker. To get the next page of the list, set this field's value to the value of `NextMarker` from the current page's response.
 #' @param MaxItems The maximum number of key groups that you want in the response.
 #'
 #' @keywords internal
@@ -4408,13 +4133,8 @@ cloudfront_list_key_value_stores <- function(Marker = NULL, MaxItems = NULL, Sta
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_origin_access_controls/](https://www.paws-r-sdk.com/docs/cloudfront_list_origin_access_controls/) for full documentation.
 #'
-#' @param Marker Use this field when paginating results to indicate where to begin in
-#' your list of origin access controls. The response includes the items in
-#' the list that occur after the marker. To get the next page of the list,
-#' set this field's value to the value of `NextMarker` from the current
-#' page's response.
-#' @param MaxItems The maximum number of origin access controls that you want in the
-#' response.
+#' @param Marker Use this field when paginating results to indicate where to begin in your list of origin access controls. The response includes the items in the list that occur after the marker. To get the next page of the list, set this field's value to the value of `NextMarker` from the current page's response.
+#' @param MaxItems The maximum number of origin access controls that you want in the response.
 #'
 #' @keywords internal
 #'
@@ -4445,21 +4165,13 @@ cloudfront_list_origin_access_controls <- function(Marker = NULL, MaxItems = NUL
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_origin_request_policies/](https://www.paws-r-sdk.com/docs/cloudfront_list_origin_request_policies/) for full documentation.
 #'
-#' @param Type A filter to return only the specified kinds of origin request policies.
-#' Valid values are:
+#' @param Type A filter to return only the specified kinds of origin request policies. Valid values are:
 #' 
-#' -   `managed` – Returns only the managed policies created by Amazon Web
-#'     Services.
+#' -   `managed` – Returns only the managed policies created by Amazon Web Services.
 #' 
-#' -   `custom` – Returns only the custom policies created in your Amazon
-#'     Web Services account.
-#' @param Marker Use this field when paginating results to indicate where to begin in
-#' your list of origin request policies. The response includes origin
-#' request policies in the list that occur after the marker. To get the
-#' next page of the list, set this field's value to the value of
-#' `NextMarker` from the current page's response.
-#' @param MaxItems The maximum number of origin request policies that you want in the
-#' response.
+#' -   `custom` – Returns only the custom policies created in your Amazon Web Services account.
+#' @param Marker Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of `NextMarker` from the current page's response.
+#' @param MaxItems The maximum number of origin request policies that you want in the response.
 #'
 #' @keywords internal
 #'
@@ -4490,11 +4202,7 @@ cloudfront_list_origin_request_policies <- function(Type = NULL, Marker = NULL, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_public_keys/](https://www.paws-r-sdk.com/docs/cloudfront_list_public_keys/) for full documentation.
 #'
-#' @param Marker Use this when paginating results to indicate where to begin in your list
-#' of public keys. The results include public keys in the list that occur
-#' after the marker. To get the next page of results, set the `Marker` to
-#' the value of the `NextMarker` from the current page's response (which is
-#' also the ID of the last public key on that page).
+#' @param Marker Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that occur after the marker. To get the next page of results, set the `Marker` to the value of the `NextMarker` from the current page's response (which is also the ID of the last public key on that page).
 #' @param MaxItems The maximum number of public keys you want in the response body.
 #'
 #' @keywords internal
@@ -4526,13 +4234,8 @@ cloudfront_list_public_keys <- function(Marker = NULL, MaxItems = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_realtime_log_configs/](https://www.paws-r-sdk.com/docs/cloudfront_list_realtime_log_configs/) for full documentation.
 #'
-#' @param MaxItems The maximum number of real-time log configurations that you want in the
-#' response.
-#' @param Marker Use this field when paginating results to indicate where to begin in
-#' your list of real-time log configurations. The response includes
-#' real-time log configurations in the list that occur after the marker. To
-#' get the next page of the list, set this field's value to the value of
-#' `NextMarker` from the current page's response.
+#' @param MaxItems The maximum number of real-time log configurations that you want in the response.
+#' @param Marker Use this field when paginating results to indicate where to begin in your list of real-time log configurations. The response includes real-time log configurations in the list that occur after the marker. To get the next page of the list, set this field's value to the value of `NextMarker` from the current page's response.
 #'
 #' @keywords internal
 #'
@@ -4563,21 +4266,13 @@ cloudfront_list_realtime_log_configs <- function(MaxItems = NULL, Marker = NULL)
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_response_headers_policies/](https://www.paws-r-sdk.com/docs/cloudfront_list_response_headers_policies/) for full documentation.
 #'
-#' @param Type A filter to get only the specified kind of response headers policies.
-#' Valid values are:
+#' @param Type A filter to get only the specified kind of response headers policies. Valid values are:
 #' 
-#' -   `managed` – Gets only the managed policies created by Amazon Web
-#'     Services.
+#' -   `managed` – Gets only the managed policies created by Amazon Web Services.
 #' 
-#' -   `custom` – Gets only the custom policies created in your Amazon Web
-#'     Services account.
-#' @param Marker Use this field when paginating results to indicate where to begin in
-#' your list of response headers policies. The response includes response
-#' headers policies in the list that occur after the marker. To get the
-#' next page of the list, set this field's value to the value of
-#' `NextMarker` from the current page's response.
-#' @param MaxItems The maximum number of response headers policies that you want to get in
-#' the response.
+#' -   `custom` – Gets only the custom policies created in your Amazon Web Services account.
+#' @param Marker Use this field when paginating results to indicate where to begin in your list of response headers policies. The response includes response headers policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of `NextMarker` from the current page's response.
+#' @param MaxItems The maximum number of response headers policies that you want to get in the response.
 #'
 #' @keywords internal
 #'
@@ -4671,12 +4366,8 @@ cloudfront_list_tags_for_resource <- function(Resource) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_list_trust_stores/](https://www.paws-r-sdk.com/docs/cloudfront_list_trust_stores/) for full documentation.
 #'
-#' @param Marker Use this field when paginating results to indicate where to begin in
-#' your list. The response includes items in the list that occur after the
-#' marker. To get the next page of the list, set this field's value to the
-#' value of `NextMarker` from the current page's response.
-#' @param MaxItems The maximum number of trust stores that you want returned in the
-#' response.
+#' @param Marker Use this field when paginating results to indicate where to begin in your list. The response includes items in the list that occur after the marker. To get the next page of the list, set this field's value to the value of `NextMarker` from the current page's response.
+#' @param MaxItems The maximum number of trust stores that you want returned in the response.
 #'
 #' @keywords internal
 #'
@@ -4773,9 +4464,7 @@ cloudfront_publish_connection_function <- function(Id, IfMatch) {
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_publish_function/](https://www.paws-r-sdk.com/docs/cloudfront_publish_function/) for full documentation.
 #'
 #' @param Name &#91;required&#93; The name of the function that you are publishing.
-#' @param IfMatch &#91;required&#93; The current version (`ETag` value) of the function that you are
-#' publishing, which you can get using
-#' [`describe_function`][cloudfront_describe_function].
+#' @param IfMatch &#91;required&#93; The current version (`ETag` value) of the function that you are publishing, which you can get using [`describe_function`][cloudfront_describe_function].
 #'
 #' @keywords internal
 #'
@@ -4806,8 +4495,7 @@ cloudfront_publish_function <- function(Name, IfMatch) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_put_resource_policy/](https://www.paws-r-sdk.com/docs/cloudfront_put_resource_policy/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the CloudFront resource for which the
-#' policy is being created.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the CloudFront resource for which the policy is being created.
 #' @param PolicyDocument &#91;required&#93; The JSON-formatted resource policy to create.
 #'
 #' @keywords internal
@@ -4906,15 +4594,9 @@ cloudfront_test_connection_function <- function(Id, IfMatch, Stage = NULL, Conne
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_test_function/](https://www.paws-r-sdk.com/docs/cloudfront_test_function/) for full documentation.
 #'
 #' @param Name &#91;required&#93; The name of the function that you are testing.
-#' @param IfMatch &#91;required&#93; The current version (`ETag` value) of the function that you are testing,
-#' which you can get using
-#' [`describe_function`][cloudfront_describe_function].
-#' @param Stage The stage of the function that you are testing, either `DEVELOPMENT` or
-#' `LIVE`.
-#' @param EventObject &#91;required&#93; The event object to test the function with. For more information about
-#' the structure of the event object, see [Testing
-#' functions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/create-function.html#test-function)
-#' in the *Amazon CloudFront Developer Guide*.
+#' @param IfMatch &#91;required&#93; The current version (`ETag` value) of the function that you are testing, which you can get using [`describe_function`][cloudfront_describe_function].
+#' @param Stage The stage of the function that you are testing, either `DEVELOPMENT` or `LIVE`.
+#' @param EventObject &#91;required&#93; The event object to test the function with. For more information about the structure of the event object, see [Testing functions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/create-function.html#test-function) in the *Amazon CloudFront Developer Guide*.
 #'
 #' @keywords internal
 #'
@@ -4978,21 +4660,20 @@ cloudfront_untag_resource <- function(Resource, TagKeys) {
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_update_anycast_ip_list/](https://www.paws-r-sdk.com/docs/cloudfront_update_anycast_ip_list/) for full documentation.
 #'
 #' @param Id &#91;required&#93; The ID of the Anycast static IP list.
-#' @param IpAddressType The IP address type for the Anycast static IP list. You can specify one
-#' of the following options:
+#' @param IpAddressType The IP address type for the Anycast static IP list. You can specify one of the following options:
 #' 
 #' -   `ipv4` only
 #' 
 #' -   `ipv6` only
 #' 
 #' -   `dualstack` - Allocate a list of both IPv4 and IPv6 addresses
-#' @param IfMatch &#91;required&#93; The current version (ETag value) of the Anycast static IP list that you
-#' are updating.
+#' @param IpamCidrConfigs A list of IPAM CIDR configurations that specify the IP address ranges and IPAM pool settings for updating the Anycast static IP list.
+#' @param IfMatch &#91;required&#93; The current version (ETag value) of the Anycast static IP list that you are updating.
 #'
 #' @keywords internal
 #'
 #' @rdname cloudfront_update_anycast_ip_list
-cloudfront_update_anycast_ip_list <- function(Id, IpAddressType = NULL, IfMatch) {
+cloudfront_update_anycast_ip_list <- function(Id, IpAddressType = NULL, IpamCidrConfigs = NULL, IfMatch) {
   op <- new_operation(
     name = "UpdateAnycastIpList",
     http_method = "PUT",
@@ -5001,7 +4682,7 @@ cloudfront_update_anycast_ip_list <- function(Id, IpAddressType = NULL, IfMatch)
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .cloudfront$update_anycast_ip_list_input(Id = Id, IpAddressType = IpAddressType, IfMatch = IfMatch)
+  input <- .cloudfront$update_anycast_ip_list_input(Id = Id, IpAddressType = IpAddressType, IpamCidrConfigs = IpamCidrConfigs, IfMatch = IfMatch)
   output <- .cloudfront$update_anycast_ip_list_output()
   config <- get_config()
   svc <- .cloudfront$service(config, op)
@@ -5019,13 +4700,8 @@ cloudfront_update_anycast_ip_list <- function(Id, IpAddressType = NULL, IfMatch)
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_update_cache_policy/](https://www.paws-r-sdk.com/docs/cloudfront_update_cache_policy/) for full documentation.
 #'
 #' @param CachePolicyConfig &#91;required&#93; A cache policy configuration.
-#' @param Id &#91;required&#93; The unique identifier for the cache policy that you are updating. The
-#' identifier is returned in a cache behavior's `CachePolicyId` field in
-#' the response to
-#' [`get_distribution_config`][cloudfront_get_distribution_config].
-#' @param IfMatch The version of the cache policy that you are updating. The version is
-#' returned in the cache policy's `ETag` field in the response to
-#' [`get_cache_policy_config`][cloudfront_get_cache_policy_config].
+#' @param Id &#91;required&#93; The unique identifier for the cache policy that you are updating. The identifier is returned in a cache behavior's `CachePolicyId` field in the response to [`get_distribution_config`][cloudfront_get_distribution_config].
+#' @param IfMatch The version of the cache policy that you are updating. The version is returned in the cache policy's `ETag` field in the response to [`get_cache_policy_config`][cloudfront_get_cache_policy_config].
 #'
 #' @keywords internal
 #'
@@ -5058,8 +4734,7 @@ cloudfront_update_cache_policy <- function(CachePolicyConfig, Id, IfMatch = NULL
 #'
 #' @param CloudFrontOriginAccessIdentityConfig &#91;required&#93; The identity's configuration information.
 #' @param Id &#91;required&#93; The identity's id.
-#' @param IfMatch The value of the `ETag` header that you received when retrieving the
-#' identity's configuration. For example: `E2QWRUHAPOMQZL`.
+#' @param IfMatch The value of the `ETag` header that you received when retrieving the identity's configuration. For example: `E2QWRUHAPOMQZL`.
 #'
 #' @keywords internal
 #'
@@ -5091,9 +4766,8 @@ cloudfront_update_cloud_front_origin_access_identity <- function(CloudFrontOrigi
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_update_connection_function/](https://www.paws-r-sdk.com/docs/cloudfront_update_connection_function/) for full documentation.
 #'
 #' @param Id &#91;required&#93; The connection function ID.
-#' @param IfMatch &#91;required&#93; The current version (`ETag` value) of the connection function you are
-#' updating.
-#' @param ConnectionFunctionConfig &#91;required&#93; 
+#' @param IfMatch &#91;required&#93; The current version (`ETag` value) of the connection function you are updating.
+#' @param ConnectionFunctionConfig &#91;required&#93; Contains configuration information about a CloudFront function.
 #' @param ConnectionFunctionCode &#91;required&#93; The connection function code.
 #'
 #' @keywords internal
@@ -5126,11 +4800,8 @@ cloudfront_update_connection_function <- function(Id, IfMatch, ConnectionFunctio
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_update_connection_group/](https://www.paws-r-sdk.com/docs/cloudfront_update_connection_group/) for full documentation.
 #'
 #' @param Id &#91;required&#93; The ID of the connection group.
-#' @param Ipv6Enabled Enable IPv6 for the connection group. For more information, see [Enable
-#' IPv6](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesEnableIPv6)
-#' in the *Amazon CloudFront Developer Guide*.
-#' @param IfMatch &#91;required&#93; The value of the `ETag` header that you received when retrieving the
-#' connection group that you're updating.
+#' @param Ipv6Enabled Enable IPv6 for the connection group. For more information, see [Enable IPv6](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesEnableIPv6) in the *Amazon CloudFront Developer Guide*.
+#' @param IfMatch &#91;required&#93; The value of the `ETag` header that you received when retrieving the connection group that you're updating.
 #' @param AnycastIpListId The ID of the Anycast static IP list.
 #' @param Enabled Whether the connection group is enabled.
 #'
@@ -5164,10 +4835,8 @@ cloudfront_update_connection_group <- function(Id, Ipv6Enabled = NULL, IfMatch, 
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_update_continuous_deployment_policy/](https://www.paws-r-sdk.com/docs/cloudfront_update_continuous_deployment_policy/) for full documentation.
 #'
 #' @param ContinuousDeploymentPolicyConfig &#91;required&#93; The continuous deployment policy configuration.
-#' @param Id &#91;required&#93; The identifier of the continuous deployment policy that you are
-#' updating.
-#' @param IfMatch The current version (`ETag` value) of the continuous deployment policy
-#' that you are updating.
+#' @param Id &#91;required&#93; The identifier of the continuous deployment policy that you are updating.
+#' @param IfMatch The current version (`ETag` value) of the continuous deployment policy that you are updating.
 #'
 #' @keywords internal
 #'
@@ -5200,8 +4869,7 @@ cloudfront_update_continuous_deployment_policy <- function(ContinuousDeploymentP
 #'
 #' @param DistributionConfig &#91;required&#93; The distribution's configuration information.
 #' @param Id &#91;required&#93; The distribution's id.
-#' @param IfMatch The value of the `ETag` header that you received when retrieving the
-#' distribution's configuration. For example: `E2QWRUHAPOMQZL`.
+#' @param IfMatch The value of the `ETag` header that you received when retrieving the distribution's configuration. For example: `E2QWRUHAPOMQZL`.
 #'
 #' @keywords internal
 #'
@@ -5234,27 +4902,13 @@ cloudfront_update_distribution <- function(DistributionConfig, Id, IfMatch = NUL
 #'
 #' @param Id &#91;required&#93; The ID of the distribution tenant.
 #' @param DistributionId The ID for the multi-tenant distribution.
-#' @param Domains The domains to update for the distribution tenant. A domain object can
-#' contain only a domain property. You must specify at least one domain.
-#' Each distribution tenant can have up to 5 domains.
-#' @param Customizations Customizations for the distribution tenant. For each distribution
-#' tenant, you can specify the geographic restrictions, and the Amazon
-#' Resource Names (ARNs) for the ACM certificate and WAF web ACL. These are
-#' specific values that you can override or disable from the multi-tenant
-#' distribution that was used to create the distribution tenant.
-#' @param Parameters A list of parameter values to add to the resource. A parameter is
-#' specified as a key-value pair. A valid parameter value must exist for
-#' any parameter that is marked as required in the multi-tenant
-#' distribution.
+#' @param Domains The domains to update for the distribution tenant. A domain object can contain only a domain property. You must specify at least one domain. Each distribution tenant can have up to 5 domains.
+#' @param Customizations Customizations for the distribution tenant. For each distribution tenant, you can specify the geographic restrictions, and the Amazon Resource Names (ARNs) for the ACM certificate and WAF web ACL. These are specific values that you can override or disable from the multi-tenant distribution that was used to create the distribution tenant.
+#' @param Parameters A list of parameter values to add to the resource. A parameter is specified as a key-value pair. A valid parameter value must exist for any parameter that is marked as required in the multi-tenant distribution.
 #' @param ConnectionGroupId The ID of the target connection group.
-#' @param IfMatch &#91;required&#93; The value of the `ETag` header that you received when retrieving the
-#' distribution tenant to update. This value is returned in the response of
-#' the [`get_distribution_tenant`][cloudfront_get_distribution_tenant] API
-#' operation.
+#' @param IfMatch &#91;required&#93; The value of the `ETag` header that you received when retrieving the distribution tenant to update. This value is returned in the response of the [`get_distribution_tenant`][cloudfront_get_distribution_tenant] API operation.
 #' @param ManagedCertificateRequest An object that contains the CloudFront managed ACM certificate request.
-#' @param Enabled Indicates whether the distribution tenant should be updated to an
-#' enabled state. If you update the distribution tenant and it's not
-#' enabled, the distribution tenant won't serve traffic.
+#' @param Enabled Indicates whether the distribution tenant should be updated to an enabled state. If you update the distribution tenant and it's not enabled, the distribution tenant won't serve traffic.
 #'
 #' @keywords internal
 #'
@@ -5286,12 +4940,9 @@ cloudfront_update_distribution_tenant <- function(Id, DistributionId = NULL, Dom
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_update_distribution_with_staging_config/](https://www.paws-r-sdk.com/docs/cloudfront_update_distribution_with_staging_config/) for full documentation.
 #'
-#' @param Id &#91;required&#93; The identifier of the primary distribution to which you are copying a
-#' staging distribution's configuration.
-#' @param StagingDistributionId The identifier of the staging distribution whose configuration you are
-#' copying to the primary distribution.
-#' @param IfMatch The current versions (`ETag` values) of both primary and staging
-#' distributions. Provide these in the following format:
+#' @param Id &#91;required&#93; The identifier of the primary distribution to which you are copying a staging distribution's configuration.
+#' @param StagingDistributionId The identifier of the staging distribution whose configuration you are copying to the primary distribution.
+#' @param IfMatch The current versions (`ETag` values) of both primary and staging distributions. Provide these in the following format:
 #' 
 #' `<primary ETag>, <staging ETag>`
 #'
@@ -5327,11 +4978,8 @@ cloudfront_update_distribution_with_staging_config <- function(Id, StagingDistri
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_update_domain_association/](https://www.paws-r-sdk.com/docs/cloudfront_update_domain_association/) for full documentation.
 #'
 #' @param Domain &#91;required&#93; The domain to update.
-#' @param TargetResource &#91;required&#93; The target standard distribution or distribution tenant resource for the
-#' domain. You can specify either `DistributionId` or
-#' `DistributionTenantId`, but not both.
-#' @param IfMatch The value of the `ETag` identifier for the standard distribution or
-#' distribution tenant that will be associated with the domain.
+#' @param TargetResource &#91;required&#93; The target standard distribution or distribution tenant resource for the domain. You can specify either `DistributionId` or `DistributionTenantId`, but not both.
+#' @param IfMatch The value of the `ETag` identifier for the standard distribution or distribution tenant that will be associated with the domain.
 #'
 #' @keywords internal
 #'
@@ -5364,8 +5012,7 @@ cloudfront_update_domain_association <- function(Domain, TargetResource, IfMatch
 #'
 #' @param FieldLevelEncryptionConfig &#91;required&#93; Request to update a field-level encryption configuration.
 #' @param Id &#91;required&#93; The ID of the configuration you want to update.
-#' @param IfMatch The value of the `ETag` header that you received when retrieving the
-#' configuration identity to update. For example: `E2QWRUHAPOMQZL`.
+#' @param IfMatch The value of the `ETag` header that you received when retrieving the configuration identity to update. For example: `E2QWRUHAPOMQZL`.
 #'
 #' @keywords internal
 #'
@@ -5398,8 +5045,7 @@ cloudfront_update_field_level_encryption_config <- function(FieldLevelEncryption
 #'
 #' @param FieldLevelEncryptionProfileConfig &#91;required&#93; Request to update a field-level encryption profile.
 #' @param Id &#91;required&#93; The ID of the field-level encryption profile request.
-#' @param IfMatch The value of the `ETag` header that you received when retrieving the
-#' profile identity to update. For example: `E2QWRUHAPOMQZL`.
+#' @param IfMatch The value of the `ETag` header that you received when retrieving the profile identity to update. For example: `E2QWRUHAPOMQZL`.
 #'
 #' @keywords internal
 #'
@@ -5431,14 +5077,9 @@ cloudfront_update_field_level_encryption_profile <- function(FieldLevelEncryptio
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_update_function/](https://www.paws-r-sdk.com/docs/cloudfront_update_function/) for full documentation.
 #'
 #' @param Name &#91;required&#93; The name of the function that you are updating.
-#' @param IfMatch &#91;required&#93; The current version (`ETag` value) of the function that you are
-#' updating, which you can get using
-#' [`describe_function`][cloudfront_describe_function].
+#' @param IfMatch &#91;required&#93; The current version (`ETag` value) of the function that you are updating, which you can get using [`describe_function`][cloudfront_describe_function].
 #' @param FunctionConfig &#91;required&#93; Configuration information about the function.
-#' @param FunctionCode &#91;required&#93; The function code. For more information about writing a CloudFront
-#' function, see [Writing function code for CloudFront
-#' Functions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html)
-#' in the *Amazon CloudFront Developer Guide*.
+#' @param FunctionCode &#91;required&#93; The function code. For more information about writing a CloudFront function, see [Writing function code for CloudFront Functions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html) in the *Amazon CloudFront Developer Guide*.
 #'
 #' @keywords internal
 #'
@@ -5471,8 +5112,7 @@ cloudfront_update_function <- function(Name, IfMatch, FunctionConfig, FunctionCo
 #'
 #' @param KeyGroupConfig &#91;required&#93; The key group configuration.
 #' @param Id &#91;required&#93; The identifier of the key group that you are updating.
-#' @param IfMatch The version of the key group that you are updating. The version is the
-#' key group's `ETag` value.
+#' @param IfMatch The version of the key group that you are updating. The version is the key group's `ETag` value.
 #'
 #' @keywords internal
 #'
@@ -5537,10 +5177,8 @@ cloudfront_update_key_value_store <- function(Name, Comment, IfMatch) {
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_update_origin_access_control/](https://www.paws-r-sdk.com/docs/cloudfront_update_origin_access_control/) for full documentation.
 #'
 #' @param OriginAccessControlConfig &#91;required&#93; An origin access control.
-#' @param Id &#91;required&#93; The unique identifier of the origin access control that you are
-#' updating.
-#' @param IfMatch The current version (`ETag` value) of the origin access control that you
-#' are updating.
+#' @param Id &#91;required&#93; The unique identifier of the origin access control that you are updating.
+#' @param IfMatch The current version (`ETag` value) of the origin access control that you are updating.
 #'
 #' @keywords internal
 #'
@@ -5572,14 +5210,8 @@ cloudfront_update_origin_access_control <- function(OriginAccessControlConfig, I
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_update_origin_request_policy/](https://www.paws-r-sdk.com/docs/cloudfront_update_origin_request_policy/) for full documentation.
 #'
 #' @param OriginRequestPolicyConfig &#91;required&#93; An origin request policy configuration.
-#' @param Id &#91;required&#93; The unique identifier for the origin request policy that you are
-#' updating. The identifier is returned in a cache behavior's
-#' `OriginRequestPolicyId` field in the response to
-#' [`get_distribution_config`][cloudfront_get_distribution_config].
-#' @param IfMatch The version of the origin request policy that you are updating. The
-#' version is returned in the origin request policy's `ETag` field in the
-#' response to
-#' [`get_origin_request_policy_config`][cloudfront_get_origin_request_policy_config].
+#' @param Id &#91;required&#93; The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache behavior's `OriginRequestPolicyId` field in the response to [`get_distribution_config`][cloudfront_get_distribution_config].
+#' @param IfMatch The version of the origin request policy that you are updating. The version is returned in the origin request policy's `ETag` field in the response to [`get_origin_request_policy_config`][cloudfront_get_origin_request_policy_config].
 #'
 #' @keywords internal
 #'
@@ -5612,8 +5244,7 @@ cloudfront_update_origin_request_policy <- function(OriginRequestPolicyConfig, I
 #'
 #' @param PublicKeyConfig &#91;required&#93; A public key configuration.
 #' @param Id &#91;required&#93; The identifier of the public key that you are updating.
-#' @param IfMatch The value of the `ETag` header that you received when retrieving the
-#' public key to update. For example: `E2QWRUHAPOMQZL`.
+#' @param IfMatch The value of the `ETag` header that you received when retrieving the public key to update. For example: `E2QWRUHAPOMQZL`.
 #'
 #' @keywords internal
 #'
@@ -5644,19 +5275,13 @@ cloudfront_update_public_key <- function(PublicKeyConfig, Id, IfMatch = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_update_realtime_log_config/](https://www.paws-r-sdk.com/docs/cloudfront_update_realtime_log_config/) for full documentation.
 #'
-#' @param EndPoints Contains information about the Amazon Kinesis data stream where you are
-#' sending real-time log data.
+#' @param EndPoints Contains information about the Amazon Kinesis data stream where you are sending real-time log data.
 #' @param Fields A list of fields to include in each real-time log record.
 #' 
-#' For more information about fields, see [Real-time log configuration
-#' fields](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields)
-#' in the *Amazon CloudFront Developer Guide*.
+#' For more information about fields, see [Real-time log configuration fields](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields) in the *Amazon CloudFront Developer Guide*.
 #' @param Name The name for this real-time log configuration.
 #' @param ARN The Amazon Resource Name (ARN) for this real-time log configuration.
-#' @param SamplingRate The sampling rate for this real-time log configuration. The sampling
-#' rate determines the percentage of viewer requests that are represented
-#' in the real-time log data. You must provide an integer between 1 and
-#' 100, inclusive.
+#' @param SamplingRate The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. You must provide an integer between 1 and 100, inclusive.
 #'
 #' @keywords internal
 #'
@@ -5691,9 +5316,7 @@ cloudfront_update_realtime_log_config <- function(EndPoints = NULL, Fields = NUL
 #' @param Id &#91;required&#93; The identifier for the response headers policy that you are updating.
 #' @param IfMatch The version of the response headers policy that you are updating.
 #' 
-#' The version is returned in the cache policy's `ETag` field in the
-#' response to
-#' [`get_response_headers_policy_config`][cloudfront_get_response_headers_policy_config].
+#' The version is returned in the cache policy's `ETag` field in the response to [`get_response_headers_policy_config`][cloudfront_get_response_headers_policy_config].
 #'
 #' @keywords internal
 #'
@@ -5726,8 +5349,7 @@ cloudfront_update_response_headers_policy <- function(ResponseHeadersPolicyConfi
 #'
 #' @param StreamingDistributionConfig &#91;required&#93; The streaming distribution's configuration information.
 #' @param Id &#91;required&#93; The streaming distribution's id.
-#' @param IfMatch The value of the `ETag` header that you received when retrieving the
-#' streaming distribution's configuration. For example: `E2QWRUHAPOMQZL`.
+#' @param IfMatch The value of the `ETag` header that you received when retrieving the streaming distribution's configuration. For example: `E2QWRUHAPOMQZL`.
 #'
 #' @keywords internal
 #'
@@ -5759,13 +5381,14 @@ cloudfront_update_streaming_distribution <- function(StreamingDistributionConfig
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_update_trust_store/](https://www.paws-r-sdk.com/docs/cloudfront_update_trust_store/) for full documentation.
 #'
 #' @param Id &#91;required&#93; The trust store ID.
-#' @param CaCertificatesBundleSource &#91;required&#93; The CA certificates bundle source.
+#' @param CaCertificatesBundleSource The CA certificates bundle source.
+#' @param UseClientCertificateOCSPEndpoint A Boolean that determines whether to use the CA certificate's OCSP endpoint to check certificate revocation status.
 #' @param IfMatch &#91;required&#93; The current version (`ETag` value) of the trust store you are updating.
 #'
 #' @keywords internal
 #'
 #' @rdname cloudfront_update_trust_store
-cloudfront_update_trust_store <- function(Id, CaCertificatesBundleSource, IfMatch) {
+cloudfront_update_trust_store <- function(Id, CaCertificatesBundleSource = NULL, UseClientCertificateOCSPEndpoint = NULL, IfMatch) {
   op <- new_operation(
     name = "UpdateTrustStore",
     http_method = "PUT",
@@ -5774,7 +5397,7 @@ cloudfront_update_trust_store <- function(Id, CaCertificatesBundleSource, IfMatc
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .cloudfront$update_trust_store_input(Id = Id, CaCertificatesBundleSource = CaCertificatesBundleSource, IfMatch = IfMatch)
+  input <- .cloudfront$update_trust_store_input(Id = Id, CaCertificatesBundleSource = CaCertificatesBundleSource, UseClientCertificateOCSPEndpoint = UseClientCertificateOCSPEndpoint, IfMatch = IfMatch)
   output <- .cloudfront$update_trust_store_output()
   config <- get_config()
   svc <- .cloudfront$service(config, op)
@@ -5825,8 +5448,7 @@ cloudfront_update_vpc_origin <- function(VpcOriginEndpointConfig, Id, IfMatch) {
 #' See [https://www.paws-r-sdk.com/docs/cloudfront_verify_dns_configuration/](https://www.paws-r-sdk.com/docs/cloudfront_verify_dns_configuration/) for full documentation.
 #'
 #' @param Domain The domain name that you're verifying.
-#' @param Identifier &#91;required&#93; The identifier of the distribution tenant. You can specify the ARN, ID,
-#' or name of the distribution tenant.
+#' @param Identifier &#91;required&#93; The identifier of the distribution tenant. You can specify the ARN, ID, or name of the distribution tenant.
 #'
 #' @keywords internal
 #'

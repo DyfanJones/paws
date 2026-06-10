@@ -28,89 +28,47 @@ omics_create_workflow(
 )
 }
 \arguments{
-\item{name}{Name (optional but highly recommended) for the workflow to locate
-relevant information in the CloudWatch logs and Amazon Web Services
-HealthOmics console.}
+\item{name}{Name (optional but highly recommended) for the workflow to locate relevant information in the CloudWatch logs and Amazon Web Services HealthOmics console.}
 
 \item{description}{A description for the workflow.}
 
-\item{engine}{The workflow engine for the workflow. This is only required if you have
-workflow definition files from more than one engine in your zip file.
-Otherwise, the service can detect the engine automatically from your
-workflow definition.}
+\item{engine}{The workflow engine for the workflow. By default, Amazon Web Services HealthOmics detects the engine automatically from your workflow definition. Provide a value if you have workflow definition files from more than one engine in your zip file, or to use WDL lenient.
 
-\item{definitionZip}{A ZIP archive containing the main workflow definition file and
-dependencies that it imports for the workflow. You can use a file with a
-://fileb prefix instead of the Base64 string. For more information, see
-\href{https://docs.aws.amazon.com/omics/latest/dev/workflow-defn-requirements.html}{Workflow definition requirements}
-in the \emph{Amazon Web Services HealthOmics User Guide}.}
+WDL lenient is designed to handle workflows migrated from Cromwell. It supports customer Cromwell directives and some non-conformant logic. For details, see \href{https://docs.aws.amazon.com/omics/latest/dev/}{Implicit type conversion in WDL lenient} in the \emph{Amazon Web Services HealthOmics User Guide}.}
 
-\item{definitionUri}{The S3 URI of a definition for the workflow. The S3 bucket must be in
-the same region as the workflow.}
+\item{definitionZip}{A ZIP archive containing the main workflow definition file and dependencies that it imports for the workflow. You can use a file with a ://fileb prefix instead of the Base64 string. For more information, see \href{https://docs.aws.amazon.com/omics/latest/dev/workflow-defn-requirements.html}{Workflow definition requirements} in the \emph{Amazon Web Services HealthOmics User Guide}.}
 
-\item{main}{The path of the main definition file for the workflow. This parameter is
-not required if the ZIP archive contains only one workflow definition
-file, or if the main definition file is named “main”. An example path
-is: \code{workflow-definition/main-file.wdl}.}
+\item{definitionUri}{The S3 URI of a definition for the workflow. The S3 bucket must be in the same region as the workflow.}
 
-\item{parameterTemplate}{A parameter template for the workflow. If this field is blank, Amazon
-Web Services HealthOmics will automatically parse the parameter template
-values from your workflow definition file. To override these service
-generated default values, provide a parameter template. To view an
-example of a parameter template, see \href{https://docs.aws.amazon.com/omics/latest/dev/parameter-templates.html}{Parameter template files}
-in the \emph{Amazon Web Services HealthOmics User Guide}.}
+\item{main}{The path of the main definition file for the workflow. This parameter is not required if the ZIP archive contains only one workflow definition file, or if the main definition file is named “main”. An example path is: \code{workflow-definition/main-file.wdl}.}
 
-\item{storageCapacity}{The default static storage capacity (in gibibytes) for runs that use
-this workflow or workflow version. The \code{storageCapacity} can be
-overwritten at run time. The storage capacity is not required for runs
-with a \code{DYNAMIC} storage type.}
+\item{parameterTemplate}{A parameter template for the workflow. If this field is blank, Amazon Web Services HealthOmics will automatically parse the parameter template values from your workflow definition file. To override these service generated default values, provide a parameter template. To view an example of a parameter template, see \href{https://docs.aws.amazon.com/omics/latest/dev/parameter-templates.html}{Parameter template files} in the \emph{Amazon Web Services HealthOmics User Guide}.}
 
-\item{tags}{Tags for the workflow. You can define up to 50 tags for the workflow.
-For more information, see \href{https://docs.aws.amazon.com/omics/latest/dev/add-a-tag.html}{Adding a tag} in the
-\emph{Amazon Web Services HealthOmics User Guide}.}
+\item{storageCapacity}{The default static storage capacity (in gibibytes) for runs that use this workflow or workflow version. The \code{storageCapacity} can be overwritten at run time. The storage capacity is not required for runs with a \code{DYNAMIC} storage type.}
 
-\item{requestId}{[required] An idempotency token to ensure that duplicate workflows are not created
-when Amazon Web Services HealthOmics submits retry requests.}
+\item{tags}{Tags for the workflow. You can define up to 50 tags for the workflow. For more information, see \href{https://docs.aws.amazon.com/omics/latest/dev/add-a-tag.html}{Adding a tag} in the \emph{Amazon Web Services HealthOmics User Guide}.}
+
+\item{requestId}{[required] An idempotency token to ensure that duplicate workflows are not created when Amazon Web Services HealthOmics submits retry requests.}
 
 \item{accelerators}{The computational accelerator specified to run the workflow.}
 
-\item{storageType}{The default storage type for runs that use this workflow. The
-\code{storageType} can be overridden at run time. \code{DYNAMIC} storage
-dynamically scales the storage up or down, based on file system
-utilization. \code{STATIC} storage allocates a fixed amount of storage. For
-more information about dynamic and static storage types, see \href{https://docs.aws.amazon.com/omics/latest/dev/workflows-run-types.html}{Run storage types}
-in the \emph{Amazon Web Services HealthOmics User Guide}.}
+\item{storageType}{The default storage type for runs that use this workflow. The \code{storageType} can be overridden at run time. \code{DYNAMIC} storage dynamically scales the storage up or down, based on file system utilization. \code{STATIC} storage allocates a fixed amount of storage. For more information about dynamic and static storage types, see \href{https://docs.aws.amazon.com/omics/latest/dev/workflows-run-types.html}{Run storage types} in the \emph{Amazon Web Services HealthOmics User Guide}.}
 
-\item{containerRegistryMap}{(Optional) Use a container registry map to specify mappings between the
-ECR private repository and one or more upstream registries. For more
-information, see \href{https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html}{Container images}
-in the \emph{Amazon Web Services HealthOmics User Guide}.}
+\item{containerRegistryMap}{(Optional) Use a container registry map to specify mappings between the ECR private repository and one or more upstream registries. For more information, see \href{https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html}{Container images} in the \emph{Amazon Web Services HealthOmics User Guide}.}
 
 \item{containerRegistryMapUri}{(Optional) URI of the S3 location for the registry mapping file.}
 
-\item{readmeMarkdown}{The markdown content for the workflow's README file. This provides
-documentation and usage information for users of the workflow.}
+\item{readmeMarkdown}{The markdown content for the workflow's README file. This provides documentation and usage information for users of the workflow.}
 
-\item{parameterTemplatePath}{The path to the workflow parameter template JSON file within the
-repository. This file defines the input parameters for runs that use
-this workflow. If not specified, the workflow will be created without a
-parameter template.}
+\item{parameterTemplatePath}{The path to the workflow parameter template JSON file within the repository. This file defines the input parameters for runs that use this workflow. If not specified, the workflow will be created without a parameter template.}
 
-\item{readmePath}{The path to the workflow README markdown file within the repository.
-This file provides documentation and usage information for the workflow.
-If not specified, the \code{README.md} file from the root directory of the
-repository will be used.}
+\item{readmePath}{The path to the workflow README markdown file within the repository. This file provides documentation and usage information for the workflow. If not specified, the \code{README.md} file from the root directory of the repository will be used.}
 
-\item{definitionRepository}{The repository information for the workflow definition. This allows you
-to source your workflow definition directly from a code repository.}
+\item{definitionRepository}{The repository information for the workflow definition. This allows you to source your workflow definition directly from a code repository.}
 
-\item{workflowBucketOwnerId}{The Amazon Web Services account ID of the expected owner of the S3
-bucket that contains the workflow definition. If not specified, the
-service skips the validation.}
+\item{workflowBucketOwnerId}{The Amazon Web Services account ID of the expected owner of the S3 bucket that contains the workflow definition. If not specified, the service skips the validation.}
 
-\item{readmeUri}{The S3 URI of the README file for the workflow. This file provides
-documentation and usage information for the workflow. Requirements
-include:
+\item{readmeUri}{The S3 URI of the README file for the workflow. This file provides documentation and usage information for the workflow. Requirements include:
 \itemize{
 \item The S3 URI must begin with \verb{s3://USER-OWNED-BUCKET/}
 \item The requester must have access to the S3 bucket and object.

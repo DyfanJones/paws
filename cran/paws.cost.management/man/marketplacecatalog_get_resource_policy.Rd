@@ -8,8 +8,7 @@ resource ARN}
 marketplacecatalog_get_resource_policy(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the entity resource that is associated
-with the resource policy.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the entity resource that is associated with the resource policy.}
 }
 \description{
 Gets a resource-based policy of an entity that is identified by its resource ARN.

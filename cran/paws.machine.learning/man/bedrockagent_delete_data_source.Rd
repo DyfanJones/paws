@@ -7,8 +7,7 @@
 bedrockagent_delete_data_source(knowledgeBaseId, dataSourceId)
 }
 \arguments{
-\item{knowledgeBaseId}{[required] The unique identifier of the knowledge base from which to delete the
-data source.}
+\item{knowledgeBaseId}{[required] The unique identifier of the knowledge base from which to delete the data source.}
 
 \item{dataSourceId}{[required] The unique identifier of the data source to delete.}
 }

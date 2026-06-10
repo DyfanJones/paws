@@ -15,19 +15,15 @@ kendra_create_query_suggestions_block_list(
 )
 }
 \arguments{
-\item{IndexId}{[required] The identifier of the index you want to create a query suggestions block
-list for.}
+\item{IndexId}{[required] The identifier of the index you want to create a query suggestions block list for.}
 
 \item{Name}{[required] A name for the block list.
 
-For example, the name 'offensive-words', which includes all offensive
-words that could appear in user queries and need to be blocked from
-suggestions.}
+For example, the name 'offensive-words', which includes all offensive words that could appear in user queries and need to be blocked from suggestions.}
 
 \item{Description}{A description for the block list.
 
-For example, the description "List of all offensive words that can
-appear in user queries and need to be blocked from suggestions."}
+For example, the description "List of all offensive words that can appear in user queries and need to be blocked from suggestions."}
 
 \item{SourceS3Path}{[required] The S3 path to your block list text file in your S3 bucket.
 
@@ -35,16 +31,11 @@ Each block word or phrase should be on a separate line in a text file.
 
 For information on the current quota limits for block lists, see \href{https://docs.aws.amazon.com/kendra/latest/dg/quotas.html}{Quotas for Amazon Kendra}.}
 
-\item{ClientToken}{A token that you provide to identify the request to create a query
-suggestions block list.}
+\item{ClientToken}{A token that you provide to identify the request to create a query suggestions block list.}
 
-\item{RoleArn}{[required] The Amazon Resource Name (ARN) of an IAM role with permission to access
-your S3 bucket that contains the block list text file. For more
-information, see \href{https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html}{IAM access roles for Amazon Kendra}.}
+\item{RoleArn}{[required] The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket that contains the block list text file. For more information, see \href{https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html}{IAM access roles for Amazon Kendra}.}
 
-\item{Tags}{A list of key-value pairs that identify or categorize the block list.
-Tag keys and values can consist of Unicode letters, digits, white space,
-and any of the following symbols: _ . : / = + - @.}
+\item{Tags}{A list of key-value pairs that identify or categorize the block list. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.}
 }
 \description{
 Creates a block list to exlcude certain queries from suggestions.

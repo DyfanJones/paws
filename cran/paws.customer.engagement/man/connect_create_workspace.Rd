@@ -15,11 +15,9 @@ connect_create_workspace(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{Name}{[required] The name of the workspace. Must be unique within the instance and can
-contain 1-127 characters.}
+\item{Name}{[required] The name of the workspace. Must be unique within the instance and can contain 1-127 characters.}
 
 \item{Description}{The description of the workspace. Maximum length is 250 characters.}
 
@@ -27,8 +25,7 @@ contain 1-127 characters.}
 
 \item{Title}{The title displayed for the workspace.}
 
-\item{Tags}{The tags used to organize, track, or control access for this resource.
-For example, \verb{\{ "Tags": \{"key1":"value1", "key2":"value2"\} \}}.}
+\item{Tags}{The tags used to organize, track, or control access for this resource. For example, \verb{\{ "Tags": \{"key1":"value1", "key2":"value2"\} \}}.}
 }
 \description{
 Creates a workspace that defines the user experience by mapping views to pages. Workspaces can be assigned to users or routing profiles.

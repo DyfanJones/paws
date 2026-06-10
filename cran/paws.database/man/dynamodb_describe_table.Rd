@@ -9,8 +9,7 @@ the table}
 dynamodb_describe_table(TableName)
 }
 \arguments{
-\item{TableName}{[required] The name of the table to describe. You can also provide the Amazon
-Resource Name (ARN) of the table in this parameter.}
+\item{TableName}{[required] The name of the table to describe. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.}
 }
 \description{
 Returns information about the table, including the current status of the table, when it was created, the primary key schema, and any indexes on the table.

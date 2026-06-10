@@ -16,19 +16,15 @@ billingconductor_update_billing_group(
 \arguments{
 \item{Arn}{[required] The Amazon Resource Name (ARN) of the billing group being updated.}
 
-\item{Name}{The name of the billing group. The names must be unique to each billing
-group.}
+\item{Name}{The name of the billing group. The names must be unique to each billing group.}
 
-\item{Status}{The status of the billing group. Only one of the valid values can be
-used.}
+\item{Status}{The status of the billing group. Only one of the valid values can be used.}
 
-\item{ComputationPreference}{The preferences and settings that will be used to compute the Amazon Web
-Services charges for a billing group.}
+\item{ComputationPreference}{The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group.}
 
 \item{Description}{A description of the billing group.}
 
-\item{AccountGrouping}{Specifies if the billing group has automatic account association
-(\code{AutoAssociate}) enabled.}
+\item{AccountGrouping}{Specifies if the billing group has automatic account association (\code{AutoAssociate}) enabled.}
 }
 \description{
 This updates an existing billing group.

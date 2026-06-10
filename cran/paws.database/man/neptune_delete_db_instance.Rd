@@ -11,35 +11,26 @@ neptune_delete_db_instance(
 )
 }
 \arguments{
-\item{DBInstanceIdentifier}{[required] The DB instance identifier for the DB instance to be deleted. This
-parameter isn't case-sensitive.
+\item{DBInstanceIdentifier}{[required] The DB instance identifier for the DB instance to be deleted. This parameter isn't case-sensitive.
 
 Constraints:
 \itemize{
 \item Must match the name of an existing DB instance.
 }}
 
-\item{SkipFinalSnapshot}{Determines whether a final DB snapshot is created before the DB instance
-is deleted. If \code{true} is specified, no DBSnapshot is created. If \code{false}
-is specified, a DB snapshot is created before the DB instance is
-deleted.
+\item{SkipFinalSnapshot}{Determines whether a final DB snapshot is created before the DB instance is deleted. If \code{true} is specified, no DBSnapshot is created. If \code{false} is specified, a DB snapshot is created before the DB instance is deleted.
 
-Note that when a DB instance is in a failure state and has a status of
-'failed', 'incompatible-restore', or 'incompatible-network', it can only
-be deleted when the SkipFinalSnapshot parameter is set to "true".
+Note that when a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore', or 'incompatible-network', it can only be deleted when the SkipFinalSnapshot parameter is set to "true".
 
 Specify \code{true} when deleting a Read Replica.
 
-The FinalDBSnapshotIdentifier parameter must be specified if
-SkipFinalSnapshot is \code{false}.
+The FinalDBSnapshotIdentifier parameter must be specified if SkipFinalSnapshot is \code{false}.
 
 Default: \code{false}}
 
-\item{FinalDBSnapshotIdentifier}{The DBSnapshotIdentifier of the new DBSnapshot created when
-SkipFinalSnapshot is set to \code{false}.
+\item{FinalDBSnapshotIdentifier}{The DBSnapshotIdentifier of the new DBSnapshot created when SkipFinalSnapshot is set to \code{false}.
 
-Specifying this parameter and also setting the SkipFinalShapshot
-parameter to true results in an error.
+Specifying this parameter and also setting the SkipFinalSnapshot parameter to true results in an error.
 
 Constraints:
 \itemize{

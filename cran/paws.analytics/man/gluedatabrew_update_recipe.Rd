@@ -12,8 +12,7 @@ gluedatabrew_update_recipe(Description = NULL, Name, Steps = NULL)
 
 \item{Name}{[required] The name of the recipe to be updated.}
 
-\item{Steps}{One or more steps to be performed by the recipe. Each step consists of
-an action, and the conditions under which the action should succeed.}
+\item{Steps}{One or more steps to be performed by the recipe. Each step consists of an action, and the conditions under which the action should succeed.}
 }
 \description{
 Modifies the definition of the \code{LATEST_WORKING} version of a DataBrew recipe.

@@ -13,9 +13,7 @@ personalize_list_solution_versions(
 \arguments{
 \item{solutionArn}{The Amazon Resource Name (ARN) of the solution.}
 
-\item{nextToken}{A token returned from the previous call to
-\code{\link[=personalize_list_solution_versions]{list_solution_versions}} for
-getting the next set of solution versions (if they exist).}
+\item{nextToken}{A token returned from the previous call to \code{\link[=personalize_list_solution_versions]{list_solution_versions}} for getting the next set of solution versions (if they exist).}
 
 \item{maxResults}{The maximum number of solution versions to return.}
 }

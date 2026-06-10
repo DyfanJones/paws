@@ -8,15 +8,9 @@ specified ARN}
 ivs_tag_resource(resourceArn, tags)
 }
 \arguments{
-\item{resourceArn}{[required] ARN of the resource for which tags are to be added or updated. The ARN
-must be URL-encoded.}
+\item{resourceArn}{[required] ARN of the resource for which tags are to be added or updated. The ARN must be URL-encoded.}
 
-\item{tags}{[required] Array of tags to be added or updated. Array of maps, each of the form
-\code{string:string (key:value)}. See \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html}{Best practices and strategies}
-in \emph{Tagging Amazon Web Services Resources and Tag Editor} for details,
-including restrictions that apply to tags and "Tag naming limits and
-requirements"; Amazon IVS has no service-specific constraints beyond
-what is documented there.}
+\item{tags}{[required] Array of tags to be added or updated. Array of maps, each of the form \code{string:string (key:value)}. See \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html}{Best practices and strategies} in \emph{Tagging Amazon Web Services Resources and Tag Editor} for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.}
 }
 \description{
 Adds or updates tags for the Amazon Web Services resource with the specified ARN.

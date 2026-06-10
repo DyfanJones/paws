@@ -7,8 +7,7 @@
 inspector2_delete_code_security_integration(integrationArn)
 }
 \arguments{
-\item{integrationArn}{[required] The Amazon Resource Name (ARN) of the code security integration to
-delete.}
+\item{integrationArn}{[required] The Amazon Resource Name (ARN) of the code security integration to delete.}
 }
 \description{
 Deletes a code security integration.

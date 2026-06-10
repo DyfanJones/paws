@@ -9,11 +9,9 @@ dax_update_parameter_group(ParameterGroupName, ParameterNameValues)
 \arguments{
 \item{ParameterGroupName}{[required] The name of the parameter group.}
 
-\item{ParameterNameValues}{[required] An array of name-value pairs for the parameters in the group. Each
-element in the array represents a single parameter.
+\item{ParameterNameValues}{[required] An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.
 
-\code{record-ttl-millis} and \code{query-ttl-millis} are the only supported
-parameter names. For more details, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl}{Configuring TTL Settings}.}
+\code{record-ttl-millis} and \code{query-ttl-millis} are the only supported parameter names. For more details, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl}{Configuring TTL Settings}.}
 }
 \description{
 Modifies the parameters of a parameter group. You can modify up to 20 parameters in a single request by submitting a list parameter name and value pairs.

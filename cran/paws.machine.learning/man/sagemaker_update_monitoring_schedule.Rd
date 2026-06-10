@@ -10,11 +10,9 @@ sagemaker_update_monitoring_schedule(
 )
 }
 \arguments{
-\item{MonitoringScheduleName}{[required] The name of the monitoring schedule. The name must be unique within an
-Amazon Web Services Region within an Amazon Web Services account.}
+\item{MonitoringScheduleName}{[required] The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an Amazon Web Services account.}
 
-\item{MonitoringScheduleConfig}{[required] The configuration object that specifies the monitoring schedule and
-defines the monitoring job.}
+\item{MonitoringScheduleConfig}{[required] The configuration object that specifies the monitoring schedule and defines the monitoring job.}
 }
 \description{
 Updates a previously created schedule.

@@ -8,9 +8,7 @@ workspace}
 prometheusservice_describe_workspace_configuration(workspaceId)
 }
 \arguments{
-\item{workspaceId}{[required] The ID of the workspace that you want to retrieve information for. To
-find the IDs of your workspaces, use the
-\code{\link[=prometheusservice_list_workspaces]{list_workspaces}} operation.}
+\item{workspaceId}{[required] The ID of the workspace that you want to retrieve information for. To find the IDs of your workspaces, use the \code{\link[=prometheusservice_list_workspaces]{list_workspaces}} operation.}
 }
 \description{
 Use this operation to return information about the configuration of a workspace. The configuration details returned include workspace configuration status, label set limits, and retention period.

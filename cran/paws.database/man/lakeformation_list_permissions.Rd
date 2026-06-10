@@ -16,10 +16,7 @@ lakeformation_list_permissions(
 )
 }
 \arguments{
-\item{CatalogId}{The identifier for the Data Catalog. By default, the account ID. The
-Data Catalog is the persistent metadata store. It contains database
-definitions, table definitions, and other control information to manage
-your Lake Formation environment.}
+\item{CatalogId}{The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.}
 
 \item{Principal}{Specifies a principal to filter the permissions returned.}
 
@@ -27,21 +24,15 @@ your Lake Formation environment.}
 
 \item{Resource}{A resource where you will get a list of the principal permissions.
 
-This operation does not support getting privileges on a table with
-columns. Instead, call this operation on the table, and the operation
-returns the table and the table w columns.}
+This operation does not support getting privileges on a table with columns. Instead, call this operation on the table, and the operation returns the table and the table w columns.}
 
-\item{NextToken}{A continuation token, if this is not the first call to retrieve this
-list.}
+\item{NextToken}{A continuation token, if this is not the first call to retrieve this list.}
 
 \item{MaxResults}{The maximum number of results to return.}
 
-\item{IncludeRelated}{Indicates that related permissions should be included in the results
-when listing permissions on a table resource.
+\item{IncludeRelated}{Indicates that related permissions should be included in the results when listing permissions on a table resource.
 
-Set the field to \code{TRUE} to show the cell filters on a table resource.
-Default is \code{FALSE}. The Principal parameter must not be specified when
-requesting cell filter information.}
+Set the field to \code{TRUE} to show the cell filters on a table resource. Default is \code{FALSE}. The Principal parameter must not be specified when requesting cell filter information.}
 }
 \description{
 Returns a list of the principal permissions on the resource, filtered by the permissions of the caller. For example, if you are granted an ALTER permission, you are able to see only the principal permissions for ALTER.

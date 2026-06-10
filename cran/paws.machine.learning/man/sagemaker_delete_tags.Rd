@@ -7,8 +7,7 @@
 sagemaker_delete_tags(ResourceArn, TagKeys)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource whose tags you want to
-delete.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource whose tags you want to delete.}
 
 \item{TagKeys}{[required] An array or one or more tag keys to delete.}
 }

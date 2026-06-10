@@ -15,23 +15,15 @@ servicediscovery_create_private_dns_namespace(
 )
 }
 \arguments{
-\item{Name}{[required] The name that you want to assign to this namespace. When you create a
-private DNS namespace, Cloud Map automatically creates an Amazon
-Route 53 private hosted zone that has the same name as the namespace.}
+\item{Name}{[required] The name that you want to assign to this namespace. When you create a private DNS namespace, Cloud Map automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.}
 
-\item{CreatorRequestId}{A unique string that identifies the request and that allows failed
-\code{\link[=servicediscovery_create_private_dns_namespace]{create_private_dns_namespace}}
-requests to be retried without the risk of running the operation twice.
-\code{CreatorRequestId} can be any unique string (for example, a
-date/timestamp).}
+\item{CreatorRequestId}{A unique string that identifies the request and that allows failed \code{\link[=servicediscovery_create_private_dns_namespace]{create_private_dns_namespace}} requests to be retried without the risk of running the operation twice. \code{CreatorRequestId} can be any unique string (for example, a date/timestamp).}
 
 \item{Description}{A description for the namespace.}
 
 \item{Vpc}{[required] The ID of the Amazon VPC that you want to associate the namespace with.}
 
-\item{Tags}{The tags to add to the namespace. Each tag consists of a key and an
-optional value that you define. Tags keys can be up to 128 characters in
-length, and tag values can be up to 256 characters in length.}
+\item{Tags}{The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.}
 
 \item{Properties}{Properties for the private DNS namespace.}
 }

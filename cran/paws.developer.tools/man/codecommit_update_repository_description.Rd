@@ -10,11 +10,9 @@ codecommit_update_repository_description(
 )
 }
 \arguments{
-\item{repositoryName}{[required] The name of the repository to set or change the comment or description
-for.}
+\item{repositoryName}{[required] The name of the repository to set or change the comment or description for.}
 
-\item{repositoryDescription}{The new comment or description for the specified repository. Repository
-descriptions are limited to 1,000 characters.}
+\item{repositoryDescription}{The new comment or description for the specified repository. Repository descriptions are limited to 1,000 characters.}
 }
 \description{
 Sets or changes the comment or description for a repository.

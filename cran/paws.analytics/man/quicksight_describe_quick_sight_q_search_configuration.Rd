@@ -7,8 +7,7 @@
 quicksight_describe_quick_sight_q_search_configuration(AwsAccountId)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the Quick Sight
-Q Search configuration that the user wants described.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the Quick Sight Q Search configuration that the user wants described.}
 }
 \description{
 Describes the state of a Quick Sight Q Search configuration.

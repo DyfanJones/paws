@@ -13,40 +13,27 @@ comprehend_classify_document(
 )
 }
 \arguments{
-\item{Text}{The document text to be analyzed. If you enter text using this
-parameter, do not use the \code{Bytes} parameter.}
+\item{Text}{The document text to be analyzed. If you enter text using this parameter, do not use the \code{Bytes} parameter.}
 
 \item{EndpointArn}{[required] The Amazon Resource Number (ARN) of the endpoint.
 
-For prompt safety classification, Amazon Comprehend provides the
-endpoint ARN. For more information about prompt safety classifiers, see
-\href{https://docs.aws.amazon.com/comprehend/latest/dg/trust-safety.html#prompt-classification}{Prompt safety classification}
-in the \emph{Amazon Comprehend Developer Guide}
+For prompt safety classification, Amazon Comprehend provides the endpoint ARN. For more information about prompt safety classifiers, see \href{https://docs.aws.amazon.com/comprehend/latest/dg/trust-safety.html#prompt-classification}{Prompt safety classification} in the \emph{Amazon Comprehend Developer Guide}
 
-For custom classification, you create an endpoint for your custom model.
-For more information, see \href{https://docs.aws.amazon.com/comprehend/latest/dg/using-endpoints.html}{Using Amazon Comprehend endpoints}.}
+For custom classification, you create an endpoint for your custom model. For more information, see \href{https://docs.aws.amazon.com/comprehend/latest/dg/using-endpoints.html}{Using Amazon Comprehend endpoints}.}
 
 \item{Bytes}{Use the \code{Bytes} parameter to input a text, PDF, Word or image file.
 
-When you classify a document using a custom model, you can also use the
-\code{Bytes} parameter to input an Amazon Textract \code{DetectDocumentText} or
-\code{AnalyzeDocument} output file.
+When you classify a document using a custom model, you can also use the \code{Bytes} parameter to input an Amazon Textract \code{DetectDocumentText} or \code{AnalyzeDocument} output file.
 
-To classify a document using the prompt safety classifier, use the
-\code{Text} parameter for input.
+To classify a document using the prompt safety classifier, use the \code{Text} parameter for input.
 
-Provide the input document as a sequence of base64-encoded bytes. If
-your code uses an Amazon Web Services SDK to classify documents, the SDK
-may encode the document file bytes for you.
+Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify documents, the SDK may encode the document file bytes for you.
 
-The maximum length of this field depends on the input document type. For
-details, see \href{https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html}{Inputs for real-time custom analysis}
-in the Comprehend Developer Guide.
+The maximum length of this field depends on the input document type. For details, see \href{https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html}{Inputs for real-time custom analysis} in the Comprehend Developer Guide.
 
 If you use the \code{Bytes} parameter, do not use the \code{Text} parameter.}
 
-\item{DocumentReaderConfig}{Provides configuration parameters to override the default actions for
-extracting text from PDF documents and image files.}
+\item{DocumentReaderConfig}{Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.}
 }
 \description{
 Creates a classification request to analyze a single document in real-time. \code{\link[=comprehend_classify_document]{classify_document}} supports the following model types:

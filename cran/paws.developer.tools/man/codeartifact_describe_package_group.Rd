@@ -10,8 +10,7 @@ codeartifact_describe_package_group(domain, domainOwner = NULL, packageGroup)
 \arguments{
 \item{domain}{[required] The name of the domain that contains the package group.}
 
-\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns
-the domain. It does not include dashes or spaces.}
+\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.}
 
 \item{packageGroup}{[required] The pattern of the requested package group.}
 }

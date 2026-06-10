@@ -21,9 +21,7 @@ Constraints:
 
 Example: \code{mydbinstance}}
 
-\item{BackupRetentionPeriod}{The number of days for which automated backups are retained. Setting
-this parameter to a positive number enables backups. Setting this
-parameter to 0 disables automated backups.
+\item{BackupRetentionPeriod}{The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.
 
 Default: 1
 
@@ -33,14 +31,9 @@ Constraints:
 \item Can't be set to 0 if the DB instance is a source to read replicas.
 }}
 
-\item{PreferredBackupWindow}{The daily time range during which automated backups are created if
-automated backups are enabled, using the \code{BackupRetentionPeriod}
-parameter.
+\item{PreferredBackupWindow}{The daily time range during which automated backups are created if automated backups are enabled, using the \code{BackupRetentionPeriod} parameter.
 
-The default is a 30-minute window selected at random from an 8-hour
-block of time for each Amazon Web Services Region. To see the time
-blocks available, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/}{Adjusting the Preferred Maintenance Window} in the
-\emph{Amazon RDS User Guide.}
+The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. To see the time blocks available, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/}{Adjusting the Preferred Maintenance Window} in the \emph{Amazon RDS User Guide.}
 
 Constraints:
 \itemize{

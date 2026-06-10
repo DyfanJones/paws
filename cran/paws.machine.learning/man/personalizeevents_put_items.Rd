@@ -7,8 +7,7 @@
 personalizeevents_put_items(datasetArn, items)
 }
 \arguments{
-\item{datasetArn}{[required] The Amazon Resource Name (ARN) of the Items dataset you are adding the
-item or items to.}
+\item{datasetArn}{[required] The Amazon Resource Name (ARN) of the Items dataset you are adding the item or items to.}
 
 \item{items}{[required] A list of item data.}
 }

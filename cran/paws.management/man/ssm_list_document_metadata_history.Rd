@@ -2,8 +2,8 @@
 % Please edit documentation in R/ssm_operations.R
 \name{ssm_list_document_metadata_history}
 \alias{ssm_list_document_metadata_history}
-\title{Amazon Web Services Systems Manager Change Manager will no longer be
-open to new customers starting November 7, 2025}
+\title{Amazon Web Services Systems Manager Change Manager is no longer open to
+new customers}
 \usage{
 ssm_list_document_metadata_history(
   Name,
@@ -18,18 +18,14 @@ ssm_list_document_metadata_history(
 
 \item{DocumentVersion}{The version of the change template.}
 
-\item{Metadata}{[required] The type of data for which details are being requested. Currently, the
-only supported value is \code{DocumentReviews}.}
+\item{Metadata}{[required] The type of data for which details are being requested. Currently, the only supported value is \code{DocumentReviews}.}
 
-\item{NextToken}{The token for the next set of items to return. (You received this token
-from a previous call.)}
+\item{NextToken}{The token for the next set of items to return. (You received this token from a previous call.)}
 
-\item{MaxResults}{The maximum number of items to return for this call. The call also
-returns a token that you can specify in a subsequent call to get the
-next set of results.}
+\item{MaxResults}{The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.}
 }
 \description{
-Amazon Web Services Systems Manager Change Manager will no longer be open to new customers starting November 7, 2025. If you would like to use Change Manager, sign up prior to that date. Existing customers can continue to use the service as normal. For more information, see \href{https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html}{Amazon Web Services Systems Manager Change Manager availability change}.
+Amazon Web Services Systems Manager Change Manager is no longer open to new customers. Existing customers can continue to use the service as normal. For more information, see \href{https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html}{Amazon Web Services Systems Manager Change Manager availability change}.
 
 See \url{https://www.paws-r-sdk.com/docs/ssm_list_document_metadata_history/} for full documentation.
 }

@@ -6,8 +6,7 @@ NULL
 #' Performs GetChannel on multiple ARNs simultaneously
 #'
 #' @description
-#' Performs [`get_channel`][ivs_get_channel] on multiple ARNs
-#' simultaneously.
+#' Performs [`get_channel`][ivs_get_channel] on multiple ARNs simultaneously.
 #'
 #' @usage
 #' ivs_batch_get_channel(arns)
@@ -18,32 +17,40 @@ NULL
 #' A list with the following syntax:
 #' ```
 #' list(
+#'   accessControlAllowOrigin = "string",
+#'   accessControlExposeHeaders = "string",
+#'   cacheControl = "string",
+#'   contentSecurityPolicy = "string",
+#'   strictTransportSecurity = "string",
+#'   xContentTypeOptions = "string",
+#'   xFrameOptions = "string",
 #'   channels = list(
 #'     list(
 #'       arn = "string",
-#'       authorized = TRUE|FALSE,
-#'       containerFormat = "TS"|"FRAGMENTED_MP4",
-#'       ingestEndpoint = "string",
-#'       insecureIngest = TRUE|FALSE,
-#'       latencyMode = "NORMAL"|"LOW",
-#'       multitrackInputConfiguration = list(
-#'         enabled = TRUE|FALSE,
-#'         maximumResolution = "SD"|"HD"|"FULL_HD",
-#'         policy = "ALLOW"|"REQUIRE"
-#'       ),
 #'       name = "string",
-#'       playbackRestrictionPolicyArn = "string",
-#'       playbackUrl = "string",
-#'       preset = "HIGHER_BANDWIDTH_DELIVERY"|"CONSTRAINED_BANDWIDTH_DELIVERY",
+#'       latencyMode = "NORMAL"|"LOW",
+#'       type = "BASIC"|"STANDARD"|"ADVANCED_SD"|"ADVANCED_HD",
 #'       recordingConfigurationArn = "string",
+#'       ingestEndpoint = "string",
+#'       playbackUrl = "string",
+#'       authorized = TRUE|FALSE,
+#'       tags = list(
+#'         "string"
+#'       ),
+#'       insecureIngest = TRUE|FALSE,
+#'       preset = "HIGHER_BANDWIDTH_DELIVERY"|"CONSTRAINED_BANDWIDTH_DELIVERY",
 #'       srt = list(
 #'         endpoint = "string",
 #'         passphrase = "string"
 #'       ),
-#'       tags = list(
-#'         "string"
+#'       playbackRestrictionPolicyArn = "string",
+#'       multitrackInputConfiguration = list(
+#'         enabled = TRUE|FALSE,
+#'         policy = "ALLOW"|"REQUIRE",
+#'         maximumResolution = "SD"|"HD"|"FULL_HD"
 #'       ),
-#'       type = "BASIC"|"STANDARD"|"ADVANCED_SD"|"ADVANCED_HD"
+#'       containerFormat = "TS"|"FRAGMENTED_MP4",
+#'       adConfigurationArn = "string"
 #'     )
 #'   ),
 #'   errors = list(
@@ -92,8 +99,7 @@ ivs_batch_get_channel <- function(arns) {
 #' Performs GetStreamKey on multiple ARNs simultaneously
 #'
 #' @description
-#' Performs [`get_stream_key`][ivs_get_stream_key] on multiple ARNs
-#' simultaneously.
+#' Performs [`get_stream_key`][ivs_get_stream_key] on multiple ARNs simultaneously.
 #'
 #' @usage
 #' ivs_batch_get_stream_key(arns)
@@ -104,21 +110,28 @@ ivs_batch_get_channel <- function(arns) {
 #' A list with the following syntax:
 #' ```
 #' list(
+#'   accessControlAllowOrigin = "string",
+#'   accessControlExposeHeaders = "string",
+#'   cacheControl = "string",
+#'   contentSecurityPolicy = "string",
+#'   strictTransportSecurity = "string",
+#'   xContentTypeOptions = "string",
+#'   xFrameOptions = "string",
+#'   streamKeys = list(
+#'     list(
+#'       arn = "string",
+#'       value = "string",
+#'       channelArn = "string",
+#'       tags = list(
+#'         "string"
+#'       )
+#'     )
+#'   ),
 #'   errors = list(
 #'     list(
 #'       arn = "string",
 #'       code = "string",
 #'       message = "string"
-#'     )
-#'   ),
-#'   streamKeys = list(
-#'     list(
-#'       arn = "string",
-#'       channelArn = "string",
-#'       tags = list(
-#'         "string"
-#'       ),
-#'       value = "string"
 #'     )
 #'   )
 #' )
@@ -161,9 +174,7 @@ ivs_batch_get_stream_key <- function(arns) {
 #' ID pairs simultaneously
 #'
 #' @description
-#' Performs
-#' [`start_viewer_session_revocation`][ivs_start_viewer_session_revocation]
-#' on multiple channel ARN and viewer ID pairs simultaneously.
+#' Performs [`start_viewer_session_revocation`][ivs_start_viewer_session_revocation] on multiple channel ARN and viewer ID pairs simultaneously.
 #'
 #' @usage
 #' ivs_batch_start_viewer_session_revocation(viewerSessions)
@@ -174,12 +185,19 @@ ivs_batch_get_stream_key <- function(arns) {
 #' A list with the following syntax:
 #' ```
 #' list(
+#'   accessControlAllowOrigin = "string",
+#'   accessControlExposeHeaders = "string",
+#'   cacheControl = "string",
+#'   contentSecurityPolicy = "string",
+#'   strictTransportSecurity = "string",
+#'   xContentTypeOptions = "string",
+#'   xFrameOptions = "string",
 #'   errors = list(
 #'     list(
 #'       channelArn = "string",
+#'       viewerId = "string",
 #'       code = "string",
-#'       message = "string",
-#'       viewerId = "string"
+#'       message = "string"
 #'     )
 #'   )
 #' )
@@ -222,54 +240,100 @@ ivs_batch_start_viewer_session_revocation <- function(viewerSessions) {
 }
 .ivs$operations$batch_start_viewer_session_revocation <- ivs_batch_start_viewer_session_revocation
 
+#' Creates a new ad configuration to be used for server-side ad insertion
+#'
+#' @description
+#' Creates a new ad configuration to be used for server-side ad insertion.
+#'
+#' @usage
+#' ivs_create_ad_configuration(name, mediaTailorPlaybackConfigurations,
+#'   tags)
+#'
+#' @param name Ad configuration name. Defaults to “”.
+#' @param mediaTailorPlaybackConfigurations &#91;required&#93; List of integration configurations with media tailor resources.
+#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   adConfiguration = list(
+#'     arn = "string",
+#'     name = "string",
+#'     mediaTailorPlaybackConfigurations = list(
+#'       list(
+#'         playbackConfigurationArn = "string"
+#'       )
+#'     ),
+#'     tags = list(
+#'       "string"
+#'     )
+#'   )
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$create_ad_configuration(
+#'   name = "string",
+#'   mediaTailorPlaybackConfigurations = list(
+#'     list(
+#'       playbackConfigurationArn = "string"
+#'     )
+#'   ),
+#'   tags = list(
+#'     "string"
+#'   )
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname ivs_create_ad_configuration
+#'
+#' @aliases ivs_create_ad_configuration
+ivs_create_ad_configuration <- function(name = NULL, mediaTailorPlaybackConfigurations, tags = NULL) {
+  op <- new_operation(
+    name = "CreateAdConfiguration",
+    http_method = "POST",
+    http_path = "/CreateAdConfiguration",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .ivs$create_ad_configuration_input(name = name, mediaTailorPlaybackConfigurations = mediaTailorPlaybackConfigurations, tags = tags)
+  output <- .ivs$create_ad_configuration_output()
+  config <- get_config()
+  svc <- .ivs$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.ivs$operations$create_ad_configuration <- ivs_create_ad_configuration
+
 #' Creates a new channel and an associated stream key to start streaming
 #'
 #' @description
 #' Creates a new channel and an associated stream key to start streaming.
 #'
 #' @usage
-#' ivs_create_channel(authorized, containerFormat, insecureIngest,
-#'   latencyMode, multitrackInputConfiguration, name,
-#'   playbackRestrictionPolicyArn, preset, recordingConfigurationArn, tags,
-#'   type)
+#' ivs_create_channel(name, latencyMode, type, authorized,
+#'   recordingConfigurationArn, tags, insecureIngest, preset,
+#'   playbackRestrictionPolicyArn, multitrackInputConfiguration,
+#'   containerFormat, adConfigurationArn)
 #'
-#' @param authorized Whether the channel is private (enabled for playback authorization).
-#' Default: `false`.
-#' @param containerFormat Indicates which content-packaging format is used (MPEG-TS or fMP4). If
-#' `multitrackInputConfiguration` is specified and `enabled` is `true`,
-#' then `containerFormat` is required and must be set to `FRAGMENTED_MP4`.
-#' Otherwise, `containerFormat` may be set to `TS` or `FRAGMENTED_MP4`.
-#' Default: `TS`.
-#' @param insecureIngest Whether the channel allows insecure RTMP and SRT ingest. Default:
-#' `false`.
-#' @param latencyMode Channel latency mode. Use `NORMAL` to broadcast and deliver live video
-#' up to Full HD. Use `LOW` for near-real-time interaction with viewers.
-#' Default: `LOW`.
-#' @param multitrackInputConfiguration Object specifying multitrack input configuration. Default: no multitrack
-#' input configuration is specified.
 #' @param name Channel name.
-#' @param playbackRestrictionPolicyArn Playback-restriction-policy ARN. A valid ARN value here both specifies
-#' the ARN and enables playback restriction. Default: "" (empty string, no
-#' playback restriction policy is applied).
-#' @param preset Optional transcode preset for the channel. This is selectable only for
-#' `ADVANCED_HD` and `ADVANCED_SD` channel types. For those channel types,
-#' the default `preset` is `HIGHER_BANDWIDTH_DELIVERY`. For other channel
-#' types (`BASIC` and `STANDARD`), `preset` is the empty string (`""`).
-#' @param recordingConfigurationArn Recording-configuration ARN. A valid ARN value here both specifies the
-#' ARN and enables recording. Default: "" (empty string, recording is
-#' disabled).
-#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See
-#' [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no service-specific constraints beyond
-#' what is documented there.
-#' @param type Channel type, which determines the allowable resolution and bitrate. *If
-#' you exceed the allowable input resolution or bitrate, the stream
-#' probably will disconnect immediately.* Default: `STANDARD`. For details,
-#' see [Channel
-#' Types](https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html).
+#' @param latencyMode Channel latency mode. Use `NORMAL` to broadcast and deliver live video up to Full HD. Use `LOW` for near-real-time interaction with viewers. Default: `LOW`.
+#' @param type Channel type, which determines the allowable resolution and bitrate. *If you exceed the allowable input resolution or bitrate, the stream probably will disconnect immediately.* Default: `STANDARD`. For details, see [Channel Types](https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/).
+#' @param authorized Whether the channel is private (enabled for playback authorization). Default: `false`.
+#' @param recordingConfigurationArn Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. Default: "" (empty string, recording is disabled).
+#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
+#' @param insecureIngest Whether the channel allows insecure RTMP and SRT ingest. Default: `false`.
+#' @param preset Optional transcode preset for the channel. This is selectable only for `ADVANCED_HD` and `ADVANCED_SD` channel types. For those channel types, the default `preset` is `HIGHER_BANDWIDTH_DELIVERY`. For other channel types (`BASIC` and `STANDARD`), `preset` is the empty string (`""`).
+#' @param playbackRestrictionPolicyArn Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction. Default: "" (empty string, no playback restriction policy is applied).
+#' @param multitrackInputConfiguration Object specifying multitrack input configuration. Default: no multitrack input configuration is specified.
+#' @param containerFormat Indicates which content-packaging format is used (MPEG-TS or fMP4). If `multitrackInputConfiguration` is specified and `enabled` is `true`, then `containerFormat` is required and must be set to `FRAGMENTED_MP4`. Otherwise, `containerFormat` may be set to `TS` or `FRAGMENTED_MP4`. Default: `TS`.
+#' @param adConfigurationArn ARN of the ad configuration associated with the channel.
 #'
 #' @return
 #' A list with the following syntax:
@@ -277,37 +341,38 @@ ivs_batch_start_viewer_session_revocation <- function(viewerSessions) {
 #' list(
 #'   channel = list(
 #'     arn = "string",
-#'     authorized = TRUE|FALSE,
-#'     containerFormat = "TS"|"FRAGMENTED_MP4",
-#'     ingestEndpoint = "string",
-#'     insecureIngest = TRUE|FALSE,
-#'     latencyMode = "NORMAL"|"LOW",
-#'     multitrackInputConfiguration = list(
-#'       enabled = TRUE|FALSE,
-#'       maximumResolution = "SD"|"HD"|"FULL_HD",
-#'       policy = "ALLOW"|"REQUIRE"
-#'     ),
 #'     name = "string",
-#'     playbackRestrictionPolicyArn = "string",
-#'     playbackUrl = "string",
-#'     preset = "HIGHER_BANDWIDTH_DELIVERY"|"CONSTRAINED_BANDWIDTH_DELIVERY",
+#'     latencyMode = "NORMAL"|"LOW",
+#'     type = "BASIC"|"STANDARD"|"ADVANCED_SD"|"ADVANCED_HD",
 #'     recordingConfigurationArn = "string",
+#'     ingestEndpoint = "string",
+#'     playbackUrl = "string",
+#'     authorized = TRUE|FALSE,
+#'     tags = list(
+#'       "string"
+#'     ),
+#'     insecureIngest = TRUE|FALSE,
+#'     preset = "HIGHER_BANDWIDTH_DELIVERY"|"CONSTRAINED_BANDWIDTH_DELIVERY",
 #'     srt = list(
 #'       endpoint = "string",
 #'       passphrase = "string"
 #'     ),
-#'     tags = list(
-#'       "string"
+#'     playbackRestrictionPolicyArn = "string",
+#'     multitrackInputConfiguration = list(
+#'       enabled = TRUE|FALSE,
+#'       policy = "ALLOW"|"REQUIRE",
+#'       maximumResolution = "SD"|"HD"|"FULL_HD"
 #'     ),
-#'     type = "BASIC"|"STANDARD"|"ADVANCED_SD"|"ADVANCED_HD"
+#'     containerFormat = "TS"|"FRAGMENTED_MP4",
+#'     adConfigurationArn = "string"
 #'   ),
 #'   streamKey = list(
 #'     arn = "string",
+#'     value = "string",
 #'     channelArn = "string",
 #'     tags = list(
 #'       "string"
-#'     ),
-#'     value = "string"
+#'     )
 #'   )
 #' )
 #' ```
@@ -315,23 +380,24 @@ ivs_batch_start_viewer_session_revocation <- function(viewerSessions) {
 #' @section Request syntax:
 #' ```
 #' svc$create_channel(
-#'   authorized = TRUE|FALSE,
-#'   containerFormat = "TS"|"FRAGMENTED_MP4",
-#'   insecureIngest = TRUE|FALSE,
-#'   latencyMode = "NORMAL"|"LOW",
-#'   multitrackInputConfiguration = list(
-#'     enabled = TRUE|FALSE,
-#'     maximumResolution = "SD"|"HD"|"FULL_HD",
-#'     policy = "ALLOW"|"REQUIRE"
-#'   ),
 #'   name = "string",
-#'   playbackRestrictionPolicyArn = "string",
-#'   preset = "HIGHER_BANDWIDTH_DELIVERY"|"CONSTRAINED_BANDWIDTH_DELIVERY",
+#'   latencyMode = "NORMAL"|"LOW",
+#'   type = "BASIC"|"STANDARD"|"ADVANCED_SD"|"ADVANCED_HD",
+#'   authorized = TRUE|FALSE,
 #'   recordingConfigurationArn = "string",
 #'   tags = list(
 #'     "string"
 #'   ),
-#'   type = "BASIC"|"STANDARD"|"ADVANCED_SD"|"ADVANCED_HD"
+#'   insecureIngest = TRUE|FALSE,
+#'   preset = "HIGHER_BANDWIDTH_DELIVERY"|"CONSTRAINED_BANDWIDTH_DELIVERY",
+#'   playbackRestrictionPolicyArn = "string",
+#'   multitrackInputConfiguration = list(
+#'     enabled = TRUE|FALSE,
+#'     policy = "ALLOW"|"REQUIRE",
+#'     maximumResolution = "SD"|"HD"|"FULL_HD"
+#'   ),
+#'   containerFormat = "TS"|"FRAGMENTED_MP4",
+#'   adConfigurationArn = "string"
 #' )
 #' ```
 #'
@@ -340,7 +406,7 @@ ivs_batch_start_viewer_session_revocation <- function(viewerSessions) {
 #' @rdname ivs_create_channel
 #'
 #' @aliases ivs_create_channel
-ivs_create_channel <- function(authorized = NULL, containerFormat = NULL, insecureIngest = NULL, latencyMode = NULL, multitrackInputConfiguration = NULL, name = NULL, playbackRestrictionPolicyArn = NULL, preset = NULL, recordingConfigurationArn = NULL, tags = NULL, type = NULL) {
+ivs_create_channel <- function(name = NULL, latencyMode = NULL, type = NULL, authorized = NULL, recordingConfigurationArn = NULL, tags = NULL, insecureIngest = NULL, preset = NULL, playbackRestrictionPolicyArn = NULL, multitrackInputConfiguration = NULL, containerFormat = NULL, adConfigurationArn = NULL) {
   op <- new_operation(
     name = "CreateChannel",
     http_method = "POST",
@@ -349,7 +415,7 @@ ivs_create_channel <- function(authorized = NULL, containerFormat = NULL, insecu
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .ivs$create_channel_input(authorized = authorized, containerFormat = containerFormat, insecureIngest = insecureIngest, latencyMode = latencyMode, multitrackInputConfiguration = multitrackInputConfiguration, name = name, playbackRestrictionPolicyArn = playbackRestrictionPolicyArn, preset = preset, recordingConfigurationArn = recordingConfigurationArn, tags = tags, type = type)
+  input <- .ivs$create_channel_input(name = name, latencyMode = latencyMode, type = type, authorized = authorized, recordingConfigurationArn = recordingConfigurationArn, tags = tags, insecureIngest = insecureIngest, preset = preset, playbackRestrictionPolicyArn = playbackRestrictionPolicyArn, multitrackInputConfiguration = multitrackInputConfiguration, containerFormat = containerFormat, adConfigurationArn = adConfigurationArn)
   output <- .ivs$create_channel_output()
   config <- get_config()
   svc <- .ivs$service(config, op)
@@ -363,44 +429,30 @@ ivs_create_channel <- function(authorized = NULL, containerFormat = NULL, insecu
 #' countries and/or origins
 #'
 #' @description
-#' Creates a new playback restriction policy, for constraining playback by
-#' countries and/or origins.
+#' Creates a new playback restriction policy, for constraining playback by countries and/or origins.
 #'
 #' @usage
 #' ivs_create_playback_restriction_policy(allowedCountries, allowedOrigins,
 #'   enableStrictOriginEnforcement, name, tags)
 #'
-#' @param allowedCountries A list of country codes that control geoblocking restriction. Allowed
-#' values are the officially assigned [ISO 3166-1
-#' alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) codes.
-#' Default: All countries (an empty array).
-#' @param allowedOrigins A list of origin sites that control CORS restriction. Allowed values are
-#' the same as valid values of the Origin header defined at
-#' [https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Origin).
-#' Default: All origins (an empty array).
-#' @param enableStrictOriginEnforcement Whether channel playback is constrained by origin site. Default:
-#' `false`.
+#' @param allowedCountries A list of country codes that control geoblocking restriction. Allowed values are the officially assigned [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) codes. Default: All countries (an empty array).
+#' @param allowedOrigins A list of origin sites that control CORS restriction. Allowed values are the same as valid values of the Origin header defined at [https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Origin). Default: All origins (an empty array).
+#' @param enableStrictOriginEnforcement Whether channel playback is constrained by origin site. Default: `false`.
 #' @param name Playback-restriction-policy name. The value does not need to be unique.
-#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See
-#' [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no service-specific constraints beyond
-#' what is documented there.
+#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
 #'
 #' @return
 #' A list with the following syntax:
 #' ```
 #' list(
 #'   playbackRestrictionPolicy = list(
+#'     arn = "string",
 #'     allowedCountries = list(
 #'       "string"
 #'     ),
 #'     allowedOrigins = list(
 #'       "string"
 #'     ),
-#'     arn = "string",
 #'     enableStrictOriginEnforcement = TRUE|FALSE,
 #'     name = "string",
 #'     tags = list(
@@ -455,43 +507,23 @@ ivs_create_playback_restriction_policy <- function(allowedCountries = NULL, allo
 #' Amazon S3
 #'
 #' @description
-#' Creates a new recording configuration, used to enable recording to
-#' Amazon S3.
+#' Creates a new recording configuration, used to enable recording to Amazon S3.
 #' 
-#' **Known issue:** In the us-east-1 region, if you use the Amazon Web
-#' Services CLI to create a recording configuration, it returns success
-#' even if the S3 bucket is in a different region. In this case, the
-#' `state` of the recording configuration is `CREATE_FAILED` (instead of
-#' `ACTIVE`). (In other regions, the CLI correctly returns failure if the
-#' bucket is in a different region.)
+#' **Known issue:** In the us-east-1 region, if you use the Amazon Web Services CLI to create a recording configuration, it returns success even if the S3 bucket is in a different region. In this case, the `state` of the recording configuration is `CREATE_FAILED` (instead of `ACTIVE`). (In other regions, the CLI correctly returns failure if the bucket is in a different region.)
 #' 
-#' **Workaround:** Ensure that your S3 bucket is in the same region as the
-#' recording configuration. If you create a recording configuration in a
-#' different region as your S3 bucket, delete that recording configuration
-#' and create a new one with an S3 bucket from the correct region.
+#' **Workaround:** Ensure that your S3 bucket is in the same region as the recording configuration. If you create a recording configuration in a different region as your S3 bucket, delete that recording configuration and create a new one with an S3 bucket from the correct region.
 #'
 #' @usage
-#' ivs_create_recording_configuration(destinationConfiguration, name,
-#'   recordingReconnectWindowSeconds, renditionConfiguration, tags,
-#'   thumbnailConfiguration)
+#' ivs_create_recording_configuration(name, destinationConfiguration, tags,
+#'   thumbnailConfiguration, recordingReconnectWindowSeconds,
+#'   renditionConfiguration)
 #'
-#' @param destinationConfiguration &#91;required&#93; A complex type that contains a destination configuration for where
-#' recorded video will be stored.
 #' @param name Recording-configuration name. The value does not need to be unique.
-#' @param recordingReconnectWindowSeconds If a broadcast disconnects and then reconnects within the specified
-#' interval, the multiple streams will be considered a single broadcast and
-#' merged together. Default: 0.
+#' @param destinationConfiguration &#91;required&#93; A complex type that contains a destination configuration for where recorded video will be stored.
+#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
+#' @param thumbnailConfiguration A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.
+#' @param recordingReconnectWindowSeconds If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be considered a single broadcast and merged together. Default: 0.
 #' @param renditionConfiguration Object that describes which renditions should be recorded for a stream.
-#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See
-#' [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no service-specific constraints beyond
-#' what is documented there.
-#' @param thumbnailConfiguration A complex type that allows you to enable/disable the recording of
-#' thumbnails for a live session and modify the interval at which
-#' thumbnails are generated for the live session.
 #'
 #' @return
 #' A list with the following syntax:
@@ -499,17 +531,10 @@ ivs_create_playback_restriction_policy <- function(allowedCountries = NULL, allo
 #' list(
 #'   recordingConfiguration = list(
 #'     arn = "string",
+#'     name = "string",
 #'     destinationConfiguration = list(
 #'       s3 = list(
 #'         bucketName = "string"
-#'       )
-#'     ),
-#'     name = "string",
-#'     recordingReconnectWindowSeconds = 123,
-#'     renditionConfiguration = list(
-#'       renditionSelection = "ALL"|"NONE"|"CUSTOM",
-#'       renditions = list(
-#'         "SD"|"HD"|"FULL_HD"|"LOWEST_RESOLUTION"
 #'       )
 #'     ),
 #'     state = "CREATING"|"CREATE_FAILED"|"ACTIVE",
@@ -518,11 +543,18 @@ ivs_create_playback_restriction_policy <- function(allowedCountries = NULL, allo
 #'     ),
 #'     thumbnailConfiguration = list(
 #'       recordingMode = "DISABLED"|"INTERVAL",
+#'       targetIntervalSeconds = 123,
 #'       resolution = "SD"|"HD"|"FULL_HD"|"LOWEST_RESOLUTION",
 #'       storage = list(
 #'         "SEQUENTIAL"|"LATEST"
-#'       ),
-#'       targetIntervalSeconds = 123
+#'       )
+#'     ),
+#'     recordingReconnectWindowSeconds = 123,
+#'     renditionConfiguration = list(
+#'       renditionSelection = "ALL"|"NONE"|"CUSTOM",
+#'       renditions = list(
+#'         "SD"|"HD"|"FULL_HD"|"LOWEST_RESOLUTION"
+#'       )
 #'     )
 #'   )
 #' )
@@ -531,17 +563,10 @@ ivs_create_playback_restriction_policy <- function(allowedCountries = NULL, allo
 #' @section Request syntax:
 #' ```
 #' svc$create_recording_configuration(
+#'   name = "string",
 #'   destinationConfiguration = list(
 #'     s3 = list(
 #'       bucketName = "string"
-#'     )
-#'   ),
-#'   name = "string",
-#'   recordingReconnectWindowSeconds = 123,
-#'   renditionConfiguration = list(
-#'     renditionSelection = "ALL"|"NONE"|"CUSTOM",
-#'     renditions = list(
-#'       "SD"|"HD"|"FULL_HD"|"LOWEST_RESOLUTION"
 #'     )
 #'   ),
 #'   tags = list(
@@ -549,11 +574,18 @@ ivs_create_playback_restriction_policy <- function(allowedCountries = NULL, allo
 #'   ),
 #'   thumbnailConfiguration = list(
 #'     recordingMode = "DISABLED"|"INTERVAL",
+#'     targetIntervalSeconds = 123,
 #'     resolution = "SD"|"HD"|"FULL_HD"|"LOWEST_RESOLUTION",
 #'     storage = list(
 #'       "SEQUENTIAL"|"LATEST"
-#'     ),
-#'     targetIntervalSeconds = 123
+#'     )
+#'   ),
+#'   recordingReconnectWindowSeconds = 123,
+#'   renditionConfiguration = list(
+#'     renditionSelection = "ALL"|"NONE"|"CUSTOM",
+#'     renditions = list(
+#'       "SD"|"HD"|"FULL_HD"|"LOWEST_RESOLUTION"
+#'     )
 #'   )
 #' )
 #' ```
@@ -563,7 +595,7 @@ ivs_create_playback_restriction_policy <- function(allowedCountries = NULL, allo
 #' @rdname ivs_create_recording_configuration
 #'
 #' @aliases ivs_create_recording_configuration
-ivs_create_recording_configuration <- function(destinationConfiguration, name = NULL, recordingReconnectWindowSeconds = NULL, renditionConfiguration = NULL, tags = NULL, thumbnailConfiguration = NULL) {
+ivs_create_recording_configuration <- function(name = NULL, destinationConfiguration, tags = NULL, thumbnailConfiguration = NULL, recordingReconnectWindowSeconds = NULL, renditionConfiguration = NULL) {
   op <- new_operation(
     name = "CreateRecordingConfiguration",
     http_method = "POST",
@@ -572,7 +604,7 @@ ivs_create_recording_configuration <- function(destinationConfiguration, name = 
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .ivs$create_recording_configuration_input(destinationConfiguration = destinationConfiguration, name = name, recordingReconnectWindowSeconds = recordingReconnectWindowSeconds, renditionConfiguration = renditionConfiguration, tags = tags, thumbnailConfiguration = thumbnailConfiguration)
+  input <- .ivs$create_recording_configuration_input(name = name, destinationConfiguration = destinationConfiguration, tags = tags, thumbnailConfiguration = thumbnailConfiguration, recordingReconnectWindowSeconds = recordingReconnectWindowSeconds, renditionConfiguration = renditionConfiguration)
   output <- .ivs$create_recording_configuration_output()
   config <- get_config()
   svc <- .ivs$service(config, op)
@@ -586,26 +618,15 @@ ivs_create_recording_configuration <- function(destinationConfiguration, name = 
 #' channel ARN
 #'
 #' @description
-#' Creates a stream key, used to initiate a stream, for the specified
-#' channel ARN.
+#' Creates a stream key, used to initiate a stream, for the specified channel ARN.
 #' 
-#' Note that [`create_channel`][ivs_create_channel] creates a stream key.
-#' If you subsequently use CreateStreamKey on the same channel, it will
-#' fail because a stream key already exists and there is a limit of 1
-#' stream key per channel. To reset the stream key on a channel, use
-#' [`delete_stream_key`][ivs_delete_stream_key] and then CreateStreamKey.
+#' Note that [`create_channel`][ivs_create_channel] creates a stream key. If you subsequently use CreateStreamKey on the same channel, it will fail because a stream key already exists and there is a limit of 1 stream key per channel. To reset the stream key on a channel, use [`delete_stream_key`][ivs_delete_stream_key] and then CreateStreamKey.
 #'
 #' @usage
 #' ivs_create_stream_key(channelArn, tags)
 #'
 #' @param channelArn &#91;required&#93; ARN of the channel for which to create the stream key.
-#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See
-#' [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no service-specific constraints beyond
-#' what is documented there.
+#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
 #'
 #' @return
 #' A list with the following syntax:
@@ -613,11 +634,11 @@ ivs_create_recording_configuration <- function(destinationConfiguration, name = 
 #' list(
 #'   streamKey = list(
 #'     arn = "string",
+#'     value = "string",
 #'     channelArn = "string",
 #'     tags = list(
 #'       "string"
-#'     ),
-#'     value = "string"
+#'     )
 #'   )
 #' )
 #' ```
@@ -656,17 +677,56 @@ ivs_create_stream_key <- function(channelArn, tags = NULL) {
 }
 .ivs$operations$create_stream_key <- ivs_create_stream_key
 
+#' Deletes the specified ad configuration
+#'
+#' @description
+#' Deletes the specified ad configuration.
+#'
+#' @usage
+#' ivs_delete_ad_configuration(arn)
+#'
+#' @param arn &#91;required&#93; ARN of the ad configuration to be deleted.
+#'
+#' @return
+#' An empty list.
+#'
+#' @section Request syntax:
+#' ```
+#' svc$delete_ad_configuration(
+#'   arn = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname ivs_delete_ad_configuration
+#'
+#' @aliases ivs_delete_ad_configuration
+ivs_delete_ad_configuration <- function(arn) {
+  op <- new_operation(
+    name = "DeleteAdConfiguration",
+    http_method = "POST",
+    http_path = "/DeleteAdConfiguration",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .ivs$delete_ad_configuration_input(arn = arn)
+  output <- .ivs$delete_ad_configuration_output()
+  config <- get_config()
+  svc <- .ivs$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.ivs$operations$delete_ad_configuration <- ivs_delete_ad_configuration
+
 #' Deletes the specified channel and its associated stream keys
 #'
 #' @description
 #' Deletes the specified channel and its associated stream keys.
 #' 
-#' If you try to delete a live channel, you will get an error (409
-#' ConflictException). To delete a channel that is live, call
-#' [`stop_stream`][ivs_stop_stream], wait for the Amazon EventBridge
-#' "Stream End" event (to verify that the stream's state is no longer
-#' Live), then call DeleteChannel. (See [Using EventBridge with Amazon
-#' IVS](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/eventbridge.html).)
+#' If you try to delete a live channel, you will get an error (409 ConflictException). To delete a channel that is live, call [`stop_stream`][ivs_stop_stream], wait for the Amazon EventBridge "Stream End" event (to verify that the stream's state is no longer Live), then call DeleteChannel. (See [Using EventBridge with Amazon IVS](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/eventbridge.html).)
 #'
 #' @usage
 #' ivs_delete_channel(arn)
@@ -710,11 +770,7 @@ ivs_delete_channel <- function(arn) {
 #' Deletes a specified authorization key pair
 #'
 #' @description
-#' Deletes a specified authorization key pair. This invalidates future
-#' viewer tokens generated using the key pair’s `privateKey`. For more
-#' information, see [Setting Up Private
-#' Channels](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels.html)
-#' in the *Amazon IVS User Guide*.
+#' Deletes a specified authorization key pair. This invalidates future viewer tokens generated using the key pair’s `privateKey`. For more information, see [Setting Up Private Channels](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels.html) in the *Amazon IVS User Guide*.
 #'
 #' @usage
 #' ivs_delete_playback_key_pair(arn)
@@ -804,12 +860,7 @@ ivs_delete_playback_restriction_policy <- function(arn) {
 #' @description
 #' Deletes the recording configuration for the specified ARN.
 #' 
-#' If you try to delete a recording configuration that is associated with a
-#' channel, you will get an error (409 ConflictException). To avoid this,
-#' for all channels that reference the recording configuration, first use
-#' [`update_channel`][ivs_update_channel] to set the
-#' `recordingConfigurationArn` field to an empty string, then use
-#' DeleteRecordingConfiguration.
+#' If you try to delete a recording configuration that is associated with a channel, you will get an error (409 ConflictException). To avoid this, for all channels that reference the recording configuration, first use [`update_channel`][ivs_update_channel] to set the `recordingConfigurationArn` field to an empty string, then use DeleteRecordingConfiguration.
 #'
 #' @usage
 #' ivs_delete_recording_configuration(arn)
@@ -854,8 +905,7 @@ ivs_delete_recording_configuration <- function(arn) {
 #' used to stream
 #'
 #' @description
-#' Deletes the stream key for the specified ARN, so it can no longer be
-#' used to stream.
+#' Deletes the stream key for the specified ARN, so it can no longer be used to stream.
 #'
 #' @usage
 #' ivs_delete_stream_key(arn)
@@ -896,11 +946,70 @@ ivs_delete_stream_key <- function(arn) {
 }
 .ivs$operations$delete_stream_key <- ivs_delete_stream_key
 
+#' Gets the ad configuration represented by the specified ARN
+#'
+#' @description
+#' Gets the ad configuration represented by the specified ARN.
+#'
+#' @usage
+#' ivs_get_ad_configuration(arn)
+#'
+#' @param arn &#91;required&#93; ARN of the ad configuration to be retrieved.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   adConfiguration = list(
+#'     arn = "string",
+#'     name = "string",
+#'     mediaTailorPlaybackConfigurations = list(
+#'       list(
+#'         playbackConfigurationArn = "string"
+#'       )
+#'     ),
+#'     tags = list(
+#'       "string"
+#'     )
+#'   )
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$get_ad_configuration(
+#'   arn = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname ivs_get_ad_configuration
+#'
+#' @aliases ivs_get_ad_configuration
+ivs_get_ad_configuration <- function(arn) {
+  op <- new_operation(
+    name = "GetAdConfiguration",
+    http_method = "POST",
+    http_path = "/GetAdConfiguration",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .ivs$get_ad_configuration_input(arn = arn)
+  output <- .ivs$get_ad_configuration_output()
+  config <- get_config()
+  svc <- .ivs$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.ivs$operations$get_ad_configuration <- ivs_get_ad_configuration
+
 #' Gets the channel configuration for the specified channel ARN
 #'
 #' @description
-#' Gets the channel configuration for the specified channel ARN. See also
-#' [`batch_get_channel`][ivs_batch_get_channel].
+#' Gets the channel configuration for the specified channel ARN. See also [`batch_get_channel`][ivs_batch_get_channel].
 #'
 #' @usage
 #' ivs_get_channel(arn)
@@ -913,29 +1022,30 @@ ivs_delete_stream_key <- function(arn) {
 #' list(
 #'   channel = list(
 #'     arn = "string",
-#'     authorized = TRUE|FALSE,
-#'     containerFormat = "TS"|"FRAGMENTED_MP4",
-#'     ingestEndpoint = "string",
-#'     insecureIngest = TRUE|FALSE,
-#'     latencyMode = "NORMAL"|"LOW",
-#'     multitrackInputConfiguration = list(
-#'       enabled = TRUE|FALSE,
-#'       maximumResolution = "SD"|"HD"|"FULL_HD",
-#'       policy = "ALLOW"|"REQUIRE"
-#'     ),
 #'     name = "string",
-#'     playbackRestrictionPolicyArn = "string",
-#'     playbackUrl = "string",
-#'     preset = "HIGHER_BANDWIDTH_DELIVERY"|"CONSTRAINED_BANDWIDTH_DELIVERY",
+#'     latencyMode = "NORMAL"|"LOW",
+#'     type = "BASIC"|"STANDARD"|"ADVANCED_SD"|"ADVANCED_HD",
 #'     recordingConfigurationArn = "string",
+#'     ingestEndpoint = "string",
+#'     playbackUrl = "string",
+#'     authorized = TRUE|FALSE,
+#'     tags = list(
+#'       "string"
+#'     ),
+#'     insecureIngest = TRUE|FALSE,
+#'     preset = "HIGHER_BANDWIDTH_DELIVERY"|"CONSTRAINED_BANDWIDTH_DELIVERY",
 #'     srt = list(
 #'       endpoint = "string",
 #'       passphrase = "string"
 #'     ),
-#'     tags = list(
-#'       "string"
+#'     playbackRestrictionPolicyArn = "string",
+#'     multitrackInputConfiguration = list(
+#'       enabled = TRUE|FALSE,
+#'       policy = "ALLOW"|"REQUIRE",
+#'       maximumResolution = "SD"|"HD"|"FULL_HD"
 #'     ),
-#'     type = "BASIC"|"STANDARD"|"ADVANCED_SD"|"ADVANCED_HD"
+#'     containerFormat = "TS"|"FRAGMENTED_MP4",
+#'     adConfigurationArn = "string"
 #'   )
 #' )
 #' ```
@@ -975,12 +1085,7 @@ ivs_get_channel <- function(arn) {
 #' fingerprint
 #'
 #' @description
-#' Gets a specified playback authorization key pair and returns the `arn`
-#' and `fingerprint`. The `privateKey` held by the caller can be used to
-#' generate viewer authorization tokens, to grant viewers access to private
-#' channels. For more information, see [Setting Up Private
-#' Channels](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels.html)
-#' in the *Amazon IVS User Guide*.
+#' Gets a specified playback authorization key pair and returns the `arn` and `fingerprint`. The `privateKey` held by the caller can be used to generate viewer authorization tokens, to grant viewers access to private channels. For more information, see [Setting Up Private Channels](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels.html) in the *Amazon IVS User Guide*.
 #'
 #' @usage
 #' ivs_get_playback_key_pair(arn)
@@ -993,8 +1098,8 @@ ivs_get_channel <- function(arn) {
 #' list(
 #'   keyPair = list(
 #'     arn = "string",
-#'     fingerprint = "string",
 #'     name = "string",
+#'     fingerprint = "string",
 #'     tags = list(
 #'       "string"
 #'     )
@@ -1048,13 +1153,13 @@ ivs_get_playback_key_pair <- function(arn) {
 #' ```
 #' list(
 #'   playbackRestrictionPolicy = list(
+#'     arn = "string",
 #'     allowedCountries = list(
 #'       "string"
 #'     ),
 #'     allowedOrigins = list(
 #'       "string"
 #'     ),
-#'     arn = "string",
 #'     enableStrictOriginEnforcement = TRUE|FALSE,
 #'     name = "string",
 #'     tags = list(
@@ -1111,17 +1216,10 @@ ivs_get_playback_restriction_policy <- function(arn) {
 #' list(
 #'   recordingConfiguration = list(
 #'     arn = "string",
+#'     name = "string",
 #'     destinationConfiguration = list(
 #'       s3 = list(
 #'         bucketName = "string"
-#'       )
-#'     ),
-#'     name = "string",
-#'     recordingReconnectWindowSeconds = 123,
-#'     renditionConfiguration = list(
-#'       renditionSelection = "ALL"|"NONE"|"CUSTOM",
-#'       renditions = list(
-#'         "SD"|"HD"|"FULL_HD"|"LOWEST_RESOLUTION"
 #'       )
 #'     ),
 #'     state = "CREATING"|"CREATE_FAILED"|"ACTIVE",
@@ -1130,11 +1228,18 @@ ivs_get_playback_restriction_policy <- function(arn) {
 #'     ),
 #'     thumbnailConfiguration = list(
 #'       recordingMode = "DISABLED"|"INTERVAL",
+#'       targetIntervalSeconds = 123,
 #'       resolution = "SD"|"HD"|"FULL_HD"|"LOWEST_RESOLUTION",
 #'       storage = list(
 #'         "SEQUENTIAL"|"LATEST"
-#'       ),
-#'       targetIntervalSeconds = 123
+#'       )
+#'     ),
+#'     recordingReconnectWindowSeconds = 123,
+#'     renditionConfiguration = list(
+#'       renditionSelection = "ALL"|"NONE"|"CUSTOM",
+#'       renditions = list(
+#'         "SD"|"HD"|"FULL_HD"|"LOWEST_RESOLUTION"
+#'       )
 #'     )
 #'   )
 #' )
@@ -1187,13 +1292,13 @@ ivs_get_recording_configuration <- function(arn) {
 #' list(
 #'   stream = list(
 #'     channelArn = "string",
-#'     health = "HEALTHY"|"STARVING"|"UNKNOWN",
+#'     streamId = "string",
 #'     playbackUrl = "string",
 #'     startTime = as.POSIXct(
 #'       "2015-01-01"
 #'     ),
 #'     state = "LIVE"|"OFFLINE",
-#'     streamId = "string",
+#'     health = "HEALTHY"|"STARVING"|"UNKNOWN",
 #'     viewerCount = 123
 #'   )
 #' )
@@ -1246,11 +1351,11 @@ ivs_get_stream <- function(channelArn) {
 #' list(
 #'   streamKey = list(
 #'     arn = "string",
+#'     value = "string",
 #'     channelArn = "string",
 #'     tags = list(
 #'       "string"
-#'     ),
-#'     value = "string"
+#'     )
 #'   )
 #' )
 #' ```
@@ -1295,105 +1400,101 @@ ivs_get_stream_key <- function(arn) {
 #' ivs_get_stream_session(channelArn, streamId)
 #'
 #' @param channelArn &#91;required&#93; ARN of the channel resource
-#' @param streamId Unique identifier for a live or previously live stream in the specified
-#' channel. If no `streamId` is provided, this returns the most recent
-#' stream session for the channel, if it exists.
+#' @param streamId Unique identifier for a live or previously live stream in the specified channel. If no `streamId` is provided, this returns the most recent stream session for the channel, if it exists.
 #'
 #' @return
 #' A list with the following syntax:
 #' ```
 #' list(
 #'   streamSession = list(
-#'     channel = list(
-#'       arn = "string",
-#'       authorized = TRUE|FALSE,
-#'       containerFormat = "TS"|"FRAGMENTED_MP4",
-#'       ingestEndpoint = "string",
-#'       insecureIngest = TRUE|FALSE,
-#'       latencyMode = "NORMAL"|"LOW",
-#'       multitrackInputConfiguration = list(
-#'         enabled = TRUE|FALSE,
-#'         maximumResolution = "SD"|"HD"|"FULL_HD",
-#'         policy = "ALLOW"|"REQUIRE"
-#'       ),
-#'       name = "string",
-#'       playbackRestrictionPolicyArn = "string",
-#'       playbackUrl = "string",
-#'       preset = "HIGHER_BANDWIDTH_DELIVERY"|"CONSTRAINED_BANDWIDTH_DELIVERY",
-#'       recordingConfigurationArn = "string",
-#'       srt = list(
-#'         endpoint = "string",
-#'         passphrase = "string"
-#'       ),
-#'       tags = list(
-#'         "string"
-#'       ),
-#'       type = "BASIC"|"STANDARD"|"ADVANCED_SD"|"ADVANCED_HD"
+#'     streamId = "string",
+#'     startTime = as.POSIXct(
+#'       "2015-01-01"
 #'     ),
 #'     endTime = as.POSIXct(
 #'       "2015-01-01"
 #'     ),
-#'     ingestConfiguration = list(
-#'       audio = list(
-#'         channels = 123,
-#'         codec = "string",
-#'         sampleRate = 123,
-#'         targetBitrate = 123,
-#'         track = "string"
+#'     channel = list(
+#'       arn = "string",
+#'       name = "string",
+#'       latencyMode = "NORMAL"|"LOW",
+#'       type = "BASIC"|"STANDARD"|"ADVANCED_SD"|"ADVANCED_HD",
+#'       recordingConfigurationArn = "string",
+#'       ingestEndpoint = "string",
+#'       playbackUrl = "string",
+#'       authorized = TRUE|FALSE,
+#'       tags = list(
+#'         "string"
 #'       ),
+#'       insecureIngest = TRUE|FALSE,
+#'       preset = "HIGHER_BANDWIDTH_DELIVERY"|"CONSTRAINED_BANDWIDTH_DELIVERY",
+#'       srt = list(
+#'         endpoint = "string",
+#'         passphrase = "string"
+#'       ),
+#'       playbackRestrictionPolicyArn = "string",
+#'       multitrackInputConfiguration = list(
+#'         enabled = TRUE|FALSE,
+#'         policy = "ALLOW"|"REQUIRE",
+#'         maximumResolution = "SD"|"HD"|"FULL_HD"
+#'       ),
+#'       containerFormat = "TS"|"FRAGMENTED_MP4",
+#'       adConfigurationArn = "string"
+#'     ),
+#'     ingestConfiguration = list(
 #'       video = list(
-#'         avcLevel = "string",
 #'         avcProfile = "string",
+#'         avcLevel = "string",
 #'         codec = "string",
 #'         encoder = "string",
-#'         level = "string",
-#'         profile = "string",
 #'         targetBitrate = 123,
 #'         targetFramerate = 123,
-#'         track = "string",
 #'         videoHeight = 123,
-#'         videoWidth = 123
+#'         videoWidth = 123,
+#'         level = "string",
+#'         track = "string",
+#'         profile = "string"
+#'       ),
+#'       audio = list(
+#'         codec = "string",
+#'         targetBitrate = 123,
+#'         sampleRate = 123,
+#'         channels = 123,
+#'         track = "string"
 #'       )
 #'     ),
 #'     ingestConfigurations = list(
-#'       audioConfigurations = list(
-#'         list(
-#'           channels = 123,
-#'           codec = "string",
-#'           sampleRate = 123,
-#'           targetBitrate = 123,
-#'           track = "string"
-#'         )
-#'       ),
 #'       videoConfigurations = list(
 #'         list(
-#'           avcLevel = "string",
 #'           avcProfile = "string",
+#'           avcLevel = "string",
 #'           codec = "string",
 #'           encoder = "string",
-#'           level = "string",
-#'           profile = "string",
 #'           targetBitrate = 123,
 #'           targetFramerate = 123,
-#'           track = "string",
 #'           videoHeight = 123,
-#'           videoWidth = 123
+#'           videoWidth = 123,
+#'           level = "string",
+#'           track = "string",
+#'           profile = "string"
+#'         )
+#'       ),
+#'       audioConfigurations = list(
+#'         list(
+#'           codec = "string",
+#'           targetBitrate = 123,
+#'           sampleRate = 123,
+#'           channels = 123,
+#'           track = "string"
 #'         )
 #'       )
 #'     ),
 #'     recordingConfiguration = list(
 #'       arn = "string",
+#'       name = "string",
 #'       destinationConfiguration = list(
 #'         s3 = list(
 #'           bucketName = "string"
-#'         )
-#'       ),
-#'       name = "string",
-#'       recordingReconnectWindowSeconds = 123,
-#'       renditionConfiguration = list(
-#'         renditionSelection = "ALL"|"NONE"|"CUSTOM",
-#'         renditions = list(
-#'           "SD"|"HD"|"FULL_HD"|"LOWEST_RESOLUTION"
 #'         )
 #'       ),
 #'       state = "CREATING"|"CREATE_FAILED"|"ACTIVE",
@@ -1402,25 +1503,28 @@ ivs_get_stream_key <- function(arn) {
 #'       ),
 #'       thumbnailConfiguration = list(
 #'         recordingMode = "DISABLED"|"INTERVAL",
+#'         targetIntervalSeconds = 123,
 #'         resolution = "SD"|"HD"|"FULL_HD"|"LOWEST_RESOLUTION",
 #'         storage = list(
 #'           "SEQUENTIAL"|"LATEST"
-#'         ),
-#'         targetIntervalSeconds = 123
+#'         )
+#'       ),
+#'       recordingReconnectWindowSeconds = 123,
+#'       renditionConfiguration = list(
+#'         renditionSelection = "ALL"|"NONE"|"CUSTOM",
+#'         renditions = list(
+#'           "SD"|"HD"|"FULL_HD"|"LOWEST_RESOLUTION"
+#'         )
 #'       )
 #'     ),
-#'     startTime = as.POSIXct(
-#'       "2015-01-01"
-#'     ),
-#'     streamId = "string",
 #'     truncatedEvents = list(
 #'       list(
-#'         code = "string",
+#'         name = "string",
+#'         type = "string",
 #'         eventTime = as.POSIXct(
 #'           "2015-01-01"
 #'         ),
-#'         name = "string",
-#'         type = "string"
+#'         code = "string"
 #'       )
 #'     )
 #'   )
@@ -1463,25 +1567,14 @@ ivs_get_stream_session <- function(channelArn, streamId = NULL) {
 #' fingerprint
 #'
 #' @description
-#' Imports the public portion of a new key pair and returns its `arn` and
-#' `fingerprint`. The `privateKey` can then be used to generate viewer
-#' authorization tokens, to grant viewers access to private channels. For
-#' more information, see [Setting Up Private
-#' Channels](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels.html)
-#' in the *Amazon IVS User Guide*.
+#' Imports the public portion of a new key pair and returns its `arn` and `fingerprint`. The `privateKey` can then be used to generate viewer authorization tokens, to grant viewers access to private channels. For more information, see [Setting Up Private Channels](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels.html) in the *Amazon IVS User Guide*.
 #'
 #' @usage
-#' ivs_import_playback_key_pair(name, publicKeyMaterial, tags)
+#' ivs_import_playback_key_pair(publicKeyMaterial, name, tags)
 #'
-#' @param name Playback-key-pair name. The value does not need to be unique.
 #' @param publicKeyMaterial &#91;required&#93; The public portion of a customer-generated key pair.
-#' @param tags Any tags provided with the request are added to the playback key pair
-#' tags. See [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no service-specific constraints beyond
-#' what is documented there.
+#' @param name Playback-key-pair name. The value does not need to be unique.
+#' @param tags Any tags provided with the request are added to the playback key pair tags. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1489,8 +1582,8 @@ ivs_get_stream_session <- function(channelArn, streamId = NULL) {
 #' list(
 #'   keyPair = list(
 #'     arn = "string",
-#'     fingerprint = "string",
 #'     name = "string",
+#'     fingerprint = "string",
 #'     tags = list(
 #'       "string"
 #'     )
@@ -1501,8 +1594,8 @@ ivs_get_stream_session <- function(channelArn, streamId = NULL) {
 #' @section Request syntax:
 #' ```
 #' svc$import_playback_key_pair(
-#'   name = "string",
 #'   publicKeyMaterial = "string",
+#'   name = "string",
 #'   tags = list(
 #'     "string"
 #'   )
@@ -1514,7 +1607,7 @@ ivs_get_stream_session <- function(channelArn, streamId = NULL) {
 #' @rdname ivs_import_playback_key_pair
 #'
 #' @aliases ivs_import_playback_key_pair
-ivs_import_playback_key_pair <- function(name = NULL, publicKeyMaterial, tags = NULL) {
+ivs_import_playback_key_pair <- function(publicKeyMaterial, name = NULL, tags = NULL) {
   op <- new_operation(
     name = "ImportPlaybackKeyPair",
     http_method = "POST",
@@ -1523,7 +1616,7 @@ ivs_import_playback_key_pair <- function(name = NULL, publicKeyMaterial, tags = 
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .ivs$import_playback_key_pair_input(name = name, publicKeyMaterial = publicKeyMaterial, tags = tags)
+  input <- .ivs$import_playback_key_pair_input(publicKeyMaterial = publicKeyMaterial, name = name, tags = tags)
   output <- .ivs$import_playback_key_pair_output()
   config <- get_config()
   svc <- .ivs$service(config, op)
@@ -1533,27 +1626,143 @@ ivs_import_playback_key_pair <- function(name = NULL, publicKeyMaterial, tags = 
 }
 .ivs$operations$import_playback_key_pair <- ivs_import_playback_key_pair
 
+#' Inserts an ad marker in the playlist for the specified channel and
+#' duration using the ad configuration associated with the channel
+#'
+#' @description
+#' Inserts an ad marker in the playlist for the specified channel and duration using the ad configuration associated with the channel.
+#' 
+#' **Note:** AWS Elemental MediaTailor (EMT), the service that handles ad requests, provides CloudWatch metrics to help you monitor the success or failure of each InsertAdBreak operation. See [Monitoring AWS Elemental MediaTailor with Amazon CloudWatch](https://docs.aws.amazon.com/mediatailor/latest/ug/monitoring-cloudwatch-metrics.html) metrics in the *AWS Elemental MediaTailor User Guide* for details on available metrics.
+#'
+#' @usage
+#' ivs_insert_ad_break(channelArn, durationSeconds)
+#'
+#' @param channelArn &#91;required&#93; ARN of the channel into which the ad break is inserted.
+#' @param durationSeconds &#91;required&#93; Maximum duration of the ad break, in seconds.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   adBreakId = "string"
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$insert_ad_break(
+#'   channelArn = "string",
+#'   durationSeconds = 123
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname ivs_insert_ad_break
+#'
+#' @aliases ivs_insert_ad_break
+ivs_insert_ad_break <- function(channelArn, durationSeconds) {
+  op <- new_operation(
+    name = "InsertAdBreak",
+    http_method = "POST",
+    http_path = "/InsertAdBreak",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .ivs$insert_ad_break_input(channelArn = channelArn, durationSeconds = durationSeconds)
+  output <- .ivs$insert_ad_break_output()
+  config <- get_config()
+  svc <- .ivs$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.ivs$operations$insert_ad_break <- ivs_insert_ad_break
+
+#' Gets summary information about all ad configurations in your account, in
+#' the AWS region where the API request is processed
+#'
+#' @description
+#' Gets summary information about all ad configurations in your account, in the AWS region where the API request is processed.
+#'
+#' @usage
+#' ivs_list_ad_configurations(nextToken, maxResults)
+#'
+#' @param nextToken The first ad configuration to retrieve. This is used for pagination; see the `nextToken` response field.
+#' @param maxResults Maximum number of ad configurations to return. Default: your service quota or 100, whichever is smaller.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   adConfigurations = list(
+#'     list(
+#'       arn = "string",
+#'       name = "string",
+#'       mediaTailorPlaybackConfigurations = list(
+#'         list(
+#'           playbackConfigurationArn = "string"
+#'         )
+#'       ),
+#'       tags = list(
+#'         "string"
+#'       )
+#'     )
+#'   ),
+#'   nextToken = "string"
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$list_ad_configurations(
+#'   nextToken = "string",
+#'   maxResults = 123
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname ivs_list_ad_configurations
+#'
+#' @aliases ivs_list_ad_configurations
+ivs_list_ad_configurations <- function(nextToken = NULL, maxResults = NULL) {
+  op <- new_operation(
+    name = "ListAdConfigurations",
+    http_method = "POST",
+    http_path = "/ListAdConfigurations",
+    host_prefix = "",
+    paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults", result_key = "adConfigurations"),
+    stream_api = FALSE
+  )
+  input <- .ivs$list_ad_configurations_input(nextToken = nextToken, maxResults = maxResults)
+  output <- .ivs$list_ad_configurations_output()
+  config <- get_config()
+  svc <- .ivs$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.ivs$operations$list_ad_configurations <- ivs_list_ad_configurations
+
 #' Gets summary information about all channels in your account, in the
 #' Amazon Web Services region where the API request is processed
 #'
 #' @description
-#' Gets summary information about all channels in your account, in the
-#' Amazon Web Services region where the API request is processed. This list
-#' can be filtered to match a specified name or recording-configuration
-#' ARN. Filters are mutually exclusive and cannot be used together. If you
-#' try to use both filters, you will get an error (409 ConflictException).
+#' Gets summary information about all channels in your account, in the Amazon Web Services region where the API request is processed. This list can be filtered to match a specified name or recording-configuration ARN. Filters are mutually exclusive and cannot be used together. If you try to use both filters, you will get an error (409 ConflictException).
 #'
 #' @usage
-#' ivs_list_channels(filterByName, filterByPlaybackRestrictionPolicyArn,
-#'   filterByRecordingConfigurationArn, maxResults, nextToken)
+#' ivs_list_channels(filterByName, filterByRecordingConfigurationArn,
+#'   filterByPlaybackRestrictionPolicyArn, filterByAdConfigurationArn,
+#'   nextToken, maxResults)
 #'
 #' @param filterByName Filters the channel list to match the specified name.
+#' @param filterByRecordingConfigurationArn Filters the channel list to match the specified recording-configuration ARN.
 #' @param filterByPlaybackRestrictionPolicyArn Filters the channel list to match the specified policy.
-#' @param filterByRecordingConfigurationArn Filters the channel list to match the specified recording-configuration
-#' ARN.
+#' @param filterByAdConfigurationArn Filters the channel list to match the specified ad configuration ARN.
+#' @param nextToken The first channel to retrieve. This is used for pagination; see the `nextToken` response field.
 #' @param maxResults Maximum number of channels to return. Default: 100.
-#' @param nextToken The first channel to retrieve. This is used for pagination; see the
-#' `nextToken` response field.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1562,17 +1771,18 @@ ivs_import_playback_key_pair <- function(name = NULL, publicKeyMaterial, tags = 
 #'   channels = list(
 #'     list(
 #'       arn = "string",
-#'       authorized = TRUE|FALSE,
-#'       insecureIngest = TRUE|FALSE,
-#'       latencyMode = "NORMAL"|"LOW",
 #'       name = "string",
-#'       playbackRestrictionPolicyArn = "string",
-#'       preset = "HIGHER_BANDWIDTH_DELIVERY"|"CONSTRAINED_BANDWIDTH_DELIVERY",
+#'       latencyMode = "NORMAL"|"LOW",
+#'       authorized = TRUE|FALSE,
 #'       recordingConfigurationArn = "string",
 #'       tags = list(
 #'         "string"
 #'       ),
-#'       type = "BASIC"|"STANDARD"|"ADVANCED_SD"|"ADVANCED_HD"
+#'       insecureIngest = TRUE|FALSE,
+#'       type = "BASIC"|"STANDARD"|"ADVANCED_SD"|"ADVANCED_HD",
+#'       preset = "HIGHER_BANDWIDTH_DELIVERY"|"CONSTRAINED_BANDWIDTH_DELIVERY",
+#'       playbackRestrictionPolicyArn = "string",
+#'       adConfigurationArn = "string"
 #'     )
 #'   ),
 #'   nextToken = "string"
@@ -1583,10 +1793,11 @@ ivs_import_playback_key_pair <- function(name = NULL, publicKeyMaterial, tags = 
 #' ```
 #' svc$list_channels(
 #'   filterByName = "string",
-#'   filterByPlaybackRestrictionPolicyArn = "string",
 #'   filterByRecordingConfigurationArn = "string",
-#'   maxResults = 123,
-#'   nextToken = "string"
+#'   filterByPlaybackRestrictionPolicyArn = "string",
+#'   filterByAdConfigurationArn = "string",
+#'   nextToken = "string",
+#'   maxResults = 123
 #' )
 #' ```
 #'
@@ -1595,7 +1806,7 @@ ivs_import_playback_key_pair <- function(name = NULL, publicKeyMaterial, tags = 
 #' @rdname ivs_list_channels
 #'
 #' @aliases ivs_list_channels
-ivs_list_channels <- function(filterByName = NULL, filterByPlaybackRestrictionPolicyArn = NULL, filterByRecordingConfigurationArn = NULL, maxResults = NULL, nextToken = NULL) {
+ivs_list_channels <- function(filterByName = NULL, filterByRecordingConfigurationArn = NULL, filterByPlaybackRestrictionPolicyArn = NULL, filterByAdConfigurationArn = NULL, nextToken = NULL, maxResults = NULL) {
   op <- new_operation(
     name = "ListChannels",
     http_method = "POST",
@@ -1604,7 +1815,7 @@ ivs_list_channels <- function(filterByName = NULL, filterByPlaybackRestrictionPo
     paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults", result_key = "channels"),
     stream_api = FALSE
   )
-  input <- .ivs$list_channels_input(filterByName = filterByName, filterByPlaybackRestrictionPolicyArn = filterByPlaybackRestrictionPolicyArn, filterByRecordingConfigurationArn = filterByRecordingConfigurationArn, maxResults = maxResults, nextToken = nextToken)
+  input <- .ivs$list_channels_input(filterByName = filterByName, filterByRecordingConfigurationArn = filterByRecordingConfigurationArn, filterByPlaybackRestrictionPolicyArn = filterByPlaybackRestrictionPolicyArn, filterByAdConfigurationArn = filterByAdConfigurationArn, nextToken = nextToken, maxResults = maxResults)
   output <- .ivs$list_channels_output()
   config <- get_config()
   svc <- .ivs$service(config, op)
@@ -1617,18 +1828,13 @@ ivs_list_channels <- function(filterByName = NULL, filterByPlaybackRestrictionPo
 #' Gets summary information about playback key pairs
 #'
 #' @description
-#' Gets summary information about playback key pairs. For more information,
-#' see [Setting Up Private
-#' Channels](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels.html)
-#' in the *Amazon IVS User Guide*.
+#' Gets summary information about playback key pairs. For more information, see [Setting Up Private Channels](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels.html) in the *Amazon IVS User Guide*.
 #'
 #' @usage
-#' ivs_list_playback_key_pairs(maxResults, nextToken)
+#' ivs_list_playback_key_pairs(nextToken, maxResults)
 #'
-#' @param maxResults Maximum number of key pairs to return. Default: your service quota or
-#' 100, whichever is smaller.
-#' @param nextToken The first key pair to retrieve. This is used for pagination; see the
-#' `nextToken` response field.
+#' @param nextToken The first key pair to retrieve. This is used for pagination; see the `nextToken` response field.
+#' @param maxResults Maximum number of key pairs to return. Default: your service quota or 100, whichever is smaller.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1650,8 +1856,8 @@ ivs_list_channels <- function(filterByName = NULL, filterByPlaybackRestrictionPo
 #' @section Request syntax:
 #' ```
 #' svc$list_playback_key_pairs(
-#'   maxResults = 123,
-#'   nextToken = "string"
+#'   nextToken = "string",
+#'   maxResults = 123
 #' )
 #' ```
 #'
@@ -1660,7 +1866,7 @@ ivs_list_channels <- function(filterByName = NULL, filterByPlaybackRestrictionPo
 #' @rdname ivs_list_playback_key_pairs
 #'
 #' @aliases ivs_list_playback_key_pairs
-ivs_list_playback_key_pairs <- function(maxResults = NULL, nextToken = NULL) {
+ivs_list_playback_key_pairs <- function(nextToken = NULL, maxResults = NULL) {
   op <- new_operation(
     name = "ListPlaybackKeyPairs",
     http_method = "POST",
@@ -1669,7 +1875,7 @@ ivs_list_playback_key_pairs <- function(maxResults = NULL, nextToken = NULL) {
     paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults", result_key = "keyPairs"),
     stream_api = FALSE
   )
-  input <- .ivs$list_playback_key_pairs_input(maxResults = maxResults, nextToken = nextToken)
+  input <- .ivs$list_playback_key_pairs_input(nextToken = nextToken, maxResults = maxResults)
   output <- .ivs$list_playback_key_pairs_output()
   config <- get_config()
   svc <- .ivs$service(config, op)
@@ -1685,41 +1891,40 @@ ivs_list_playback_key_pairs <- function(maxResults = NULL, nextToken = NULL) {
 #' Gets summary information about playback restriction policies.
 #'
 #' @usage
-#' ivs_list_playback_restriction_policies(maxResults, nextToken)
+#' ivs_list_playback_restriction_policies(nextToken, maxResults)
 #'
+#' @param nextToken The first policy to retrieve. This is used for pagination; see the `nextToken` response field.
 #' @param maxResults Maximum number of policies to return. Default: 1.
-#' @param nextToken The first policy to retrieve. This is used for pagination; see the
-#' `nextToken` response field.
 #'
 #' @return
 #' A list with the following syntax:
 #' ```
 #' list(
-#'   nextToken = "string",
 #'   playbackRestrictionPolicies = list(
 #'     list(
+#'       arn = "string",
 #'       allowedCountries = list(
 #'         "string"
 #'       ),
 #'       allowedOrigins = list(
 #'         "string"
 #'       ),
-#'       arn = "string",
 #'       enableStrictOriginEnforcement = TRUE|FALSE,
 #'       name = "string",
 #'       tags = list(
 #'         "string"
 #'       )
 #'     )
-#'   )
+#'   ),
+#'   nextToken = "string"
 #' )
 #' ```
 #'
 #' @section Request syntax:
 #' ```
 #' svc$list_playback_restriction_policies(
-#'   maxResults = 123,
-#'   nextToken = "string"
+#'   nextToken = "string",
+#'   maxResults = 123
 #' )
 #' ```
 #'
@@ -1728,7 +1933,7 @@ ivs_list_playback_key_pairs <- function(maxResults = NULL, nextToken = NULL) {
 #' @rdname ivs_list_playback_restriction_policies
 #'
 #' @aliases ivs_list_playback_restriction_policies
-ivs_list_playback_restriction_policies <- function(maxResults = NULL, nextToken = NULL) {
+ivs_list_playback_restriction_policies <- function(nextToken = NULL, maxResults = NULL) {
   op <- new_operation(
     name = "ListPlaybackRestrictionPolicies",
     http_method = "POST",
@@ -1737,7 +1942,7 @@ ivs_list_playback_restriction_policies <- function(maxResults = NULL, nextToken 
     paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults"),
     stream_api = FALSE
   )
-  input <- .ivs$list_playback_restriction_policies_input(maxResults = maxResults, nextToken = nextToken)
+  input <- .ivs$list_playback_restriction_policies_input(nextToken = nextToken, maxResults = maxResults)
   output <- .ivs$list_playback_restriction_policies_output()
   config <- get_config()
   svc <- .ivs$service(config, op)
@@ -1752,46 +1957,42 @@ ivs_list_playback_restriction_policies <- function(maxResults = NULL, nextToken 
 #' processed
 #'
 #' @description
-#' Gets summary information about all recording configurations in your
-#' account, in the Amazon Web Services region where the API request is
-#' processed.
+#' Gets summary information about all recording configurations in your account, in the Amazon Web Services region where the API request is processed.
 #'
 #' @usage
-#' ivs_list_recording_configurations(maxResults, nextToken)
+#' ivs_list_recording_configurations(nextToken, maxResults)
 #'
-#' @param maxResults Maximum number of recording configurations to return. Default: your
-#' service quota or 100, whichever is smaller.
-#' @param nextToken The first recording configuration to retrieve. This is used for
-#' pagination; see the `nextToken` response field.
+#' @param nextToken The first recording configuration to retrieve. This is used for pagination; see the `nextToken` response field.
+#' @param maxResults Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller.
 #'
 #' @return
 #' A list with the following syntax:
 #' ```
 #' list(
-#'   nextToken = "string",
 #'   recordingConfigurations = list(
 #'     list(
 #'       arn = "string",
+#'       name = "string",
 #'       destinationConfiguration = list(
 #'         s3 = list(
 #'           bucketName = "string"
 #'         )
 #'       ),
-#'       name = "string",
 #'       state = "CREATING"|"CREATE_FAILED"|"ACTIVE",
 #'       tags = list(
 #'         "string"
 #'       )
 #'     )
-#'   )
+#'   ),
+#'   nextToken = "string"
 #' )
 #' ```
 #'
 #' @section Request syntax:
 #' ```
 #' svc$list_recording_configurations(
-#'   maxResults = 123,
-#'   nextToken = "string"
+#'   nextToken = "string",
+#'   maxResults = 123
 #' )
 #' ```
 #'
@@ -1800,7 +2001,7 @@ ivs_list_playback_restriction_policies <- function(maxResults = NULL, nextToken 
 #' @rdname ivs_list_recording_configurations
 #'
 #' @aliases ivs_list_recording_configurations
-ivs_list_recording_configurations <- function(maxResults = NULL, nextToken = NULL) {
+ivs_list_recording_configurations <- function(nextToken = NULL, maxResults = NULL) {
   op <- new_operation(
     name = "ListRecordingConfigurations",
     http_method = "POST",
@@ -1809,7 +2010,7 @@ ivs_list_recording_configurations <- function(maxResults = NULL, nextToken = NUL
     paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults", result_key = "recordingConfigurations"),
     stream_api = FALSE
   )
-  input <- .ivs$list_recording_configurations_input(maxResults = maxResults, nextToken = nextToken)
+  input <- .ivs$list_recording_configurations_input(nextToken = nextToken, maxResults = maxResults)
   output <- .ivs$list_recording_configurations_output()
   config <- get_config()
   svc <- .ivs$service(config, op)
@@ -1825,18 +2026,16 @@ ivs_list_recording_configurations <- function(maxResults = NULL, nextToken = NUL
 #' Gets summary information about stream keys for the specified channel.
 #'
 #' @usage
-#' ivs_list_stream_keys(channelArn, maxResults, nextToken)
+#' ivs_list_stream_keys(channelArn, nextToken, maxResults)
 #'
 #' @param channelArn &#91;required&#93; Channel ARN used to filter the list.
+#' @param nextToken The first stream key to retrieve. This is used for pagination; see the `nextToken` response field.
 #' @param maxResults Maximum number of streamKeys to return. Default: 1.
-#' @param nextToken The first stream key to retrieve. This is used for pagination; see the
-#' `nextToken` response field.
 #'
 #' @return
 #' A list with the following syntax:
 #' ```
 #' list(
-#'   nextToken = "string",
 #'   streamKeys = list(
 #'     list(
 #'       arn = "string",
@@ -1845,7 +2044,8 @@ ivs_list_recording_configurations <- function(maxResults = NULL, nextToken = NUL
 #'         "string"
 #'       )
 #'     )
-#'   )
+#'   ),
+#'   nextToken = "string"
 #' )
 #' ```
 #'
@@ -1853,8 +2053,8 @@ ivs_list_recording_configurations <- function(maxResults = NULL, nextToken = NUL
 #' ```
 #' svc$list_stream_keys(
 #'   channelArn = "string",
-#'   maxResults = 123,
-#'   nextToken = "string"
+#'   nextToken = "string",
+#'   maxResults = 123
 #' )
 #' ```
 #'
@@ -1863,7 +2063,7 @@ ivs_list_recording_configurations <- function(maxResults = NULL, nextToken = NUL
 #' @rdname ivs_list_stream_keys
 #'
 #' @aliases ivs_list_stream_keys
-ivs_list_stream_keys <- function(channelArn, maxResults = NULL, nextToken = NULL) {
+ivs_list_stream_keys <- function(channelArn, nextToken = NULL, maxResults = NULL) {
   op <- new_operation(
     name = "ListStreamKeys",
     http_method = "POST",
@@ -1872,7 +2072,7 @@ ivs_list_stream_keys <- function(channelArn, maxResults = NULL, nextToken = NULL
     paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults", result_key = "streamKeys"),
     stream_api = FALSE
   )
-  input <- .ivs$list_stream_keys_input(channelArn = channelArn, maxResults = maxResults, nextToken = nextToken)
+  input <- .ivs$list_stream_keys_input(channelArn = channelArn, nextToken = nextToken, maxResults = maxResults)
   output <- .ivs$list_stream_keys_output()
   config <- get_config()
   svc <- .ivs$service(config, op)
@@ -1886,34 +2086,32 @@ ivs_list_stream_keys <- function(channelArn, maxResults = NULL, nextToken = NULL
 #' in your account, in the AWS region where the API request is processed
 #'
 #' @description
-#' Gets a summary of current and previous streams for a specified channel
-#' in your account, in the AWS region where the API request is processed.
+#' Gets a summary of current and previous streams for a specified channel in your account, in the AWS region where the API request is processed.
 #'
 #' @usage
-#' ivs_list_stream_sessions(channelArn, maxResults, nextToken)
+#' ivs_list_stream_sessions(channelArn, nextToken, maxResults)
 #'
 #' @param channelArn &#91;required&#93; Channel ARN used to filter the list.
+#' @param nextToken The first stream to retrieve. This is used for pagination; see the `nextToken` response field.
 #' @param maxResults Maximum number of streams to return. Default: 100.
-#' @param nextToken The first stream to retrieve. This is used for pagination; see the
-#' `nextToken` response field.
 #'
 #' @return
 #' A list with the following syntax:
 #' ```
 #' list(
-#'   nextToken = "string",
 #'   streamSessions = list(
 #'     list(
-#'       endTime = as.POSIXct(
-#'         "2015-01-01"
-#'       ),
-#'       hasErrorEvent = TRUE|FALSE,
+#'       streamId = "string",
 #'       startTime = as.POSIXct(
 #'         "2015-01-01"
 #'       ),
-#'       streamId = "string"
+#'       endTime = as.POSIXct(
+#'         "2015-01-01"
+#'       ),
+#'       hasErrorEvent = TRUE|FALSE
 #'     )
-#'   )
+#'   ),
+#'   nextToken = "string"
 #' )
 #' ```
 #'
@@ -1921,8 +2119,8 @@ ivs_list_stream_keys <- function(channelArn, maxResults = NULL, nextToken = NULL
 #' ```
 #' svc$list_stream_sessions(
 #'   channelArn = "string",
-#'   maxResults = 123,
-#'   nextToken = "string"
+#'   nextToken = "string",
+#'   maxResults = 123
 #' )
 #' ```
 #'
@@ -1931,7 +2129,7 @@ ivs_list_stream_keys <- function(channelArn, maxResults = NULL, nextToken = NULL
 #' @rdname ivs_list_stream_sessions
 #'
 #' @aliases ivs_list_stream_sessions
-ivs_list_stream_sessions <- function(channelArn, maxResults = NULL, nextToken = NULL) {
+ivs_list_stream_sessions <- function(channelArn, nextToken = NULL, maxResults = NULL) {
   op <- new_operation(
     name = "ListStreamSessions",
     http_method = "POST",
@@ -1940,7 +2138,7 @@ ivs_list_stream_sessions <- function(channelArn, maxResults = NULL, nextToken = 
     paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults"),
     stream_api = FALSE
   )
-  input <- .ivs$list_stream_sessions_input(channelArn = channelArn, maxResults = maxResults, nextToken = nextToken)
+  input <- .ivs$list_stream_sessions_input(channelArn = channelArn, nextToken = nextToken, maxResults = maxResults)
   output <- .ivs$list_stream_sessions_output()
   config <- get_config()
   svc <- .ivs$service(config, op)
@@ -1954,34 +2152,32 @@ ivs_list_stream_sessions <- function(channelArn, maxResults = NULL, nextToken = 
 #' Amazon Web Services region where the API request is processed
 #'
 #' @description
-#' Gets summary information about live streams in your account, in the
-#' Amazon Web Services region where the API request is processed.
+#' Gets summary information about live streams in your account, in the Amazon Web Services region where the API request is processed.
 #'
 #' @usage
-#' ivs_list_streams(filterBy, maxResults, nextToken)
+#' ivs_list_streams(filterBy, nextToken, maxResults)
 #'
 #' @param filterBy Filters the stream list to match the specified criterion.
+#' @param nextToken The first stream to retrieve. This is used for pagination; see the `nextToken` response field.
 #' @param maxResults Maximum number of streams to return. Default: 100.
-#' @param nextToken The first stream to retrieve. This is used for pagination; see the
-#' `nextToken` response field.
 #'
 #' @return
 #' A list with the following syntax:
 #' ```
 #' list(
-#'   nextToken = "string",
 #'   streams = list(
 #'     list(
 #'       channelArn = "string",
+#'       streamId = "string",
+#'       state = "LIVE"|"OFFLINE",
 #'       health = "HEALTHY"|"STARVING"|"UNKNOWN",
+#'       viewerCount = 123,
 #'       startTime = as.POSIXct(
 #'         "2015-01-01"
-#'       ),
-#'       state = "LIVE"|"OFFLINE",
-#'       streamId = "string",
-#'       viewerCount = 123
+#'       )
 #'     )
-#'   )
+#'   ),
+#'   nextToken = "string"
 #' )
 #' ```
 #'
@@ -1991,8 +2187,8 @@ ivs_list_stream_sessions <- function(channelArn, maxResults = NULL, nextToken = 
 #'   filterBy = list(
 #'     health = "HEALTHY"|"STARVING"|"UNKNOWN"
 #'   ),
-#'   maxResults = 123,
-#'   nextToken = "string"
+#'   nextToken = "string",
+#'   maxResults = 123
 #' )
 #' ```
 #'
@@ -2001,7 +2197,7 @@ ivs_list_stream_sessions <- function(channelArn, maxResults = NULL, nextToken = 
 #' @rdname ivs_list_streams
 #'
 #' @aliases ivs_list_streams
-ivs_list_streams <- function(filterBy = NULL, maxResults = NULL, nextToken = NULL) {
+ivs_list_streams <- function(filterBy = NULL, nextToken = NULL, maxResults = NULL) {
   op <- new_operation(
     name = "ListStreams",
     http_method = "POST",
@@ -2010,7 +2206,7 @@ ivs_list_streams <- function(filterBy = NULL, maxResults = NULL, nextToken = NUL
     paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults", result_key = "streams"),
     stream_api = FALSE
   )
-  input <- .ivs$list_streams_input(filterBy = filterBy, maxResults = maxResults, nextToken = nextToken)
+  input <- .ivs$list_streams_input(filterBy = filterBy, nextToken = nextToken, maxResults = maxResults)
   output <- .ivs$list_streams_output()
   config <- get_config()
   svc <- .ivs$service(config, op)
@@ -2074,20 +2270,12 @@ ivs_list_tags_for_resource <- function(resourceArn) {
 #' Inserts metadata into the active stream of the specified channel
 #'
 #' @description
-#' Inserts metadata into the active stream of the specified channel. At
-#' most 5 requests per second per channel are allowed, each with a maximum
-#' 1 KB payload. (If 5 TPS is not sufficient for your needs, we recommend
-#' batching your data into a single PutMetadata call.) At most 155 requests
-#' per second per account are allowed. Also see [Embedding Metadata within
-#' a Video
-#' Stream](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/metadata.html)
-#' in the *Amazon IVS User Guide*.
+#' Inserts metadata into the active stream of the specified channel. At most 5 requests per second per channel are allowed, each with a maximum 1 KB payload. (If 5 TPS is not sufficient for your needs, we recommend batching your data into a single PutMetadata call.) At most 155 requests per second per account are allowed. Also see [Embedding Metadata within a Video Stream](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/metadata.html) in the *Amazon IVS User Guide*.
 #'
 #' @usage
 #' ivs_put_metadata(channelArn, metadata)
 #'
-#' @param channelArn &#91;required&#93; ARN of the channel into which metadata is inserted. This channel must
-#' have an active stream.
+#' @param channelArn &#91;required&#93; ARN of the channel into which metadata is inserted. This channel must have an active stream.
 #' @param metadata &#91;required&#93; Metadata to insert into the stream. Maximum: 1 KB per request.
 #'
 #' @return
@@ -2129,24 +2317,15 @@ ivs_put_metadata <- function(channelArn, metadata) {
 #' specified channel ARN and viewer ID
 #'
 #' @description
-#' Starts the process of revoking the viewer session associated with a
-#' specified channel ARN and viewer ID. Optionally, you can provide a
-#' version to revoke viewer sessions less than and including that version.
-#' For instructions on associating a viewer ID with a viewer session, see
-#' [Setting Up Private
-#' Channels](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels.html).
+#' Starts the process of revoking the viewer session associated with a specified channel ARN and viewer ID. Optionally, you can provide a version to revoke viewer sessions less than and including that version. For instructions on associating a viewer ID with a viewer session, see [Setting Up Private Channels](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels.html).
 #'
 #' @usage
 #' ivs_start_viewer_session_revocation(channelArn, viewerId,
 #'   viewerSessionVersionsLessThanOrEqualTo)
 #'
 #' @param channelArn &#91;required&#93; The ARN of the channel associated with the viewer session to revoke.
-#' @param viewerId &#91;required&#93; The ID of the viewer associated with the viewer session to revoke. Do
-#' not use this field for personally identifying, confidential, or
-#' sensitive information.
-#' @param viewerSessionVersionsLessThanOrEqualTo An optional filter on which versions of the viewer session to revoke.
-#' All versions less than or equal to the specified version will be
-#' revoked. Default: 0.
+#' @param viewerId &#91;required&#93; The ID of the viewer associated with the viewer session to revoke. Do not use this field for personally identifying, confidential, or sensitive information.
+#' @param viewerSessionVersionsLessThanOrEqualTo An optional filter on which versions of the viewer session to revoke. All versions less than or equal to the specified version will be revoked. Default: 0.
 #'
 #' @return
 #' An empty list.
@@ -2187,13 +2366,9 @@ ivs_start_viewer_session_revocation <- function(channelArn, viewerId, viewerSess
 #' Disconnects the incoming RTMPS stream for the specified channel
 #'
 #' @description
-#' Disconnects the incoming RTMPS stream for the specified channel. Can be
-#' used in conjunction with [`delete_stream_key`][ivs_delete_stream_key] to
-#' prevent further streaming to a channel.
+#' Disconnects the incoming RTMPS stream for the specified channel. Can be used in conjunction with [`delete_stream_key`][ivs_delete_stream_key] to prevent further streaming to a channel.
 #' 
-#' Many streaming client-software libraries automatically reconnect a
-#' dropped RTMPS session, so to stop the stream permanently, you may want
-#' to first revoke the `streamKey` attached to the channel.
+#' Many streaming client-software libraries automatically reconnect a dropped RTMPS session, so to stop the stream permanently, you may want to first revoke the `streamKey` attached to the channel.
 #'
 #' @usage
 #' ivs_stop_stream(channelArn)
@@ -2238,21 +2413,13 @@ ivs_stop_stream <- function(channelArn) {
 #' specified ARN
 #'
 #' @description
-#' Adds or updates tags for the Amazon Web Services resource with the
-#' specified ARN.
+#' Adds or updates tags for the Amazon Web Services resource with the specified ARN.
 #'
 #' @usage
 #' ivs_tag_resource(resourceArn, tags)
 #'
-#' @param resourceArn &#91;required&#93; ARN of the resource for which tags are to be added or updated. The ARN
-#' must be URL-encoded.
-#' @param tags &#91;required&#93; Array of tags to be added or updated. Array of maps, each of the form
-#' `string:string (key:value)`. See [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no service-specific constraints beyond
-#' what is documented there.
+#' @param resourceArn &#91;required&#93; ARN of the resource for which tags are to be added or updated. The ARN must be URL-encoded.
+#' @param tags &#91;required&#93; Array of tags to be added or updated. Array of maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
 #'
 #' @return
 #' An empty list.
@@ -2299,15 +2466,8 @@ ivs_tag_resource <- function(resourceArn, tags) {
 #' @usage
 #' ivs_untag_resource(resourceArn, tagKeys)
 #'
-#' @param resourceArn &#91;required&#93; ARN of the resource for which tags are to be removed. The ARN must be
-#' URL-encoded.
-#' @param tagKeys &#91;required&#93; Array of tags to be removed. Array of maps, each of the form
-#' `string:string (key:value)`. See [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no service-specific constraints beyond
-#' what is documented there.
+#' @param resourceArn &#91;required&#93; ARN of the resource for which tags are to be removed. The ARN must be URL-encoded.
+#' @param tagKeys &#91;required&#93; Array of tag keys (strings) for the tags to be removed. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
 #'
 #' @return
 #' An empty list.
@@ -2349,44 +2509,26 @@ ivs_untag_resource <- function(resourceArn, tagKeys) {
 #' Updates a channel's configuration
 #'
 #' @description
-#' Updates a channel's configuration. Live channels cannot be updated. You
-#' must stop the ongoing stream, update the channel, and restart the stream
-#' for the changes to take effect.
+#' Updates a channel's configuration. Live channels cannot be updated. You must stop the ongoing stream, update the channel, and restart the stream for the changes to take effect.
 #'
 #' @usage
-#' ivs_update_channel(arn, authorized, containerFormat, insecureIngest,
-#'   latencyMode, multitrackInputConfiguration, name,
-#'   playbackRestrictionPolicyArn, preset, recordingConfigurationArn, type)
+#' ivs_update_channel(arn, name, latencyMode, type, authorized,
+#'   recordingConfigurationArn, insecureIngest, preset,
+#'   playbackRestrictionPolicyArn, multitrackInputConfiguration,
+#'   containerFormat, adConfigurationArn)
 #'
 #' @param arn &#91;required&#93; ARN of the channel to be updated.
-#' @param authorized Whether the channel is private (enabled for playback authorization).
-#' @param containerFormat Indicates which content-packaging format is used (MPEG-TS or fMP4). If
-#' `multitrackInputConfiguration` is specified and `enabled` is `true`,
-#' then `containerFormat` is required and must be set to `FRAGMENTED_MP4`.
-#' Otherwise, `containerFormat` may be set to `TS` or `FRAGMENTED_MP4`.
-#' Default: `TS`.
-#' @param insecureIngest Whether the channel allows insecure RTMP and SRT ingest. Default:
-#' `false`.
-#' @param latencyMode Channel latency mode. Use `NORMAL` to broadcast and deliver live video
-#' up to Full HD. Use `LOW` for near-real-time interaction with viewers.
-#' @param multitrackInputConfiguration Object specifying multitrack input configuration. Default: no multitrack
-#' input configuration is specified.
 #' @param name Channel name.
-#' @param playbackRestrictionPolicyArn Playback-restriction-policy ARN. A valid ARN value here both specifies
-#' the ARN and enables playback restriction. If this is set to an empty
-#' string, playback restriction policy is disabled.
-#' @param preset Optional transcode preset for the channel. This is selectable only for
-#' `ADVANCED_HD` and `ADVANCED_SD` channel types. For those channel types,
-#' the default `preset` is `HIGHER_BANDWIDTH_DELIVERY`. For other channel
-#' types (`BASIC` and `STANDARD`), `preset` is the empty string (`""`).
-#' @param recordingConfigurationArn Recording-configuration ARN. A valid ARN value here both specifies the
-#' ARN and enables recording. If this is set to an empty string, recording
-#' is disabled.
-#' @param type Channel type, which determines the allowable resolution and bitrate. *If
-#' you exceed the allowable input resolution or bitrate, the stream
-#' probably will disconnect immediately.* Default: `STANDARD`. For details,
-#' see [Channel
-#' Types](https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html).
+#' @param latencyMode Channel latency mode. Use `NORMAL` to broadcast and deliver live video up to Full HD. Use `LOW` for near-real-time interaction with viewers.
+#' @param type Channel type, which determines the allowable resolution and bitrate. *If you exceed the allowable input resolution or bitrate, the stream probably will disconnect immediately.* Default: `STANDARD`. For details, see [Channel Types](https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/).
+#' @param authorized Whether the channel is private (enabled for playback authorization).
+#' @param recordingConfigurationArn Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. If this is set to an empty string, recording is disabled.
+#' @param insecureIngest Whether the channel allows insecure RTMP and SRT ingest. Default: `false`.
+#' @param preset Optional transcode preset for the channel. This is selectable only for `ADVANCED_HD` and `ADVANCED_SD` channel types. For those channel types, the default `preset` is `HIGHER_BANDWIDTH_DELIVERY`. For other channel types (`BASIC` and `STANDARD`), `preset` is the empty string (`""`).
+#' @param playbackRestrictionPolicyArn Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction. If this is set to an empty string, playback restriction policy is disabled.
+#' @param multitrackInputConfiguration Object specifying multitrack input configuration. Default: no multitrack input configuration is specified.
+#' @param containerFormat Indicates which content-packaging format is used (MPEG-TS or fMP4). If `multitrackInputConfiguration` is specified and `enabled` is `true`, then `containerFormat` is required and must be set to `FRAGMENTED_MP4`. Otherwise, `containerFormat` may be set to `TS` or `FRAGMENTED_MP4`. Default: `TS`.
+#' @param adConfigurationArn ARN of the ad configuration associated with the channel.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2394,29 +2536,30 @@ ivs_untag_resource <- function(resourceArn, tagKeys) {
 #' list(
 #'   channel = list(
 #'     arn = "string",
-#'     authorized = TRUE|FALSE,
-#'     containerFormat = "TS"|"FRAGMENTED_MP4",
-#'     ingestEndpoint = "string",
-#'     insecureIngest = TRUE|FALSE,
-#'     latencyMode = "NORMAL"|"LOW",
-#'     multitrackInputConfiguration = list(
-#'       enabled = TRUE|FALSE,
-#'       maximumResolution = "SD"|"HD"|"FULL_HD",
-#'       policy = "ALLOW"|"REQUIRE"
-#'     ),
 #'     name = "string",
-#'     playbackRestrictionPolicyArn = "string",
-#'     playbackUrl = "string",
-#'     preset = "HIGHER_BANDWIDTH_DELIVERY"|"CONSTRAINED_BANDWIDTH_DELIVERY",
+#'     latencyMode = "NORMAL"|"LOW",
+#'     type = "BASIC"|"STANDARD"|"ADVANCED_SD"|"ADVANCED_HD",
 #'     recordingConfigurationArn = "string",
+#'     ingestEndpoint = "string",
+#'     playbackUrl = "string",
+#'     authorized = TRUE|FALSE,
+#'     tags = list(
+#'       "string"
+#'     ),
+#'     insecureIngest = TRUE|FALSE,
+#'     preset = "HIGHER_BANDWIDTH_DELIVERY"|"CONSTRAINED_BANDWIDTH_DELIVERY",
 #'     srt = list(
 #'       endpoint = "string",
 #'       passphrase = "string"
 #'     ),
-#'     tags = list(
-#'       "string"
+#'     playbackRestrictionPolicyArn = "string",
+#'     multitrackInputConfiguration = list(
+#'       enabled = TRUE|FALSE,
+#'       policy = "ALLOW"|"REQUIRE",
+#'       maximumResolution = "SD"|"HD"|"FULL_HD"
 #'     ),
-#'     type = "BASIC"|"STANDARD"|"ADVANCED_SD"|"ADVANCED_HD"
+#'     containerFormat = "TS"|"FRAGMENTED_MP4",
+#'     adConfigurationArn = "string"
 #'   )
 #' )
 #' ```
@@ -2425,20 +2568,21 @@ ivs_untag_resource <- function(resourceArn, tagKeys) {
 #' ```
 #' svc$update_channel(
 #'   arn = "string",
-#'   authorized = TRUE|FALSE,
-#'   containerFormat = "TS"|"FRAGMENTED_MP4",
-#'   insecureIngest = TRUE|FALSE,
+#'   name = "string",
 #'   latencyMode = "NORMAL"|"LOW",
+#'   type = "BASIC"|"STANDARD"|"ADVANCED_SD"|"ADVANCED_HD",
+#'   authorized = TRUE|FALSE,
+#'   recordingConfigurationArn = "string",
+#'   insecureIngest = TRUE|FALSE,
+#'   preset = "HIGHER_BANDWIDTH_DELIVERY"|"CONSTRAINED_BANDWIDTH_DELIVERY",
+#'   playbackRestrictionPolicyArn = "string",
 #'   multitrackInputConfiguration = list(
 #'     enabled = TRUE|FALSE,
-#'     maximumResolution = "SD"|"HD"|"FULL_HD",
-#'     policy = "ALLOW"|"REQUIRE"
+#'     policy = "ALLOW"|"REQUIRE",
+#'     maximumResolution = "SD"|"HD"|"FULL_HD"
 #'   ),
-#'   name = "string",
-#'   playbackRestrictionPolicyArn = "string",
-#'   preset = "HIGHER_BANDWIDTH_DELIVERY"|"CONSTRAINED_BANDWIDTH_DELIVERY",
-#'   recordingConfigurationArn = "string",
-#'   type = "BASIC"|"STANDARD"|"ADVANCED_SD"|"ADVANCED_HD"
+#'   containerFormat = "TS"|"FRAGMENTED_MP4",
+#'   adConfigurationArn = "string"
 #' )
 #' ```
 #'
@@ -2447,7 +2591,7 @@ ivs_untag_resource <- function(resourceArn, tagKeys) {
 #' @rdname ivs_update_channel
 #'
 #' @aliases ivs_update_channel
-ivs_update_channel <- function(arn, authorized = NULL, containerFormat = NULL, insecureIngest = NULL, latencyMode = NULL, multitrackInputConfiguration = NULL, name = NULL, playbackRestrictionPolicyArn = NULL, preset = NULL, recordingConfigurationArn = NULL, type = NULL) {
+ivs_update_channel <- function(arn, name = NULL, latencyMode = NULL, type = NULL, authorized = NULL, recordingConfigurationArn = NULL, insecureIngest = NULL, preset = NULL, playbackRestrictionPolicyArn = NULL, multitrackInputConfiguration = NULL, containerFormat = NULL, adConfigurationArn = NULL) {
   op <- new_operation(
     name = "UpdateChannel",
     http_method = "POST",
@@ -2456,7 +2600,7 @@ ivs_update_channel <- function(arn, authorized = NULL, containerFormat = NULL, i
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .ivs$update_channel_input(arn = arn, authorized = authorized, containerFormat = containerFormat, insecureIngest = insecureIngest, latencyMode = latencyMode, multitrackInputConfiguration = multitrackInputConfiguration, name = name, playbackRestrictionPolicyArn = playbackRestrictionPolicyArn, preset = preset, recordingConfigurationArn = recordingConfigurationArn, type = type)
+  input <- .ivs$update_channel_input(arn = arn, name = name, latencyMode = latencyMode, type = type, authorized = authorized, recordingConfigurationArn = recordingConfigurationArn, insecureIngest = insecureIngest, preset = preset, playbackRestrictionPolicyArn = playbackRestrictionPolicyArn, multitrackInputConfiguration = multitrackInputConfiguration, containerFormat = containerFormat, adConfigurationArn = adConfigurationArn)
   output <- .ivs$update_channel_output()
   config <- get_config()
   svc <- .ivs$service(config, op)
@@ -2472,20 +2616,13 @@ ivs_update_channel <- function(arn, authorized = NULL, containerFormat = NULL, i
 #' Updates a specified playback restriction policy.
 #'
 #' @usage
-#' ivs_update_playback_restriction_policy(allowedCountries, allowedOrigins,
-#'   arn, enableStrictOriginEnforcement, name)
+#' ivs_update_playback_restriction_policy(arn, allowedCountries,
+#'   allowedOrigins, enableStrictOriginEnforcement, name)
 #'
-#' @param allowedCountries A list of country codes that control geoblocking restriction. Allowed
-#' values are the officially assigned [ISO 3166-1
-#' alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) codes.
-#' Default: All countries (an empty array).
-#' @param allowedOrigins A list of origin sites that control CORS restriction. Allowed values are
-#' the same as valid values of the Origin header defined at
-#' [https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Origin).
-#' Default: All origins (an empty array).
 #' @param arn &#91;required&#93; ARN of the playback-restriction-policy to be updated.
-#' @param enableStrictOriginEnforcement Whether channel playback is constrained by origin site. Default:
-#' `false`.
+#' @param allowedCountries A list of country codes that control geoblocking restriction. Allowed values are the officially assigned [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) codes. Default: All countries (an empty array).
+#' @param allowedOrigins A list of origin sites that control CORS restriction. Allowed values are the same as valid values of the Origin header defined at [https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Origin). Default: All origins (an empty array).
+#' @param enableStrictOriginEnforcement Whether channel playback is constrained by origin site. Default: `false`.
 #' @param name Playback-restriction-policy name. The value does not need to be unique.
 #'
 #' @return
@@ -2493,13 +2630,13 @@ ivs_update_channel <- function(arn, authorized = NULL, containerFormat = NULL, i
 #' ```
 #' list(
 #'   playbackRestrictionPolicy = list(
+#'     arn = "string",
 #'     allowedCountries = list(
 #'       "string"
 #'     ),
 #'     allowedOrigins = list(
 #'       "string"
 #'     ),
-#'     arn = "string",
 #'     enableStrictOriginEnforcement = TRUE|FALSE,
 #'     name = "string",
 #'     tags = list(
@@ -2512,13 +2649,13 @@ ivs_update_channel <- function(arn, authorized = NULL, containerFormat = NULL, i
 #' @section Request syntax:
 #' ```
 #' svc$update_playback_restriction_policy(
+#'   arn = "string",
 #'   allowedCountries = list(
 #'     "string"
 #'   ),
 #'   allowedOrigins = list(
 #'     "string"
 #'   ),
-#'   arn = "string",
 #'   enableStrictOriginEnforcement = TRUE|FALSE,
 #'   name = "string"
 #' )
@@ -2529,7 +2666,7 @@ ivs_update_channel <- function(arn, authorized = NULL, containerFormat = NULL, i
 #' @rdname ivs_update_playback_restriction_policy
 #'
 #' @aliases ivs_update_playback_restriction_policy
-ivs_update_playback_restriction_policy <- function(allowedCountries = NULL, allowedOrigins = NULL, arn, enableStrictOriginEnforcement = NULL, name = NULL) {
+ivs_update_playback_restriction_policy <- function(arn, allowedCountries = NULL, allowedOrigins = NULL, enableStrictOriginEnforcement = NULL, name = NULL) {
   op <- new_operation(
     name = "UpdatePlaybackRestrictionPolicy",
     http_method = "POST",
@@ -2538,7 +2675,7 @@ ivs_update_playback_restriction_policy <- function(allowedCountries = NULL, allo
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .ivs$update_playback_restriction_policy_input(allowedCountries = allowedCountries, allowedOrigins = allowedOrigins, arn = arn, enableStrictOriginEnforcement = enableStrictOriginEnforcement, name = name)
+  input <- .ivs$update_playback_restriction_policy_input(arn = arn, allowedCountries = allowedCountries, allowedOrigins = allowedOrigins, enableStrictOriginEnforcement = enableStrictOriginEnforcement, name = name)
   output <- .ivs$update_playback_restriction_policy_output()
   config <- get_config()
   svc <- .ivs$service(config, op)

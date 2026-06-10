@@ -9,9 +9,7 @@ elbv2_deregister_targets(TargetGroupArn, Targets)
 \arguments{
 \item{TargetGroupArn}{[required] The Amazon Resource Name (ARN) of the target group.}
 
-\item{Targets}{[required] The targets. If you specified a port override when you registered a
-target, you must specify both the target ID and the port when you
-deregister it.}
+\item{Targets}{[required] The targets. If you specified a port override when you registered a target, you must specify both the target ID and the port when you deregister it.}
 }
 \description{
 Deregisters the specified targets from the specified target group. After the targets are deregistered, they no longer receive traffic from the load balancer.

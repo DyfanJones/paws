@@ -26,82 +26,57 @@ opensearchservice_update_domain_config(
   DryRunMode = NULL,
   OffPeakWindowOptions = NULL,
   SoftwareUpdateOptions = NULL,
-  AIMLOptions = NULL
+  AIMLOptions = NULL,
+  DeploymentStrategyOptions = NULL,
+  AutomatedSnapshotPauseOptions = NULL
 )
 }
 \arguments{
 \item{DomainName}{[required] The name of the domain that you're updating.}
 
-\item{ClusterConfig}{Changes that you want to make to the cluster configuration, such as the
-instance type and number of EC2 instances.}
+\item{ClusterConfig}{Changes that you want to make to the cluster configuration, such as the instance type and number of EC2 instances.}
 
-\item{EBSOptions}{The type and size of the EBS volume to attach to instances in the
-domain.}
+\item{EBSOptions}{The type and size of the EBS volume to attach to instances in the domain.}
 
-\item{SnapshotOptions}{Option to set the time, in UTC format, for the daily automated snapshot.
-Default value is \code{0} hours.}
+\item{SnapshotOptions}{Option to set the time, in UTC format, for the daily automated snapshot. Default value is \code{0} hours.}
 
-\item{VPCOptions}{Options to specify the subnets and security groups for a VPC endpoint.
-For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html}{Launching your Amazon OpenSearch Service domains using a VPC}.}
+\item{VPCOptions}{Options to specify the subnets and security groups for a VPC endpoint. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html}{Launching your Amazon OpenSearch Service domains using a VPC}.}
 
-\item{CognitoOptions}{Key-value pairs to configure Amazon Cognito authentication for
-OpenSearch Dashboards.}
+\item{CognitoOptions}{Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.}
 
-\item{AdvancedOptions}{Key-value pairs to specify advanced configuration options. The following
-key-value pairs are supported:
+\item{AdvancedOptions}{Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:
 \itemize{
-\item \code{"rest.action.multi.allow_explicit_index": "true" | "false"} - Note
-the use of a string rather than a boolean. Specifies whether
-explicit references to indexes are allowed inside the body of HTTP
-requests. If you want to configure access policies for domain
-sub-resources, such as specific indexes and domain APIs, you must
-disable this property. Default is true.
-\item \code{"indices.fielddata.cache.size": "80" } - Note the use of a string
-rather than a boolean. Specifies the percentage of heap space
-allocated to field data. Default is unbounded.
-\item \code{"indices.query.bool.max_clause_count": "1024"} - Note the use of a
-string rather than a boolean. Specifies the maximum number of
-clauses allowed in a Lucene boolean query. Default is 1,024. Queries
-with more than the permitted number of clauses result in a
-\code{TooManyClauses} error.
+\item \code{"rest.action.multi.allow_explicit_index": "true" | "false"} - Note the use of a string rather than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must disable this property. Default is true.
+\item \code{"indices.fielddata.cache.size": "80" } - Note the use of a string rather than a boolean. Specifies the percentage of heap space allocated to field data. Default is unbounded.
+\item \code{"indices.query.bool.max_clause_count": "1024"} - Note the use of a string rather than a boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more than the permitted number of clauses result in a \code{TooManyClauses} error.
 }
 
 For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options}{Advanced cluster parameters}.}
 
-\item{AccessPolicies}{Identity and Access Management (IAM) access policy as a JSON-formatted
-string.}
+\item{AccessPolicies}{Identity and Access Management (IAM) access policy as a JSON-formatted string.}
 
-\item{IPAddressType}{Specify either dual stack or IPv4 as your IP address type. Dual stack
-allows you to share domain resources across IPv4 and IPv6 address types,
-and is the recommended option. If your IP address type is currently set
-to dual stack, you can't change it.}
+\item{IPAddressType}{Specify either dual stack or IPv4 as your IP address type. Dual stack allows you to share domain resources across IPv4 and IPv6 address types, and is the recommended option. If your IP address type is currently set to dual stack, you can't change it.}
 
 \item{LogPublishingOptions}{Options to publish OpenSearch logs to Amazon CloudWatch Logs.}
 
 \item{EncryptionAtRestOptions}{Encryption at rest options for the domain.}
 
-\item{DomainEndpointOptions}{Additional options for the domain endpoint, such as whether to require
-HTTPS for all traffic.}
+\item{DomainEndpointOptions}{Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.}
 
 \item{NodeToNodeEncryptionOptions}{Node-to-node encryption options for the domain.}
 
 \item{AdvancedSecurityOptions}{Options for fine-grained access control.}
 
-\item{IdentityCenterOptions}{}
+\item{IdentityCenterOptions}{Settings container for integrating IAM Identity Center with OpenSearch UI applications, which enables enabling secure user authentication and access control across multiple data sources. This setup supports single sign-on (SSO) through IAM Identity Center, allowing centralized user management.}
 
 \item{AutoTuneOptions}{Options for Auto-Tune.}
 
-\item{DryRun}{This flag, when set to True, specifies whether the \code{UpdateDomain}
-request should return the results of a dry run analysis without actually
-applying the change. A dry run determines what type of deployment the
-update will cause.}
+\item{DryRun}{This flag, when set to True, specifies whether the \code{UpdateDomain} request should return the results of a dry run analysis without actually applying the change. A dry run determines what type of deployment the update will cause.}
 
 \item{DryRunMode}{The type of dry run to perform.
 \itemize{
-\item \code{Basic} only returns the type of deployment (blue/green or dynamic)
-that the update will cause.
-\item \code{Verbose} runs an additional check to validate the changes you're
-making. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes.html#validation-check}{Validating a domain update}.
+\item \code{Basic} only returns the type of deployment (blue/green or dynamic) that the update will cause.
+\item \code{Verbose} runs an additional check to validate the changes you're making. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes.html#validation-check}{Validating a domain update}.
 }}
 
 \item{OffPeakWindowOptions}{Off-peak window options for the domain.}
@@ -109,6 +84,14 @@ making. For more information, see \href{https://docs.aws.amazon.com/opensearch-s
 \item{SoftwareUpdateOptions}{Service software update options for the domain.}
 
 \item{AIMLOptions}{Options for all machine learning features for the specified domain.}
+
+\item{DeploymentStrategyOptions}{Specifies the deployment strategy options for the domain.}
+
+\item{AutomatedSnapshotPauseOptions}{Specifies the automated snapshot pause options for the domain.
+
+Suspending snapshots reduces data protection. You cannot restore your domain to points in time when snapshots are suspended. Use this feature only for short-term operational needs such as migrations or maintenance windows.
+
+Maximum suspension duration: 3 days.}
 }
 \description{
 Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.

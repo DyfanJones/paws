@@ -7,13 +7,11 @@
 redshiftserverless_put_resource_policy(policy, resourceArn)
 }
 \arguments{
-\item{policy}{[required] The policy to create or update. For example, the following policy grants
-a user authorization to restore a snapshot.
+\item{policy}{[required] The policy to create or update. For example, the following policy grants a user authorization to restore a snapshot.
 
 \verb{"\{\\"Version\\": \\"2012-10-17\\", \\"Statement\\" : [\{ \\"Sid\\": \\"AllowUserRestoreFromSnapshot\\", \\"Principal\\":\{\\"AWS\\": [\\"739247239426\\"]\}, \\"Action\\": [\\"redshift-serverless:RestoreFromSnapshot\\"] , \\"Effect\\": \\"Allow\\" \}]\}"}}
 
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the account to create or update a
-resource policy for.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the account to create or update a resource policy for.}
 }
 \description{
 Creates or updates a resource policy. Currently, you can use policies to share snapshots across Amazon Web Services accounts.

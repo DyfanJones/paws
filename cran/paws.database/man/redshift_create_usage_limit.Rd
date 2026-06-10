@@ -20,22 +20,13 @@ redshift_create_usage_limit(
 
 \item{FeatureType}{[required] The Amazon Redshift feature that you want to limit.}
 
-\item{LimitType}{[required] The type of limit. Depending on the feature type, this can be based on a
-time duration or data size. If \code{FeatureType} is \code{spectrum}, then
-\code{LimitType} must be \code{data-scanned}. If \code{FeatureType} is
-\code{concurrency-scaling}, then \code{LimitType} must be \code{time}. If \code{FeatureType}
-is \code{cross-region-datasharing}, then \code{LimitType} must be \code{data-scanned}.}
+\item{LimitType}{[required] The type of limit. Depending on the feature type, this can be based on a time duration or data size. If \code{FeatureType} is \code{spectrum}, then \code{LimitType} must be \code{data-scanned}. If \code{FeatureType} is \code{concurrency-scaling}, then \code{LimitType} must be \code{time}. If \code{FeatureType} is \code{cross-region-datasharing}, then \code{LimitType} must be \code{data-scanned}. If \code{FeatureType} is \verb{extra-compute-for-automatic-optimization}, then \code{LimitType} must be \code{time}.}
 
-\item{Amount}{[required] The limit amount. If time-based, this amount is in minutes. If
-data-based, this amount is in terabytes (TB). The value must be a
-positive number.}
+\item{Amount}{[required] The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB). The value must be a positive number.}
 
-\item{Period}{The time period that the amount applies to. A \code{weekly} period begins on
-Sunday. The default is \code{monthly}.}
+\item{Period}{The time period that the amount applies to. A \code{weekly} period begins on Sunday. The default is \code{monthly}.}
 
-\item{BreachAction}{The action that Amazon Redshift takes when the limit is reached. The
-default is log. For more information about this parameter, see
-UsageLimit.}
+\item{BreachAction}{The action that Amazon Redshift takes when the limit is reached. The default is log. For more information about this parameter, see UsageLimit.}
 
 \item{Tags}{A list of tag instances.}
 }

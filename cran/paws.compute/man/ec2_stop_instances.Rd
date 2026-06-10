@@ -15,37 +15,21 @@ ec2_stop_instances(
 \arguments{
 \item{InstanceIds}{[required] The IDs of the instances.}
 
-\item{Hibernate}{Hibernates the instance if the instance was enabled for hibernation at
-launch. If the instance cannot hibernate successfully, a normal shutdown
-occurs. For more information, see \href{https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html}{Hibernate your Amazon EC2 instance}
-in the \emph{Amazon EC2 User Guide}.
+\item{Hibernate}{Hibernates the instance if the instance was enabled for hibernation at launch. If the instance cannot hibernate successfully, a normal shutdown occurs. For more information, see \href{https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html}{Hibernate your Amazon EC2 instance} in the \emph{Amazon EC2 User Guide}.
 
 Default: \code{false}}
 
-\item{SkipOsShutdown}{Specifies whether to bypass the graceful OS shutdown process when the
-instance is stopped.
+\item{SkipOsShutdown}{Specifies whether to bypass the graceful OS shutdown process when the instance is stopped.
 
-Bypassing the graceful OS shutdown might result in data loss or
-corruption (for example, memory contents not flushed to disk or loss of
-in-flight IOs) or skipped shutdown scripts.
+Bypassing the graceful OS shutdown might result in data loss or corruption (for example, memory contents not flushed to disk or loss of in-flight IOs) or skipped shutdown scripts.
 
 Default: \code{false}}
 
-\item{DryRun}{Checks whether you have the required permissions for the operation,
-without actually making the request, and provides an error response. If
-you have the required permissions, the error response is
-\code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
-\item{Force}{Forces the instance to stop. The instance will first attempt a graceful
-shutdown, which includes flushing file system caches and metadata. If
-the graceful shutdown fails to complete within the timeout period, the
-instance shuts down forcibly without flushing the file system caches and
-metadata.
+\item{Force}{Forces the instance to stop. The instance will first attempt a graceful shutdown, which includes flushing file system caches and metadata. If the graceful shutdown fails to complete within the timeout period, the instance shuts down forcibly without flushing the file system caches and metadata.
 
-After using this option, you must perform file system check and repair
-procedures. This option is not recommended for Windows instances. For
-more information, see \href{https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html}{Troubleshoot Amazon EC2 instance stop issues}
-in the \emph{Amazon EC2 User Guide}.
+After using this option, you must perform file system check and repair procedures. This option is not recommended for Windows instances. For more information, see \href{https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html}{Troubleshoot Amazon EC2 instance stop issues} in the \emph{Amazon EC2 User Guide}.
 
 Default: \code{false}}
 }

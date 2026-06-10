@@ -7,11 +7,9 @@
 rekognition_stop_project_version(ProjectVersionArn)
 }
 \arguments{
-\item{ProjectVersionArn}{[required] The Amazon Resource Name (ARN) of the model version that you want to
-stop.
+\item{ProjectVersionArn}{[required] The Amazon Resource Name (ARN) of the model version that you want to stop.
 
-This operation requires permissions to perform the
-\code{rekognition:StopProjectVersion} action.}
+This operation requires permissions to perform the \code{rekognition:StopProjectVersion} action.}
 }
 \description{
 This operation applies only to Amazon Rekognition Custom Labels.

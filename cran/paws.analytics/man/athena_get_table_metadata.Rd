@@ -12,15 +12,13 @@ athena_get_table_metadata(
 )
 }
 \arguments{
-\item{CatalogName}{[required] The name of the data catalog that contains the database and table
-metadata to return.}
+\item{CatalogName}{[required] The name of the data catalog that contains the database and table metadata to return.}
 
 \item{DatabaseName}{[required] The name of the database that contains the table metadata to return.}
 
 \item{TableName}{[required] The name of the table for which metadata is returned.}
 
-\item{WorkGroup}{The name of the workgroup for which the metadata is being fetched.
-Required if requesting an IAM Identity Center enabled Glue Data Catalog.}
+\item{WorkGroup}{The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center enabled Glue Data Catalog.}
 }
 \description{
 Returns table metadata for the specified catalog, database, and table.

@@ -10,20 +10,13 @@ sesv2_put_account_suppression_attributes(
 )
 }
 \arguments{
-\item{SuppressedReasons}{A list that contains the reasons that email addresses will be
-automatically added to the suppression list for your account. This list
-can contain any or all of the following:
+\item{SuppressedReasons}{A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. This list can contain any or all of the following:
 \itemize{
-\item \code{COMPLAINT} – Amazon SES adds an email address to the suppression
-list for your account when a message sent to that address results in
-a complaint.
-\item \code{BOUNCE} – Amazon SES adds an email address to the suppression list
-for your account when a message sent to that address results in a
-hard bounce.
+\item \code{COMPLAINT} – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.
+\item \code{BOUNCE} – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.
 }}
 
-\item{ValidationAttributes}{An object that contains additional suppression attributes for your
-account.}
+\item{ValidationAttributes}{An object that contains additional suppression attributes for your account.}
 }
 \description{
 Change the settings for the account-level suppression list.

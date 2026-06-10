@@ -8,8 +8,7 @@ operation}
 forecastservice_delete_what_if_analysis(WhatIfAnalysisArn)
 }
 \arguments{
-\item{WhatIfAnalysisArn}{[required] The Amazon Resource Name (ARN) of the what-if analysis that you want to
-delete.}
+\item{WhatIfAnalysisArn}{[required] The Amazon Resource Name (ARN) of the what-if analysis that you want to delete.}
 }
 \description{
 Deletes a what-if analysis created using the \code{\link[=forecastservice_create_what_if_analysis]{create_what_if_analysis}} operation. You can delete only what-if analyses that have a status of \code{ACTIVE} or \code{CREATE_FAILED}. To get the status, use the \code{\link[=forecastservice_describe_what_if_analysis]{describe_what_if_analysis}} operation.

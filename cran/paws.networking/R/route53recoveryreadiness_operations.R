@@ -11,10 +11,8 @@ NULL
 #' See [https://www.paws-r-sdk.com/docs/route53recoveryreadiness_create_cell/](https://www.paws-r-sdk.com/docs/route53recoveryreadiness_create_cell/) for full documentation.
 #'
 #' @param CellName &#91;required&#93; The name of the cell to create.
-#' @param Cells A list of cell Amazon Resource Names (ARNs) contained within this cell,
-#' for use in nested cells. For example, Availability Zones within specific
-#' Amazon Web Services Regions.
-#' @param Tags 
+#' @param Cells A list of cell Amazon Resource Names (ARNs) contained within this cell, for use in nested cells. For example, Availability Zones within specific Amazon Web Services Regions.
+#' @param Tags A collection of tags associated with a resource.
 #'
 #' @keywords internal
 #'
@@ -78,7 +76,7 @@ route53recoveryreadiness_create_cross_account_authorization <- function(CrossAcc
 #'
 #' @param ReadinessCheckName &#91;required&#93; The name of the readiness check to create.
 #' @param ResourceSetName &#91;required&#93; The name of the resource set to check.
-#' @param Tags 
+#' @param Tags A collection of tags associated with a resource.
 #'
 #' @keywords internal
 #'
@@ -111,7 +109,7 @@ route53recoveryreadiness_create_readiness_check <- function(ReadinessCheckName, 
 #'
 #' @param Cells A list of the cell Amazon Resource Names (ARNs) in the recovery group.
 #' @param RecoveryGroupName &#91;required&#93; The name of the recovery group to create.
-#' @param Tags 
+#' @param Tags A collection of tags associated with a resource.
 #'
 #' @keywords internal
 #'
@@ -143,18 +141,9 @@ route53recoveryreadiness_create_recovery_group <- function(Cells = NULL, Recover
 #' See [https://www.paws-r-sdk.com/docs/route53recoveryreadiness_create_resource_set/](https://www.paws-r-sdk.com/docs/route53recoveryreadiness_create_resource_set/) for full documentation.
 #'
 #' @param ResourceSetName &#91;required&#93; The name of the resource set to create.
-#' @param ResourceSetType &#91;required&#93; The resource type of the resources in the resource set. Enter one of the
-#' following values for resource type:
+#' @param ResourceSetType &#91;required&#93; The resource type of the resources in the resource set. Enter one of the following values for resource type:
 #' 
-#' AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage,
-#' AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm,
-#' AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume,
-#' AWS::ElasticLoadBalancing::LoadBalancer,
-#' AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function,
-#' AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck,
-#' AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC,
-#' AWS::EC2::VPNConnection, AWS::EC2::VPNGateway,
-#' AWS::Route53RecoveryReadiness::DNSTargetResource
+#' AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource
 #' @param Resources &#91;required&#93; A list of resource objects in the resource set.
 #' @param Tags A tag to associate with the parameters for a resource set.
 #'
@@ -476,9 +465,7 @@ route53recoveryreadiness_get_readiness_check <- function(ReadinessCheckName) {
 #' @param MaxResults The number of objects that you want to return with this call.
 #' @param NextToken The token that identifies which batch of results you want to see.
 #' @param ReadinessCheckName &#91;required&#93; Name of a readiness check.
-#' @param ResourceIdentifier &#91;required&#93; The resource identifier, which is the Amazon Resource Name (ARN) or the
-#' identifier generated for the resource by Application Recovery Controller
-#' (for example, for a DNS target resource).
+#' @param ResourceIdentifier &#91;required&#93; The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).
 #'
 #' @keywords internal
 #'
@@ -932,8 +919,7 @@ route53recoveryreadiness_untag_resource <- function(ResourceArn, TagKeys) {
 #' See [https://www.paws-r-sdk.com/docs/route53recoveryreadiness_update_cell/](https://www.paws-r-sdk.com/docs/route53recoveryreadiness_update_cell/) for full documentation.
 #'
 #' @param CellName &#91;required&#93; The name of the cell.
-#' @param Cells &#91;required&#93; A list of cell Amazon Resource Names (ARNs), which completely replaces
-#' the previous list.
+#' @param Cells &#91;required&#93; A list of cell Amazon Resource Names (ARNs), which completely replaces the previous list.
 #'
 #' @keywords internal
 #'
@@ -996,8 +982,7 @@ route53recoveryreadiness_update_readiness_check <- function(ReadinessCheckName, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53recoveryreadiness_update_recovery_group/](https://www.paws-r-sdk.com/docs/route53recoveryreadiness_update_recovery_group/) for full documentation.
 #'
-#' @param Cells &#91;required&#93; A list of cell Amazon Resource Names (ARNs). This list completely
-#' replaces the previous list.
+#' @param Cells &#91;required&#93; A list of cell Amazon Resource Names (ARNs). This list completely replaces the previous list.
 #' @param RecoveryGroupName &#91;required&#93; The name of a recovery group.
 #'
 #' @keywords internal
@@ -1030,18 +1015,9 @@ route53recoveryreadiness_update_recovery_group <- function(Cells, RecoveryGroupN
 #' See [https://www.paws-r-sdk.com/docs/route53recoveryreadiness_update_resource_set/](https://www.paws-r-sdk.com/docs/route53recoveryreadiness_update_resource_set/) for full documentation.
 #'
 #' @param ResourceSetName &#91;required&#93; Name of a resource set.
-#' @param ResourceSetType &#91;required&#93; The resource type of the resources in the resource set. Enter one of the
-#' following values for resource type:
+#' @param ResourceSetType &#91;required&#93; The resource type of the resources in the resource set. Enter one of the following values for resource type:
 #' 
-#' AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage,
-#' AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm,
-#' AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume,
-#' AWS::ElasticLoadBalancing::LoadBalancer,
-#' AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function,
-#' AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck,
-#' AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC,
-#' AWS::EC2::VPNConnection, AWS::EC2::VPNGateway,
-#' AWS::Route53RecoveryReadiness::DNSTargetResource
+#' AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource
 #' @param Resources &#91;required&#93; A list of resource objects.
 #'
 #' @keywords internal

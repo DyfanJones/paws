@@ -53,8 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Provides translation of the input content from the source language to
-the target language.
+Provides translation of the input content from the source language to the target language.
 }
 \section{Service syntax}{
 

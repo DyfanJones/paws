@@ -7,10 +7,9 @@
 opensearchservice_put_default_application_setting(applicationArn, setAsDefault)
 }
 \arguments{
-\item{applicationArn}{[required]}
+\item{applicationArn}{[required] The Amazon Resource Name (ARN) of the domain. See \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/}{Identifiers for IAM Entities} in \emph{Using Amazon Web Services Identity and Access Management} for more information.}
 
-\item{setAsDefault}{[required] Set to true to set the specified ARN as the default application. Set to
-false to clear the default application.}
+\item{setAsDefault}{[required] Set to true to set the specified ARN as the default application. Set to false to clear the default application.}
 }
 \description{
 Sets the default application to the application with the specified ARN.

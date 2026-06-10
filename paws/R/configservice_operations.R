@@ -8,23 +8,16 @@ NULL
 #' resource types when recording
 #'
 #' @description
-#' Adds all resource types specified in the `ResourceTypes` list to the
-#' [RecordingGroup](https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html)
-#' of specified configuration recorder and includes those resource types
-#' when recording.
+#' Adds all resource types specified in the `ResourceTypes` list to the [RecordingGroup](https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html) of specified configuration recorder and includes those resource types when recording.
 #' 
-#' For this operation, the specified configuration recorder must use a
-#' [RecordingStrategy](https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html)
-#' that is either `INCLUSION_BY_RESOURCE_TYPES` or
-#' `EXCLUSION_BY_RESOURCE_TYPES`.
+#' For this operation, the specified configuration recorder must use a [RecordingStrategy](https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html) that is either `INCLUSION_BY_RESOURCE_TYPES` or `EXCLUSION_BY_RESOURCE_TYPES`.
 #'
 #' @usage
 #' configservice_associate_resource_types(ConfigurationRecorderArn,
 #'   ResourceTypes)
 #'
 #' @param ConfigurationRecorderArn &#91;required&#93; The Amazon Resource Name (ARN) of the specified configuration recorder.
-#' @param ResourceTypes &#91;required&#93; The list of resource types you want to add to the recording group of the
-#' specified configuration recorder.
+#' @param ResourceTypes &#91;required&#93; The list of resource types you want to add to the recording group of the specified configuration recorder.
 #'
 #' @return
 #' A list with the following syntax:
@@ -105,11 +98,7 @@ configservice_associate_resource_types <- function(ConfigurationRecorderArn, Res
 #' in your Config aggregator
 #'
 #' @description
-#' Returns the current configuration items for resources that are present
-#' in your Config aggregator. The operation also returns a list of
-#' resources that are not processed in the current request. If there are no
-#' unprocessed resources, the operation returns an empty
-#' `unprocessedResourceIdentifiers` list.
+#' Returns the current configuration items for resources that are present in your Config aggregator. The operation also returns a list of resources that are not processed in the current request. If there are no unprocessed resources, the operation returns an empty `unprocessedResourceIdentifiers` list.
 #' 
 #' -   The API does not return results for deleted resources.
 #' 
@@ -209,22 +198,16 @@ configservice_batch_get_aggregate_resource_config <- function(ConfigurationAggre
 #' Returns the BaseConfigurationItem for one or more requested resources
 #'
 #' @description
-#' Returns the `BaseConfigurationItem` for one or more requested resources.
-#' The operation also returns a list of resources that are not processed in
-#' the current request. If there are no unprocessed resources, the
-#' operation returns an empty unprocessedResourceKeys list.
+#' Returns the `BaseConfigurationItem` for one or more requested resources. The operation also returns a list of resources that are not processed in the current request. If there are no unprocessed resources, the operation returns an empty unprocessedResourceKeys list.
 #' 
 #' -   The API does not return results for deleted resources.
 #' 
-#' -   The API does not return any tags for the requested resources. This
-#'     information is filtered out of the supplementaryConfiguration
-#'     section of the API response.
+#' -   The API does not return any tags for the requested resources. This information is filtered out of the supplementaryConfiguration section of the API response.
 #'
 #' @usage
 #' configservice_batch_get_resource_config(resourceKeys)
 #'
-#' @param resourceKeys &#91;required&#93; A list of resource keys to be processed with the current request. Each
-#' element in the list consists of the resource type and resource ID.
+#' @param resourceKeys &#91;required&#93; A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.
 #'
 #' @return
 #' A list with the following syntax:
@@ -307,8 +290,7 @@ configservice_batch_get_resource_config <- function(resourceKeys) {
 #' aggregator account in a specified region
 #'
 #' @description
-#' Deletes the authorization granted to the specified configuration
-#' aggregator account in a specified region.
+#' Deletes the authorization granted to the specified configuration aggregator account in a specified region.
 #'
 #' @usage
 #' configservice_delete_aggregation_authorization(AuthorizedAccountId,
@@ -357,33 +339,17 @@ configservice_delete_aggregation_authorization <- function(AuthorizedAccountId, 
 #' @description
 #' Deletes the specified Config rule and all of its evaluation results.
 #' 
-#' Config sets the state of a rule to `DELETING` until the deletion is
-#' complete. You cannot update a rule while it is in this state. If you
-#' make a [`put_config_rule`][configservice_put_config_rule] or
-#' [`delete_config_rule`][configservice_delete_config_rule] request for the
-#' rule, you will receive a `ResourceInUseException`.
+#' Config sets the state of a rule to `DELETING` until the deletion is complete. You cannot update a rule while it is in this state. If you make a [`put_config_rule`][configservice_put_config_rule] or [`delete_config_rule`][configservice_delete_config_rule] request for the rule, you will receive a `ResourceInUseException`.
 #' 
-#' You can check the state of a rule by using the
-#' [`describe_config_rules`][configservice_describe_config_rules] request.
+#' You can check the state of a rule by using the [`describe_config_rules`][configservice_describe_config_rules] request.
 #' 
-#' **Recommendation: Consider excluding the
-#' `AWS::Config::ResourceCompliance` resource type from recording before
-#' deleting rules**
+#' **Recommendation: Consider excluding the `AWS::Config::ResourceCompliance` resource type from recording before deleting rules**
 #' 
-#' Deleting rules creates configuration items (CIs) for
-#' `AWS::Config::ResourceCompliance` that can affect your costs for the
-#' configuration recorder. If you are deleting rules which evaluate a large
-#' number of resource types, this can lead to a spike in the number of CIs
-#' recorded.
+#' Deleting rules creates configuration items (CIs) for `AWS::Config::ResourceCompliance` that can affect your costs for the configuration recorder. If you are deleting rules which evaluate a large number of resource types, this can lead to a spike in the number of CIs recorded.
 #' 
-#' To avoid the associated costs, you can opt to disable recording for the
-#' `AWS::Config::ResourceCompliance` resource type before deleting rules,
-#' and re-enable recording after the rules have been deleted.
+#' To avoid the associated costs, you can opt to disable recording for the `AWS::Config::ResourceCompliance` resource type before deleting rules, and re-enable recording after the rules have been deleted.
 #' 
-#' However, since deleting rules is an asynchronous process, it might take
-#' an hour or more to complete. During the time when recording is disabled
-#' for `AWS::Config::ResourceCompliance`, rule evaluations will not be
-#' recorded in the associated resource’s history.
+#' However, since deleting rules is an asynchronous process, it might take an hour or more to complete. During the time when recording is disabled for `AWS::Config::ResourceCompliance`, rule evaluations will not be recorded in the associated resource’s history.
 #'
 #' @usage
 #' configservice_delete_config_rule(ConfigRuleName)
@@ -428,8 +394,7 @@ configservice_delete_config_rule <- function(ConfigRuleName) {
 #' associated with the aggregator
 #'
 #' @description
-#' Deletes the specified configuration aggregator and the aggregated data
-#' associated with the aggregator.
+#' Deletes the specified configuration aggregator and the aggregated data associated with the aggregator.
 #'
 #' @usage
 #' configservice_delete_configuration_aggregator(
@@ -476,22 +441,12 @@ configservice_delete_configuration_aggregator <- function(ConfigurationAggregato
 #' @description
 #' Deletes the customer managed configuration recorder.
 #' 
-#' This operation does not delete the configuration information that was
-#' previously recorded. You will be able to access the previously recorded
-#' information by using the
-#' [`get_resource_config_history`][configservice_get_resource_config_history]
-#' operation, but you will not be able to access this information in the
-#' Config console until you have created a new customer managed
-#' configuration recorder.
+#' This operation does not delete the configuration information that was previously recorded. You will be able to access the previously recorded information by using the [`get_resource_config_history`][configservice_get_resource_config_history] operation, but you will not be able to access this information in the Config console until you have created a new customer managed configuration recorder.
 #'
 #' @usage
 #' configservice_delete_configuration_recorder(ConfigurationRecorderName)
 #'
-#' @param ConfigurationRecorderName &#91;required&#93; The name of the customer managed configuration recorder that you want to
-#' delete. You can retrieve the name of your configuration recorders by
-#' using the
-#' [`describe_configuration_recorders`][configservice_describe_configuration_recorders]
-#' operation.
+#' @param ConfigurationRecorderName &#91;required&#93; The name of the customer managed configuration recorder that you want to delete. You can retrieve the name of your configuration recorders by using the [`describe_configuration_recorders`][configservice_describe_configuration_recorders] operation.
 #'
 #' @return
 #' An empty list.
@@ -532,32 +487,17 @@ configservice_delete_configuration_recorder <- function(ConfigurationRecorderNam
 #' pack
 #'
 #' @description
-#' Deletes the specified conformance pack and all the Config rules,
-#' remediation actions, and all evaluation results within that conformance
-#' pack.
+#' Deletes the specified conformance pack and all the Config rules, remediation actions, and all evaluation results within that conformance pack.
 #' 
-#' Config sets the conformance pack to `DELETE_IN_PROGRESS` until the
-#' deletion is complete. You cannot update a conformance pack while it is
-#' in this state.
+#' Config sets the conformance pack to `DELETE_IN_PROGRESS` until the deletion is complete. You cannot update a conformance pack while it is in this state.
 #' 
-#' **Recommendation: Consider excluding the
-#' `AWS::Config::ResourceCompliance` resource type from recording before
-#' deleting rules**
+#' **Recommendation: Consider excluding the `AWS::Config::ResourceCompliance` resource type from recording before deleting rules**
 #' 
-#' Deleting rules creates configuration items (CIs) for
-#' `AWS::Config::ResourceCompliance` that can affect your costs for the
-#' configuration recorder. If you are deleting rules which evaluate a large
-#' number of resource types, this can lead to a spike in the number of CIs
-#' recorded.
+#' Deleting rules creates configuration items (CIs) for `AWS::Config::ResourceCompliance` that can affect your costs for the configuration recorder. If you are deleting rules which evaluate a large number of resource types, this can lead to a spike in the number of CIs recorded.
 #' 
-#' To avoid the associated costs, you can opt to disable recording for the
-#' `AWS::Config::ResourceCompliance` resource type before deleting rules,
-#' and re-enable recording after the rules have been deleted.
+#' To avoid the associated costs, you can opt to disable recording for the `AWS::Config::ResourceCompliance` resource type before deleting rules, and re-enable recording after the rules have been deleted.
 #' 
-#' However, since deleting rules is an asynchronous process, it might take
-#' an hour or more to complete. During the time when recording is disabled
-#' for `AWS::Config::ResourceCompliance`, rule evaluations will not be
-#' recorded in the associated resource’s history.
+#' However, since deleting rules is an asynchronous process, it might take an hour or more to complete. During the time when recording is disabled for `AWS::Config::ResourceCompliance`, rule evaluations will not be recorded in the associated resource’s history.
 #'
 #' @usage
 #' configservice_delete_conformance_pack(ConformancePackName)
@@ -603,10 +543,7 @@ configservice_delete_conformance_pack <- function(ConformancePackName) {
 #' @description
 #' Deletes the delivery channel.
 #' 
-#' Before you can delete the delivery channel, you must stop the customer
-#' managed configuration recorder. You can use the
-#' [`stop_configuration_recorder`][configservice_stop_configuration_recorder]
-#' operation to stop the customer managed configuration recorder.
+#' Before you can delete the delivery channel, you must stop the customer managed configuration recorder. You can use the [`stop_configuration_recorder`][configservice_stop_configuration_recorder] operation to stop the customer managed configuration recorder.
 #'
 #' @usage
 #' configservice_delete_delivery_channel(DeliveryChannelName)
@@ -650,18 +587,12 @@ configservice_delete_delivery_channel <- function(DeliveryChannelName) {
 #' Deletes the evaluation results for the specified Config rule
 #'
 #' @description
-#' Deletes the evaluation results for the specified Config rule. You can
-#' specify one Config rule per request. After you delete the evaluation
-#' results, you can call the
-#' [`start_config_rules_evaluation`][configservice_start_config_rules_evaluation]
-#' API to start evaluating your Amazon Web Services resources against the
-#' rule.
+#' Deletes the evaluation results for the specified Config rule. You can specify one Config rule per request. After you delete the evaluation results, you can call the [`start_config_rules_evaluation`][configservice_start_config_rules_evaluation] API to start evaluating your Amazon Web Services resources against the rule.
 #'
 #' @usage
 #' configservice_delete_evaluation_results(ConfigRuleName)
 #'
-#' @param ConfigRuleName &#91;required&#93; The name of the Config rule for which you want to delete the evaluation
-#' results.
+#' @param ConfigRuleName &#91;required&#93; The name of the Config rule for which you want to delete the evaluation results.
 #'
 #' @return
 #' An empty list.
@@ -701,35 +632,19 @@ configservice_delete_evaluation_results <- function(ConfigRuleName) {
 #' results from all member accounts in that organization
 #'
 #' @description
-#' Deletes the specified organization Config rule and all of its evaluation
-#' results from all member accounts in that organization.
+#' Deletes the specified organization Config rule and all of its evaluation results from all member accounts in that organization.
 #' 
-#' Only a management account and a delegated administrator account can
-#' delete an organization Config rule. When calling this API with a
-#' delegated administrator, you must ensure Organizations
-#' `ListDelegatedAdministrator` permissions are added.
+#' Only a management account and a delegated administrator account can delete an organization Config rule. When calling this API with a delegated administrator, you must ensure Organizations `ListDelegatedAdministrator` permissions are added.
 #' 
-#' Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion
-#' is complete. You cannot update a rule while it is in this state.
+#' Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion is complete. You cannot update a rule while it is in this state.
 #' 
-#' **Recommendation: Consider excluding the
-#' `AWS::Config::ResourceCompliance` resource type from recording before
-#' deleting rules**
+#' **Recommendation: Consider excluding the `AWS::Config::ResourceCompliance` resource type from recording before deleting rules**
 #' 
-#' Deleting rules creates configuration items (CIs) for
-#' `AWS::Config::ResourceCompliance` that can affect your costs for the
-#' configuration recorder. If you are deleting rules which evaluate a large
-#' number of resource types, this can lead to a spike in the number of CIs
-#' recorded.
+#' Deleting rules creates configuration items (CIs) for `AWS::Config::ResourceCompliance` that can affect your costs for the configuration recorder. If you are deleting rules which evaluate a large number of resource types, this can lead to a spike in the number of CIs recorded.
 #' 
-#' To avoid the associated costs, you can opt to disable recording for the
-#' `AWS::Config::ResourceCompliance` resource type before deleting rules,
-#' and re-enable recording after the rules have been deleted.
+#' To avoid the associated costs, you can opt to disable recording for the `AWS::Config::ResourceCompliance` resource type before deleting rules, and re-enable recording after the rules have been deleted.
 #' 
-#' However, since deleting rules is an asynchronous process, it might take
-#' an hour or more to complete. During the time when recording is disabled
-#' for `AWS::Config::ResourceCompliance`, rule evaluations will not be
-#' recorded in the associated resource’s history.
+#' However, since deleting rules is an asynchronous process, it might take an hour or more to complete. During the time when recording is disabled for `AWS::Config::ResourceCompliance`, rule evaluations will not be recorded in the associated resource’s history.
 #'
 #' @usage
 #' configservice_delete_organization_config_rule(
@@ -776,37 +691,19 @@ configservice_delete_organization_config_rule <- function(OrganizationConfigRule
 #' organization
 #'
 #' @description
-#' Deletes the specified organization conformance pack and all of the
-#' Config rules and remediation actions from all member accounts in that
-#' organization.
+#' Deletes the specified organization conformance pack and all of the Config rules and remediation actions from all member accounts in that organization.
 #' 
-#' Only a management account or a delegated administrator account can
-#' delete an organization conformance pack. When calling this API with a
-#' delegated administrator, you must ensure Organizations
-#' `ListDelegatedAdministrator` permissions are added.
+#' Only a management account or a delegated administrator account can delete an organization conformance pack. When calling this API with a delegated administrator, you must ensure Organizations `ListDelegatedAdministrator` permissions are added.
 #' 
-#' Config sets the state of a conformance pack to DELETE_IN_PROGRESS until
-#' the deletion is complete. You cannot update a conformance pack while it
-#' is in this state.
+#' Config sets the state of a conformance pack to DELETE_IN_PROGRESS until the deletion is complete. You cannot update a conformance pack while it is in this state.
 #' 
-#' **Recommendation: Consider excluding the
-#' `AWS::Config::ResourceCompliance` resource type from recording before
-#' deleting rules**
+#' **Recommendation: Consider excluding the `AWS::Config::ResourceCompliance` resource type from recording before deleting rules**
 #' 
-#' Deleting rules creates configuration items (CIs) for
-#' `AWS::Config::ResourceCompliance` that can affect your costs for the
-#' configuration recorder. If you are deleting rules which evaluate a large
-#' number of resource types, this can lead to a spike in the number of CIs
-#' recorded.
+#' Deleting rules creates configuration items (CIs) for `AWS::Config::ResourceCompliance` that can affect your costs for the configuration recorder. If you are deleting rules which evaluate a large number of resource types, this can lead to a spike in the number of CIs recorded.
 #' 
-#' To avoid the associated costs, you can opt to disable recording for the
-#' `AWS::Config::ResourceCompliance` resource type before deleting rules,
-#' and re-enable recording after the rules have been deleted.
+#' To avoid the associated costs, you can opt to disable recording for the `AWS::Config::ResourceCompliance` resource type before deleting rules, and re-enable recording after the rules have been deleted.
 #' 
-#' However, since deleting rules is an asynchronous process, it might take
-#' an hour or more to complete. During the time when recording is disabled
-#' for `AWS::Config::ResourceCompliance`, rule evaluations will not be
-#' recorded in the associated resource’s history.
+#' However, since deleting rules is an asynchronous process, it might take an hour or more to complete. During the time when recording is disabled for `AWS::Config::ResourceCompliance`, rule evaluations will not be recorded in the associated resource’s history.
 #'
 #' @usage
 #' configservice_delete_organization_conformance_pack(
@@ -852,8 +749,7 @@ configservice_delete_organization_conformance_pack <- function(OrganizationConfo
 #' account in a specified region
 #'
 #' @description
-#' Deletes pending authorization requests for a specified aggregator
-#' account in a specified region.
+#' Deletes pending authorization requests for a specified aggregator account in a specified region.
 #'
 #' @usage
 #' configservice_delete_pending_aggregation_request(RequesterAccountId,
@@ -906,8 +802,7 @@ configservice_delete_pending_aggregation_request <- function(RequesterAccountId,
 #' configservice_delete_remediation_configuration(ConfigRuleName,
 #'   ResourceType)
 #'
-#' @param ConfigRuleName &#91;required&#93; The name of the Config rule for which you want to delete remediation
-#' configuration.
+#' @param ConfigRuleName &#91;required&#93; The name of the Config rule for which you want to delete remediation configuration.
 #' @param ResourceType The type of a resource.
 #'
 #' @return
@@ -949,22 +844,16 @@ configservice_delete_remediation_configuration <- function(ConfigRuleName, Resou
 #' keys
 #'
 #' @description
-#' Deletes one or more remediation exceptions mentioned in the resource
-#' keys.
+#' Deletes one or more remediation exceptions mentioned in the resource keys.
 #' 
-#' Config generates a remediation exception when a problem occurs executing
-#' a remediation action to a specific resource. Remediation exceptions
-#' blocks auto-remediation until the exception is cleared.
+#' Config generates a remediation exception when a problem occurs executing a remediation action to a specific resource. Remediation exceptions blocks auto-remediation until the exception is cleared.
 #'
 #' @usage
 #' configservice_delete_remediation_exceptions(ConfigRuleName,
 #'   ResourceKeys)
 #'
-#' @param ConfigRuleName &#91;required&#93; The name of the Config rule for which you want to delete remediation
-#' exception configuration.
-#' @param ResourceKeys &#91;required&#93; An exception list of resource exception keys to be processed with the
-#' current request. Config adds exception for each resource key. For
-#' example, Config adds 3 exceptions for 3 resource keys.
+#' @param ConfigRuleName &#91;required&#93; The name of the Config rule for which you want to delete remediation exception configuration.
+#' @param ResourceKeys &#91;required&#93; An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1025,10 +914,7 @@ configservice_delete_remediation_exceptions <- function(ConfigRuleName, Resource
 #' deleted
 #'
 #' @description
-#' Records the configuration state for a custom resource that has been
-#' deleted. This API records a new ConfigurationItem with a ResourceDeleted
-#' status. You can retrieve the ConfigurationItems recorded for this
-#' resource in your Config History.
+#' Records the configuration state for a custom resource that has been deleted. This API records a new ConfigurationItem with a ResourceDeleted status. You can retrieve the ConfigurationItems recorded for this resource in your Config History.
 #'
 #' @usage
 #' configservice_delete_resource_config(ResourceType, ResourceId)
@@ -1120,27 +1006,17 @@ configservice_delete_retention_configuration <- function(RetentionConfigurationN
 #' @description
 #' Deletes an existing service-linked configuration recorder.
 #' 
-#' This operation does not delete the configuration information that was
-#' previously recorded. You will be able to access the previously recorded
-#' information by using the
-#' [`get_resource_config_history`][configservice_get_resource_config_history]
-#' operation, but you will not be able to access this information in the
-#' Config console until you have created a new service-linked configuration
-#' recorder for the same service.
+#' This operation does not delete the configuration information that was previously recorded. You will be able to access the previously recorded information by using the [`get_resource_config_history`][configservice_get_resource_config_history] operation, but you will not be able to access this information in the Config console until you have created a new service-linked configuration recorder for the same service.
 #' 
 #' **The recording scope determines if you receive configuration items**
 #' 
-#' The recording scope is set by the service that is linked to the
-#' configuration recorder and determines whether you receive configuration
-#' items (CIs) in the delivery channel. If the recording scope is internal,
-#' you will not receive CIs in the delivery channel.
+#' The recording scope is set by the service that is linked to the configuration recorder and determines whether you receive configuration items (CIs) in the delivery channel. If the recording scope is internal, you will not receive CIs in the delivery channel.
 #'
 #' @usage
 #' configservice_delete_service_linked_configuration_recorder(
 #'   ServicePrincipal)
 #'
-#' @param ServicePrincipal &#91;required&#93; The service principal of the Amazon Web Services service for the
-#' service-linked configuration recorder that you want to delete.
+#' @param ServicePrincipal &#91;required&#93; The service principal of the Amazon Web Services service for the service-linked configuration recorder that you want to delete.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1186,8 +1062,7 @@ configservice_delete_service_linked_configuration_recorder <- function(ServicePr
 #' single Amazon Web Services Region
 #'
 #' @description
-#' Deletes the stored query for a single Amazon Web Services account and a
-#' single Amazon Web Services Region.
+#' Deletes the stored query for a single Amazon Web Services account and a single Amazon Web Services Region.
 #'
 #' @usage
 #' configservice_delete_stored_query(QueryName)
@@ -1232,23 +1107,18 @@ configservice_delete_stored_query <- function(QueryName) {
 #' in the specified delivery channel
 #'
 #' @description
-#' Schedules delivery of a configuration snapshot to the Amazon S3 bucket
-#' in the specified delivery channel. After the delivery has started,
-#' Config sends the following notifications using an Amazon SNS topic that
-#' you have specified.
+#' Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified delivery channel. After the delivery has started, Config sends the following notifications using an Amazon SNS topic that you have specified.
 #' 
 #' -   Notification of the start of the delivery.
 #' 
-#' -   Notification of the completion of the delivery, if the delivery was
-#'     successfully completed.
+#' -   Notification of the completion of the delivery, if the delivery was successfully completed.
 #' 
 #' -   Notification of delivery failure, if the delivery failed.
 #'
 #' @usage
 #' configservice_deliver_config_snapshot(deliveryChannelName)
 #'
-#' @param deliveryChannelName &#91;required&#93; The name of the delivery channel through which the snapshot is
-#' delivered.
+#' @param deliveryChannelName &#91;required&#93; The name of the delivery channel through which the snapshot is delivered.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1293,12 +1163,9 @@ configservice_deliver_config_snapshot <- function(deliveryChannelName) {
 #' resources for compliant and noncompliant rules
 #'
 #' @description
-#' Returns a list of compliant and noncompliant rules with the number of
-#' resources for compliant and noncompliant rules. Does not display rules
-#' that do not have compliance results.
+#' Returns a list of compliant and noncompliant rules with the number of resources for compliant and noncompliant rules. Does not display rules that do not have compliance results.
 #' 
-#' The results can return an empty result page, but if you have a
-#' `nextToken`, the results are displayed on the next page.
+#' The results can return an empty result page, but if you have a `nextToken`, the results are displayed on the next page.
 #'
 #' @usage
 #' configservice_describe_aggregate_compliance_by_config_rules(
@@ -1306,10 +1173,8 @@ configservice_deliver_config_snapshot <- function(deliveryChannelName) {
 #'
 #' @param ConfigurationAggregatorName &#91;required&#93; The name of the configuration aggregator.
 #' @param Filters Filters the results by ConfigRuleComplianceFilters object.
-#' @param Limit The maximum number of evaluation results returned on each page. The
-#' default is maximum. If you specify 0, Config uses the default.
-#' @param NextToken The `nextToken` string returned on a previous page that you use to get
-#' the next page of results in a paginated response.
+#' @param Limit The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.
+#' @param NextToken The `nextToken` string returned on a previous page that you use to get the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1377,27 +1242,18 @@ configservice_describe_aggregate_compliance_by_config_rules <- function(Configur
 #' noncompliant Config rules within each conformance pack
 #'
 #' @description
-#' Returns a list of the existing and deleted conformance packs and their
-#' associated compliance status with the count of compliant and
-#' noncompliant Config rules within each conformance pack. Also returns the
-#' total rule count which includes compliant rules, noncompliant rules, and
-#' rules that cannot be evaluated due to insufficient data.
+#' Returns a list of the existing and deleted conformance packs and their associated compliance status with the count of compliant and noncompliant Config rules within each conformance pack. Also returns the total rule count which includes compliant rules, noncompliant rules, and rules that cannot be evaluated due to insufficient data.
 #' 
-#' The results can return an empty result page, but if you have a
-#' `nextToken`, the results are displayed on the next page.
+#' The results can return an empty result page, but if you have a `nextToken`, the results are displayed on the next page.
 #'
 #' @usage
 #' configservice_describe_aggregate_compliance_by_conformance_packs(
 #'   ConfigurationAggregatorName, Filters, Limit, NextToken)
 #'
 #' @param ConfigurationAggregatorName &#91;required&#93; The name of the configuration aggregator.
-#' @param Filters Filters the result by `AggregateConformancePackComplianceFilters`
-#' object.
-#' @param Limit The maximum number of conformance packs compliance details returned on
-#' each page. The default is maximum. If you specify 0, Config uses the
-#' default.
-#' @param NextToken The `nextToken` string returned on a previous page that you use to get
-#' the next page of results in a paginated response.
+#' @param Filters Filters the result by `AggregateConformancePackComplianceFilters` object.
+#' @param Limit The maximum number of conformance packs compliance details returned on each page. The default is maximum. If you specify 0, Config uses the default.
+#' @param NextToken The `nextToken` string returned on a previous page that you use to get the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1463,16 +1319,13 @@ configservice_describe_aggregate_compliance_by_conformance_packs <- function(Con
 #' and regions
 #'
 #' @description
-#' Returns a list of authorizations granted to various aggregator accounts
-#' and regions.
+#' Returns a list of authorizations granted to various aggregator accounts and regions.
 #'
 #' @usage
 #' configservice_describe_aggregation_authorizations(Limit, NextToken)
 #'
-#' @param Limit The maximum number of AggregationAuthorizations returned on each page.
-#' The default is maximum. If you specify 0, Config uses the default.
-#' @param NextToken The `nextToken` string returned on a previous page that you use to get
-#' the next page of results in a paginated response.
+#' @param Limit The maximum number of AggregationAuthorizations returned on each page. The default is maximum. If you specify 0, Config uses the default.
+#' @param NextToken The `nextToken` string returned on a previous page that you use to get the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1527,32 +1380,17 @@ configservice_describe_aggregation_authorizations <- function(Limit = NULL, Next
 #' Indicates whether the specified Config rules are compliant
 #'
 #' @description
-#' Indicates whether the specified Config rules are compliant. If a rule is
-#' noncompliant, this operation returns the number of Amazon Web Services
-#' resources that do not comply with the rule.
+#' Indicates whether the specified Config rules are compliant. If a rule is noncompliant, this operation returns the number of Amazon Web Services resources that do not comply with the rule.
 #' 
-#' A rule is compliant if all of the evaluated resources comply with it. It
-#' is noncompliant if any of these resources do not comply.
+#' A rule is compliant if all of the evaluated resources comply with it. It is noncompliant if any of these resources do not comply.
 #' 
-#' If Config has no current evaluation results for the rule, it returns
-#' `INSUFFICIENT_DATA`. This result might indicate one of the following
-#' conditions:
+#' If Config has no current evaluation results for the rule, it returns `INSUFFICIENT_DATA`. This result might indicate one of the following conditions:
 #' 
-#' -   Config has never invoked an evaluation for the rule. To check
-#'     whether it has, use the
-#'     [`describe_config_rule_evaluation_status`][configservice_describe_config_rule_evaluation_status]
-#'     action to get the `LastSuccessfulInvocationTime` and
-#'     `LastFailedInvocationTime`.
+#' -   Config has never invoked an evaluation for the rule. To check whether it has, use the [`describe_config_rule_evaluation_status`][configservice_describe_config_rule_evaluation_status] action to get the `LastSuccessfulInvocationTime` and `LastFailedInvocationTime`.
 #' 
-#' -   The rule's Lambda function is failing to send evaluation results to
-#'     Config. Verify that the role you assigned to your configuration
-#'     recorder includes the `config:PutEvaluations` permission. If the
-#'     rule is a custom rule, verify that the Lambda execution role
-#'     includes the `config:PutEvaluations` permission.
+#' -   The rule's Lambda function is failing to send evaluation results to Config. Verify that the role you assigned to your configuration recorder includes the `config:PutEvaluations` permission. If the rule is a custom rule, verify that the Lambda execution role includes the `config:PutEvaluations` permission.
 #' 
-#' -   The rule's Lambda function has returned `NOT_APPLICABLE` for all
-#'     evaluation results. This can occur if the resources were deleted or
-#'     removed from the rule's scope.
+#' -   The rule's Lambda function has returned `NOT_APPLICABLE` for all evaluation results. This can occur if the resources were deleted or removed from the rule's scope.
 #'
 #' @usage
 #' configservice_describe_compliance_by_config_rule(ConfigRuleNames,
@@ -1560,8 +1398,7 @@ configservice_describe_aggregation_authorizations <- function(Limit = NULL, Next
 #'
 #' @param ConfigRuleNames Specify one or more Config rule names to filter the results by rule.
 #' @param ComplianceTypes Filters the results by compliance.
-#' @param NextToken The `nextToken` string returned on a previous page that you use to get
-#' the next page of results in a paginated response.
+#' @param NextToken The `nextToken` string returned on a previous page that you use to get the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1624,51 +1461,27 @@ configservice_describe_compliance_by_config_rule <- function(ConfigRuleNames = N
 #' compliant
 #'
 #' @description
-#' Indicates whether the specified Amazon Web Services resources are
-#' compliant. If a resource is noncompliant, this operation returns the
-#' number of Config rules that the resource does not comply with.
+#' Indicates whether the specified Amazon Web Services resources are compliant. If a resource is noncompliant, this operation returns the number of Config rules that the resource does not comply with.
 #' 
-#' A resource is compliant if it complies with all the Config rules that
-#' evaluate it. It is noncompliant if it does not comply with one or more
-#' of these rules.
+#' A resource is compliant if it complies with all the Config rules that evaluate it. It is noncompliant if it does not comply with one or more of these rules.
 #' 
-#' If Config has no current evaluation results for the resource, it returns
-#' `INSUFFICIENT_DATA`. This result might indicate one of the following
-#' conditions about the rules that evaluate the resource:
+#' If Config has no current evaluation results for the resource, it returns `INSUFFICIENT_DATA`. This result might indicate one of the following conditions about the rules that evaluate the resource:
 #' 
-#' -   Config has never invoked an evaluation for the rule. To check
-#'     whether it has, use the
-#'     [`describe_config_rule_evaluation_status`][configservice_describe_config_rule_evaluation_status]
-#'     action to get the `LastSuccessfulInvocationTime` and
-#'     `LastFailedInvocationTime`.
+#' -   Config has never invoked an evaluation for the rule. To check whether it has, use the [`describe_config_rule_evaluation_status`][configservice_describe_config_rule_evaluation_status] action to get the `LastSuccessfulInvocationTime` and `LastFailedInvocationTime`.
 #' 
-#' -   The rule's Lambda function is failing to send evaluation results to
-#'     Config. Verify that the role that you assigned to your configuration
-#'     recorder includes the `config:PutEvaluations` permission. If the
-#'     rule is a custom rule, verify that the Lambda execution role
-#'     includes the `config:PutEvaluations` permission.
+#' -   The rule's Lambda function is failing to send evaluation results to Config. Verify that the role that you assigned to your configuration recorder includes the `config:PutEvaluations` permission. If the rule is a custom rule, verify that the Lambda execution role includes the `config:PutEvaluations` permission.
 #' 
-#' -   The rule's Lambda function has returned `NOT_APPLICABLE` for all
-#'     evaluation results. This can occur if the resources were deleted or
-#'     removed from the rule's scope.
+#' -   The rule's Lambda function has returned `NOT_APPLICABLE` for all evaluation results. This can occur if the resources were deleted or removed from the rule's scope.
 #'
 #' @usage
 #' configservice_describe_compliance_by_resource(ResourceType, ResourceId,
 #'   ComplianceTypes, Limit, NextToken)
 #'
-#' @param ResourceType The types of Amazon Web Services resources for which you want compliance
-#' information (for example, `AWS::EC2::Instance`). For this operation, you
-#' can specify that the resource type is an Amazon Web Services account by
-#' specifying `AWS::::Account`.
-#' @param ResourceId The ID of the Amazon Web Services resource for which you want compliance
-#' information. You can specify only one resource ID. If you specify a
-#' resource ID, you must also specify a type for `ResourceType`.
+#' @param ResourceType The types of Amazon Web Services resources for which you want compliance information (for example, `AWS::EC2::Instance`). For this operation, you can specify that the resource type is an Amazon Web Services account by specifying `AWS::::Account`.
+#' @param ResourceId The ID of the Amazon Web Services resource for which you want compliance information. You can specify only one resource ID. If you specify a resource ID, you must also specify a type for `ResourceType`.
 #' @param ComplianceTypes Filters the results by compliance.
-#' @param Limit The maximum number of evaluation results returned on each page. The
-#' default is 10. You cannot specify a number greater than 100. If you
-#' specify 0, Config uses the default.
-#' @param NextToken The `nextToken` string returned on a previous page that you use to get
-#' the next page of results in a paginated response.
+#' @param Limit The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.
+#' @param NextToken The `nextToken` string returned on a previous page that you use to get the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1731,28 +1544,19 @@ configservice_describe_compliance_by_resource <- function(ResourceType = NULL, R
 #' Returns status information for each of your Config managed rules
 #'
 #' @description
-#' Returns status information for each of your Config managed rules. The
-#' status includes information such as the last time Config invoked the
-#' rule, the last time Config failed to invoke the rule, and the related
-#' error for the last failure.
+#' Returns status information for each of your Config managed rules. The status includes information such as the last time Config invoked the rule, the last time Config failed to invoke the rule, and the related error for the last failure.
 #'
 #' @usage
 #' configservice_describe_config_rule_evaluation_status(ConfigRuleNames,
 #'   NextToken, Limit)
 #'
-#' @param ConfigRuleNames The name of the Config managed rules for which you want status
-#' information. If you do not specify any names, Config returns status
-#' information for all Config managed rules that you use.
-#' @param NextToken The `nextToken` string returned on a previous page that you use to get
-#' the next page of results in a paginated response.
+#' @param ConfigRuleNames The name of the Config managed rules for which you want status information. If you do not specify any names, Config returns status information for all Config managed rules that you use.
+#' @param NextToken The `nextToken` string returned on a previous page that you use to get the next page of results in a paginated response.
 #' @param Limit The number of rule evaluation results that you want returned.
 #' 
-#' This parameter is required if the rule limit for your account is more
-#' than the default of 1000 rules.
+#' This parameter is required if the rule limit for your account is more than the default of 1000 rules.
 #' 
-#' For information about requesting a rule limit increase, see [Config
-#' Limits](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config)
-#' in the *Amazon Web Services General Reference Guide*.
+#' For information about requesting a rule limit increase, see [Config Limits](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config) in the *Amazon Web Services General Reference Guide*.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1838,15 +1642,9 @@ configservice_describe_config_rule_evaluation_status <- function(ConfigRuleNames
 #' @usage
 #' configservice_describe_config_rules(ConfigRuleNames, NextToken, Filters)
 #'
-#' @param ConfigRuleNames The names of the Config rules for which you want details. If you do not
-#' specify any names, Config returns details for all your rules.
-#' @param NextToken The `nextToken` string returned on a previous page that you use to get
-#' the next page of results in a paginated response.
-#' @param Filters Returns a list of Detective or Proactive Config rules. By default, this
-#' API returns an unfiltered list. For more information on Detective or
-#' Proactive Config rules, see [**Evaluation
-#' Mode**](https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_components.html)
-#' in the *Config Developer Guide*.
+#' @param ConfigRuleNames The names of the Config rules for which you want details. If you do not specify any names, Config returns details for all your rules.
+#' @param NextToken The `nextToken` string returned on a previous page that you use to get the next page of results in a paginated response.
+#' @param Filters Returns a list of Detective or Proactive Config rules. By default, this API returns an unfiltered list. For more information on Detective or Proactive Config rules, see [**Evaluation Mode**](https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_components.html) in the *Config Developer Guide*.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1937,10 +1735,7 @@ configservice_describe_config_rules <- function(ConfigRuleNames = NULL, NextToke
 #' Returns status information for sources within an aggregator
 #'
 #' @description
-#' Returns status information for sources within an aggregator. The status
-#' includes information about the last time Config verified authorization
-#' between the source account and an aggregator account. In case of a
-#' failure, the status contains the related error code or message.
+#' Returns status information for sources within an aggregator. The status includes information about the last time Config verified authorization between the source account and an aggregator account. In case of a failure, the status contains the related error code or message.
 #'
 #' @usage
 #' configservice_describe_configuration_aggregator_sources_status(
@@ -1954,10 +1749,8 @@ configservice_describe_config_rules <- function(ConfigRuleNames = NULL, NextToke
 #' -   Valid value SUCCEEDED indicates the data was successfully moved.
 #' 
 #' -   Valid value OUTDATED indicates the data is not the most recent.
-#' @param NextToken The `nextToken` string returned on a previous page that you use to get
-#' the next page of results in a paginated response.
-#' @param Limit The maximum number of AggregatorSourceStatus returned on each page. The
-#' default is maximum. If you specify 0, Config uses the default.
+#' @param NextToken The `nextToken` string returned on a previous page that you use to get the next page of results in a paginated response.
+#' @param Limit The maximum number of AggregatorSourceStatus returned on each page. The default is maximum. If you specify 0, Config uses the default.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2019,20 +1812,15 @@ configservice_describe_configuration_aggregator_sources_status <- function(Confi
 #' Returns the details of one or more configuration aggregators
 #'
 #' @description
-#' Returns the details of one or more configuration aggregators. If the
-#' configuration aggregator is not specified, this operation returns the
-#' details for all the configuration aggregators associated with the
-#' account.
+#' Returns the details of one or more configuration aggregators. If the configuration aggregator is not specified, this operation returns the details for all the configuration aggregators associated with the account.
 #'
 #' @usage
 #' configservice_describe_configuration_aggregators(
 #'   ConfigurationAggregatorNames, NextToken, Limit)
 #'
 #' @param ConfigurationAggregatorNames The name of the configuration aggregators.
-#' @param NextToken The `nextToken` string returned on a previous page that you use to get
-#' the next page of results in a paginated response.
-#' @param Limit The maximum number of configuration aggregators returned on each page.
-#' The default is maximum. If you specify 0, Config uses the default.
+#' @param NextToken The `nextToken` string returned on a previous page that you use to get the next page of results in a paginated response.
+#' @param Limit The maximum number of configuration aggregators returned on each page. The default is maximum. If you specify 0, Config uses the default.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2127,35 +1915,23 @@ configservice_describe_configuration_aggregators <- function(ConfigurationAggreg
 #' recorders
 #'
 #' @description
-#' Returns the current status of the configuration recorder you specify as
-#' well as the status of the last recording event for the configuration
-#' recorders.
+#' Returns the current status of the configuration recorder you specify as well as the status of the last recording event for the configuration recorders.
 #' 
-#' For a detailed status of recording events over time, add your Config
-#' events to Amazon CloudWatch metrics and use CloudWatch metrics.
+#' For a detailed status of recording events over time, add your Config events to Amazon CloudWatch metrics and use CloudWatch metrics.
 #' 
-#' If a configuration recorder is not specified, this operation returns the
-#' status for the customer managed configuration recorder configured for
-#' the account, if applicable.
+#' If a configuration recorder is not specified, this operation returns the status for the customer managed configuration recorder configured for the account, if applicable.
 #' 
-#' When making a request to this operation, you can only specify one
-#' configuration recorder.
+#' When making a request to this operation, you can only specify one configuration recorder.
 #'
 #' @usage
 #' configservice_describe_configuration_recorder_status(
 #'   ConfigurationRecorderNames, ServicePrincipal, Arn)
 #'
-#' @param ConfigurationRecorderNames The name of the configuration recorder. If the name is not specified,
-#' the operation returns the status for the customer managed configuration
-#' recorder configured for the account, if applicable.
+#' @param ConfigurationRecorderNames The name of the configuration recorder. If the name is not specified, the operation returns the status for the customer managed configuration recorder configured for the account, if applicable.
 #' 
-#' When making a request to this operation, you can only specify one
-#' configuration recorder.
-#' @param ServicePrincipal For service-linked configuration recorders, you can use the service
-#' principal of the linked Amazon Web Services service to specify the
-#' configuration recorder.
-#' @param Arn The Amazon Resource Name (ARN) of the configuration recorder that you
-#' want to specify.
+#' When making a request to this operation, you can only specify one configuration recorder.
+#' @param ServicePrincipal For service-linked configuration recorders, you can use the service principal of the linked Amazon Web Services service to specify the configuration recorder.
+#' @param Arn The Amazon Resource Name (ARN) of the configuration recorder that you want to specify.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2224,12 +2000,9 @@ configservice_describe_configuration_recorder_status <- function(ConfigurationRe
 #' @description
 #' Returns details for the configuration recorder you specify.
 #' 
-#' If a configuration recorder is not specified, this operation returns
-#' details for the customer managed configuration recorder configured for
-#' the account, if applicable.
+#' If a configuration recorder is not specified, this operation returns details for the customer managed configuration recorder configured for the account, if applicable.
 #' 
-#' When making a request to this operation, you can only specify one
-#' configuration recorder.
+#' When making a request to this operation, you can only specify one configuration recorder.
 #'
 #' @usage
 #' configservice_describe_configuration_recorders(
@@ -2237,13 +2010,9 @@ configservice_describe_configuration_recorder_status <- function(ConfigurationRe
 #'
 #' @param ConfigurationRecorderNames A list of names of the configuration recorders that you want to specify.
 #' 
-#' When making a request to this operation, you can only specify one
-#' configuration recorder.
-#' @param ServicePrincipal For service-linked configuration recorders, you can use the service
-#' principal of the linked Amazon Web Services service to specify the
-#' configuration recorder.
-#' @param Arn The Amazon Resource Name (ARN) of the configuration recorder that you
-#' want to specify.
+#' When making a request to this operation, you can only specify one configuration recorder.
+#' @param ServicePrincipal For service-linked configuration recorders, you can use the service principal of the linked Amazon Web Services service to specify the configuration recorder.
+#' @param Arn The Amazon Resource Name (ARN) of the configuration recorder that you want to specify.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2336,10 +2105,8 @@ configservice_describe_configuration_recorders <- function(ConfigurationRecorder
 #'
 #' @param ConformancePackName &#91;required&#93; Name of the conformance pack.
 #' @param Filters A `ConformancePackComplianceFilters` object.
-#' @param Limit The maximum number of Config rules within a conformance pack are
-#' returned on each page.
-#' @param NextToken The `nextToken` string returned in a previous request that you use to
-#' request the next page of results in a paginated response.
+#' @param Limit The maximum number of Config rules within a conformance pack are returned on each page.
+#' @param NextToken The `nextToken` string returned in a previous request that you use to request the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2411,8 +2178,7 @@ configservice_describe_conformance_pack_compliance <- function(ConformancePackNa
 #'
 #' @param ConformancePackNames Comma-separated list of conformance pack names.
 #' @param Limit The maximum number of conformance packs status returned on each page.
-#' @param NextToken The `nextToken` string returned in a previous request that you use to
-#' request the next page of results in a paginated response.
+#' @param NextToken The `nextToken` string returned in a previous request that you use to request the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2482,12 +2248,9 @@ configservice_describe_conformance_pack_status <- function(ConformancePackNames 
 #' configservice_describe_conformance_packs(ConformancePackNames, Limit,
 #'   NextToken)
 #'
-#' @param ConformancePackNames Comma-separated list of conformance pack names for which you want
-#' details. If you do not specify any names, Config returns details for all
-#' your conformance packs.
+#' @param ConformancePackNames Comma-separated list of conformance pack names for which you want details. If you do not specify any names, Config returns details for all your conformance packs.
 #' @param Limit The maximum number of conformance packs returned on each page.
-#' @param NextToken The `nextToken` string returned in a previous request that you use to
-#' request the next page of results in a paginated response.
+#' @param NextToken The `nextToken` string returned in a previous request that you use to request the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2558,12 +2321,9 @@ configservice_describe_conformance_packs <- function(ConformancePackNames = NULL
 #' Returns the current status of the specified delivery channel
 #'
 #' @description
-#' Returns the current status of the specified delivery channel. If a
-#' delivery channel is not specified, this operation returns the current
-#' status of all delivery channels associated with the account.
+#' Returns the current status of the specified delivery channel. If a delivery channel is not specified, this operation returns the current status of all delivery channels associated with the account.
 #' 
-#' Currently, you can specify only one delivery channel per region in your
-#' account.
+#' Currently, you can specify only one delivery channel per region in your account.
 #'
 #' @usage
 #' configservice_describe_delivery_channel_status(DeliveryChannelNames)
@@ -2654,12 +2414,9 @@ configservice_describe_delivery_channel_status <- function(DeliveryChannelNames 
 #' Returns details about the specified delivery channel
 #'
 #' @description
-#' Returns details about the specified delivery channel. If a delivery
-#' channel is not specified, this operation returns the details of all
-#' delivery channels associated with the account.
+#' Returns details about the specified delivery channel. If a delivery channel is not specified, this operation returns the details of all delivery channels associated with the account.
 #' 
-#' Currently, you can specify only one delivery channel per region in your
-#' account.
+#' Currently, you can specify only one delivery channel per region in your account.
 #'
 #' @usage
 #' configservice_describe_delivery_channels(DeliveryChannelNames)
@@ -2723,27 +2480,17 @@ configservice_describe_delivery_channels <- function(DeliveryChannelNames = NULL
 #' @description
 #' Provides organization Config rule deployment status for an organization.
 #' 
-#' The status is not considered successful until organization Config rule
-#' is successfully deployed in all the member accounts with an exception of
-#' excluded accounts.
+#' The status is not considered successful until organization Config rule is successfully deployed in all the member accounts with an exception of excluded accounts.
 #' 
-#' When you specify the limit and the next token, you receive a paginated
-#' response. Limit and next token are not applicable if you specify
-#' organization Config rule names. It is only applicable, when you request
-#' all the organization Config rules.
+#' When you specify the limit and the next token, you receive a paginated response. Limit and next token are not applicable if you specify organization Config rule names. It is only applicable, when you request all the organization Config rules.
 #'
 #' @usage
 #' configservice_describe_organization_config_rule_statuses(
 #'   OrganizationConfigRuleNames, Limit, NextToken)
 #'
-#' @param OrganizationConfigRuleNames The names of organization Config rules for which you want status
-#' details. If you do not specify any names, Config returns details for all
-#' your organization Config rules.
-#' @param Limit The maximum number of `OrganizationConfigRuleStatuses` returned on each
-#' page. If you do no specify a number, Config uses the default. The
-#' default is 100.
-#' @param NextToken The `nextToken` string returned on a previous page that you use to get
-#' the next page of results in a paginated response.
+#' @param OrganizationConfigRuleNames The names of organization Config rules for which you want status details. If you do not specify any names, Config returns details for all your organization Config rules.
+#' @param Limit The maximum number of `OrganizationConfigRuleStatuses` returned on each page. If you do no specify a number, Config uses the default. The default is 100.
+#' @param NextToken The `nextToken` string returned on a previous page that you use to get the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2804,41 +2551,21 @@ configservice_describe_organization_config_rule_statuses <- function(Organizatio
 #' @description
 #' Returns a list of organization Config rules.
 #' 
-#' When you specify the limit and the next token, you receive a paginated
-#' response.
+#' When you specify the limit and the next token, you receive a paginated response.
 #' 
-#' Limit and next token are not applicable if you specify organization
-#' Config rule names. It is only applicable, when you request all the
-#' organization Config rules.
+#' Limit and next token are not applicable if you specify organization Config rule names. It is only applicable, when you request all the organization Config rules.
 #' 
 #' *For accounts within an organization*
 #' 
-#' If you deploy an organizational rule or conformance pack in an
-#' organization administrator account, and then establish a delegated
-#' administrator and deploy an organizational rule or conformance pack in
-#' the delegated administrator account, you won't be able to see the
-#' organizational rule or conformance pack in the organization
-#' administrator account from the delegated administrator account or see
-#' the organizational rule or conformance pack in the delegated
-#' administrator account from organization administrator account. The
-#' [`describe_organization_config_rules`][configservice_describe_organization_config_rules]
-#' and
-#' [`describe_organization_conformance_packs`][configservice_describe_organization_conformance_packs]
-#' APIs can only see and interact with the organization-related resource
-#' that were deployed from within the account calling those APIs.
+#' If you deploy an organizational rule or conformance pack in an organization administrator account, and then establish a delegated administrator and deploy an organizational rule or conformance pack in the delegated administrator account, you won't be able to see the organizational rule or conformance pack in the organization administrator account from the delegated administrator account or see the organizational rule or conformance pack in the delegated administrator account from organization administrator account. The [`describe_organization_config_rules`][configservice_describe_organization_config_rules] and [`describe_organization_conformance_packs`][configservice_describe_organization_conformance_packs] APIs can only see and interact with the organization-related resource that were deployed from within the account calling those APIs.
 #'
 #' @usage
 #' configservice_describe_organization_config_rules(
 #'   OrganizationConfigRuleNames, Limit, NextToken)
 #'
-#' @param OrganizationConfigRuleNames The names of organization Config rules for which you want details. If
-#' you do not specify any names, Config returns details for all your
-#' organization Config rules.
-#' @param Limit The maximum number of organization Config rules returned on each page.
-#' If you do no specify a number, Config uses the default. The default is
-#' 100.
-#' @param NextToken The `nextToken` string returned on a previous page that you use to get
-#' the next page of results in a paginated response.
+#' @param OrganizationConfigRuleNames The names of organization Config rules for which you want details. If you do not specify any names, Config returns details for all your organization Config rules.
+#' @param Limit The maximum number of organization Config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.
+#' @param NextToken The `nextToken` string returned on a previous page that you use to get the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2944,30 +2671,19 @@ configservice_describe_organization_config_rules <- function(OrganizationConfigR
 #' organization
 #'
 #' @description
-#' Provides organization conformance pack deployment status for an
-#' organization.
+#' Provides organization conformance pack deployment status for an organization.
 #' 
-#' The status is not considered successful until organization conformance
-#' pack is successfully deployed in all the member accounts with an
-#' exception of excluded accounts.
+#' The status is not considered successful until organization conformance pack is successfully deployed in all the member accounts with an exception of excluded accounts.
 #' 
-#' When you specify the limit and the next token, you receive a paginated
-#' response. Limit and next token are not applicable if you specify
-#' organization conformance pack names. They are only applicable, when you
-#' request all the organization conformance packs.
+#' When you specify the limit and the next token, you receive a paginated response. Limit and next token are not applicable if you specify organization conformance pack names. They are only applicable, when you request all the organization conformance packs.
 #'
 #' @usage
 #' configservice_describe_organization_conformance_pack_statuses(
 #'   OrganizationConformancePackNames, Limit, NextToken)
 #'
-#' @param OrganizationConformancePackNames The names of organization conformance packs for which you want status
-#' details. If you do not specify any names, Config returns details for all
-#' your organization conformance packs.
-#' @param Limit The maximum number of OrganizationConformancePackStatuses returned on
-#' each page. If you do no specify a number, Config uses the default. The
-#' default is 100.
-#' @param NextToken The nextToken string returned on a previous page that you use to get the
-#' next page of results in a paginated response.
+#' @param OrganizationConformancePackNames The names of organization conformance packs for which you want status details. If you do not specify any names, Config returns details for all your organization conformance packs.
+#' @param Limit The maximum number of OrganizationConformancePackStatuses returned on each page. If you do no specify a number, Config uses the default. The default is 100.
+#' @param NextToken The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3028,39 +2744,21 @@ configservice_describe_organization_conformance_pack_statuses <- function(Organi
 #' @description
 #' Returns a list of organization conformance packs.
 #' 
-#' When you specify the limit and the next token, you receive a paginated
-#' response.
+#' When you specify the limit and the next token, you receive a paginated response.
 #' 
-#' Limit and next token are not applicable if you specify organization
-#' conformance packs names. They are only applicable, when you request all
-#' the organization conformance packs.
+#' Limit and next token are not applicable if you specify organization conformance packs names. They are only applicable, when you request all the organization conformance packs.
 #' 
 #' *For accounts within an organization*
 #' 
-#' If you deploy an organizational rule or conformance pack in an
-#' organization administrator account, and then establish a delegated
-#' administrator and deploy an organizational rule or conformance pack in
-#' the delegated administrator account, you won't be able to see the
-#' organizational rule or conformance pack in the organization
-#' administrator account from the delegated administrator account or see
-#' the organizational rule or conformance pack in the delegated
-#' administrator account from organization administrator account. The
-#' [`describe_organization_config_rules`][configservice_describe_organization_config_rules]
-#' and
-#' [`describe_organization_conformance_packs`][configservice_describe_organization_conformance_packs]
-#' APIs can only see and interact with the organization-related resource
-#' that were deployed from within the account calling those APIs.
+#' If you deploy an organizational rule or conformance pack in an organization administrator account, and then establish a delegated administrator and deploy an organizational rule or conformance pack in the delegated administrator account, you won't be able to see the organizational rule or conformance pack in the organization administrator account from the delegated administrator account or see the organizational rule or conformance pack in the delegated administrator account from organization administrator account. The [`describe_organization_config_rules`][configservice_describe_organization_config_rules] and [`describe_organization_conformance_packs`][configservice_describe_organization_conformance_packs] APIs can only see and interact with the organization-related resource that were deployed from within the account calling those APIs.
 #'
 #' @usage
 #' configservice_describe_organization_conformance_packs(
 #'   OrganizationConformancePackNames, Limit, NextToken)
 #'
 #' @param OrganizationConformancePackNames The name that you assign to an organization conformance pack.
-#' @param Limit The maximum number of organization config packs returned on each page.
-#' If you do no specify a number, Config uses the default. The default is
-#' 100.
-#' @param NextToken The nextToken string returned on a previous page that you use to get the
-#' next page of results in a paginated response.
+#' @param Limit The maximum number of organization config packs returned on each page. If you do no specify a number, Config uses the default. The default is 100.
+#' @param NextToken The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3133,10 +2831,8 @@ configservice_describe_organization_conformance_packs <- function(OrganizationCo
 #' @usage
 #' configservice_describe_pending_aggregation_requests(Limit, NextToken)
 #'
-#' @param Limit The maximum number of evaluation results returned on each page. The
-#' default is maximum. If you specify 0, Config uses the default.
-#' @param NextToken The `nextToken` string returned on a previous page that you use to get
-#' the next page of results in a paginated response.
+#' @param Limit The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.
+#' @param NextToken The `nextToken` string returned on a previous page that you use to get the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3192,8 +2888,7 @@ configservice_describe_pending_aggregation_requests <- function(Limit = NULL, Ne
 #' @usage
 #' configservice_describe_remediation_configurations(ConfigRuleNames)
 #'
-#' @param ConfigRuleNames &#91;required&#93; A list of Config rule names of remediation configurations for which you
-#' want details.
+#' @param ConfigRuleNames &#91;required&#93; A list of Config rule names of remediation configurations for which you want details.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3270,34 +2965,22 @@ configservice_describe_remediation_configurations <- function(ConfigRuleNames) {
 #' Returns the details of one or more remediation exceptions
 #'
 #' @description
-#' Returns the details of one or more remediation exceptions. A detailed
-#' view of a remediation exception for a set of resources that includes an
-#' explanation of an exception and the time when the exception will be
-#' deleted. When you specify the limit and the next token, you receive a
-#' paginated response.
+#' Returns the details of one or more remediation exceptions. A detailed view of a remediation exception for a set of resources that includes an explanation of an exception and the time when the exception will be deleted. When you specify the limit and the next token, you receive a paginated response.
 #' 
-#' Config generates a remediation exception when a problem occurs executing
-#' a remediation action to a specific resource. Remediation exceptions
-#' blocks auto-remediation until the exception is cleared.
+#' Config generates a remediation exception when a problem occurs executing a remediation action to a specific resource. Remediation exceptions blocks auto-remediation until the exception is cleared.
 #' 
-#' When you specify the limit and the next token, you receive a paginated
-#' response.
+#' When you specify the limit and the next token, you receive a paginated response.
 #' 
-#' Limit and next token are not applicable if you request resources in
-#' batch. It is only applicable, when you request all resources.
+#' Limit and next token are not applicable if you request resources in batch. It is only applicable, when you request all resources.
 #'
 #' @usage
 #' configservice_describe_remediation_exceptions(ConfigRuleName,
 #'   ResourceKeys, Limit, NextToken)
 #'
 #' @param ConfigRuleName &#91;required&#93; The name of the Config rule.
-#' @param ResourceKeys An exception list of resource exception keys to be processed with the
-#' current request. Config adds exception for each resource key. For
-#' example, Config adds 3 exceptions for 3 resource keys.
-#' @param Limit The maximum number of RemediationExceptionResourceKey returned on each
-#' page. The default is 25. If you specify 0, Config uses the default.
-#' @param NextToken The `nextToken` string returned in a previous request that you use to
-#' request the next page of results in a paginated response.
+#' @param ResourceKeys An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys.
+#' @param Limit The maximum number of RemediationExceptionResourceKey returned on each page. The default is 25. If you specify 0, Config uses the default.
+#' @param NextToken The `nextToken` string returned in a previous request that you use to request the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3362,23 +3045,16 @@ configservice_describe_remediation_exceptions <- function(ConfigRuleName, Resour
 #' execution occur, and any error messages for steps that have failed
 #'
 #' @description
-#' Provides a detailed view of a Remediation Execution for a set of
-#' resources including state, timestamps for when steps for the remediation
-#' execution occur, and any error messages for steps that have failed. When
-#' you specify the limit and the next token, you receive a paginated
-#' response.
+#' Provides a detailed view of a Remediation Execution for a set of resources including state, timestamps for when steps for the remediation execution occur, and any error messages for steps that have failed. When you specify the limit and the next token, you receive a paginated response.
 #'
 #' @usage
 #' configservice_describe_remediation_execution_status(ConfigRuleName,
 #'   ResourceKeys, Limit, NextToken)
 #'
 #' @param ConfigRuleName &#91;required&#93; The name of the Config rule.
-#' @param ResourceKeys A list of resource keys to be processed with the current request. Each
-#' element in the list consists of the resource type and resource ID.
-#' @param Limit The maximum number of RemediationExecutionStatuses returned on each
-#' page. The default is maximum. If you specify 0, Config uses the default.
-#' @param NextToken The `nextToken` string returned on a previous page that you use to get
-#' the next page of results in a paginated response.
+#' @param ResourceKeys A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.
+#' @param Limit The maximum number of RemediationExecutionStatuses returned on each page. The default is maximum. If you specify 0, Config uses the default.
+#' @param NextToken The `nextToken` string returned on a previous page that you use to get the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3458,25 +3134,18 @@ configservice_describe_remediation_execution_status <- function(ConfigRuleName, 
 #' Returns the details of one or more retention configurations
 #'
 #' @description
-#' Returns the details of one or more retention configurations. If the
-#' retention configuration name is not specified, this operation returns
-#' the details for all the retention configurations for that account.
+#' Returns the details of one or more retention configurations. If the retention configuration name is not specified, this operation returns the details for all the retention configurations for that account.
 #' 
-#' Currently, Config supports only one retention configuration per region
-#' in your account.
+#' Currently, Config supports only one retention configuration per region in your account.
 #'
 #' @usage
 #' configservice_describe_retention_configurations(
 #'   RetentionConfigurationNames, NextToken)
 #'
-#' @param RetentionConfigurationNames A list of names of retention configurations for which you want details.
-#' If you do not specify a name, Config returns details for all the
-#' retention configurations for that account.
+#' @param RetentionConfigurationNames A list of names of retention configurations for which you want details. If you do not specify a name, Config returns details for all the retention configurations for that account.
 #' 
-#' Currently, Config supports only one retention configuration per region
-#' in your account.
-#' @param NextToken The `nextToken` string returned on a previous page that you use to get
-#' the next page of results in a paginated response.
+#' Currently, Config supports only one retention configuration per region in your account.
+#' @param NextToken The `nextToken` string returned on a previous page that you use to get the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3531,24 +3200,16 @@ configservice_describe_retention_configurations <- function(RetentionConfigurati
 #' types when recording
 #'
 #' @description
-#' Removes all resource types specified in the `ResourceTypes` list from
-#' the
-#' [RecordingGroup](https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html)
-#' of configuration recorder and excludes these resource types when
-#' recording.
+#' Removes all resource types specified in the `ResourceTypes` list from the [RecordingGroup](https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html) of configuration recorder and excludes these resource types when recording.
 #' 
-#' For this operation, the configuration recorder must use a
-#' [RecordingStrategy](https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html)
-#' that is either `INCLUSION_BY_RESOURCE_TYPES` or
-#' `EXCLUSION_BY_RESOURCE_TYPES`.
+#' For this operation, the configuration recorder must use a [RecordingStrategy](https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html) that is either `INCLUSION_BY_RESOURCE_TYPES` or `EXCLUSION_BY_RESOURCE_TYPES`.
 #'
 #' @usage
 #' configservice_disassociate_resource_types(ConfigurationRecorderArn,
 #'   ResourceTypes)
 #'
 #' @param ConfigurationRecorderArn &#91;required&#93; The Amazon Resource Name (ARN) of the specified configuration recorder.
-#' @param ResourceTypes &#91;required&#93; The list of resource types you want to remove from the recording group
-#' of the specified configuration recorder.
+#' @param ResourceTypes &#91;required&#93; The list of resource types you want to remove from the recording group of the specified configuration recorder.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3629,13 +3290,9 @@ configservice_disassociate_resource_types <- function(ConfigurationRecorderArn, 
 #' specific resource in a rule
 #'
 #' @description
-#' Returns the evaluation results for the specified Config rule for a
-#' specific resource in a rule. The results indicate which Amazon Web
-#' Services resources were evaluated by the rule, when each resource was
-#' last evaluated, and whether each resource complies with the rule.
+#' Returns the evaluation results for the specified Config rule for a specific resource in a rule. The results indicate which Amazon Web Services resources were evaluated by the rule, when each resource was last evaluated, and whether each resource complies with the rule.
 #' 
-#' The results can return an empty result page. But if you have a
-#' `nextToken`, the results are displayed on the next page.
+#' The results can return an empty result page. But if you have a `nextToken`, the results are displayed on the next page.
 #'
 #' @usage
 #' configservice_get_aggregate_compliance_details_by_config_rule(
@@ -3648,14 +3305,9 @@ configservice_disassociate_resource_types <- function(ConfigurationRecorderArn, 
 #' @param AwsRegion &#91;required&#93; The source region from where the data is aggregated.
 #' @param ComplianceType The resource compliance status.
 #' 
-#' For the `GetAggregateComplianceDetailsByConfigRuleRequest` data type,
-#' Config supports only the `COMPLIANT` and `NON_COMPLIANT`. Config does
-#' not support the `NOT_APPLICABLE` and `INSUFFICIENT_DATA` values.
-#' @param Limit The maximum number of evaluation results returned on each page. The
-#' default is 50. You cannot specify a number greater than 100. If you
-#' specify 0, Config uses the default.
-#' @param NextToken The `nextToken` string returned on a previous page that you use to get
-#' the next page of results in a paginated response.
+#' For the `GetAggregateComplianceDetailsByConfigRuleRequest` data type, Config supports only the `COMPLIANT` and `NON_COMPLIANT`. Config does not support the `NOT_APPLICABLE` and `INSUFFICIENT_DATA` values.
+#' @param Limit The maximum number of evaluation results returned on each page. The default is 50. You cannot specify a number greater than 100. If you specify 0, Config uses the default.
+#' @param NextToken The `nextToken` string returned on a previous page that you use to get the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3732,25 +3384,19 @@ configservice_get_aggregate_compliance_details_by_config_rule <- function(Config
 #' accounts and regions in an aggregator
 #'
 #' @description
-#' Returns the number of compliant and noncompliant rules for one or more
-#' accounts and regions in an aggregator.
+#' Returns the number of compliant and noncompliant rules for one or more accounts and regions in an aggregator.
 #' 
-#' The results can return an empty result page, but if you have a
-#' nextToken, the results are displayed on the next page.
+#' The results can return an empty result page, but if you have a nextToken, the results are displayed on the next page.
 #'
 #' @usage
 #' configservice_get_aggregate_config_rule_compliance_summary(
 #'   ConfigurationAggregatorName, Filters, GroupByKey, Limit, NextToken)
 #'
 #' @param ConfigurationAggregatorName &#91;required&#93; The name of the configuration aggregator.
-#' @param Filters Filters the results based on the ConfigRuleComplianceSummaryFilters
-#' object.
+#' @param Filters Filters the results based on the ConfigRuleComplianceSummaryFilters object.
 #' @param GroupByKey Groups the result based on ACCOUNT_ID or AWS_REGION.
-#' @param Limit The maximum number of evaluation results returned on each page. The
-#' default is 1000. You cannot specify a number greater than 1000. If you
-#' specify 0, Config uses the default.
-#' @param NextToken The `nextToken` string returned on a previous page that you use to get
-#' the next page of results in a paginated response.
+#' @param Limit The maximum number of evaluation results returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.
+#' @param NextToken The `nextToken` string returned on a previous page that you use to get the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3822,27 +3468,19 @@ configservice_get_aggregate_config_rule_compliance_summary <- function(Configura
 #' aggregator
 #'
 #' @description
-#' Returns the count of compliant and noncompliant conformance packs across
-#' all Amazon Web Services accounts and Amazon Web Services Regions in an
-#' aggregator. You can filter based on Amazon Web Services account ID or
-#' Amazon Web Services Region.
+#' Returns the count of compliant and noncompliant conformance packs across all Amazon Web Services accounts and Amazon Web Services Regions in an aggregator. You can filter based on Amazon Web Services account ID or Amazon Web Services Region.
 #' 
-#' The results can return an empty result page, but if you have a
-#' nextToken, the results are displayed on the next page.
+#' The results can return an empty result page, but if you have a nextToken, the results are displayed on the next page.
 #'
 #' @usage
 #' configservice_get_aggregate_conformance_pack_compliance_summary(
 #'   ConfigurationAggregatorName, Filters, GroupByKey, Limit, NextToken)
 #'
 #' @param ConfigurationAggregatorName &#91;required&#93; The name of the configuration aggregator.
-#' @param Filters Filters the results based on the
-#' `AggregateConformancePackComplianceSummaryFilters` object.
-#' @param GroupByKey Groups the result based on Amazon Web Services account ID or Amazon Web
-#' Services Region.
-#' @param Limit The maximum number of results returned on each page. The default is
-#' maximum. If you specify 0, Config uses the default.
-#' @param NextToken The `nextToken` string returned on a previous page that you use to get
-#' the next page of results in a paginated response.
+#' @param Filters Filters the results based on the `AggregateConformancePackComplianceSummaryFilters` object.
+#' @param GroupByKey Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.
+#' @param Limit The maximum number of results returned on each page. The default is maximum. If you specify 0, Config uses the default.
+#' @param NextToken The `nextToken` string returned on a previous page that you use to get the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3904,15 +3542,9 @@ configservice_get_aggregate_conformance_pack_compliance_summary <- function(Conf
 #' in your Config aggregator
 #'
 #' @description
-#' Returns the resource counts across accounts and regions that are present
-#' in your Config aggregator. You can request the resource counts by
-#' providing filters and GroupByKey.
+#' Returns the resource counts across accounts and regions that are present in your Config aggregator. You can request the resource counts by providing filters and GroupByKey.
 #' 
-#' For example, if the input contains accountID 12345678910 and region
-#' us-east-1 in filters, the API returns the count of resources in account
-#' ID 12345678910 and region us-east-1. If the input contains ACCOUNT_ID as
-#' a GroupByKey, the API returns resource counts for all source accounts
-#' that are present in your aggregator.
+#' For example, if the input contains accountID 12345678910 and region us-east-1 in filters, the API returns the count of resources in account ID 12345678910 and region us-east-1. If the input contains ACCOUNT_ID as a GroupByKey, the API returns resource counts for all source accounts that are present in your aggregator.
 #'
 #' @usage
 #' configservice_get_aggregate_discovered_resource_counts(
@@ -3921,11 +3553,8 @@ configservice_get_aggregate_conformance_pack_compliance_summary <- function(Conf
 #' @param ConfigurationAggregatorName &#91;required&#93; The name of the configuration aggregator.
 #' @param Filters Filters the results based on the `ResourceCountFilters` object.
 #' @param GroupByKey The key to group the resource counts.
-#' @param Limit The maximum number of GroupedResourceCount objects returned on each
-#' page. The default is 1000. You cannot specify a number greater than
-#' 1000. If you specify 0, Config uses the default.
-#' @param NextToken The `nextToken` string returned on a previous page that you use to get
-#' the next page of results in a paginated response.
+#' @param Limit The maximum number of GroupedResourceCount objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.
+#' @param NextToken The `nextToken` string returned on a previous page that you use to get the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3986,8 +3615,7 @@ configservice_get_aggregate_discovered_resource_counts <- function(Configuration
 #' in a specific source account and region
 #'
 #' @description
-#' Returns configuration item that is aggregated for your specific resource
-#' in a specific source account and region.
+#' Returns configuration item that is aggregated for your specific resource in a specific source account and region.
 #' 
 #' The API does not return results for deleted resources.
 #'
@@ -4087,10 +3715,7 @@ configservice_get_aggregate_resource_config <- function(ConfigurationAggregatorN
 #' Returns the evaluation results for the specified Config rule
 #'
 #' @description
-#' Returns the evaluation results for the specified Config rule. The
-#' results indicate which Amazon Web Services resources were evaluated by
-#' the rule, when each resource was last evaluated, and whether each
-#' resource complies with the rule.
+#' Returns the evaluation results for the specified Config rule. The results indicate which Amazon Web Services resources were evaluated by the rule, when each resource was last evaluated, and whether each resource complies with the rule.
 #'
 #' @usage
 #' configservice_get_compliance_details_by_config_rule(ConfigRuleName,
@@ -4099,14 +3724,9 @@ configservice_get_aggregate_resource_config <- function(ConfigurationAggregatorN
 #' @param ConfigRuleName &#91;required&#93; The name of the Config rule for which you want compliance information.
 #' @param ComplianceTypes Filters the results by compliance.
 #' 
-#' `INSUFFICIENT_DATA` is a valid `ComplianceType` that is returned when an
-#' Config rule cannot be evaluated. However, `INSUFFICIENT_DATA` cannot be
-#' used as a `ComplianceType` for filtering results.
-#' @param Limit The maximum number of evaluation results returned on each page. The
-#' default is 10. You cannot specify a number greater than 100. If you
-#' specify 0, Config uses the default.
-#' @param NextToken The `nextToken` string returned on a previous page that you use to get
-#' the next page of results in a paginated response.
+#' `INSUFFICIENT_DATA` is a valid `ComplianceType` that is returned when an Config rule cannot be evaluated. However, `INSUFFICIENT_DATA` cannot be used as a `ComplianceType` for filtering results.
+#' @param Limit The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.
+#' @param NextToken The `nextToken` string returned on a previous page that you use to get the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4181,31 +3801,21 @@ configservice_get_compliance_details_by_config_rule <- function(ConfigRuleName, 
 #' resource
 #'
 #' @description
-#' Returns the evaluation results for the specified Amazon Web Services
-#' resource. The results indicate which Config rules were used to evaluate
-#' the resource, when each rule was last invoked, and whether the resource
-#' complies with each rule.
+#' Returns the evaluation results for the specified Amazon Web Services resource. The results indicate which Config rules were used to evaluate the resource, when each rule was last invoked, and whether the resource complies with each rule.
 #'
 #' @usage
 #' configservice_get_compliance_details_by_resource(ResourceType,
 #'   ResourceId, ComplianceTypes, NextToken, ResourceEvaluationId)
 #'
-#' @param ResourceType The type of the Amazon Web Services resource for which you want
-#' compliance information.
-#' @param ResourceId The ID of the Amazon Web Services resource for which you want compliance
-#' information.
+#' @param ResourceType The type of the Amazon Web Services resource for which you want compliance information.
+#' @param ResourceId The ID of the Amazon Web Services resource for which you want compliance information.
 #' @param ComplianceTypes Filters the results by compliance.
 #' 
-#' `INSUFFICIENT_DATA` is a valid `ComplianceType` that is returned when an
-#' Config rule cannot be evaluated. However, `INSUFFICIENT_DATA` cannot be
-#' used as a `ComplianceType` for filtering results.
-#' @param NextToken The `nextToken` string returned on a previous page that you use to get
-#' the next page of results in a paginated response.
-#' @param ResourceEvaluationId The unique ID of Amazon Web Services resource execution for which you
-#' want to retrieve evaluation results.
+#' `INSUFFICIENT_DATA` is a valid `ComplianceType` that is returned when an Config rule cannot be evaluated. However, `INSUFFICIENT_DATA` cannot be used as a `ComplianceType` for filtering results.
+#' @param NextToken The `nextToken` string returned on a previous page that you use to get the next page of results in a paginated response.
+#' @param ResourceEvaluationId The unique ID of Amazon Web Services resource execution for which you want to retrieve evaluation results.
 #' 
-#' You need to only provide either a `ResourceEvaluationID` or a
-#' `ResourceID `and `ResourceType`.
+#' You need to only provide either a `ResourceEvaluationID` or a `ResourceID `and `ResourceType`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4281,8 +3891,7 @@ configservice_get_compliance_details_by_resource <- function(ResourceType = NULL
 #' up to a maximum of 25 for each
 #'
 #' @description
-#' Returns the number of Config rules that are compliant and noncompliant,
-#' up to a maximum of 25 for each.
+#' Returns the number of Config rules that are compliant and noncompliant, up to a maximum of 25 for each.
 #'
 #' @usage
 #' configservice_get_compliance_summary_by_config_rule()
@@ -4339,21 +3948,14 @@ configservice_get_compliance_summary_by_config_rule <- function() {
 #' are noncompliant
 #'
 #' @description
-#' Returns the number of resources that are compliant and the number that
-#' are noncompliant. You can specify one or more resource types to get
-#' these numbers for each resource type. The maximum number returned is
-#' 100.
+#' Returns the number of resources that are compliant and the number that are noncompliant. You can specify one or more resource types to get these numbers for each resource type. The maximum number returned is 100.
 #'
 #' @usage
 #' configservice_get_compliance_summary_by_resource_type(ResourceTypes)
 #'
-#' @param ResourceTypes Specify one or more resource types to get the number of resources that
-#' are compliant and the number that are noncompliant for each resource
-#' type.
+#' @param ResourceTypes Specify one or more resource types to get the number of resources that are compliant and the number that are noncompliant for each resource type.
 #' 
-#' For this request, you can specify an Amazon Web Services resource type
-#' such as `AWS::EC2::Instance`. You can specify that the resource type is
-#' an Amazon Web Services account by specifying `AWS::::Account`.
+#' For this request, you can specify an Amazon Web Services resource type such as `AWS::EC2::Instance`. You can specify that the resource type is an Amazon Web Services account by specifying `AWS::::Account`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4417,8 +4019,7 @@ configservice_get_compliance_summary_by_resource_type <- function(ResourceTypes 
 #' Services resources that are monitered by conformance pack
 #'
 #' @description
-#' Returns compliance details of a conformance pack for all Amazon Web
-#' Services resources that are monitered by conformance pack.
+#' Returns compliance details of a conformance pack for all Amazon Web Services resources that are monitered by conformance pack.
 #'
 #' @usage
 #' configservice_get_conformance_pack_compliance_details(
@@ -4426,10 +4027,8 @@ configservice_get_compliance_summary_by_resource_type <- function(ResourceTypes 
 #'
 #' @param ConformancePackName &#91;required&#93; Name of the conformance pack.
 #' @param Filters A `ConformancePackEvaluationFilters` object.
-#' @param Limit The maximum number of evaluation results returned on each page. If you
-#' do no specify a number, Config uses the default. The default is 100.
-#' @param NextToken The `nextToken` string returned in a previous request that you use to
-#' request the next page of results in a paginated response.
+#' @param Limit The maximum number of evaluation results returned on each page. If you do no specify a number, Config uses the default. The default is 100.
+#' @param NextToken The `nextToken` string returned in a previous request that you use to request the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4511,8 +4110,7 @@ configservice_get_conformance_pack_compliance_details <- function(ConformancePac
 #' cumulative compliance results of all the rules in that conformance pack
 #'
 #' @description
-#' Returns compliance details for the conformance pack based on the
-#' cumulative compliance results of all the rules in that conformance pack.
+#' Returns compliance details for the conformance pack based on the cumulative compliance results of all the rules in that conformance pack.
 #'
 #' @usage
 #' configservice_get_conformance_pack_compliance_summary(
@@ -4520,8 +4118,7 @@ configservice_get_conformance_pack_compliance_details <- function(ConformancePac
 #'
 #' @param ConformancePackNames &#91;required&#93; Names of conformance packs.
 #' @param Limit The maximum number of conformance packs returned on each page.
-#' @param NextToken The nextToken string returned on a previous page that you use to get the
-#' next page of results in a paginated response.
+#' @param NextToken The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4576,8 +4173,7 @@ configservice_get_conformance_pack_compliance_summary <- function(ConformancePac
 #' Custom Policy rule
 #'
 #' @description
-#' Returns the policy definition containing the logic for your Config
-#' Custom Policy rule.
+#' Returns the policy definition containing the logic for your Config Custom Policy rule.
 #'
 #' @usage
 #' configservice_get_custom_rule_policy(ConfigRuleName)
@@ -4628,19 +4224,13 @@ configservice_get_custom_rule_policy <- function(ConfigRuleName = NULL) {
 #' your Amazon Web Services account
 #'
 #' @description
-#' Returns the resource types, the number of each resource type, and the
-#' total number of resources that Config is recording in this region for
-#' your Amazon Web Services account.
+#' Returns the resource types, the number of each resource type, and the total number of resources that Config is recording in this region for your Amazon Web Services account.
 #' 
 #' **Example**
 #' 
-#' 1.  Config is recording three resource types in the US East (Ohio)
-#'     Region for your account: 25 EC2 instances, 20 IAM users, and 15 S3
-#'     buckets.
+#' 1.  Config is recording three resource types in the US East (Ohio) Region for your account: 25 EC2 instances, 20 IAM users, and 15 S3 buckets.
 #' 
-#' 2.  You make a call to the
-#'     [`get_discovered_resource_counts`][configservice_get_discovered_resource_counts]
-#'     action and specify that you want all resource types.
+#' 2.  You make a call to the [`get_discovered_resource_counts`][configservice_get_discovered_resource_counts] action and specify that you want all resource types.
 #' 
 #' 3.  Config returns the following:
 #' 
@@ -4650,46 +4240,27 @@ configservice_get_custom_rule_policy <- function(ConfigRuleName = NULL) {
 #' 
 #'     -   The total number of all resources (60).
 #' 
-#' The response is paginated. By default, Config lists 100 ResourceCount
-#' objects on each page. You can customize this number with the `limit`
-#' parameter. The response includes a `nextToken` string. To get the next
-#' page of results, run the request again and specify the string for the
-#' `nextToken` parameter.
+#' The response is paginated. By default, Config lists 100 ResourceCount objects on each page. You can customize this number with the `limit` parameter. The response includes a `nextToken` string. To get the next page of results, run the request again and specify the string for the `nextToken` parameter.
 #' 
-#' If you make a call to the
-#' [`get_discovered_resource_counts`][configservice_get_discovered_resource_counts]
-#' action, you might not immediately receive resource counts in the
-#' following situations:
+#' If you make a call to the [`get_discovered_resource_counts`][configservice_get_discovered_resource_counts] action, you might not immediately receive resource counts in the following situations:
 #' 
 #' -   You are a new Config customer.
 #' 
 #' -   You just enabled resource recording.
 #' 
-#' It might take a few minutes for Config to record and count your
-#' resources. Wait a few minutes and then retry the
-#' [`get_discovered_resource_counts`][configservice_get_discovered_resource_counts]
-#' action.
+#' It might take a few minutes for Config to record and count your resources. Wait a few minutes and then retry the [`get_discovered_resource_counts`][configservice_get_discovered_resource_counts] action.
 #'
 #' @usage
 #' configservice_get_discovered_resource_counts(resourceTypes, limit,
 #'   nextToken)
 #'
-#' @param resourceTypes The comma-separated list that specifies the resource types that you want
-#' Config to return (for example, `"AWS::EC2::Instance"`,
-#' `"AWS::IAM::User"`).
+#' @param resourceTypes The comma-separated list that specifies the resource types that you want Config to return (for example, `"AWS::EC2::Instance"`, `"AWS::IAM::User"`).
 #' 
-#' If a value for `resourceTypes` is not specified, Config returns all
-#' resource types that Config is recording in the region for your account.
+#' If a value for `resourceTypes` is not specified, Config returns all resource types that Config is recording in the region for your account.
 #' 
-#' If the configuration recorder is turned off, Config returns an empty
-#' list of ResourceCount objects. If the configuration recorder is not
-#' recording a specific resource type (for example, S3 buckets), that
-#' resource type is not returned in the list of ResourceCount objects.
-#' @param limit The maximum number of ResourceCount objects returned on each page. The
-#' default is 100. You cannot specify a number greater than 100. If you
-#' specify 0, Config uses the default.
-#' @param nextToken The `nextToken` string returned on a previous page that you use to get
-#' the next page of results in a paginated response.
+#' If the configuration recorder is turned off, Config returns an empty list of ResourceCount objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of ResourceCount objects.
+#' @param limit The maximum number of ResourceCount objects returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.
+#' @param nextToken The `nextToken` string returned on a previous page that you use to get the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4745,21 +4316,16 @@ configservice_get_discovered_resource_counts <- function(resourceTypes = NULL, l
 #' for a given organization Config rule
 #'
 #' @description
-#' Returns detailed status for each member account within an organization
-#' for a given organization Config rule.
+#' Returns detailed status for each member account within an organization for a given organization Config rule.
 #'
 #' @usage
 #' configservice_get_organization_config_rule_detailed_status(
 #'   OrganizationConfigRuleName, Filters, Limit, NextToken)
 #'
-#' @param OrganizationConfigRuleName &#91;required&#93; The name of your organization Config rule for which you want status
-#' details for member accounts.
+#' @param OrganizationConfigRuleName &#91;required&#93; The name of your organization Config rule for which you want status details for member accounts.
 #' @param Filters A `StatusDetailFilters` object.
-#' @param Limit The maximum number of `OrganizationConfigRuleDetailedStatus` returned on
-#' each page. If you do not specify a number, Config uses the default. The
-#' default is 100.
-#' @param NextToken The `nextToken` string returned on a previous page that you use to get
-#' the next page of results in a paginated response.
+#' @param Limit The maximum number of `OrganizationConfigRuleDetailedStatus` returned on each page. If you do not specify a number, Config uses the default. The default is 100.
+#' @param NextToken The `nextToken` string returned on a previous page that you use to get the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4822,21 +4388,16 @@ configservice_get_organization_config_rule_detailed_status <- function(Organizat
 #' for a given organization conformance pack
 #'
 #' @description
-#' Returns detailed status for each member account within an organization
-#' for a given organization conformance pack.
+#' Returns detailed status for each member account within an organization for a given organization conformance pack.
 #'
 #' @usage
 #' configservice_get_organization_conformance_pack_detailed_status(
 #'   OrganizationConformancePackName, Filters, Limit, NextToken)
 #'
-#' @param OrganizationConformancePackName &#91;required&#93; The name of organization conformance pack for which you want status
-#' details for member accounts.
+#' @param OrganizationConformancePackName &#91;required&#93; The name of organization conformance pack for which you want status details for member accounts.
 #' @param Filters An `OrganizationResourceDetailedStatusFilters` object.
-#' @param Limit The maximum number of `OrganizationConformancePackDetailedStatuses`
-#' returned on each page. If you do not specify a number, Config uses the
-#' default. The default is 100.
-#' @param NextToken The nextToken string returned on a previous page that you use to get the
-#' next page of results in a paginated response.
+#' @param Limit The maximum number of `OrganizationConformancePackDetailedStatuses` returned on each page. If you do not specify a number, Config uses the default. The default is 100.
+#' @param NextToken The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4899,8 +4460,7 @@ configservice_get_organization_conformance_pack_detailed_status <- function(Orga
 #' Config Custom Policy rule
 #'
 #' @description
-#' Returns the policy definition containing the logic for your organization
-#' Config Custom Policy rule.
+#' Returns the policy definition containing the logic for your organization Config Custom Policy rule.
 #'
 #' @usage
 #' configservice_get_organization_custom_rule_policy(
@@ -4951,34 +4511,21 @@ configservice_get_organization_custom_rule_policy <- function(OrganizationConfig
 #' AWS::Config::ResourceCompliance resource type
 #'
 #' @description
-#' For accurate reporting on the compliance status, you must record the
-#' `AWS::Config::ResourceCompliance` resource type.
+#' For accurate reporting on the compliance status, you must record the `AWS::Config::ResourceCompliance` resource type.
 #' 
-#' For more information, see [Recording Amazon Web Services
-#' Resources](https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html)
-#' in the *Config Resources Developer Guide*.
+#' For more information, see [Recording Amazon Web Services Resources](https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html) in the *Config Resources Developer Guide*.
 #' 
 #' Returns a list of configurations items (CIs) for the specified resource.
 #' 
 #' **Contents**
 #' 
-#' The list contains details about each state of the resource during the
-#' specified time interval. If you specified a retention period to retain
-#' your CIs between a minimum of 30 days and a maximum of 7 years (2557
-#' days), Config returns the CIs for the specified retention period.
+#' The list contains details about each state of the resource during the specified time interval. If you specified a retention period to retain your CIs between a minimum of 30 days and a maximum of 7 years (2557 days), Config returns the CIs for the specified retention period.
 #' 
 #' **Pagination**
 #' 
-#' The response is paginated. By default, Config returns a limit of 10
-#' configuration items per page. You can customize this number with the
-#' `limit` parameter. The response includes a `nextToken` string. To get
-#' the next page of results, run the request again and specify the string
-#' for the `nextToken` parameter.
+#' The response is paginated. By default, Config returns a limit of 10 configuration items per page. You can customize this number with the `limit` parameter. The response includes a `nextToken` string. To get the next page of results, run the request again and specify the string for the `nextToken` parameter.
 #' 
-#' Each call to the API is limited to span a duration of seven days. It is
-#' likely that the number of records returned is smaller than the specified
-#' `limit`. In such cases, you can make another call, using the
-#' `nextToken`.
+#' Each call to the API is limited to span a duration of seven days. It is likely that the number of records returned is smaller than the specified `limit`. In such cases, you can make another call, using the `nextToken`.
 #'
 #' @usage
 #' configservice_get_resource_config_history(resourceType, resourceId,
@@ -4986,19 +4533,11 @@ configservice_get_organization_custom_rule_policy <- function(OrganizationConfig
 #'
 #' @param resourceType &#91;required&#93; The resource type.
 #' @param resourceId &#91;required&#93; The ID of the resource (for example., `sg-xxxxxx`).
-#' @param laterTime The chronologically latest time in the time range for which the history
-#' requested. If not specified, current time is taken.
-#' @param earlierTime The chronologically earliest time in the time range for which the
-#' history requested. If not specified, the action returns paginated
-#' results that contain configuration items that start when the first
-#' configuration item was recorded.
-#' @param chronologicalOrder The chronological order for configuration items listed. By default, the
-#' results are listed in reverse chronological order.
-#' @param limit The maximum number of configuration items returned on each page. The
-#' default is 10. You cannot specify a number greater than 100. If you
-#' specify 0, Config uses the default.
-#' @param nextToken The `nextToken` string returned on a previous page that you use to get
-#' the next page of results in a paginated response.
+#' @param laterTime The chronologically latest time in the time range for which the history requested. If not specified, current time is taken.
+#' @param earlierTime The chronologically earliest time in the time range for which the history requested. If not specified, the action returns paginated results that contain configuration items that start when the first configuration item was recorded.
+#' @param chronologicalOrder The chronological order for configuration items listed. By default, the results are listed in reverse chronological order.
+#' @param limit The maximum number of configuration items returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.
+#' @param nextToken The `nextToken` string returned on a previous page that you use to get the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5096,25 +4635,14 @@ configservice_get_resource_config_history <- function(resourceType, resourceId, 
 #' evaluation ID from the proactive rules that were run
 #'
 #' @description
-#' Returns a summary of resource evaluation for the specified resource
-#' evaluation ID from the proactive rules that were run. The results
-#' indicate which evaluation context was used to evaluate the rules, which
-#' resource details were evaluated, the evaluation mode that was run, and
-#' whether the resource details comply with the configuration of the
-#' proactive rules.
+#' Returns a summary of resource evaluation for the specified resource evaluation ID from the proactive rules that were run. The results indicate which evaluation context was used to evaluate the rules, which resource details were evaluated, the evaluation mode that was run, and whether the resource details comply with the configuration of the proactive rules.
 #' 
-#' To see additional information about the evaluation result, such as which
-#' rule flagged a resource as NON_COMPLIANT, use the
-#' [`get_compliance_details_by_resource`][configservice_get_compliance_details_by_resource]
-#' API. For more information, see the
-#' [Examples](https://docs.aws.amazon.com/config/latest/APIReference/API_GetResourceEvaluationSummary.html#API_GetResourceEvaluationSummary_Examples)
-#' section.
+#' To see additional information about the evaluation result, such as which rule flagged a resource as NON_COMPLIANT, use the [`get_compliance_details_by_resource`][configservice_get_compliance_details_by_resource] API. For more information, see the [Examples](https://docs.aws.amazon.com/config/latest/APIReference/API_GetResourceEvaluationSummary.html#API_GetResourceEvaluationSummary_Examples) section.
 #'
 #' @usage
 #' configservice_get_resource_evaluation_summary(ResourceEvaluationId)
 #'
-#' @param ResourceEvaluationId &#91;required&#93; The unique `ResourceEvaluationId` of Amazon Web Services resource
-#' execution for which you want to retrieve the evaluation summary.
+#' @param ResourceEvaluationId &#91;required&#93; The unique `ResourceEvaluationId` of Amazon Web Services resource execution for which you want to retrieve the evaluation summary.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5232,17 +4760,9 @@ configservice_get_stored_query <- function(QueryName) {
 #' are aggregated for a specific resource type across accounts and regions
 #'
 #' @description
-#' Accepts a resource type and returns a list of resource identifiers that
-#' are aggregated for a specific resource type across accounts and regions.
-#' A resource identifier includes the resource type, ID, (if available) the
-#' custom resource name, source account, and source region. You can narrow
-#' the results to include only resources that have specific resource IDs,
-#' or a resource name, or source account ID, or source region.
+#' Accepts a resource type and returns a list of resource identifiers that are aggregated for a specific resource type across accounts and regions. A resource identifier includes the resource type, ID, (if available) the custom resource name, source account, and source region. You can narrow the results to include only resources that have specific resource IDs, or a resource name, or source account ID, or source region.
 #' 
-#' For example, if the input consists of accountID 12345678910 and the
-#' region is us-east-1 for resource type `AWS::EC2::Instance` then the API
-#' returns all the EC2 instance identifiers of accountID 12345678910 and
-#' region us-east-1.
+#' For example, if the input consists of accountID 12345678910 and the region is us-east-1 for resource type `AWS::EC2::Instance` then the API returns all the EC2 instance identifiers of accountID 12345678910 and region us-east-1.
 #'
 #' @usage
 #' configservice_list_aggregate_discovered_resources(
@@ -5251,11 +4771,8 @@ configservice_get_stored_query <- function(QueryName) {
 #' @param ConfigurationAggregatorName &#91;required&#93; The name of the configuration aggregator.
 #' @param ResourceType &#91;required&#93; The type of resources that you want Config to list in the response.
 #' @param Filters Filters the results based on the `ResourceFilters` object.
-#' @param Limit The maximum number of resource identifiers returned on each page. You
-#' cannot specify a number greater than 100. If you specify 0, Config uses
-#' the default.
-#' @param NextToken The `nextToken` string returned on a previous page that you use to get
-#' the next page of results in a paginated response.
+#' @param Limit The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100. If you specify 0, Config uses the default.
+#' @param NextToken The `nextToken` string returned on a previous page that you use to get the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5318,18 +4835,15 @@ configservice_list_aggregate_discovered_resources <- function(ConfigurationAggre
 #' specify
 #'
 #' @description
-#' Returns a list of configuration recorders depending on the filters you
-#' specify.
+#' Returns a list of configuration recorders depending on the filters you specify.
 #'
 #' @usage
 #' configservice_list_configuration_recorders(Filters, MaxResults,
 #'   NextToken)
 #'
-#' @param Filters Filters the results based on a list of `ConfigurationRecorderFilter`
-#' objects that you specify.
+#' @param Filters Filters the results based on a list of `ConfigurationRecorderFilter` objects that you specify.
 #' @param MaxResults The maximum number of results to include in the response.
-#' @param NextToken The `NextToken` string returned on a previous page that you use to get
-#' the next page of results in a paginated response.
+#' @param NextToken The `NextToken` string returned on a previous page that you use to get the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5390,48 +4904,25 @@ configservice_list_configuration_recorders <- function(Filters = NULL, MaxResult
 #' Returns a list of conformance pack compliance scores
 #'
 #' @description
-#' Returns a list of conformance pack compliance scores. A compliance score
-#' is the percentage of the number of compliant rule-resource combinations
-#' in a conformance pack compared to the number of total possible
-#' rule-resource combinations in the conformance pack. This metric provides
-#' you with a high-level view of the compliance state of your conformance
-#' packs. You can use it to identify, investigate, and understand the level
-#' of compliance in your conformance packs.
+#' Returns a list of conformance pack compliance scores. A compliance score is the percentage of the number of compliant rule-resource combinations in a conformance pack compared to the number of total possible rule-resource combinations in the conformance pack. This metric provides you with a high-level view of the compliance state of your conformance packs. You can use it to identify, investigate, and understand the level of compliance in your conformance packs.
 #' 
-#' Conformance packs with no evaluation results will have a compliance
-#' score of `INSUFFICIENT_DATA`.
+#' Conformance packs with no evaluation results will have a compliance score of `INSUFFICIENT_DATA`.
 #'
 #' @usage
 #' configservice_list_conformance_pack_compliance_scores(Filters,
 #'   SortOrder, SortBy, Limit, NextToken)
 #'
-#' @param Filters Filters the results based on the
-#' `ConformancePackComplianceScoresFilters`.
-#' @param SortOrder Determines the order in which conformance pack compliance scores are
-#' sorted. Either in ascending or descending order.
+#' @param Filters Filters the results based on the `ConformancePackComplianceScoresFilters`.
+#' @param SortOrder Determines the order in which conformance pack compliance scores are sorted. Either in ascending or descending order.
 #' 
-#' By default, conformance pack compliance scores are sorted in
-#' alphabetical order by name of the conformance pack. Conformance pack
-#' compliance scores are sorted in reverse alphabetical order if you enter
-#' `DESCENDING`.
+#' By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack. Conformance pack compliance scores are sorted in reverse alphabetical order if you enter `DESCENDING`.
 #' 
-#' You can sort conformance pack compliance scores by the numerical value
-#' of the compliance score by entering `SCORE` in the `SortBy` action. When
-#' compliance scores are sorted by `SCORE`, conformance packs with a
-#' compliance score of `INSUFFICIENT_DATA` will be last when sorting by
-#' ascending order and first when sorting by descending order.
-#' @param SortBy Sorts your conformance pack compliance scores in either ascending or
-#' descending order, depending on `SortOrder`.
+#' You can sort conformance pack compliance scores by the numerical value of the compliance score by entering `SCORE` in the `SortBy` action. When compliance scores are sorted by `SCORE`, conformance packs with a compliance score of `INSUFFICIENT_DATA` will be last when sorting by ascending order and first when sorting by descending order.
+#' @param SortBy Sorts your conformance pack compliance scores in either ascending or descending order, depending on `SortOrder`.
 #' 
-#' By default, conformance pack compliance scores are sorted in
-#' alphabetical order by name of the conformance pack. Enter `SCORE`, to
-#' sort conformance pack compliance scores by the numerical value of the
-#' compliance score.
-#' @param Limit The maximum number of conformance pack compliance scores returned on
-#' each page.
-#' @param NextToken The `nextToken` string in a prior request that you can use to get the
-#' paginated response for the next set of conformance pack compliance
-#' scores.
+#' By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack. Enter `SCORE`, to sort conformance pack compliance scores by the numerical value of the compliance score.
+#' @param Limit The maximum number of conformance pack compliance scores returned on each page.
+#' @param NextToken The `nextToken` string in a prior request that you can use to get the paginated response for the next set of conformance pack compliance scores.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5493,25 +4984,15 @@ configservice_list_conformance_pack_compliance_scores <- function(Filters = NULL
 #' resource types for the resources of that type
 #'
 #' @description
-#' Returns a list of resource resource identifiers for the specified
-#' resource types for the resources of that type. A *resource identifier*
-#' includes the resource type, ID, and (if available) the custom resource
-#' name.
+#' Returns a list of resource resource identifiers for the specified resource types for the resources of that type. A *resource identifier* includes the resource type, ID, and (if available) the custom resource name.
 #' 
-#' The results consist of resources that Config has *discovered*, including
-#' those that Config is not currently recording. You can narrow the results
-#' to include only resources that have specific resource IDs or a resource
-#' name.
+#' The results consist of resources that Config has *discovered*, including those that Config is not currently recording. You can narrow the results to include only resources that have specific resource IDs or a resource name.
 #' 
-#' You can specify either resource IDs or a resource name, but not both, in
-#' the same request.
+#' You can specify either resource IDs or a resource name, but not both, in the same request.
 #' 
 #' *CloudFormation stack recording behavior in Config*
 #' 
-#' When a CloudFormation stack fails to create (for example, it enters the
-#' `ROLLBACK_FAILED` state), Config does not record a configuration item
-#' (CI) for that stack. Configuration items are only recorded for stacks
-#' that reach the following states:
+#' When a CloudFormation stack fails to create (for example, it enters the `ROLLBACK_FAILED` state), Config does not record a configuration item (CI) for that stack. Configuration items are only recorded for stacks that reach the following states:
 #' 
 #' -   `CREATE_COMPLETE`
 #' 
@@ -5525,30 +5006,18 @@ configservice_list_conformance_pack_compliance_scores <- function(Filters = NULL
 #' 
 #' -   `DELETE_COMPLETE`
 #' 
-#' Because no CI is created for a failed stack creation, you won't see
-#' configuration history for that stack in Config, even after the stack is
-#' deleted. This helps make sure that Config only tracks resources that
-#' were successfully provisioned.
+#' Because no CI is created for a failed stack creation, you won't see configuration history for that stack in Config, even after the stack is deleted. This helps make sure that Config only tracks resources that were successfully provisioned.
 #'
 #' @usage
 #' configservice_list_discovered_resources(resourceType, resourceIds,
 #'   resourceName, limit, includeDeletedResources, nextToken)
 #'
 #' @param resourceType &#91;required&#93; The type of resources that you want Config to list in the response.
-#' @param resourceIds The IDs of only those resources that you want Config to list in the
-#' response. If you do not specify this parameter, Config lists all
-#' resources of the specified type that it has discovered. You can list a
-#' minimum of 1 resourceID and a maximum of 20 resourceIds.
-#' @param resourceName The custom name of only those resources that you want Config to list in
-#' the response. If you do not specify this parameter, Config lists all
-#' resources of the specified type that it has discovered.
-#' @param limit The maximum number of resource identifiers returned on each page. The
-#' default is 100. You cannot specify a number greater than 100. If you
-#' specify 0, Config uses the default.
-#' @param includeDeletedResources Specifies whether Config includes deleted resources in the results. By
-#' default, deleted resources are not included.
-#' @param nextToken The `nextToken` string returned on a previous page that you use to get
-#' the next page of results in a paginated response.
+#' @param resourceIds The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered. You can list a minimum of 1 resourceID and a maximum of 20 resourceIds.
+#' @param resourceName The custom name of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.
+#' @param limit The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.
+#' @param includeDeletedResources Specifies whether Config includes deleted resources in the results. By default, deleted resources are not included.
+#' @param nextToken The `nextToken` string returned on a previous page that you use to get the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5615,11 +5084,8 @@ configservice_list_discovered_resources <- function(resourceType, resourceIds = 
 #' configservice_list_resource_evaluations(Filters, Limit, NextToken)
 #'
 #' @param Filters Returns a `ResourceEvaluationFilters` object.
-#' @param Limit The maximum number of evaluations returned on each page. The default is
-#' 10. You cannot specify a number greater than 100. If you specify 0,
-#' Config uses the default.
-#' @param NextToken The `nextToken` string returned on a previous page that you use to get
-#' the next page of results in a paginated response.
+#' @param Limit The maximum number of evaluations returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.
+#' @param NextToken The `nextToken` string returned on a previous page that you use to get the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5686,14 +5152,12 @@ configservice_list_resource_evaluations <- function(Filters = NULL, Limit = NULL
 #' single Amazon Web Services Region
 #'
 #' @description
-#' Lists the stored queries for a single Amazon Web Services account and a
-#' single Amazon Web Services Region. The default is 100.
+#' Lists the stored queries for a single Amazon Web Services account and a single Amazon Web Services Region. The default is 100.
 #'
 #' @usage
 #' configservice_list_stored_queries(NextToken, MaxResults)
 #'
-#' @param NextToken The nextToken string returned in a previous request that you use to
-#' request the next page of results in a paginated response.
+#' @param NextToken The nextToken string returned in a previous request that you use to request the next page of results in a paginated response.
 #' @param MaxResults The maximum number of results to be returned with a single call.
 #'
 #' @return
@@ -5752,8 +5216,7 @@ configservice_list_stored_queries <- function(NextToken = NULL, MaxResults = NUL
 #' @usage
 #' configservice_list_tags_for_resource(ResourceArn, Limit, NextToken)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the resource for which to
-#' list the tags. The following resources are supported:
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. The following resources are supported:
 #' 
 #' -   `ConfigurationRecorder`
 #' 
@@ -5770,11 +5233,8 @@ configservice_list_stored_queries <- function(NextToken = NULL, MaxResults = NUL
 #' -   `AggregationAuthorization`
 #' 
 #' -   `StoredQuery`
-#' @param Limit The maximum number of tags returned on each page. The limit maximum is
-#' 50. You cannot specify a number greater than 50. If you specify 0,
-#' Config uses the default.
-#' @param NextToken The `nextToken` string returned on a previous page that you use to get
-#' the next page of results in a paginated response.
+#' @param Limit The maximum number of tags returned on each page. The limit maximum is 50. You cannot specify a number greater than 50. If you specify 0, Config uses the default.
+#' @param NextToken The `nextToken` string returned on a previous page that you use to get the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5827,21 +5287,13 @@ configservice_list_tags_for_resource <- function(ResourceArn, Limit = NULL, Next
 #' source account and region
 #'
 #' @description
-#' Authorizes the aggregator account and region to collect data from the
-#' source account and region.
+#' Authorizes the aggregator account and region to collect data from the source account and region.
 #' 
 #' **Tags are added at creation and cannot be updated with this operation**
 #' 
-#' [`put_aggregation_authorization`][configservice_put_aggregation_authorization]
-#' is an idempotent API. Subsequent requests won’t create a duplicate
-#' resource if one was already created. If a following request has
-#' different `tags` values, Config will ignore these differences and treat
-#' it as an idempotent request of the previous. In this case, `tags` will
-#' not be updated, even if they are different.
+#' [`put_aggregation_authorization`][configservice_put_aggregation_authorization] is an idempotent API. Subsequent requests won’t create a duplicate resource if one was already created. If a following request has different `tags` values, Config will ignore these differences and treat it as an idempotent request of the previous. In this case, `tags` will not be updated, even if they are different.
 #' 
-#' Use [`tag_resource`][configservice_tag_resource] and
-#' [`untag_resource`][configservice_untag_resource] to update tags after
-#' creation.
+#' Use [`tag_resource`][configservice_tag_resource] and [`untag_resource`][configservice_untag_resource] to update tags after creation.
 #'
 #' @usage
 #' configservice_put_aggregation_authorization(AuthorizedAccountId,
@@ -5908,66 +5360,27 @@ configservice_put_aggregation_authorization <- function(AuthorizedAccountId, Aut
 #' resources comply with your desired configurations
 #'
 #' @description
-#' Adds or updates an Config rule to evaluate if your Amazon Web Services
-#' resources comply with your desired configurations. For information on
-#' how many Config rules you can have per account, see [**Service
-#' Limits**](https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html)
-#' in the *Config Developer Guide*.
+#' Adds or updates an Config rule to evaluate if your Amazon Web Services resources comply with your desired configurations. For information on how many Config rules you can have per account, see [**Service Limits**](https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html) in the *Config Developer Guide*.
 #' 
-#' There are two types of rules: *Config Managed Rules* and *Config Custom
-#' Rules*. You can use [`put_config_rule`][configservice_put_config_rule]
-#' to create both Config Managed Rules and Config Custom Rules.
+#' There are two types of rules: *Config Managed Rules* and *Config Custom Rules*. You can use [`put_config_rule`][configservice_put_config_rule] to create both Config Managed Rules and Config Custom Rules.
 #' 
-#' Config Managed Rules are predefined, customizable rules created by
-#' Config. For a list of managed rules, see [List of Config Managed
-#' Rules](https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html).
-#' If you are adding an Config managed rule, you must specify the rule's
-#' identifier for the `SourceIdentifier` key.
+#' Config Managed Rules are predefined, customizable rules created by Config. For a list of managed rules, see [List of Config Managed Rules](https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html). If you are adding an Config managed rule, you must specify the rule's identifier for the `SourceIdentifier` key.
 #' 
-#' Config Custom Rules are rules that you create from scratch. There are
-#' two ways to create Config custom rules: with Lambda functions ( [Lambda
-#' Developer
-#' Guide](https://docs.aws.amazon.com/config/latest/developerguide/#gettingstarted-concepts-function))
-#' and with Guard ([Guard GitHub
-#' Repository](https://github.com/aws-cloudformation/cloudformation-guard)),
-#' a policy-as-code language. Config custom rules created with Lambda are
-#' called *Config Custom Lambda Rules* and Config custom rules created with
-#' Guard are called *Config Custom Policy Rules*.
+#' Config Custom Rules are rules that you create from scratch. There are two ways to create Config custom rules: with Lambda functions ( [Lambda Developer Guide](https://docs.aws.amazon.com/config/latest/developerguide/#gettingstarted-concepts-function)) and with Guard ([Guard GitHub Repository](https://github.com/aws-cloudformation/cloudformation-guard)), a policy-as-code language. Config custom rules created with Lambda are called *Config Custom Lambda Rules* and Config custom rules created with Guard are called *Config Custom Policy Rules*.
 #' 
-#' If you are adding a new Config Custom Lambda rule, you first need to
-#' create an Lambda function that the rule invokes to evaluate your
-#' resources. When you use
-#' [`put_config_rule`][configservice_put_config_rule] to add a Custom
-#' Lambda rule to Config, you must specify the Amazon Resource Name (ARN)
-#' that Lambda assigns to the function. You specify the ARN in the
-#' `SourceIdentifier` key. This key is part of the `Source` object, which
-#' is part of the `ConfigRule` object.
+#' If you are adding a new Config Custom Lambda rule, you first need to create an Lambda function that the rule invokes to evaluate your resources. When you use [`put_config_rule`][configservice_put_config_rule] to add a Custom Lambda rule to Config, you must specify the Amazon Resource Name (ARN) that Lambda assigns to the function. You specify the ARN in the `SourceIdentifier` key. This key is part of the `Source` object, which is part of the `ConfigRule` object.
 #' 
-#' For any new Config rule that you add, specify the `ConfigRuleName` in
-#' the `ConfigRule` object. Do not specify the `ConfigRuleArn` or the
-#' `ConfigRuleId`. These values are generated by Config for new rules.
+#' For any new Config rule that you add, specify the `ConfigRuleName` in the `ConfigRule` object. Do not specify the `ConfigRuleArn` or the `ConfigRuleId`. These values are generated by Config for new rules.
 #' 
-#' If you are updating a rule that you added previously, you can specify
-#' the rule by `ConfigRuleName`, `ConfigRuleId`, or `ConfigRuleArn` in the
-#' `ConfigRule` data type that you use in this request.
+#' If you are updating a rule that you added previously, you can specify the rule by `ConfigRuleName`, `ConfigRuleId`, or `ConfigRuleArn` in the `ConfigRule` data type that you use in this request.
 #' 
-#' For more information about developing and using Config rules, see
-#' [Evaluating Resources with Config
-#' Rules](https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html)
-#' in the *Config Developer Guide*.
+#' For more information about developing and using Config rules, see [Evaluating Resources with Config Rules](https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html) in the *Config Developer Guide*.
 #' 
 #' **Tags are added at creation and cannot be updated with this operation**
 #' 
-#' [`put_config_rule`][configservice_put_config_rule] is an idempotent API.
-#' Subsequent requests won’t create a duplicate resource if one was already
-#' created. If a following request has different `tags` values, Config will
-#' ignore these differences and treat it as an idempotent request of the
-#' previous. In this case, `tags` will not be updated, even if they are
-#' different.
+#' [`put_config_rule`][configservice_put_config_rule] is an idempotent API. Subsequent requests won’t create a duplicate resource if one was already created. If a following request has different `tags` values, Config will ignore these differences and treat it as an idempotent request of the previous. In this case, `tags` will not be updated, even if they are different.
 #' 
-#' Use [`tag_resource`][configservice_tag_resource] and
-#' [`untag_resource`][configservice_untag_resource] to update tags after
-#' creation.
+#' Use [`tag_resource`][configservice_tag_resource] and [`untag_resource`][configservice_untag_resource] to update tags after creation.
 #'
 #' @usage
 #' configservice_put_config_rule(ConfigRule, Tags)
@@ -6057,43 +5470,21 @@ configservice_put_config_rule <- function(ConfigRule, Tags = NULL) {
 #' source accounts and regions
 #'
 #' @description
-#' Creates and updates the configuration aggregator with the selected
-#' source accounts and regions. The source account can be individual
-#' account(s) or an organization.
+#' Creates and updates the configuration aggregator with the selected source accounts and regions. The source account can be individual account(s) or an organization.
 #' 
-#' `accountIds` that are passed will be replaced with existing accounts. If
-#' you want to add additional accounts into the aggregator, call
-#' [`describe_configuration_aggregators`][configservice_describe_configuration_aggregators]
-#' to get the previous accounts and then append new ones.
+#' `accountIds` that are passed will be replaced with existing accounts. If you want to add additional accounts into the aggregator, call [`describe_configuration_aggregators`][configservice_describe_configuration_aggregators] to get the previous accounts and then append new ones.
 #' 
-#' Config should be enabled in source accounts and regions you want to
-#' aggregate.
+#' Config should be enabled in source accounts and regions you want to aggregate.
 #' 
-#' If your source type is an organization, you must be signed in to the
-#' management account or a registered delegated administrator and all the
-#' features must be enabled in your organization. If the caller is a
-#' management account, Config calls `EnableAwsServiceAccess` API to enable
-#' integration between Config and Organizations. If the caller is a
-#' registered delegated administrator, Config calls
-#' `ListDelegatedAdministrators` API to verify whether the caller is a
-#' valid delegated administrator.
+#' If your source type is an organization, you must be signed in to the management account or a registered delegated administrator and all the features must be enabled in your organization. If the caller is a management account, Config calls `EnableAwsServiceAccess` API to enable integration between Config and Organizations. If the caller is a registered delegated administrator, Config calls `ListDelegatedAdministrators` API to verify whether the caller is a valid delegated administrator.
 #' 
-#' To register a delegated administrator, see [Register a Delegated
-#' Administrator](https://docs.aws.amazon.com/config/latest/developerguide/#register-a-delegated-administrator-cli)
-#' in the *Config developer guide*.
+#' To register a delegated administrator, see [Register a Delegated Administrator](https://docs.aws.amazon.com/config/latest/developerguide/#register-a-delegated-administrator-cli) in the *Config developer guide*.
 #' 
 #' **Tags are added at creation and cannot be updated with this operation**
 #' 
-#' [`put_configuration_aggregator`][configservice_put_configuration_aggregator]
-#' is an idempotent API. Subsequent requests won’t create a duplicate
-#' resource if one was already created. If a following request has
-#' different `tags` values, Config will ignore these differences and treat
-#' it as an idempotent request of the previous. In this case, `tags` will
-#' not be updated, even if they are different.
+#' [`put_configuration_aggregator`][configservice_put_configuration_aggregator] is an idempotent API. Subsequent requests won’t create a duplicate resource if one was already created. If a following request has different `tags` values, Config will ignore these differences and treat it as an idempotent request of the previous. In this case, `tags` will not be updated, even if they are different.
 #' 
-#' Use [`tag_resource`][configservice_tag_resource] and
-#' [`untag_resource`][configservice_untag_resource] to update tags after
-#' creation.
+#' Use [`tag_resource`][configservice_tag_resource] and [`untag_resource`][configservice_untag_resource] to update tags after creation.
 #'
 #' @usage
 #' configservice_put_configuration_aggregator(ConfigurationAggregatorName,
@@ -6104,8 +5495,7 @@ configservice_put_config_rule <- function(ConfigRule, Tags = NULL) {
 #' @param AccountAggregationSources A list of AccountAggregationSource object.
 #' @param OrganizationAggregationSource An OrganizationAggregationSource object.
 #' @param Tags An array of tag object.
-#' @param AggregatorFilters An object to filter configuration recorders in an aggregator. Either
-#' `ResourceType` or `ServicePrincipal` is required.
+#' @param AggregatorFilters An object to filter configuration recorders in an aggregator. Either `ResourceType` or `ServicePrincipal` is required.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6231,54 +5621,31 @@ configservice_put_configuration_aggregator <- function(ConfigurationAggregatorNa
 #' @description
 #' Creates or updates the customer managed configuration recorder.
 #' 
-#' You can use this operation to create a new customer managed
-#' configuration recorder or to update the `roleARN` and the
-#' `recordingGroup` for an existing customer managed configuration
-#' recorder.
+#' You can use this operation to create a new customer managed configuration recorder or to update the `roleARN` and the `recordingGroup` for an existing customer managed configuration recorder.
 #' 
-#' To start the customer managed configuration recorder and begin recording
-#' configuration changes for the resource types you specify, use the
-#' [`start_configuration_recorder`][configservice_start_configuration_recorder]
-#' operation.
+#' To start the customer managed configuration recorder and begin recording configuration changes for the resource types you specify, use the [`start_configuration_recorder`][configservice_start_configuration_recorder] operation.
 #' 
-#' For more information, see [**Working with the Configuration
-#' Recorder**](https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html)
-#' in the *Config Developer Guide*.
+#' For more information, see [**Working with the Configuration Recorder**](https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html) in the *Config Developer Guide*.
 #' 
 #' **One customer managed configuration recorder per account per Region**
 #' 
-#' You can create only one customer managed configuration recorder for each
-#' account for each Amazon Web Services Region.
+#' You can create only one customer managed configuration recorder for each account for each Amazon Web Services Region.
 #' 
-#' **Default is to record all supported resource types, excluding the
-#' global IAM resource types**
+#' **Default is to record all supported resource types, excluding the global IAM resource types**
 #' 
-#' If you have not specified values for the `recordingGroup` field, the
-#' default for the customer managed configuration recorder is to record all
-#' supported resource types, excluding the global IAM resource types:
-#' `AWS::IAM::Group`, `AWS::IAM::Policy`, `AWS::IAM::Role`, and
-#' `AWS::IAM::User`.
+#' If you have not specified values for the `recordingGroup` field, the default for the customer managed configuration recorder is to record all supported resource types, excluding the global IAM resource types: `AWS::IAM::Group`, `AWS::IAM::Policy`, `AWS::IAM::Role`, and `AWS::IAM::User`.
 #' 
 #' **Tags are added at creation and cannot be updated**
 #' 
-#' [`put_configuration_recorder`][configservice_put_configuration_recorder]
-#' is an idempotent API. Subsequent requests won’t create a duplicate
-#' resource if one was already created. If a following request has
-#' different tags values, Config will ignore these differences and treat it
-#' as an idempotent request of the previous. In this case, tags will not be
-#' updated, even if they are different.
+#' [`put_configuration_recorder`][configservice_put_configuration_recorder] is an idempotent API. Subsequent requests won’t create a duplicate resource if one was already created. If a following request has different tags values, Config will ignore these differences and treat it as an idempotent request of the previous. In this case, tags will not be updated, even if they are different.
 #' 
-#' Use [`tag_resource`][configservice_tag_resource] and
-#' [`untag_resource`][configservice_untag_resource] to update tags after
-#' creation.
+#' Use [`tag_resource`][configservice_tag_resource] and [`untag_resource`][configservice_untag_resource] to update tags after creation.
 #'
 #' @usage
 #' configservice_put_configuration_recorder(ConfigurationRecorder, Tags)
 #'
-#' @param ConfigurationRecorder &#91;required&#93; An object for the configuration recorder. A configuration recorder
-#' records configuration changes for the resource types in scope.
-#' @param Tags The tags for the customer managed configuration recorder. Each tag
-#' consists of a key and an optional value, both of which you define.
+#' @param ConfigurationRecorder &#91;required&#93; An object for the configuration recorder. A configuration recorder records configuration changes for the resource types in scope.
+#' @param Tags The tags for the customer managed configuration recorder. Each tag consists of a key and an optional value, both of which you define.
 #'
 #' @return
 #' An empty list.
@@ -6356,68 +5723,43 @@ configservice_put_configuration_recorder <- function(ConfigurationRecorder, Tags
 #' Creates or updates a conformance pack
 #'
 #' @description
-#' Creates or updates a conformance pack. A conformance pack is a
-#' collection of Config rules that can be easily deployed in an account and
-#' a region and across an organization. For information on how many
-#' conformance packs you can have per account, see [**Service
-#' Limits**](https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html)
-#' in the *Config Developer Guide*.
+#' Creates or updates a conformance pack. A conformance pack is a collection of Config rules that can be easily deployed in an account and a region and across an organization. For information on how many conformance packs you can have per account, see [**Service Limits**](https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html) in the *Config Developer Guide*.
 #' 
-#' When you use
-#' [`put_conformance_pack`][configservice_put_conformance_pack] to deploy
-#' conformance packs in your account, the operation can create Config rules
-#' and remediation actions without requiring `config:PutConfigRule` or
-#' `config:PutRemediationConfigurations` permissions in your account IAM
-#' policies.
+#' When you use [`put_conformance_pack`][configservice_put_conformance_pack] to deploy conformance packs in your account, the operation can create Config rules and remediation actions without requiring `config:PutConfigRule` or `config:PutRemediationConfigurations` permissions in your account IAM policies.
 #' 
-#' This API uses the `AWSServiceRoleForConfigConforms` service-linked role
-#' in your account to create conformance pack resources. This
-#' service-linked role includes the permissions to create Config rules and
-#' remediation configurations, even if your account IAM policies explicitly
-#' deny these actions.
+#' This API uses the `AWSServiceRoleForConfigConforms` service-linked role in your account to create conformance pack resources. This service-linked role includes the permissions to create Config rules and remediation configurations, even if your account IAM policies explicitly deny these actions.
 #' 
-#' This API creates a service-linked role `AWSServiceRoleForConfigConforms`
-#' in your account. The service-linked role is created only when the role
-#' does not exist in your account.
+#' This API creates a service-linked role `AWSServiceRoleForConfigConforms` in your account. The service-linked role is created only when the role does not exist in your account.
 #' 
-#' You must specify only one of the follow parameters: `TemplateS3Uri`,
-#' `TemplateBody` or `TemplateSSMDocumentDetails`.
+#' You must specify only one of the follow parameters: `TemplateS3Uri`, `TemplateBody` or `TemplateSSMDocumentDetails`.
+#' 
+#' **Tags are added at creation and cannot be updated with this operation**
+#' 
+#' [`put_conformance_pack`][configservice_put_conformance_pack] is an idempotent API. Subsequent requests won't create a duplicate resource if one was already created. If a following request has different `tags` values, Config will ignore these differences and treat it as an idempotent request of the previous. In this case, `tags` will not be updated, even if they are different.
+#' 
+#' Use [`tag_resource`][configservice_tag_resource] and [`untag_resource`][configservice_untag_resource] to update tags after creation.
 #'
 #' @usage
 #' configservice_put_conformance_pack(ConformancePackName, TemplateS3Uri,
 #'   TemplateBody, DeliveryS3Bucket, DeliveryS3KeyPrefix,
-#'   ConformancePackInputParameters, TemplateSSMDocumentDetails)
+#'   ConformancePackInputParameters, TemplateSSMDocumentDetails, Tags)
 #'
 #' @param ConformancePackName &#91;required&#93; The unique name of the conformance pack you want to deploy.
-#' @param TemplateS3Uri The location of the file containing the template body
-#' (`s3://bucketname/prefix`). The uri must point to a conformance pack
-#' template (max size: 300 KB) that is located in an Amazon S3 bucket in
-#' the same Region as the conformance pack.
+#' @param TemplateS3Uri The location of the file containing the template body (`s3://bucketname/prefix`). The uri must point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as the conformance pack.
 #' 
-#' You must have access to read Amazon S3 bucket. In addition, in order to
-#' ensure a successful deployment, the template object must not be in an
-#' [archived storage
-#' class](https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html)
-#' if this parameter is passed.
-#' @param TemplateBody A string that contains the full conformance pack template body. The
-#' structure containing the template body has a minimum length of 1 byte
-#' and a maximum length of 51,200 bytes.
+#' You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment, the template object must not be in an [archived storage class](https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html) if this parameter is passed.
+#' @param TemplateBody A string that contains the full conformance pack template body. The structure containing the template body has a minimum length of 1 byte and a maximum length of 51,200 bytes.
 #' 
-#' You can use a YAML template with two resource types: Config rule
-#' (`AWS::Config::ConfigRule`) and remediation action
-#' (`AWS::Config::RemediationConfiguration`).
-#' @param DeliveryS3Bucket The name of the Amazon S3 bucket where Config stores conformance pack
-#' templates.
+#' You can use a YAML template with two resource types: Config rule (`AWS::Config::ConfigRule`) and remediation action (`AWS::Config::RemediationConfiguration`).
+#' @param DeliveryS3Bucket The name of the Amazon S3 bucket where Config stores conformance pack templates.
 #' 
 #' This field is optional.
 #' @param DeliveryS3KeyPrefix The prefix for the Amazon S3 bucket.
 #' 
 #' This field is optional.
 #' @param ConformancePackInputParameters A list of `ConformancePackInputParameter` objects.
-#' @param TemplateSSMDocumentDetails An object of type `TemplateSSMDocumentDetails`, which contains the name
-#' or the Amazon Resource Name (ARN) of the Amazon Web Services Systems
-#' Manager document (SSM document) and the version of the SSM document that
-#' is used to create a conformance pack.
+#' @param TemplateSSMDocumentDetails An object of type `TemplateSSMDocumentDetails`, which contains the name or the Amazon Resource Name (ARN) of the Amazon Web Services Systems Manager document (SSM document) and the version of the SSM document that is used to create a conformance pack.
+#' @param Tags The tags for the conformance pack. Each tag consists of a key and an optional value, both of which you define.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6444,6 +5786,12 @@ configservice_put_configuration_recorder <- function(ConfigurationRecorder, Tags
 #'   TemplateSSMDocumentDetails = list(
 #'     DocumentName = "string",
 #'     DocumentVersion = "string"
+#'   ),
+#'   Tags = list(
+#'     list(
+#'       Key = "string",
+#'       Value = "string"
+#'     )
 #'   )
 #' )
 #' ```
@@ -6453,7 +5801,7 @@ configservice_put_configuration_recorder <- function(ConfigurationRecorder, Tags
 #' @rdname configservice_put_conformance_pack
 #'
 #' @aliases configservice_put_conformance_pack
-configservice_put_conformance_pack <- function(ConformancePackName, TemplateS3Uri = NULL, TemplateBody = NULL, DeliveryS3Bucket = NULL, DeliveryS3KeyPrefix = NULL, ConformancePackInputParameters = NULL, TemplateSSMDocumentDetails = NULL) {
+configservice_put_conformance_pack <- function(ConformancePackName, TemplateS3Uri = NULL, TemplateBody = NULL, DeliveryS3Bucket = NULL, DeliveryS3KeyPrefix = NULL, ConformancePackInputParameters = NULL, TemplateSSMDocumentDetails = NULL, Tags = NULL) {
   op <- new_operation(
     name = "PutConformancePack",
     http_method = "POST",
@@ -6462,7 +5810,7 @@ configservice_put_conformance_pack <- function(ConformancePackName, TemplateS3Ur
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .configservice$put_conformance_pack_input(ConformancePackName = ConformancePackName, TemplateS3Uri = TemplateS3Uri, TemplateBody = TemplateBody, DeliveryS3Bucket = DeliveryS3Bucket, DeliveryS3KeyPrefix = DeliveryS3KeyPrefix, ConformancePackInputParameters = ConformancePackInputParameters, TemplateSSMDocumentDetails = TemplateSSMDocumentDetails)
+  input <- .configservice$put_conformance_pack_input(ConformancePackName = ConformancePackName, TemplateS3Uri = TemplateS3Uri, TemplateBody = TemplateBody, DeliveryS3Bucket = DeliveryS3Bucket, DeliveryS3KeyPrefix = DeliveryS3KeyPrefix, ConformancePackInputParameters = ConformancePackInputParameters, TemplateSSMDocumentDetails = TemplateSSMDocumentDetails, Tags = Tags)
   output <- .configservice$put_conformance_pack_output()
   config <- get_config()
   svc <- .configservice$service(config, op)
@@ -6476,27 +5824,20 @@ configservice_put_conformance_pack <- function(ConformancePackName, TemplateS3Ur
 #' information and other compliance information
 #'
 #' @description
-#' Creates or updates a delivery channel to deliver configuration
-#' information and other compliance information.
+#' Creates or updates a delivery channel to deliver configuration information and other compliance information.
 #' 
-#' You can use this operation to create a new delivery channel or to update
-#' the Amazon S3 bucket and the Amazon SNS topic of an existing delivery
-#' channel.
+#' You can use this operation to create a new delivery channel or to update the Amazon S3 bucket and the Amazon SNS topic of an existing delivery channel.
 #' 
-#' For more information, see [**Working with the Delivery
-#' Channel**](https://docs.aws.amazon.com/config/latest/developerguide/manage-delivery-channel.html)
-#' in the *Config Developer Guide.*
+#' For more information, see [**Working with the Delivery Channel**](https://docs.aws.amazon.com/config/latest/developerguide/manage-delivery-channel.html) in the *Config Developer Guide.*
 #' 
 #' **One delivery channel per account per Region**
 #' 
-#' You can have only one delivery channel for each account for each Amazon
-#' Web Services Region.
+#' You can have only one delivery channel for each account for each Amazon Web Services Region.
 #'
 #' @usage
 #' configservice_put_delivery_channel(DeliveryChannel)
 #'
-#' @param DeliveryChannel &#91;required&#93; An object for the delivery channel. A delivery channel sends
-#' notifications and updated configuration states.
+#' @param DeliveryChannel &#91;required&#93; An object for the delivery channel. A delivery channel sends notifications and updated configuration states.
 #'
 #' @return
 #' An empty list.
@@ -6544,28 +5885,16 @@ configservice_put_delivery_channel <- function(DeliveryChannel) {
 #' Used by an Lambda function to deliver evaluation results to Config
 #'
 #' @description
-#' Used by an Lambda function to deliver evaluation results to Config. This
-#' operation is required in every Lambda function that is invoked by an
-#' Config rule.
+#' Used by an Lambda function to deliver evaluation results to Config. This operation is required in every Lambda function that is invoked by an Config rule.
 #'
 #' @usage
 #' configservice_put_evaluations(Evaluations, ResultToken, TestMode)
 #'
-#' @param Evaluations The assessments that the Lambda function performs. Each evaluation
-#' identifies an Amazon Web Services resource and indicates whether it
-#' complies with the Config rule that invokes the Lambda function.
-#' @param ResultToken &#91;required&#93; An encrypted token that associates an evaluation with an Config rule.
-#' Identifies the rule and the event that triggered the evaluation.
-#' @param TestMode Use this parameter to specify a test run for
-#' [`put_evaluations`][configservice_put_evaluations]. You can verify
-#' whether your Lambda function will deliver evaluation results to Config.
-#' No updates occur to your existing evaluations, and evaluation results
-#' are not sent to Config.
+#' @param Evaluations The assessments that the Lambda function performs. Each evaluation identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that invokes the Lambda function.
+#' @param ResultToken &#91;required&#93; An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the evaluation.
+#' @param TestMode Use this parameter to specify a test run for [`put_evaluations`][configservice_put_evaluations]. You can verify whether your Lambda function will deliver evaluation results to Config. No updates occur to your existing evaluations, and evaluation results are not sent to Config.
 #' 
-#' When `TestMode` is `true`,
-#' [`put_evaluations`][configservice_put_evaluations] doesn't require a
-#' valid value for the `ResultToken` parameter, but the value cannot be
-#' null.
+#' When `TestMode` is `true`, [`put_evaluations`][configservice_put_evaluations] doesn't require a valid value for the `ResultToken` parameter, but the value cannot be null.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6631,9 +5960,7 @@ configservice_put_evaluations <- function(Evaluations = NULL, ResultToken, TestM
 #' Add or updates the evaluations for process checks
 #'
 #' @description
-#' Add or updates the evaluations for process checks. This API checks if
-#' the rule is a process check when the name of the Config rule is
-#' provided.
+#' Add or updates the evaluations for process checks. This API checks if the rule is a process check when the name of the Config rule is provided.
 #'
 #' @usage
 #' configservice_put_external_evaluation(ConfigRuleName,
@@ -6690,68 +6017,25 @@ configservice_put_external_evaluation <- function(ConfigRuleName, ExternalEvalua
 #' configurations
 #'
 #' @description
-#' Adds or updates an Config rule for your entire organization to evaluate
-#' if your Amazon Web Services resources comply with your desired
-#' configurations. For information on how many organization Config rules
-#' you can have per account, see [**Service
-#' Limits**](https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html)
-#' in the *Config Developer Guide*.
+#' Adds or updates an Config rule for your entire organization to evaluate if your Amazon Web Services resources comply with your desired configurations. For information on how many organization Config rules you can have per account, see [**Service Limits**](https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html) in the *Config Developer Guide*.
 #' 
-#' Only a management account and a delegated administrator can create or
-#' update an organization Config rule. When calling this API with a
-#' delegated administrator, you must ensure Organizations
-#' `ListDelegatedAdministrator` permissions are added. An organization can
-#' have up to 3 delegated administrators.
+#' Only a management account and a delegated administrator can create or update an organization Config rule. When calling this API with a delegated administrator, you must ensure Organizations `ListDelegatedAdministrator` permissions are added. An organization can have up to 3 delegated administrators.
 #' 
-#' This API enables organization service access through the
-#' `EnableAWSServiceAccess` action and creates a service-linked role
-#' `AWSServiceRoleForConfigMultiAccountSetup` in the management or
-#' delegated administrator account of your organization. The service-linked
-#' role is created only when the role does not exist in the caller account.
-#' Config verifies the existence of role with `GetRole` action.
+#' This API enables organization service access through the `EnableAWSServiceAccess` action and creates a service-linked role `AWSServiceRoleForConfigMultiAccountSetup` in the management or delegated administrator account of your organization. The service-linked role is created only when the role does not exist in the caller account. Config verifies the existence of role with `GetRole` action.
 #' 
-#' To use this API with delegated administrator, register a delegated
-#' administrator by calling Amazon Web Services Organization
-#' `register-delegated-administrator` for
-#' `config-multiaccountsetup.amazonaws.com`.
+#' To use this API with delegated administrator, register a delegated administrator by calling Amazon Web Services Organization `register-delegated-administrator` for `config-multiaccountsetup.amazonaws.com`.
 #' 
-#' There are two types of rules: *Config Managed Rules* and *Config Custom
-#' Rules*. You can use
-#' [`put_organization_config_rule`][configservice_put_organization_config_rule]
-#' to create both Config Managed Rules and Config Custom Rules.
+#' There are two types of rules: *Config Managed Rules* and *Config Custom Rules*. You can use [`put_organization_config_rule`][configservice_put_organization_config_rule] to create both Config Managed Rules and Config Custom Rules.
 #' 
-#' Config Managed Rules are predefined, customizable rules created by
-#' Config. For a list of managed rules, see [List of Config Managed
-#' Rules](https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html).
-#' If you are adding an Config managed rule, you must specify the rule's
-#' identifier for the `RuleIdentifier` key.
+#' Config Managed Rules are predefined, customizable rules created by Config. For a list of managed rules, see [List of Config Managed Rules](https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html). If you are adding an Config managed rule, you must specify the rule's identifier for the `RuleIdentifier` key.
 #' 
-#' Config Custom Rules are rules that you create from scratch. There are
-#' two ways to create Config custom rules: with Lambda functions ( [Lambda
-#' Developer
-#' Guide](https://docs.aws.amazon.com/config/latest/developerguide/#gettingstarted-concepts-function))
-#' and with Guard ([Guard GitHub
-#' Repository](https://github.com/aws-cloudformation/cloudformation-guard)),
-#' a policy-as-code language. Config custom rules created with Lambda are
-#' called *Config Custom Lambda Rules* and Config custom rules created with
-#' Guard are called *Config Custom Policy Rules*.
+#' Config Custom Rules are rules that you create from scratch. There are two ways to create Config custom rules: with Lambda functions ( [Lambda Developer Guide](https://docs.aws.amazon.com/config/latest/developerguide/#gettingstarted-concepts-function)) and with Guard ([Guard GitHub Repository](https://github.com/aws-cloudformation/cloudformation-guard)), a policy-as-code language. Config custom rules created with Lambda are called *Config Custom Lambda Rules* and Config custom rules created with Guard are called *Config Custom Policy Rules*.
 #' 
-#' If you are adding a new Config Custom Lambda rule, you first need to
-#' create an Lambda function in the management account or a delegated
-#' administrator that the rule invokes to evaluate your resources. You also
-#' need to create an IAM role in the managed account that can be assumed by
-#' the Lambda function. When you use
-#' [`put_organization_config_rule`][configservice_put_organization_config_rule]
-#' to add a Custom Lambda rule to Config, you must specify the Amazon
-#' Resource Name (ARN) that Lambda assigns to the function.
+#' If you are adding a new Config Custom Lambda rule, you first need to create an Lambda function in the management account or a delegated administrator that the rule invokes to evaluate your resources. You also need to create an IAM role in the managed account that can be assumed by the Lambda function. When you use [`put_organization_config_rule`][configservice_put_organization_config_rule] to add a Custom Lambda rule to Config, you must specify the Amazon Resource Name (ARN) that Lambda assigns to the function.
 #' 
-#' Prerequisite: Ensure you call `EnableAllFeatures` API to enable all
-#' features in an organization.
+#' Prerequisite: Ensure you call `EnableAllFeatures` API to enable all features in an organization.
 #' 
-#' Make sure to specify one of either
-#' `OrganizationCustomPolicyRuleMetadata` for Custom Policy rules,
-#' `OrganizationCustomRuleMetadata` for Custom Lambda rules, or
-#' `OrganizationManagedRuleMetadata` for managed rules.
+#' Make sure to specify one of either `OrganizationCustomPolicyRuleMetadata` for Custom Policy rules, `OrganizationCustomRuleMetadata` for Custom Lambda rules, or `OrganizationManagedRuleMetadata` for managed rules.
 #'
 #' @usage
 #' configservice_put_organization_config_rule(OrganizationConfigRuleName,
@@ -6759,27 +6043,10 @@ configservice_put_external_evaluation <- function(ConfigRuleName, ExternalEvalua
 #'   ExcludedAccounts, OrganizationCustomPolicyRuleMetadata)
 #'
 #' @param OrganizationConfigRuleName &#91;required&#93; The name that you assign to an organization Config rule.
-#' @param OrganizationManagedRuleMetadata An `OrganizationManagedRuleMetadata` object. This object specifies
-#' organization managed rule metadata such as resource type and ID of
-#' Amazon Web Services resource along with the rule identifier. It also
-#' provides the frequency with which you want Config to run evaluations for
-#' the rule if the trigger type is periodic.
-#' @param OrganizationCustomRuleMetadata An `OrganizationCustomRuleMetadata` object. This object specifies
-#' organization custom rule metadata such as resource type, resource ID of
-#' Amazon Web Services resource, Lambda function ARN, and organization
-#' trigger types that trigger Config to evaluate your Amazon Web Services
-#' resources against a rule. It also provides the frequency with which you
-#' want Config to run evaluations for the rule if the trigger type is
-#' periodic.
-#' @param ExcludedAccounts A comma-separated list of accounts that you want to exclude from an
-#' organization Config rule.
-#' @param OrganizationCustomPolicyRuleMetadata An `OrganizationCustomPolicyRuleMetadata` object. This object specifies
-#' metadata for your organization's Config Custom Policy rule. The metadata
-#' includes the runtime system in use, which accounts have debug logging
-#' enabled, and other custom rule metadata, such as resource type, resource
-#' ID of Amazon Web Services resource, and organization trigger types that
-#' initiate Config to evaluate Amazon Web Services resources against a
-#' rule.
+#' @param OrganizationManagedRuleMetadata An `OrganizationManagedRuleMetadata` object. This object specifies organization managed rule metadata such as resource type and ID of Amazon Web Services resource along with the rule identifier. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.
+#' @param OrganizationCustomRuleMetadata An `OrganizationCustomRuleMetadata` object. This object specifies organization custom rule metadata such as resource type, resource ID of Amazon Web Services resource, Lambda function ARN, and organization trigger types that trigger Config to evaluate your Amazon Web Services resources against a rule. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.
+#' @param ExcludedAccounts A comma-separated list of accounts that you want to exclude from an organization Config rule.
+#' @param OrganizationCustomPolicyRuleMetadata An `OrganizationCustomPolicyRuleMetadata` object. This object specifies metadata for your organization's Config Custom Policy rule. The metadata includes the runtime system in use, which accounts have debug logging enabled, and other custom rule metadata, such as resource type, resource ID of Amazon Web Services resource, and organization trigger types that initiate Config to evaluate Amazon Web Services resources against a rule.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6873,51 +6140,21 @@ configservice_put_organization_config_rule <- function(OrganizationConfigRuleNam
 #' Services Organization
 #'
 #' @description
-#' Deploys conformance packs across member accounts in an Amazon Web
-#' Services Organization. For information on how many organization
-#' conformance packs and how many Config rules you can have per account,
-#' see [**Service
-#' Limits**](https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html)
-#' in the *Config Developer Guide*.
+#' Deploys conformance packs across member accounts in an Amazon Web Services Organization. For information on how many organization conformance packs and how many Config rules you can have per account, see [**Service Limits**](https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html) in the *Config Developer Guide*.
 #' 
-#' Only a management account and a delegated administrator can call this
-#' API. When calling this API with a delegated administrator, you must
-#' ensure Organizations `ListDelegatedAdministrator` permissions are added.
-#' An organization can have up to 3 delegated administrators.
+#' Only a management account and a delegated administrator can call this API. When calling this API with a delegated administrator, you must ensure Organizations `ListDelegatedAdministrator` permissions are added. An organization can have up to 3 delegated administrators.
 #' 
-#' When you use
-#' [`put_organization_conformance_pack`][configservice_put_organization_conformance_pack]
-#' to deploy conformance packs across member accounts, the operation can
-#' create Config rules and remediation actions without requiring
-#' `config:PutConfigRule` or `config:PutRemediationConfigurations`
-#' permissions in member account IAM policies.
+#' When you use [`put_organization_conformance_pack`][configservice_put_organization_conformance_pack] to deploy conformance packs across member accounts, the operation can create Config rules and remediation actions without requiring `config:PutConfigRule` or `config:PutRemediationConfigurations` permissions in member account IAM policies.
 #' 
-#' This API uses the `AWSServiceRoleForConfigConforms` service-linked role
-#' in each member account to create conformance pack resources. This
-#' service-linked role includes the permissions to create Config rules and
-#' remediation configurations, even if member account IAM policies
-#' explicitly deny these actions.
+#' This API uses the `AWSServiceRoleForConfigConforms` service-linked role in each member account to create conformance pack resources. This service-linked role includes the permissions to create Config rules and remediation configurations, even if member account IAM policies explicitly deny these actions.
 #' 
-#' This API enables organization service access for
-#' `config-multiaccountsetup.amazonaws.com` through the
-#' `EnableAWSServiceAccess` action and creates a service-linked role
-#' `AWSServiceRoleForConfigMultiAccountSetup` in the management or
-#' delegated administrator account of your organization. The service-linked
-#' role is created only when the role does not exist in the caller account.
-#' To use this API with delegated administrator, register a delegated
-#' administrator by calling Amazon Web Services Organization
-#' `register-delegate-admin` for `config-multiaccountsetup.amazonaws.com`.
+#' This API enables organization service access for `config-multiaccountsetup.amazonaws.com` through the `EnableAWSServiceAccess` action and creates a service-linked role `AWSServiceRoleForConfigMultiAccountSetup` in the management or delegated administrator account of your organization. The service-linked role is created only when the role does not exist in the caller account. To use this API with delegated administrator, register a delegated administrator by calling Amazon Web Services Organization `register-delegate-admin` for `config-multiaccountsetup.amazonaws.com`.
 #' 
-#' Prerequisite: Ensure you call `EnableAllFeatures` API to enable all
-#' features in an organization.
+#' Prerequisite: Ensure you call `EnableAllFeatures` API to enable all features in an organization.
 #' 
-#' You must specify either the `TemplateS3Uri` or the `TemplateBody`
-#' parameter, but not both. If you provide both Config uses the
-#' `TemplateS3Uri` parameter and ignores the `TemplateBody` parameter.
+#' You must specify either the `TemplateS3Uri` or the `TemplateBody` parameter, but not both. If you provide both Config uses the `TemplateS3Uri` parameter and ignores the `TemplateBody` parameter.
 #' 
-#' Config sets the state of a conformance pack to CREATE_IN_PROGRESS and
-#' UPDATE_IN_PROGRESS until the conformance pack is created or updated. You
-#' cannot update a conformance pack while it is in this state.
+#' Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS until the conformance pack is created or updated. You cannot update a conformance pack while it is in this state.
 #'
 #' @usage
 #' configservice_put_organization_conformance_pack(
@@ -6926,28 +6163,18 @@ configservice_put_organization_config_rule <- function(OrganizationConfigRuleNam
 #'   ExcludedAccounts)
 #'
 #' @param OrganizationConformancePackName &#91;required&#93; Name of the organization conformance pack you want to create.
-#' @param TemplateS3Uri Location of file containing the template body. The uri must point to the
-#' conformance pack template (max size: 300 KB).
+#' @param TemplateS3Uri Location of file containing the template body. The uri must point to the conformance pack template (max size: 300 KB).
 #' 
-#' You must have access to read Amazon S3 bucket. In addition, in order to
-#' ensure a successful deployment, the template object must not be in an
-#' [archived storage
-#' class](https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html)
-#' if this parameter is passed.
-#' @param TemplateBody A string that contains the full conformance pack template body.
-#' Structure containing the template body with a minimum length of 1 byte
-#' and a maximum length of 51,200 bytes.
-#' @param DeliveryS3Bucket The name of the Amazon S3 bucket where Config stores conformance pack
-#' templates.
+#' You must have access to read Amazon S3 bucket. In addition, in order to ensure a successful deployment, the template object must not be in an [archived storage class](https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html) if this parameter is passed.
+#' @param TemplateBody A string that contains the full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.
+#' @param DeliveryS3Bucket The name of the Amazon S3 bucket where Config stores conformance pack templates.
 #' 
-#' This field is optional. If used, it must be prefixed with
-#' `awsconfigconforms`.
+#' This field is optional. If used, it must be prefixed with `awsconfigconforms`.
 #' @param DeliveryS3KeyPrefix The prefix for the Amazon S3 bucket.
 #' 
 #' This field is optional.
 #' @param ConformancePackInputParameters A list of `ConformancePackInputParameter` objects.
-#' @param ExcludedAccounts A list of Amazon Web Services accounts to be excluded from an
-#' organization conformance pack while deploying a conformance pack.
+#' @param ExcludedAccounts A list of Amazon Web Services accounts to be excluded from an organization conformance pack while deploying a conformance pack.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7005,48 +6232,25 @@ configservice_put_organization_conformance_pack <- function(OrganizationConforma
 #' rule with the selected target or action
 #'
 #' @description
-#' Adds or updates the remediation configuration with a specific Config
-#' rule with the selected target or action. The API creates the
-#' `RemediationConfiguration` object for the Config rule. The Config rule
-#' must already exist for you to add a remediation configuration. The
-#' target (SSM document) must exist and have permissions to use the target.
+#' Adds or updates the remediation configuration with a specific Config rule with the selected target or action. The API creates the `RemediationConfiguration` object for the Config rule. The Config rule must already exist for you to add a remediation configuration. The target (SSM document) must exist and have permissions to use the target.
 #' 
 #' **Be aware of backward incompatible changes**
 #' 
-#' If you make backward incompatible changes to the SSM document, you must
-#' call this again to ensure the remediations can run.
+#' If you make backward incompatible changes to the SSM document, you must call this again to ensure the remediations can run.
 #' 
-#' This API does not support adding remediation configurations for
-#' service-linked Config Rules such as Organization Config rules, the rules
-#' deployed by conformance packs, and rules deployed by Amazon Web Services
-#' Security Hub.
+#' This API does not support adding remediation configurations for service-linked Config Rules such as Organization Config rules, the rules deployed by conformance packs, and rules deployed by Amazon Web Services Security Hub.
 #' 
 #' **Required fields**
 #' 
-#' For manual remediation configuration, you need to provide a value for
-#' `automationAssumeRole` or use a value in the `assumeRole`field to
-#' remediate your resources. The SSM automation document can use either as
-#' long as it maps to a valid parameter.
+#' For manual remediation configuration, you need to provide a value for `automationAssumeRole` or use a value in the `assumeRole`field to remediate your resources. The SSM automation document can use either as long as it maps to a valid parameter.
 #' 
-#' However, for automatic remediation configuration, the only valid
-#' `assumeRole` field value is `AutomationAssumeRole` and you need to
-#' provide a value for `AutomationAssumeRole` to remediate your resources.
+#' However, for automatic remediation configuration, the only valid `assumeRole` field value is `AutomationAssumeRole` and you need to provide a value for `AutomationAssumeRole` to remediate your resources.
 #' 
 #' **Auto remediation can be initiated even for compliant resources**
 #' 
-#' If you enable auto remediation for a specific Config rule using the
-#' [`put_remediation_configurations`][configservice_put_remediation_configurations]
-#' API or the Config console, it initiates the remediation process for all
-#' non-compliant resources for that specific rule. The auto remediation
-#' process relies on the compliance data snapshot which is captured on a
-#' periodic basis. Any non-compliant resource that is updated between the
-#' snapshot schedule will continue to be remediated based on the last known
-#' compliance data snapshot.
+#' If you enable auto remediation for a specific Config rule using the [`put_remediation_configurations`][configservice_put_remediation_configurations] API or the Config console, it initiates the remediation process for all non-compliant resources for that specific rule. The auto remediation process relies on the compliance data snapshot which is captured on a periodic basis. Any non-compliant resource that is updated between the snapshot schedule will continue to be remediated based on the last known compliance data snapshot.
 #' 
-#' This means that in some cases auto remediation can be initiated even for
-#' compliant resources, since the bootstrap processor uses a database that
-#' can have stale evaluation results based on the last known compliance
-#' data snapshot.
+#' This means that in some cases auto remediation can be initiated even for compliant resources, since the bootstrap processor uses a database that can have stale evaluation results based on the last known compliance data snapshot.
 #'
 #' @usage
 #' configservice_put_remediation_configurations(RemediationConfigurations)
@@ -7163,69 +6367,36 @@ configservice_put_remediation_configurations <- function(RemediationConfiguratio
 #' considered for auto-remediation
 #'
 #' @description
-#' A remediation exception is when a specified resource is no longer
-#' considered for auto-remediation. This API adds a new exception or
-#' updates an existing exception for a specified resource with a specified
-#' Config rule.
+#' A remediation exception is when a specified resource is no longer considered for auto-remediation. This API adds a new exception or updates an existing exception for a specified resource with a specified Config rule.
 #' 
 #' **Exceptions block auto remediation**
 #' 
-#' Config generates a remediation exception when a problem occurs running a
-#' remediation action for a specified resource. Remediation exceptions
-#' blocks auto-remediation until the exception is cleared.
+#' Config generates a remediation exception when a problem occurs running a remediation action for a specified resource. Remediation exceptions blocks auto-remediation until the exception is cleared.
 #' 
 #' **Manual remediation is recommended when placing an exception**
 #' 
-#' When placing an exception on an Amazon Web Services resource, it is
-#' recommended that remediation is set as manual remediation until the
-#' given Config rule for the specified resource evaluates the resource as
-#' `NON_COMPLIANT`. Once the resource has been evaluated as
-#' `NON_COMPLIANT`, you can add remediation exceptions and change the
-#' remediation type back from Manual to Auto if you want to use
-#' auto-remediation. Otherwise, using auto-remediation before a
-#' `NON_COMPLIANT` evaluation result can delete resources before the
-#' exception is applied.
+#' When placing an exception on an Amazon Web Services resource, it is recommended that remediation is set as manual remediation until the given Config rule for the specified resource evaluates the resource as `NON_COMPLIANT`. Once the resource has been evaluated as `NON_COMPLIANT`, you can add remediation exceptions and change the remediation type back from Manual to Auto if you want to use auto-remediation. Otherwise, using auto-remediation before a `NON_COMPLIANT` evaluation result can delete resources before the exception is applied.
 #' 
 #' **Exceptions can only be performed on non-compliant resources**
 #' 
-#' Placing an exception can only be performed on resources that are
-#' `NON_COMPLIANT`. If you use this API for `COMPLIANT` resources or
-#' resources that are `NOT_APPLICABLE`, a remediation exception will not be
-#' generated. For more information on the conditions that initiate the
-#' possible Config evaluation results, see [Concepts | Config
-#' Rules](https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.html#aws-config-rules)
-#' in the *Config Developer Guide*.
+#' Placing an exception can only be performed on resources that are `NON_COMPLIANT`. If you use this API for `COMPLIANT` resources or resources that are `NOT_APPLICABLE`, a remediation exception will not be generated. For more information on the conditions that initiate the possible Config evaluation results, see [Concepts | Config Rules](https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.html#aws-config-rules) in the *Config Developer Guide*.
 #' 
 #' **Exceptions cannot be placed on service-linked remediation actions**
 #' 
-#' You cannot place an exception on service-linked remediation actions,
-#' such as remediation actions put by an organizational conformance pack.
+#' You cannot place an exception on service-linked remediation actions, such as remediation actions put by an organizational conformance pack.
 #' 
 #' **Auto remediation can be initiated even for compliant resources**
 #' 
-#' If you enable auto remediation for a specific Config rule using the
-#' [`put_remediation_configurations`][configservice_put_remediation_configurations]
-#' API or the Config console, it initiates the remediation process for all
-#' non-compliant resources for that specific rule. The auto remediation
-#' process relies on the compliance data snapshot which is captured on a
-#' periodic basis. Any non-compliant resource that is updated between the
-#' snapshot schedule will continue to be remediated based on the last known
-#' compliance data snapshot.
+#' If you enable auto remediation for a specific Config rule using the [`put_remediation_configurations`][configservice_put_remediation_configurations] API or the Config console, it initiates the remediation process for all non-compliant resources for that specific rule. The auto remediation process relies on the compliance data snapshot which is captured on a periodic basis. Any non-compliant resource that is updated between the snapshot schedule will continue to be remediated based on the last known compliance data snapshot.
 #' 
-#' This means that in some cases auto remediation can be initiated even for
-#' compliant resources, since the bootstrap processor uses a database that
-#' can have stale evaluation results based on the last known compliance
-#' data snapshot.
+#' This means that in some cases auto remediation can be initiated even for compliant resources, since the bootstrap processor uses a database that can have stale evaluation results based on the last known compliance data snapshot.
 #'
 #' @usage
 #' configservice_put_remediation_exceptions(ConfigRuleName, ResourceKeys,
 #'   Message, ExpirationTime)
 #'
-#' @param ConfigRuleName &#91;required&#93; The name of the Config rule for which you want to create remediation
-#' exception.
-#' @param ResourceKeys &#91;required&#93; An exception list of resource exception keys to be processed with the
-#' current request. Config adds exception for each resource key. For
-#' example, Config adds 3 exceptions for 3 resource keys.
+#' @param ConfigRuleName &#91;required&#93; The name of the Config rule for which you want to create remediation exception.
+#' @param ResourceKeys &#91;required&#93; An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys.
 #' @param Message The message contains an explanation of the exception.
 #' @param ExpirationTime The exception is automatically deleted after the expiration date.
 #'
@@ -7296,45 +6467,30 @@ configservice_put_remediation_exceptions <- function(ConfigRuleName, ResourceKey
 #' Records the configuration state for the resource provided in the request
 #'
 #' @description
-#' Records the configuration state for the resource provided in the
-#' request. The configuration state of a resource is represented in Config
-#' as Configuration Items. Once this API records the configuration item,
-#' you can retrieve the list of configuration items for the custom resource
-#' type using existing Config APIs.
+#' Records the configuration state for the resource provided in the request. The configuration state of a resource is represented in Config as Configuration Items. Once this API records the configuration item, you can retrieve the list of configuration items for the custom resource type using existing Config APIs.
 #' 
-#' The custom resource type must be registered with CloudFormation. This
-#' API accepts the configuration item registered with CloudFormation.
+#' The custom resource type must be registered with CloudFormation. This API accepts the configuration item registered with CloudFormation.
 #' 
-#' When you call this API, Config only stores configuration state of the
-#' resource provided in the request. This API does not change or remediate
-#' the configuration of the resource.
+#' When you call this API, Config only stores configuration state of the resource provided in the request. This API does not change or remediate the configuration of the resource.
 #' 
-#' Write-only schema properites are not recorded as part of the published
-#' configuration item.
+#' Write-only schema properites are not recorded as part of the published configuration item.
 #'
 #' @usage
 #' configservice_put_resource_config(ResourceType, SchemaVersionId,
 #'   ResourceId, ResourceName, Configuration, Tags)
 #'
-#' @param ResourceType &#91;required&#93; The type of the resource. The custom resource type must be registered
-#' with CloudFormation.
+#' @param ResourceType &#91;required&#93; The type of the resource. The custom resource type must be registered with CloudFormation.
 #' 
-#' You cannot use the organization names “amzn”, “amazon”, “alexa”,
-#' “custom” with custom resource types. It is the first part of the
-#' ResourceType up to the first ::.
+#' You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.
 #' @param SchemaVersionId &#91;required&#93; Version of the schema registered for the ResourceType in CloudFormation.
 #' @param ResourceId &#91;required&#93; Unique identifier of the resource.
 #' @param ResourceName Name of the resource.
-#' @param Configuration &#91;required&#93; The configuration object of the resource in valid JSON format. It must
-#' match the schema registered with CloudFormation.
+#' @param Configuration &#91;required&#93; The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.
 #' 
 #' The configuration JSON must not exceed 64 KB.
 #' @param Tags Tags associated with the resource.
 #' 
-#' This field is not to be confused with the Amazon Web Services-wide tag
-#' feature for Amazon Web Services resources. Tags for
-#' [`put_resource_config`][configservice_put_resource_config] are tags that
-#' you supply for the configuration items of your custom resources.
+#' This field is not to be confused with the Amazon Web Services-wide tag feature for Amazon Web Services resources. Tags for [`put_resource_config`][configservice_put_resource_config] are tags that you supply for the configuration items of your custom resources.
 #'
 #' @return
 #' An empty list.
@@ -7382,15 +6538,9 @@ configservice_put_resource_config <- function(ResourceType, SchemaVersionId, Res
 #' information
 #'
 #' @description
-#' Creates and updates the retention configuration with details about
-#' retention period (number of days) that Config stores your historical
-#' information. The API creates the `RetentionConfiguration` object and
-#' names the object as **default**. When you have a
-#' `RetentionConfiguration` object named **default**, calling the API
-#' modifies the default object.
+#' Creates and updates the retention configuration with details about retention period (number of days) that Config stores your historical information. The API creates the `RetentionConfiguration` object and names the object as **default**. When you have a `RetentionConfiguration` object named **default**, calling the API modifies the default object.
 #' 
-#' Currently, Config supports only one retention configuration per region
-#' in your account.
+#' Currently, Config supports only one retention configuration per region in your account.
 #'
 #' @usage
 #' configservice_put_retention_configuration(RetentionPeriodInDays)
@@ -7446,44 +6596,28 @@ configservice_put_retention_configuration <- function(RetentionPeriodInDays) {
 #' specify
 #'
 #' @description
-#' Creates a service-linked configuration recorder that is linked to a
-#' specific Amazon Web Services service based on the `ServicePrincipal` you
-#' specify.
+#' Creates a service-linked configuration recorder that is linked to a specific Amazon Web Services service based on the `ServicePrincipal` you specify.
 #' 
-#' The configuration recorder's `name`, `recordingGroup`, `recordingMode`,
-#' and `recordingScope` is set by the service that is linked to the
-#' configuration recorder.
+#' The configuration recorder's `name`, `recordingGroup`, `recordingMode`, and `recordingScope` is set by the service that is linked to the configuration recorder.
 #' 
-#' For more information and a list of supported services/service
-#' principals, see [**Working with the Configuration
-#' Recorder**](https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html)
-#' in the *Config Developer Guide*.
+#' For more information and a list of supported services/service principals, see [**Working with the Configuration Recorder**](https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html) in the *Config Developer Guide*.
 #' 
-#' This API creates a service-linked role `AWSServiceRoleForConfig` in your
-#' account. The service-linked role is created only when the role does not
-#' exist in your account.
+#' This API creates a service-linked role `AWSServiceRoleForConfig` in your account. The service-linked role is created only when the role does not exist in your account.
 #' 
 #' **The recording scope determines if you receive configuration items**
 #' 
-#' The recording scope is set by the service that is linked to the
-#' configuration recorder and determines whether you receive configuration
-#' items (CIs) in the delivery channel. If the recording scope is internal,
-#' you will not receive CIs in the delivery channel.
+#' The recording scope is set by the service that is linked to the configuration recorder and determines whether you receive configuration items (CIs) in the delivery channel. If the recording scope is internal, you will not receive CIs in the delivery channel.
 #' 
 #' **Tags are added at creation and cannot be updated with this operation**
 #' 
-#' Use [`tag_resource`][configservice_tag_resource] and
-#' [`untag_resource`][configservice_untag_resource] to update tags after
-#' creation.
+#' Use [`tag_resource`][configservice_tag_resource] and [`untag_resource`][configservice_untag_resource] to update tags after creation.
 #'
 #' @usage
 #' configservice_put_service_linked_configuration_recorder(
 #'   ServicePrincipal, Tags)
 #'
-#' @param ServicePrincipal &#91;required&#93; The service principal of the Amazon Web Services service for the
-#' service-linked configuration recorder that you want to create.
-#' @param Tags The tags for a service-linked configuration recorder. Each tag consists
-#' of a key and an optional value, both of which you define.
+#' @param ServicePrincipal &#91;required&#93; The service principal of the Amazon Web Services service for the service-linked configuration recorder that you want to create.
+#' @param Tags The tags for a service-linked configuration recorder. Each tag consists of a key and an optional value, both of which you define.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7534,29 +6668,18 @@ configservice_put_service_linked_configuration_recorder <- function(ServicePrinc
 #' Saves a new query or updates an existing saved query
 #'
 #' @description
-#' Saves a new query or updates an existing saved query. The `QueryName`
-#' must be unique for a single Amazon Web Services account and a single
-#' Amazon Web Services Region. You can create upto 300 queries in a single
-#' Amazon Web Services account and a single Amazon Web Services Region.
+#' Saves a new query or updates an existing saved query. The `QueryName` must be unique for a single Amazon Web Services account and a single Amazon Web Services Region. You can create upto 300 queries in a single Amazon Web Services account and a single Amazon Web Services Region.
 #' 
 #' **Tags are added at creation and cannot be updated**
 #' 
-#' [`put_stored_query`][configservice_put_stored_query] is an idempotent
-#' API. Subsequent requests won’t create a duplicate resource if one was
-#' already created. If a following request has different `tags` values,
-#' Config will ignore these differences and treat it as an idempotent
-#' request of the previous. In this case, `tags` will not be updated, even
-#' if they are different.
+#' [`put_stored_query`][configservice_put_stored_query] is an idempotent API. Subsequent requests won’t create a duplicate resource if one was already created. If a following request has different `tags` values, Config will ignore these differences and treat it as an idempotent request of the previous. In this case, `tags` will not be updated, even if they are different.
 #'
 #' @usage
 #' configservice_put_stored_query(StoredQuery, Tags)
 #'
-#' @param StoredQuery &#91;required&#93; A list of `StoredQuery` objects. The mandatory fields are `QueryName`
-#' and `Expression`.
+#' @param StoredQuery &#91;required&#93; A list of `StoredQuery` objects. The mandatory fields are `QueryName` and `Expression`.
 #' 
-#' When you are creating a query, you must provide a query name and an
-#' expression. When you are updating a query, you must provide a query name
-#' but updating the description is optional.
+#' When you are creating a query, you must provide a query name and an expression. When you are updating a query, you must provide a query name but updating the description is optional.
 #' @param Tags A list of `Tags` object.
 #'
 #' @return
@@ -7616,26 +6739,13 @@ configservice_put_stored_query <- function(StoredQuery, Tags = NULL) {
 #' and returns resource configurations matching the properties
 #'
 #' @description
-#' Accepts a structured query language (SQL) SELECT command and an
-#' aggregator to query configuration state of Amazon Web Services resources
-#' across multiple accounts and regions, performs the corresponding search,
-#' and returns resource configurations matching the properties.
+#' Accepts a structured query language (SQL) SELECT command and an aggregator to query configuration state of Amazon Web Services resources across multiple accounts and regions, performs the corresponding search, and returns resource configurations matching the properties.
 #' 
-#' For more information about query components, see the [**Query
-#' Components**](https://docs.aws.amazon.com/config/latest/developerguide/query-components.html)
-#' section in the *Config Developer Guide*.
+#' For more information about query components, see the [**Query Components**](https://docs.aws.amazon.com/config/latest/developerguide/query-components.html) section in the *Config Developer Guide*.
 #' 
-#' If you run an aggregation query (i.e., using `GROUP BY` or using
-#' aggregate functions such as `COUNT`; e.g.,
-#' `SELECT resourceId, COUNT(*) WHERE resourceType = 'AWS::IAM::Role' GROUP BY resourceId`)
-#' and do not specify the `MaxResults` or the `Limit` query parameters, the
-#' default page size is set to 500.
+#' If you run an aggregation query (i.e., using `GROUP BY` or using aggregate functions such as `COUNT`; e.g., `SELECT resourceId, COUNT(*) WHERE resourceType = 'AWS::IAM::Role' GROUP BY resourceId`) and do not specify the `MaxResults` or the `Limit` query parameters, the default page size is set to 500.
 #' 
-#' If you run a non-aggregation query (i.e., not using `GROUP BY` or
-#' aggregate function; e.g.,
-#' `SELECT * WHERE resourceType = 'AWS::IAM::Role'`) and do not specify the
-#' `MaxResults` or the `Limit` query parameters, the default page size is
-#' set to 25.
+#' If you run a non-aggregation query (i.e., not using `GROUP BY` or aggregate function; e.g., `SELECT * WHERE resourceType = 'AWS::IAM::Role'`) and do not specify the `MaxResults` or the `Limit` query parameters, the default page size is set to 25.
 #'
 #' @usage
 #' configservice_select_aggregate_resource_config(Expression,
@@ -7644,10 +6754,8 @@ configservice_put_stored_query <- function(StoredQuery, Tags = NULL) {
 #' @param Expression &#91;required&#93; The SQL query SELECT command.
 #' @param ConfigurationAggregatorName &#91;required&#93; The name of the configuration aggregator.
 #' @param Limit The maximum number of query results returned on each page.
-#' @param MaxResults The maximum number of query results returned on each page. Config also
-#' allows the Limit request parameter.
-#' @param NextToken The nextToken string returned in a previous request that you use to
-#' request the next page of results in a paginated response.
+#' @param MaxResults The maximum number of query results returned on each page. Config also allows the Limit request parameter.
+#' @param NextToken The nextToken string returned in a previous request that you use to request the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7707,21 +6815,16 @@ configservice_select_aggregate_resource_config <- function(Expression, Configura
 #' properties
 #'
 #' @description
-#' Accepts a structured query language (SQL) `SELECT` command, performs the
-#' corresponding search, and returns resource configurations matching the
-#' properties.
+#' Accepts a structured query language (SQL) `SELECT` command, performs the corresponding search, and returns resource configurations matching the properties.
 #' 
-#' For more information about query components, see the [**Query
-#' Components**](https://docs.aws.amazon.com/config/latest/developerguide/query-components.html)
-#' section in the *Config Developer Guide*.
+#' For more information about query components, see the [**Query Components**](https://docs.aws.amazon.com/config/latest/developerguide/query-components.html) section in the *Config Developer Guide*.
 #'
 #' @usage
 #' configservice_select_resource_config(Expression, Limit, NextToken)
 #'
 #' @param Expression &#91;required&#93; The SQL query `SELECT` command.
 #' @param Limit The maximum number of query results returned on each page.
-#' @param NextToken The `nextToken` string returned in a previous request that you use to
-#' request the next page of results in a paginated response.
+#' @param NextToken The `nextToken` string returned in a previous request that you use to request the next page of results in a paginated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7778,45 +6881,23 @@ configservice_select_resource_config <- function(Expression, Limit = NULL, NextT
 #' last known configuration state of the resources
 #'
 #' @description
-#' Runs an on-demand evaluation for the specified Config rules against the
-#' last known configuration state of the resources. Use
-#' [`start_config_rules_evaluation`][configservice_start_config_rules_evaluation]
-#' when you want to test that a rule you updated is working as expected.
-#' [`start_config_rules_evaluation`][configservice_start_config_rules_evaluation]
-#' does not re-record the latest configuration state for your resources. It
-#' re-runs an evaluation against the last known state of your resources.
+#' Runs an on-demand evaluation for the specified Config rules against the last known configuration state of the resources. Use [`start_config_rules_evaluation`][configservice_start_config_rules_evaluation] when you want to test that a rule you updated is working as expected. [`start_config_rules_evaluation`][configservice_start_config_rules_evaluation] does not re-record the latest configuration state for your resources. It re-runs an evaluation against the last known state of your resources.
 #' 
 #' You can specify up to 25 Config rules per request.
 #' 
-#' An existing
-#' [`start_config_rules_evaluation`][configservice_start_config_rules_evaluation]
-#' call for the specified rules must complete before you can call the API
-#' again. If you chose to have Config stream to an Amazon SNS topic, you
-#' will receive a `ConfigRuleEvaluationStarted` notification when the
-#' evaluation starts.
+#' An existing [`start_config_rules_evaluation`][configservice_start_config_rules_evaluation] call for the specified rules must complete before you can call the API again. If you chose to have Config stream to an Amazon SNS topic, you will receive a `ConfigRuleEvaluationStarted` notification when the evaluation starts.
 #' 
-#' You don't need to call the
-#' [`start_config_rules_evaluation`][configservice_start_config_rules_evaluation]
-#' API to run an evaluation for a new rule. When you create a rule, Config
-#' evaluates your resources against the rule automatically.
+#' You don't need to call the [`start_config_rules_evaluation`][configservice_start_config_rules_evaluation] API to run an evaluation for a new rule. When you create a rule, Config evaluates your resources against the rule automatically.
 #' 
-#' The
-#' [`start_config_rules_evaluation`][configservice_start_config_rules_evaluation]
-#' API is useful if you want to run on-demand evaluations, such as the
-#' following example:
+#' The [`start_config_rules_evaluation`][configservice_start_config_rules_evaluation] API is useful if you want to run on-demand evaluations, such as the following example:
 #' 
-#' 1.  You have a custom rule that evaluates your IAM resources every 24
-#'     hours.
+#' 1.  You have a custom rule that evaluates your IAM resources every 24 hours.
 #' 
-#' 2.  You update your Lambda function to add additional conditions to your
-#'     rule.
+#' 2.  You update your Lambda function to add additional conditions to your rule.
 #' 
-#' 3.  Instead of waiting for the next periodic evaluation, you call the
-#'     [`start_config_rules_evaluation`][configservice_start_config_rules_evaluation]
-#'     API.
+#' 3.  Instead of waiting for the next periodic evaluation, you call the [`start_config_rules_evaluation`][configservice_start_config_rules_evaluation] API.
 #' 
-#' 4.  Config invokes your Lambda function and evaluates your IAM
-#'     resources.
+#' 4.  Config invokes your Lambda function and evaluates your IAM resources.
 #' 
 #' 5.  Your custom rule will still run periodic evaluations every 24 hours.
 #'
@@ -7864,20 +6945,14 @@ configservice_start_config_rules_evaluation <- function(ConfigRuleNames = NULL) 
 #' Starts the customer managed configuration recorder
 #'
 #' @description
-#' Starts the customer managed configuration recorder. The customer managed
-#' configuration recorder will begin recording configuration changes for
-#' the resource types you specify.
+#' Starts the customer managed configuration recorder. The customer managed configuration recorder will begin recording configuration changes for the resource types you specify.
 #' 
-#' You must have created a delivery channel to successfully start the
-#' customer managed configuration recorder. You can use the
-#' [`put_delivery_channel`][configservice_put_delivery_channel] operation
-#' to create a delivery channel.
+#' You must have created a delivery channel to successfully start the customer managed configuration recorder. You can use the [`put_delivery_channel`][configservice_put_delivery_channel] operation to create a delivery channel.
 #'
 #' @usage
 #' configservice_start_configuration_recorder(ConfigurationRecorderName)
 #'
-#' @param ConfigurationRecorderName &#91;required&#93; The name of the customer managed configuration recorder that you want to
-#' start.
+#' @param ConfigurationRecorderName &#91;required&#93; The name of the customer managed configuration recorder that you want to start.
 #'
 #' @return
 #' An empty list.
@@ -7917,21 +6992,15 @@ configservice_start_configuration_recorder <- function(ConfigurationRecorderName
 #' last known remediation configuration
 #'
 #' @description
-#' Runs an on-demand remediation for the specified Config rules against the
-#' last known remediation configuration. It runs an execution against the
-#' current state of your resources. Remediation execution is asynchronous.
+#' Runs an on-demand remediation for the specified Config rules against the last known remediation configuration. It runs an execution against the current state of your resources. Remediation execution is asynchronous.
 #' 
-#' You can specify up to 100 resource keys per request. An existing
-#' StartRemediationExecution call for the specified resource keys must
-#' complete before you can call the API again.
+#' You can specify up to 100 resource keys per request. An existing StartRemediationExecution call for the specified resource keys must complete before you can call the API again.
 #'
 #' @usage
 #' configservice_start_remediation_execution(ConfigRuleName, ResourceKeys)
 #'
-#' @param ConfigRuleName &#91;required&#93; The list of names of Config rules that you want to run remediation
-#' execution for.
-#' @param ResourceKeys &#91;required&#93; A list of resource keys to be processed with the current request. Each
-#' element in the list consists of the resource type and resource ID.
+#' @param ConfigRuleName &#91;required&#93; The list of names of Config rules that you want to run remediation execution for.
+#' @param ResourceKeys &#91;required&#93; A list of resource keys to be processed with the current request. Each element in the list consists of the resource type and resource ID.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7988,28 +7057,13 @@ configservice_start_remediation_execution <- function(ConfigRuleName, ResourceKe
 #' whether the resource details will comply with configured Config rules
 #'
 #' @description
-#' Runs an on-demand evaluation for the specified resource to determine
-#' whether the resource details will comply with configured Config rules.
-#' You can also use it for evaluation purposes. Config recommends using an
-#' evaluation context. It runs an execution against the resource details
-#' with all of the Config rules in your account that match with the
-#' specified proactive mode and resource type.
+#' Runs an on-demand evaluation for the specified resource to determine whether the resource details will comply with configured Config rules. You can also use it for evaluation purposes. Config recommends using an evaluation context. It runs an execution against the resource details with all of the Config rules in your account that match with the specified proactive mode and resource type.
 #' 
-#' Ensure you have the `cloudformation:DescribeType` role setup to validate
-#' the resource type schema.
+#' Ensure you have the `cloudformation:DescribeType` role setup to validate the resource type schema.
 #' 
-#' You can find the [Resource type
-#' schema](https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html)
-#' in "*Amazon Web Services public extensions*" within the CloudFormation
-#' registry or with the following CLI commmand:
-#' `aws cloudformation describe-type --type-name "AWS::S3::Bucket" --type RESOURCE`.
+#' You can find the [Resource type schema](https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html) in "*Amazon Web Services public extensions*" within the CloudFormation registry or with the following CLI commmand: `aws cloudformation describe-type --type-name "AWS::S3::Bucket" --type RESOURCE`.
 #' 
-#' For more information, see [Managing extensions through the
-#' CloudFormation
-#' registry](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-view)
-#' and [Amazon Web Services resource and property types
-#' reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-template-resource-type-ref.html)
-#' in the CloudFormation User Guide.
+#' For more information, see [Managing extensions through the CloudFormation registry](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-view) and [Amazon Web Services resource and property types reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-template-resource-type-ref.html) in the CloudFormation User Guide.
 #'
 #' @usage
 #' configservice_start_resource_evaluation(ResourceDetails,
@@ -8020,20 +7074,10 @@ configservice_start_remediation_execution <- function(ConfigRuleName, ResourceKe
 #' @param EvaluationMode &#91;required&#93; The mode of an evaluation.
 #' 
 #' The only valid value for this API is `PROACTIVE`.
-#' @param EvaluationTimeout The timeout for an evaluation. The default is 900 seconds. You cannot
-#' specify a number greater than 3600. If you specify 0, Config uses the
-#' default.
-#' @param ClientToken A client token is a unique, case-sensitive string of up to 64 ASCII
-#' characters. To make an idempotent API request using one of these
-#' actions, specify a client token in the request.
+#' @param EvaluationTimeout The timeout for an evaluation. The default is 900 seconds. You cannot specify a number greater than 3600. If you specify 0, Config uses the default.
+#' @param ClientToken A client token is a unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request using one of these actions, specify a client token in the request.
 #' 
-#' Avoid reusing the same client token for other API requests. If you retry
-#' a request that completed successfully using the same client token and
-#' the same parameters, the retry succeeds without performing any further
-#' actions. If you retry a successful request using the same client token,
-#' but one or more of the parameters are different, other than the Region
-#' or Availability Zone, the retry fails with an
-#' IdempotentParameterMismatch error.
+#' Avoid reusing the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, other than the Region or Availability Zone, the retry fails with an IdempotentParameterMismatch error.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8088,15 +7132,12 @@ configservice_start_resource_evaluation <- function(ResourceDetails, EvaluationC
 #' Stops the customer managed configuration recorder
 #'
 #' @description
-#' Stops the customer managed configuration recorder. The customer managed
-#' configuration recorder will stop recording configuration changes for the
-#' resource types you have specified.
+#' Stops the customer managed configuration recorder. The customer managed configuration recorder will stop recording configuration changes for the resource types you have specified.
 #'
 #' @usage
 #' configservice_stop_configuration_recorder(ConfigurationRecorderName)
 #'
-#' @param ConfigurationRecorderName &#91;required&#93; The name of the customer managed configuration recorder that you want to
-#' stop.
+#' @param ConfigurationRecorderName &#91;required&#93; The name of the customer managed configuration recorder that you want to stop.
 #'
 #' @return
 #' An empty list.
@@ -8136,17 +7177,12 @@ configservice_stop_configuration_recorder <- function(ConfigurationRecorderName)
 #' ResourceArn
 #'
 #' @description
-#' Associates the specified tags to a resource with the specified
-#' `ResourceArn`. If existing tags on a resource are not specified in the
-#' request parameters, they are not changed. If existing tags are
-#' specified, however, then their values will be updated. When a resource
-#' is deleted, the tags associated with that resource are deleted as well.
+#' Associates the specified tags to a resource with the specified `ResourceArn`. If existing tags on a resource are not specified in the request parameters, they are not changed. If existing tags are specified, however, then their values will be updated. When a resource is deleted, the tags associated with that resource are deleted as well.
 #'
 #' @usage
 #' configservice_tag_resource(ResourceArn, Tags)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the resource for which to
-#' list the tags. The following resources are supported:
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. The following resources are supported:
 #' 
 #' -   `ConfigurationRecorder`
 #' 
@@ -8213,8 +7249,7 @@ configservice_tag_resource <- function(ResourceArn, Tags) {
 #' @usage
 #' configservice_untag_resource(ResourceArn, TagKeys)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the resource for which to
-#' list the tags. The following resources are supported:
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. The following resources are supported:
 #' 
 #' -   `ConfigurationRecorder`
 #' 

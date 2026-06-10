@@ -14,21 +14,17 @@ fsx_create_and_attach_s3_access_point(
 )
 }
 \arguments{
-\item{ClientRequestToken}{}
+\item{ClientRequestToken}{(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.}
 
 \item{Name}{[required] The name you want to assign to this S3 access point.}
 
-\item{Type}{[required] The type of S3 access point you want to create. Only \code{OpenZFS} is
-supported.}
+\item{Type}{[required] The type of S3 access point you want to create. Only \code{OpenZFS} is supported.}
 
-\item{OpenZFSConfiguration}{Specifies the configuration to use when creating and attaching an S3
-access point to an FSx for OpenZFS volume.}
+\item{OpenZFSConfiguration}{Specifies the configuration to use when creating and attaching an S3 access point to an FSx for OpenZFS volume.}
 
-\item{OntapConfiguration}{}
+\item{OntapConfiguration}{Specifies the FSx for ONTAP volume that the S3 access point will be attached to, and the file system user identity.}
 
-\item{S3AccessPoint}{Specifies the virtual private cloud (VPC) configuration if you're
-creating an access point that is restricted to a VPC. For more
-information, see \href{https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/access-points-vpc.html}{Creating access points restricted to a virtual private cloud}.}
+\item{S3AccessPoint}{Specifies the virtual private cloud (VPC) configuration if you're creating an access point that is restricted to a VPC. For more information, see \href{https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/access-points-vpc.html}{Creating access points restricted to a virtual private cloud}.}
 }
 \description{
 Creates an S3 access point and attaches it to an Amazon FSx volume. For FSx for OpenZFS file systems, the volume must be hosted on a high-availability file system, either Single-AZ or Multi-AZ. For more information, see \href{https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/s3accesspoints-for-FSx.html}{Accessing your data using Amazon S3 access points}. in the Amazon FSx for OpenZFS User Guide.

@@ -13,11 +13,9 @@ lambda_put_function_scaling_config(
 \arguments{
 \item{FunctionName}{[required] The name or ARN of the Lambda function.}
 
-\item{Qualifier}{[required] Specify a version or alias to set the scaling configuration for a
-published version of the function.}
+\item{Qualifier}{[required] Specify a version or alias to set the scaling configuration for a published version of the function.}
 
-\item{FunctionScalingConfig}{The scaling configuration to apply to the function, including minimum
-and maximum execution environment limits.}
+\item{FunctionScalingConfig}{The scaling configuration to apply to the function, including minimum and maximum execution environment limits.}
 }
 \description{
 Sets the scaling configuration for a Lambda Managed Instances function. The scaling configuration defines the minimum and maximum number of execution environments that can be provisioned for the function, allowing you to control scaling behavior and resource allocation.

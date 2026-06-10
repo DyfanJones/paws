@@ -14,21 +14,13 @@ route53resolver_list_firewall_domains(
 \arguments{
 \item{FirewallDomainListId}{[required] The ID of the domain list whose domains you want to retrieve.}
 
-\item{MaxResults}{The maximum number of objects that you want Resolver to return for this
-request. If more objects are available, in the response, Resolver
-provides a \code{NextToken} value that you can use in a subsequent call to
-get the next batch of objects.
+\item{MaxResults}{The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a \code{NextToken} value that you can use in a subsequent call to get the next batch of objects.
 
-If you don't specify a value for \code{MaxResults}, Resolver returns up to
-100 objects.}
+If you don't specify a value for \code{MaxResults}, Resolver returns up to 100 objects.}
 
 \item{NextToken}{For the first call to this list request, omit this value.
 
-When you request a list of objects, Resolver returns at most the number
-of objects specified in \code{MaxResults}. If more objects are available for
-retrieval, Resolver returns a \code{NextToken} value in the response. To
-retrieve the next batch of objects, use the token that was returned for
-the prior request in your next request.}
+When you request a list of objects, Resolver returns at most the number of objects specified in \code{MaxResults}. If more objects are available for retrieval, Resolver returns a \code{NextToken} value in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.}
 }
 \description{
 Retrieves the domains that you have defined for the specified firewall domain list.

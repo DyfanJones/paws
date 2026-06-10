@@ -8,10 +8,9 @@ and search endpoints}
 cloudsearch_update_service_access_policies(DomainName, AccessPolicies)
 }
 \arguments{
-\item{DomainName}{[required]}
+\item{DomainName}{[required] A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).}
 
-\item{AccessPolicies}{[required] The access rules you want to configure. These rules replace any existing
-rules.}
+\item{AccessPolicies}{[required] The access rules you want to configure. These rules replace any existing rules.}
 }
 \description{
 Configures the access rules that control access to the domain's document and search endpoints. For more information, see \if{html}{\out{<a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">}}Configuring Access for an Amazon CloudSearch Domain\if{html}{\out{</a>}}.

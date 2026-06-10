@@ -13,18 +13,13 @@ elasticache_describe_cache_parameter_groups(
 \arguments{
 \item{CacheParameterGroupName}{The name of a specific cache parameter group to return details for.}
 
-\item{MaxRecords}{The maximum number of records to include in the response. If more
-records exist than the specified \code{MaxRecords} value, a marker is
-included in the response so that the remaining results can be retrieved.
+\item{MaxRecords}{The maximum number of records to include in the response. If more records exist than the specified \code{MaxRecords} value, a marker is included in the response so that the remaining results can be retrieved.
 
 Default: 100
 
 Constraints: minimum 20; maximum 100.}
 
-\item{Marker}{An optional marker returned from a prior request. Use this marker for
-pagination of results from this operation. If this parameter is
-specified, the response includes only records beyond the marker, up to
-the value specified by \code{MaxRecords}.}
+\item{Marker}{An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by \code{MaxRecords}.}
 }
 \description{
 Returns a list of cache parameter group descriptions. If a cache parameter group name is specified, the list contains only the descriptions for that group.

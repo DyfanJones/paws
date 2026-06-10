@@ -7,12 +7,9 @@
 translate_untag_resource(ResourceArn, TagKeys)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the given Amazon Translate resource
-from which you want to remove the tags.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the given Amazon Translate resource from which you want to remove the tags.}
 
-\item{TagKeys}{[required] The initial part of a key-value pair that forms a tag being removed from
-a given resource. Keys must be unique and cannot be duplicated for a
-particular resource.}
+\item{TagKeys}{[required] The initial part of a key-value pair that forms a tag being removed from a given resource. Keys must be unique and cannot be duplicated for a particular resource.}
 }
 \description{
 Removes a specific tag associated with an Amazon Translate resource. For more information, see \href{https://docs.aws.amazon.com/translate/latest/dg/tagging.html}{Tagging your resources}.

@@ -10,14 +10,9 @@ resourceexplorer_delete_resource_explorer_setup(
 )
 }
 \arguments{
-\item{RegionList}{A list of Amazon Web Services Regions from which to delete the Resource
-Explorer configuration. If not specified, the operation uses the
-\code{DeleteInAllRegions} parameter to determine scope.}
+\item{RegionList}{A list of Amazon Web Services Regions from which to delete the Resource Explorer configuration. If not specified, the operation uses the \code{DeleteInAllRegions} parameter to determine scope.}
 
-\item{DeleteInAllRegions}{Specifies whether to delete Resource Explorer configuration from all
-Regions where it is currently enabled. If this parameter is set to
-\code{true}, a value for \code{RegionList} must not be provided. Otherwise, the
-operation fails with a \code{ValidationException} error.}
+\item{DeleteInAllRegions}{Specifies whether to delete Resource Explorer configuration from all Regions where it is currently enabled. If this parameter is set to \code{true}, a value for \code{RegionList} must not be provided. Otherwise, the operation fails with a \code{ValidationException} error.}
 }
 \description{
 Deletes a Resource Explorer setup configuration. This operation removes indexes and views from the specified Regions or all Regions where Resource Explorer is configured.

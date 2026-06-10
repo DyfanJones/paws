@@ -10,15 +10,8 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/sagemakerfeaturestoreruntime_batch_get_record/](https://www.paws-r-sdk.com/docs/sagemakerfeaturestoreruntime_batch_get_record/) for full documentation.
 #'
-#' @param Identifiers &#91;required&#93; A list containing the name or Amazon Resource Name (ARN) of the
-#' `FeatureGroup`, the list of names of `Feature`s to be retrieved, and the
-#' corresponding `RecordIdentifier` values as strings.
-#' @param ExpirationTimeResponse Parameter to request `ExpiresAt` in response. If `Enabled`,
-#' [`batch_get_record`][sagemakerfeaturestoreruntime_batch_get_record] will
-#' return the value of `ExpiresAt`, if it is not null. If `Disabled` and
-#' null,
-#' [`batch_get_record`][sagemakerfeaturestoreruntime_batch_get_record] will
-#' return null.
+#' @param Identifiers &#91;required&#93; A list containing the name or Amazon Resource Name (ARN) of the `FeatureGroup`, the list of names of `Feature`s to be retrieved, and the corresponding `RecordIdentifier` values as strings.
+#' @param ExpirationTimeResponse Parameter to request `ExpiresAt` in response. If `Enabled`, [`batch_get_record`][sagemakerfeaturestoreruntime_batch_get_record] will return the value of `ExpiresAt`, if it is not null. If `Disabled` and null, [`batch_get_record`][sagemakerfeaturestoreruntime_batch_get_record] will return null.
 #'
 #' @keywords internal
 #'
@@ -49,17 +42,11 @@ sagemakerfeaturestoreruntime_batch_get_record <- function(Identifiers, Expiratio
 #'
 #' See [https://www.paws-r-sdk.com/docs/sagemakerfeaturestoreruntime_delete_record/](https://www.paws-r-sdk.com/docs/sagemakerfeaturestoreruntime_delete_record/) for full documentation.
 #'
-#' @param FeatureGroupName &#91;required&#93; The name or Amazon Resource Name (ARN) of the feature group to delete
-#' the record from.
-#' @param RecordIdentifierValueAsString &#91;required&#93; The value for the `RecordIdentifier` that uniquely identifies the
-#' record, in string format.
-#' @param EventTime &#91;required&#93; Timestamp indicating when the deletion event occurred. `EventTime` can
-#' be used to query data at a certain point in time.
-#' @param TargetStores A list of stores from which you're deleting the record. By default,
-#' Feature Store deletes the record from all of the stores that you're
-#' using for the `FeatureGroup`.
-#' @param DeletionMode The name of the deletion mode for deleting the record. By default, the
-#' deletion mode is set to `SoftDelete`.
+#' @param FeatureGroupName &#91;required&#93; The name or Amazon Resource Name (ARN) of the feature group to delete the record from.
+#' @param RecordIdentifierValueAsString &#91;required&#93; The value for the `RecordIdentifier` that uniquely identifies the record, in string format.
+#' @param EventTime &#91;required&#93; Timestamp indicating when the deletion event occurred. `EventTime` can be used to query data at a certain point in time.
+#' @param TargetStores A list of stores from which you're deleting the record. By default, Feature Store deletes the record from all of the stores that you're using for the `FeatureGroup`.
+#' @param DeletionMode The name of the deletion mode for deleting the record. By default, the deletion mode is set to `SoftDelete`.
 #'
 #' @keywords internal
 #'
@@ -90,17 +77,10 @@ sagemakerfeaturestoreruntime_delete_record <- function(FeatureGroupName, RecordI
 #'
 #' See [https://www.paws-r-sdk.com/docs/sagemakerfeaturestoreruntime_get_record/](https://www.paws-r-sdk.com/docs/sagemakerfeaturestoreruntime_get_record/) for full documentation.
 #'
-#' @param FeatureGroupName &#91;required&#93; The name or Amazon Resource Name (ARN) of the feature group from which
-#' you want to retrieve a record.
-#' @param RecordIdentifierValueAsString &#91;required&#93; The value that corresponds to `RecordIdentifier` type and uniquely
-#' identifies the record in the `FeatureGroup`.
-#' @param FeatureNames List of names of Features to be retrieved. If not specified, the latest
-#' value for all the Features are returned.
-#' @param ExpirationTimeResponse Parameter to request `ExpiresAt` in response. If `Enabled`,
-#' [`get_record`][sagemakerfeaturestoreruntime_get_record] will return the
-#' value of `ExpiresAt`, if it is not null. If `Disabled` and null,
-#' [`get_record`][sagemakerfeaturestoreruntime_get_record] will return
-#' null.
+#' @param FeatureGroupName &#91;required&#93; The name or Amazon Resource Name (ARN) of the feature group from which you want to retrieve a record.
+#' @param RecordIdentifierValueAsString &#91;required&#93; The value that corresponds to `RecordIdentifier` type and uniquely identifies the record in the `FeatureGroup`.
+#' @param FeatureNames List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.
+#' @param ExpirationTimeResponse Parameter to request `ExpiresAt` in response. If `Enabled`, [`get_record`][sagemakerfeaturestoreruntime_get_record] will return the value of `ExpiresAt`, if it is not null. If `Disabled` and null, [`get_record`][sagemakerfeaturestoreruntime_get_record] will return null.
 #'
 #' @keywords internal
 #'
@@ -132,27 +112,16 @@ sagemakerfeaturestoreruntime_get_record <- function(FeatureGroupName, RecordIden
 #'
 #' See [https://www.paws-r-sdk.com/docs/sagemakerfeaturestoreruntime_put_record/](https://www.paws-r-sdk.com/docs/sagemakerfeaturestoreruntime_put_record/) for full documentation.
 #'
-#' @param FeatureGroupName &#91;required&#93; The name or Amazon Resource Name (ARN) of the feature group that you
-#' want to insert the record into.
-#' @param Record &#91;required&#93; List of FeatureValues to be inserted. This will be a full over-write. If
-#' you only want to update few of the feature values, do the following:
+#' @param FeatureGroupName &#91;required&#93; The name or Amazon Resource Name (ARN) of the feature group that you want to insert the record into.
+#' @param Record &#91;required&#93; List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:
 #' 
-#' -   Use [`get_record`][sagemakerfeaturestoreruntime_get_record] to
-#'     retrieve the latest record.
+#' -   Use [`get_record`][sagemakerfeaturestoreruntime_get_record] to retrieve the latest record.
 #' 
-#' -   Update the record returned from
-#'     [`get_record`][sagemakerfeaturestoreruntime_get_record].
+#' -   Update the record returned from [`get_record`][sagemakerfeaturestoreruntime_get_record].
 #' 
-#' -   Use [`put_record`][sagemakerfeaturestoreruntime_put_record] to
-#'     update feature values.
-#' @param TargetStores A list of stores to which you're adding the record. By default, Feature
-#' Store adds the record to all of the stores that you're using for the
-#' `FeatureGroup`.
-#' @param TtlDuration Time to live duration, where the record is hard deleted after the
-#' expiration time is reached; `ExpiresAt` = `EventTime` + `TtlDuration`.
-#' For information on HardDelete, see the
-#' [`delete_record`][sagemakerfeaturestoreruntime_delete_record] API in the
-#' Amazon SageMaker API Reference guide.
+#' -   Use [`put_record`][sagemakerfeaturestoreruntime_put_record] to update feature values.
+#' @param TargetStores A list of stores to which you're adding the record. By default, Feature Store adds the record to all of the stores that you're using for the `FeatureGroup`.
+#' @param TtlDuration Time to live duration, where the record is hard deleted after the expiration time is reached; `ExpiresAt` = `EventTime` + `TtlDuration`. For information on HardDelete, see the [`delete_record`][sagemakerfeaturestoreruntime_delete_record] API in the Amazon SageMaker API Reference guide.
 #'
 #' @keywords internal
 #'

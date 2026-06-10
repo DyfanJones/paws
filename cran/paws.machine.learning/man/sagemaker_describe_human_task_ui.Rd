@@ -8,8 +8,7 @@
 sagemaker_describe_human_task_ui(HumanTaskUiName)
 }
 \arguments{
-\item{HumanTaskUiName}{[required] The name of the human task user interface (worker task template) you
-want information about.}
+\item{HumanTaskUiName}{[required] The name of the human task user interface (worker task template) you want information about.}
 }
 \description{
 Returns information about the requested human task user interface (worker task template).

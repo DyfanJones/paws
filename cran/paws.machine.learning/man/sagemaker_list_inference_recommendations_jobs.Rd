@@ -20,38 +20,29 @@ sagemaker_list_inference_recommendations_jobs(
 )
 }
 \arguments{
-\item{CreationTimeAfter}{A filter that returns only jobs created after the specified time
-(timestamp).}
+\item{CreationTimeAfter}{A filter that returns only jobs created after the specified time (timestamp).}
 
-\item{CreationTimeBefore}{A filter that returns only jobs created before the specified time
-(timestamp).}
+\item{CreationTimeBefore}{A filter that returns only jobs created before the specified time (timestamp).}
 
-\item{LastModifiedTimeAfter}{A filter that returns only jobs that were last modified after the
-specified time (timestamp).}
+\item{LastModifiedTimeAfter}{A filter that returns only jobs that were last modified after the specified time (timestamp).}
 
-\item{LastModifiedTimeBefore}{A filter that returns only jobs that were last modified before the
-specified time (timestamp).}
+\item{LastModifiedTimeBefore}{A filter that returns only jobs that were last modified before the specified time (timestamp).}
 
-\item{NameContains}{A string in the job name. This filter returns only recommendations whose
-name contains the specified string.}
+\item{NameContains}{A string in the job name. This filter returns only recommendations whose name contains the specified string.}
 
-\item{StatusEquals}{A filter that retrieves only inference recommendations jobs with a
-specific status.}
+\item{StatusEquals}{A filter that retrieves only inference recommendations jobs with a specific status.}
 
 \item{SortBy}{The parameter by which to sort the results.}
 
 \item{SortOrder}{The sort order for the results.}
 
-\item{NextToken}{If the response to a previous \code{ListInferenceRecommendationsJobsRequest}
-request was truncated, the response includes a \code{NextToken}. To retrieve
-the next set of recommendations, use the token in the next request.}
+\item{NextToken}{If the response to a previous \code{ListInferenceRecommendationsJobsRequest} request was truncated, the response includes a \code{NextToken}. To retrieve the next set of recommendations, use the token in the next request.}
 
 \item{MaxResults}{The maximum number of recommendations to return in the response.}
 
 \item{ModelNameEquals}{A filter that returns only jobs that were created for this model.}
 
-\item{ModelPackageVersionArnEquals}{A filter that returns only jobs that were created for this versioned
-model package.}
+\item{ModelPackageVersionArnEquals}{A filter that returns only jobs that were created for this versioned model package.}
 }
 \description{
 Lists recommendation jobs that satisfy various filters.

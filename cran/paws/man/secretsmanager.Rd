@@ -55,40 +55,23 @@ Operations section.
 \description{
 Amazon Web Services Secrets Manager
 
-Amazon Web Services Secrets Manager provides a service to enable you to
-store, manage, and retrieve, secrets.
+Amazon Web Services Secrets Manager provides a service to enable you to store, manage, and retrieve, secrets.
 
-This guide provides descriptions of the Secrets Manager API. For more
-information about using this service, see the \href{https://docs.aws.amazon.com/secretsmanager/latest/userguide/}{Amazon Web Services Secrets Manager User Guide}.
+This guide provides descriptions of the Secrets Manager API. For more information about using this service, see the \href{https://docs.aws.amazon.com/secretsmanager/latest/userguide/}{Amazon Web Services Secrets Manager User Guide}.
 
 \strong{API Version}
 
-This version of the Secrets Manager API Reference documents the Secrets
-Manager API version 2017-10-17.
+This version of the Secrets Manager API Reference documents the Secrets Manager API version 2017-10-17.
 
 For a list of endpoints, see \href{https://docs.aws.amazon.com/secretsmanager/latest/userguide/asm_access.html#endpoints}{Amazon Web Services Secrets Manager endpoints}.
 
 \strong{Support and Feedback for Amazon Web Services Secrets Manager}
 
-We welcome your feedback. Send your comments to
-\href{mailto:awssecretsmanager-feedback@amazon.com}{awssecretsmanager-feedback@amazon.com}, or post your feedback and
-questions in the Amazon Web Services Secrets Manager Discussion Forum.
-For more information about the Amazon Web Services Discussion Forums,
-see Forums Help.
+We welcome your feedback. Send your comments to \href{mailto:awssecretsmanager-feedback@amazon.com}{awssecretsmanager-feedback@amazon.com}, or post your feedback and questions in the Amazon Web Services Secrets Manager Discussion Forum. For more information about the Amazon Web Services Discussion Forums, see Forums Help.
 
 \strong{Logging API Requests}
 
-Amazon Web Services Secrets Manager supports Amazon Web Services
-CloudTrail, a service that records Amazon Web Services API calls for
-your Amazon Web Services account and delivers log files to an Amazon S3
-bucket. By using information that's collected by Amazon Web Services
-CloudTrail, you can determine the requests successfully made to Secrets
-Manager, who made the request, when it was made, and so on. For more
-about Amazon Web Services Secrets Manager and support for Amazon Web
-Services CloudTrail, see \href{https://docs.aws.amazon.com/secretsmanager/latest/userguide/monitoring.html#monitoring_cloudtrail}{Logging Amazon Web Services Secrets Manager Events with Amazon Web Services CloudTrail}
-in the \emph{Amazon Web Services Secrets Manager User Guide}. To learn more
-about CloudTrail, including enabling it and find your log files, see the
-\href{https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html}{Amazon Web Services CloudTrail User Guide}.
+Amazon Web Services Secrets Manager supports Amazon Web Services CloudTrail, a service that records Amazon Web Services API calls for your Amazon Web Services account and delivers log files to an Amazon S3 bucket. By using information that's collected by Amazon Web Services CloudTrail, you can determine the requests successfully made to Secrets Manager, who made the request, when it was made, and so on. For more about Amazon Web Services Secrets Manager and support for Amazon Web Services CloudTrail, see \href{https://docs.aws.amazon.com/secretsmanager/latest/userguide/monitoring.html#monitoring_cloudtrail}{Logging Amazon Web Services Secrets Manager Events with Amazon Web Services CloudTrail} in the \emph{Amazon Web Services Secrets Manager User Guide}. To learn more about CloudTrail, including enabling it and find your log files, see the \href{https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html}{Amazon Web Services CloudTrail User Guide}.
 }
 \section{Service syntax}{
 

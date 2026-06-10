@@ -8,8 +8,7 @@ notification rule}
 codestarnotifications_untag_resource(Arn, TagKeys)
 }
 \arguments{
-\item{Arn}{[required] The Amazon Resource Name (ARN) of the notification rule from which to
-remove the tags.}
+\item{Arn}{[required] The Amazon Resource Name (ARN) of the notification rule from which to remove the tags.}
 
 \item{TagKeys}{[required] The key names of the tags to remove.}
 }

@@ -6,9 +6,7 @@ NULL
 #' Converts a recovery point to a snapshot
 #'
 #' @description
-#' Converts a recovery point to a snapshot. For more information about
-#' recovery points and snapshots, see [Working with snapshots and recovery
-#' points](https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery-points.html).
+#' Converts a recovery point to a snapshot. For more information about recovery points and snapshots, see [Working with snapshots and recovery points](https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery-points.html).
 #'
 #' @usage
 #' redshiftserverless_convert_recovery_point_to_snapshot(recoveryPointId,
@@ -17,9 +15,7 @@ NULL
 #' @param recoveryPointId &#91;required&#93; The unique identifier of the recovery point.
 #' @param retentionPeriod How long to retain the snapshot.
 #' @param snapshotName &#91;required&#93; The name of the snapshot.
-#' @param tags An array of [Tag
-#' objects](https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html)
-#' to associate with the created snapshot.
+#' @param tags An array of [Tag objects](https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html) to associate with the created snapshot.
 #'
 #' @return
 #' A list with the following syntax:
@@ -167,17 +163,10 @@ redshiftserverless_create_custom_domain_association <- function(customDomainCert
 #' redshiftserverless_create_endpoint_access(endpointName, ownerAccount,
 #'   subnetIds, vpcSecurityGroupIds, workgroupName)
 #'
-#' @param endpointName &#91;required&#93; The name of the VPC endpoint. An endpoint name must contain 1-30
-#' characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first
-#' character must be a letter. The name can't contain two consecutive
-#' hyphens or end with a hyphen.
-#' @param ownerAccount The owner Amazon Web Services account for the Amazon Redshift Serverless
-#' workgroup.
-#' @param subnetIds &#91;required&#93; The unique identifers of subnets from which Amazon Redshift Serverless
-#' chooses one to deploy a VPC endpoint.
-#' @param vpcSecurityGroupIds The unique identifiers of the security group that defines the ports,
-#' protocols, and sources for inbound traffic that you are authorizing into
-#' your endpoint.
+#' @param endpointName &#91;required&#93; The name of the VPC endpoint. An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.
+#' @param ownerAccount The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.
+#' @param subnetIds &#91;required&#93; The unique identifers of subnets from which Amazon Redshift Serverless chooses one to deploy a VPC endpoint.
+#' @param vpcSecurityGroupIds The unique identifiers of the security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.
 #' @param workgroupName &#91;required&#93; The name of the workgroup to associate with the VPC endpoint.
 #'
 #' @return
@@ -270,31 +259,19 @@ redshiftserverless_create_endpoint_access <- function(endpointName, ownerAccount
 #'   kmsKeyId, logExports, manageAdminPassword, namespaceName,
 #'   redshiftIdcApplicationArn, tags)
 #'
-#' @param adminPasswordSecretKmsKeyId The ID of the Key Management Service (KMS) key used to encrypt and store
-#' the namespace's admin credentials secret. You can only use this
-#' parameter if `manageAdminPassword` is true.
-#' @param adminUserPassword The password of the administrator for the first database created in the
-#' namespace.
+#' @param adminPasswordSecretKmsKeyId The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret. You can only use this parameter if `manageAdminPassword` is true.
+#' @param adminUserPassword The password of the administrator for the first database created in the namespace.
 #' 
 #' You can't use `adminUserPassword` if `manageAdminPassword` is true.
-#' @param adminUsername The username of the administrator for the first database created in the
-#' namespace.
+#' @param adminUsername The username of the administrator for the first database created in the namespace.
 #' @param dbName The name of the first database created in the namespace.
-#' @param defaultIamRoleArn The Amazon Resource Name (ARN) of the IAM role to set as a default in
-#' the namespace.
+#' @param defaultIamRoleArn The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.
 #' @param iamRoles A list of IAM roles to associate with the namespace.
-#' @param kmsKeyId The ID of the Amazon Web Services Key Management Service key used to
-#' encrypt your data.
-#' @param logExports The types of logs the namespace can export. Available export types are
-#' `userlog`, `connectionlog`, and `useractivitylog`.
-#' @param manageAdminPassword If `true`, Amazon Redshift uses Secrets Manager to manage the
-#' namespace's admin credentials. You can't use `adminUserPassword` if
-#' `manageAdminPassword` is true. If `manageAdminPassword` is false or not
-#' set, Amazon Redshift uses `adminUserPassword` for the admin user
-#' account's password.
+#' @param kmsKeyId The ID of the Amazon Web Services Key Management Service key used to encrypt your data.
+#' @param logExports The types of logs the namespace can export. Available export types are `userlog`, `connectionlog`, and `useractivitylog`.
+#' @param manageAdminPassword If `true`, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't use `adminUserPassword` if `manageAdminPassword` is true. If `manageAdminPassword` is false or not set, Amazon Redshift uses `adminUserPassword` for the admin user account's password.
 #' @param namespaceName &#91;required&#93; The name of the namespace.
-#' @param redshiftIdcApplicationArn The ARN for the Redshift application that integrates with IAM Identity
-#' Center.
+#' @param redshiftIdcApplicationArn The ARN for the Redshift application that integrates with IAM Identity Center.
 #' @param tags A list of tag instances.
 #'
 #' @return
@@ -383,22 +360,14 @@ redshiftserverless_create_namespace <- function(adminPasswordSecretKmsKeyId = NU
 #' (RPUs) for a year at a discount from Serverless on-demand (OD) rates
 #'
 #' @description
-#' Creates an Amazon Redshift Serverless reservation, which gives you the
-#' option to commit to a specified number of Redshift Processing Units
-#' (RPUs) for a year at a discount from Serverless on-demand (OD) rates.
+#' Creates an Amazon Redshift Serverless reservation, which gives you the option to commit to a specified number of Redshift Processing Units (RPUs) for a year at a discount from Serverless on-demand (OD) rates.
 #'
 #' @usage
 #' redshiftserverless_create_reservation(capacity, clientToken, offeringId)
 #'
 #' @param capacity &#91;required&#93; The number of Redshift Processing Units (RPUs) to reserve.
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If not provided, the Amazon Web Services SDK
-#' populates this field. This token must be a valid UUIDv4 value. For more
-#' information about idempotency, see [Making retries safe with idempotent
-#' APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/)
-#' .
-#' @param offeringId &#91;required&#93; The ID of the offering associated with the reservation. The offering
-#' determines the payment schedule for the reservation.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. This token must be a valid UUIDv4 value. For more information about idempotency, see [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/) .
+#' @param offeringId &#91;required&#93; The ID of the offering associated with the reservation. The offering determines the payment schedule for the reservation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -463,49 +432,28 @@ redshiftserverless_create_reservation <- function(capacity, clientToken = NULL, 
 #' Creates a scheduled action
 #'
 #' @description
-#' Creates a scheduled action. A scheduled action contains a schedule and
-#' an Amazon Redshift API action. For example, you can create a schedule of
-#' when to run the [`create_snapshot`][redshiftserverless_create_snapshot]
-#' API operation.
+#' Creates a scheduled action. A scheduled action contains a schedule and an Amazon Redshift API action. For example, you can create a schedule of when to run the [`create_snapshot`][redshiftserverless_create_snapshot] API operation.
 #'
 #' @usage
 #' redshiftserverless_create_scheduled_action(enabled, endTime,
 #'   namespaceName, roleArn, schedule, scheduledActionDescription,
 #'   scheduledActionName, startTime, targetAction)
 #'
-#' @param enabled Indicates whether the schedule is enabled. If false, the scheduled
-#' action does not trigger. For more information about `state` of the
-#' scheduled action, see
-#' [ScheduledAction](https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/).
-#' @param endTime The end time in UTC when the schedule is no longer active. After this
-#' time, the scheduled action does not trigger.
+#' @param enabled Indicates whether the schedule is enabled. If false, the scheduled action does not trigger. For more information about `state` of the scheduled action, see [ScheduledAction](https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/).
+#' @param endTime The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger.
 #' @param namespaceName &#91;required&#93; The name of the namespace for which to create a scheduled action.
-#' @param roleArn &#91;required&#93; The ARN of the IAM role to assume to run the scheduled action. This IAM
-#' role must have permission to run the Amazon Redshift Serverless API
-#' operation in the scheduled action. This IAM role must allow the Amazon
-#' Redshift scheduler to schedule creating snapshots. (Principal
-#' scheduler.redshift.amazonaws.com) to assume permissions on your behalf.
-#' For more information about the IAM role to use with the Amazon Redshift
-#' scheduler, see [Using Identity-Based Policies for Amazon
-#' Redshift](https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html)
-#' in the Amazon Redshift Management Guide
-#' @param schedule &#91;required&#93; The schedule for a one-time (at timestamp format) or recurring (cron
-#' format) scheduled action. Schedule invocations must be separated by at
-#' least one hour. Times are in UTC.
+#' @param roleArn &#91;required&#93; The ARN of the IAM role to assume to run the scheduled action. This IAM role must have permission to run the Amazon Redshift Serverless API operation in the scheduled action. This IAM role must allow the Amazon Redshift scheduler to schedule creating snapshots. (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf. For more information about the IAM role to use with the Amazon Redshift scheduler, see [Using Identity-Based Policies for Amazon Redshift](https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html) in the Amazon Redshift Management Guide
+#' @param schedule &#91;required&#93; The schedule for a one-time (at timestamp format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour. Times are in UTC.
 #' 
-#' -   Format of at timestamp is `yyyy-mm-ddThh:mm:ss`. For example,
-#'     `2016-03-04T17:27:00`.
+#' -   Format of at timestamp is `yyyy-mm-ddThh:mm:ss`. For example, `2016-03-04T17:27:00`.
 #' 
-#' -   Format of cron expression is
-#'     `(Minutes Hours Day-of-month Month Day-of-week Year)`. For example,
-#'     `"(0 10 ? * MON *)"`. For more information, see [Cron
-#'     Expressions](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html#CronExpressions)
-#'     in the *Amazon CloudWatch Events User Guide*.
+#' -   Format of cron expression is `(Minutes Hours Day-of-month Month Day-of-week Year)`. For example, `"(0 10 ? * MON *)"`. For more information, see [Cron Expressions](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html#CronExpressions) in the *Amazon CloudWatch Events User Guide*.
 #' @param scheduledActionDescription The description of the scheduled action.
 #' @param scheduledActionName &#91;required&#93; The name of the scheduled action.
-#' @param startTime The start time in UTC when the schedule is active. Before this time, the
-#' scheduled action does not trigger.
-#' @param targetAction &#91;required&#93; 
+#' @param startTime The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger.
+#' @param targetAction &#91;required&#93; A JSON format string of the Amazon Redshift Serverless API operation with input parameters. The following is an example of a target action.
+#' 
+#' `"{"CreateSnapshot": {"NamespaceName": "sampleNamespace","SnapshotName": "sampleSnapshot", "retentionPeriod": "1"}}"`
 #'
 #' @return
 #' A list with the following syntax:
@@ -615,9 +563,7 @@ redshiftserverless_create_scheduled_action <- function(enabled = NULL, endTime =
 #' Creates a snapshot of all databases in a namespace
 #'
 #' @description
-#' Creates a snapshot of all databases in a namespace. For more information
-#' about snapshots, see [Working with snapshots and recovery
-#' points](https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery-points.html).
+#' Creates a snapshot of all databases in a namespace. For more information about snapshots, see [Working with snapshots and recovery points](https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery-points.html).
 #'
 #' @usage
 #' redshiftserverless_create_snapshot(namespaceName, retentionPeriod,
@@ -626,9 +572,7 @@ redshiftserverless_create_scheduled_action <- function(enabled = NULL, endTime =
 #' @param namespaceName &#91;required&#93; The namespace to create a snapshot for.
 #' @param retentionPeriod How long to retain the created snapshot.
 #' @param snapshotName &#91;required&#93; The name of the snapshot.
-#' @param tags An array of [Tag
-#' objects](https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html)
-#' to associate with the snapshot.
+#' @param tags An array of [Tag objects](https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html) to associate with the snapshot.
 #'
 #' @return
 #' A list with the following syntax:
@@ -712,21 +656,17 @@ redshiftserverless_create_snapshot <- function(namespaceName, retentionPeriod = 
 #' another Amazon Web Services Region
 #'
 #' @description
-#' Creates a snapshot copy configuration that lets you copy snapshots to
-#' another Amazon Web Services Region.
+#' Creates a snapshot copy configuration that lets you copy snapshots to another Amazon Web Services Region.
 #'
 #' @usage
 #' redshiftserverless_create_snapshot_copy_configuration(
 #'   destinationKmsKeyId, destinationRegion, namespaceName,
 #'   snapshotRetentionPeriod)
 #'
-#' @param destinationKmsKeyId The KMS key to use to encrypt your snapshots in the destination Amazon
-#' Web Services Region.
-#' @param destinationRegion &#91;required&#93; The destination Amazon Web Services Region that you want to copy
-#' snapshots to.
+#' @param destinationKmsKeyId The KMS key to use to encrypt your snapshots in the destination Amazon Web Services Region.
+#' @param destinationRegion &#91;required&#93; The destination Amazon Web Services Region that you want to copy snapshots to.
 #' @param namespaceName &#91;required&#93; The name of the namespace to copy snapshots from.
-#' @param snapshotRetentionPeriod The retention period of the snapshots that you copy to the destination
-#' Amazon Web Services Region.
+#' @param snapshotRetentionPeriod The retention period of the snapshots that you copy to the destination Amazon Web Services Region.
 #'
 #' @return
 #' A list with the following syntax:
@@ -781,26 +721,17 @@ redshiftserverless_create_snapshot_copy_configuration <- function(destinationKms
 #' type
 #'
 #' @description
-#' Creates a usage limit for a specified Amazon Redshift Serverless usage
-#' type. The usage limit is identified by the returned usage limit
-#' identifier.
+#' Creates a usage limit for a specified Amazon Redshift Serverless usage type. The usage limit is identified by the returned usage limit identifier.
 #'
 #' @usage
 #' redshiftserverless_create_usage_limit(amount, breachAction, period,
 #'   resourceArn, usageType)
 #'
-#' @param amount &#91;required&#93; The limit amount. If time-based, this amount is in Redshift Processing
-#' Units (RPU) consumed per hour. If data-based, this amount is in
-#' terabytes (TB) of data transferred between Regions in cross-account
-#' sharing. The value must be a positive number.
-#' @param breachAction The action that Amazon Redshift Serverless takes when the limit is
-#' reached. The default is log.
-#' @param period The time period that the amount applies to. A weekly period begins on
-#' Sunday. The default is monthly.
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon Redshift Serverless
-#' resource to create the usage limit for.
-#' @param usageType &#91;required&#93; The type of Amazon Redshift Serverless usage to create a usage limit
-#' for.
+#' @param amount &#91;required&#93; The limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The value must be a positive number.
+#' @param breachAction The action that Amazon Redshift Serverless takes when the limit is reached. The default is log.
+#' @param period The time period that the amount applies to. A weekly period begins on Sunday. The default is monthly.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon Redshift Serverless resource to create the usage limit for.
+#' @param usageType &#91;required&#93; The type of Amazon Redshift Serverless usage to create a usage limit for.
 #'
 #' @return
 #' A list with the following syntax:
@@ -858,59 +789,39 @@ redshiftserverless_create_usage_limit <- function(amount, breachAction = NULL, p
 #' @description
 #' Creates an workgroup in Amazon Redshift Serverless.
 #' 
-#' VPC Block Public Access (BPA) enables you to block resources in VPCs and
-#' subnets that you own in a Region from reaching or being reached from the
-#' internet through internet gateways and egress-only internet gateways. If
-#' a workgroup is in an account with VPC BPA turned on, the following
-#' capabilities are blocked:
+#' VPC Block Public Access (BPA) enables you to block resources in VPCs and subnets that you own in a Region from reaching or being reached from the internet through internet gateways and egress-only internet gateways. If a workgroup is in an account with VPC BPA turned on, the following capabilities are blocked:
 #' 
 #' -   Creating a public access workgroup
 #' 
 #' -   Modifying a private workgroup to public
 #' 
-#' -   Adding a subnet with VPC BPA turned on to the workgroup when the
-#'     workgroup is public
+#' -   Adding a subnet with VPC BPA turned on to the workgroup when the workgroup is public
 #' 
-#' For more information about VPC BPA, see [Block public access to VPCs and
-#' subnets](https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html)
-#' in the *Amazon VPC User Guide*.
+#' For more information about VPC BPA, see [Block public access to VPCs and subnets](https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html) in the *Amazon VPC User Guide*.
 #'
 #' @usage
 #' redshiftserverless_create_workgroup(baseCapacity, configParameters,
-#'   enhancedVpcRouting, ipAddressType, maxCapacity, namespaceName, port,
-#'   pricePerformanceTarget, publiclyAccessible, securityGroupIds, subnetIds,
-#'   tags, trackName, workgroupName)
+#'   enhancedVpcRouting, extraComputeForAutomaticOptimization, ipAddressType,
+#'   maxCapacity, namespaceName, port, pricePerformanceTarget,
+#'   publiclyAccessible, securityGroupIds, subnetIds, tags, trackName,
+#'   workgroupName)
 #'
-#' @param baseCapacity The base data warehouse capacity of the workgroup in Redshift Processing
-#' Units (RPUs).
-#' @param configParameters An array of parameters to set for advanced control over a database. The
-#' options are `auto_mv`, `datestyle`, `enable_case_sensitive_identifier`,
-#' `enable_user_activity_logging`, `query_group`, `search_path`,
-#' `require_ssl`, `use_fips_ssl`, and query monitoring metrics that let you
-#' define performance boundaries. For more information about query
-#' monitoring rules and available metrics, see [Query monitoring metrics
-#' for Amazon Redshift
-#' Serverless](https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless).
-#' @param enhancedVpcRouting The value that specifies whether to turn on enhanced virtual private
-#' cloud (VPC) routing, which forces Amazon Redshift Serverless to route
-#' traffic through your VPC instead of over the internet.
-#' @param ipAddressType The IP address type that the workgroup supports. Possible values are
-#' `ipv4` and `dualstack`.
-#' @param maxCapacity The maximum data-warehouse capacity Amazon Redshift Serverless uses to
-#' serve queries. The max capacity is specified in RPUs.
+#' @param baseCapacity The base data warehouse capacity of the workgroup in Redshift Processing Units (RPUs).
+#' @param configParameters An array of parameters to set for advanced control over a database. The options are `auto_mv`, `datestyle`, `enable_case_sensitive_identifier`, `enable_user_activity_logging`, `query_group`, `search_path`, `require_ssl`, `use_fips_ssl`, and either `wlm_json_configuration` or query monitoring metrics that let you define performance boundaries. You can either specify individual query monitoring metrics (such as `max_scan_row_count`, `max_query_execution_time`) or use `wlm_json_configuration` to define query queues with rules, but not both. If you're using `wlm_json_configuration`, the maximum size of `parameterValue` is 8000 characters. For more information about query monitoring rules and available metrics, see [Query monitoring metrics for Amazon Redshift Serverless](https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless).
+#' @param enhancedVpcRouting The value that specifies whether to turn on enhanced virtual private cloud (VPC) routing, which forces Amazon Redshift Serverless to route traffic through your VPC instead of over the internet.
+#' @param extraComputeForAutomaticOptimization If `true`, allocates additional compute resources for running automatic optimization operations.
+#' 
+#' Default: false
+#' @param ipAddressType The IP address type that the workgroup supports. Possible values are `ipv4` and `dualstack`.
+#' @param maxCapacity The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is specified in RPUs.
 #' @param namespaceName &#91;required&#93; The name of the namespace to associate with the workgroup.
-#' @param port The custom port to use when connecting to a workgroup. Valid port ranges
-#' are 5431-5455 and 8191-8215. The default is 5439.
-#' @param pricePerformanceTarget An object that represents the price performance target settings for the
-#' workgroup.
-#' @param publiclyAccessible A value that specifies whether the workgroup can be accessed from a
-#' public network.
+#' @param port The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.
+#' @param pricePerformanceTarget An object that represents the price performance target settings for the workgroup.
+#' @param publiclyAccessible A value that specifies whether the workgroup can be accessed from a public network.
 #' @param securityGroupIds An array of security group IDs to associate with the workgroup.
 #' @param subnetIds An array of VPC subnet IDs to associate with the workgroup.
 #' @param tags A array of tag instances.
-#' @param trackName An optional parameter for the name of the track for the workgroup. If
-#' you don't provide a track name, the workgroup is assigned to the
-#' `current` track.
+#' @param trackName An optional parameter for the name of the track for the workgroup. If you don't provide a track name, the workgroup is assigned to the `current` track.
 #' @param workgroupName &#91;required&#93; The name of the created workgroup.
 #'
 #' @return
@@ -956,6 +867,7 @@ redshiftserverless_create_usage_limit <- function(amount, breachAction = NULL, p
 #'       )
 #'     ),
 #'     enhancedVpcRouting = TRUE|FALSE,
+#'     extraComputeForAutomaticOptimization = TRUE|FALSE,
 #'     ipAddressType = "string",
 #'     maxCapacity = 123,
 #'     namespaceName = "string",
@@ -994,6 +906,7 @@ redshiftserverless_create_usage_limit <- function(amount, breachAction = NULL, p
 #'     )
 #'   ),
 #'   enhancedVpcRouting = TRUE|FALSE,
+#'   extraComputeForAutomaticOptimization = TRUE|FALSE,
 #'   ipAddressType = "string",
 #'   maxCapacity = 123,
 #'   namespaceName = "string",
@@ -1025,7 +938,7 @@ redshiftserverless_create_usage_limit <- function(amount, breachAction = NULL, p
 #' @rdname redshiftserverless_create_workgroup
 #'
 #' @aliases redshiftserverless_create_workgroup
-redshiftserverless_create_workgroup <- function(baseCapacity = NULL, configParameters = NULL, enhancedVpcRouting = NULL, ipAddressType = NULL, maxCapacity = NULL, namespaceName, port = NULL, pricePerformanceTarget = NULL, publiclyAccessible = NULL, securityGroupIds = NULL, subnetIds = NULL, tags = NULL, trackName = NULL, workgroupName) {
+redshiftserverless_create_workgroup <- function(baseCapacity = NULL, configParameters = NULL, enhancedVpcRouting = NULL, extraComputeForAutomaticOptimization = NULL, ipAddressType = NULL, maxCapacity = NULL, namespaceName, port = NULL, pricePerformanceTarget = NULL, publiclyAccessible = NULL, securityGroupIds = NULL, subnetIds = NULL, tags = NULL, trackName = NULL, workgroupName) {
   op <- new_operation(
     name = "CreateWorkgroup",
     http_method = "POST",
@@ -1034,7 +947,7 @@ redshiftserverless_create_workgroup <- function(baseCapacity = NULL, configParam
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .redshiftserverless$create_workgroup_input(baseCapacity = baseCapacity, configParameters = configParameters, enhancedVpcRouting = enhancedVpcRouting, ipAddressType = ipAddressType, maxCapacity = maxCapacity, namespaceName = namespaceName, port = port, pricePerformanceTarget = pricePerformanceTarget, publiclyAccessible = publiclyAccessible, securityGroupIds = securityGroupIds, subnetIds = subnetIds, tags = tags, trackName = trackName, workgroupName = workgroupName)
+  input <- .redshiftserverless$create_workgroup_input(baseCapacity = baseCapacity, configParameters = configParameters, enhancedVpcRouting = enhancedVpcRouting, extraComputeForAutomaticOptimization = extraComputeForAutomaticOptimization, ipAddressType = ipAddressType, maxCapacity = maxCapacity, namespaceName = namespaceName, port = port, pricePerformanceTarget = pricePerformanceTarget, publiclyAccessible = publiclyAccessible, securityGroupIds = securityGroupIds, subnetIds = subnetIds, tags = tags, trackName = trackName, workgroupName = workgroupName)
   output <- .redshiftserverless$create_workgroup_output()
   config <- get_config()
   svc <- .redshiftserverless$service(config, op)
@@ -1175,9 +1088,7 @@ redshiftserverless_delete_endpoint_access <- function(endpointName) {
 #' Deletes a namespace from Amazon Redshift Serverless
 #'
 #' @description
-#' Deletes a namespace from Amazon Redshift Serverless. Before you delete
-#' the namespace, you can create a final snapshot that has all of the data
-#' within the namespace.
+#' Deletes a namespace from Amazon Redshift Serverless. Before you delete the namespace, you can create a final snapshot that has all of the data within the namespace.
 #'
 #' @usage
 #' redshiftserverless_delete_namespace(finalSnapshotName,
@@ -1627,6 +1538,7 @@ redshiftserverless_delete_usage_limit <- function(usageLimitId) {
 #'       )
 #'     ),
 #'     enhancedVpcRouting = TRUE|FALSE,
+#'     extraComputeForAutomaticOptimization = TRUE|FALSE,
 #'     ipAddressType = "string",
 #'     maxCapacity = 123,
 #'     namespaceName = "string",
@@ -1689,45 +1601,33 @@ redshiftserverless_delete_workgroup <- function(workgroupName) {
 #' authorization to log in to Amazon Redshift Serverless
 #'
 #' @description
-#' Returns a database user name and temporary password with temporary
-#' authorization to log in to Amazon Redshift Serverless.
+#' Returns a database user name and temporary password with temporary authorization to log in to Amazon Redshift Serverless.
 #' 
-#' By default, the temporary credentials expire in 900 seconds. You can
-#' optionally specify a duration between 900 seconds (15 minutes) and 3600
-#' seconds (60 minutes).
+#' By default, the temporary credentials expire in 900 seconds. You can optionally specify a duration between 900 seconds (15 minutes) and 3600 seconds (60 minutes).
 #' 
-#' The Identity and Access Management (IAM) user or role that runs
-#' GetCredentials must have an IAM policy attached that allows access to
-#' all necessary actions and resources.
+#' The Identity and Access Management (IAM) user or role that runs GetCredentials must have an IAM policy attached that allows access to all necessary actions and resources.
 #' 
-#' If the `DbName` parameter is specified, the IAM policy must allow access
-#' to the resource dbname for the specified database name.
+#' If the `DbName` parameter is specified, the IAM policy must allow access to the resource dbname for the specified database name.
 #'
 #' @usage
 #' redshiftserverless_get_credentials(customDomainName, dbName,
 #'   durationSeconds, workgroupName)
 #'
-#' @param customDomainName The custom domain name associated with the workgroup. The custom domain
-#' name or the workgroup name must be included in the request.
+#' @param customDomainName The custom domain name associated with the workgroup. The custom domain name or the workgroup name must be included in the request.
 #' @param dbName The name of the database to get temporary authorization to log on to.
 #' 
 #' Constraints:
 #' 
 #' -   Must be 1 to 64 alphanumeric characters or hyphens.
 #' 
-#' -   Must contain only uppercase or lowercase letters, numbers,
-#'     underscore, plus sign, period (dot), at symbol (@@), or hyphen.
+#' -   Must contain only uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@@), or hyphen.
 #' 
 #' -   The first character must be a letter.
 #' 
 #' -   Must not contain a colon ( : ) or slash ( / ).
 #' 
-#' -   Cannot be a reserved word. A list of reserved words can be found in
-#'     [Reserved
-#'     Words](https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html)
-#'     in the Amazon Redshift Database Developer Guide
-#' @param durationSeconds The number of seconds until the returned temporary password expires. The
-#' minimum is 900 seconds, and the maximum is 3600 seconds.
+#' -   Cannot be a reserved word. A list of reserved words can be found in [Reserved Words](https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html) in the Amazon Redshift Database Developer Guide
+#' @param durationSeconds The number of seconds until the returned temporary password expires. The minimum is 900 seconds, and the maximum is 3600 seconds.
 #' @param workgroupName The name of the workgroup associated with the database.
 #'
 #' @return
@@ -1921,33 +1821,24 @@ redshiftserverless_get_endpoint_access <- function(endpointName) {
 #' Redshift Serverless workgroups
 #'
 #' @description
-#' Returns an Identity Center authentication token for accessing Amazon
-#' Redshift Serverless workgroups.
+#' Returns an Identity Center authentication token for accessing Amazon Redshift Serverless workgroups.
 #' 
-#' The token provides secure access to data within the specified workgroups
-#' using Identity Center identity propagation. The token expires after a
-#' specified duration and must be refreshed for continued access.
+#' The token provides secure access to data within the specified workgroups using Identity Center identity propagation. The token expires after a specified duration and must be refreshed for continued access.
 #' 
-#' The Identity and Access Management (IAM) user or role that runs
-#' GetIdentityCenterAuthToken must have appropriate permissions to access
-#' the specified workgroups and Identity Center integration must be
-#' configured for the workgroups.
+#' The Identity and Access Management (IAM) user or role that runs GetIdentityCenterAuthToken must have appropriate permissions to access the specified workgroups and Identity Center integration must be configured for the workgroups.
 #'
 #' @usage
 #' redshiftserverless_get_identity_center_auth_token(workgroupNames)
 #'
-#' @param workgroupNames &#91;required&#93; A list of workgroup names for which to generate the Identity Center
-#' authentication token.
+#' @param workgroupNames &#91;required&#93; A list of workgroup names for which to generate the Identity Center authentication token.
 #' 
 #' Constraints:
 #' 
 #' -   Must contain between 1 and 20 workgroup names.
 #' 
-#' -   Each workgroup name must be a valid Amazon Redshift Serverless
-#'     workgroup identifier.
+#' -   Each workgroup name must be a valid Amazon Redshift Serverless workgroup identifier.
 #' 
-#' -   All specified workgroups must have Identity Center integration
-#'     enabled.
+#' -   All specified workgroups must have Identity Center integration enabled.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2125,9 +2016,7 @@ redshiftserverless_get_recovery_point <- function(recoveryPointId) {
 #' Gets an Amazon Redshift Serverless reservation
 #'
 #' @description
-#' Gets an Amazon Redshift Serverless reservation. A reservation gives you
-#' the option to commit to a specified number of Redshift Processing Units
-#' (RPUs) for a year at a discount from Serverless on-demand (OD) rates.
+#' Gets an Amazon Redshift Serverless reservation. A reservation gives you the option to commit to a specified number of Redshift Processing Units (RPUs) for a year at a discount from Serverless on-demand (OD) rates.
 #'
 #' @usage
 #' redshiftserverless_get_reservation(reservationId)
@@ -2195,8 +2084,7 @@ redshiftserverless_get_reservation <- function(reservationId) {
 #' Returns the reservation offering
 #'
 #' @description
-#' Returns the reservation offering. The offering determines the payment
-#' schedule for the reservation.
+#' Returns the reservation offering. The offering determines the payment schedule for the reservation.
 #'
 #' @usage
 #' redshiftserverless_get_reservation_offering(offeringId)
@@ -2395,8 +2283,7 @@ redshiftserverless_get_scheduled_action <- function(scheduledActionName) {
 #' @usage
 #' redshiftserverless_get_snapshot(ownerAccount, snapshotArn, snapshotName)
 #'
-#' @param ownerAccount The owner Amazon Web Services account of a snapshot shared with another
-#' user.
+#' @param ownerAccount The owner Amazon Web Services account of a snapshot shared with another user.
 #' @param snapshotArn The Amazon Resource Name (ARN) of the snapshot to return.
 #' @param snapshotName The name of the snapshot to return.
 #'
@@ -2480,9 +2367,7 @@ redshiftserverless_get_snapshot <- function(ownerAccount = NULL, snapshotArn = N
 #' @usage
 #' redshiftserverless_get_table_restore_status(tableRestoreRequestId)
 #'
-#' @param tableRestoreRequestId &#91;required&#93; The ID of the
-#' [`restore_table_from_snapshot`][redshiftserverless_restore_table_from_snapshot]
-#' request to return status for.
+#' @param tableRestoreRequestId &#91;required&#93; The ID of the [`restore_table_from_snapshot`][redshiftserverless_restore_table_from_snapshot] request to return status for.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2710,6 +2595,7 @@ redshiftserverless_get_usage_limit <- function(usageLimitId) {
 #'       )
 #'     ),
 #'     enhancedVpcRouting = TRUE|FALSE,
+#'     extraComputeForAutomaticOptimization = TRUE|FALSE,
 #'     ipAddressType = "string",
 #'     maxCapacity = 123,
 #'     namespaceName = "string",
@@ -2779,11 +2665,8 @@ redshiftserverless_get_workgroup <- function(workgroupName) {
 #'
 #' @param customDomainCertificateArn The custom domain name’s certificate Amazon resource name (ARN).
 #' @param customDomainName The custom domain name associated with the workgroup.
-#' @param maxResults An optional parameter that specifies the maximum number of results to
-#' return. You can use `nextToken` to display the next page of results.
-#' @param nextToken When `nextToken` is returned, there are more results available. The
-#' value of `nextToken` is a unique pagination token for each page. Make
-#' the call again using the returned token to retrieve the next page.
+#' @param maxResults An optional parameter that specifies the maximum number of results to return. You can use `nextToken` to display the next page of results.
+#' @param nextToken When `nextToken` is returned, there are more results available. The value of `nextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2846,18 +2729,10 @@ redshiftserverless_list_custom_domain_associations <- function(customDomainCerti
 #' redshiftserverless_list_endpoint_access(maxResults, nextToken,
 #'   ownerAccount, vpcId, workgroupName)
 #'
-#' @param maxResults An optional parameter that specifies the maximum number of results to
-#' return. You can use `nextToken` to display the next page of results.
-#' @param nextToken If your initial
-#' [`list_endpoint_access`][redshiftserverless_list_endpoint_access]
-#' operation returns a `nextToken`, you can include the returned
-#' `nextToken` in following
-#' [`list_endpoint_access`][redshiftserverless_list_endpoint_access]
-#' operations, which returns results in the next page.
-#' @param ownerAccount The owner Amazon Web Services account for the Amazon Redshift Serverless
-#' workgroup.
-#' @param vpcId The unique identifier of the virtual private cloud with access to Amazon
-#' Redshift Serverless.
+#' @param maxResults An optional parameter that specifies the maximum number of results to return. You can use `nextToken` to display the next page of results.
+#' @param nextToken If your initial [`list_endpoint_access`][redshiftserverless_list_endpoint_access] operation returns a `nextToken`, you can include the returned `nextToken` in following [`list_endpoint_access`][redshiftserverless_list_endpoint_access] operations, which returns results in the next page.
+#' @param ownerAccount The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.
+#' @param vpcId The unique identifier of the virtual private cloud with access to Amazon Redshift Serverless.
 #' @param workgroupName The name of the workgroup associated with the VPC endpoint to return.
 #'
 #' @return
@@ -2942,20 +2817,15 @@ redshiftserverless_list_endpoint_access <- function(maxResults = NULL, nextToken
 #' account
 #'
 #' @description
-#' Returns information about a list of specified managed workgroups in your
-#' account.
+#' Returns information about a list of specified managed workgroups in your account.
 #'
 #' @usage
 #' redshiftserverless_list_managed_workgroups(maxResults, nextToken,
 #'   sourceArn)
 #'
-#' @param maxResults An optional parameter that specifies the maximum number of results to
-#' return. You can use nextToken to display the next page of results.
-#' @param nextToken If your initial ListManagedWorkgroups operation returns a nextToken, you
-#' can include the returned nextToken in following ListManagedWorkgroups
-#' operations, which returns results in the next page.
-#' @param sourceArn The Amazon Resource Name (ARN) for the managed workgroup in the Glue
-#' Data Catalog.
+#' @param maxResults An optional parameter that specifies the maximum number of results to return. You can use nextToken to display the next page of results.
+#' @param nextToken If your initial ListManagedWorkgroups operation returns a nextToken, you can include the returned nextToken in following ListManagedWorkgroups operations, which returns results in the next page.
+#' @param sourceArn The Amazon Resource Name (ARN) for the managed workgroup in the Glue Data Catalog.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3017,13 +2887,8 @@ redshiftserverless_list_managed_workgroups <- function(maxResults = NULL, nextTo
 #' @usage
 #' redshiftserverless_list_namespaces(maxResults, nextToken)
 #'
-#' @param maxResults An optional parameter that specifies the maximum number of results to
-#' return. You can use `nextToken` to display the next page of results.
-#' @param nextToken If your initial [`list_namespaces`][redshiftserverless_list_namespaces]
-#' operation returns a `nextToken`, you can include the returned
-#' `nextToken` in following
-#' [`list_namespaces`][redshiftserverless_list_namespaces] operations,
-#' which returns results in the next page.
+#' @param maxResults An optional parameter that specifies the maximum number of results to return. You can use `nextToken` to display the next page of results.
+#' @param nextToken If your initial [`list_namespaces`][redshiftserverless_list_namespaces] operation returns a `nextToken`, you can include the returned `nextToken` in following [`list_namespaces`][redshiftserverless_list_namespaces] operations, which returns results in the next page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3100,17 +2965,10 @@ redshiftserverless_list_namespaces <- function(maxResults = NULL, nextToken = NU
 #'   namespaceArn, namespaceName, nextToken, startTime)
 #'
 #' @param endTime The time when creation of the recovery point finished.
-#' @param maxResults An optional parameter that specifies the maximum number of results to
-#' return. You can use `nextToken` to display the next page of results.
-#' @param namespaceArn The Amazon Resource Name (ARN) of the namespace from which to list
-#' recovery points.
+#' @param maxResults An optional parameter that specifies the maximum number of results to return. You can use `nextToken` to display the next page of results.
+#' @param namespaceArn The Amazon Resource Name (ARN) of the namespace from which to list recovery points.
 #' @param namespaceName The name of the namespace to list recovery points for.
-#' @param nextToken If your initial
-#' [`list_recovery_points`][redshiftserverless_list_recovery_points]
-#' operation returns a `nextToken`, you can include the returned
-#' `nextToken` in following
-#' [`list_recovery_points`][redshiftserverless_list_recovery_points]
-#' operations, which returns results in the next page.
+#' @param nextToken If your initial [`list_recovery_points`][redshiftserverless_list_recovery_points] operation returns a `nextToken`, you can include the returned `nextToken` in following [`list_recovery_points`][redshiftserverless_list_recovery_points] operations, which returns results in the next page.
 #' @param startTime The time when the recovery point's creation was initiated.
 #'
 #' @return
@@ -3181,11 +3039,8 @@ redshiftserverless_list_recovery_points <- function(endTime = NULL, maxResults =
 #' @usage
 #' redshiftserverless_list_reservation_offerings(maxResults, nextToken)
 #'
-#' @param maxResults The maximum number of items to return for this call. The call also
-#' returns a token that you can specify in a subsequent call to get the
-#' next set of results.
-#' @param nextToken The token for the next set of items to return. (You received this token
-#' from a previous call.)
+#' @param maxResults The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.
+#' @param nextToken The token for the next set of items to return. (You received this token from a previous call.)
 #'
 #' @return
 #' A list with the following syntax:
@@ -3245,11 +3100,8 @@ redshiftserverless_list_reservation_offerings <- function(maxResults = NULL, nex
 #' @usage
 #' redshiftserverless_list_reservations(maxResults, nextToken)
 #'
-#' @param maxResults The maximum number of items to return for this call. The call also
-#' returns a token that you can specify in a subsequent call to get the
-#' next set of results.
-#' @param nextToken The token for the next set of items to return. (You received this token
-#' from a previous call.)
+#' @param maxResults The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.
+#' @param nextToken The token for the next set of items to return. (You received this token from a previous call.)
 #'
 #' @return
 #' A list with the following syntax:
@@ -3316,19 +3168,15 @@ redshiftserverless_list_reservations <- function(maxResults = NULL, nextToken = 
 #' Returns a list of scheduled actions
 #'
 #' @description
-#' Returns a list of scheduled actions. You can use the flags to filter the
-#' list of returned scheduled actions.
+#' Returns a list of scheduled actions. You can use the flags to filter the list of returned scheduled actions.
 #'
 #' @usage
 #' redshiftserverless_list_scheduled_actions(maxResults, namespaceName,
 #'   nextToken)
 #'
-#' @param maxResults An optional parameter that specifies the maximum number of results to
-#' return. Use `nextToken` to display the next page of results.
+#' @param maxResults An optional parameter that specifies the maximum number of results to return. Use `nextToken` to display the next page of results.
 #' @param namespaceName The name of namespace associated with the scheduled action to retrieve.
-#' @param nextToken If `nextToken` is returned, there are more results available. The value
-#' of `nextToken` is a unique pagination token for each page. Make the call
-#' again using the returned token to retrieve the next page.
+#' @param nextToken If `nextToken` is returned, there are more results available. The value of `nextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3386,12 +3234,9 @@ redshiftserverless_list_scheduled_actions <- function(maxResults = NULL, namespa
 #' redshiftserverless_list_snapshot_copy_configurations(maxResults,
 #'   namespaceName, nextToken)
 #'
-#' @param maxResults An optional parameter that specifies the maximum number of results to
-#' return. You can use `nextToken` to display the next page of results.
+#' @param maxResults An optional parameter that specifies the maximum number of results to return. You can use `nextToken` to display the next page of results.
 #' @param namespaceName The namespace from which to list all snapshot copy configurations.
-#' @param nextToken If `nextToken` is returned, there are more results available. The value
-#' of `nextToken` is a unique pagination token for each page. Make the call
-#' again using the returned token to retrieve the next page.
+#' @param nextToken If `nextToken` is returned, there are more results available. The value of `nextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3454,14 +3299,10 @@ redshiftserverless_list_snapshot_copy_configurations <- function(maxResults = NU
 #'   namespaceName, nextToken, ownerAccount, startTime)
 #'
 #' @param endTime The timestamp showing when the snapshot creation finished.
-#' @param maxResults An optional parameter that specifies the maximum number of results to
-#' return. You can use `nextToken` to display the next page of results.
-#' @param namespaceArn The Amazon Resource Name (ARN) of the namespace from which to list all
-#' snapshots.
+#' @param maxResults An optional parameter that specifies the maximum number of results to return. You can use `nextToken` to display the next page of results.
+#' @param namespaceArn The Amazon Resource Name (ARN) of the namespace from which to list all snapshots.
 #' @param namespaceName The namespace from which to list all snapshots.
-#' @param nextToken If `nextToken` is returned, there are more results available. The value
-#' of `nextToken` is a unique pagination token for each page. Make the call
-#' again using the returned token to retrieve the next page.
+#' @param nextToken If `nextToken` is returned, there are more results available. The value of `nextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
 #' @param ownerAccount The owner Amazon Web Services account of the snapshot.
 #' @param startTime The time when the creation of the snapshot was initiated.
 #'
@@ -3557,20 +3398,10 @@ redshiftserverless_list_snapshots <- function(endTime = NULL, maxResults = NULL,
 #' redshiftserverless_list_table_restore_status(maxResults, namespaceName,
 #'   nextToken, workgroupName)
 #'
-#' @param maxResults An optional parameter that specifies the maximum number of results to
-#' return. You can use nextToken to display the next page of results.
-#' @param namespaceName The namespace from which to list all of the statuses of
-#' [`restore_table_from_snapshot`][redshiftserverless_restore_table_from_snapshot]
-#' operations .
-#' @param nextToken If your initial
-#' [`list_table_restore_status`][redshiftserverless_list_table_restore_status]
-#' operation returns a nextToken, you can include the returned `nextToken`
-#' in following
-#' [`list_table_restore_status`][redshiftserverless_list_table_restore_status]
-#' operations. This will return results on the next page.
-#' @param workgroupName The workgroup from which to list all of the statuses of
-#' [`restore_table_from_snapshot`][redshiftserverless_restore_table_from_snapshot]
-#' operations.
+#' @param maxResults An optional parameter that specifies the maximum number of results to return. You can use nextToken to display the next page of results.
+#' @param namespaceName The namespace from which to list all of the statuses of [`restore_table_from_snapshot`][redshiftserverless_restore_table_from_snapshot] operations .
+#' @param nextToken If your initial [`list_table_restore_status`][redshiftserverless_list_table_restore_status] operation returns a nextToken, you can include the returned `nextToken` in following [`list_table_restore_status`][redshiftserverless_list_table_restore_status] operations. This will return results on the next page.
+#' @param workgroupName The workgroup from which to list all of the statuses of [`restore_table_from_snapshot`][redshiftserverless_restore_table_from_snapshot] operations.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3698,14 +3529,8 @@ redshiftserverless_list_tags_for_resource <- function(resourceArn) {
 #' @usage
 #' redshiftserverless_list_tracks(maxResults, nextToken)
 #'
-#' @param maxResults The maximum number of response records to return in each call. If the
-#' number of remaining response records exceeds the specified MaxRecords
-#' value, a value is returned in a marker field of the response. You can
-#' retrieve the next set of records by retrying the command with the
-#' returned marker value.
-#' @param nextToken If your initial `ListTracksRequest` operation returns a `nextToken`, you
-#' can include the returned `nextToken` in following `ListTracksRequest`
-#' operations, which returns results in the next page.
+#' @param maxResults The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified MaxRecords value, a value is returned in a marker field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
+#' @param nextToken If your initial `ListTracksRequest` operation returns a `nextToken`, you can include the returned `nextToken` in following `ListTracksRequest` operations, which returns results in the next page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3768,16 +3593,9 @@ redshiftserverless_list_tracks <- function(maxResults = NULL, nextToken = NULL) 
 #' redshiftserverless_list_usage_limits(maxResults, nextToken, resourceArn,
 #'   usageType)
 #'
-#' @param maxResults An optional parameter that specifies the maximum number of results to
-#' return. You can use `nextToken` to get the next page of results. The
-#' default is 100.
-#' @param nextToken If your initial
-#' [`list_usage_limits`][redshiftserverless_list_usage_limits] operation
-#' returns a `nextToken`, you can include the returned `nextToken` in
-#' following [`list_usage_limits`][redshiftserverless_list_usage_limits]
-#' operations, which returns results in the next page.
-#' @param resourceArn The Amazon Resource Name (ARN) associated with the resource whose usage
-#' limits you want to list.
+#' @param maxResults An optional parameter that specifies the maximum number of results to return. You can use `nextToken` to get the next page of results. The default is 100.
+#' @param nextToken If your initial [`list_usage_limits`][redshiftserverless_list_usage_limits] operation returns a `nextToken`, you can include the returned `nextToken` in following [`list_usage_limits`][redshiftserverless_list_usage_limits] operations, which returns results in the next page.
+#' @param resourceArn The Amazon Resource Name (ARN) associated with the resource whose usage limits you want to list.
 #' @param usageType The Amazon Redshift Serverless feature whose limits you want to see.
 #'
 #' @return
@@ -3841,13 +3659,9 @@ redshiftserverless_list_usage_limits <- function(maxResults = NULL, nextToken = 
 #' @usage
 #' redshiftserverless_list_workgroups(maxResults, nextToken, ownerAccount)
 #'
-#' @param maxResults An optional parameter that specifies the maximum number of results to
-#' return. You can use `nextToken` to display the next page of results.
-#' @param nextToken If your initial ListWorkgroups operation returns a `nextToken`, you can
-#' include the returned `nextToken` in following ListNamespaces operations,
-#' which returns results in the next page.
-#' @param ownerAccount The owner Amazon Web Services account for the Amazon Redshift Serverless
-#' workgroup.
+#' @param maxResults An optional parameter that specifies the maximum number of results to return. You can use `nextToken` to display the next page of results.
+#' @param nextToken If your initial ListWorkgroups operation returns a `nextToken`, you can include the returned `nextToken` in following ListNamespaces operations, which returns results in the next page.
+#' @param ownerAccount The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3894,6 +3708,7 @@ redshiftserverless_list_usage_limits <- function(maxResults = NULL, nextToken = 
 #'         )
 #'       ),
 #'       enhancedVpcRouting = TRUE|FALSE,
+#'       extraComputeForAutomaticOptimization = TRUE|FALSE,
 #'       ipAddressType = "string",
 #'       maxCapacity = 123,
 #'       namespaceName = "string",
@@ -3958,18 +3773,15 @@ redshiftserverless_list_workgroups <- function(maxResults = NULL, nextToken = NU
 #' Creates or updates a resource policy
 #'
 #' @description
-#' Creates or updates a resource policy. Currently, you can use policies to
-#' share snapshots across Amazon Web Services accounts.
+#' Creates or updates a resource policy. Currently, you can use policies to share snapshots across Amazon Web Services accounts.
 #'
 #' @usage
 #' redshiftserverless_put_resource_policy(policy, resourceArn)
 #'
-#' @param policy &#91;required&#93; The policy to create or update. For example, the following policy grants
-#' a user authorization to restore a snapshot.
+#' @param policy &#91;required&#93; The policy to create or update. For example, the following policy grants a user authorization to restore a snapshot.
 #' 
 #' `"{\"Version\": \"2012-10-17\", \"Statement\" : [{ \"Sid\": \"AllowUserRestoreFromSnapshot\", \"Principal\":{\"AWS\": [\"739247239426\"]}, \"Action\": [\"redshift-serverless:RestoreFromSnapshot\"] , \"Effect\": \"Allow\" }]}"`
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the account to create or update a
-#' resource policy for.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the account to create or update a resource policy for.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4101,22 +3913,14 @@ redshiftserverless_restore_from_recovery_point <- function(namespaceName, recove
 #'   manageAdminPassword, namespaceName, ownerAccount, snapshotArn,
 #'   snapshotName, workgroupName)
 #'
-#' @param adminPasswordSecretKmsKeyId The ID of the Key Management Service (KMS) key used to encrypt and store
-#' the namespace's admin credentials secret.
-#' @param manageAdminPassword If `true`, Amazon Redshift uses Secrets Manager to manage the restored
-#' snapshot's admin credentials. If `MmanageAdminPassword` is false or not
-#' set, Amazon Redshift uses the admin credentials that the namespace or
-#' cluster had at the time the snapshot was taken.
+#' @param adminPasswordSecretKmsKeyId The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret.
+#' @param manageAdminPassword If `true`, Amazon Redshift uses Secrets Manager to manage the restored snapshot's admin credentials. If `MmanageAdminPassword` is false or not set, Amazon Redshift uses the admin credentials that the namespace or cluster had at the time the snapshot was taken.
 #' @param namespaceName &#91;required&#93; The name of the namespace to restore the snapshot to.
 #' @param ownerAccount The Amazon Web Services account that owns the snapshot.
-#' @param snapshotArn The Amazon Resource Name (ARN) of the snapshot to restore from. Required
-#' if restoring from a provisioned cluster to Amazon Redshift Serverless.
-#' Must not be specified at the same time as `snapshotName`.
+#' @param snapshotArn The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from a provisioned cluster to Amazon Redshift Serverless. Must not be specified at the same time as `snapshotName`.
 #' 
-#' The format of the ARN is
-#' arn:aws:redshift:\<region\>:\<account_id\>:snapshot:\<cluster_identifier\>/\<snapshot_identifier\>.
-#' @param snapshotName The name of the snapshot to restore from. Must not be specified at the
-#' same time as `snapshotArn`.
+#' The format of the ARN is arn:aws:redshift:\<region\>:\<account_id\>:snapshot:\<cluster_identifier\>/\<snapshot_identifier\>.
+#' @param snapshotName The name of the snapshot to restore from. Must not be specified at the same time as `snapshotArn`.
 #' @param workgroupName &#91;required&#93; The name of the workgroup used to restore the snapshot.
 #'
 #' @return
@@ -4192,9 +3996,7 @@ redshiftserverless_restore_from_snapshot <- function(adminPasswordSecretKmsKeyId
 #' Serverless instance
 #'
 #' @description
-#' Restores a table from a recovery point to your Amazon Redshift
-#' Serverless instance. You can't use this operation to restore tables with
-#' interleaved sort keys.
+#' Restores a table from a recovery point to your Amazon Redshift Serverless instance. You can't use this operation to restore tables with interleaved sort keys.
 #'
 #' @usage
 #' redshiftserverless_restore_table_from_recovery_point(
@@ -4202,9 +4004,7 @@ redshiftserverless_restore_from_snapshot <- function(adminPasswordSecretKmsKeyId
 #'   recoveryPointId, sourceDatabaseName, sourceSchemaName, sourceTableName,
 #'   targetDatabaseName, targetSchemaName, workgroupName)
 #'
-#' @param activateCaseSensitiveIdentifier Indicates whether name identifiers for database, schema, and table are
-#' case sensitive. If true, the names are case sensitive. If false, the
-#' names are not case sensitive. The default is false.
+#' @param activateCaseSensitiveIdentifier Indicates whether name identifiers for database, schema, and table are case sensitive. If true, the names are case sensitive. If false, the names are not case sensitive. The default is false.
 #' @param namespaceName &#91;required&#93; Namespace of the recovery point to restore from.
 #' @param newTableName &#91;required&#93; The name of the table to create from the restore operation.
 #' @param recoveryPointId &#91;required&#93; The ID of the recovery point to restore the table from.
@@ -4286,10 +4086,7 @@ redshiftserverless_restore_table_from_recovery_point <- function(activateCaseSen
 #' instance
 #'
 #' @description
-#' Restores a table from a snapshot to your Amazon Redshift Serverless
-#' instance. You can't use this operation to restore tables with
-#' [interleaved sort
-#' keys](https://docs.aws.amazon.com/redshift/latest/dg/t_Sorting_data.html#t_Sorting_data-interleaved).
+#' Restores a table from a snapshot to your Amazon Redshift Serverless instance. You can't use this operation to restore tables with [interleaved sort keys](https://docs.aws.amazon.com/redshift/latest/dg/t_Sorting_data.html#t_Sorting_data-interleaved).
 #'
 #' @usage
 #' redshiftserverless_restore_table_from_snapshot(
@@ -4297,9 +4094,7 @@ redshiftserverless_restore_table_from_recovery_point <- function(activateCaseSen
 #'   snapshotName, sourceDatabaseName, sourceSchemaName, sourceTableName,
 #'   targetDatabaseName, targetSchemaName, workgroupName)
 #'
-#' @param activateCaseSensitiveIdentifier Indicates whether name identifiers for database, schema, and table are
-#' case sensitive. If true, the names are case sensitive. If false, the
-#' names are not case sensitive. The default is false.
+#' @param activateCaseSensitiveIdentifier Indicates whether name identifiers for database, schema, and table are case sensitive. If true, the names are case sensitive. If false, the names are not case sensitive. The default is false.
 #' @param namespaceName &#91;required&#93; The namespace of the snapshot to restore from.
 #' @param newTableName &#91;required&#93; The name of the table to create from the restore operation.
 #' @param snapshotName &#91;required&#93; The name of the snapshot to restore the table from.
@@ -4480,15 +4275,13 @@ redshiftserverless_untag_resource <- function(resourceArn, tagKeys) {
 #' custom domain
 #'
 #' @description
-#' Updates an Amazon Redshift Serverless certificate associated with a
-#' custom domain.
+#' Updates an Amazon Redshift Serverless certificate associated with a custom domain.
 #'
 #' @usage
 #' redshiftserverless_update_custom_domain_association(
 #'   customDomainCertificateArn, customDomainName, workgroupName)
 #'
-#' @param customDomainCertificateArn &#91;required&#93; The custom domain name’s certificate Amazon resource name (ARN). This is
-#' optional.
+#' @param customDomainCertificateArn &#91;required&#93; The custom domain name’s certificate Amazon resource name (ARN). This is optional.
 #' @param customDomainName &#91;required&#93; The custom domain name associated with the workgroup.
 #' @param workgroupName &#91;required&#93; The name of the workgroup associated with the database.
 #'
@@ -4548,8 +4341,7 @@ redshiftserverless_update_custom_domain_association <- function(customDomainCert
 #'   vpcSecurityGroupIds)
 #'
 #' @param endpointName &#91;required&#93; The name of the VPC endpoint to update.
-#' @param vpcSecurityGroupIds The list of VPC security groups associated with the endpoint after the
-#' endpoint is modified.
+#' @param vpcSecurityGroupIds The list of VPC security groups associated with the endpoint after the endpoint is modified.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4628,34 +4420,21 @@ redshiftserverless_update_endpoint_access <- function(endpointName, vpcSecurityG
 #' Modifies the lakehouse configuration for a namespace
 #'
 #' @description
-#' Modifies the lakehouse configuration for a namespace. This operation
-#' allows you to manage Amazon Redshift federated permissions and Amazon
-#' Web Services IAM Identity Center trusted identity propagation.
+#' Modifies the lakehouse configuration for a namespace. This operation allows you to manage Amazon Redshift federated permissions and Amazon Web Services IAM Identity Center trusted identity propagation.
 #'
 #' @usage
 #' redshiftserverless_update_lakehouse_configuration(catalogName, dryRun,
 #'   lakehouseIdcApplicationArn, lakehouseIdcRegistration,
 #'   lakehouseRegistration, namespaceName)
 #'
-#' @param catalogName The name of the Glue Data Catalog that will be associated with the
-#' namespace enabled with Amazon Redshift federated permissions.
+#' @param catalogName The name of the Glue Data Catalog that will be associated with the namespace enabled with Amazon Redshift federated permissions.
 #' 
 #' Pattern: `^[a-z0-9_-]*[a-z]+[a-z0-9_-]*$`
-#' @param dryRun A boolean value that, if `true`, validates the request without actually
-#' updating the lakehouse configuration. Use this to check for errors
-#' before making changes.
-#' @param lakehouseIdcApplicationArn The Amazon Resource Name (ARN) of the IAM Identity Center application
-#' used for enabling Amazon Web Services IAM Identity Center trusted
-#' identity propagation on a namespace enabled with Amazon Redshift
-#' federated permissions.
-#' @param lakehouseIdcRegistration Modifies the Amazon Web Services IAM Identity Center trusted identity
-#' propagation on a namespace enabled with Amazon Redshift federated
-#' permissions. Valid values are `Associate` or `Disassociate`.
-#' @param lakehouseRegistration Specifies whether to register or deregister the namespace with Amazon
-#' Redshift federated permissions. Valid values are `Register` or
-#' `Deregister`.
-#' @param namespaceName &#91;required&#93; The name of the namespace whose lakehouse configuration you want to
-#' modify.
+#' @param dryRun A boolean value that, if `true`, validates the request without actually updating the lakehouse configuration. Use this to check for errors before making changes.
+#' @param lakehouseIdcApplicationArn The Amazon Resource Name (ARN) of the IAM Identity Center application used for enabling Amazon Web Services IAM Identity Center trusted identity propagation on a namespace enabled with Amazon Redshift federated permissions.
+#' @param lakehouseIdcRegistration Modifies the Amazon Web Services IAM Identity Center trusted identity propagation on a namespace enabled with Amazon Redshift federated permissions. Valid values are `Associate` or `Disassociate`.
+#' @param lakehouseRegistration Specifies whether to register or deregister the namespace with Amazon Redshift federated permissions. Valid values are `Register` or `Deregister`.
+#' @param namespaceName &#91;required&#93; The name of the namespace whose lakehouse configuration you want to modify.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4707,42 +4486,24 @@ redshiftserverless_update_lakehouse_configuration <- function(catalogName = NULL
 #' Updates a namespace with the specified settings
 #'
 #' @description
-#' Updates a namespace with the specified settings. Unless required, you
-#' can't update multiple parameters in one request. For example, you must
-#' specify both `adminUsername` and `adminUserPassword` to update either
-#' field, but you can't update both `kmsKeyId` and `logExports` in a single
-#' request.
+#' Updates a namespace with the specified settings. Unless required, you can't update multiple parameters in one request. For example, you must specify both `adminUsername` and `adminUserPassword` to update either field, but you can't update both `kmsKeyId` and `logExports` in a single request.
 #'
 #' @usage
 #' redshiftserverless_update_namespace(adminPasswordSecretKmsKeyId,
 #'   adminUserPassword, adminUsername, defaultIamRoleArn, iamRoles, kmsKeyId,
 #'   logExports, manageAdminPassword, namespaceName)
 #'
-#' @param adminPasswordSecretKmsKeyId The ID of the Key Management Service (KMS) key used to encrypt and store
-#' the namespace's admin credentials secret. You can only use this
-#' parameter if `manageAdminPassword` is true.
-#' @param adminUserPassword The password of the administrator for the first database created in the
-#' namespace. This parameter must be updated together with `adminUsername`.
+#' @param adminPasswordSecretKmsKeyId The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret. You can only use this parameter if `manageAdminPassword` is true.
+#' @param adminUserPassword The password of the administrator for the first database created in the namespace. This parameter must be updated together with `adminUsername`.
 #' 
 #' You can't use `adminUserPassword` if `manageAdminPassword` is true.
-#' @param adminUsername The username of the administrator for the first database created in the
-#' namespace. This parameter must be updated together with
-#' `adminUserPassword`.
-#' @param defaultIamRoleArn The Amazon Resource Name (ARN) of the IAM role to set as a default in
-#' the namespace. This parameter must be updated together with `iamRoles`.
-#' @param iamRoles A list of IAM roles to associate with the namespace. This parameter must
-#' be updated together with `defaultIamRoleArn`.
-#' @param kmsKeyId The ID of the Amazon Web Services Key Management Service key used to
-#' encrypt your data.
-#' @param logExports The types of logs the namespace can export. The export types are
-#' `userlog`, `connectionlog`, and `useractivitylog`.
-#' @param manageAdminPassword If `true`, Amazon Redshift uses Secrets Manager to manage the
-#' namespace's admin credentials. You can't use `adminUserPassword` if
-#' `manageAdminPassword` is true. If `manageAdminPassword` is false or not
-#' set, Amazon Redshift uses `adminUserPassword` for the admin user
-#' account's password.
-#' @param namespaceName &#91;required&#93; The name of the namespace to update. You can't update the name of a
-#' namespace once it is created.
+#' @param adminUsername The username of the administrator for the first database created in the namespace. This parameter must be updated together with `adminUserPassword`.
+#' @param defaultIamRoleArn The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace. This parameter must be updated together with `iamRoles`.
+#' @param iamRoles A list of IAM roles to associate with the namespace. This parameter must be updated together with `defaultIamRoleArn`.
+#' @param kmsKeyId The ID of the Amazon Web Services Key Management Service key used to encrypt your data.
+#' @param logExports The types of logs the namespace can export. The export types are `userlog`, `connectionlog`, and `useractivitylog`.
+#' @param manageAdminPassword If `true`, Amazon Redshift uses Secrets Manager to manage the namespace's admin credentials. You can't use `adminUserPassword` if `manageAdminPassword` is true. If `manageAdminPassword` is false or not set, Amazon Redshift uses `adminUserPassword` for the admin user account's password.
+#' @param namespaceName &#91;required&#93; The name of the namespace to update. You can't update the name of a namespace once it is created.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4829,31 +4590,18 @@ redshiftserverless_update_namespace <- function(adminPasswordSecretKmsKeyId = NU
 #'
 #' @param enabled Specifies whether to enable the scheduled action.
 #' @param endTime The end time in UTC of the scheduled action to update.
-#' @param roleArn The ARN of the IAM role to assume to run the scheduled action. This IAM
-#' role must have permission to run the Amazon Redshift Serverless API
-#' operation in the scheduled action. This IAM role must allow the Amazon
-#' Redshift scheduler to schedule creating snapshots (Principal
-#' scheduler.redshift.amazonaws.com) to assume permissions on your behalf.
-#' For more information about the IAM role to use with the Amazon Redshift
-#' scheduler, see [Using Identity-Based Policies for Amazon
-#' Redshift](https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html)
-#' in the Amazon Redshift Management Guide
-#' @param schedule The schedule for a one-time (at timestamp format) or recurring (cron
-#' format) scheduled action. Schedule invocations must be separated by at
-#' least one hour. Times are in UTC.
+#' @param roleArn The ARN of the IAM role to assume to run the scheduled action. This IAM role must have permission to run the Amazon Redshift Serverless API operation in the scheduled action. This IAM role must allow the Amazon Redshift scheduler to schedule creating snapshots (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf. For more information about the IAM role to use with the Amazon Redshift scheduler, see [Using Identity-Based Policies for Amazon Redshift](https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html) in the Amazon Redshift Management Guide
+#' @param schedule The schedule for a one-time (at timestamp format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour. Times are in UTC.
 #' 
-#' -   Format of at timestamp is `yyyy-mm-ddThh:mm:ss`. For example,
-#'     `2016-03-04T17:27:00`.
+#' -   Format of at timestamp is `yyyy-mm-ddThh:mm:ss`. For example, `2016-03-04T17:27:00`.
 #' 
-#' -   Format of cron expression is
-#'     `(Minutes Hours Day-of-month Month Day-of-week Year)`. For example,
-#'     `"(0 10 ? * MON *)"`. For more information, see [Cron
-#'     Expressions](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html#CronExpressions)
-#'     in the *Amazon CloudWatch Events User Guide*.
+#' -   Format of cron expression is `(Minutes Hours Day-of-month Month Day-of-week Year)`. For example, `"(0 10 ? * MON *)"`. For more information, see [Cron Expressions](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html#CronExpressions) in the *Amazon CloudWatch Events User Guide*.
 #' @param scheduledActionDescription The descripion of the scheduled action to update to.
 #' @param scheduledActionName &#91;required&#93; The name of the scheduled action to update to.
 #' @param startTime The start time in UTC of the scheduled action to update to.
-#' @param targetAction 
+#' @param targetAction A JSON format string of the Amazon Redshift Serverless API operation with input parameters. The following is an example of a target action.
+#' 
+#' `"{"CreateSnapshot": {"NamespaceName": "sampleNamespace","SnapshotName": "sampleSnapshot", "retentionPeriod": "1"}}"`
 #'
 #' @return
 #' A list with the following syntax:
@@ -5051,8 +4799,7 @@ redshiftserverless_update_snapshot <- function(retentionPeriod = NULL, snapshotN
 #'   snapshotCopyConfigurationId, snapshotRetentionPeriod)
 #'
 #' @param snapshotCopyConfigurationId &#91;required&#93; The ID of the snapshot copy configuration to update.
-#' @param snapshotRetentionPeriod The new retention period of how long to keep a snapshot in the
-#' destination Amazon Web Services Region.
+#' @param snapshotRetentionPeriod The new retention period of how long to keep a snapshot in the destination Amazon Web Services Region.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5104,19 +4851,14 @@ redshiftserverless_update_snapshot_copy_configuration <- function(snapshotCopyCo
 #' Update a usage limit in Amazon Redshift Serverless
 #'
 #' @description
-#' Update a usage limit in Amazon Redshift Serverless. You can't update the
-#' usage type or period of a usage limit.
+#' Update a usage limit in Amazon Redshift Serverless. You can't update the usage type or period of a usage limit.
 #'
 #' @usage
 #' redshiftserverless_update_usage_limit(amount, breachAction,
 #'   usageLimitId)
 #'
-#' @param amount The new limit amount. If time-based, this amount is in Redshift
-#' Processing Units (RPU) consumed per hour. If data-based, this amount is
-#' in terabytes (TB) of data transferred between Regions in cross-account
-#' sharing. The value must be a positive number.
-#' @param breachAction The new action that Amazon Redshift Serverless takes when the limit is
-#' reached.
+#' @param amount The new limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The value must be a positive number.
+#' @param breachAction The new action that Amazon Redshift Serverless takes when the limit is reached.
 #' @param usageLimitId &#91;required&#93; The identifier of the usage limit to update.
 #'
 #' @return
@@ -5171,64 +4913,39 @@ redshiftserverless_update_usage_limit <- function(amount = NULL, breachAction = 
 #' Updates a workgroup with the specified configuration settings
 #'
 #' @description
-#' Updates a workgroup with the specified configuration settings. You can't
-#' update multiple parameters in one request. For example, you can update
-#' `baseCapacity` or `port` in a single request, but you can't update both
-#' in the same request.
+#' Updates a workgroup with the specified configuration settings. You can't update multiple parameters in one request. For example, you can update `baseCapacity` or `port` in a single request, but you can't update both in the same request.
 #' 
-#' VPC Block Public Access (BPA) enables you to block resources in VPCs and
-#' subnets that you own in a Region from reaching or being reached from the
-#' internet through internet gateways and egress-only internet gateways. If
-#' a workgroup is in an account with VPC BPA turned on, the following
-#' capabilities are blocked:
+#' VPC Block Public Access (BPA) enables you to block resources in VPCs and subnets that you own in a Region from reaching or being reached from the internet through internet gateways and egress-only internet gateways. If a workgroup is in an account with VPC BPA turned on, the following capabilities are blocked:
 #' 
 #' -   Creating a public access workgroup
 #' 
 #' -   Modifying a private workgroup to public
 #' 
-#' -   Adding a subnet with VPC BPA turned on to the workgroup when the
-#'     workgroup is public
+#' -   Adding a subnet with VPC BPA turned on to the workgroup when the workgroup is public
 #' 
-#' For more information about VPC BPA, see [Block public access to VPCs and
-#' subnets](https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html)
-#' in the *Amazon VPC User Guide*.
+#' For more information about VPC BPA, see [Block public access to VPCs and subnets](https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html) in the *Amazon VPC User Guide*.
 #'
 #' @usage
 #' redshiftserverless_update_workgroup(baseCapacity, configParameters,
-#'   enhancedVpcRouting, ipAddressType, maxCapacity, port,
-#'   pricePerformanceTarget, publiclyAccessible, securityGroupIds, subnetIds,
-#'   trackName, workgroupName)
+#'   enhancedVpcRouting, extraComputeForAutomaticOptimization, ipAddressType,
+#'   maxCapacity, port, pricePerformanceTarget, publiclyAccessible,
+#'   securityGroupIds, subnetIds, trackName, workgroupName)
 #'
-#' @param baseCapacity The new base data warehouse capacity in Redshift Processing Units
-#' (RPUs).
-#' @param configParameters An array of parameters to set for advanced control over a database. The
-#' options are `auto_mv`, `datestyle`, `enable_case_sensitive_identifier`,
-#' `enable_user_activity_logging`, `query_group`, `search_path`,
-#' `require_ssl`, `use_fips_ssl`, and query monitoring metrics that let you
-#' define performance boundaries. For more information about query
-#' monitoring rules and available metrics, see [Query monitoring metrics
-#' for Amazon Redshift
-#' Serverless](https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless).
-#' @param enhancedVpcRouting The value that specifies whether to turn on enhanced virtual private
-#' cloud (VPC) routing, which forces Amazon Redshift Serverless to route
-#' traffic through your VPC.
-#' @param ipAddressType The IP address type that the workgroup supports. Possible values are
-#' `ipv4` and `dualstack`.
-#' @param maxCapacity The maximum data-warehouse capacity Amazon Redshift Serverless uses to
-#' serve queries. The max capacity is specified in RPUs.
-#' @param port The custom port to use when connecting to a workgroup. Valid port ranges
-#' are 5431-5455 and 8191-8215. The default is 5439.
-#' @param pricePerformanceTarget An object that represents the price performance target settings for the
-#' workgroup.
-#' @param publiclyAccessible A value that specifies whether the workgroup can be accessible from a
-#' public network.
+#' @param baseCapacity The new base data warehouse capacity in Redshift Processing Units (RPUs).
+#' @param configParameters An array of parameters to set for advanced control over a database. The options are `auto_mv`, `datestyle`, `enable_case_sensitive_identifier`, `enable_user_activity_logging`, `query_group`, `search_path`, `require_ssl`, `use_fips_ssl`, and either `wlm_json_configuration` or query monitoring metrics that let you define performance boundaries. You can either specify individual query monitoring metrics (such as `max_scan_row_count`, `max_query_execution_time`) or use `wlm_json_configuration` to define query queues with rules, but not both. If you're using `wlm_json_configuration`, the maximum size of `parameterValue` is 8000 characters. For more information about query monitoring rules and available metrics, see [Query monitoring metrics for Amazon Redshift Serverless](https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless).
+#' @param enhancedVpcRouting The value that specifies whether to turn on enhanced virtual private cloud (VPC) routing, which forces Amazon Redshift Serverless to route traffic through your VPC.
+#' @param extraComputeForAutomaticOptimization If `true`, allocates additional compute resources for running automatic optimization operations.
+#' 
+#' Default: false
+#' @param ipAddressType The IP address type that the workgroup supports. Possible values are `ipv4` and `dualstack`.
+#' @param maxCapacity The maximum data-warehouse capacity Amazon Redshift Serverless uses to serve queries. The max capacity is specified in RPUs.
+#' @param port The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439.
+#' @param pricePerformanceTarget An object that represents the price performance target settings for the workgroup.
+#' @param publiclyAccessible A value that specifies whether the workgroup can be accessible from a public network.
 #' @param securityGroupIds An array of security group IDs to associate with the workgroup.
 #' @param subnetIds An array of VPC subnet IDs to associate with the workgroup.
-#' @param trackName An optional parameter for the name of the track for the workgroup. If
-#' you don't provide a track name, the workgroup is assigned to the
-#' `current` track.
-#' @param workgroupName &#91;required&#93; The name of the workgroup to update. You can't update the name of a
-#' workgroup once it is created.
+#' @param trackName An optional parameter for the name of the track for the workgroup. If you don't provide a track name, the workgroup is assigned to the `current` track.
+#' @param workgroupName &#91;required&#93; The name of the workgroup to update. You can't update the name of a workgroup once it is created.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5273,6 +4990,7 @@ redshiftserverless_update_usage_limit <- function(amount = NULL, breachAction = 
 #'       )
 #'     ),
 #'     enhancedVpcRouting = TRUE|FALSE,
+#'     extraComputeForAutomaticOptimization = TRUE|FALSE,
 #'     ipAddressType = "string",
 #'     maxCapacity = 123,
 #'     namespaceName = "string",
@@ -5311,6 +5029,7 @@ redshiftserverless_update_usage_limit <- function(amount = NULL, breachAction = 
 #'     )
 #'   ),
 #'   enhancedVpcRouting = TRUE|FALSE,
+#'   extraComputeForAutomaticOptimization = TRUE|FALSE,
 #'   ipAddressType = "string",
 #'   maxCapacity = 123,
 #'   port = 123,
@@ -5335,7 +5054,7 @@ redshiftserverless_update_usage_limit <- function(amount = NULL, breachAction = 
 #' @rdname redshiftserverless_update_workgroup
 #'
 #' @aliases redshiftserverless_update_workgroup
-redshiftserverless_update_workgroup <- function(baseCapacity = NULL, configParameters = NULL, enhancedVpcRouting = NULL, ipAddressType = NULL, maxCapacity = NULL, port = NULL, pricePerformanceTarget = NULL, publiclyAccessible = NULL, securityGroupIds = NULL, subnetIds = NULL, trackName = NULL, workgroupName) {
+redshiftserverless_update_workgroup <- function(baseCapacity = NULL, configParameters = NULL, enhancedVpcRouting = NULL, extraComputeForAutomaticOptimization = NULL, ipAddressType = NULL, maxCapacity = NULL, port = NULL, pricePerformanceTarget = NULL, publiclyAccessible = NULL, securityGroupIds = NULL, subnetIds = NULL, trackName = NULL, workgroupName) {
   op <- new_operation(
     name = "UpdateWorkgroup",
     http_method = "POST",
@@ -5344,7 +5063,7 @@ redshiftserverless_update_workgroup <- function(baseCapacity = NULL, configParam
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .redshiftserverless$update_workgroup_input(baseCapacity = baseCapacity, configParameters = configParameters, enhancedVpcRouting = enhancedVpcRouting, ipAddressType = ipAddressType, maxCapacity = maxCapacity, port = port, pricePerformanceTarget = pricePerformanceTarget, publiclyAccessible = publiclyAccessible, securityGroupIds = securityGroupIds, subnetIds = subnetIds, trackName = trackName, workgroupName = workgroupName)
+  input <- .redshiftserverless$update_workgroup_input(baseCapacity = baseCapacity, configParameters = configParameters, enhancedVpcRouting = enhancedVpcRouting, extraComputeForAutomaticOptimization = extraComputeForAutomaticOptimization, ipAddressType = ipAddressType, maxCapacity = maxCapacity, port = port, pricePerformanceTarget = pricePerformanceTarget, publiclyAccessible = publiclyAccessible, securityGroupIds = securityGroupIds, subnetIds = subnetIds, trackName = trackName, workgroupName = workgroupName)
   output <- .redshiftserverless$update_workgroup_output()
   config <- get_config()
   svc <- .redshiftserverless$service(config, op)

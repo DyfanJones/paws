@@ -11,8 +11,7 @@ rds_delete_db_subnet_group(DBSubnetGroupName)
 
 You can't delete the default subnet group.
 
-Constraints: Must match the name of an existing DBSubnetGroup. Must not
-be default.
+Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
 
 Example: \code{mydbsubnetgroup}}
 }

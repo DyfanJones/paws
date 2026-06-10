@@ -12,7 +12,7 @@ connect_get_effective_hours_of_operations(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance.}
 
 \item{HoursOfOperationId}{[required] The identifier for the hours of operation.}
 

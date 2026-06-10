@@ -14,13 +14,9 @@ ivs_start_viewer_session_revocation(
 \arguments{
 \item{channelArn}{[required] The ARN of the channel associated with the viewer session to revoke.}
 
-\item{viewerId}{[required] The ID of the viewer associated with the viewer session to revoke. Do
-not use this field for personally identifying, confidential, or
-sensitive information.}
+\item{viewerId}{[required] The ID of the viewer associated with the viewer session to revoke. Do not use this field for personally identifying, confidential, or sensitive information.}
 
-\item{viewerSessionVersionsLessThanOrEqualTo}{An optional filter on which versions of the viewer session to revoke.
-All versions less than or equal to the specified version will be
-revoked. Default: 0.}
+\item{viewerSessionVersionsLessThanOrEqualTo}{An optional filter on which versions of the viewer session to revoke. All versions less than or equal to the specified version will be revoked. Default: 0.}
 }
 \description{
 Starts the process of revoking the viewer session associated with a specified channel ARN and viewer ID. Optionally, you can provide a version to revoke viewer sessions less than and including that version. For instructions on associating a viewer ID with a viewer session, see \href{https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels.html}{Setting Up Private Channels}.

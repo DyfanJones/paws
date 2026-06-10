@@ -7,7 +7,7 @@
 route53domains_transfer_domain(
   DomainName,
   IdnLangCode = NULL,
-  DurationInYears,
+  DurationInYears = NULL,
   Nameservers = NULL,
   AuthCode = NULL,
   AutoRenew = NULL,
@@ -22,36 +22,29 @@ route53domains_transfer_domain(
 )
 }
 \arguments{
-\item{DomainName}{[required] The name of the domain that you want to transfer to Route 53. The
-top-level domain (TLD), such as .com, must be a TLD that Route 53
-supports. For a list of supported TLDs, see \href{https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html}{Domains that You Can Register with Amazon Route 53}
-in the \emph{Amazon Route 53 Developer Guide}.
+\item{DomainName}{[required] The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see \href{https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html}{Domains that You Can Register with Amazon Route 53} in the \emph{Amazon Route 53 Developer Guide}.
 
 The domain name can contain only the following characters:
 \itemize{
 \item Letters a through z. Domain names are not case sensitive.
 \item Numbers 0 through 9.
-\item Hyphen (-). You can't specify a hyphen at the beginning or end of a
-label.
-\item Period (.) to separate the labels in the name, such as the \code{.} in
-\code{example.com}.
+\item Hyphen (-). You can't specify a hyphen at the beginning or end of a label.
+\item Period (.) to separate the labels in the name, such as the \code{.} in \code{example.com}.
 }}
 
 \item{IdnLangCode}{Reserved for future use.}
 
-\item{DurationInYears}{[required] The number of years that you want to register the domain for. Domains
-are registered for a minimum of one year. The maximum period depends on
-the top-level domain.
+\item{DurationInYears}{Reserved for future use.
+
+Currently, the effect of a domain transfer on the registration period varies by TLD. For information about how transferring a domain affects the expiration date, see the Transfer Term column in the pricing information at \href{https://aws.amazon.com/route53/pricing/}{Amazon Route 53 Pricing}.
 
 Default: 1}
 
 \item{Nameservers}{Contains details for the host and glue IP addresses.}
 
-\item{AuthCode}{The authorization code for the domain. You get this value from the
-current registrar.}
+\item{AuthCode}{The authorization code for the domain. You get this value from the current registrar.}
 
-\item{AutoRenew}{Indicates whether the domain will be automatically renewed (true) or not
-(false). Auto renewal only takes effect after the account is charged.
+\item{AutoRenew}{Indicates whether the domain will be automatically renewed (true) or not (false). Auto renewal only takes effect after the account is charged.
 
 Default: true}
 
@@ -61,48 +54,29 @@ Default: true}
 
 \item{TechContact}{[required] Provides detailed contact information.}
 
-\item{PrivacyProtectAdminContact}{Whether you want to conceal contact information from WHOIS queries. If
-you specify \code{true}, WHOIS ("who is") queries return contact information
-for the registrar, the phrase "REDACTED FOR PRIVACY", or "On behalf of
-\<domain name\> owner.".
+\item{PrivacyProtectAdminContact}{Whether you want to conceal contact information from WHOIS queries. If you specify \code{true}, WHOIS ("who is") queries return contact information for the registrar, the phrase "REDACTED FOR PRIVACY", or "On behalf of \<domain name\> owner.".
 
-While some domains may allow different privacy settings per contact, we
-recommend specifying the same privacy setting for all contacts.
+While some domains may allow different privacy settings per contact, we recommend specifying the same privacy setting for all contacts.
 
 Default: \code{true}}
 
-\item{PrivacyProtectRegistrantContact}{Whether you want to conceal contact information from WHOIS queries. If
-you specify \code{true}, WHOIS ("who is") queries return contact information
-either for Amazon Registrar or for our registrar associate, Gandi. If
-you specify \code{false}, WHOIS queries return the information that you
-entered for the registrant contact (domain owner).
+\item{PrivacyProtectRegistrantContact}{Whether you want to conceal contact information from WHOIS queries. If you specify \code{true}, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify \code{false}, WHOIS queries return the information that you entered for the registrant contact (domain owner).
 
-You must specify the same privacy setting for the administrative,
-billing, registrant, and technical contacts.
+You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.
 
 Default: \code{true}}
 
-\item{PrivacyProtectTechContact}{Whether you want to conceal contact information from WHOIS queries. If
-you specify \code{true}, WHOIS ("who is") queries return contact information
-either for Amazon Registrar or for our registrar associate, Gandi. If
-you specify \code{false}, WHOIS queries return the information that you
-entered for the technical contact.
+\item{PrivacyProtectTechContact}{Whether you want to conceal contact information from WHOIS queries. If you specify \code{true}, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify \code{false}, WHOIS queries return the information that you entered for the technical contact.
 
-You must specify the same privacy setting for the administrative,
-billing, registrant, and technical contacts.
+You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.
 
 Default: \code{true}}
 
 \item{BillingContact}{Provides detailed contact information.}
 
-\item{PrivacyProtectBillingContact}{Whether you want to conceal contact information from WHOIS queries. If
-you specify \code{true}, WHOIS ("who is") queries return contact information
-either for Amazon Registrar or for our registrar associate, Gandi. If
-you specify \code{false}, WHOIS queries return the information that you
-entered for the billing contact.
+\item{PrivacyProtectBillingContact}{Whether you want to conceal contact information from WHOIS queries. If you specify \code{true}, WHOIS ("who is") queries return contact information either for Amazon Registrar or for our registrar associate, Gandi. If you specify \code{false}, WHOIS queries return the information that you entered for the billing contact.
 
-You must specify the same privacy setting for the administrative,
-billing, registrant, and technical contacts.}
+You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.}
 }
 \description{
 Transfers a domain from another registrar to Amazon Route 53.

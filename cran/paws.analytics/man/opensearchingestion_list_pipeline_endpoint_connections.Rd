@@ -10,15 +10,9 @@ opensearchingestion_list_pipeline_endpoint_connections(
 )
 }
 \arguments{
-\item{MaxResults}{The maximum number of pipeline endpoint connections to return in the
-response.}
+\item{MaxResults}{The maximum number of pipeline endpoint connections to return in the response.}
 
-\item{NextToken}{If your initial
-\code{\link[=opensearchingestion_list_pipeline_endpoint_connections]{list_pipeline_endpoint_connections}}
-operation returns a \code{nextToken}, you can include the returned
-\code{nextToken} in subsequent
-\code{\link[=opensearchingestion_list_pipeline_endpoint_connections]{list_pipeline_endpoint_connections}}
-operations, which returns results in the next page.}
+\item{NextToken}{If your initial \code{\link[=opensearchingestion_list_pipeline_endpoint_connections]{list_pipeline_endpoint_connections}} operation returns a \code{nextToken}, you can include the returned \code{nextToken} in subsequent \code{\link[=opensearchingestion_list_pipeline_endpoint_connections]{list_pipeline_endpoint_connections}} operations, which returns results in the next page.}
 }
 \description{
 Lists the pipeline endpoints connected to pipelines in your account.

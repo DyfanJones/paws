@@ -15,17 +15,11 @@ NULL
 #' @param name The name of the ApiKey.
 #' @param description The description of the ApiKey.
 #' @param enabled Specifies whether the ApiKey can be used by callers.
-#' @param generateDistinctId Specifies whether (`true`) or not (`false`) the key identifier is
-#' distinct from the created API key value. This parameter is deprecated
-#' and should not be used.
+#' @param generateDistinctId Specifies whether (`true`) or not (`false`) the key identifier is distinct from the created API key value. This parameter is deprecated and should not be used.
 #' @param value Specifies a value of the API key.
-#' @param stageKeys DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API
-#' key.
-#' @param customerId An Amazon Web Services Marketplace customer identifier, when integrating
-#' with the Amazon Web Services SaaS Marketplace.
-#' @param tags The key-value map of strings. The valid character set is
-#' \[a-zA-Z+-=._:/\]. The tag key can be up to 128 characters and must not
-#' start with `aws:`. The tag value can be up to 256 characters.
+#' @param stageKeys DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API key.
+#' @param customerId An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS Marketplace.
+#' @param tags The key-value map of strings. The valid character set is \[a-zA-Z+-=._:/\]. The tag key can be up to 128 characters and must not start with `aws:`. The tag value can be up to 256 characters.
 #'
 #' @return
 #' A list with the following syntax:
@@ -109,63 +103,14 @@ apigateway_create_api_key <- function(name = NULL, description = NULL, enabled =
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
 #' @param name &#91;required&#93; The name of the authorizer.
-#' @param type &#91;required&#93; The authorizer type. Valid values are `TOKEN` for a Lambda function
-#' using a single authorization token submitted in a custom header,
-#' `REQUEST` for a Lambda function using incoming request parameters, and
-#' `COGNITO_USER_POOLS` for using an Amazon Cognito user pool.
-#' @param providerARNs A list of the Amazon Cognito user pool ARNs for the `COGNITO_USER_POOLS`
-#' authorizer. Each element is of this format:
-#' `arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}`. For
-#' a `TOKEN` or `REQUEST` authorizer, this is not defined.
-#' @param authType Optional customer-defined field, used in OpenAPI imports and exports
-#' without functional impact.
-#' @param authorizerUri Specifies the authorizer's Uniform Resource Identifier (URI). For
-#' `TOKEN` or `REQUEST` authorizers, this must be a well-formed Lambda
-#' function URI, for example,
-#' `arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations`.
-#' In general, the URI has this form
-#' `arn:aws:apigateway:{region}:lambda:path/{service_api}`, where
-#' `{region}` is the same as the region hosting the Lambda function, `path`
-#' indicates that the remaining substring in the URI should be treated as
-#' the path to the resource, including the initial `/`. For Lambda
-#' functions, this is usually of the form
-#' `/2015-03-31/functions/[FunctionARN]/invocations`.
-#' @param authorizerCredentials Specifies the required credentials as an IAM role for API Gateway to
-#' invoke the authorizer. To specify an IAM role for API Gateway to assume,
-#' use the role's Amazon Resource Name (ARN). To use resource-based
-#' permissions on the Lambda function, specify null.
-#' @param identitySource The identity source for which authorization is requested. For a `TOKEN`
-#' or `COGNITO_USER_POOLS` authorizer, this is required and specifies the
-#' request header mapping expression for the custom header holding the
-#' authorization token submitted by the client. For example, if the token
-#' header name is `Auth`, the header mapping expression is
-#' `method.request.header.Auth`. For the `REQUEST` authorizer, this is
-#' required when authorization caching is enabled. The value is a
-#' comma-separated string of one or more mapping expressions of the
-#' specified request parameters. For example, if an `Auth` header, a `Name`
-#' query string parameter are defined as identity sources, this value is
-#' `method.request.header.Auth, method.request.querystring.Name`. These
-#' parameters will be used to derive the authorization caching key and to
-#' perform runtime validation of the `REQUEST` authorizer by verifying all
-#' of the identity-related request parameters are present, not null and
-#' non-empty. Only when this is true does the authorizer invoke the
-#' authorizer Lambda function, otherwise, it returns a 401 Unauthorized
-#' response without calling the Lambda function. The valid value is a
-#' string of comma-separated mapping expressions of the specified request
-#' parameters. When the authorization caching is not enabled, this property
-#' is optional.
-#' @param identityValidationExpression A validation expression for the incoming identity token. For `TOKEN`
-#' authorizers, this value is a regular expression. For
-#' `COGNITO_USER_POOLS` authorizers, API Gateway will match the `aud` field
-#' of the incoming token from the client against the specified regular
-#' expression. It will invoke the authorizer's Lambda function when there
-#' is a match. Otherwise, it will return a 401 Unauthorized response
-#' without calling the Lambda function. The validation expression does not
-#' apply to the `REQUEST` authorizer.
-#' @param authorizerResultTtlInSeconds The TTL in seconds of cached authorizer results. If it equals 0,
-#' authorization caching is disabled. If it is greater than 0, API Gateway
-#' will cache authorizer responses. If this field is not set, the default
-#' value is 300. The maximum value is 3600, or 1 hour.
+#' @param type &#91;required&#93; The authorizer type. Valid values are `TOKEN` for a Lambda function using a single authorization token submitted in a custom header, `REQUEST` for a Lambda function using incoming request parameters, and `COGNITO_USER_POOLS` for using an Amazon Cognito user pool.
+#' @param providerARNs A list of the Amazon Cognito user pool ARNs for the `COGNITO_USER_POOLS` authorizer. Each element is of this format: `arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}`. For a `TOKEN` or `REQUEST` authorizer, this is not defined.
+#' @param authType Optional customer-defined field, used in OpenAPI imports and exports without functional impact.
+#' @param authorizerUri Specifies the authorizer's Uniform Resource Identifier (URI). For `TOKEN` or `REQUEST` authorizers, this must be a well-formed Lambda function URI, for example, `arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations`. In general, the URI has this form `arn:aws:apigateway:{region}:lambda:path/{service_api}`, where `{region}` is the same as the region hosting the Lambda function, `path` indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial `/`. For Lambda functions, this is usually of the form `/2015-03-31/functions/[FunctionARN]/invocations`.
+#' @param authorizerCredentials Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, specify null.
+#' @param identitySource The identity source for which authorization is requested. For a `TOKEN` or `COGNITO_USER_POOLS` authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is `Auth`, the header mapping expression is `method.request.header.Auth`. For the `REQUEST` authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an `Auth` header, a `Name` query string parameter are defined as identity sources, this value is `method.request.header.Auth, method.request.querystring.Name`. These parameters will be used to derive the authorization caching key and to perform runtime validation of the `REQUEST` authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.
+#' @param identityValidationExpression A validation expression for the incoming identity token. For `TOKEN` authorizers, this value is a regular expression. For `COGNITO_USER_POOLS` authorizers, API Gateway will match the `aud` field of the incoming token from the client against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match. Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the `REQUEST` authorizer.
+#' @param authorizerResultTtlInSeconds The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.
 #'
 #' @return
 #' A list with the following syntax:
@@ -238,16 +183,10 @@ apigateway_create_authorizer <- function(restApiId, name, type, providerARNs = N
 #'   restApiId, stage)
 #'
 #' @param domainName &#91;required&#93; The domain name of the BasePathMapping resource to create.
-#' @param domainNameId The identifier for the domain name resource. Required for private custom
-#' domain names.
-#' @param basePath The base path name that callers of the API must provide as part of the
-#' URL after the domain name. This value must be unique for all of the
-#' mappings across a single API. Specify '(none)' if you do not want
-#' callers to specify a base path name after the domain name.
+#' @param domainNameId The identifier for the domain name resource. Required for private custom domain names.
+#' @param basePath The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify a base path name after the domain name.
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
-#' @param stage The name of the API's stage that you want to use for this mapping.
-#' Specify '(none)' if you want callers to explicitly specify the stage
-#' name after any base path name.
+#' @param stage The name of the API's stage that you want to use for this mapping. Specify '(none)' if you want callers to explicitly specify the stage name after any base path name.
 #'
 #' @return
 #' A list with the following syntax:
@@ -298,8 +237,7 @@ apigateway_create_base_path_mapping <- function(domainName, domainNameId = NULL,
 #' over the internet
 #'
 #' @description
-#' Creates a Deployment resource, which makes a specified RestApi callable
-#' over the internet.
+#' Creates a Deployment resource, which makes a specified RestApi callable over the internet.
 #'
 #' @usage
 #' apigateway_create_deployment(restApiId, stageName, stageDescription,
@@ -308,19 +246,12 @@ apigateway_create_base_path_mapping <- function(domainName, domainNameId = NULL,
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
 #' @param stageName The name of the Stage resource for the Deployment resource to create.
-#' @param stageDescription The description of the Stage resource for the Deployment resource to
-#' create.
+#' @param stageDescription The description of the Stage resource for the Deployment resource to create.
 #' @param description The description for the Deployment resource to create.
 #' @param cacheClusterEnabled Enables a cache cluster for the Stage resource specified in the input.
-#' @param cacheClusterSize The stage's cache capacity in GB. For more information about choosing a
-#' cache size, see [Enabling API caching to enhance
-#' responsiveness](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html).
-#' @param variables A map that defines the stage variables for the Stage resource that is
-#' associated with the new deployment. Variable names can have alphanumeric
-#' and underscore characters, and the values must match
-#' `[A-Za-z0-9-._~:/?#&=,]+`.
-#' @param canarySettings The input configuration for the canary deployment when the deployment is
-#' a canary release deployment.
+#' @param cacheClusterSize The stage's cache capacity in GB. For more information about choosing a cache size, see [Enabling API caching to enhance responsiveness](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html).
+#' @param variables A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match `[A-Za-z0-9-._~:/?#&=,]+`.
+#' @param canarySettings The input configuration for the canary deployment when the deployment is a canary release deployment.
 #' @param tracingEnabled Specifies whether active tracing with X-ray is enabled for the Stage.
 #'
 #' @return
@@ -399,11 +330,8 @@ apigateway_create_deployment <- function(restApiId, stageName = NULL, stageDescr
 #' apigateway_create_documentation_part(restApiId, location, properties)
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
-#' @param location &#91;required&#93; The location of the targeted API entity of the to-be-created
-#' documentation part.
-#' @param properties &#91;required&#93; The new documentation content map of the targeted API entity. Enclosed
-#' key-value pairs are API-specific, but only OpenAPI-compliant key-value
-#' pairs can be exported and, hence, published.
+#' @param location &#91;required&#93; The location of the targeted API entity of the to-be-created documentation part.
+#' @param properties &#91;required&#93; The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.
 #'
 #' @return
 #' A list with the following syntax:
@@ -534,49 +462,21 @@ apigateway_create_documentation_version <- function(restApiId, documentationVers
 #'   routingMode)
 #'
 #' @param domainName &#91;required&#93; The name of the DomainName resource.
-#' @param certificateName The user-friendly name of the certificate that will be used by
-#' edge-optimized endpoint or private endpoint for this domain name.
-#' @param certificateBody \[Deprecated\] The body of the server certificate that will be used by
-#' edge-optimized endpoint or private endpoint for this domain name
-#' provided by your certificate authority.
-#' @param certificatePrivateKey \[Deprecated\] Your edge-optimized endpoint's domain name certificate's
-#' private key.
-#' @param certificateChain \[Deprecated\] The intermediate certificates and optionally the root
-#' certificate, one after the other without any blank lines, used by an
-#' edge-optimized endpoint for this domain name. If you include the root
-#' certificate, your certificate chain must start with intermediate
-#' certificates and end with the root certificate. Use the intermediate
-#' certificates that were provided by your certificate authority. Do not
-#' include any intermediaries that are not in the chain of trust path.
-#' @param certificateArn The reference to an Amazon Web Services-managed certificate that will be
-#' used by edge-optimized endpoint or private endpoint for this domain
-#' name. Certificate Manager is the only supported source.
-#' @param regionalCertificateName The user-friendly name of the certificate that will be used by regional
-#' endpoint for this domain name.
-#' @param regionalCertificateArn The reference to an Amazon Web Services-managed certificate that will be
-#' used by regional endpoint for this domain name. Certificate Manager is
-#' the only supported source.
-#' @param endpointConfiguration The endpoint configuration of this DomainName showing the endpoint types
-#' and IP address types of the domain name.
-#' @param tags The key-value map of strings. The valid character set is
-#' \[a-zA-Z+-=._:/\]. The tag key can be up to 128 characters and must not
-#' start with `aws:`. The tag value can be up to 256 characters.
-#' @param securityPolicy The Transport Layer Security (TLS) version + cipher suite for this
-#' DomainName.
-#' @param endpointAccessMode The endpoint access mode of the DomainName. Only available for
-#' DomainNames that use security policies that start with
-#' `SecurityPolicy_`.
-#' @param mutualTlsAuthentication 
-#' @param ownershipVerificationCertificateArn The ARN of the public certificate issued by ACM to validate ownership of
-#' your custom domain. Only required when configuring mutual TLS and using
-#' an ACM imported or private CA certificate ARN as the
-#' regionalCertificateArn.
-#' @param policy A stringified JSON policy document that applies to the `execute-api`
-#' service for this DomainName regardless of the caller and Method
-#' configuration. Supported only for private custom domain names.
-#' @param routingMode The routing mode for this domain name. The routing mode determines how
-#' API Gateway sends traffic from your custom domain name to your private
-#' APIs.
+#' @param certificateName The user-friendly name of the certificate that will be used by edge-optimized endpoint or private endpoint for this domain name.
+#' @param certificateBody \[Deprecated\] The body of the server certificate that will be used by edge-optimized endpoint or private endpoint for this domain name provided by your certificate authority.
+#' @param certificatePrivateKey \[Deprecated\] Your edge-optimized endpoint's domain name certificate's private key.
+#' @param certificateChain \[Deprecated\] The intermediate certificates and optionally the root certificate, one after the other without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.
+#' @param certificateArn The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint or private endpoint for this domain name. Certificate Manager is the only supported source.
+#' @param regionalCertificateName The user-friendly name of the certificate that will be used by regional endpoint for this domain name.
+#' @param regionalCertificateArn The reference to an Amazon Web Services-managed certificate that will be used by regional endpoint for this domain name. Certificate Manager is the only supported source.
+#' @param endpointConfiguration The endpoint configuration of this DomainName showing the endpoint types and IP address types of the domain name.
+#' @param tags The key-value map of strings. The valid character set is \[a-zA-Z+-=._:/\]. The tag key can be up to 128 characters and must not start with `aws:`. The tag value can be up to 256 characters.
+#' @param securityPolicy The Transport Layer Security (TLS) version + cipher suite for this DomainName.
+#' @param endpointAccessMode The endpoint access mode of the DomainName. Only available for DomainNames that use security policies that start with `SecurityPolicy_`.
+#' @param mutualTlsAuthentication The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.
+#' @param ownershipVerificationCertificateArn The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.
+#' @param policy A stringified JSON policy document that applies to the `execute-api` service for this DomainName regardless of the caller and Method configuration. Supported only for private custom domain names.
+#' @param routingMode The routing mode for this domain name. The routing mode determines how API Gateway sends traffic from your custom domain name to your private APIs.
 #'
 #' @return
 #' A list with the following syntax:
@@ -607,7 +507,7 @@ apigateway_create_documentation_version <- function(restApiId, documentationVers
 #'   ),
 #'   domainNameStatus = "AVAILABLE"|"UPDATING"|"PENDING"|"PENDING_CERTIFICATE_REIMPORT"|"PENDING_OWNERSHIP_VERIFICATION"|"FAILED",
 #'   domainNameStatusMessage = "string",
-#'   securityPolicy = "TLS_1_0"|"TLS_1_2"|"SecurityPolicy_TLS13_1_3_2025_09"|"SecurityPolicy_TLS13_1_3_FIPS_2025_09"|"SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_2021_06"|"SecurityPolicy_TLS13_2025_EDGE"|"SecurityPolicy_TLS12_PFS_2025_EDGE"|"SecurityPolicy_TLS12_2018_EDGE",
+#'   securityPolicy = "TLS_1_0"|"TLS_1_2"|"SecurityPolicy_TLS13_1_3_2025_09"|"SecurityPolicy_TLS13_1_3_FIPS_2025_09"|"SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_2021_06"|"SecurityPolicy_TLS13_2025_EDGE"|"SecurityPolicy_TLS12_PFS_2025_EDGE"|"SecurityPolicy_TLS12_2018_EDGE",
 #'   endpointAccessMode = "BASIC"|"STRICT",
 #'   tags = list(
 #'     "string"
@@ -649,7 +549,7 @@ apigateway_create_documentation_version <- function(restApiId, documentationVers
 #'   tags = list(
 #'     "string"
 #'   ),
-#'   securityPolicy = "TLS_1_0"|"TLS_1_2"|"SecurityPolicy_TLS13_1_3_2025_09"|"SecurityPolicy_TLS13_1_3_FIPS_2025_09"|"SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_2021_06"|"SecurityPolicy_TLS13_2025_EDGE"|"SecurityPolicy_TLS12_PFS_2025_EDGE"|"SecurityPolicy_TLS12_2018_EDGE",
+#'   securityPolicy = "TLS_1_0"|"TLS_1_2"|"SecurityPolicy_TLS13_1_3_2025_09"|"SecurityPolicy_TLS13_1_3_FIPS_2025_09"|"SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_2021_06"|"SecurityPolicy_TLS13_2025_EDGE"|"SecurityPolicy_TLS12_PFS_2025_EDGE"|"SecurityPolicy_TLS12_2018_EDGE",
 #'   endpointAccessMode = "BASIC"|"STRICT",
 #'   mutualTlsAuthentication = list(
 #'     truststoreUri = "string",
@@ -689,8 +589,7 @@ apigateway_create_domain_name <- function(domainName, certificateName = NULL, ce
 #' association source and a private custom domain name
 #'
 #' @description
-#' Creates a domain name access association resource between an access
-#' association source and a private custom domain name.
+#' Creates a domain name access association resource between an access association source and a private custom domain name.
 #'
 #' @usage
 #' apigateway_create_domain_name_access_association(domainNameArn,
@@ -698,11 +597,8 @@ apigateway_create_domain_name <- function(domainName, certificateName = NULL, ce
 #'
 #' @param domainNameArn &#91;required&#93; The ARN of the domain name.
 #' @param accessAssociationSourceType &#91;required&#93; The type of the domain name access association source.
-#' @param accessAssociationSource &#91;required&#93; The identifier of the domain name access association source. For a VPCE,
-#' the value is the VPC endpoint ID.
-#' @param tags The key-value map of strings. The valid character set is
-#' \[a-zA-Z+-=._:/\]. The tag key can be up to 128 characters and must not
-#' start with `aws:`. The tag value can be up to 256 characters.
+#' @param accessAssociationSource &#91;required&#93; The identifier of the domain name access association source. For a VPCE, the value is the VPC endpoint ID.
+#' @param tags The key-value map of strings. The valid character set is \[a-zA-Z+-=._:/\]. The tag key can be up to 128 characters and must not start with `aws:`. The tag value can be up to 256 characters.
 #'
 #' @return
 #' A list with the following syntax:
@@ -766,8 +662,7 @@ apigateway_create_domain_name_access_association <- function(domainNameArn, acce
 #' @param restApiId &#91;required&#93; The RestApi identifier under which the Model will be created.
 #' @param name &#91;required&#93; The name of the model. Must be alphanumeric.
 #' @param description The description of the model.
-#' @param schema The schema for the model. For `application/json` models, this should be
-#' JSON schema draft 4 model. The maximum size of the model is 400 KB.
+#' @param schema The schema for the model. For `application/json` models, this should be JSON schema draft 4 model. The maximum size of the model is 400 KB.
 #' @param contentType &#91;required&#93; The content-type for the model.
 #'
 #' @return
@@ -828,10 +723,8 @@ apigateway_create_model <- function(restApiId, name, description = NULL, schema 
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
 #' @param name The name of the to-be-created RequestValidator.
-#' @param validateRequestBody A Boolean flag to indicate whether to validate request body according to
-#' the configured model schema for the method (`true`) or not (`false`).
-#' @param validateRequestParameters A Boolean flag to indicate whether to validate request parameters,
-#' `true`, or not `false`.
+#' @param validateRequestBody A Boolean flag to indicate whether to validate request body according to the configured model schema for the method (`true`) or not (`false`).
+#' @param validateRequestParameters A Boolean flag to indicate whether to validate request parameters, `true`, or not `false`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1018,34 +911,15 @@ apigateway_create_resource <- function(restApiId, parentId, pathPart) {
 #' @param description The description of the RestApi.
 #' @param version A version identifier for the API.
 #' @param cloneFrom The ID of the RestApi that you want to clone from.
-#' @param binaryMediaTypes The list of binary media types supported by the RestApi. By default, the
-#' RestApi supports only UTF-8-encoded text payloads.
-#' @param minimumCompressionSize A nullable integer that is used to enable compression (with non-negative
-#' between 0 and 10485760 (10M) bytes, inclusive) or disable compression
-#' (with a null value) on an API. When compression is enabled, compression
-#' or decompression is not applied on the payload if the payload size is
-#' smaller than this value. Setting it to zero allows compression for any
-#' payload size.
-#' @param apiKeySource The source of the API key for metering requests according to a usage
-#' plan. Valid values are: `HEADER` to read the API key from the
-#' `X-API-Key` header of a request. `AUTHORIZER` to read the API key from
-#' the `UsageIdentifierKey` from a custom authorizer.
-#' @param endpointConfiguration The endpoint configuration of this RestApi showing the endpoint types
-#' and IP address types of the API.
-#' @param policy A stringified JSON policy document that applies to this RestApi
-#' regardless of the caller and Method configuration.
-#' @param tags The key-value map of strings. The valid character set is
-#' \[a-zA-Z+-=._:/\]. The tag key can be up to 128 characters and must not
-#' start with `aws:`. The tag value can be up to 256 characters.
-#' @param disableExecuteApiEndpoint Specifies whether clients can invoke your API by using the default
-#' `execute-api` endpoint. By default, clients can invoke your API with the
-#' default `https://{api_id}.execute-api.{region}.amazonaws.com` endpoint.
-#' To require that clients use a custom domain name to invoke your API,
-#' disable the default endpoint
-#' @param securityPolicy The Transport Layer Security (TLS) version + cipher suite for this
-#' RestApi.
-#' @param endpointAccessMode The endpoint access mode of the RestApi. Only available for RestApis
-#' that use security policies that start with `SecurityPolicy_`.
+#' @param binaryMediaTypes The list of binary media types supported by the RestApi. By default, the RestApi supports only UTF-8-encoded text payloads.
+#' @param minimumCompressionSize A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.
+#' @param apiKeySource The source of the API key for metering requests according to a usage plan. Valid values are: `HEADER` to read the API key from the `X-API-Key` header of a request. `AUTHORIZER` to read the API key from the `UsageIdentifierKey` from a custom authorizer.
+#' @param endpointConfiguration The endpoint configuration of this RestApi showing the endpoint types and IP address types of the API.
+#' @param policy A stringified JSON policy document that applies to this RestApi regardless of the caller and Method configuration.
+#' @param tags The key-value map of strings. The valid character set is \[a-zA-Z+-=._:/\]. The tag key can be up to 128 characters and must not start with `aws:`. The tag value can be up to 256 characters.
+#' @param disableExecuteApiEndpoint Specifies whether clients can invoke your API by using the default `execute-api` endpoint. By default, clients can invoke your API with the default `https://{api_id}.execute-api.{region}.amazonaws.com` endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint
+#' @param securityPolicy The Transport Layer Security (TLS) version + cipher suite for this RestApi.
+#' @param endpointAccessMode The endpoint access mode of the RestApi. Only available for RestApis that use security policies that start with `SecurityPolicy_`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1081,7 +955,7 @@ apigateway_create_resource <- function(restApiId, parentId, pathPart) {
 #'   ),
 #'   disableExecuteApiEndpoint = TRUE|FALSE,
 #'   rootResourceId = "string",
-#'   securityPolicy = "TLS_1_0"|"TLS_1_2"|"SecurityPolicy_TLS13_1_3_2025_09"|"SecurityPolicy_TLS13_1_3_FIPS_2025_09"|"SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_2021_06"|"SecurityPolicy_TLS13_2025_EDGE"|"SecurityPolicy_TLS12_PFS_2025_EDGE"|"SecurityPolicy_TLS12_2018_EDGE",
+#'   securityPolicy = "TLS_1_0"|"TLS_1_2"|"SecurityPolicy_TLS13_1_3_2025_09"|"SecurityPolicy_TLS13_1_3_FIPS_2025_09"|"SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_2021_06"|"SecurityPolicy_TLS13_2025_EDGE"|"SecurityPolicy_TLS12_PFS_2025_EDGE"|"SecurityPolicy_TLS12_2018_EDGE",
 #'   endpointAccessMode = "BASIC"|"STRICT",
 #'   apiStatus = "UPDATING"|"AVAILABLE"|"PENDING"|"FAILED",
 #'   apiStatusMessage = "string"
@@ -1114,7 +988,7 @@ apigateway_create_resource <- function(restApiId, parentId, pathPart) {
 #'     "string"
 #'   ),
 #'   disableExecuteApiEndpoint = TRUE|FALSE,
-#'   securityPolicy = "TLS_1_0"|"TLS_1_2"|"SecurityPolicy_TLS13_1_3_2025_09"|"SecurityPolicy_TLS13_1_3_FIPS_2025_09"|"SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_2021_06"|"SecurityPolicy_TLS13_2025_EDGE"|"SecurityPolicy_TLS12_PFS_2025_EDGE"|"SecurityPolicy_TLS12_2018_EDGE",
+#'   securityPolicy = "TLS_1_0"|"TLS_1_2"|"SecurityPolicy_TLS13_1_3_2025_09"|"SecurityPolicy_TLS13_1_3_FIPS_2025_09"|"SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_2021_06"|"SecurityPolicy_TLS13_2025_EDGE"|"SecurityPolicy_TLS12_PFS_2025_EDGE"|"SecurityPolicy_TLS12_2018_EDGE",
 #'   endpointAccessMode = "BASIC"|"STRICT"
 #' )
 #' ```
@@ -1147,8 +1021,7 @@ apigateway_create_rest_api <- function(name, description = NULL, version = NULL,
 #' for the API
 #'
 #' @description
-#' Creates a new Stage resource that references a pre-existing Deployment
-#' for the API.
+#' Creates a new Stage resource that references a pre-existing Deployment for the API.
 #'
 #' @usage
 #' apigateway_create_stage(restApiId, stageName, deploymentId, description,
@@ -1156,24 +1029,16 @@ apigateway_create_rest_api <- function(name, description = NULL, version = NULL,
 #'   canarySettings, tracingEnabled, tags)
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
-#' @param stageName &#91;required&#93; The name for the Stage resource. Stage names can only contain
-#' alphanumeric characters, hyphens, and underscores. Maximum length is 128
-#' characters.
+#' @param stageName &#91;required&#93; The name for the Stage resource. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.
 #' @param deploymentId &#91;required&#93; The identifier of the Deployment resource for the Stage resource.
 #' @param description The description of the Stage resource.
 #' @param cacheClusterEnabled Whether cache clustering is enabled for the stage.
-#' @param cacheClusterSize The stage's cache capacity in GB. For more information about choosing a
-#' cache size, see [Enabling API caching to enhance
-#' responsiveness](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html).
-#' @param variables A map that defines the stage variables for the new Stage resource.
-#' Variable names can have alphanumeric and underscore characters, and the
-#' values must match `[A-Za-z0-9-._~:/?#&=,]+`.
+#' @param cacheClusterSize The stage's cache capacity in GB. For more information about choosing a cache size, see [Enabling API caching to enhance responsiveness](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html).
+#' @param variables A map that defines the stage variables for the new Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match `[A-Za-z0-9-._~:/?#&=,]+`.
 #' @param documentationVersion The version of the associated API documentation.
 #' @param canarySettings The canary deployment settings of this stage.
 #' @param tracingEnabled Specifies whether active tracing with X-ray is enabled for the Stage.
-#' @param tags The key-value map of strings. The valid character set is
-#' \[a-zA-Z+-=._:/\]. The tag key can be up to 128 characters and must not
-#' start with `aws:`. The tag value can be up to 256 characters.
+#' @param tags The key-value map of strings. The valid character set is \[a-zA-Z+-=._:/\]. The tag key can be up to 128 characters and must not start with `aws:`. The tag value can be up to 256 characters.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1286,8 +1151,7 @@ apigateway_create_stage <- function(restApiId, stageName, deploymentId, descript
 #' associated API stages, specified in the payload
 #'
 #' @description
-#' Creates a usage plan with the throttle and quota limits, as well as the
-#' associated API stages, specified in the payload.
+#' Creates a usage plan with the throttle and quota limits, as well as the associated API stages, specified in the payload.
 #'
 #' @usage
 #' apigateway_create_usage_plan(name, description, apiStages, throttle,
@@ -1298,9 +1162,7 @@ apigateway_create_stage <- function(restApiId, stageName, deploymentId, descript
 #' @param apiStages The associated API stages of the usage plan.
 #' @param throttle The throttling limits of the usage plan.
 #' @param quota The quota of the usage plan.
-#' @param tags The key-value map of strings. The valid character set is
-#' \[a-zA-Z+-=._:/\]. The tag key can be up to 128 characters and must not
-#' start with `aws:`. The tag value can be up to 256 characters.
+#' @param tags The key-value map of strings. The valid character set is \[a-zA-Z+-=._:/\]. The tag key can be up to 128 characters and must not start with `aws:`. The tag value can be up to 256 characters.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1401,8 +1263,7 @@ apigateway_create_usage_plan <- function(name, description = NULL, apiStages = N
 #' @usage
 #' apigateway_create_usage_plan_key(usagePlanId, keyId, keyType)
 #'
-#' @param usagePlanId &#91;required&#93; The Id of the UsagePlan resource representing the usage plan containing
-#' the to-be-created UsagePlanKey resource representing a plan customer.
+#' @param usagePlanId &#91;required&#93; The Id of the UsagePlan resource representing the usage plan containing the to-be-created UsagePlanKey resource representing a plan customer.
 #' @param keyId &#91;required&#93; The identifier of a UsagePlanKey resource for a plan customer.
 #' @param keyType &#91;required&#93; The type of a UsagePlanKey resource for a plan customer.
 #'
@@ -1455,22 +1316,15 @@ apigateway_create_usage_plan_key <- function(usagePlanId, keyId, keyType) {
 #' and become operational
 #'
 #' @description
-#' Creates a VPC link, under the caller's account in a selected region, in
-#' an asynchronous operation that typically takes 2-4 minutes to complete
-#' and become operational. The caller must have permissions to create and
-#' update VPC Endpoint services.
+#' Creates a VPC link, under the caller's account in a selected region, in an asynchronous operation that typically takes 2-4 minutes to complete and become operational. The caller must have permissions to create and update VPC Endpoint services.
 #'
 #' @usage
 #' apigateway_create_vpc_link(name, description, targetArns, tags)
 #'
 #' @param name &#91;required&#93; The name used to label and identify the VPC link.
 #' @param description The description of the VPC link.
-#' @param targetArns &#91;required&#93; The ARN of the network load balancer of the VPC targeted by the VPC
-#' link. The network load balancer must be owned by the same Amazon Web
-#' Services account of the API owner.
-#' @param tags The key-value map of strings. The valid character set is
-#' \[a-zA-Z+-=._:/\]. The tag key can be up to 128 characters and must not
-#' start with `aws:`. The tag value can be up to 256 characters.
+#' @param targetArns &#91;required&#93; The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same Amazon Web Services account of the API owner.
+#' @param tags The key-value map of strings. The valid character set is \[a-zA-Z+-=._:/\]. The tag key can be up to 128 characters and must not start with `aws:`. The tag value can be up to 256 characters.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1627,8 +1481,7 @@ apigateway_delete_authorizer <- function(restApiId, authorizerId) {
 #' apigateway_delete_base_path_mapping(domainName, domainNameId, basePath)
 #'
 #' @param domainName &#91;required&#93; The domain name of the BasePathMapping resource to delete.
-#' @param domainNameId The identifier for the domain name resource. Supported only for private
-#' custom domain names.
+#' @param domainNameId The identifier for the domain name resource. Supported only for private custom domain names.
 #' @param basePath &#91;required&#93; The base path name of the BasePathMapping resource to delete.
 #' 
 #' To specify an empty base path, set this parameter to `'(none)'`.
@@ -1716,8 +1569,7 @@ apigateway_delete_client_certificate <- function(clientCertificateId) {
 #' Deletes a Deployment resource
 #'
 #' @description
-#' Deletes a Deployment resource. Deleting a deployment will only succeed
-#' if there are no Stage resources associated with it.
+#' Deletes a Deployment resource. Deleting a deployment will only succeed if there are no Stage resources associated with it.
 #'
 #' @usage
 #' apigateway_delete_deployment(restApiId, deploymentId)
@@ -1861,8 +1713,7 @@ apigateway_delete_documentation_version <- function(restApiId, documentationVers
 #' apigateway_delete_domain_name(domainName, domainNameId)
 #'
 #' @param domainName &#91;required&#93; The name of the DomainName resource to be deleted.
-#' @param domainNameId The identifier for the domain name resource. Supported only for private
-#' custom domain names.
+#' @param domainNameId The identifier for the domain name resource. Supported only for private custom domain names.
 #'
 #' @return
 #' An empty list.
@@ -1904,10 +1755,7 @@ apigateway_delete_domain_name <- function(domainName, domainNameId = NULL) {
 #' @description
 #' Deletes the DomainNameAccessAssociation resource.
 #' 
-#' Only the AWS account that created the DomainNameAccessAssociation
-#' resource can delete it. To stop an access association source in another
-#' AWS account from accessing your private custom domain name, use the
-#' RejectDomainNameAccessAssociation operation.
+#' Only the AWS account that created the DomainNameAccessAssociation resource can delete it. To stop an access association source in another AWS account from accessing your private custom domain name, use the RejectDomainNameAccessAssociation operation.
 #'
 #' @usage
 #' apigateway_delete_domain_name_access_association(
@@ -1953,8 +1801,7 @@ apigateway_delete_domain_name_access_association <- function(domainNameAccessAss
 #' type on the given RestApi and resets it with the default settings
 #'
 #' @description
-#' Clears any customization of a GatewayResponse of a specified response
-#' type on the given RestApi and resets it with the default settings.
+#' Clears any customization of a GatewayResponse of a specified response type on the given RestApi and resets it with the default settings.
 #'
 #' @usage
 #' apigateway_delete_gateway_response(restApiId, responseType)
@@ -2471,14 +2318,12 @@ apigateway_delete_usage_plan <- function(usagePlanId) {
 #' associated usage plan
 #'
 #' @description
-#' Deletes a usage plan key and remove the underlying API key from the
-#' associated usage plan.
+#' Deletes a usage plan key and remove the underlying API key from the associated usage plan.
 #'
 #' @usage
 #' apigateway_delete_usage_plan_key(usagePlanId, keyId)
 #'
-#' @param usagePlanId &#91;required&#93; The Id of the UsagePlan resource representing the usage plan containing
-#' the to-be-deleted UsagePlanKey resource representing a plan customer.
+#' @param usagePlanId &#91;required&#93; The Id of the UsagePlan resource representing the usage plan containing the to-be-deleted UsagePlanKey resource representing a plan customer.
 #' @param keyId &#91;required&#93; The Id of the UsagePlanKey resource to be deleted.
 #'
 #' @return
@@ -2524,8 +2369,7 @@ apigateway_delete_usage_plan_key <- function(usagePlanId, keyId) {
 #' @usage
 #' apigateway_delete_vpc_link(vpcLinkId)
 #'
-#' @param vpcLinkId &#91;required&#93; The identifier of the VpcLink. It is used in an Integration to reference
-#' this VpcLink.
+#' @param vpcLinkId &#91;required&#93; The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.
 #'
 #' @return
 #' An empty list.
@@ -2662,9 +2506,7 @@ apigateway_flush_stage_cache <- function(restApiId, stageName) {
 #' apigateway_generate_client_certificate(description, tags)
 #'
 #' @param description The description of the ClientCertificate.
-#' @param tags The key-value map of strings. The valid character set is
-#' \[a-zA-Z+-=._:/\]. The tag key can be up to 128 characters and must not
-#' start with `aws:`. The tag value can be up to 256 characters.
+#' @param tags The key-value map of strings. The valid character set is \[a-zA-Z+-=._:/\]. The tag key can be up to 128 characters and must not start with `aws:`. The tag value can be up to 256 characters.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2783,8 +2625,7 @@ apigateway_get_account <- function() {
 #' apigateway_get_api_key(apiKey, includeValue)
 #'
 #' @param apiKey &#91;required&#93; The identifier of the ApiKey resource.
-#' @param includeValue A boolean flag to specify whether (`true`) or not (`false`) the result
-#' contains the key value.
+#' @param includeValue A boolean flag to specify whether (`true`) or not (`false`) the result contains the key value.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2853,13 +2694,10 @@ apigateway_get_api_key <- function(apiKey, includeValue = NULL) {
 #'   includeValues)
 #'
 #' @param position The current pagination position in the paged result set.
-#' @param limit The maximum number of returned results per page. The default value is 25
-#' and the maximum value is 500.
+#' @param limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
 #' @param nameQuery The name of queried API keys.
-#' @param customerId The identifier of a customer in Amazon Web Services Marketplace or an
-#' external system, such as a developer portal.
-#' @param includeValues A boolean flag to specify whether (`true`) or not (`false`) the result
-#' contains key values.
+#' @param customerId The identifier of a customer in Amazon Web Services Marketplace or an external system, such as a developer portal.
+#' @param includeValues A boolean flag to specify whether (`true`) or not (`false`) the result contains key values.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3001,8 +2839,7 @@ apigateway_get_authorizer <- function(restApiId, authorizerId) {
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
 #' @param position The current pagination position in the paged result set.
-#' @param limit The maximum number of returned results per page. The default value is 25
-#' and the maximum value is 500.
+#' @param limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3070,12 +2907,8 @@ apigateway_get_authorizers <- function(restApiId, position = NULL, limit = NULL)
 #' apigateway_get_base_path_mapping(domainName, domainNameId, basePath)
 #'
 #' @param domainName &#91;required&#93; The domain name of the BasePathMapping resource to be described.
-#' @param domainNameId The identifier for the domain name resource. Supported only for private
-#' custom domain names.
-#' @param basePath &#91;required&#93; The base path name that callers of the API must provide as part of the
-#' URL after the domain name. This value must be unique for all of the
-#' mappings across a single API. Specify '(none)' if you do not want
-#' callers to specify any base path name after the domain name.
+#' @param domainNameId The identifier for the domain name resource. Supported only for private custom domain names.
+#' @param basePath &#91;required&#93; The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify any base path name after the domain name.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3130,11 +2963,9 @@ apigateway_get_base_path_mapping <- function(domainName, domainNameId = NULL, ba
 #'   limit)
 #'
 #' @param domainName &#91;required&#93; The domain name of a BasePathMapping resource.
-#' @param domainNameId The identifier for the domain name resource. Supported only for private
-#' custom domain names.
+#' @param domainNameId The identifier for the domain name resource. Supported only for private custom domain names.
 #' @param position The current pagination position in the paged result set.
-#' @param limit The maximum number of returned results per page. The default value is 25
-#' and the maximum value is 500.
+#' @param limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3254,8 +3085,7 @@ apigateway_get_client_certificate <- function(clientCertificateId) {
 #' apigateway_get_client_certificates(position, limit)
 #'
 #' @param position The current pagination position in the paged result set.
-#' @param limit The maximum number of returned results per page. The default value is 25
-#' and the maximum value is 500.
+#' @param limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3323,16 +3153,7 @@ apigateway_get_client_certificates <- function(position = NULL, limit = NULL) {
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
 #' @param deploymentId &#91;required&#93; The identifier of the Deployment resource to get information about.
-#' @param embed A query parameter to retrieve the specified embedded resources of the
-#' returned Deployment resource in the response. In a REST API call, this
-#' `embed` parameter value is a list of comma-separated strings, as in
-#' `GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2`.
-#' The SDK and other platform-dependent libraries might use a different
-#' format for the list. Currently, this request supports only retrieval of
-#' the embedded API summary this way. Hence, the parameter value must be a
-#' single-valued list containing only the `"apisummary"` string. For
-#' example,
-#' `GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary`.
+#' @param embed A query parameter to retrieve the specified embedded resources of the returned Deployment resource in the response. In a REST API call, this `embed` parameter value is a list of comma-separated strings, as in `GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2`. The SDK and other platform-dependent libraries might use a different format for the list. Currently, this request supports only retrieval of the embedded API summary this way. Hence, the parameter value must be a single-valued list containing only the `"apisummary"` string. For example, `GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3399,8 +3220,7 @@ apigateway_get_deployment <- function(restApiId, deploymentId, embed = NULL) {
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
 #' @param position The current pagination position in the paged result set.
-#' @param limit The maximum number of returned results per page. The default value is 25
-#' and the maximum value is 500.
+#' @param limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3533,11 +3353,8 @@ apigateway_get_documentation_part <- function(restApiId, documentationPartId) {
 #' @param nameQuery The name of API entities of the to-be-retrieved documentation parts.
 #' @param path The path of API entities of the to-be-retrieved documentation parts.
 #' @param position The current pagination position in the paged result set.
-#' @param limit The maximum number of returned results per page. The default value is 25
-#' and the maximum value is 500.
-#' @param locationStatus The status of the API documentation parts to retrieve. Valid values are
-#' `DOCUMENTED` for retrieving DocumentationPart resources with content and
-#' `UNDOCUMENTED` for DocumentationPart resources without content.
+#' @param limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
+#' @param locationStatus The status of the API documentation parts to retrieve. Valid values are `DOCUMENTED` for retrieving DocumentationPart resources with content and `UNDOCUMENTED` for DocumentationPart resources without content.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3662,8 +3479,7 @@ apigateway_get_documentation_version <- function(restApiId, documentationVersion
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
 #' @param position The current pagination position in the paged result set.
-#' @param limit The maximum number of returned results per page. The default value is 25
-#' and the maximum value is 500.
+#' @param limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3719,15 +3535,13 @@ apigateway_get_documentation_versions <- function(restApiId, position = NULL, li
 #' URL that can be called
 #'
 #' @description
-#' Represents a domain name that is contained in a simpler, more intuitive
-#' URL that can be called.
+#' Represents a domain name that is contained in a simpler, more intuitive URL that can be called.
 #'
 #' @usage
 #' apigateway_get_domain_name(domainName, domainNameId)
 #'
 #' @param domainName &#91;required&#93; The name of the DomainName resource.
-#' @param domainNameId The identifier for the domain name resource. Required for private custom
-#' domain names.
+#' @param domainNameId The identifier for the domain name resource. Required for private custom domain names.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3758,7 +3572,7 @@ apigateway_get_documentation_versions <- function(restApiId, position = NULL, li
 #'   ),
 #'   domainNameStatus = "AVAILABLE"|"UPDATING"|"PENDING"|"PENDING_CERTIFICATE_REIMPORT"|"PENDING_OWNERSHIP_VERIFICATION"|"FAILED",
 #'   domainNameStatusMessage = "string",
-#'   securityPolicy = "TLS_1_0"|"TLS_1_2"|"SecurityPolicy_TLS13_1_3_2025_09"|"SecurityPolicy_TLS13_1_3_FIPS_2025_09"|"SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_2021_06"|"SecurityPolicy_TLS13_2025_EDGE"|"SecurityPolicy_TLS12_PFS_2025_EDGE"|"SecurityPolicy_TLS12_2018_EDGE",
+#'   securityPolicy = "TLS_1_0"|"TLS_1_2"|"SecurityPolicy_TLS13_1_3_2025_09"|"SecurityPolicy_TLS13_1_3_FIPS_2025_09"|"SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_2021_06"|"SecurityPolicy_TLS13_2025_EDGE"|"SecurityPolicy_TLS12_PFS_2025_EDGE"|"SecurityPolicy_TLS12_2018_EDGE",
 #'   endpointAccessMode = "BASIC"|"STRICT",
 #'   tags = list(
 #'     "string"
@@ -3819,12 +3633,8 @@ apigateway_get_domain_name <- function(domainName, domainNameId = NULL) {
 #'   resourceOwner)
 #'
 #' @param position The current pagination position in the paged result set.
-#' @param limit The maximum number of returned results per page. The default value is 25
-#' and the maximum value is 500.
-#' @param resourceOwner The owner of the domain name access association. Use `SELF` to only list
-#' the domain name access associations owned by your own account. Use
-#' `OTHER_ACCOUNTS` to list the domain name access associations with your
-#' private custom domain names that are owned by other AWS accounts.
+#' @param limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
+#' @param resourceOwner The owner of the domain name access association. Use `SELF` to only list the domain name access associations owned by your own account. Use `OTHER_ACCOUNTS` to list the domain name access associations with your private custom domain names that are owned by other AWS accounts.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3887,8 +3697,7 @@ apigateway_get_domain_name_access_associations <- function(position = NULL, limi
 #' apigateway_get_domain_names(position, limit, resourceOwner)
 #'
 #' @param position The current pagination position in the paged result set.
-#' @param limit The maximum number of returned results per page. The default value is 25
-#' and the maximum value is 500.
+#' @param limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
 #' @param resourceOwner The owner of the domain name access association.
 #'
 #' @return
@@ -3923,7 +3732,7 @@ apigateway_get_domain_name_access_associations <- function(position = NULL, limi
 #'       ),
 #'       domainNameStatus = "AVAILABLE"|"UPDATING"|"PENDING"|"PENDING_CERTIFICATE_REIMPORT"|"PENDING_OWNERSHIP_VERIFICATION"|"FAILED",
 #'       domainNameStatusMessage = "string",
-#'       securityPolicy = "TLS_1_0"|"TLS_1_2"|"SecurityPolicy_TLS13_1_3_2025_09"|"SecurityPolicy_TLS13_1_3_FIPS_2025_09"|"SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_2021_06"|"SecurityPolicy_TLS13_2025_EDGE"|"SecurityPolicy_TLS12_PFS_2025_EDGE"|"SecurityPolicy_TLS12_2018_EDGE",
+#'       securityPolicy = "TLS_1_0"|"TLS_1_2"|"SecurityPolicy_TLS13_1_3_2025_09"|"SecurityPolicy_TLS13_1_3_FIPS_2025_09"|"SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_2021_06"|"SecurityPolicy_TLS13_2025_EDGE"|"SecurityPolicy_TLS12_PFS_2025_EDGE"|"SecurityPolicy_TLS12_2018_EDGE",
 #'       endpointAccessMode = "BASIC"|"STRICT",
 #'       tags = list(
 #'         "string"
@@ -3988,20 +3797,9 @@ apigateway_get_domain_names <- function(position = NULL, limit = NULL, resourceO
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
 #' @param stageName &#91;required&#93; The name of the Stage that will be exported.
-#' @param exportType &#91;required&#93; The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and
-#' 'swagger' for Swagger/OpenAPI 2.0.
-#' @param parameters A key-value map of query string parameters that specify properties of
-#' the export, depending on the requested `exportType`. For `exportType`
-#' `oas30` and `swagger`, any combination of the following parameters are
-#' supported: `extensions='integrations'` or `extensions='apigateway'` will
-#' export the API with x-amazon-apigateway-integration extensions.
-#' `extensions='authorizers'` will export the API with
-#' x-amazon-apigateway-authorizer extensions. `postman` will export the API
-#' with Postman extensions, allowing for import to the Postman tool
-#' @param accepts The content-type of the export, for example `application/json`.
-#' Currently `application/json` and `application/yaml` are supported for
-#' `exportType` of`oas30` and `swagger`. This should be specified in the
-#' `Accept` header for direct API requests.
+#' @param exportType &#91;required&#93; The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and 'swagger' for Swagger/OpenAPI 2.0.
+#' @param parameters A key-value map of query string parameters that specify properties of the export, depending on the requested `exportType`. For `exportType` `oas30` and `swagger`, any combination of the following parameters are supported: `extensions='integrations'` or `extensions='apigateway'` will export the API with x-amazon-apigateway-integration extensions. `extensions='authorizers'` will export the API with x-amazon-apigateway-authorizer extensions. `postman` will export the API with Postman extensions, allowing for import to the Postman tool
+#' @param accepts The content-type of the export, for example `application/json`. Currently `application/json` and `application/yaml` are supported for `exportType` of`oas30` and `swagger`. This should be specified in the `Accept` header for direct API requests.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4053,8 +3851,7 @@ apigateway_get_export <- function(restApiId, stageName, exportType, parameters =
 #' Gets a GatewayResponse of a specified response type on the given RestApi
 #'
 #' @description
-#' Gets a GatewayResponse of a specified response type on the given
-#' RestApi.
+#' Gets a GatewayResponse of a specified response type on the given RestApi.
 #'
 #' @usage
 #' apigateway_get_gateway_response(restApiId, responseType)
@@ -4113,21 +3910,14 @@ apigateway_get_gateway_response <- function(restApiId, responseType) {
 #' Gets the GatewayResponses collection on the given RestApi
 #'
 #' @description
-#' Gets the GatewayResponses collection on the given RestApi. If an API
-#' developer has not added any definitions for gateway responses, the
-#' result will be the API Gateway-generated default GatewayResponses
-#' collection for the supported response types.
+#' Gets the GatewayResponses collection on the given RestApi. If an API developer has not added any definitions for gateway responses, the result will be the API Gateway-generated default GatewayResponses collection for the supported response types.
 #'
 #' @usage
 #' apigateway_get_gateway_responses(restApiId, position, limit)
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
-#' @param position The current pagination position in the paged result set. The
-#' GatewayResponse collection does not support pagination and the position
-#' does not apply here.
-#' @param limit The maximum number of returned results per page. The default value is 25
-#' and the maximum value is 500. The GatewayResponses collection does not
-#' support pagination and the limit does not apply here.
+#' @param position The current pagination position in the paged result set. The GatewayResponse collection does not support pagination and the position does not apply here.
+#' @param limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The GatewayResponses collection does not support pagination and the limit does not apply here.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4525,9 +4315,7 @@ apigateway_get_method_response <- function(restApiId, resourceId, httpMethod, st
 #'
 #' @param restApiId &#91;required&#93; The RestApi identifier under which the Model exists.
 #' @param modelName &#91;required&#93; The name of the model as an identifier.
-#' @param flatten A query parameter of a Boolean value to resolve (`true`) all external
-#' model references and returns a flattened model schema or not (`false`)
-#' The default is `false`.
+#' @param flatten A query parameter of a Boolean value to resolve (`true`) all external model references and returns a flattened model schema or not (`false`) The default is `false`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4578,8 +4366,7 @@ apigateway_get_model <- function(restApiId, modelName, flatten = NULL) {
 #' payload into the structure of a model
 #'
 #' @description
-#' Generates a sample mapping template that can be used to transform a
-#' payload into the structure of a model.
+#' Generates a sample mapping template that can be used to transform a payload into the structure of a model.
 #'
 #' @usage
 #' apigateway_get_model_template(restApiId, modelName)
@@ -4637,8 +4424,7 @@ apigateway_get_model_template <- function(restApiId, modelName) {
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
 #' @param position The current pagination position in the paged result set.
-#' @param limit The maximum number of returned results per page. The default value is 25
-#' and the maximum value is 500.
+#' @param limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4754,8 +4540,7 @@ apigateway_get_request_validator <- function(restApiId, requestValidatorId) {
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
 #' @param position The current pagination position in the paged result set.
-#' @param limit The maximum number of returned results per page. The default value is 25
-#' and the maximum value is 500.
+#' @param limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4816,13 +4601,7 @@ apigateway_get_request_validators <- function(restApiId, position = NULL, limit 
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
 #' @param resourceId &#91;required&#93; The identifier for the Resource resource.
-#' @param embed A query parameter to retrieve the specified resources embedded in the
-#' returned Resource representation in the response. This `embed` parameter
-#' value is a list of comma-separated strings. Currently, the request
-#' supports only retrieval of the embedded Method resources this way. The
-#' query parameter value must be a single-valued list and contain the
-#' `"methods"` string. For example,
-#' `GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods`.
+#' @param embed A query parameter to retrieve the specified resources embedded in the returned Resource representation in the response. This `embed` parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded Method resources this way. The query parameter value must be a single-valued list and contain the `"methods"` string. For example, `GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4949,15 +4728,8 @@ apigateway_get_resource <- function(restApiId, resourceId, embed = NULL) {
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
 #' @param position The current pagination position in the paged result set.
-#' @param limit The maximum number of returned results per page. The default value is 25
-#' and the maximum value is 500.
-#' @param embed A query parameter used to retrieve the specified resources embedded in
-#' the returned Resources resource in the response. This `embed` parameter
-#' value is a list of comma-separated strings. Currently, the request
-#' supports only retrieval of the embedded Method resources this way. The
-#' query parameter value must be a single-valued list and contain the
-#' `"methods"` string. For example,
-#' `GET /restapis/{restapi_id}/resources?embed=methods`.
+#' @param limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
+#' @param embed A query parameter used to retrieve the specified resources embedded in the returned Resources resource in the response. This `embed` parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded Method resources this way. The query parameter value must be a single-valued list and contain the `"methods"` string. For example, `GET /restapis/{restapi_id}/resources?embed=methods`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5124,7 +4896,7 @@ apigateway_get_resources <- function(restApiId, position = NULL, limit = NULL, e
 #'   ),
 #'   disableExecuteApiEndpoint = TRUE|FALSE,
 #'   rootResourceId = "string",
-#'   securityPolicy = "TLS_1_0"|"TLS_1_2"|"SecurityPolicy_TLS13_1_3_2025_09"|"SecurityPolicy_TLS13_1_3_FIPS_2025_09"|"SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_2021_06"|"SecurityPolicy_TLS13_2025_EDGE"|"SecurityPolicy_TLS12_PFS_2025_EDGE"|"SecurityPolicy_TLS12_2018_EDGE",
+#'   securityPolicy = "TLS_1_0"|"TLS_1_2"|"SecurityPolicy_TLS13_1_3_2025_09"|"SecurityPolicy_TLS13_1_3_FIPS_2025_09"|"SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_2021_06"|"SecurityPolicy_TLS13_2025_EDGE"|"SecurityPolicy_TLS12_PFS_2025_EDGE"|"SecurityPolicy_TLS12_2018_EDGE",
 #'   endpointAccessMode = "BASIC"|"STRICT",
 #'   apiStatus = "UPDATING"|"AVAILABLE"|"PENDING"|"FAILED",
 #'   apiStatusMessage = "string"
@@ -5171,8 +4943,7 @@ apigateway_get_rest_api <- function(restApiId) {
 #' apigateway_get_rest_apis(position, limit)
 #'
 #' @param position The current pagination position in the paged result set.
-#' @param limit The maximum number of returned results per page. The default value is 25
-#' and the maximum value is 500.
+#' @param limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5211,7 +4982,7 @@ apigateway_get_rest_api <- function(restApiId) {
 #'       ),
 #'       disableExecuteApiEndpoint = TRUE|FALSE,
 #'       rootResourceId = "string",
-#'       securityPolicy = "TLS_1_0"|"TLS_1_2"|"SecurityPolicy_TLS13_1_3_2025_09"|"SecurityPolicy_TLS13_1_3_FIPS_2025_09"|"SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_2021_06"|"SecurityPolicy_TLS13_2025_EDGE"|"SecurityPolicy_TLS12_PFS_2025_EDGE"|"SecurityPolicy_TLS12_2018_EDGE",
+#'       securityPolicy = "TLS_1_0"|"TLS_1_2"|"SecurityPolicy_TLS13_1_3_2025_09"|"SecurityPolicy_TLS13_1_3_FIPS_2025_09"|"SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_2021_06"|"SecurityPolicy_TLS13_2025_EDGE"|"SecurityPolicy_TLS12_PFS_2025_EDGE"|"SecurityPolicy_TLS12_2018_EDGE",
 #'       endpointAccessMode = "BASIC"|"STRICT",
 #'       apiStatus = "UPDATING"|"AVAILABLE"|"PENDING"|"FAILED",
 #'       apiStatusMessage = "string"
@@ -5262,15 +5033,8 @@ apigateway_get_rest_apis <- function(position = NULL, limit = NULL) {
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
 #' @param stageName &#91;required&#93; The name of the Stage that the SDK will use.
-#' @param sdkType &#91;required&#93; The language for the generated SDK. Currently `java`, `javascript`,
-#' `android`, `objectivec` (for iOS), `swift` (for iOS), and `ruby` are
-#' supported.
-#' @param parameters A string-to-string key-value map of query parameters `sdkType`-dependent
-#' properties of the SDK. For `sdkType` of `objectivec` or `swift`, a
-#' parameter named `classPrefix` is required. For `sdkType` of `android`,
-#' parameters named `groupId`, `artifactId`, `artifactVersion`, and
-#' `invokerPackage` are required. For `sdkType` of `java`, parameters named
-#' `serviceName` and `javaPackageName` are required.
+#' @param sdkType &#91;required&#93; The language for the generated SDK. Currently `java`, `javascript`, `android`, `objectivec` (for iOS), `swift` (for iOS), and `ruby` are supported.
+#' @param parameters A string-to-string key-value map of query parameters `sdkType`-dependent properties of the SDK. For `sdkType` of `objectivec` or `swift`, a parameter named `classPrefix` is required. For `sdkType` of `android`, parameters named `groupId`, `artifactId`, `artifactVersion`, and `invokerPackage` are required. For `sdkType` of `java`, parameters named `serviceName` and `javaPackageName` are required.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5387,8 +5151,7 @@ apigateway_get_sdk_type <- function(id) {
 #' apigateway_get_sdk_types(position, limit)
 #'
 #' @param position The current pagination position in the paged result set.
-#' @param limit The maximum number of returned results per page. The default value is 25
-#' and the maximum value is 500.
+#' @param limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5655,10 +5418,8 @@ apigateway_get_stages <- function(restApiId, deploymentId = NULL) {
 #' apigateway_get_tags(resourceArn, position, limit)
 #'
 #' @param resourceArn &#91;required&#93; The ARN of a resource that can be tagged.
-#' @param position (Not currently supported) The current pagination position in the paged
-#' result set.
-#' @param limit (Not currently supported) The maximum number of returned results per
-#' page. The default value is 25 and the maximum value is 500.
+#' @param position (Not currently supported) The current pagination position in the paged result set.
+#' @param limit (Not currently supported) The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5717,8 +5478,7 @@ apigateway_get_tags <- function(resourceArn, position = NULL, limit = NULL) {
 #' @param startDate &#91;required&#93; The starting date (e.g., 2016-01-01) of the usage data.
 #' @param endDate &#91;required&#93; The ending date (e.g., 2016-12-31) of the usage data.
 #' @param position The current pagination position in the paged result set.
-#' @param limit The maximum number of returned results per page. The default value is 25
-#' and the maximum value is 500.
+#' @param limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5858,10 +5618,8 @@ apigateway_get_usage_plan <- function(usagePlanId) {
 #' @usage
 #' apigateway_get_usage_plan_key(usagePlanId, keyId)
 #'
-#' @param usagePlanId &#91;required&#93; The Id of the UsagePlan resource representing the usage plan containing
-#' the to-be-retrieved UsagePlanKey resource representing a plan customer.
-#' @param keyId &#91;required&#93; The key Id of the to-be-retrieved UsagePlanKey resource representing a
-#' plan customer.
+#' @param usagePlanId &#91;required&#93; The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource representing a plan customer.
+#' @param keyId &#91;required&#93; The key Id of the to-be-retrieved UsagePlanKey resource representing a plan customer.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5910,19 +5668,15 @@ apigateway_get_usage_plan_key <- function(usagePlanId, keyId) {
 #' specified usage plan
 #'
 #' @description
-#' Gets all the usage plan keys representing the API keys added to a
-#' specified usage plan.
+#' Gets all the usage plan keys representing the API keys added to a specified usage plan.
 #'
 #' @usage
 #' apigateway_get_usage_plan_keys(usagePlanId, position, limit, nameQuery)
 #'
-#' @param usagePlanId &#91;required&#93; The Id of the UsagePlan resource representing the usage plan containing
-#' the to-be-retrieved UsagePlanKey resource representing a plan customer.
+#' @param usagePlanId &#91;required&#93; The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource representing a plan customer.
 #' @param position The current pagination position in the paged result set.
-#' @param limit The maximum number of returned results per page. The default value is 25
-#' and the maximum value is 500.
-#' @param nameQuery A query parameter specifying the name of the to-be-returned usage plan
-#' keys.
+#' @param limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
+#' @param nameQuery A query parameter specifying the name of the to-be-returned usage plan keys.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5984,8 +5738,7 @@ apigateway_get_usage_plan_keys <- function(usagePlanId, position = NULL, limit =
 #'
 #' @param position The current pagination position in the paged result set.
 #' @param keyId The identifier of the API key associated with the usage plans.
-#' @param limit The maximum number of returned results per page. The default value is 25
-#' and the maximum value is 500.
+#' @param limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6068,8 +5821,7 @@ apigateway_get_usage_plans <- function(position = NULL, keyId = NULL, limit = NU
 #' @usage
 #' apigateway_get_vpc_link(vpcLinkId)
 #'
-#' @param vpcLinkId &#91;required&#93; The identifier of the VpcLink. It is used in an Integration to reference
-#' this VpcLink.
+#' @param vpcLinkId &#91;required&#93; The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6124,15 +5876,13 @@ apigateway_get_vpc_link <- function(vpcLinkId) {
 #' region
 #'
 #' @description
-#' Gets the VpcLinks collection under the caller's account in a selected
-#' region.
+#' Gets the VpcLinks collection under the caller's account in a selected region.
 #'
 #' @usage
 #' apigateway_get_vpc_links(position, limit)
 #'
 #' @param position The current pagination position in the paged result set.
-#' @param limit The maximum number of returned results per page. The default value is 25
-#' and the maximum value is 500.
+#' @param limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6197,12 +5947,9 @@ apigateway_get_vpc_links <- function(position = NULL, limit = NULL) {
 #' @usage
 #' apigateway_import_api_keys(body, format, failOnWarnings)
 #'
-#' @param body &#91;required&#93; The payload of the POST request to import API keys. For the payload
-#' format, see API Key File Format.
-#' @param format &#91;required&#93; A query parameter to specify the input format to imported API keys.
-#' Currently, only the `csv` format is supported.
-#' @param failOnWarnings A query parameter to indicate whether to rollback ApiKey importation
-#' (`true`) or not (`false`) when error is encountered.
+#' @param body &#91;required&#93; The payload of the POST request to import API keys. For the payload format, see API Key File Format.
+#' @param format &#91;required&#93; A query parameter to specify the input format to imported API keys. Currently, only the `csv` format is supported.
+#' @param failOnWarnings A query parameter to indicate whether to rollback ApiKey importation (`true`) or not (`false`) when error is encountered.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6260,14 +6007,9 @@ apigateway_import_api_keys <- function(body, format, failOnWarnings = NULL) {
 #'   body)
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
-#' @param mode A query parameter to indicate whether to overwrite (`overwrite`) any
-#' existing DocumentationParts definition or to merge (`merge`) the new
-#' definition into the existing one. The default value is `merge`.
-#' @param failOnWarnings A query parameter to specify whether to rollback the documentation
-#' importation (`true`) or not (`false`) when a warning is encountered. The
-#' default value is `false`.
-#' @param body &#91;required&#93; Raw byte array representing the to-be-imported documentation parts. To
-#' import from an OpenAPI file, this is a JSON object.
+#' @param mode A query parameter to indicate whether to overwrite (`overwrite`) any existing DocumentationParts definition or to merge (`merge`) the new definition into the existing one. The default value is `merge`.
+#' @param failOnWarnings A query parameter to specify whether to rollback the documentation importation (`true`) or not (`false`) when a warning is encountered. The default value is `false`.
+#' @param body &#91;required&#93; Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a JSON object.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6320,33 +6062,20 @@ apigateway_import_documentation_parts <- function(restApiId, mode = NULL, failOn
 #' an external API definition file
 #'
 #' @description
-#' A feature of the API Gateway control service for creating a new API from
-#' an external API definition file.
+#' A feature of the API Gateway control service for creating a new API from an external API definition file.
 #'
 #' @usage
 #' apigateway_import_rest_api(failOnWarnings, parameters, body)
 #'
-#' @param failOnWarnings A query parameter to indicate whether to rollback the API creation
-#' (`true`) or not (`false`) when a warning is encountered. The default
-#' value is `false`.
-#' @param parameters A key-value map of context-specific query string parameters specifying
-#' the behavior of different API importing operations. The following shows
-#' operation-specific parameters and their supported values.
+#' @param failOnWarnings A query parameter to indicate whether to rollback the API creation (`true`) or not (`false`) when a warning is encountered. The default value is `false`.
+#' @param parameters A key-value map of context-specific query string parameters specifying the behavior of different API importing operations. The following shows operation-specific parameters and their supported values.
 #' 
-#' To exclude DocumentationParts from the import, set `parameters` as
-#' `ignore=documentation`.
+#' To exclude DocumentationParts from the import, set `parameters` as `ignore=documentation`.
 #' 
-#' To configure the endpoint type, set `parameters` as
-#' `endpointConfigurationTypes=EDGE`,
-#' `endpointConfigurationTypes=REGIONAL`, or
-#' `endpointConfigurationTypes=PRIVATE`. The default endpoint type is
-#' `EDGE`.
+#' To configure the endpoint type, set `parameters` as `endpointConfigurationTypes=EDGE`, `endpointConfigurationTypes=REGIONAL`, or `endpointConfigurationTypes=PRIVATE`. The default endpoint type is `EDGE`.
 #' 
-#' To handle imported `basepath`, set `parameters` as `basepath=ignore`,
-#' `basepath=prepend` or `basepath=split`.
-#' @param body &#91;required&#93; The POST request body containing external API definitions. Currently,
-#' only OpenAPI definition JSON/YAML files are supported. The maximum size
-#' of the API definition file is 6MB.
+#' To handle imported `basepath`, set `parameters` as `basepath=ignore`, `basepath=prepend` or `basepath=split`.
+#' @param body &#91;required&#93; The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6382,7 +6111,7 @@ apigateway_import_documentation_parts <- function(restApiId, mode = NULL, failOn
 #'   ),
 #'   disableExecuteApiEndpoint = TRUE|FALSE,
 #'   rootResourceId = "string",
-#'   securityPolicy = "TLS_1_0"|"TLS_1_2"|"SecurityPolicy_TLS13_1_3_2025_09"|"SecurityPolicy_TLS13_1_3_FIPS_2025_09"|"SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_2021_06"|"SecurityPolicy_TLS13_2025_EDGE"|"SecurityPolicy_TLS12_PFS_2025_EDGE"|"SecurityPolicy_TLS12_2018_EDGE",
+#'   securityPolicy = "TLS_1_0"|"TLS_1_2"|"SecurityPolicy_TLS13_1_3_2025_09"|"SecurityPolicy_TLS13_1_3_FIPS_2025_09"|"SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_2021_06"|"SecurityPolicy_TLS13_2025_EDGE"|"SecurityPolicy_TLS12_PFS_2025_EDGE"|"SecurityPolicy_TLS12_2018_EDGE",
 #'   endpointAccessMode = "BASIC"|"STRICT",
 #'   apiStatus = "UPDATING"|"AVAILABLE"|"PENDING"|"FAILED",
 #'   apiStatusMessage = "string"
@@ -6428,8 +6157,7 @@ apigateway_import_rest_api <- function(failOnWarnings = NULL, parameters = NULL,
 #' type and status code on the given RestApi
 #'
 #' @description
-#' Creates a customization of a GatewayResponse of a specified response
-#' type and status code on the given RestApi.
+#' Creates a customization of a GatewayResponse of a specified response type and status code on the given RestApi.
 #'
 #' @usage
 #' apigateway_put_gateway_response(restApiId, responseType, statusCode,
@@ -6438,10 +6166,8 @@ apigateway_import_rest_api <- function(failOnWarnings = NULL, parameters = NULL,
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
 #' @param responseType &#91;required&#93; The response type of the associated GatewayResponse
 #' @param statusCode The HTTP status code of the GatewayResponse.
-#' @param responseParameters Response parameters (paths, query strings and headers) of the
-#' GatewayResponse as a string-to-string map of key-value pairs.
-#' @param responseTemplates Response templates of the GatewayResponse as a string-to-string map of
-#' key-value pairs.
+#' @param responseParameters Response parameters (paths, query strings and headers) of the GatewayResponse as a string-to-string map of key-value pairs.
+#' @param responseTemplates Response templates of the GatewayResponse as a string-to-string map of key-value pairs.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6515,72 +6241,20 @@ apigateway_put_gateway_response <- function(restApiId, responseType, statusCode 
 #' @param httpMethod &#91;required&#93; Specifies the HTTP method for the integration.
 #' @param type &#91;required&#93; Specifies a put integration input's type.
 #' @param integrationHttpMethod The HTTP method for the integration.
-#' @param uri Specifies Uniform Resource Identifier (URI) of the integration endpoint.
-#' For HTTP or `HTTP_PROXY` integrations, the URI must be a fully formed,
-#' encoded HTTP(S) URL according to the RFC-3986 specification, for either
-#' standard integration, where `connectionType` is not `VPC_LINK`, or
-#' private integration, where `connectionType` is `VPC_LINK`. For a private
-#' HTTP integration, the URI is not used for routing. For `AWS` or
-#' `AWS_PROXY` integrations, the URI is of the form
-#' `arn:aws:apigateway:\{region\}:\{subdomain.service|service\}:path|action/\{service_api`\}.
-#' Here, \{Region\} is the API Gateway region (e.g., us-east-1);
-#' \{service\} is the name of the integrated Amazon Web Services service
-#' (e.g., s3); and \{subdomain\} is a designated subdomain supported by
-#' certain Amazon Web Services service for fast host-name lookup. action
-#' can be used for an Amazon Web Services service action-based API, using
-#' an Action=\{name\}&\{p1\}=\{v1\}&p2=\{v2\}... query string. The
-#' ensuing \{service_api\} refers to a supported action \{name\} plus
-#' any required input parameters. Alternatively, path can be used for an
-#' Amazon Web Services service path-based API. The ensuing service_api
-#' refers to the path to an Amazon Web Services service resource, including
-#' the region of the integrated Amazon Web Services service, if applicable.
-#' For example, for integration with the S3 API of `GetObject`, the `uri`
-#' can be either
-#' `arn:aws:apigateway:us-west-2:s3:action/GetObject&Bucket={bucket}&Key={key}`
-#' or `arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}`.
-#' @param connectionType The type of the network connection to the integration endpoint. The
-#' valid value is `INTERNET` for connections through the public routable
-#' internet or `VPC_LINK` for private connections between API Gateway and a
-#' network load balancer in a VPC. The default value is `INTERNET`.
-#' @param connectionId The ID of the VpcLink used for the integration. Specify this value only
-#' if you specify `VPC_LINK` as the connection type.
+#' @param uri Specifies Uniform Resource Identifier (URI) of the integration endpoint. For HTTP or `HTTP_PROXY` integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the RFC-3986 specification, for either standard integration, where `connectionType` is not `VPC_LINK`, or private integration, where `connectionType` is `VPC_LINK`. For a private HTTP integration, the URI is not used for routing. For `AWS` or `AWS_PROXY` integrations, the URI is of the form `arn:aws:apigateway:\{region\}:\{subdomain.service|service\}:path|action/\{service_api`\}. Here, \{Region\} is the API Gateway region (e.g., us-east-1); \{service\} is the name of the integrated Amazon Web Services service (e.g., s3); and \{subdomain\} is a designated subdomain supported by certain Amazon Web Services service for fast host-name lookup. action can be used for an Amazon Web Services service action-based API, using an Action=\{name\}&\{p1\}=\{v1\}&p2=\{v2\}... query string. The ensuing \{service_api\} refers to a supported action \{name\} plus any required input parameters. Alternatively, path can be used for an Amazon Web Services service path-based API. The ensuing service_api refers to the path to an Amazon Web Services service resource, including the region of the integrated Amazon Web Services service, if applicable. For example, for integration with the S3 API of `GetObject`, the `uri` can be either `arn:aws:apigateway:us-west-2:s3:action/GetObject&Bucket={bucket}&Key={key}` or `arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}`.
+#' @param connectionType The type of the network connection to the integration endpoint. The valid value is `INTERNET` for connections through the public routable internet or `VPC_LINK` for private connections between API Gateway and a network load balancer in a VPC. The default value is `INTERNET`.
+#' @param connectionId The ID of the VpcLink used for the integration. Specify this value only if you specify `VPC_LINK` as the connection type.
 #' @param credentials Specifies whether credentials are required for a put integration.
-#' @param requestParameters A key-value map specifying request parameters that are passed from the
-#' method request to the back end. The key is an integration request
-#' parameter name and the associated value is a method request parameter
-#' value or static value that must be enclosed within single quotes and
-#' pre-encoded as required by the back end. The method request parameter
-#' value must match the pattern of `method.request.{location}.{name}`,
-#' where `location` is `querystring`, `path`, or `header` and `name` must
-#' be a valid and unique method request parameter name.
-#' @param requestTemplates Represents a map of Velocity templates that are applied on the request
-#' payload based on the value of the Content-Type header sent by the
-#' client. The content type value is the key in this map, and the template
-#' (as a String) is the value.
-#' @param passthroughBehavior Specifies the pass-through behavior for incoming requests based on the
-#' Content-Type header in the request, and the available mapping templates
-#' specified as the `requestTemplates` property on the Integration
-#' resource. There are three valid values: `WHEN_NO_MATCH`,
-#' `WHEN_NO_TEMPLATES`, and `NEVER`.
-#' @param cacheNamespace Specifies a group of related cached parameters. By default, API Gateway
-#' uses the resource ID as the `cacheNamespace`. You can specify the same
-#' `cacheNamespace` across resources to return the same cached data for
-#' requests to different resources.
-#' @param cacheKeyParameters A list of request parameters whose values API Gateway caches. To be
-#' valid values for `cacheKeyParameters`, these parameters must also be
-#' specified for Method `requestParameters`.
-#' @param contentHandling Specifies how to handle request payload content type conversions.
-#' Supported values are `CONVERT_TO_BINARY` and `CONVERT_TO_TEXT`, with the
-#' following behaviors:
+#' @param requestParameters A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of `method.request.{location}.{name}`, where `location` is `querystring`, `path`, or `header` and `name` must be a valid and unique method request parameter name.
+#' @param requestTemplates Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value.
+#' @param passthroughBehavior Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the `requestTemplates` property on the Integration resource. There are three valid values: `WHEN_NO_MATCH`, `WHEN_NO_TEMPLATES`, and `NEVER`.
+#' @param cacheNamespace Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the `cacheNamespace`. You can specify the same `cacheNamespace` across resources to return the same cached data for requests to different resources.
+#' @param cacheKeyParameters A list of request parameters whose values API Gateway caches. To be valid values for `cacheKeyParameters`, these parameters must also be specified for Method `requestParameters`.
+#' @param contentHandling Specifies how to handle request payload content type conversions. Supported values are `CONVERT_TO_BINARY` and `CONVERT_TO_TEXT`, with the following behaviors:
 #' 
-#' If this property is not defined, the request payload will be passed
-#' through from the method request to integration request without
-#' modification, provided that the `passthroughBehavior` is configured to
-#' support payload pass-through.
-#' @param timeoutInMillis Custom timeout between 50 and 29,000 milliseconds. The default value is
-#' 29,000 milliseconds or 29 seconds. You can increase the default value to
-#' longer than 29 seconds for Regional or private APIs only.
-#' @param tlsConfig 
+#' If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the `passthroughBehavior` is configured to support payload pass-through.
+#' @param timeoutInMillis Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds. You can increase the default value to longer than 29 seconds for Regional or private APIs only.
+#' @param tlsConfig Specifies the TLS configuration for an integration.
 #' @param responseTransferMode The response transfer mode of the integration.
 #' @param integrationTarget The ALB or NLB listener to send the request to.
 #'
@@ -6698,28 +6372,13 @@ apigateway_put_integration <- function(restApiId, resourceId, httpMethod, type, 
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
 #' @param resourceId &#91;required&#93; Specifies a put integration response request's resource identifier.
 #' @param httpMethod &#91;required&#93; Specifies a put integration response request's HTTP method.
-#' @param statusCode &#91;required&#93; Specifies the status code that is used to map the integration response
-#' to an existing MethodResponse.
+#' @param statusCode &#91;required&#93; Specifies the status code that is used to map the integration response to an existing MethodResponse.
 #' @param selectionPattern Specifies the selection pattern of a put integration response.
-#' @param responseParameters A key-value map specifying response parameters that are passed to the
-#' method response from the back end. The key is a method response header
-#' parameter name and the mapped value is an integration response header
-#' value, a static value enclosed within a pair of single quotes, or a JSON
-#' expression from the integration response body. The mapping key must
-#' match the pattern of `method.response.header.{name}`, where `name` is a
-#' valid and unique header name. The mapped non-static value must match the
-#' pattern of `integration.response.header.{name}` or
-#' `integration.response.body.{JSON-expression}`, where `name` must be a
-#' valid and unique response header name and `JSON-expression` a valid JSON
-#' expression without the `$` prefix.
+#' @param responseParameters A key-value map specifying response parameters that are passed to the method response from the back end. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of `method.response.header.{name}`, where `name` is a valid and unique header name. The mapped non-static value must match the pattern of `integration.response.header.{name}` or `integration.response.body.{JSON-expression}`, where `name` must be a valid and unique response header name and `JSON-expression` a valid JSON expression without the `$` prefix.
 #' @param responseTemplates Specifies a put integration response's templates.
-#' @param contentHandling Specifies how to handle response payload content type conversions.
-#' Supported values are `CONVERT_TO_BINARY` and `CONVERT_TO_TEXT`, with the
-#' following behaviors:
+#' @param contentHandling Specifies how to handle response payload content type conversions. Supported values are `CONVERT_TO_BINARY` and `CONVERT_TO_TEXT`, with the following behaviors:
 #' 
-#' If this property is not defined, the response payload will be passed
-#' through from the integration response to the method response without
-#' modification.
+#' If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6793,38 +6452,14 @@ apigateway_put_integration_response <- function(restApiId, resourceId, httpMetho
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
 #' @param resourceId &#91;required&#93; The Resource identifier for the new Method resource.
 #' @param httpMethod &#91;required&#93; Specifies the method request's HTTP method type.
-#' @param authorizationType &#91;required&#93; The method's authorization type. Valid values are `NONE` for open
-#' access, `AWS_IAM` for using AWS IAM permissions, `CUSTOM` for using a
-#' custom authorizer, or `COGNITO_USER_POOLS` for using a Cognito user
-#' pool.
-#' @param authorizerId Specifies the identifier of an Authorizer to use on this Method, if the
-#' type is CUSTOM or COGNITO_USER_POOLS. The authorizer identifier is
-#' generated by API Gateway when you created the authorizer.
+#' @param authorizationType &#91;required&#93; The method's authorization type. Valid values are `NONE` for open access, `AWS_IAM` for using AWS IAM permissions, `CUSTOM` for using a custom authorizer, or `COGNITO_USER_POOLS` for using a Cognito user pool.
+#' @param authorizerId Specifies the identifier of an Authorizer to use on this Method, if the type is CUSTOM or COGNITO_USER_POOLS. The authorizer identifier is generated by API Gateway when you created the authorizer.
 #' @param apiKeyRequired Specifies whether the method required a valid ApiKey.
-#' @param operationName A human-friendly operation identifier for the method. For example, you
-#' can assign the `operationName` of `ListPets` for the `GET /pets` method
-#' in the `PetStore` example.
-#' @param requestParameters A key-value map defining required or optional method request parameters
-#' that can be accepted by API Gateway. A key defines a method request
-#' parameter name matching the pattern of
-#' `method.request.{location}.{name}`, where `location` is `querystring`,
-#' `path`, or `header` and `name` is a valid and unique parameter name. The
-#' value associated with the key is a Boolean flag indicating whether the
-#' parameter is required (`true`) or optional (`false`). The method request
-#' parameter names defined here are available in Integration to be mapped
-#' to integration request parameters or body-mapping templates.
-#' @param requestModels Specifies the Model resources used for the request's content type.
-#' Request models are represented as a key/value map, with a content type
-#' as the key and a Model name as the value.
+#' @param operationName A human-friendly operation identifier for the method. For example, you can assign the `operationName` of `ListPets` for the `GET /pets` method in the `PetStore` example.
+#' @param requestParameters A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key defines a method request parameter name matching the pattern of `method.request.{location}.{name}`, where `location` is `querystring`, `path`, or `header` and `name` is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (`true`) or optional (`false`). The method request parameter names defined here are available in Integration to be mapped to integration request parameters or body-mapping templates.
+#' @param requestModels Specifies the Model resources used for the request's content type. Request models are represented as a key/value map, with a content type as the key and a Model name as the value.
 #' @param requestValidatorId The identifier of a RequestValidator for validating the method request.
-#' @param authorizationScopes A list of authorization scopes configured on the method. The scopes are
-#' used with a `COGNITO_USER_POOLS` authorizer to authorize the method
-#' invocation. The authorization works by matching the method scopes
-#' against the scopes parsed from the access token in the incoming request.
-#' The method invocation is authorized if any method scopes matches a
-#' claimed scope in the access token. Otherwise, the invocation is not
-#' authorized. When the method scope is configured, the client must provide
-#' an access token instead of an identity token for authorization purposes.
+#' @param authorizationScopes A list of authorization scopes configured on the method. The scopes are used with a `COGNITO_USER_POOLS` authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6958,22 +6593,8 @@ apigateway_put_method <- function(restApiId, resourceId, httpMethod, authorizati
 #' @param resourceId &#91;required&#93; The Resource identifier for the Method resource.
 #' @param httpMethod &#91;required&#93; The HTTP verb of the Method resource.
 #' @param statusCode &#91;required&#93; The method response's status code.
-#' @param responseParameters A key-value map specifying required or optional response parameters that
-#' API Gateway can send back to the caller. A key defines a method response
-#' header name and the associated value is a Boolean flag indicating
-#' whether the method response parameter is required or not. The method
-#' response header names must match the pattern of
-#' `method.response.header.{name}`, where `name` is a valid and unique
-#' header name. The response parameter names defined here are available in
-#' the integration response to be mapped from an integration response
-#' header expressed in `integration.response.header.{name}`, a static value
-#' enclosed within a pair of single quotes (e.g., `'application/json'`), or
-#' a JSON expression from the back-end response payload in the form of
-#' `integration.response.body.{JSON-expression}`, where `JSON-expression`
-#' is a valid JSON expression without the `$` prefix.)
-#' @param responseModels Specifies the Model resources used for the response's content type.
-#' Response models are represented as a key/value map, with a content type
-#' as the key and a Model name as the value.
+#' @param responseParameters A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header name and the associated value is a Boolean flag indicating whether the method response parameter is required or not. The method response header names must match the pattern of `method.response.header.{name}`, where `name` is a valid and unique header name. The response parameter names defined here are available in the integration response to be mapped from an integration response header expressed in `integration.response.header.{name}`, a static value enclosed within a pair of single quotes (e.g., `'application/json'`), or a JSON expression from the back-end response payload in the form of `integration.response.body.{JSON-expression}`, where `JSON-expression` is a valid JSON expression without the `$` prefix.)
+#' @param responseModels Specifies the Model resources used for the response's content type. Response models are represented as a key/value map, with a content type as the key and a Model name as the value.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7033,28 +6654,17 @@ apigateway_put_method_response <- function(restApiId, resourceId, httpMethod, st
 #' API with an input of external API definitions
 #'
 #' @description
-#' A feature of the API Gateway control service for updating an existing
-#' API with an input of external API definitions. The update can take the
-#' form of merging the supplied definition into the existing API or
-#' overwriting the existing API.
+#' A feature of the API Gateway control service for updating an existing API with an input of external API definitions. The update can take the form of merging the supplied definition into the existing API or overwriting the existing API.
 #'
 #' @usage
 #' apigateway_put_rest_api(restApiId, mode, failOnWarnings, parameters,
 #'   body)
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
-#' @param mode The `mode` query parameter to specify the update mode. Valid values are
-#' "merge" and "overwrite". By default, the update mode is "merge".
-#' @param failOnWarnings A query parameter to indicate whether to rollback the API update
-#' (`true`) or not (`false`) when a warning is encountered. The default
-#' value is `false`.
-#' @param parameters Custom header parameters as part of the request. For example, to exclude
-#' DocumentationParts from an imported API, set `ignore=documentation` as a
-#' `parameters` value, as in the AWS CLI command of
-#' `aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'`.
-#' @param body &#91;required&#93; The PUT request body containing external API definitions. Currently,
-#' only OpenAPI definition JSON/YAML files are supported. The maximum size
-#' of the API definition file is 6MB.
+#' @param mode The `mode` query parameter to specify the update mode. Valid values are "merge" and "overwrite". By default, the update mode is "merge".
+#' @param failOnWarnings A query parameter to indicate whether to rollback the API update (`true`) or not (`false`) when a warning is encountered. The default value is `false`.
+#' @param parameters Custom header parameters as part of the request. For example, to exclude DocumentationParts from an imported API, set `ignore=documentation` as a `parameters` value, as in the AWS CLI command of `aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'`.
+#' @param body &#91;required&#93; The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7090,7 +6700,7 @@ apigateway_put_method_response <- function(restApiId, resourceId, httpMethod, st
 #'   ),
 #'   disableExecuteApiEndpoint = TRUE|FALSE,
 #'   rootResourceId = "string",
-#'   securityPolicy = "TLS_1_0"|"TLS_1_2"|"SecurityPolicy_TLS13_1_3_2025_09"|"SecurityPolicy_TLS13_1_3_FIPS_2025_09"|"SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_2021_06"|"SecurityPolicy_TLS13_2025_EDGE"|"SecurityPolicy_TLS12_PFS_2025_EDGE"|"SecurityPolicy_TLS12_2018_EDGE",
+#'   securityPolicy = "TLS_1_0"|"TLS_1_2"|"SecurityPolicy_TLS13_1_3_2025_09"|"SecurityPolicy_TLS13_1_3_FIPS_2025_09"|"SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_2021_06"|"SecurityPolicy_TLS13_2025_EDGE"|"SecurityPolicy_TLS12_PFS_2025_EDGE"|"SecurityPolicy_TLS12_2018_EDGE",
 #'   endpointAccessMode = "BASIC"|"STRICT",
 #'   apiStatus = "UPDATING"|"AVAILABLE"|"PENDING"|"FAILED",
 #'   apiStatusMessage = "string"
@@ -7138,13 +6748,9 @@ apigateway_put_rest_api <- function(restApiId, mode = NULL, failOnWarnings = NUL
 #' name
 #'
 #' @description
-#' Rejects a domain name access association with a private custom domain
-#' name.
+#' Rejects a domain name access association with a private custom domain name.
 #' 
-#' To reject a domain name access association with an access association
-#' source in another AWS account, use this operation. To remove a domain
-#' name access association with an access association source in your own
-#' account, use the DeleteDomainNameAccessAssociation operation.
+#' To reject a domain name access association with an access association source in another AWS account, use this operation. To remove a domain name access association with an access association source in your own account, use the DeleteDomainNameAccessAssociation operation.
 #'
 #' @usage
 #' apigateway_reject_domain_name_access_association(
@@ -7197,9 +6803,7 @@ apigateway_reject_domain_name_access_association <- function(domainNameAccessAss
 #' apigateway_tag_resource(resourceArn, tags)
 #'
 #' @param resourceArn &#91;required&#93; The ARN of a resource that can be tagged.
-#' @param tags &#91;required&#93; The key-value map of strings. The valid character set is
-#' \[a-zA-Z+-=._:/\]. The tag key can be up to 128 characters and must not
-#' start with `aws:`. The tag value can be up to 256 characters.
+#' @param tags &#91;required&#93; The key-value map of strings. The valid character set is \[a-zA-Z+-=._:/\]. The tag key can be up to 128 characters and must not start with `aws:`. The tag value can be up to 256 characters.
 #'
 #' @return
 #' An empty list.
@@ -7242,8 +6846,7 @@ apigateway_tag_resource <- function(resourceArn, tags) {
 #' parameters, and an incoming request body
 #'
 #' @description
-#' Simulate the execution of an Authorizer in your RestApi with headers,
-#' parameters, and an incoming request body.
+#' Simulate the execution of an Authorizer in your RestApi with headers, parameters, and an incoming request body.
 #'
 #' @usage
 #' apigateway_test_invoke_authorizer(restApiId, authorizerId, headers,
@@ -7252,18 +6855,11 @@ apigateway_tag_resource <- function(resourceArn, tags) {
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
 #' @param authorizerId &#91;required&#93; Specifies a test invoke authorizer request's Authorizer ID.
-#' @param headers A key-value map of headers to simulate an incoming invocation request.
-#' This is where the incoming authorization token, or identity source,
-#' should be specified.
-#' @param multiValueHeaders The headers as a map from string to list of values to simulate an
-#' incoming invocation request. This is where the incoming authorization
-#' token, or identity source, may be specified.
-#' @param pathWithQueryString The URI path, including query string, of the simulated invocation
-#' request. Use this to specify path parameters and query string
-#' parameters.
+#' @param headers A key-value map of headers to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, should be specified.
+#' @param multiValueHeaders The headers as a map from string to list of values to simulate an incoming invocation request. This is where the incoming authorization token, or identity source, may be specified.
+#' @param pathWithQueryString The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.
 #' @param body The simulated request body of an incoming invocation request.
-#' @param stageVariables A key-value map of stage variables to simulate an invocation on a
-#' deployed Stage.
+#' @param stageVariables A key-value map of stage variables to simulate an invocation on a deployed Stage.
 #' @param additionalContext A key-value map of additional context variables.
 #'
 #' @return
@@ -7338,8 +6934,7 @@ apigateway_test_invoke_authorizer <- function(restApiId, authorizerId, headers =
 #' parameters, and an incoming request body
 #'
 #' @description
-#' Simulate the invocation of a Method in your RestApi with headers,
-#' parameters, and an incoming request body.
+#' Simulate the invocation of a Method in your RestApi with headers, parameters, and an incoming request body.
 #'
 #' @usage
 #' apigateway_test_invoke_method(restApiId, resourceId, httpMethod,
@@ -7349,18 +6944,12 @@ apigateway_test_invoke_authorizer <- function(restApiId, authorizerId, headers =
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
 #' @param resourceId &#91;required&#93; Specifies a test invoke method request's resource ID.
 #' @param httpMethod &#91;required&#93; Specifies a test invoke method request's HTTP method.
-#' @param pathWithQueryString The URI path, including query string, of the simulated invocation
-#' request. Use this to specify path parameters and query string
-#' parameters.
+#' @param pathWithQueryString The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.
 #' @param body The simulated request body of an incoming invocation request.
 #' @param headers A key-value map of headers to simulate an incoming invocation request.
-#' @param multiValueHeaders The headers as a map from string to list of values to simulate an
-#' incoming invocation request.
-#' @param clientCertificateId A ClientCertificate identifier to use in the test invocation. API
-#' Gateway will use the certificate when making the HTTPS request to the
-#' defined back-end endpoint.
-#' @param stageVariables A key-value map of stage variables to simulate an invocation on a
-#' deployed Stage.
+#' @param multiValueHeaders The headers as a map from string to list of values to simulate an incoming invocation request.
+#' @param clientCertificateId A ClientCertificate identifier to use in the test invocation. API Gateway will use the certificate when making the HTTPS request to the defined back-end endpoint.
+#' @param stageVariables A key-value map of stage variables to simulate an invocation on a deployed Stage.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7484,8 +7073,7 @@ apigateway_untag_resource <- function(resourceArn, tagKeys) {
 #' @usage
 #' apigateway_update_account(patchOperations)
 #'
-#' @param patchOperations For more information about supported patch operations, see [Patch
-#' Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
+#' @param patchOperations For more information about supported patch operations, see [Patch Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -7550,8 +7138,7 @@ apigateway_update_account <- function(patchOperations = NULL) {
 #' apigateway_update_api_key(apiKey, patchOperations)
 #'
 #' @param apiKey &#91;required&#93; The identifier of the ApiKey resource to be updated.
-#' @param patchOperations For more information about supported patch operations, see [Patch
-#' Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
+#' @param patchOperations For more information about supported patch operations, see [Patch Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -7627,8 +7214,7 @@ apigateway_update_api_key <- function(apiKey, patchOperations = NULL) {
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
 #' @param authorizerId &#91;required&#93; The identifier of the Authorizer resource.
-#' @param patchOperations For more information about supported patch operations, see [Patch
-#' Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
+#' @param patchOperations For more information about supported patch operations, see [Patch Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -7699,13 +7285,11 @@ apigateway_update_authorizer <- function(restApiId, authorizerId, patchOperation
 #'   patchOperations)
 #'
 #' @param domainName &#91;required&#93; The domain name of the BasePathMapping resource to change.
-#' @param domainNameId The identifier for the domain name resource. Supported only for private
-#' custom domain names.
+#' @param domainNameId The identifier for the domain name resource. Supported only for private custom domain names.
 #' @param basePath &#91;required&#93; The base path of the BasePathMapping resource to change.
 #' 
 #' To specify an empty base path, set this parameter to `'(none)'`.
-#' @param patchOperations For more information about supported patch operations, see [Patch
-#' Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
+#' @param patchOperations For more information about supported patch operations, see [Patch Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -7768,8 +7352,7 @@ apigateway_update_base_path_mapping <- function(domainName, domainNameId = NULL,
 #'   patchOperations)
 #'
 #' @param clientCertificateId &#91;required&#93; The identifier of the ClientCertificate resource to be updated.
-#' @param patchOperations For more information about supported patch operations, see [Patch
-#' Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
+#' @param patchOperations For more information about supported patch operations, see [Patch Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -7838,10 +7421,8 @@ apigateway_update_client_certificate <- function(clientCertificateId, patchOpera
 #' apigateway_update_deployment(restApiId, deploymentId, patchOperations)
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
-#' @param deploymentId &#91;required&#93; The replacement identifier for the Deployment resource to change
-#' information about.
-#' @param patchOperations For more information about supported patch operations, see [Patch
-#' Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
+#' @param deploymentId &#91;required&#93; The replacement identifier for the Deployment resource to change information about.
+#' @param patchOperations For more information about supported patch operations, see [Patch Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -7914,8 +7495,7 @@ apigateway_update_deployment <- function(restApiId, deploymentId, patchOperation
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
 #' @param documentationPartId &#91;required&#93; The identifier of the to-be-updated documentation part.
-#' @param patchOperations For more information about supported patch operations, see [Patch
-#' Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
+#' @param patchOperations For more information about supported patch operations, see [Patch Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -7984,8 +7564,7 @@ apigateway_update_documentation_part <- function(restApiId, documentationPartId,
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
 #' @param documentationVersion &#91;required&#93; The version identifier of the to-be-updated documentation version.
-#' @param patchOperations For more information about supported patch operations, see [Patch
-#' Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
+#' @param patchOperations For more information about supported patch operations, see [Patch Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -8048,10 +7627,8 @@ apigateway_update_documentation_version <- function(restApiId, documentationVers
 #' apigateway_update_domain_name(domainName, domainNameId, patchOperations)
 #'
 #' @param domainName &#91;required&#93; The name of the DomainName resource to be changed.
-#' @param domainNameId The identifier for the domain name resource. Supported only for private
-#' custom domain names.
-#' @param patchOperations For more information about supported patch operations, see [Patch
-#' Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
+#' @param domainNameId The identifier for the domain name resource. Supported only for private custom domain names.
+#' @param patchOperations For more information about supported patch operations, see [Patch Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -8082,7 +7659,7 @@ apigateway_update_documentation_version <- function(restApiId, documentationVers
 #'   ),
 #'   domainNameStatus = "AVAILABLE"|"UPDATING"|"PENDING"|"PENDING_CERTIFICATE_REIMPORT"|"PENDING_OWNERSHIP_VERIFICATION"|"FAILED",
 #'   domainNameStatusMessage = "string",
-#'   securityPolicy = "TLS_1_0"|"TLS_1_2"|"SecurityPolicy_TLS13_1_3_2025_09"|"SecurityPolicy_TLS13_1_3_FIPS_2025_09"|"SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_2021_06"|"SecurityPolicy_TLS13_2025_EDGE"|"SecurityPolicy_TLS12_PFS_2025_EDGE"|"SecurityPolicy_TLS12_2018_EDGE",
+#'   securityPolicy = "TLS_1_0"|"TLS_1_2"|"SecurityPolicy_TLS13_1_3_2025_09"|"SecurityPolicy_TLS13_1_3_FIPS_2025_09"|"SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_2021_06"|"SecurityPolicy_TLS13_2025_EDGE"|"SecurityPolicy_TLS12_PFS_2025_EDGE"|"SecurityPolicy_TLS12_2018_EDGE",
 #'   endpointAccessMode = "BASIC"|"STRICT",
 #'   tags = list(
 #'     "string"
@@ -8145,8 +7722,7 @@ apigateway_update_domain_name <- function(domainName, domainNameId = NULL, patch
 #' RestApi
 #'
 #' @description
-#' Updates a GatewayResponse of a specified response type on the given
-#' RestApi.
+#' Updates a GatewayResponse of a specified response type on the given RestApi.
 #'
 #' @usage
 #' apigateway_update_gateway_response(restApiId, responseType,
@@ -8154,8 +7730,7 @@ apigateway_update_domain_name <- function(domainName, domainNameId = NULL, patch
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
 #' @param responseType &#91;required&#93; The response type of the associated GatewayResponse.
-#' @param patchOperations For more information about supported patch operations, see [Patch
-#' Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
+#' @param patchOperations For more information about supported patch operations, see [Patch Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -8225,8 +7800,7 @@ apigateway_update_gateway_response <- function(restApiId, responseType, patchOpe
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
 #' @param resourceId &#91;required&#93; Represents an update integration request's resource identifier.
 #' @param httpMethod &#91;required&#93; Represents an update integration request's HTTP method.
-#' @param patchOperations For more information about supported patch operations, see [Patch
-#' Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
+#' @param patchOperations For more information about supported patch operations, see [Patch Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -8326,8 +7900,7 @@ apigateway_update_integration <- function(restApiId, resourceId, httpMethod, pat
 #' @param resourceId &#91;required&#93; Specifies an update integration response request's resource identifier.
 #' @param httpMethod &#91;required&#93; Specifies an update integration response request's HTTP method.
 #' @param statusCode &#91;required&#93; Specifies an update integration response request's status code.
-#' @param patchOperations For more information about supported patch operations, see [Patch
-#' Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
+#' @param patchOperations For more information about supported patch operations, see [Patch Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -8399,8 +7972,7 @@ apigateway_update_integration_response <- function(restApiId, resourceId, httpMe
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
 #' @param resourceId &#91;required&#93; The Resource identifier for the Method resource.
 #' @param httpMethod &#91;required&#93; The HTTP verb of the Method resource.
-#' @param patchOperations For more information about supported patch operations, see [Patch
-#' Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
+#' @param patchOperations For more information about supported patch operations, see [Patch Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -8528,8 +8100,7 @@ apigateway_update_method <- function(restApiId, resourceId, httpMethod, patchOpe
 #' @param resourceId &#91;required&#93; The Resource identifier for the MethodResponse resource.
 #' @param httpMethod &#91;required&#93; The HTTP verb of the Method resource.
 #' @param statusCode &#91;required&#93; The status code for the MethodResponse resource.
-#' @param patchOperations For more information about supported patch operations, see [Patch
-#' Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
+#' @param patchOperations For more information about supported patch operations, see [Patch Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -8590,16 +8161,14 @@ apigateway_update_method_response <- function(restApiId, resourceId, httpMethod,
 #' Changes information about a model
 #'
 #' @description
-#' Changes information about a model. The maximum size of the model is 400
-#' KB.
+#' Changes information about a model. The maximum size of the model is 400 KB.
 #'
 #' @usage
 #' apigateway_update_model(restApiId, modelName, patchOperations)
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
 #' @param modelName &#91;required&#93; The name of the model to update.
-#' @param patchOperations For more information about supported patch operations, see [Patch
-#' Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
+#' @param patchOperations For more information about supported patch operations, see [Patch Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -8664,8 +8233,7 @@ apigateway_update_model <- function(restApiId, modelName, patchOperations = NULL
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
 #' @param requestValidatorId &#91;required&#93; The identifier of RequestValidator to be updated.
-#' @param patchOperations For more information about supported patch operations, see [Patch
-#' Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
+#' @param patchOperations For more information about supported patch operations, see [Patch Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -8728,8 +8296,7 @@ apigateway_update_request_validator <- function(restApiId, requestValidatorId, p
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
 #' @param resourceId &#91;required&#93; The identifier of the Resource resource.
-#' @param patchOperations For more information about supported patch operations, see [Patch
-#' Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
+#' @param patchOperations For more information about supported patch operations, see [Patch Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -8860,8 +8427,7 @@ apigateway_update_resource <- function(restApiId, resourceId, patchOperations = 
 #' apigateway_update_rest_api(restApiId, patchOperations)
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
-#' @param patchOperations For more information about supported patch operations, see [Patch
-#' Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
+#' @param patchOperations For more information about supported patch operations, see [Patch Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -8897,7 +8463,7 @@ apigateway_update_resource <- function(restApiId, resourceId, patchOperations = 
 #'   ),
 #'   disableExecuteApiEndpoint = TRUE|FALSE,
 #'   rootResourceId = "string",
-#'   securityPolicy = "TLS_1_0"|"TLS_1_2"|"SecurityPolicy_TLS13_1_3_2025_09"|"SecurityPolicy_TLS13_1_3_FIPS_2025_09"|"SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_2021_06"|"SecurityPolicy_TLS13_2025_EDGE"|"SecurityPolicy_TLS12_PFS_2025_EDGE"|"SecurityPolicy_TLS12_2018_EDGE",
+#'   securityPolicy = "TLS_1_0"|"TLS_1_2"|"SecurityPolicy_TLS13_1_3_2025_09"|"SecurityPolicy_TLS13_1_3_FIPS_2025_09"|"SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_FIPS_PFS_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_PQ_2025_09"|"SecurityPolicy_TLS13_1_2_2021_06"|"SecurityPolicy_TLS13_2025_EDGE"|"SecurityPolicy_TLS12_PFS_2025_EDGE"|"SecurityPolicy_TLS12_2018_EDGE",
 #'   endpointAccessMode = "BASIC"|"STRICT",
 #'   apiStatus = "UPDATING"|"AVAILABLE"|"PENDING"|"FAILED",
 #'   apiStatusMessage = "string"
@@ -8953,8 +8519,7 @@ apigateway_update_rest_api <- function(restApiId, patchOperations = NULL) {
 #'
 #' @param restApiId &#91;required&#93; The string identifier of the associated RestApi.
 #' @param stageName &#91;required&#93; The name of the Stage resource to change information about.
-#' @param patchOperations For more information about supported patch operations, see [Patch
-#' Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
+#' @param patchOperations For more information about supported patch operations, see [Patch Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -9055,17 +8620,14 @@ apigateway_update_stage <- function(restApiId, stageName, patchOperations = NULL
 #' associated with a specified API key
 #'
 #' @description
-#' Grants a temporary extension to the remaining quota of a usage plan
-#' associated with a specified API key.
+#' Grants a temporary extension to the remaining quota of a usage plan associated with a specified API key.
 #'
 #' @usage
 #' apigateway_update_usage(usagePlanId, keyId, patchOperations)
 #'
 #' @param usagePlanId &#91;required&#93; The Id of the usage plan associated with the usage data.
-#' @param keyId &#91;required&#93; The identifier of the API key associated with the usage plan in which a
-#' temporary extension is granted to the remaining quota.
-#' @param patchOperations For more information about supported patch operations, see [Patch
-#' Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
+#' @param keyId &#91;required&#93; The identifier of the API key associated with the usage plan in which a temporary extension is granted to the remaining quota.
+#' @param patchOperations For more information about supported patch operations, see [Patch Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -9134,8 +8696,7 @@ apigateway_update_usage <- function(usagePlanId, keyId, patchOperations = NULL) 
 #' apigateway_update_usage_plan(usagePlanId, patchOperations)
 #'
 #' @param usagePlanId &#91;required&#93; The Id of the to-be-updated usage plan.
-#' @param patchOperations For more information about supported patch operations, see [Patch
-#' Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
+#' @param patchOperations For more information about supported patch operations, see [Patch Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -9219,10 +8780,8 @@ apigateway_update_usage_plan <- function(usagePlanId, patchOperations = NULL) {
 #' @usage
 #' apigateway_update_vpc_link(vpcLinkId, patchOperations)
 #'
-#' @param vpcLinkId &#91;required&#93; The identifier of the VpcLink. It is used in an Integration to reference
-#' this VpcLink.
-#' @param patchOperations For more information about supported patch operations, see [Patch
-#' Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
+#' @param vpcLinkId &#91;required&#93; The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.
+#' @param patchOperations For more information about supported patch operations, see [Patch Operations](https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html).
 #'
 #' @return
 #' A list with the following syntax:

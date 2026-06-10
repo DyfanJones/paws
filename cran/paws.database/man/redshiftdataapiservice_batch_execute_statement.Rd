@@ -13,6 +13,7 @@ redshiftdataapiservice_batch_execute_statement(
   Database = NULL,
   WithEvent = NULL,
   StatementName = NULL,
+  Parameters = NULL,
   WorkgroupName = NULL,
   ClientToken = NULL,
   ResultFormat = NULL,
@@ -21,45 +22,29 @@ redshiftdataapiservice_batch_execute_statement(
 )
 }
 \arguments{
-\item{Sqls}{[required] One or more SQL statements to run. The SQL statements are run as a
-single transaction. They run serially in the order of the array.
-Subsequent SQL statements don't start until the previous statement in
-the array completes. If any SQL statement fails, then because they are
-run as one transaction, all work is rolled back.}
+\item{Sqls}{[required] One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially in the order of the array. Subsequent SQL statements don't start until the previous statement in the array completes. If any SQL statement fails, then because they are run as one transaction, all work is rolled back.}
 
-\item{ClusterIdentifier}{The cluster identifier. This parameter is required when connecting to a
-cluster and authenticating using either Secrets Manager or temporary
-credentials.}
+\item{ClusterIdentifier}{The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials.}
 
-\item{SecretArn}{The name or ARN of the secret that enables access to the database. This
-parameter is required when authenticating using Secrets Manager.}
+\item{SecretArn}{The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager.}
 
-\item{DbUser}{The database user name. This parameter is required when connecting to a
-cluster as a database user and authenticating using temporary
-credentials.}
+\item{DbUser}{The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials.}
 
-\item{Database}{The name of the database. This parameter is required when authenticating
-using either Secrets Manager or temporary credentials.}
+\item{Database}{The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials.}
 
-\item{WithEvent}{A value that indicates whether to send an event to the Amazon
-EventBridge event bus after the SQL statements run.}
+\item{WithEvent}{A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statements run.}
 
-\item{StatementName}{The name of the SQL statements. You can name the SQL statements when you
-create them to identify the query.}
+\item{StatementName}{The name of the SQL statements. You can name the SQL statements when you create them to identify the query.}
 
-\item{WorkgroupName}{The serverless workgroup name or Amazon Resource Name (ARN). This
-parameter is required when connecting to a serverless workgroup and
-authenticating using either Secrets Manager or temporary credentials.}
+\item{Parameters}{The parameters for the SQL statements. The parameters are shared across all SQL statements in the batch.}
 
-\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request.}
+\item{WorkgroupName}{The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.}
 
-\item{ResultFormat}{The data format of the result of the SQL statement. If no format is
-specified, the default is JSON.}
+\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.}
 
-\item{SessionKeepAliveSeconds}{The number of seconds to keep the session alive after the query
-finishes. The maximum time a session can keep alive is 24 hours. After
-24 hours, the session is forced closed and the query is terminated.}
+\item{ResultFormat}{The data format of the result of the SQL statement. If no format is specified, the default is JSON.}
+
+\item{SessionKeepAliveSeconds}{The number of seconds to keep the session alive after the query finishes. The maximum time a session can keep alive is 24 hours. After 24 hours, the session is forced closed and the query is terminated.}
 
 \item{SessionId}{The session identifier of the query.}
 }

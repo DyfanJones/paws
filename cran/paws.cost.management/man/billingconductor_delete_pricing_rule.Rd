@@ -8,8 +8,7 @@ Name (ARN)}
 billingconductor_delete_pricing_rule(Arn)
 }
 \arguments{
-\item{Arn}{[required] The Amazon Resource Name (ARN) of the pricing rule that you are
-deleting.}
+\item{Arn}{[required] The Amazon Resource Name (ARN) of the pricing rule that you are deleting.}
 }
 \description{
 Deletes the pricing rule that's identified by the input Amazon Resource Name (ARN).

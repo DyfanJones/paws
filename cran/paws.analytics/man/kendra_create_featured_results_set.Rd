@@ -23,34 +23,15 @@ kendra_create_featured_results_set(
 
 \item{Description}{A description for the set of featured results.}
 
-\item{ClientToken}{A token that you provide to identify the request to create a set of
-featured results. Multiple calls to the
-\code{\link[=kendra_create_featured_results_set]{create_featured_results_set}} API
-with the same client token will create only one featured results set.}
+\item{ClientToken}{A token that you provide to identify the request to create a set of featured results. Multiple calls to the \code{\link[=kendra_create_featured_results_set]{create_featured_results_set}} API with the same client token will create only one featured results set.}
 
-\item{Status}{The current status of the set of featured results. When the value is
-\code{ACTIVE}, featured results are ready for use. You can still configure
-your settings before setting the status to \code{ACTIVE}. You can set the
-status to \code{ACTIVE} or \code{INACTIVE} using the
-\code{\link[=kendra_update_featured_results_set]{update_featured_results_set}} API.
-The queries you specify for featured results must be unique per featured
-results set for each index, whether the status is \code{ACTIVE} or
-\code{INACTIVE}.}
+\item{Status}{The current status of the set of featured results. When the value is \code{ACTIVE}, featured results are ready for use. You can still configure your settings before setting the status to \code{ACTIVE}. You can set the status to \code{ACTIVE} or \code{INACTIVE} using the \code{\link[=kendra_update_featured_results_set]{update_featured_results_set}} API. The queries you specify for featured results must be unique per featured results set for each index, whether the status is \code{ACTIVE} or \code{INACTIVE}.}
 
-\item{QueryTexts}{A list of queries for featuring results. For more information on the
-list of queries, see
-\href{https://docs.aws.amazon.com/kendra/latest/APIReference/API_FeaturedResultsSet.html}{FeaturedResultsSet}.}
+\item{QueryTexts}{A list of queries for featuring results. For more information on the list of queries, see \href{https://docs.aws.amazon.com/kendra/latest/APIReference/API_FeaturedResultsSet.html}{FeaturedResultsSet}.}
 
-\item{FeaturedDocuments}{A list of document IDs for the documents you want to feature at the top
-of the search results page. For more information on the list of
-documents, see
-\href{https://docs.aws.amazon.com/kendra/latest/APIReference/API_FeaturedResultsSet.html}{FeaturedResultsSet}.}
+\item{FeaturedDocuments}{A list of document IDs for the documents you want to feature at the top of the search results page. For more information on the list of documents, see \href{https://docs.aws.amazon.com/kendra/latest/APIReference/API_FeaturedResultsSet.html}{FeaturedResultsSet}.}
 
-\item{Tags}{A list of key-value pairs that identify or categorize the featured
-results set. You can also use tags to help control access to the
-featured results set. Tag keys and values can consist of Unicode
-letters, digits, white space, and any of the following symbols:_ . : /
-= + - @.}
+\item{Tags}{A list of key-value pairs that identify or categorize the featured results set. You can also use tags to help control access to the featured results set. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols:_ . : / = + - @.}
 }
 \description{
 Creates a set of featured results to display at the top of the search results page. Featured results are placed above all other results for certain queries. You map specific queries to specific documents for featuring in the results. If a query contains an exact match, then one or more specific documents are featured in the search results.

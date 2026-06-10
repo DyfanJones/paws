@@ -13,21 +13,15 @@ sagemaker_list_human_task_uis(
 )
 }
 \arguments{
-\item{CreationTimeAfter}{A filter that returns only human task user interfaces with a creation
-time greater than or equal to the specified timestamp.}
+\item{CreationTimeAfter}{A filter that returns only human task user interfaces with a creation time greater than or equal to the specified timestamp.}
 
-\item{CreationTimeBefore}{A filter that returns only human task user interfaces that were created
-before the specified timestamp.}
+\item{CreationTimeBefore}{A filter that returns only human task user interfaces that were created before the specified timestamp.}
 
-\item{SortOrder}{An optional value that specifies whether you want the results sorted in
-\code{Ascending} or \code{Descending} order.}
+\item{SortOrder}{An optional value that specifies whether you want the results sorted in \code{Ascending} or \code{Descending} order.}
 
 \item{NextToken}{A token to resume pagination.}
 
-\item{MaxResults}{The total number of items to return. If the total number of available
-items is more than the value specified in \code{MaxResults}, then a
-\code{NextToken} will be provided in the output that you can use to resume
-pagination.}
+\item{MaxResults}{The total number of items to return. If the total number of available items is more than the value specified in \code{MaxResults}, then a \code{NextToken} will be provided in the output that you can use to resume pagination.}
 }
 \description{
 Returns information about the human task user interfaces in your account.

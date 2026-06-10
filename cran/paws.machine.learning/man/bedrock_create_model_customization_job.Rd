@@ -27,17 +27,9 @@ bedrock_create_model_customization_job(
 
 \item{customModelName}{[required] A name for the resulting custom model.}
 
-\item{roleArn}{[required] The Amazon Resource Name (ARN) of an IAM service role that Amazon
-Bedrock can assume to perform tasks on your behalf. For example, during
-model training, Amazon Bedrock needs your permission to read input data
-from an S3 bucket, write model artifacts to an S3 bucket. To pass this
-role to Amazon Bedrock, the caller of this API must have the
-\code{iam:PassRole} permission.}
+\item{roleArn}{[required] The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the \code{iam:PassRole} permission.}
 
-\item{clientRequestToken}{A unique, case-sensitive identifier to ensure that the API request
-completes no more than one time. If this token matches a previous
-request, Amazon Bedrock ignores the request, but does not return an
-error. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
+\item{clientRequestToken}{A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
 
 \item{baseModelIdentifier}{[required] Name of the base model.}
 
@@ -55,12 +47,9 @@ error. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/de
 
 \item{outputDataConfig}{[required] S3 location for the output data.}
 
-\item{hyperParameters}{Parameters related to tuning the model. For details on the format for
-different models, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html}{Custom model hyperparameters}.}
+\item{hyperParameters}{Parameters related to tuning the model. For details on the format for different models, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html}{Custom model hyperparameters}.}
 
-\item{vpcConfig}{The configuration of the Virtual Private Cloud (VPC) that contains the
-resources that you're using for this job. For more information, see
-\href{https://docs.aws.amazon.com/bedrock/latest/userguide/}{Protect your model customization jobs using a VPC}.}
+\item{vpcConfig}{The configuration of the Virtual Private Cloud (VPC) that contains the resources that you're using for this job. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/}{Protect your model customization jobs using a VPC}.}
 
 \item{customizationConfig}{The customization configuration for the model customization job.}
 }

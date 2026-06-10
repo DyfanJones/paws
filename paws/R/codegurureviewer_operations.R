@@ -8,59 +8,30 @@ NULL
 #' Amazon CodeGuru Reviewer
 #'
 #' @description
-#' Use to associate an Amazon Web Services CodeCommit repository or a
-#' repository managed by Amazon Web Services CodeStar Connections with
-#' Amazon CodeGuru Reviewer. When you associate a repository, CodeGuru
-#' Reviewer reviews source code changes in the repository's pull requests
-#' and provides automatic recommendations. You can view recommendations
-#' using the CodeGuru Reviewer console. For more information, see
-#' [Recommendations in Amazon CodeGuru
-#' Reviewer](https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/recommendations.html)
-#' in the *Amazon CodeGuru Reviewer User Guide.*
+#' Use to associate an Amazon Web Services CodeCommit repository or a repository managed by Amazon Web Services CodeStar Connections with Amazon CodeGuru Reviewer. When you associate a repository, CodeGuru Reviewer reviews source code changes in the repository's pull requests and provides automatic recommendations. You can view recommendations using the CodeGuru Reviewer console. For more information, see [Recommendations in Amazon CodeGuru Reviewer](https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/recommendations.html) in the *Amazon CodeGuru Reviewer User Guide.*
 #' 
-#' If you associate a CodeCommit or S3 repository, it must be in the same
-#' Amazon Web Services Region and Amazon Web Services account where its
-#' CodeGuru Reviewer code reviews are configured.
+#' If you associate a CodeCommit or S3 repository, it must be in the same Amazon Web Services Region and Amazon Web Services account where its CodeGuru Reviewer code reviews are configured.
 #' 
-#' Bitbucket and GitHub Enterprise Server repositories are managed by
-#' Amazon Web Services CodeStar Connections to connect to CodeGuru
-#' Reviewer. For more information, see [Associate a
-#' repository](https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/getting-started-associate-repository.html)
-#' in the *Amazon CodeGuru Reviewer User Guide.*
+#' Bitbucket and GitHub Enterprise Server repositories are managed by Amazon Web Services CodeStar Connections to connect to CodeGuru Reviewer. For more information, see [Associate a repository](https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/getting-started-associate-repository.html) in the *Amazon CodeGuru Reviewer User Guide.*
 #' 
-#' You cannot use the CodeGuru Reviewer SDK or the Amazon Web Services CLI
-#' to associate a GitHub repository with Amazon CodeGuru Reviewer. To
-#' associate a GitHub repository, use the console. For more information,
-#' see [Getting started with CodeGuru
-#' Reviewer](https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/getting-started-with-guru.html)
-#' in the *CodeGuru Reviewer User Guide.*
+#' You cannot use the CodeGuru Reviewer SDK or the Amazon Web Services CLI to associate a GitHub repository with Amazon CodeGuru Reviewer. To associate a GitHub repository, use the console. For more information, see [Getting started with CodeGuru Reviewer](https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/getting-started-with-guru.html) in the *CodeGuru Reviewer User Guide.*
 #'
 #' @usage
 #' codegurureviewer_associate_repository(Repository, ClientRequestToken,
 #'   Tags, KMSKeyDetails)
 #'
 #' @param Repository &#91;required&#93; The repository to associate.
-#' @param ClientRequestToken Amazon CodeGuru Reviewer uses this value to prevent the accidental
-#' creation of duplicate repository associations if there are failures and
-#' retries.
-#' @param Tags An array of key-value pairs used to tag an associated repository. A tag
-#' is a custom attribute label with two parts:
+#' @param ClientRequestToken Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate repository associations if there are failures and retries.
+#' @param Tags An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
 #' 
-#' -   A *tag key* (for example, `CostCenter`, `Environment`, `Project`, or
-#'     `Secret`). Tag keys are case sensitive.
+#' -   A *tag key* (for example, `CostCenter`, `Environment`, `Project`, or `Secret`). Tag keys are case sensitive.
 #' 
-#' -   An optional field known as a *tag value* (for example,
-#'     `111122223333`, `Production`, or a team name). Omitting the tag
-#'     value is the same as using an empty string. Like tag keys, tag
-#'     values are case sensitive.
+#' -   An optional field known as a *tag value* (for example, `111122223333`, `Production`, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.
 #' @param KMSKeyDetails A `KMSKeyDetails` object that contains:
 #' 
-#' -   The encryption option for this repository association. It is either
-#'     owned by Amazon Web Services Key Management Service (KMS)
-#'     (`AWS_OWNED_CMK`) or customer managed (`CUSTOMER_MANAGED_CMK`).
+#' -   The encryption option for this repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (`AWS_OWNED_CMK`) or customer managed (`CUSTOMER_MANAGED_CMK`).
 #' 
-#' -   The ID of the Amazon Web Services KMS key that is associated with
-#'     this repository association.
+#' -   The ID of the Amazon Web Services KMS key that is associated with this repository association.
 #'
 #' @return
 #' A list with the following syntax:
@@ -159,30 +130,18 @@ codegurureviewer_associate_repository <- function(Repository, ClientRequestToken
 #' Use to create a code review with a CodeReviewType of RepositoryAnalysis
 #'
 #' @description
-#' Use to create a code review with a
-#' [CodeReviewType](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html)
-#' of `RepositoryAnalysis`. This type of code review analyzes all code
-#' under a specified branch in an associated repository. `PullRequest` code
-#' reviews are automatically triggered by a pull request.
+#' Use to create a code review with a [CodeReviewType](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html) of `RepositoryAnalysis`. This type of code review analyzes all code under a specified branch in an associated repository. `PullRequest` code reviews are automatically triggered by a pull request.
 #'
 #' @usage
 #' codegurureviewer_create_code_review(Name, RepositoryAssociationArn,
 #'   Type, ClientRequestToken)
 #'
-#' @param Name &#91;required&#93; The name of the code review. The name of each code review in your Amazon
-#' Web Services account must be unique.
-#' @param RepositoryAssociationArn &#91;required&#93; The Amazon Resource Name (ARN) of the
-#' [RepositoryAssociation](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html)
-#' object. You can retrieve this ARN by calling
-#' [`list_repository_associations`][codegurureviewer_list_repository_associations].
+#' @param Name &#91;required&#93; The name of the code review. The name of each code review in your Amazon Web Services account must be unique.
+#' @param RepositoryAssociationArn &#91;required&#93; The Amazon Resource Name (ARN) of the [RepositoryAssociation](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html) object. You can retrieve this ARN by calling [`list_repository_associations`][codegurureviewer_list_repository_associations].
 #' 
-#' A code review can only be created on an associated repository. This is
-#' the ARN of the associated repository.
-#' @param Type &#91;required&#93; The type of code review to create. This is specified using a
-#' [CodeReviewType](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html)
-#' object. You can create a code review only of type `RepositoryAnalysis`.
-#' @param ClientRequestToken Amazon CodeGuru Reviewer uses this value to prevent the accidental
-#' creation of duplicate code reviews if there are failures and retries.
+#' A code review can only be created on an associated repository. This is the ARN of the associated repository.
+#' @param Type &#91;required&#93; The type of code review to create. This is specified using a [CodeReviewType](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html) object. You can create a code review only of type `RepositoryAnalysis`.
+#' @param ClientRequestToken Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate code reviews if there are failures and retries.
 #'
 #' @return
 #' A list with the following syntax:
@@ -331,15 +290,12 @@ codegurureviewer_create_code_review <- function(Name, RepositoryAssociationArn, 
 #' status
 #'
 #' @description
-#' Returns the metadata associated with the code review along with its
-#' status.
+#' Returns the metadata associated with the code review along with its status.
 #'
 #' @usage
 #' codegurureviewer_describe_code_review(CodeReviewArn)
 #'
-#' @param CodeReviewArn &#91;required&#93; The Amazon Resource Name (ARN) of the
-#' [CodeReview](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html)
-#' object.
+#' @param CodeReviewArn &#91;required&#93; The Amazon Resource Name (ARN) of the [CodeReview](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html) object.
 #'
 #' @return
 #' A list with the following syntax:
@@ -448,19 +404,11 @@ codegurureviewer_describe_code_review <- function(CodeReviewArn) {
 #' codegurureviewer_describe_recommendation_feedback(CodeReviewArn,
 #'   RecommendationId, UserId)
 #'
-#' @param CodeReviewArn &#91;required&#93; The Amazon Resource Name (ARN) of the
-#' [CodeReview](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html)
-#' object.
-#' @param RecommendationId &#91;required&#93; The recommendation ID that can be used to track the provided
-#' recommendations and then to collect the feedback.
-#' @param UserId Optional parameter to describe the feedback for a given user. If this is
-#' not supplied, it defaults to the user making the request.
+#' @param CodeReviewArn &#91;required&#93; The Amazon Resource Name (ARN) of the [CodeReview](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html) object.
+#' @param RecommendationId &#91;required&#93; The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.
+#' @param UserId Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request.
 #' 
-#' The `UserId` is an IAM principal that can be specified as an Amazon Web
-#' Services account ID or an Amazon Resource Name (ARN). For more
-#' information, see [Specifying a
-#' Principal](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying)
-#' in the *Amazon Web Services Identity and Access Management User Guide*.
+#' The `UserId` is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see [Specifying a Principal](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying) in the *Amazon Web Services Identity and Access Management User Guide*.
 #'
 #' @return
 #' A list with the following syntax:
@@ -520,18 +468,12 @@ codegurureviewer_describe_recommendation_feedback <- function(CodeReviewArn, Rec
 #' the requested repository association
 #'
 #' @description
-#' Returns a
-#' [RepositoryAssociation](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html)
-#' object that contains information about the requested repository
-#' association.
+#' Returns a [RepositoryAssociation](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html) object that contains information about the requested repository association.
 #'
 #' @usage
 #' codegurureviewer_describe_repository_association(AssociationArn)
 #'
-#' @param AssociationArn &#91;required&#93; The Amazon Resource Name (ARN) of the
-#' [RepositoryAssociation](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html)
-#' object. You can retrieve this ARN by calling
-#' [`list_repository_associations`][codegurureviewer_list_repository_associations].
+#' @param AssociationArn &#91;required&#93; The Amazon Resource Name (ARN) of the [RepositoryAssociation](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html) object. You can retrieve this ARN by calling [`list_repository_associations`][codegurureviewer_list_repository_associations].
 #'
 #' @return
 #' A list with the following syntax:
@@ -605,16 +547,12 @@ codegurureviewer_describe_repository_association <- function(AssociationArn) {
 #' repository
 #'
 #' @description
-#' Removes the association between Amazon CodeGuru Reviewer and a
-#' repository.
+#' Removes the association between Amazon CodeGuru Reviewer and a repository.
 #'
 #' @usage
 #' codegurureviewer_disassociate_repository(AssociationArn)
 #'
-#' @param AssociationArn &#91;required&#93; The Amazon Resource Name (ARN) of the
-#' [RepositoryAssociation](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html)
-#' object. You can retrieve this ARN by calling
-#' [`list_repository_associations`][codegurureviewer_list_repository_associations].
+#' @param AssociationArn &#91;required&#93; The Amazon Resource Name (ARN) of the [RepositoryAssociation](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html) object. You can retrieve this ARN by calling [`list_repository_associations`][codegurureviewer_list_repository_associations].
 #'
 #' @return
 #' A list with the following syntax:
@@ -688,19 +626,14 @@ codegurureviewer_disassociate_repository <- function(AssociationArn) {
 #' days
 #'
 #' @description
-#' Lists all the code reviews that the customer has created in the past 90
-#' days.
+#' Lists all the code reviews that the customer has created in the past 90 days.
 #'
 #' @usage
 #' codegurureviewer_list_code_reviews(ProviderTypes, States,
 #'   RepositoryNames, Type, MaxResults, NextToken)
 #'
-#' @param ProviderTypes List of provider types for filtering that needs to be applied before
-#' displaying the result. For example, `providerTypes=[GitHub]` lists code
-#' reviews from GitHub.
-#' @param States List of states for filtering that needs to be applied before displaying
-#' the result. For example, `states=[Pending]` lists code reviews in the
-#' Pending state.
+#' @param ProviderTypes List of provider types for filtering that needs to be applied before displaying the result. For example, `providerTypes=[GitHub]` lists code reviews from GitHub.
+#' @param States List of states for filtering that needs to be applied before displaying the result. For example, `states=[Pending]` lists code reviews in the Pending state.
 #' 
 #' The valid code review states are:
 #' 
@@ -711,15 +644,10 @@ codegurureviewer_disassociate_repository <- function(AssociationArn) {
 #' -   `Failed`: The code review failed.
 #' 
 #' -   `Deleting`: The code review is being deleted.
-#' @param RepositoryNames List of repository names for filtering that needs to be applied before
-#' displaying the result.
+#' @param RepositoryNames List of repository names for filtering that needs to be applied before displaying the result.
 #' @param Type &#91;required&#93; The type of code reviews to list in the response.
-#' @param MaxResults The maximum number of results that are returned per call. The default is
-#' 100.
-#' @param NextToken If `nextToken` is returned, there are more results available. The value
-#' of `nextToken` is a unique pagination token for each page. Make the call
-#' again using the returned token to retrieve the next page. Keep all other
-#' arguments unchanged.
+#' @param MaxResults The maximum number of results that are returned per call. The default is 100.
+#' @param NextToken If `nextToken` is returned, there are more results available. The value of `nextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
 #'
 #' @return
 #' A list with the following syntax:
@@ -831,33 +759,18 @@ codegurureviewer_list_code_reviews <- function(ProviderTypes = NULL, States = NU
 #' customer recommendation feedback for all CodeGuru Reviewer users
 #'
 #' @description
-#' Returns a list of
-#' [RecommendationFeedbackSummary](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RecommendationFeedbackSummary.html)
-#' objects that contain customer recommendation feedback for all CodeGuru
-#' Reviewer users.
+#' Returns a list of [RecommendationFeedbackSummary](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RecommendationFeedbackSummary.html) objects that contain customer recommendation feedback for all CodeGuru Reviewer users.
 #'
 #' @usage
 #' codegurureviewer_list_recommendation_feedback(NextToken, MaxResults,
 #'   CodeReviewArn, UserIds, RecommendationIds)
 #'
-#' @param NextToken If `nextToken` is returned, there are more results available. The value
-#' of `nextToken` is a unique pagination token for each page. Make the call
-#' again using the returned token to retrieve the next page. Keep all other
-#' arguments unchanged.
-#' @param MaxResults The maximum number of results that are returned per call. The default is
-#' 100.
-#' @param CodeReviewArn &#91;required&#93; The Amazon Resource Name (ARN) of the
-#' [CodeReview](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html)
-#' object.
-#' @param UserIds An Amazon Web Services user's account ID or Amazon Resource Name (ARN).
-#' Use this ID to query the recommendation feedback for a code review from
-#' that user.
+#' @param NextToken If `nextToken` is returned, there are more results available. The value of `nextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
+#' @param MaxResults The maximum number of results that are returned per call. The default is 100.
+#' @param CodeReviewArn &#91;required&#93; The Amazon Resource Name (ARN) of the [CodeReview](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html) object.
+#' @param UserIds An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user.
 #' 
-#' The `UserId` is an IAM principal that can be specified as an Amazon Web
-#' Services account ID or an Amazon Resource Name (ARN). For more
-#' information, see [Specifying a
-#' Principal](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying)
-#' in the *Amazon Web Services Identity and Access Management User Guide*.
+#' The `UserId` is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see [Specifying a Principal](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying) in the *Amazon Web Services Identity and Access Management User Guide*.
 #' @param RecommendationIds Used to query the recommendation feedback for a given recommendation.
 #'
 #' @return
@@ -926,11 +839,8 @@ codegurureviewer_list_recommendation_feedback <- function(NextToken = NULL, MaxR
 #'   CodeReviewArn)
 #'
 #' @param NextToken Pagination token.
-#' @param MaxResults The maximum number of results that are returned per call. The default is
-#' 100.
-#' @param CodeReviewArn &#91;required&#93; The Amazon Resource Name (ARN) of the
-#' [CodeReview](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html)
-#' object.
+#' @param MaxResults The maximum number of results that are returned per call. The default is 100.
+#' @param CodeReviewArn &#91;required&#93; The Amazon Resource Name (ARN) of the [CodeReview](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html) object.
 #'
 #' @return
 #' A list with the following syntax:
@@ -997,15 +907,7 @@ codegurureviewer_list_recommendations <- function(NextToken = NULL, MaxResults =
 #' summary information about a repository association
 #'
 #' @description
-#' Returns a list of
-#' [RepositoryAssociationSummary](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html)
-#' objects that contain summary information about a repository association.
-#' You can filter the returned list by
-#' [ProviderType](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-ProviderType),
-#' [Name](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-Name),
-#' [State](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-State),
-#' and
-#' [Owner](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-Owner).
+#' Returns a list of [RepositoryAssociationSummary](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html) objects that contain summary information about a repository association. You can filter the returned list by [ProviderType](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-ProviderType), [Name](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-Name), [State](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-State), and [Owner](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-Owner).
 #'
 #' @usage
 #' codegurureviewer_list_repository_associations(ProviderTypes, States,
@@ -1020,57 +922,23 @@ codegurureviewer_list_recommendations <- function(NextToken = NULL, MaxResults =
 #' 
 #' -   **Associating**: CodeGuru Reviewer is:
 #' 
-#'     -   Setting up pull request notifications. This is required for pull
-#'         requests to trigger a CodeGuru Reviewer review.
+#'     -   Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.
 #' 
-#'         If your repository `ProviderType` is `GitHub`,
-#'         `GitHub Enterprise Server`, or `Bitbucket`, CodeGuru Reviewer
-#'         creates webhooks in your repository to trigger CodeGuru Reviewer
-#'         reviews. If you delete these webhooks, reviews of code in your
-#'         repository cannot be triggered.
+#'         If your repository `ProviderType` is `GitHub`, `GitHub Enterprise Server`, or `Bitbucket`, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.
 #' 
-#'     -   Setting up source code access. This is required for CodeGuru
-#'         Reviewer to securely clone code in your repository.
+#'     -   Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.
 #' 
 #' -   **Failed**: The repository failed to associate or disassociate.
 #' 
-#' -   **Disassociating**: CodeGuru Reviewer is removing the repository's
-#'     pull request notifications and source code access.
+#' -   **Disassociating**: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.
 #' 
-#' -   **Disassociated**: CodeGuru Reviewer successfully disassociated the
-#'     repository. You can create a new association with this repository if
-#'     you want to review source code in it later. You can control access
-#'     to code reviews created in anassociated repository with tags after
-#'     it has been disassociated. For more information, see [Using tags to
-#'     control access to associated
-#'     repositories](https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html)
-#'     in the *Amazon CodeGuru Reviewer User Guide*.
+#' -   **Disassociated**: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see [Using tags to control access to associated repositories](https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html) in the *Amazon CodeGuru Reviewer User Guide*.
 #' @param Names List of repository names to use as a filter.
-#' @param Owners List of owners to use as a filter. For Amazon Web Services CodeCommit,
-#' it is the name of the CodeCommit account that was used to associate the
-#' repository. For other repository source providers, such as Bitbucket and
-#' GitHub Enterprise Server, this is name of the account that was used to
-#' associate the repository.
-#' @param MaxResults The maximum number of repository association results returned by
-#' [`list_repository_associations`][codegurureviewer_list_repository_associations]
-#' in paginated output. When this parameter is used,
-#' [`list_repository_associations`][codegurureviewer_list_repository_associations]
-#' only returns `maxResults` results in a single page with a `nextToken`
-#' response element. The remaining results of the initial request can be
-#' seen by sending another
-#' [`list_repository_associations`][codegurureviewer_list_repository_associations]
-#' request with the returned `nextToken` value. This value can be between 1
-#' and 100. If this parameter is not used,
-#' [`list_repository_associations`][codegurureviewer_list_repository_associations]
-#' returns up to 100 results and a `nextToken` value if applicable.
-#' @param NextToken The `nextToken` value returned from a previous paginated
-#' [`list_repository_associations`][codegurureviewer_list_repository_associations]
-#' request where `maxResults` was used and the results exceeded the value
-#' of that parameter. Pagination continues from the end of the previous
-#' results that returned the `nextToken` value.
+#' @param Owners List of owners to use as a filter. For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account that was used to associate the repository.
+#' @param MaxResults The maximum number of repository association results returned by [`list_repository_associations`][codegurureviewer_list_repository_associations] in paginated output. When this parameter is used, [`list_repository_associations`][codegurureviewer_list_repository_associations] only returns `maxResults` results in a single page with a `nextToken` response element. The remaining results of the initial request can be seen by sending another [`list_repository_associations`][codegurureviewer_list_repository_associations] request with the returned `nextToken` value. This value can be between 1 and 100. If this parameter is not used, [`list_repository_associations`][codegurureviewer_list_repository_associations] returns up to 100 results and a `nextToken` value if applicable.
+#' @param NextToken The `nextToken` value returned from a previous paginated [`list_repository_associations`][codegurureviewer_list_repository_associations] request where `maxResults` was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the `nextToken` value.
 #' 
-#' Treat this token as an opaque identifier that is only used to retrieve
-#' the next items in a list and not for other programmatic purposes.
+#' Treat this token as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1142,16 +1010,12 @@ codegurureviewer_list_repository_associations <- function(ProviderTypes = NULL, 
 #' resource
 #'
 #' @description
-#' Returns the list of tags associated with an associated repository
-#' resource.
+#' Returns the list of tags associated with an associated repository resource.
 #'
 #' @usage
 #' codegurureviewer_list_tags_for_resource(resourceArn)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the
-#' [RepositoryAssociation](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html)
-#' object. You can retrieve this ARN by calling
-#' [`list_repository_associations`][codegurureviewer_list_repository_associations].
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the [RepositoryAssociation](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html) object. You can retrieve this ARN by calling [`list_repository_associations`][codegurureviewer_list_repository_associations].
 #'
 #' @return
 #' A list with the following syntax:
@@ -1197,21 +1061,15 @@ codegurureviewer_list_tags_for_resource <- function(resourceArn) {
 #' Stores customer feedback for a CodeGuru Reviewer recommendation
 #'
 #' @description
-#' Stores customer feedback for a CodeGuru Reviewer recommendation. When
-#' this API is called again with different reactions the previous feedback
-#' is overwritten.
+#' Stores customer feedback for a CodeGuru Reviewer recommendation. When this API is called again with different reactions the previous feedback is overwritten.
 #'
 #' @usage
 #' codegurureviewer_put_recommendation_feedback(CodeReviewArn,
 #'   RecommendationId, Reactions)
 #'
-#' @param CodeReviewArn &#91;required&#93; The Amazon Resource Name (ARN) of the
-#' [CodeReview](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html)
-#' object.
-#' @param RecommendationId &#91;required&#93; The recommendation ID that can be used to track the provided
-#' recommendations and then to collect the feedback.
-#' @param Reactions &#91;required&#93; List for storing reactions. Reactions are utf-8 text code for emojis. If
-#' you send an empty list it clears all your feedback.
+#' @param CodeReviewArn &#91;required&#93; The Amazon Resource Name (ARN) of the [CodeReview](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html) object.
+#' @param RecommendationId &#91;required&#93; The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.
+#' @param Reactions &#91;required&#93; List for storing reactions. Reactions are utf-8 text code for emojis. If you send an empty list it clears all your feedback.
 #'
 #' @return
 #' An empty list.
@@ -1259,20 +1117,12 @@ codegurureviewer_put_recommendation_feedback <- function(CodeReviewArn, Recommen
 #' @usage
 #' codegurureviewer_tag_resource(resourceArn, Tags)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the
-#' [RepositoryAssociation](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html)
-#' object. You can retrieve this ARN by calling
-#' [`list_repository_associations`][codegurureviewer_list_repository_associations].
-#' @param Tags &#91;required&#93; An array of key-value pairs used to tag an associated repository. A tag
-#' is a custom attribute label with two parts:
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the [RepositoryAssociation](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html) object. You can retrieve this ARN by calling [`list_repository_associations`][codegurureviewer_list_repository_associations].
+#' @param Tags &#91;required&#93; An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
 #' 
-#' -   A *tag key* (for example, `CostCenter`, `Environment`, `Project`, or
-#'     `Secret`). Tag keys are case sensitive.
+#' -   A *tag key* (for example, `CostCenter`, `Environment`, `Project`, or `Secret`). Tag keys are case sensitive.
 #' 
-#' -   An optional field known as a *tag value* (for example,
-#'     `111122223333`, `Production`, or a team name). Omitting the tag
-#'     value is the same as using an empty string. Like tag keys, tag
-#'     values are case sensitive.
+#' -   An optional field known as a *tag value* (for example, `111122223333`, `Production`, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.
 #'
 #' @return
 #' An empty list.
@@ -1319,12 +1169,8 @@ codegurureviewer_tag_resource <- function(resourceArn, Tags) {
 #' @usage
 #' codegurureviewer_untag_resource(resourceArn, TagKeys)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the
-#' [RepositoryAssociation](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html)
-#' object. You can retrieve this ARN by calling
-#' [`list_repository_associations`][codegurureviewer_list_repository_associations].
-#' @param TagKeys &#91;required&#93; A list of the keys for each tag you want to remove from an associated
-#' repository.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the [RepositoryAssociation](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html) object. You can retrieve this ARN by calling [`list_repository_associations`][codegurureviewer_list_repository_associations].
+#' @param TagKeys &#91;required&#93; A list of the keys for each tag you want to remove from an associated repository.
 #'
 #' @return
 #' An empty list.

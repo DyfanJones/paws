@@ -7,9 +7,7 @@
 bedrock_get_automated_reasoning_policy(policyArn)
 }
 \arguments{
-\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy to
-retrieve. Can be either the unversioned ARN for the draft policy or an
-ARN for a specific policy version.}
+\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy to retrieve. Can be either the unversioned ARN for the draft policy or an ARN for a specific policy version.}
 }
 \description{
 Retrieves details about an Automated Reasoning policy or policy version. Returns information including the policy definition, metadata, and timestamps.

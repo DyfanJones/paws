@@ -9,8 +9,7 @@ prometheusservice_delete_logging_configuration(workspaceId, clientToken = NULL)
 \arguments{
 \item{workspaceId}{[required] The ID of the workspace containing the logging configuration to delete.}
 
-\item{clientToken}{A unique identifier that you can provide to ensure the idempotency of
-the request. Case-sensitive.}
+\item{clientToken}{A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.}
 }
 \description{
 Deletes the rules and alerting logging configuration for a workspace.

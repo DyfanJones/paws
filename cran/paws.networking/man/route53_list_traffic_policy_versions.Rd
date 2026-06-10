@@ -12,27 +12,13 @@ route53_list_traffic_policy_versions(
 )
 }
 \arguments{
-\item{Id}{[required] Specify the value of \code{Id} of the traffic policy for which you want to
-list all versions.}
+\item{Id}{[required] Specify the value of \code{Id} of the traffic policy for which you want to list all versions.}
 
-\item{TrafficPolicyVersionMarker}{For your first request to
-\code{\link[=route53_list_traffic_policy_versions]{list_traffic_policy_versions}},
-don't include the \code{TrafficPolicyVersionMarker} parameter.
+\item{TrafficPolicyVersionMarker}{For your first request to \code{\link[=route53_list_traffic_policy_versions]{list_traffic_policy_versions}}, don't include the \code{TrafficPolicyVersionMarker} parameter.
 
-If you have more traffic policy versions than the value of \code{MaxItems},
-\code{\link[=route53_list_traffic_policy_versions]{list_traffic_policy_versions}}
-returns only the first group of \code{MaxItems} versions. To get more traffic
-policy versions, submit another
-\code{\link[=route53_list_traffic_policy_versions]{list_traffic_policy_versions}}
-request. For the value of \code{TrafficPolicyVersionMarker}, specify the
-value of \code{TrafficPolicyVersionMarker} in the previous response.}
+If you have more traffic policy versions than the value of \code{MaxItems}, \code{\link[=route53_list_traffic_policy_versions]{list_traffic_policy_versions}} returns only the first group of \code{MaxItems} versions. To get more traffic policy versions, submit another \code{\link[=route53_list_traffic_policy_versions]{list_traffic_policy_versions}} request. For the value of \code{TrafficPolicyVersionMarker}, specify the value of \code{TrafficPolicyVersionMarker} in the previous response.}
 
-\item{MaxItems}{The maximum number of traffic policy versions that you want Amazon Route
-53 to include in the response body for this request. If the specified
-traffic policy has more than \code{MaxItems} versions, the value of
-\code{IsTruncated} in the response is \code{true}, and the value of the
-\code{TrafficPolicyVersionMarker} element is the ID of the first version that
-Route 53 will return if you submit another request.}
+\item{MaxItems}{The maximum number of traffic policy versions that you want Amazon Route 53 to include in the response body for this request. If the specified traffic policy has more than \code{MaxItems} versions, the value of \code{IsTruncated} in the response is \code{true}, and the value of the \code{TrafficPolicyVersionMarker} element is the ID of the first version that Route 53 will return if you submit another request.}
 }
 \description{
 Gets information about all of the versions for a specified traffic policy.

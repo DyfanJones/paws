@@ -13,10 +13,7 @@ sagemaker_list_monitoring_alerts(
 \arguments{
 \item{MonitoringScheduleName}{[required] The name of a monitoring schedule.}
 
-\item{NextToken}{If the result of the previous
-\code{\link[=sagemaker_list_monitoring_alerts]{list_monitoring_alerts}} request was
-truncated, the response includes a \code{NextToken}. To retrieve the next set
-of alerts in the history, use the token in the next request.}
+\item{NextToken}{If the result of the previous \code{\link[=sagemaker_list_monitoring_alerts]{list_monitoring_alerts}} request was truncated, the response includes a \code{NextToken}. To retrieve the next set of alerts in the history, use the token in the next request.}
 
 \item{MaxResults}{The maximum number of results to display. The default is 100.}
 }

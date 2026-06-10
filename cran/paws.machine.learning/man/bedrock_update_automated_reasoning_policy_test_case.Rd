@@ -16,8 +16,7 @@ bedrock_update_automated_reasoning_policy_test_case(
 )
 }
 \arguments{
-\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy that
-contains the test.}
+\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy that contains the test.}
 
 \item{testCaseId}{[required] The unique identifier of the test to update.}
 
@@ -25,18 +24,13 @@ contains the test.}
 
 \item{queryContent}{The updated input query or prompt that generated the content.}
 
-\item{lastUpdatedAt}{[required] The timestamp when the test was last updated. This is used as a
-concurrency token to prevent conflicting modifications.}
+\item{lastUpdatedAt}{[required] The timestamp when the test was last updated. This is used as a concurrency token to prevent conflicting modifications.}
 
 \item{expectedAggregatedFindingsResult}{[required] The updated expected result of the Automated Reasoning check.}
 
-\item{confidenceThreshold}{The updated minimum confidence level for logic validation. If null is
-provided, the threshold will be removed.}
+\item{confidenceThreshold}{The updated minimum confidence level for logic validation. If null is provided, the threshold will be removed.}
 
-\item{clientRequestToken}{A unique, case-sensitive identifier to ensure that the operation
-completes no more than one time. If this token matches a previous
-request, Amazon Bedrock ignores the request, but does not return an
-error.}
+\item{clientRequestToken}{A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error.}
 }
 \description{
 Updates an existing Automated Reasoning policy test. You can modify the content, query, expected result, and confidence threshold.

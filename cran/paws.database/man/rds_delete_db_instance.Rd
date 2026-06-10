@@ -12,37 +12,26 @@ rds_delete_db_instance(
 )
 }
 \arguments{
-\item{DBInstanceIdentifier}{[required] The DB instance identifier for the DB instance to be deleted. This
-parameter isn't case-sensitive.
+\item{DBInstanceIdentifier}{[required] The DB instance identifier for the DB instance to be deleted. This parameter isn't case-sensitive.
 
 Constraints:
 \itemize{
 \item Must match the name of an existing DB instance.
 }}
 
-\item{SkipFinalSnapshot}{Specifies whether to skip the creation of a final DB snapshot before
-deleting the instance. If you enable this parameter, RDS doesn't create
-a DB snapshot. If you don't enable this parameter, RDS creates a DB
-snapshot before the DB instance is deleted. By default, skip isn't
-enabled, and the DB snapshot is created.
+\item{SkipFinalSnapshot}{Specifies whether to skip the creation of a final DB snapshot before deleting the instance. If you enable this parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter, RDS creates a DB snapshot before the DB instance is deleted. By default, skip isn't enabled, and the DB snapshot is created.
 
-If you don't enable this parameter, you must specify the
-\code{FinalDBSnapshotIdentifier} parameter.
+If you don't enable this parameter, you must specify the \code{FinalDBSnapshotIdentifier} parameter.
 
-When a DB instance is in a failure state and has a status of \code{failed},
-\code{incompatible-restore}, or \code{incompatible-network}, RDS can delete the
-instance only if you enable this parameter.
+When a DB instance is in a failure state and has a status of \code{failed}, \code{incompatible-restore}, or \code{incompatible-network}, RDS can delete the instance only if you enable this parameter.
 
-If you delete a read replica or an RDS Custom instance, you must enable
-this setting.
+If you delete a read replica or an RDS Custom instance, you must enable this setting.
 
 This setting is required for RDS Custom.}
 
-\item{FinalDBSnapshotIdentifier}{The \code{DBSnapshotIdentifier} of the new \code{DBSnapshot} created when the
-\code{SkipFinalSnapshot} parameter is disabled.
+\item{FinalDBSnapshotIdentifier}{The \code{DBSnapshotIdentifier} of the new \code{DBSnapshot} created when the \code{SkipFinalSnapshot} parameter is disabled.
 
-If you enable this parameter and also enable SkipFinalShapshot, the
-command results in an error.
+If you enable this parameter and also enable SkipFinalShapshot, the command results in an error.
 
 This setting doesn't apply to RDS Custom.
 
@@ -54,10 +43,7 @@ Constraints:
 \item Can't be specified when deleting a read replica.
 }}
 
-\item{DeleteAutomatedBackups}{Specifies whether to remove automated backups immediately after the DB
-instance is deleted. This parameter isn't case-sensitive. The default is
-to remove automated backups immediately after the DB instance is
-deleted.}
+\item{DeleteAutomatedBackups}{Specifies whether to remove automated backups immediately after the DB instance is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB instance is deleted.}
 }
 \description{
 Deletes a previously provisioned DB instance. When you delete a DB instance, all automated backups for that instance are deleted and can't be recovered. However, manual DB snapshots of the DB instance aren't deleted.

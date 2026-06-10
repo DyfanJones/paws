@@ -7,8 +7,7 @@
 kafkaconnect_describe_worker_configuration(workerConfigurationArn)
 }
 \arguments{
-\item{workerConfigurationArn}{[required] The Amazon Resource Name (ARN) of the worker configuration that you want
-to get information about.}
+\item{workerConfigurationArn}{[required] The Amazon Resource Name (ARN) of the worker configuration that you want to get information about.}
 }
 \description{
 Returns information about a worker configuration.

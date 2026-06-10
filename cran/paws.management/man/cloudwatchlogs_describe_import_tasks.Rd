@@ -16,13 +16,11 @@ cloudwatchlogs_describe_import_tasks(
 \arguments{
 \item{importId}{Optional filter to describe a specific import task by its ID.}
 
-\item{importStatus}{Optional filter to list imports by their status. Valid values are
-IN_PROGRESS, CANCELLED, COMPLETED and FAILED.}
+\item{importStatus}{Optional filter to list imports by their status. Valid values are IN_PROGRESS, CANCELLED, COMPLETED and FAILED.}
 
 \item{importSourceArn}{Optional filter to list imports from a specific source}
 
-\item{limit}{The maximum number of import tasks to return in the response. Default:
-50}
+\item{limit}{The maximum number of import tasks to return in the response. Default: 50}
 
 \item{nextToken}{The pagination token for the next set of results.}
 }

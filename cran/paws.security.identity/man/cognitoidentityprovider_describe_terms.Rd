@@ -9,8 +9,7 @@ cognitoidentityprovider_describe_terms(TermsId, UserPoolId)
 \arguments{
 \item{TermsId}{[required] The ID of the terms documents that you want to describe.}
 
-\item{UserPoolId}{[required] The ID of the user pool that contains the terms documents that you want
-to describe.}
+\item{UserPoolId}{[required] The ID of the user pool that contains the terms documents that you want to describe.}
 }
 \description{
 Returns details for the requested terms documents ID. For more information, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-terms-documents}{Terms documents}.

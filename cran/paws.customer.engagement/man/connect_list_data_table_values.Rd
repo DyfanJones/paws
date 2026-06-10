@@ -21,14 +21,11 @@ connect_list_data_table_values(
 
 \item{RecordIds}{Optional list of specific record IDs to retrieve values for.}
 
-\item{PrimaryAttributeValues}{Optional filter to retrieve values for records matching specific primary
-attribute criteria.}
+\item{PrimaryAttributeValues}{Optional filter to retrieve values for records matching specific primary attribute criteria.}
 
-\item{NextToken}{Specify the pagination token from a previous request to retrieve the
-next page of results.}
+\item{NextToken}{Specify the pagination token from a previous request to retrieve the next page of results.}
 
-\item{MaxResults}{The maximum number of data table values to return in one page of
-results.}
+\item{MaxResults}{The maximum number of data table values to return in one page of results.}
 }
 \description{
 Lists values stored in a data table with optional filtering by record IDs or primary attribute values. Returns the raw stored values along with metadata such as lock versions and modification timestamps.

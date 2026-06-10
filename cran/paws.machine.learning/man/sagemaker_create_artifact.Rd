@@ -14,8 +14,7 @@ sagemaker_create_artifact(
 )
 }
 \arguments{
-\item{ArtifactName}{The name of the artifact. Must be unique to your account in an Amazon
-Web Services Region.}
+\item{ArtifactName}{The name of the artifact. Must be unique to your account in an Amazon Web Services Region.}
 
 \item{Source}{[required] The ID, ID type, and URI of the source.}
 
@@ -23,7 +22,7 @@ Web Services Region.}
 
 \item{Properties}{A list of properties to add to the artifact.}
 
-\item{MetadataProperties}{}
+\item{MetadataProperties}{Metadata properties of the tracking entity, trial, or trial component.}
 
 \item{Tags}{A list of tags to apply to the artifact.}
 }

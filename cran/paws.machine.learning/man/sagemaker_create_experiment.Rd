@@ -12,17 +12,13 @@ sagemaker_create_experiment(
 )
 }
 \arguments{
-\item{ExperimentName}{[required] The name of the experiment. The name must be unique in your Amazon Web
-Services account and is not case-sensitive.}
+\item{ExperimentName}{[required] The name of the experiment. The name must be unique in your Amazon Web Services account and is not case-sensitive.}
 
-\item{DisplayName}{The name of the experiment as displayed. The name doesn't need to be
-unique. If you don't specify \code{DisplayName}, the value in
-\code{ExperimentName} is displayed.}
+\item{DisplayName}{The name of the experiment as displayed. The name doesn't need to be unique. If you don't specify \code{DisplayName}, the value in \code{ExperimentName} is displayed.}
 
 \item{Description}{The description of the experiment.}
 
-\item{Tags}{A list of tags to associate with the experiment. You can use
-\code{\link[=sagemaker_search]{search}} API to search on the tags.}
+\item{Tags}{A list of tags to associate with the experiment. You can use \code{\link[=sagemaker_search]{search}} API to search on the tags.}
 }
 \description{
 Creates a SageMaker \emph{experiment}. An experiment is a collection of \emph{trials} that are observed, compared and evaluated as a group. A trial is a set of steps, called \emph{trial components}, that produce a machine learning model.

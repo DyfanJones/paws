@@ -7,15 +7,11 @@
 redshift_modify_cluster_db_revision(ClusterIdentifier, RevisionTarget)
 }
 \arguments{
-\item{ClusterIdentifier}{[required] The unique identifier of a cluster whose database revision you want to
-modify.
+\item{ClusterIdentifier}{[required] The unique identifier of a cluster whose database revision you want to modify.
 
 Example: \code{examplecluster}}
 
-\item{RevisionTarget}{[required] The identifier of the database revision. You can retrieve this value
-from the response to the
-\code{\link[=redshift_describe_cluster_db_revisions]{describe_cluster_db_revisions}}
-request.}
+\item{RevisionTarget}{[required] The identifier of the database revision. You can retrieve this value from the response to the \code{\link[=redshift_describe_cluster_db_revisions]{describe_cluster_db_revisions}} request.}
 }
 \description{
 Modifies the database revision of a cluster. The database revision is a unique revision of the database running in a cluster.

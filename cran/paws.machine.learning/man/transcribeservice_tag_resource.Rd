@@ -8,19 +8,13 @@ the specified resource}
 transcribeservice_tag_resource(ResourceArn, Tags)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource you want to tag. ARNs
-have the format
-\code{arn:partition:service:region:account-id:resource-type/resource-id}.
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource you want to tag. ARNs have the format \code{arn:partition:service:region:account-id:resource-type/resource-id}.
 
-For example,
-\code{arn:aws:transcribe:us-west-2:111122223333:transcription-job/transcription-job-name}.
+For example, \code{arn:aws:transcribe:us-west-2:111122223333:transcription-job/transcription-job-name}.
 
-Valid values for \code{resource-type} are: \code{transcription-job},
-\code{medical-transcription-job}, \code{vocabulary}, \code{medical-vocabulary},
-\code{vocabulary-filter}, and \code{language-model}.}
+Valid values for \code{resource-type} are: \code{transcription-job}, \code{medical-transcription-job}, \code{vocabulary}, \code{medical-vocabulary}, \code{vocabulary-filter}, and \code{language-model}.}
 
-\item{Tags}{[required] Adds one or more custom tags, each in the form of a key:value pair, to
-the specified resource.
+\item{Tags}{[required] Adds one or more custom tags, each in the form of a key:value pair, to the specified resource.
 
 To learn more about using tags with Amazon Transcribe, refer to \href{https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html}{Tagging resources}.}
 }

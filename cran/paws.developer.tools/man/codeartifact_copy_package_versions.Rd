@@ -20,24 +20,19 @@ codeartifact_copy_package_versions(
 )
 }
 \arguments{
-\item{domain}{[required] The name of the domain that contains the source and destination
-repositories.}
+\item{domain}{[required] The name of the domain that contains the source and destination repositories.}
 
-\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns
-the domain. It does not include dashes or spaces.}
+\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.}
 
-\item{sourceRepository}{[required] The name of the repository that contains the package versions to be
-copied.}
+\item{sourceRepository}{[required] The name of the repository that contains the package versions to be copied.}
 
 \item{destinationRepository}{[required] The name of the repository into which package versions are copied.}
 
 \item{format}{[required] The format of the package versions to be copied.}
 
-\item{namespace}{The namespace of the package versions to be copied. The package
-component that specifies its namespace depends on its type. For example:
+\item{namespace}{The namespace of the package versions to be copied. The package component that specifies its namespace depends on its type. For example:
 
-The namespace is required when copying package versions of the following
-formats:
+The namespace is required when copying package versions of the following formats:
 \itemize{
 \item Maven
 \item Swift
@@ -45,35 +40,22 @@ formats:
 \item The namespace of a Maven package version is its \code{groupId}.
 \item The namespace of an npm or Swift package version is its \code{scope}.
 \item The namespace of a generic package is its \code{namespace}.
-\item Python, NuGet, Ruby, and Cargo package versions do not contain a
-corresponding component, package versions of those formats do not
-have a namespace.
+\item Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.
 }}
 
 \item{package}{[required] The name of the package that contains the versions to be copied.}
 
 \item{versions}{The versions of the package to be copied.
 
-You must specify \code{versions} or \code{versionRevisions}. You cannot specify
-both.}
+You must specify \code{versions} or \code{versionRevisions}. You cannot specify both.}
 
-\item{versionRevisions}{A list of key-value pairs. The keys are package versions and the values
-are package version revisions. A \code{CopyPackageVersion} operation succeeds
-if the specified versions in the source repository match the specified
-package version revision.
+\item{versionRevisions}{A list of key-value pairs. The keys are package versions and the values are package version revisions. A \code{CopyPackageVersion} operation succeeds if the specified versions in the source repository match the specified package version revision.
 
-You must specify \code{versions} or \code{versionRevisions}. You cannot specify
-both.}
+You must specify \code{versions} or \code{versionRevisions}. You cannot specify both.}
 
-\item{allowOverwrite}{Set to true to overwrite a package version that already exists in the
-destination repository. If set to false and the package version already
-exists in the destination repository, the package version is returned in
-the \code{failedVersions} field of the response with an \code{ALREADY_EXISTS}
-error code.}
+\item{allowOverwrite}{Set to true to overwrite a package version that already exists in the destination repository. If set to false and the package version already exists in the destination repository, the package version is returned in the \code{failedVersions} field of the response with an \code{ALREADY_EXISTS} error code.}
 
-\item{includeFromUpstream}{Set to true to copy packages from repositories that are upstream from
-the source repository to the destination repository. The default setting
-is false. For more information, see \href{https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html}{Working with upstream repositories}.}
+\item{includeFromUpstream}{Set to true to copy packages from repositories that are upstream from the source repository to the destination repository. The default setting is false. For more information, see \href{https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html}{Working with upstream repositories}.}
 }
 \description{
 Copies package versions from one repository to another repository in the same domain.

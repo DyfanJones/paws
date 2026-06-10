@@ -8,9 +8,7 @@ an image}
 rekognition_detect_protective_equipment(Image, SummarizationAttributes = NULL)
 }
 \arguments{
-\item{Image}{[required] The image in which you want to detect PPE on detected persons. The image
-can be passed as image bytes or you can reference an image stored in an
-Amazon S3 bucket.}
+\item{Image}{[required] The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can reference an image stored in an Amazon S3 bucket.}
 
 \item{SummarizationAttributes}{An array of PPE types that you want to summarize.}
 }

@@ -19,42 +19,23 @@ sagemaker_create_workteam(
 
 \item{WorkforceName}{The name of the workforce.}
 
-\item{MemberDefinitions}{[required] A list of \code{MemberDefinition} objects that contains objects that identify
-the workers that make up the work team.
+\item{MemberDefinitions}{[required] A list of \code{MemberDefinition} objects that contains objects that identify the workers that make up the work team.
 
-Workforces can be created using Amazon Cognito or your own OIDC Identity
-Provider (IdP). For private workforces created using Amazon Cognito use
-\code{CognitoMemberDefinition}. For workforces created using your own OIDC
-identity provider (IdP) use \code{OidcMemberDefinition}. Do not provide input
-for both of these parameters in a single request.
+Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use \code{CognitoMemberDefinition}. For workforces created using your own OIDC identity provider (IdP) use \code{OidcMemberDefinition}. Do not provide input for both of these parameters in a single request.
 
-For workforces created using Amazon Cognito, private work teams
-correspond to Amazon Cognito \emph{user groups} within the user pool used to
-create a workforce. All of the \code{CognitoMemberDefinition} objects that
-make up the member definition must have the same \code{ClientId} and
-\code{UserPool} values. To add a Amazon Cognito user group to an existing
-worker pool, see Adding groups to a User Pool. For more information
-about user pools, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools.html}{Amazon Cognito User Pools}.
+For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito \emph{user groups} within the user pool used to create a workforce. All of the \code{CognitoMemberDefinition} objects that make up the member definition must have the same \code{ClientId} and \code{UserPool} values. To add a Amazon Cognito user group to an existing worker pool, see Adding groups to a User Pool. For more information about user pools, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools.html}{Amazon Cognito User Pools}.
 
-For workforces created using your own OIDC IdP, specify the user groups
-that you want to include in your private work team in
-\code{OidcMemberDefinition} by listing those groups in \code{Groups}.}
+For workforces created using your own OIDC IdP, specify the user groups that you want to include in your private work team in \code{OidcMemberDefinition} by listing those groups in \code{Groups}.}
 
 \item{Description}{[required] A description of the work team.}
 
-\item{NotificationConfiguration}{Configures notification of workers regarding available or expiring work
-items.}
+\item{NotificationConfiguration}{Configures notification of workers regarding available or expiring work items.}
 
-\item{WorkerAccessConfiguration}{Use this optional parameter to constrain access to an Amazon S3 resource
-based on the IP address using supported IAM global condition keys. The
-Amazon S3 resource is accessed in the worker portal using a Amazon S3
-presigned URL.}
+\item{WorkerAccessConfiguration}{Use this optional parameter to constrain access to an Amazon S3 resource based on the IP address using supported IAM global condition keys. The Amazon S3 resource is accessed in the worker portal using a Amazon S3 presigned URL.}
 
 \item{Tags}{An array of key-value pairs.
 
-For more information, see \href{https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-properties-resource-tags.html}{Resource Tag}
-and \href{https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what}{Using Cost Allocation Tags}
-in the \emph{Amazon Web Services Billing and Cost Management User Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-properties-resource-tags.html}{Resource Tag} and \href{https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what}{Using Cost Allocation Tags} in the \emph{Amazon Web Services Billing and Cost Management User Guide}.}
 }
 \description{
 Creates a new work team for labeling your data. A work team is defined by one or more Amazon Cognito user pools. You must first create the user pools before you can create a work team.

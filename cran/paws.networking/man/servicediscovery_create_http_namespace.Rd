@@ -14,17 +14,11 @@ servicediscovery_create_http_namespace(
 \arguments{
 \item{Name}{[required] The name that you want to assign to this namespace.}
 
-\item{CreatorRequestId}{A unique string that identifies the request and that allows failed
-\code{\link[=servicediscovery_create_http_namespace]{create_http_namespace}}
-requests to be retried without the risk of running the operation twice.
-\code{CreatorRequestId} can be any unique string (for example, a date/time
-stamp).}
+\item{CreatorRequestId}{A unique string that identifies the request and that allows failed \code{\link[=servicediscovery_create_http_namespace]{create_http_namespace}} requests to be retried without the risk of running the operation twice. \code{CreatorRequestId} can be any unique string (for example, a date/time stamp).}
 
 \item{Description}{A description for the namespace.}
 
-\item{Tags}{The tags to add to the namespace. Each tag consists of a key and an
-optional value that you define. Tags keys can be up to 128 characters in
-length, and tag values can be up to 256 characters in length.}
+\item{Tags}{The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.}
 }
 \description{
 Creates an HTTP namespace. Service instances registered using an HTTP namespace can be discovered using a \code{\link[=servicediscovery_discover_instances]{discover_instances}} request but can't be discovered using DNS.

@@ -9,8 +9,7 @@ glue_get_workflow(Name, IncludeGraph = NULL)
 \arguments{
 \item{Name}{[required] The name of the workflow to retrieve.}
 
-\item{IncludeGraph}{Specifies whether to include a graph when returning the workflow
-resource metadata.}
+\item{IncludeGraph}{Specifies whether to include a graph when returning the workflow resource metadata.}
 }
 \description{
 Retrieves resource metadata for a workflow.

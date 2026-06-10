@@ -11,38 +11,26 @@ NULL
 #' See [https://www.paws-r-sdk.com/docs/rdsdataservice_batch_execute_statement/](https://www.paws-r-sdk.com/docs/rdsdataservice_batch_execute_statement/) for full documentation.
 #'
 #' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
-#' @param secretArn &#91;required&#93; The ARN of the secret that enables access to the DB cluster. Enter the
-#' database user name and password for the credentials in the secret.
+#' @param secretArn &#91;required&#93; The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.
 #' 
-#' For information about creating the secret, see [Create a database
-#' secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/).
-#' @param sql &#91;required&#93; The SQL statement to run. Don't include a semicolon (;) at the end of
-#' the SQL statement.
+#' For information about creating the secret, see [Create a database secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/).
+#' @param sql &#91;required&#93; The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.
 #' @param database The name of the database.
 #' @param schema The name of the database schema.
 #' 
 #' Currently, the `schema` parameter isn't supported.
 #' @param parameterSets The parameter set for the batch operation.
 #' 
-#' The SQL statement is executed as many times as the number of parameter
-#' sets provided. To execute a SQL statement with no parameters, use one of
-#' the following options:
+#' The SQL statement is executed as many times as the number of parameter sets provided. To execute a SQL statement with no parameters, use one of the following options:
 #' 
 #' -   Specify one or more empty parameter sets.
 #' 
-#' -   Use the [`execute_statement`][rdsdataservice_execute_statement]
-#'     operation instead of the
-#'     [`batch_execute_statement`][rdsdataservice_batch_execute_statement]
-#'     operation.
+#' -   Use the [`execute_statement`][rdsdataservice_execute_statement] operation instead of the [`batch_execute_statement`][rdsdataservice_batch_execute_statement] operation.
 #' 
 #' Array parameters are not supported.
-#' @param transactionId The identifier of a transaction that was started by using the
-#' [`begin_transaction`][rdsdataservice_begin_transaction] operation.
-#' Specify the transaction ID of the transaction that you want to include
-#' the SQL statement in.
+#' @param transactionId The identifier of a transaction that was started by using the [`begin_transaction`][rdsdataservice_begin_transaction] operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.
 #' 
-#' If the SQL statement is not part of a transaction, don't set this
-#' parameter.
+#' If the SQL statement is not part of a transaction, don't set this parameter.
 #'
 #' @keywords internal
 #'
@@ -142,17 +130,12 @@ rdsdataservice_commit_transaction <- function(resourceArn, secretArn, transactio
 #' See [https://www.paws-r-sdk.com/docs/rdsdataservice_execute_sql/](https://www.paws-r-sdk.com/docs/rdsdataservice_execute_sql/) for full documentation.
 #'
 #' @param dbClusterOrInstanceArn &#91;required&#93; The ARN of the Aurora Serverless DB cluster.
-#' @param awsSecretStoreArn &#91;required&#93; The Amazon Resource Name (ARN) of the secret that enables access to the
-#' DB cluster. Enter the database user name and password for the
-#' credentials in the secret.
+#' @param awsSecretStoreArn &#91;required&#93; The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.
 #' 
-#' For information about creating the secret, see [Create a database
-#' secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/).
+#' For information about creating the secret, see [Create a database secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/).
 #' @param sqlStatements &#91;required&#93; One or more SQL statements to run on the DB cluster.
 #' 
-#' You can separate SQL statements from each other with a semicolon (;).
-#' Any valid SQL statement is permitted, including data definition, data
-#' manipulation, and commit statements.
+#' You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements.
 #' @param database The name of the database.
 #' @param schema The name of the database schema.
 #'
@@ -186,11 +169,9 @@ rdsdataservice_execute_sql <- function(dbClusterOrInstanceArn, awsSecretStoreArn
 #' See [https://www.paws-r-sdk.com/docs/rdsdataservice_execute_statement/](https://www.paws-r-sdk.com/docs/rdsdataservice_execute_statement/) for full documentation.
 #'
 #' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
-#' @param secretArn &#91;required&#93; The ARN of the secret that enables access to the DB cluster. Enter the
-#' database user name and password for the credentials in the secret.
+#' @param secretArn &#91;required&#93; The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.
 #' 
-#' For information about creating the secret, see [Create a database
-#' secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/).
+#' For information about creating the secret, see [Create a database secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/).
 #' @param sql &#91;required&#93; The SQL statement to run.
 #' @param database The name of the database.
 #' @param schema The name of the database schema.
@@ -199,33 +180,17 @@ rdsdataservice_execute_sql <- function(dbClusterOrInstanceArn, awsSecretStoreArn
 #' @param parameters The parameters for the SQL statement.
 #' 
 #' Array parameters are not supported.
-#' @param transactionId The identifier of a transaction that was started by using the
-#' [`begin_transaction`][rdsdataservice_begin_transaction] operation.
-#' Specify the transaction ID of the transaction that you want to include
-#' the SQL statement in.
+#' @param transactionId The identifier of a transaction that was started by using the [`begin_transaction`][rdsdataservice_begin_transaction] operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.
 #' 
-#' If the SQL statement is not part of a transaction, don't set this
-#' parameter.
+#' If the SQL statement is not part of a transaction, don't set this parameter.
 #' @param includeResultMetadata A value that indicates whether to include metadata in the results.
-#' @param continueAfterTimeout A value that indicates whether to continue running the statement after
-#' the call times out. By default, the statement stops running when the
-#' call times out.
+#' @param continueAfterTimeout A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.
 #' 
-#' For DDL statements, we recommend continuing to run the statement after
-#' the call times out. When a DDL statement terminates before it is
-#' finished running, it can result in errors and possibly corrupted data
-#' structures.
+#' For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.
 #' @param resultSetOptions Options that control how the result set is returned.
-#' @param formatRecordsAs A value that indicates whether to format the result set as a single JSON
-#' string. This parameter only applies to `SELECT` statements and is
-#' ignored for other types of statements. Allowed values are `NONE` and
-#' `JSON`. The default value is `NONE`. The result is returned in the
-#' `formattedRecords` field.
+#' @param formatRecordsAs A value that indicates whether to format the result set as a single JSON string. This parameter only applies to `SELECT` statements and is ignored for other types of statements. Allowed values are `NONE` and `JSON`. The default value is `NONE`. The result is returned in the `formattedRecords` field.
 #' 
-#' For usage information about the JSON format for result sets, see [Using
-#' the Data
-#' API](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html)
-#' in the *Amazon Aurora User Guide*.
+#' For usage information about the JSON format for result sets, see [Using the Data API](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html) in the *Amazon Aurora User Guide*.
 #'
 #' @keywords internal
 #'

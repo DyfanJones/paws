@@ -20,8 +20,7 @@ workmail_create_impersonation_role(
 
 \item{Name}{[required] The name of the new impersonation role.}
 
-\item{Type}{[required] The impersonation role's type. The available impersonation role types
-are \code{READ_ONLY} or \code{FULL_ACCESS}.}
+\item{Type}{[required] The impersonation role's type. The available impersonation role types are \code{READ_ONLY} or \code{FULL_ACCESS}.}
 
 \item{Description}{The description of the new impersonation role.}
 

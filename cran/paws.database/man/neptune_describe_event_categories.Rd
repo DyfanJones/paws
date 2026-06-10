@@ -10,8 +10,7 @@ neptune_describe_event_categories(SourceType = NULL, Filters = NULL)
 \arguments{
 \item{SourceType}{The type of source that is generating the events.
 
-Valid values: db-instance | db-parameter-group | db-security-group |
-db-snapshot}
+Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot}
 
 \item{Filters}{This parameter is not currently supported.}
 }

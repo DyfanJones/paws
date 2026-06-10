@@ -10,8 +10,7 @@ globalaccelerator_withdraw_byoip_cidr(Cidr)
 \arguments{
 \item{Cidr}{[required] The address range, in CIDR notation.
 
-For more information, see \href{https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html}{Bring your own IP addresses (BYOIP)}
-in the Global Accelerator Developer Guide.}
+For more information, see \href{https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html}{Bring your own IP addresses (BYOIP)} in the Global Accelerator Developer Guide.}
 }
 \description{
 Stops advertising an address range that is provisioned as an address pool. You can perform this operation at most once every 10 seconds, even if you specify different address ranges each time.

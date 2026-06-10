@@ -11,8 +11,7 @@ cloudhsm_get_config(ClientArn, ClientVersion, HapgList)
 
 \item{ClientVersion}{[required] The client version.}
 
-\item{HapgList}{[required] A list of ARNs that identify the high-availability partition groups that
-are associated with the client.}
+\item{HapgList}{[required] A list of ARNs that identify the high-availability partition groups that are associated with the client.}
 }
 \description{
 This is documentation for \strong{AWS CloudHSM Classic}. For more information, see \href{https://aws.amazon.com/cloudhsm/faqs/}{AWS CloudHSM Classic FAQs}, the AWS CloudHSM Classic User Guide, and the AWS CloudHSM Classic API Reference.

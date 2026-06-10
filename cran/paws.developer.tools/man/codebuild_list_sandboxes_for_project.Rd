@@ -18,8 +18,7 @@ codebuild_list_sandboxes_for_project(
 
 \item{sortOrder}{The order in which sandbox records should be retrieved.}
 
-\item{nextToken}{The next token, if any, to get paginated results. You will get this
-value from previous execution of list sandboxes.}
+\item{nextToken}{The next token, if any, to get paginated results. You will get this value from previous execution of list sandboxes.}
 }
 \description{
 Gets a list of sandboxes for a given project.

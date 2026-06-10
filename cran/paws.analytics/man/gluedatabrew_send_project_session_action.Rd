@@ -15,21 +15,17 @@ gluedatabrew_send_project_session_action(
 )
 }
 \arguments{
-\item{Preview}{If true, the result of the recipe step will be returned, but not
-applied.}
+\item{Preview}{If true, the result of the recipe step will be returned, but not applied.}
 
 \item{Name}{[required] The name of the project to apply the action to.}
 
-\item{RecipeStep}{}
+\item{RecipeStep}{Represents a single step from a DataBrew recipe to be performed.}
 
-\item{StepIndex}{The index from which to preview a step. This index is used to preview
-the result of steps that have already been applied, so that the
-resulting view frame is from earlier in the view frame stack.}
+\item{StepIndex}{The index from which to preview a step. This index is used to preview the result of steps that have already been applied, so that the resulting view frame is from earlier in the view frame stack.}
 
-\item{ClientSessionId}{A unique identifier for an interactive session that's currently open and
-ready for work. The action will be performed on this session.}
+\item{ClientSessionId}{A unique identifier for an interactive session that's currently open and ready for work. The action will be performed on this session.}
 
-\item{ViewFrame}{}
+\item{ViewFrame}{Represents the data being transformed during an action.}
 }
 \description{
 Performs a recipe step within an interactive DataBrew session that's currently open.

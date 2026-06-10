@@ -20,20 +20,15 @@ comprehendmedical_start_icd10cm_inference_job(
 
 \item{OutputDataConfig}{[required] Specifies where to send the output files.}
 
-\item{DataAccessRoleArn}{[required] The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-(IAM) role that grants Amazon Comprehend Medical read access to your
-input data. For more information, see \href{https://docs.aws.amazon.com/comprehend-medical/latest/dev/security-iam-permissions.html#auth-role-permissions-med}{Role-Based Permissions Required for Asynchronous Operations}.}
+\item{DataAccessRoleArn}{[required] The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend Medical read access to your input data. For more information, see \href{https://docs.aws.amazon.com/comprehend-medical/latest/dev/security-iam-permissions.html#auth-role-permissions-med}{Role-Based Permissions Required for Asynchronous Operations}.}
 
 \item{JobName}{The identifier of the job.}
 
-\item{ClientRequestToken}{A unique identifier for the request. If you don't set the client request
-token, Amazon Comprehend Medical generates one.}
+\item{ClientRequestToken}{A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical generates one.}
 
-\item{KMSKey}{An AWS Key Management Service key to encrypt your output files. If you
-do not specify a key, the files are written in plain text.}
+\item{KMSKey}{An AWS Key Management Service key to encrypt your output files. If you do not specify a key, the files are written in plain text.}
 
-\item{LanguageCode}{[required] The language of the input documents. All documents must be in the same
-language.}
+\item{LanguageCode}{[required] The language of the input documents. All documents must be in the same language.}
 }
 \description{
 Starts an asynchronous job to detect medical conditions and link them to the ICD-10-CM ontology. Use the \code{\link[=comprehendmedical_describe_icd10cm_inference_job]{describe_icd10cm_inference_job}} operation to track the status of a job.

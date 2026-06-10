@@ -16,8 +16,7 @@ ssmcontacts_create_contact(
 )
 }
 \arguments{
-\item{Alias}{[required] The short name to quickly identify a contact or escalation plan. The
-contact alias must be unique and identifiable.}
+\item{Alias}{[required] The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable.}
 
 \item{DisplayName}{The full name of the contact or escalation plan.}
 
@@ -28,15 +27,11 @@ contact alias must be unique and identifiable.}
 \item \code{ONCALL_SCHEDULE}: An on-call schedule.
 }}
 
-\item{Plan}{[required] A list of stages. A contact has an engagement plan with stages that
-contact specified contact channels. An escalation plan uses stages that
-contact specified contacts.}
+\item{Plan}{[required] A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts.}
 
-\item{Tags}{Adds a tag to the target. You can only tag resources created in the
-first Region of your replication set.}
+\item{Tags}{Adds a tag to the target. You can only tag resources created in the first Region of your replication set.}
 
-\item{IdempotencyToken}{A token ensuring that the operation is called only once with the
-specified details.}
+\item{IdempotencyToken}{A token ensuring that the operation is called only once with the specified details.}
 }
 \description{
 Contacts are either the contacts that Incident Manager engages during an incident or the escalation plans that Incident Manager uses to engage contacts in phases during an incident.

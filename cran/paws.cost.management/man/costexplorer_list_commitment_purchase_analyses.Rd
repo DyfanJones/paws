@@ -16,8 +16,7 @@ costexplorer_list_commitment_purchase_analyses(
 
 \item{NextPageToken}{The token to retrieve the next set of results.}
 
-\item{PageSize}{The number of analyses that you want returned in a single response
-object.}
+\item{PageSize}{The number of analyses that you want returned in a single response object.}
 
 \item{AnalysisIds}{The analysis IDs associated with the commitment purchase analyses.}
 }

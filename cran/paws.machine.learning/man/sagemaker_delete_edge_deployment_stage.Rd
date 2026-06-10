@@ -8,8 +8,7 @@ inactive}
 sagemaker_delete_edge_deployment_stage(EdgeDeploymentPlanName, StageName)
 }
 \arguments{
-\item{EdgeDeploymentPlanName}{[required] The name of the edge deployment plan from which the stage will be
-deleted.}
+\item{EdgeDeploymentPlanName}{[required] The name of the edge deployment plan from which the stage will be deleted.}
 
 \item{StageName}{[required] The name of the stage.}
 }

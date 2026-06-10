@@ -8,9 +8,7 @@ values}
 braket_search_jobs(nextToken = NULL, maxResults = NULL, filters)
 }
 \arguments{
-\item{nextToken}{A token used for pagination of results returned in the response. Use the
-token returned from the previous request to continue search where the
-previous request ended.}
+\item{nextToken}{A token used for pagination of results returned in the response. Use the token returned from the previous request to continue search where the previous request ended.}
 
 \item{maxResults}{The maximum number of results to return in the response.}
 

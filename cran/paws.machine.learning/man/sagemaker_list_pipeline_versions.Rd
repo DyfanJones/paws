@@ -16,18 +16,13 @@ sagemaker_list_pipeline_versions(
 \arguments{
 \item{PipelineName}{[required] The Amazon Resource Name (ARN) of the pipeline.}
 
-\item{CreatedAfter}{A filter that returns the pipeline versions that were created after a
-specified time.}
+\item{CreatedAfter}{A filter that returns the pipeline versions that were created after a specified time.}
 
-\item{CreatedBefore}{A filter that returns the pipeline versions that were created before a
-specified time.}
+\item{CreatedBefore}{A filter that returns the pipeline versions that were created before a specified time.}
 
 \item{SortOrder}{The sort order for the results.}
 
-\item{NextToken}{If the result of the previous
-\code{\link[=sagemaker_list_pipeline_versions]{list_pipeline_versions}} request was
-truncated, the response includes a \code{NextToken}. To retrieve the next set
-of pipeline versions, use this token in your next request.}
+\item{NextToken}{If the result of the previous \code{\link[=sagemaker_list_pipeline_versions]{list_pipeline_versions}} request was truncated, the response includes a \code{NextToken}. To retrieve the next set of pipeline versions, use this token in your next request.}
 
 \item{MaxResults}{The maximum number of pipeline versions to return in the response.}
 }

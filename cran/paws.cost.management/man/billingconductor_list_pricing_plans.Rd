@@ -14,13 +14,11 @@ billingconductor_list_pricing_plans(
 \arguments{
 \item{BillingPeriod}{The preferred billing period to get pricing plan.}
 
-\item{Filters}{A \code{ListPricingPlansFilter} that specifies the Amazon Resource Name
-(ARNs) of pricing plans to retrieve pricing plans information.}
+\item{Filters}{A \code{ListPricingPlansFilter} that specifies the Amazon Resource Name (ARNs) of pricing plans to retrieve pricing plans information.}
 
 \item{MaxResults}{The maximum number of pricing plans to retrieve.}
 
-\item{NextToken}{The pagination token that's used on subsequent call to get pricing
-plans.}
+\item{NextToken}{The pagination token that's used on subsequent call to get pricing plans.}
 }
 \description{
 A paginated call to get pricing plans for the given billing period. If you don't provide a billing period, the current billing period is used.

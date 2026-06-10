@@ -15,18 +15,13 @@ redshift_associate_data_share_consumer(
 )
 }
 \arguments{
-\item{DataShareArn}{[required] The Amazon Resource Name (ARN) of the datashare that the consumer is to
-use.}
+\item{DataShareArn}{[required] The Amazon Resource Name (ARN) of the datashare that the consumer is to use.}
 
-\item{AssociateEntireAccount}{A value that specifies whether the datashare is associated with the
-entire account.}
+\item{AssociateEntireAccount}{A value that specifies whether the datashare is associated with the entire account.}
 
-\item{ConsumerArn}{The Amazon Resource Name (ARN) of the consumer namespace associated with
-the datashare.}
+\item{ConsumerArn}{The Amazon Resource Name (ARN) of the consumer namespace associated with the datashare.}
 
-\item{ConsumerRegion}{From a datashare consumer account, associates a datashare with all
-existing and future namespaces in the specified Amazon Web Services
-Region.}
+\item{ConsumerRegion}{From a datashare consumer account, associates a datashare with all existing and future namespaces in the specified Amazon Web Services Region.}
 
 \item{AllowWrites}{If set to true, allows write operations for a datashare.}
 }

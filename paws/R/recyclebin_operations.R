@@ -6,65 +6,35 @@ NULL
 #' Creates a Recycle Bin retention rule
 #'
 #' @description
-#' Creates a Recycle Bin retention rule. You can create two types of
-#' retention rules:
+#' Creates a Recycle Bin retention rule. You can create two types of retention rules:
 #' 
-#' -   **Tag-level retention rules** - These retention rules use resource
-#'     tags to identify the resources to protect. For each retention rule,
-#'     you specify one or more tag key and value pairs. Resources (of the
-#'     specified type) that have at least one of these tag key and value
-#'     pairs are automatically retained in the Recycle Bin upon deletion.
-#'     Use this type of retention rule to protect specific resources in
-#'     your account based on their tags.
+#' -   **Tag-level retention rules** - These retention rules use resource tags to identify the resources to protect. For each retention rule, you specify one or more tag key and value pairs. Resources (of the specified type) that have at least one of these tag key and value pairs are automatically retained in the Recycle Bin upon deletion. Use this type of retention rule to protect specific resources in your account based on their tags.
 #' 
-#' -   **Region-level retention rules** - These retention rules, by
-#'     default, apply to all of the resources (of the specified type) in
-#'     the Region, even if the resources are not tagged. However, you can
-#'     specify exclusion tags to exclude resources that have specific tags.
-#'     Use this type of retention rule to protect all resources of a
-#'     specific type in a Region.
+#' -   **Region-level retention rules** - These retention rules, by default, apply to all of the resources (of the specified type) in the Region, even if the resources are not tagged. However, you can specify exclusion tags to exclude resources that have specific tags. Use this type of retention rule to protect all resources of a specific type in a Region.
 #' 
-#' For more information, see [Create Recycle Bin retention
-#' rules](https://docs.aws.amazon.com/ebs/latest/userguide/recycle-bin.html)
-#' in the *Amazon EBS User Guide*.
+#' For more information, see [Create Recycle Bin retention rules](https://docs.aws.amazon.com/ebs/latest/userguide/recycle-bin.html) in the *Amazon EBS User Guide*.
 #'
 #' @usage
 #' recyclebin_create_rule(RetentionPeriod, Description, Tags, ResourceType,
 #'   ResourceTags, LockConfiguration, ExcludeResourceTags)
 #'
-#' @param RetentionPeriod &#91;required&#93; Information about the retention period for which the retention rule is
-#' to retain resources.
+#' @param RetentionPeriod &#91;required&#93; Information about the retention period for which the retention rule is to retain resources.
 #' @param Description The retention rule description.
 #' @param Tags Information about the tags to assign to the retention rule.
-#' @param ResourceType &#91;required&#93; The resource type to be retained by the retention rule. Currently, only
-#' EBS volumes, EBS snapshots, and EBS-backed AMIs are supported.
+#' @param ResourceType &#91;required&#93; The resource type to be retained by the retention rule. Currently, only EBS volumes, EBS snapshots, and EBS-backed AMIs are supported.
 #' 
 #' -   To retain EBS volumes, specify `EBS_VOLUME`.
 #' 
 #' -   To retain EBS snapshots, specify `EBS_SNAPSHOT`
 #' 
 #' -   To retain EBS-backed AMIs, specify `EC2_IMAGE`.
-#' @param ResourceTags \[Tag-level retention rules only\] Specifies the resource tags to use to
-#' identify resources that are to be retained by a tag-level retention
-#' rule. For tag-level retention rules, only deleted resources, of the
-#' specified resource type, that have one or more of the specified tag key
-#' and value pairs are retained. If a resource is deleted, but it does not
-#' have any of the specified tag key and value pairs, it is immediately
-#' deleted without being retained by the retention rule.
+#' @param ResourceTags \[Tag-level retention rules only\] Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. For tag-level retention rules, only deleted resources, of the specified resource type, that have one or more of the specified tag key and value pairs are retained. If a resource is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.
 #' 
-#' You can add the same tag key and value pair to a maximum or five
-#' retention rules.
+#' You can add the same tag key and value pair to a maximum or five retention rules.
 #' 
-#' To create a Region-level retention rule, omit this parameter. A
-#' Region-level retention rule does not have any resource tags specified.
-#' It retains all deleted resources of the specified resource type in the
-#' Region in which the rule is created, even if the resources are not
-#' tagged.
+#' To create a Region-level retention rule, omit this parameter. A Region-level retention rule does not have any resource tags specified. It retains all deleted resources of the specified resource type in the Region in which the rule is created, even if the resources are not tagged.
 #' @param LockConfiguration Information about the retention rule lock configuration.
-#' @param ExcludeResourceTags \[Region-level retention rules only\] Specifies the exclusion tags to
-#' use to identify resources that are to be excluded, or ignored, by a
-#' Region-level retention rule. Resources that have any of these tags are
-#' not retained by the retention rule upon deletion.
+#' @param ExcludeResourceTags \[Region-level retention rules only\] Specifies the exclusion tags to use to identify resources that are to be excluded, or ignored, by a Region-level retention rule. Resources that have any of these tags are not retained by the retention rule upon deletion.
 #' 
 #' You can't specify exclusion tags for tag-level retention rules.
 #'
@@ -172,10 +142,7 @@ recyclebin_create_rule <- function(RetentionPeriod, Description = NULL, Tags = N
 #' Deletes a Recycle Bin retention rule
 #'
 #' @description
-#' Deletes a Recycle Bin retention rule. For more information, see [Delete
-#' Recycle Bin retention
-#' rules](https://docs.aws.amazon.com/ebs/latest/userguide/#recycle-bin-delete-rule)
-#' in the *Amazon Elastic Compute Cloud User Guide*.
+#' Deletes a Recycle Bin retention rule. For more information, see [Delete Recycle Bin retention rules](https://docs.aws.amazon.com/ebs/latest/userguide/#recycle-bin-delete-rule) in the *Amazon Elastic Compute Cloud User Guide*.
 #'
 #' @usage
 #' recyclebin_delete_rule(Identifier)
@@ -304,29 +271,18 @@ recyclebin_get_rule <- function(Identifier) {
 #' recyclebin_list_rules(MaxResults, NextToken, ResourceType, ResourceTags,
 #'   LockState, ExcludeResourceTags)
 #'
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned `NextToken`
-#' value.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned `NextToken` value.
 #' @param NextToken The token for the next page of results.
-#' @param ResourceType &#91;required&#93; The resource type retained by the retention rule. Only retention rules
-#' that retain the specified resource type are listed. Currently, only EBS
-#' volumes, EBS snapshots, and EBS-backed AMIs are supported.
+#' @param ResourceType &#91;required&#93; The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed. Currently, only EBS volumes, EBS snapshots, and EBS-backed AMIs are supported.
 #' 
-#' -   To list retention rules that retain EBS volumes, specify
-#'     `EBS_VOLUME`.
+#' -   To list retention rules that retain EBS volumes, specify `EBS_VOLUME`.
 #' 
-#' -   To list retention rules that retain EBS snapshots, specify
-#'     `EBS_SNAPSHOT`.
+#' -   To list retention rules that retain EBS snapshots, specify `EBS_SNAPSHOT`.
 #' 
-#' -   To list retention rules that retain EBS-backed AMIs, specify
-#'     `EC2_IMAGE`.
-#' @param ResourceTags \[Tag-level retention rules only\] Information about the resource tags
-#' used to identify resources that are retained by the retention rule.
-#' @param LockState The lock state of the retention rules to list. Only retention rules with
-#' the specified lock state are returned.
-#' @param ExcludeResourceTags \[Region-level retention rules only\] Information about the exclusion
-#' tags used to identify resources that are to be excluded, or ignored, by
-#' the retention rule.
+#' -   To list retention rules that retain EBS-backed AMIs, specify `EC2_IMAGE`.
+#' @param ResourceTags \[Tag-level retention rules only\] Information about the resource tags used to identify resources that are retained by the retention rule.
+#' @param LockState The lock state of the retention rules to list. Only retention rules with the specified lock state are returned.
+#' @param ExcludeResourceTags \[Region-level retention rules only\] Information about the exclusion tags used to identify resources that are to be excluded, or ignored, by the retention rule.
 #'
 #' @return
 #' A list with the following syntax:
@@ -451,11 +407,9 @@ recyclebin_list_tags_for_resource <- function(ResourceArn) {
 #' Locks a Region-level retention rule
 #'
 #' @description
-#' Locks a Region-level retention rule. A locked retention rule can't be
-#' modified or deleted.
+#' Locks a Region-level retention rule. A locked retention rule can't be modified or deleted.
 #' 
-#' You can't lock tag-level retention rules, or Region-level retention
-#' rules that have exclusion tags.
+#' You can't lock tag-level retention rules, or Region-level retention rules that have exclusion tags.
 #'
 #' @usage
 #' recyclebin_lock_rule(Identifier, LockConfiguration)
@@ -589,8 +543,7 @@ recyclebin_tag_resource <- function(ResourceArn, Tags) {
 #' Unlocks a retention rule
 #'
 #' @description
-#' Unlocks a retention rule. After a retention rule is unlocked, it can be
-#' modified or deleted only after the unlock delay period expires.
+#' Unlocks a retention rule. After a retention rule is unlocked, it can be modified or deleted only after the unlock delay period expires.
 #'
 #' @usage
 #' recyclebin_unlock_rule(Identifier)
@@ -675,8 +628,7 @@ recyclebin_unlock_rule <- function(Identifier) {
 #' recyclebin_untag_resource(ResourceArn, TagKeys)
 #'
 #' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the retention rule.
-#' @param TagKeys &#91;required&#93; The tag keys of the tags to unassign. All tags that have the specified
-#' tag key are unassigned.
+#' @param TagKeys &#91;required&#93; The tag keys of the tags to unassign. All tags that have the specified tag key are unassigned.
 #'
 #' @return
 #' An empty list.
@@ -718,43 +670,22 @@ recyclebin_untag_resource <- function(ResourceArn, TagKeys) {
 #' Updates an existing Recycle Bin retention rule
 #'
 #' @description
-#' Updates an existing Recycle Bin retention rule. You can update a
-#' retention rule's description, resource tags, and retention period at any
-#' time after creation. You can't update a retention rule's resource type
-#' after creation. For more information, see [Update Recycle Bin retention
-#' rules](https://docs.aws.amazon.com/ebs/latest/userguide/#recycle-bin-update-rule)
-#' in the *Amazon Elastic Compute Cloud User Guide*.
+#' Updates an existing Recycle Bin retention rule. You can update a retention rule's description, resource tags, and retention period at any time after creation. You can't update a retention rule's resource type after creation. For more information, see [Update Recycle Bin retention rules](https://docs.aws.amazon.com/ebs/latest/userguide/#recycle-bin-update-rule) in the *Amazon Elastic Compute Cloud User Guide*.
 #'
 #' @usage
 #' recyclebin_update_rule(Identifier, RetentionPeriod, Description,
 #'   ResourceType, ResourceTags, ExcludeResourceTags)
 #'
 #' @param Identifier &#91;required&#93; The unique ID of the retention rule.
-#' @param RetentionPeriod Information about the retention period for which the retention rule is
-#' to retain resources.
+#' @param RetentionPeriod Information about the retention period for which the retention rule is to retain resources.
 #' @param Description The retention rule description.
-#' @param ResourceType This parameter is currently not supported. You can't update a retention
-#' rule's resource type after creation.
-#' @param ResourceTags \[Tag-level retention rules only\] Specifies the resource tags to use to
-#' identify resources that are to be retained by a tag-level retention
-#' rule. For tag-level retention rules, only deleted resources, of the
-#' specified resource type, that have one or more of the specified tag key
-#' and value pairs are retained. If a resource is deleted, but it does not
-#' have any of the specified tag key and value pairs, it is immediately
-#' deleted without being retained by the retention rule.
+#' @param ResourceType This parameter is currently not supported. You can't update a retention rule's resource type after creation.
+#' @param ResourceTags \[Tag-level retention rules only\] Specifies the resource tags to use to identify resources that are to be retained by a tag-level retention rule. For tag-level retention rules, only deleted resources, of the specified resource type, that have one or more of the specified tag key and value pairs are retained. If a resource is deleted, but it does not have any of the specified tag key and value pairs, it is immediately deleted without being retained by the retention rule.
 #' 
-#' You can add the same tag key and value pair to a maximum or five
-#' retention rules.
+#' You can add the same tag key and value pair to a maximum or five retention rules.
 #' 
-#' To create a Region-level retention rule, omit this parameter. A
-#' Region-level retention rule does not have any resource tags specified.
-#' It retains all deleted resources of the specified resource type in the
-#' Region in which the rule is created, even if the resources are not
-#' tagged.
-#' @param ExcludeResourceTags \[Region-level retention rules only\] Specifies the exclusion tags to
-#' use to identify resources that are to be excluded, or ignored, by a
-#' Region-level retention rule. Resources that have any of these tags are
-#' not retained by the retention rule upon deletion.
+#' To create a Region-level retention rule, omit this parameter. A Region-level retention rule does not have any resource tags specified. It retains all deleted resources of the specified resource type in the Region in which the rule is created, even if the resources are not tagged.
+#' @param ExcludeResourceTags \[Region-level retention rules only\] Specifies the exclusion tags to use to identify resources that are to be excluded, or ignored, by a Region-level retention rule. Resources that have any of these tags are not retained by the retention rule upon deletion.
 #' 
 #' You can't specify exclusion tags for tag-level retention rules.
 #'

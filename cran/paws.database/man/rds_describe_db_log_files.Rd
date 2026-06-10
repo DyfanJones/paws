@@ -15,33 +15,24 @@ rds_describe_db_log_files(
 )
 }
 \arguments{
-\item{DBInstanceIdentifier}{[required] The customer-assigned name of the DB instance that contains the log
-files you want to list.
+\item{DBInstanceIdentifier}{[required] The customer-assigned name of the DB instance that contains the log files you want to list.
 
 Constraints:
 \itemize{
 \item Must match the identifier of an existing DBInstance.
 }}
 
-\item{FilenameContains}{Filters the available log files for log file names that contain the
-specified string.}
+\item{FilenameContains}{Filters the available log files for log file names that contain the specified string.}
 
-\item{FileLastWritten}{Filters the available log files for files written since the specified
-date, in POSIX timestamp format with milliseconds.}
+\item{FileLastWritten}{Filters the available log files for files written since the specified date, in POSIX timestamp format with milliseconds.}
 
-\item{FileSize}{Filters the available log files for files larger than the specified
-size.}
+\item{FileSize}{Filters the available log files for files larger than the specified size.}
 
 \item{Filters}{This parameter isn't currently supported.}
 
-\item{MaxRecords}{The maximum number of records to include in the response. If more
-records exist than the specified MaxRecords value, a pagination token
-called a marker is included in the response so you can retrieve the
-remaining results.}
+\item{MaxRecords}{The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a pagination token called a marker is included in the response so you can retrieve the remaining results.}
 
-\item{Marker}{The pagination token provided in the previous request. If this parameter
-is specified the response includes only records beyond the marker, up to
-MaxRecords.}
+\item{Marker}{The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to MaxRecords.}
 }
 \description{
 Returns a list of DB log files for the DB instance.

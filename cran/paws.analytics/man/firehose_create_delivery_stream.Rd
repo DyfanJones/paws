@@ -26,80 +26,49 @@ firehose_create_delivery_stream(
 )
 }
 \arguments{
-\item{DeliveryStreamName}{[required] The name of the Firehose stream. This name must be unique per Amazon Web
-Services account in the same Amazon Web Services Region. If the Firehose
-streams are in different accounts or different Regions, you can have
-multiple Firehose streams with the same name.}
+\item{DeliveryStreamName}{[required] The name of the Firehose stream. This name must be unique per Amazon Web Services account in the same Amazon Web Services Region. If the Firehose streams are in different accounts or different Regions, you can have multiple Firehose streams with the same name.}
 
-\item{DeliveryStreamType}{The Firehose stream type. This parameter can be one of the following
-values:
+\item{DeliveryStreamType}{The Firehose stream type. This parameter can be one of the following values:
 \itemize{
-\item \code{DirectPut}: Provider applications access the Firehose stream
-directly.
-\item \code{KinesisStreamAsSource}: The Firehose stream uses a Kinesis data
-stream as a source.
+\item \code{DirectPut}: Provider applications access the Firehose stream directly.
+\item \code{KinesisStreamAsSource}: The Firehose stream uses a Kinesis data stream as a source.
 }}
 
-\item{DirectPutSourceConfiguration}{The structure that configures parameters such as \code{ThroughputHintInMBs}
-for a stream configured with Direct PUT as a source.}
+\item{DirectPutSourceConfiguration}{The structure that configures parameters such as \code{ThroughputHintInMBs} for a stream configured with Direct PUT as a source.}
 
-\item{KinesisStreamSourceConfiguration}{When a Kinesis data stream is used as the source for the Firehose
-stream, a KinesisStreamSourceConfiguration containing the Kinesis data
-stream Amazon Resource Name (ARN) and the role ARN for the source
-stream.}
+\item{KinesisStreamSourceConfiguration}{When a Kinesis data stream is used as the source for the Firehose stream, a KinesisStreamSourceConfiguration containing the Kinesis data stream Amazon Resource Name (ARN) and the role ARN for the source stream.}
 
-\item{DeliveryStreamEncryptionConfigurationInput}{Used to specify the type and Amazon Resource Name (ARN) of the KMS key
-needed for Server-Side Encryption (SSE).}
+\item{DeliveryStreamEncryptionConfigurationInput}{Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for Server-Side Encryption (SSE).}
 
-\item{S3DestinationConfiguration}{[Deprecated] The destination in Amazon S3. You can specify only one
-destination.}
+\item{S3DestinationConfiguration}{[Deprecated] The destination in Amazon S3. You can specify only one destination.}
 
 \item{ExtendedS3DestinationConfiguration}{The destination in Amazon S3. You can specify only one destination.}
 
-\item{RedshiftDestinationConfiguration}{The destination in Amazon Redshift. You can specify only one
-destination.}
+\item{RedshiftDestinationConfiguration}{The destination in Amazon Redshift. You can specify only one destination.}
 
-\item{ElasticsearchDestinationConfiguration}{The destination in Amazon OpenSearch Service. You can specify only one
-destination.}
+\item{ElasticsearchDestinationConfiguration}{The destination in Amazon OpenSearch Service. You can specify only one destination.}
 
-\item{AmazonopensearchserviceDestinationConfiguration}{The destination in Amazon OpenSearch Service. You can specify only one
-destination.}
+\item{AmazonopensearchserviceDestinationConfiguration}{The destination in Amazon OpenSearch Service. You can specify only one destination.}
 
 \item{SplunkDestinationConfiguration}{The destination in Splunk. You can specify only one destination.}
 
-\item{HttpEndpointDestinationConfiguration}{Enables configuring Kinesis Firehose to deliver data to any HTTP
-endpoint destination. You can specify only one destination.}
+\item{HttpEndpointDestinationConfiguration}{Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination. You can specify only one destination.}
 
-\item{Tags}{A set of tags to assign to the Firehose stream. A tag is a key-value
-pair that you can define and assign to Amazon Web Services resources.
-Tags are metadata. For example, you can add friendly names and
-descriptions or other types of information that can help you distinguish
-the Firehose stream. For more information about tags, see \href{https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html}{Using Cost Allocation Tags}
-in the Amazon Web Services Billing and Cost Management User Guide.
+\item{Tags}{A set of tags to assign to the Firehose stream. A tag is a key-value pair that you can define and assign to Amazon Web Services resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of information that can help you distinguish the Firehose stream. For more information about tags, see \href{https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html}{Using Cost Allocation Tags} in the Amazon Web Services Billing and Cost Management User Guide.
 
 You can specify up to 50 tags when creating a Firehose stream.
 
-If you specify tags in the
-\code{\link[=firehose_create_delivery_stream]{create_delivery_stream}} action,
-Amazon Data Firehose performs an additional authorization on the
-\code{firehose:TagDeliveryStream} action to verify if users have permissions
-to create tags. If you do not provide this permission, requests to
-create new Firehose streams with IAM resource tags will fail with an
-\code{AccessDeniedException} such as following.
+If you specify tags in the \code{\link[=firehose_create_delivery_stream]{create_delivery_stream}} action, Amazon Data Firehose performs an additional authorization on the \code{firehose:TagDeliveryStream} action to verify if users have permissions to create tags. If you do not provide this permission, requests to create new Firehose streams with IAM resource tags will fail with an \code{AccessDeniedException} such as following.
 
 \strong{AccessDeniedException}
 
-User: arn:aws:sts::x:assumed-role/x/x is not authorized to perform:
-firehose:TagDeliveryStream on resource:
-arn:aws:firehose:us-east-1:x:deliverystream/x with an explicit deny in
-an identity-based policy.
+User: arn:aws:sts::x:assumed-role/x/x is not authorized to perform: firehose:TagDeliveryStream on resource: arn:aws:firehose:us-east-1:x:deliverystream/x with an explicit deny in an identity-based policy.
 
 For an example IAM policy, see \href{https://docs.aws.amazon.com/firehose/latest/APIReference/API_CreateDeliveryStream.html#API_CreateDeliveryStream_Examples}{Tag example.}}
 
-\item{AmazonOpenSearchServerlessDestinationConfiguration}{The destination in the Serverless offering for Amazon OpenSearch
-Service. You can specify only one destination.}
+\item{AmazonOpenSearchServerlessDestinationConfiguration}{The destination in the Serverless offering for Amazon OpenSearch Service. You can specify only one destination.}
 
-\item{MSKSourceConfiguration}{}
+\item{MSKSourceConfiguration}{The configuration for the Amazon MSK cluster to be used as the source for a delivery stream.}
 
 \item{SnowflakeDestinationConfiguration}{Configure Snowflake destination}
 

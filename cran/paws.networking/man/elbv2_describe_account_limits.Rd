@@ -8,8 +8,7 @@ Amazon Web Services account}
 elbv2_describe_account_limits(Marker = NULL, PageSize = NULL)
 }
 \arguments{
-\item{Marker}{The marker for the next set of results. (You received this marker from a
-previous call.)}
+\item{Marker}{The marker for the next set of results. (You received this marker from a previous call.)}
 
 \item{PageSize}{The maximum number of results to return with this call.}
 }

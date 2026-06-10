@@ -7,8 +7,7 @@
 kafka_describe_cluster_operation(ClusterOperationArn)
 }
 \arguments{
-\item{ClusterOperationArn}{[required] The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster
-operation.}
+\item{ClusterOperationArn}{[required] The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster operation.}
 }
 \description{
 Returns a description of the cluster operation specified by the ARN.

@@ -13,8 +13,7 @@ route53_list_tags_for_resources(ResourceType, ResourceIds)
 \item The resource type for hosted zones is \code{hostedzone}.
 }}
 
-\item{ResourceIds}{[required] A complex type that contains the ResourceId element for each resource
-for which you want to get a list of tags.}
+\item{ResourceIds}{[required] A complex type that contains the ResourceId element for each resource for which you want to get a list of tags.}
 }
 \description{
 Lists tags for up to 10 health checks or hosted zones.

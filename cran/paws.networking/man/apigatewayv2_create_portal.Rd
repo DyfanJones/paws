@@ -17,20 +17,17 @@ apigatewayv2_create_portal(
 \arguments{
 \item{Authorization}{[required] The authentication configuration for the portal.}
 
-\item{EndpointConfiguration}{[required] The domain configuration for the portal. Use a default domain provided
-by API Gateway or provide a fully-qualified domain name that you own.}
+\item{EndpointConfiguration}{[required] The domain configuration for the portal. Use a default domain provided by API Gateway or provide a fully-qualified domain name that you own.}
 
 \item{IncludedPortalProductArns}{The ARNs of the portal products included in the portal.}
 
-\item{LogoUri}{The URI for the portal logo image that is displayed in the portal
-header.}
+\item{LogoUri}{The URI for the portal logo image that is displayed in the portal header.}
 
 \item{PortalContent}{[required] The content of the portal.}
 
 \item{RumAppMonitorName}{The name of the Amazon CloudWatch RUM app monitor for the portal.}
 
-\item{Tags}{The collection of tags. Each tag element is associated with a given
-resource.}
+\item{Tags}{The collection of tags. Each tag element is associated with a given resource.}
 }
 \description{
 Creates a portal.

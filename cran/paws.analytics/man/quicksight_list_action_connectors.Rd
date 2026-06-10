@@ -13,11 +13,9 @@ quicksight_list_action_connectors(
 \arguments{
 \item{AwsAccountId}{[required] The Amazon Web Services account ID for which to list action connectors.}
 
-\item{MaxResults}{The maximum number of action connectors to return in a single response.
-Valid range is 1 to 100.}
+\item{MaxResults}{The maximum number of action connectors to return in a single response. Valid range is 1 to 100.}
 
-\item{NextToken}{A pagination token to retrieve the next set of results. Use the token
-returned from a previous call to continue listing action connectors.}
+\item{NextToken}{A pagination token to retrieve the next set of results. Use the token returned from a previous call to continue listing action connectors.}
 }
 \description{
 Lists all action connectors in the specified Amazon Web Services account. Returns summary information for each connector including its name, type, creation time, and status.

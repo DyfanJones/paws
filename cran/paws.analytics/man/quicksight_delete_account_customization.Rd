@@ -8,8 +8,7 @@ specified Amazon Web Services account and namespace}
 quicksight_delete_account_customization(AwsAccountId, Namespace = NULL)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that you want to delete Quick
-Sight customizations from.}
+\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that you want to delete Quick Sight customizations from.}
 
 \item{Namespace}{The Quick Sight namespace that you're deleting the customizations from.}
 }

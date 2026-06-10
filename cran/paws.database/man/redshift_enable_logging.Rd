@@ -28,16 +28,11 @@ Constraints:
 
 \item{S3KeyPrefix}{The prefix applied to the log file names.
 
-Valid characters are any letter from any language, any whitespace
-character, any numeric character, and the following characters:
-underscore (\verb{_}), period (\code{.}), colon (\code{:}), slash (\code{/}), equal (\code{=}),
-plus (\code{+}), backslash (\verb{\\}), hyphen (\code{-}), at symbol (\code{@}).}
+Valid characters are any letter from any language, any whitespace character, any numeric character, and the following characters: underscore (\verb{_}), period (\code{.}), colon (\code{:}), slash (\code{/}), equal (\code{=}), plus (\code{+}), backslash (\verb{\\}), hyphen (\code{-}), at symbol (\code{@}).}
 
-\item{LogDestinationType}{The log destination type. An enum with possible values of \code{s3} and
-\code{cloudwatch}.}
+\item{LogDestinationType}{The log destination type. An enum with possible values of \code{s3} and \code{cloudwatch}.}
 
-\item{LogExports}{The collection of exported log types. Possible values are
-\code{connectionlog}, \code{useractivitylog}, and \code{userlog}.}
+\item{LogExports}{The collection of exported log types. Possible values are \code{connectionlog}, \code{useractivitylog}, and \code{userlog}.}
 }
 \description{
 Starts logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster.

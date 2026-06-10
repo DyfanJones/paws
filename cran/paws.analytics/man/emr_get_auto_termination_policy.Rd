@@ -7,8 +7,7 @@
 emr_get_auto_termination_policy(ClusterId)
 }
 \arguments{
-\item{ClusterId}{[required] Specifies the ID of the Amazon EMR cluster for which the
-auto-termination policy will be fetched.}
+\item{ClusterId}{[required] Specifies the ID of the Amazon EMR cluster for which the auto-termination policy will be fetched.}
 }
 \description{
 Returns the auto-termination policy for an Amazon EMR cluster.

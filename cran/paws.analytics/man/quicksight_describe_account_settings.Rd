@@ -8,8 +8,7 @@ was first created in this Amazon Web Services account}
 quicksight_describe_account_settings(AwsAccountId)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that contains the settings
-that you want to list.}
+\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that contains the settings that you want to list.}
 }
 \description{
 Describes the settings that were used when your Quick Sight subscription was first created in this Amazon Web Services account.

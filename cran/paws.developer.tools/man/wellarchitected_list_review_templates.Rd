@@ -7,9 +7,9 @@
 wellarchitected_list_review_templates(NextToken = NULL, MaxResults = NULL)
 }
 \arguments{
-\item{NextToken}{}
+\item{NextToken}{The token to use to retrieve the next set of results.}
 
-\item{MaxResults}{}
+\item{MaxResults}{The maximum number of results to return for this request.}
 }
 \description{
 List review templates.

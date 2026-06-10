@@ -23,12 +23,11 @@ memorydb_update_multi_region_cluster(
 
 \item{EngineVersion}{The new engine version to be used for the multi-Region cluster.}
 
-\item{ShardConfiguration}{}
+\item{ShardConfiguration}{Shard configuration options. Each shard configuration has the following: Slots and ReplicaCount.}
 
 \item{MultiRegionParameterGroupName}{The new multi-Region parameter group to be associated with the cluster.}
 
-\item{UpdateStrategy}{The strategy to use for the update operation. Supported values are
-"coordinated" or "uncoordinated".}
+\item{UpdateStrategy}{The strategy to use for the update operation. Supported values are "coordinated" or "uncoordinated".}
 }
 \description{
 Updates the configuration of an existing multi-Region cluster.

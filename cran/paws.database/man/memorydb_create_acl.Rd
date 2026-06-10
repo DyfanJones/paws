@@ -11,8 +11,7 @@ memorydb_create_acl(ACLName, UserNames = NULL, Tags = NULL)
 
 \item{UserNames}{The list of users that belong to the Access Control List.}
 
-\item{Tags}{A list of tags to be added to this resource. A tag is a key-value pair.
-A tag key must be accompanied by a tag value, although null is accepted.}
+\item{Tags}{A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.}
 }
 \description{
 Creates an Access Control List. For more information, see \href{https://docs.aws.amazon.com/memorydb/latest/devguide/clusters.acls.html}{Authenticating users with Access Contol Lists (ACLs)}.

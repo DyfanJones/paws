@@ -9,9 +9,7 @@ quicksight_describe_topic_refresh_schedule(AwsAccountId, TopicId, DatasetId)
 \arguments{
 \item{AwsAccountId}{[required] The Amazon Web Services account ID.}
 
-\item{TopicId}{[required] The ID of the topic that contains the refresh schedule that you want to
-describe. This ID is unique per Amazon Web Services Region for each
-Amazon Web Services account.}
+\item{TopicId}{[required] The ID of the topic that contains the refresh schedule that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.}
 
 \item{DatasetId}{[required] The ID of the dataset.}
 }

@@ -12,16 +12,11 @@ bedrock_create_automated_reasoning_policy_version(
 )
 }
 \arguments{
-\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy for
-which to create a version.}
+\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy for which to create a version.}
 
-\item{clientRequestToken}{A unique, case-sensitive identifier to ensure that the operation
-completes no more than one time. If this token matches a previous
-request, Amazon Bedrock ignores the request, but does not return an
-error.}
+\item{clientRequestToken}{A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error.}
 
-\item{lastUpdatedDefinitionHash}{[required] The hash of the current policy definition used as a concurrency token to
-ensure the policy hasn't been modified since you last retrieved it.}
+\item{lastUpdatedDefinitionHash}{[required] The hash of the current policy definition used as a concurrency token to ensure the policy hasn't been modified since you last retrieved it.}
 
 \item{tags}{A list of tags to associate with the policy version.}
 }

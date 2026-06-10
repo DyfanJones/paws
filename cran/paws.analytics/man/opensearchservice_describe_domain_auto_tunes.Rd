@@ -14,15 +14,9 @@ opensearchservice_describe_domain_auto_tunes(
 \arguments{
 \item{DomainName}{[required] Name of the domain that you want Auto-Tune details about.}
 
-\item{MaxResults}{An optional parameter that specifies the maximum number of results to
-return. You can use \code{nextToken} to get the next page of results.}
+\item{MaxResults}{An optional parameter that specifies the maximum number of results to return. You can use \code{nextToken} to get the next page of results.}
 
-\item{NextToken}{If your initial
-\code{\link[=opensearchservice_describe_domain_auto_tunes]{describe_domain_auto_tunes}}
-operation returns a \code{nextToken}, you can include the returned
-\code{nextToken} in subsequent
-\code{\link[=opensearchservice_describe_domain_auto_tunes]{describe_domain_auto_tunes}}
-operations, which returns results in the next page.}
+\item{NextToken}{If your initial \code{\link[=opensearchservice_describe_domain_auto_tunes]{describe_domain_auto_tunes}} operation returns a \code{nextToken}, you can include the returned \code{nextToken} in subsequent \code{\link[=opensearchservice_describe_domain_auto_tunes]{describe_domain_auto_tunes}} operations, which returns results in the next page.}
 }
 \description{
 Returns the list of optimizations that Auto-Tune has made to an Amazon OpenSearch Service domain. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html}{Auto-Tune for Amazon OpenSearch Service}.

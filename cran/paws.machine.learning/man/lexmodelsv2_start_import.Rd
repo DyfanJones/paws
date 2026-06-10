@@ -13,19 +13,13 @@ lexmodelsv2_start_import(
 )
 }
 \arguments{
-\item{importId}{[required] The unique identifier for the import. It is included in the response
-from the \code{\link[=lexmodelsv2_create_upload_url]{create_upload_url}} operation.}
+\item{importId}{[required] The unique identifier for the import. It is included in the response from the \code{\link[=lexmodelsv2_create_upload_url]{create_upload_url}} operation.}
 
 \item{resourceSpecification}{[required] Parameters for creating the bot, bot locale or custom vocabulary.}
 
-\item{mergeStrategy}{[required] The strategy to use when there is a name conflict between the imported
-resource and an existing resource. When the merge strategy is
-\code{FailOnConflict} existing resources are not overwritten and the import
-fails.}
+\item{mergeStrategy}{[required] The strategy to use when there is a name conflict between the imported resource and an existing resource. When the merge strategy is \code{FailOnConflict} existing resources are not overwritten and the import fails.}
 
-\item{filePassword}{The password used to encrypt the zip archive that contains the resource
-definition. You should always encrypt the zip archive to protect it
-during transit between your site and Amazon Lex.}
+\item{filePassword}{The password used to encrypt the zip archive that contains the resource definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.}
 }
 \description{
 Starts importing a bot, bot locale, or custom vocabulary from a zip archive that you uploaded to an S3 bucket.

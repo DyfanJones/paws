@@ -7,11 +7,9 @@
 timestreamquery_untag_resource(ResourceARN, TagKeys)
 }
 \arguments{
-\item{ResourceARN}{[required] The Timestream resource that the tags will be removed from. This value
-is an Amazon Resource Name (ARN).}
+\item{ResourceARN}{[required] The Timestream resource that the tags will be removed from. This value is an Amazon Resource Name (ARN).}
 
-\item{TagKeys}{[required] A list of tags keys. Existing tags of the resource whose keys are
-members of this list will be removed from the Timestream resource.}
+\item{TagKeys}{[required] A list of tags keys. Existing tags of the resource whose keys are members of this list will be removed from the Timestream resource.}
 }
 \description{
 Removes the association of tags from a Timestream query resource.

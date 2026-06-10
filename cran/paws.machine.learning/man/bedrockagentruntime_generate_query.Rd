@@ -10,11 +10,9 @@ bedrockagentruntime_generate_query(
 )
 }
 \arguments{
-\item{queryGenerationInput}{[required] Specifies information about a natural language query to transform into
-SQL.}
+\item{queryGenerationInput}{[required] Specifies information about a natural language query to transform into SQL.}
 
-\item{transformationConfiguration}{[required] Specifies configurations for transforming the natural language query
-into SQL.}
+\item{transformationConfiguration}{[required] Specifies configurations for transforming the natural language query into SQL.}
 }
 \description{
 Generates an SQL query from a natural language query. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-generate-query.html}{Generate a query for structured data} in the Amazon Bedrock User Guide.

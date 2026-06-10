@@ -8,39 +8,31 @@ or firewall}
 networkfirewall_put_resource_policy(ResourceArn, Policy)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the account that you want to share
-your Network Firewall resources with.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the account that you want to share your Network Firewall resources with.}
 
-\item{Policy}{[required] The IAM policy statement that lists the accounts that you want to share
-your Network Firewall resources with and the operations that you want
-the accounts to be able to perform.
+\item{Policy}{[required] The IAM policy statement that lists the accounts that you want to share your Network Firewall resources with and the operations that you want the accounts to be able to perform.
 
-For a rule group resource, you can specify the following operations in
-the Actions section of the statement:
+For a rule group resource, you can specify the following operations in the Actions section of the statement:
 \itemize{
 \item network-firewall:CreateFirewallPolicy
 \item network-firewall:UpdateFirewallPolicy
 \item network-firewall:ListRuleGroups
 }
 
-For a firewall policy resource, you can specify the following operations
-in the Actions section of the statement:
+For a firewall policy resource, you can specify the following operations in the Actions section of the statement:
 \itemize{
 \item network-firewall:AssociateFirewallPolicy
 \item network-firewall:ListFirewallPolicies
 }
 
-For a firewall resource, you can specify the following operations in the
-Actions section of the statement:
+For a firewall resource, you can specify the following operations in the Actions section of the statement:
 \itemize{
 \item network-firewall:CreateVpcEndpointAssociation
 \item network-firewall:DescribeFirewallMetadata
 \item network-firewall:ListFirewalls
 }
 
-In the Resource section of the statement, you specify the ARNs for the
-Network Firewall resources that you want to share with the account that
-you specified in \code{Arn}.}
+In the Resource section of the statement, you specify the ARNs for the Network Firewall resources that you want to share with the account that you specified in \code{Arn}.}
 }
 \description{
 Creates or updates an IAM policy for your rule group, firewall policy, or firewall. Use this to share these resources between accounts. This operation works in conjunction with the Amazon Web Services Resource Access Manager (RAM) service to manage resource sharing for Network Firewall.

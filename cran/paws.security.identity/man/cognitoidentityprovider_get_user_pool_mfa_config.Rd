@@ -8,8 +8,7 @@ authenticators and for multi-factor authentication (MFA)}
 cognitoidentityprovider_get_user_pool_mfa_config(UserPoolId)
 }
 \arguments{
-\item{UserPoolId}{[required] The ID of the user pool where you want to query WebAuthn and MFA
-configuration.}
+\item{UserPoolId}{[required] The ID of the user pool where you want to query WebAuthn and MFA configuration.}
 }
 \description{
 Given a user pool ID, returns configuration for sign-in with WebAuthn authenticators and for multi-factor authentication (MFA). This operation describes the following:

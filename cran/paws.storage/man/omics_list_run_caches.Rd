@@ -9,8 +9,7 @@ omics_list_run_caches(maxResults = NULL, startingToken = NULL)
 \arguments{
 \item{maxResults}{The maximum number of results to return.}
 
-\item{startingToken}{Optional pagination token returned from a prior call to the
-\code{\link[=omics_list_run_caches]{list_run_caches}} API operation.}
+\item{startingToken}{Optional pagination token returned from a prior call to the \code{\link[=omics_list_run_caches]{list_run_caches}} API operation.}
 }
 \description{
 Retrieves a list of your run caches and the metadata for each cache.

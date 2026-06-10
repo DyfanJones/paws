@@ -24,28 +24,21 @@ The following is the format of a DB Cluster ARN:
 
 \code{arn:aws:rds:{region}:{accountId}:cluster:{resourceName}}}
 
-\item{nextToken}{The token to advance to the next page of Amazon Aurora and RDS database
-recommendations.}
+\item{nextToken}{The token to advance to the next page of Amazon Aurora and RDS database recommendations.}
 
-\item{maxResults}{The maximum number of Amazon Aurora and RDS database recommendations to
-return with a single request.
+\item{maxResults}{The maximum number of Amazon Aurora and RDS database recommendations to return with a single request.
 
-To retrieve the remaining results, make another request with the
-returned \code{nextToken} value.}
+To retrieve the remaining results, make another request with the returned \code{nextToken} value.}
 
-\item{filters}{An array of objects to specify a filter that returns a more specific
-list of Amazon Aurora and RDS database recommendations.}
+\item{filters}{An array of objects to specify a filter that returns a more specific list of Amazon Aurora and RDS database recommendations.}
 
-\item{accountIds}{Return the Amazon Aurora and RDS database recommendations to the
-specified Amazon Web Services account IDs.
+\item{accountIds}{Return the Amazon Aurora and RDS database recommendations to the specified Amazon Web Services account IDs.
 
-If your account is the management account or the delegated administrator
-of an organization, use this parameter to return the Amazon Aurora and
-RDS database recommendations to specific member accounts.
+If your account is the management account or the delegated administrator of an organization, use this parameter to return the Amazon Aurora and RDS database recommendations to specific member accounts.
 
 You can only specify one account ID per request.}
 
-\item{recommendationPreferences}{}
+\item{recommendationPreferences}{Describes the recommendation preferences to return in the response of a \code{\link[=computeoptimizer_get_auto_scaling_group_recommendations]{get_auto_scaling_group_recommendations}}, \code{\link[=computeoptimizer_get_ec2_instance_recommendations]{get_ec2_instance_recommendations}}, \code{\link[=computeoptimizer_get_ec2_recommendation_projected_metrics]{get_ec2_recommendation_projected_metrics}}, \code{\link[=computeoptimizer_get_rds_database_recommendations]{get_rds_database_recommendations}}, and \code{\link[=computeoptimizer_get_rds_database_recommendation_projected_metrics]{get_rds_database_recommendation_projected_metrics}} request.}
 }
 \description{
 Returns Amazon Aurora and RDS database recommendations.

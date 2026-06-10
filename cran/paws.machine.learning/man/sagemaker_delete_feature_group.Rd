@@ -8,9 +8,7 @@ of the FeatureGroup}
 sagemaker_delete_feature_group(FeatureGroupName)
 }
 \arguments{
-\item{FeatureGroupName}{[required] The name of the \code{FeatureGroup} you want to delete. The name must be
-unique within an Amazon Web Services Region in an Amazon Web Services
-account.}
+\item{FeatureGroupName}{[required] The name of the \code{FeatureGroup} you want to delete. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account.}
 }
 \description{
 Delete the \code{FeatureGroup} and any data that was written to the \code{OnlineStore} of the \code{FeatureGroup}. Data cannot be accessed from the \code{OnlineStore} immediately after \code{\link[=sagemaker_delete_feature_group]{delete_feature_group}} is called.

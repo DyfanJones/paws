@@ -9,8 +9,7 @@ codecommit_batch_get_repositories(repositoryNames)
 \arguments{
 \item{repositoryNames}{[required] The names of the repositories to get information about.
 
-The length constraint limit is for each string in the array. The array
-itself can be empty.}
+The length constraint limit is for each string in the array. The array itself can be empty.}
 }
 \description{
 Returns information about one or more repositories.

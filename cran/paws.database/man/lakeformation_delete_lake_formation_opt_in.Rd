@@ -12,11 +12,11 @@ lakeformation_delete_lake_formation_opt_in(
 )
 }
 \arguments{
-\item{Principal}{[required]}
+\item{Principal}{[required] The Lake Formation principal. Supported principals are IAM users or IAM roles.}
 
-\item{Resource}{[required]}
+\item{Resource}{[required] A structure for the resource.}
 
-\item{Condition}{}
+\item{Condition}{A Lake Formation condition, which applies to permissions and opt-ins that contain an expression.}
 }
 \description{
 Remove the Lake Formation permissions enforcement of the given databases, tables, and principals.

@@ -7,8 +7,7 @@
 codecommit_update_default_branch(repositoryName, defaultBranchName)
 }
 \arguments{
-\item{repositoryName}{[required] The name of the repository for which you want to set or change the
-default branch.}
+\item{repositoryName}{[required] The name of the repository for which you want to set or change the default branch.}
 
 \item{defaultBranchName}{[required] The name of the branch to set as the default branch.}
 }

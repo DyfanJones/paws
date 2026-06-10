@@ -13,8 +13,7 @@ route53domains_associate_delegation_signer_to_domain(
 \arguments{
 \item{DomainName}{[required] The name of the domain.}
 
-\item{SigningAttributes}{[required] The information about a key, including the algorithm, public key-value,
-and flags.}
+\item{SigningAttributes}{[required] The information about a key, including the algorithm, public key-value, and flags.}
 }
 \description{
 Creates a delegation signer (DS) record in the registry zone for this domain name.

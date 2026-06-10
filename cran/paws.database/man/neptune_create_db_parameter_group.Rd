@@ -23,10 +23,7 @@ Constraints:
 
 This value is stored as a lowercase string.}
 
-\item{DBParameterGroupFamily}{[required] The DB parameter group family name. A DB parameter group can be
-associated with one and only one DB parameter group family, and can be
-applied only to a DB instance running a database engine and engine
-version compatible with that DB parameter group family.}
+\item{DBParameterGroupFamily}{[required] The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family.}
 
 \item{Description}{[required] The description for the DB parameter group.}
 

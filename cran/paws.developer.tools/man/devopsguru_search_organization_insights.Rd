@@ -16,17 +16,13 @@ devopsguru_search_organization_insights(
 \arguments{
 \item{AccountIds}{[required] The ID of the Amazon Web Services account.}
 
-\item{StartTimeRange}{[required]}
+\item{StartTimeRange}{[required] A time range used to specify when the behavior of an insight or anomaly started.}
 
-\item{Filters}{A \code{SearchOrganizationInsightsFilters} object that is used to set the
-severity and status filters on your insight search.}
+\item{Filters}{A \code{SearchOrganizationInsightsFilters} object that is used to set the severity and status filters on your insight search.}
 
-\item{MaxResults}{The maximum number of results to return with a single call. To retrieve
-the remaining results, make another call with the returned \code{nextToken}
-value.}
+\item{MaxResults}{The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned \code{nextToken} value.}
 
-\item{NextToken}{The pagination token to use to retrieve the next page of results for
-this operation. If this value is null, it retrieves the first page.}
+\item{NextToken}{The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.}
 
 \item{Type}{[required] The type of insights you are searching for (\code{REACTIVE} or \code{PROACTIVE}).}
 }

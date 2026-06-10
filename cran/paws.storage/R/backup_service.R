@@ -7,10 +7,7 @@ NULL
 #' @description
 #' Backup
 #' 
-#' Backup is a unified backup service designed to protect Amazon Web
-#' Services services and their associated data. Backup simplifies the
-#' creation, migration, restoration, and deletion of backups, while also
-#' providing reporting and auditing.
+#' Backup is a unified backup service designed to protect Amazon Web Services services and their associated data. Backup simplifies the creation, migration, restoration, and deletion of backups, while also providing reporting and auditing.
 #'
 #' @param
 #' config
@@ -124,7 +121,7 @@ NULL
 #'  \link[=backup_describe_backup_vault]{describe_backup_vault} \tab Returns metadata about a backup vault specified by its name\cr
 #'  \link[=backup_describe_copy_job]{describe_copy_job} \tab Returns metadata associated with creating a copy of a resource\cr
 #'  \link[=backup_describe_framework]{describe_framework} \tab Returns the framework details for the specified FrameworkName\cr
-#'  \link[=backup_describe_global_settings]{describe_global_settings} \tab Describes whether the Amazon Web Services account is opted in to cross-account backup\cr
+#'  \link[=backup_describe_global_settings]{describe_global_settings} \tab Describes whether the Amazon Web Services account has enabled different cross-account management options, including cross-account backup, multi-party approval, and delegated administrator\cr
 #'  \link[=backup_describe_protected_resource]{describe_protected_resource} \tab Returns information about a saved resource, including the last time it was backed up, its Amazon Resource Name (ARN), and the Amazon Web Services service type of the saved resource\cr
 #'  \link[=backup_describe_recovery_point]{describe_recovery_point} \tab Returns metadata associated with a recovery point, including ID, status, encryption, and lifecycle\cr
 #'  \link[=backup_describe_region_settings]{describe_region_settings} \tab Returns the current service opt-in settings for the Region\cr
@@ -143,6 +140,7 @@ NULL
 #'  \link[=backup_get_backup_vault_access_policy]{get_backup_vault_access_policy} \tab Returns the access policy document that is associated with the named backup vault\cr
 #'  \link[=backup_get_backup_vault_notifications]{get_backup_vault_notifications} \tab Returns event notifications for the specified backup vault\cr
 #'  \link[=backup_get_legal_hold]{get_legal_hold} \tab This action returns details for a specified legal hold\cr
+#'  \link[=backup_get_pitr_malware_scan_results]{get_pitr_malware_scan_results} \tab Returns the malware scan results for a specified point in time within a continuous (point-in-time recovery) backup\cr
 #'  \link[=backup_get_recovery_point_index_details]{get_recovery_point_index_details} \tab This operation returns the metadata and details specific to the backup index associated with the specified recovery point\cr
 #'  \link[=backup_get_recovery_point_restore_metadata]{get_recovery_point_restore_metadata} \tab Returns a set of metadata key-value pairs that were used to create the backup\cr
 #'  \link[=backup_get_restore_job_metadata]{get_restore_job_metadata} \tab This request returns the metadata for the specified restore job\cr
@@ -195,7 +193,7 @@ NULL
 #'  \link[=backup_untag_resource]{untag_resource} \tab Removes a set of key-value pairs from a recovery point, backup plan, or backup vault identified by an Amazon Resource Name (ARN)\cr
 #'  \link[=backup_update_backup_plan]{update_backup_plan} \tab Updates the specified backup plan\cr
 #'  \link[=backup_update_framework]{update_framework} \tab Updates the specified framework\cr
-#'  \link[=backup_update_global_settings]{update_global_settings} \tab Updates whether the Amazon Web Services account is opted in to cross-account backup\cr
+#'  \link[=backup_update_global_settings]{update_global_settings} \tab Updates whether the Amazon Web Services account has enabled different cross-account management options, including cross-account backup, multi-party approval, and delegated administrator\cr
 #'  \link[=backup_update_recovery_point_index_settings]{update_recovery_point_index_settings} \tab This operation updates the settings of a recovery point index\cr
 #'  \link[=backup_update_recovery_point_lifecycle]{update_recovery_point_lifecycle} \tab Sets the transition lifecycle of a recovery point\cr
 #'  \link[=backup_update_region_settings]{update_region_settings} \tab Updates the current service opt-in settings for the Region\cr

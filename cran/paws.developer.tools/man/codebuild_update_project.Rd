@@ -36,105 +36,66 @@ You cannot change a build project's name.}
 
 \item{description}{A new or replacement description of the build project.}
 
-\item{source}{Information to be changed about the build input source code for the
-build project.}
+\item{source}{Information to be changed about the build input source code for the build project.}
 
 \item{secondarySources}{An array of \code{ProjectSource} objects.}
 
-\item{sourceVersion}{A version of the build input to be built for this project. If not
-specified, the latest version is used. If specified, it must be one of:
+\item{sourceVersion}{A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of:
 \itemize{
 \item For CodeCommit: the commit ID, branch, or Git tag to use.
-\item For GitHub: the commit ID, pull request ID, branch name, or tag name
-that corresponds to the version of the source code you want to
-build. If a pull request ID is specified, it must use the format
-\code{pr/pull-request-ID} (for example \code{pr/25}). If a branch name is
-specified, the branch's HEAD commit ID is used. If not specified,
-the default branch's HEAD commit ID is used.
+\item For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format \code{pr/pull-request-ID} (for example \code{pr/25}). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
 \item For GitLab: the commit ID, branch, or Git tag to use.
-\item For Bitbucket: the commit ID, branch name, or tag name that
-corresponds to the version of the source code you want to build. If
-a branch name is specified, the branch's HEAD commit ID is used. If
-not specified, the default branch's HEAD commit ID is used.
-\item For Amazon S3: the version ID of the object that represents the
-build input ZIP file to use.
+\item For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
+\item For Amazon S3: the version ID of the object that represents the build input ZIP file to use.
 }
 
-If \code{sourceVersion} is specified at the build level, then that version
-takes precedence over this \code{sourceVersion} (at the project level).
+If \code{sourceVersion} is specified at the build level, then that version takes precedence over this \code{sourceVersion} (at the project level).
 
-For more information, see \href{https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html}{Source Version Sample with CodeBuild}
-in the \emph{CodeBuild User Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html}{Source Version Sample with CodeBuild} in the \emph{CodeBuild User Guide}.}
 
-\item{secondarySourceVersions}{An array of \code{ProjectSourceVersion} objects. If \code{secondarySourceVersions}
-is specified at the build level, then they take over these
-\code{secondarySourceVersions} (at the project level).}
+\item{secondarySourceVersions}{An array of \code{ProjectSourceVersion} objects. If \code{secondarySourceVersions} is specified at the build level, then they take over these \code{secondarySourceVersions} (at the project level).}
 
-\item{artifacts}{Information to be changed about the build output artifacts for the build
-project.}
+\item{artifacts}{Information to be changed about the build output artifacts for the build project.}
 
 \item{secondaryArtifacts}{An array of \code{ProjectArtifact} objects.}
 
-\item{cache}{Stores recently used information so that it can be quickly accessed at a
-later time.}
+\item{cache}{Stores recently used information so that it can be quickly accessed at a later time.}
 
-\item{environment}{Information to be changed about the build environment for the build
-project.}
+\item{environment}{Information to be changed about the build environment for the build project.}
 
-\item{serviceRole}{The replacement ARN of the IAM role that enables CodeBuild to interact
-with dependent Amazon Web Services services on behalf of the Amazon Web
-Services account.}
+\item{serviceRole}{The replacement ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.}
 
-\item{timeoutInMinutes}{The replacement value in minutes, from 5 to 2160 (36 hours), for
-CodeBuild to wait before timing out any related build that did not get
-marked as completed.}
+\item{timeoutInMinutes}{The replacement value in minutes, from 5 to 2160 (36 hours), for CodeBuild to wait before timing out any related build that did not get marked as completed.}
 
-\item{queuedTimeoutInMinutes}{The number of minutes a build is allowed to be queued before it times
-out.}
+\item{queuedTimeoutInMinutes}{The number of minutes a build is allowed to be queued before it times out.}
 
-\item{encryptionKey}{The Key Management Service customer master key (CMK) to be used for
-encrypting the build output artifacts.
+\item{encryptionKey}{The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.
 
-You can use a cross-account KMS key to encrypt the build output
-artifacts if your service role has permission to that key.
+You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.
 
-You can specify either the Amazon Resource Name (ARN) of the CMK or, if
-available, the CMK's alias (using the format \verb{alias/<alias-name>}).}
+You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format \verb{alias/<alias-name>}).}
 
-\item{tags}{An updated list of tag key and value pairs associated with this build
-project.
+\item{tags}{An updated list of tag key and value pairs associated with this build project.
 
-These tags are available for use by Amazon Web Services services that
-support CodeBuild build project tags.}
+These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.}
 
 \item{vpcConfig}{VpcConfig enables CodeBuild to access resources in an Amazon VPC.}
 
-\item{badgeEnabled}{Set this to true to generate a publicly accessible URL for your
-project's build badge.}
+\item{badgeEnabled}{Set this to true to generate a publicly accessible URL for your project's build badge.}
 
-\item{logsConfig}{Information about logs for the build project. A project can create logs
-in CloudWatch Logs, logs in an S3 bucket, or both.}
+\item{logsConfig}{Information about logs for the build project. A project can create logs in CloudWatch Logs, logs in an S3 bucket, or both.}
 
-\item{fileSystemLocations}{An array of \code{ProjectFileSystemLocation} objects for a CodeBuild build
-project. A \code{ProjectFileSystemLocation} object specifies the
-\code{identifier}, \code{location}, \code{mountOptions}, \code{mountPoint}, and \code{type} of a
-file system created using Amazon Elastic File System.}
+\item{fileSystemLocations}{An array of \code{ProjectFileSystemLocation} objects for a CodeBuild build project. A \code{ProjectFileSystemLocation} object specifies the \code{identifier}, \code{location}, \code{mountOptions}, \code{mountPoint}, and \code{type} of a file system created using Amazon Elastic File System.}
 
-\item{buildBatchConfig}{}
+\item{buildBatchConfig}{Contains configuration information about a batch build project.}
 
-\item{concurrentBuildLimit}{The maximum number of concurrent builds that are allowed for this
-project.
+\item{concurrentBuildLimit}{The maximum number of concurrent builds that are allowed for this project.
 
-New builds are only started if the current number of builds is less than
-or equal to this limit. If the current build count meets this limit, new
-builds are throttled and are not run.
+New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.
 
 To remove this limit, set this value to -1.}
 
-\item{autoRetryLimit}{The maximum number of additional automatic retries after a failed build.
-For example, if the auto-retry limit is set to 2, CodeBuild will call
-the \code{\link[=codebuild_retry_build]{retry_build}} API to automatically retry
-your build for up to 2 additional times.}
+\item{autoRetryLimit}{The maximum number of additional automatic retries after a failed build. For example, if the auto-retry limit is set to 2, CodeBuild will call the \code{\link[=codebuild_retry_build]{retry_build}} API to automatically retry your build for up to 2 additional times.}
 }
 \description{
 Changes the settings of a build project.

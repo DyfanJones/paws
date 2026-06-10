@@ -20,26 +20,17 @@ codestarconnections_create_sync_configuration(
 \arguments{
 \item{Branch}{[required] The branch in the repository from which changes will be synced.}
 
-\item{ConfigFile}{[required] The file name of the configuration file that manages syncing between the
-connection and the repository. This configuration file is stored in the
-repository.}
+\item{ConfigFile}{[required] The file name of the configuration file that manages syncing between the connection and the repository. This configuration file is stored in the repository.}
 
-\item{RepositoryLinkId}{[required] The ID of the repository link created for the connection. A repository
-link allows Git sync to monitor and sync changes to files in a specified
-Git repository.}
+\item{RepositoryLinkId}{[required] The ID of the repository link created for the connection. A repository link allows Git sync to monitor and sync changes to files in a specified Git repository.}
 
-\item{ResourceName}{[required] The name of the Amazon Web Services resource (for example, a
-CloudFormation stack in the case of CFN_STACK_SYNC) that will be
-synchronized from the linked repository.}
+\item{ResourceName}{[required] The name of the Amazon Web Services resource (for example, a CloudFormation stack in the case of CFN_STACK_SYNC) that will be synchronized from the linked repository.}
 
-\item{RoleArn}{[required] The ARN of the IAM role that grants permission for Amazon Web Services
-to use Git sync to update a given Amazon Web Services resource on your
-behalf.}
+\item{RoleArn}{[required] The ARN of the IAM role that grants permission for Amazon Web Services to use Git sync to update a given Amazon Web Services resource on your behalf.}
 
 \item{SyncType}{[required] The type of sync configuration.}
 
-\item{PublishDeploymentStatus}{Whether to enable or disable publishing of deployment status to source
-providers.}
+\item{PublishDeploymentStatus}{Whether to enable or disable publishing of deployment status to source providers.}
 
 \item{TriggerResourceUpdateOn}{When to trigger Git sync to begin the stack update.}
 }

@@ -13,13 +13,9 @@ lexmodelsv2_start_bot_resource_generation(
 )
 }
 \arguments{
-\item{generationInputPrompt}{[required] The prompt to generate intents and slot types for the bot locale. Your
-description should be both \emph{detailed} and \emph{precise} to help generate
-appropriate and sufficient intents for your bot. Include a list of
-actions to improve the intent creation process.}
+\item{generationInputPrompt}{[required] The prompt to generate intents and slot types for the bot locale. Your description should be both \emph{detailed} and \emph{precise} to help generate appropriate and sufficient intents for your bot. Include a list of actions to improve the intent creation process.}
 
-\item{botId}{[required] The unique identifier of the bot for which to generate intents and slot
-types.}
+\item{botId}{[required] The unique identifier of the bot for which to generate intents and slot types.}
 
 \item{botVersion}{[required] The version of the bot for which to generate intents and slot types.}
 

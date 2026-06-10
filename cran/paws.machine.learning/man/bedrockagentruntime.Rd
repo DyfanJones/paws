@@ -53,8 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Contains APIs related to model invocation and querying of knowledge
-bases.
+Contains APIs related to model invocation and querying of knowledge bases.
 }
 \section{Service syntax}{
 

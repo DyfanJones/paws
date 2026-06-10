@@ -16,13 +16,9 @@ codecatalyst_start_workflow_run(
 
 \item{projectName}{[required] The name of the project in the space.}
 
-\item{workflowId}{[required] The system-generated unique ID of the workflow. To retrieve a list of
-workflow IDs, use \code{\link[=codecatalyst_list_workflows]{list_workflows}}.}
+\item{workflowId}{[required] The system-generated unique ID of the workflow. To retrieve a list of workflow IDs, use \code{\link[=codecatalyst_list_workflows]{list_workflows}}.}
 
-\item{clientToken}{A user-specified idempotency token. Idempotency ensures that an API
-request completes only once. With an idempotent request, if the original
-request completes successfully, the subsequent retries return the result
-from the original successful request and have no additional effect.}
+\item{clientToken}{A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.}
 }
 \description{
 Begins a run of a specified workflow.

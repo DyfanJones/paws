@@ -10,14 +10,11 @@ route53_list_cidr_locations(CollectionId, NextToken = NULL, MaxResults = NULL)
 \arguments{
 \item{CollectionId}{[required] The CIDR collection ID.}
 
-\item{NextToken}{An opaque pagination token to indicate where the service is to begin
-enumerating results.
+\item{NextToken}{An opaque pagination token to indicate where the service is to begin enumerating results.
 
-If no value is provided, the listing of results starts from the
-beginning.}
+If no value is provided, the listing of results starts from the beginning.}
 
-\item{MaxResults}{The maximum number of CIDR collection locations to return in the
-response.}
+\item{MaxResults}{The maximum number of CIDR collection locations to return in the response.}
 }
 \description{
 Returns a paginated list of CIDR locations for the given collection (metadata only, does not include CIDR blocks).

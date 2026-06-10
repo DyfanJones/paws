@@ -14,15 +14,13 @@ workdocs_get_document_path(
 )
 }
 \arguments{
-\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web
-Services administrator credentials to access the API.}
+\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.}
 
 \item{DocumentId}{[required] The ID of the document.}
 
 \item{Limit}{The maximum number of levels in the hierarchy to return.}
 
-\item{Fields}{A comma-separated list of values. Specify \code{NAME} to include the names of
-the parent folders.}
+\item{Fields}{A comma-separated list of values. Specify \code{NAME} to include the names of the parent folders.}
 
 \item{Marker}{This value is not supported.}
 }

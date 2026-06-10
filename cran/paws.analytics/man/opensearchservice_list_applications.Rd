@@ -11,12 +11,11 @@ opensearchservice_list_applications(
 )
 }
 \arguments{
-\item{nextToken}{}
+\item{nextToken}{When \code{nextToken} is returned, there are more results available. The value of \code{nextToken} is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.}
 
-\item{statuses}{Filters the list of OpenSearch applications by status. Possible values:
-\code{CREATING}, \code{UPDATING}, \code{DELETING}, \code{FAILED}, \code{ACTIVE}, and \code{DELETED}.}
+\item{statuses}{Filters the list of OpenSearch applications by status. Possible values: \code{CREATING}, \code{UPDATING}, \code{DELETING}, \code{FAILED}, \code{ACTIVE}, and \code{DELETED}.}
 
-\item{maxResults}{}
+\item{maxResults}{An optional parameter that specifies the maximum number of results to return for a given request.}
 }
 \description{
 Lists all OpenSearch applications under your account.

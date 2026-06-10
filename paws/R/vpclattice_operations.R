@@ -6,15 +6,11 @@ NULL
 #' Updates the listener rules in a batch
 #'
 #' @description
-#' Updates the listener rules in a batch. You can use this operation to
-#' change the priority of listener rules. This can be useful when bulk
-#' updating or swapping rule priority.
+#' Updates the listener rules in a batch. You can use this operation to change the priority of listener rules. This can be useful when bulk updating or swapping rule priority.
 #' 
 #' **Required permissions:** `vpc-lattice:UpdateRule`
 #' 
-#' For more information, see [How Amazon VPC Lattice works with
-#' IAM](https://docs.aws.amazon.com/vpc-lattice/latest/ug/security_iam_service-with-iam.html)
-#' in the *Amazon VPC Lattice User Guide*.
+#' For more information, see [How Amazon VPC Lattice works with IAM](https://docs.aws.amazon.com/vpc-lattice/latest/ug/security_iam_service-with-iam.html) in the *Amazon VPC Lattice User Guide*.
 #'
 #' @usage
 #' vpclattice_batch_update_rule(serviceIdentifier, listenerIdentifier,
@@ -161,29 +157,15 @@ vpclattice_batch_update_rule <- function(serviceIdentifier, listenerIdentifier, 
 #' Amazon Kinesis Data Firehose
 #'
 #' @description
-#' Enables access logs to be sent to Amazon CloudWatch, Amazon S3, and
-#' Amazon Kinesis Data Firehose. The service network owner can use the
-#' access logs to audit the services in the network. The service network
-#' owner can only see access logs from clients and services that are
-#' associated with their service network. Access log entries represent
-#' traffic originated from VPCs associated with that network. For more
-#' information, see [Access
-#' logs](https://docs.aws.amazon.com/vpc-lattice/latest/ug/monitoring-access-logs.html)
-#' in the *Amazon VPC Lattice User Guide*.
+#' Enables access logs to be sent to Amazon CloudWatch, Amazon S3, and Amazon Kinesis Data Firehose. The service network owner can use the access logs to audit the services in the network. The service network owner can only see access logs from clients and services that are associated with their service network. Access log entries represent traffic originated from VPCs associated with that network. For more information, see [Access logs](https://docs.aws.amazon.com/vpc-lattice/latest/ug/monitoring-access-logs.html) in the *Amazon VPC Lattice User Guide*.
 #'
 #' @usage
 #' vpclattice_create_access_log_subscription(clientToken,
 #'   resourceIdentifier, destinationArn, serviceNetworkLogType, tags)
 #'
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you retry a request that completed
-#' successfully using the same client token and parameters, the retry
-#' succeeds without performing any actions. If the parameters aren't
-#' identical, the retry fails.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
 #' @param resourceIdentifier &#91;required&#93; The ID or ARN of the service network or service.
-#' @param destinationArn &#91;required&#93; The Amazon Resource Name (ARN) of the destination. The supported
-#' destination types are CloudWatch Log groups, Kinesis Data Firehose
-#' delivery streams, and Amazon S3 buckets.
+#' @param destinationArn &#91;required&#93; The Amazon Resource Name (ARN) of the destination. The supported destination types are CloudWatch Log groups, Kinesis Data Firehose delivery streams, and Amazon S3 buckets.
 #' @param serviceNetworkLogType The type of log that monitors your Amazon VPC Lattice service networks.
 #' @param tags The tags for the access log subscription.
 #'
@@ -240,32 +222,18 @@ vpclattice_create_access_log_subscription <- function(clientToken = NULL, resour
 #' Creates a listener for a service
 #'
 #' @description
-#' Creates a listener for a service. Before you start using your Amazon VPC
-#' Lattice service, you must add one or more listeners. A listener is a
-#' process that checks for connection requests to your services. For more
-#' information, see
-#' [Listeners](https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html)
-#' in the *Amazon VPC Lattice User Guide*.
+#' Creates a listener for a service. Before you start using your Amazon VPC Lattice service, you must add one or more listeners. A listener is a process that checks for connection requests to your services. For more information, see [Listeners](https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html) in the *Amazon VPC Lattice User Guide*.
 #'
 #' @usage
 #' vpclattice_create_listener(serviceIdentifier, name, protocol, port,
 #'   defaultAction, clientToken, tags)
 #'
 #' @param serviceIdentifier &#91;required&#93; The ID or ARN of the service.
-#' @param name &#91;required&#93; The name of the listener. A listener name must be unique within a
-#' service. The valid characters are a-z, 0-9, and hyphens (-). You can't
-#' use a hyphen as the first or last character, or immediately after
-#' another hyphen.
+#' @param name &#91;required&#93; The name of the listener. A listener name must be unique within a service. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
 #' @param protocol &#91;required&#93; The listener protocol.
-#' @param port The listener port. You can specify a value from 1 to 65535. For HTTP,
-#' the default is 80. For HTTPS, the default is 443.
-#' @param defaultAction &#91;required&#93; The action for the default rule. Each listener has a default rule. The
-#' default rule is used if no other rules match.
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you retry a request that completed
-#' successfully using the same client token and parameters, the retry
-#' succeeds without performing any actions. If the parameters aren't
-#' identical, the retry fails.
+#' @param port The listener port. You can specify a value from 1 to 65535. For HTTP, the default is 80. For HTTPS, the default is 443.
+#' @param defaultAction &#91;required&#93; The action for the default rule. Each listener has a default rule. The default rule is used if no other rules match.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
 #' @param tags The tags for the listener.
 #'
 #' @return
@@ -349,9 +317,7 @@ vpclattice_create_listener <- function(serviceIdentifier, name, protocol, port =
 #' Creates a resource configuration
 #'
 #' @description
-#' Creates a resource configuration. A resource configuration defines a
-#' specific resource. You can associate a resource configuration with a
-#' service network or a VPC endpoint.
+#' Creates a resource configuration. A resource configuration defines a specific resource. You can associate a resource configuration with a service network or a VPC endpoint.
 #'
 #' @usage
 #' vpclattice_create_resource_configuration(name, type, portRanges,
@@ -360,57 +326,32 @@ vpclattice_create_listener <- function(serviceIdentifier, name, protocol, port =
 #'   allowAssociationToShareableServiceNetwork, customDomainName,
 #'   groupDomain, domainVerificationIdentifier, clientToken, tags)
 #'
-#' @param name &#91;required&#93; The name of the resource configuration. The name must be unique within
-#' the account. The valid characters are a-z, 0-9, and hyphens (-). You
-#' can't use a hyphen as the first or last character, or immediately after
-#' another hyphen.
-#' @param type &#91;required&#93; The type of resource configuration. A resource configuration can be one
-#' of the following types:
+#' @param name &#91;required&#93; The name of the resource configuration. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
+#' @param type &#91;required&#93; The type of resource configuration. A resource configuration can be one of the following types:
 #' 
 #' -   **SINGLE** - A single resource.
 #' 
-#' -   **GROUP** - A group of resources. You must create a group resource
-#'     configuration before you create a child resource configuration.
+#' -   **GROUP** - A group of resources. You must create a group resource configuration before you create a child resource configuration.
 #' 
-#' -   **CHILD** - A single resource that is part of a group resource
-#'     configuration.
+#' -   **CHILD** - A single resource that is part of a group resource configuration.
 #' 
 #' -   **ARN** - An Amazon Web Services resource.
-#' @param portRanges (SINGLE, GROUP, CHILD) The TCP port ranges that a consumer can use to
-#' access a resource configuration (for example: 1-65535). You can separate
-#' port ranges using commas (for example: 1,2,22-30).
+#' @param portRanges (SINGLE, GROUP, CHILD) The TCP port ranges that a consumer can use to access a resource configuration (for example: 1-65535). You can separate port ranges using commas (for example: 1,2,22-30).
 #' @param protocol (SINGLE, GROUP) The protocol accepted by the resource configuration.
-#' @param resourceGatewayIdentifier (SINGLE, GROUP, ARN) The ID or ARN of the resource gateway used to
-#' connect to the resource configuration. For a child resource
-#' configuration, this value is inherited from the parent resource
-#' configuration.
-#' @param resourceConfigurationGroupIdentifier (CHILD) The ID or ARN of the parent resource configuration of type
-#' `GROUP`. This is used to associate a child resource configuration with a
-#' group resource configuration.
+#' @param resourceGatewayIdentifier (SINGLE, GROUP, ARN) The ID or ARN of the resource gateway used to connect to the resource configuration. For a child resource configuration, this value is inherited from the parent resource configuration.
+#' @param resourceConfigurationGroupIdentifier (CHILD) The ID or ARN of the parent resource configuration of type `GROUP`. This is used to associate a child resource configuration with a group resource configuration.
 #' @param resourceConfigurationDefinition Identifies the resource configuration in one of the following ways:
 #' 
-#' -   **Amazon Resource Name (ARN)** - Supported resource-types that are
-#'     provisioned by Amazon Web Services services, such as RDS databases,
-#'     can be identified by their ARN.
+#' -   **Amazon Resource Name (ARN)** - Supported resource-types that are provisioned by Amazon Web Services services, such as RDS databases, can be identified by their ARN.
 #' 
 #' -   **Domain name** - Any domain name that is publicly resolvable.
 #' 
-#' -   **IP address** - For IPv4 and IPv6, only IP addresses in the VPC are
-#'     supported.
-#' @param allowAssociationToShareableServiceNetwork (SINGLE, GROUP, ARN) Specifies whether the resource configuration can be
-#' associated with a sharable service network. The default is false.
-#' @param customDomainName A custom domain name for your resource configuration. Additionally,
-#' provide a DomainVerificationID to prove your ownership of a domain.
-#' @param groupDomain (GROUP) The group domain for a group resource configuration. Any domains
-#' that you create for the child resource are subdomains of the group
-#' domain. Child resources inherit the verification status of the domain.
-#' @param domainVerificationIdentifier The domain verification ID of your verified custom domain name. If you
-#' don't provide an ID, you must configure the DNS settings yourself.
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you retry a request that completed
-#' successfully using the same client token and parameters, the retry
-#' succeeds without performing any actions. If the parameters aren't
-#' identical, the retry fails.
+#' -   **IP address** - For IPv4 and IPv6, only IP addresses in the VPC are supported.
+#' @param allowAssociationToShareableServiceNetwork (SINGLE, GROUP, ARN) Specifies whether the resource configuration can be associated with a sharable service network. The default is false.
+#' @param customDomainName A custom domain name for your resource configuration. Additionally, provide a DomainVerificationID to prove your ownership of a domain.
+#' @param groupDomain (GROUP) The group domain for a group resource configuration. Any domains that you create for the child resource are subdomains of the group domain. Child resources inherit the verification status of the domain.
+#' @param domainVerificationIdentifier The domain verification ID of your verified custom domain name. If you don't provide an ID, you must configure the DNS settings yourself.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
 #' @param tags The tags for the resource configuration.
 #'
 #' @return
@@ -514,48 +455,33 @@ vpclattice_create_resource_configuration <- function(name, type, portRanges = NU
 #' resides
 #'
 #' @description
-#' A resource gateway is a point of ingress into the VPC where a resource
-#' resides. It spans multiple Availability Zones. For your resource to be
-#' accessible from all Availability Zones, you should create your resource
-#' gateways to span as many Availability Zones as possible. A VPC can have
-#' multiple resource gateways.
+#' A resource gateway is a point of ingress into the VPC where a resource resides. It spans multiple Availability Zones. For your resource to be accessible from all Availability Zones, you should create your resource gateways to span as many Availability Zones as possible. A VPC can have multiple resource gateways.
 #'
 #' @usage
 #' vpclattice_create_resource_gateway(clientToken, name, vpcIdentifier,
-#'   subnetIds, securityGroupIds, ipAddressType, ipv4AddressesPerEni, tags)
+#'   subnetIds, securityGroupIds, ipAddressType, ipv4AddressesPerEni,
+#'   resourceConfigDnsResolution, tags)
 #'
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you retry a request that completed
-#' successfully using the same client token and parameters, the retry
-#' succeeds without performing any actions. If the parameters aren't
-#' identical, the retry fails.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
 #' @param name &#91;required&#93; The name of the resource gateway.
 #' @param vpcIdentifier The ID of the VPC for the resource gateway.
 #' @param subnetIds The IDs of the VPC subnets in which to create the resource gateway.
-#' @param securityGroupIds The IDs of the security groups to apply to the resource gateway. The
-#' security groups must be in the same VPC.
-#' @param ipAddressType A resource gateway can have IPv4, IPv6 or dualstack addresses. The IP
-#' address type of a resource gateway must be compatible with the subnets
-#' of the resource gateway and the IP address type of the resource, as
-#' described here:
+#' @param securityGroupIds The IDs of the security groups to apply to the resource gateway. The security groups must be in the same VPC.
+#' @param ipAddressType A resource gateway can have IPv4, IPv6 or dualstack addresses. The IP address type of a resource gateway must be compatible with the subnets of the resource gateway and the IP address type of the resource, as described here:
 #' 
-#' -   **IPv4**Assign IPv4 addresses to your resource gateway network
-#'     interfaces. This option is supported only if all selected subnets
-#'     have IPv4 address ranges, and the resource also has an IPv4 address.
+#' -   **IPv4**Assign IPv4 addresses to your resource gateway network interfaces. This option is supported only if all selected subnets have IPv4 address ranges, and the resource also has an IPv4 address.
 #' 
-#' -   **IPv6**Assign IPv6 addresses to your resource gateway network
-#'     interfaces. This option is supported only if all selected subnets
-#'     are IPv6 only subnets, and the resource also has an IPv6 address.
+#' -   **IPv6**Assign IPv6 addresses to your resource gateway network interfaces. This option is supported only if all selected subnets are IPv6 only subnets, and the resource also has an IPv6 address.
 #' 
-#' -   **Dualstack**Assign both IPv4 and IPv6 addresses to your resource
-#'     gateway network interfaces. This option is supported only if all
-#'     selected subnets have both IPv4 and IPv6 address ranges, and the
-#'     resource either has an IPv4 or IPv6 address.
+#' -   **Dualstack**Assign both IPv4 and IPv6 addresses to your resource gateway network interfaces. This option is supported only if all selected subnets have both IPv4 and IPv6 address ranges, and the resource either has an IPv4 or IPv6 address.
 #' 
-#' The IP address type of the resource gateway is independent of the IP
-#' address type of the client or the VPC endpoint through which the
-#' resource is accessed.
+#' The IP address type of the resource gateway is independent of the IP address type of the client or the VPC endpoint through which the resource is accessed.
 #' @param ipv4AddressesPerEni The number of IPv4 addresses in each ENI for the resource gateway.
+#' @param resourceConfigDnsResolution Indicates how DNS is resolved for resource configurations associated to this resource gateway. ResourceConfigDnsResolution is set at creation time and cannot be changed.
+#' 
+#' -   `IN_VPC` - DNS resolution occurs privately within the resource gateway's VPC. DNS queries for resources behind this resource gateway resolve using the DNS resolvers defined in the VPC's DHCP option sets. Use this when your resource domain names are hosted in private Route 53 hosted zones or on-premises DNS servers reachable from the VPC.
+#' 
+#' -   `PUBLIC` - DNS resolution occurs against public DNS resolvers. DNS queries for resources behind this resource gateway resolve using standard public DNS. Use this when your resource domain names are publicly resolvable.
 #' @param tags The tags for the resource gateway.
 #'
 #' @return
@@ -574,7 +500,8 @@ vpclattice_create_resource_configuration <- function(name, type, portRanges = NU
 #'     "string"
 #'   ),
 #'   ipAddressType = "IPV4"|"IPV6"|"DUALSTACK",
-#'   ipv4AddressesPerEni = 123
+#'   ipv4AddressesPerEni = 123,
+#'   resourceConfigDnsResolution = "IN_VPC"|"PUBLIC"
 #' )
 #' ```
 #'
@@ -592,6 +519,7 @@ vpclattice_create_resource_configuration <- function(name, type, portRanges = NU
 #'   ),
 #'   ipAddressType = "IPV4"|"IPV6"|"DUALSTACK",
 #'   ipv4AddressesPerEni = 123,
+#'   resourceConfigDnsResolution = "IN_VPC"|"PUBLIC",
 #'   tags = list(
 #'     "string"
 #'   )
@@ -603,7 +531,7 @@ vpclattice_create_resource_configuration <- function(name, type, portRanges = NU
 #' @rdname vpclattice_create_resource_gateway
 #'
 #' @aliases vpclattice_create_resource_gateway
-vpclattice_create_resource_gateway <- function(clientToken = NULL, name, vpcIdentifier = NULL, subnetIds = NULL, securityGroupIds = NULL, ipAddressType = NULL, ipv4AddressesPerEni = NULL, tags = NULL) {
+vpclattice_create_resource_gateway <- function(clientToken = NULL, name, vpcIdentifier = NULL, subnetIds = NULL, securityGroupIds = NULL, ipAddressType = NULL, ipv4AddressesPerEni = NULL, resourceConfigDnsResolution = NULL, tags = NULL) {
   op <- new_operation(
     name = "CreateResourceGateway",
     http_method = "POST",
@@ -612,7 +540,7 @@ vpclattice_create_resource_gateway <- function(clientToken = NULL, name, vpcIden
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .vpclattice$create_resource_gateway_input(clientToken = clientToken, name = name, vpcIdentifier = vpcIdentifier, subnetIds = subnetIds, securityGroupIds = securityGroupIds, ipAddressType = ipAddressType, ipv4AddressesPerEni = ipv4AddressesPerEni, tags = tags)
+  input <- .vpclattice$create_resource_gateway_input(clientToken = clientToken, name = name, vpcIdentifier = vpcIdentifier, subnetIds = subnetIds, securityGroupIds = securityGroupIds, ipAddressType = ipAddressType, ipv4AddressesPerEni = ipv4AddressesPerEni, resourceConfigDnsResolution = resourceConfigDnsResolution, tags = tags)
   output <- .vpclattice$create_resource_gateway_output()
   config <- get_config()
   svc <- .vpclattice$service(config, op)
@@ -625,12 +553,7 @@ vpclattice_create_resource_gateway <- function(clientToken = NULL, name, vpcIden
 #' Creates a listener rule
 #'
 #' @description
-#' Creates a listener rule. Each listener has a default rule for checking
-#' connection requests, but you can define additional rules. Each rule
-#' consists of a priority, one or more actions, and one or more conditions.
-#' For more information, see [Listener
-#' rules](https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html#listener-rules)
-#' in the *Amazon VPC Lattice User Guide*.
+#' Creates a listener rule. Each listener has a default rule for checking connection requests, but you can define additional rules. Each rule consists of a priority, one or more actions, and one or more conditions. For more information, see [Listener rules](https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html#listener-rules) in the *Amazon VPC Lattice User Guide*.
 #'
 #' @usage
 #' vpclattice_create_rule(serviceIdentifier, listenerIdentifier, name,
@@ -638,19 +561,11 @@ vpclattice_create_resource_gateway <- function(clientToken = NULL, name, vpcIden
 #'
 #' @param serviceIdentifier &#91;required&#93; The ID or ARN of the service.
 #' @param listenerIdentifier &#91;required&#93; The ID or ARN of the listener.
-#' @param name &#91;required&#93; The name of the rule. The name must be unique within the listener. The
-#' valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen
-#' as the first or last character, or immediately after another hyphen.
+#' @param name &#91;required&#93; The name of the rule. The name must be unique within the listener. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
 #' @param match &#91;required&#93; The rule match.
-#' @param priority &#91;required&#93; The priority assigned to the rule. Each rule for a specific listener
-#' must have a unique priority. The lower the priority number the higher
-#' the priority.
+#' @param priority &#91;required&#93; The priority assigned to the rule. Each rule for a specific listener must have a unique priority. The lower the priority number the higher the priority.
 #' @param action &#91;required&#93; The action for the default rule.
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you retry a request that completed
-#' successfully using the same client token and parameters, the retry
-#' succeeds without performing any actions. If the parameters aren't
-#' identical, the retry fails.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
 #' @param tags The tags for the rule.
 #'
 #' @return
@@ -777,36 +692,24 @@ vpclattice_create_rule <- function(serviceIdentifier, listenerIdentifier, name, 
 #' Creates a service
 #'
 #' @description
-#' Creates a service. A service is any software application that can run on
-#' instances containers, or serverless functions within an account or
-#' virtual private cloud (VPC).
+#' Creates a service. A service is any software application that can run on instances containers, or serverless functions within an account or virtual private cloud (VPC).
 #' 
-#' For more information, see
-#' [Services](https://docs.aws.amazon.com/vpc-lattice/latest/ug/services.html)
-#' in the *Amazon VPC Lattice User Guide*.
+#' For more information, see [Services](https://docs.aws.amazon.com/vpc-lattice/latest/ug/services.html) in the *Amazon VPC Lattice User Guide*.
 #'
 #' @usage
 #' vpclattice_create_service(clientToken, name, tags, customDomainName,
 #'   certificateArn, authType)
 #'
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you retry a request that completed
-#' successfully using the same client token and parameters, the retry
-#' succeeds without performing any actions. If the parameters aren't
-#' identical, the retry fails.
-#' @param name &#91;required&#93; The name of the service. The name must be unique within the account. The
-#' valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen
-#' as the first or last character, or immediately after another hyphen.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
+#' @param name &#91;required&#93; The name of the service. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
 #' @param tags The tags for the service.
 #' @param customDomainName The custom domain name of the service.
 #' @param certificateArn The Amazon Resource Name (ARN) of the certificate.
 #' @param authType The type of IAM policy.
 #' 
-#' -   `NONE`: The resource does not use an IAM policy. This is the
-#'     default.
+#' -   `NONE`: The resource does not use an IAM policy. This is the default.
 #' 
-#' -   `AWS_IAM`: The resource uses an IAM policy. When this type is used,
-#'     auth is enabled and an auth policy is required.
+#' -   `AWS_IAM`: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.
 #'
 #' @return
 #' A list with the following syntax:
@@ -867,34 +770,21 @@ vpclattice_create_service <- function(clientToken = NULL, name, tags = NULL, cus
 #' Creates a service network
 #'
 #' @description
-#' Creates a service network. A service network is a logical boundary for a
-#' collection of services. You can associate services and VPCs with a
-#' service network.
+#' Creates a service network. A service network is a logical boundary for a collection of services. You can associate services and VPCs with a service network.
 #' 
-#' For more information, see [Service
-#' networks](https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html)
-#' in the *Amazon VPC Lattice User Guide*.
+#' For more information, see [Service networks](https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html) in the *Amazon VPC Lattice User Guide*.
 #'
 #' @usage
 #' vpclattice_create_service_network(clientToken, name, authType, tags,
 #'   sharingConfig)
 #'
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you retry a request that completed
-#' successfully using the same client token and parameters, the retry
-#' succeeds without performing any actions. If the parameters aren't
-#' identical, the retry fails.
-#' @param name &#91;required&#93; The name of the service network. The name must be unique to the account.
-#' The valid characters are a-z, 0-9, and hyphens (-). You can't use a
-#' hyphen as the first or last character, or immediately after another
-#' hyphen.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
+#' @param name &#91;required&#93; The name of the service network. The name must be unique to the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
 #' @param authType The type of IAM policy.
 #' 
-#' -   `NONE`: The resource does not use an IAM policy. This is the
-#'     default.
+#' -   `NONE`: The resource does not use an IAM policy. This is the default.
 #' 
-#' -   `AWS_IAM`: The resource uses an IAM policy. When this type is used,
-#'     auth is enabled and an auth policy is required.
+#' -   `AWS_IAM`: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.
 #' @param tags The tags for the service network.
 #' @param sharingConfig Specify if the service network should be enabled for sharing.
 #'
@@ -955,27 +845,17 @@ vpclattice_create_service_network <- function(clientToken = NULL, name, authType
 #' configuration
 #'
 #' @description
-#' Associates the specified service network with the specified resource
-#' configuration. This allows the resource configuration to receive
-#' connections through the service network, including through a service
-#' network VPC endpoint.
+#' Associates the specified service network with the specified resource configuration. This allows the resource configuration to receive connections through the service network, including through a service network VPC endpoint.
 #'
 #' @usage
 #' vpclattice_create_service_network_resource_association(clientToken,
 #'   resourceConfigurationIdentifier, serviceNetworkIdentifier,
 #'   privateDnsEnabled, tags)
 #'
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you retry a request that completed
-#' successfully using the same client token and parameters, the retry
-#' succeeds without performing any actions. If the parameters aren't
-#' identical, the retry fails.
-#' @param resourceConfigurationIdentifier &#91;required&#93; The ID of the resource configuration to associate with the service
-#' network.
-#' @param serviceNetworkIdentifier &#91;required&#93; The ID of the service network to associate with the resource
-#' configuration.
-#' @param privateDnsEnabled Indicates if private DNS is enabled for the service network resource
-#' association.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
+#' @param resourceConfigurationIdentifier &#91;required&#93; The ID of the resource configuration to associate with the service network.
+#' @param serviceNetworkIdentifier &#91;required&#93; The ID of the service network to associate with the resource configuration.
+#' @param privateDnsEnabled Indicates if private DNS is enabled for the service network resource association.
 #' @param tags A key-value pair to associate with a resource.
 #'
 #' @return
@@ -1030,34 +910,21 @@ vpclattice_create_service_network_resource_association <- function(clientToken =
 #' Associates the specified service with the specified service network
 #'
 #' @description
-#' Associates the specified service with the specified service network. For
-#' more information, see [Manage service
-#' associations](https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-network-associations.html#service-network-service-associations)
-#' in the *Amazon VPC Lattice User Guide*.
+#' Associates the specified service with the specified service network. For more information, see [Manage service associations](https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-network-associations.html#service-network-service-associations) in the *Amazon VPC Lattice User Guide*.
 #' 
-#' You can't use this operation if the service and service network are
-#' already associated or if there is a disassociation or deletion in
-#' progress. If the association fails, you can retry the operation by
-#' deleting the association and recreating it.
+#' You can't use this operation if the service and service network are already associated or if there is a disassociation or deletion in progress. If the association fails, you can retry the operation by deleting the association and recreating it.
 #' 
-#' You cannot associate a service and service network that are shared with
-#' a caller. The caller must own either the service or the service network.
+#' You cannot associate a service and service network that are shared with a caller. The caller must own either the service or the service network.
 #' 
-#' As a result of this operation, the association is created in the service
-#' network account and the association owner account.
+#' As a result of this operation, the association is created in the service network account and the association owner account.
 #'
 #' @usage
 #' vpclattice_create_service_network_service_association(clientToken,
 #'   serviceIdentifier, serviceNetworkIdentifier, tags)
 #'
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you retry a request that completed
-#' successfully using the same client token and parameters, the retry
-#' succeeds without performing any actions. If the parameters aren't
-#' identical, the retry fails.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
 #' @param serviceIdentifier &#91;required&#93; The ID or ARN of the service.
-#' @param serviceNetworkIdentifier &#91;required&#93; The ID or ARN of the service network. You must use an ARN if the
-#' resources are in different accounts.
+#' @param serviceNetworkIdentifier &#91;required&#93; The ID or ARN of the service network. You must use an ARN if the resources are in different accounts.
 #' @param tags The tags for the association.
 #'
 #' @return
@@ -1115,47 +982,24 @@ vpclattice_create_service_network_service_association <- function(clientToken = 
 #' Associates a VPC with a service network
 #'
 #' @description
-#' Associates a VPC with a service network. When you associate a VPC with
-#' the service network, it enables all the resources within that VPC to be
-#' clients and communicate with other services in the service network. For
-#' more information, see [Manage VPC
-#' associations](https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-network-associations.html#service-network-vpc-associations)
-#' in the *Amazon VPC Lattice User Guide*.
+#' Associates a VPC with a service network. When you associate a VPC with the service network, it enables all the resources within that VPC to be clients and communicate with other services in the service network. For more information, see [Manage VPC associations](https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-network-associations.html#service-network-vpc-associations) in the *Amazon VPC Lattice User Guide*.
 #' 
-#' You can't use this operation if there is a disassociation in progress.
-#' If the association fails, retry by deleting the association and
-#' recreating it.
+#' You can't use this operation if there is a disassociation in progress. If the association fails, retry by deleting the association and recreating it.
 #' 
-#' As a result of this operation, the association gets created in the
-#' service network account and the VPC owner account.
+#' As a result of this operation, the association gets created in the service network account and the VPC owner account.
 #' 
-#' If you add a security group to the service network and VPC association,
-#' the association must continue to always have at least one security
-#' group. You can add or edit security groups at any time. However, to
-#' remove all security groups, you must first delete the association and
-#' recreate it without security groups.
+#' If you add a security group to the service network and VPC association, the association must continue to always have at least one security group. You can add or edit security groups at any time. However, to remove all security groups, you must first delete the association and recreate it without security groups.
 #'
 #' @usage
 #' vpclattice_create_service_network_vpc_association(clientToken,
 #'   serviceNetworkIdentifier, vpcIdentifier, privateDnsEnabled,
 #'   securityGroupIds, tags, dnsOptions)
 #'
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you retry a request that completed
-#' successfully using the same client token and parameters, the retry
-#' succeeds without performing any actions. If the parameters aren't
-#' identical, the retry fails.
-#' @param serviceNetworkIdentifier &#91;required&#93; The ID or ARN of the service network. You must use an ARN if the
-#' resources are in different accounts.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
+#' @param serviceNetworkIdentifier &#91;required&#93; The ID or ARN of the service network. You must use an ARN if the resources are in different accounts.
 #' @param vpcIdentifier &#91;required&#93; The ID of the VPC.
 #' @param privateDnsEnabled Indicates if private DNS is enabled for the VPC association.
-#' @param securityGroupIds The IDs of the security groups. Security groups aren't added by default.
-#' You can add a security group to apply network level controls to control
-#' which resources in a VPC are allowed to access the service network and
-#' its services. For more information, see [Control traffic to resources
-#' using security
-#' groups](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html)
-#' in the *Amazon VPC User Guide*.
+#' @param securityGroupIds The IDs of the security groups. Security groups aren't added by default. You can add a security group to apply network level controls to control which resources in a VPC are allowed to access the service network and its services. For more information, see [Control traffic to resources using security groups](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html) in the *Amazon VPC User Guide*.
 #' @param tags The tags for the association.
 #' @param dnsOptions DNS options for the service network VPC association.
 #'
@@ -1229,28 +1073,17 @@ vpclattice_create_service_network_vpc_association <- function(clientToken = NULL
 #' Creates a target group
 #'
 #' @description
-#' Creates a target group. A target group is a collection of targets, or
-#' compute resources, that run your application or service. A target group
-#' can only be used by a single service.
+#' Creates a target group. A target group is a collection of targets, or compute resources, that run your application or service. A target group can only be used by a single service.
 #' 
-#' For more information, see [Target
-#' groups](https://docs.aws.amazon.com/vpc-lattice/latest/ug/target-groups.html)
-#' in the *Amazon VPC Lattice User Guide*.
+#' For more information, see [Target groups](https://docs.aws.amazon.com/vpc-lattice/latest/ug/target-groups.html) in the *Amazon VPC Lattice User Guide*.
 #'
 #' @usage
 #' vpclattice_create_target_group(name, type, config, clientToken, tags)
 #'
-#' @param name &#91;required&#93; The name of the target group. The name must be unique within the
-#' account. The valid characters are a-z, 0-9, and hyphens (-). You can't
-#' use a hyphen as the first or last character, or immediately after
-#' another hyphen.
+#' @param name &#91;required&#93; The name of the target group. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
 #' @param type &#91;required&#93; The type of target group.
 #' @param config The target group configuration.
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you retry a request that completed
-#' successfully using the same client token and parameters, the retry
-#' succeeds without performing any actions. If the parameters aren't
-#' identical, the retry fails.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
 #' @param tags The tags for the target group.
 #'
 #' @return
@@ -1393,11 +1226,7 @@ vpclattice_delete_access_log_subscription <- function(accessLogSubscriptionIdent
 #' Deletes the specified auth policy
 #'
 #' @description
-#' Deletes the specified auth policy. If an auth is set to `AWS_IAM` and
-#' the auth policy is deleted, all requests are denied. If you are trying
-#' to remove the auth policy completely, you must set the auth type to
-#' `NONE`. If auth is enabled on the resource, but no auth policy is set,
-#' all requests are denied.
+#' Deletes the specified auth policy. If an auth is set to `AWS_IAM` and the auth policy is deleted, all requests are denied. If you are trying to remove the auth policy completely, you must set the auth type to `NONE`. If auth is enabled on the resource, but no auth policy is set, all requests are denied.
 #'
 #' @usage
 #' vpclattice_delete_auth_policy(resourceIdentifier)
@@ -1726,15 +1555,9 @@ vpclattice_delete_resource_policy <- function(resourceArn) {
 #' Deletes a listener rule
 #'
 #' @description
-#' Deletes a listener rule. Each listener has a default rule for checking
-#' connection requests, but you can define additional rules. Each rule
-#' consists of a priority, one or more actions, and one or more conditions.
-#' You can delete additional listener rules, but you cannot delete the
-#' default rule.
+#' Deletes a listener rule. Each listener has a default rule for checking connection requests, but you can define additional rules. Each rule consists of a priority, one or more actions, and one or more conditions. You can delete additional listener rules, but you cannot delete the default rule.
 #' 
-#' For more information, see [Listener
-#' rules](https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html#listener-rules)
-#' in the *Amazon VPC Lattice User Guide*.
+#' For more information, see [Listener rules](https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html#listener-rules) in the *Amazon VPC Lattice User Guide*.
 #'
 #' @usage
 #' vpclattice_delete_rule(serviceIdentifier, listenerIdentifier,
@@ -1783,13 +1606,7 @@ vpclattice_delete_rule <- function(serviceIdentifier, listenerIdentifier, ruleId
 #' Deletes a service
 #'
 #' @description
-#' Deletes a service. A service can't be deleted if it's associated with a
-#' service network. If you delete a service, all resources related to the
-#' service, such as the resource policy, auth policy, listeners, listener
-#' rules, and access log subscriptions, are also deleted. For more
-#' information, see [Delete a
-#' service](https://docs.aws.amazon.com/vpc-lattice/latest/ug/services.html#delete-service)
-#' in the *Amazon VPC Lattice User Guide*.
+#' Deletes a service. A service can't be deleted if it's associated with a service network. If you delete a service, all resources related to the service, such as the resource policy, auth policy, listeners, listener rules, and access log subscriptions, are also deleted. For more information, see [Delete a service](https://docs.aws.amazon.com/vpc-lattice/latest/ug/services.html#delete-service) in the *Amazon VPC Lattice User Guide*.
 #'
 #' @usage
 #' vpclattice_delete_service(serviceIdentifier)
@@ -1841,13 +1658,7 @@ vpclattice_delete_service <- function(serviceIdentifier) {
 #' Deletes a service network
 #'
 #' @description
-#' Deletes a service network. You can only delete the service network if
-#' there is no service or VPC associated with it. If you delete a service
-#' network, all resources related to the service network, such as the
-#' resource policy, auth policy, and access log subscriptions, are also
-#' deleted. For more information, see [Delete a service
-#' network](https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#delete-service-network)
-#' in the *Amazon VPC Lattice User Guide*.
+#' Deletes a service network. You can only delete the service network if there is no service or VPC associated with it. If you delete a service network, all resources related to the service network, such as the resource policy, auth policy, and access log subscriptions, are also deleted. For more information, see [Delete a service network](https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#delete-service-network) in the *Amazon VPC Lattice User Guide*.
 #'
 #' @usage
 #' vpclattice_delete_service_network(serviceNetworkIdentifier)
@@ -1892,8 +1703,7 @@ vpclattice_delete_service_network <- function(serviceNetworkIdentifier) {
 #' configuration
 #'
 #' @description
-#' Deletes the association between a service network and a resource
-#' configuration.
+#' Deletes the association between a service network and a resource configuration.
 #'
 #' @usage
 #' vpclattice_delete_service_network_resource_association(
@@ -1945,8 +1755,7 @@ vpclattice_delete_service_network_resource_association <- function(serviceNetwor
 #' Deletes the association between a service and a service network
 #'
 #' @description
-#' Deletes the association between a service and a service network. This
-#' operation fails if an association is still in progress.
+#' Deletes the association between a service and a service network. This operation fails if an association is still in progress.
 #'
 #' @usage
 #' vpclattice_delete_service_network_service_association(
@@ -1998,8 +1807,7 @@ vpclattice_delete_service_network_service_association <- function(serviceNetwork
 #' Disassociates the VPC from the service network
 #'
 #' @description
-#' Disassociates the VPC from the service network. You can't disassociate
-#' the VPC if there is a create or update association in progress.
+#' Disassociates the VPC from the service network. You can't disassociate the VPC if there is a create or update association in progress.
 #'
 #' @usage
 #' vpclattice_delete_service_network_vpc_association(
@@ -2051,8 +1859,7 @@ vpclattice_delete_service_network_vpc_association <- function(serviceNetworkVpcA
 #' Deletes a target group
 #'
 #' @description
-#' Deletes a target group. You can't delete a target group if it is used in
-#' a listener rule or if the target group creation is in progress.
+#' Deletes a target group. You can't delete a target group if it is used in a listener rule or if the target group creation is in progress.
 #'
 #' @usage
 #' vpclattice_delete_target_group(targetGroupIdentifier)
@@ -2233,8 +2040,7 @@ vpclattice_get_access_log_subscription <- function(accessLogSubscriptionIdentifi
 #' service network
 #'
 #' @description
-#' Retrieves information about the auth policy for the specified service or
-#' service network.
+#' Retrieves information about the auth policy for the specified service or service network.
 #'
 #' @usage
 #' vpclattice_get_auth_policy(resourceIdentifier)
@@ -2356,8 +2162,7 @@ vpclattice_get_domain_verification <- function(domainVerificationIdentifier) {
 #' service
 #'
 #' @description
-#' Retrieves information about the specified listener for the specified
-#' service.
+#' Retrieves information about the specified listener for the specified service.
 #'
 #' @usage
 #' vpclattice_get_listener(serviceIdentifier, listenerIdentifier)
@@ -2537,11 +2342,14 @@ vpclattice_get_resource_configuration <- function(resourceConfigurationIdentifie
 #'   subnetIds = list(
 #'     "string"
 #'   ),
+#'   serviceManaged = TRUE|FALSE,
+#'   managedBy = "string",
 #'   securityGroupIds = list(
 #'     "string"
 #'   ),
 #'   ipAddressType = "IPV4"|"IPV6"|"DUALSTACK",
 #'   ipv4AddressesPerEni = 123,
+#'   resourceConfigDnsResolution = "IN_VPC"|"PUBLIC",
 #'   createdAt = as.POSIXct(
 #'     "2015-01-01"
 #'   ),
@@ -2585,9 +2393,7 @@ vpclattice_get_resource_gateway <- function(resourceGatewayIdentifier) {
 #' Retrieves information about the specified resource policy
 #'
 #' @description
-#' Retrieves information about the specified resource policy. The resource
-#' policy is an IAM policy created on behalf of the resource owner when
-#' they share a resource.
+#' Retrieves information about the specified resource policy. The resource policy is an IAM policy created on behalf of the resource owner when they share a resource.
 #'
 #' @usage
 #' vpclattice_get_resource_policy(resourceArn)
@@ -2636,11 +2442,7 @@ vpclattice_get_resource_policy <- function(resourceArn) {
 #' Retrieves information about the specified listener rules
 #'
 #' @description
-#' Retrieves information about the specified listener rules. You can also
-#' retrieve information about the default listener rule. For more
-#' information, see [Listener
-#' rules](https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html#listener-rules)
-#' in the *Amazon VPC Lattice User Guide*.
+#' Retrieves information about the specified listener rules. You can also retrieve information about the default listener rule. For more information, see [Listener rules](https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html#listener-rules) in the *Amazon VPC Lattice User Guide*.
 #'
 #' @usage
 #' vpclattice_get_rule(serviceIdentifier, listenerIdentifier,
@@ -2871,8 +2673,7 @@ vpclattice_get_service_network <- function(serviceNetworkIdentifier) {
 #' network and a resource configuration
 #'
 #' @description
-#' Retrieves information about the specified association between a service
-#' network and a resource configuration.
+#' Retrieves information about the specified association between a service network and a resource configuration.
 #'
 #' @usage
 #' vpclattice_get_service_network_resource_association(
@@ -2951,8 +2752,7 @@ vpclattice_get_service_network_resource_association <- function(serviceNetworkRe
 #' network and a service
 #'
 #' @description
-#' Retrieves information about the specified association between a service
-#' network and a service.
+#' Retrieves information about the specified association between a service network and a service.
 #'
 #' @usage
 #' vpclattice_get_service_network_service_association(
@@ -3022,8 +2822,7 @@ vpclattice_get_service_network_service_association <- function(serviceNetworkSer
 #' network and a VPC
 #'
 #' @description
-#' Retrieves information about the specified association between a service
-#' network and a VPC.
+#' Retrieves information about the specified association between a service network and a VPC.
 #'
 #' @usage
 #' vpclattice_get_service_network_vpc_association(
@@ -3185,8 +2984,7 @@ vpclattice_get_target_group <- function(targetGroupIdentifier) {
 #' service
 #'
 #' @description
-#' Lists the access log subscriptions for the specified service network or
-#' service.
+#' Lists the access log subscriptions for the specified service network or service.
 #'
 #' @usage
 #' vpclattice_list_access_log_subscriptions(resourceIdentifier, maxResults,
@@ -3558,8 +3356,7 @@ vpclattice_list_resource_endpoint_associations <- function(resourceConfiguration
 #' vpclattice_list_resource_gateways(maxResults, nextToken)
 #'
 #' @param maxResults The maximum page size.
-#' @param nextToken If there are additional results, a pagination token for the next page of
-#' results.
+#' @param nextToken If there are additional results, a pagination token for the next page of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3580,6 +3377,7 @@ vpclattice_list_resource_endpoint_associations <- function(resourceConfiguration
 #'       ),
 #'       ipAddressType = "IPV4"|"IPV6"|"DUALSTACK",
 #'       ipv4AddressesPerEni = 123,
+#'       resourceConfigDnsResolution = "IN_VPC"|"PUBLIC",
 #'       createdAt = as.POSIXct(
 #'         "2015-01-01"
 #'       ),
@@ -3699,8 +3497,7 @@ vpclattice_list_rules <- function(serviceIdentifier, listenerIdentifier, maxResu
 #' configuration
 #'
 #' @description
-#' Lists the associations between a service network and a resource
-#' configuration.
+#' Lists the associations between a service network and a resource configuration.
 #'
 #' @usage
 #' vpclattice_list_service_network_resource_associations(
@@ -3710,10 +3507,8 @@ vpclattice_list_rules <- function(serviceIdentifier, listenerIdentifier, maxResu
 #' @param serviceNetworkIdentifier The ID of the service network.
 #' @param resourceConfigurationIdentifier The ID of the resource configuration.
 #' @param maxResults The maximum page size.
-#' @param nextToken If there are additional results, a pagination token for the next page of
-#' results.
-#' @param includeChildren Include service network resource associations of the child resource
-#' configuration with the grouped resource configuration.
+#' @param nextToken If there are additional results, a pagination token for the next page of results.
+#' @param includeChildren Include service network resource associations of the child resource configuration with the grouped resource configuration.
 #' 
 #' The type is boolean and the default value is false.
 #'
@@ -3791,15 +3586,9 @@ vpclattice_list_service_network_resource_associations <- function(serviceNetwork
 #' Lists the associations between a service network and a service
 #'
 #' @description
-#' Lists the associations between a service network and a service. You can
-#' filter the list either by service or service network. You must provide
-#' either the service network identifier or the service identifier.
+#' Lists the associations between a service network and a service. You can filter the list either by service or service network. You must provide either the service network identifier or the service identifier.
 #' 
-#' Every association in Amazon VPC Lattice has a unique Amazon Resource
-#' Name (ARN), such as when a service network is associated with a VPC or
-#' when a service is associated with a service network. If the association
-#' is for a resource is shared with another account, the association
-#' includes the local account ID as the prefix in the ARN.
+#' Every association in Amazon VPC Lattice has a unique Amazon Resource Name (ARN), such as when a service network is associated with a VPC or when a service is associated with a service network. If the association is for a resource is shared with another account, the association includes the local account ID as the prefix in the ARN.
 #'
 #' @usage
 #' vpclattice_list_service_network_service_associations(
@@ -3877,9 +3666,7 @@ vpclattice_list_service_network_service_associations <- function(serviceNetworkI
 #' Lists the associations between a service network and a VPC
 #'
 #' @description
-#' Lists the associations between a service network and a VPC. You can
-#' filter the list either by VPC or service network. You must provide
-#' either the ID of the service network identifier or the ID of the VPC.
+#' Lists the associations between a service network and a VPC. You can filter the list either by VPC or service network. You must provide either the ID of the service network identifier or the ID of the VPC.
 #'
 #' @usage
 #' vpclattice_list_service_network_vpc_associations(
@@ -3968,8 +3755,7 @@ vpclattice_list_service_network_vpc_associations <- function(serviceNetworkIdent
 #'
 #' @param serviceNetworkIdentifier &#91;required&#93; The ID of the service network associated with the VPC endpoint.
 #' @param maxResults The maximum page size.
-#' @param nextToken If there are additional results, a pagination token for the next page of
-#' results.
+#' @param nextToken If there are additional results, a pagination token for the next page of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4028,8 +3814,7 @@ vpclattice_list_service_network_vpc_endpoint_associations <- function(serviceNet
 #' Lists the service networks owned by or shared with this account
 #'
 #' @description
-#' Lists the service networks owned by or shared with this account. The
-#' account ID in the ARN shows which account owns the service network.
+#' Lists the service networks owned by or shared with this account. The account ID in the ARN shows which account owns the service network.
 #'
 #' @usage
 #' vpclattice_list_service_networks(maxResults, nextToken)
@@ -4097,8 +3882,7 @@ vpclattice_list_service_networks <- function(maxResults = NULL, nextToken = NULL
 #' account
 #'
 #' @description
-#' Lists the services owned by the caller account or shared with the caller
-#' account.
+#' Lists the services owned by the caller account or shared with the caller account.
 #'
 #' @usage
 #' vpclattice_list_services(maxResults, nextToken)
@@ -4219,8 +4003,7 @@ vpclattice_list_tags_for_resource <- function(resourceArn) {
 #' Lists your target groups
 #'
 #' @description
-#' Lists your target groups. You can narrow your search by using the
-#' filters below in your request.
+#' Lists your target groups. You can narrow your search by using the filters below in your request.
 #'
 #' @usage
 #' vpclattice_list_target_groups(maxResults, nextToken, vpcIdentifier,
@@ -4299,9 +4082,7 @@ vpclattice_list_target_groups <- function(maxResults = NULL, nextToken = NULL, v
 #' Lists the targets for the target group
 #'
 #' @description
-#' Lists the targets for the target group. By default, all targets are
-#' included. You can use this API to check the health status of targets.
-#' You can also filter the results by target.
+#' Lists the targets for the target group. By default, all targets are included. You can use this API to check the health status of targets. You can also filter the results by target.
 #'
 #' @usage
 #' vpclattice_list_targets(targetGroupIdentifier, maxResults, nextToken,
@@ -4370,20 +4151,15 @@ vpclattice_list_targets <- function(targetGroupIdentifier, maxResults = NULL, ne
 #' Creates or updates the auth policy
 #'
 #' @description
-#' Creates or updates the auth policy. The policy string in JSON must not
-#' contain newlines or blank lines.
+#' Creates or updates the auth policy. The policy string in JSON must not contain newlines or blank lines.
 #' 
-#' For more information, see [Auth
-#' policies](https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html)
-#' in the *Amazon VPC Lattice User Guide*.
+#' For more information, see [Auth policies](https://docs.aws.amazon.com/vpc-lattice/latest/ug/auth-policies.html) in the *Amazon VPC Lattice User Guide*.
 #'
 #' @usage
 #' vpclattice_put_auth_policy(resourceIdentifier, policy)
 #'
-#' @param resourceIdentifier &#91;required&#93; The ID or ARN of the service network or service for which the policy is
-#' created.
-#' @param policy &#91;required&#93; The auth policy. The policy string in JSON must not contain newlines or
-#' blank lines.
+#' @param resourceIdentifier &#91;required&#93; The ID or ARN of the service network or service for which the policy is created.
+#' @param policy &#91;required&#93; The auth policy. The policy string in JSON must not contain newlines or blank lines.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4430,18 +4206,13 @@ vpclattice_put_auth_policy <- function(resourceIdentifier, policy) {
 #' network
 #'
 #' @description
-#' Attaches a resource-based permission policy to a service or service
-#' network. The policy must contain the same actions and condition
-#' statements as the Amazon Web Services Resource Access Manager permission
-#' for sharing services and service networks.
+#' Attaches a resource-based permission policy to a service or service network. The policy must contain the same actions and condition statements as the Amazon Web Services Resource Access Manager permission for sharing services and service networks.
 #'
 #' @usage
 #' vpclattice_put_resource_policy(resourceArn, policy)
 #'
-#' @param resourceArn &#91;required&#93; The ID or ARN of the service network or service for which the policy is
-#' created.
-#' @param policy &#91;required&#93; An IAM policy. The policy string in JSON must not contain newlines or
-#' blank lines.
+#' @param resourceArn &#91;required&#93; The ID or ARN of the service network or service for which the policy is created.
+#' @param policy &#91;required&#93; An IAM policy. The policy string in JSON must not contain newlines or blank lines.
 #'
 #' @return
 #' An empty list.
@@ -4481,8 +4252,7 @@ vpclattice_put_resource_policy <- function(resourceArn, policy) {
 #' Registers the targets with the target group
 #'
 #' @description
-#' Registers the targets with the target group. If it's a Lambda target,
-#' you can only have one target in a target group.
+#' Registers the targets with the target group. If it's a Lambda target, you can only have one target in a target group.
 #'
 #' @usage
 #' vpclattice_register_targets(targetGroupIdentifier, targets)
@@ -4556,11 +4326,7 @@ vpclattice_register_targets <- function(targetGroupIdentifier, targets) {
 #' @usage
 #' vpclattice_start_domain_verification(clientToken, domainName, tags)
 #'
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you retry a request that completed
-#' successfully using the same client token and parameters, the retry
-#' succeeds without performing any actions. If the parameters aren't
-#' identical, the retry fails.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
 #' @param domainName &#91;required&#93; The domain name to verify ownership for.
 #' @param tags The tags for the domain verification.
 #'
@@ -4864,19 +4630,13 @@ vpclattice_update_listener <- function(serviceIdentifier, listenerIdentifier, de
 #' @param resourceConfigurationIdentifier &#91;required&#93; The ID of the resource configuration.
 #' @param resourceConfigurationDefinition Identifies the resource configuration in one of the following ways:
 #' 
-#' -   **Amazon Resource Name (ARN)** - Supported resource-types that are
-#'     provisioned by Amazon Web Services services, such as RDS databases,
-#'     can be identified by their ARN.
+#' -   **Amazon Resource Name (ARN)** - Supported resource-types that are provisioned by Amazon Web Services services, such as RDS databases, can be identified by their ARN.
 #' 
 #' -   **Domain name** - Any domain name that is publicly resolvable.
 #' 
-#' -   **IP address** - For IPv4 and IPv6, only IP addresses in the VPC are
-#'     supported.
-#' @param allowAssociationToShareableServiceNetwork Indicates whether to add the resource configuration to service networks
-#' that are shared with other accounts.
-#' @param portRanges The TCP port ranges that a consumer can use to access a resource
-#' configuration. You can separate port ranges with a comma. Example:
-#' 1-65535 or 1,2,22-30
+#' -   **IP address** - For IPv4 and IPv6, only IP addresses in the VPC are supported.
+#' @param allowAssociationToShareableServiceNetwork Indicates whether to add the resource configuration to service networks that are shared with other accounts.
+#' @param portRanges The TCP port ranges that a consumer can use to access a resource configuration. You can separate port ranges with a comma. Example: 1-65535 or 1,2,22-30
 #'
 #' @return
 #' A list with the following syntax:
@@ -5024,9 +4784,7 @@ vpclattice_update_resource_gateway <- function(resourceGatewayIdentifier, securi
 #' Updates a specified rule for the listener
 #'
 #' @description
-#' Updates a specified rule for the listener. You can't modify a default
-#' listener rule. To modify a default listener rule, use
-#' [`update_listener`][vpclattice_update_listener].
+#' Updates a specified rule for the listener. You can't modify a default listener rule. To modify a default listener rule, use [`update_listener`][vpclattice_update_listener].
 #'
 #' @usage
 #' vpclattice_update_rule(serviceIdentifier, listenerIdentifier,
@@ -5036,8 +4794,7 @@ vpclattice_update_resource_gateway <- function(resourceGatewayIdentifier, securi
 #' @param listenerIdentifier &#91;required&#93; The ID or ARN of the listener.
 #' @param ruleIdentifier &#91;required&#93; The ID or ARN of the rule.
 #' @param match The rule match.
-#' @param priority The rule priority. A listener can't have multiple rules with the same
-#' priority.
+#' @param priority The rule priority. A listener can't have multiple rules with the same priority.
 #' @param action Information about the action for the specified listener rule.
 #'
 #' @return
@@ -5170,11 +4927,9 @@ vpclattice_update_rule <- function(serviceIdentifier, listenerIdentifier, ruleId
 #' @param certificateArn The Amazon Resource Name (ARN) of the certificate.
 #' @param authType The type of IAM policy.
 #' 
-#' -   `NONE`: The resource does not use an IAM policy. This is the
-#'     default.
+#' -   `NONE`: The resource does not use an IAM policy. This is the default.
 #' 
-#' -   `AWS_IAM`: The resource uses an IAM policy. When this type is used,
-#'     auth is enabled and an auth policy is required.
+#' -   `AWS_IAM`: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5233,11 +4988,9 @@ vpclattice_update_service <- function(serviceIdentifier, certificateArn = NULL, 
 #' @param serviceNetworkIdentifier &#91;required&#93; The ID or ARN of the service network.
 #' @param authType &#91;required&#93; The type of IAM policy.
 #' 
-#' -   `NONE`: The resource does not use an IAM policy. This is the
-#'     default.
+#' -   `NONE`: The resource does not use an IAM policy. This is the default.
 #' 
-#' -   `AWS_IAM`: The resource uses an IAM policy. When this type is used,
-#'     auth is enabled and an auth policy is required.
+#' -   `AWS_IAM`: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5285,12 +5038,7 @@ vpclattice_update_service_network <- function(serviceNetworkIdentifier, authType
 #' Updates the service network and VPC association
 #'
 #' @description
-#' Updates the service network and VPC association. If you add a security
-#' group to the service network and VPC association, the association must
-#' continue to have at least one security group. You can add or edit
-#' security groups at any time. However, to remove all security groups, you
-#' must first delete the association and then recreate it without security
-#' groups.
+#' Updates the service network and VPC association. If you add a security group to the service network and VPC association, the association must continue to have at least one security group. You can add or edit security groups at any time. However, to remove all security groups, you must first delete the association and then recreate it without security groups.
 #'
 #' @usage
 #' vpclattice_update_service_network_vpc_association(

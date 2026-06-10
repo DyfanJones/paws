@@ -14,13 +14,9 @@ ec2_create_delegate_mac_volume_ownership_task(
 )
 }
 \arguments{
-\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring Idempotency}.}
+\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring Idempotency}.}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
 \item{InstanceId}{[required] The ID of the Amazon EC2 Mac instance.}
 
@@ -28,18 +24,12 @@ Otherwise, it is \code{UnauthorizedOperation}.}
 \itemize{
 \item \strong{Internal disk administrative user}
 \itemize{
-\item \strong{Username} - Only the default administrative user
-(\code{aws-managed-user}) is supported and it is used by default. You
-can't specify a different administrative user.
-\item \strong{Password} - If you did not change the default password for
-\code{aws-managed-user}, specify the default password, which is
-\emph{blank}. Otherwise, specify your password.
+\item \strong{Username} - Only the default administrative user (\code{aws-managed-user}) is supported and it is used by default. You can't specify a different administrative user.
+\item \strong{Password} - If you did not change the default password for \code{aws-managed-user}, specify the default password, which is \emph{blank}. Otherwise, specify your password.
 }
 \item \strong{Amazon EBS root volume administrative user}
 \itemize{
-\item \strong{Username} - If you did not change the default administrative
-user, specify \code{ec2-user}. Otherwise, specify the username for
-your administrative user.
+\item \strong{Username} - If you did not change the default administrative user, specify \code{ec2-user}. Otherwise, specify the username for your administrative user.
 \item \strong{Password} - Specify the password for the administrative user.
 }
 }

@@ -7,8 +7,7 @@
 transcribeservice_delete_language_model(ModelName)
 }
 \arguments{
-\item{ModelName}{[required] The name of the custom language model you want to delete. Model names
-are case sensitive.}
+\item{ModelName}{[required] The name of the custom language model you want to delete. Model names are case sensitive.}
 }
 \description{
 Deletes a custom language model. To use this operation, specify the name of the language model you want to delete using \code{ModelName}. custom language model names are case sensitive.

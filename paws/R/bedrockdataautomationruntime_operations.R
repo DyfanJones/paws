@@ -72,18 +72,22 @@ bedrockdataautomationruntime_get_data_automation_status <- function(invocationAr
 #' @usage
 #' bedrockdataautomationruntime_invoke_data_automation(inputConfiguration,
 #'   dataAutomationConfiguration, blueprints, dataAutomationProfileArn,
-#'   encryptionConfiguration)
+#'   encryptionConfiguration, outputConfiguration)
 #'
 #' @param inputConfiguration &#91;required&#93; Input configuration.
 #' @param dataAutomationConfiguration Data automation configuration.
 #' @param blueprints Blueprint list.
 #' @param dataAutomationProfileArn &#91;required&#93; Data automation profile ARN
 #' @param encryptionConfiguration Encryption configuration.
+#' @param outputConfiguration Output configuration.
 #'
 #' @return
 #' A list with the following syntax:
 #' ```
 #' list(
+#'   outputConfiguration = list(
+#'     s3Uri = "string"
+#'   ),
 #'   semanticModality = "DOCUMENT"|"IMAGE"|"AUDIO"|"VIDEO",
 #'   outputSegments = list(
 #'     list(
@@ -119,6 +123,9 @@ bedrockdataautomationruntime_get_data_automation_status <- function(invocationAr
 #'     kmsEncryptionContext = list(
 #'       "string"
 #'     )
+#'   ),
+#'   outputConfiguration = list(
+#'     s3Uri = "string"
 #'   )
 #' )
 #' ```
@@ -128,7 +135,7 @@ bedrockdataautomationruntime_get_data_automation_status <- function(invocationAr
 #' @rdname bedrockdataautomationruntime_invoke_data_automation
 #'
 #' @aliases bedrockdataautomationruntime_invoke_data_automation
-bedrockdataautomationruntime_invoke_data_automation <- function(inputConfiguration, dataAutomationConfiguration = NULL, blueprints = NULL, dataAutomationProfileArn, encryptionConfiguration = NULL) {
+bedrockdataautomationruntime_invoke_data_automation <- function(inputConfiguration, dataAutomationConfiguration = NULL, blueprints = NULL, dataAutomationProfileArn, encryptionConfiguration = NULL, outputConfiguration = NULL) {
   op <- new_operation(
     name = "InvokeDataAutomation",
     http_method = "POST",
@@ -137,7 +144,7 @@ bedrockdataautomationruntime_invoke_data_automation <- function(inputConfigurati
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .bedrockdataautomationruntime$invoke_data_automation_input(inputConfiguration = inputConfiguration, dataAutomationConfiguration = dataAutomationConfiguration, blueprints = blueprints, dataAutomationProfileArn = dataAutomationProfileArn, encryptionConfiguration = encryptionConfiguration)
+  input <- .bedrockdataautomationruntime$invoke_data_automation_input(inputConfiguration = inputConfiguration, dataAutomationConfiguration = dataAutomationConfiguration, blueprints = blueprints, dataAutomationProfileArn = dataAutomationProfileArn, encryptionConfiguration = encryptionConfiguration, outputConfiguration = outputConfiguration)
   output <- .bedrockdataautomationruntime$invoke_data_automation_output()
   config <- get_config()
   svc <- .bedrockdataautomationruntime$service(config, op)
@@ -260,7 +267,7 @@ bedrockdataautomationruntime_invoke_data_automation_async <- function(clientToke
 #' @usage
 #' bedrockdataautomationruntime_list_tags_for_resource(resourceARN)
 #'
-#' @param resourceARN &#91;required&#93; 
+#' @param resourceARN &#91;required&#93; ARN of a taggable resource
 #'
 #' @return
 #' A list with the following syntax:
@@ -314,8 +321,8 @@ bedrockdataautomationruntime_list_tags_for_resource <- function(resourceARN) {
 #' @usage
 #' bedrockdataautomationruntime_tag_resource(resourceARN, tags)
 #'
-#' @param resourceARN &#91;required&#93; 
-#' @param tags &#91;required&#93; 
+#' @param resourceARN &#91;required&#93; ARN of a taggable resource
+#' @param tags &#91;required&#93; List of tags
 #'
 #' @return
 #' An empty list.
@@ -365,8 +372,8 @@ bedrockdataautomationruntime_tag_resource <- function(resourceARN, tags) {
 #' @usage
 #' bedrockdataautomationruntime_untag_resource(resourceARN, tagKeys)
 #'
-#' @param resourceARN &#91;required&#93; 
-#' @param tagKeys &#91;required&#93; 
+#' @param resourceARN &#91;required&#93; ARN of a taggable resource
+#' @param tagKeys &#91;required&#93; List of tag keys
 #'
 #' @return
 #' An empty list.

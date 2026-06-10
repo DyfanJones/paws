@@ -13,13 +13,11 @@ prometheusservice_list_anomaly_detectors(
 )
 }
 \arguments{
-\item{workspaceId}{[required] The identifier of the workspace containing the anomaly detectors to
-list.}
+\item{workspaceId}{[required] The identifier of the workspace containing the anomaly detectors to list.}
 
 \item{alias}{Filters the results to anomaly detectors with the specified alias.}
 
-\item{maxResults}{The maximum number of results to return in a single call. Valid range is
-1 to 1000.}
+\item{maxResults}{The maximum number of results to return in a single call. Valid range is 1 to 1000.}
 
 \item{nextToken}{The pagination token to continue retrieving results.}
 }

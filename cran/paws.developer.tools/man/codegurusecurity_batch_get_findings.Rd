@@ -7,9 +7,7 @@
 codegurusecurity_batch_get_findings(findingIdentifiers)
 }
 \arguments{
-\item{findingIdentifiers}{[required] A list of finding identifiers. Each identifier consists of a \code{scanName}
-and a \code{findingId}. You retrieve the \code{findingId} when you call
-\code{\link[=codegurusecurity_get_findings]{get_findings}}.}
+\item{findingIdentifiers}{[required] A list of finding identifiers. Each identifier consists of a \code{scanName} and a \code{findingId}. You retrieve the \code{findingId} when you call \code{\link[=codegurusecurity_get_findings]{get_findings}}.}
 }
 \description{
 Returns a list of requested findings from standard scans.

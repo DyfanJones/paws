@@ -24,12 +24,7 @@ bedrockagent_update_agent_alias(
 
 \item{routingConfiguration}{Contains details about the routing configuration of the alias.}
 
-\item{aliasInvocationState}{The invocation state for the agent alias. To pause the agent alias, set
-the value to \code{REJECT_INVOCATIONS}. To start the agent alias running
-again, set the value to \code{ACCEPT_INVOCATIONS}. Use the
-\code{\link[=bedrockagent_get_agent_alias]{get_agent_alias}}, or
-\code{\link[=bedrockagent_list_agent_aliases]{list_agent_aliases}}, operation to
-get the invocation state of an agent alias.}
+\item{aliasInvocationState}{The invocation state for the agent alias. To pause the agent alias, set the value to \code{REJECT_INVOCATIONS}. To start the agent alias running again, set the value to \code{ACCEPT_INVOCATIONS}. Use the \code{\link[=bedrockagent_get_agent_alias]{get_agent_alias}}, or \code{\link[=bedrockagent_list_agent_aliases]{list_agent_aliases}}, operation to get the invocation state of an agent alias.}
 }
 \description{
 Updates configurations for an alias of an agent.

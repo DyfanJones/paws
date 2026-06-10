@@ -8,8 +8,7 @@ predefined billing group}
 billingconductor_associate_accounts(Arn, AccountIds)
 }
 \arguments{
-\item{Arn}{[required] The Amazon Resource Name (ARN) of the billing group that associates the
-array of account IDs.}
+\item{Arn}{[required] The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs.}
 
 \item{AccountIds}{[required] The associating array of account IDs.}
 }

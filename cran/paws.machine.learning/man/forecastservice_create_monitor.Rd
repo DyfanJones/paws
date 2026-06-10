@@ -11,9 +11,7 @@ forecastservice_create_monitor(MonitorName, ResourceArn, Tags = NULL)
 
 \item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the predictor to monitor.}
 
-\item{Tags}{A list of
-\href{https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html}{tags}
-to apply to the monitor resource.}
+\item{Tags}{A list of \href{https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html}{tags} to apply to the monitor resource.}
 }
 \description{
 Creates a predictor monitor resource for an existing auto predictor. Predictor monitoring allows you to see how your predictor's performance changes over time. For more information, see \href{https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html}{Predictor Monitoring}.

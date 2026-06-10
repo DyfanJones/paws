@@ -7,12 +7,9 @@
 route53resolver_update_resolver_dnssec_config(ResourceId, Validation)
 }
 \arguments{
-\item{ResourceId}{[required] The ID of the virtual private cloud (VPC) that you're updating the
-DNSSEC validation status for.}
+\item{ResourceId}{[required] The ID of the virtual private cloud (VPC) that you're updating the DNSSEC validation status for.}
 
-\item{Validation}{[required] The new value that you are specifying for DNSSEC validation for the VPC.
-The value can be \code{ENABLE} or \code{DISABLE}. Be aware that it can take time
-for a validation status change to be completed.}
+\item{Validation}{[required] The new value that you are specifying for DNSSEC validation for the VPC. The value can be \code{ENABLE} or \code{DISABLE}. Be aware that it can take time for a validation status change to be completed.}
 }
 \description{
 Updates an existing DNSSEC validation configuration. If there is no existing DNSSEC validation configuration, one is created.

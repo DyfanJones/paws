@@ -19,9 +19,7 @@ redshiftserverless_restore_table_from_snapshot(
 )
 }
 \arguments{
-\item{activateCaseSensitiveIdentifier}{Indicates whether name identifiers for database, schema, and table are
-case sensitive. If true, the names are case sensitive. If false, the
-names are not case sensitive. The default is false.}
+\item{activateCaseSensitiveIdentifier}{Indicates whether name identifiers for database, schema, and table are case sensitive. If true, the names are case sensitive. If false, the names are not case sensitive. The default is false.}
 
 \item{namespaceName}{[required] The namespace of the snapshot to restore from.}
 

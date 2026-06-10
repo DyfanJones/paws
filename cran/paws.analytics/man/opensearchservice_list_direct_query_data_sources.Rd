@@ -8,7 +8,7 @@ configured within Amazon OpenSearch Service}
 opensearchservice_list_direct_query_data_sources(NextToken = NULL)
 }
 \arguments{
-\item{NextToken}{}
+\item{NextToken}{When \code{nextToken} is returned, there are more results available. The value of \code{nextToken} is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.}
 }
 \description{
 Lists an inventory of all the direct query data sources that you have configured within Amazon OpenSearch Service.

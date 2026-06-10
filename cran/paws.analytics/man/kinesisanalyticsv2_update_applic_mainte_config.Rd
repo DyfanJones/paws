@@ -11,8 +11,7 @@ kinesisanalyticsv2_update_application_maintenance_configuration(
 )
 }
 \arguments{
-\item{ApplicationName}{[required] The name of the application for which you want to update the maintenance
-configuration.}
+\item{ApplicationName}{[required] The name of the application for which you want to update the maintenance configuration.}
 
 \item{ApplicationMaintenanceConfigurationUpdate}{[required] Describes the application maintenance configuration update.}
 }

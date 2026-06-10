@@ -45,13 +45,9 @@ codebuild_start_build(
 
 \item{secondarySourcesOverride}{An array of \code{ProjectSource} objects.}
 
-\item{secondarySourcesVersionOverride}{An array of \code{ProjectSourceVersion} objects that specify one or more
-versions of the project's secondary sources to be used for this build
-only.}
+\item{secondarySourcesVersionOverride}{An array of \code{ProjectSourceVersion} objects that specify one or more versions of the project's secondary sources to be used for this build only.}
 
-\item{sourceVersion}{The version of the build input to be built, for this build only. If not
-specified, the latest version is used. If specified, the contents
-depends on the source provider:
+\item{sourceVersion}{The version of the build input to be built, for this build only. If not specified, the latest version is used. If specified, the contents depends on the source provider:
 
 \strong{CodeCommit}
 
@@ -59,12 +55,7 @@ The commit ID, branch, or Git tag to use.
 
 \strong{GitHub}
 
-The commit ID, pull request ID, branch name, or tag name that
-corresponds to the version of the source code you want to build. If a
-pull request ID is specified, it must use the format
-\code{pr/pull-request-ID} (for example \code{pr/25}). If a branch name is
-specified, the branch's HEAD commit ID is used. If not specified, the
-default branch's HEAD commit ID is used.
+The commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format \code{pr/pull-request-ID} (for example \code{pr/25}). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
 
 \strong{GitLab}
 
@@ -72,167 +63,95 @@ The commit ID, branch, or Git tag to use.
 
 \strong{Bitbucket}
 
-The commit ID, branch name, or tag name that corresponds to the version
-of the source code you want to build. If a branch name is specified, the
-branch's HEAD commit ID is used. If not specified, the default branch's
-HEAD commit ID is used.
+The commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
 
 \strong{Amazon S3}
 
-The version ID of the object that represents the build input ZIP file to
-use.
+The version ID of the object that represents the build input ZIP file to use.
 
-If \code{sourceVersion} is specified at the project level, then this
-\code{sourceVersion} (at the build level) takes precedence.
+If \code{sourceVersion} is specified at the project level, then this \code{sourceVersion} (at the build level) takes precedence.
 
-For more information, see \href{https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html}{Source Version Sample with CodeBuild}
-in the \emph{CodeBuild User Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html}{Source Version Sample with CodeBuild} in the \emph{CodeBuild User Guide}.}
 
-\item{artifactsOverride}{Build output artifact settings that override, for this build only, the
-latest ones already defined in the build project.}
+\item{artifactsOverride}{Build output artifact settings that override, for this build only, the latest ones already defined in the build project.}
 
 \item{secondaryArtifactsOverride}{An array of \code{ProjectArtifacts} objects.}
 
-\item{environmentVariablesOverride}{A set of environment variables that overrides, for this build only, the
-latest ones already defined in the build project.}
+\item{environmentVariablesOverride}{A set of environment variables that overrides, for this build only, the latest ones already defined in the build project.}
 
-\item{sourceTypeOverride}{A source input type, for this build, that overrides the source input
-defined in the build project.}
+\item{sourceTypeOverride}{A source input type, for this build, that overrides the source input defined in the build project.}
 
-\item{sourceLocationOverride}{A location that overrides, for this build, the source location for the
-one defined in the build project.}
+\item{sourceLocationOverride}{A location that overrides, for this build, the source location for the one defined in the build project.}
 
-\item{sourceAuthOverride}{An authorization type for this build that overrides the one defined in
-the build project. This override applies only if the build project's
-source is BitBucket, GitHub, GitLab, or GitLab Self Managed.}
+\item{sourceAuthOverride}{An authorization type for this build that overrides the one defined in the build project. This override applies only if the build project's source is BitBucket, GitHub, GitLab, or GitLab Self Managed.}
 
-\item{gitCloneDepthOverride}{The user-defined depth of history, with a minimum value of 0, that
-overrides, for this build only, any previous depth of history defined in
-the build project.}
+\item{gitCloneDepthOverride}{The user-defined depth of history, with a minimum value of 0, that overrides, for this build only, any previous depth of history defined in the build project.}
 
-\item{gitSubmodulesConfigOverride}{Information about the Git submodules configuration for this build of an
-CodeBuild build project.}
+\item{gitSubmodulesConfigOverride}{Information about the Git submodules configuration for this build of an CodeBuild build project.}
 
-\item{buildspecOverride}{A buildspec file declaration that overrides the latest one defined in
-the build project, for this build only. The buildspec defined on the
-project is not changed.
+\item{buildspecOverride}{A buildspec file declaration that overrides the latest one defined in the build project, for this build only. The buildspec defined on the project is not changed.
 
-If this value is set, it can be either an inline buildspec definition,
-the path to an alternate buildspec file relative to the value of the
-built-in \code{CODEBUILD_SRC_DIR} environment variable, or the path to an S3
-bucket. The bucket must be in the same Amazon Web Services Region as the
-build project. Specify the buildspec file using its ARN (for example,
-\code{arn:aws:s3:::my-codebuild-sample2/buildspec.yml}). If this value is not
-provided or is set to an empty string, the source code must contain a
-buildspec file in its root directory. For more information, see
-\href{https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage}{Buildspec File Name and Storage Location}.
+If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file relative to the value of the built-in \code{CODEBUILD_SRC_DIR} environment variable, or the path to an S3 bucket. The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec file using its ARN (for example, \code{arn:aws:s3:::my-codebuild-sample2/buildspec.yml}). If this value is not provided or is set to an empty string, the source code must contain a buildspec file in its root directory. For more information, see \href{https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage}{Buildspec File Name and Storage Location}.
 
-Since this property allows you to change the build commands that will
-run in the container, you should note that an IAM principal with the
-ability to call this API and set this parameter can override the default
-settings. Moreover, we encourage that you use a trustworthy buildspec
-location like a file in your source repository or a Amazon S3 bucket.
-Alternatively, you can restrict overrides to the buildspec by using a
-condition key: \href{https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html#action-context-keys-example-overridebuildspec.html}{Prevent unauthorized modifications to project buildspec}.}
+Since this property allows you to change the build commands that will run in the container, you should note that an IAM principal with the ability to call this API and set this parameter can override the default settings. Moreover, we encourage that you use a trustworthy buildspec location like a file in your source repository or a Amazon S3 bucket. Alternatively, you can restrict overrides to the buildspec by using a condition key: \href{https://docs.aws.amazon.com/codebuild/latest/userguide/action-context-keys.html#action-context-keys-example-overridebuildspec.html}{Prevent unauthorized modifications to project buildspec}.}
 
-\item{insecureSslOverride}{Enable this flag to override the insecure SSL setting that is specified
-in the build project. The insecure SSL setting determines whether to
-ignore SSL warnings while connecting to the project source code. This
-override applies only if the build's source is GitHub Enterprise.}
+\item{insecureSslOverride}{Enable this flag to override the insecure SSL setting that is specified in the build project. The insecure SSL setting determines whether to ignore SSL warnings while connecting to the project source code. This override applies only if the build's source is GitHub Enterprise.}
 
-\item{reportBuildStatusOverride}{Set to true to report to your source provider the status of a build's
-start and completion. If you use this option with a source provider
-other than GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or
-Bitbucket, an \code{invalidInputException} is thrown.
+\item{reportBuildStatusOverride}{Set to true to report to your source provider the status of a build's start and completion. If you use this option with a source provider other than GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket, an \code{invalidInputException} is thrown.
 
-To be able to report the build status to the source provider, the user
-associated with the source provider must have write access to the repo.
-If the user does not have write access, the build status cannot be
-updated. For more information, see \href{https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html}{Source provider access}
-in the \emph{CodeBuild User Guide}.
+To be able to report the build status to the source provider, the user associated with the source provider must have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see \href{https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html}{Source provider access} in the \emph{CodeBuild User Guide}.
 
-The status of a build triggered by a webhook is always reported to your
-source provider.}
+The status of a build triggered by a webhook is always reported to your source provider.}
 
-\item{buildStatusConfigOverride}{Contains information that defines how the build project reports the
-build status to the source provider. This option is only used when the
-source provider is \code{GITHUB}, \code{GITHUB_ENTERPRISE}, or \code{BITBUCKET}.}
+\item{buildStatusConfigOverride}{Contains information that defines how the build project reports the build status to the source provider. This option is only used when the source provider is \code{GITHUB}, \code{GITHUB_ENTERPRISE}, or \code{BITBUCKET}.}
 
-\item{environmentTypeOverride}{A container type for this build that overrides the one specified in the
-build project.}
+\item{environmentTypeOverride}{A container type for this build that overrides the one specified in the build project.}
 
-\item{imageOverride}{The name of an image for this build that overrides the one specified in
-the build project.}
+\item{imageOverride}{The name of an image for this build that overrides the one specified in the build project.}
 
-\item{computeTypeOverride}{The name of a compute type for this build that overrides the one
-specified in the build project.}
+\item{computeTypeOverride}{The name of a compute type for this build that overrides the one specified in the build project.}
 
-\item{certificateOverride}{The name of a certificate for this build that overrides the one
-specified in the build project.}
+\item{certificateOverride}{The name of a certificate for this build that overrides the one specified in the build project.}
 
-\item{cacheOverride}{A ProjectCache object specified for this build that overrides the one
-defined in the build project.}
+\item{cacheOverride}{A ProjectCache object specified for this build that overrides the one defined in the build project.}
 
-\item{serviceRoleOverride}{The name of a service role for this build that overrides the one
-specified in the build project.}
+\item{serviceRoleOverride}{The name of a service role for this build that overrides the one specified in the build project.}
 
 \item{privilegedModeOverride}{Enable this flag to override privileged mode in the build project.}
 
-\item{timeoutInMinutesOverride}{The number of build timeout minutes, from 5 to 2160 (36 hours), that
-overrides, for this build only, the latest setting already defined in
-the build project.}
+\item{timeoutInMinutesOverride}{The number of build timeout minutes, from 5 to 2160 (36 hours), that overrides, for this build only, the latest setting already defined in the build project.}
 
-\item{queuedTimeoutInMinutesOverride}{The number of minutes a build is allowed to be queued before it times
-out.}
+\item{queuedTimeoutInMinutesOverride}{The number of minutes a build is allowed to be queued before it times out.}
 
-\item{encryptionKeyOverride}{The Key Management Service customer master key (CMK) that overrides the
-one specified in the build project. The CMK key encrypts the build
-output artifacts.
+\item{encryptionKeyOverride}{The Key Management Service customer master key (CMK) that overrides the one specified in the build project. The CMK key encrypts the build output artifacts.
 
-You can use a cross-account KMS key to encrypt the build output
-artifacts if your service role has permission to that key.
+You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key.
 
-You can specify either the Amazon Resource Name (ARN) of the CMK or, if
-available, the CMK's alias (using the format \verb{alias/<alias-name>}).}
+You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format \verb{alias/<alias-name>}).}
 
-\item{idempotencyToken}{A unique, case sensitive identifier you provide to ensure the
-idempotency of the StartBuild request. The token is included in the
-StartBuild request and is valid for 5 minutes. If you repeat the
-StartBuild request with the same token, but change a parameter,
-CodeBuild returns a parameter mismatch error.}
+\item{idempotencyToken}{A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The token is included in the StartBuild request and is valid for 5 minutes. If you repeat the StartBuild request with the same token, but change a parameter, CodeBuild returns a parameter mismatch error.}
 
-\item{logsConfigOverride}{Log settings for this build that override the log settings defined in
-the build project.}
+\item{logsConfigOverride}{Log settings for this build that override the log settings defined in the build project.}
 
 \item{registryCredentialOverride}{The credentials for access to a private registry.}
 
-\item{imagePullCredentialsTypeOverride}{The type of credentials CodeBuild uses to pull images in your build.
-There are two valid values:
+\item{imagePullCredentialsTypeOverride}{The type of credentials CodeBuild uses to pull images in your build. There are two valid values:
 
 \strong{CODEBUILD}
 
-Specifies that CodeBuild uses its own credentials. This requires that
-you modify your ECR repository policy to trust CodeBuild's service
-principal.
+Specifies that CodeBuild uses its own credentials. This requires that you modify your ECR repository policy to trust CodeBuild's service principal.
 
 \strong{SERVICE_ROLE}
 
 Specifies that CodeBuild uses your build project's service role.
 
-When using a cross-account or private registry image, you must use
-\code{SERVICE_ROLE} credentials. When using an CodeBuild curated image, you
-must use \code{CODEBUILD} credentials.}
+When using a cross-account or private registry image, you must use \code{SERVICE_ROLE} credentials. When using an CodeBuild curated image, you must use \code{CODEBUILD} credentials.}
 
-\item{debugSessionEnabled}{Specifies if session debugging is enabled for this build. For more
-information, see \href{https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html}{Viewing a running build in Session Manager}.}
+\item{debugSessionEnabled}{Specifies if session debugging is enabled for this build. For more information, see \href{https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html}{Viewing a running build in Session Manager}.}
 
-\item{fleetOverride}{A ProjectFleet object specified for this build that overrides the one
-defined in the build project.}
+\item{fleetOverride}{A ProjectFleet object specified for this build that overrides the one defined in the build project.}
 
-\item{autoRetryLimitOverride}{The maximum number of additional automatic retries after a failed build.
-For example, if the auto-retry limit is set to 2, CodeBuild will call
-the \code{\link[=codebuild_retry_build]{retry_build}} API to automatically retry
-your build for up to 2 additional times.}
+\item{autoRetryLimitOverride}{The maximum number of additional automatic retries after a failed build. For example, if the auto-retry limit is set to 2, CodeBuild will call the \code{\link[=codebuild_retry_build]{retry_build}} API to automatically retry your build for up to 2 additional times.}
 }
 \description{
 Starts running a build with the settings defined in the project. These setting include: how to run a build, where to get the source code, which build environment to use, which build commands to run, and where to store the build output.

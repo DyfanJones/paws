@@ -9,12 +9,7 @@ emr_set_visible_to_all_users(JobFlowIds, VisibleToAllUsers)
 \arguments{
 \item{JobFlowIds}{[required] The unique identifier of the job flow (cluster).}
 
-\item{VisibleToAllUsers}{[required] A value of \code{true} indicates that an IAM principal in the Amazon Web
-Services account can perform Amazon EMR actions on the cluster that the
-IAM policies attached to the principal allow. A value of \code{false}
-indicates that only the IAM principal that created the cluster and the
-Amazon Web Services root user can perform Amazon EMR actions on the
-cluster.}
+\item{VisibleToAllUsers}{[required] A value of \code{true} indicates that an IAM principal in the Amazon Web Services account can perform Amazon EMR actions on the cluster that the IAM policies attached to the principal allow. A value of \code{false} indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform Amazon EMR actions on the cluster.}
 }
 \description{
 The SetVisibleToAllUsers parameter is no longer supported. Your cluster may be visible to all users in your account. To restrict cluster access using an IAM policy, see \href{https://docs.aws.amazon.com/emr/latest/ManagementGuide/}{Identity and Access Management for Amazon EMR}.

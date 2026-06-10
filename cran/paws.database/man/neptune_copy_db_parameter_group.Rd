@@ -12,14 +12,12 @@ neptune_copy_db_parameter_group(
 )
 }
 \arguments{
-\item{SourceDBParameterGroupIdentifier}{[required] The identifier or ARN for the source DB parameter group. For information
-about creating an ARN, see \href{https://docs.aws.amazon.com/neptune/latest/userguide/#tagging.ARN.Constructing}{Constructing an Amazon Resource Name (ARN)}.
+\item{SourceDBParameterGroupIdentifier}{[required] The identifier or ARN for the source DB parameter group. For information about creating an ARN, see \href{https://docs.aws.amazon.com/neptune/latest/userguide/#tagging.ARN.Constructing}{Constructing an Amazon Resource Name (ARN)}.
 
 Constraints:
 \itemize{
 \item Must specify a valid DB parameter group.
-\item Must specify a valid DB parameter group identifier, for example
-\code{my-db-param-group}, or a valid ARN.
+\item Must specify a valid DB parameter group identifier, for example \code{my-db-param-group}, or a valid ARN.
 }}
 
 \item{TargetDBParameterGroupIdentifier}{[required] The identifier for the copied DB parameter group.

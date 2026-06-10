@@ -10,7 +10,14 @@ dynamodb_batch_execute_statement(Statements, ReturnConsumedCapacity = NULL)
 \arguments{
 \item{Statements}{[required] The list of PartiQL statements representing the batch to run.}
 
-\item{ReturnConsumedCapacity}{}
+\item{ReturnConsumedCapacity}{Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:
+\itemize{
+\item \code{INDEXES} - The response includes the aggregate \code{ConsumedCapacity} for the operation, together with \code{ConsumedCapacity} for each table and secondary index that was accessed.
+
+Note that some operations, such as \code{\link[=dynamodb_get_item]{get_item}} and \code{\link[=dynamodb_batch_get_item]{batch_get_item}}, do not access any indexes at all. In these cases, specifying \code{INDEXES} will only return \code{ConsumedCapacity} information for table(s).
+\item \code{TOTAL} - The response includes only the aggregate \code{ConsumedCapacity} for the operation.
+\item \code{NONE} - No \code{ConsumedCapacity} details are included in the response.
+}}
 }
 \description{
 This operation allows you to perform batch reads or writes on data stored in DynamoDB, using PartiQL. Each read statement in a \code{\link[=dynamodb_batch_execute_statement]{batch_execute_statement}} must specify an equality condition on all key attributes. This enforces that each \code{SELECT} statement in a batch returns at most a single item. For more information, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.multiplestatements.batching.html}{Running batch operations with PartiQL for DynamoDB} .

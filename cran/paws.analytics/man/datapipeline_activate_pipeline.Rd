@@ -15,8 +15,7 @@ datapipeline_activate_pipeline(
 
 \item{parameterValues}{A list of parameter values to pass to the pipeline at activation.}
 
-\item{startTimestamp}{The date and time to resume the pipeline. By default, the pipeline
-resumes from the last completed execution.}
+\item{startTimestamp}{The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.}
 }
 \description{
 Validates the specified pipeline and starts processing pipeline tasks. If the pipeline does not pass validation, activation fails.

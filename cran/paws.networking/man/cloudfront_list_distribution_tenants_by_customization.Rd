@@ -18,8 +18,7 @@ cloudfront_list_distribution_tenants_by_customization(
 
 \item{Marker}{The marker for the next set of results.}
 
-\item{MaxItems}{The maximum number of distribution tenants to return by the specified
-customization.}
+\item{MaxItems}{The maximum number of distribution tenants to return by the specified customization.}
 }
 \description{
 Lists distribution tenants by the customization that you specify.

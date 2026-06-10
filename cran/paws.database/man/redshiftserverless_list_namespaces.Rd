@@ -7,14 +7,9 @@
 redshiftserverless_list_namespaces(maxResults = NULL, nextToken = NULL)
 }
 \arguments{
-\item{maxResults}{An optional parameter that specifies the maximum number of results to
-return. You can use \code{nextToken} to display the next page of results.}
+\item{maxResults}{An optional parameter that specifies the maximum number of results to return. You can use \code{nextToken} to display the next page of results.}
 
-\item{nextToken}{If your initial \code{\link[=redshiftserverless_list_namespaces]{list_namespaces}}
-operation returns a \code{nextToken}, you can include the returned
-\code{nextToken} in following
-\code{\link[=redshiftserverless_list_namespaces]{list_namespaces}} operations,
-which returns results in the next page.}
+\item{nextToken}{If your initial \code{\link[=redshiftserverless_list_namespaces]{list_namespaces}} operation returns a \code{nextToken}, you can include the returned \code{nextToken} in following \code{\link[=redshiftserverless_list_namespaces]{list_namespaces}} operations, which returns results in the next page.}
 }
 \description{
 Returns information about a list of specified namespaces.

@@ -10,12 +10,9 @@ quicksight_describe_asset_bundle_import_job(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account the import job was executed
-in.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account the import job was executed in.}
 
-\item{AssetBundleImportJobId}{[required] The ID of the job. The job ID is set when you start a new job with a
-\code{\link[=quicksight_start_asset_bundle_import_job]{start_asset_bundle_import_job}}
-API call.}
+\item{AssetBundleImportJobId}{[required] The ID of the job. The job ID is set when you start a new job with a \code{\link[=quicksight_start_asset_bundle_import_job]{start_asset_bundle_import_job}} API call.}
 }
 \description{
 Describes an existing import job.

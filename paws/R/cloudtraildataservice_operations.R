@@ -6,22 +6,15 @@ NULL
 #' Ingests your application events into CloudTrail Lake
 #'
 #' @description
-#' Ingests your application events into CloudTrail Lake. A required
-#' parameter, `auditEvents`, accepts the JSON records (also called
-#' *payload*) of events that you want CloudTrail to ingest. You can add up
-#' to 100 of these events (or up to 1 MB) per
-#' [`put_audit_events`][cloudtraildataservice_put_audit_events] request.
+#' Ingests your application events into CloudTrail Lake. A required parameter, `auditEvents`, accepts the JSON records (also called *payload*) of events that you want CloudTrail to ingest. You can add up to 100 of these events (or up to 1 MB) per [`put_audit_events`][cloudtraildataservice_put_audit_events] request.
 #'
 #' @usage
 #' cloudtraildataservice_put_audit_events(auditEvents, channelArn,
 #'   externalId)
 #'
-#' @param auditEvents &#91;required&#93; The JSON payload of events that you want to ingest. You can also point
-#' to the JSON event payload in a file.
+#' @param auditEvents &#91;required&#93; The JSON payload of events that you want to ingest. You can also point to the JSON event payload in a file.
 #' @param channelArn &#91;required&#93; The ARN or ID (the ARN suffix) of a channel.
-#' @param externalId A unique identifier that is conditionally required when the channel's
-#' resource policy includes an external ID. This value can be any string,
-#' such as a passphrase or account number.
+#' @param externalId A unique identifier that is conditionally required when the channel's resource policy includes an external ID. This value can be any string, such as a passphrase or account number.
 #'
 #' @return
 #' A list with the following syntax:

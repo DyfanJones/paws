@@ -19,27 +19,17 @@ appstream_update_theme_for_stack(
 \arguments{
 \item{StackName}{[required] The name of the stack for the theme.}
 
-\item{FooterLinks}{The links that are displayed in the footer of the streaming application
-catalog page. These links are helpful resources for users, such as the
-organization's IT support and product marketing sites.}
+\item{FooterLinks}{The links that are displayed in the footer of the streaming application catalog page. These links are helpful resources for users, such as the organization's IT support and product marketing sites.}
 
-\item{TitleText}{The title that is displayed at the top of the browser tab during users'
-application streaming sessions.}
+\item{TitleText}{The title that is displayed at the top of the browser tab during users' application streaming sessions.}
 
-\item{ThemeStyling}{The color theme that is applied to website links, text, and buttons.
-These colors are also applied as accents in the background for the
-streaming application catalog page.}
+\item{ThemeStyling}{The color theme that is applied to website links, text, and buttons. These colors are also applied as accents in the background for the streaming application catalog page.}
 
-\item{OrganizationLogoS3Location}{The organization logo that appears on the streaming application catalog
-page.}
+\item{OrganizationLogoS3Location}{The organization logo that appears on the streaming application catalog page.}
 
-\item{FaviconS3Location}{The S3 location of the favicon. The favicon enables users to recognize
-their application streaming site in a browser full of tabs or bookmarks.
-It is displayed at the top of the browser tab for the application
-streaming site during users' streaming sessions.}
+\item{FaviconS3Location}{The S3 location of the favicon. The favicon enables users to recognize their application streaming site in a browser full of tabs or bookmarks. It is displayed at the top of the browser tab for the application streaming site during users' streaming sessions.}
 
-\item{State}{Specifies whether custom branding should be applied to catalog page or
-not.}
+\item{State}{Specifies whether custom branding should be applied to catalog page or not.}
 
 \item{AttributesToDelete}{The attributes to delete.}
 }

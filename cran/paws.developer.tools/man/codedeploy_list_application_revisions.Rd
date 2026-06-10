@@ -15,21 +15,16 @@ codedeploy_list_application_revisions(
 )
 }
 \arguments{
-\item{applicationName}{[required] The name of an CodeDeploy application associated with the user or Amazon
-Web Services account.}
+\item{applicationName}{[required] The name of an CodeDeploy application associated with the user or Amazon Web Services account.}
 
 \item{sortBy}{The column name to use to sort the list results:
 \itemize{
-\item \code{registerTime}: Sort by the time the revisions were registered with
-CodeDeploy.
-\item \code{firstUsedTime}: Sort by the time the revisions were first used in a
-deployment.
-\item \code{lastUsedTime}: Sort by the time the revisions were last used in a
-deployment.
+\item \code{registerTime}: Sort by the time the revisions were registered with CodeDeploy.
+\item \code{firstUsedTime}: Sort by the time the revisions were first used in a deployment.
+\item \code{lastUsedTime}: Sort by the time the revisions were last used in a deployment.
 }
 
-If not specified or set to null, the results are returned in an
-arbitrary order.}
+If not specified or set to null, the results are returned in an arbitrary order.}
 
 \item{sortOrder}{The order in which to sort the list results:
 \itemize{
@@ -45,22 +40,16 @@ If set to null, the results are sorted in an arbitrary order.}
 
 If set to null, all of the user's buckets are searched.}
 
-\item{s3KeyPrefix}{A key prefix for the set of Amazon S3 objects to limit the search for
-revisions.}
+\item{s3KeyPrefix}{A key prefix for the set of Amazon S3 objects to limit the search for revisions.}
 
-\item{deployed}{Whether to list revisions based on whether the revision is the target
-revision of a deployment group:
+\item{deployed}{Whether to list revisions based on whether the revision is the target revision of a deployment group:
 \itemize{
-\item \code{include}: List revisions that are target revisions of a deployment
-group.
-\item \code{exclude}: Do not list revisions that are target revisions of a
-deployment group.
+\item \code{include}: List revisions that are target revisions of a deployment group.
+\item \code{exclude}: Do not list revisions that are target revisions of a deployment group.
 \item \code{ignore}: List all revisions.
 }}
 
-\item{nextToken}{An identifier returned from the previous
-\code{\link[=codedeploy_list_application_revisions]{list_application_revisions}}
-call. It can be used to return the next set of applications in the list.}
+\item{nextToken}{An identifier returned from the previous \code{\link[=codedeploy_list_application_revisions]{list_application_revisions}} call. It can be used to return the next set of applications in the list.}
 }
 \description{
 Lists information about revisions for an application.

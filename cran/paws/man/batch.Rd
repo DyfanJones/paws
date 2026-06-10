@@ -50,22 +50,9 @@ Operations section.
 \description{
 Batch
 
-Using Batch, you can run batch computing workloads on the Amazon Web
-Services Cloud. Batch computing is a common means for developers,
-scientists, and engineers to access large amounts of compute resources.
-Batch uses the advantages of the batch computing to remove the
-undifferentiated heavy lifting of configuring and managing required
-infrastructure. At the same time, it also adopts a familiar batch
-computing software approach. You can use Batch to efficiently provision
-resources, and work toward eliminating capacity constraints, reducing
-your overall compute costs, and delivering results more quickly.
+Using Batch, you can run batch computing workloads on the Amazon Web Services Cloud. Batch computing is a common means for developers, scientists, and engineers to access large amounts of compute resources. Batch uses the advantages of the batch computing to remove the undifferentiated heavy lifting of configuring and managing required infrastructure. At the same time, it also adopts a familiar batch computing software approach. You can use Batch to efficiently provision resources, and work toward eliminating capacity constraints, reducing your overall compute costs, and delivering results more quickly.
 
-As a fully managed service, Batch can run batch computing workloads of
-any scale. Batch automatically provisions compute resources and
-optimizes workload distribution based on the quantity and scale of your
-specific workloads. With Batch, there's no need to install or manage
-batch computing software. This means that you can focus on analyzing
-results and solving your specific problems instead.
+As a fully managed service, Batch can run batch computing workloads of any scale. Batch automatically provisions compute resources and optimizes workload distribution based on the quantity and scale of your specific workloads. With Batch, there's no need to install or manage batch computing software. This means that you can focus on analyzing results and solving your specific problems instead.
 }
 \section{Service syntax}{
 
@@ -110,11 +97,13 @@ results and solving your specific problems instead.
 \link[paws.compute:batch_create_compute_environment]{create_compute_environment} \tab Creates an Batch compute environment\cr
 \link[paws.compute:batch_create_consumable_resource]{create_consumable_resource} \tab Creates an Batch consumable resource\cr
 \link[paws.compute:batch_create_job_queue]{create_job_queue} \tab Creates an Batch job queue\cr
+\link[paws.compute:batch_create_quota_share]{create_quota_share} \tab Creates an Batch quota share\cr
 \link[paws.compute:batch_create_scheduling_policy]{create_scheduling_policy} \tab Creates an Batch scheduling policy\cr
 \link[paws.compute:batch_create_service_environment]{create_service_environment} \tab Creates a service environment for running service jobs\cr
 \link[paws.compute:batch_delete_compute_environment]{delete_compute_environment} \tab Deletes an Batch compute environment\cr
 \link[paws.compute:batch_delete_consumable_resource]{delete_consumable_resource} \tab Deletes the specified consumable resource\cr
 \link[paws.compute:batch_delete_job_queue]{delete_job_queue} \tab Deletes the specified job queue\cr
+\link[paws.compute:batch_delete_quota_share]{delete_quota_share} \tab Deletes the specified quota share\cr
 \link[paws.compute:batch_delete_scheduling_policy]{delete_scheduling_policy} \tab Deletes the specified scheduling policy\cr
 \link[paws.compute:batch_delete_service_environment]{delete_service_environment} \tab Deletes a Service environment\cr
 \link[paws.compute:batch_deregister_job_definition]{deregister_job_definition} \tab Deregisters an Batch job definition\cr
@@ -123,13 +112,15 @@ results and solving your specific problems instead.
 \link[paws.compute:batch_describe_job_definitions]{describe_job_definitions} \tab Describes a list of job definitions\cr
 \link[paws.compute:batch_describe_job_queues]{describe_job_queues} \tab Describes one or more of your job queues\cr
 \link[paws.compute:batch_describe_jobs]{describe_jobs} \tab Describes a list of Batch jobs\cr
+\link[paws.compute:batch_describe_quota_share]{describe_quota_share} \tab Returns a description of the specified quota share\cr
 \link[paws.compute:batch_describe_scheduling_policies]{describe_scheduling_policies} \tab Describes one or more of your scheduling policies\cr
 \link[paws.compute:batch_describe_service_environments]{describe_service_environments} \tab Describes one or more of your service environments\cr
 \link[paws.compute:batch_describe_service_job]{describe_service_job} \tab The details of a service job\cr
-\link[paws.compute:batch_get_job_queue_snapshot]{get_job_queue_snapshot} \tab Provides a list of the first 100 RUNNABLE jobs associated to a single job queue\cr
+\link[paws.compute:batch_get_job_queue_snapshot]{get_job_queue_snapshot} \tab Provides a snapshot of job queue state, including ordering of RUNNABLE jobs, as well as capacity utilization for already dispatched jobs\cr
 \link[paws.compute:batch_list_consumable_resources]{list_consumable_resources} \tab Returns a list of Batch consumable resources\cr
 \link[paws.compute:batch_list_jobs]{list_jobs} \tab Returns a list of Batch jobs\cr
 \link[paws.compute:batch_list_jobs_by_consumable_resource]{list_jobs_by_consumable_resource} \tab Returns a list of Batch jobs that require a specific consumable resource\cr
+\link[paws.compute:batch_list_quota_shares]{list_quota_shares} \tab Returns a list of Batch quota shares associated with a job queue\cr
 \link[paws.compute:batch_list_scheduling_policies]{list_scheduling_policies} \tab Returns a list of Batch scheduling policies\cr
 \link[paws.compute:batch_list_service_jobs]{list_service_jobs} \tab Returns a list of service jobs for a specified job queue\cr
 \link[paws.compute:batch_list_tags_for_resource]{list_tags_for_resource} \tab Lists the tags for an Batch resource\cr
@@ -143,8 +134,10 @@ results and solving your specific problems instead.
 \link[paws.compute:batch_update_compute_environment]{update_compute_environment} \tab Updates an Batch compute environment\cr
 \link[paws.compute:batch_update_consumable_resource]{update_consumable_resource} \tab Updates a consumable resource\cr
 \link[paws.compute:batch_update_job_queue]{update_job_queue} \tab Updates a job queue\cr
+\link[paws.compute:batch_update_quota_share]{update_quota_share} \tab Updates a quota share\cr
 \link[paws.compute:batch_update_scheduling_policy]{update_scheduling_policy} \tab Updates a scheduling policy\cr
-\link[paws.compute:batch_update_service_environment]{update_service_environment} \tab Updates a service environment
+\link[paws.compute:batch_update_service_environment]{update_service_environment} \tab Updates a service environment\cr
+\link[paws.compute:batch_update_service_job]{update_service_job} \tab Updates the priority of a specified service job in an Batch job queue
 }
 }
 

@@ -7,17 +7,13 @@
 budgets_create_notification(AccountId, BudgetName, Notification, Subscribers)
 }
 \arguments{
-\item{AccountId}{[required] The \code{accountId} that is associated with the budget that you want to
-create a notification for.}
+\item{AccountId}{[required] The \code{accountId} that is associated with the budget that you want to create a notification for.}
 
-\item{BudgetName}{[required] The name of the budget that you want Amazon Web Services to notify you
-about. Budget names must be unique within an account.}
+\item{BudgetName}{[required] The name of the budget that you want Amazon Web Services to notify you about. Budget names must be unique within an account.}
 
 \item{Notification}{[required] The notification that you want to create.}
 
-\item{Subscribers}{[required] A list of subscribers that you want to associate with the notification.
-Each notification can have one SNS subscriber and up to 10 email
-subscribers.}
+\item{Subscribers}{[required] A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.}
 }
 \description{
 Creates a notification. You must create the budget before you create the associated notification.

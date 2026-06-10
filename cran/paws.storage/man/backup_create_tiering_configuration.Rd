@@ -11,21 +11,13 @@ backup_create_tiering_configuration(
 )
 }
 \arguments{
-\item{TieringConfiguration}{[required] A tiering configuration must contain a unique \code{TieringConfigurationName}
-string you create and must contain a \code{BackupVaultName} and
-\code{ResourceSelection}. You may optionally include a \code{CreatorRequestId}
-string.
+\item{TieringConfiguration}{[required] A tiering configuration must contain a unique \code{TieringConfigurationName} string you create and must contain a \code{BackupVaultName} and \code{ResourceSelection}. You may optionally include a \code{CreatorRequestId} string.
 
-The \code{TieringConfigurationName} is a unique string that is the name of
-the tiering configuration. This cannot be changed after creation, and it
-must consist of only alphanumeric characters and underscores.}
+The \code{TieringConfigurationName} is a unique string that is the name of the tiering configuration. This cannot be changed after creation, and it must consist of only alphanumeric characters and underscores.}
 
 \item{TieringConfigurationTags}{The tags to assign to the tiering configuration.}
 
-\item{CreatorRequestId}{This is a unique string that identifies the request and allows failed
-requests to be retried without the risk of running the operation twice.
-This parameter is optional. If used, this parameter must contain 1 to 50
-alphanumeric or '-_.' characters.}
+\item{CreatorRequestId}{This is a unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional. If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.}
 }
 \description{
 Creates a tiering configuration.

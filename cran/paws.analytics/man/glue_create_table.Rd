@@ -15,25 +15,19 @@ glue_create_table(
 )
 }
 \arguments{
-\item{CatalogId}{The ID of the Data Catalog in which to create the \code{Table}. If none is
-supplied, the Amazon Web Services account ID is used by default.}
+\item{CatalogId}{The ID of the Data Catalog in which to create the \code{Table}. If none is supplied, the Amazon Web Services account ID is used by default.}
 
-\item{DatabaseName}{[required] The catalog database in which to create the new table. For Hive
-compatibility, this name is entirely lowercase.}
+\item{DatabaseName}{[required] The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase.}
 
-\item{Name}{The unique identifier for the table within the specified database that
-will be created in the Glue Data Catalog.}
+\item{Name}{The unique identifier for the table within the specified database that will be created in the Glue Data Catalog.}
 
-\item{TableInput}{The \code{TableInput} object that defines the metadata table to create in the
-catalog.}
+\item{TableInput}{The \code{TableInput} object that defines the metadata table to create in the catalog.}
 
-\item{PartitionIndexes}{A list of partition indexes, \code{PartitionIndex} structures, to create in
-the table.}
+\item{PartitionIndexes}{A list of partition indexes, \code{PartitionIndex} structures, to create in the table.}
 
 \item{TransactionId}{The ID of the transaction.}
 
-\item{OpenTableFormatInput}{Specifies an \code{OpenTableFormatInput} structure when creating an open
-format table.}
+\item{OpenTableFormatInput}{Specifies an \code{OpenTableFormatInput} structure when creating an open format table.}
 }
 \description{
 Creates a new table definition in the Data Catalog.

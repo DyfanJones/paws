@@ -20,7 +20,8 @@ appstream_create_image_builder(
   AccessEndpoints = NULL,
   RootVolumeConfig = NULL,
   SoftwaresToInstall = NULL,
-  SoftwaresToUninstall = NULL
+  SoftwaresToUninstall = NULL,
+  DisableIMDSV1 = NULL
 )
 }
 \arguments{
@@ -30,8 +31,7 @@ appstream_create_image_builder(
 
 \item{ImageArn}{The ARN of the public, private, or shared image to use.}
 
-\item{InstanceType}{[required] The instance type to use when launching the image builder. The following
-instance types are available:
+\item{InstanceType}{[required] The instance type to use when launching the image builder. The following instance types are available:
 \itemize{
 \item stream.standard.small
 \item stream.standard.medium
@@ -85,53 +85,33 @@ instance types are available:
 
 \item{DisplayName}{The image builder name to display.}
 
-\item{VpcConfig}{The VPC configuration for the image builder. You can specify only one
-subnet.}
+\item{VpcConfig}{The VPC configuration for the image builder. You can specify only one subnet.}
 
-\item{IamRoleArn}{The Amazon Resource Name (ARN) of the IAM role to apply to the image
-builder. To assume a role, the image builder calls the AWS Security
-Token Service (STS) \code{AssumeRole} API operation and passes the ARN of the
-role to use. The operation creates a new session with temporary
-credentials. WorkSpaces Applications retrieves the temporary credentials
-and creates the \strong{appstream_machine_role} credential profile on the
-instance.
+\item{IamRoleArn}{The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) \code{AssumeRole} API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. WorkSpaces Applications retrieves the temporary credentials and creates the \strong{appstream_machine_role} credential profile on the instance.
 
-For more information, see \href{https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html}{Using an IAM Role to Grant Permissions to Applications and Scripts Running on WorkSpaces Applications Streaming Instances}
-in the \emph{Amazon WorkSpaces Applications Administration Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html}{Using an IAM Role to Grant Permissions to Applications and Scripts Running on WorkSpaces Applications Streaming Instances} in the \emph{Amazon WorkSpaces Applications Administration Guide}.}
 
 \item{EnableDefaultInternetAccess}{Enables or disables default internet access for the image builder.}
 
-\item{DomainJoinInfo}{The name of the directory and organizational unit (OU) to use to join
-the image builder to a Microsoft Active Directory domain.}
+\item{DomainJoinInfo}{The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain.}
 
-\item{AppstreamAgentVersion}{The version of the WorkSpaces Applications agent to use for this image
-builder. To use the latest version of the WorkSpaces Applications agent,
-specify [LATEST].}
+\item{AppstreamAgentVersion}{The version of the WorkSpaces Applications agent to use for this image builder. To use the latest version of the WorkSpaces Applications agent, specify [LATEST].}
 
-\item{Tags}{The tags to associate with the image builder. A tag is a key-value pair,
-and the value is optional. For example, Environment=Test. If you do not
-specify a value, Environment=.
+\item{Tags}{The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.
 
-Generally allowed characters are: letters, numbers, and spaces
-representable in UTF-8, and the following special characters:
+Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:
 
 _ . : / = + \\ - @
 
 If you do not specify a value, the value is set to an empty string.
 
-For more information about tags, see \href{https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html}{Tagging Your Resources}
-in the \emph{Amazon WorkSpaces Applications Administration Guide}.}
+For more information about tags, see \href{https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html}{Tagging Your Resources} in the \emph{Amazon WorkSpaces Applications Administration Guide}.}
 
-\item{AccessEndpoints}{The list of interface VPC endpoint (interface endpoint) objects.
-Administrators can connect to the image builder only through the
-specified endpoints.}
+\item{AccessEndpoints}{The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder only through the specified endpoints.}
 
-\item{RootVolumeConfig}{The configuration for the root volume of the image builder. Use this to
-customize storage capacity from 200 GB up to 500 GB based on your
-application installation requirements.}
+\item{RootVolumeConfig}{The configuration for the root volume of the image builder. Use this to customize storage capacity from 200 GB up to 500 GB based on your application installation requirements.}
 
-\item{SoftwaresToInstall}{The list of license included applications to install on the image
-builder during creation.
+\item{SoftwaresToInstall}{The list of license included applications to install on the image builder during creation.
 
 Possible values include the following:
 \itemize{
@@ -161,8 +141,7 @@ Possible values include the following:
 \item Microsoft_Project_2024_Standard_64Bit
 }}
 
-\item{SoftwaresToUninstall}{The list of license included applications to uninstall from the image
-builder during creation.
+\item{SoftwaresToUninstall}{The list of license included applications to uninstall from the image builder during creation.
 
 Possible values include the following:
 \itemize{
@@ -191,6 +170,10 @@ Possible values include the following:
 \item Microsoft_Project_2024_Standard_32Bit
 \item Microsoft_Project_2024_Standard_64Bit
 }}
+
+\item{DisableIMDSV1}{Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.
+
+Before disabling IMDSv1, ensure your WorkSpaces Applications images are running the agent version or managed image update released on or after January 16, 2024 to support IMDSv2 enforcement.}
 }
 \description{
 Creates an image builder. An image builder is a virtual machine that is used to create an image.

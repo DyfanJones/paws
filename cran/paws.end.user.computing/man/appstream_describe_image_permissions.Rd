@@ -13,16 +13,13 @@ appstream_describe_image_permissions(
 )
 }
 \arguments{
-\item{Name}{[required] The name of the private image for which to describe permissions. The
-image must be one that you own.}
+\item{Name}{[required] The name of the private image for which to describe permissions. The image must be one that you own.}
 
 \item{MaxResults}{The maximum size of each page of results.}
 
-\item{SharedAwsAccountIds}{The 12-digit identifier of one or more AWS accounts with which the image
-is shared.}
+\item{SharedAwsAccountIds}{The 12-digit identifier of one or more AWS accounts with which the image is shared.}
 
-\item{NextToken}{The pagination token to use to retrieve the next page of results for
-this operation. If this value is null, it retrieves the first page.}
+\item{NextToken}{The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.}
 }
 \description{
 Retrieves a list that describes the permissions for shared AWS account IDs on a private image that you own.

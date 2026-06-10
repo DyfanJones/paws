@@ -13,31 +13,19 @@ xray_put_resource_policy(
 )
 }
 \arguments{
-\item{PolicyName}{[required] The name of the resource policy. Must be unique within a specific Amazon
-Web Services account.}
+\item{PolicyName}{[required] The name of the resource policy. Must be unique within a specific Amazon Web Services account.}
 
 \item{PolicyDocument}{[required] The resource policy document, which can be up to 5kb in size.}
 
-\item{PolicyRevisionId}{Specifies a specific policy revision, to ensure an atomic create
-operation. By default the resource policy is created if it does not
-exist, or updated with an incremented revision id. The revision id is
-unique to each policy in the account.
+\item{PolicyRevisionId}{Specifies a specific policy revision, to ensure an atomic create operation. By default the resource policy is created if it does not exist, or updated with an incremented revision id. The revision id is unique to each policy in the account.
 
-If the policy revision id does not match the latest revision id, the
-operation will fail with an \code{InvalidPolicyRevisionIdException}
-exception. You can also provide a \code{PolicyRevisionId} of 0. In this case,
-the operation will fail with an \code{InvalidPolicyRevisionIdException}
-exception if a resource policy with the same name already exists.}
+If the policy revision id does not match the latest revision id, the operation will fail with an \code{InvalidPolicyRevisionIdException} exception. You can also provide a \code{PolicyRevisionId} of 0. In this case, the operation will fail with an \code{InvalidPolicyRevisionIdException} exception if a resource policy with the same name already exists.}
 
-\item{BypassPolicyLockoutCheck}{A flag to indicate whether to bypass the resource policy lockout safety
-check.
+\item{BypassPolicyLockoutCheck}{A flag to indicate whether to bypass the resource policy lockout safety check.
 
-Setting this value to true increases the risk that the policy becomes
-unmanageable. Do not set this value to true indiscriminately.
+Setting this value to true increases the risk that the policy becomes unmanageable. Do not set this value to true indiscriminately.
 
-Use this parameter only when you include a policy in the request and you
-intend to prevent the principal that is making the request from making a
-subsequent \code{\link[=xray_put_resource_policy]{put_resource_policy}} request.
+Use this parameter only when you include a policy in the request and you intend to prevent the principal that is making the request from making a subsequent \code{\link[=xray_put_resource_policy]{put_resource_policy}} request.
 
 The default value is false.}
 }

@@ -13,15 +13,12 @@ vpclattice_create_resource_gateway(
   securityGroupIds = NULL,
   ipAddressType = NULL,
   ipv4AddressesPerEni = NULL,
+  resourceConfigDnsResolution = NULL,
   tags = NULL
 )
 }
 \arguments{
-\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If you retry a request that completed
-successfully using the same client token and parameters, the retry
-succeeds without performing any actions. If the parameters aren't
-identical, the retry fails.}
+\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.}
 
 \item{name}{[required] The name of the resource gateway.}
 
@@ -29,31 +26,24 @@ identical, the retry fails.}
 
 \item{subnetIds}{The IDs of the VPC subnets in which to create the resource gateway.}
 
-\item{securityGroupIds}{The IDs of the security groups to apply to the resource gateway. The
-security groups must be in the same VPC.}
+\item{securityGroupIds}{The IDs of the security groups to apply to the resource gateway. The security groups must be in the same VPC.}
 
-\item{ipAddressType}{A resource gateway can have IPv4, IPv6 or dualstack addresses. The IP
-address type of a resource gateway must be compatible with the subnets
-of the resource gateway and the IP address type of the resource, as
-described here:
+\item{ipAddressType}{A resource gateway can have IPv4, IPv6 or dualstack addresses. The IP address type of a resource gateway must be compatible with the subnets of the resource gateway and the IP address type of the resource, as described here:
 \itemize{
-\item \strong{IPv4}Assign IPv4 addresses to your resource gateway network
-interfaces. This option is supported only if all selected subnets
-have IPv4 address ranges, and the resource also has an IPv4 address.
-\item \strong{IPv6}Assign IPv6 addresses to your resource gateway network
-interfaces. This option is supported only if all selected subnets
-are IPv6 only subnets, and the resource also has an IPv6 address.
-\item \strong{Dualstack}Assign both IPv4 and IPv6 addresses to your resource
-gateway network interfaces. This option is supported only if all
-selected subnets have both IPv4 and IPv6 address ranges, and the
-resource either has an IPv4 or IPv6 address.
+\item \strong{IPv4}Assign IPv4 addresses to your resource gateway network interfaces. This option is supported only if all selected subnets have IPv4 address ranges, and the resource also has an IPv4 address.
+\item \strong{IPv6}Assign IPv6 addresses to your resource gateway network interfaces. This option is supported only if all selected subnets are IPv6 only subnets, and the resource also has an IPv6 address.
+\item \strong{Dualstack}Assign both IPv4 and IPv6 addresses to your resource gateway network interfaces. This option is supported only if all selected subnets have both IPv4 and IPv6 address ranges, and the resource either has an IPv4 or IPv6 address.
 }
 
-The IP address type of the resource gateway is independent of the IP
-address type of the client or the VPC endpoint through which the
-resource is accessed.}
+The IP address type of the resource gateway is independent of the IP address type of the client or the VPC endpoint through which the resource is accessed.}
 
 \item{ipv4AddressesPerEni}{The number of IPv4 addresses in each ENI for the resource gateway.}
+
+\item{resourceConfigDnsResolution}{Indicates how DNS is resolved for resource configurations associated to this resource gateway. ResourceConfigDnsResolution is set at creation time and cannot be changed.
+\itemize{
+\item \code{IN_VPC} - DNS resolution occurs privately within the resource gateway's VPC. DNS queries for resources behind this resource gateway resolve using the DNS resolvers defined in the VPC's DHCP option sets. Use this when your resource domain names are hosted in private Route 53 hosted zones or on-premises DNS servers reachable from the VPC.
+\item \code{PUBLIC} - DNS resolution occurs against public DNS resolvers. DNS queries for resources behind this resource gateway resolve using standard public DNS. Use this when your resource domain names are publicly resolvable.
+}}
 
 \item{tags}{The tags for the resource gateway.}
 }

@@ -19,32 +19,17 @@ lexmodelsv2_list_intents(
 
 \item{botVersion}{[required] The version of the bot that contains the intent.}
 
-\item{localeId}{[required] The identifier of the language and locale of the intents to list. The
-string must match one of the supported locales. For more information,
-see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
+\item{localeId}{[required] The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
 
-\item{sortBy}{Determines the sort order for the response from the
-\code{\link[=lexmodelsv2_list_intents]{list_intents}} operation. You can choose to
-sort by the intent name or last updated date in either ascending or
-descending order.}
+\item{sortBy}{Determines the sort order for the response from the \code{\link[=lexmodelsv2_list_intents]{list_intents}} operation. You can choose to sort by the intent name or last updated date in either ascending or descending order.}
 
-\item{filters}{Provides the specification of a filter used to limit the intents in the
-response to only those that match the filter specification. You can only
-specify one filter and only one string to filter on.}
+\item{filters}{Provides the specification of a filter used to limit the intents in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.}
 
-\item{maxResults}{The maximum number of intents to return in each page of results. If
-there are fewer results than the max page size, only the actual number
-of results are returned.}
+\item{maxResults}{The maximum number of intents to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.}
 
-\item{nextToken}{If the response from the \code{\link[=lexmodelsv2_list_intents]{list_intents}}
-operation contains more results than specified in the \code{maxResults}
-parameter, a token is returned in the response.
+\item{nextToken}{If the response from the \code{\link[=lexmodelsv2_list_intents]{list_intents}} operation contains more results than specified in the \code{maxResults} parameter, a token is returned in the response.
 
-Use the returned token in the \code{nextToken} parameter of a
-\code{\link[=lexmodelsv2_list_intents]{list_intents}} request to return the next
-page of results. For a complete set of results, call the
-\code{\link[=lexmodelsv2_list_intents]{list_intents}} operation until the
-\code{nextToken} returned in the response is null.}
+Use the returned token in the \code{nextToken} parameter of a \code{\link[=lexmodelsv2_list_intents]{list_intents}} request to return the next page of results. For a complete set of results, call the \code{\link[=lexmodelsv2_list_intents]{list_intents}} operation until the \code{nextToken} returned in the response is null.}
 }
 \description{
 Get a list of intents that meet the specified criteria.

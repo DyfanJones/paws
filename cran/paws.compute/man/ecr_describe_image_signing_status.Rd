@@ -11,9 +11,7 @@ ecr_describe_image_signing_status(repositoryName, imageId, registryId = NULL)
 
 \item{imageId}{[required] An object containing identifying information for an image.}
 
-\item{registryId}{The Amazon Web Services account ID associated with the registry that
-contains the repository. If you do not specify a registry, the default
-registry is assumed.}
+\item{registryId}{The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.}
 }
 \description{
 Returns the signing status for a specified image. If the image matched signing rules that reference different signing profiles, a status is returned for each profile.

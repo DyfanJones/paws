@@ -9,9 +9,7 @@ lexmodelbuildingservice_delete_intent_version(name, version)
 \arguments{
 \item{name}{[required] The name of the intent.}
 
-\item{version}{[required] The version of the intent to delete. You cannot delete the \verb{$LATEST}
-version of the intent. To delete the \verb{$LATEST} version, use the
-\code{\link[=lexmodelbuildingservice_delete_intent]{delete_intent}} operation.}
+\item{version}{[required] The version of the intent to delete. You cannot delete the \verb{$LATEST} version of the intent. To delete the \verb{$LATEST} version, use the \code{\link[=lexmodelbuildingservice_delete_intent]{delete_intent}} operation.}
 }
 \description{
 Deletes a specific version of an intent. To delete all versions of a intent, use the \code{\link[=lexmodelbuildingservice_delete_intent]{delete_intent}} operation.

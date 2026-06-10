@@ -11,6 +11,7 @@ customerprofiles_create_segment_definition(
   Description = NULL,
   SegmentGroups = NULL,
   SegmentSqlQuery = NULL,
+  SegmentSort = NULL,
   Tags = NULL
 )
 }
@@ -23,10 +24,11 @@ customerprofiles_create_segment_definition(
 
 \item{Description}{The description of the segment definition.}
 
-\item{SegmentGroups}{Specifies the base segments and dimensions for a segment definition
-along with their respective relationship.}
+\item{SegmentGroups}{Specifies the base segments and dimensions for a segment definition along with their respective relationship.}
 
 \item{SegmentSqlQuery}{The segment SQL query.}
+
+\item{SegmentSort}{The segment sort.}
 
 \item{Tags}{The tags used to organize, track, or control access for this resource.}
 }

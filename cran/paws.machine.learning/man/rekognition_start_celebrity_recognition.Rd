@@ -12,25 +12,13 @@ rekognition_start_celebrity_recognition(
 )
 }
 \arguments{
-\item{Video}{[required] The video in which you want to recognize celebrities. The video must be
-stored in an Amazon S3 bucket.}
+\item{Video}{[required] The video in which you want to recognize celebrities. The video must be stored in an Amazon S3 bucket.}
 
-\item{ClientRequestToken}{Idempotent token used to identify the start request. If you use the same
-token with multiple
-\code{\link[=rekognition_start_celebrity_recognition]{start_celebrity_recognition}}
-requests, the same \code{JobId} is returned. Use \code{ClientRequestToken} to
-prevent the same job from being accidently started more than once.}
+\item{ClientRequestToken}{Idempotent token used to identify the start request. If you use the same token with multiple \code{\link[=rekognition_start_celebrity_recognition]{start_celebrity_recognition}} requests, the same \code{JobId} is returned. Use \code{ClientRequestToken} to prevent the same job from being accidently started more than once.}
 
-\item{NotificationChannel}{The Amazon SNS topic ARN that you want Amazon Rekognition Video to
-publish the completion status of the celebrity recognition analysis to.
-The Amazon SNS topic must have a topic name that begins with
-\emph{AmazonRekognition} if you are using the AmazonRekognitionServiceRole
-permissions policy.}
+\item{NotificationChannel}{The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the celebrity recognition analysis to. The Amazon SNS topic must have a topic name that begins with \emph{AmazonRekognition} if you are using the AmazonRekognitionServiceRole permissions policy.}
 
-\item{JobTag}{An identifier you specify that's returned in the completion notification
-that's published to your Amazon Simple Notification Service topic. For
-example, you can use \code{JobTag} to group related jobs and identify them in
-the completion notification.}
+\item{JobTag}{An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use \code{JobTag} to group related jobs and identify them in the completion notification.}
 }
 \description{
 Starts asynchronous recognition of celebrities in a stored video.

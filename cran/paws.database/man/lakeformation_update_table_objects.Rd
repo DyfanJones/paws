@@ -14,8 +14,7 @@ lakeformation_update_table_objects(
 )
 }
 \arguments{
-\item{CatalogId}{The catalog containing the governed table to update. Defaults to the
-caller’s account ID.}
+\item{CatalogId}{The catalog containing the governed table to update. Defaults to the caller’s account ID.}
 
 \item{DatabaseName}{[required] The database containing the governed table to update.}
 
@@ -23,8 +22,7 @@ caller’s account ID.}
 
 \item{TransactionId}{The transaction at which to do the write.}
 
-\item{WriteOperations}{[required] A list of \code{WriteOperation} objects that define an object to add to or
-delete from the manifest for a governed table.}
+\item{WriteOperations}{[required] A list of \code{WriteOperation} objects that define an object to add to or delete from the manifest for a governed table.}
 }
 \description{
 Updates the manifest of Amazon S3 objects that make up the specified governed table.

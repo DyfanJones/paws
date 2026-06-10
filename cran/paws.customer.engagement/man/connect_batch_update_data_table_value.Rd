@@ -10,11 +10,9 @@ connect_batch_update_data_table_value(InstanceId, DataTableId, Values)
 \arguments{
 \item{InstanceId}{[required] The unique identifier for the Amazon Connect instance.}
 
-\item{DataTableId}{[required] The unique identifier for the data table. Must also accept the table ARN
-with or without a version alias.}
+\item{DataTableId}{[required] The unique identifier for the data table. Must also accept the table ARN with or without a version alias.}
 
-\item{Values}{[required] A list of values to update, each including the current lock version to
-ensure optimistic locking.}
+\item{Values}{[required] A list of values to update, each including the current lock version to ensure optimistic locking.}
 }
 \description{
 Updates multiple data table values using all properties from BatchCreateDataTableValue. System managed values are not modifiable by customers. The operation requires proper lock versions to prevent concurrent modification conflicts.

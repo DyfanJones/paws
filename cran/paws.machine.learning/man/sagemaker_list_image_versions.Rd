@@ -17,27 +17,19 @@ sagemaker_list_image_versions(
 )
 }
 \arguments{
-\item{CreationTimeAfter}{A filter that returns only versions created on or after the specified
-time.}
+\item{CreationTimeAfter}{A filter that returns only versions created on or after the specified time.}
 
-\item{CreationTimeBefore}{A filter that returns only versions created on or before the specified
-time.}
+\item{CreationTimeBefore}{A filter that returns only versions created on or before the specified time.}
 
 \item{ImageName}{[required] The name of the image to list the versions of.}
 
-\item{LastModifiedTimeAfter}{A filter that returns only versions modified on or after the specified
-time.}
+\item{LastModifiedTimeAfter}{A filter that returns only versions modified on or after the specified time.}
 
-\item{LastModifiedTimeBefore}{A filter that returns only versions modified on or before the specified
-time.}
+\item{LastModifiedTimeBefore}{A filter that returns only versions modified on or before the specified time.}
 
-\item{MaxResults}{The maximum number of versions to return in the response. The default
-value is 10.}
+\item{MaxResults}{The maximum number of versions to return in the response. The default value is 10.}
 
-\item{NextToken}{If the previous call to
-\code{\link[=sagemaker_list_image_versions]{list_image_versions}} didn't return the
-full set of versions, the call returns a token for getting the next set
-of versions.}
+\item{NextToken}{If the previous call to \code{\link[=sagemaker_list_image_versions]{list_image_versions}} didn't return the full set of versions, the call returns a token for getting the next set of versions.}
 
 \item{SortBy}{The property used to sort results. The default value is \code{CREATION_TIME}.}
 

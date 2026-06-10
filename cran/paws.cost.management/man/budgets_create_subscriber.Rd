@@ -7,11 +7,9 @@
 budgets_create_subscriber(AccountId, BudgetName, Notification, Subscriber)
 }
 \arguments{
-\item{AccountId}{[required] The \code{accountId} that is associated with the budget that you want to
-create a subscriber for.}
+\item{AccountId}{[required] The \code{accountId} that is associated with the budget that you want to create a subscriber for.}
 
-\item{BudgetName}{[required] The name of the budget that you want to subscribe to. Budget names must
-be unique within an account.}
+\item{BudgetName}{[required] The name of the budget that you want to subscribe to. Budget names must be unique within an account.}
 
 \item{Notification}{[required] The notification that you want to create a subscriber for.}
 

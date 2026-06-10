@@ -7,6 +7,7 @@
 sagemaker_update_inference_component(
   InferenceComponentName,
   Specification = NULL,
+  Specifications = NULL,
   RuntimeConfig = NULL,
   DeploymentConfig = NULL
 )
@@ -14,15 +15,13 @@ sagemaker_update_inference_component(
 \arguments{
 \item{InferenceComponentName}{[required] The name of the inference component.}
 
-\item{Specification}{Details about the resources to deploy with this inference component,
-including the model, container, and compute resources.}
+\item{Specification}{Details about the resources to deploy with this inference component, including the model, container, and compute resources.}
 
-\item{RuntimeConfig}{Runtime settings for a model that is deployed with an inference
-component.}
+\item{Specifications}{A list of specification objects for the inference component, one per instance type. Use this parameter when you want to specify different model or resource configurations for the inference component on each instance type. You can use either this parameter or the singular \code{Specification} parameter, but not both.}
 
-\item{DeploymentConfig}{The deployment configuration for the inference component. The
-configuration contains the desired deployment strategy and rollback
-settings.}
+\item{RuntimeConfig}{Runtime settings for a model that is deployed with an inference component.}
+
+\item{DeploymentConfig}{The deployment configuration for the inference component. The configuration contains the desired deployment strategy and rollback settings.}
 }
 \description{
 Updates an inference component.

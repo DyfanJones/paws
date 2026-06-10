@@ -11,8 +11,7 @@ controltower_update_enabled_baseline(
 )
 }
 \arguments{
-\item{baselineVersion}{[required] Specifies the new \code{Baseline} version, to which the \code{EnabledBaseline}
-should be updated.}
+\item{baselineVersion}{[required] Specifies the new \code{Baseline} version, to which the \code{EnabledBaseline} should be updated.}
 
 \item{parameters}{Parameters to apply when making an update.}
 

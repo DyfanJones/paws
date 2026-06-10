@@ -13,11 +13,9 @@ personalize_list_metric_attributions(
 \arguments{
 \item{datasetGroupArn}{The metric attributions' dataset group Amazon Resource Name (ARN).}
 
-\item{nextToken}{Specify the pagination token from a previous request to retrieve the
-next page of results.}
+\item{nextToken}{Specify the pagination token from a previous request to retrieve the next page of results.}
 
-\item{maxResults}{The maximum number of metric attributions to return in one page of
-results.}
+\item{maxResults}{The maximum number of metric attributions to return in one page of results.}
 }
 \description{
 Lists metric attributions.

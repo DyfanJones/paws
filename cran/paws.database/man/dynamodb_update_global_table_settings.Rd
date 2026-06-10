@@ -16,28 +16,19 @@ dynamodb_update_global_table_settings(
 \arguments{
 \item{GlobalTableName}{[required] The name of the global table}
 
-\item{GlobalTableBillingMode}{The billing mode of the global table. If \code{GlobalTableBillingMode} is not
-specified, the global table defaults to \code{PROVISIONED} capacity billing
-mode.
+\item{GlobalTableBillingMode}{The billing mode of the global table. If \code{GlobalTableBillingMode} is not specified, the global table defaults to \code{PROVISIONED} capacity billing mode.
 \itemize{
-\item \code{PROVISIONED} - We recommend using \code{PROVISIONED} for predictable
-workloads. \code{PROVISIONED} sets the billing mode to \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html}{Provisioned capacity mode}.
-\item \code{PAY_PER_REQUEST} - We recommend using \code{PAY_PER_REQUEST} for
-unpredictable workloads. \code{PAY_PER_REQUEST} sets the billing mode to
-\href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html}{On-demand capacity mode}.
+\item \code{PROVISIONED} - We recommend using \code{PROVISIONED} for predictable workloads. \code{PROVISIONED} sets the billing mode to \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html}{Provisioned capacity mode}.
+\item \code{PAY_PER_REQUEST} - We recommend using \code{PAY_PER_REQUEST} for unpredictable workloads. \code{PAY_PER_REQUEST} sets the billing mode to \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html}{On-demand capacity mode}.
 }}
 
-\item{GlobalTableProvisionedWriteCapacityUnits}{The maximum number of writes consumed per second before DynamoDB returns
-a \code{ThrottlingException.}}
+\item{GlobalTableProvisionedWriteCapacityUnits}{The maximum number of writes consumed per second before DynamoDB returns a \code{ThrottlingException.}}
 
-\item{GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate}{Auto scaling settings for managing provisioned write capacity for the
-global table.}
+\item{GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate}{Auto scaling settings for managing provisioned write capacity for the global table.}
 
-\item{GlobalTableGlobalSecondaryIndexSettingsUpdate}{Represents the settings of a global secondary index for a global table
-that will be modified.}
+\item{GlobalTableGlobalSecondaryIndexSettingsUpdate}{Represents the settings of a global secondary index for a global table that will be modified.}
 
-\item{ReplicaSettingsUpdate}{Represents the settings for a global table in a Region that will be
-modified.}
+\item{ReplicaSettingsUpdate}{Represents the settings for a global table in a Region that will be modified.}
 }
 \description{
 Updates settings for a global table.

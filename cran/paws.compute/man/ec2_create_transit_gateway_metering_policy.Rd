@@ -19,10 +19,7 @@ ec2_create_transit_gateway_metering_policy(
 
 \item{TagSpecifications}{The tags to assign to the metering policy.}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 }
 \description{
 Creates a metering policy for a transit gateway to track and measure network traffic.

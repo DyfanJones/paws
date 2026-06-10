@@ -31,13 +31,11 @@ networkmanager_list_core_network_routing_information(
 
 \item{ExactAsPathMatches}{Exact AS path values to match when filtering routing information.}
 
-\item{MedMatches}{Multi-Exit Discriminator (MED) values to match when filtering routing
-information.}
+\item{MedMatches}{Multi-Exit Discriminator (MED) values to match when filtering routing information.}
 
 \item{CommunityMatches}{BGP community values to match when filtering routing information.}
 
-\item{MaxResults}{The maximum number of routing information entries to return in a single
-page.}
+\item{MaxResults}{The maximum number of routing information entries to return in a single page.}
 
 \item{NextToken}{The token for the next page of results.}
 }

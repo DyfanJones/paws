@@ -7,10 +7,7 @@
 cloudsearch_create_domain(DomainName)
 }
 \arguments{
-\item{DomainName}{[required] A name for the domain you are creating. Allowed characters are a-z
-(lower-case letters), 0-9, and hyphen (-). Domain names must start with
-a letter or number and be at least 3 and no more than 28 characters
-long.}
+\item{DomainName}{[required] A name for the domain you are creating. Allowed characters are a-z (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter or number and be at least 3 and no more than 28 characters long.}
 }
 \description{
 Creates a new search domain. For more information, see \if{html}{\out{<a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/creating-domains.html" target="_blank">}}Creating a Search Domain\if{html}{\out{</a>}} in the \emph{Amazon CloudSearch Developer Guide}.

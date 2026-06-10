@@ -10,8 +10,7 @@ route53recoveryreadiness_update_cell(CellName, Cells)
 \arguments{
 \item{CellName}{[required] The name of the cell.}
 
-\item{Cells}{[required] A list of cell Amazon Resource Names (ARNs), which completely replaces
-the previous list.}
+\item{Cells}{[required] A list of cell Amazon Resource Names (ARNs), which completely replaces the previous list.}
 }
 \description{
 Updates a cell to replace the list of nested cells with a new list of nested cells.

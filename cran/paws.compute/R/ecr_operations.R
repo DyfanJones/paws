@@ -10,11 +10,8 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_batch_check_layer_availability/](https://www.paws-r-sdk.com/docs/ecr_batch_check_layer_availability/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry that
-#' contains the image layers to check. If you do not specify a registry,
-#' the default registry is assumed.
-#' @param repositoryName &#91;required&#93; The name of the repository that is associated with the image layers to
-#' check.
+#' @param registryId The Amazon Web Services account ID associated with the registry that contains the image layers to check. If you do not specify a registry, the default registry is assumed.
+#' @param repositoryName &#91;required&#93; The name of the repository that is associated with the image layers to check.
 #' @param layerDigests &#91;required&#93; The digests of the image layers to check.
 #'
 #' @keywords internal
@@ -46,13 +43,9 @@ ecr_batch_check_layer_availability <- function(registryId = NULL, repositoryName
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_batch_delete_image/](https://www.paws-r-sdk.com/docs/ecr_batch_delete_image/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry that
-#' contains the image to delete. If you do not specify a registry, the
-#' default registry is assumed.
+#' @param registryId The Amazon Web Services account ID associated with the registry that contains the image to delete. If you do not specify a registry, the default registry is assumed.
 #' @param repositoryName &#91;required&#93; The repository that contains the image to delete.
-#' @param imageIds &#91;required&#93; A list of image ID references that correspond to images to delete. The
-#' format of the `imageIds` reference is `imageTag=tag` or
-#' `imageDigest=digest`.
+#' @param imageIds &#91;required&#93; A list of image ID references that correspond to images to delete. The format of the `imageIds` reference is `imageTag=tag` or `imageDigest=digest`.
 #'
 #' @keywords internal
 #'
@@ -83,18 +76,12 @@ ecr_batch_delete_image <- function(registryId = NULL, repositoryName, imageIds) 
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_batch_get_image/](https://www.paws-r-sdk.com/docs/ecr_batch_get_image/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry that
-#' contains the images to describe. If you do not specify a registry, the
-#' default registry is assumed.
+#' @param registryId The Amazon Web Services account ID associated with the registry that contains the images to describe. If you do not specify a registry, the default registry is assumed.
 #' @param repositoryName &#91;required&#93; The repository that contains the images to describe.
-#' @param imageIds &#91;required&#93; A list of image ID references that correspond to images to describe. The
-#' format of the `imageIds` reference is `imageTag=tag` or
-#' `imageDigest=digest`.
+#' @param imageIds &#91;required&#93; A list of image ID references that correspond to images to describe. The format of the `imageIds` reference is `imageTag=tag` or `imageDigest=digest`.
 #' @param acceptedMediaTypes The accepted media types for the request.
 #' 
-#' Valid values: `application/vnd.docker.distribution.manifest.v1+json` |
-#' `application/vnd.docker.distribution.manifest.v2+json` |
-#' `application/vnd.oci.image.manifest.v1+json`
+#' Valid values: `application/vnd.docker.distribution.manifest.v1+json` | `application/vnd.docker.distribution.manifest.v2+json` | `application/vnd.oci.image.manifest.v1+json`
 #'
 #' @keywords internal
 #'
@@ -157,13 +144,9 @@ ecr_batch_get_repository_scanning_configuration <- function(repositoryNames) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_complete_layer_upload/](https://www.paws-r-sdk.com/docs/ecr_complete_layer_upload/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry to which
-#' to upload layers. If you do not specify a registry, the default registry
-#' is assumed.
+#' @param registryId The Amazon Web Services account ID associated with the registry to which to upload layers. If you do not specify a registry, the default registry is assumed.
 #' @param repositoryName &#91;required&#93; The name of the repository to associate with the image layer.
-#' @param uploadId &#91;required&#93; The upload ID from a previous
-#' [`initiate_layer_upload`][ecr_initiate_layer_upload] operation to
-#' associate with the image layer.
+#' @param uploadId &#91;required&#93; The upload ID from a previous [`initiate_layer_upload`][ecr_initiate_layer_upload] operation to associate with the image layer.
 #' @param layerDigests &#91;required&#93; The `sha256` digest of the image layer.
 #'
 #' @keywords internal
@@ -195,15 +178,10 @@ ecr_complete_layer_upload <- function(registryId = NULL, repositoryName, uploadI
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_create_pull_through_cache_rule/](https://www.paws-r-sdk.com/docs/ecr_create_pull_through_cache_rule/) for full documentation.
 #'
-#' @param ecrRepositoryPrefix &#91;required&#93; The repository name prefix to use when caching images from the source
-#' registry.
+#' @param ecrRepositoryPrefix &#91;required&#93; The repository name prefix to use when caching images from the source registry.
 #' 
-#' There is always an assumed `/` applied to the end of the prefix. If you
-#' specify `ecr-public` as the prefix, Amazon ECR treats that as
-#' `ecr-public/`.
-#' @param upstreamRegistryUrl &#91;required&#93; The registry URL of the upstream public registry to use as the source
-#' for the pull through cache rule. The following is the syntax to use for
-#' each supported upstream registry.
+#' There is always an assumed `/` applied to the end of the prefix. If you specify `ecr-public` as the prefix, Amazon ECR treats that as `ecr-public/`.
+#' @param upstreamRegistryUrl &#91;required&#93; The registry URL of the upstream public registry to use as the source for the pull through cache rule. The following is the syntax to use for each supported upstream registry.
 #' 
 #' -   Amazon ECR (`ecr`) – `<accountId>.dkr.ecr.<region>.amazonaws.com`
 #' 
@@ -213,28 +191,18 @@ ecr_complete_layer_upload <- function(registryId = NULL, repositoryName, uploadI
 #' 
 #' -   GitHub Container Registry (`github-container-registry`) – `ghcr.io`
 #' 
-#' -   GitLab Container Registry (`gitlab-container-registry`) –
-#'     `registry.gitlab.com`
+#' -   GitLab Container Registry (`gitlab-container-registry`) – `registry.gitlab.com`
 #' 
 #' -   Kubernetes (`k8s`) – `registry.k8s.io`
 #' 
-#' -   Microsoft Azure Container Registry (`azure-container-registry`) –
-#'     `<custom>.azurecr.io`
+#' -   Microsoft Azure Container Registry (`azure-container-registry`) – `<custom>.azurecr.io`
 #' 
 #' -   Quay (`quay`) – `quay.io`
-#' @param registryId The Amazon Web Services account ID associated with the registry to
-#' create the pull through cache rule for. If you do not specify a
-#' registry, the default registry is assumed.
+#' @param registryId The Amazon Web Services account ID associated with the registry to create the pull through cache rule for. If you do not specify a registry, the default registry is assumed.
 #' @param upstreamRegistry The name of the upstream registry.
-#' @param credentialArn The Amazon Resource Name (ARN) of the Amazon Web Services Secrets
-#' Manager secret that identifies the credentials to authenticate to the
-#' upstream registry.
-#' @param customRoleArn Amazon Resource Name (ARN) of the IAM role to be assumed by Amazon ECR
-#' to authenticate to the ECR upstream registry. This role must be in the
-#' same account as the registry that you are configuring.
-#' @param upstreamRepositoryPrefix The repository name prefix of the upstream registry to match with the
-#' upstream repository name. When this field isn't specified, Amazon ECR
-#' will use the `ROOT`.
+#' @param credentialArn The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that identifies the credentials to authenticate to the upstream registry.
+#' @param customRoleArn Amazon Resource Name (ARN) of the IAM role to be assumed by Amazon ECR to authenticate to the ECR upstream registry. This role must be in the same account as the registry that you are configuring.
+#' @param upstreamRepositoryPrefix The repository name prefix of the upstream registry to match with the upstream repository name. When this field isn't specified, Amazon ECR will use the `ROOT`.
 #'
 #' @keywords internal
 #'
@@ -265,37 +233,17 @@ ecr_create_pull_through_cache_rule <- function(ecrRepositoryPrefix, upstreamRegi
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_create_repository/](https://www.paws-r-sdk.com/docs/ecr_create_repository/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry to
-#' create the repository. If you do not specify a registry, the default
-#' registry is assumed.
-#' @param repositoryName &#91;required&#93; The name to use for the repository. The repository name may be specified
-#' on its own (such as `nginx-web-app`) or it can be prepended with a
-#' namespace to group the repository into a category (such as
-#' `project-a/nginx-web-app`).
+#' @param registryId The Amazon Web Services account ID associated with the registry to create the repository. If you do not specify a registry, the default registry is assumed.
+#' @param repositoryName &#91;required&#93; The name to use for the repository. The repository name may be specified on its own (such as `nginx-web-app`) or it can be prepended with a namespace to group the repository into a category (such as `project-a/nginx-web-app`).
 #' 
-#' The repository name must start with a letter and can only contain
-#' lowercase letters, numbers, hyphens, underscores, and forward slashes.
-#' @param tags The metadata that you apply to the repository to help you categorize and
-#' organize them. Each tag consists of a key and an optional value, both of
-#' which you define. Tag keys can have a maximum character length of 128
-#' characters, and tag values can have a maximum length of 256 characters.
-#' @param imageTagMutability The tag mutability setting for the repository. If this parameter is
-#' omitted, the default setting of `MUTABLE` will be used which will allow
-#' image tags to be overwritten. If `IMMUTABLE` is specified, all image
-#' tags within the repository will be immutable which will prevent them
-#' from being overwritten.
-#' @param imageTagMutabilityExclusionFilters A list of filters that specify which image tags should be excluded from
-#' the repository's image tag mutability setting.
-#' @param imageScanningConfiguration The `imageScanningConfiguration` parameter is being deprecated, in favor
-#' of specifying the image scanning configuration at the registry level.
-#' For more information, see
-#' [`put_registry_scanning_configuration`][ecr_put_registry_scanning_configuration].
+#' The repository name must start with a letter and can only contain lowercase letters, numbers, hyphens, underscores, and forward slashes.
+#' @param tags The metadata that you apply to the repository to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+#' @param imageTagMutability The tag mutability setting for the repository. If this parameter is omitted, the default setting of `MUTABLE` will be used which will allow image tags to be overwritten. If `IMMUTABLE` is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.
+#' @param imageTagMutabilityExclusionFilters A list of filters that specify which image tags should be excluded from the repository's image tag mutability setting.
+#' @param imageScanningConfiguration The `imageScanningConfiguration` parameter is being deprecated, in favor of specifying the image scanning configuration at the registry level. For more information, see [`put_registry_scanning_configuration`][ecr_put_registry_scanning_configuration].
 #' 
-#' The image scanning configuration for the repository. This determines
-#' whether images are scanned for known vulnerabilities after being pushed
-#' to the repository.
-#' @param encryptionConfiguration The encryption configuration for the repository. This determines how the
-#' contents of your repository are encrypted at rest.
+#' The image scanning configuration for the repository. This determines whether images are scanned for known vulnerabilities after being pushed to the repository.
+#' @param encryptionConfiguration The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.
 #'
 #' @keywords internal
 #'
@@ -326,46 +274,20 @@ ecr_create_repository <- function(registryId = NULL, repositoryName, tags = NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_create_repository_creation_template/](https://www.paws-r-sdk.com/docs/ecr_create_repository_creation_template/) for full documentation.
 #'
-#' @param prefix &#91;required&#93; The repository namespace prefix to associate with the template. All
-#' repositories created using this namespace prefix will have the settings
-#' defined in this template applied. For example, a prefix of `prod` would
-#' apply to all repositories beginning with `prod/`. Similarly, a prefix of
-#' `prod/team` would apply to all repositories beginning with `prod/team/`.
+#' @param prefix &#91;required&#93; The repository namespace prefix to associate with the template. All repositories created using this namespace prefix will have the settings defined in this template applied. For example, a prefix of `prod` would apply to all repositories beginning with `prod/`. Similarly, a prefix of `prod/team` would apply to all repositories beginning with `prod/team/`.
 #' 
-#' To apply a template to all repositories in your registry that don't have
-#' an associated creation template, you can use `ROOT` as the prefix.
+#' To apply a template to all repositories in your registry that don't have an associated creation template, you can use `ROOT` as the prefix.
 #' 
-#' There is always an assumed `/` applied to the end of the prefix. If you
-#' specify `ecr-public` as the prefix, Amazon ECR treats that as
-#' `ecr-public/`. When using a pull through cache rule, the repository
-#' prefix you specify during rule creation is what you should specify as
-#' your repository creation template prefix as well.
+#' There is always an assumed `/` applied to the end of the prefix. If you specify `ecr-public` as the prefix, Amazon ECR treats that as `ecr-public/`. When using a pull through cache rule, the repository prefix you specify during rule creation is what you should specify as your repository creation template prefix as well.
 #' @param description A description for the repository creation template.
-#' @param encryptionConfiguration The encryption configuration to use for repositories created using the
-#' template.
-#' @param resourceTags The metadata to apply to the repository to help you categorize and
-#' organize. Each tag consists of a key and an optional value, both of
-#' which you define. Tag keys can have a maximum character length of 128
-#' characters, and tag values can have a maximum length of 256 characters.
-#' @param imageTagMutability The tag mutability setting for the repository. If this parameter is
-#' omitted, the default setting of `MUTABLE` will be used which will allow
-#' image tags to be overwritten. If `IMMUTABLE` is specified, all image
-#' tags within the repository will be immutable which will prevent them
-#' from being overwritten.
-#' @param imageTagMutabilityExclusionFilters A list of filters that specify which image tags should be excluded from
-#' the repository creation template's image tag mutability setting.
-#' @param repositoryPolicy The repository policy to apply to repositories created using the
-#' template. A repository policy is a permissions policy associated with a
-#' repository to control access permissions.
+#' @param encryptionConfiguration The encryption configuration to use for repositories created using the template.
+#' @param resourceTags The metadata to apply to the repository to help you categorize and organize. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+#' @param imageTagMutability The tag mutability setting for the repository. If this parameter is omitted, the default setting of `MUTABLE` will be used which will allow image tags to be overwritten. If `IMMUTABLE` is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.
+#' @param imageTagMutabilityExclusionFilters A list of filters that specify which image tags should be excluded from the repository creation template's image tag mutability setting.
+#' @param repositoryPolicy The repository policy to apply to repositories created using the template. A repository policy is a permissions policy associated with a repository to control access permissions.
 #' @param lifecyclePolicy The lifecycle policy to use for repositories created using the template.
-#' @param appliedFor &#91;required&#93; A list of enumerable strings representing the Amazon ECR repository
-#' creation scenarios that this template will apply towards. The supported
-#' scenarios are `PULL_THROUGH_CACHE`, `REPLICATION`, and `CREATE_ON_PUSH`
-#' @param customRoleArn The ARN of the role to be assumed by Amazon ECR. This role must be in
-#' the same account as the registry that you are configuring. Amazon ECR
-#' will assume your supplied role when the customRoleArn is specified. When
-#' this field isn't specified, Amazon ECR will use the service-linked role
-#' for the repository creation template.
+#' @param appliedFor &#91;required&#93; A list of enumerable strings representing the Amazon ECR repository creation scenarios that this template will apply towards. The supported scenarios are `PULL_THROUGH_CACHE`, `REPLICATION`, and `CREATE_ON_PUSH`
+#' @param customRoleArn The ARN of the role to be assumed by Amazon ECR. This role must be in the same account as the registry that you are configuring. Amazon ECR will assume your supplied role when the customRoleArn is specified. When this field isn't specified, Amazon ECR will use the service-linked role for the repository creation template.
 #'
 #' @keywords internal
 #'
@@ -396,9 +318,7 @@ ecr_create_repository_creation_template <- function(prefix, description = NULL, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_delete_lifecycle_policy/](https://www.paws-r-sdk.com/docs/ecr_delete_lifecycle_policy/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry that
-#' contains the repository. If you do not specify a registry, the default
-#' registry is assumed.
+#' @param registryId The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.
 #' @param repositoryName &#91;required&#93; The name of the repository.
 #'
 #' @keywords internal
@@ -430,11 +350,8 @@ ecr_delete_lifecycle_policy <- function(registryId = NULL, repositoryName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_delete_pull_through_cache_rule/](https://www.paws-r-sdk.com/docs/ecr_delete_pull_through_cache_rule/) for full documentation.
 #'
-#' @param ecrRepositoryPrefix &#91;required&#93; The Amazon ECR repository prefix associated with the pull through cache
-#' rule to delete.
-#' @param registryId The Amazon Web Services account ID associated with the registry that
-#' contains the pull through cache rule. If you do not specify a registry,
-#' the default registry is assumed.
+#' @param ecrRepositoryPrefix &#91;required&#93; The Amazon ECR repository prefix associated with the pull through cache rule to delete.
+#' @param registryId The Amazon Web Services account ID associated with the registry that contains the pull through cache rule. If you do not specify a registry, the default registry is assumed.
 #'
 #' @keywords internal
 #'
@@ -496,13 +413,9 @@ ecr_delete_registry_policy <- function() {
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_delete_repository/](https://www.paws-r-sdk.com/docs/ecr_delete_repository/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry that
-#' contains the repository to delete. If you do not specify a registry, the
-#' default registry is assumed.
+#' @param registryId The Amazon Web Services account ID associated with the registry that contains the repository to delete. If you do not specify a registry, the default registry is assumed.
 #' @param repositoryName &#91;required&#93; The name of the repository to delete.
-#' @param force If true, deleting the repository force deletes the contents of the
-#' repository. If false, the repository must be empty before attempting to
-#' delete it.
+#' @param force If true, deleting the repository force deletes the contents of the repository. If false, the repository must be empty before attempting to delete it.
 #'
 #' @keywords internal
 #'
@@ -533,8 +446,7 @@ ecr_delete_repository <- function(registryId = NULL, repositoryName, force = NUL
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_delete_repository_creation_template/](https://www.paws-r-sdk.com/docs/ecr_delete_repository_creation_template/) for full documentation.
 #'
-#' @param prefix &#91;required&#93; The repository namespace prefix associated with the repository creation
-#' template.
+#' @param prefix &#91;required&#93; The repository namespace prefix associated with the repository creation template.
 #'
 #' @keywords internal
 #'
@@ -565,11 +477,8 @@ ecr_delete_repository_creation_template <- function(prefix) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_delete_repository_policy/](https://www.paws-r-sdk.com/docs/ecr_delete_repository_policy/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry that
-#' contains the repository policy to delete. If you do not specify a
-#' registry, the default registry is assumed.
-#' @param repositoryName &#91;required&#93; The name of the repository that is associated with the repository policy
-#' to delete.
+#' @param registryId The Amazon Web Services account ID associated with the registry that contains the repository policy to delete. If you do not specify a registry, the default registry is assumed.
+#' @param repositoryName &#91;required&#93; The name of the repository that is associated with the repository policy to delete.
 #'
 #' @keywords internal
 #'
@@ -632,8 +541,7 @@ ecr_delete_signing_configuration <- function() {
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_deregister_pull_time_update_exclusion/](https://www.paws-r-sdk.com/docs/ecr_deregister_pull_time_update_exclusion/) for full documentation.
 #'
-#' @param principalArn &#91;required&#93; The ARN of the IAM principal to remove from the pull time update
-#' exclusion list.
+#' @param principalArn &#91;required&#93; The ARN of the IAM principal to remove from the pull time update exclusion list.
 #'
 #' @keywords internal
 #'
@@ -665,9 +573,8 @@ ecr_deregister_pull_time_update_exclusion <- function(principalArn) {
 #' See [https://www.paws-r-sdk.com/docs/ecr_describe_image_replication_status/](https://www.paws-r-sdk.com/docs/ecr_describe_image_replication_status/) for full documentation.
 #'
 #' @param repositoryName &#91;required&#93; The name of the repository that the image is in.
-#' @param imageId &#91;required&#93; 
-#' @param registryId The Amazon Web Services account ID associated with the registry. If you
-#' do not specify a registry, the default registry is assumed.
+#' @param imageId &#91;required&#93; An object with identifying information for an image in an Amazon ECR repository.
+#' @param registryId The Amazon Web Services account ID associated with the registry. If you do not specify a registry, the default registry is assumed.
 #'
 #' @keywords internal
 #'
@@ -698,29 +605,11 @@ ecr_describe_image_replication_status <- function(repositoryName, imageId, regis
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_describe_image_scan_findings/](https://www.paws-r-sdk.com/docs/ecr_describe_image_scan_findings/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry that
-#' contains the repository in which to describe the image scan findings
-#' for. If you do not specify a registry, the default registry is assumed.
+#' @param registryId The Amazon Web Services account ID associated with the registry that contains the repository in which to describe the image scan findings for. If you do not specify a registry, the default registry is assumed.
 #' @param repositoryName &#91;required&#93; The repository for the image for which to describe the scan findings.
-#' @param imageId &#91;required&#93; 
-#' @param nextToken The `nextToken` value returned from a previous paginated
-#' [`describe_image_scan_findings`][ecr_describe_image_scan_findings]
-#' request where `maxResults` was used and the results exceeded the value
-#' of that parameter. Pagination continues from the end of the previous
-#' results that returned the `nextToken` value. This value is null when
-#' there are no more results to return.
-#' @param maxResults The maximum number of image scan results returned by
-#' [`describe_image_scan_findings`][ecr_describe_image_scan_findings] in
-#' paginated output. When this parameter is used,
-#' [`describe_image_scan_findings`][ecr_describe_image_scan_findings] only
-#' returns `maxResults` results in a single page along with a `nextToken`
-#' response element. The remaining results of the initial request can be
-#' seen by sending another
-#' [`describe_image_scan_findings`][ecr_describe_image_scan_findings]
-#' request with the returned `nextToken` value. This value can be between 1
-#' and 1000. If this parameter is not used, then
-#' [`describe_image_scan_findings`][ecr_describe_image_scan_findings]
-#' returns up to 100 results and a `nextToken` value, if applicable.
+#' @param imageId &#91;required&#93; An object with identifying information for an image in an Amazon ECR repository.
+#' @param nextToken The `nextToken` value returned from a previous paginated [`describe_image_scan_findings`][ecr_describe_image_scan_findings] request where `maxResults` was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the `nextToken` value. This value is null when there are no more results to return.
+#' @param maxResults The maximum number of image scan results returned by [`describe_image_scan_findings`][ecr_describe_image_scan_findings] in paginated output. When this parameter is used, [`describe_image_scan_findings`][ecr_describe_image_scan_findings] only returns `maxResults` results in a single page along with a `nextToken` response element. The remaining results of the initial request can be seen by sending another [`describe_image_scan_findings`][ecr_describe_image_scan_findings] request with the returned `nextToken` value. This value can be between 1 and 1000. If this parameter is not used, then [`describe_image_scan_findings`][ecr_describe_image_scan_findings] returns up to 100 results and a `nextToken` value, if applicable.
 #'
 #' @keywords internal
 #'
@@ -753,9 +642,7 @@ ecr_describe_image_scan_findings <- function(registryId = NULL, repositoryName, 
 #'
 #' @param repositoryName &#91;required&#93; The name of the repository that contains the image.
 #' @param imageId &#91;required&#93; An object containing identifying information for an image.
-#' @param registryId The Amazon Web Services account ID associated with the registry that
-#' contains the repository. If you do not specify a registry, the default
-#' registry is assumed.
+#' @param registryId The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.
 #'
 #' @keywords internal
 #'
@@ -786,31 +673,12 @@ ecr_describe_image_signing_status <- function(repositoryName, imageId, registryI
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_describe_images/](https://www.paws-r-sdk.com/docs/ecr_describe_images/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry that
-#' contains the repository in which to describe images. If you do not
-#' specify a registry, the default registry is assumed.
+#' @param registryId The Amazon Web Services account ID associated with the registry that contains the repository in which to describe images. If you do not specify a registry, the default registry is assumed.
 #' @param repositoryName &#91;required&#93; The repository that contains the images to describe.
 #' @param imageIds The list of image IDs for the requested repository.
-#' @param nextToken The `nextToken` value returned from a previous paginated
-#' [`describe_images`][ecr_describe_images] request where `maxResults` was
-#' used and the results exceeded the value of that parameter. Pagination
-#' continues from the end of the previous results that returned the
-#' `nextToken` value. This value is `null` when there are no more results
-#' to return. This option cannot be used when you specify images with
-#' `imageIds`.
-#' @param maxResults The maximum number of repository results returned by
-#' [`describe_images`][ecr_describe_images] in paginated output. When this
-#' parameter is used, [`describe_images`][ecr_describe_images] only returns
-#' `maxResults` results in a single page along with a `nextToken` response
-#' element. The remaining results of the initial request can be seen by
-#' sending another [`describe_images`][ecr_describe_images] request with
-#' the returned `nextToken` value. This value can be between 1 and 1000. If
-#' this parameter is not used, then
-#' [`describe_images`][ecr_describe_images] returns up to 100 results and a
-#' `nextToken` value, if applicable. This option cannot be used when you
-#' specify images with `imageIds`.
-#' @param filter The filter key and value with which to filter your
-#' [`describe_images`][ecr_describe_images] results.
+#' @param nextToken The `nextToken` value returned from a previous paginated [`describe_images`][ecr_describe_images] request where `maxResults` was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the `nextToken` value. This value is `null` when there are no more results to return. This option cannot be used when you specify images with `imageIds`.
+#' @param maxResults The maximum number of repository results returned by [`describe_images`][ecr_describe_images] in paginated output. When this parameter is used, [`describe_images`][ecr_describe_images] only returns `maxResults` results in a single page along with a `nextToken` response element. The remaining results of the initial request can be seen by sending another [`describe_images`][ecr_describe_images] request with the returned `nextToken` value. This value can be between 1 and 1000. If this parameter is not used, then [`describe_images`][ecr_describe_images] returns up to 100 results and a `nextToken` value, if applicable. This option cannot be used when you specify images with `imageIds`.
+#' @param filter The filter key and value with which to filter your [`describe_images`][ecr_describe_images] results.
 #'
 #' @keywords internal
 #'
@@ -841,27 +709,10 @@ ecr_describe_images <- function(registryId = NULL, repositoryName, imageIds = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_describe_pull_through_cache_rules/](https://www.paws-r-sdk.com/docs/ecr_describe_pull_through_cache_rules/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry to
-#' return the pull through cache rules for. If you do not specify a
-#' registry, the default registry is assumed.
-#' @param ecrRepositoryPrefixes The Amazon ECR repository prefixes associated with the pull through
-#' cache rules to return. If no repository prefix value is specified, all
-#' pull through cache rules are returned.
-#' @param nextToken The `nextToken` value returned from a previous paginated
-#' `DescribePullThroughCacheRulesRequest` request where `maxResults` was
-#' used and the results exceeded the value of that parameter. Pagination
-#' continues from the end of the previous results that returned the
-#' `nextToken` value. This value is null when there are no more results to
-#' return.
-#' @param maxResults The maximum number of pull through cache rules returned by
-#' `DescribePullThroughCacheRulesRequest` in paginated output. When this
-#' parameter is used, `DescribePullThroughCacheRulesRequest` only returns
-#' `maxResults` results in a single page along with a `nextToken` response
-#' element. The remaining results of the initial request can be seen by
-#' sending another `DescribePullThroughCacheRulesRequest` request with the
-#' returned `nextToken` value. This value can be between 1 and 1000. If
-#' this parameter is not used, then `DescribePullThroughCacheRulesRequest`
-#' returns up to 100 results and a `nextToken` value, if applicable.
+#' @param registryId The Amazon Web Services account ID associated with the registry to return the pull through cache rules for. If you do not specify a registry, the default registry is assumed.
+#' @param ecrRepositoryPrefixes The Amazon ECR repository prefixes associated with the pull through cache rules to return. If no repository prefix value is specified, all pull through cache rules are returned.
+#' @param nextToken The `nextToken` value returned from a previous paginated `DescribePullThroughCacheRulesRequest` request where `maxResults` was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the `nextToken` value. This value is null when there are no more results to return.
+#' @param maxResults The maximum number of pull through cache rules returned by `DescribePullThroughCacheRulesRequest` in paginated output. When this parameter is used, `DescribePullThroughCacheRulesRequest` only returns `maxResults` results in a single page along with a `nextToken` response element. The remaining results of the initial request can be seen by sending another `DescribePullThroughCacheRulesRequest` request with the returned `nextToken` value. This value can be between 1 and 1000. If this parameter is not used, then `DescribePullThroughCacheRulesRequest` returns up to 100 results and a `nextToken` value, if applicable.
 #'
 #' @keywords internal
 #'
@@ -923,34 +774,12 @@ ecr_describe_registry <- function() {
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_describe_repositories/](https://www.paws-r-sdk.com/docs/ecr_describe_repositories/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry that
-#' contains the repositories to be described. If you do not specify a
-#' registry, the default registry is assumed.
-#' @param repositoryNames A list of repositories to describe. If this parameter is omitted, then
-#' all repositories in a registry are described.
-#' @param nextToken The `nextToken` value returned from a previous paginated
-#' [`describe_repositories`][ecr_describe_repositories] request where
-#' `maxResults` was used and the results exceeded the value of that
-#' parameter. Pagination continues from the end of the previous results
-#' that returned the `nextToken` value. This value is `null` when there are
-#' no more results to return. This option cannot be used when you specify
-#' repositories with `repositoryNames`.
+#' @param registryId The Amazon Web Services account ID associated with the registry that contains the repositories to be described. If you do not specify a registry, the default registry is assumed.
+#' @param repositoryNames A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are described.
+#' @param nextToken The `nextToken` value returned from a previous paginated [`describe_repositories`][ecr_describe_repositories] request where `maxResults` was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the `nextToken` value. This value is `null` when there are no more results to return. This option cannot be used when you specify repositories with `repositoryNames`.
 #' 
-#' This token should be treated as an opaque identifier that is only used
-#' to retrieve the next items in a list and not for other programmatic
-#' purposes.
-#' @param maxResults The maximum number of repository results returned by
-#' [`describe_repositories`][ecr_describe_repositories] in paginated
-#' output. When this parameter is used,
-#' [`describe_repositories`][ecr_describe_repositories] only returns
-#' `maxResults` results in a single page along with a `nextToken` response
-#' element. The remaining results of the initial request can be seen by
-#' sending another [`describe_repositories`][ecr_describe_repositories]
-#' request with the returned `nextToken` value. This value can be between 1
-#' and 1000. If this parameter is not used, then
-#' [`describe_repositories`][ecr_describe_repositories] returns up to 100
-#' results and a `nextToken` value, if applicable. This option cannot be
-#' used when you specify repositories with `repositoryNames`.
+#' This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.
+#' @param maxResults The maximum number of repository results returned by [`describe_repositories`][ecr_describe_repositories] in paginated output. When this parameter is used, [`describe_repositories`][ecr_describe_repositories] only returns `maxResults` results in a single page along with a `nextToken` response element. The remaining results of the initial request can be seen by sending another [`describe_repositories`][ecr_describe_repositories] request with the returned `nextToken` value. This value can be between 1 and 1000. If this parameter is not used, then [`describe_repositories`][ecr_describe_repositories] returns up to 100 results and a `nextToken` value, if applicable. This option cannot be used when you specify repositories with `repositoryNames`.
 #'
 #' @keywords internal
 #'
@@ -981,29 +810,11 @@ ecr_describe_repositories <- function(registryId = NULL, repositoryNames = NULL,
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_describe_repository_creation_templates/](https://www.paws-r-sdk.com/docs/ecr_describe_repository_creation_templates/) for full documentation.
 #'
-#' @param prefixes The repository namespace prefixes associated with the repository
-#' creation templates to describe. If this value is not specified, all
-#' repository creation templates are returned.
-#' @param nextToken The `nextToken` value returned from a previous paginated
-#' [`describe_repository_creation_templates`][ecr_describe_repository_creation_templates]
-#' request where `maxResults` was used and the results exceeded the value
-#' of that parameter. Pagination continues from the end of the previous
-#' results that returned the `nextToken` value. This value is `null` when
-#' there are no more results to return.
+#' @param prefixes The repository namespace prefixes associated with the repository creation templates to describe. If this value is not specified, all repository creation templates are returned.
+#' @param nextToken The `nextToken` value returned from a previous paginated [`describe_repository_creation_templates`][ecr_describe_repository_creation_templates] request where `maxResults` was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the `nextToken` value. This value is `null` when there are no more results to return.
 #' 
-#' This token should be treated as an opaque identifier that is only used
-#' to retrieve the next items in a list and not for other programmatic
-#' purposes.
-#' @param maxResults The maximum number of repository results returned by
-#' `DescribeRepositoryCreationTemplatesRequest` in paginated output. When
-#' this parameter is used, `DescribeRepositoryCreationTemplatesRequest`
-#' only returns `maxResults` results in a single page along with a
-#' `nextToken` response element. The remaining results of the initial
-#' request can be seen by sending another
-#' `DescribeRepositoryCreationTemplatesRequest` request with the returned
-#' `nextToken` value. This value can be between 1 and 1000. If this
-#' parameter is not used, then `DescribeRepositoryCreationTemplatesRequest`
-#' returns up to 100 results and a `nextToken` value, if applicable.
+#' This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.
+#' @param maxResults The maximum number of repository results returned by `DescribeRepositoryCreationTemplatesRequest` in paginated output. When this parameter is used, `DescribeRepositoryCreationTemplatesRequest` only returns `maxResults` results in a single page along with a `nextToken` response element. The remaining results of the initial request can be seen by sending another `DescribeRepositoryCreationTemplatesRequest` request with the returned `nextToken` value. This value can be between 1 and 1000. If this parameter is not used, then `DescribeRepositoryCreationTemplatesRequest` returns up to 100 results and a `nextToken` value, if applicable.
 #'
 #' @keywords internal
 #'
@@ -1034,8 +845,7 @@ ecr_describe_repository_creation_templates <- function(prefixes = NULL, nextToke
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_get_account_setting/](https://www.paws-r-sdk.com/docs/ecr_get_account_setting/) for full documentation.
 #'
-#' @param name &#91;required&#93; The name of the account setting, such as `BASIC_SCAN_TYPE_VERSION` or
-#' `REGISTRY_POLICY_SCOPE`.
+#' @param name &#91;required&#93; The name of the account setting, such as `BASIC_SCAN_TYPE_VERSION`, `REGISTRY_POLICY_SCOPE`, or `BLOB_MOUNTING`.
 #'
 #' @keywords internal
 #'
@@ -1066,9 +876,7 @@ ecr_get_account_setting <- function(name) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_get_authorization_token/](https://www.paws-r-sdk.com/docs/ecr_get_authorization_token/) for full documentation.
 #'
-#' @param registryIds A list of Amazon Web Services account IDs that are associated with the
-#' registries for which to get AuthorizationData objects. If you do not
-#' specify a registry, the default registry is assumed.
+#' @param registryIds A list of Amazon Web Services account IDs that are associated with the registries for which to get AuthorizationData objects. If you do not specify a registry, the default registry is assumed.
 #'
 #' @keywords internal
 #'
@@ -1100,11 +908,8 @@ ecr_get_authorization_token <- function(registryIds = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_get_download_url_for_layer/](https://www.paws-r-sdk.com/docs/ecr_get_download_url_for_layer/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry that
-#' contains the image layer to download. If you do not specify a registry,
-#' the default registry is assumed.
-#' @param repositoryName &#91;required&#93; The name of the repository that is associated with the image layer to
-#' download.
+#' @param registryId The Amazon Web Services account ID associated with the registry that contains the image layer to download. If you do not specify a registry, the default registry is assumed.
+#' @param repositoryName &#91;required&#93; The name of the repository that is associated with the image layer to download.
 #' @param layerDigest &#91;required&#93; The digest of the image layer to download.
 #'
 #' @keywords internal
@@ -1136,9 +941,7 @@ ecr_get_download_url_for_layer <- function(registryId = NULL, repositoryName, la
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_get_lifecycle_policy/](https://www.paws-r-sdk.com/docs/ecr_get_lifecycle_policy/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry that
-#' contains the repository. If you do not specify a registry, the default
-#' registry is assumed.
+#' @param registryId The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.
 #' @param repositoryName &#91;required&#93; The name of the repository.
 #'
 #' @keywords internal
@@ -1171,30 +974,12 @@ ecr_get_lifecycle_policy <- function(registryId = NULL, repositoryName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_get_lifecycle_policy_preview/](https://www.paws-r-sdk.com/docs/ecr_get_lifecycle_policy_preview/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry that
-#' contains the repository. If you do not specify a registry, the default
-#' registry is assumed.
+#' @param registryId The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.
 #' @param repositoryName &#91;required&#93; The name of the repository.
 #' @param imageIds The list of imageIDs to be included.
-#' @param nextToken The `nextToken` value returned from a previous paginated
-#' `GetLifecyclePolicyPreviewRequest` request where `maxResults` was used
-#' and the results exceeded the value of that parameter. Pagination
-#' continues from the end of the previous results that returned the
-#' `nextToken` value. This value is `null` when there are no more results
-#' to return. This option cannot be used when you specify images with
-#' `imageIds`.
-#' @param maxResults The maximum number of repository results returned by
-#' `GetLifecyclePolicyPreviewRequest` in paginated output. When this
-#' parameter is used, `GetLifecyclePolicyPreviewRequest` only returns
-#' `maxResults` results in a single page along with a `nextToken` response
-#' element. The remaining results of the initial request can be seen by
-#' sending another `GetLifecyclePolicyPreviewRequest` request with the
-#' returned `nextToken` value. This value can be between 1 and 100. If
-#' this parameter is not used, then `GetLifecyclePolicyPreviewRequest`
-#' returns up to100 results and a `nextToken` value, if applicable. This
-#' option cannot be used when you specify images with `imageIds`.
-#' @param filter An optional parameter that filters results based on image tag status and
-#' all tags, if tagged.
+#' @param nextToken The `nextToken` value returned from a previous paginated `GetLifecyclePolicyPreviewRequest` request where `maxResults` was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the `nextToken` value. This value is `null` when there are no more results to return. This option cannot be used when you specify images with `imageIds`.
+#' @param maxResults The maximum number of repository results returned by `GetLifecyclePolicyPreviewRequest` in paginated output. When this parameter is used, `GetLifecyclePolicyPreviewRequest` only returns `maxResults` results in a single page along with a `nextToken` response element. The remaining results of the initial request can be seen by sending another `GetLifecyclePolicyPreviewRequest` request with the returned `nextToken` value. This value can be between 1 and 100. If this parameter is not used, then `GetLifecyclePolicyPreviewRequest` returns up to100 results and a `nextToken` value, if applicable. This option cannot be used when you specify images with `imageIds`.
+#' @param filter An optional parameter that filters results based on image tag status and all tags, if tagged.
 #'
 #' @keywords internal
 #'
@@ -1287,9 +1072,7 @@ ecr_get_registry_scanning_configuration <- function() {
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_get_repository_policy/](https://www.paws-r-sdk.com/docs/ecr_get_repository_policy/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry that
-#' contains the repository. If you do not specify a registry, the default
-#' registry is assumed.
+#' @param registryId The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.
 #' @param repositoryName &#91;required&#93; The name of the repository with the policy to retrieve.
 #'
 #' @keywords internal
@@ -1353,9 +1136,7 @@ ecr_get_signing_configuration <- function() {
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_initiate_layer_upload/](https://www.paws-r-sdk.com/docs/ecr_initiate_layer_upload/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry to which
-#' you intend to upload layers. If you do not specify a registry, the
-#' default registry is assumed.
+#' @param registryId The Amazon Web Services account ID associated with the registry to which you intend to upload layers. If you do not specify a registry, the default registry is assumed.
 #' @param repositoryName &#91;required&#93; The name of the repository to which you intend to upload layers.
 #'
 #' @keywords internal
@@ -1387,36 +1168,14 @@ ecr_initiate_layer_upload <- function(registryId = NULL, repositoryName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_list_image_referrers/](https://www.paws-r-sdk.com/docs/ecr_list_image_referrers/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry that
-#' contains the repository in which to list image referrers. If you do not
-#' specify a registry, the default registry is assumed.
+#' @param registryId The Amazon Web Services account ID associated with the registry that contains the repository in which to list image referrers. If you do not specify a registry, the default registry is assumed.
 #' @param repositoryName &#91;required&#93; The name of the repository that contains the subject image.
-#' @param subjectId &#91;required&#93; An object containing the image digest of the subject image for which to
-#' retrieve associated artifacts.
-#' @param filter The filter key and value with which to filter your
-#' [`list_image_referrers`][ecr_list_image_referrers] results. If no filter
-#' is specified, only artifacts with `ACTIVE` status are returned.
-#' @param nextToken The `nextToken` value returned from a previous paginated
-#' [`list_image_referrers`][ecr_list_image_referrers] request where
-#' `maxResults` was used and the results exceeded the value of that
-#' parameter. Pagination continues from the end of the previous results
-#' that returned the `nextToken` value. This value is `null` when there are
-#' no more results to return.
+#' @param subjectId &#91;required&#93; An object containing the image digest of the subject image for which to retrieve associated artifacts.
+#' @param filter The filter key and value with which to filter your [`list_image_referrers`][ecr_list_image_referrers] results. If no filter is specified, only artifacts with `ACTIVE` status are returned.
+#' @param nextToken The `nextToken` value returned from a previous paginated [`list_image_referrers`][ecr_list_image_referrers] request where `maxResults` was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the `nextToken` value. This value is `null` when there are no more results to return.
 #' 
-#' This token should be treated as an opaque identifier that is only used
-#' to retrieve the next items in a list and not for other programmatic
-#' purposes.
-#' @param maxResults The maximum number of image referrer results returned by
-#' [`list_image_referrers`][ecr_list_image_referrers] in paginated output.
-#' When this parameter is used,
-#' [`list_image_referrers`][ecr_list_image_referrers] only returns
-#' `maxResults` results in a single page along with a `nextToken` response
-#' element. The remaining results of the initial request can be seen by
-#' sending another [`list_image_referrers`][ecr_list_image_referrers]
-#' request with the returned `nextToken` value. This value can be between 1
-#' and 50. If this parameter is not used, then
-#' [`list_image_referrers`][ecr_list_image_referrers] returns up to 50
-#' results and a `nextToken` value, if applicable.
+#' This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.
+#' @param maxResults The maximum number of image referrer results returned by [`list_image_referrers`][ecr_list_image_referrers] in paginated output. When this parameter is used, [`list_image_referrers`][ecr_list_image_referrers] only returns `maxResults` results in a single page along with a `nextToken` response element. The remaining results of the initial request can be seen by sending another [`list_image_referrers`][ecr_list_image_referrers] request with the returned `nextToken` value. This value can be between 1 and 50. If this parameter is not used, then [`list_image_referrers`][ecr_list_image_referrers] returns up to 20 results and a `nextToken` value, if applicable.
 #'
 #' @keywords internal
 #'
@@ -1447,30 +1206,13 @@ ecr_list_image_referrers <- function(registryId = NULL, repositoryName, subjectI
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_list_images/](https://www.paws-r-sdk.com/docs/ecr_list_images/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry that
-#' contains the repository in which to list images. If you do not specify a
-#' registry, the default registry is assumed.
+#' @param registryId The Amazon Web Services account ID associated with the registry that contains the repository in which to list images. If you do not specify a registry, the default registry is assumed.
 #' @param repositoryName &#91;required&#93; The repository with image IDs to be listed.
-#' @param nextToken The `nextToken` value returned from a previous paginated
-#' [`list_images`][ecr_list_images] request where `maxResults` was used and
-#' the results exceeded the value of that parameter. Pagination continues
-#' from the end of the previous results that returned the `nextToken`
-#' value. This value is `null` when there are no more results to return.
+#' @param nextToken The `nextToken` value returned from a previous paginated [`list_images`][ecr_list_images] request where `maxResults` was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the `nextToken` value. This value is `null` when there are no more results to return.
 #' 
-#' This token should be treated as an opaque identifier that is only used
-#' to retrieve the next items in a list and not for other programmatic
-#' purposes.
-#' @param maxResults The maximum number of image results returned by
-#' [`list_images`][ecr_list_images] in paginated output. When this
-#' parameter is used, [`list_images`][ecr_list_images] only returns
-#' `maxResults` results in a single page along with a `nextToken` response
-#' element. The remaining results of the initial request can be seen by
-#' sending another [`list_images`][ecr_list_images] request with the
-#' returned `nextToken` value. This value can be between 1 and 1000. If
-#' this parameter is not used, then [`list_images`][ecr_list_images]
-#' returns up to 100 results and a `nextToken` value, if applicable.
-#' @param filter The filter key and value with which to filter your
-#' [`list_images`][ecr_list_images] results.
+#' This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.
+#' @param maxResults The maximum number of image results returned by [`list_images`][ecr_list_images] in paginated output. When this parameter is used, [`list_images`][ecr_list_images] only returns `maxResults` results in a single page along with a `nextToken` response element. The remaining results of the initial request can be seen by sending another [`list_images`][ecr_list_images] request with the returned `nextToken` value. This value can be between 1 and 1000. If this parameter is not used, then [`list_images`][ecr_list_images] returns up to 100 results and a `nextToken` value, if applicable.
+#' @param filter The filter key and value with which to filter your [`list_images`][ecr_list_images] results.
 #'
 #' @keywords internal
 #'
@@ -1502,28 +1244,10 @@ ecr_list_images <- function(registryId = NULL, repositoryName, nextToken = NULL,
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_list_pull_time_update_exclusions/](https://www.paws-r-sdk.com/docs/ecr_list_pull_time_update_exclusions/) for full documentation.
 #'
-#' @param maxResults The maximum number of pull time update exclusion results returned by
-#' [`list_pull_time_update_exclusions`][ecr_list_pull_time_update_exclusions]
-#' in paginated output. When this parameter is used,
-#' [`list_pull_time_update_exclusions`][ecr_list_pull_time_update_exclusions]
-#' only returns `maxResults` results in a single page along with a
-#' `nextToken` response element. The remaining results of the initial
-#' request can be seen by sending another
-#' [`list_pull_time_update_exclusions`][ecr_list_pull_time_update_exclusions]
-#' request with the returned `nextToken` value. This value can be between 1
-#' and 1000. If this parameter is not used, then
-#' [`list_pull_time_update_exclusions`][ecr_list_pull_time_update_exclusions]
-#' returns up to 100 results and a `nextToken` value, if applicable.
-#' @param nextToken The `nextToken` value returned from a previous paginated
-#' [`list_pull_time_update_exclusions`][ecr_list_pull_time_update_exclusions]
-#' request where `maxResults` was used and the results exceeded the value
-#' of that parameter. Pagination continues from the end of the previous
-#' results that returned the `nextToken` value. This value is `null` when
-#' there are no more results to return.
+#' @param maxResults The maximum number of pull time update exclusion results returned by [`list_pull_time_update_exclusions`][ecr_list_pull_time_update_exclusions] in paginated output. When this parameter is used, [`list_pull_time_update_exclusions`][ecr_list_pull_time_update_exclusions] only returns `maxResults` results in a single page along with a `nextToken` response element. The remaining results of the initial request can be seen by sending another [`list_pull_time_update_exclusions`][ecr_list_pull_time_update_exclusions] request with the returned `nextToken` value. This value can be between 1 and 1000. If this parameter is not used, then [`list_pull_time_update_exclusions`][ecr_list_pull_time_update_exclusions] returns up to 100 results and a `nextToken` value, if applicable.
+#' @param nextToken The `nextToken` value returned from a previous paginated [`list_pull_time_update_exclusions`][ecr_list_pull_time_update_exclusions] request where `maxResults` was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the `nextToken` value. This value is `null` when there are no more results to return.
 #' 
-#' This token should be treated as an opaque identifier that is only used
-#' to retrieve the next items in a list and not for other programmatic
-#' purposes.
+#' This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.
 #'
 #' @keywords internal
 #'
@@ -1554,9 +1278,7 @@ ecr_list_pull_time_update_exclusions <- function(maxResults = NULL, nextToken = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/ecr_list_tags_for_resource/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the resource for which to
-#' list the tags. Currently, the only supported resource is an Amazon ECR
-#' repository.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the only supported resource is an Amazon ECR repository.
 #'
 #' @keywords internal
 #'
@@ -1588,11 +1310,8 @@ ecr_list_tags_for_resource <- function(resourceArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_put_account_setting/](https://www.paws-r-sdk.com/docs/ecr_put_account_setting/) for full documentation.
 #'
-#' @param name &#91;required&#93; The name of the account setting, such as `BASIC_SCAN_TYPE_VERSION` or
-#' `REGISTRY_POLICY_SCOPE`.
-#' @param value &#91;required&#93; Setting value that is specified. The following are valid values for the
-#' basic scan type being used: `AWS_NATIVE` or `CLAIR`. The following are
-#' valid values for the registry policy scope being used: `V1` or `V2`.
+#' @param name &#91;required&#93; The name of the account setting, such as `BASIC_SCAN_TYPE_VERSION`, `REGISTRY_POLICY_SCOPE`, or `BLOB_MOUNTING`.
+#' @param value &#91;required&#93; Setting value that is specified. Valid value for basic scan type: `AWS_NATIVE`. Valid values for registry policy scope: `V2`. Valid values for blob mounting: `ENABLED` or `DISABLED`.
 #'
 #' @keywords internal
 #'
@@ -1623,14 +1342,10 @@ ecr_put_account_setting <- function(name, value) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_put_image/](https://www.paws-r-sdk.com/docs/ecr_put_image/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry that
-#' contains the repository in which to put the image. If you do not specify
-#' a registry, the default registry is assumed.
+#' @param registryId The Amazon Web Services account ID associated with the registry that contains the repository in which to put the image. If you do not specify a registry, the default registry is assumed.
 #' @param repositoryName &#91;required&#93; The name of the repository in which to put the image.
 #' @param imageManifest &#91;required&#93; The image manifest corresponding to the image to be uploaded.
-#' @param imageManifestMediaType The media type of the image manifest. If you push an image manifest that
-#' does not contain the `mediaType` field, you must specify the
-#' `imageManifestMediaType` in the request.
+#' @param imageManifestMediaType The media type of the image manifest. If you push an image manifest that does not contain the `mediaType` field, you must specify the `imageManifestMediaType` in the request.
 #' @param imageTag The tag to associate with the image. This parameter is optional.
 #' @param imageDigest The image digest of the image manifest corresponding to the image.
 #'
@@ -1664,15 +1379,9 @@ ecr_put_image <- function(registryId = NULL, repositoryName, imageManifest, imag
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_put_image_scanning_configuration/](https://www.paws-r-sdk.com/docs/ecr_put_image_scanning_configuration/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry that
-#' contains the repository in which to update the image scanning
-#' configuration setting. If you do not specify a registry, the default
-#' registry is assumed.
-#' @param repositoryName &#91;required&#93; The name of the repository in which to update the image scanning
-#' configuration setting.
-#' @param imageScanningConfiguration &#91;required&#93; The image scanning configuration for the repository. This setting
-#' determines whether images are scanned for known vulnerabilities after
-#' being pushed to the repository.
+#' @param registryId The Amazon Web Services account ID associated with the registry that contains the repository in which to update the image scanning configuration setting. If you do not specify a registry, the default registry is assumed.
+#' @param repositoryName &#91;required&#93; The name of the repository in which to update the image scanning configuration setting.
+#' @param imageScanningConfiguration &#91;required&#93; The image scanning configuration for the repository. This setting determines whether images are scanned for known vulnerabilities after being pushed to the repository.
 #'
 #' @keywords internal
 #'
@@ -1703,18 +1412,10 @@ ecr_put_image_scanning_configuration <- function(registryId = NULL, repositoryNa
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_put_image_tag_mutability/](https://www.paws-r-sdk.com/docs/ecr_put_image_tag_mutability/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry that
-#' contains the repository in which to update the image tag mutability
-#' settings. If you do not specify a registry, the default registry is
-#' assumed.
-#' @param repositoryName &#91;required&#93; The name of the repository in which to update the image tag mutability
-#' settings.
-#' @param imageTagMutability &#91;required&#93; The tag mutability setting for the repository. If `MUTABLE` is
-#' specified, image tags can be overwritten. If `IMMUTABLE` is specified,
-#' all image tags within the repository will be immutable which will
-#' prevent them from being overwritten.
-#' @param imageTagMutabilityExclusionFilters A list of filters that specify which image tags should be excluded from
-#' the image tag mutability setting being applied.
+#' @param registryId The Amazon Web Services account ID associated with the registry that contains the repository in which to update the image tag mutability settings. If you do not specify a registry, the default registry is assumed.
+#' @param repositoryName &#91;required&#93; The name of the repository in which to update the image tag mutability settings.
+#' @param imageTagMutability &#91;required&#93; The tag mutability setting for the repository. If `MUTABLE` is specified, image tags can be overwritten. If `IMMUTABLE` is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.
+#' @param imageTagMutabilityExclusionFilters A list of filters that specify which image tags should be excluded from the image tag mutability setting being applied.
 #'
 #' @keywords internal
 #'
@@ -1745,9 +1446,7 @@ ecr_put_image_tag_mutability <- function(registryId = NULL, repositoryName, imag
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_put_lifecycle_policy/](https://www.paws-r-sdk.com/docs/ecr_put_lifecycle_policy/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry that
-#' contains the repository. If you do not specify a registry, the default
-#' registry is assumed.
+#' @param registryId The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.
 #' @param repositoryName &#91;required&#93; The name of the repository to receive the policy.
 #' @param lifecyclePolicyText &#91;required&#93; The JSON repository policy text to apply to the repository.
 #'
@@ -1780,10 +1479,7 @@ ecr_put_lifecycle_policy <- function(registryId = NULL, repositoryName, lifecycl
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_put_registry_policy/](https://www.paws-r-sdk.com/docs/ecr_put_registry_policy/) for full documentation.
 #'
-#' @param policyText &#91;required&#93; The JSON policy text to apply to your registry. The policy text follows
-#' the same format as IAM policy text. For more information, see [Registry
-#' permissions](https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html)
-#' in the *Amazon Elastic Container Registry User Guide*.
+#' @param policyText &#91;required&#93; The JSON policy text to apply to your registry. The policy text follows the same format as IAM policy text. For more information, see [Registry permissions](https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html) in the *Amazon Elastic Container Registry User Guide*.
 #'
 #' @keywords internal
 #'
@@ -1816,19 +1512,10 @@ ecr_put_registry_policy <- function(policyText) {
 #'
 #' @param scanType The scanning type to set for the registry.
 #' 
-#' When a registry scanning configuration is not defined, by default the
-#' `BASIC` scan type is used. When basic scanning is used, you may specify
-#' filters to determine which individual repositories, or all repositories,
-#' are scanned when new images are pushed to those repositories.
-#' Alternatively, you can do manual scans of images with basic scanning.
+#' When a registry scanning configuration is not defined, by default the `BASIC` scan type is used. When basic scanning is used, you may specify filters to determine which individual repositories, or all repositories, are scanned when new images are pushed to those repositories. Alternatively, you can do manual scans of images with basic scanning.
 #' 
-#' When the `ENHANCED` scan type is set, Amazon Inspector provides
-#' automated vulnerability scanning. You may choose between continuous
-#' scanning or scan on push and you may specify filters to determine which
-#' individual repositories, or all repositories, are scanned.
-#' @param rules The scanning rules to use for the registry. A scanning rule is used to
-#' determine which repository filters are used and at what frequency
-#' scanning will occur.
+#' When the `ENHANCED` scan type is set, Amazon Inspector provides automated vulnerability scanning. You may choose between continuous scanning or scan on push and you may specify filters to determine which individual repositories, or all repositories, are scanned.
+#' @param rules The scanning rules to use for the registry. A scanning rule is used to determine which repository filters are used and at what frequency scanning will occur.
 #'
 #' @keywords internal
 #'
@@ -1923,8 +1610,7 @@ ecr_put_signing_configuration <- function(signingConfiguration) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_register_pull_time_update_exclusion/](https://www.paws-r-sdk.com/docs/ecr_register_pull_time_update_exclusion/) for full documentation.
 #'
-#' @param principalArn &#91;required&#93; The ARN of the IAM principal to exclude from having image pull times
-#' recorded.
+#' @param principalArn &#91;required&#93; The ARN of the IAM principal to exclude from having image pull times recorded.
 #'
 #' @keywords internal
 #'
@@ -1956,18 +1642,10 @@ ecr_register_pull_time_update_exclusion <- function(principalArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_set_repository_policy/](https://www.paws-r-sdk.com/docs/ecr_set_repository_policy/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry that
-#' contains the repository. If you do not specify a registry, the default
-#' registry is assumed.
+#' @param registryId The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.
 #' @param repositoryName &#91;required&#93; The name of the repository to receive the policy.
-#' @param policyText &#91;required&#93; The JSON repository policy text to apply to the repository. For more
-#' information, see [Amazon ECR repository
-#' policies](https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html)
-#' in the *Amazon Elastic Container Registry User Guide*.
-#' @param force If the policy you are attempting to set on a repository policy would
-#' prevent you from setting another policy in the future, you must force
-#' the [`set_repository_policy`][ecr_set_repository_policy] operation. This
-#' is intended to prevent accidental repository lock outs.
+#' @param policyText &#91;required&#93; The JSON repository policy text to apply to the repository. For more information, see [Amazon ECR repository policies](https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html) in the *Amazon Elastic Container Registry User Guide*.
+#' @param force If the policy you are attempting to set on a repository policy would prevent you from setting another policy in the future, you must force the [`set_repository_policy`][ecr_set_repository_policy] operation. This is intended to prevent accidental repository lock outs.
 #'
 #' @keywords internal
 #'
@@ -1998,11 +1676,9 @@ ecr_set_repository_policy <- function(registryId = NULL, repositoryName, policyT
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_start_image_scan/](https://www.paws-r-sdk.com/docs/ecr_start_image_scan/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry that
-#' contains the repository in which to start an image scan request. If you
-#' do not specify a registry, the default registry is assumed.
+#' @param registryId The Amazon Web Services account ID associated with the registry that contains the repository in which to start an image scan request. If you do not specify a registry, the default registry is assumed.
 #' @param repositoryName &#91;required&#93; The name of the repository that contains the images to scan.
-#' @param imageId &#91;required&#93; 
+#' @param imageId &#91;required&#93; An object with identifying information for an image in an Amazon ECR repository.
 #'
 #' @keywords internal
 #'
@@ -2033,12 +1709,9 @@ ecr_start_image_scan <- function(registryId = NULL, repositoryName, imageId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_start_lifecycle_policy_preview/](https://www.paws-r-sdk.com/docs/ecr_start_lifecycle_policy_preview/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry that
-#' contains the repository. If you do not specify a registry, the default
-#' registry is assumed.
+#' @param registryId The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.
 #' @param repositoryName &#91;required&#93; The name of the repository to be evaluated.
-#' @param lifecyclePolicyText The policy to be evaluated against. If you do not specify a policy, the
-#' current policy for the repository is used.
+#' @param lifecyclePolicyText The policy to be evaluated against. If you do not specify a policy, the current policy for the repository is used.
 #'
 #' @keywords internal
 #'
@@ -2069,11 +1742,8 @@ ecr_start_lifecycle_policy_preview <- function(registryId = NULL, repositoryName
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_tag_resource/](https://www.paws-r-sdk.com/docs/ecr_tag_resource/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the the resource to which to add tags.
-#' Currently, the only supported resource is an Amazon ECR repository.
-#' @param tags &#91;required&#93; The tags to add to the resource. A tag is an array of key-value pairs.
-#' Tag keys can have a maximum character length of 128 characters, and tag
-#' values can have a maximum length of 256 characters.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the the resource to which to add tags. Currently, the only supported resource is an Amazon ECR repository.
+#' @param tags &#91;required&#93; The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
 #'
 #' @keywords internal
 #'
@@ -2104,9 +1774,7 @@ ecr_tag_resource <- function(resourceArn, tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_untag_resource/](https://www.paws-r-sdk.com/docs/ecr_untag_resource/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource from which to remove
-#' tags. Currently, the only supported resource is an Amazon ECR
-#' repository.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource from which to remove tags. Currently, the only supported resource is an Amazon ECR repository.
 #' @param tagKeys &#91;required&#93; The keys of the tags to be removed.
 #'
 #' @keywords internal
@@ -2138,11 +1806,9 @@ ecr_untag_resource <- function(resourceArn, tagKeys) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_update_image_storage_class/](https://www.paws-r-sdk.com/docs/ecr_update_image_storage_class/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry that
-#' contains the image to transition. If you do not specify a registry, the
-#' default registry is assumed.
+#' @param registryId The Amazon Web Services account ID associated with the registry that contains the image to transition. If you do not specify a registry, the default registry is assumed.
 #' @param repositoryName &#91;required&#93; The name of the repository that contains the image to transition.
-#' @param imageId &#91;required&#93; 
+#' @param imageId &#91;required&#93; An object with identifying information for an image in an Amazon ECR repository.
 #' @param targetStorageClass &#91;required&#93; The target storage class for the image.
 #'
 #' @keywords internal
@@ -2174,17 +1840,10 @@ ecr_update_image_storage_class <- function(registryId = NULL, repositoryName, im
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_update_pull_through_cache_rule/](https://www.paws-r-sdk.com/docs/ecr_update_pull_through_cache_rule/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry
-#' associated with the pull through cache rule. If you do not specify a
-#' registry, the default registry is assumed.
-#' @param ecrRepositoryPrefix &#91;required&#93; The repository name prefix to use when caching images from the source
-#' registry.
-#' @param credentialArn The Amazon Resource Name (ARN) of the Amazon Web Services Secrets
-#' Manager secret that identifies the credentials to authenticate to the
-#' upstream registry.
-#' @param customRoleArn Amazon Resource Name (ARN) of the IAM role to be assumed by Amazon ECR
-#' to authenticate to the ECR upstream registry. This role must be in the
-#' same account as the registry that you are configuring.
+#' @param registryId The Amazon Web Services account ID associated with the registry associated with the pull through cache rule. If you do not specify a registry, the default registry is assumed.
+#' @param ecrRepositoryPrefix &#91;required&#93; The repository name prefix to use when caching images from the source registry.
+#' @param credentialArn The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that identifies the credentials to authenticate to the upstream registry.
+#' @param customRoleArn Amazon Resource Name (ARN) of the IAM role to be assumed by Amazon ECR to authenticate to the ECR upstream registry. This role must be in the same account as the registry that you are configuring.
 #'
 #' @keywords internal
 #'
@@ -2215,42 +1874,18 @@ ecr_update_pull_through_cache_rule <- function(registryId = NULL, ecrRepositoryP
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_update_repository_creation_template/](https://www.paws-r-sdk.com/docs/ecr_update_repository_creation_template/) for full documentation.
 #'
-#' @param prefix &#91;required&#93; The repository namespace prefix that matches an existing repository
-#' creation template in the registry. All repositories created using this
-#' namespace prefix will have the settings defined in this template
-#' applied. For example, a prefix of `prod` would apply to all repositories
-#' beginning with `prod/`. This includes a repository named `prod/team1` as
-#' well as a repository named `prod/repository1`.
+#' @param prefix &#91;required&#93; The repository namespace prefix that matches an existing repository creation template in the registry. All repositories created using this namespace prefix will have the settings defined in this template applied. For example, a prefix of `prod` would apply to all repositories beginning with `prod/`. This includes a repository named `prod/team1` as well as a repository named `prod/repository1`.
 #' 
-#' To apply a template to all repositories in your registry that don't have
-#' an associated creation template, you can use `ROOT` as the prefix.
+#' To apply a template to all repositories in your registry that don't have an associated creation template, you can use `ROOT` as the prefix.
 #' @param description A description for the repository creation template.
-#' @param encryptionConfiguration 
-#' @param resourceTags The metadata to apply to the repository to help you categorize and
-#' organize. Each tag consists of a key and an optional value, both of
-#' which you define. Tag keys can have a maximum character length of 128
-#' characters, and tag values can have a maximum length of 256 characters.
-#' @param imageTagMutability Updates the tag mutability setting for the repository. If this parameter
-#' is omitted, the default setting of `MUTABLE` will be used which will
-#' allow image tags to be overwritten. If `IMMUTABLE` is specified, all
-#' image tags within the repository will be immutable which will prevent
-#' them from being overwritten.
-#' @param imageTagMutabilityExclusionFilters A list of filters that specify which image tags should be excluded from
-#' the repository creation template's image tag mutability setting.
-#' @param repositoryPolicy Updates the repository policy created using the template. A repository
-#' policy is a permissions policy associated with a repository to control
-#' access permissions.
-#' @param lifecyclePolicy Updates the lifecycle policy associated with the specified repository
-#' creation template.
-#' @param appliedFor Updates the list of enumerable strings representing the Amazon ECR
-#' repository creation scenarios that this template will apply towards. The
-#' supported scenarios are `PULL_THROUGH_CACHE`, `REPLICATION`, and
-#' `CREATE_ON_PUSH`
-#' @param customRoleArn The ARN of the role to be assumed by Amazon ECR. This role must be in
-#' the same account as the registry that you are configuring. Amazon ECR
-#' will assume your supplied role when the customRoleArn is specified. When
-#' this field isn't specified, Amazon ECR will use the service-linked role
-#' for the repository creation template.
+#' @param encryptionConfiguration The encryption configuration to associate with the repository creation template.
+#' @param resourceTags The metadata to apply to the repository to help you categorize and organize. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+#' @param imageTagMutability Updates the tag mutability setting for the repository. If this parameter is omitted, the default setting of `MUTABLE` will be used which will allow image tags to be overwritten. If `IMMUTABLE` is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.
+#' @param imageTagMutabilityExclusionFilters A list of filters that specify which image tags should be excluded from the repository creation template's image tag mutability setting.
+#' @param repositoryPolicy Updates the repository policy created using the template. A repository policy is a permissions policy associated with a repository to control access permissions.
+#' @param lifecyclePolicy Updates the lifecycle policy associated with the specified repository creation template.
+#' @param appliedFor Updates the list of enumerable strings representing the Amazon ECR repository creation scenarios that this template will apply towards. The supported scenarios are `PULL_THROUGH_CACHE`, `REPLICATION`, and `CREATE_ON_PUSH`
+#' @param customRoleArn The ARN of the role to be assumed by Amazon ECR. This role must be in the same account as the registry that you are configuring. Amazon ECR will assume your supplied role when the customRoleArn is specified. When this field isn't specified, Amazon ECR will use the service-linked role for the repository creation template.
 #'
 #' @keywords internal
 #'
@@ -2281,17 +1916,11 @@ ecr_update_repository_creation_template <- function(prefix, description = NULL, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/ecr_upload_layer_part/](https://www.paws-r-sdk.com/docs/ecr_upload_layer_part/) for full documentation.
 #'
-#' @param registryId The Amazon Web Services account ID associated with the registry to which
-#' you are uploading layer parts. If you do not specify a registry, the
-#' default registry is assumed.
+#' @param registryId The Amazon Web Services account ID associated with the registry to which you are uploading layer parts. If you do not specify a registry, the default registry is assumed.
 #' @param repositoryName &#91;required&#93; The name of the repository to which you are uploading layer parts.
-#' @param uploadId &#91;required&#93; The upload ID from a previous
-#' [`initiate_layer_upload`][ecr_initiate_layer_upload] operation to
-#' associate with the layer part upload.
-#' @param partFirstByte &#91;required&#93; The position of the first byte of the layer part witin the overall image
-#' layer.
-#' @param partLastByte &#91;required&#93; The position of the last byte of the layer part within the overall image
-#' layer.
+#' @param uploadId &#91;required&#93; The upload ID from a previous [`initiate_layer_upload`][ecr_initiate_layer_upload] operation to associate with the layer part upload.
+#' @param partFirstByte &#91;required&#93; The position of the first byte of the layer part witin the overall image layer.
+#' @param partLastByte &#91;required&#93; The position of the last byte of the layer part within the overall image layer.
 #' @param layerPartBlob &#91;required&#93; The base64-encoded layer part payload.
 #'
 #' @keywords internal
@@ -2325,8 +1954,7 @@ ecr_upload_layer_part <- function(registryId = NULL, repositoryName, uploadId, p
 #' See [https://www.paws-r-sdk.com/docs/ecr_validate_pull_through_cache_rule/](https://www.paws-r-sdk.com/docs/ecr_validate_pull_through_cache_rule/) for full documentation.
 #'
 #' @param ecrRepositoryPrefix &#91;required&#93; The repository name prefix associated with the pull through cache rule.
-#' @param registryId The registry ID associated with the pull through cache rule. If you do
-#' not specify a registry, the default registry is assumed.
+#' @param registryId The registry ID associated with the pull through cache rule. If you do not specify a registry, the default registry is assumed.
 #'
 #' @keywords internal
 #'

@@ -8,9 +8,7 @@ completed}
 route53domains_get_operation_detail(OperationId)
 }
 \arguments{
-\item{OperationId}{[required] The identifier for the operation for which you want to get the status.
-Route 53 returned the identifier in the response to the original
-request.}
+\item{OperationId}{[required] The identifier for the operation for which you want to get the status. Route 53 returned the identifier in the response to the original request.}
 }
 \description{
 This operation returns the current status of an operation that is not completed.

@@ -19,14 +19,11 @@ sagemaker_create_image_version(
 )
 }
 \arguments{
-\item{BaseImage}{[required] The registry path of the container image to use as the starting point
-for this version. The path is an Amazon ECR URI in the following format:
+\item{BaseImage}{[required] The registry path of the container image to use as the starting point for this version. The path is an Amazon ECR URI in the following format:
 
 \verb{<acct-id>.dkr.ecr.<region>.amazonaws.com/<repo-name[:tag] or [@digest]>}}
 
-\item{ClientToken}{[required] A unique ID. If not specified, the Amazon Web Services CLI and Amazon
-Web Services SDKs, such as the SDK for Python (Boto3), add a unique
-value to the call.}
+\item{ClientToken}{[required] A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK for Python (Boto3), add a unique value to the call.}
 
 \item{ImageName}{[required] The \code{ImageName} of the \code{Image} to create a version of.}
 
@@ -34,24 +31,17 @@ value to the call.}
 
 \item{VendorGuidance}{The stability of the image version, specified by the maintainer.
 \itemize{
-\item \code{NOT_PROVIDED}: The maintainers did not provide a status for image
-version stability.
+\item \code{NOT_PROVIDED}: The maintainers did not provide a status for image version stability.
 \item \code{STABLE}: The image version is stable.
-\item \code{TO_BE_ARCHIVED}: The image version is set to be archived. Custom
-image versions that are set to be archived are automatically
-archived after three months.
-\item \code{ARCHIVED}: The image version is archived. Archived image versions
-are not searchable and are no longer actively supported.
+\item \code{TO_BE_ARCHIVED}: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.
+\item \code{ARCHIVED}: The image version is archived. Archived image versions are not searchable and are no longer actively supported.
 }}
 
 \item{JobType}{Indicates SageMaker AI job type compatibility.
 \itemize{
-\item \code{TRAINING}: The image version is compatible with SageMaker AI
-training jobs.
-\item \code{INFERENCE}: The image version is compatible with SageMaker AI
-inference jobs.
-\item \code{NOTEBOOK_KERNEL}: The image version is compatible with SageMaker AI
-notebook kernels.
+\item \code{TRAINING}: The image version is compatible with SageMaker AI training jobs.
+\item \code{INFERENCE}: The image version is compatible with SageMaker AI inference jobs.
+\item \code{NOTEBOOK_KERNEL}: The image version is compatible with SageMaker AI notebook kernels.
 }}
 
 \item{MLFramework}{The machine learning framework vended in the image version.}

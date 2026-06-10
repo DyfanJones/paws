@@ -7,12 +7,9 @@
 backupgateway_associate_gateway_to_server(GatewayArn, ServerArn)
 }
 \arguments{
-\item{GatewayArn}{[required] The Amazon Resource Name (ARN) of the gateway. Use the
-\code{\link[=backupgateway_list_gateways]{list_gateways}} operation to return a
-list of gateways for your account and Amazon Web Services Region.}
+\item{GatewayArn}{[required] The Amazon Resource Name (ARN) of the gateway. Use the \code{\link[=backupgateway_list_gateways]{list_gateways}} operation to return a list of gateways for your account and Amazon Web Services Region.}
 
-\item{ServerArn}{[required] The Amazon Resource Name (ARN) of the server that hosts your virtual
-machines.}
+\item{ServerArn}{[required] The Amazon Resource Name (ARN) of the server that hosts your virtual machines.}
 }
 \description{
 Associates a backup gateway with your server. After you complete the association process, you can back up and restore your VMs through the gateway.

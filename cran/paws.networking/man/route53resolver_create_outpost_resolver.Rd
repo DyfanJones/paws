@@ -14,23 +14,17 @@ route53resolver_create_outpost_resolver(
 )
 }
 \arguments{
-\item{CreatorRequestId}{[required] A unique string that identifies the request and that allows failed
-requests to be retried without the risk of running the operation twice.
+\item{CreatorRequestId}{[required] A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice.
 
-\code{CreatorRequestId} can be any unique string, for example, a date/time
-stamp.}
+\code{CreatorRequestId} can be any unique string, for example, a date/time stamp.}
 
-\item{Name}{[required] A friendly name that lets you easily find a configuration in the
-Resolver dashboard in the Route 53 console.}
+\item{Name}{[required] A friendly name that lets you easily find a configuration in the Resolver dashboard in the Route 53 console.}
 
-\item{InstanceCount}{Number of Amazon EC2 instances for the Resolver on Outpost. The default
-and minimal value is 4.}
+\item{InstanceCount}{Number of Amazon EC2 instances for the Resolver on Outpost. The default and minimal value is 4.}
 
-\item{PreferredInstanceType}{[required] The Amazon EC2 instance type. If you specify this, you must also specify
-a value for the \code{OutpostArn}.}
+\item{PreferredInstanceType}{[required] The Amazon EC2 instance type. If you specify this, you must also specify a value for the \code{OutpostArn}.}
 
-\item{OutpostArn}{[required] The Amazon Resource Name (ARN) of the Outpost. If you specify this, you
-must also specify a value for the \code{PreferredInstanceType}.}
+\item{OutpostArn}{[required] The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also specify a value for the \code{PreferredInstanceType}.}
 
 \item{Tags}{A string that helps identify the Route 53 Resolvers on Outpost.}
 }

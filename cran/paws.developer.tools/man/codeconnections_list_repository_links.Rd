@@ -7,11 +7,9 @@
 codeconnections_list_repository_links(MaxResults = NULL, NextToken = NULL)
 }
 \arguments{
-\item{MaxResults}{A non-zero, non-negative integer used to limit the number of returned
-results.}
+\item{MaxResults}{A non-zero, non-negative integer used to limit the number of returned results.}
 
-\item{NextToken}{An enumeration token that, when provided in a request, returns the next
-batch of the results.}
+\item{NextToken}{An enumeration token that, when provided in a request, returns the next batch of the results.}
 }
 \description{
 Lists the repository links created for connections in your account.

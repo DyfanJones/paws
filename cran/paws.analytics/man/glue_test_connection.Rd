@@ -12,8 +12,7 @@ glue_test_connection(
 )
 }
 \arguments{
-\item{ConnectionName}{Optional. The name of the connection to test. If only name is provided,
-the operation will get the connection and use that for testing.}
+\item{ConnectionName}{Optional. The name of the connection to test. If only name is provided, the operation will get the connection and use that for testing.}
 
 \item{CatalogId}{The catalog ID where the connection resides.}
 

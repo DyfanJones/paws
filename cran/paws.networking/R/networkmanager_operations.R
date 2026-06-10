@@ -182,8 +182,7 @@ networkmanager_associate_transit_gateway_connect_peer <- function(GlobalNetworkI
 #' @param CoreNetworkId &#91;required&#93; The ID of a core network where you want to create the attachment.
 #' @param EdgeLocation &#91;required&#93; The Region where the edge is located.
 #' @param TransportAttachmentId &#91;required&#93; The ID of the attachment between the two connections.
-#' @param RoutingPolicyLabel The routing policy label to apply to the Connect attachment for traffic
-#' routing decisions.
+#' @param RoutingPolicyLabel The routing policy label to apply to the Connect attachment for traffic routing decisions.
 #' @param Options &#91;required&#93; Options for creating an attachment.
 #' @param Tags The list of key-value tags associated with the request.
 #' @param ClientToken The client token associated with the request.
@@ -219,16 +218,13 @@ networkmanager_create_connect_attachment <- function(CoreNetworkId, EdgeLocation
 #' See [https://www.paws-r-sdk.com/docs/networkmanager_create_connect_peer/](https://www.paws-r-sdk.com/docs/networkmanager_create_connect_peer/) for full documentation.
 #'
 #' @param ConnectAttachmentId &#91;required&#93; The ID of the connection attachment.
-#' @param CoreNetworkAddress A Connect peer core network address. This only applies only when the
-#' protocol is `GRE`.
+#' @param CoreNetworkAddress A Connect peer core network address. This only applies only when the protocol is `GRE`.
 #' @param PeerAddress &#91;required&#93; The Connect peer address.
-#' @param BgpOptions The Connect peer BGP options. This only applies only when the protocol
-#' is `GRE`.
+#' @param BgpOptions The Connect peer BGP options. This only applies only when the protocol is `GRE`.
 #' @param InsideCidrBlocks The inside IP addresses used for BGP peering.
 #' @param Tags The tags associated with the peer request.
 #' @param ClientToken The client token associated with the request.
-#' @param SubnetArn The subnet ARN for the Connect peer. This only applies only when the
-#' protocol is NO_ENCAP.
+#' @param SubnetArn The subnet ARN for the Connect peer. This only applies only when the protocol is NO_ENCAP.
 #'
 #' @keywords internal
 #'
@@ -338,8 +334,7 @@ networkmanager_create_core_network <- function(GlobalNetworkId, Description = NU
 #' @param CoreNetworkId &#91;required&#93; The ID of the core network to associate with the prefix list.
 #' @param PrefixListArn &#91;required&#93; The ARN of the prefix list to associate with the core network.
 #' @param PrefixListAlias &#91;required&#93; An optional alias for the prefix list association.
-#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request.
+#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -371,8 +366,7 @@ networkmanager_create_core_network_prefix_list_association <- function(CoreNetwo
 #' See [https://www.paws-r-sdk.com/docs/networkmanager_create_device/](https://www.paws-r-sdk.com/docs/networkmanager_create_device/) for full documentation.
 #'
 #' @param GlobalNetworkId &#91;required&#93; The ID of the global network.
-#' @param AWSLocation The Amazon Web Services location of the device, if applicable. For an
-#' on-premises device, you can omit this parameter.
+#' @param AWSLocation The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.
 #' @param Description A description of the device.
 #' 
 #' Constraints: Maximum length of 256 characters.
@@ -419,15 +413,11 @@ networkmanager_create_device <- function(GlobalNetworkId, AWSLocation = NULL, De
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkmanager_create_direct_connect_gateway_attachment/](https://www.paws-r-sdk.com/docs/networkmanager_create_direct_connect_gateway_attachment/) for full documentation.
 #'
-#' @param CoreNetworkId &#91;required&#93; The ID of the Cloud WAN core network that the Direct Connect gateway
-#' attachment should be attached to.
+#' @param CoreNetworkId &#91;required&#93; The ID of the Cloud WAN core network that the Direct Connect gateway attachment should be attached to.
 #' @param DirectConnectGatewayArn &#91;required&#93; The ARN of the Direct Connect gateway attachment.
-#' @param RoutingPolicyLabel The routing policy label to apply to the Direct Connect Gateway
-#' attachment for traffic routing decisions.
-#' @param EdgeLocations &#91;required&#93; One or more core network edge locations that the Direct Connect gateway
-#' attachment is associated with.
-#' @param Tags The key value tags to apply to the Direct Connect gateway attachment
-#' during creation.
+#' @param RoutingPolicyLabel The routing policy label to apply to the Direct Connect Gateway attachment for traffic routing decisions.
+#' @param EdgeLocations &#91;required&#93; One or more core network edge locations that the Direct Connect gateway attachment is associated with.
+#' @param Tags The key value tags to apply to the Direct Connect gateway attachment during creation.
 #' @param ClientToken client token
 #'
 #' @keywords internal
@@ -499,13 +489,11 @@ networkmanager_create_global_network <- function(Description = NULL, Tags = NULL
 #' Constraints: Maximum length of 256 characters.
 #' @param Type The type of the link.
 #' 
-#' Constraints: Maximum length of 128 characters. Cannot include the
-#' following characters: | \\ ^
+#' Constraints: Maximum length of 128 characters. Cannot include the following characters: | \\ ^
 #' @param Bandwidth &#91;required&#93; The upload speed and download speed in Mbps.
 #' @param Provider The provider of the link.
 #' 
-#' Constraints: Maximum length of 128 characters. Cannot include the
-#' following characters: | \\ ^
+#' Constraints: Maximum length of 128 characters. Cannot include the following characters: | \\ ^
 #' @param SiteId &#91;required&#93; The ID of the site.
 #' @param Tags The tags to apply to the resource during creation.
 #'
@@ -542,9 +530,7 @@ networkmanager_create_link <- function(GlobalNetworkId, Description = NULL, Type
 #' @param Description A description of your site.
 #' 
 #' Constraints: Maximum length of 256 characters.
-#' @param Location The site location. This information is used for visualization in the
-#' Network Manager console. If you specify the address, the latitude and
-#' longitude are automatically calculated.
+#' @param Location The site location. This information is used for visualization in the Network Manager console. If you specify the address, the latitude and longitude are automatically calculated.
 #' 
 #' -   `Address`: The physical address of the site.
 #' 
@@ -583,11 +569,9 @@ networkmanager_create_site <- function(GlobalNetworkId, Description = NULL, Loca
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkmanager_create_site_to_site_vpn_attachment/](https://www.paws-r-sdk.com/docs/networkmanager_create_site_to_site_vpn_attachment/) for full documentation.
 #'
-#' @param CoreNetworkId &#91;required&#93; The ID of a core network where you're creating a site-to-site VPN
-#' attachment.
+#' @param CoreNetworkId &#91;required&#93; The ID of a core network where you're creating a site-to-site VPN attachment.
 #' @param VpnConnectionArn &#91;required&#93; The ARN identifying the VPN attachment.
-#' @param RoutingPolicyLabel The routing policy label to apply to the Site-to-Site VPN attachment for
-#' traffic routing decisions.
+#' @param RoutingPolicyLabel The routing policy label to apply to the Site-to-Site VPN attachment for traffic routing decisions.
 #' @param Tags The tags associated with the request.
 #' @param ClientToken The client token associated with the request.
 #'
@@ -655,11 +639,8 @@ networkmanager_create_transit_gateway_peering <- function(CoreNetworkId, Transit
 #' See [https://www.paws-r-sdk.com/docs/networkmanager_create_transit_gateway_route_table_attachment/](https://www.paws-r-sdk.com/docs/networkmanager_create_transit_gateway_route_table_attachment/) for full documentation.
 #'
 #' @param PeeringId &#91;required&#93; The ID of the peer for the
-#' @param TransitGatewayRouteTableArn &#91;required&#93; The ARN of the transit gateway route table for the attachment request.
-#' For example,
-#' `"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"`.
-#' @param RoutingPolicyLabel The routing policy label to apply to the Transit Gateway route table
-#' attachment for traffic routing decisions.
+#' @param TransitGatewayRouteTableArn &#91;required&#93; The ARN of the transit gateway route table for the attachment request. For example, `"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"`.
+#' @param RoutingPolicyLabel The routing policy label to apply to the Transit Gateway route table attachment for traffic routing decisions.
 #' @param Tags The list of key-value tags associated with the request.
 #' @param ClientToken The client token associated with the request.
 #'
@@ -696,8 +677,7 @@ networkmanager_create_transit_gateway_route_table_attachment <- function(Peering
 #' @param VpcArn &#91;required&#93; The ARN of the VPC.
 #' @param SubnetArns &#91;required&#93; The subnet ARN of the VPC attachment.
 #' @param Options Options for the VPC attachment.
-#' @param RoutingPolicyLabel The routing policy label to apply to the VPC attachment for traffic
-#' routing decisions.
+#' @param RoutingPolicyLabel The routing policy label to apply to the VPC attachment for traffic routing decisions.
 #' @param Tags The key-value tags associated with the request.
 #' @param ClientToken The client token associated with the request.
 #'
@@ -887,8 +867,7 @@ networkmanager_delete_core_network_policy_version <- function(CoreNetworkId, Pol
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkmanager_delete_core_network_prefix_list_association/](https://www.paws-r-sdk.com/docs/networkmanager_delete_core_network_prefix_list_association/) for full documentation.
 #'
-#' @param CoreNetworkId &#91;required&#93; The ID of the core network from which to delete the prefix list
-#' association.
+#' @param CoreNetworkId &#91;required&#93; The ID of the core network from which to delete the prefix list association.
 #' @param PrefixListArn &#91;required&#93; The ARN of the prefix list to disassociate from the core network.
 #'
 #' @keywords internal
@@ -1602,8 +1581,7 @@ networkmanager_get_core_network_policy <- function(CoreNetworkId, PolicyVersionI
 #' See [https://www.paws-r-sdk.com/docs/networkmanager_get_customer_gateway_associations/](https://www.paws-r-sdk.com/docs/networkmanager_get_customer_gateway_associations/) for full documentation.
 #'
 #' @param GlobalNetworkId &#91;required&#93; The ID of the global network.
-#' @param CustomerGatewayArns One or more customer gateway Amazon Resource Names (ARNs). The maximum
-#' is 10.
+#' @param CustomerGatewayArns One or more customer gateway Amazon Resource Names (ARNs). The maximum is 10.
 #' @param MaxResults The maximum number of results to return.
 #' @param NextToken The token for the next page of results.
 #'
@@ -1672,8 +1650,7 @@ networkmanager_get_devices <- function(GlobalNetworkId, DeviceIds = NULL, SiteId
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkmanager_get_direct_connect_gateway_attachment/](https://www.paws-r-sdk.com/docs/networkmanager_get_direct_connect_gateway_attachment/) for full documentation.
 #'
-#' @param AttachmentId &#91;required&#93; The ID of the Direct Connect gateway attachment that you want to see
-#' details about.
+#' @param AttachmentId &#91;required&#93; The ID of the Direct Connect gateway attachment that you want to see details about.
 #'
 #' @keywords internal
 #'
@@ -2014,13 +1991,11 @@ networkmanager_get_network_resources <- function(GlobalNetworkId, CoreNetworkId 
 #' @param ExactCidrMatches An exact CIDR block.
 #' @param LongestPrefixMatches The most specific route that matches the traffic (longest prefix match).
 #' @param SubnetOfMatches The routes with a subnet that match the specified CIDR filter.
-#' @param SupernetOfMatches The routes with a CIDR that encompasses the CIDR filter. Example: If you
-#' specify 10.0.1.0/30, then the result returns 10.0.1.0/29.
+#' @param SupernetOfMatches The routes with a CIDR that encompasses the CIDR filter. Example: If you specify 10.0.1.0/30, then the result returns 10.0.1.0/29.
 #' @param PrefixListIds The IDs of the prefix lists.
 #' @param States The route states.
 #' @param Types The route types.
-#' @param DestinationFilters Filter by route table destination. Possible Values:
-#' TRANSIT_GATEWAY_ATTACHMENT_ID, RESOURCE_ID, or RESOURCE_TYPE.
+#' @param DestinationFilters Filter by route table destination. Possible Values: TRANSIT_GATEWAY_ATTACHMENT_ID, RESOURCE_ID, or RESOURCE_TYPE.
 #'
 #' @keywords internal
 #'
@@ -2292,8 +2267,7 @@ networkmanager_get_transit_gateway_peering <- function(PeeringId) {
 #' See [https://www.paws-r-sdk.com/docs/networkmanager_get_transit_gateway_registrations/](https://www.paws-r-sdk.com/docs/networkmanager_get_transit_gateway_registrations/) for full documentation.
 #'
 #' @param GlobalNetworkId &#91;required&#93; The ID of the global network.
-#' @param TransitGatewayArns The Amazon Resource Names (ARNs) of one or more transit gateways. The
-#' maximum is 10.
+#' @param TransitGatewayArns The Amazon Resource Names (ARNs) of one or more transit gateways. The maximum is 10.
 #' @param MaxResults The maximum number of results to return.
 #' @param NextToken The token for the next page of results.
 #'
@@ -2388,10 +2362,8 @@ networkmanager_get_vpc_attachment <- function(AttachmentId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkmanager_list_attachment_routing_policy_associations/](https://www.paws-r-sdk.com/docs/networkmanager_list_attachment_routing_policy_associations/) for full documentation.
 #'
-#' @param CoreNetworkId &#91;required&#93; The ID of the core network to list attachment routing policy
-#' associations for.
-#' @param AttachmentId The ID of a specific attachment to filter the routing policy
-#' associations.
+#' @param CoreNetworkId &#91;required&#93; The ID of the core network to list attachment routing policy associations for.
+#' @param AttachmentId The ID of a specific attachment to filter the routing policy associations.
 #' @param MaxResults The maximum number of results to return in a single page.
 #' @param NextToken The token for the next page of results.
 #'
@@ -2568,11 +2540,9 @@ networkmanager_list_core_network_prefix_list_associations <- function(CoreNetwor
 #' @param NextHopFilters Filters to apply based on next hop information.
 #' @param LocalPreferenceMatches Local preference values to match when filtering routing information.
 #' @param ExactAsPathMatches Exact AS path values to match when filtering routing information.
-#' @param MedMatches Multi-Exit Discriminator (MED) values to match when filtering routing
-#' information.
+#' @param MedMatches Multi-Exit Discriminator (MED) values to match when filtering routing information.
 #' @param CommunityMatches BGP community values to match when filtering routing information.
-#' @param MaxResults The maximum number of routing information entries to return in a single
-#' page.
+#' @param MaxResults The maximum number of routing information entries to return in a single page.
 #' @param NextToken The token for the next page of results.
 #'
 #' @keywords internal
@@ -2740,8 +2710,7 @@ networkmanager_list_tags_for_resource <- function(ResourceArn) {
 #' @param CoreNetworkId &#91;required&#93; The ID of the core network containing the attachment.
 #' @param AttachmentId &#91;required&#93; The ID of the attachment to apply the routing policy label to.
 #' @param RoutingPolicyLabel &#91;required&#93; The routing policy label to apply to the attachment.
-#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request.
+#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -2968,8 +2937,7 @@ networkmanager_restore_core_network_policy_version <- function(CoreNetworkId, Po
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkmanager_start_organization_service_access_update/](https://www.paws-r-sdk.com/docs/networkmanager_start_organization_service_access_update/) for full documentation.
 #'
-#' @param Action &#91;required&#93; The action to take for the update request. This can be either `ENABLE`
-#' or `DISABLE`.
+#' @param Action &#91;required&#93; The action to take for the update request. This can be either `ENABLE` or `DISABLE`.
 #'
 #' @keywords internal
 #'
@@ -3005,8 +2973,7 @@ networkmanager_start_organization_service_access_update <- function(Action) {
 #' @param Source &#91;required&#93; The source from which traffic originates.
 #' @param Destination &#91;required&#93; The destination.
 #' @param IncludeReturnPath Indicates whether to analyze the return path. The default is `false`.
-#' @param UseMiddleboxes Indicates whether to include the location of middlebox appliances in the
-#' route analysis. The default is `false`.
+#' @param UseMiddleboxes Indicates whether to include the location of middlebox appliances in the route analysis. The default is `false`.
 #'
 #' @keywords internal
 #'
@@ -3172,8 +3139,7 @@ networkmanager_update_core_network <- function(CoreNetworkId, Description = NULL
 #'
 #' @param GlobalNetworkId &#91;required&#93; The ID of the global network.
 #' @param DeviceId &#91;required&#93; The ID of the device.
-#' @param AWSLocation The Amazon Web Services location of the device, if applicable. For an
-#' on-premises device, you can omit this parameter.
+#' @param AWSLocation The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.
 #' @param Description A description of the device.
 #' 
 #' Constraints: Maximum length of 256 characters.
@@ -3187,7 +3153,7 @@ networkmanager_update_core_network <- function(CoreNetworkId, Description = NULL
 #' @param SerialNumber The serial number of the device.
 #' 
 #' Constraints: Maximum length of 128 characters.
-#' @param Location 
+#' @param Location Describes a location.
 #' @param SiteId The ID of the site.
 #'
 #' @keywords internal
@@ -3220,12 +3186,8 @@ networkmanager_update_device <- function(GlobalNetworkId, DeviceId, AWSLocation 
 #'
 #' See [https://www.paws-r-sdk.com/docs/networkmanager_update_direct_connect_gateway_attachment/](https://www.paws-r-sdk.com/docs/networkmanager_update_direct_connect_gateway_attachment/) for full documentation.
 #'
-#' @param AttachmentId &#91;required&#93; The ID of the Direct Connect gateway attachment for the updated edge
-#' locations.
-#' @param EdgeLocations One or more edge locations to update for the Direct Connect gateway
-#' attachment. The updated array of edge locations overwrites the previous
-#' array of locations. `EdgeLocations` is only used for Direct Connect
-#' gateway attachments.
+#' @param AttachmentId &#91;required&#93; The ID of the Direct Connect gateway attachment for the updated edge locations.
+#' @param EdgeLocations One or more edge locations to update for the Direct Connect gateway attachment. The updated array of edge locations overwrites the previous array of locations. `EdgeLocations` is only used for Direct Connect gateway attachments.
 #'
 #' @keywords internal
 #'

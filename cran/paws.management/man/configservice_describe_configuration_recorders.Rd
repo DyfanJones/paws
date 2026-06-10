@@ -13,15 +13,11 @@ configservice_describe_configuration_recorders(
 \arguments{
 \item{ConfigurationRecorderNames}{A list of names of the configuration recorders that you want to specify.
 
-When making a request to this operation, you can only specify one
-configuration recorder.}
+When making a request to this operation, you can only specify one configuration recorder.}
 
-\item{ServicePrincipal}{For service-linked configuration recorders, you can use the service
-principal of the linked Amazon Web Services service to specify the
-configuration recorder.}
+\item{ServicePrincipal}{For service-linked configuration recorders, you can use the service principal of the linked Amazon Web Services service to specify the configuration recorder.}
 
-\item{Arn}{The Amazon Resource Name (ARN) of the configuration recorder that you
-want to specify.}
+\item{Arn}{The Amazon Resource Name (ARN) of the configuration recorder that you want to specify.}
 }
 \description{
 Returns details for the configuration recorder you specify.

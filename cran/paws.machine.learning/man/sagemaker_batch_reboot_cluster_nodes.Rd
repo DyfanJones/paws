@@ -12,30 +12,20 @@ sagemaker_batch_reboot_cluster_nodes(
 )
 }
 \arguments{
-\item{ClusterName}{[required] The name or Amazon Resource Name (ARN) of the SageMaker HyperPod cluster
-containing the nodes to reboot.}
+\item{ClusterName}{[required] The name or Amazon Resource Name (ARN) of the SageMaker HyperPod cluster containing the nodes to reboot.}
 
-\item{NodeIds}{A list of EC2 instance IDs to reboot using soft recovery. You can
-specify between 1 and 25 instance IDs.
+\item{NodeIds}{A list of EC2 instance IDs to reboot using soft recovery. You can specify between 1 and 25 instance IDs.
 \itemize{
-\item Either \code{NodeIds} or \code{NodeLogicalIds} must be provided (or both), but
-at least one is required.
-\item Each instance ID must follow the pattern \verb{i-} followed by 17
-hexadecimal characters (for example, \verb{i-0123456789abcdef0}).
+\item Either \code{NodeIds} or \code{NodeLogicalIds} must be provided (or both), but at least one is required.
+\item Each instance ID must follow the pattern \verb{i-} followed by 17 hexadecimal characters (for example, \verb{i-0123456789abcdef0}).
 }}
 
-\item{NodeLogicalIds}{A list of logical node IDs to reboot using soft recovery. You can
-specify between 1 and 25 logical node IDs.
+\item{NodeLogicalIds}{A list of logical node IDs to reboot using soft recovery. You can specify between 1 and 25 logical node IDs.
 
-The \code{NodeLogicalId} is a unique identifier that persists throughout the
-node's lifecycle and can be used to track nodes that are still being
-provisioned and don't yet have an EC2 instance ID assigned.
+The \code{NodeLogicalId} is a unique identifier that persists throughout the node's lifecycle and can be used to track nodes that are still being provisioned and don't yet have an EC2 instance ID assigned.
 \itemize{
-\item This parameter is only supported for clusters using \code{Continuous} as
-the \code{NodeProvisioningMode}. For clusters using the default
-provisioning mode, use \code{NodeIds} instead.
-\item Either \code{NodeIds} or \code{NodeLogicalIds} must be provided (or both), but
-at least one is required.
+\item This parameter is only supported for clusters using \code{Continuous} as the \code{NodeProvisioningMode}. For clusters using the default provisioning mode, use \code{NodeIds} instead.
+\item Either \code{NodeIds} or \code{NodeLogicalIds} must be provided (or both), but at least one is required.
 }}
 }
 \description{

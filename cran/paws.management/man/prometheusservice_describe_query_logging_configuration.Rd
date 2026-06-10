@@ -8,8 +8,7 @@ specified workspace}
 prometheusservice_describe_query_logging_configuration(workspaceId)
 }
 \arguments{
-\item{workspaceId}{[required] The ID of the workspace for which to retrieve the query logging
-configuration.}
+\item{workspaceId}{[required] The ID of the workspace for which to retrieve the query logging configuration.}
 }
 \description{
 Retrieves the details of the query logging configuration for the specified workspace.

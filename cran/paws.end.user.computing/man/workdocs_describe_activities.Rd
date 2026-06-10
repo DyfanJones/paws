@@ -18,33 +18,21 @@ workdocs_describe_activities(
 )
 }
 \arguments{
-\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web
-Services administrator credentials to access the API.}
+\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.}
 
-\item{StartTime}{The timestamp that determines the starting time of the activities. The
-response includes the activities performed after the specified
-timestamp.}
+\item{StartTime}{The timestamp that determines the starting time of the activities. The response includes the activities performed after the specified timestamp.}
 
-\item{EndTime}{The timestamp that determines the end time of the activities. The
-response includes the activities performed before the specified
-timestamp.}
+\item{EndTime}{The timestamp that determines the end time of the activities. The response includes the activities performed before the specified timestamp.}
 
-\item{OrganizationId}{The ID of the organization. This is a mandatory parameter when using
-administrative API (SigV4) requests.}
+\item{OrganizationId}{The ID of the organization. This is a mandatory parameter when using administrative API (SigV4) requests.}
 
-\item{ActivityTypes}{Specifies which activity types to include in the response. If this field
-is left empty, all activity types are returned.}
+\item{ActivityTypes}{Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.}
 
 \item{ResourceId}{The document or folder ID for which to describe activity types.}
 
-\item{UserId}{The ID of the user who performed the action. The response includes
-activities pertaining to this user. This is an optional parameter and is
-only applicable for administrative API (SigV4) requests.}
+\item{UserId}{The ID of the user who performed the action. The response includes activities pertaining to this user. This is an optional parameter and is only applicable for administrative API (SigV4) requests.}
 
-\item{IncludeIndirectActivities}{Includes indirect activities. An indirect activity results from a direct
-activity performed on a parent resource. For example, sharing a parent
-folder (the direct activity) shares all of the subfolders and documents
-within the parent folder (the indirect activity).}
+\item{IncludeIndirectActivities}{Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).}
 
 \item{Limit}{The maximum number of items to return.}
 

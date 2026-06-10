@@ -8,78 +8,53 @@ from one or more tables}
 dynamodb_batch_get_item(RequestItems, ReturnConsumedCapacity = NULL)
 }
 \arguments{
-\item{RequestItems}{[required] A map of one or more table names or table ARNs and, for each table, a
-map that describes one or more items to retrieve from that table. Each
-table name or ARN can be used only once per
-\code{\link[=dynamodb_batch_get_item]{batch_get_item}} request.
+\item{RequestItems}{[required] A map of one or more table names or table ARNs and, for each table, a map that describes one or more items to retrieve from that table. Each table name or ARN can be used only once per \code{\link[=dynamodb_batch_get_item]{batch_get_item}} request.
 
 Each element in the map of items to retrieve consists of the following:
 \itemize{
-\item \code{ConsistentRead} - If \code{true}, a strongly consistent read is used; if
-\code{false} (the default), an eventually consistent read is used.
-\item \code{ExpressionAttributeNames} - One or more substitution tokens for
-attribute names in the \code{ProjectionExpression} parameter. The
-following are some use cases for using \code{ExpressionAttributeNames}:
+\item \code{ConsistentRead} - If \code{true}, a strongly consistent read is used; if \code{false} (the default), an eventually consistent read is used.
+\item \code{ExpressionAttributeNames} - One or more substitution tokens for attribute names in the \code{ProjectionExpression} parameter. The following are some use cases for using \code{ExpressionAttributeNames}:
 \itemize{
-\item To access an attribute whose name conflicts with a DynamoDB
-reserved word.
-\item To create a placeholder for repeating occurrences of an
-attribute name in an expression.
-\item To prevent special characters in an attribute name from being
-misinterpreted in an expression.
+\item To access an attribute whose name conflicts with a DynamoDB reserved word.
+\item To create a placeholder for repeating occurrences of an attribute name in an expression.
+\item To prevent special characters in an attribute name from being misinterpreted in an expression.
 }
 
-Use the \strong{#} character in an expression to dereference an
-attribute name. For example, consider the following attribute name:
+Use the \strong{#} character in an expression to dereference an attribute name. For example, consider the following attribute name:
 \itemize{
 \item \code{Percentile}
 }
 
-The name of this attribute conflicts with a reserved word, so it
-cannot be used directly in an expression. (For the complete list of
-reserved words, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html}{Reserved Words}
-in the \emph{Amazon DynamoDB Developer Guide}). To work around this, you
-could specify the following for \code{ExpressionAttributeNames}:
+The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html}{Reserved Words} in the \emph{Amazon DynamoDB Developer Guide}). To work around this, you could specify the following for \code{ExpressionAttributeNames}:
 \itemize{
 \item \code{{"#P":"Percentile"}}
 }
 
-You could then use this substitution in an expression, as in this
-example:
+You could then use this substitution in an expression, as in this example:
 \itemize{
 \item \verb{#P = :val}
 }
 
-Tokens that begin with the \strong{:} character are \emph{expression attribute
-values}, which are placeholders for the actual value at runtime.
+Tokens that begin with the \strong{:} character are \emph{expression attribute values}, which are placeholders for the actual value at runtime.
 
-For more information about expression attribute names, see
-\href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Attributes.html}{Accessing Item Attributes}
-in the \emph{Amazon DynamoDB Developer Guide}.
-\item \code{Keys} - An array of primary key attribute values that define
-specific items in the table. For each primary key, you must provide
-\emph{all} of the key attributes. For example, with a simple primary key,
-you only need to provide the partition key value. For a composite
-key, you must provide \emph{both} the partition key value and the sort
-key value.
-\item \code{ProjectionExpression} - A string that identifies one or more
-attributes to retrieve from the table. These attributes can include
-scalars, sets, or elements of a JSON document. The attributes in the
-expression must be separated by commas.
+For more information about expression attribute names, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Attributes.html}{Accessing Item Attributes} in the \emph{Amazon DynamoDB Developer Guide}.
+\item \code{Keys} - An array of primary key attribute values that define specific items in the table. For each primary key, you must provide \emph{all} of the key attributes. For example, with a simple primary key, you only need to provide the partition key value. For a composite key, you must provide \emph{both} the partition key value and the sort key value.
+\item \code{ProjectionExpression} - A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.
 
-If no attribute names are specified, then all attributes are
-returned. If any of the requested attributes are not found, they do
-not appear in the result.
+If no attribute names are specified, then all attributes are returned. If any of the requested attributes are not found, they do not appear in the result.
 
-For more information, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Attributes.html}{Accessing Item Attributes}
-in the \emph{Amazon DynamoDB Developer Guide}.
-\item \code{AttributesToGet} - This is a legacy parameter. Use
-\code{ProjectionExpression} instead. For more information, see
-\href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html}{AttributesToGet}
-in the \emph{Amazon DynamoDB Developer Guide}.
+For more information, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Attributes.html}{Accessing Item Attributes} in the \emph{Amazon DynamoDB Developer Guide}.
+\item \code{AttributesToGet} - This is a legacy parameter. Use \code{ProjectionExpression} instead. For more information, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html}{AttributesToGet} in the \emph{Amazon DynamoDB Developer Guide}.
 }}
 
-\item{ReturnConsumedCapacity}{}
+\item{ReturnConsumedCapacity}{Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:
+\itemize{
+\item \code{INDEXES} - The response includes the aggregate \code{ConsumedCapacity} for the operation, together with \code{ConsumedCapacity} for each table and secondary index that was accessed.
+
+Note that some operations, such as \code{\link[=dynamodb_get_item]{get_item}} and \code{\link[=dynamodb_batch_get_item]{batch_get_item}}, do not access any indexes at all. In these cases, specifying \code{INDEXES} will only return \code{ConsumedCapacity} information for table(s).
+\item \code{TOTAL} - The response includes only the aggregate \code{ConsumedCapacity} for the operation.
+\item \code{NONE} - No \code{ConsumedCapacity} details are included in the response.
+}}
 }
 \description{
 The \code{\link[=dynamodb_batch_get_item]{batch_get_item}} operation returns the attributes of one or more items from one or more tables. You identify requested items by primary key.

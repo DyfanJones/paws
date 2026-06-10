@@ -9,13 +9,9 @@ apigateway_get_gateway_responses(restApiId, position = NULL, limit = NULL)
 \arguments{
 \item{restApiId}{[required] The string identifier of the associated RestApi.}
 
-\item{position}{The current pagination position in the paged result set. The
-GatewayResponse collection does not support pagination and the position
-does not apply here.}
+\item{position}{The current pagination position in the paged result set. The GatewayResponse collection does not support pagination and the position does not apply here.}
 
-\item{limit}{The maximum number of returned results per page. The default value is 25
-and the maximum value is 500. The GatewayResponses collection does not
-support pagination and the limit does not apply here.}
+\item{limit}{The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The GatewayResponses collection does not support pagination and the limit does not apply here.}
 }
 \description{
 Gets the GatewayResponses collection on the given RestApi. If an API developer has not added any definitions for gateway responses, the result will be the API Gateway-generated default GatewayResponses collection for the supported response types.

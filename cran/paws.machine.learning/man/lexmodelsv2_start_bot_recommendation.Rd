@@ -18,16 +18,11 @@ lexmodelsv2_start_bot_recommendation(
 
 \item{botVersion}{[required] The version of the bot containing the bot recommendation.}
 
-\item{localeId}{[required] The identifier of the language and locale of the bot recommendation to
-start. The string must match one of the supported locales. For more
-information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}}
+\item{localeId}{[required] The identifier of the language and locale of the bot recommendation to start. The string must match one of the supported locales. For more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}}
 
-\item{transcriptSourceSetting}{[required] The object representing the Amazon S3 bucket containing the transcript,
-as well as the associated metadata.}
+\item{transcriptSourceSetting}{[required] The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.}
 
-\item{encryptionSetting}{The object representing the passwords that will be used to encrypt the
-data related to the bot recommendation results, as well as the KMS key
-ARN used to encrypt the associated metadata.}
+\item{encryptionSetting}{The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.}
 }
 \description{
 Use this to provide your transcript data, and to start the bot recommendation process.

@@ -13,15 +13,13 @@ lexmodelsv2_describe_bot_resource_generation(
 )
 }
 \arguments{
-\item{botId}{[required] The unique identifier of the bot for which to return the generation
-details.}
+\item{botId}{[required] The unique identifier of the bot for which to return the generation details.}
 
 \item{botVersion}{[required] The version of the bot for which to return the generation details.}
 
 \item{localeId}{[required] The locale of the bot for which to return the generation details.}
 
-\item{generationId}{[required] The unique identifier of the generation request for which to return the
-generation details.}
+\item{generationId}{[required] The unique identifier of the generation request for which to return the generation details.}
 }
 \description{
 Returns information about a request to generate a bot through natural language description, made through the \code{StartBotResource} API. Use the \code{generatedBotLocaleUrl} to retrieve the Amazon S3 object containing the bot locale configuration. You can then modify and import this configuration.

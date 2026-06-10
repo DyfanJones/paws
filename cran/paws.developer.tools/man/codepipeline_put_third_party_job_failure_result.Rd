@@ -12,12 +12,9 @@ codepipeline_put_third_party_job_failure_result(
 )
 }
 \arguments{
-\item{jobId}{[required] The ID of the job that failed. This is the same ID returned from
-\code{\link[=codepipeline_poll_for_third_party_jobs]{poll_for_third_party_jobs}}.}
+\item{jobId}{[required] The ID of the job that failed. This is the same ID returned from \code{\link[=codepipeline_poll_for_third_party_jobs]{poll_for_third_party_jobs}}.}
 
-\item{clientToken}{[required] The clientToken portion of the clientId and clientToken pair used to
-verify that the calling entity is allowed access to the job and its
-details.}
+\item{clientToken}{[required] The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.}
 
 \item{failureDetails}{[required] Represents information about failure details.}
 }

@@ -14,27 +14,17 @@ bedrock_create_marketplace_model_endpoint(
 )
 }
 \arguments{
-\item{modelSourceIdentifier}{[required] The ARN of the model from Amazon Bedrock Marketplace that you want to
-deploy to the endpoint.}
+\item{modelSourceIdentifier}{[required] The ARN of the model from Amazon Bedrock Marketplace that you want to deploy to the endpoint.}
 
-\item{endpointConfig}{[required] The configuration for the endpoint, including the number and type of
-instances to use.}
+\item{endpointConfig}{[required] The configuration for the endpoint, including the number and type of instances to use.}
 
-\item{acceptEula}{Indicates whether you accept the end-user license agreement (EULA) for
-the model. Set to \code{true} to accept the EULA.}
+\item{acceptEula}{Indicates whether you accept the end-user license agreement (EULA) for the model. Set to \code{true} to accept the EULA.}
 
-\item{endpointName}{[required] The name of the endpoint. This name must be unique within your Amazon
-Web Services account and region.}
+\item{endpointName}{[required] The name of the endpoint. This name must be unique within your Amazon Web Services account and region.}
 
-\item{clientRequestToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. This token is listed as not required because
-Amazon Web Services SDKs automatically generate it for you and set this
-parameter. If you're not using the Amazon Web Services SDK or the CLI,
-you must provide this token or the action will fail.}
+\item{clientRequestToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This token is listed as not required because Amazon Web Services SDKs automatically generate it for you and set this parameter. If you're not using the Amazon Web Services SDK or the CLI, you must provide this token or the action will fail.}
 
-\item{tags}{An array of key-value pairs to apply to the underlying Amazon SageMaker
-endpoint. You can use these tags to organize and identify your Amazon
-Web Services resources.}
+\item{tags}{An array of key-value pairs to apply to the underlying Amazon SageMaker endpoint. You can use these tags to organize and identify your Amazon Web Services resources.}
 }
 \description{
 Creates an endpoint for a model from Amazon Bedrock Marketplace. The endpoint is hosted by Amazon SageMaker.

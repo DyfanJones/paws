@@ -7,8 +7,7 @@
 redshift_get_resource_policy(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource of which its resource
-policy is fetched.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource of which its resource policy is fetched.}
 }
 \description{
 Get the resource policy for a specified resource.

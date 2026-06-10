@@ -7,8 +7,7 @@
 glue_delete_schema_versions(SchemaId, Versions)
 }
 \arguments{
-\item{SchemaId}{[required] This is a wrapper structure that may contain the schema name and Amazon
-Resource Name (ARN).}
+\item{SchemaId}{[required] This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).}
 
 \item{Versions}{[required] A version range may be supplied which may be of the format:
 \itemize{

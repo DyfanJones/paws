@@ -19,18 +19,15 @@ healthlake_list_fhir_export_jobs(
 
 \item{NextToken}{A pagination token used to identify the next page of results to return.}
 
-\item{MaxResults}{Limits the number of results returned for a ListFHIRExportJobs to a
-maximum quantity specified by the user.}
+\item{MaxResults}{Limits the number of results returned for a ListFHIRExportJobs to a maximum quantity specified by the user.}
 
 \item{JobName}{Limits the response to the export job with the specified job name.}
 
 \item{JobStatus}{Limits the response to export jobs with the specified job status.}
 
-\item{SubmittedBefore}{Limits the response to FHIR export jobs submitted before a user-
-specified date.}
+\item{SubmittedBefore}{Limits the response to FHIR export jobs submitted before a user- specified date.}
 
-\item{SubmittedAfter}{Limits the response to FHIR export jobs submitted after a user-specified
-date.}
+\item{SubmittedAfter}{Limits the response to FHIR export jobs submitted after a user-specified date.}
 }
 \description{
 Lists all FHIR export jobs associated with an account and their statuses.

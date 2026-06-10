@@ -16,25 +16,17 @@ networkfirewall_update_logging_configuration(
 
 You must specify the ARN or the name, and you can specify both.}
 
-\item{FirewallName}{The descriptive name of the firewall. You can't change the name of a
-firewall after you create it.
+\item{FirewallName}{The descriptive name of the firewall. You can't change the name of a firewall after you create it.
 
 You must specify the ARN or the name, and you can specify both.}
 
-\item{LoggingConfiguration}{Defines how Network Firewall performs logging for a firewall. If you
-omit this setting, Network Firewall disables logging for the firewall.}
+\item{LoggingConfiguration}{Defines how Network Firewall performs logging for a firewall. If you omit this setting, Network Firewall disables logging for the firewall.}
 
-\item{EnableMonitoringDashboard}{A boolean that lets you enable or disable the detailed firewall
-monitoring dashboard on the firewall.
+\item{EnableMonitoringDashboard}{A boolean that lets you enable or disable the detailed firewall monitoring dashboard on the firewall.
 
-The monitoring dashboard provides comprehensive visibility into your
-firewall's flow logs and alert logs. After you enable detailed
-monitoring, you can access these dashboards directly from the
-\strong{Monitoring} page of the Network Firewall console.
+The monitoring dashboard provides comprehensive visibility into your firewall's flow logs and alert logs. After you enable detailed monitoring, you can access these dashboards directly from the \strong{Monitoring} page of the Network Firewall console.
 
-Specify \code{TRUE} to enable the the detailed monitoring dashboard on the
-firewall. Specify \code{FALSE} to disable the the detailed monitoring
-dashboard on the firewall.}
+Specify \code{TRUE} to enable the the detailed monitoring dashboard on the firewall. Specify \code{FALSE} to disable the the detailed monitoring dashboard on the firewall.}
 }
 \description{
 Sets the logging configuration for the specified firewall.

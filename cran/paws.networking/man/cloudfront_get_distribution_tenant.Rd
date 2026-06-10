@@ -7,8 +7,7 @@
 cloudfront_get_distribution_tenant(Identifier)
 }
 \arguments{
-\item{Identifier}{[required] The identifier of the distribution tenant. You can specify the ARN, ID,
-or name of the distribution tenant.}
+\item{Identifier}{[required] The identifier of the distribution tenant. You can specify the ARN, ID, or name of the distribution tenant.}
 }
 \description{
 Gets information about a distribution tenant.

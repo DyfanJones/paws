@@ -8,12 +8,14 @@ sagemaker_update_cluster(
   ClusterName,
   InstanceGroups = NULL,
   RestrictedInstanceGroups = NULL,
+  RestrictedInstanceGroupsConfig = NULL,
   TieredStorageConfig = NULL,
   NodeRecovery = NULL,
   InstanceGroupsToDelete = NULL,
   NodeProvisioningMode = NULL,
   ClusterRole = NULL,
-  AutoScaling = NULL
+  AutoScaling = NULL,
+  Orchestrator = NULL
 )
 }
 \arguments{
@@ -21,32 +23,23 @@ sagemaker_update_cluster(
 
 \item{InstanceGroups}{Specify the instance groups to update.}
 
-\item{RestrictedInstanceGroups}{The specialized instance groups for training models like Amazon Nova to
-be created in the SageMaker HyperPod cluster.}
+\item{RestrictedInstanceGroups}{The specialized instance groups for training models like Amazon Nova to be created in the SageMaker HyperPod cluster.}
 
-\item{TieredStorageConfig}{Updates the configuration for managed tier checkpointing on the HyperPod
-cluster. For example, you can enable or disable the feature and modify
-the percentage of cluster memory allocated for checkpoint storage.}
+\item{RestrictedInstanceGroupsConfig}{The configuration for the restricted instance groups (RIG) in the SageMaker HyperPod cluster.}
+
+\item{TieredStorageConfig}{Updates the configuration for managed tier checkpointing on the HyperPod cluster. For example, you can enable or disable the feature and modify the percentage of cluster memory allocated for checkpoint storage.}
 
 \item{NodeRecovery}{The node recovery mode to be applied to the SageMaker HyperPod cluster.}
 
-\item{InstanceGroupsToDelete}{Specify the names of the instance groups to delete. Use a single \verb{,} as
-the separator between multiple names.}
+\item{InstanceGroupsToDelete}{Specify the names of the instance groups to delete. Use a single \verb{,} as the separator between multiple names.}
 
-\item{NodeProvisioningMode}{Determines how instance provisioning is handled during cluster
-operations. In \code{Continuous} mode, the cluster provisions available
-instances incrementally and retries until the target count is reached.
-The cluster becomes operational once cluster-level resources are ready.
-Use \code{CurrentCount} and \code{TargetCount} in
-\code{\link[=sagemaker_describe_cluster]{describe_cluster}} to track provisioning
-progress.}
+\item{NodeProvisioningMode}{Determines how instance provisioning is handled during cluster operations. In \code{Continuous} mode, the cluster provisions available instances incrementally and retries until the target count is reached. The cluster becomes operational once cluster-level resources are ready. Use \code{CurrentCount} and \code{TargetCount} in \code{\link[=sagemaker_describe_cluster]{describe_cluster}} to track provisioning progress.}
 
-\item{ClusterRole}{The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes for
-cluster autoscaling operations. Cannot be updated while autoscaling is
-enabled.}
+\item{ClusterRole}{The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes for cluster autoscaling operations. Cannot be updated while autoscaling is enabled.}
 
-\item{AutoScaling}{Updates the autoscaling configuration for the cluster. Use to enable or
-disable automatic node scaling.}
+\item{AutoScaling}{Updates the autoscaling configuration for the cluster. Use to enable or disable automatic node scaling.}
+
+\item{Orchestrator}{The type of orchestrator used for the SageMaker HyperPod cluster.}
 }
 \description{
 Updates a SageMaker HyperPod cluster.

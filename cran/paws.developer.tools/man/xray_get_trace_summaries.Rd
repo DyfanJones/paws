@@ -20,19 +20,15 @@ xray_get_trace_summaries(
 
 \item{EndTime}{[required] The end of the time frame for which to retrieve traces.}
 
-\item{TimeRangeType}{Query trace summaries by TraceId (trace start time), Event (trace update
-time), or Service (trace segment end time).}
+\item{TimeRangeType}{Query trace summaries by TraceId (trace start time), Event (trace update time), or Service (trace segment end time).}
 
 \item{Sampling}{Set to \code{true} to get summaries for only a subset of available traces.}
 
-\item{SamplingStrategy}{A parameter to indicate whether to enable sampling on trace summaries.
-Input parameters are Name and Value.}
+\item{SamplingStrategy}{A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.}
 
-\item{FilterExpression}{Specify a filter expression to retrieve trace summaries for services or
-requests that meet certain requirements.}
+\item{FilterExpression}{Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.}
 
-\item{NextToken}{Specify the pagination token returned by a previous request to retrieve
-the next page of results.}
+\item{NextToken}{Specify the pagination token returned by a previous request to retrieve the next page of results.}
 }
 \description{
 Retrieves IDs and annotations for traces available for a specified time frame using an optional filter. To get the full traces, pass the trace IDs to \code{\link[=xray_batch_get_traces]{batch_get_traces}}.

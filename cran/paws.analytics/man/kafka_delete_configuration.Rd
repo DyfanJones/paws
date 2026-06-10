@@ -7,8 +7,7 @@
 kafka_delete_configuration(Arn)
 }
 \arguments{
-\item{Arn}{[required] The Amazon Resource Name (ARN) that uniquely identifies an MSK
-configuration.}
+\item{Arn}{[required] The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.}
 }
 \description{
 Deletes an MSK Configuration.

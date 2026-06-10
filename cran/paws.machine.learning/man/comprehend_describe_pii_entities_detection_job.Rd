@@ -7,8 +7,7 @@
 comprehend_describe_pii_entities_detection_job(JobId)
 }
 \arguments{
-\item{JobId}{[required] The identifier that Amazon Comprehend generated for the job. The
-operation returns this identifier in its response.}
+\item{JobId}{[required] The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its response.}
 }
 \description{
 Gets the properties associated with a PII entities detection job. For example, you can use this operation to get the job status.

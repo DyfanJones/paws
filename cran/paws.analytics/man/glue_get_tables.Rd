@@ -19,14 +19,11 @@ glue_get_tables(
 )
 }
 \arguments{
-\item{CatalogId}{The ID of the Data Catalog where the tables reside. If none is provided,
-the Amazon Web Services account ID is used by default.}
+\item{CatalogId}{The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.}
 
-\item{DatabaseName}{[required] The database in the catalog whose tables to list. For Hive
-compatibility, this name is entirely lowercase.}
+\item{DatabaseName}{[required] The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase.}
 
-\item{Expression}{A regular expression pattern. If present, only those tables whose names
-match the pattern are returned.}
+\item{Expression}{A regular expression pattern. If present, only those tables whose names match the pattern are returned.}
 
 \item{NextToken}{A continuation token, included if this is a continuation call.}
 
@@ -34,18 +31,13 @@ match the pattern are returned.}
 
 \item{TransactionId}{The transaction ID at which to read the table contents.}
 
-\item{QueryAsOfTime}{The time as of when to read the table contents. If not set, the most
-recent transaction commit time will be used. Cannot be specified along
-with \code{TransactionId}.}
+\item{QueryAsOfTime}{The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with \code{TransactionId}.}
 
 \item{AuditContext}{A structure containing the Lake Formation \href{https://docs.aws.amazon.com/glue/latest/webapi/API_AuditContext.html}{audit context}.}
 
-\item{IncludeStatusDetails}{Specifies whether to include status details related to a request to
-create or update an Glue Data Catalog view.}
+\item{IncludeStatusDetails}{Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.}
 
-\item{AttributesToGet}{Specifies the table fields returned by the
-\code{\link[=glue_get_tables]{get_tables}} call. This parameter doesn’t accept an
-empty list. The request must include \code{NAME}.
+\item{AttributesToGet}{Specifies the table fields returned by the \code{\link[=glue_get_tables]{get_tables}} call. This parameter doesn’t accept an empty list. The request must include \code{NAME}.
 
 The following are the valid combinations of values:
 \itemize{

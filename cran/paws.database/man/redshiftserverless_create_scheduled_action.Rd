@@ -17,45 +17,29 @@ redshiftserverless_create_scheduled_action(
 )
 }
 \arguments{
-\item{enabled}{Indicates whether the schedule is enabled. If false, the scheduled
-action does not trigger. For more information about \code{state} of the
-scheduled action, see
-\href{https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/}{ScheduledAction}.}
+\item{enabled}{Indicates whether the schedule is enabled. If false, the scheduled action does not trigger. For more information about \code{state} of the scheduled action, see \href{https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/}{ScheduledAction}.}
 
-\item{endTime}{The end time in UTC when the schedule is no longer active. After this
-time, the scheduled action does not trigger.}
+\item{endTime}{The end time in UTC when the schedule is no longer active. After this time, the scheduled action does not trigger.}
 
 \item{namespaceName}{[required] The name of the namespace for which to create a scheduled action.}
 
-\item{roleArn}{[required] The ARN of the IAM role to assume to run the scheduled action. This IAM
-role must have permission to run the Amazon Redshift Serverless API
-operation in the scheduled action. This IAM role must allow the Amazon
-Redshift scheduler to schedule creating snapshots. (Principal
-scheduler.redshift.amazonaws.com) to assume permissions on your behalf.
-For more information about the IAM role to use with the Amazon Redshift
-scheduler, see \href{https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html}{Using Identity-Based Policies for Amazon Redshift}
-in the Amazon Redshift Management Guide}
+\item{roleArn}{[required] The ARN of the IAM role to assume to run the scheduled action. This IAM role must have permission to run the Amazon Redshift Serverless API operation in the scheduled action. This IAM role must allow the Amazon Redshift scheduler to schedule creating snapshots. (Principal scheduler.redshift.amazonaws.com) to assume permissions on your behalf. For more information about the IAM role to use with the Amazon Redshift scheduler, see \href{https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html}{Using Identity-Based Policies for Amazon Redshift} in the Amazon Redshift Management Guide}
 
-\item{schedule}{[required] The schedule for a one-time (at timestamp format) or recurring (cron
-format) scheduled action. Schedule invocations must be separated by at
-least one hour. Times are in UTC.
+\item{schedule}{[required] The schedule for a one-time (at timestamp format) or recurring (cron format) scheduled action. Schedule invocations must be separated by at least one hour. Times are in UTC.
 \itemize{
-\item Format of at timestamp is \code{yyyy-mm-ddThh:mm:ss}. For example,
-\verb{2016-03-04T17:27:00}.
-\item Format of cron expression is
-\verb{(Minutes Hours Day-of-month Month Day-of-week Year)}. For example,
-\code{"(0 10 ? * MON *)"}. For more information, see \href{https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html#CronExpressions}{Cron Expressions}
-in the \emph{Amazon CloudWatch Events User Guide}.
+\item Format of at timestamp is \code{yyyy-mm-ddThh:mm:ss}. For example, \verb{2016-03-04T17:27:00}.
+\item Format of cron expression is \verb{(Minutes Hours Day-of-month Month Day-of-week Year)}. For example, \code{"(0 10 ? * MON *)"}. For more information, see \href{https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html#CronExpressions}{Cron Expressions} in the \emph{Amazon CloudWatch Events User Guide}.
 }}
 
 \item{scheduledActionDescription}{The description of the scheduled action.}
 
 \item{scheduledActionName}{[required] The name of the scheduled action.}
 
-\item{startTime}{The start time in UTC when the schedule is active. Before this time, the
-scheduled action does not trigger.}
+\item{startTime}{The start time in UTC when the schedule is active. Before this time, the scheduled action does not trigger.}
 
-\item{targetAction}{[required]}
+\item{targetAction}{[required] A JSON format string of the Amazon Redshift Serverless API operation with input parameters. The following is an example of a target action.
+
+\verb{"\{"CreateSnapshot": \{"NamespaceName": "sampleNamespace","SnapshotName": "sampleSnapshot", "retentionPeriod": "1"\}\}"}}
 }
 \description{
 Creates a scheduled action. A scheduled action contains a schedule and an Amazon Redshift API action. For example, you can create a schedule of when to run the \code{\link[=redshiftserverless_create_snapshot]{create_snapshot}} API operation.

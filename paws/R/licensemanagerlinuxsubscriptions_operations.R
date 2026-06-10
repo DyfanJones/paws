@@ -7,15 +7,13 @@ NULL
 #' License (BYOL) subscriptions registered to your account
 #'
 #' @description
-#' Remove a third-party subscription provider from the Bring Your Own
-#' License (BYOL) subscriptions registered to your account.
+#' Remove a third-party subscription provider from the Bring Your Own License (BYOL) subscriptions registered to your account.
 #'
 #' @usage
 #' licensemanagerlinuxsubscriptions_deregister_subscription_provider(
 #'   SubscriptionProviderArn)
 #'
-#' @param SubscriptionProviderArn &#91;required&#93; The Amazon Resource Name (ARN) of the subscription provider resource to
-#' deregister.
+#' @param SubscriptionProviderArn &#91;required&#93; The Amazon Resource Name (ARN) of the subscription provider resource to deregister.
 #'
 #' @return
 #' An empty list.
@@ -55,15 +53,13 @@ licensemanagerlinuxsubscriptions_deregister_subscription_provider <- function(Su
 #' registered to your account
 #'
 #' @description
-#' Get details for a Bring Your Own License (BYOL) subscription that's
-#' registered to your account.
+#' Get details for a Bring Your Own License (BYOL) subscription that's registered to your account.
 #'
 #' @usage
 #' licensemanagerlinuxsubscriptions_get_registered_subscription_provider(
 #'   SubscriptionProviderArn)
 #'
-#' @param SubscriptionProviderArn &#91;required&#93; The Amazon Resource Name (ARN) of the BYOL registration resource to get
-#' details for.
+#' @param SubscriptionProviderArn &#91;required&#93; The Amazon Resource Name (ARN) of the BYOL registration resource to get details for.
 #'
 #' @return
 #' A list with the following syntax:
@@ -173,20 +169,15 @@ licensemanagerlinuxsubscriptions_get_service_settings <- function() {
 #' commercial Linux subscriptions
 #'
 #' @description
-#' Lists the running Amazon EC2 instances that were discovered with
-#' commercial Linux subscriptions.
+#' Lists the running Amazon EC2 instances that were discovered with commercial Linux subscriptions.
 #'
 #' @usage
 #' licensemanagerlinuxsubscriptions_list_linux_subscription_instances(
 #'   Filters, MaxResults, NextToken)
 #'
-#' @param Filters An array of structures that you can use to filter the results by your
-#' specified criteria. For example, you can specify `Region` in the `Name`,
-#' with the `contains` operator to list all subscriptions that match a
-#' partial string in the `Value`, such as `us-west`.
+#' @param Filters An array of structures that you can use to filter the results by your specified criteria. For example, you can specify `Region` in the `Name`, with the `contains` operator to list all subscriptions that match a partial string in the `Value`, such as `us-west`.
 #' 
-#' For each filter, you can specify one of the following values for the
-#' `Name` key to streamline results:
+#' For each filter, you can specify one of the following values for the `Name` key to streamline results:
 #' 
 #' -   `AccountID`
 #' 
@@ -206,8 +197,7 @@ licensemanagerlinuxsubscriptions_get_service_settings <- function() {
 #' 
 #' -   `UsageOperation`
 #' 
-#' For each filter, you can use one of the following `Operator` values to
-#' define the behavior of the filter:
+#' For each filter, you can use one of the following `Operator` values to define the behavior of the filter:
 #' 
 #' -   `contains`
 #' 
@@ -215,8 +205,7 @@ licensemanagerlinuxsubscriptions_get_service_settings <- function() {
 #' 
 #' -   `Notequal`
 #' @param MaxResults The maximum items to return in a request.
-#' @param NextToken A token to specify where to start paginating. This is the nextToken from
-#' a previously truncated response.
+#' @param NextToken A token to specify where to start paginating. This is the nextToken from a previously truncated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -291,19 +280,13 @@ licensemanagerlinuxsubscriptions_list_linux_subscription_instances <- function(F
 #' Lists the Linux subscriptions that have been discovered
 #'
 #' @description
-#' Lists the Linux subscriptions that have been discovered. If you have
-#' linked your organization, the returned results will include data
-#' aggregated across your accounts in Organizations.
+#' Lists the Linux subscriptions that have been discovered. If you have linked your organization, the returned results will include data aggregated across your accounts in Organizations.
 #'
 #' @usage
 #' licensemanagerlinuxsubscriptions_list_linux_subscriptions(Filters,
 #'   MaxResults, NextToken)
 #'
-#' @param Filters An array of structures that you can use to filter the results to those
-#' that match one or more sets of key-value pairs that you specify. For
-#' example, you can filter by the name of `Subscription` with an optional
-#' operator to see subscriptions that match, partially match, or don't
-#' match a certain subscription's name.
+#' @param Filters An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of `Subscription` with an optional operator to see subscriptions that match, partially match, or don't match a certain subscription's name.
 #' 
 #' The valid names for this filter are:
 #' 
@@ -317,8 +300,7 @@ licensemanagerlinuxsubscriptions_list_linux_subscription_instances <- function(F
 #' 
 #' -   `Notequal`
 #' @param MaxResults The maximum items to return in a request.
-#' @param NextToken A token to specify where to start paginating. This is the nextToken from
-#' a previously truncated response.
+#' @param NextToken A token to specify where to start paginating. This is the nextToken from a previously truncated response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -380,18 +362,15 @@ licensemanagerlinuxsubscriptions_list_linux_subscriptions <- function(Filters = 
 #' for your account
 #'
 #' @description
-#' List Bring Your Own License (BYOL) subscription registration resources
-#' for your account.
+#' List Bring Your Own License (BYOL) subscription registration resources for your account.
 #'
 #' @usage
 #' licensemanagerlinuxsubscriptions_list_registered_subscription_providers(
 #'   MaxResults, NextToken, SubscriptionProviderSources)
 #'
 #' @param MaxResults The maximum items to return in a request.
-#' @param NextToken A token to specify where to start paginating. This is the nextToken from
-#' a previously truncated response.
-#' @param SubscriptionProviderSources To filter your results, specify which subscription providers to return
-#' in the list.
+#' @param NextToken A token to specify where to start paginating. This is the nextToken from a previously truncated response.
+#' @param SubscriptionProviderSources To filter your results, specify which subscription providers to return in the list.
 #'
 #' @return
 #' A list with the following syntax:
@@ -450,14 +429,12 @@ licensemanagerlinuxsubscriptions_list_registered_subscription_providers <- funct
 #' Services resource
 #'
 #' @description
-#' List the metadata tags that are assigned to the specified Amazon Web
-#' Services resource.
+#' List the metadata tags that are assigned to the specified Amazon Web Services resource.
 #'
 #' @usage
 #' licensemanagerlinuxsubscriptions_list_tags_for_resource(resourceArn)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which to list
-#' metadata tags.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which to list metadata tags.
 #'
 #' @return
 #' A list with the following syntax:
@@ -504,20 +481,15 @@ licensemanagerlinuxsubscriptions_list_tags_for_resource <- function(resourceArn)
 #' Your Own License (BYOL) subscription
 #'
 #' @description
-#' Register the supported third-party subscription provider for your Bring
-#' Your Own License (BYOL) subscription.
+#' Register the supported third-party subscription provider for your Bring Your Own License (BYOL) subscription.
 #'
 #' @usage
 #' licensemanagerlinuxsubscriptions_register_subscription_provider(
 #'   SecretArn, SubscriptionProviderSource, Tags)
 #'
-#' @param SecretArn &#91;required&#93; The Amazon Resource Name (ARN) of the secret where you've stored your
-#' subscription provider's access token. For RHEL subscriptions managed
-#' through the Red Hat Subscription Manager (RHSM), the secret contains
-#' your Red Hat Offline token.
+#' @param SecretArn &#91;required&#93; The Amazon Resource Name (ARN) of the secret where you've stored your subscription provider's access token. For RHEL subscriptions managed through the Red Hat Subscription Manager (RHSM), the secret contains your Red Hat Offline token.
 #' @param SubscriptionProviderSource &#91;required&#93; The supported Linux subscription provider to register.
-#' @param Tags The metadata tags to assign to your registered Linux subscription
-#' provider resource.
+#' @param Tags The metadata tags to assign to your registered Linux subscription provider resource.
 #'
 #' @return
 #' A list with the following syntax:
@@ -572,10 +544,8 @@ licensemanagerlinuxsubscriptions_register_subscription_provider <- function(Secr
 #' @usage
 #' licensemanagerlinuxsubscriptions_tag_resource(resourceArn, tags)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon Web Services resource to
-#' which to add the specified metadata tags.
-#' @param tags &#91;required&#93; The metadata tags to assign to the Amazon Web Services resource. Tags
-#' are formatted as key value pairs.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon Web Services resource to which to add the specified metadata tags.
+#' @param tags &#91;required&#93; The metadata tags to assign to the Amazon Web Services resource. Tags are formatted as key value pairs.
 #'
 #' @return
 #' An empty list.
@@ -618,14 +588,12 @@ licensemanagerlinuxsubscriptions_tag_resource <- function(resourceArn, tags) {
 #' resource
 #'
 #' @description
-#' Remove one or more metadata tag from the specified Amazon Web Services
-#' resource.
+#' Remove one or more metadata tag from the specified Amazon Web Services resource.
 #'
 #' @usage
 #' licensemanagerlinuxsubscriptions_untag_resource(resourceArn, tagKeys)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon Web Services resource to
-#' remove the metadata tags from.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon Web Services resource to remove the metadata tags from.
 #' @param tagKeys &#91;required&#93; A list of metadata tag keys to remove from the requested resource.
 #'
 #' @return
@@ -674,13 +642,9 @@ licensemanagerlinuxsubscriptions_untag_resource <- function(resourceArn, tagKeys
 #' licensemanagerlinuxsubscriptions_update_service_settings(AllowUpdate,
 #'   LinuxSubscriptionsDiscovery, LinuxSubscriptionsDiscoverySettings)
 #'
-#' @param AllowUpdate Describes if updates are allowed to the service settings for Linux
-#' subscriptions. If you allow updates, you can aggregate Linux
-#' subscription data in more than one home Region.
+#' @param AllowUpdate Describes if updates are allowed to the service settings for Linux subscriptions. If you allow updates, you can aggregate Linux subscription data in more than one home Region.
 #' @param LinuxSubscriptionsDiscovery &#91;required&#93; Describes if the discovery of Linux subscriptions is enabled.
-#' @param LinuxSubscriptionsDiscoverySettings &#91;required&#93; The settings defined for Linux subscriptions discovery. The settings
-#' include if Organizations integration has been enabled, and which Regions
-#' data will be aggregated from.
+#' @param LinuxSubscriptionsDiscoverySettings &#91;required&#93; The settings defined for Linux subscriptions discovery. The settings include if Organizations integration has been enabled, and which Regions data will be aggregated from.
 #'
 #' @return
 #' A list with the following syntax:

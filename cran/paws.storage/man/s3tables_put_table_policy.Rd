@@ -8,8 +8,7 @@ table}
 s3tables_put_table_policy(tableBucketARN, namespace, name, resourcePolicy)
 }
 \arguments{
-\item{tableBucketARN}{[required] The Amazon Resource Name (ARN) of the table bucket that contains the
-table.}
+\item{tableBucketARN}{[required] The Amazon Resource Name (ARN) of the table bucket that contains the table.}
 
 \item{namespace}{[required] The namespace associated with the table.}
 

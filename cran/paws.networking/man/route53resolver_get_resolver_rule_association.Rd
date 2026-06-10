@@ -8,8 +8,7 @@ and a VPC}
 route53resolver_get_resolver_rule_association(ResolverRuleAssociationId)
 }
 \arguments{
-\item{ResolverRuleAssociationId}{[required] The ID of the Resolver rule association that you want to get information
-about.}
+\item{ResolverRuleAssociationId}{[required] The ID of the Resolver rule association that you want to get information about.}
 }
 \description{
 Gets information about an association between a specified Resolver rule and a VPC. You associate a Resolver rule and a VPC using \code{\link[=route53resolver_associate_resolver_rule]{associate_resolver_rule}}.

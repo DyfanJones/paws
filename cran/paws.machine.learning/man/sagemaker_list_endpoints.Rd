@@ -22,27 +22,19 @@ sagemaker_list_endpoints(
 
 \item{SortOrder}{The sort order for results. The default is \code{Descending}.}
 
-\item{NextToken}{If the result of a \code{\link[=sagemaker_list_endpoints]{list_endpoints}} request
-was truncated, the response includes a \code{NextToken}. To retrieve the next
-set of endpoints, use the token in the next request.}
+\item{NextToken}{If the result of a \code{\link[=sagemaker_list_endpoints]{list_endpoints}} request was truncated, the response includes a \code{NextToken}. To retrieve the next set of endpoints, use the token in the next request.}
 
-\item{MaxResults}{The maximum number of endpoints to return in the response. This value
-defaults to 10.}
+\item{MaxResults}{The maximum number of endpoints to return in the response. This value defaults to 10.}
 
-\item{NameContains}{A string in endpoint names. This filter returns only endpoints whose
-name contains the specified string.}
+\item{NameContains}{A string in endpoint names. This filter returns only endpoints whose name contains the specified string.}
 
-\item{CreationTimeBefore}{A filter that returns only endpoints that were created before the
-specified time (timestamp).}
+\item{CreationTimeBefore}{A filter that returns only endpoints that were created before the specified time (timestamp).}
 
-\item{CreationTimeAfter}{A filter that returns only endpoints with a creation time greater than
-or equal to the specified time (timestamp).}
+\item{CreationTimeAfter}{A filter that returns only endpoints with a creation time greater than or equal to the specified time (timestamp).}
 
-\item{LastModifiedTimeBefore}{A filter that returns only endpoints that were modified before the
-specified timestamp.}
+\item{LastModifiedTimeBefore}{A filter that returns only endpoints that were modified before the specified timestamp.}
 
-\item{LastModifiedTimeAfter}{A filter that returns only endpoints that were modified after the
-specified timestamp.}
+\item{LastModifiedTimeAfter}{A filter that returns only endpoints that were modified after the specified timestamp.}
 
 \item{StatusEquals}{A filter that returns only endpoints with the specified status.}
 }

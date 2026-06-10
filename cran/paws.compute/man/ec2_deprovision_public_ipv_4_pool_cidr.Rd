@@ -7,10 +7,7 @@
 ec2_deprovision_public_ipv_4_pool_cidr(DryRun = NULL, PoolId, Cidr)
 }
 \arguments{
-\item{DryRun}{A check for whether you have the required permissions for the action
-without actually making the request and provides an error response. If
-you have the required permissions, the error response is
-\code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
 \item{PoolId}{[required] The ID of the pool that you want to deprovision the CIDR from.}
 

@@ -15,18 +15,11 @@ rekognition_update_stream_processor(
 \arguments{
 \item{Name}{[required] Name of the stream processor that you want to update.}
 
-\item{SettingsForUpdate}{The stream processor settings that you want to update. Label detection
-settings can be updated to detect different labels with a different
-minimum confidence.}
+\item{SettingsForUpdate}{The stream processor settings that you want to update. Label detection settings can be updated to detect different labels with a different minimum confidence.}
 
-\item{RegionsOfInterestForUpdate}{Specifies locations in the frames where Amazon Rekognition checks for
-objects or people. This is an optional parameter for label detection
-stream processors.}
+\item{RegionsOfInterestForUpdate}{Specifies locations in the frames where Amazon Rekognition checks for objects or people. This is an optional parameter for label detection stream processors.}
 
-\item{DataSharingPreferenceForUpdate}{Shows whether you are sharing data with Rekognition to improve model
-performance. You can choose this option at the account level or on a
-per-stream basis. Note that if you opt out at the account level this
-setting is ignored on individual streams.}
+\item{DataSharingPreferenceForUpdate}{Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams.}
 
 \item{ParametersToDelete}{A list of parameters you want to delete from the stream processor.}
 }

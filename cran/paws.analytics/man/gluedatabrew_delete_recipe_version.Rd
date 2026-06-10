@@ -9,9 +9,7 @@ gluedatabrew_delete_recipe_version(Name, RecipeVersion)
 \arguments{
 \item{Name}{[required] The name of the recipe.}
 
-\item{RecipeVersion}{[required] The version of the recipe to be deleted. You can specify a numeric
-versions (\code{X.Y}) or \code{LATEST_WORKING}. \code{LATEST_PUBLISHED} is not
-supported.}
+\item{RecipeVersion}{[required] The version of the recipe to be deleted. You can specify a numeric versions (\code{X.Y}) or \code{LATEST_WORKING}. \code{LATEST_PUBLISHED} is not supported.}
 }
 \description{
 Deletes a single version of a DataBrew recipe.

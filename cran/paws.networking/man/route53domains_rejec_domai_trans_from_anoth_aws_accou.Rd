@@ -8,10 +8,7 @@ account to the current Amazon Web Services account}
 route53domains_reject_domain_transfer_from_another_aws_account(DomainName)
 }
 \arguments{
-\item{DomainName}{[required] The name of the domain that was specified when another Amazon Web
-Services account submitted a
-\code{\link[=route53domains_transfer_domain_to_another_aws_account]{transfer_domain_to_another_aws_account}}
-request.}
+\item{DomainName}{[required] The name of the domain that was specified when another Amazon Web Services account submitted a \code{\link[=route53domains_transfer_domain_to_another_aws_account]{transfer_domain_to_another_aws_account}} request.}
 }
 \description{
 Rejects the transfer of a domain from another Amazon Web Services account to the current Amazon Web Services account. You initiate a transfer betweenAmazon Web Services accounts using \code{\link[=route53domains_transfer_domain_to_another_aws_account]{transfer_domain_to_another_aws_account}}.

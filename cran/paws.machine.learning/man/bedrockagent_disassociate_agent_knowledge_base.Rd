@@ -11,8 +11,7 @@ bedrockagent_disassociate_agent_knowledge_base(
 )
 }
 \arguments{
-\item{agentId}{[required] The unique identifier of the agent from which to disassociate the
-knowledge base.}
+\item{agentId}{[required] The unique identifier of the agent from which to disassociate the knowledge base.}
 
 \item{agentVersion}{[required] The version of the agent from which to disassociate the knowledge base.}
 

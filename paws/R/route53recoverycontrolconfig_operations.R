@@ -6,24 +6,16 @@ NULL
 #' Create a new cluster
 #'
 #' @description
-#' Create a new cluster. A cluster is a set of redundant Regional endpoints
-#' against which you can run API calls to update or get the state of one or
-#' more routing controls. Each cluster has a name, status, Amazon Resource
-#' Name (ARN), and an array of the five cluster endpoints (one for each
-#' supported Amazon Web Services Region) that you can use with API calls to
-#' the cluster data plane.
+#' Create a new cluster. A cluster is a set of redundant Regional endpoints against which you can run API calls to update or get the state of one or more routing controls. Each cluster has a name, status, Amazon Resource Name (ARN), and an array of the five cluster endpoints (one for each supported Amazon Web Services Region) that you can use with API calls to the cluster data plane.
 #'
 #' @usage
 #' route53recoverycontrolconfig_create_cluster(ClientToken, ClusterName,
 #'   Tags, NetworkType)
 #'
-#' @param ClientToken A unique, case-sensitive string of up to 64 ASCII characters. To make an
-#' idempotent API request with an action, specify a client token in the
-#' request.
+#' @param ClientToken A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.
 #' @param ClusterName &#91;required&#93; The name of the cluster.
 #' @param Tags The tags associated with the cluster.
-#' @param NetworkType The network type of the cluster. NetworkType can be one of the
-#' following: IPV4, DUALSTACK.
+#' @param NetworkType The network type of the cluster. NetworkType can be one of the following: IPV4, DUALSTACK.
 #'
 #' @return
 #' A list with the following syntax:
@@ -84,20 +76,13 @@ route53recoverycontrolconfig_create_cluster <- function(ClientToken = NULL, Clus
 #' Creates a new control panel
 #'
 #' @description
-#' Creates a new control panel. A control panel represents a group of
-#' routing controls that can be changed together in a single transaction.
-#' You can use a control panel to centrally view the operational status of
-#' applications across your organization, and trigger multi-app failovers
-#' in a single transaction, for example, to fail over an Availability Zone
-#' or Amazon Web Services Region.
+#' Creates a new control panel. A control panel represents a group of routing controls that can be changed together in a single transaction. You can use a control panel to centrally view the operational status of applications across your organization, and trigger multi-app failovers in a single transaction, for example, to fail over an Availability Zone or Amazon Web Services Region.
 #'
 #' @usage
 #' route53recoverycontrolconfig_create_control_panel(ClientToken,
 #'   ClusterArn, ControlPanelName, Tags)
 #'
-#' @param ClientToken A unique, case-sensitive string of up to 64 ASCII characters. To make an
-#' idempotent API request with an action, specify a client token in the
-#' request.
+#' @param ClientToken A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) of the cluster for the control panel.
 #' @param ControlPanelName &#91;required&#93; The name of the control panel.
 #' @param Tags The tags associated with the control panel.
@@ -159,25 +144,17 @@ route53recoverycontrolconfig_create_control_panel <- function(ClientToken = NULL
 #' @description
 #' Creates a new routing control.
 #' 
-#' A routing control has one of two states: ON and OFF. You can map the
-#' routing control state to the state of an Amazon Route 53 health check,
-#' which can be used to control traffic routing.
+#' A routing control has one of two states: ON and OFF. You can map the routing control state to the state of an Amazon Route 53 health check, which can be used to control traffic routing.
 #' 
-#' To get or update the routing control state, see the Recovery Cluster
-#' (data plane) API actions for Amazon Route 53 Application Recovery
-#' Controller.
+#' To get or update the routing control state, see the Recovery Cluster (data plane) API actions for Amazon Route 53 Application Recovery Controller.
 #'
 #' @usage
 #' route53recoverycontrolconfig_create_routing_control(ClientToken,
 #'   ClusterArn, ControlPanelArn, RoutingControlName)
 #'
-#' @param ClientToken A unique, case-sensitive string of up to 64 ASCII characters. To make an
-#' idempotent API request with an action, specify a client token in the
-#' request.
-#' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) of the cluster that includes the routing
-#' control.
-#' @param ControlPanelArn The Amazon Resource Name (ARN) of the control panel that includes the
-#' routing control.
+#' @param ClientToken A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.
+#' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) of the cluster that includes the routing control.
+#' @param ControlPanelArn The Amazon Resource Name (ARN) of the control panel that includes the routing control.
 #' @param RoutingControlName &#91;required&#93; The name of the routing control.
 #'
 #' @return
@@ -231,35 +208,22 @@ route53recoverycontrolconfig_create_routing_control <- function(ClientToken = NU
 #' Creates a safety rule in a control panel
 #'
 #' @description
-#' Creates a safety rule in a control panel. Safety rules let you add
-#' safeguards around changing routing control states, and for enabling and
-#' disabling routing controls, to help prevent unexpected outcomes.
+#' Creates a safety rule in a control panel. Safety rules let you add safeguards around changing routing control states, and for enabling and disabling routing controls, to help prevent unexpected outcomes.
 #' 
 #' There are two types of safety rules: assertion rules and gating rules.
 #' 
-#' Assertion rule: An assertion rule enforces that, when you change a
-#' routing control state, that a certain criteria is met. For example, the
-#' criteria might be that at least one routing control state is On after
-#' the transaction so that traffic continues to flow to at least one cell
-#' for the application. This ensures that you avoid a fail-open scenario.
+#' Assertion rule: An assertion rule enforces that, when you change a routing control state, that a certain criteria is met. For example, the criteria might be that at least one routing control state is On after the transaction so that traffic continues to flow to at least one cell for the application. This ensures that you avoid a fail-open scenario.
 #' 
-#' Gating rule: A gating rule lets you configure a gating routing control
-#' as an overall "on/off" switch for a group of routing controls. Or, you
-#' can configure more complex gating scenarios, for example by configuring
-#' multiple gating routing controls.
+#' Gating rule: A gating rule lets you configure a gating routing control as an overall "on/off" switch for a group of routing controls. Or, you can configure more complex gating scenarios, for example by configuring multiple gating routing controls.
 #' 
-#' For more information, see [Safety
-#' rules](https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.safety-rules.html)
-#' in the Amazon Route 53 Application Recovery Controller Developer Guide.
+#' For more information, see [Safety rules](https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.safety-rules.html) in the Amazon Route 53 Application Recovery Controller Developer Guide.
 #'
 #' @usage
 #' route53recoverycontrolconfig_create_safety_rule(AssertionRule,
 #'   ClientToken, GatingRule, Tags)
 #'
 #' @param AssertionRule The assertion rule requested.
-#' @param ClientToken A unique, case-sensitive string of up to 64 ASCII characters. To make an
-#' idempotent API request with an action, specify a client token in the
-#' request.
+#' @param ClientToken A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.
 #' @param GatingRule The gating rule requested.
 #' @param Tags The tags associated with the safety rule.
 #'
@@ -464,8 +428,7 @@ route53recoverycontrolconfig_delete_control_panel <- function(ControlPanelArn) {
 #' @usage
 #' route53recoverycontrolconfig_delete_routing_control(RoutingControlArn)
 #'
-#' @param RoutingControlArn &#91;required&#93; The Amazon Resource Name (ARN) of the routing control that you're
-#' deleting.
+#' @param RoutingControlArn &#91;required&#93; The Amazon Resource Name (ARN) of the routing control that you're deleting.
 #'
 #' @return
 #' An empty list.
@@ -550,8 +513,7 @@ route53recoverycontrolconfig_delete_safety_rule <- function(SafetyRuleArn) {
 #' Display the details about a cluster
 #'
 #' @description
-#' Display the details about a cluster. The response includes the cluster
-#' name, endpoints, status, and Amazon Resource Name (ARN).
+#' Display the details about a cluster. The response includes the cluster name, endpoints, status, and Amazon Resource Name (ARN).
 #'
 #' @usage
 #' route53recoverycontrolconfig_describe_cluster(ClusterArn)
@@ -669,14 +631,9 @@ route53recoverycontrolconfig_describe_control_panel <- function(ControlPanelArn)
 #' Displays details about a routing control
 #'
 #' @description
-#' Displays details about a routing control. A routing control has one of
-#' two states: ON and OFF. You can map the routing control state to the
-#' state of an Amazon Route 53 health check, which can be used to control
-#' routing.
+#' Displays details about a routing control. A routing control has one of two states: ON and OFF. You can map the routing control state to the state of an Amazon Route 53 health check, which can be used to control routing.
 #' 
-#' To get or update the routing control state, see the Recovery Cluster
-#' (data plane) API actions for Amazon Route 53 Application Recovery
-#' Controller.
+#' To get or update the routing control state, see the Recovery Cluster (data plane) API actions for Amazon Route 53 Application Recovery Controller.
 #'
 #' @usage
 #' route53recoverycontrolconfig_describe_routing_control(RoutingControlArn)
@@ -864,8 +821,7 @@ route53recoverycontrolconfig_get_resource_policy <- function(ResourceArn) {
 #' specific routing control
 #'
 #' @description
-#' Returns an array of all Amazon Route 53 health checks associated with a
-#' specific routing control.
+#' Returns an array of all Amazon Route 53 health checks associated with a specific routing control.
 #'
 #' @usage
 #' route53recoverycontrolconfig_list_associated_route_53_health_checks(
@@ -1053,11 +1009,7 @@ route53recoverycontrolconfig_list_control_panels <- function(ClusterArn = NULL, 
 #' Returns an array of routing controls for a control panel
 #'
 #' @description
-#' Returns an array of routing controls for a control panel. A routing
-#' control is an Amazon Route 53 Application Recovery Controller construct
-#' that has one of two states: ON and OFF. You can map the routing control
-#' state to the state of an Amazon Route 53 health check, which can be used
-#' to control routing.
+#' Returns an array of routing controls for a control panel. A routing control is an Amazon Route 53 Application Recovery Controller construct that has one of two states: ON and OFF. You can map the routing control state to the state of an Amazon Route 53 health check, which can be used to control routing.
 #'
 #' @usage
 #' route53recoverycontrolconfig_list_routing_controls(ControlPanelArn,
@@ -1121,8 +1073,7 @@ route53recoverycontrolconfig_list_routing_controls <- function(ControlPanelArn, 
 #' defined for the routing controls in a control panel
 #'
 #' @description
-#' List the safety rules (the assertion rules and gating rules) that you've
-#' defined for the routing controls in a control panel.
+#' List the safety rules (the assertion rules and gating rules) that you've defined for the routing controls in a control panel.
 #'
 #' @usage
 #' route53recoverycontrolconfig_list_safety_rules(ControlPanelArn,
@@ -1362,15 +1313,13 @@ route53recoverycontrolconfig_untag_resource <- function(ResourceArn, TagKeys) {
 #' Updates an existing cluster
 #'
 #' @description
-#' Updates an existing cluster. You can only update the network type of a
-#' cluster.
+#' Updates an existing cluster. You can only update the network type of a cluster.
 #'
 #' @usage
 #' route53recoverycontrolconfig_update_cluster(ClusterArn, NetworkType)
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) of the cluster.
-#' @param NetworkType &#91;required&#93; The network type of the cluster. NetworkType can be one of the
-#' following: IPV4, DUALSTACK.
+#' @param NetworkType &#91;required&#93; The network type of the cluster. NetworkType can be one of the following: IPV4, DUALSTACK.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1427,8 +1376,7 @@ route53recoverycontrolconfig_update_cluster <- function(ClusterArn, NetworkType)
 #' Updates a control panel
 #'
 #' @description
-#' Updates a control panel. The only update you can make to a control panel
-#' is to change the name of the control panel.
+#' Updates a control panel. The only update you can make to a control panel is to change the name of the control panel.
 #'
 #' @usage
 #' route53recoverycontrolconfig_update_control_panel(ControlPanelArn,
@@ -1488,10 +1436,7 @@ route53recoverycontrolconfig_update_control_panel <- function(ControlPanelArn, C
 #' Updates a routing control
 #'
 #' @description
-#' Updates a routing control. You can only update the name of the routing
-#' control. To get or update the routing control state, see the Recovery
-#' Cluster (data plane) API actions for Amazon Route 53 Application
-#' Recovery Controller.
+#' Updates a routing control. You can only update the name of the routing control. To get or update the routing control state, see the Recovery Cluster (data plane) API actions for Amazon Route 53 Application Recovery Controller.
 #'
 #' @usage
 #' route53recoverycontrolconfig_update_routing_control(RoutingControlArn,
@@ -1549,9 +1494,7 @@ route53recoverycontrolconfig_update_routing_control <- function(RoutingControlAr
 #' Update a safety rule (an assertion rule or gating rule)
 #'
 #' @description
-#' Update a safety rule (an assertion rule or gating rule). You can only
-#' update the name and the waiting period for a safety rule. To make other
-#' updates, delete the safety rule and create a new one.
+#' Update a safety rule (an assertion rule or gating rule). You can only update the name and the waiting period for a safety rule. To make other updates, delete the safety rule and create a new one.
 #'
 #' @usage
 #' route53recoverycontrolconfig_update_safety_rule(AssertionRuleUpdate,

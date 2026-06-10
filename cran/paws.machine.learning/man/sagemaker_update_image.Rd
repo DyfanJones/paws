@@ -13,8 +13,7 @@ sagemaker_update_image(
 )
 }
 \arguments{
-\item{DeleteProperties}{A list of properties to delete. Only the \code{Description} and \code{DisplayName}
-properties can be deleted.}
+\item{DeleteProperties}{A list of properties to delete. Only the \code{Description} and \code{DisplayName} properties can be deleted.}
 
 \item{Description}{The new description for the image.}
 
@@ -22,8 +21,7 @@ properties can be deleted.}
 
 \item{ImageName}{[required] The name of the image to update.}
 
-\item{RoleArn}{The new ARN for the IAM role that enables Amazon SageMaker AI to perform
-tasks on your behalf.}
+\item{RoleArn}{The new ARN for the IAM role that enables Amazon SageMaker AI to perform tasks on your behalf.}
 }
 \description{
 Updates the properties of a SageMaker AI image. To change the image's tags, use the \code{\link[=sagemaker_add_tags]{add_tags}} and \code{\link[=sagemaker_delete_tags]{delete_tags}} APIs.

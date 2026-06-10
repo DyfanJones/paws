@@ -13,16 +13,11 @@ bedrockagentruntime_create_session(
 )
 }
 \arguments{
-\item{encryptionKeyArn}{The Amazon Resource Name (ARN) of the KMS key to use to encrypt the
-session data. The user or role creating the session must have permission
-to use the key. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/}{Amazon Bedrock session encryption}.}
+\item{encryptionKeyArn}{The Amazon Resource Name (ARN) of the KMS key to use to encrypt the session data. The user or role creating the session must have permission to use the key. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/}{Amazon Bedrock session encryption}.}
 
-\item{sessionMetadata}{A map of key-value pairs containing attributes to be persisted across
-the session. For example, the user's ID, their language preference, and
-the type of device they are using.}
+\item{sessionMetadata}{A map of key-value pairs containing attributes to be persisted across the session. For example, the user's ID, their language preference, and the type of device they are using.}
 
-\item{tags}{Specify the key-value pairs for the tags that you want to attach to the
-session.}
+\item{tags}{Specify the key-value pairs for the tags that you want to attach to the session.}
 }
 \description{
 Creates a session to temporarily store conversations for generative AI (GenAI) applications built with open-source frameworks such as LangGraph and LlamaIndex. Sessions enable you to save the state of conversations at checkpoints, with the added security and infrastructure of Amazon Web Services. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html}{Store and retrieve conversation history and context with Amazon Bedrock sessions}.

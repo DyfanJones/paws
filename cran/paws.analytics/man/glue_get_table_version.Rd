@@ -8,21 +8,20 @@ glue_get_table_version(
   CatalogId = NULL,
   DatabaseName,
   TableName,
-  VersionId = NULL
+  VersionId = NULL,
+  AuditContext = NULL
 )
 }
 \arguments{
-\item{CatalogId}{The ID of the Data Catalog where the tables reside. If none is provided,
-the Amazon Web Services account ID is used by default.}
+\item{CatalogId}{The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.}
 
-\item{DatabaseName}{[required] The database in the catalog in which the table resides. For Hive
-compatibility, this name is entirely lowercase.}
+\item{DatabaseName}{[required] The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.}
 
-\item{TableName}{[required] The name of the table. For Hive compatibility, this name is entirely
-lowercase.}
+\item{TableName}{[required] The name of the table. For Hive compatibility, this name is entirely lowercase.}
 
-\item{VersionId}{The ID value of the table version to be retrieved. A \code{VersionID} is a
-string representation of an integer. Each version is incremented by 1.}
+\item{VersionId}{The ID value of the table version to be retrieved. A \code{VersionID} is a string representation of an integer. Each version is incremented by 1.}
+
+\item{AuditContext}{A structure containing the Lake Formation audit context.}
 }
 \description{
 Retrieves a specified version of a table.

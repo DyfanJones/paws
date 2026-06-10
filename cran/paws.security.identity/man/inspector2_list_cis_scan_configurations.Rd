@@ -19,11 +19,9 @@ inspector2_list_cis_scan_configurations(
 
 \item{sortOrder}{The CIS scan configuration sort order order.}
 
-\item{nextToken}{The pagination token from a previous request that's used to retrieve the
-next page of results.}
+\item{nextToken}{The pagination token from a previous request that's used to retrieve the next page of results.}
 
-\item{maxResults}{The maximum number of CIS scan configurations to be returned in a single
-page of results.}
+\item{maxResults}{The maximum number of CIS scan configurations to be returned in a single page of results.}
 }
 \description{
 Lists CIS scan configurations.

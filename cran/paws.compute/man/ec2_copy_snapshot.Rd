@@ -22,62 +22,33 @@ ec2_copy_snapshot(
 \arguments{
 \item{Description}{A description for the EBS snapshot.}
 
-\item{DestinationOutpostArn}{The Amazon Resource Name (ARN) of the Outpost to which to copy the
-snapshot.
+\item{DestinationOutpostArn}{The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot.
 
 Only supported when copying a snapshot to an Outpost.
 
-For more information, see \href{https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-snapshots}{Copy snapshots from an Amazon Web Services Region to an Outpost}
-in the \emph{Amazon EBS User Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-snapshots}{Copy snapshots from an Amazon Web Services Region to an Outpost} in the \emph{Amazon EBS User Guide}.}
 
-\item{DestinationRegion}{The destination Region to use in the \code{PresignedUrl} parameter of a
-snapshot copy operation. This parameter is only valid for specifying the
-destination Region in a \code{PresignedUrl} parameter, where it is required.
+\item{DestinationRegion}{The destination Region to use in the \code{PresignedUrl} parameter of a snapshot copy operation. This parameter is only valid for specifying the destination Region in a \code{PresignedUrl} parameter, where it is required.
 
-The snapshot copy is sent to the regional endpoint that you sent the
-HTTP request to (for example, \verb{ec2.us-east-1.amazonaws.com}). With the
-CLI, this is specified using the \code{--region} parameter or the default
-Region in your Amazon Web Services configuration file.}
+The snapshot copy is sent to the regional endpoint that you sent the HTTP request to (for example, \verb{ec2.us-east-1.amazonaws.com}). With the CLI, this is specified using the \code{--region} parameter or the default Region in your Amazon Web Services configuration file.}
 
-\item{Encrypted}{To encrypt a copy of an unencrypted snapshot if encryption by default is
-not enabled, enable encryption using this parameter. Otherwise, omit
-this parameter. Copies of encrypted snapshots are encrypted, even if you
-omit this parameter and encryption by default is not enabled. You cannot
-set this parameter to false. For more information, see \href{https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html}{Amazon EBS encryption}
-in the \emph{Amazon EBS User Guide}.}
+\item{Encrypted}{To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled, enable encryption using this parameter. Otherwise, omit this parameter. Copies of encrypted snapshots are encrypted, even if you omit this parameter and encryption by default is not enabled. You cannot set this parameter to false. For more information, see \href{https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html}{Amazon EBS encryption} in the \emph{Amazon EBS User Guide}.}
 
-\item{KmsKeyId}{The identifier of the KMS key to use for Amazon EBS encryption. If this
-parameter is not specified, your KMS key for Amazon EBS is used. If
-\code{KmsKeyId} is specified, the encrypted state must be \code{true}.
+\item{KmsKeyId}{The identifier of the KMS key to use for Amazon EBS encryption. If this parameter is not specified, your KMS key for Amazon EBS is used. If \code{KmsKeyId} is specified, the encrypted state must be \code{true}.
 
 You can specify the KMS key using any of the following:
 \itemize{
 \item Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.
 \item Key alias. For example, alias/ExampleAlias.
-\item Key ARN. For example,
-arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.
-\item Alias ARN. For example,
-arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.
+\item Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.
+\item Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.
 }
 
-Amazon Web Services authenticates the KMS key asynchronously. Therefore,
-if you specify an ID, alias, or ARN that is not valid, the action can
-appear to complete, but eventually fails.}
+Amazon Web Services authenticates the KMS key asynchronously. Therefore, if you specify an ID, alias, or ARN that is not valid, the action can appear to complete, but eventually fails.}
 
-\item{PresignedUrl}{When you copy an encrypted source snapshot using the Amazon EC2 Query
-API, you must supply a pre-signed URL. This parameter is optional for
-unencrypted snapshots. For more information, see \href{https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html}{Query requests}.
+\item{PresignedUrl}{When you copy an encrypted source snapshot using the Amazon EC2 Query API, you must supply a pre-signed URL. This parameter is optional for unencrypted snapshots. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/Query-Requests.html}{Query requests}.
 
-The \code{PresignedUrl} should use the snapshot source endpoint, the
-\code{\link[=ec2_copy_snapshot]{copy_snapshot}} action, and include the
-\code{SourceRegion}, \code{SourceSnapshotId}, and \code{DestinationRegion} parameters.
-The \code{PresignedUrl} must be signed using Amazon Web Services Signature
-Version 4. Because EBS snapshots are stored in Amazon S3, the signing
-algorithm for this parameter uses the same logic that is described in
-\href{https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html}{Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)}
-in the \emph{Amazon S3 API Reference}. An invalid or improperly signed
-\code{PresignedUrl} will cause the copy operation to fail asynchronously, and
-the snapshot will move to an \code{error} state.}
+The \code{PresignedUrl} should use the snapshot source endpoint, the \code{\link[=ec2_copy_snapshot]{copy_snapshot}} action, and include the \code{SourceRegion}, \code{SourceSnapshotId}, and \code{DestinationRegion} parameters. The \code{PresignedUrl} must be signed using Amazon Web Services Signature Version 4. Because EBS snapshots are stored in Amazon S3, the signing algorithm for this parameter uses the same logic that is described in \href{https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html}{Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)} in the \emph{Amazon S3 API Reference}. An invalid or improperly signed \code{PresignedUrl} will cause the copy operation to fail asynchronously, and the snapshot will move to an \code{error} state.}
 
 \item{SourceRegion}{[required] The ID of the Region that contains the snapshot to be copied.}
 
@@ -87,22 +58,15 @@ the snapshot will move to an \code{error} state.}
 
 \item{CompletionDurationMinutes}{Not supported when copying snapshots to or from Local Zones or Outposts.
 
-Specify a completion duration, in 15 minute increments, to initiate a
-time-based snapshot copy. Time-based snapshot copy operations complete
-within the specified duration. For more information, see \href{https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html}{Time-based copies}.
+Specify a completion duration, in 15 minute increments, to initiate a time-based snapshot copy. Time-based snapshot copy operations complete within the specified duration. For more information, see \href{https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html}{Time-based copies}.
 
-If you do not specify a value, the snapshot copy operation is completed
-on a best-effort basis.}
+If you do not specify a value, the snapshot copy operation is completed on a best-effort basis.}
 
-\item{DestinationAvailabilityZone}{The Local Zone, for example, \verb{cn-north-1-pkx-1a} to which to copy the
-snapshot.
+\item{DestinationAvailabilityZone}{The Local Zone, for example, \verb{cn-north-1-pkx-1a} to which to copy the snapshot.
 
 Only supported when copying a snapshot to a Local Zone.}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 }
 \description{
 Creates an exact copy of an Amazon EBS snapshot.

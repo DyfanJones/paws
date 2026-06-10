@@ -15,11 +15,9 @@ elb_create_load_balancer_policy(
 \arguments{
 \item{LoadBalancerName}{[required] The name of the load balancer.}
 
-\item{PolicyName}{[required] The name of the load balancer policy to be created. This name must be
-unique within the set of policies for this load balancer.}
+\item{PolicyName}{[required] The name of the load balancer policy to be created. This name must be unique within the set of policies for this load balancer.}
 
-\item{PolicyTypeName}{[required] The name of the base policy type. To get the list of policy types, use
-\code{\link[=elb_describe_load_balancer_policy_types]{describe_load_balancer_policy_types}}.}
+\item{PolicyTypeName}{[required] The name of the base policy type. To get the list of policy types, use \code{\link[=elb_describe_load_balancer_policy_types]{describe_load_balancer_policy_types}}.}
 
 \item{PolicyAttributes}{The policy attributes.}
 }

@@ -12,19 +12,9 @@ NULL
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_add_application_cloud_watch_logging_option/](https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_add_application_cloud_watch_logging_option/) for full documentation.
 #'
 #' @param ApplicationName &#91;required&#93; The Kinesis Data Analytics application name.
-#' @param CurrentApplicationVersionId The version ID of the SQL-based Kinesis Data Analytics application. You
-#' must provide the `CurrentApplicationVersionId` or the
-#' `ConditionalToken`.You can retrieve the application version ID using
-#' [`describe_application`][kinesisanalyticsv2_describe_application]. For
-#' better concurrency support, use the `ConditionalToken` parameter instead
-#' of `CurrentApplicationVersionId`.
+#' @param CurrentApplicationVersionId The version ID of the SQL-based Kinesis Data Analytics application. You must provide the `CurrentApplicationVersionId` or the `ConditionalToken`.You can retrieve the application version ID using [`describe_application`][kinesisanalyticsv2_describe_application]. For better concurrency support, use the `ConditionalToken` parameter instead of `CurrentApplicationVersionId`.
 #' @param CloudWatchLoggingOption &#91;required&#93; Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN).
-#' @param ConditionalToken A value you use to implement strong concurrency for application updates.
-#' You must provide the `CurrentApplicationVersionId` or the
-#' `ConditionalToken`. You get the application's current `ConditionalToken`
-#' using [`describe_application`][kinesisanalyticsv2_describe_application].
-#' For better concurrency support, use the `ConditionalToken` parameter
-#' instead of `CurrentApplicationVersionId`.
+#' @param ConditionalToken A value you use to implement strong concurrency for application updates. You must provide the `CurrentApplicationVersionId` or the `ConditionalToken`. You get the application's current `ConditionalToken` using [`describe_application`][kinesisanalyticsv2_describe_application]. For better concurrency support, use the `ConditionalToken` parameter instead of `CurrentApplicationVersionId`.
 #'
 #' @keywords internal
 #'
@@ -56,12 +46,8 @@ kinesisanalyticsv2_add_application_cloud_watch_logging_option <- function(Applic
 #'
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_add_application_input/](https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_add_application_input/) for full documentation.
 #'
-#' @param ApplicationName &#91;required&#93; The name of your existing application to which you want to add the
-#' streaming source.
-#' @param CurrentApplicationVersionId &#91;required&#93; The current version of your application. You must provide the
-#' `ApplicationVersionID` or the `ConditionalToken`.You can use the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation to find the current application version.
+#' @param ApplicationName &#91;required&#93; The name of your existing application to which you want to add the streaming source.
+#' @param CurrentApplicationVersionId &#91;required&#93; The current version of your application. You must provide the `ApplicationVersionID` or the `ConditionalToken`.You can use the [`describe_application`][kinesisanalyticsv2_describe_application] operation to find the current application version.
 #' @param Input &#91;required&#93; The Input to add.
 #'
 #' @keywords internal
@@ -94,19 +80,9 @@ kinesisanalyticsv2_add_application_input <- function(ApplicationName, CurrentApp
 #'
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_add_application_input_processing_configuration/](https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_add_application_input_processing_configuration/) for full documentation.
 #'
-#' @param ApplicationName &#91;required&#93; The name of the application to which you want to add the input
-#' processing configuration.
-#' @param CurrentApplicationVersionId &#91;required&#93; The version of the application to which you want to add the input
-#' processing configuration. You can use the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation to get the current application version. If the version
-#' specified is not the current version, the
-#' `ConcurrentModificationException` is returned.
-#' @param InputId &#91;required&#93; The ID of the input configuration to add the input processing
-#' configuration to. You can get a list of the input IDs for an application
-#' using the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation.
+#' @param ApplicationName &#91;required&#93; The name of the application to which you want to add the input processing configuration.
+#' @param CurrentApplicationVersionId &#91;required&#93; The version of the application to which you want to add the input processing configuration. You can use the [`describe_application`][kinesisanalyticsv2_describe_application] operation to get the current application version. If the version specified is not the current version, the `ConcurrentModificationException` is returned.
+#' @param InputId &#91;required&#93; The ID of the input configuration to add the input processing configuration to. You can get a list of the input IDs for an application using the [`describe_application`][kinesisanalyticsv2_describe_application] operation.
 #' @param InputProcessingConfiguration &#91;required&#93; The InputProcessingConfiguration to add to the application.
 #'
 #' @keywords internal
@@ -139,19 +115,9 @@ kinesisanalyticsv2_add_application_input_processing_configuration <- function(Ap
 #'
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_add_application_output/](https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_add_application_output/) for full documentation.
 #'
-#' @param ApplicationName &#91;required&#93; The name of the application to which you want to add the output
-#' configuration.
-#' @param CurrentApplicationVersionId &#91;required&#93; The version of the application to which you want to add the output
-#' configuration. You can use the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation to get the current application version. If the version
-#' specified is not the current version, the
-#' `ConcurrentModificationException` is returned.
-#' @param Output &#91;required&#93; An array of objects, each describing one output configuration. In the
-#' output configuration, you specify the name of an in-application stream,
-#' a destination (that is, a Kinesis data stream, a Kinesis Data Firehose
-#' delivery stream, or an Amazon Lambda function), and record the formation
-#' to use when writing to the destination.
+#' @param ApplicationName &#91;required&#93; The name of the application to which you want to add the output configuration.
+#' @param CurrentApplicationVersionId &#91;required&#93; The version of the application to which you want to add the output configuration. You can use the [`describe_application`][kinesisanalyticsv2_describe_application] operation to get the current application version. If the version specified is not the current version, the `ConcurrentModificationException` is returned.
+#' @param Output &#91;required&#93; An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination (that is, a Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), and record the formation to use when writing to the destination.
 #'
 #' @keywords internal
 #'
@@ -184,16 +150,8 @@ kinesisanalyticsv2_add_application_output <- function(ApplicationName, CurrentAp
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_add_application_reference_data_source/](https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_add_application_reference_data_source/) for full documentation.
 #'
 #' @param ApplicationName &#91;required&#93; The name of an existing application.
-#' @param CurrentApplicationVersionId &#91;required&#93; The version of the application for which you are adding the reference
-#' data source. You can use the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation to get the current application version. If the version
-#' specified is not the current version, the
-#' `ConcurrentModificationException` is returned.
-#' @param ReferenceDataSource &#91;required&#93; The reference data source can be an object in your Amazon S3 bucket.
-#' Kinesis Data Analytics reads the object and copies the data into the
-#' in-application table that is created. You provide an S3 bucket, object
-#' key name, and the resulting in-application table that is created.
+#' @param CurrentApplicationVersionId &#91;required&#93; The version of the application for which you are adding the reference data source. You can use the [`describe_application`][kinesisanalyticsv2_describe_application] operation to get the current application version. If the version specified is not the current version, the `ConcurrentModificationException` is returned.
+#' @param ReferenceDataSource &#91;required&#93; The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created.
 #'
 #' @keywords internal
 #'
@@ -225,22 +183,9 @@ kinesisanalyticsv2_add_application_reference_data_source <- function(Application
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_add_application_vpc_configuration/](https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_add_application_vpc_configuration/) for full documentation.
 #'
 #' @param ApplicationName &#91;required&#93; The name of an existing application.
-#' @param CurrentApplicationVersionId The version of the application to which you want to add the VPC
-#' configuration. You must provide the `CurrentApplicationVersionId` or the
-#' `ConditionalToken`. You can use the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation to get the current application version. If the version
-#' specified is not the current version, the
-#' `ConcurrentModificationException` is returned. For better concurrency
-#' support, use the `ConditionalToken` parameter instead of
-#' `CurrentApplicationVersionId`.
+#' @param CurrentApplicationVersionId The version of the application to which you want to add the VPC configuration. You must provide the `CurrentApplicationVersionId` or the `ConditionalToken`. You can use the [`describe_application`][kinesisanalyticsv2_describe_application] operation to get the current application version. If the version specified is not the current version, the `ConcurrentModificationException` is returned. For better concurrency support, use the `ConditionalToken` parameter instead of `CurrentApplicationVersionId`.
 #' @param VpcConfiguration &#91;required&#93; Description of the VPC to add to the application.
-#' @param ConditionalToken A value you use to implement strong concurrency for application updates.
-#' You must provide the `ApplicationVersionID` or the `ConditionalToken`.
-#' You get the application's current `ConditionalToken` using
-#' [`describe_application`][kinesisanalyticsv2_describe_application]. For
-#' better concurrency support, use the `ConditionalToken` parameter instead
-#' of `CurrentApplicationVersionId`.
+#' @param ConditionalToken A value you use to implement strong concurrency for application updates. You must provide the `ApplicationVersionID` or the `ConditionalToken`. You get the application's current `ConditionalToken` using [`describe_application`][kinesisanalyticsv2_describe_application]. For better concurrency support, use the `ConditionalToken` parameter instead of `CurrentApplicationVersionId`.
 #'
 #' @keywords internal
 #'
@@ -274,20 +219,11 @@ kinesisanalyticsv2_add_application_vpc_configuration <- function(ApplicationName
 #' @param ApplicationName &#91;required&#93; The name of your application (for example, `sample-app`).
 #' @param ApplicationDescription A summary description of the application.
 #' @param RuntimeEnvironment &#91;required&#93; The runtime environment for the application.
-#' @param ServiceExecutionRole &#91;required&#93; The IAM role used by the application to access Kinesis data streams,
-#' Kinesis Data Firehose delivery streams, Amazon S3 objects, and other
-#' external resources.
+#' @param ServiceExecutionRole &#91;required&#93; The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources.
 #' @param ApplicationConfiguration Use this parameter to configure the application.
-#' @param CloudWatchLoggingOptions Use this parameter to configure an Amazon CloudWatch log stream to
-#' monitor application configuration errors.
-#' @param Tags A list of one or more tags to assign to the application. A tag is a
-#' key-value pair that identifies an application. Note that the maximum
-#' number of application tags includes system tags. The maximum number of
-#' user-defined application tags is 50. For more information, see [Using
-#' Tagging](https://docs.aws.amazon.com/managed-flink/latest/java/how-tagging.html).
-#' @param ApplicationMode Use the `STREAMING` mode to create a Managed Service for Apache Flink
-#' application. To create a Managed Service for Apache Flink Studio
-#' notebook, use the `INTERACTIVE` mode.
+#' @param CloudWatchLoggingOptions Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors.
+#' @param Tags A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see [Using Tagging](https://docs.aws.amazon.com/managed-flink/latest/java/how-tagging.html).
+#' @param ApplicationMode Use the `STREAMING` mode to create a Managed Service for Apache Flink application. To create a Managed Service for Apache Flink Studio notebook, use the `INTERACTIVE` mode.
 #'
 #' @keywords internal
 #'
@@ -320,8 +256,7 @@ kinesisanalyticsv2_create_application <- function(ApplicationName, ApplicationDe
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_create_application_presigned_url/](https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_create_application_presigned_url/) for full documentation.
 #'
 #' @param ApplicationName &#91;required&#93; The name of the application.
-#' @param UrlType &#91;required&#93; The type of the extension for which to create and return a URL.
-#' Currently, the only valid extension URL type is `FLINK_DASHBOARD_URL`.
+#' @param UrlType &#91;required&#93; The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is `FLINK_DASHBOARD_URL`.
 #' @param SessionExpirationDurationInSeconds The duration in seconds for which the returned URL will be valid.
 #'
 #' @keywords internal
@@ -386,9 +321,7 @@ kinesisanalyticsv2_create_application_snapshot <- function(ApplicationName, Snap
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_delete_application/](https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_delete_application/) for full documentation.
 #'
 #' @param ApplicationName &#91;required&#93; The name of the application to delete.
-#' @param CreateTimestamp &#91;required&#93; Use the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation to get this value.
+#' @param CreateTimestamp &#91;required&#93; Use the [`describe_application`][kinesisanalyticsv2_describe_application] operation to get this value.
 #'
 #' @keywords internal
 #'
@@ -421,22 +354,9 @@ kinesisanalyticsv2_delete_application <- function(ApplicationName, CreateTimesta
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_delete_application_cloud_watch_logging_option/](https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_delete_application_cloud_watch_logging_option/) for full documentation.
 #'
 #' @param ApplicationName &#91;required&#93; The application name.
-#' @param CurrentApplicationVersionId The version ID of the application. You must provide the
-#' `CurrentApplicationVersionId` or the `ConditionalToken`. You can
-#' retrieve the application version ID using
-#' [`describe_application`][kinesisanalyticsv2_describe_application]. For
-#' better concurrency support, use the `ConditionalToken` parameter instead
-#' of `CurrentApplicationVersionId`.
-#' @param CloudWatchLoggingOptionId &#91;required&#93; The `CloudWatchLoggingOptionId` of the Amazon CloudWatch logging option
-#' to delete. You can get the `CloudWatchLoggingOptionId` by using the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation.
-#' @param ConditionalToken A value you use to implement strong concurrency for application updates.
-#' You must provide the `CurrentApplicationVersionId` or the
-#' `ConditionalToken`. You get the application's current `ConditionalToken`
-#' using [`describe_application`][kinesisanalyticsv2_describe_application].
-#' For better concurrency support, use the `ConditionalToken` parameter
-#' instead of `CurrentApplicationVersionId`.
+#' @param CurrentApplicationVersionId The version ID of the application. You must provide the `CurrentApplicationVersionId` or the `ConditionalToken`. You can retrieve the application version ID using [`describe_application`][kinesisanalyticsv2_describe_application]. For better concurrency support, use the `ConditionalToken` parameter instead of `CurrentApplicationVersionId`.
+#' @param CloudWatchLoggingOptionId &#91;required&#93; The `CloudWatchLoggingOptionId` of the Amazon CloudWatch logging option to delete. You can get the `CloudWatchLoggingOptionId` by using the [`describe_application`][kinesisanalyticsv2_describe_application] operation.
+#' @param ConditionalToken A value you use to implement strong concurrency for application updates. You must provide the `CurrentApplicationVersionId` or the `ConditionalToken`. You get the application's current `ConditionalToken` using [`describe_application`][kinesisanalyticsv2_describe_application]. For better concurrency support, use the `ConditionalToken` parameter instead of `CurrentApplicationVersionId`.
 #'
 #' @keywords internal
 #'
@@ -468,16 +388,8 @@ kinesisanalyticsv2_delete_application_cloud_watch_logging_option <- function(App
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_delete_application_input_processing_configuration/](https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_delete_application_input_processing_configuration/) for full documentation.
 #'
 #' @param ApplicationName &#91;required&#93; The name of the application.
-#' @param CurrentApplicationVersionId &#91;required&#93; The application version. You can use the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation to get the current application version. If the version
-#' specified is not the current version, the
-#' `ConcurrentModificationException` is returned.
-#' @param InputId &#91;required&#93; The ID of the input configuration from which to delete the input
-#' processing configuration. You can get a list of the input IDs for an
-#' application by using the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation.
+#' @param CurrentApplicationVersionId &#91;required&#93; The application version. You can use the [`describe_application`][kinesisanalyticsv2_describe_application] operation to get the current application version. If the version specified is not the current version, the `ConcurrentModificationException` is returned.
+#' @param InputId &#91;required&#93; The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the [`describe_application`][kinesisanalyticsv2_describe_application] operation.
 #'
 #' @keywords internal
 #'
@@ -510,20 +422,8 @@ kinesisanalyticsv2_delete_application_input_processing_configuration <- function
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_delete_application_output/](https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_delete_application_output/) for full documentation.
 #'
 #' @param ApplicationName &#91;required&#93; The application name.
-#' @param CurrentApplicationVersionId &#91;required&#93; The application version. You can use the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation to get the current application version. If the version
-#' specified is not the current version, the
-#' `ConcurrentModificationException` is returned.
-#' @param OutputId &#91;required&#93; The ID of the configuration to delete. Each output configuration that is
-#' added to the application (either when the application is created or
-#' later) using the
-#' [`add_application_output`][kinesisanalyticsv2_add_application_output]
-#' operation has a unique ID. You need to provide the ID to uniquely
-#' identify the output configuration that you want to delete from the
-#' application configuration. You can use the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation to get the specific `OutputId`.
+#' @param CurrentApplicationVersionId &#91;required&#93; The application version. You can use the [`describe_application`][kinesisanalyticsv2_describe_application] operation to get the current application version. If the version specified is not the current version, the `ConcurrentModificationException` is returned.
+#' @param OutputId &#91;required&#93; The ID of the configuration to delete. Each output configuration that is added to the application (either when the application is created or later) using the [`add_application_output`][kinesisanalyticsv2_add_application_output] operation has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the [`describe_application`][kinesisanalyticsv2_describe_application] operation to get the specific `OutputId`.
 #'
 #' @keywords internal
 #'
@@ -556,17 +456,8 @@ kinesisanalyticsv2_delete_application_output <- function(ApplicationName, Curren
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_delete_application_reference_data_source/](https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_delete_application_reference_data_source/) for full documentation.
 #'
 #' @param ApplicationName &#91;required&#93; The name of an existing application.
-#' @param CurrentApplicationVersionId &#91;required&#93; The current application version. You can use the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation to get the current application version. If the version
-#' specified is not the current version, the
-#' `ConcurrentModificationException` is returned.
-#' @param ReferenceId &#91;required&#93; The ID of the reference data source. When you add a reference data
-#' source to your application using the
-#' [`add_application_reference_data_source`][kinesisanalyticsv2_add_application_reference_data_source],
-#' Kinesis Data Analytics assigns an ID. You can use the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation to get the reference ID.
+#' @param CurrentApplicationVersionId &#91;required&#93; The current application version. You can use the [`describe_application`][kinesisanalyticsv2_describe_application] operation to get the current application version. If the version specified is not the current version, the `ConcurrentModificationException` is returned.
+#' @param ReferenceId &#91;required&#93; The ID of the reference data source. When you add a reference data source to your application using the [`add_application_reference_data_source`][kinesisanalyticsv2_add_application_reference_data_source], Kinesis Data Analytics assigns an ID. You can use the [`describe_application`][kinesisanalyticsv2_describe_application] operation to get the reference ID.
 #'
 #' @keywords internal
 #'
@@ -599,8 +490,7 @@ kinesisanalyticsv2_delete_application_reference_data_source <- function(Applicat
 #'
 #' @param ApplicationName &#91;required&#93; The name of an existing application.
 #' @param SnapshotName &#91;required&#93; The identifier for the snapshot delete.
-#' @param SnapshotCreationTimestamp &#91;required&#93; The creation timestamp of the application snapshot to delete. You can
-#' retrieve this value using or .
+#' @param SnapshotCreationTimestamp &#91;required&#93; The creation timestamp of the application snapshot to delete. You can retrieve this value using or .
 #'
 #' @keywords internal
 #'
@@ -633,19 +523,9 @@ kinesisanalyticsv2_delete_application_snapshot <- function(ApplicationName, Snap
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_delete_application_vpc_configuration/](https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_delete_application_vpc_configuration/) for full documentation.
 #'
 #' @param ApplicationName &#91;required&#93; The name of an existing application.
-#' @param CurrentApplicationVersionId The current application version ID. You must provide the
-#' `CurrentApplicationVersionId` or the `ConditionalToken`. You can
-#' retrieve the application version ID using
-#' [`describe_application`][kinesisanalyticsv2_describe_application]. For
-#' better concurrency support, use the `ConditionalToken` parameter instead
-#' of `CurrentApplicationVersionId`.
+#' @param CurrentApplicationVersionId The current application version ID. You must provide the `CurrentApplicationVersionId` or the `ConditionalToken`. You can retrieve the application version ID using [`describe_application`][kinesisanalyticsv2_describe_application]. For better concurrency support, use the `ConditionalToken` parameter instead of `CurrentApplicationVersionId`.
 #' @param VpcConfigurationId &#91;required&#93; The ID of the VPC configuration to delete.
-#' @param ConditionalToken A value you use to implement strong concurrency for application updates.
-#' You must provide the `CurrentApplicationVersionId` or the
-#' `ConditionalToken`. You get the application's current `ConditionalToken`
-#' using [`describe_application`][kinesisanalyticsv2_describe_application].
-#' For better concurrency support, use the `ConditionalToken` parameter
-#' instead of `CurrentApplicationVersionId`.
+#' @param ConditionalToken A value you use to implement strong concurrency for application updates. You must provide the `CurrentApplicationVersionId` or the `ConditionalToken`. You get the application's current `ConditionalToken` using [`describe_application`][kinesisanalyticsv2_describe_application]. For better concurrency support, use the `ConditionalToken` parameter instead of `CurrentApplicationVersionId`.
 #'
 #' @keywords internal
 #'
@@ -678,8 +558,7 @@ kinesisanalyticsv2_delete_application_vpc_configuration <- function(ApplicationN
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_describe_application/](https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_describe_application/) for full documentation.
 #'
 #' @param ApplicationName &#91;required&#93; The name of the application.
-#' @param IncludeAdditionalDetails Displays verbose information about a Managed Service for Apache Flink
-#' application, including the application's job plan.
+#' @param IncludeAdditionalDetails Displays verbose information about a Managed Service for Apache Flink application, including the application's job plan.
 #'
 #' @keywords internal
 #'
@@ -710,8 +589,8 @@ kinesisanalyticsv2_describe_application <- function(ApplicationName, IncludeAddi
 #'
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_describe_application_operation/](https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_describe_application_operation/) for full documentation.
 #'
-#' @param ApplicationName &#91;required&#93; 
-#' @param OperationId &#91;required&#93; 
+#' @param ApplicationName &#91;required&#93; The name of the application.
+#' @param OperationId &#91;required&#93; The operation ID of the request.
 #'
 #' @keywords internal
 #'
@@ -743,8 +622,7 @@ kinesisanalyticsv2_describe_application_operation <- function(ApplicationName, O
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_describe_application_snapshot/](https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_describe_application_snapshot/) for full documentation.
 #'
 #' @param ApplicationName &#91;required&#93; The name of an existing application.
-#' @param SnapshotName &#91;required&#93; The identifier of an application snapshot. You can retrieve this value
-#' using .
+#' @param SnapshotName &#91;required&#93; The identifier of an application snapshot. You can retrieve this value using .
 #'
 #' @keywords internal
 #'
@@ -776,10 +654,8 @@ kinesisanalyticsv2_describe_application_snapshot <- function(ApplicationName, Sn
 #'
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_describe_application_version/](https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_describe_application_version/) for full documentation.
 #'
-#' @param ApplicationName &#91;required&#93; The name of the application for which you want to get the version
-#' description.
-#' @param ApplicationVersionId &#91;required&#93; The ID of the application version for which you want to get the
-#' description.
+#' @param ApplicationName &#91;required&#93; The name of the application for which you want to get the version description.
+#' @param ApplicationVersionId &#91;required&#93; The ID of the application version for which you want to get the description.
 #'
 #' @keywords internal
 #'
@@ -815,12 +691,9 @@ kinesisanalyticsv2_describe_application_version <- function(ApplicationName, App
 #'
 #' @param ResourceARN The Amazon Resource Name (ARN) of the streaming source.
 #' @param ServiceExecutionRole &#91;required&#93; The ARN of the role that is used to access the streaming source.
-#' @param InputStartingPositionConfiguration The point at which you want Kinesis Data Analytics to start reading
-#' records from the specified streaming source for discovery purposes.
-#' @param S3Configuration Specify this parameter to discover a schema from data in an Amazon S3
-#' object.
-#' @param InputProcessingConfiguration The InputProcessingConfiguration to use to preprocess the records before
-#' discovering the schema of the records.
+#' @param InputStartingPositionConfiguration The point at which you want Kinesis Data Analytics to start reading records from the specified streaming source for discovery purposes.
+#' @param S3Configuration Specify this parameter to discover a schema from data in an Amazon S3 object.
+#' @param InputProcessingConfiguration The InputProcessingConfiguration to use to preprocess the records before discovering the schema of the records.
 #'
 #' @keywords internal
 #'
@@ -852,11 +725,11 @@ kinesisanalyticsv2_discover_input_schema <- function(ResourceARN = NULL, Service
 #'
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_list_application_operations/](https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_list_application_operations/) for full documentation.
 #'
-#' @param ApplicationName &#91;required&#93; 
-#' @param Limit 
-#' @param NextToken 
-#' @param Operation 
-#' @param OperationStatus 
+#' @param ApplicationName &#91;required&#93; The name of the application.
+#' @param Limit The limit on the number of records to be returned in the response.
+#' @param NextToken A pagination token that can be used in a subsequent request.
+#' @param Operation The type of operation that is performed on an application.
+#' @param OperationStatus The status of the operation.
 #'
 #' @keywords internal
 #'
@@ -889,10 +762,7 @@ kinesisanalyticsv2_list_application_operations <- function(ApplicationName, Limi
 #'
 #' @param ApplicationName &#91;required&#93; The name of an existing application.
 #' @param Limit The maximum number of application snapshots to list.
-#' @param NextToken Use this parameter if you receive a `NextToken` response in a previous
-#' request that indicates that there is more output available. Set it to
-#' the value of the previous call's `NextToken` response to indicate where
-#' the output should continue from.
+#' @param NextToken Use this parameter if you receive a `NextToken` response in a previous request that indicates that there is more output available. Set it to the value of the previous call's `NextToken` response to indicate where the output should continue from.
 #'
 #' @keywords internal
 #'
@@ -925,13 +795,8 @@ kinesisanalyticsv2_list_application_snapshots <- function(ApplicationName, Limit
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_list_application_versions/](https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_list_application_versions/) for full documentation.
 #'
 #' @param ApplicationName &#91;required&#93; The name of the application for which you want to list all versions.
-#' @param Limit The maximum number of versions to list in this invocation of the
-#' operation.
-#' @param NextToken If a previous invocation of this operation returned a pagination token,
-#' pass it into this value to retrieve the next set of results. For more
-#' information about pagination, see [Using the Amazon Command Line
-#' Interface's Pagination
-#' Options](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-pagination.html).
+#' @param Limit The maximum number of versions to list in this invocation of the operation.
+#' @param NextToken If a previous invocation of this operation returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see [Using the Amazon Command Line Interface's Pagination Options](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-pagination.html).
 #'
 #' @keywords internal
 #'
@@ -964,10 +829,7 @@ kinesisanalyticsv2_list_application_versions <- function(ApplicationName, Limit 
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_list_applications/](https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_list_applications/) for full documentation.
 #'
 #' @param Limit The maximum number of applications to list.
-#' @param NextToken If a previous command returned a pagination token, pass it into this
-#' value to retrieve the next set of results. For more information about
-#' pagination, see [Using the Amazon Command Line Interface's Pagination
-#' Options](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-pagination.html).
+#' @param NextToken If a previous command returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see [Using the Amazon Command Line Interface's Pagination Options](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-pagination.html).
 #'
 #' @keywords internal
 #'
@@ -1030,9 +892,7 @@ kinesisanalyticsv2_list_tags_for_resource <- function(ResourceARN) {
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_rollback_application/](https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_rollback_application/) for full documentation.
 #'
 #' @param ApplicationName &#91;required&#93; The name of the application.
-#' @param CurrentApplicationVersionId &#91;required&#93; The current application version ID. You can retrieve the application
-#' version ID using
-#' [`describe_application`][kinesisanalyticsv2_describe_application].
+#' @param CurrentApplicationVersionId &#91;required&#93; The current application version ID. You can retrieve the application version ID using [`describe_application`][kinesisanalyticsv2_describe_application].
 #'
 #' @keywords internal
 #'
@@ -1064,8 +924,7 @@ kinesisanalyticsv2_rollback_application <- function(ApplicationName, CurrentAppl
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_start_application/](https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_start_application/) for full documentation.
 #'
 #' @param ApplicationName &#91;required&#93; The name of the application.
-#' @param RunConfiguration Identifies the run configuration (start parameters) of a Managed Service
-#' for Apache Flink application.
+#' @param RunConfiguration Identifies the run configuration (start parameters) of a Managed Service for Apache Flink application.
 #'
 #' @keywords internal
 #'
@@ -1097,20 +956,13 @@ kinesisanalyticsv2_start_application <- function(ApplicationName, RunConfigurati
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_stop_application/](https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_stop_application/) for full documentation.
 #'
 #' @param ApplicationName &#91;required&#93; The name of the running application to stop.
-#' @param Force Set to `true` to force the application to stop. If you set `Force` to
-#' `true`, Managed Service for Apache Flink stops the application without
-#' taking a snapshot.
+#' @param Force Set to `true` to force the application to stop. If you set `Force` to `true`, Managed Service for Apache Flink stops the application without taking a snapshot.
 #' 
-#' Force-stopping your application may lead to data loss or duplication. To
-#' prevent data loss or duplicate processing of data during application
-#' restarts, we recommend you to take frequent snapshots of your
-#' application.
+#' Force-stopping your application may lead to data loss or duplication. To prevent data loss or duplicate processing of data during application restarts, we recommend you to take frequent snapshots of your application.
 #' 
-#' You can only force stop a Managed Service for Apache Flink application.
-#' You can't force stop a SQL-based Kinesis Data Analytics application.
+#' You can only force stop a Managed Service for Apache Flink application. You can't force stop a SQL-based Kinesis Data Analytics application.
 #' 
-#' The application must be in the `STARTING`, `UPDATING`, `STOPPING`,
-#' `AUTOSCALING`, or `RUNNING` status.
+#' The application must be in the `STARTING`, `UPDATING`, `STOPPING`, `AUTOSCALING`, or `RUNNING` status.
 #'
 #' @keywords internal
 #'
@@ -1175,8 +1027,7 @@ kinesisanalyticsv2_tag_resource <- function(ResourceARN, Tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_untag_resource/](https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_untag_resource/) for full documentation.
 #'
-#' @param ResourceARN &#91;required&#93; The ARN of the Managed Service for Apache Flink application from which
-#' to remove the tags.
+#' @param ResourceARN &#91;required&#93; The ARN of the Managed Service for Apache Flink application from which to remove the tags.
 #' @param TagKeys &#91;required&#93; A list of keys of tags to remove from the specified application.
 #'
 #' @keywords internal
@@ -1209,33 +1060,17 @@ kinesisanalyticsv2_untag_resource <- function(ResourceARN, TagKeys) {
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_update_application/](https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_update_application/) for full documentation.
 #'
 #' @param ApplicationName &#91;required&#93; The name of the application to update.
-#' @param CurrentApplicationVersionId The current application version ID. You must provide the
-#' `CurrentApplicationVersionId` or the `ConditionalToken`.You can retrieve
-#' the application version ID using
-#' [`describe_application`][kinesisanalyticsv2_describe_application]. For
-#' better concurrency support, use the `ConditionalToken` parameter instead
-#' of `CurrentApplicationVersionId`.
+#' @param CurrentApplicationVersionId The current application version ID. You must provide the `CurrentApplicationVersionId` or the `ConditionalToken`.You can retrieve the application version ID using [`describe_application`][kinesisanalyticsv2_describe_application]. For better concurrency support, use the `ConditionalToken` parameter instead of `CurrentApplicationVersionId`.
 #' @param ApplicationConfigurationUpdate Describes application configuration updates.
 #' @param ServiceExecutionRoleUpdate Describes updates to the service execution role.
 #' @param RunConfigurationUpdate Describes updates to the application's starting parameters.
-#' @param CloudWatchLoggingOptionUpdates Describes application Amazon CloudWatch logging option updates. You can
-#' only update existing CloudWatch logging options with this action. To add
-#' a new CloudWatch logging option, use
-#' [`add_application_cloud_watch_logging_option`][kinesisanalyticsv2_add_application_cloud_watch_logging_option].
-#' @param ConditionalToken A value you use to implement strong concurrency for application updates.
-#' You must provide the `CurrentApplicationVersionId` or the
-#' `ConditionalToken`. You get the application's current `ConditionalToken`
-#' using [`describe_application`][kinesisanalyticsv2_describe_application].
-#' For better concurrency support, use the `ConditionalToken` parameter
-#' instead of `CurrentApplicationVersionId`.
-#' @param RuntimeEnvironmentUpdate Updates the Managed Service for Apache Flink runtime environment used to
-#' run your code. To avoid issues you must:
+#' @param CloudWatchLoggingOptionUpdates Describes application Amazon CloudWatch logging option updates. You can only update existing CloudWatch logging options with this action. To add a new CloudWatch logging option, use [`add_application_cloud_watch_logging_option`][kinesisanalyticsv2_add_application_cloud_watch_logging_option].
+#' @param ConditionalToken A value you use to implement strong concurrency for application updates. You must provide the `CurrentApplicationVersionId` or the `ConditionalToken`. You get the application's current `ConditionalToken` using [`describe_application`][kinesisanalyticsv2_describe_application]. For better concurrency support, use the `ConditionalToken` parameter instead of `CurrentApplicationVersionId`.
+#' @param RuntimeEnvironmentUpdate Updates the Managed Service for Apache Flink runtime environment used to run your code. To avoid issues you must:
 #' 
-#' -   Ensure your new jar and dependencies are compatible with the new
-#'     runtime selected.
+#' -   Ensure your new jar and dependencies are compatible with the new runtime selected.
 #' 
-#' -   Ensure your new code's state is compatible with the snapshot from
-#'     which your application will start
+#' -   Ensure your new code's state is compatible with the snapshot from which your application will start
 #'
 #' @keywords internal
 #'
@@ -1267,8 +1102,7 @@ kinesisanalyticsv2_update_application <- function(ApplicationName, CurrentApplic
 #'
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_update_application_maintenance_configuration/](https://www.paws-r-sdk.com/docs/kinesisanalyticsv2_update_application_maintenance_configuration/) for full documentation.
 #'
-#' @param ApplicationName &#91;required&#93; The name of the application for which you want to update the maintenance
-#' configuration.
+#' @param ApplicationName &#91;required&#93; The name of the application for which you want to update the maintenance configuration.
 #' @param ApplicationMaintenanceConfigurationUpdate &#91;required&#93; Describes the application maintenance configuration update.
 #'
 #' @keywords internal

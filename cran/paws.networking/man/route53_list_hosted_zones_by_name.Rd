@@ -11,34 +11,13 @@ route53_list_hosted_zones_by_name(
 )
 }
 \arguments{
-\item{DNSName}{(Optional) For your first request to
-\code{\link[=route53_list_hosted_zones_by_name]{list_hosted_zones_by_name}},
-include the \code{dnsname} parameter only if you want to specify the name of
-the first hosted zone in the response. If you don't include the
-\code{dnsname} parameter, Amazon Route 53 returns all of the hosted zones
-that were created by the current Amazon Web Services account, in ASCII
-order. For subsequent requests, include both \code{dnsname} and
-\code{hostedzoneid} parameters. For \code{dnsname}, specify the value of
-\code{NextDNSName} from the previous response.}
+\item{DNSName}{(Optional) For your first request to \code{\link[=route53_list_hosted_zones_by_name]{list_hosted_zones_by_name}}, include the \code{dnsname} parameter only if you want to specify the name of the first hosted zone in the response. If you don't include the \code{dnsname} parameter, Amazon Route 53 returns all of the hosted zones that were created by the current Amazon Web Services account, in ASCII order. For subsequent requests, include both \code{dnsname} and \code{hostedzoneid} parameters. For \code{dnsname}, specify the value of \code{NextDNSName} from the previous response.}
 
-\item{HostedZoneId}{(Optional) For your first request to
-\code{\link[=route53_list_hosted_zones_by_name]{list_hosted_zones_by_name}}, do not
-include the \code{hostedzoneid} parameter.
+\item{HostedZoneId}{(Optional) For your first request to \code{\link[=route53_list_hosted_zones_by_name]{list_hosted_zones_by_name}}, do not include the \code{hostedzoneid} parameter.
 
-If you have more hosted zones than the value of \code{maxitems},
-\code{\link[=route53_list_hosted_zones_by_name]{list_hosted_zones_by_name}} returns
-only the first \code{maxitems} hosted zones. To get the next group of
-\code{maxitems} hosted zones, submit another request to
-\code{\link[=route53_list_hosted_zones_by_name]{list_hosted_zones_by_name}} and
-include both \code{dnsname} and \code{hostedzoneid} parameters. For the value of
-\code{hostedzoneid}, specify the value of the \code{NextHostedZoneId} element from
-the previous response.}
+If you have more hosted zones than the value of \code{maxitems}, \code{\link[=route53_list_hosted_zones_by_name]{list_hosted_zones_by_name}} returns only the first \code{maxitems} hosted zones. To get the next group of \code{maxitems} hosted zones, submit another request to \code{\link[=route53_list_hosted_zones_by_name]{list_hosted_zones_by_name}} and include both \code{dnsname} and \code{hostedzoneid} parameters. For the value of \code{hostedzoneid}, specify the value of the \code{NextHostedZoneId} element from the previous response.}
 
-\item{MaxItems}{The maximum number of hosted zones to be included in the response body
-for this request. If you have more than \code{maxitems} hosted zones, then
-the value of the \code{IsTruncated} element in the response is true, and the
-values of \code{NextDNSName} and \code{NextHostedZoneId} specify the first hosted
-zone in the next group of \code{maxitems} hosted zones.}
+\item{MaxItems}{The maximum number of hosted zones to be included in the response body for this request. If you have more than \code{maxitems} hosted zones, then the value of the \code{IsTruncated} element in the response is true, and the values of \code{NextDNSName} and \code{NextHostedZoneId} specify the first hosted zone in the next group of \code{maxitems} hosted zones.}
 }
 \description{
 Retrieves a list of your hosted zones in lexicographic order. The response includes a \code{HostedZones} child element for each hosted zone created by the current Amazon Web Services account.

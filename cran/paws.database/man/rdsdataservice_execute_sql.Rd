@@ -15,17 +15,13 @@ rdsdataservice_execute_sql(
 \arguments{
 \item{dbClusterOrInstanceArn}{[required] The ARN of the Aurora Serverless DB cluster.}
 
-\item{awsSecretStoreArn}{[required] The Amazon Resource Name (ARN) of the secret that enables access to the
-DB cluster. Enter the database user name and password for the
-credentials in the secret.
+\item{awsSecretStoreArn}{[required] The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.
 
 For information about creating the secret, see \href{https://docs.aws.amazon.com/secretsmanager/latest/userguide/}{Create a database secret}.}
 
 \item{sqlStatements}{[required] One or more SQL statements to run on the DB cluster.
 
-You can separate SQL statements from each other with a semicolon (;).
-Any valid SQL statement is permitted, including data definition, data
-manipulation, and commit statements.}
+You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements.}
 
 \item{database}{The name of the database.}
 

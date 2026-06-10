@@ -13,8 +13,7 @@ appstream_describe_app_block_builders(
 \arguments{
 \item{Names}{The names of the app block builders.}
 
-\item{NextToken}{The pagination token used to retrieve the next page of results for this
-operation.}
+\item{NextToken}{The pagination token used to retrieve the next page of results for this operation.}
 
 \item{MaxResults}{The maximum size of each page of results. The maximum value is 25.}
 }

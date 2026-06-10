@@ -27,19 +27,13 @@ Conditional: You must specify either \code{TypeName} and \code{Type}, or \code{A
 
 Conditional: You must specify either \code{TypeName} and \code{Type}, or \code{Arn}.}
 
-\item{VersionId}{The ID of a specific version of the extension. The version ID is the
-value at the end of the Amazon Resource Name (ARN) assigned to the
-extension version when it is registered.
+\item{VersionId}{The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.
 
-If you specify a \code{VersionId},
-\code{\link[=cloudformation_describe_type]{describe_type}} returns information
-about that specific extension version. Otherwise, it returns information
-about the default extension version.}
+If you specify a \code{VersionId}, \code{\link[=cloudformation_describe_type]{describe_type}} returns information about that specific extension version. Otherwise, it returns information about the default extension version.}
 
 \item{PublisherId}{The publisher ID of the extension publisher.
 
-Extensions provided by Amazon Web Services are not assigned a publisher
-ID.}
+Extensions provided by Amazon Web Services are not assigned a publisher ID.}
 
 \item{PublicVersionNumber}{The version number of a public third-party extension.}
 }

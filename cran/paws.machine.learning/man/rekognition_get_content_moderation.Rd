@@ -15,28 +15,15 @@ rekognition_get_content_moderation(
 )
 }
 \arguments{
-\item{JobId}{[required] The identifier for the inappropriate, unwanted, or offensive content
-moderation job. Use \code{JobId} to identify the job in a subsequent call to
-\code{\link[=rekognition_get_content_moderation]{get_content_moderation}}.}
+\item{JobId}{[required] The identifier for the inappropriate, unwanted, or offensive content moderation job. Use \code{JobId} to identify the job in a subsequent call to \code{\link[=rekognition_get_content_moderation]{get_content_moderation}}.}
 
-\item{MaxResults}{Maximum number of results to return per paginated call. The largest
-value you can specify is 1000. If you specify a value greater than 1000,
-a maximum of 1000 results is returned. The default value is 1000.}
+\item{MaxResults}{Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.}
 
-\item{NextToken}{If the previous response was incomplete (because there is more data to
-retrieve), Amazon Rekognition returns a pagination token in the
-response. You can use this pagination token to retrieve the next set of
-content moderation labels.}
+\item{NextToken}{If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of content moderation labels.}
 
-\item{SortBy}{Sort to use for elements in the \code{ModerationLabelDetections} array. Use
-\code{TIMESTAMP} to sort array elements by the time labels are detected. Use
-\code{NAME} to alphabetically group elements for a label together. Within
-each label group, the array element are sorted by detection confidence.
-The default sort is by \code{TIMESTAMP}.}
+\item{SortBy}{Sort to use for elements in the \code{ModerationLabelDetections} array. Use \code{TIMESTAMP} to sort array elements by the time labels are detected. Use \code{NAME} to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by \code{TIMESTAMP}.}
 
-\item{AggregateBy}{Defines how to aggregate results of the StartContentModeration request.
-Default aggregation option is TIMESTAMPS. SEGMENTS mode aggregates
-moderation labels over time.}
+\item{AggregateBy}{Defines how to aggregate results of the StartContentModeration request. Default aggregation option is TIMESTAMPS. SEGMENTS mode aggregates moderation labels over time.}
 }
 \description{
 Gets the inappropriate, unwanted, or offensive content analysis results for a Amazon Rekognition Video analysis started by \code{\link[=rekognition_start_content_moderation]{start_content_moderation}}. For a list of moderation labels in Amazon Rekognition, see \href{https://docs.aws.amazon.com/rekognition/latest/dg/moderation.html#moderation-api}{Using the image and video moderation APIs}.

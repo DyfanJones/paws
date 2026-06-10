@@ -18,21 +18,13 @@ billing_create_billing_view(
 
 \item{description}{The description of the billing view.}
 
-\item{sourceViews}{[required] A list of billing views used as the data source for the custom billing
-view.}
+\item{sourceViews}{[required] A list of billing views used as the data source for the custom billing view.}
 
-\item{dataFilterExpression}{See
-\href{https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html}{Expression}.
-Billing view only supports \code{LINKED_ACCOUNT} and \code{Tags}.}
+\item{dataFilterExpression}{See \href{https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html}{Expression}. Billing view only supports \code{LINKED_ACCOUNT}, \code{Tags}, and \code{CostCategories}.}
 
-\item{clientToken}{A unique, case-sensitive identifier you specify to ensure idempotency of
-the request. Idempotency ensures that an API request completes no more
-than one time. If the original request completes successfully, any
-subsequent retries complete successfully without performing any further
-actions with an idempotent request.}
+\item{clientToken}{A unique, case-sensitive identifier you specify to ensure idempotency of the request. Idempotency ensures that an API request completes no more than one time. If the original request completes successfully, any subsequent retries complete successfully without performing any further actions with an idempotent request.}
 
-\item{resourceTags}{A list of key value map specifying tags associated to the billing view
-being created.}
+\item{resourceTags}{A list of key value map specifying tags associated to the billing view being created.}
 }
 \description{
 Creates a billing view with the specified billing view attributes.

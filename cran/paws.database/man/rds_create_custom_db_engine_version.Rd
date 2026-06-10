@@ -9,14 +9,14 @@ rds_create_custom_db_engine_version(
   EngineVersion,
   DatabaseInstallationFilesS3BucketName = NULL,
   DatabaseInstallationFilesS3Prefix = NULL,
+  DatabaseInstallationFiles = NULL,
   ImageId = NULL,
   KMSKeyId = NULL,
   SourceCustomDbEngineVersionIdentifier = NULL,
   UseAwsProvidedLatestImage = NULL,
   Description = NULL,
   Manifest = NULL,
-  Tags = NULL,
-  DatabaseInstallationFiles = NULL
+  Tags = NULL
 )
 }
 \arguments{
@@ -42,59 +42,33 @@ RDS for SQL Server supports only \code{sqlserver-dev-ee}.}
 
 \item{EngineVersion}{[required] The name of your custom engine version (CEV).
 
-For RDS Custom for Oracle, the name format is \verb{19.*customized_string*}.
-For example, a valid CEV name is \verb{19.my_cev1}.
+For RDS Custom for Oracle, the name format is \verb{19.*customized_string*}. For example, a valid CEV name is \verb{19.my_cev1}.
 
-For RDS for SQL Server and RDS Custom for SQL Server, the name format is
-\verb{major engine_version*.*minor_engine_version*.*customized_string*}. For
-example, a valid CEV name is \verb{16.00.4215.2.my_cev1}.
+For RDS for SQL Server and RDS Custom for SQL Server, the name format is \verb{major engine_version*.*minor_engine_version*.*customized_string*}. For example, a valid CEV name is \verb{16.00.4215.2.my_cev1}.
 
 The CEV name is unique per customer per Amazon Web Services Regions.}
 
-\item{DatabaseInstallationFilesS3BucketName}{The name of an Amazon S3 bucket that contains database installation
-files for your CEV. For example, a valid bucket name is
-\code{my-custom-installation-files}.}
+\item{DatabaseInstallationFilesS3BucketName}{The name of an Amazon S3 bucket that contains database installation files for your CEV. For example, a valid bucket name is \code{my-custom-installation-files}.}
 
-\item{DatabaseInstallationFilesS3Prefix}{The Amazon S3 directory that contains the database installation files
-for your CEV. For example, a valid bucket name is \code{123456789012/cev1}.
-If this setting isn't specified, no prefix is assumed.}
+\item{DatabaseInstallationFilesS3Prefix}{The Amazon S3 directory that contains the database installation files for your CEV. For example, a valid bucket name is \code{123456789012/cev1}. If this setting isn't specified, no prefix is assumed.}
 
-\item{ImageId}{The ID of the Amazon Machine Image (AMI). For RDS Custom for SQL Server,
-an AMI ID is required to create a CEV. For RDS Custom for Oracle, the
-default is the most recent AMI available, but you can specify an AMI ID
-that was used in a different Oracle CEV. Find the AMIs used by your CEVs
-by calling the
-\code{\link[=rds_describe_db_engine_versions]{describe_db_engine_versions}}
-operation.}
+\item{DatabaseInstallationFiles}{The database installation files (ISO and EXE) uploaded to Amazon S3 for your database engine version to import to Amazon RDS.}
 
-\item{KMSKeyId}{The Amazon Web Services KMS key identifier for an encrypted CEV. A
-symmetric encryption KMS key is required for RDS Custom, but optional
-for Amazon RDS.
+\item{ImageId}{The ID of the Amazon Machine Image (AMI). For RDS Custom for SQL Server, an AMI ID is required to create a CEV. For RDS Custom for Oracle, the default is the most recent AMI available, but you can specify an AMI ID that was used in a different Oracle CEV. Find the AMIs used by your CEVs by calling the \code{\link[=rds_describe_db_engine_versions]{describe_db_engine_versions}} operation.}
 
-If you have an existing symmetric encryption KMS key in your account,
-you can use it with RDS Custom. No further action is necessary. If you
-don't already have a symmetric encryption KMS key in your account,
-follow the instructions in \href{https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk}{Creating a symmetric encryption KMS key}
-in the \emph{Amazon Web Services Key Management Service Developer Guide}.
+\item{KMSKeyId}{The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric encryption KMS key is required for RDS Custom, but optional for Amazon RDS.
 
-You can choose the same symmetric encryption key when you create a CEV
-and a DB instance, or choose different keys.}
+If you have an existing symmetric encryption KMS key in your account, you can use it with RDS Custom. No further action is necessary. If you don't already have a symmetric encryption KMS key in your account, follow the instructions in \href{https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk}{Creating a symmetric encryption KMS key} in the \emph{Amazon Web Services Key Management Service Developer Guide}.
 
-\item{SourceCustomDbEngineVersionIdentifier}{The ARN of a CEV to use as a source for creating a new CEV. You can
-specify a different Amazon Machine Imagine (AMI) by using either
-\code{Source} or \code{UseAwsProvidedLatestImage}. You can't specify a different
-JSON manifest when you specify \code{SourceCustomDbEngineVersionIdentifier}.}
+You can choose the same symmetric encryption key when you create a CEV and a DB instance, or choose different keys.}
 
-\item{UseAwsProvidedLatestImage}{Specifies whether to use the latest service-provided Amazon Machine
-Image (AMI) for the CEV. If you specify \code{UseAwsProvidedLatestImage}, you
-can't also specify \code{ImageId}.}
+\item{SourceCustomDbEngineVersionIdentifier}{The ARN of a CEV to use as a source for creating a new CEV. You can specify a different Amazon Machine Imagine (AMI) by using either \code{Source} or \code{UseAwsProvidedLatestImage}. You can't specify a different JSON manifest when you specify \code{SourceCustomDbEngineVersionIdentifier}.}
+
+\item{UseAwsProvidedLatestImage}{Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for the CEV. If you specify \code{UseAwsProvidedLatestImage}, you can't also specify \code{ImageId}.}
 
 \item{Description}{An optional description of your CEV.}
 
-\item{Manifest}{The CEV manifest, which is a JSON document that describes the
-installation .zip files stored in Amazon S3. Specify the name/value
-pairs in a file or a quoted string. RDS Custom applies the patches in
-the order in which they are listed.
+\item{Manifest}{The CEV manifest, which is a JSON document that describes the installation .zip files stored in Amazon S3. Specify the name/value pairs in a file or a quoted string. RDS Custom applies the patches in the order in which they are listed.
 
 The following JSON fields are valid:
 
@@ -116,16 +90,13 @@ The PSU and RU patches for this CEV.
 
 \strong{OtherPatchFileNames}
 
-The patches that are not in the list of PSU and RU patches. Amazon RDS
-applies these patches after applying the PSU and RU patches.
+The patches that are not in the list of PSU and RU patches. Amazon RDS applies these patches after applying the PSU and RU patches.
 
-For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest}{Creating the CEV manifest}
-in the \emph{Amazon RDS User Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest}{Creating the CEV manifest} in the \emph{Amazon RDS User Guide}.}
 
-\item{Tags}{}
+\item{Tags}{A list of tags.
 
-\item{DatabaseInstallationFiles}{The database installation files (ISO and EXE) uploaded to Amazon S3 for
-your database engine version to import to Amazon RDS.}
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html}{Tagging Amazon RDS resources} in the \emph{Amazon RDS User Guide} or \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html}{Tagging Amazon Aurora and Amazon RDS resources} in the \emph{Amazon Aurora User Guide}.}
 }
 \description{
 Creates a custom DB engine version (CEV).

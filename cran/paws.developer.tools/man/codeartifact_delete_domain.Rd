@@ -9,8 +9,7 @@ codeartifact_delete_domain(domain, domainOwner = NULL)
 \arguments{
 \item{domain}{[required] The name of the domain to delete.}
 
-\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns
-the domain. It does not include dashes or spaces.}
+\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.}
 }
 \description{
 Deletes a domain. You cannot delete a domain that contains repositories. If you want to delete a domain with repositories, first delete its repositories.

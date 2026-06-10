@@ -15,8 +15,7 @@ inspector2_update_filter(
 )
 }
 \arguments{
-\item{action}{Specifies the action that is to be applied to the findings that match
-the filter.}
+\item{action}{Specifies the action that is to be applied to the findings that match the filter.}
 
 \item{description}{A description of the filter.}
 

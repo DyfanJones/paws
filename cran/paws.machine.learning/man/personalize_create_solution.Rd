@@ -20,73 +20,37 @@ personalize_create_solution(
 \arguments{
 \item{name}{[required] The name for the solution.}
 
-\item{performHPO}{Whether to perform hyperparameter optimization (HPO) on the specified or
-selected recipe. The default is \code{false}.
+\item{performHPO}{Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe. The default is \code{false}.
 
-When performing AutoML, this parameter is always \code{true} and you should
-not set it to \code{false}.}
+When performing AutoML, this parameter is always \code{true} and you should not set it to \code{false}.}
 
-\item{performAutoML}{We don't recommend enabling automated machine learning. Instead, match
-your use case to the available Amazon Personalize recipes. For more
-information, see \href{https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html}{Choosing a recipe}.
+\item{performAutoML}{We don't recommend enabling automated machine learning. Instead, match your use case to the available Amazon Personalize recipes. For more information, see \href{https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html}{Choosing a recipe}.
 
-Whether to perform automated machine learning (AutoML). The default is
-\code{false}. For this case, you must specify \code{recipeArn}.
+Whether to perform automated machine learning (AutoML). The default is \code{false}. For this case, you must specify \code{recipeArn}.
 
-When set to \code{true}, Amazon Personalize analyzes your training data and
-selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In
-this case, you must omit \code{recipeArn}. Amazon Personalize determines the
-optimal recipe by running tests with different values for the
-hyperparameters. AutoML lengthens the training process as compared to
-selecting a specific recipe.}
+When set to \code{true}, Amazon Personalize analyzes your training data and selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit \code{recipeArn}. Amazon Personalize determines the optimal recipe by running tests with different values for the hyperparameters. AutoML lengthens the training process as compared to selecting a specific recipe.}
 
-\item{performAutoTraining}{Whether the solution uses automatic training to create new solution
-versions (trained models). The default is \code{True} and the solution
-automatically creates new solution versions every 7 days. You can change
-the training frequency by specifying a \code{schedulingExpression} in the
-\code{AutoTrainingConfig} as part of solution configuration. For more
-information about automatic training, see \href{https://docs.aws.amazon.com/personalize/latest/dg/solution-config-auto-training.html}{Configuring automatic training}.
+\item{performAutoTraining}{Whether the solution uses automatic training to create new solution versions (trained models). The default is \code{True} and the solution automatically creates new solution versions every 7 days. You can change the training frequency by specifying a \code{schedulingExpression} in the \code{AutoTrainingConfig} as part of solution configuration. For more information about automatic training, see \href{https://docs.aws.amazon.com/personalize/latest/dg/solution-config-auto-training.html}{Configuring automatic training}.
 
-Automatic solution version creation starts within one hour after the
-solution is ACTIVE. If you manually create a solution version within the
-hour, the solution skips the first automatic training.
+Automatic solution version creation starts within one hour after the solution is ACTIVE. If you manually create a solution version within the hour, the solution skips the first automatic training.
 
-After training starts, you can get the solution version's Amazon
-Resource Name (ARN) with the
-\code{\link[=personalize_list_solution_versions]{list_solution_versions}} API
-operation. To get its status, use the
-\code{\link[=personalize_describe_solution_version]{describe_solution_version}}.}
+After training starts, you can get the solution version's Amazon Resource Name (ARN) with the \code{\link[=personalize_list_solution_versions]{list_solution_versions}} API operation. To get its status, use the \code{\link[=personalize_describe_solution_version]{describe_solution_version}}.}
 
-\item{performIncrementalUpdate}{Whether to perform incremental training updates on your model. When
-enabled, this allows the model to learn from new data more frequently
-without requiring full retraining, which enables near real-time
-personalization. This parameter is supported only for solutions that use
-the semantic-similarity recipe.}
+\item{performIncrementalUpdate}{Whether to perform incremental training updates on your model. When enabled, this allows the model to learn from new data more frequently without requiring full retraining, which enables near real-time personalization. This parameter is supported only for solutions that use the semantic-similarity recipe.}
 
-\item{recipeArn}{The Amazon Resource Name (ARN) of the recipe to use for model training.
-This is required when \code{performAutoML} is false. For information about
-different Amazon Personalize recipes and their ARNs, see \href{https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html}{Choosing a recipe}.}
+\item{recipeArn}{The Amazon Resource Name (ARN) of the recipe to use for model training. This is required when \code{performAutoML} is false. For information about different Amazon Personalize recipes and their ARNs, see \href{https://docs.aws.amazon.com/personalize/latest/dg/working-with-predefined-recipes.html}{Choosing a recipe}.}
 
-\item{datasetGroupArn}{[required] The Amazon Resource Name (ARN) of the dataset group that provides the
-training data.}
+\item{datasetGroupArn}{[required] The Amazon Resource Name (ARN) of the dataset group that provides the training data.}
 
-\item{eventType}{When your have multiple event types (using an \code{EVENT_TYPE} schema
-field), this parameter specifies which event type (for example, 'click'
-or 'like') is used for training the model.
+\item{eventType}{When your have multiple event types (using an \code{EVENT_TYPE} schema field), this parameter specifies which event type (for example, 'click' or 'like') is used for training the model.
 
-If you do not provide an \code{eventType}, Amazon Personalize will use all
-interactions for training with equal weight regardless of type.}
+If you do not provide an \code{eventType}, Amazon Personalize will use all interactions for training with equal weight regardless of type.}
 
-\item{solutionConfig}{The configuration properties for the solution. When \code{performAutoML} is
-set to true, Amazon Personalize only evaluates the \code{autoMLConfig}
-section of the solution configuration.
+\item{solutionConfig}{The configuration properties for the solution. When \code{performAutoML} is set to true, Amazon Personalize only evaluates the \code{autoMLConfig} section of the solution configuration.
 
-Amazon Personalize doesn't support configuring the \code{hpoObjective} at
-this time.}
+Amazon Personalize doesn't support configuring the \code{hpoObjective} at this time.}
 
-\item{tags}{A list of
-\href{https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html}{tags}
-to apply to the solution.}
+\item{tags}{A list of \href{https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html}{tags} to apply to the solution.}
 }
 \description{
 By default, all new solutions use automatic training. With automatic training, you incur training costs while your solution is active. To avoid unnecessary costs, when you are finished you can \href{https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateSolution.html}{update the solution} to turn off automatic training. For information about training costs, see \href{https://aws.amazon.com/personalize/pricing/}{Amazon Personalize pricing}.

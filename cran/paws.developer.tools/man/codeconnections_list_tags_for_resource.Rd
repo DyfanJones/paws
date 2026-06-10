@@ -8,8 +8,7 @@ resource}
 codeconnections_list_tags_for_resource(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource for which you want to get
-information about tags, if any.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource for which you want to get information about tags, if any.}
 }
 \description{
 Gets the set of key-value pairs (metadata) that are used to manage the resource.

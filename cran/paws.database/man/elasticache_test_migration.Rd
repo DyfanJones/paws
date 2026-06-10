@@ -9,8 +9,7 @@ elasticache_test_migration(ReplicationGroupId, CustomerNodeEndpointList)
 \arguments{
 \item{ReplicationGroupId}{[required] The ID of the replication group to which data is to be migrated.}
 
-\item{CustomerNodeEndpointList}{[required] List of endpoints from which data should be migrated. List should have
-only one element.}
+\item{CustomerNodeEndpointList}{[required] List of endpoints from which data should be migrated. List should have only one element.}
 }
 \description{
 Async API to test connection between source and target replication group.

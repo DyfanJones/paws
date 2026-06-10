@@ -13,15 +13,13 @@ workdocs_get_document_version(
 )
 }
 \arguments{
-\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web
-Services administrator credentials to access the API.}
+\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.}
 
 \item{DocumentId}{[required] The ID of the document.}
 
 \item{VersionId}{[required] The version ID of the document.}
 
-\item{Fields}{A comma-separated list of values. Specify "SOURCE" to include a URL for
-the source document.}
+\item{Fields}{A comma-separated list of values. Specify "SOURCE" to include a URL for the source document.}
 
 \item{IncludeCustomMetadata}{Set this to TRUE to include custom metadata in the response.}
 }

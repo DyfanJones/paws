@@ -26,8 +26,7 @@ emr_list_instances(
 
 \item{InstanceFleetType}{The node type of the instance fleet. For example MASTER, CORE, or TASK.}
 
-\item{InstanceStates}{A list of instance states that will filter the instances returned with
-this request.}
+\item{InstanceStates}{A list of instance states that will filter the instances returned with this request.}
 
 \item{Marker}{The pagination token that indicates the next set of results to retrieve.}
 }

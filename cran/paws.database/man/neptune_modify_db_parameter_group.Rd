@@ -14,16 +14,11 @@ Constraints:
 \item If supplied, must match the name of an existing DBParameterGroup.
 }}
 
-\item{Parameters}{[required] An array of parameter names, values, and the apply method for the
-parameter update. At least one parameter name, value, and apply method
-must be supplied; subsequent arguments are optional. A maximum of 20
-parameters can be modified in a single request.
+\item{Parameters}{[required] An array of parameter names, values, and the apply method for the parameter update. At least one parameter name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters can be modified in a single request.
 
 Valid Values (for the application method): \code{immediate | pending-reboot}
 
-You can use the immediate value with dynamic parameters only. You can
-use the pending-reboot value for both dynamic and static parameters, and
-changes are applied when you reboot the DB instance without failover.}
+You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both dynamic and static parameters, and changes are applied when you reboot the DB instance without failover.}
 }
 \description{
 Modifies the parameters of a DB parameter group. To modify more than one parameter, submit a list of the following: \code{ParameterName}, \code{ParameterValue}, and \code{ApplyMethod}. A maximum of 20 parameters can be modified in a single request.

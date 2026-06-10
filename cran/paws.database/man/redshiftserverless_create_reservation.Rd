@@ -11,14 +11,9 @@ redshiftserverless_create_reservation(capacity, clientToken = NULL, offeringId)
 \arguments{
 \item{capacity}{[required] The number of Redshift Processing Units (RPUs) to reserve.}
 
-\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If not provided, the Amazon Web Services SDK
-populates this field. This token must be a valid UUIDv4 value. For more
-information about idempotency, see \href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}
-.}
+\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. This token must be a valid UUIDv4 value. For more information about idempotency, see \href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs} .}
 
-\item{offeringId}{[required] The ID of the offering associated with the reservation. The offering
-determines the payment schedule for the reservation.}
+\item{offeringId}{[required] The ID of the offering associated with the reservation. The offering determines the payment schedule for the reservation.}
 }
 \description{
 Creates an Amazon Redshift Serverless reservation, which gives you the option to commit to a specified number of Redshift Processing Units (RPUs) for a year at a discount from Serverless on-demand (OD) rates.

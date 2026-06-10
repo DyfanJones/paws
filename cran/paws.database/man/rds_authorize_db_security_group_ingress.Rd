@@ -18,22 +18,11 @@ rds_authorize_db_security_group_ingress(
 
 \item{CIDRIP}{The IP range to authorize.}
 
-\item{EC2SecurityGroupName}{Name of the EC2 security group to authorize. For VPC DB security groups,
-\code{EC2SecurityGroupId} must be provided. Otherwise,
-\code{EC2SecurityGroupOwnerId} and either \code{EC2SecurityGroupName} or
-\code{EC2SecurityGroupId} must be provided.}
+\item{EC2SecurityGroupName}{Name of the EC2 security group to authorize. For VPC DB security groups, \code{EC2SecurityGroupId} must be provided. Otherwise, \code{EC2SecurityGroupOwnerId} and either \code{EC2SecurityGroupName} or \code{EC2SecurityGroupId} must be provided.}
 
-\item{EC2SecurityGroupId}{Id of the EC2 security group to authorize. For VPC DB security groups,
-\code{EC2SecurityGroupId} must be provided. Otherwise,
-\code{EC2SecurityGroupOwnerId} and either \code{EC2SecurityGroupName} or
-\code{EC2SecurityGroupId} must be provided.}
+\item{EC2SecurityGroupId}{Id of the EC2 security group to authorize. For VPC DB security groups, \code{EC2SecurityGroupId} must be provided. Otherwise, \code{EC2SecurityGroupOwnerId} and either \code{EC2SecurityGroupName} or \code{EC2SecurityGroupId} must be provided.}
 
-\item{EC2SecurityGroupOwnerId}{Amazon Web Services account number of the owner of the EC2 security
-group specified in the \code{EC2SecurityGroupName} parameter. The Amazon Web
-Services access key ID isn't an acceptable value. For VPC DB security
-groups, \code{EC2SecurityGroupId} must be provided. Otherwise,
-\code{EC2SecurityGroupOwnerId} and either \code{EC2SecurityGroupName} or
-\code{EC2SecurityGroupId} must be provided.}
+\item{EC2SecurityGroupOwnerId}{Amazon Web Services account number of the owner of the EC2 security group specified in the \code{EC2SecurityGroupName} parameter. The Amazon Web Services access key ID isn't an acceptable value. For VPC DB security groups, \code{EC2SecurityGroupId} must be provided. Otherwise, \code{EC2SecurityGroupOwnerId} and either \code{EC2SecurityGroupName} or \code{EC2SecurityGroupId} must be provided.}
 }
 \description{
 Enables ingress to a DBSecurityGroup using one of two forms of authorization. First, EC2 or VPC security groups can be added to the DBSecurityGroup if the application using the database is running on EC2 or VPC instances. Second, IP ranges are available if the application accessing your database is running on the internet. Required parameters for this API are one of CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId for non-VPC).

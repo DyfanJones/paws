@@ -7,8 +7,7 @@
 marketplacecatalog_describe_entity(Catalog, EntityId)
 }
 \arguments{
-\item{Catalog}{[required] Required. The catalog related to the request. Fixed value:
-\code{AWSMarketplace}}
+\item{Catalog}{[required] Required. The catalog related to the request. Fixed value: \code{AWSMarketplace}}
 
 \item{EntityId}{[required] Required. The unique ID of the entity to describe.}
 }

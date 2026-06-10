@@ -61,8 +61,7 @@ appstream_associate_app_block_builder_app_block <- function(AppBlockArn, AppBloc
 #' Associates the specified application with the specified fleet
 #'
 #' @description
-#' Associates the specified application with the specified fleet. This is
-#' only supported for Elastic fleets.
+#' Associates the specified application with the specified fleet. This is only supported for Elastic fleets.
 #'
 #' @usage
 #' appstream_associate_application_fleet(FleetName, ApplicationArn)
@@ -212,16 +211,14 @@ appstream_associate_fleet <- function(FleetName, StackName) {
 #' builder instance
 #'
 #' @description
-#' Associates license included application(s) with an existing image
-#' builder instance.
+#' Associates license included application(s) with an existing image builder instance.
 #'
 #' @usage
 #' appstream_associate_software_to_image_builder(ImageBuilderName,
 #'   SoftwareNames)
 #'
 #' @param ImageBuilderName &#91;required&#93; The name of the target image builder instance.
-#' @param SoftwareNames &#91;required&#93; The list of license included applications to associate with the image
-#' builder.
+#' @param SoftwareNames &#91;required&#93; The list of license included applications to associate with the image builder.
 #' 
 #' Possible values include the following:
 #' 
@@ -313,9 +310,7 @@ appstream_associate_software_to_image_builder <- function(ImageBuilderName, Soft
 #' Associates the specified users with the specified stacks
 #'
 #' @description
-#' Associates the specified users with the specified stacks. Users in a
-#' user pool cannot be assigned to stacks with fleets that are joined to an
-#' Active Directory domain.
+#' Associates the specified users with the specified stacks. Users in a user pool cannot be assigned to stacks with fleets that are joined to an Active Directory domain.
 #'
 #' @usage
 #' appstream_batch_associate_user_stack(UserStackAssociations)
@@ -450,9 +445,7 @@ appstream_batch_disassociate_user_stack <- function(UserStackAssociations) {
 #' same AWS account
 #'
 #' @description
-#' Copies the image within the same region or to a new region within the
-#' same AWS account. Note that any tags you added to the image will not be
-#' copied.
+#' Copies the image within the same region or to a new region within the same AWS account. Note that any tags you added to the image will not be copied.
 #'
 #' @usage
 #' appstream_copy_image(SourceImageName, DestinationImageName,
@@ -460,10 +453,8 @@ appstream_batch_disassociate_user_stack <- function(UserStackAssociations) {
 #'
 #' @param SourceImageName &#91;required&#93; The name of the image to copy.
 #' @param DestinationImageName &#91;required&#93; The name that the image will have when it is copied to the destination.
-#' @param DestinationRegion &#91;required&#93; The destination region to which the image will be copied. This parameter
-#' is required, even if you are copying an image within the same region.
-#' @param DestinationImageDescription The description that the image will have when it is copied to the
-#' destination.
+#' @param DestinationRegion &#91;required&#93; The destination region to which the image will be copied. This parameter is required, even if you are copying an image within the same region.
+#' @param DestinationImageDescription The description that the image will have when it is copied to the destination.
 #'
 #' @return
 #' A list with the following syntax:
@@ -512,12 +503,7 @@ appstream_copy_image <- function(SourceImageName, DestinationImageName, Destinat
 #' @description
 #' Creates an app block.
 #' 
-#' App blocks are a WorkSpaces Applications resource that stores the
-#' details about the virtual hard disk in an S3 bucket. It also stores the
-#' setup script with details about how to mount the virtual hard disk. The
-#' virtual hard disk includes the application binaries and other files
-#' necessary to launch your applications. Multiple applications can be
-#' assigned to a single app block.
+#' App blocks are a WorkSpaces Applications resource that stores the details about the virtual hard disk in an S3 bucket. It also stores the setup script with details about how to mount the virtual hard disk. The virtual hard disk includes the application binaries and other files necessary to launch your applications. Multiple applications can be assigned to a single app block.
 #' 
 #' This is only supported for Elastic fleets.
 #'
@@ -530,11 +516,9 @@ appstream_copy_image <- function(SourceImageName, DestinationImageName, Destinat
 #' @param Description The description of the app block.
 #' @param DisplayName The display name of the app block. This is not displayed to the user.
 #' @param SourceS3Location &#91;required&#93; The source S3 location of the app block.
-#' @param SetupScriptDetails The setup script details of the app block. This must be provided for the
-#' `CUSTOM` PackagingType.
+#' @param SetupScriptDetails The setup script details of the app block. This must be provided for the `CUSTOM` PackagingType.
 #' @param Tags The tags assigned to the app block.
-#' @param PostSetupScriptDetails The post setup script details of the app block. This can only be
-#' provided for the `APPSTREAM2` PackagingType.
+#' @param PostSetupScriptDetails The post setup script details of the app block. This can only be provided for the `APPSTREAM2` PackagingType.
 #' @param PackagingType The packaging type of the app block.
 #'
 #' @return
@@ -650,30 +634,24 @@ appstream_create_app_block <- function(Name, Description = NULL, DisplayName = N
 #' @usage
 #' appstream_create_app_block_builder(Name, Description, DisplayName, Tags,
 #'   Platform, InstanceType, VpcConfig, EnableDefaultInternetAccess,
-#'   IamRoleArn, AccessEndpoints)
+#'   IamRoleArn, AccessEndpoints, DisableIMDSV1)
 #'
 #' @param Name &#91;required&#93; The unique name for the app block builder.
 #' @param Description The description of the app block builder.
 #' @param DisplayName The display name of the app block builder.
-#' @param Tags The tags to associate with the app block builder. A tag is a key-value
-#' pair, and the value is optional. For example, Environment=Test. If you
-#' do not specify a value, Environment=.
+#' @param Tags The tags to associate with the app block builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.
 #' 
 #' If you do not specify a value, the value is set to an empty string.
 #' 
-#' Generally allowed characters are: letters, numbers, and spaces
-#' representable in UTF-8, and the following special characters:
+#' Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:
 #' 
 #' _ . : / = + \\ - @@
 #' 
-#' For more information, see [Tagging Your
-#' Resources](https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html)
-#' in the *Amazon WorkSpaces Applications Administration Guide*.
+#' For more information, see [Tagging Your Resources](https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html) in the *Amazon WorkSpaces Applications Administration Guide*.
 #' @param Platform &#91;required&#93; The platform of the app block builder.
 #' 
 #' `WINDOWS_SERVER_2019` is the only valid value.
-#' @param InstanceType &#91;required&#93; The instance type to use when launching the app block builder. The
-#' following instance types are available:
+#' @param InstanceType &#91;required&#93; The instance type to use when launching the app block builder. The following instance types are available:
 #' 
 #' -   stream.standard.small
 #' 
@@ -686,24 +664,13 @@ appstream_create_app_block <- function(Name, Description = NULL, DisplayName = N
 #' -   stream.standard.2xlarge
 #' @param VpcConfig &#91;required&#93; The VPC configuration for the app block builder.
 #' 
-#' App block builders require that you specify at least two subnets in
-#' different availability zones.
+#' App block builders require that you specify at least two subnets in different availability zones.
 #' @param EnableDefaultInternetAccess Enables or disables default internet access for the app block builder.
-#' @param IamRoleArn The Amazon Resource Name (ARN) of the IAM role to apply to the app block
-#' builder. To assume a role, the app block builder calls the AWS Security
-#' Token Service (STS) `AssumeRole` API operation and passes the ARN of the
-#' role to use. The operation creates a new session with temporary
-#' credentials. WorkSpaces Applications retrieves the temporary credentials
-#' and creates the **appstream_machine_role** credential profile on the
-#' instance.
+#' @param IamRoleArn The Amazon Resource Name (ARN) of the IAM role to apply to the app block builder. To assume a role, the app block builder calls the AWS Security Token Service (STS) `AssumeRole` API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. WorkSpaces Applications retrieves the temporary credentials and creates the **appstream_machine_role** credential profile on the instance.
 #' 
-#' For more information, see [Using an IAM Role to Grant Permissions to
-#' Applications and Scripts Running on WorkSpaces Applications Streaming
-#' Instances](https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html)
-#' in the *Amazon WorkSpaces Applications Administration Guide*.
-#' @param AccessEndpoints The list of interface VPC endpoint (interface endpoint) objects.
-#' Administrators can connect to the app block builder only through the
-#' specified endpoints.
+#' For more information, see [Using an IAM Role to Grant Permissions to Applications and Scripts Running on WorkSpaces Applications Streaming Instances](https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html) in the *Amazon WorkSpaces Applications Administration Guide*.
+#' @param AccessEndpoints The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.
+#' @param DisableIMDSV1 Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.
 #'
 #' @return
 #' A list with the following syntax:
@@ -748,7 +715,8 @@ appstream_create_app_block <- function(Name, Description = NULL, DisplayName = N
 #'         EndpointType = "STREAMING",
 #'         VpceId = "string"
 #'       )
-#'     )
+#'     ),
+#'     DisableIMDSV1 = TRUE|FALSE
 #'   )
 #' )
 #' ```
@@ -779,7 +747,8 @@ appstream_create_app_block <- function(Name, Description = NULL, DisplayName = N
 #'       EndpointType = "STREAMING",
 #'       VpceId = "string"
 #'     )
-#'   )
+#'   ),
+#'   DisableIMDSV1 = TRUE|FALSE
 #' )
 #' ```
 #'
@@ -788,7 +757,7 @@ appstream_create_app_block <- function(Name, Description = NULL, DisplayName = N
 #' @rdname appstream_create_app_block_builder
 #'
 #' @aliases appstream_create_app_block_builder
-appstream_create_app_block_builder <- function(Name, Description = NULL, DisplayName = NULL, Tags = NULL, Platform, InstanceType, VpcConfig, EnableDefaultInternetAccess = NULL, IamRoleArn = NULL, AccessEndpoints = NULL) {
+appstream_create_app_block_builder <- function(Name, Description = NULL, DisplayName = NULL, Tags = NULL, Platform, InstanceType, VpcConfig, EnableDefaultInternetAccess = NULL, IamRoleArn = NULL, AccessEndpoints = NULL, DisableIMDSV1 = NULL) {
   op <- new_operation(
     name = "CreateAppBlockBuilder",
     http_method = "POST",
@@ -797,7 +766,7 @@ appstream_create_app_block_builder <- function(Name, Description = NULL, Display
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .appstream$create_app_block_builder_input(Name = Name, Description = Description, DisplayName = DisplayName, Tags = Tags, Platform = Platform, InstanceType = InstanceType, VpcConfig = VpcConfig, EnableDefaultInternetAccess = EnableDefaultInternetAccess, IamRoleArn = IamRoleArn, AccessEndpoints = AccessEndpoints)
+  input <- .appstream$create_app_block_builder_input(Name = Name, Description = Description, DisplayName = DisplayName, Tags = Tags, Platform = Platform, InstanceType = InstanceType, VpcConfig = VpcConfig, EnableDefaultInternetAccess = EnableDefaultInternetAccess, IamRoleArn = IamRoleArn, AccessEndpoints = AccessEndpoints, DisableIMDSV1 = DisableIMDSV1)
   output <- .appstream$create_app_block_builder_output()
   config <- get_config()
   svc <- .appstream$service(config, op)
@@ -817,8 +786,7 @@ appstream_create_app_block_builder <- function(Name, Description = NULL, Display
 #'   Validity)
 #'
 #' @param AppBlockBuilderName &#91;required&#93; The name of the app block builder.
-#' @param Validity The time that the streaming URL will be valid, in seconds. Specify a
-#' value between 1 and 604800 seconds. The default is 3600 seconds.
+#' @param Validity The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.
 #'
 #' @return
 #' A list with the following syntax:
@@ -868,12 +836,7 @@ appstream_create_app_block_builder_streaming_url <- function(AppBlockBuilderName
 #' @description
 #' Creates an application.
 #' 
-#' Applications are a WorkSpaces Applications resource that stores the
-#' details about how to launch applications on Elastic fleet streaming
-#' instances. An application consists of the launch details, icon, and
-#' display name. Applications are associated with an app block that
-#' contains the application binaries and other files. The applications
-#' assigned to an Elastic fleet are the applications users can launch.
+#' Applications are a WorkSpaces Applications resource that stores the details about how to launch applications on Elastic fleet streaming instances. An application consists of the launch details, icon, and display name. Applications are associated with an app block that contains the application binaries and other files. The applications assigned to an Elastic fleet are the applications users can launch.
 #' 
 #' This is only supported for Elastic fleets.
 #'
@@ -882,19 +845,15 @@ appstream_create_app_block_builder_streaming_url <- function(AppBlockBuilderName
 #'   IconS3Location, LaunchPath, WorkingDirectory, LaunchParameters,
 #'   Platforms, InstanceFamilies, AppBlockArn, Tags)
 #'
-#' @param Name &#91;required&#93; The name of the application. This name is visible to users when display
-#' name is not specified.
-#' @param DisplayName The display name of the application. This name is visible to users in
-#' the application catalog.
+#' @param Name &#91;required&#93; The name of the application. This name is visible to users when display name is not specified.
+#' @param DisplayName The display name of the application. This name is visible to users in the application catalog.
 #' @param Description The description of the application.
 #' @param IconS3Location &#91;required&#93; The location in S3 of the application icon.
 #' @param LaunchPath &#91;required&#93; The launch path of the application.
 #' @param WorkingDirectory The working directory of the application.
 #' @param LaunchParameters The launch parameters of the application.
-#' @param Platforms &#91;required&#93; The platforms the application supports. WINDOWS_SERVER_2019,
-#' AMAZON_LINUX2 and UBUNTU_PRO_2404 are supported for Elastic fleets.
-#' @param InstanceFamilies &#91;required&#93; The instance families the application supports. Valid values are
-#' GENERAL_PURPOSE and GRAPHICS_G4.
+#' @param Platforms &#91;required&#93; The platforms the application supports. WINDOWS_SERVER_2019, AMAZON_LINUX2 and UBUNTU_PRO_2404 are supported for Elastic fleets.
+#' @param InstanceFamilies &#91;required&#93; The instance families the application supports. Valid values are GENERAL_PURPOSE and GRAPHICS_G4.
 #' @param AppBlockArn &#91;required&#93; The app block ARN to which the application should be associated
 #' @param Tags The tags assigned to the application.
 #'
@@ -986,31 +945,17 @@ appstream_create_application <- function(Name, DisplayName = NULL, Description =
 #' Creates a Directory Config object in WorkSpaces Applications
 #'
 #' @description
-#' Creates a Directory Config object in WorkSpaces Applications. This
-#' object includes the configuration information required to join fleets
-#' and image builders to Microsoft Active Directory domains.
+#' Creates a Directory Config object in WorkSpaces Applications. This object includes the configuration information required to join fleets and image builders to Microsoft Active Directory domains.
 #'
 #' @usage
 #' appstream_create_directory_config(DirectoryName,
 #'   OrganizationalUnitDistinguishedNames, ServiceAccountCredentials,
 #'   CertificateBasedAuthProperties)
 #'
-#' @param DirectoryName &#91;required&#93; The fully qualified name of the directory (for example,
-#' corp.example.com).
-#' @param OrganizationalUnitDistinguishedNames &#91;required&#93; The distinguished names of the organizational units for computer
-#' accounts.
-#' @param ServiceAccountCredentials The credentials for the service account used by the fleet or image
-#' builder to connect to the directory.
-#' @param CertificateBasedAuthProperties The certificate-based authentication properties used to authenticate
-#' SAML 2.0 Identity Provider (IdP) user identities to Active Directory
-#' domain-joined streaming instances. Fallback is turned on by default when
-#' certificate-based authentication is **Enabled** . Fallback allows users
-#' to log in using their AD domain password if certificate-based
-#' authentication is unsuccessful, or to unlock a desktop lock screen.
-#' **Enabled_no_directory_login_fallback** enables certificate-based
-#' authentication, but does not allow users to log in using their AD domain
-#' password. Users will be disconnected to re-authenticate using
-#' certificates.
+#' @param DirectoryName &#91;required&#93; The fully qualified name of the directory (for example, corp.example.com).
+#' @param OrganizationalUnitDistinguishedNames &#91;required&#93; The distinguished names of the organizational units for computer accounts.
+#' @param ServiceAccountCredentials The credentials for the service account used by the fleet or image builder to connect to the directory.
+#' @param CertificateBasedAuthProperties The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is **Enabled** . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. **Enabled_no_directory_login_fallback** enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1081,13 +1026,7 @@ appstream_create_directory_config <- function(DirectoryName, OrganizationalUnitD
 #' Creates a new entitlement
 #'
 #' @description
-#' Creates a new entitlement. Entitlements control access to specific
-#' applications within a stack, based on user attributes. Entitlements
-#' apply to SAML 2.0 federated user identities. WorkSpaces Applications
-#' user pool and streaming URL users are entitled to all applications in a
-#' stack. Entitlements don't apply to the desktop stream view application,
-#' or to applications managed by a dynamic app provider using the Dynamic
-#' Application Framework.
+#' Creates a new entitlement. Entitlements control access to specific applications within a stack, based on user attributes. Entitlements apply to SAML 2.0 federated user identities. WorkSpaces Applications user pool and streaming URL users are entitled to all applications in a stack. Entitlements don't apply to the desktop stream view application, or to applications managed by a dynamic app provider using the Dynamic Application Framework.
 #'
 #' @usage
 #' appstream_create_entitlement(Name, StackName, Description,
@@ -1167,26 +1106,17 @@ appstream_create_entitlement <- function(Name, StackName, Description = NULL, Ap
 #' Creates a task to export a WorkSpaces Applications image to an EC2 AMI
 #'
 #' @description
-#' Creates a task to export a WorkSpaces Applications image to an EC2 AMI.
-#' This allows you to use your customized WorkSpaces Applications images
-#' with other AWS services or for backup purposes.
+#' Creates a task to export a WorkSpaces Applications image to an EC2 AMI. This allows you to use your customized WorkSpaces Applications images with other AWS services or for backup purposes.
 #'
 #' @usage
 #' appstream_create_export_image_task(ImageName, AmiName, IamRoleArn,
 #'   TagSpecifications, AmiDescription)
 #'
-#' @param ImageName &#91;required&#93; The name of the WorkSpaces Applications image to export. The image must
-#' be in an available state and owned by your account.
-#' @param AmiName &#91;required&#93; The name for the exported EC2 AMI. This is a required field that must be
-#' unique within your account and region.
-#' @param IamRoleArn &#91;required&#93; The ARN of the IAM role that allows WorkSpaces Applications to create
-#' the AMI. The role must have permissions to copy images, describe images,
-#' and create tags, with a trust relationship allowing
-#' appstream.amazonaws.com to assume the role.
-#' @param TagSpecifications The tags to apply to the exported AMI. These tags help you organize and
-#' manage your EC2 AMIs.
-#' @param AmiDescription An optional description for the exported AMI. This description will be
-#' applied to the resulting EC2 AMI.
+#' @param ImageName &#91;required&#93; The name of the WorkSpaces Applications image to export. The image must be in an available state and owned by your account.
+#' @param AmiName &#91;required&#93; The name for the exported EC2 AMI. This is a required field that must be unique within your account and region.
+#' @param IamRoleArn &#91;required&#93; The ARN of the IAM role that allows WorkSpaces Applications to create the AMI. The role must have permissions to copy images, describe images, and create tags, with a trust relationship allowing appstream.amazonaws.com to assume the role.
+#' @param TagSpecifications The tags to apply to the exported AMI. These tags help you organize and manage your EC2 AMIs.
+#' @param AmiDescription An optional description for the exported AMI. This description will be applied to the resulting EC2 AMI.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1255,8 +1185,7 @@ appstream_create_export_image_task <- function(ImageName, AmiName, IamRoleArn, T
 #' Creates a fleet
 #'
 #' @description
-#' Creates a fleet. A fleet consists of streaming instances that your users
-#' access for their applications and desktops.
+#' Creates a fleet. A fleet consists of streaming instances that your users access for their applications and desktops.
 #'
 #' @usage
 #' appstream_create_fleet(Name, ImageName, ImageArn, InstanceType,
@@ -1265,13 +1194,12 @@ appstream_create_export_image_task <- function(ImageName, AmiName, IamRoleArn, T
 #'   EnableDefaultInternetAccess, DomainJoinInfo, Tags,
 #'   IdleDisconnectTimeoutInSeconds, IamRoleArn, StreamView, Platform,
 #'   MaxConcurrentSessions, UsbDeviceFilterStrings, SessionScriptS3Location,
-#'   MaxSessionsPerInstance, RootVolumeConfig)
+#'   MaxSessionsPerInstance, RootVolumeConfig, DisableIMDSV1)
 #'
 #' @param Name &#91;required&#93; A unique name for the fleet.
 #' @param ImageName The name of the image used to create the fleet.
 #' @param ImageArn The ARN of the public, private, or shared image to use.
-#' @param InstanceType &#91;required&#93; The instance type to use when launching fleet instances. The following
-#' instance types are available:
+#' @param InstanceType &#91;required&#93; The instance type to use when launching fleet instances. The following instance types are available:
 #' 
 #' -   stream.standard.small
 #' 
@@ -1384,110 +1312,52 @@ appstream_create_export_image_task <- function(ImageName, AmiName, IamRoleArn, T
 #' 
 #' **ALWAYS_ON**
 #' 
-#' Provides users with instant-on access to their apps. You are charged for
-#' all running instances in your fleet, even if no users are streaming
-#' apps.
+#' Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.
 #' 
 #' **ON_DEMAND**
 #' 
-#' Provide users with access to applications after they connect, which
-#' takes one to two minutes. You are charged for instance streaming when
-#' users are connected and a small hourly fee for instances that are not
-#' streaming apps.
-#' @param ComputeCapacity The desired capacity for the fleet. This is not allowed for Elastic
-#' fleets. For Elastic fleets, specify MaxConcurrentSessions instead.
-#' @param VpcConfig The VPC configuration for the fleet. This is required for Elastic
-#' fleets, but not required for other fleet types. Elastic fleets require
-#' that you specify at least two subnets in different availability zones.
-#' @param MaxUserDurationInSeconds The maximum amount of time that a streaming session can remain active,
-#' in seconds. If users are still connected to a streaming instance five
-#' minutes before this limit is reached, they are prompted to save any open
-#' documents before being disconnected. After this time elapses, the
-#' instance is terminated and replaced by a new instance.
+#' Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.
+#' @param ComputeCapacity The desired capacity for the fleet. This is not allowed for Elastic fleets. For Elastic fleets, specify MaxConcurrentSessions instead.
+#' @param VpcConfig The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones.
+#' @param MaxUserDurationInSeconds The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.
 #' 
 #' Specify a value between 600 and 432000.
-#' @param DisconnectTimeoutInSeconds The amount of time that a streaming session remains active after users
-#' disconnect. If users try to reconnect to the streaming session after a
-#' disconnection or network interruption within this time interval, they
-#' are connected to their previous session. Otherwise, they are connected
-#' to a new session with a new streaming instance.
+#' @param DisconnectTimeoutInSeconds The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance.
 #' 
 #' Specify a value between 60 and 36000.
 #' @param Description The description to display.
 #' @param DisplayName The fleet name to display.
 #' @param EnableDefaultInternetAccess Enables or disables default internet access for the fleet.
-#' @param DomainJoinInfo The name of the directory and organizational unit (OU) to use to join
-#' the fleet to a Microsoft Active Directory domain. This is not allowed
-#' for Elastic fleets.
-#' @param Tags The tags to associate with the fleet. A tag is a key-value pair, and the
-#' value is optional. For example, Environment=Test. If you do not specify
-#' a value, Environment=.
+#' @param DomainJoinInfo The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. This is not allowed for Elastic fleets.
+#' @param Tags The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.
 #' 
 #' If you do not specify a value, the value is set to an empty string.
 #' 
-#' Generally allowed characters are: letters, numbers, and spaces
-#' representable in UTF-8, and the following special characters:
+#' Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:
 #' 
 #' _ . : / = + \\ - @@
 #' 
-#' For more information, see [Tagging Your
-#' Resources](https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html)
-#' in the *Amazon WorkSpaces Applications Administration Guide*.
-#' @param IdleDisconnectTimeoutInSeconds The amount of time that users can be idle (inactive) before they are
-#' disconnected from their streaming session and the
-#' `DisconnectTimeoutInSeconds` time interval begins. Users are notified
-#' before they are disconnected due to inactivity. If they try to reconnect
-#' to the streaming session before the time interval specified in
-#' `DisconnectTimeoutInSeconds` elapses, they are connected to their
-#' previous session. Users are considered idle when they stop providing
-#' keyboard or mouse input during their streaming session. File uploads and
-#' downloads, audio in, audio out, and pixels changing do not qualify as
-#' user activity. If users continue to be idle after the time interval in
-#' `IdleDisconnectTimeoutInSeconds` elapses, they are disconnected.
+#' For more information, see [Tagging Your Resources](https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html) in the *Amazon WorkSpaces Applications Administration Guide*.
+#' @param IdleDisconnectTimeoutInSeconds The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the `DisconnectTimeoutInSeconds` time interval begins. Users are notified before they are disconnected due to inactivity. If they try to reconnect to the streaming session before the time interval specified in `DisconnectTimeoutInSeconds` elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in `IdleDisconnectTimeoutInSeconds` elapses, they are disconnected.
 #' 
-#' To prevent users from being disconnected due to inactivity, specify a
-#' value of 0. Otherwise, specify a value between 60 and 36000. The default
-#' value is 0.
+#' To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 36000. The default value is 0.
 #' 
-#' If you enable this feature, we recommend that you specify a value that
-#' corresponds exactly to a whole number of minutes (for example, 60, 120,
-#' and 180). If you don't do this, the value is rounded to the nearest
-#' minute. For example, if you specify a value of 70, users are
-#' disconnected after 1 minute of inactivity. If you specify a value that
-#' is at the midpoint between two different minutes, the value is rounded
-#' up. For example, if you specify a value of 90, users are disconnected
-#' after 2 minutes of inactivity.
-#' @param IamRoleArn The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To
-#' assume a role, a fleet instance calls the AWS Security Token Service
-#' (STS) `AssumeRole` API operation and passes the ARN of the role to use.
-#' The operation creates a new session with temporary credentials.
-#' WorkSpaces Applications retrieves the temporary credentials and creates
-#' the **appstream_machine_role** credential profile on the instance.
+#' If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity.
+#' @param IamRoleArn The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) `AssumeRole` API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. WorkSpaces Applications retrieves the temporary credentials and creates the **appstream_machine_role** credential profile on the instance.
 #' 
-#' For more information, see [Using an IAM Role to Grant Permissions to
-#' Applications and Scripts Running on WorkSpaces Applications Streaming
-#' Instances](https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html)
-#' in the *Amazon WorkSpaces Applications Administration Guide*.
-#' @param StreamView The WorkSpaces Applications view that is displayed to your users when
-#' they stream from the fleet. When `APP` is specified, only the windows of
-#' applications opened by users display. When `DESKTOP` is specified, the
-#' standard desktop that is provided by the operating system displays.
+#' For more information, see [Using an IAM Role to Grant Permissions to Applications and Scripts Running on WorkSpaces Applications Streaming Instances](https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html) in the *Amazon WorkSpaces Applications Administration Guide*.
+#' @param StreamView The WorkSpaces Applications view that is displayed to your users when they stream from the fleet. When `APP` is specified, only the windows of applications opened by users display. When `DESKTOP` is specified, the standard desktop that is provided by the operating system displays.
 #' 
 #' The default value is `APP`.
-#' @param Platform The fleet platform. WINDOWS_SERVER_2019, AMAZON_LINUX2 and
-#' UBUNTU_PRO_2404 are supported for Elastic fleets.
-#' @param MaxConcurrentSessions The maximum concurrent sessions of the Elastic fleet. This is required
-#' for Elastic fleets, and not allowed for other fleet types.
-#' @param UsbDeviceFilterStrings The USB device filter strings that specify which USB devices a user can
-#' redirect to the fleet streaming session, when using the Windows native
-#' client. This is allowed but not required for Elastic fleets.
-#' @param SessionScriptS3Location The S3 location of the session scripts configuration zip file. This only
-#' applies to Elastic fleets.
-#' @param MaxSessionsPerInstance The maximum number of user sessions on an instance. This only applies to
-#' multi-session fleets.
-#' @param RootVolumeConfig The configuration for the root volume of fleet instances. Use this to
-#' customize storage capacity from 200 GB up to 500 GB based on your
-#' application requirements.
+#' @param Platform The fleet platform. WINDOWS_SERVER_2019, AMAZON_LINUX2 and UBUNTU_PRO_2404 are supported for Elastic fleets.
+#' @param MaxConcurrentSessions The maximum concurrent sessions of the Elastic fleet. This is required for Elastic fleets, and not allowed for other fleet types.
+#' @param UsbDeviceFilterStrings The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.
+#' @param SessionScriptS3Location The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.
+#' @param MaxSessionsPerInstance The maximum number of user sessions on an instance. This only applies to multi-session fleets.
+#' @param RootVolumeConfig The configuration for the root volume of fleet instances. Use this to customize storage capacity from 200 GB up to 500 GB based on your application requirements.
+#' @param DisableIMDSV1 Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.
+#' 
+#' Before disabling IMDSv1, ensure your WorkSpaces Applications images are running the agent version or managed image update released on or after January 16, 2024 to support IMDSv2 enforcement.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1510,7 +1380,10 @@ appstream_create_export_image_task <- function(ImageName, AmiName, IamRoleArn, T
 #'       DesiredUserSessions = 123,
 #'       AvailableUserSessions = 123,
 #'       ActiveUserSessions = 123,
-#'       ActualUserSessions = 123
+#'       ActualUserSessions = 123,
+#'       Draining = 123,
+#'       DrainModeActiveUserSessions = 123,
+#'       DrainModeUnusedUserSessions = 123
 #'     ),
 #'     MaxUserDurationInSeconds = 123,
 #'     DisconnectTimeoutInSeconds = 123,
@@ -1552,7 +1425,8 @@ appstream_create_export_image_task <- function(ImageName, AmiName, IamRoleArn, T
 #'     MaxSessionsPerInstance = 123,
 #'     RootVolumeConfig = list(
 #'       VolumeSizeInGb = 123
-#'     )
+#'     ),
+#'     DisableIMDSV1 = TRUE|FALSE
 #'   )
 #' )
 #' ```
@@ -1604,7 +1478,8 @@ appstream_create_export_image_task <- function(ImageName, AmiName, IamRoleArn, T
 #'   MaxSessionsPerInstance = 123,
 #'   RootVolumeConfig = list(
 #'     VolumeSizeInGb = 123
-#'   )
+#'   ),
+#'   DisableIMDSV1 = TRUE|FALSE
 #' )
 #' ```
 #'
@@ -1613,7 +1488,7 @@ appstream_create_export_image_task <- function(ImageName, AmiName, IamRoleArn, T
 #' @rdname appstream_create_fleet
 #'
 #' @aliases appstream_create_fleet
-appstream_create_fleet <- function(Name, ImageName = NULL, ImageArn = NULL, InstanceType, FleetType = NULL, ComputeCapacity = NULL, VpcConfig = NULL, MaxUserDurationInSeconds = NULL, DisconnectTimeoutInSeconds = NULL, Description = NULL, DisplayName = NULL, EnableDefaultInternetAccess = NULL, DomainJoinInfo = NULL, Tags = NULL, IdleDisconnectTimeoutInSeconds = NULL, IamRoleArn = NULL, StreamView = NULL, Platform = NULL, MaxConcurrentSessions = NULL, UsbDeviceFilterStrings = NULL, SessionScriptS3Location = NULL, MaxSessionsPerInstance = NULL, RootVolumeConfig = NULL) {
+appstream_create_fleet <- function(Name, ImageName = NULL, ImageArn = NULL, InstanceType, FleetType = NULL, ComputeCapacity = NULL, VpcConfig = NULL, MaxUserDurationInSeconds = NULL, DisconnectTimeoutInSeconds = NULL, Description = NULL, DisplayName = NULL, EnableDefaultInternetAccess = NULL, DomainJoinInfo = NULL, Tags = NULL, IdleDisconnectTimeoutInSeconds = NULL, IamRoleArn = NULL, StreamView = NULL, Platform = NULL, MaxConcurrentSessions = NULL, UsbDeviceFilterStrings = NULL, SessionScriptS3Location = NULL, MaxSessionsPerInstance = NULL, RootVolumeConfig = NULL, DisableIMDSV1 = NULL) {
   op <- new_operation(
     name = "CreateFleet",
     http_method = "POST",
@@ -1622,7 +1497,7 @@ appstream_create_fleet <- function(Name, ImageName = NULL, ImageArn = NULL, Inst
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .appstream$create_fleet_input(Name = Name, ImageName = ImageName, ImageArn = ImageArn, InstanceType = InstanceType, FleetType = FleetType, ComputeCapacity = ComputeCapacity, VpcConfig = VpcConfig, MaxUserDurationInSeconds = MaxUserDurationInSeconds, DisconnectTimeoutInSeconds = DisconnectTimeoutInSeconds, Description = Description, DisplayName = DisplayName, EnableDefaultInternetAccess = EnableDefaultInternetAccess, DomainJoinInfo = DomainJoinInfo, Tags = Tags, IdleDisconnectTimeoutInSeconds = IdleDisconnectTimeoutInSeconds, IamRoleArn = IamRoleArn, StreamView = StreamView, Platform = Platform, MaxConcurrentSessions = MaxConcurrentSessions, UsbDeviceFilterStrings = UsbDeviceFilterStrings, SessionScriptS3Location = SessionScriptS3Location, MaxSessionsPerInstance = MaxSessionsPerInstance, RootVolumeConfig = RootVolumeConfig)
+  input <- .appstream$create_fleet_input(Name = Name, ImageName = ImageName, ImageArn = ImageArn, InstanceType = InstanceType, FleetType = FleetType, ComputeCapacity = ComputeCapacity, VpcConfig = VpcConfig, MaxUserDurationInSeconds = MaxUserDurationInSeconds, DisconnectTimeoutInSeconds = DisconnectTimeoutInSeconds, Description = Description, DisplayName = DisplayName, EnableDefaultInternetAccess = EnableDefaultInternetAccess, DomainJoinInfo = DomainJoinInfo, Tags = Tags, IdleDisconnectTimeoutInSeconds = IdleDisconnectTimeoutInSeconds, IamRoleArn = IamRoleArn, StreamView = StreamView, Platform = Platform, MaxConcurrentSessions = MaxConcurrentSessions, UsbDeviceFilterStrings = UsbDeviceFilterStrings, SessionScriptS3Location = SessionScriptS3Location, MaxSessionsPerInstance = MaxSessionsPerInstance, RootVolumeConfig = RootVolumeConfig, DisableIMDSV1 = DisableIMDSV1)
   output <- .appstream$create_fleet_output()
   config <- get_config()
   svc <- .appstream$service(config, op)
@@ -1635,24 +1510,21 @@ appstream_create_fleet <- function(Name, ImageName = NULL, ImageArn = NULL, Inst
 #' Creates an image builder
 #'
 #' @description
-#' Creates an image builder. An image builder is a virtual machine that is
-#' used to create an image.
+#' Creates an image builder. An image builder is a virtual machine that is used to create an image.
 #' 
-#' The initial state of the builder is `PENDING`. When it is ready, the
-#' state is `RUNNING`.
+#' The initial state of the builder is `PENDING`. When it is ready, the state is `RUNNING`.
 #'
 #' @usage
 #' appstream_create_image_builder(Name, ImageName, ImageArn, InstanceType,
 #'   Description, DisplayName, VpcConfig, IamRoleArn,
 #'   EnableDefaultInternetAccess, DomainJoinInfo, AppstreamAgentVersion,
 #'   Tags, AccessEndpoints, RootVolumeConfig, SoftwaresToInstall,
-#'   SoftwaresToUninstall)
+#'   SoftwaresToUninstall, DisableIMDSV1)
 #'
 #' @param Name &#91;required&#93; A unique name for the image builder.
 #' @param ImageName The name of the image used to create the image builder.
 #' @param ImageArn The ARN of the public, private, or shared image to use.
-#' @param InstanceType &#91;required&#93; The instance type to use when launching the image builder. The following
-#' instance types are available:
+#' @param InstanceType &#91;required&#93; The instance type to use when launching the image builder. The following instance types are available:
 #' 
 #' -   stream.standard.small
 #' 
@@ -1747,48 +1619,25 @@ appstream_create_fleet <- function(Name, ImageName = NULL, ImageArn = NULL, Inst
 #' -   stream.graphics.gr6f.4xlarge
 #' @param Description The description to display.
 #' @param DisplayName The image builder name to display.
-#' @param VpcConfig The VPC configuration for the image builder. You can specify only one
-#' subnet.
-#' @param IamRoleArn The Amazon Resource Name (ARN) of the IAM role to apply to the image
-#' builder. To assume a role, the image builder calls the AWS Security
-#' Token Service (STS) `AssumeRole` API operation and passes the ARN of the
-#' role to use. The operation creates a new session with temporary
-#' credentials. WorkSpaces Applications retrieves the temporary credentials
-#' and creates the **appstream_machine_role** credential profile on the
-#' instance.
+#' @param VpcConfig The VPC configuration for the image builder. You can specify only one subnet.
+#' @param IamRoleArn The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder calls the AWS Security Token Service (STS) `AssumeRole` API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. WorkSpaces Applications retrieves the temporary credentials and creates the **appstream_machine_role** credential profile on the instance.
 #' 
-#' For more information, see [Using an IAM Role to Grant Permissions to
-#' Applications and Scripts Running on WorkSpaces Applications Streaming
-#' Instances](https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html)
-#' in the *Amazon WorkSpaces Applications Administration Guide*.
+#' For more information, see [Using an IAM Role to Grant Permissions to Applications and Scripts Running on WorkSpaces Applications Streaming Instances](https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html) in the *Amazon WorkSpaces Applications Administration Guide*.
 #' @param EnableDefaultInternetAccess Enables or disables default internet access for the image builder.
-#' @param DomainJoinInfo The name of the directory and organizational unit (OU) to use to join
-#' the image builder to a Microsoft Active Directory domain.
-#' @param AppstreamAgentVersion The version of the WorkSpaces Applications agent to use for this image
-#' builder. To use the latest version of the WorkSpaces Applications agent,
-#' specify \[LATEST\].
-#' @param Tags The tags to associate with the image builder. A tag is a key-value pair,
-#' and the value is optional. For example, Environment=Test. If you do not
-#' specify a value, Environment=.
+#' @param DomainJoinInfo The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active Directory domain.
+#' @param AppstreamAgentVersion The version of the WorkSpaces Applications agent to use for this image builder. To use the latest version of the WorkSpaces Applications agent, specify \[LATEST\].
+#' @param Tags The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.
 #' 
-#' Generally allowed characters are: letters, numbers, and spaces
-#' representable in UTF-8, and the following special characters:
+#' Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:
 #' 
 #' _ . : / = + \\ - @@
 #' 
 #' If you do not specify a value, the value is set to an empty string.
 #' 
-#' For more information about tags, see [Tagging Your
-#' Resources](https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html)
-#' in the *Amazon WorkSpaces Applications Administration Guide*.
-#' @param AccessEndpoints The list of interface VPC endpoint (interface endpoint) objects.
-#' Administrators can connect to the image builder only through the
-#' specified endpoints.
-#' @param RootVolumeConfig The configuration for the root volume of the image builder. Use this to
-#' customize storage capacity from 200 GB up to 500 GB based on your
-#' application installation requirements.
-#' @param SoftwaresToInstall The list of license included applications to install on the image
-#' builder during creation.
+#' For more information about tags, see [Tagging Your Resources](https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html) in the *Amazon WorkSpaces Applications Administration Guide*.
+#' @param AccessEndpoints The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder only through the specified endpoints.
+#' @param RootVolumeConfig The configuration for the root volume of the image builder. Use this to customize storage capacity from 200 GB up to 500 GB based on your application installation requirements.
+#' @param SoftwaresToInstall The list of license included applications to install on the image builder during creation.
 #' 
 #' Possible values include the following:
 #' 
@@ -1839,8 +1688,7 @@ appstream_create_fleet <- function(Name, ImageName = NULL, ImageArn = NULL, Inst
 #' -   Microsoft_Project_2024_Standard_32Bit
 #' 
 #' -   Microsoft_Project_2024_Standard_64Bit
-#' @param SoftwaresToUninstall The list of license included applications to uninstall from the image
-#' builder during creation.
+#' @param SoftwaresToUninstall The list of license included applications to uninstall from the image builder during creation.
 #' 
 #' Possible values include the following:
 #' 
@@ -1891,6 +1739,9 @@ appstream_create_fleet <- function(Name, ImageName = NULL, ImageArn = NULL, Inst
 #' -   Microsoft_Project_2024_Standard_32Bit
 #' 
 #' -   Microsoft_Project_2024_Standard_64Bit
+#' @param DisableIMDSV1 Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.
+#' 
+#' Before disabling IMDSv1, ensure your WorkSpaces Applications images are running the agent version or managed image update released on or after January 16, 2024 to support IMDSv2 enforcement.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1952,7 +1803,8 @@ appstream_create_fleet <- function(Name, ImageName = NULL, ImageArn = NULL, Inst
 #'     RootVolumeConfig = list(
 #'       VolumeSizeInGb = 123
 #'     ),
-#'     LatestAppstreamAgentVersion = "TRUE"|"FALSE"
+#'     LatestAppstreamAgentVersion = "TRUE"|"FALSE",
+#'     DisableIMDSV1 = TRUE|FALSE
 #'   )
 #' )
 #' ```
@@ -1998,7 +1850,8 @@ appstream_create_fleet <- function(Name, ImageName = NULL, ImageArn = NULL, Inst
 #'   ),
 #'   SoftwaresToUninstall = list(
 #'     "string"
-#'   )
+#'   ),
+#'   DisableIMDSV1 = TRUE|FALSE
 #' )
 #' ```
 #'
@@ -2007,7 +1860,7 @@ appstream_create_fleet <- function(Name, ImageName = NULL, ImageArn = NULL, Inst
 #' @rdname appstream_create_image_builder
 #'
 #' @aliases appstream_create_image_builder
-appstream_create_image_builder <- function(Name, ImageName = NULL, ImageArn = NULL, InstanceType, Description = NULL, DisplayName = NULL, VpcConfig = NULL, IamRoleArn = NULL, EnableDefaultInternetAccess = NULL, DomainJoinInfo = NULL, AppstreamAgentVersion = NULL, Tags = NULL, AccessEndpoints = NULL, RootVolumeConfig = NULL, SoftwaresToInstall = NULL, SoftwaresToUninstall = NULL) {
+appstream_create_image_builder <- function(Name, ImageName = NULL, ImageArn = NULL, InstanceType, Description = NULL, DisplayName = NULL, VpcConfig = NULL, IamRoleArn = NULL, EnableDefaultInternetAccess = NULL, DomainJoinInfo = NULL, AppstreamAgentVersion = NULL, Tags = NULL, AccessEndpoints = NULL, RootVolumeConfig = NULL, SoftwaresToInstall = NULL, SoftwaresToUninstall = NULL, DisableIMDSV1 = NULL) {
   op <- new_operation(
     name = "CreateImageBuilder",
     http_method = "POST",
@@ -2016,7 +1869,7 @@ appstream_create_image_builder <- function(Name, ImageName = NULL, ImageArn = NU
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .appstream$create_image_builder_input(Name = Name, ImageName = ImageName, ImageArn = ImageArn, InstanceType = InstanceType, Description = Description, DisplayName = DisplayName, VpcConfig = VpcConfig, IamRoleArn = IamRoleArn, EnableDefaultInternetAccess = EnableDefaultInternetAccess, DomainJoinInfo = DomainJoinInfo, AppstreamAgentVersion = AppstreamAgentVersion, Tags = Tags, AccessEndpoints = AccessEndpoints, RootVolumeConfig = RootVolumeConfig, SoftwaresToInstall = SoftwaresToInstall, SoftwaresToUninstall = SoftwaresToUninstall)
+  input <- .appstream$create_image_builder_input(Name = Name, ImageName = ImageName, ImageArn = ImageArn, InstanceType = InstanceType, Description = Description, DisplayName = DisplayName, VpcConfig = VpcConfig, IamRoleArn = IamRoleArn, EnableDefaultInternetAccess = EnableDefaultInternetAccess, DomainJoinInfo = DomainJoinInfo, AppstreamAgentVersion = AppstreamAgentVersion, Tags = Tags, AccessEndpoints = AccessEndpoints, RootVolumeConfig = RootVolumeConfig, SoftwaresToInstall = SoftwaresToInstall, SoftwaresToUninstall = SoftwaresToUninstall, DisableIMDSV1 = DisableIMDSV1)
   output <- .appstream$create_image_builder_output()
   config <- get_config()
   svc <- .appstream$service(config, op)
@@ -2035,8 +1888,7 @@ appstream_create_image_builder <- function(Name, ImageName = NULL, ImageArn = NU
 #' appstream_create_image_builder_streaming_url(Name, Validity)
 #'
 #' @param Name &#91;required&#93; The name of the image builder.
-#' @param Validity The time that the streaming URL will be valid, in seconds. Specify a
-#' value between 1 and 604800 seconds. The default is 3600 seconds.
+#' @param Validity The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 3600 seconds.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2084,47 +1936,23 @@ appstream_create_image_builder_streaming_url <- function(Name, Validity = NULL) 
 #' Creates a custom WorkSpaces Applications image by importing an EC2 AMI
 #'
 #' @description
-#' Creates a custom WorkSpaces Applications image by importing an EC2 AMI.
-#' This allows you to use your own customized AMI to create WorkSpaces
-#' Applications images that support additional instance types beyond the
-#' standard stream.* instances.
+#' Creates a custom WorkSpaces Applications image by importing an EC2 AMI. This allows you to use your own customized AMI to create WorkSpaces Applications images that support additional instance types beyond the standard stream.* instances.
 #'
 #' @usage
 #' appstream_create_imported_image(Name, SourceAmiId, IamRoleArn,
 #'   Description, DisplayName, Tags, RuntimeValidationConfig,
 #'   AgentSoftwareVersion, AppCatalogConfig, DryRun)
 #'
-#' @param Name &#91;required&#93; A unique name for the imported image. The name must be between 1 and 100
-#' characters and can contain letters, numbers, underscores, periods, and
-#' hyphens.
-#' @param SourceAmiId &#91;required&#93; The ID of the EC2 AMI to import. The AMI must meet specific requirements
-#' including Windows Server 2022 Full Base, UEFI boot mode, TPM 2.0
-#' support, and proper drivers.
-#' @param IamRoleArn &#91;required&#93; The ARN of the IAM role that allows WorkSpaces Applications to access
-#' your AMI. The role must have permissions to modify image attributes and
-#' describe images, with a trust relationship allowing
-#' appstream.amazonaws.com to assume the role.
-#' @param Description An optional description for the imported image. The description must
-#' match approved regex patterns and can be up to 256 characters.
-#' @param DisplayName An optional display name for the imported image. The display name must
-#' match approved regex patterns and can be up to 100 characters.
-#' @param Tags The tags to apply to the imported image. Tags help you organize and
-#' manage your WorkSpaces Applications resources.
-#' @param RuntimeValidationConfig Configuration for runtime validation of the imported image. When
-#' specified, WorkSpaces Applications provisions an instance to test
-#' streaming functionality, which helps ensure the image is suitable for
-#' use.
-#' @param AgentSoftwareVersion The version of the WorkSpaces Applications agent to use for the imported
-#' image. Choose CURRENT_LATEST to use the agent version available at the
-#' time of import, or ALWAYS_LATEST to automatically update to the latest
-#' agent version when new versions are released.
-#' @param AppCatalogConfig Configuration for the application catalog of the imported image. This
-#' allows you to specify applications available for streaming, including
-#' their paths, icons, and launch parameters. This field contains sensitive
-#' data.
-#' @param DryRun When set to true, performs validation checks without actually creating
-#' the imported image. Use this to verify your configuration before
-#' executing the actual import operation.
+#' @param Name &#91;required&#93; A unique name for the imported image. The name must be between 1 and 100 characters and can contain letters, numbers, underscores, periods, and hyphens.
+#' @param SourceAmiId &#91;required&#93; The ID of the EC2 AMI to import. The AMI must meet specific requirements including Windows Server 2022 Full Base, UEFI boot mode, TPM 2.0 support, and proper drivers.
+#' @param IamRoleArn &#91;required&#93; The ARN of the IAM role that allows WorkSpaces Applications to access your AMI. The role must have permissions to modify image attributes and describe images, with a trust relationship allowing appstream.amazonaws.com to assume the role.
+#' @param Description An optional description for the imported image. The description must match approved regex patterns and can be up to 256 characters.
+#' @param DisplayName An optional display name for the imported image. The display name must match approved regex patterns and can be up to 100 characters.
+#' @param Tags The tags to apply to the imported image. Tags help you organize and manage your WorkSpaces Applications resources.
+#' @param RuntimeValidationConfig Configuration for runtime validation of the imported image. When specified, WorkSpaces Applications provisions an instance to test streaming functionality, which helps ensure the image is suitable for use.
+#' @param AgentSoftwareVersion The version of the WorkSpaces Applications agent to use for the imported image. Choose CURRENT_LATEST to use the agent version available at the time of import, or ALWAYS_LATEST to automatically update to the latest agent version when new versions are released.
+#' @param AppCatalogConfig Configuration for the application catalog of the imported image. This allows you to specify applications available for streaming, including their paths, icons, and launch parameters. This field contains sensitive data.
+#' @param DryRun When set to true, performs validation checks without actually creating the imported image. Use this to verify your configuration before executing the actual import operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2264,51 +2092,36 @@ appstream_create_imported_image <- function(Name, SourceAmiId, IamRoleArn, Descr
 #' Creates a stack to start streaming applications to users
 #'
 #' @description
-#' Creates a stack to start streaming applications to users. A stack
-#' consists of an associated fleet, user access policies, and storage
-#' configurations.
+#' Creates a stack to start streaming applications to users. A stack consists of an associated fleet, user access policies, and storage configurations.
 #'
 #' @usage
 #' appstream_create_stack(Name, Description, DisplayName,
 #'   StorageConnectors, RedirectURL, FeedbackURL, UserSettings,
 #'   ApplicationSettings, Tags, AccessEndpoints, EmbedHostDomains,
-#'   StreamingExperienceSettings)
+#'   StreamingExperienceSettings, ContentRedirection, AgentAccessConfig)
 #'
 #' @param Name &#91;required&#93; The name of the stack.
 #' @param Description The description to display.
 #' @param DisplayName The stack name to display.
 #' @param StorageConnectors The storage connectors to enable.
 #' @param RedirectURL The URL that users are redirected to after their streaming session ends.
-#' @param FeedbackURL The URL that users are redirected to after they click the Send Feedback
-#' link. If no URL is specified, no Send Feedback link is displayed.
-#' @param UserSettings The actions that are enabled or disabled for users during their
-#' streaming sessions. By default, these actions are enabled.
-#' @param ApplicationSettings The persistent application settings for users of a stack. When these
-#' settings are enabled, changes that users make to applications and
-#' Windows settings are automatically saved after each session and applied
-#' to the next session.
-#' @param Tags The tags to associate with the stack. A tag is a key-value pair, and the
-#' value is optional. For example, Environment=Test. If you do not specify
-#' a value, Environment=.
+#' @param FeedbackURL The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.
+#' @param UserSettings The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.
+#' @param ApplicationSettings The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.
+#' @param Tags The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.
 #' 
 #' If you do not specify a value, the value is set to an empty string.
 #' 
-#' Generally allowed characters are: letters, numbers, and spaces
-#' representable in UTF-8, and the following special characters:
+#' Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:
 #' 
 #' _ . : / = + \\ - @@
 #' 
-#' For more information about tags, see [Tagging Your
-#' Resources](https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html)
-#' in the *Amazon WorkSpaces Applications Administration Guide*.
-#' @param AccessEndpoints The list of interface VPC endpoint (interface endpoint) objects. Users
-#' of the stack can connect to WorkSpaces Applications only through the
-#' specified endpoints.
-#' @param EmbedHostDomains The domains where WorkSpaces Applications streaming sessions can be
-#' embedded in an iframe. You must approve the domains that you want to
-#' host embedded WorkSpaces Applications streaming sessions.
-#' @param StreamingExperienceSettings The streaming protocol you want your stack to prefer. This can be UDP or
-#' TCP. Currently, UDP is only supported in the Windows native client.
+#' For more information about tags, see [Tagging Your Resources](https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html) in the *Amazon WorkSpaces Applications Administration Guide*.
+#' @param AccessEndpoints The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to WorkSpaces Applications only through the specified endpoints.
+#' @param EmbedHostDomains The domains where WorkSpaces Applications streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded WorkSpaces Applications streaming sessions.
+#' @param StreamingExperienceSettings The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.
+#' @param ContentRedirection Configuration for bidirectional URL redirection between the streaming session and the local client. Use HostToClient to redirect URLs from the remote desktop to the local browser.
+#' @param AgentAccessConfig The configuration for agent access on the stack. If specified, agent access is enabled for the stack.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2365,6 +2178,29 @@ appstream_create_imported_image <- function(Name, SourceAmiId, IamRoleArn, Descr
 #'     ),
 #'     StreamingExperienceSettings = list(
 #'       PreferredProtocol = "TCP"|"UDP"
+#'     ),
+#'     ContentRedirection = list(
+#'       HostToClient = list(
+#'         Enabled = TRUE|FALSE,
+#'         AllowedUrls = list(
+#'           "string"
+#'         ),
+#'         DeniedUrls = list(
+#'           "string"
+#'         )
+#'       )
+#'     ),
+#'     AgentAccessConfig = list(
+#'       Settings = list(
+#'         list(
+#'           AgentAction = "COMPUTER_VISION"|"COMPUTER_INPUT",
+#'           Permission = "ENABLED"|"DISABLED"
+#'         )
+#'       ),
+#'       S3BucketArn = "string",
+#'       ScreenshotsUploadEnabled = TRUE|FALSE,
+#'       ScreenResolution = "W_1280xH_720",
+#'       ScreenImageFormat = "PNG"|"JPEG"
 #'     )
 #'   )
 #' )
@@ -2415,6 +2251,29 @@ appstream_create_imported_image <- function(Name, SourceAmiId, IamRoleArn, Descr
 #'   ),
 #'   StreamingExperienceSettings = list(
 #'     PreferredProtocol = "TCP"|"UDP"
+#'   ),
+#'   ContentRedirection = list(
+#'     HostToClient = list(
+#'       Enabled = TRUE|FALSE,
+#'       AllowedUrls = list(
+#'         "string"
+#'       ),
+#'       DeniedUrls = list(
+#'         "string"
+#'       )
+#'     )
+#'   ),
+#'   AgentAccessConfig = list(
+#'     Settings = list(
+#'       list(
+#'         AgentAction = "COMPUTER_VISION"|"COMPUTER_INPUT",
+#'         Permission = "ENABLED"|"DISABLED"
+#'       )
+#'     ),
+#'     S3BucketArn = "string",
+#'     ScreenshotsUploadEnabled = TRUE|FALSE,
+#'     ScreenResolution = "W_1280xH_720",
+#'     ScreenImageFormat = "PNG"|"JPEG"
 #'   )
 #' )
 #' ```
@@ -2424,7 +2283,7 @@ appstream_create_imported_image <- function(Name, SourceAmiId, IamRoleArn, Descr
 #' @rdname appstream_create_stack
 #'
 #' @aliases appstream_create_stack
-appstream_create_stack <- function(Name, Description = NULL, DisplayName = NULL, StorageConnectors = NULL, RedirectURL = NULL, FeedbackURL = NULL, UserSettings = NULL, ApplicationSettings = NULL, Tags = NULL, AccessEndpoints = NULL, EmbedHostDomains = NULL, StreamingExperienceSettings = NULL) {
+appstream_create_stack <- function(Name, Description = NULL, DisplayName = NULL, StorageConnectors = NULL, RedirectURL = NULL, FeedbackURL = NULL, UserSettings = NULL, ApplicationSettings = NULL, Tags = NULL, AccessEndpoints = NULL, EmbedHostDomains = NULL, StreamingExperienceSettings = NULL, ContentRedirection = NULL, AgentAccessConfig = NULL) {
   op <- new_operation(
     name = "CreateStack",
     http_method = "POST",
@@ -2433,7 +2292,7 @@ appstream_create_stack <- function(Name, Description = NULL, DisplayName = NULL,
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .appstream$create_stack_input(Name = Name, Description = Description, DisplayName = DisplayName, StorageConnectors = StorageConnectors, RedirectURL = RedirectURL, FeedbackURL = FeedbackURL, UserSettings = UserSettings, ApplicationSettings = ApplicationSettings, Tags = Tags, AccessEndpoints = AccessEndpoints, EmbedHostDomains = EmbedHostDomains, StreamingExperienceSettings = StreamingExperienceSettings)
+  input <- .appstream$create_stack_input(Name = Name, Description = Description, DisplayName = DisplayName, StorageConnectors = StorageConnectors, RedirectURL = RedirectURL, FeedbackURL = FeedbackURL, UserSettings = UserSettings, ApplicationSettings = ApplicationSettings, Tags = Tags, AccessEndpoints = AccessEndpoints, EmbedHostDomains = EmbedHostDomains, StreamingExperienceSettings = StreamingExperienceSettings, ContentRedirection = ContentRedirection, AgentAccessConfig = AgentAccessConfig)
   output <- .appstream$create_stack_output()
   config <- get_config()
   svc <- .appstream$service(config, op)
@@ -2447,9 +2306,7 @@ appstream_create_stack <- function(Name, Description = NULL, DisplayName = NULL,
 #' session for the specified user
 #'
 #' @description
-#' Creates a temporary URL to start an WorkSpaces Applications streaming
-#' session for the specified user. A streaming URL enables application
-#' streaming to be tested without user setup.
+#' Creates a temporary URL to start an WorkSpaces Applications streaming session for the specified user. A streaming URL enables application streaming to be tested without user setup.
 #'
 #' @usage
 #' appstream_create_streaming_url(StackName, FleetName, UserId,
@@ -2458,16 +2315,9 @@ appstream_create_stack <- function(Name, Description = NULL, DisplayName = NULL,
 #' @param StackName &#91;required&#93; The name of the stack.
 #' @param FleetName &#91;required&#93; The name of the fleet.
 #' @param UserId &#91;required&#93; The identifier of the user.
-#' @param ApplicationId The name of the application to launch after the session starts. This is
-#' the name that you specified as **Name** in the Image Assistant. If your
-#' fleet is enabled for the **Desktop** stream view, you can also choose to
-#' launch directly to the operating system desktop. To do so, specify
-#' **Desktop**.
-#' @param Validity The time that the streaming URL will be valid, in seconds. Specify a
-#' value between 1 and 604800 seconds. The default is 60 seconds.
-#' @param SessionContext The session context. For more information, see [Session
-#' Context](https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters)
-#' in the *Amazon WorkSpaces Applications Administration Guide*.
+#' @param ApplicationId The name of the application to launch after the session starts. This is the name that you specified as **Name** in the Image Assistant. If your fleet is enabled for the **Desktop** stream view, you can also choose to launch directly to the operating system desktop. To do so, specify **Desktop**.
+#' @param Validity The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 60 seconds.
+#' @param SessionContext The session context. For more information, see [Session Context](https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters) in the *Amazon WorkSpaces Applications Administration Guide*.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2520,28 +2370,18 @@ appstream_create_streaming_url <- function(StackName, FleetName, UserId, Applica
 #' application catalog page
 #'
 #' @description
-#' Creates custom branding that customizes the appearance of the streaming
-#' application catalog page.
+#' Creates custom branding that customizes the appearance of the streaming application catalog page.
 #'
 #' @usage
 #' appstream_create_theme_for_stack(StackName, FooterLinks, TitleText,
 #'   ThemeStyling, OrganizationLogoS3Location, FaviconS3Location)
 #'
 #' @param StackName &#91;required&#93; The name of the stack for the theme.
-#' @param FooterLinks The links that are displayed in the footer of the streaming application
-#' catalog page. These links are helpful resources for users, such as the
-#' organization's IT support and product marketing sites.
-#' @param TitleText &#91;required&#93; The title that is displayed at the top of the browser tab during users'
-#' application streaming sessions.
-#' @param ThemeStyling &#91;required&#93; The color theme that is applied to website links, text, and buttons.
-#' These colors are also applied as accents in the background for the
-#' streaming application catalog page.
-#' @param OrganizationLogoS3Location &#91;required&#93; The organization logo that appears on the streaming application catalog
-#' page.
-#' @param FaviconS3Location &#91;required&#93; The S3 location of the favicon. The favicon enables users to recognize
-#' their application streaming site in a browser full of tabs or bookmarks.
-#' It is displayed at the top of the browser tab for the application
-#' streaming site during users' streaming sessions.
+#' @param FooterLinks The links that are displayed in the footer of the streaming application catalog page. These links are helpful resources for users, such as the organization's IT support and product marketing sites.
+#' @param TitleText &#91;required&#93; The title that is displayed at the top of the browser tab during users' application streaming sessions.
+#' @param ThemeStyling &#91;required&#93; The color theme that is applied to website links, text, and buttons. These colors are also applied as accents in the background for the streaming application catalog page.
+#' @param OrganizationLogoS3Location &#91;required&#93; The organization logo that appears on the streaming application catalog page.
+#' @param FaviconS3Location &#91;required&#93; The S3 location of the favicon. The favicon enables users to recognize their application streaming site in a browser full of tabs or bookmarks. It is displayed at the top of the browser tab for the application streaming site during users' streaming sessions.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2618,44 +2458,28 @@ appstream_create_theme_for_stack <- function(StackName, FooterLinks = NULL, Titl
 #' driver updates, and WorkSpaces Applications agent software
 #'
 #' @description
-#' Creates a new image with the latest Windows operating system updates,
-#' driver updates, and WorkSpaces Applications agent software.
+#' Creates a new image with the latest Windows operating system updates, driver updates, and WorkSpaces Applications agent software.
 #' 
-#' For more information, see the "Update an Image by Using Managed
-#' WorkSpaces Applications Image Updates" section in [Administer Your
-#' WorkSpaces Applications
-#' Images](https://docs.aws.amazon.com/appstream2/latest/developerguide/administer-images.html),
-#' in the *Amazon WorkSpaces Applications Administration Guide*.
+#' For more information, see the "Update an Image by Using Managed WorkSpaces Applications Image Updates" section in [Administer Your WorkSpaces Applications Images](https://docs.aws.amazon.com/appstream2/latest/developerguide/administer-images.html), in the *Amazon WorkSpaces Applications Administration Guide*.
 #'
 #' @usage
 #' appstream_create_updated_image(existingImageName, newImageName,
 #'   newImageDescription, newImageDisplayName, newImageTags, dryRun)
 #'
 #' @param existingImageName &#91;required&#93; The name of the image to update.
-#' @param newImageName &#91;required&#93; The name of the new image. The name must be unique within the AWS
-#' account and Region.
+#' @param newImageName &#91;required&#93; The name of the new image. The name must be unique within the AWS account and Region.
 #' @param newImageDescription The description to display for the new image.
 #' @param newImageDisplayName The name to display for the new image.
-#' @param newImageTags The tags to associate with the new image. A tag is a key-value pair, and
-#' the value is optional. For example, Environment=Test. If you do not
-#' specify a value, Environment=.
+#' @param newImageTags The tags to associate with the new image. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.
 #' 
-#' Generally allowed characters are: letters, numbers, and spaces
-#' representable in UTF-8, and the following special characters:
+#' Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:
 #' 
 #' _ . : / = + \\ - @@
 #' 
 #' If you do not specify a value, the value is set to an empty string.
 #' 
-#' For more information about tags, see [Tagging Your
-#' Resources](https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html)
-#' in the *Amazon WorkSpaces Applications Administration Guide*.
-#' @param dryRun Indicates whether to display the status of image update availability
-#' before WorkSpaces Applications initiates the process of creating a new
-#' updated image. If this value is set to `true`, WorkSpaces Applications
-#' displays whether image updates are available. If this value is set to
-#' `false`, WorkSpaces Applications initiates the process of creating a new
-#' updated image without displaying whether image updates are available.
+#' For more information about tags, see [Tagging Your Resources](https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html) in the *Amazon WorkSpaces Applications Administration Guide*.
+#' @param dryRun Indicates whether to display the status of image update availability before WorkSpaces Applications initiates the process of creating a new updated image. If this value is set to `true`, WorkSpaces Applications displays whether image updates are available. If this value is set to `false`, WorkSpaces Applications initiates the process of creating a new updated image without displaying whether image updates are available.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2836,18 +2660,10 @@ appstream_create_usage_report_subscription <- function() {
 #'
 #' @param UserName &#91;required&#93; The email address of the user.
 #' 
-#' Users' email addresses are case-sensitive. During login, if they specify
-#' an email address that doesn't use the same capitalization as the email
-#' address specified when their user pool account was created, a "user does
-#' not exist" error message displays.
-#' @param MessageAction The action to take for the welcome email that is sent to a user after
-#' the user is created in the user pool. If you specify SUPPRESS, no email
-#' is sent. If you specify RESEND, do not specify the first name or last
-#' name of the user. If the value is null, the email is sent.
+#' Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays.
+#' @param MessageAction The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent.
 #' 
-#' The temporary password in the welcome email is valid for only 7 days. If
-#' users don’t set their passwords within 7 days, you must send them a new
-#' welcome email.
+#' The temporary password in the welcome email is valid for only 7 days. If users don’t set their passwords within 7 days, you must send them a new welcome email.
 #' @param FirstName The first name, or given name, of the user.
 #' @param LastName The last name, or surname, of the user.
 #' @param AuthenticationType &#91;required&#93; The authentication type for the user. You must specify USERPOOL.
@@ -2939,8 +2755,7 @@ appstream_delete_app_block <- function(Name) {
 #' @description
 #' Deletes an app block builder.
 #' 
-#' An app block builder can only be deleted when it has no association with
-#' an app block.
+#' An app block builder can only be deleted when it has no association with an app block.
 #'
 #' @usage
 #' appstream_delete_app_block_builder(Name)
@@ -3029,9 +2844,7 @@ appstream_delete_application <- function(Name) {
 #' Applications
 #'
 #' @description
-#' Deletes the specified Directory Config object from WorkSpaces
-#' Applications. This object includes the information required to join
-#' streaming instances to an Active Directory domain.
+#' Deletes the specified Directory Config object from WorkSpaces Applications. This object includes the information required to join streaming instances to an Active Directory domain.
 #'
 #' @usage
 #' appstream_delete_directory_config(DirectoryName)
@@ -3165,9 +2978,7 @@ appstream_delete_fleet <- function(Name) {
 #' Deletes the specified image
 #'
 #' @description
-#' Deletes the specified image. You cannot delete an image when it is in
-#' use. After you delete an image, you cannot provision new capacity using
-#' the image.
+#' Deletes the specified image. You cannot delete an image when it is in use. After you delete an image, you cannot provision new capacity using the image.
 #'
 #' @usage
 #' appstream_delete_image(Name)
@@ -3356,7 +3167,8 @@ appstream_delete_image <- function(Name) {
 #'     RootVolumeConfig = list(
 #'       VolumeSizeInGb = 123
 #'     ),
-#'     LatestAppstreamAgentVersion = "TRUE"|"FALSE"
+#'     LatestAppstreamAgentVersion = "TRUE"|"FALSE",
+#'     DisableIMDSV1 = TRUE|FALSE
 #'   )
 #' )
 #' ```
@@ -3395,16 +3207,13 @@ appstream_delete_image_builder <- function(Name) {
 #' Deletes permissions for the specified private image
 #'
 #' @description
-#' Deletes permissions for the specified private image. After you delete
-#' permissions for an image, AWS accounts to which you previously granted
-#' these permissions can no longer use the image.
+#' Deletes permissions for the specified private image. After you delete permissions for an image, AWS accounts to which you previously granted these permissions can no longer use the image.
 #'
 #' @usage
 #' appstream_delete_image_permissions(Name, SharedAccountId)
 #'
 #' @param Name &#91;required&#93; The name of the private image.
-#' @param SharedAccountId &#91;required&#93; The 12-digit identifier of the AWS account for which to delete image
-#' permissions.
+#' @param SharedAccountId &#91;required&#93; The 12-digit identifier of the AWS account for which to delete image permissions.
 #'
 #' @return
 #' An empty list.
@@ -3444,10 +3253,7 @@ appstream_delete_image_permissions <- function(Name, SharedAccountId) {
 #' Deletes the specified stack
 #'
 #' @description
-#' Deletes the specified stack. After the stack is deleted, the application
-#' streaming environment provided by the stack is no longer available to
-#' users. Also, any reservations made for application streaming sessions
-#' for the stack are released.
+#' Deletes the specified stack. After the stack is deleted, the application streaming environment provided by the stack is no longer available to users. Also, any reservations made for application streaming sessions for the stack are released.
 #'
 #' @usage
 #' appstream_delete_stack(Name)
@@ -3492,8 +3298,7 @@ appstream_delete_stack <- function(Name) {
 #' application catalog page
 #'
 #' @description
-#' Deletes custom branding that customizes the appearance of the streaming
-#' application catalog page.
+#' Deletes custom branding that customizes the appearance of the streaming application catalog page.
 #'
 #' @usage
 #' appstream_delete_theme_for_stack(StackName)
@@ -3628,8 +3433,7 @@ appstream_delete_user <- function(UserName, AuthenticationType) {
 #' associations
 #'
 #' @description
-#' Retrieves a list that describes one or more app block builder
-#' associations.
+#' Retrieves a list that describes one or more app block builder associations.
 #'
 #' @usage
 #' appstream_describe_app_block_builder_app_block_associations(AppBlockArn,
@@ -3638,8 +3442,7 @@ appstream_delete_user <- function(UserName, AuthenticationType) {
 #' @param AppBlockArn The ARN of the app block.
 #' @param AppBlockBuilderName The name of the app block builder.
 #' @param MaxResults The maximum size of each page of results.
-#' @param NextToken The pagination token used to retrieve the next page of results for this
-#' operation.
+#' @param NextToken The pagination token used to retrieve the next page of results for this operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3698,8 +3501,7 @@ appstream_describe_app_block_builder_app_block_associations <- function(AppBlock
 #' appstream_describe_app_block_builders(Names, NextToken, MaxResults)
 #'
 #' @param Names The names of the app block builders.
-#' @param NextToken The pagination token used to retrieve the next page of results for this
-#' operation.
+#' @param NextToken The pagination token used to retrieve the next page of results for this operation.
 #' @param MaxResults The maximum size of each page of results. The maximum value is 25.
 #'
 #' @return
@@ -3746,7 +3548,8 @@ appstream_describe_app_block_builder_app_block_associations <- function(AppBlock
 #'           EndpointType = "STREAMING",
 #'           VpceId = "string"
 #'         )
-#'       )
+#'       ),
+#'       DisableIMDSV1 = TRUE|FALSE
 #'     )
 #'   ),
 #'   NextToken = "string"
@@ -3797,8 +3600,7 @@ appstream_describe_app_block_builders <- function(Names = NULL, NextToken = NULL
 #' appstream_describe_app_blocks(Arns, NextToken, MaxResults)
 #'
 #' @param Arns The ARNs of the app blocks.
-#' @param NextToken The pagination token used to retrieve the next page of results for this
-#' operation.
+#' @param NextToken The pagination token used to retrieve the next page of results for this operation.
 #' @param MaxResults The maximum size of each page of results.
 #'
 #' @return
@@ -3896,8 +3698,7 @@ appstream_describe_app_blocks <- function(Arns = NULL, NextToken = NULL, MaxResu
 #'
 #' @param BillingPeriod &#91;required&#93; Billing period for the usage record.
 #' 
-#' Specify the value in *yyyy-mm* format. For example, for August 2025, use
-#' *2025-08*.
+#' Specify the value in *yyyy-mm* format. For example, for August 2025, use *2025-08*.
 #' @param MaxResults The maximum number of results to return.
 #' @param NextToken Token for pagination of results.
 #'
@@ -3961,8 +3762,7 @@ appstream_describe_app_license_usage <- function(BillingPeriod, MaxResults = NUL
 #' associations
 #'
 #' @description
-#' Retrieves a list that describes one or more application fleet
-#' associations. Either ApplicationArn or FleetName must be specified.
+#' Retrieves a list that describes one or more application fleet associations. Either ApplicationArn or FleetName must be specified.
 #'
 #' @usage
 #' appstream_describe_application_fleet_associations(FleetName,
@@ -3971,8 +3771,7 @@ appstream_describe_app_license_usage <- function(BillingPeriod, MaxResults = NUL
 #' @param FleetName The name of the fleet.
 #' @param ApplicationArn The ARN of the application.
 #' @param MaxResults The maximum size of each page of results.
-#' @param NextToken The pagination token used to retrieve the next page of results for this
-#' operation.
+#' @param NextToken The pagination token used to retrieve the next page of results for this operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4031,8 +3830,7 @@ appstream_describe_application_fleet_associations <- function(FleetName = NULL, 
 #' appstream_describe_applications(Arns, NextToken, MaxResults)
 #'
 #' @param Arns The ARNs for the applications.
-#' @param NextToken The pagination token used to retrieve the next page of results for this
-#' operation.
+#' @param NextToken The pagination token used to retrieve the next page of results for this operation.
 #' @param MaxResults The maximum size of each page of results.
 #'
 #' @return
@@ -4113,14 +3911,9 @@ appstream_describe_applications <- function(Arns = NULL, NextToken = NULL, MaxRe
 #' provided
 #'
 #' @description
-#' Retrieves a list that describes one or more specified Directory Config
-#' objects for WorkSpaces Applications, if the names for these objects are
-#' provided. Otherwise, all Directory Config objects in the account are
-#' described. These objects include the configuration information required
-#' to join fleets and image builders to Microsoft Active Directory domains.
+#' Retrieves a list that describes one or more specified Directory Config objects for WorkSpaces Applications, if the names for these objects are provided. Otherwise, all Directory Config objects in the account are described. These objects include the configuration information required to join fleets and image builders to Microsoft Active Directory domains.
 #' 
-#' Although the response syntax in this topic includes the account
-#' password, this password is not returned in the actual response.
+#' Although the response syntax in this topic includes the account password, this password is not returned in the actual response.
 #'
 #' @usage
 #' appstream_describe_directory_configs(DirectoryNames, MaxResults,
@@ -4128,8 +3921,7 @@ appstream_describe_applications <- function(Arns = NULL, NextToken = NULL, MaxRe
 #'
 #' @param DirectoryNames The directory names.
 #' @param MaxResults The maximum size of each page of results.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4203,8 +3995,7 @@ appstream_describe_directory_configs <- function(DirectoryNames = NULL, MaxResul
 #'
 #' @param Name The name of the entitlement.
 #' @param StackName &#91;required&#93; The name of the stack with which the entitlement is associated.
-#' @param NextToken The pagination token used to retrieve the next page of results for this
-#' operation.
+#' @param NextToken The pagination token used to retrieve the next page of results for this operation.
 #' @param MaxResults The maximum size of each page of results.
 #'
 #' @return
@@ -4273,16 +4064,13 @@ appstream_describe_entitlements <- function(Name = NULL, StackName, NextToken = 
 #' fleet names are provided
 #'
 #' @description
-#' Retrieves a list that describes one or more specified fleets, if the
-#' fleet names are provided. Otherwise, all fleets in the account are
-#' described.
+#' Retrieves a list that describes one or more specified fleets, if the fleet names are provided. Otherwise, all fleets in the account are described.
 #'
 #' @usage
 #' appstream_describe_fleets(Names, NextToken)
 #'
 #' @param Names The names of the fleets to describe.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4306,7 +4094,10 @@ appstream_describe_entitlements <- function(Name = NULL, StackName, NextToken = 
 #'         DesiredUserSessions = 123,
 #'         AvailableUserSessions = 123,
 #'         ActiveUserSessions = 123,
-#'         ActualUserSessions = 123
+#'         ActualUserSessions = 123,
+#'         Draining = 123,
+#'         DrainModeActiveUserSessions = 123,
+#'         DrainModeUnusedUserSessions = 123
 #'       ),
 #'       MaxUserDurationInSeconds = 123,
 #'       DisconnectTimeoutInSeconds = 123,
@@ -4348,7 +4139,8 @@ appstream_describe_entitlements <- function(Name = NULL, StackName, NextToken = 
 #'       MaxSessionsPerInstance = 123,
 #'       RootVolumeConfig = list(
 #'         VolumeSizeInGb = 123
-#'       )
+#'       ),
+#'       DisableIMDSV1 = TRUE|FALSE
 #'     )
 #'   ),
 #'   NextToken = "string"
@@ -4393,17 +4185,14 @@ appstream_describe_fleets <- function(Names = NULL, NextToken = NULL) {
 #' the image builder names are provided
 #'
 #' @description
-#' Retrieves a list that describes one or more specified image builders, if
-#' the image builder names are provided. Otherwise, all image builders in
-#' the account are described.
+#' Retrieves a list that describes one or more specified image builders, if the image builder names are provided. Otherwise, all image builders in the account are described.
 #'
 #' @usage
 #' appstream_describe_image_builders(Names, MaxResults, NextToken)
 #'
 #' @param Names The names of the image builders to describe.
 #' @param MaxResults The maximum size of each page of results.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4466,7 +4255,8 @@ appstream_describe_fleets <- function(Names = NULL, NextToken = NULL) {
 #'       RootVolumeConfig = list(
 #'         VolumeSizeInGb = 123
 #'       ),
-#'       LatestAppstreamAgentVersion = "TRUE"|"FALSE"
+#'       LatestAppstreamAgentVersion = "TRUE"|"FALSE",
+#'       DisableIMDSV1 = TRUE|FALSE
 #'     )
 #'   ),
 #'   NextToken = "string"
@@ -4512,20 +4302,16 @@ appstream_describe_image_builders <- function(Names = NULL, MaxResults = NULL, N
 #' IDs on a private image that you own
 #'
 #' @description
-#' Retrieves a list that describes the permissions for shared AWS account
-#' IDs on a private image that you own.
+#' Retrieves a list that describes the permissions for shared AWS account IDs on a private image that you own.
 #'
 #' @usage
 #' appstream_describe_image_permissions(Name, MaxResults,
 #'   SharedAwsAccountIds, NextToken)
 #'
-#' @param Name &#91;required&#93; The name of the private image for which to describe permissions. The
-#' image must be one that you own.
+#' @param Name &#91;required&#93; The name of the private image for which to describe permissions. The image must be one that you own.
 #' @param MaxResults The maximum size of each page of results.
-#' @param SharedAwsAccountIds The 12-digit identifier of one or more AWS accounts with which the image
-#' is shared.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param SharedAwsAccountIds The 12-digit identifier of one or more AWS accounts with which the image is shared.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4585,9 +4371,7 @@ appstream_describe_image_permissions <- function(Name, MaxResults = NULL, Shared
 #' image names or image ARNs are provided
 #'
 #' @description
-#' Retrieves a list that describes one or more specified images, if the
-#' image names or image ARNs are provided. Otherwise, all images in the
-#' account are described.
+#' Retrieves a list that describes one or more specified images, if the image names or image ARNs are provided. Otherwise, all images in the account are described.
 #'
 #' @usage
 #' appstream_describe_images(Names, Arns, Type, NextToken, MaxResults)
@@ -4595,8 +4379,7 @@ appstream_describe_image_permissions <- function(Name, MaxResults = NULL, Shared
 #' @param Names The names of the public or private images to describe.
 #' @param Arns The ARNs of the public, private, and shared images to describe.
 #' @param Type The type of image (public, private, or shared) to describe.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #' @param MaxResults The maximum size of each page of results.
 #'
 #' @return
@@ -4726,11 +4509,7 @@ appstream_describe_images <- function(Names = NULL, Arns = NULL, Type = NULL, Ne
 #' stack and fleet
 #'
 #' @description
-#' Retrieves a list that describes the streaming sessions for a specified
-#' stack and fleet. If a UserId is provided for the stack and fleet, only
-#' streaming sessions for that user are described. If an authentication
-#' type is not provided, the default is to authenticate users using a
-#' streaming URL.
+#' Retrieves a list that describes the streaming sessions for a specified stack and fleet. If a UserId is provided for the stack and fleet, only streaming sessions for that user are described. If an authentication type is not provided, the default is to authenticate users using a streaming URL.
 #'
 #' @usage
 #' appstream_describe_sessions(StackName, FleetName, UserId, NextToken,
@@ -4738,15 +4517,10 @@ appstream_describe_images <- function(Names = NULL, Arns = NULL, Type = NULL, Ne
 #'
 #' @param StackName &#91;required&#93; The name of the stack. This value is case-sensitive.
 #' @param FleetName &#91;required&#93; The name of the fleet. This value is case-sensitive.
-#' @param UserId The user identifier (ID). If you specify a user ID, you must also
-#' specify the authentication type.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
-#' @param Limit The size of each page of results. The default value is 20 and the
-#' maximum value is 50.
-#' @param AuthenticationType The authentication method. Specify `API` for a user authenticated using
-#' a streaming URL or `SAML` for a SAML federated user. The default is to
-#' authenticate users using a streaming URL.
+#' @param UserId The user identifier (ID). If you specify a user ID, you must also specify the authentication type.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
+#' @param Limit The size of each page of results. The default value is 20 and the maximum value is 50.
+#' @param AuthenticationType The authentication method. Specify `API` for a user authenticated using a streaming URL or `SAML` for a SAML federated user. The default is to authenticate users using a streaming URL.
 #' @param InstanceId The identifier for the instance hosting the session.
 #'
 #' @return
@@ -4775,7 +4549,8 @@ appstream_describe_images <- function(Names = NULL, Arns = NULL, Type = NULL, Ne
 #'         ),
 #'         EniId = "string"
 #'       ),
-#'       InstanceId = "string"
+#'       InstanceId = "string",
+#'       InstanceDrainStatus = "ACTIVE"|"DRAINING"|"NOT_APPLICABLE"
 #'     )
 #'   ),
 #'   NextToken = "string"
@@ -4823,18 +4598,15 @@ appstream_describe_sessions <- function(StackName, FleetName, UserId = NULL, Nex
 #' resource
 #'
 #' @description
-#' Retrieves license included application associations for a specified
-#' resource.
+#' Retrieves license included application associations for a specified resource.
 #'
 #' @usage
 #' appstream_describe_software_associations(AssociatedResource, MaxResults,
 #'   NextToken)
 #'
-#' @param AssociatedResource &#91;required&#93; The ARN of the resource to describe software associations. Possible
-#' resources are Image and ImageBuilder.
+#' @param AssociatedResource &#91;required&#93; The ARN of the resource to describe software associations. Possible resources are Image and ImageBuilder.
 #' @param MaxResults The maximum number of results to return.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4894,16 +4666,13 @@ appstream_describe_software_associations <- function(AssociatedResource, MaxResu
 #' stack names are provided
 #'
 #' @description
-#' Retrieves a list that describes one or more specified stacks, if the
-#' stack names are provided. Otherwise, all stacks in the account are
-#' described.
+#' Retrieves a list that describes one or more specified stacks, if the stack names are provided. Otherwise, all stacks in the account are described.
 #'
 #' @usage
 #' appstream_describe_stacks(Names, NextToken)
 #'
 #' @param Names The names of the stacks to describe.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4961,6 +4730,29 @@ appstream_describe_software_associations <- function(AssociatedResource, MaxResu
 #'       ),
 #'       StreamingExperienceSettings = list(
 #'         PreferredProtocol = "TCP"|"UDP"
+#'       ),
+#'       ContentRedirection = list(
+#'         HostToClient = list(
+#'           Enabled = TRUE|FALSE,
+#'           AllowedUrls = list(
+#'             "string"
+#'           ),
+#'           DeniedUrls = list(
+#'             "string"
+#'           )
+#'         )
+#'       ),
+#'       AgentAccessConfig = list(
+#'         Settings = list(
+#'           list(
+#'             AgentAction = "COMPUTER_VISION"|"COMPUTER_INPUT",
+#'             Permission = "ENABLED"|"DISABLED"
+#'           )
+#'         ),
+#'         S3BucketArn = "string",
+#'         ScreenshotsUploadEnabled = TRUE|FALSE,
+#'         ScreenResolution = "W_1280xH_720",
+#'         ScreenImageFormat = "PNG"|"JPEG"
 #'       )
 #'     )
 #'   ),
@@ -5005,9 +4797,7 @@ appstream_describe_stacks <- function(Names = NULL, NextToken = NULL) {
 #' Retrieves a list that describes the theme for a specified stack
 #'
 #' @description
-#' Retrieves a list that describes the theme for a specified stack. A theme
-#' is custom branding that customizes the appearance of the streaming
-#' application catalog page.
+#' Retrieves a list that describes the theme for a specified stack. A theme is custom branding that customizes the appearance of the streaming application catalog page.
 #'
 #' @usage
 #' appstream_describe_theme_for_stack(StackName)
@@ -5078,8 +4868,7 @@ appstream_describe_theme_for_stack <- function(StackName) {
 #' appstream_describe_usage_report_subscriptions(MaxResults, NextToken)
 #'
 #' @param MaxResults The maximum size of each page of results.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5139,13 +4928,11 @@ appstream_describe_usage_report_subscriptions <- function(MaxResults = NULL, Nex
 #' Retrieves a list that describes the UserStackAssociation objects
 #'
 #' @description
-#' Retrieves a list that describes the UserStackAssociation objects. You
-#' must specify either or both of the following:
+#' Retrieves a list that describes the UserStackAssociation objects. You must specify either or both of the following:
 #' 
 #' -   The stack name
 #' 
-#' -   The user name (email address of the user associated with the stack)
-#'     and the authentication type for the user
+#' -   The user name (email address of the user associated with the stack) and the authentication type for the user
 #'
 #' @usage
 #' appstream_describe_user_stack_associations(StackName, UserName,
@@ -5155,11 +4942,9 @@ appstream_describe_usage_report_subscriptions <- function(MaxResults = NULL, Nex
 #' @param UserName The email address of the user who is associated with the stack.
 #' 
 #' Users' email addresses are case-sensitive.
-#' @param AuthenticationType The authentication type for the user who is associated with the stack.
-#' You must specify USERPOOL.
+#' @param AuthenticationType The authentication type for the user who is associated with the stack. You must specify USERPOOL.
 #' @param MaxResults The maximum size of each page of results.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5216,17 +5001,14 @@ appstream_describe_user_stack_associations <- function(StackName = NULL, UserNam
 #' pool
 #'
 #' @description
-#' Retrieves a list that describes one or more specified users in the user
-#' pool.
+#' Retrieves a list that describes one or more specified users in the user pool.
 #'
 #' @usage
 #' appstream_describe_users(AuthenticationType, MaxResults, NextToken)
 #'
-#' @param AuthenticationType &#91;required&#93; The authentication type for the users in the user pool to describe. You
-#' must specify USERPOOL.
+#' @param AuthenticationType &#91;required&#93; The authentication type for the users in the user pool to describe. You must specify USERPOOL.
 #' @param MaxResults The maximum size of each page of results.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5286,9 +5068,7 @@ appstream_describe_users <- function(AuthenticationType, MaxResults = NULL, Next
 #' Disables the specified user in the user pool
 #'
 #' @description
-#' Disables the specified user in the user pool. Users can't sign in to
-#' WorkSpaces Applications until they are re-enabled. This action does not
-#' delete the user.
+#' Disables the specified user in the user pool. Users can't sign in to WorkSpaces Applications until they are re-enabled. This action does not delete the user.
 #'
 #' @usage
 #' appstream_disable_user(UserName, AuthenticationType)
@@ -5525,16 +5305,14 @@ appstream_disassociate_fleet <- function(FleetName, StackName) {
 #' builder instance
 #'
 #' @description
-#' Removes license included application(s) association(s) from an image
-#' builder instance.
+#' Removes license included application(s) association(s) from an image builder instance.
 #'
 #' @usage
 #' appstream_disassociate_software_from_image_builder(ImageBuilderName,
 #'   SoftwareNames)
 #'
 #' @param ImageBuilderName &#91;required&#93; The name of the target image builder instance.
-#' @param SoftwareNames &#91;required&#93; The list of license included applications to disassociate from the image
-#' builder.
+#' @param SoftwareNames &#91;required&#93; The list of license included applications to disassociate from the image builder.
 #' 
 #' Possible values include the following:
 #' 
@@ -5623,22 +5401,61 @@ appstream_disassociate_software_from_image_builder <- function(ImageBuilderName,
 }
 .appstream$operations$disassociate_software_from_image_builder <- appstream_disassociate_software_from_image_builder
 
+#' Drains the instance hosting the specified streaming session
+#'
+#' @description
+#' Drains the instance hosting the specified streaming session. The instance stops accepting new sessions while existing sessions continue uninterrupted. Once all sessions end, the instance is reclaimed and replaced. This only applies to multi-session fleets.
+#'
+#' @usage
+#' appstream_drain_session_instance(SessionId)
+#'
+#' @param SessionId &#91;required&#93; The identifier of the streaming session.
+#'
+#' @return
+#' An empty list.
+#'
+#' @section Request syntax:
+#' ```
+#' svc$drain_session_instance(
+#'   SessionId = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname appstream_drain_session_instance
+#'
+#' @aliases appstream_drain_session_instance
+appstream_drain_session_instance <- function(SessionId) {
+  op <- new_operation(
+    name = "DrainSessionInstance",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .appstream$drain_session_instance_input(SessionId = SessionId)
+  output <- .appstream$drain_session_instance_output()
+  config <- get_config()
+  svc <- .appstream$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.appstream$operations$drain_session_instance <- appstream_drain_session_instance
+
 #' Enables a user in the user pool
 #'
 #' @description
-#' Enables a user in the user pool. After being enabled, users can sign in
-#' to WorkSpaces Applications and open applications from the stacks to
-#' which they are assigned.
+#' Enables a user in the user pool. After being enabled, users can sign in to WorkSpaces Applications and open applications from the stacks to which they are assigned.
 #'
 #' @usage
 #' appstream_enable_user(UserName, AuthenticationType)
 #'
 #' @param UserName &#91;required&#93; The email address of the user.
 #' 
-#' Users' email addresses are case-sensitive. During login, if they specify
-#' an email address that doesn't use the same capitalization as the email
-#' address specified when their user pool account was created, a "user does
-#' not exist" error message displays.
+#' Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays.
 #' @param AuthenticationType &#91;required&#93; The authentication type for the user. You must specify USERPOOL.
 #'
 #' @return
@@ -5724,14 +5541,12 @@ appstream_expire_session <- function(SessionId) {
 #' state, progress, and any error details
 #'
 #' @description
-#' Retrieves information about an export image task, including its current
-#' state, progress, and any error details.
+#' Retrieves information about an export image task, including its current state, progress, and any error details.
 #'
 #' @usage
 #' appstream_get_export_image_task(TaskId)
 #'
-#' @param TaskId The unique identifier of the export image task to retrieve information
-#' about.
+#' @param TaskId The unique identifier of the export image task to retrieve information about.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5795,15 +5610,13 @@ appstream_get_export_image_task <- function(TaskId = NULL) {
 #' stack
 #'
 #' @description
-#' Retrieves the name of the fleet that is associated with the specified
-#' stack.
+#' Retrieves the name of the fleet that is associated with the specified stack.
 #'
 #' @usage
 #' appstream_list_associated_fleets(StackName, NextToken)
 #'
 #' @param StackName &#91;required&#93; The name of the stack.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5852,15 +5665,13 @@ appstream_list_associated_fleets <- function(StackName, NextToken = NULL) {
 #' associated
 #'
 #' @description
-#' Retrieves the name of the stack with which the specified fleet is
-#' associated.
+#' Retrieves the name of the stack with which the specified fleet is associated.
 #'
 #' @usage
 #' appstream_list_associated_stacks(FleetName, NextToken)
 #'
 #' @param FleetName &#91;required&#93; The name of the fleet.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5916,8 +5727,7 @@ appstream_list_associated_stacks <- function(FleetName, NextToken = NULL) {
 #'
 #' @param StackName &#91;required&#93; The name of the stack with which the entitlement is associated.
 #' @param EntitlementName &#91;required&#93; The name of the entitlement.
-#' @param NextToken The pagination token used to retrieve the next page of results for this
-#' operation.
+#' @param NextToken The pagination token used to retrieve the next page of results for this operation.
 #' @param MaxResults The maximum size of each page of results.
 #'
 #' @return
@@ -5970,19 +5780,14 @@ appstream_list_entitled_applications <- function(StackName, EntitlementName, Nex
 #' Lists export image tasks, with optional filtering and pagination
 #'
 #' @description
-#' Lists export image tasks, with optional filtering and pagination. Use
-#' this operation to monitor the status of multiple export operations.
+#' Lists export image tasks, with optional filtering and pagination. Use this operation to monitor the status of multiple export operations.
 #'
 #' @usage
 #' appstream_list_export_image_tasks(Filters, MaxResults, NextToken)
 #'
-#' @param Filters Optional filters to apply when listing export image tasks. Filters help
-#' you narrow down the results based on specific criteria.
-#' @param MaxResults The maximum number of export image tasks to return in a single request.
-#' The valid range is 1-500, with a default of 50.
-#' @param NextToken The pagination token from a previous request. Use this to retrieve the
-#' next page of results when there are more tasks than the MaxResults
-#' limit.
+#' @param Filters Optional filters to apply when listing export image tasks. Filters help you narrow down the results based on specific criteria.
+#' @param MaxResults The maximum number of export image tasks to return in a single request. The valid range is 1-500, with a default of 50.
+#' @param NextToken The pagination token from a previous request. Use this to retrieve the next page of results when there are more tasks than the MaxResults limit.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6058,13 +5863,9 @@ appstream_list_export_image_tasks <- function(Filters = NULL, MaxResults = NULL,
 #' resource
 #'
 #' @description
-#' Retrieves a list of all tags for the specified WorkSpaces Applications
-#' resource. You can tag WorkSpaces Applications image builders, images,
-#' fleets, and stacks.
+#' Retrieves a list of all tags for the specified WorkSpaces Applications resource. You can tag WorkSpaces Applications image builders, images, fleets, and stacks.
 #' 
-#' For more information about tags, see [Tagging Your
-#' Resources](https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html)
-#' in the *Amazon WorkSpaces Applications Administration Guide*.
+#' For more information about tags, see [Tagging Your Resources](https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html) in the *Amazon WorkSpaces Applications Administration Guide*.
 #'
 #' @usage
 #' appstream_list_tags_for_resource(ResourceArn)
@@ -6117,12 +5918,9 @@ appstream_list_tags_for_resource <- function(ResourceArn) {
 #' @description
 #' Starts an app block builder.
 #' 
-#' An app block builder can only be started when it's associated with an
-#' app block.
+#' An app block builder can only be started when it's associated with an app block.
 #' 
-#' Starting an app block builder starts a new instance, which is equivalent
-#' to an elastic fleet instance with application builder assistance
-#' functionality.
+#' Starting an app block builder starts a new instance, which is equivalent to an elastic fleet instance with application builder assistance functionality.
 #'
 #' @usage
 #' appstream_start_app_block_builder(Name)
@@ -6172,7 +5970,8 @@ appstream_list_tags_for_resource <- function(ResourceArn) {
 #'         EndpointType = "STREAMING",
 #'         VpceId = "string"
 #'       )
-#'     )
+#'     ),
+#'     DisableIMDSV1 = TRUE|FALSE
 #'   )
 #' )
 #' ```
@@ -6261,9 +6060,7 @@ appstream_start_fleet <- function(Name) {
 #' appstream_start_image_builder(Name, AppstreamAgentVersion)
 #'
 #' @param Name &#91;required&#93; The name of the image builder.
-#' @param AppstreamAgentVersion The version of the WorkSpaces Applications agent to use for this image
-#' builder. To use the latest version of the WorkSpaces Applications agent,
-#' specify \[LATEST\].
+#' @param AppstreamAgentVersion The version of the WorkSpaces Applications agent to use for this image builder. To use the latest version of the WorkSpaces Applications agent, specify \[LATEST\].
 #'
 #' @return
 #' A list with the following syntax:
@@ -6325,7 +6122,8 @@ appstream_start_fleet <- function(Name) {
 #'     RootVolumeConfig = list(
 #'       VolumeSizeInGb = 123
 #'     ),
-#'     LatestAppstreamAgentVersion = "TRUE"|"FALSE"
+#'     LatestAppstreamAgentVersion = "TRUE"|"FALSE",
+#'     DisableIMDSV1 = TRUE|FALSE
 #'   )
 #' )
 #' ```
@@ -6366,16 +6164,14 @@ appstream_start_image_builder <- function(Name, AppstreamAgentVersion = NULL) {
 #' instance
 #'
 #' @description
-#' Initiates license included applications deployment to an image builder
-#' instance.
+#' Initiates license included applications deployment to an image builder instance.
 #'
 #' @usage
 #' appstream_start_software_deployment_to_image_builder(ImageBuilderName,
 #'   RetryFailedDeployments)
 #'
 #' @param ImageBuilderName &#91;required&#93; The name of the target image builder instance.
-#' @param RetryFailedDeployments Whether to retry previously failed license included application
-#' deployments.
+#' @param RetryFailedDeployments Whether to retry previously failed license included application deployments.
 #'
 #' @return
 #' An empty list.
@@ -6417,8 +6213,7 @@ appstream_start_software_deployment_to_image_builder <- function(ImageBuilderNam
 #' @description
 #' Stops an app block builder.
 #' 
-#' Stopping an app block builder terminates the instance, and the instance
-#' state is not persisted.
+#' Stopping an app block builder terminates the instance, and the instance state is not persisted.
 #'
 #' @usage
 #' appstream_stop_app_block_builder(Name)
@@ -6468,7 +6263,8 @@ appstream_start_software_deployment_to_image_builder <- function(ImageBuilderNam
 #'         EndpointType = "STREAMING",
 #'         VpceId = "string"
 #'       )
-#'     )
+#'     ),
+#'     DisableIMDSV1 = TRUE|FALSE
 #'   )
 #' )
 #' ```
@@ -6618,7 +6414,8 @@ appstream_stop_fleet <- function(Name) {
 #'     RootVolumeConfig = list(
 #'       VolumeSizeInGb = 123
 #'     ),
-#'     LatestAppstreamAgentVersion = "TRUE"|"FALSE"
+#'     LatestAppstreamAgentVersion = "TRUE"|"FALSE",
+#'     DisableIMDSV1 = TRUE|FALSE
 #'   )
 #' )
 #' ```
@@ -6658,34 +6455,23 @@ appstream_stop_image_builder <- function(Name) {
 #' Applications resource
 #'
 #' @description
-#' Adds or overwrites one or more tags for the specified WorkSpaces
-#' Applications resource. You can tag WorkSpaces Applications image
-#' builders, images, fleets, and stacks.
+#' Adds or overwrites one or more tags for the specified WorkSpaces Applications resource. You can tag WorkSpaces Applications image builders, images, fleets, and stacks.
 #' 
-#' Each tag consists of a key and an optional value. If a resource already
-#' has a tag with the same key, this operation updates its value.
+#' Each tag consists of a key and an optional value. If a resource already has a tag with the same key, this operation updates its value.
 #' 
-#' To list the current tags for your resources, use
-#' [`list_tags_for_resource`][appstream_list_tags_for_resource]. To
-#' disassociate tags from your resources, use
-#' [`untag_resource`][appstream_untag_resource].
+#' To list the current tags for your resources, use [`list_tags_for_resource`][appstream_list_tags_for_resource]. To disassociate tags from your resources, use [`untag_resource`][appstream_untag_resource].
 #' 
-#' For more information about tags, see [Tagging Your
-#' Resources](https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html)
-#' in the *Amazon WorkSpaces Applications Administration Guide*.
+#' For more information about tags, see [Tagging Your Resources](https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html) in the *Amazon WorkSpaces Applications Administration Guide*.
 #'
 #' @usage
 #' appstream_tag_resource(ResourceArn, Tags)
 #'
 #' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource.
-#' @param Tags &#91;required&#93; The tags to associate. A tag is a key-value pair, and the value is
-#' optional. For example, Environment=Test. If you do not specify a value,
-#' Environment=.
+#' @param Tags &#91;required&#93; The tags to associate. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.
 #' 
 #' If you do not specify a value, the value is set to an empty string.
 #' 
-#' Generally allowed characters are: letters, numbers, and spaces
-#' representable in UTF-8, and the following special characters:
+#' Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:
 #' 
 #' _ . : / = + \\ - @@
 #'
@@ -6730,15 +6516,11 @@ appstream_tag_resource <- function(ResourceArn, Tags) {
 #' Applications resource
 #'
 #' @description
-#' Disassociates one or more specified tags from the specified WorkSpaces
-#' Applications resource.
+#' Disassociates one or more specified tags from the specified WorkSpaces Applications resource.
 #' 
-#' To list the current tags for your resources, use
-#' [`list_tags_for_resource`][appstream_list_tags_for_resource].
+#' To list the current tags for your resources, use [`list_tags_for_resource`][appstream_list_tags_for_resource].
 #' 
-#' For more information about tags, see [Tagging Your
-#' Resources](https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html)
-#' in the *Amazon WorkSpaces Applications Administration Guide*.
+#' For more information about tags, see [Tagging Your Resources](https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html) in the *Amazon WorkSpaces Applications Administration Guide*.
 #'
 #' @usage
 #' appstream_untag_resource(ResourceArn, TagKeys)
@@ -6788,16 +6570,12 @@ appstream_untag_resource <- function(ResourceArn, TagKeys) {
 #' @description
 #' Updates an app block builder.
 #' 
-#' If the app block builder is in the `STARTING` or `STOPPING` state, you
-#' can't update it. If the app block builder is in the `RUNNING` state, you
-#' can only update the DisplayName and Description. If the app block
-#' builder is in the `STOPPED` state, you can update any attribute except
-#' the Name.
+#' If the app block builder is in the `STARTING` or `STOPPING` state, you can't update it. If the app block builder is in the `RUNNING` state, you can only update the DisplayName and Description. If the app block builder is in the `STOPPED` state, you can update any attribute except the Name.
 #'
 #' @usage
 #' appstream_update_app_block_builder(Name, Description, DisplayName,
 #'   Platform, InstanceType, VpcConfig, EnableDefaultInternetAccess,
-#'   IamRoleArn, AccessEndpoints, AttributesToDelete)
+#'   IamRoleArn, AccessEndpoints, AttributesToDelete, DisableIMDSV1)
 #'
 #' @param Name &#91;required&#93; The unique name for the app block builder.
 #' @param Description The description of the app block builder.
@@ -6805,8 +6583,7 @@ appstream_untag_resource <- function(ResourceArn, TagKeys) {
 #' @param Platform The platform of the app block builder.
 #' 
 #' `WINDOWS_SERVER_2019` is the only valid value.
-#' @param InstanceType The instance type to use when launching the app block builder. The
-#' following instance types are available:
+#' @param InstanceType The instance type to use when launching the app block builder. The following instance types are available:
 #' 
 #' -   stream.standard.small
 #' 
@@ -6819,25 +6596,14 @@ appstream_untag_resource <- function(ResourceArn, TagKeys) {
 #' -   stream.standard.2xlarge
 #' @param VpcConfig The VPC configuration for the app block builder.
 #' 
-#' App block builders require that you specify at least two subnets in
-#' different availability zones.
+#' App block builders require that you specify at least two subnets in different availability zones.
 #' @param EnableDefaultInternetAccess Enables or disables default internet access for the app block builder.
-#' @param IamRoleArn The Amazon Resource Name (ARN) of the IAM role to apply to the app block
-#' builder. To assume a role, the app block builder calls the AWS Security
-#' Token Service (STS) `AssumeRole` API operation and passes the ARN of the
-#' role to use. The operation creates a new session with temporary
-#' credentials. WorkSpaces Applications retrieves the temporary credentials
-#' and creates the **appstream_machine_role** credential profile on the
-#' instance.
+#' @param IamRoleArn The Amazon Resource Name (ARN) of the IAM role to apply to the app block builder. To assume a role, the app block builder calls the AWS Security Token Service (STS) `AssumeRole` API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. WorkSpaces Applications retrieves the temporary credentials and creates the **appstream_machine_role** credential profile on the instance.
 #' 
-#' For more information, see [Using an IAM Role to Grant Permissions to
-#' Applications and Scripts Running on WorkSpaces Applications Streaming
-#' Instances](https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html)
-#' in the *Amazon WorkSpaces Applications Administration Guide*.
-#' @param AccessEndpoints The list of interface VPC endpoint (interface endpoint) objects.
-#' Administrators can connect to the app block builder only through the
-#' specified endpoints.
+#' For more information, see [Using an IAM Role to Grant Permissions to Applications and Scripts Running on WorkSpaces Applications Streaming Instances](https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html) in the *Amazon WorkSpaces Applications Administration Guide*.
+#' @param AccessEndpoints The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.
 #' @param AttributesToDelete The attributes to delete from the app block builder.
+#' @param DisableIMDSV1 Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6882,7 +6648,8 @@ appstream_untag_resource <- function(ResourceArn, TagKeys) {
 #'         EndpointType = "STREAMING",
 #'         VpceId = "string"
 #'       )
-#'     )
+#'     ),
+#'     DisableIMDSV1 = TRUE|FALSE
 #'   )
 #' )
 #' ```
@@ -6913,7 +6680,8 @@ appstream_untag_resource <- function(ResourceArn, TagKeys) {
 #'   ),
 #'   AttributesToDelete = list(
 #'     "IAM_ROLE_ARN"|"ACCESS_ENDPOINTS"|"VPC_CONFIGURATION_SECURITY_GROUP_IDS"
-#'   )
+#'   ),
+#'   DisableIMDSV1 = TRUE|FALSE
 #' )
 #' ```
 #'
@@ -6922,7 +6690,7 @@ appstream_untag_resource <- function(ResourceArn, TagKeys) {
 #' @rdname appstream_update_app_block_builder
 #'
 #' @aliases appstream_update_app_block_builder
-appstream_update_app_block_builder <- function(Name, Description = NULL, DisplayName = NULL, Platform = NULL, InstanceType = NULL, VpcConfig = NULL, EnableDefaultInternetAccess = NULL, IamRoleArn = NULL, AccessEndpoints = NULL, AttributesToDelete = NULL) {
+appstream_update_app_block_builder <- function(Name, Description = NULL, DisplayName = NULL, Platform = NULL, InstanceType = NULL, VpcConfig = NULL, EnableDefaultInternetAccess = NULL, IamRoleArn = NULL, AccessEndpoints = NULL, AttributesToDelete = NULL, DisableIMDSV1 = NULL) {
   op <- new_operation(
     name = "UpdateAppBlockBuilder",
     http_method = "POST",
@@ -6931,7 +6699,7 @@ appstream_update_app_block_builder <- function(Name, Description = NULL, Display
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .appstream$update_app_block_builder_input(Name = Name, Description = Description, DisplayName = DisplayName, Platform = Platform, InstanceType = InstanceType, VpcConfig = VpcConfig, EnableDefaultInternetAccess = EnableDefaultInternetAccess, IamRoleArn = IamRoleArn, AccessEndpoints = AccessEndpoints, AttributesToDelete = AttributesToDelete)
+  input <- .appstream$update_app_block_builder_input(Name = Name, Description = Description, DisplayName = DisplayName, Platform = Platform, InstanceType = InstanceType, VpcConfig = VpcConfig, EnableDefaultInternetAccess = EnableDefaultInternetAccess, IamRoleArn = IamRoleArn, AccessEndpoints = AccessEndpoints, AttributesToDelete = AttributesToDelete, DisableIMDSV1 = DisableIMDSV1)
   output <- .appstream$update_app_block_builder_output()
   config <- get_config()
   svc <- .appstream$service(config, op)
@@ -6951,10 +6719,8 @@ appstream_update_app_block_builder <- function(Name, Description = NULL, Display
 #'   IconS3Location, LaunchPath, WorkingDirectory, LaunchParameters,
 #'   AppBlockArn, AttributesToDelete)
 #'
-#' @param Name &#91;required&#93; The name of the application. This name is visible to users when display
-#' name is not specified.
-#' @param DisplayName The display name of the application. This name is visible to users in
-#' the application catalog.
+#' @param Name &#91;required&#93; The name of the application. This name is visible to users when display name is not specified.
+#' @param DisplayName The display name of the application. This name is visible to users in the application catalog.
 #' @param Description The description of the application.
 #' @param IconS3Location The icon S3 location of the application.
 #' @param LaunchPath The launch path of the application.
@@ -7045,10 +6811,7 @@ appstream_update_application <- function(Name, DisplayName = NULL, Description =
 #' Updates the specified Directory Config object in WorkSpaces Applications
 #'
 #' @description
-#' Updates the specified Directory Config object in WorkSpaces
-#' Applications. This object includes the configuration information
-#' required to join fleets and image builders to Microsoft Active Directory
-#' domains.
+#' Updates the specified Directory Config object in WorkSpaces Applications. This object includes the configuration information required to join fleets and image builders to Microsoft Active Directory domains.
 #'
 #' @usage
 #' appstream_update_directory_config(DirectoryName,
@@ -7056,20 +6819,9 @@ appstream_update_application <- function(Name, DisplayName = NULL, Description =
 #'   CertificateBasedAuthProperties)
 #'
 #' @param DirectoryName &#91;required&#93; The name of the Directory Config object.
-#' @param OrganizationalUnitDistinguishedNames The distinguished names of the organizational units for computer
-#' accounts.
-#' @param ServiceAccountCredentials The credentials for the service account used by the fleet or image
-#' builder to connect to the directory.
-#' @param CertificateBasedAuthProperties The certificate-based authentication properties used to authenticate
-#' SAML 2.0 Identity Provider (IdP) user identities to Active Directory
-#' domain-joined streaming instances. Fallback is turned on by default when
-#' certificate-based authentication is **Enabled** . Fallback allows users
-#' to log in using their AD domain password if certificate-based
-#' authentication is unsuccessful, or to unlock a desktop lock screen.
-#' **Enabled_no_directory_login_fallback** enables certificate-based
-#' authentication, but does not allow users to log in using their AD domain
-#' password. Users will be disconnected to re-authenticate using
-#' certificates.
+#' @param OrganizationalUnitDistinguishedNames The distinguished names of the organizational units for computer accounts.
+#' @param ServiceAccountCredentials The credentials for the service account used by the fleet or image builder to connect to the directory.
+#' @param CertificateBasedAuthProperties The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is **Enabled** . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. **Enabled_no_directory_login_fallback** enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7222,26 +6974,19 @@ appstream_update_entitlement <- function(Name, StackName, Description = NULL, Ap
 #' @description
 #' Updates the specified fleet.
 #' 
-#' If the fleet is in the `STOPPED` state, you can update any attribute
-#' except the fleet name.
+#' If the fleet is in the `STOPPED` state, you can update any attribute except the fleet name.
 #' 
-#' If the fleet is in the `RUNNING` state, you can update the following
-#' based on the fleet type:
+#' If the fleet is in the `RUNNING` state, you can update the following based on the fleet type:
 #' 
 #' -   Always-On and On-Demand fleet types
 #' 
-#'     You can update the `DisplayName`, `ComputeCapacity`, `ImageARN`,
-#'     `ImageName`, `IdleDisconnectTimeoutInSeconds`, and
-#'     `DisconnectTimeoutInSeconds` attributes.
+#'     You can update the `DisplayName`, `ComputeCapacity`, `ImageARN`, `ImageName`, `IdleDisconnectTimeoutInSeconds`, and `DisconnectTimeoutInSeconds` attributes.
 #' 
 #' -   Elastic fleet type
 #' 
-#'     You can update the `DisplayName`, `IdleDisconnectTimeoutInSeconds`,
-#'     `DisconnectTimeoutInSeconds`, `MaxConcurrentSessions`,
-#'     `SessionScriptS3Location` and `UsbDeviceFilterStrings` attributes.
+#'     You can update the `DisplayName`, `IdleDisconnectTimeoutInSeconds`, `DisconnectTimeoutInSeconds`, `MaxConcurrentSessions`, `SessionScriptS3Location` and `UsbDeviceFilterStrings` attributes.
 #' 
-#' If the fleet is in the `STARTING` or `STOPPED` state, you can't update
-#' it.
+#' If the fleet is in the `STARTING` or `STOPPED` state, you can't update it.
 #'
 #' @usage
 #' appstream_update_fleet(ImageName, ImageArn, Name, InstanceType,
@@ -7250,13 +6995,13 @@ appstream_update_entitlement <- function(Name, StackName, Description = NULL, Ap
 #'   EnableDefaultInternetAccess, DomainJoinInfo,
 #'   IdleDisconnectTimeoutInSeconds, AttributesToDelete, IamRoleArn,
 #'   StreamView, Platform, MaxConcurrentSessions, UsbDeviceFilterStrings,
-#'   SessionScriptS3Location, MaxSessionsPerInstance, RootVolumeConfig)
+#'   SessionScriptS3Location, MaxSessionsPerInstance, RootVolumeConfig,
+#'   DisableIMDSV1)
 #'
 #' @param ImageName The name of the image used to create the fleet.
 #' @param ImageArn The ARN of the public, private, or shared image to use.
 #' @param Name A unique name for the fleet.
-#' @param InstanceType The instance type to use when launching fleet instances. The following
-#' instance types are available:
+#' @param InstanceType The instance type to use when launching fleet instances. The following instance types are available:
 #' 
 #' -   stream.standard.small
 #' 
@@ -7365,85 +7110,40 @@ appstream_update_entitlement <- function(Name, StackName, Description = NULL, Ap
 #' -   stream.standard.xlarge
 #' 
 #' -   stream.standard.2xlarge
-#' @param ComputeCapacity The desired capacity for the fleet. This is not allowed for Elastic
-#' fleets.
-#' @param VpcConfig The VPC configuration for the fleet. This is required for Elastic
-#' fleets, but not required for other fleet types. Elastic fleets require
-#' that you specify at least two subnets in different availability zones.
-#' @param MaxUserDurationInSeconds The maximum amount of time that a streaming session can remain active,
-#' in seconds. If users are still connected to a streaming instance five
-#' minutes before this limit is reached, they are prompted to save any open
-#' documents before being disconnected. After this time elapses, the
-#' instance is terminated and replaced by a new instance.
+#' @param ComputeCapacity The desired capacity for the fleet. This is not allowed for Elastic fleets.
+#' @param VpcConfig The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones.
+#' @param MaxUserDurationInSeconds The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.
 #' 
 #' Specify a value between 600 and 432000.
-#' @param DisconnectTimeoutInSeconds The amount of time that a streaming session remains active after users
-#' disconnect. If users try to reconnect to the streaming session after a
-#' disconnection or network interruption within this time interval, they
-#' are connected to their previous session. Otherwise, they are connected
-#' to a new session with a new streaming instance.
+#' @param DisconnectTimeoutInSeconds The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance.
 #' 
 #' Specify a value between 60 and 36000.
 #' @param DeleteVpcConfig Deletes the VPC association for the specified fleet.
 #' @param Description The description to display.
 #' @param DisplayName The fleet name to display.
 #' @param EnableDefaultInternetAccess Enables or disables default internet access for the fleet.
-#' @param DomainJoinInfo The name of the directory and organizational unit (OU) to use to join
-#' the fleet to a Microsoft Active Directory domain.
-#' @param IdleDisconnectTimeoutInSeconds The amount of time that users can be idle (inactive) before they are
-#' disconnected from their streaming session and the
-#' `DisconnectTimeoutInSeconds` time interval begins. Users are notified
-#' before they are disconnected due to inactivity. If users try to
-#' reconnect to the streaming session before the time interval specified in
-#' `DisconnectTimeoutInSeconds` elapses, they are connected to their
-#' previous session. Users are considered idle when they stop providing
-#' keyboard or mouse input during their streaming session. File uploads and
-#' downloads, audio in, audio out, and pixels changing do not qualify as
-#' user activity. If users continue to be idle after the time interval in
-#' `IdleDisconnectTimeoutInSeconds` elapses, they are disconnected.
+#' @param DomainJoinInfo The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain.
+#' @param IdleDisconnectTimeoutInSeconds The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the `DisconnectTimeoutInSeconds` time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in `DisconnectTimeoutInSeconds` elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in `IdleDisconnectTimeoutInSeconds` elapses, they are disconnected.
 #' 
-#' To prevent users from being disconnected due to inactivity, specify a
-#' value of 0. Otherwise, specify a value between 60 and 36000. The default
-#' value is 0.
+#' To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 36000. The default value is 0.
 #' 
-#' If you enable this feature, we recommend that you specify a value that
-#' corresponds exactly to a whole number of minutes (for example, 60, 120,
-#' and 180). If you don't do this, the value is rounded to the nearest
-#' minute. For example, if you specify a value of 70, users are
-#' disconnected after 1 minute of inactivity. If you specify a value that
-#' is at the midpoint between two different minutes, the value is rounded
-#' up. For example, if you specify a value of 90, users are disconnected
-#' after 2 minutes of inactivity.
+#' If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity.
 #' @param AttributesToDelete The fleet attributes to delete.
-#' @param IamRoleArn The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To
-#' assume a role, a fleet instance calls the AWS Security Token Service
-#' (STS) `AssumeRole` API operation and passes the ARN of the role to use.
-#' The operation creates a new session with temporary credentials.
-#' WorkSpaces Applications retrieves the temporary credentials and creates
-#' the **appstream_machine_role** credential profile on the instance.
+#' @param IamRoleArn The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) `AssumeRole` API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. WorkSpaces Applications retrieves the temporary credentials and creates the **appstream_machine_role** credential profile on the instance.
 #' 
-#' For more information, see [Using an IAM Role to Grant Permissions to
-#' Applications and Scripts Running on WorkSpaces Applications Streaming
-#' Instances](https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html)
-#' in the *Amazon WorkSpaces Applications Administration Guide*.
-#' @param StreamView The WorkSpaces Applications view that is displayed to your users when
-#' they stream from the fleet. When `APP` is specified, only the windows of
-#' applications opened by users display. When `DESKTOP` is specified, the
-#' standard desktop that is provided by the operating system displays.
+#' For more information, see [Using an IAM Role to Grant Permissions to Applications and Scripts Running on WorkSpaces Applications Streaming Instances](https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html) in the *Amazon WorkSpaces Applications Administration Guide*.
+#' @param StreamView The WorkSpaces Applications view that is displayed to your users when they stream from the fleet. When `APP` is specified, only the windows of applications opened by users display. When `DESKTOP` is specified, the standard desktop that is provided by the operating system displays.
 #' 
 #' The default value is `APP`.
-#' @param Platform The platform of the fleet. WINDOWS_SERVER_2019, AMAZON_LINUX2 and
-#' UBUNTU_PRO_2404 are supported for Elastic fleets.
+#' @param Platform The platform of the fleet. WINDOWS_SERVER_2019, AMAZON_LINUX2 and UBUNTU_PRO_2404 are supported for Elastic fleets.
 #' @param MaxConcurrentSessions The maximum number of concurrent sessions for a fleet.
-#' @param UsbDeviceFilterStrings The USB device filter strings that specify which USB devices a user can
-#' redirect to the fleet streaming session, when using the Windows native
-#' client. This is allowed but not required for Elastic fleets.
-#' @param SessionScriptS3Location The S3 location of the session scripts configuration zip file. This only
-#' applies to Elastic fleets.
-#' @param MaxSessionsPerInstance The maximum number of user sessions on an instance. This only applies to
-#' multi-session fleets.
-#' @param RootVolumeConfig The updated configuration for the root volume of fleet instances. Note
-#' that volume size cannot be decreased below the image volume size.
+#' @param UsbDeviceFilterStrings The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.
+#' @param SessionScriptS3Location The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.
+#' @param MaxSessionsPerInstance The maximum number of user sessions on an instance. This only applies to multi-session fleets.
+#' @param RootVolumeConfig The updated configuration for the root volume of fleet instances. Note that volume size cannot be decreased below the image volume size.
+#' @param DisableIMDSV1 Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.
+#' 
+#' Before disabling IMDSv1, ensure your WorkSpaces Applications images are running the agent version or managed image update released on or after January 16, 2024 to support IMDSv2 enforcement.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7466,7 +7166,10 @@ appstream_update_entitlement <- function(Name, StackName, Description = NULL, Ap
 #'       DesiredUserSessions = 123,
 #'       AvailableUserSessions = 123,
 #'       ActiveUserSessions = 123,
-#'       ActualUserSessions = 123
+#'       ActualUserSessions = 123,
+#'       Draining = 123,
+#'       DrainModeActiveUserSessions = 123,
+#'       DrainModeUnusedUserSessions = 123
 #'     ),
 #'     MaxUserDurationInSeconds = 123,
 #'     DisconnectTimeoutInSeconds = 123,
@@ -7508,7 +7211,8 @@ appstream_update_entitlement <- function(Name, StackName, Description = NULL, Ap
 #'     MaxSessionsPerInstance = 123,
 #'     RootVolumeConfig = list(
 #'       VolumeSizeInGb = 123
-#'     )
+#'     ),
+#'     DisableIMDSV1 = TRUE|FALSE
 #'   )
 #' )
 #' ```
@@ -7560,7 +7264,8 @@ appstream_update_entitlement <- function(Name, StackName, Description = NULL, Ap
 #'   MaxSessionsPerInstance = 123,
 #'   RootVolumeConfig = list(
 #'     VolumeSizeInGb = 123
-#'   )
+#'   ),
+#'   DisableIMDSV1 = TRUE|FALSE
 #' )
 #' ```
 #'
@@ -7569,7 +7274,7 @@ appstream_update_entitlement <- function(Name, StackName, Description = NULL, Ap
 #' @rdname appstream_update_fleet
 #'
 #' @aliases appstream_update_fleet
-appstream_update_fleet <- function(ImageName = NULL, ImageArn = NULL, Name = NULL, InstanceType = NULL, ComputeCapacity = NULL, VpcConfig = NULL, MaxUserDurationInSeconds = NULL, DisconnectTimeoutInSeconds = NULL, DeleteVpcConfig = NULL, Description = NULL, DisplayName = NULL, EnableDefaultInternetAccess = NULL, DomainJoinInfo = NULL, IdleDisconnectTimeoutInSeconds = NULL, AttributesToDelete = NULL, IamRoleArn = NULL, StreamView = NULL, Platform = NULL, MaxConcurrentSessions = NULL, UsbDeviceFilterStrings = NULL, SessionScriptS3Location = NULL, MaxSessionsPerInstance = NULL, RootVolumeConfig = NULL) {
+appstream_update_fleet <- function(ImageName = NULL, ImageArn = NULL, Name = NULL, InstanceType = NULL, ComputeCapacity = NULL, VpcConfig = NULL, MaxUserDurationInSeconds = NULL, DisconnectTimeoutInSeconds = NULL, DeleteVpcConfig = NULL, Description = NULL, DisplayName = NULL, EnableDefaultInternetAccess = NULL, DomainJoinInfo = NULL, IdleDisconnectTimeoutInSeconds = NULL, AttributesToDelete = NULL, IamRoleArn = NULL, StreamView = NULL, Platform = NULL, MaxConcurrentSessions = NULL, UsbDeviceFilterStrings = NULL, SessionScriptS3Location = NULL, MaxSessionsPerInstance = NULL, RootVolumeConfig = NULL, DisableIMDSV1 = NULL) {
   op <- new_operation(
     name = "UpdateFleet",
     http_method = "POST",
@@ -7578,7 +7283,7 @@ appstream_update_fleet <- function(ImageName = NULL, ImageArn = NULL, Name = NUL
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .appstream$update_fleet_input(ImageName = ImageName, ImageArn = ImageArn, Name = Name, InstanceType = InstanceType, ComputeCapacity = ComputeCapacity, VpcConfig = VpcConfig, MaxUserDurationInSeconds = MaxUserDurationInSeconds, DisconnectTimeoutInSeconds = DisconnectTimeoutInSeconds, DeleteVpcConfig = DeleteVpcConfig, Description = Description, DisplayName = DisplayName, EnableDefaultInternetAccess = EnableDefaultInternetAccess, DomainJoinInfo = DomainJoinInfo, IdleDisconnectTimeoutInSeconds = IdleDisconnectTimeoutInSeconds, AttributesToDelete = AttributesToDelete, IamRoleArn = IamRoleArn, StreamView = StreamView, Platform = Platform, MaxConcurrentSessions = MaxConcurrentSessions, UsbDeviceFilterStrings = UsbDeviceFilterStrings, SessionScriptS3Location = SessionScriptS3Location, MaxSessionsPerInstance = MaxSessionsPerInstance, RootVolumeConfig = RootVolumeConfig)
+  input <- .appstream$update_fleet_input(ImageName = ImageName, ImageArn = ImageArn, Name = Name, InstanceType = InstanceType, ComputeCapacity = ComputeCapacity, VpcConfig = VpcConfig, MaxUserDurationInSeconds = MaxUserDurationInSeconds, DisconnectTimeoutInSeconds = DisconnectTimeoutInSeconds, DeleteVpcConfig = DeleteVpcConfig, Description = Description, DisplayName = DisplayName, EnableDefaultInternetAccess = EnableDefaultInternetAccess, DomainJoinInfo = DomainJoinInfo, IdleDisconnectTimeoutInSeconds = IdleDisconnectTimeoutInSeconds, AttributesToDelete = AttributesToDelete, IamRoleArn = IamRoleArn, StreamView = StreamView, Platform = Platform, MaxConcurrentSessions = MaxConcurrentSessions, UsbDeviceFilterStrings = UsbDeviceFilterStrings, SessionScriptS3Location = SessionScriptS3Location, MaxSessionsPerInstance = MaxSessionsPerInstance, RootVolumeConfig = RootVolumeConfig, DisableIMDSV1 = DisableIMDSV1)
   output <- .appstream$update_fleet_output()
   config <- get_config()
   svc <- .appstream$service(config, op)
@@ -7598,8 +7303,7 @@ appstream_update_fleet <- function(ImageName = NULL, ImageArn = NULL, Name = NUL
 #'   ImagePermissions)
 #'
 #' @param Name &#91;required&#93; The name of the private image.
-#' @param SharedAccountId &#91;required&#93; The 12-digit identifier of the AWS account for which you want add or
-#' update image permissions.
+#' @param SharedAccountId &#91;required&#93; The 12-digit identifier of the AWS account for which you want add or update image permissions.
 #' @param ImagePermissions &#91;required&#93; The permissions for the image.
 #'
 #' @return
@@ -7650,7 +7354,8 @@ appstream_update_image_permissions <- function(Name, SharedAccountId, ImagePermi
 #' appstream_update_stack(DisplayName, Description, Name,
 #'   StorageConnectors, DeleteStorageConnectors, RedirectURL, FeedbackURL,
 #'   AttributesToDelete, UserSettings, ApplicationSettings, AccessEndpoints,
-#'   EmbedHostDomains, StreamingExperienceSettings)
+#'   EmbedHostDomains, StreamingExperienceSettings, ContentRedirection,
+#'   AgentAccessConfig)
 #'
 #' @param DisplayName The stack name to display.
 #' @param Description The description to display.
@@ -7658,23 +7363,15 @@ appstream_update_image_permissions <- function(Name, SharedAccountId, ImagePermi
 #' @param StorageConnectors The storage connectors to enable.
 #' @param DeleteStorageConnectors Deletes the storage connectors currently enabled for the stack.
 #' @param RedirectURL The URL that users are redirected to after their streaming session ends.
-#' @param FeedbackURL The URL that users are redirected to after they choose the Send Feedback
-#' link. If no URL is specified, no Send Feedback link is displayed.
+#' @param FeedbackURL The URL that users are redirected to after they choose the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.
 #' @param AttributesToDelete The stack attributes to delete.
-#' @param UserSettings The actions that are enabled or disabled for users during their
-#' streaming sessions. By default, these actions are enabled.
-#' @param ApplicationSettings The persistent application settings for users of a stack. When these
-#' settings are enabled, changes that users make to applications and
-#' Windows settings are automatically saved after each session and applied
-#' to the next session.
-#' @param AccessEndpoints The list of interface VPC endpoint (interface endpoint) objects. Users
-#' of the stack can connect to WorkSpaces Applications only through the
-#' specified endpoints.
-#' @param EmbedHostDomains The domains where WorkSpaces Applications streaming sessions can be
-#' embedded in an iframe. You must approve the domains that you want to
-#' host embedded WorkSpaces Applications streaming sessions.
-#' @param StreamingExperienceSettings The streaming protocol you want your stack to prefer. This can be UDP or
-#' TCP. Currently, UDP is only supported in the Windows native client.
+#' @param UserSettings The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are enabled.
+#' @param ApplicationSettings The persistent application settings for users of a stack. When these settings are enabled, changes that users make to applications and Windows settings are automatically saved after each session and applied to the next session.
+#' @param AccessEndpoints The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to WorkSpaces Applications only through the specified endpoints.
+#' @param EmbedHostDomains The domains where WorkSpaces Applications streaming sessions can be embedded in an iframe. You must approve the domains that you want to host embedded WorkSpaces Applications streaming sessions.
+#' @param StreamingExperienceSettings The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.
+#' @param ContentRedirection Configuration for bidirectional URL redirection between the streaming session and the local client. Use HostToClient to redirect URLs from the remote desktop to the local browser.
+#' @param AgentAccessConfig The configuration for agent access on the stack. Specify this to update agent access settings. To remove agent access, use AttributesToDelete with the AGENT_ACCESS_CONFIG value.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7731,6 +7428,29 @@ appstream_update_image_permissions <- function(Name, SharedAccountId, ImagePermi
 #'     ),
 #'     StreamingExperienceSettings = list(
 #'       PreferredProtocol = "TCP"|"UDP"
+#'     ),
+#'     ContentRedirection = list(
+#'       HostToClient = list(
+#'         Enabled = TRUE|FALSE,
+#'         AllowedUrls = list(
+#'           "string"
+#'         ),
+#'         DeniedUrls = list(
+#'           "string"
+#'         )
+#'       )
+#'     ),
+#'     AgentAccessConfig = list(
+#'       Settings = list(
+#'         list(
+#'           AgentAction = "COMPUTER_VISION"|"COMPUTER_INPUT",
+#'           Permission = "ENABLED"|"DISABLED"
+#'         )
+#'       ),
+#'       S3BucketArn = "string",
+#'       ScreenshotsUploadEnabled = TRUE|FALSE,
+#'       ScreenResolution = "W_1280xH_720",
+#'       ScreenImageFormat = "PNG"|"JPEG"
 #'     )
 #'   )
 #' )
@@ -7758,7 +7478,7 @@ appstream_update_image_permissions <- function(Name, SharedAccountId, ImagePermi
 #'   RedirectURL = "string",
 #'   FeedbackURL = "string",
 #'   AttributesToDelete = list(
-#'     "STORAGE_CONNECTORS"|"STORAGE_CONNECTOR_HOMEFOLDERS"|"STORAGE_CONNECTOR_GOOGLE_DRIVE"|"STORAGE_CONNECTOR_ONE_DRIVE"|"REDIRECT_URL"|"FEEDBACK_URL"|"THEME_NAME"|"USER_SETTINGS"|"EMBED_HOST_DOMAINS"|"IAM_ROLE_ARN"|"ACCESS_ENDPOINTS"|"STREAMING_EXPERIENCE_SETTINGS"
+#'     "STORAGE_CONNECTORS"|"STORAGE_CONNECTOR_HOMEFOLDERS"|"STORAGE_CONNECTOR_GOOGLE_DRIVE"|"STORAGE_CONNECTOR_ONE_DRIVE"|"REDIRECT_URL"|"FEEDBACK_URL"|"THEME_NAME"|"USER_SETTINGS"|"EMBED_HOST_DOMAINS"|"IAM_ROLE_ARN"|"ACCESS_ENDPOINTS"|"STREAMING_EXPERIENCE_SETTINGS"|"CONTENT_REDIRECTION"|"AGENT_ACCESS_CONFIG"
 #'   ),
 #'   UserSettings = list(
 #'     list(
@@ -7782,6 +7502,29 @@ appstream_update_image_permissions <- function(Name, SharedAccountId, ImagePermi
 #'   ),
 #'   StreamingExperienceSettings = list(
 #'     PreferredProtocol = "TCP"|"UDP"
+#'   ),
+#'   ContentRedirection = list(
+#'     HostToClient = list(
+#'       Enabled = TRUE|FALSE,
+#'       AllowedUrls = list(
+#'         "string"
+#'       ),
+#'       DeniedUrls = list(
+#'         "string"
+#'       )
+#'     )
+#'   ),
+#'   AgentAccessConfig = list(
+#'     Settings = list(
+#'       list(
+#'         AgentAction = "COMPUTER_VISION"|"COMPUTER_INPUT",
+#'         Permission = "ENABLED"|"DISABLED"
+#'       )
+#'     ),
+#'     S3BucketArn = "string",
+#'     ScreenshotsUploadEnabled = TRUE|FALSE,
+#'     ScreenResolution = "W_1280xH_720",
+#'     ScreenImageFormat = "PNG"|"JPEG"
 #'   )
 #' )
 #' ```
@@ -7791,7 +7534,7 @@ appstream_update_image_permissions <- function(Name, SharedAccountId, ImagePermi
 #' @rdname appstream_update_stack
 #'
 #' @aliases appstream_update_stack
-appstream_update_stack <- function(DisplayName = NULL, Description = NULL, Name, StorageConnectors = NULL, DeleteStorageConnectors = NULL, RedirectURL = NULL, FeedbackURL = NULL, AttributesToDelete = NULL, UserSettings = NULL, ApplicationSettings = NULL, AccessEndpoints = NULL, EmbedHostDomains = NULL, StreamingExperienceSettings = NULL) {
+appstream_update_stack <- function(DisplayName = NULL, Description = NULL, Name, StorageConnectors = NULL, DeleteStorageConnectors = NULL, RedirectURL = NULL, FeedbackURL = NULL, AttributesToDelete = NULL, UserSettings = NULL, ApplicationSettings = NULL, AccessEndpoints = NULL, EmbedHostDomains = NULL, StreamingExperienceSettings = NULL, ContentRedirection = NULL, AgentAccessConfig = NULL) {
   op <- new_operation(
     name = "UpdateStack",
     http_method = "POST",
@@ -7800,7 +7543,7 @@ appstream_update_stack <- function(DisplayName = NULL, Description = NULL, Name,
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .appstream$update_stack_input(DisplayName = DisplayName, Description = Description, Name = Name, StorageConnectors = StorageConnectors, DeleteStorageConnectors = DeleteStorageConnectors, RedirectURL = RedirectURL, FeedbackURL = FeedbackURL, AttributesToDelete = AttributesToDelete, UserSettings = UserSettings, ApplicationSettings = ApplicationSettings, AccessEndpoints = AccessEndpoints, EmbedHostDomains = EmbedHostDomains, StreamingExperienceSettings = StreamingExperienceSettings)
+  input <- .appstream$update_stack_input(DisplayName = DisplayName, Description = Description, Name = Name, StorageConnectors = StorageConnectors, DeleteStorageConnectors = DeleteStorageConnectors, RedirectURL = RedirectURL, FeedbackURL = FeedbackURL, AttributesToDelete = AttributesToDelete, UserSettings = UserSettings, ApplicationSettings = ApplicationSettings, AccessEndpoints = AccessEndpoints, EmbedHostDomains = EmbedHostDomains, StreamingExperienceSettings = StreamingExperienceSettings, ContentRedirection = ContentRedirection, AgentAccessConfig = AgentAccessConfig)
   output <- .appstream$update_stack_output()
   config <- get_config()
   svc <- .appstream$service(config, op)
@@ -7814,8 +7557,7 @@ appstream_update_stack <- function(DisplayName = NULL, Description = NULL, Name,
 #' application catalog page
 #'
 #' @description
-#' Updates custom branding that customizes the appearance of the streaming
-#' application catalog page.
+#' Updates custom branding that customizes the appearance of the streaming application catalog page.
 #'
 #' @usage
 #' appstream_update_theme_for_stack(StackName, FooterLinks, TitleText,
@@ -7823,22 +7565,12 @@ appstream_update_stack <- function(DisplayName = NULL, Description = NULL, Name,
 #'   AttributesToDelete)
 #'
 #' @param StackName &#91;required&#93; The name of the stack for the theme.
-#' @param FooterLinks The links that are displayed in the footer of the streaming application
-#' catalog page. These links are helpful resources for users, such as the
-#' organization's IT support and product marketing sites.
-#' @param TitleText The title that is displayed at the top of the browser tab during users'
-#' application streaming sessions.
-#' @param ThemeStyling The color theme that is applied to website links, text, and buttons.
-#' These colors are also applied as accents in the background for the
-#' streaming application catalog page.
-#' @param OrganizationLogoS3Location The organization logo that appears on the streaming application catalog
-#' page.
-#' @param FaviconS3Location The S3 location of the favicon. The favicon enables users to recognize
-#' their application streaming site in a browser full of tabs or bookmarks.
-#' It is displayed at the top of the browser tab for the application
-#' streaming site during users' streaming sessions.
-#' @param State Specifies whether custom branding should be applied to catalog page or
-#' not.
+#' @param FooterLinks The links that are displayed in the footer of the streaming application catalog page. These links are helpful resources for users, such as the organization's IT support and product marketing sites.
+#' @param TitleText The title that is displayed at the top of the browser tab during users' application streaming sessions.
+#' @param ThemeStyling The color theme that is applied to website links, text, and buttons. These colors are also applied as accents in the background for the streaming application catalog page.
+#' @param OrganizationLogoS3Location The organization logo that appears on the streaming application catalog page.
+#' @param FaviconS3Location The S3 location of the favicon. The favicon enables users to recognize their application streaming site in a browser full of tabs or bookmarks. It is displayed at the top of the browser tab for the application streaming site during users' streaming sessions.
+#' @param State Specifies whether custom branding should be applied to catalog page or not.
 #' @param AttributesToDelete The attributes to delete.
 #'
 #' @return

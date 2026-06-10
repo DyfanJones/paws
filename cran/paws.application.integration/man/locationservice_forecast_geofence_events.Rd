@@ -19,33 +19,19 @@ locationservice_forecast_geofence_events(
 \arguments{
 \item{CollectionName}{[required] The name of the geofence collection.}
 
-\item{DeviceState}{[required] Represents the device's state, including its current position and speed.
-When speed is omitted, this API performs a \emph{containment check}. The
-\emph{containment check} operation returns \code{IDLE} events for geofences where
-the device is currently inside of, but no other events.}
+\item{DeviceState}{[required] Represents the device's state, including its current position and speed. When speed is omitted, this API performs a \emph{containment check}. The \emph{containment check} operation returns \code{IDLE} events for geofences where the device is currently inside of, but no other events.}
 
-\item{TimeHorizonMinutes}{The forward-looking time window for forecasting, specified in minutes.
-The API only returns events that are predicted to occur within this time
-horizon. When no value is specified, this API performs a \emph{containment
-check}. The \emph{containment check} operation returns \code{IDLE} events for
-geofences where the device is currently inside of, but no other events.}
+\item{TimeHorizonMinutes}{The forward-looking time window for forecasting, specified in minutes. The API only returns events that are predicted to occur within this time horizon. When no value is specified, this API performs a \emph{containment check}. The \emph{containment check} operation returns \code{IDLE} events for geofences where the device is currently inside of, but no other events.}
 
-\item{DistanceUnit}{The distance unit used for the \code{NearestDistance} property returned in a
-forecasted event. The measurement system must match for \code{DistanceUnit}
-and \code{SpeedUnit}; if \code{Kilometers} is specified for \code{DistanceUnit}, then
-\code{SpeedUnit} must be \code{KilometersPerHour}.
+\item{DistanceUnit}{The distance unit used for the \code{NearestDistance} property returned in a forecasted event. The measurement system must match for \code{DistanceUnit} and \code{SpeedUnit}; if \code{Kilometers} is specified for \code{DistanceUnit}, then \code{SpeedUnit} must be \code{KilometersPerHour}.
 
 Default Value: \code{Kilometers}}
 
-\item{SpeedUnit}{The speed unit for the device captured by the device state. The
-measurement system must match for \code{DistanceUnit} and \code{SpeedUnit}; if
-\code{Kilometers} is specified for \code{DistanceUnit}, then \code{SpeedUnit} must be
-\code{KilometersPerHour}.
+\item{SpeedUnit}{The speed unit for the device captured by the device state. The measurement system must match for \code{DistanceUnit} and \code{SpeedUnit}; if \code{Kilometers} is specified for \code{DistanceUnit}, then \code{SpeedUnit} must be \code{KilometersPerHour}.
 
 Default Value: \code{KilometersPerHour}.}
 
-\item{NextToken}{The pagination token specifying which page of results to return in the
-response. If no token is provided, the default page is the first page.
+\item{NextToken}{The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.
 
 Default value: \code{null}}
 

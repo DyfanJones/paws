@@ -7,11 +7,7 @@
 arczonalshift_update_autoshift_observer_notification_status(status)
 }
 \arguments{
-\item{status}{[required] The status to set for autoshift observer notification. If the status is
-\code{ENABLED}, ARC includes all autoshift events when you use the Amazon
-EventBridge pattern \verb{Autoshift In Progress}. When the status is
-\code{DISABLED}, ARC includes only autoshift events for autoshifts when one
-or more of your resources is included in the autoshift.}
+\item{status}{[required] The status to set for autoshift observer notification. If the status is \code{ENABLED}, ARC includes all autoshift events when you use the Amazon EventBridge pattern \verb{Autoshift In Progress}. When the status is \code{DISABLED}, ARC includes only autoshift events for autoshifts when one or more of your resources is included in the autoshift.}
 }
 \description{
 Update the status of autoshift observer notification. Autoshift observer notification enables you to be notified, through Amazon EventBridge, when there is an autoshift event for zonal autoshift.

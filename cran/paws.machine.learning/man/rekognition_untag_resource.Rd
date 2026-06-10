@@ -8,8 +8,7 @@ processor, or Custom Labels model}
 rekognition_untag_resource(ResourceArn, TagKeys)
 }
 \arguments{
-\item{ResourceArn}{[required] Amazon Resource Name (ARN) of the model, collection, or stream processor
-that you want to remove the tags from.}
+\item{ResourceArn}{[required] Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to remove the tags from.}
 
 \item{TagKeys}{[required] A list of the tags that you want to remove.}
 }

@@ -7,14 +7,11 @@
 route53_associate_vpc_with_hosted_zone(HostedZoneId, VPC, Comment = NULL)
 }
 \arguments{
-\item{HostedZoneId}{[required] The ID of the private hosted zone that you want to associate an Amazon
-VPC with.
+\item{HostedZoneId}{[required] The ID of the private hosted zone that you want to associate an Amazon VPC with.
 
-Note that you can't associate a VPC with a hosted zone that doesn't have
-an existing VPC association.}
+Note that you can't associate a VPC with a hosted zone that doesn't have an existing VPC association.}
 
-\item{VPC}{[required] A complex type that contains information about the VPC that you want to
-associate with a private hosted zone.}
+\item{VPC}{[required] A complex type that contains information about the VPC that you want to associate with a private hosted zone.}
 
 \item{Comment}{\emph{Optional:} A comment about the association request.}
 }

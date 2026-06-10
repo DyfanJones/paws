@@ -14,13 +14,9 @@ ivsrealtime_list_participant_replicas(
 \arguments{
 \item{sourceStageArn}{[required] ARN of the stage where the participant is publishing.}
 
-\item{participantId}{[required] Participant ID of the publisher that has been replicated. This is
-assigned by IVS and returned by
-\code{\link[=ivsrealtime_create_participant_token]{create_participant_token}} or
-the \code{jti} (JWT ID) used to \href{https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started-distribute-tokens.html#getting-started-distribute-tokens-self-signed}{create a self signed token}.}
+\item{participantId}{[required] Participant ID of the publisher that has been replicated. This is assigned by IVS and returned by \code{\link[=ivsrealtime_create_participant_token]{create_participant_token}} or the \code{jti} (JWT ID) used to \href{https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started-distribute-tokens.html#getting-started-distribute-tokens-self-signed}{create a self signed token}.}
 
-\item{nextToken}{The first participant to retrieve. This is used for pagination; see the
-\code{nextToken} response field.}
+\item{nextToken}{The first participant to retrieve. This is used for pagination; see the \code{nextToken} response field.}
 
 \item{maxResults}{Maximum number of results to return. Default: 50.}
 }

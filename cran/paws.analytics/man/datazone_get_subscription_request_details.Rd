@@ -7,8 +7,7 @@
 datazone_get_subscription_request_details(domainIdentifier, identifier)
 }
 \arguments{
-\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which to get the
-subscription request details.}
+\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which to get the subscription request details.}
 
 \item{identifier}{[required] The identifier of the subscription request the details of which to get.}
 }

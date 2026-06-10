@@ -7,8 +7,7 @@
 kendraranking_describe_rescore_execution_plan(Id)
 }
 \arguments{
-\item{Id}{[required] The identifier of the rescore execution plan that you want to get
-information on.}
+\item{Id}{[required] The identifier of the rescore execution plan that you want to get information on.}
 }
 \description{
 Gets information about a rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the \code{\link[=kendraranking_rescore]{rescore}} API.

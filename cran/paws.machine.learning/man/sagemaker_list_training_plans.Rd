@@ -19,14 +19,11 @@ sagemaker_list_training_plans(
 
 \item{MaxResults}{The maximum number of results to return in the response.}
 
-\item{StartTimeAfter}{Filter to list only training plans with an actual start time after this
-date.}
+\item{StartTimeAfter}{Filter to list only training plans with an actual start time after this date.}
 
-\item{StartTimeBefore}{Filter to list only training plans with an actual start time before this
-date.}
+\item{StartTimeBefore}{Filter to list only training plans with an actual start time before this date.}
 
-\item{SortBy}{The training plan field to sort the results by (e.g., StartTime,
-Status).}
+\item{SortBy}{The training plan field to sort the results by (e.g., StartTime, Status).}
 
 \item{SortOrder}{The order to sort the results (Ascending or Descending).}
 

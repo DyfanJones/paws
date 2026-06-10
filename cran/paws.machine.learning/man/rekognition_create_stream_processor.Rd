@@ -19,60 +19,25 @@ rekognition_create_stream_processor(
 )
 }
 \arguments{
-\item{Input}{[required] Kinesis video stream stream that provides the source streaming video. If
-you are using the AWS CLI, the parameter name is \code{StreamProcessorInput}.
-This is required for both face search and label detection stream
-processors.}
+\item{Input}{[required] Kinesis video stream stream that provides the source streaming video. If you are using the AWS CLI, the parameter name is \code{StreamProcessorInput}. This is required for both face search and label detection stream processors.}
 
-\item{Output}{[required] Kinesis data stream stream or Amazon S3 bucket location to which Amazon
-Rekognition Video puts the analysis results. If you are using the AWS
-CLI, the parameter name is \code{StreamProcessorOutput}. This must be a
-S3Destination of an Amazon S3 bucket that you own for a label detection
-stream processor or a Kinesis data stream ARN for a face search stream
-processor.}
+\item{Output}{[required] Kinesis data stream stream or Amazon S3 bucket location to which Amazon Rekognition Video puts the analysis results. If you are using the AWS CLI, the parameter name is \code{StreamProcessorOutput}. This must be a S3Destination of an Amazon S3 bucket that you own for a label detection stream processor or a Kinesis data stream ARN for a face search stream processor.}
 
-\item{Name}{[required] An identifier you assign to the stream processor. You can use \code{Name} to
-manage the stream processor. For example, you can get the current status
-of the stream processor by calling
-\code{\link[=rekognition_describe_stream_processor]{describe_stream_processor}}.
-\code{Name} is idempotent. This is required for both face search and label
-detection stream processors.}
+\item{Name}{[required] An identifier you assign to the stream processor. You can use \code{Name} to manage the stream processor. For example, you can get the current status of the stream processor by calling \code{\link[=rekognition_describe_stream_processor]{describe_stream_processor}}. \code{Name} is idempotent. This is required for both face search and label detection stream processors.}
 
-\item{Settings}{[required] Input parameters used in a streaming video analyzed by a stream
-processor. You can use \code{FaceSearch} to recognize faces in a streaming
-video, or you can use \code{ConnectedHome} to detect labels.}
+\item{Settings}{[required] Input parameters used in a streaming video analyzed by a stream processor. You can use \code{FaceSearch} to recognize faces in a streaming video, or you can use \code{ConnectedHome} to detect labels.}
 
-\item{RoleArn}{[required] The Amazon Resource Number (ARN) of the IAM role that allows access to
-the stream processor. The IAM role provides Rekognition read permissions
-for a Kinesis stream. It also provides write permissions to an Amazon S3
-bucket and Amazon Simple Notification Service topic for a label
-detection stream processor. This is required for both face search and
-label detection stream processors.}
+\item{RoleArn}{[required] The Amazon Resource Number (ARN) of the IAM role that allows access to the stream processor. The IAM role provides Rekognition read permissions for a Kinesis stream. It also provides write permissions to an Amazon S3 bucket and Amazon Simple Notification Service topic for a label detection stream processor. This is required for both face search and label detection stream processors.}
 
-\item{Tags}{A set of tags (key-value pairs) that you want to attach to the stream
-processor.}
+\item{Tags}{A set of tags (key-value pairs) that you want to attach to the stream processor.}
 
-\item{NotificationChannel}{}
+\item{NotificationChannel}{The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see \href{https://docs.aws.amazon.com/rekognition/latest/dg/api-video.html}{Calling Amazon Rekognition Video operations}. Note that the Amazon SNS topic must have a topic name that begins with \emph{AmazonRekognition} if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see \href{https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics}{Giving access to multiple Amazon SNS topics}.}
 
-\item{KmsKeyId}{The identifier for your AWS Key Management Service key (AWS KMS key).
-This is an optional parameter for label detection stream processors and
-should not be used to create a face search stream processor. You can
-supply the Amazon Resource Name (ARN) of your KMS key, the ID of your
-KMS key, an alias for your KMS key, or an alias ARN. The key is used to
-encrypt results and data published to your Amazon S3 bucket, which
-includes image frames and hero images. Your source images are
-unaffected.}
+\item{KmsKeyId}{The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt results and data published to your Amazon S3 bucket, which includes image frames and hero images. Your source images are unaffected.}
 
-\item{RegionsOfInterest}{Specifies locations in the frames where Amazon Rekognition checks for
-objects or people. You can specify up to 10 regions of interest, and
-each region has either a polygon or a bounding box. This is an optional
-parameter for label detection stream processors and should not be used
-to create a face search stream processor.}
+\item{RegionsOfInterest}{Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10 regions of interest, and each region has either a polygon or a bounding box. This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor.}
 
-\item{DataSharingPreference}{Shows whether you are sharing data with Rekognition to improve model
-performance. You can choose this option at the account level or on a
-per-stream basis. Note that if you opt out at the account level this
-setting is ignored on individual streams.}
+\item{DataSharingPreference}{Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams.}
 }
 \description{
 Creates an Amazon Rekognition stream processor that you can use to detect and recognize faces or to detect labels in a streaming video.

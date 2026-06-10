@@ -15,30 +15,19 @@ workspaces_describe_workspaces(
 )
 }
 \arguments{
-\item{WorkspaceIds}{The identifiers of the WorkSpaces. You cannot combine this parameter
-with any other filter.
+\item{WorkspaceIds}{The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.
 
-Because the \code{\link[=workspaces_create_workspaces]{create_workspaces}}
-operation is asynchronous, the identifier it returns is not immediately
-available. If you immediately call
-\code{\link[=workspaces_describe_workspaces]{describe_workspaces}} with this
-identifier, no information is returned.}
+Because the \code{\link[=workspaces_create_workspaces]{create_workspaces}} operation is asynchronous, the identifier it returns is not immediately available. If you immediately call \code{\link[=workspaces_describe_workspaces]{describe_workspaces}} with this identifier, no information is returned.}
 
-\item{DirectoryId}{The identifier of the directory. In addition, you can optionally specify
-a specific directory user (see \code{UserName}). You cannot combine this
-parameter with any other filter.}
+\item{DirectoryId}{The identifier of the directory. In addition, you can optionally specify a specific directory user (see \code{UserName}). You cannot combine this parameter with any other filter.}
 
-\item{UserName}{The name of the directory user. You must specify this parameter with
-\code{DirectoryId}.}
+\item{UserName}{The name of the directory user. You must specify this parameter with \code{DirectoryId}.}
 
-\item{BundleId}{The identifier of the bundle. All WorkSpaces that are created from this
-bundle are retrieved. You cannot combine this parameter with any other
-filter.}
+\item{BundleId}{The identifier of the bundle. All WorkSpaces that are created from this bundle are retrieved. You cannot combine this parameter with any other filter.}
 
 \item{Limit}{The maximum number of items to return.}
 
-\item{NextToken}{If you received a \code{NextToken} from a previous call that was paginated,
-provide this token to receive the next set of results.}
+\item{NextToken}{If you received a \code{NextToken} from a previous call that was paginated, provide this token to receive the next set of results.}
 
 \item{WorkspaceName}{The name of the user-decoupled WorkSpace.}
 }

@@ -30,13 +30,9 @@ workmail_put_access_control_rule(
 
 \item{NotIpRanges}{IPv4 CIDR ranges to exclude from the rule.}
 
-\item{Actions}{Access protocol actions to include in the rule. Valid values include
-\code{ActiveSync}, \code{AutoDiscover}, \code{EWS}, \code{IMAP}, \code{SMTP}, \code{WindowsOutlook},
-and \code{WebMail}.}
+\item{Actions}{Access protocol actions to include in the rule. Valid values include \code{ActiveSync}, \code{AutoDiscover}, \code{EWS}, \code{IMAP}, \code{SMTP}, \code{WindowsOutlook}, and \code{WebMail}.}
 
-\item{NotActions}{Access protocol actions to exclude from the rule. Valid values include
-\code{ActiveSync}, \code{AutoDiscover}, \code{EWS}, \code{IMAP}, \code{SMTP}, \code{WindowsOutlook},
-and \code{WebMail}.}
+\item{NotActions}{Access protocol actions to exclude from the rule. Valid values include \code{ActiveSync}, \code{AutoDiscover}, \code{EWS}, \code{IMAP}, \code{SMTP}, \code{WindowsOutlook}, and \code{WebMail}.}
 
 \item{UserIds}{User IDs to include in the rule.}
 

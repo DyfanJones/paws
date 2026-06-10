@@ -14,23 +14,17 @@ codeartifact_update_package_group_origin_configuration(
 )
 }
 \arguments{
-\item{domain}{[required] The name of the domain which contains the package group for which to
-update the origin configuration.}
+\item{domain}{[required] The name of the domain which contains the package group for which to update the origin configuration.}
 
-\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns
-the domain. It does not include dashes or spaces.}
+\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.}
 
-\item{packageGroup}{[required] The pattern of the package group for which to update the origin
-configuration.}
+\item{packageGroup}{[required] The pattern of the package group for which to update the origin configuration.}
 
-\item{restrictions}{The origin configuration settings that determine how package versions
-can enter repositories.}
+\item{restrictions}{The origin configuration settings that determine how package versions can enter repositories.}
 
-\item{addAllowedRepositories}{The repository name and restrictions to add to the allowed repository
-list of the specified package group.}
+\item{addAllowedRepositories}{The repository name and restrictions to add to the allowed repository list of the specified package group.}
 
-\item{removeAllowedRepositories}{The repository name and restrictions to remove from the allowed
-repository list of the specified package group.}
+\item{removeAllowedRepositories}{The repository name and restrictions to remove from the allowed repository list of the specified package group.}
 }
 \description{
 Updates the package origin configuration for a package group.

@@ -9,8 +9,7 @@ API}
 neptune_start_db_cluster(DBClusterIdentifier)
 }
 \arguments{
-\item{DBClusterIdentifier}{[required] The DB cluster identifier of the Neptune DB cluster to be started. This
-parameter is stored as a lowercase string.}
+\item{DBClusterIdentifier}{[required] The DB cluster identifier of the Neptune DB cluster to be started. This parameter is stored as a lowercase string.}
 }
 \description{
 Starts an Amazon Neptune DB cluster that was stopped using the Amazon console, the Amazon CLI stop-db-cluster command, or the StopDBCluster API.

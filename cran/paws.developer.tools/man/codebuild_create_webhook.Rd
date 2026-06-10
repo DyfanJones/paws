@@ -20,44 +20,27 @@ codebuild_create_webhook(
 \arguments{
 \item{projectName}{[required] The name of the CodeBuild project.}
 
-\item{branchFilter}{A regular expression used to determine which repository branches are
-built when a webhook is triggered. If the name of a branch matches the
-regular expression, then it is built. If \code{branchFilter} is empty, then
-all branches are built.
+\item{branchFilter}{A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If \code{branchFilter} is empty, then all branches are built.
 
 It is recommended that you use \code{filterGroups} instead of \code{branchFilter}.}
 
-\item{filterGroups}{An array of arrays of \code{WebhookFilter} objects used to determine which
-webhooks are triggered. At least one \code{WebhookFilter} in the array must
-specify \code{EVENT} as its \code{type}.
+\item{filterGroups}{An array of arrays of \code{WebhookFilter} objects used to determine which webhooks are triggered. At least one \code{WebhookFilter} in the array must specify \code{EVENT} as its \code{type}.
 
-For a build to be triggered, at least one filter group in the
-\code{filterGroups} array must pass. For a filter group to pass, each of its
-filters must pass.}
+For a build to be triggered, at least one filter group in the \code{filterGroups} array must pass. For a filter group to pass, each of its filters must pass.}
 
 \item{buildType}{Specifies the type of build this webhook will trigger.
 
-\code{RUNNER_BUILDKITE_BUILD} is only available for \code{NO_SOURCE} source type
-projects configured for Buildkite runner builds. For more information
-about CodeBuild-hosted Buildkite runner builds, see \href{https://docs.aws.amazon.com/codebuild/latest/userguide/sample-runner-buildkite.html}{Tutorial: Configure a CodeBuild-hosted Buildkite runner}
-in the \emph{CodeBuild user guide}.}
+\code{RUNNER_BUILDKITE_BUILD} is only available for \code{NO_SOURCE} source type projects configured for Buildkite runner builds. For more information about CodeBuild-hosted Buildkite runner builds, see \href{https://docs.aws.amazon.com/codebuild/latest/userguide/sample-runner-buildkite.html}{Tutorial: Configure a CodeBuild-hosted Buildkite runner} in the \emph{CodeBuild user guide}.}
 
-\item{manualCreation}{If manualCreation is true, CodeBuild doesn't create a webhook in GitHub
-and instead returns \code{payloadUrl} and \code{secret} values for the webhook.
-The \code{payloadUrl} and \code{secret} values in the output can be used to
-manually create a webhook within GitHub.
+\item{manualCreation}{If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and instead returns \code{payloadUrl} and \code{secret} values for the webhook. The \code{payloadUrl} and \code{secret} values in the output can be used to manually create a webhook within GitHub.
 
 \code{manualCreation} is only available for GitHub webhooks.}
 
 \item{scopeConfiguration}{The scope configuration for global or organization webhooks.
 
-Global or organization webhooks are only available for GitHub and Github
-Enterprise webhooks.}
+Global or organization webhooks are only available for GitHub and Github Enterprise webhooks.}
 
-\item{pullRequestBuildPolicy}{A PullRequestBuildPolicy object that defines comment-based approval
-requirements for triggering builds on pull requests. This policy helps
-control when automated builds are executed based on contributor
-permissions and approval workflows.}
+\item{pullRequestBuildPolicy}{A PullRequestBuildPolicy object that defines comment-based approval requirements for triggering builds on pull requests. This policy helps control when automated builds are executed based on contributor permissions and approval workflows.}
 }
 \description{
 For an existing CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository, enables CodeBuild to start rebuilding the source code every time a code change is pushed to the repository.

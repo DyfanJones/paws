@@ -8,8 +8,7 @@ associated usage plan}
 apigateway_delete_usage_plan_key(usagePlanId, keyId)
 }
 \arguments{
-\item{usagePlanId}{[required] The Id of the UsagePlan resource representing the usage plan containing
-the to-be-deleted UsagePlanKey resource representing a plan customer.}
+\item{usagePlanId}{[required] The Id of the UsagePlan resource representing the usage plan containing the to-be-deleted UsagePlanKey resource representing a plan customer.}
 
 \item{keyId}{[required] The Id of the UsagePlanKey resource to be deleted.}
 }

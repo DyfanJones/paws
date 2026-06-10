@@ -14,8 +14,7 @@ s3_create_bucket_metadata_configuration(
 )
 }
 \arguments{
-\item{Bucket}{[required] The general purpose bucket that you want to create the metadata
-configuration for.}
+\item{Bucket}{[required] The general purpose bucket that you want to create the metadata configuration for.}
 
 \item{ContentMD5}{The \code{Content-MD5} header for the metadata configuration.}
 
@@ -23,8 +22,7 @@ configuration for.}
 
 \item{MetadataConfiguration}{[required] The contents of your metadata configuration.}
 
-\item{ExpectedBucketOwner}{The expected owner of the general purpose bucket that corresponds to
-your metadata configuration.}
+\item{ExpectedBucketOwner}{The expected owner of the general purpose bucket that corresponds to your metadata configuration.}
 }
 \description{
 Creates an S3 Metadata V2 metadata configuration for a general purpose bucket. For more information, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html}{Accelerating data discovery with S3 Metadata} in the \emph{Amazon S3 User Guide}.

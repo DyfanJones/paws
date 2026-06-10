@@ -13,15 +13,9 @@ cognitoidentityprovider_list_terms(
 \arguments{
 \item{UserPoolId}{[required] The ID of the user pool where you want to list terms documents.}
 
-\item{MaxResults}{The maximum number of terms documents that you want Amazon Cognito to
-return in the response.}
+\item{MaxResults}{The maximum number of terms documents that you want Amazon Cognito to return in the response.}
 
-\item{NextToken}{This API operation returns a limited number of results. The pagination
-token is an identifier that you can present in an additional API request
-with the same parameters. When you include the pagination token, Amazon
-Cognito returns the next set of items after the current list. Subsequent
-requests return a new pagination token. By use of this token, you can
-paginate through the full list of items.}
+\item{NextToken}{This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.}
 }
 \description{
 Returns details about all terms documents for the requested user pool.

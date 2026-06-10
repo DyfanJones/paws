@@ -2,7 +2,7 @@
 % Please edit documentation in R/quicksight_operations.R
 \name{quicksight_search_topics}
 \alias{quicksight_search_topics}
-\title{Searches for any Q topic that exists in an Quick Suite account}
+\title{Searches for any Q topic that exists in an Quick account}
 \usage{
 quicksight_search_topics(
   AwsAccountId,
@@ -12,18 +12,16 @@ quicksight_search_topics(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the topic that
-you want to find.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the topic that you want to find.}
 
 \item{Filters}{[required] The filters that you want to use to search for the topic.}
 
-\item{NextToken}{The token for the next set of results, or null if there are no more
-results.}
+\item{NextToken}{The token for the next set of results, or null if there are no more results.}
 
 \item{MaxResults}{The maximum number of results to be returned per request.}
 }
 \description{
-Searches for any Q topic that exists in an Quick Suite account.
+Searches for any Q topic that exists in an Quick account.
 
 See \url{https://www.paws-r-sdk.com/docs/quicksight_search_topics/} for full documentation.
 }

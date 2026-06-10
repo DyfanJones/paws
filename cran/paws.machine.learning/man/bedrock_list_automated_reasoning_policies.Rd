@@ -12,12 +12,9 @@ bedrock_list_automated_reasoning_policies(
 )
 }
 \arguments{
-\item{policyArn}{Optional filter to list only the policy versions with the specified
-Amazon Resource Name (ARN). If not provided, the DRAFT versions for all
-policies are listed.}
+\item{policyArn}{Optional filter to list only the policy versions with the specified Amazon Resource Name (ARN). If not provided, the DRAFT versions for all policies are listed.}
 
-\item{nextToken}{The pagination token from a previous request to retrieve the next page
-of results.}
+\item{nextToken}{The pagination token from a previous request to retrieve the next page of results.}
 
 \item{maxResults}{The maximum number of policies to return in a single call.}
 }

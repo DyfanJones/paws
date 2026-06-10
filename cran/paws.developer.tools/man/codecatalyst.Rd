@@ -53,124 +53,73 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Welcome to the Amazon CodeCatalyst API reference. This reference
-provides descriptions of operations and data types for Amazon
-CodeCatalyst. You can use the Amazon CodeCatalyst API to work with the
-following objects.
+Welcome to the Amazon CodeCatalyst API reference. This reference provides descriptions of operations and data types for Amazon CodeCatalyst. You can use the Amazon CodeCatalyst API to work with the following objects.
 
 Spaces, by calling the following:
 \itemize{
 \item \code{\link[=codecatalyst_delete_space]{delete_space}}, which deletes a space.
-\item \code{\link[=codecatalyst_get_space]{get_space}}, which returns information
-about a space.
-\item \code{\link[=codecatalyst_get_subscription]{get_subscription}}, which returns
-information about the Amazon Web Services account used for billing
-purposes and the billing plan for the space.
-\item \code{\link[=codecatalyst_list_spaces]{list_spaces}}, which retrieves a list of
-spaces.
-\item \code{\link[=codecatalyst_update_space]{update_space}}, which changes one or
-more values for a space.
+\item \code{\link[=codecatalyst_get_space]{get_space}}, which returns information about a space.
+\item \code{\link[=codecatalyst_get_subscription]{get_subscription}}, which returns information about the Amazon Web Services account used for billing purposes and the billing plan for the space.
+\item \code{\link[=codecatalyst_list_spaces]{list_spaces}}, which retrieves a list of spaces.
+\item \code{\link[=codecatalyst_update_space]{update_space}}, which changes one or more values for a space.
 }
 
 Projects, by calling the following:
 \itemize{
-\item \code{\link[=codecatalyst_create_project]{create_project}} which creates a
-project in a specified space.
-\item \code{\link[=codecatalyst_get_project]{get_project}}, which returns information
-about a project.
-\item \code{\link[=codecatalyst_list_projects]{list_projects}}, which retrieves a
-list of projects in a space.
+\item \code{\link[=codecatalyst_create_project]{create_project}} which creates a project in a specified space.
+\item \code{\link[=codecatalyst_get_project]{get_project}}, which returns information about a project.
+\item \code{\link[=codecatalyst_list_projects]{list_projects}}, which retrieves a list of projects in a space.
 }
 
 Users, by calling the following:
 \itemize{
-\item \code{\link[=codecatalyst_get_user_details]{get_user_details}}, which returns
-information about a user in Amazon CodeCatalyst.
+\item \code{\link[=codecatalyst_get_user_details]{get_user_details}}, which returns information about a user in Amazon CodeCatalyst.
 }
 
 Source repositories, by calling the following:
 \itemize{
-\item \code{\link[=codecatalyst_create_source_repository]{create_source_repository}},
-which creates an empty Git-based source repository in a specified
-project.
-\item \code{\link[=codecatalyst_create_source_repository_branch]{create_source_repository_branch}},
-which creates a branch in a specified repository where you can work
-on code.
-\item \code{\link[=codecatalyst_delete_source_repository]{delete_source_repository}},
-which deletes a source repository.
-\item \code{\link[=codecatalyst_get_source_repository]{get_source_repository}}, which
-returns information about a source repository.
-\item \code{\link[=codecatalyst_get_source_repository_clone_urls]{get_source_repository_clone_urls}},
-which returns information about the URLs that can be used with a Git
-client to clone a source repository.
-\item \code{\link[=codecatalyst_list_source_repositories]{list_source_repositories}},
-which retrieves a list of source repositories in a project.
-\item \code{\link[=codecatalyst_list_source_repository_branches]{list_source_repository_branches}},
-which retrieves a list of branches in a source repository.
+\item \code{\link[=codecatalyst_create_source_repository]{create_source_repository}}, which creates an empty Git-based source repository in a specified project.
+\item \code{\link[=codecatalyst_create_source_repository_branch]{create_source_repository_branch}}, which creates a branch in a specified repository where you can work on code.
+\item \code{\link[=codecatalyst_delete_source_repository]{delete_source_repository}}, which deletes a source repository.
+\item \code{\link[=codecatalyst_get_source_repository]{get_source_repository}}, which returns information about a source repository.
+\item \code{\link[=codecatalyst_get_source_repository_clone_urls]{get_source_repository_clone_urls}}, which returns information about the URLs that can be used with a Git client to clone a source repository.
+\item \code{\link[=codecatalyst_list_source_repositories]{list_source_repositories}}, which retrieves a list of source repositories in a project.
+\item \code{\link[=codecatalyst_list_source_repository_branches]{list_source_repository_branches}}, which retrieves a list of branches in a source repository.
 }
 
-Dev Environments and the Amazon Web Services Toolkits, by calling the
-following:
+Dev Environments and the Amazon Web Services Toolkits, by calling the following:
 \itemize{
-\item \code{\link[=codecatalyst_create_dev_environment]{create_dev_environment}},
-which creates a Dev Environment, where you can quickly work on the
-code stored in the source repositories of your project.
-\item \code{\link[=codecatalyst_delete_dev_environment]{delete_dev_environment}},
-which deletes a Dev Environment.
-\item \code{\link[=codecatalyst_get_dev_environment]{get_dev_environment}}, which
-returns information about a Dev Environment.
-\item \code{\link[=codecatalyst_list_dev_environments]{list_dev_environments}}, which
-retrieves a list of Dev Environments in a project.
-\item \code{\link[=codecatalyst_list_dev_environment_sessions]{list_dev_environment_sessions}},
-which retrieves a list of active Dev Environment sessions in a
-project.
-\item \code{\link[=codecatalyst_start_dev_environment]{start_dev_environment}}, which
-starts a specified Dev Environment and puts it into an active state.
-\item \code{\link[=codecatalyst_start_dev_environment_session]{start_dev_environment_session}},
-which starts a session to a specified Dev Environment.
-\item \code{\link[=codecatalyst_stop_dev_environment]{stop_dev_environment}}, which
-stops a specified Dev Environment and puts it into an stopped state.
-\item \code{\link[=codecatalyst_stop_dev_environment_session]{stop_dev_environment_session}},
-which stops a session for a specified Dev Environment.
-\item \code{\link[=codecatalyst_update_dev_environment]{update_dev_environment}},
-which changes one or more values for a Dev Environment.
+\item \code{\link[=codecatalyst_create_dev_environment]{create_dev_environment}}, which creates a Dev Environment, where you can quickly work on the code stored in the source repositories of your project.
+\item \code{\link[=codecatalyst_delete_dev_environment]{delete_dev_environment}}, which deletes a Dev Environment.
+\item \code{\link[=codecatalyst_get_dev_environment]{get_dev_environment}}, which returns information about a Dev Environment.
+\item \code{\link[=codecatalyst_list_dev_environments]{list_dev_environments}}, which retrieves a list of Dev Environments in a project.
+\item \code{\link[=codecatalyst_list_dev_environment_sessions]{list_dev_environment_sessions}}, which retrieves a list of active Dev Environment sessions in a project.
+\item \code{\link[=codecatalyst_start_dev_environment]{start_dev_environment}}, which starts a specified Dev Environment and puts it into an active state.
+\item \code{\link[=codecatalyst_start_dev_environment_session]{start_dev_environment_session}}, which starts a session to a specified Dev Environment.
+\item \code{\link[=codecatalyst_stop_dev_environment]{stop_dev_environment}}, which stops a specified Dev Environment and puts it into an stopped state.
+\item \code{\link[=codecatalyst_stop_dev_environment_session]{stop_dev_environment_session}}, which stops a session for a specified Dev Environment.
+\item \code{\link[=codecatalyst_update_dev_environment]{update_dev_environment}}, which changes one or more values for a Dev Environment.
 }
 
 Workflows, by calling the following:
 \itemize{
-\item \code{\link[=codecatalyst_get_workflow]{get_workflow}}, which returns
-information about a workflow.
-\item \code{\link[=codecatalyst_get_workflow_run]{get_workflow_run}}, which returns
-information about a specified run of a workflow.
-\item \code{\link[=codecatalyst_list_workflow_runs]{list_workflow_runs}}, which
-retrieves a list of runs of a specified workflow.
-\item \code{\link[=codecatalyst_list_workflows]{list_workflows}}, which retrieves a
-list of workflows in a specified project.
-\item \code{\link[=codecatalyst_start_workflow_run]{start_workflow_run}}, which
-starts a run of a specified workflow.
+\item \code{\link[=codecatalyst_get_workflow]{get_workflow}}, which returns information about a workflow.
+\item \code{\link[=codecatalyst_get_workflow_run]{get_workflow_run}}, which returns information about a specified run of a workflow.
+\item \code{\link[=codecatalyst_list_workflow_runs]{list_workflow_runs}}, which retrieves a list of runs of a specified workflow.
+\item \code{\link[=codecatalyst_list_workflows]{list_workflows}}, which retrieves a list of workflows in a specified project.
+\item \code{\link[=codecatalyst_start_workflow_run]{start_workflow_run}}, which starts a run of a specified workflow.
 }
 
-Security, activity, and resource management in Amazon CodeCatalyst, by
-calling the following:
+Security, activity, and resource management in Amazon CodeCatalyst, by calling the following:
 \itemize{
-\item \code{\link[=codecatalyst_create_access_token]{create_access_token}}, which
-creates a personal access token (PAT) for the current user.
-\item \code{\link[=codecatalyst_delete_access_token]{delete_access_token}}, which
-deletes a specified personal access token (PAT).
-\item \code{\link[=codecatalyst_list_access_tokens]{list_access_tokens}}, which lists
-all personal access tokens (PATs) associated with a user.
-\item \code{\link[=codecatalyst_list_event_logs]{list_event_logs}}, which retrieves a
-list of events that occurred during a specified time period in a
-space.
-\item \code{\link[=codecatalyst_verify_session]{verify_session}}, which verifies
-whether the calling user has a valid Amazon CodeCatalyst login and
-session.
+\item \code{\link[=codecatalyst_create_access_token]{create_access_token}}, which creates a personal access token (PAT) for the current user.
+\item \code{\link[=codecatalyst_delete_access_token]{delete_access_token}}, which deletes a specified personal access token (PAT).
+\item \code{\link[=codecatalyst_list_access_tokens]{list_access_tokens}}, which lists all personal access tokens (PATs) associated with a user.
+\item \code{\link[=codecatalyst_list_event_logs]{list_event_logs}}, which retrieves a list of events that occurred during a specified time period in a space.
+\item \code{\link[=codecatalyst_verify_session]{verify_session}}, which verifies whether the calling user has a valid Amazon CodeCatalyst login and session.
 }
 
-If you are using the Amazon CodeCatalyst APIs with an SDK or the CLI,
-you must configure your computer to work with Amazon CodeCatalyst and
-single sign-on (SSO). For more information, see \href{https://docs.aws.amazon.com/codecatalyst/latest/userguide/set-up-cli.html}{Setting up to use the CLI with Amazon CodeCatalyst}
-and the SSO documentation for your SDK.
+If you are using the Amazon CodeCatalyst APIs with an SDK or the CLI, you must configure your computer to work with Amazon CodeCatalyst and single sign-on (SSO). For more information, see \href{https://docs.aws.amazon.com/codecatalyst/latest/userguide/set-up-cli.html}{Setting up to use the CLI with Amazon CodeCatalyst} and the SSO documentation for your SDK.
 }
 \section{Service syntax}{
 

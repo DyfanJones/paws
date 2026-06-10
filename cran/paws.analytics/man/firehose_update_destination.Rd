@@ -23,13 +23,7 @@ firehose_update_destination(
 \arguments{
 \item{DeliveryStreamName}{[required] The name of the Firehose stream.}
 
-\item{CurrentDeliveryStreamVersionId}{[required] Obtain this value from the \code{VersionId} result of
-DeliveryStreamDescription. This value is required, and helps the service
-perform conditional operations. For example, if there is an interleaving
-update and this value is null, then the update destination fails. After
-the update is successful, the \code{VersionId} value is updated. The service
-then performs a merge of the old configuration with the new
-configuration.}
+\item{CurrentDeliveryStreamVersionId}{[required] Obtain this value from the \code{VersionId} result of DeliveryStreamDescription. This value is required, and helps the service perform conditional operations. For example, if there is an interleaving update and this value is null, then the update destination fails. After the update is successful, the \code{VersionId} value is updated. The service then performs a merge of the old configuration with the new configuration.}
 
 \item{DestinationId}{[required] The ID of the destination.}
 
@@ -47,8 +41,7 @@ configuration.}
 
 \item{HttpEndpointDestinationUpdate}{Describes an update to the specified HTTP endpoint destination.}
 
-\item{AmazonOpenSearchServerlessDestinationUpdate}{Describes an update for a destination in the Serverless offering for
-Amazon OpenSearch Service.}
+\item{AmazonOpenSearchServerlessDestinationUpdate}{Describes an update for a destination in the Serverless offering for Amazon OpenSearch Service.}
 
 \item{SnowflakeDestinationUpdate}{Update to the Snowflake destination configuration settings.}
 

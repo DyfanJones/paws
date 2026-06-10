@@ -19,18 +19,15 @@ ecs_update_express_gateway_service(
 \arguments{
 \item{serviceArn}{[required] The Amazon Resource Name (ARN) of the Express service to update.}
 
-\item{executionRoleArn}{The Amazon Resource Name (ARN) of the task execution role for the
-Express service.}
+\item{executionRoleArn}{The Amazon Resource Name (ARN) of the task execution role for the Express service.}
 
 \item{healthCheckPath}{The path on the container for Application Load Balancer health checks.}
 
 \item{primaryContainer}{The primary container configuration for the Express service.}
 
-\item{taskRoleArn}{The Amazon Resource Name (ARN) of the IAM role for containers in this
-task.}
+\item{taskRoleArn}{The Amazon Resource Name (ARN) of the IAM role for containers in this task.}
 
-\item{networkConfiguration}{The network configuration for the Express service tasks. By default, the
-network configuration for an Express service uses the default VPC.}
+\item{networkConfiguration}{The network configuration for the Express service tasks. By default, the network configuration for an Express service uses the default VPC.}
 
 \item{cpu}{The number of CPU units used by the task.}
 

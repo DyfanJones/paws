@@ -20,11 +20,9 @@ apigateway_put_gateway_response(
 
 \item{statusCode}{The HTTP status code of the GatewayResponse.}
 
-\item{responseParameters}{Response parameters (paths, query strings and headers) of the
-GatewayResponse as a string-to-string map of key-value pairs.}
+\item{responseParameters}{Response parameters (paths, query strings and headers) of the GatewayResponse as a string-to-string map of key-value pairs.}
 
-\item{responseTemplates}{Response templates of the GatewayResponse as a string-to-string map of
-key-value pairs.}
+\item{responseTemplates}{Response templates of the GatewayResponse as a string-to-string map of key-value pairs.}
 }
 \description{
 Creates a customization of a GatewayResponse of a specified response type and status code on the given RestApi.

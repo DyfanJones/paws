@@ -11,8 +11,7 @@ quicksight_delete_iam_policy_assignment(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The Amazon Web Services account ID where you want to delete the IAM
-policy assignment.}
+\item{AwsAccountId}{[required] The Amazon Web Services account ID where you want to delete the IAM policy assignment.}
 
 \item{AssignmentName}{[required] The name of the assignment.}
 

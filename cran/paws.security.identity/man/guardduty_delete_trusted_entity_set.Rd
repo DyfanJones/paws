@@ -8,15 +8,11 @@ trustedEntitySetId}
 guardduty_delete_trusted_entity_set(DetectorId, TrustedEntitySetId)
 }
 \arguments{
-\item{DetectorId}{[required] The unique ID of the detector associated with the trusted entity set
-resource.
+\item{DetectorId}{[required] The unique ID of the detector associated with the trusted entity set resource.
 
-To find the \code{detectorId} in the current Region, see the Settings page in
-the GuardDuty console, or run the
-\code{\link[=guardduty_list_detectors]{list_detectors}} API.}
+To find the \code{detectorId} in the current Region, see the Settings page in the GuardDuty console, or run the \code{\link[=guardduty_list_detectors]{list_detectors}} API.}
 
-\item{TrustedEntitySetId}{[required] The unique ID that helps GuardDuty identify which trusted entity set
-needs to be deleted.}
+\item{TrustedEntitySetId}{[required] The unique ID that helps GuardDuty identify which trusted entity set needs to be deleted.}
 }
 \description{
 Deletes the trusted entity set that is associated with the specified \code{trustedEntitySetId}.

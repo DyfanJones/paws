@@ -12,17 +12,12 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_add_key_replication_regions/](https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_add_key_replication_regions/) for full documentation.
 #'
-#' @param KeyIdentifier &#91;required&#93; The key identifier (ARN or alias) of the key for which to add
-#' replication regions.
+#' @param KeyIdentifier &#91;required&#93; The key identifier (ARN or alias) of the key for which to add replication regions.
 #' 
 #' This key must exist and be in a valid state for replication operations.
-#' @param ReplicationRegions &#91;required&#93; The list of Amazon Web Services Regions to add to the key's replication
-#' configuration.
+#' @param ReplicationRegions &#91;required&#93; The list of Amazon Web Services Regions to add to the key's replication configuration.
 #' 
-#' Each region must be a valid Amazon Web Services Region where Amazon Web
-#' Services Payment Cryptography is available. The key will be replicated
-#' to these regions, allowing cryptographic operations to be performed
-#' closer to your applications.
+#' Each region must be a valid Amazon Web Services Region where Amazon Web Services Payment Cryptography is available. The key will be replicated to these regions, allowing cryptographic operations to be performed closer to your applications.
 #'
 #' @keywords internal
 #'
@@ -46,6 +41,41 @@ paymentcryptographycontrolplane_add_key_replication_regions <- function(KeyIdent
 }
 .paymentcryptographycontrolplane$operations$add_key_replication_regions <- paymentcryptographycontrolplane_add_key_replication_regions
 
+#' Associates a Multi-Party Approval (MPA) team with a protected operation
+#'
+#' @description
+#' Associates a Multi-Party Approval (MPA) team with a protected operation. For more information, see [Multi-Party Approval](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/mpa.html) in the *Amazon Web Services Payment Cryptography User Guide.*
+#'
+#' See [https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_associate_mpa_team/](https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_associate_mpa_team/) for full documentation.
+#'
+#' @param Action &#91;required&#93; The protected operation to associate with the MPA team. Currently, the only supported value is `IMPORT_ROOT_PUBLIC_KEY_CERTIFICATE`.
+#' @param MpaTeamArn &#91;required&#93; The ARN of the MPA team to associate with the protected operation.
+#' @param RequesterComment The comment from the requester explaining the reason for the association.
+#' 
+#' Don't include personal, confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.
+#'
+#' @keywords internal
+#'
+#' @rdname paymentcryptographycontrolplane_associate_mpa_team
+paymentcryptographycontrolplane_associate_mpa_team <- function(Action, MpaTeamArn, RequesterComment = NULL) {
+  op <- new_operation(
+    name = "AssociateMpaTeam",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .paymentcryptographycontrolplane$associate_mpa_team_input(Action = Action, MpaTeamArn = MpaTeamArn, RequesterComment = RequesterComment)
+  output <- .paymentcryptographycontrolplane$associate_mpa_team_output()
+  config <- get_config()
+  svc <- .paymentcryptographycontrolplane$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.paymentcryptographycontrolplane$operations$associate_mpa_team <- paymentcryptographycontrolplane_associate_mpa_team
+
 #' Creates an alias, or a friendly name, for an Amazon Web Services Payment
 #' Cryptography key
 #'
@@ -54,14 +84,9 @@ paymentcryptographycontrolplane_add_key_replication_regions <- function(KeyIdent
 #'
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_create_alias/](https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_create_alias/) for full documentation.
 #'
-#' @param AliasName &#91;required&#93; A friendly name that you can use to refer to a key. An alias must begin
-#' with `alias/` followed by a name, for example `alias/ExampleAlias`. It
-#' can contain only alphanumeric characters, forward slashes (/),
-#' underscores (_), and dashes (-).
+#' @param AliasName &#91;required&#93; A friendly name that you can use to refer to a key. An alias must begin with `alias/` followed by a name, for example `alias/ExampleAlias`. It can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-).
 #' 
-#' Don't include personal, confidential or sensitive information in this
-#' field. This field may be displayed in plaintext in CloudTrail logs and
-#' other output.
+#' Don't include personal, confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.
 #' @param KeyArn The `KeyARN` of the key to associate with the alias.
 #'
 #' @keywords internal
@@ -95,45 +120,25 @@ paymentcryptographycontrolplane_create_alias <- function(AliasName, KeyArn = NUL
 #'
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_create_key/](https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_create_key/) for full documentation.
 #'
-#' @param KeyAttributes &#91;required&#93; The role of the key, the algorithm it supports, and the cryptographic
-#' operations allowed with the key. This data is immutable after the key is
-#' created.
-#' @param KeyCheckValueAlgorithm The algorithm that Amazon Web Services Payment Cryptography uses to
-#' calculate the key check value (KCV). It is used to validate the key
-#' integrity.
+#' @param KeyAttributes &#91;required&#93; The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.
+#' @param KeyCheckValueAlgorithm The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV). It is used to validate the key integrity.
 #' 
-#' For TDES keys, the KCV is computed by encrypting 8 bytes, each with
-#' value of zero, with the key to be checked and retaining the 3 highest
-#' order bytes of the encrypted result. For AES keys, the KCV is computed
-#' using a CMAC algorithm where the input data is 16 bytes of zero and
-#' retaining the 3 highest order bytes of the encrypted result.
+#' For TDES keys, the KCV is computed by encrypting 8 bytes, each with value of zero, with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES keys, the KCV is computed using a CMAC algorithm where the input data is 16 bytes of zero and retaining the 3 highest order bytes of the encrypted result.
 #' @param Exportable &#91;required&#93; Specifies whether the key is exportable from the service.
-#' @param Enabled Specifies whether to enable the key. If the key is enabled, it is
-#' activated for use within the service. If the key is not enabled, then it
-#' is created but not activated. The default value is enabled.
-#' @param Tags Assigns one or more tags to the Amazon Web Services Payment Cryptography
-#' key. Use this parameter to tag a key when it is created. To tag an
-#' existing Amazon Web Services Payment Cryptography key, use the
-#' [`tag_resource`][paymentcryptographycontrolplane_tag_resource]
-#' operation.
+#' @param Enabled Specifies whether to enable the key. If the key is enabled, it is activated for use within the service. If the key is not enabled, then it is created but not activated. The default value is enabled.
+#' @param Tags Assigns one or more tags to the Amazon Web Services Payment Cryptography key. Use this parameter to tag a key when it is created. To tag an existing Amazon Web Services Payment Cryptography key, use the [`tag_resource`][paymentcryptographycontrolplane_tag_resource] operation.
 #' 
-#' Each tag consists of a tag key and a tag value. Both the tag key and the
-#' tag value are required, but the tag value can be an empty (null) string.
-#' You can't have more than one tag on an Amazon Web Services Payment
-#' Cryptography key with the same tag key.
+#' Each tag consists of a tag key and a tag value. Both the tag key and the tag value are required, but the tag value can be an empty (null) string. You can't have more than one tag on an Amazon Web Services Payment Cryptography key with the same tag key.
 #' 
-#' Don't include personal, confidential or sensitive information in this
-#' field. This field may be displayed in plaintext in CloudTrail logs and
-#' other output.
+#' Don't include personal, confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.
 #' 
-#' Tagging or untagging an Amazon Web Services Payment Cryptography key can
-#' allow or deny permission to the key.
-#' @param DeriveKeyUsage The intended cryptographic usage of keys derived from the ECC key pair
-#' to be created.
+#' Tagging or untagging an Amazon Web Services Payment Cryptography key can allow or deny permission to the key.
+#' @param DeriveKeyUsage The intended cryptographic usage of keys derived from the ECC key pair to be created.
 #' 
-#' After creating an ECC key pair, you cannot change the intended
-#' cryptographic usage of keys derived from it using ECDH.
-#' @param ReplicationRegions 
+#' After creating an ECC key pair, you cannot change the intended cryptographic usage of keys derived from it using ECDH.
+#' @param ReplicationRegions A list of Amazon Web Services Regions for key replication operations.
+#' 
+#' Each region in the list must be a valid Amazon Web Services Region identifier where Amazon Web Services Payment Cryptography is available. This list is used to specify which regions should be added to or removed from a key's replication configuration.
 #'
 #' @keywords internal
 #'
@@ -164,9 +169,7 @@ paymentcryptographycontrolplane_create_key <- function(KeyAttributes, KeyCheckVa
 #'
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_delete_alias/](https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_delete_alias/) for full documentation.
 #'
-#' @param AliasName &#91;required&#93; A friendly name that you can use to refer Amazon Web Services Payment
-#' Cryptography key. This value must begin with `alias/` followed by a
-#' name, such as `alias/ExampleAlias`.
+#' @param AliasName &#91;required&#93; A friendly name that you can use to refer Amazon Web Services Payment Cryptography key. This value must begin with `alias/` followed by a name, such as `alias/ExampleAlias`.
 #'
 #' @keywords internal
 #'
@@ -223,6 +226,38 @@ paymentcryptographycontrolplane_delete_key <- function(KeyIdentifier, DeleteKeyI
 }
 .paymentcryptographycontrolplane$operations$delete_key <- paymentcryptographycontrolplane_delete_key
 
+#' Removes the resource-based policy attached to an Amazon Web Services
+#' Payment Cryptography key
+#'
+#' @description
+#' Removes the resource-based policy attached to an Amazon Web Services Payment Cryptography key.
+#'
+#' See [https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_delete_resource_policy/](https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_delete_resource_policy/) for full documentation.
+#'
+#' @param ResourceArn &#91;required&#93; The `KeyARN` of the key whose resource-based policy you want to delete.
+#'
+#' @keywords internal
+#'
+#' @rdname paymentcryptographycontrolplane_delete_resource_policy
+paymentcryptographycontrolplane_delete_resource_policy <- function(ResourceArn) {
+  op <- new_operation(
+    name = "DeleteResourcePolicy",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .paymentcryptographycontrolplane$delete_resource_policy_input(ResourceArn = ResourceArn)
+  output <- .paymentcryptographycontrolplane$delete_resource_policy_output()
+  config <- get_config()
+  svc <- .paymentcryptographycontrolplane$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.paymentcryptographycontrolplane$operations$delete_resource_policy <- paymentcryptographycontrolplane_delete_resource_policy
+
 #' Disables Multi-Region key replication settings for the specified Amazon
 #' Web Services Regions in your Amazon Web Services account, preventing new
 #' keys from being automatically replicated to those regions
@@ -232,12 +267,9 @@ paymentcryptographycontrolplane_delete_key <- function(KeyIdentifier, DeleteKeyI
 #'
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_disable_default_key_replication_regions/](https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_disable_default_key_replication_regions/) for full documentation.
 #'
-#' @param ReplicationRegions &#91;required&#93; The list of Amazon Web Services Regions to remove from the account's
-#' default replication regions.
+#' @param ReplicationRegions &#91;required&#93; The list of Amazon Web Services Regions to remove from the account's default replication regions.
 #' 
-#' New keys created after this operation will not automatically be
-#' replicated to these regions, though existing keys with replication to
-#' these regions will be unaffected.
+#' New keys created after this operation will not automatically be replicated to these regions, though existing keys with replication to these regions will be unaffected.
 #'
 #' @keywords internal
 #'
@@ -261,6 +293,41 @@ paymentcryptographycontrolplane_disable_default_key_replication_regions <- funct
 }
 .paymentcryptographycontrolplane$operations$disable_default_key_replication_regions <- paymentcryptographycontrolplane_disable_default_key_replication_regions
 
+#' Removes the association between a Multi-Party Approval (MPA) team and a
+#' protected operation
+#'
+#' @description
+#' Removes the association between a Multi-Party Approval (MPA) team and a protected operation.
+#'
+#' See [https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_disassociate_mpa_team/](https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_disassociate_mpa_team/) for full documentation.
+#'
+#' @param Action &#91;required&#93; The protected operation to disassociate from the MPA team. Currently, the only supported value is `IMPORT_ROOT_PUBLIC_KEY_CERTIFICATE`.
+#' @param RequesterComment The comment from the requester explaining the reason for the disassociation.
+#' 
+#' Don't include personal, confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.
+#'
+#' @keywords internal
+#'
+#' @rdname paymentcryptographycontrolplane_disassociate_mpa_team
+paymentcryptographycontrolplane_disassociate_mpa_team <- function(Action, RequesterComment = NULL) {
+  op <- new_operation(
+    name = "DisassociateMpaTeam",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .paymentcryptographycontrolplane$disassociate_mpa_team_input(Action = Action, RequesterComment = RequesterComment)
+  output <- .paymentcryptographycontrolplane$disassociate_mpa_team_output()
+  config <- get_config()
+  svc <- .paymentcryptographycontrolplane$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.paymentcryptographycontrolplane$operations$disassociate_mpa_team <- paymentcryptographycontrolplane_disassociate_mpa_team
+
 #' Enables Multi-Region key replication settings for your Amazon Web
 #' Services account, causing new keys to be automatically replicated to the
 #' specified Amazon Web Services Regions when created
@@ -270,12 +337,9 @@ paymentcryptographycontrolplane_disable_default_key_replication_regions <- funct
 #'
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_enable_default_key_replication_regions/](https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_enable_default_key_replication_regions/) for full documentation.
 #'
-#' @param ReplicationRegions &#91;required&#93; The list of Amazon Web Services Regions to enable as default replication
-#' regions for the Amazon Web Services account for [Multi-Region key
-#' replication](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html).
+#' @param ReplicationRegions &#91;required&#93; The list of Amazon Web Services Regions to enable as default replication regions for the Amazon Web Services account for [Multi-Region key replication](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html).
 #' 
-#' New keys created in this account will automatically be replicated to
-#' these regions unless explicitly overridden during key creation.
+#' New keys created in this account will automatically be replicated to these regions unless explicitly overridden during key creation.
 #'
 #' @keywords internal
 #'
@@ -306,10 +370,8 @@ paymentcryptographycontrolplane_enable_default_key_replication_regions <- functi
 #'
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_export_key/](https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_export_key/) for full documentation.
 #'
-#' @param KeyMaterial &#91;required&#93; The key block format type, for example, TR-34 or TR-31, to use during
-#' key material export.
-#' @param ExportKeyIdentifier &#91;required&#93; The `KeyARN` of the key under export from Amazon Web Services Payment
-#' Cryptography.
+#' @param KeyMaterial &#91;required&#93; The key block format type, for example, TR-34 or TR-31, to use during key material export.
+#' @param ExportKeyIdentifier &#91;required&#93; The `KeyARN` of the key under export from Amazon Web Services Payment Cryptography.
 #' @param ExportAttributes The attributes for IPEK generation during export.
 #'
 #' @keywords internal
@@ -464,6 +526,38 @@ paymentcryptographycontrolplane_get_key <- function(KeyIdentifier) {
 }
 .paymentcryptographycontrolplane$operations$get_key <- paymentcryptographycontrolplane_get_key
 
+#' Returns the Multi-Party Approval (MPA) team association for a protected
+#' operation
+#'
+#' @description
+#' Returns the Multi-Party Approval (MPA) team association for a protected operation.
+#'
+#' See [https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_get_mpa_team_association/](https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_get_mpa_team_association/) for full documentation.
+#'
+#' @param Action &#91;required&#93; The protected operation whose MPA team association you want to retrieve. Currently, the only supported value is `IMPORT_ROOT_PUBLIC_KEY_CERTIFICATE`.
+#'
+#' @keywords internal
+#'
+#' @rdname paymentcryptographycontrolplane_get_mpa_team_association
+paymentcryptographycontrolplane_get_mpa_team_association <- function(Action) {
+  op <- new_operation(
+    name = "GetMpaTeamAssociation",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .paymentcryptographycontrolplane$get_mpa_team_association_input(Action = Action)
+  output <- .paymentcryptographycontrolplane$get_mpa_team_association_output()
+  config <- get_config()
+  svc <- .paymentcryptographycontrolplane$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.paymentcryptographycontrolplane$operations$get_mpa_team_association <- paymentcryptographycontrolplane_get_mpa_team_association
+
 #' Gets the export token and the signing key certificate to initiate a
 #' TR-34 key export from Amazon Web Services Payment Cryptography
 #'
@@ -472,18 +566,14 @@ paymentcryptographycontrolplane_get_key <- function(KeyIdentifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_get_parameters_for_export/](https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_get_parameters_for_export/) for full documentation.
 #'
-#' @param KeyMaterialType &#91;required&#93; The key block format type (for example, TR-34 or TR-31) to use during
-#' key material export. Export token is only required for a TR-34 key
-#' export, `TR34_KEY_BLOCK`. Export token is not required for TR-31 key
-#' export.
-#' @param SigningKeyAlgorithm &#91;required&#93; The signing key algorithm to generate a signing key certificate. This
-#' certificate signs the wrapped key under export within the TR-34 key
-#' block. `RSA_2048` is the only signing key algorithm allowed.
+#' @param KeyMaterialType &#91;required&#93; The key block format type (for example, TR-34 or TR-31) to use during key material export. Export token is only required for a TR-34 key export, `TR34_KEY_BLOCK`. Export token is not required for TR-31 key export.
+#' @param SigningKeyAlgorithm &#91;required&#93; The signing key algorithm to generate a signing key certificate. This certificate signs the wrapped key under export within the TR-34 key block. `RSA_2048` is the only signing key algorithm allowed.
+#' @param ReuseLastGeneratedToken Specifies whether to reuse the existing export token and signing key certificate. If set to `true` and a valid export token exists for the same key material type and signing key algorithm with at least 7 days of remaining validity, the existing token and signing key certificate are returned. Otherwise, a new export token and signing key certificate are generated. The default value is `false`, which generates a new export token and signing key certificate on every call.
 #'
 #' @keywords internal
 #'
 #' @rdname paymentcryptographycontrolplane_get_parameters_for_export
-paymentcryptographycontrolplane_get_parameters_for_export <- function(KeyMaterialType, SigningKeyAlgorithm) {
+paymentcryptographycontrolplane_get_parameters_for_export <- function(KeyMaterialType, SigningKeyAlgorithm, ReuseLastGeneratedToken = NULL) {
   op <- new_operation(
     name = "GetParametersForExport",
     http_method = "POST",
@@ -492,7 +582,7 @@ paymentcryptographycontrolplane_get_parameters_for_export <- function(KeyMateria
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .paymentcryptographycontrolplane$get_parameters_for_export_input(KeyMaterialType = KeyMaterialType, SigningKeyAlgorithm = SigningKeyAlgorithm)
+  input <- .paymentcryptographycontrolplane$get_parameters_for_export_input(KeyMaterialType = KeyMaterialType, SigningKeyAlgorithm = SigningKeyAlgorithm, ReuseLastGeneratedToken = ReuseLastGeneratedToken)
   output <- .paymentcryptographycontrolplane$get_parameters_for_export_output()
   config <- get_config()
   svc <- .paymentcryptographycontrolplane$service(config, op)
@@ -512,23 +602,18 @@ paymentcryptographycontrolplane_get_parameters_for_export <- function(KeyMateria
 #'
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_get_parameters_for_import/](https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_get_parameters_for_import/) for full documentation.
 #'
-#' @param KeyMaterialType &#91;required&#93; The method to use for key material import. Import token is only required
-#' for TR-34 WrappedKeyBlock (`TR34_KEY_BLOCK`) and RSA
-#' WrappedKeyCryptogram (`KEY_CRYPTOGRAM`).
+#' @param KeyMaterialType &#91;required&#93; The method to use for key material import. Import token is only required for TR-34 WrappedKeyBlock (`TR34_KEY_BLOCK`) and RSA WrappedKeyCryptogram (`KEY_CRYPTOGRAM`).
 #' 
-#' Import token is not required for TR-31, root public key cerificate or
-#' trusted public key certificate.
-#' @param WrappingKeyAlgorithm &#91;required&#93; The wrapping key algorithm to generate a wrapping key certificate. This
-#' certificate wraps the key under import.
+#' Import token is not required for TR-31, root public key cerificate or trusted public key certificate.
+#' @param WrappingKeyAlgorithm &#91;required&#93; The wrapping key algorithm to generate a wrapping key certificate. This certificate wraps the key under import.
 #' 
-#' At this time, `RSA_2048` is the allowed algorithm for TR-34
-#' WrappedKeyBlock import. Additionally, `RSA_2048`, `RSA_3072`, `RSA_4096`
-#' are the allowed algorithms for RSA WrappedKeyCryptogram import.
+#' At this time, `RSA_2048` is the allowed algorithm for TR-34 WrappedKeyBlock import. Additionally, `RSA_2048`, `RSA_3072`, `RSA_4096` are the allowed algorithms for RSA WrappedKeyCryptogram import.
+#' @param ReuseLastGeneratedToken Specifies whether to reuse the existing import token and wrapping key certificate. If set to `true` and a valid import token exists for the same key material type and wrapping key algorithm with at least 7 days of remaining validity, the existing token and wrapping key certificate are returned. Otherwise, a new import token and wrapping key certificate are generated. The default value is `false`, which generates a new import token and wrapping key certificate on every call.
 #'
 #' @keywords internal
 #'
 #' @rdname paymentcryptographycontrolplane_get_parameters_for_import
-paymentcryptographycontrolplane_get_parameters_for_import <- function(KeyMaterialType, WrappingKeyAlgorithm) {
+paymentcryptographycontrolplane_get_parameters_for_import <- function(KeyMaterialType, WrappingKeyAlgorithm, ReuseLastGeneratedToken = NULL) {
   op <- new_operation(
     name = "GetParametersForImport",
     http_method = "POST",
@@ -537,7 +622,7 @@ paymentcryptographycontrolplane_get_parameters_for_import <- function(KeyMateria
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .paymentcryptographycontrolplane$get_parameters_for_import_input(KeyMaterialType = KeyMaterialType, WrappingKeyAlgorithm = WrappingKeyAlgorithm)
+  input <- .paymentcryptographycontrolplane$get_parameters_for_import_input(KeyMaterialType = KeyMaterialType, WrappingKeyAlgorithm = WrappingKeyAlgorithm, ReuseLastGeneratedToken = ReuseLastGeneratedToken)
   output <- .paymentcryptographycontrolplane$get_parameters_for_import_output()
   config <- get_config()
   svc <- .paymentcryptographycontrolplane$service(config, op)
@@ -579,6 +664,38 @@ paymentcryptographycontrolplane_get_public_key_certificate <- function(KeyIdenti
 }
 .paymentcryptographycontrolplane$operations$get_public_key_certificate <- paymentcryptographycontrolplane_get_public_key_certificate
 
+#' Returns the resource-based policy attached to an Amazon Web Services
+#' Payment Cryptography key
+#'
+#' @description
+#' Returns the resource-based policy attached to an Amazon Web Services Payment Cryptography key.
+#'
+#' See [https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_get_resource_policy/](https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_get_resource_policy/) for full documentation.
+#'
+#' @param ResourceArn &#91;required&#93; The `KeyARN` of the key whose resource-based policy you want to retrieve.
+#'
+#' @keywords internal
+#'
+#' @rdname paymentcryptographycontrolplane_get_resource_policy
+paymentcryptographycontrolplane_get_resource_policy <- function(ResourceArn) {
+  op <- new_operation(
+    name = "GetResourcePolicy",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .paymentcryptographycontrolplane$get_resource_policy_input(ResourceArn = ResourceArn)
+  output <- .paymentcryptographycontrolplane$get_resource_policy_output()
+  config <- get_config()
+  svc <- .paymentcryptographycontrolplane$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.paymentcryptographycontrolplane$operations$get_resource_policy <- paymentcryptographycontrolplane_get_resource_policy
+
 #' Imports symmetric keys and public key certificates in PEM format (base64
 #' encoded) into Amazon Web Services Payment Cryptography
 #'
@@ -587,43 +704,29 @@ paymentcryptographycontrolplane_get_public_key_certificate <- function(KeyIdenti
 #'
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_import_key/](https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_import_key/) for full documentation.
 #'
-#' @param KeyMaterial &#91;required&#93; The key or public key certificate type to use during key material
-#' import, for example TR-34 or RootCertificatePublicKey.
-#' @param KeyCheckValueAlgorithm The algorithm that Amazon Web Services Payment Cryptography uses to
-#' calculate the key check value (KCV). It is used to validate the key
-#' integrity.
+#' @param KeyMaterial &#91;required&#93; The key or public key certificate type to use during key material import, for example TR-34 or RootCertificatePublicKey.
+#' @param KeyCheckValueAlgorithm The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV). It is used to validate the key integrity.
 #' 
-#' For TDES keys, the KCV is computed by encrypting 8 bytes, each with
-#' value of zero, with the key to be checked and retaining the 3 highest
-#' order bytes of the encrypted result. For AES keys, the KCV is computed
-#' using a CMAC algorithm where the input data is 16 bytes of zero and
-#' retaining the 3 highest order bytes of the encrypted result.
+#' For TDES keys, the KCV is computed by encrypting 8 bytes, each with value of zero, with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES keys, the KCV is computed using a CMAC algorithm where the input data is 16 bytes of zero and retaining the 3 highest order bytes of the encrypted result.
 #' @param Enabled Specifies whether import key is enabled.
-#' @param Tags Assigns one or more tags to the Amazon Web Services Payment Cryptography
-#' key. Use this parameter to tag a key when it is imported. To tag an
-#' existing Amazon Web Services Payment Cryptography key, use the
-#' [`tag_resource`][paymentcryptographycontrolplane_tag_resource]
-#' operation.
+#' @param Tags Assigns one or more tags to the Amazon Web Services Payment Cryptography key. Use this parameter to tag a key when it is imported. To tag an existing Amazon Web Services Payment Cryptography key, use the [`tag_resource`][paymentcryptographycontrolplane_tag_resource] operation.
 #' 
-#' Each tag consists of a tag key and a tag value. Both the tag key and the
-#' tag value are required, but the tag value can be an empty (null) string.
-#' You can't have more than one tag on an Amazon Web Services Payment
-#' Cryptography key with the same tag key. If you specify an existing tag
-#' key with a different tag value, Amazon Web Services Payment Cryptography
-#' replaces the current tag value with the specified one.
+#' Each tag consists of a tag key and a tag value. Both the tag key and the tag value are required, but the tag value can be an empty (null) string. You can't have more than one tag on an Amazon Web Services Payment Cryptography key with the same tag key. If you specify an existing tag key with a different tag value, Amazon Web Services Payment Cryptography replaces the current tag value with the specified one.
 #' 
-#' Don't include personal, confidential or sensitive information in this
-#' field. This field may be displayed in plaintext in CloudTrail logs and
-#' other output.
+#' Don't include personal, confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.
 #' 
-#' Tagging or untagging an Amazon Web Services Payment Cryptography key can
-#' allow or deny permission to the key.
-#' @param ReplicationRegions 
+#' Tagging or untagging an Amazon Web Services Payment Cryptography key can allow or deny permission to the key.
+#' @param ReplicationRegions A list of Amazon Web Services Regions for key replication operations.
+#' 
+#' Each region in the list must be a valid Amazon Web Services Region identifier where Amazon Web Services Payment Cryptography is available. This list is used to specify which regions should be added to or removed from a key's replication configuration.
+#' @param RequesterComment The comment from the requester explaining the reason for the import.
+#' 
+#' Don't include personal, confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.
 #'
 #' @keywords internal
 #'
 #' @rdname paymentcryptographycontrolplane_import_key
-paymentcryptographycontrolplane_import_key <- function(KeyMaterial, KeyCheckValueAlgorithm = NULL, Enabled = NULL, Tags = NULL, ReplicationRegions = NULL) {
+paymentcryptographycontrolplane_import_key <- function(KeyMaterial, KeyCheckValueAlgorithm = NULL, Enabled = NULL, Tags = NULL, ReplicationRegions = NULL, RequesterComment = NULL) {
   op <- new_operation(
     name = "ImportKey",
     http_method = "POST",
@@ -632,7 +735,7 @@ paymentcryptographycontrolplane_import_key <- function(KeyMaterial, KeyCheckValu
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .paymentcryptographycontrolplane$import_key_input(KeyMaterial = KeyMaterial, KeyCheckValueAlgorithm = KeyCheckValueAlgorithm, Enabled = Enabled, Tags = Tags, ReplicationRegions = ReplicationRegions)
+  input <- .paymentcryptographycontrolplane$import_key_input(KeyMaterial = KeyMaterial, KeyCheckValueAlgorithm = KeyCheckValueAlgorithm, Enabled = Enabled, Tags = Tags, ReplicationRegions = ReplicationRegions, RequesterComment = RequesterComment)
   output <- .paymentcryptographycontrolplane$import_key_output()
   config <- get_config()
   svc <- .paymentcryptographycontrolplane$service(config, op)
@@ -651,16 +754,10 @@ paymentcryptographycontrolplane_import_key <- function(KeyMaterial, KeyCheckValu
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_list_aliases/](https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_list_aliases/) for full documentation.
 #'
 #' @param KeyArn The `keyARN` for which you want to list all aliases.
-#' @param NextToken Use this parameter in a subsequent request after you receive a response
-#' with truncated results. Set it to the value of `NextToken` from the
-#' truncated response you just received.
-#' @param MaxResults Use this parameter to specify the maximum number of items to return.
-#' When this value is present, Amazon Web Services Payment Cryptography
-#' does not return more than the specified number of items, but it might
-#' return fewer.
+#' @param NextToken Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of `NextToken` from the truncated response you just received.
+#' @param MaxResults Use this parameter to specify the maximum number of items to return. When this value is present, Amazon Web Services Payment Cryptography does not return more than the specified number of items, but it might return fewer.
 #' 
-#' This value is optional. If you include a value, it must be between 1 and
-#' 100, inclusive. If you do not include a value, it defaults to 50.
+#' This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.
 #'
 #' @keywords internal
 #'
@@ -693,16 +790,10 @@ paymentcryptographycontrolplane_list_aliases <- function(KeyArn = NULL, NextToke
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_list_keys/](https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_list_keys/) for full documentation.
 #'
 #' @param KeyState The key state of the keys you want to list.
-#' @param NextToken Use this parameter in a subsequent request after you receive a response
-#' with truncated results. Set it to the value of `NextToken` from the
-#' truncated response you just received.
-#' @param MaxResults Use this parameter to specify the maximum number of items to return.
-#' When this value is present, Amazon Web Services Payment Cryptography
-#' does not return more than the specified number of items, but it might
-#' return fewer.
+#' @param NextToken Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of `NextToken` from the truncated response you just received.
+#' @param MaxResults Use this parameter to specify the maximum number of items to return. When this value is present, Amazon Web Services Payment Cryptography does not return more than the specified number of items, but it might return fewer.
 #' 
-#' This value is optional. If you include a value, it must be between 1 and
-#' 100, inclusive. If you do not include a value, it defaults to 50.
+#' This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.
 #'
 #' @keywords internal
 #'
@@ -734,16 +825,10 @@ paymentcryptographycontrolplane_list_keys <- function(KeyState = NULL, NextToken
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_list_tags_for_resource/) for full documentation.
 #'
 #' @param ResourceArn &#91;required&#93; The `KeyARN` of the key whose tags you are getting.
-#' @param NextToken Use this parameter in a subsequent request after you receive a response
-#' with truncated results. Set it to the value of `NextToken` from the
-#' truncated response you just received.
-#' @param MaxResults Use this parameter to specify the maximum number of items to return.
-#' When this value is present, Amazon Web Services Payment Cryptography
-#' does not return more than the specified number of items, but it might
-#' return fewer.
+#' @param NextToken Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of `NextToken` from the truncated response you just received.
+#' @param MaxResults Use this parameter to specify the maximum number of items to return. When this value is present, Amazon Web Services Payment Cryptography does not return more than the specified number of items, but it might return fewer.
 #' 
-#' This value is optional. If you include a value, it must be between 1 and
-#' 100, inclusive. If you do not include a value, it defaults to 50.
+#' This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.
 #'
 #' @keywords internal
 #'
@@ -767,6 +852,39 @@ paymentcryptographycontrolplane_list_tags_for_resource <- function(ResourceArn, 
 }
 .paymentcryptographycontrolplane$operations$list_tags_for_resource <- paymentcryptographycontrolplane_list_tags_for_resource
 
+#' Attaches or replaces a resource-based policy on an Amazon Web Services
+#' Payment Cryptography key
+#'
+#' @description
+#' Attaches or replaces a resource-based policy on an Amazon Web Services Payment Cryptography key. A resource-based policy can grant cross-account access to your key.
+#'
+#' See [https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_put_resource_policy/](https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_put_resource_policy/) for full documentation.
+#'
+#' @param ResourceArn &#91;required&#93; The `KeyARN` of the key to attach the resource-based policy to.
+#' @param Policy &#91;required&#93; The resource-based policy to attach to the key, in JSON format.
+#'
+#' @keywords internal
+#'
+#' @rdname paymentcryptographycontrolplane_put_resource_policy
+paymentcryptographycontrolplane_put_resource_policy <- function(ResourceArn, Policy) {
+  op <- new_operation(
+    name = "PutResourcePolicy",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .paymentcryptographycontrolplane$put_resource_policy_input(ResourceArn = ResourceArn, Policy = Policy)
+  output <- .paymentcryptographycontrolplane$put_resource_policy_output()
+  config <- get_config()
+  svc <- .paymentcryptographycontrolplane$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.paymentcryptographycontrolplane$operations$put_resource_policy <- paymentcryptographycontrolplane_put_resource_policy
+
 #' Removes Replication Regions from an existing Amazon Web Services Payment
 #' Cryptography key, disabling the key's availability for cryptographic
 #' operations in the specified Amazon Web Services Regions
@@ -776,17 +894,12 @@ paymentcryptographycontrolplane_list_tags_for_resource <- function(ResourceArn, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_remove_key_replication_regions/](https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_remove_key_replication_regions/) for full documentation.
 #'
-#' @param KeyIdentifier &#91;required&#93; The key identifier (ARN or alias) of the key from which to remove
-#' replication regions.
+#' @param KeyIdentifier &#91;required&#93; The key identifier (ARN or alias) of the key from which to remove replication regions.
 #' 
-#' This key must exist and have replication enabled in the specified
-#' regions.
-#' @param ReplicationRegions &#91;required&#93; The list of Amazon Web Services Regions to remove from the key's
-#' replication configuration.
+#' This key must exist and have replication enabled in the specified regions.
+#' @param ReplicationRegions &#91;required&#93; The list of Amazon Web Services Regions to remove from the key's replication configuration.
 #' 
-#' The key will no longer be available for cryptographic operations in
-#' these regions after removal. Ensure no active operations depend on the
-#' key in these regions before removal.
+#' The key will no longer be available for cryptographic operations in these regions after removal. Ensure no active operations depend on the key in these regions before removal.
 #'
 #' @keywords internal
 #'
@@ -817,8 +930,7 @@ paymentcryptographycontrolplane_remove_key_replication_regions <- function(KeyId
 #'
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_restore_key/](https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_restore_key/) for full documentation.
 #'
-#' @param KeyIdentifier &#91;required&#93; The `KeyARN` of the key to be restored within Amazon Web Services
-#' Payment Cryptography.
+#' @param KeyIdentifier &#91;required&#93; The `KeyARN` of the key to be restored within Amazon Web Services Payment Cryptography.
 #'
 #' @keywords internal
 #'
@@ -915,24 +1027,13 @@ paymentcryptographycontrolplane_stop_key_usage <- function(KeyIdentifier) {
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_tag_resource/](https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_tag_resource/) for full documentation.
 #'
 #' @param ResourceArn &#91;required&#93; The `KeyARN` of the key whose tags are being updated.
-#' @param Tags &#91;required&#93; One or more tags. Each tag consists of a tag key and a tag value. The
-#' tag value can be an empty (null) string. You can't have more than one
-#' tag on an Amazon Web Services Payment Cryptography key with the same tag
-#' key. If you specify an existing tag key with a different tag value,
-#' Amazon Web Services Payment Cryptography replaces the current tag value
-#' with the new one.
+#' @param Tags &#91;required&#93; One or more tags. Each tag consists of a tag key and a tag value. The tag value can be an empty (null) string. You can't have more than one tag on an Amazon Web Services Payment Cryptography key with the same tag key. If you specify an existing tag key with a different tag value, Amazon Web Services Payment Cryptography replaces the current tag value with the new one.
 #' 
-#' Don't include personal, confidential or sensitive information in this
-#' field. This field may be displayed in plaintext in CloudTrail logs and
-#' other output.
+#' Don't include personal, confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.
 #' 
-#' To use this parameter, you must have
-#' [`tag_resource`][paymentcryptographycontrolplane_tag_resource]
-#' permission in an IAM policy.
+#' To use this parameter, you must have [`tag_resource`][paymentcryptographycontrolplane_tag_resource] permission in an IAM policy.
 #' 
-#' Don't include personal, confidential or sensitive information in this
-#' field. This field may be displayed in plaintext in CloudTrail logs and
-#' other output.
+#' Don't include personal, confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.
 #'
 #' @keywords internal
 #'
@@ -966,12 +1067,7 @@ paymentcryptographycontrolplane_tag_resource <- function(ResourceArn, Tags) {
 #' @param ResourceArn &#91;required&#93; The `KeyARN` of the key whose tags are being removed.
 #' @param TagKeys &#91;required&#93; One or more tag keys. Don't include the tag values.
 #' 
-#' If the Amazon Web Services Payment Cryptography key doesn't have the
-#' specified tag key, Amazon Web Services Payment Cryptography doesn't
-#' throw an exception or return a response. To confirm that the operation
-#' succeeded, use the
-#' [`list_tags_for_resource`][paymentcryptographycontrolplane_list_tags_for_resource]
-#' operation.
+#' If the Amazon Web Services Payment Cryptography key doesn't have the specified tag key, Amazon Web Services Payment Cryptography doesn't throw an exception or return a response. To confirm that the operation succeeded, use the [`list_tags_for_resource`][paymentcryptographycontrolplane_list_tags_for_resource] operation.
 #'
 #' @keywords internal
 #'
@@ -1004,8 +1100,7 @@ paymentcryptographycontrolplane_untag_resource <- function(ResourceArn, TagKeys)
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_update_alias/](https://www.paws-r-sdk.com/docs/paymentcryptographycontrolplane_update_alias/) for full documentation.
 #'
 #' @param AliasName &#91;required&#93; The alias whose associated key is changing.
-#' @param KeyArn The `KeyARN` for the key that you are updating or removing from the
-#' alias.
+#' @param KeyArn The `KeyARN` for the key that you are updating or removing from the alias.
 #'
 #' @keywords internal
 #'

@@ -7,8 +7,7 @@
 entityresolution_get_policy(arn)
 }
 \arguments{
-\item{arn}{[required] The Amazon Resource Name (ARN) of the resource for which the policy need
-to be returned.}
+\item{arn}{[required] The Amazon Resource Name (ARN) of the resource for which the policy need to be returned.}
 }
 \description{
 Returns the resource-based policy.

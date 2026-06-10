@@ -13,14 +13,9 @@ rekognition_list_dataset_labels(
 \arguments{
 \item{DatasetArn}{[required] The Amazon Resource Name (ARN) of the dataset that you want to use.}
 
-\item{NextToken}{If the previous response was incomplete (because there is more results
-to retrieve), Amazon Rekognition Custom Labels returns a pagination
-token in the response. You can use this pagination token to retrieve the
-next set of results.}
+\item{NextToken}{If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.}
 
-\item{MaxResults}{The maximum number of results to return per paginated call. The largest
-value you can specify is 100. If you specify a value greater than 100, a
-ValidationException error occurs. The default value is 100.}
+\item{MaxResults}{The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.}
 }
 \description{
 This operation applies only to Amazon Rekognition Custom Labels.

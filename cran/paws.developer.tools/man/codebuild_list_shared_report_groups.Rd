@@ -19,25 +19,15 @@ codebuild_list_shared_report_groups(
 \item \code{DESCENDING}: List in descending order.
 }}
 
-\item{sortBy}{The criterion to be used to list report groups shared with the current
-Amazon Web Services account or user. Valid values include:
+\item{sortBy}{The criterion to be used to list report groups shared with the current Amazon Web Services account or user. Valid values include:
 \itemize{
 \item \code{ARN}: List based on the ARN.
-\item \code{MODIFIED_TIME}: List based on when information about the shared
-report group was last changed.
+\item \code{MODIFIED_TIME}: List based on when information about the shared report group was last changed.
 }}
 
-\item{nextToken}{During a previous call, the maximum number of items that can be returned
-is the value specified in \code{maxResults}. If there more items in the list,
-then a unique string called a \emph{nextToken} is returned. To get the next
-batch of items in the list, call this operation again, adding the next
-token to the call. To get all of the items in the list, keep calling
-this operation with each subsequent next token that is returned, until
-no more next tokens are returned.}
+\item{nextToken}{During a previous call, the maximum number of items that can be returned is the value specified in \code{maxResults}. If there more items in the list, then a unique string called a \emph{nextToken} is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.}
 
-\item{maxResults}{The maximum number of paginated shared report groups per response. Use
-\code{nextToken} to iterate pages in the list of returned \code{ReportGroup}
-objects. The default value is 100.}
+\item{maxResults}{The maximum number of paginated shared report groups per response. Use \code{nextToken} to iterate pages in the list of returned \code{ReportGroup} objects. The default value is 100.}
 }
 \description{
 Gets a list of report groups that are shared with other Amazon Web Services accounts or users.

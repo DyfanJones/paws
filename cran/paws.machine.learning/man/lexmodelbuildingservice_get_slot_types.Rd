@@ -11,17 +11,11 @@ lexmodelbuildingservice_get_slot_types(
 )
 }
 \arguments{
-\item{nextToken}{A pagination token that fetches the next page of slot types. If the
-response to this API call is truncated, Amazon Lex returns a pagination
-token in the response. To fetch next page of slot types, specify the
-pagination token in the next request.}
+\item{nextToken}{A pagination token that fetches the next page of slot types. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch next page of slot types, specify the pagination token in the next request.}
 
-\item{maxResults}{The maximum number of slot types to return in the response. The default
-is 10.}
+\item{maxResults}{The maximum number of slot types to return in the response. The default is 10.}
 
-\item{nameContains}{Substring to match in slot type names. A slot type will be returned if
-any part of its name matches the substring. For example, "xyz" matches
-both "xyzabc" and "abcxyz."}
+\item{nameContains}{Substring to match in slot type names. A slot type will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."}
 }
 \description{
 Returns slot type information as follows:

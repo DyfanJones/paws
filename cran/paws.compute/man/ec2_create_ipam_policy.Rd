@@ -12,15 +12,11 @@ ec2_create_ipam_policy(
 )
 }
 \arguments{
-\item{DryRun}{A check for whether you have the required permissions for the action
-without actually making the request and provides an error response. If
-you have the required permissions, the error response is
-\code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
 \item{TagSpecifications}{The tags to assign to the IPAM policy.}
 
-\item{ClientToken}{A unique, case-sensitive identifier to ensure the idempotency of the
-request.}
+\item{ClientToken}{A unique, case-sensitive identifier to ensure the idempotency of the request.}
 
 \item{IpamId}{[required] The ID of the IPAM for which you're creating the policy.}
 }

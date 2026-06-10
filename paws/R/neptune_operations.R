@@ -7,20 +7,15 @@ NULL
 #' DB cluster
 #'
 #' @description
-#' Associates an Identity and Access Management (IAM) role with an Neptune
-#' DB cluster.
+#' Associates an Identity and Access Management (IAM) role with an Neptune DB cluster.
 #'
 #' @usage
 #' neptune_add_role_to_db_cluster(DBClusterIdentifier, RoleArn,
 #'   FeatureName)
 #'
 #' @param DBClusterIdentifier &#91;required&#93; The name of the DB cluster to associate the IAM role with.
-#' @param RoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role to associate with the
-#' Neptune DB cluster, for example
-#' `arn:aws:iam::123456789012:role/NeptuneAccessRole`.
-#' @param FeatureName The name of the feature for the Neptune DB cluster that the IAM role is
-#' to be associated with. For the list of supported feature names, see
-#' DBEngineVersion.
+#' @param RoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role to associate with the Neptune DB cluster, for example `arn:aws:iam::123456789012:role/NeptuneAccessRole`.
+#' @param FeatureName The name of the feature for the Neptune DB cluster that the IAM role is to be associated with. For the list of supported feature names, see DBEngineVersion.
 #'
 #' @return
 #' An empty list.
@@ -67,23 +62,18 @@ neptune_add_role_to_db_cluster <- function(DBClusterIdentifier, RoleArn, Feature
 #' neptune_add_source_identifier_to_subscription(SubscriptionName,
 #'   SourceIdentifier)
 #'
-#' @param SubscriptionName &#91;required&#93; The name of the event notification subscription you want to add a source
-#' identifier to.
+#' @param SubscriptionName &#91;required&#93; The name of the event notification subscription you want to add a source identifier to.
 #' @param SourceIdentifier &#91;required&#93; The identifier of the event source to be added.
 #' 
 #' Constraints:
 #' 
-#' -   If the source type is a DB instance, then a `DBInstanceIdentifier`
-#'     must be supplied.
+#' -   If the source type is a DB instance, then a `DBInstanceIdentifier` must be supplied.
 #' 
-#' -   If the source type is a DB security group, a `DBSecurityGroupName`
-#'     must be supplied.
+#' -   If the source type is a DB security group, a `DBSecurityGroupName` must be supplied.
 #' 
-#' -   If the source type is a DB parameter group, a `DBParameterGroupName`
-#'     must be supplied.
+#' -   If the source type is a DB parameter group, a `DBParameterGroupName` must be supplied.
 #' 
-#' -   If the source type is a DB snapshot, a `DBSnapshotIdentifier` must
-#'     be supplied.
+#' -   If the source type is a DB snapshot, a `DBSnapshotIdentifier` must be supplied.
 #'
 #' @return
 #' A list with the following syntax:
@@ -143,18 +133,12 @@ neptune_add_source_identifier_to_subscription <- function(SubscriptionName, Sour
 #' Adds metadata tags to an Amazon Neptune resource
 #'
 #' @description
-#' Adds metadata tags to an Amazon Neptune resource. These tags can also be
-#' used with cost allocation reporting to track cost associated with Amazon
-#' Neptune resources, or used in a Condition statement in an IAM policy for
-#' Amazon Neptune.
+#' Adds metadata tags to an Amazon Neptune resource. These tags can also be used with cost allocation reporting to track cost associated with Amazon Neptune resources, or used in a Condition statement in an IAM policy for Amazon Neptune.
 #'
 #' @usage
 #' neptune_add_tags_to_resource(ResourceName, Tags)
 #'
-#' @param ResourceName &#91;required&#93; The Amazon Neptune resource that the tags are added to. This value is an
-#' Amazon Resource Name (ARN). For information about creating an ARN, see
-#' [Constructing an Amazon Resource Name
-#' (ARN)](https://docs.aws.amazon.com/neptune/latest/userguide/#tagging.ARN.Constructing).
+#' @param ResourceName &#91;required&#93; The Amazon Neptune resource that the tags are added to. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see [Constructing an Amazon Resource Name (ARN)](https://docs.aws.amazon.com/neptune/latest/userguide/#tagging.ARN.Constructing).
 #' @param Tags &#91;required&#93; The tags to be assigned to the Amazon Neptune resource.
 #'
 #' @return
@@ -201,32 +185,25 @@ neptune_add_tags_to_resource <- function(ResourceName, Tags) {
 #' instance)
 #'
 #' @description
-#' Applies a pending maintenance action to a resource (for example, to a DB
-#' instance).
+#' Applies a pending maintenance action to a resource (for example, to a DB instance).
 #'
 #' @usage
 #' neptune_apply_pending_maintenance_action(ResourceIdentifier,
 #'   ApplyAction, OptInType)
 #'
-#' @param ResourceIdentifier &#91;required&#93; The Amazon Resource Name (ARN) of the resource that the pending
-#' maintenance action applies to. For information about creating an ARN,
-#' see [Constructing an Amazon Resource Name
-#' (ARN)](https://docs.aws.amazon.com/neptune/latest/userguide/#tagging.ARN.Constructing).
+#' @param ResourceIdentifier &#91;required&#93; The Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to. For information about creating an ARN, see [Constructing an Amazon Resource Name (ARN)](https://docs.aws.amazon.com/neptune/latest/userguide/#tagging.ARN.Constructing).
 #' @param ApplyAction &#91;required&#93; The pending maintenance action to apply to this resource.
 #' 
 #' Valid values: `system-update`, `db-upgrade`
-#' @param OptInType &#91;required&#93; A value that specifies the type of opt-in request, or undoes an opt-in
-#' request. An opt-in request of type `immediate` can't be undone.
+#' @param OptInType &#91;required&#93; A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type `immediate` can't be undone.
 #' 
 #' Valid values:
 #' 
 #' -   `immediate` - Apply the maintenance action immediately.
 #' 
-#' -   `next-maintenance` - Apply the maintenance action during the next
-#'     maintenance window for the resource.
+#' -   `next-maintenance` - Apply the maintenance action during the next maintenance window for the resource.
 #' 
-#' -   `undo-opt-in` - Cancel any existing `next-maintenance` opt-in
-#'     requests.
+#' -   `undo-opt-in` - Cancel any existing `next-maintenance` opt-in requests.
 #'
 #' @return
 #' A list with the following syntax:
@@ -298,23 +275,15 @@ neptune_apply_pending_maintenance_action <- function(ResourceIdentifier, ApplyAc
 #'   TargetDBClusterParameterGroupIdentifier,
 #'   TargetDBClusterParameterGroupDescription, Tags)
 #'
-#' @param SourceDBClusterParameterGroupIdentifier &#91;required&#93; The identifier or Amazon Resource Name (ARN) for the source DB cluster
-#' parameter group. For information about creating an ARN, see
-#' [Constructing an Amazon Resource Name
-#' (ARN)](https://docs.aws.amazon.com/neptune/latest/userguide/#tagging.ARN.Constructing).
+#' @param SourceDBClusterParameterGroupIdentifier &#91;required&#93; The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information about creating an ARN, see [Constructing an Amazon Resource Name (ARN)](https://docs.aws.amazon.com/neptune/latest/userguide/#tagging.ARN.Constructing).
 #' 
 #' Constraints:
 #' 
 #' -   Must specify a valid DB cluster parameter group.
 #' 
-#' -   If the source DB cluster parameter group is in the same Amazon
-#'     Region as the copy, specify a valid DB parameter group identifier,
-#'     for example `my-db-cluster-param-group`, or a valid ARN.
+#' -   If the source DB cluster parameter group is in the same Amazon Region as the copy, specify a valid DB parameter group identifier, for example `my-db-cluster-param-group`, or a valid ARN.
 #' 
-#' -   If the source DB parameter group is in a different Amazon Region
-#'     than the copy, specify a valid DB cluster parameter group ARN, for
-#'     example
-#'     `arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1`.
+#' -   If the source DB parameter group is in a different Amazon Region than the copy, specify a valid DB cluster parameter group ARN, for example `arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1`.
 #' @param TargetDBClusterParameterGroupIdentifier &#91;required&#93; The identifier for the copied DB cluster parameter group.
 #' 
 #' Constraints:
@@ -388,18 +357,14 @@ neptune_copy_db_cluster_parameter_group <- function(SourceDBClusterParameterGrou
 #' @description
 #' Copies a snapshot of a DB cluster.
 #' 
-#' To copy a DB cluster snapshot from a shared manual DB cluster snapshot,
-#' `SourceDBClusterSnapshotIdentifier` must be the Amazon Resource Name
-#' (ARN) of the shared DB cluster snapshot.
+#' To copy a DB cluster snapshot from a shared manual DB cluster snapshot, `SourceDBClusterSnapshotIdentifier` must be the Amazon Resource Name (ARN) of the shared DB cluster snapshot.
 #'
 #' @usage
 #' neptune_copy_db_cluster_snapshot(SourceDBClusterSnapshotIdentifier,
 #'   TargetDBClusterSnapshotIdentifier, KmsKeyId, PreSignedUrl, CopyTags,
 #'   Tags)
 #'
-#' @param SourceDBClusterSnapshotIdentifier &#91;required&#93; The identifier of the DB cluster snapshot to copy. This parameter is not
-#' case-sensitive. If the source DB cluster snapshot is in a different
-#' region or owned by another account, specify the snapshot ARN.
+#' @param SourceDBClusterSnapshotIdentifier &#91;required&#93; The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive. If the source DB cluster snapshot is in a different region or owned by another account, specify the snapshot ARN.
 #' 
 #' Constraints:
 #' 
@@ -408,8 +373,7 @@ neptune_copy_db_cluster_parameter_group <- function(SourceDBClusterParameterGrou
 #' -   Specify a valid DB snapshot identifier.
 #' 
 #' Example: `my-cluster-snapshot1`
-#' @param TargetDBClusterSnapshotIdentifier &#91;required&#93; The identifier of the new DB cluster snapshot to create from the source
-#' DB cluster snapshot. This parameter is not case-sensitive.
+#' @param TargetDBClusterSnapshotIdentifier &#91;required&#93; The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter is not case-sensitive.
 #' 
 #' Constraints:
 #' 
@@ -420,29 +384,17 @@ neptune_copy_db_cluster_parameter_group <- function(SourceDBClusterParameterGrou
 #' -   Cannot end with a hyphen or contain two consecutive hyphens.
 #' 
 #' Example: `my-cluster-snapshot2`
-#' @param KmsKeyId The Amazon Amazon KMS key ID for an encrypted DB cluster snapshot. The
-#' KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the
-#' KMS key alias for the KMS encryption key.
+#' @param KmsKeyId The Amazon KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
 #' 
-#' If you copy an encrypted DB cluster snapshot from your Amazon account,
-#' you can specify a value for `KmsKeyId` to encrypt the copy with a new
-#' KMS encryption key. If you don't specify a value for `KmsKeyId`, then
-#' the copy of the DB cluster snapshot is encrypted with the same KMS key
-#' as the source DB cluster snapshot.
+#' If you copy an encrypted DB cluster snapshot from your Amazon account, you can specify a value for `KmsKeyId` to encrypt the copy with a new KMS encryption key. If you don't specify a value for `KmsKeyId`, then the copy of the DB cluster snapshot is encrypted with the same KMS key as the source DB cluster snapshot.
 #' 
-#' If you copy an encrypted DB cluster snapshot that is shared from another
-#' Amazon account, then you must specify a value for `KmsKeyId`.
+#' If you copy an encrypted DB cluster snapshot that is shared from another Amazon account, then you must specify a value for `KmsKeyId`.
 #' 
-#' KMS encryption keys are specific to the Amazon Region that they are
-#' created in, and you can't use encryption keys from one Amazon Region in
-#' another Amazon Region.
+#' KMS encryption keys are specific to the Amazon Region that they are created in, and you can't use encryption keys from one Amazon Region in another Amazon Region.
 #' 
-#' You cannot encrypt an unencrypted DB cluster snapshot when you copy it.
-#' If you try to copy an unencrypted DB cluster snapshot and specify a
-#' value for the KmsKeyId parameter, an error is returned.
+#' You cannot encrypt an unencrypted DB cluster snapshot when you copy it. If you try to copy an unencrypted DB cluster snapshot and specify a value for the KmsKeyId parameter, an error is returned.
 #' @param PreSignedUrl Not currently supported.
-#' @param CopyTags True to copy all tags from the source DB cluster snapshot to the target
-#' DB cluster snapshot, and otherwise false. The default is false.
+#' @param CopyTags True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot, and otherwise false. The default is false.
 #' @param Tags The tags to assign to the new DB cluster snapshot copy.
 #'
 #' @return
@@ -532,16 +484,13 @@ neptune_copy_db_cluster_snapshot <- function(SourceDBClusterSnapshotIdentifier, 
 #'   TargetDBParameterGroupIdentifier, TargetDBParameterGroupDescription,
 #'   Tags)
 #'
-#' @param SourceDBParameterGroupIdentifier &#91;required&#93; The identifier or ARN for the source DB parameter group. For information
-#' about creating an ARN, see [Constructing an Amazon Resource Name
-#' (ARN)](https://docs.aws.amazon.com/neptune/latest/userguide/#tagging.ARN.Constructing).
+#' @param SourceDBParameterGroupIdentifier &#91;required&#93; The identifier or ARN for the source DB parameter group. For information about creating an ARN, see [Constructing an Amazon Resource Name (ARN)](https://docs.aws.amazon.com/neptune/latest/userguide/#tagging.ARN.Constructing).
 #' 
 #' Constraints:
 #' 
 #' -   Must specify a valid DB parameter group.
 #' 
-#' -   Must specify a valid DB parameter group identifier, for example
-#'     `my-db-param-group`, or a valid ARN.
+#' -   Must specify a valid DB parameter group identifier, for example `my-db-param-group`, or a valid ARN.
 #' @param TargetDBParameterGroupIdentifier &#91;required&#93; The identifier for the copied DB parameter group.
 #' 
 #' Constraints:
@@ -615,16 +564,9 @@ neptune_copy_db_parameter_group <- function(SourceDBParameterGroupIdentifier, Ta
 #' @description
 #' Creates a new Amazon Neptune DB cluster.
 #' 
-#' You can use the `ReplicationSourceIdentifier` parameter to create the DB
-#' cluster as a Read Replica of another DB cluster or Amazon Neptune DB
-#' instance.
+#' You can use the `ReplicationSourceIdentifier` parameter to create the DB cluster as a Read Replica of another DB cluster or Amazon Neptune DB instance.
 #' 
-#' Note that when you create a new cluster using
-#' [`create_db_cluster`][neptune_create_db_cluster] directly, deletion
-#' protection is disabled by default (when you create a new production
-#' cluster in the console, deletion protection is enabled by default). You
-#' can only delete a DB cluster if its `DeletionProtection` field is set to
-#' `false`.
+#' Note that when you create a new cluster using [`create_db_cluster`][neptune_create_db_cluster] directly, deletion protection is disabled by default (when you create a new production cluster in the console, deletion protection is enabled by default). You can only delete a DB cluster if its `DeletionProtection` field is set to `false`.
 #'
 #' @usage
 #' neptune_create_db_cluster(AvailabilityZones, BackupRetentionPeriod,
@@ -637,10 +579,8 @@ neptune_copy_db_parameter_group <- function(SourceDBParameterGroupIdentifier, Ta
 #'   EnableCloudwatchLogsExports, DeletionProtection,
 #'   ServerlessV2ScalingConfiguration, GlobalClusterIdentifier, StorageType)
 #'
-#' @param AvailabilityZones A list of EC2 Availability Zones that instances in the DB cluster can be
-#' created in.
-#' @param BackupRetentionPeriod The number of days for which automated backups are retained. You must
-#' specify a minimum value of 1.
+#' @param AvailabilityZones A list of EC2 Availability Zones that instances in the DB cluster can be created in.
+#' @param BackupRetentionPeriod The number of days for which automated backups are retained. You must specify a minimum value of 1.
 #' 
 #' Default: 1
 #' 
@@ -648,13 +588,9 @@ neptune_copy_db_parameter_group <- function(SourceDBParameterGroupIdentifier, Ta
 #' 
 #' -   Must be a value from 1 to 35
 #' @param CharacterSetName *(Not supported by Neptune)*
-#' @param CopyTagsToSnapshot *If set to true, tags are copied to any snapshot of the DB cluster that
-#' is created.*
-#' @param DatabaseName The name for your database of up to 64 alpha-numeric characters. If you
-#' do not provide a name, Amazon Neptune will not create a database in the
-#' DB cluster you are creating.
-#' @param DBClusterIdentifier &#91;required&#93; The DB cluster identifier. This parameter is stored as a lowercase
-#' string.
+#' @param CopyTagsToSnapshot *If set to true, tags are copied to any snapshot of the DB cluster that is created.*
+#' @param DatabaseName The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon Neptune will not create a database in the DB cluster you are creating.
+#' @param DBClusterIdentifier &#91;required&#93; The DB cluster identifier. This parameter is stored as a lowercase string.
 #' 
 #' Constraints:
 #' 
@@ -665,18 +601,15 @@ neptune_copy_db_parameter_group <- function(SourceDBParameterGroupIdentifier, Ta
 #' -   Cannot end with a hyphen or contain two consecutive hyphens.
 #' 
 #' Example: `my-cluster1`
-#' @param DBClusterParameterGroupName The name of the DB cluster parameter group to associate with this DB
-#' cluster. If this argument is omitted, the default is used.
+#' @param DBClusterParameterGroupName The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the default is used.
 #' 
 #' Constraints:
 #' 
-#' -   If supplied, must match the name of an existing
-#'     DBClusterParameterGroup.
+#' -   If supplied, must match the name of an existing DBClusterParameterGroup.
 #' @param VpcSecurityGroupIds A list of EC2 VPC security groups to associate with this DB cluster.
 #' @param DBSubnetGroupName A DB subnet group to associate with this DB cluster.
 #' 
-#' Constraints: Must match the name of an existing DBSubnetGroup. Must not
-#' be default.
+#' Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
 #' 
 #' Example: `mySubnetgroup`
 #' @param Engine &#91;required&#93; The name of the database engine to be used for this DB cluster.
@@ -685,22 +618,15 @@ neptune_copy_db_parameter_group <- function(SourceDBParameterGroupIdentifier, Ta
 #' @param EngineVersion The version number of the database engine to use for the new DB cluster.
 #' 
 #' Example: `1.2.1.0`
-#' @param Port The port number on which the instances in the DB cluster accept
-#' connections.
+#' @param Port The port number on which the instances in the DB cluster accept connections.
 #' 
 #' Default: `8182`
 #' @param MasterUsername Not supported by Neptune.
 #' @param MasterUserPassword Not supported by Neptune.
 #' @param OptionGroupName *(Not supported by Neptune)*
-#' @param PreferredBackupWindow The daily time range during which automated backups are created if
-#' automated backups are enabled using the `BackupRetentionPeriod`
-#' parameter.
+#' @param PreferredBackupWindow The daily time range during which automated backups are created if automated backups are enabled using the `BackupRetentionPeriod` parameter.
 #' 
-#' The default is a 30-minute window selected at random from an 8-hour
-#' block of time for each Amazon Region. To see the time blocks available,
-#' see [Neptune Maintenance
-#' Window](https://docs.aws.amazon.com/neptune/latest/userguide/#manage-console-maintaining-window)
-#' in the *Amazon Neptune User Guide.*
+#' The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region. To see the time blocks available, see [Neptune Maintenance Window](https://docs.aws.amazon.com/neptune/latest/userguide/#manage-console-maintaining-window) in the *Amazon Neptune User Guide.*
 #' 
 #' Constraints:
 #' 
@@ -711,89 +637,50 @@ neptune_copy_db_parameter_group <- function(SourceDBParameterGroupIdentifier, Ta
 #' -   Must not conflict with the preferred maintenance window.
 #' 
 #' -   Must be at least 30 minutes.
-#' @param PreferredMaintenanceWindow The weekly time range during which system maintenance can occur, in
-#' Universal Coordinated Time (UTC).
+#' @param PreferredMaintenanceWindow The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).
 #' 
 #' Format: `ddd:hh24:mi-ddd:hh24:mi`
 #' 
-#' The default is a 30-minute window selected at random from an 8-hour
-#' block of time for each Amazon Region, occurring on a random day of the
-#' week. To see the time blocks available, see [Neptune Maintenance
-#' Window](https://docs.aws.amazon.com/neptune/latest/userguide/#manage-console-maintaining-window)
-#' in the *Amazon Neptune User Guide.*
+#' The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week. To see the time blocks available, see [Neptune Maintenance Window](https://docs.aws.amazon.com/neptune/latest/userguide/#manage-console-maintaining-window) in the *Amazon Neptune User Guide.*
 #' 
 #' Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
 #' 
 #' Constraints: Minimum 30-minute window.
-#' @param ReplicationSourceIdentifier The Amazon Resource Name (ARN) of the source DB instance or DB cluster
-#' if this DB cluster is created as a Read Replica.
+#' @param ReplicationSourceIdentifier The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a Read Replica.
 #' @param Tags The tags to assign to the new DB cluster.
 #' @param StorageEncrypted Specifies whether the DB cluster is encrypted.
 #' @param KmsKeyId The Amazon KMS key identifier for an encrypted DB cluster.
 #' 
-#' The KMS key identifier is the Amazon Resource Name (ARN) for the KMS
-#' encryption key. If you are creating a DB cluster with the same Amazon
-#' account that owns the KMS encryption key used to encrypt the new DB
-#' cluster, then you can use the KMS key alias instead of the ARN for the
-#' KMS encryption key.
+#' The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.
 #' 
 #' If an encryption key is not specified in `KmsKeyId`:
 #' 
-#' -   If `ReplicationSourceIdentifier` identifies an encrypted source,
-#'     then Amazon Neptune will use the encryption key used to encrypt the
-#'     source. Otherwise, Amazon Neptune will use your default encryption
-#'     key.
+#' -   If `ReplicationSourceIdentifier` identifies an encrypted source, then Amazon Neptune will use the encryption key used to encrypt the source. Otherwise, Amazon Neptune will use your default encryption key.
 #' 
-#' -   If the `StorageEncrypted` parameter is true and
-#'     `ReplicationSourceIdentifier` is not specified, then Amazon Neptune
-#'     will use your default encryption key.
+#' -   If the `StorageEncrypted` parameter is true and `ReplicationSourceIdentifier` is not specified, then Amazon Neptune will use your default encryption key.
 #' 
-#' Amazon KMS creates the default encryption key for your Amazon account.
-#' Your Amazon account has a different default encryption key for each
-#' Amazon Region.
+#' Amazon KMS creates the default encryption key for your Amazon account. Your Amazon account has a different default encryption key for each Amazon Region.
 #' 
-#' If you create a Read Replica of an encrypted DB cluster in another
-#' Amazon Region, you must set `KmsKeyId` to a KMS key ID that is valid in
-#' the destination Amazon Region. This key is used to encrypt the Read
-#' Replica in that Amazon Region.
+#' If you create a Read Replica of an encrypted DB cluster in another Amazon Region, you must set `KmsKeyId` to a KMS key ID that is valid in the destination Amazon Region. This key is used to encrypt the Read Replica in that Amazon Region.
 #' @param PreSignedUrl This parameter is not currently supported.
-#' @param EnableIAMDatabaseAuthentication If set to `true`, enables Amazon Identity and Access Management (IAM)
-#' authentication for the entire DB cluster (this cannot be set at an
-#' instance level).
+#' @param EnableIAMDatabaseAuthentication If set to `true`, enables Amazon Identity and Access Management (IAM) authentication for the entire DB cluster (this cannot be set at an instance level).
 #' 
 #' Default: `false`.
-#' @param EnableCloudwatchLogsExports A list of the log types that this DB cluster should export to CloudWatch
-#' Logs. Valid log types are: `audit` (to publish audit logs) and
-#' `slowquery` (to publish slow-query logs). See [Publishing Neptune logs
-#' to Amazon CloudWatch
-#' logs](https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html).
-#' @param DeletionProtection A value that indicates whether the DB cluster has deletion protection
-#' enabled. The database can't be deleted when deletion protection is
-#' enabled. By default, deletion protection is enabled.
+#' @param EnableCloudwatchLogsExports A list of the log types that this DB cluster should export to CloudWatch Logs. Valid log types are: `audit` (to publish audit logs) and `slowquery` (to publish slow-query logs). See [Publishing Neptune logs to Amazon CloudWatch logs](https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html).
+#' @param DeletionProtection A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is enabled.
 #' @param ServerlessV2ScalingConfiguration Contains the scaling configuration of a Neptune Serverless DB cluster.
 #' 
-#' For more information, see [Using Amazon Neptune
-#' Serverless](https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html)
-#' in the *Amazon Neptune User Guide*.
-#' @param GlobalClusterIdentifier The ID of the Neptune global database to which this new DB cluster
-#' should be added.
+#' For more information, see [Using Amazon Neptune Serverless](https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html) in the *Amazon Neptune User Guide*.
+#' @param GlobalClusterIdentifier The ID of the Neptune global database to which this new DB cluster should be added.
 #' @param StorageType The storage type for the new DB cluster.
 #' 
 #' Valid Values:
 #' 
-#' -   **`standard`**   –   ( *the default* ) Configures cost-effective
-#'     database storage for applications with moderate to small I/O usage.
-#'     When set to `standard`, the storage type is not returned in the
-#'     response.
+#' -   **`standard`**   –   ( *the default* ) Configures cost-effective database storage for applications with moderate to small I/O usage. When set to `standard`, the storage type is not returned in the response.
 #' 
-#' -   **`iopt1`**   –   Enables [I/O-Optimized
-#'     storage](https://docs.aws.amazon.com/neptune/latest/userguide/storage-types.html#provisioned-iops-storage)
-#'     that's designed to meet the needs of I/O-intensive graph workloads
-#'     that require predictable pricing with low I/O latency and consistent
-#'     I/O throughput.
+#' -   **`iopt1`**   –   Enables [I/O-Optimized storage](https://docs.aws.amazon.com/neptune/latest/userguide/storage-types.html#provisioned-iops-storage) that's designed to meet the needs of I/O-intensive graph workloads that require predictable pricing with low I/O latency and consistent I/O throughput.
 #' 
-#'     Neptune I/O-Optimized storage is only available starting with engine
-#'     release 1.3.0.0.
+#'     Neptune I/O-Optimized storage is only available starting with engine release 1.3.0.0.
 #'
 #' @return
 #' A list with the following syntax:
@@ -983,24 +870,18 @@ neptune_create_db_cluster <- function(AvailabilityZones = NULL, BackupRetentionP
 #' DB cluster
 #'
 #' @description
-#' Creates a new custom endpoint and associates it with an Amazon Neptune
-#' DB cluster.
+#' Creates a new custom endpoint and associates it with an Amazon Neptune DB cluster.
 #'
 #' @usage
 #' neptune_create_db_cluster_endpoint(DBClusterIdentifier,
 #'   DBClusterEndpointIdentifier, EndpointType, StaticMembers,
 #'   ExcludedMembers, Tags)
 #'
-#' @param DBClusterIdentifier &#91;required&#93; The DB cluster identifier of the DB cluster associated with the
-#' endpoint. This parameter is stored as a lowercase string.
-#' @param DBClusterEndpointIdentifier &#91;required&#93; The identifier to use for the new endpoint. This parameter is stored as
-#' a lowercase string.
+#' @param DBClusterIdentifier &#91;required&#93; The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.
+#' @param DBClusterEndpointIdentifier &#91;required&#93; The identifier to use for the new endpoint. This parameter is stored as a lowercase string.
 #' @param EndpointType &#91;required&#93; The type of the endpoint. One of: `READER`, `WRITER`, `ANY`.
-#' @param StaticMembers List of DB instance identifiers that are part of the custom endpoint
-#' group.
-#' @param ExcludedMembers List of DB instance identifiers that aren't part of the custom endpoint
-#' group. All other eligible instances are reachable through the custom
-#' endpoint. Only relevant if the list of static members is empty.
+#' @param StaticMembers List of DB instance identifiers that are part of the custom endpoint group.
+#' @param ExcludedMembers List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.
 #' @param Tags The tags to be assigned to the Amazon Neptune resource.
 #'
 #' @return
@@ -1074,34 +955,11 @@ neptune_create_db_cluster_endpoint <- function(DBClusterIdentifier, DBClusterEnd
 #' @description
 #' Creates a new DB cluster parameter group.
 #' 
-#' Parameters in a DB cluster parameter group apply to all of the instances
-#' in a DB cluster.
+#' Parameters in a DB cluster parameter group apply to all of the instances in a DB cluster.
 #' 
-#' A DB cluster parameter group is initially created with the default
-#' parameters for the database engine used by instances in the DB cluster.
-#' To provide custom values for any of the parameters, you must modify the
-#' group after creating it using
-#' [`modify_db_cluster_parameter_group`][neptune_modify_db_cluster_parameter_group].
-#' Once you've created a DB cluster parameter group, you need to associate
-#' it with your DB cluster using
-#' [`modify_db_cluster`][neptune_modify_db_cluster]. When you associate a
-#' new DB cluster parameter group with a running DB cluster, you need to
-#' reboot the DB instances in the DB cluster without failover for the new
-#' DB cluster parameter group and associated settings to take effect.
+#' A DB cluster parameter group is initially created with the default parameters for the database engine used by instances in the DB cluster. To provide custom values for any of the parameters, you must modify the group after creating it using [`modify_db_cluster_parameter_group`][neptune_modify_db_cluster_parameter_group]. Once you've created a DB cluster parameter group, you need to associate it with your DB cluster using [`modify_db_cluster`][neptune_modify_db_cluster]. When you associate a new DB cluster parameter group with a running DB cluster, you need to reboot the DB instances in the DB cluster without failover for the new DB cluster parameter group and associated settings to take effect.
 #' 
-#' After you create a DB cluster parameter group, you should wait at least
-#' 5 minutes before creating your first DB cluster that uses that DB
-#' cluster parameter group as the default parameter group. This allows
-#' Amazon Neptune to fully complete the create action before the DB cluster
-#' parameter group is used as the default for a new DB cluster. This is
-#' especially important for parameters that are critical when creating the
-#' default database for a DB cluster, such as the character set for the
-#' default database defined by the `character_set_database` parameter. You
-#' can use the *Parameter Groups* option of the Amazon Neptune console or
-#' the
-#' [`describe_db_cluster_parameters`][neptune_describe_db_cluster_parameters]
-#' command to verify that your DB cluster parameter group has been created
-#' or modified.
+#' After you create a DB cluster parameter group, you should wait at least 5 minutes before creating your first DB cluster that uses that DB cluster parameter group as the default parameter group. This allows Amazon Neptune to fully complete the create action before the DB cluster parameter group is used as the default for a new DB cluster. This is especially important for parameters that are critical when creating the default database for a DB cluster, such as the character set for the default database defined by the `character_set_database` parameter. You can use the *Parameter Groups* option of the Amazon Neptune console or the [`describe_db_cluster_parameters`][neptune_describe_db_cluster_parameters] command to verify that your DB cluster parameter group has been created or modified.
 #'
 #' @usage
 #' neptune_create_db_cluster_parameter_group(DBClusterParameterGroupName,
@@ -1114,11 +972,7 @@ neptune_create_db_cluster_endpoint <- function(DBClusterIdentifier, DBClusterEnd
 #' -   Must match the name of an existing DBClusterParameterGroup.
 #' 
 #' This value is stored as a lowercase string.
-#' @param DBParameterGroupFamily &#91;required&#93; The DB cluster parameter group family name. A DB cluster parameter group
-#' can be associated with one and only one DB cluster parameter group
-#' family, and can be applied only to a DB cluster running a database
-#' engine and engine version compatible with that DB cluster parameter
-#' group family.
+#' @param DBParameterGroupFamily &#91;required&#93; The DB cluster parameter group family name. A DB cluster parameter group can be associated with one and only one DB cluster parameter group family, and can be applied only to a DB cluster running a database engine and engine version compatible with that DB cluster parameter group family.
 #' @param Description &#91;required&#93; The description for the DB cluster parameter group.
 #' @param Tags The tags to be assigned to the new DB cluster parameter group.
 #'
@@ -1183,8 +1037,7 @@ neptune_create_db_cluster_parameter_group <- function(DBClusterParameterGroupNam
 #' neptune_create_db_cluster_snapshot(DBClusterSnapshotIdentifier,
 #'   DBClusterIdentifier, Tags)
 #'
-#' @param DBClusterSnapshotIdentifier &#91;required&#93; The identifier of the DB cluster snapshot. This parameter is stored as a
-#' lowercase string.
+#' @param DBClusterSnapshotIdentifier &#91;required&#93; The identifier of the DB cluster snapshot. This parameter is stored as a lowercase string.
 #' 
 #' Constraints:
 #' 
@@ -1195,8 +1048,7 @@ neptune_create_db_cluster_parameter_group <- function(DBClusterParameterGroupNam
 #' -   Cannot end with a hyphen or contain two consecutive hyphens.
 #' 
 #' Example: `my-cluster1-snapshot1`
-#' @param DBClusterIdentifier &#91;required&#93; The identifier of the DB cluster to create a snapshot for. This
-#' parameter is not case-sensitive.
+#' @param DBClusterIdentifier &#91;required&#93; The identifier of the DB cluster to create a snapshot for. This parameter is not case-sensitive.
 #' 
 #' Constraints:
 #' 
@@ -1301,8 +1153,7 @@ neptune_create_db_cluster_snapshot <- function(DBClusterSnapshotIdentifier, DBCl
 #'   DeletionProtection)
 #'
 #' @param DBName Not supported.
-#' @param DBInstanceIdentifier &#91;required&#93; The DB instance identifier. This parameter is stored as a lowercase
-#' string.
+#' @param DBInstanceIdentifier &#91;required&#93; The DB instance identifier. This parameter is stored as a lowercase string.
 #' 
 #' Constraints:
 #' 
@@ -1314,9 +1165,7 @@ neptune_create_db_cluster_snapshot <- function(DBClusterSnapshotIdentifier, DBCl
 #' 
 #' Example: `mydbinstance`
 #' @param AllocatedStorage Not supported by Neptune.
-#' @param DBInstanceClass &#91;required&#93; The compute and memory capacity of the DB instance, for example,
-#' `db.m4.large`. Not all DB instance classes are available in all Amazon
-#' Regions.
+#' @param DBInstanceClass &#91;required&#93; The compute and memory capacity of the DB instance, for example, `db.m4.large`. Not all DB instance classes are available in all Amazon Regions.
 #' @param Engine &#91;required&#93; The name of the database engine to be used for this instance.
 #' 
 #' Valid Values: `neptune`
@@ -1327,40 +1176,29 @@ neptune_create_db_cluster_snapshot <- function(DBClusterSnapshotIdentifier, DBCl
 #' Default: The default DB security group for the database engine.
 #' @param VpcSecurityGroupIds A list of EC2 VPC security groups to associate with this DB instance.
 #' 
-#' Not applicable. The associated list of EC2 VPC security groups is
-#' managed by the DB cluster. For more information, see
-#' [`create_db_cluster`][neptune_create_db_cluster].
+#' Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see [`create_db_cluster`][neptune_create_db_cluster].
 #' 
-#' Default: The default EC2 VPC security group for the DB subnet group's
-#' VPC.
+#' Default: The default EC2 VPC security group for the DB subnet group's VPC.
 #' @param AvailabilityZone The EC2 Availability Zone that the DB instance is created in
 #' 
-#' Default: A random, system-chosen Availability Zone in the endpoint's
-#' Amazon Region.
+#' Default: A random, system-chosen Availability Zone in the endpoint's Amazon Region.
 #' 
 #' Example: `us-east-1d`
 #' 
-#' Constraint: The AvailabilityZone parameter can't be specified if the
-#' MultiAZ parameter is set to `true`. The specified Availability Zone must
-#' be in the same Amazon Region as the current endpoint.
+#' Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to `true`. The specified Availability Zone must be in the same Amazon Region as the current endpoint.
 #' @param DBSubnetGroupName A DB subnet group to associate with this DB instance.
 #' 
 #' If there is no DB subnet group, then it is a non-VPC DB instance.
-#' @param PreferredMaintenanceWindow The time range each week during which system maintenance can occur, in
-#' Universal Coordinated Time (UTC).
+#' @param PreferredMaintenanceWindow The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC).
 #' 
 #' Format: `ddd:hh24:mi-ddd:hh24:mi`
 #' 
-#' The default is a 30-minute window selected at random from an 8-hour
-#' block of time for each Amazon Region, occurring on a random day of the
-#' week.
+#' The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week.
 #' 
 #' Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
 #' 
 #' Constraints: Minimum 30-minute window.
-#' @param DBParameterGroupName The name of the DB parameter group to associate with this DB instance.
-#' If this argument is omitted, the default DBParameterGroup for the
-#' specified engine is used.
+#' @param DBParameterGroupName The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default DBParameterGroup for the specified engine is used.
 #' 
 #' Constraints:
 #' 
@@ -1371,9 +1209,7 @@ neptune_create_db_cluster_snapshot <- function(DBClusterSnapshotIdentifier, DBCl
 #' -   Cannot end with a hyphen or contain two consecutive hyphens
 #' @param BackupRetentionPeriod The number of days for which automated backups are retained.
 #' 
-#' Not applicable. The retention period for automated backups is managed by
-#' the DB cluster. For more information, see
-#' [`create_db_cluster`][neptune_create_db_cluster].
+#' Not applicable. The retention period for automated backups is managed by the DB cluster. For more information, see [`create_db_cluster`][neptune_create_db_cluster].
 #' 
 #' Default: 1
 #' 
@@ -1384,102 +1220,63 @@ neptune_create_db_cluster_snapshot <- function(DBClusterSnapshotIdentifier, DBCl
 #' -   Cannot be set to 0 if the DB instance is a source to Read Replicas
 #' @param PreferredBackupWindow The daily time range during which automated backups are created.
 #' 
-#' Not applicable. The daily time range for creating automated backups is
-#' managed by the DB cluster. For more information, see
-#' [`create_db_cluster`][neptune_create_db_cluster].
+#' Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more information, see [`create_db_cluster`][neptune_create_db_cluster].
 #' @param Port The port number on which the database accepts connections.
 #' 
-#' Not applicable. The port is managed by the DB cluster. For more
-#' information, see [`create_db_cluster`][neptune_create_db_cluster].
+#' Not applicable. The port is managed by the DB cluster. For more information, see [`create_db_cluster`][neptune_create_db_cluster].
 #' 
 #' Default: `8182`
 #' 
 #' Type: Integer
-#' @param MultiAZ Specifies if the DB instance is a Multi-AZ deployment. You can't set the
-#' AvailabilityZone parameter if the MultiAZ parameter is set to true.
-#' @param EngineVersion The version number of the database engine to use. Currently, setting
-#' this parameter has no effect.
-#' @param AutoMinorVersionUpgrade Indicates that minor engine upgrades are applied automatically to the DB
-#' instance during the maintenance window.
+#' @param MultiAZ Specifies if the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone parameter if the MultiAZ parameter is set to true.
+#' @param EngineVersion The version number of the database engine to use. Currently, setting this parameter has no effect.
+#' @param AutoMinorVersionUpgrade Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance window.
 #' 
 #' Default: `true`
 #' @param LicenseModel License model information for this DB instance.
 #' 
-#' Valid values: `license-included` | `bring-your-own-license` |
-#' `general-public-license`
-#' @param Iops The amount of Provisioned IOPS (input/output operations per second) to
-#' be initially allocated for the DB instance.
+#' Valid values: `license-included` | `bring-your-own-license` | `general-public-license`
+#' @param Iops The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance.
 #' @param OptionGroupName *(Not supported by Neptune)*
 #' @param CharacterSetName *(Not supported by Neptune)*
 #' @param PubliclyAccessible Indicates whether the DB instance is publicly accessible.
 #' 
-#' When the DB instance is publicly accessible and you connect from outside
-#' of the DB instance's virtual private cloud (VPC), its Domain Name System
-#' (DNS) endpoint resolves to the public IP address. When you connect from
-#' within the same VPC as the DB instance, the endpoint resolves to the
-#' private IP address. Access to the DB instance is ultimately controlled
-#' by the security group it uses. That public access isn't permitted if the
-#' security group assigned to the DB cluster doesn't permit it.
+#' When the DB instance is publicly accessible and you connect from outside of the DB instance's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB instance, the endpoint resolves to the private IP address. Access to the DB instance is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.
 #' 
-#' When the DB instance isn't publicly accessible, it is an internal DB
-#' instance with a DNS name that resolves to a private IP address.
+#' When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.
 #' @param Tags The tags to assign to the new instance.
 #' @param DBClusterIdentifier &#91;required&#93; The identifier of the DB cluster that the instance will belong to.
 #' 
-#' For information on creating a DB cluster, see
-#' [`create_db_cluster`][neptune_create_db_cluster].
+#' For information on creating a DB cluster, see [`create_db_cluster`][neptune_create_db_cluster].
 #' 
 #' Type: String
-#' @param StorageType Not applicable. In Neptune the storage type is managed at the DB Cluster
-#' level.
-#' @param TdeCredentialArn The ARN from the key store with which to associate the instance for TDE
-#' encryption.
-#' @param TdeCredentialPassword The password for the given ARN from the key store in order to access the
-#' device.
+#' @param StorageType Not applicable. In Neptune the storage type is managed at the DB Cluster level.
+#' @param TdeCredentialArn The ARN from the key store with which to associate the instance for TDE encryption.
+#' @param TdeCredentialPassword The password for the given ARN from the key store in order to access the device.
 #' @param StorageEncrypted Specifies whether the DB instance is encrypted.
 #' 
-#' Not applicable. The encryption for DB instances is managed by the DB
-#' cluster. For more information, see
-#' [`create_db_cluster`][neptune_create_db_cluster].
+#' Not applicable. The encryption for DB instances is managed by the DB cluster. For more information, see [`create_db_cluster`][neptune_create_db_cluster].
 #' 
 #' Default: false
 #' @param KmsKeyId The Amazon KMS key identifier for an encrypted DB instance.
 #' 
-#' The KMS key identifier is the Amazon Resource Name (ARN) for the KMS
-#' encryption key. If you are creating a DB instance with the same Amazon
-#' account that owns the KMS encryption key used to encrypt the new DB
-#' instance, then you can use the KMS key alias instead of the ARN for the
-#' KM encryption key.
+#' The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB instance with the same Amazon account that owns the KMS encryption key used to encrypt the new DB instance, then you can use the KMS key alias instead of the ARN for the KMS encryption key.
 #' 
-#' Not applicable. The KMS key identifier is managed by the DB cluster. For
-#' more information, see [`create_db_cluster`][neptune_create_db_cluster].
+#' Not applicable. The KMS key identifier is managed by the DB cluster. For more information, see [`create_db_cluster`][neptune_create_db_cluster].
 #' 
-#' If the `StorageEncrypted` parameter is true, and you do not specify a
-#' value for the `KmsKeyId` parameter, then Amazon Neptune will use your
-#' default encryption key. Amazon KMS creates the default encryption key
-#' for your Amazon account. Your Amazon account has a different default
-#' encryption key for each Amazon Region.
+#' If the `StorageEncrypted` parameter is true, and you do not specify a value for the `KmsKeyId` parameter, then Amazon Neptune will use your default encryption key. Amazon KMS creates the default encryption key for your Amazon account. Your Amazon account has a different default encryption key for each Amazon Region.
 #' @param Domain Specify the Active Directory Domain to create the instance in.
-#' @param CopyTagsToSnapshot True to copy all tags from the DB instance to snapshots of the DB
-#' instance, and otherwise false. The default is false.
-#' @param MonitoringInterval The interval, in seconds, between points when Enhanced Monitoring
-#' metrics are collected for the DB instance. To disable collecting
-#' Enhanced Monitoring metrics, specify 0. The default is 0.
+#' @param CopyTagsToSnapshot True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The default is false.
+#' @param MonitoringInterval The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.
 #' 
-#' If `MonitoringRoleArn` is specified, then you must also set
-#' `MonitoringInterval` to a value other than 0.
+#' If `MonitoringRoleArn` is specified, then you must also set `MonitoringInterval` to a value other than 0.
 #' 
 #' Valid Values: `0, 1, 5, 10, 15, 30, 60`
-#' @param MonitoringRoleArn The ARN for the IAM role that permits Neptune to send enhanced
-#' monitoring metrics to Amazon CloudWatch Logs. For example,
-#' `arn:aws:iam:123456789012:role/emaccess`.
+#' @param MonitoringRoleArn The ARN for the IAM role that permits Neptune to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, `arn:aws:iam:123456789012:role/emaccess`.
 #' 
-#' If `MonitoringInterval` is set to a value other than 0, then you must
-#' supply a `MonitoringRoleArn` value.
-#' @param DomainIAMRoleName Specify the name of the IAM role to be used when making API calls to the
-#' Directory Service.
-#' @param PromotionTier A value that specifies the order in which an Read Replica is promoted to
-#' the primary instance after a failure of the existing primary instance.
+#' If `MonitoringInterval` is set to a value other than 0, then you must supply a `MonitoringRoleArn` value.
+#' @param DomainIAMRoleName Specify the name of the IAM role to be used when making API calls to the Directory Service.
+#' @param PromotionTier A value that specifies the order in which an Read Replica is promoted to the primary instance after a failure of the existing primary instance.
 #' 
 #' Default: 1
 #' 
@@ -1488,15 +1285,10 @@ neptune_create_db_cluster_snapshot <- function(DBClusterSnapshotIdentifier, DBCl
 #' @param EnableIAMDatabaseAuthentication Not supported by Neptune (ignored).
 #' @param EnablePerformanceInsights *(Not supported by Neptune)*
 #' @param PerformanceInsightsKMSKeyId *(Not supported by Neptune)*
-#' @param EnableCloudwatchLogsExports The list of log types that need to be enabled for exporting to
-#' CloudWatch Logs.
-#' @param DeletionProtection A value that indicates whether the DB instance has deletion protection
-#' enabled. The database can't be deleted when deletion protection is
-#' enabled. By default, deletion protection is disabled. See [Deleting a DB
-#' Instance](https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html).
+#' @param EnableCloudwatchLogsExports The list of log types that need to be enabled for exporting to CloudWatch Logs.
+#' @param DeletionProtection A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. See [Deleting a DB Instance](https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html).
 #' 
-#' DB instances in a DB cluster can be deleted even when deletion
-#' protection is enabled in their parent DB cluster.
+#' DB instances in a DB cluster can be deleted even when deletion protection is enabled in their parent DB cluster.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1734,26 +1526,9 @@ neptune_create_db_instance <- function(DBName = NULL, DBInstanceIdentifier, Allo
 #' @description
 #' Creates a new DB parameter group.
 #' 
-#' A DB parameter group is initially created with the default parameters
-#' for the database engine used by the DB instance. To provide custom
-#' values for any of the parameters, you must modify the group after
-#' creating it using *ModifyDBParameterGroup*. Once you've created a DB
-#' parameter group, you need to associate it with your DB instance using
-#' *ModifyDBInstance*. When you associate a new DB parameter group with a
-#' running DB instance, you need to reboot the DB instance without failover
-#' for the new DB parameter group and associated settings to take effect.
+#' A DB parameter group is initially created with the default parameters for the database engine used by the DB instance. To provide custom values for any of the parameters, you must modify the group after creating it using *ModifyDBParameterGroup*. Once you've created a DB parameter group, you need to associate it with your DB instance using *ModifyDBInstance*. When you associate a new DB parameter group with a running DB instance, you need to reboot the DB instance without failover for the new DB parameter group and associated settings to take effect.
 #' 
-#' After you create a DB parameter group, you should wait at least 5
-#' minutes before creating your first DB instance that uses that DB
-#' parameter group as the default parameter group. This allows Amazon
-#' Neptune to fully complete the create action before the parameter group
-#' is used as the default for a new DB instance. This is especially
-#' important for parameters that are critical when creating the default
-#' database for a DB instance, such as the character set for the default
-#' database defined by the `character_set_database` parameter. You can use
-#' the *Parameter Groups* option of the Amazon Neptune console or the
-#' *DescribeDBParameters* command to verify that your DB parameter group
-#' has been created or modified.
+#' After you create a DB parameter group, you should wait at least 5 minutes before creating your first DB instance that uses that DB parameter group as the default parameter group. This allows Amazon Neptune to fully complete the create action before the parameter group is used as the default for a new DB instance. This is especially important for parameters that are critical when creating the default database for a DB instance, such as the character set for the default database defined by the `character_set_database` parameter. You can use the *Parameter Groups* option of the Amazon Neptune console or the *DescribeDBParameters* command to verify that your DB parameter group has been created or modified.
 #'
 #' @usage
 #' neptune_create_db_parameter_group(DBParameterGroupName,
@@ -1770,10 +1545,7 @@ neptune_create_db_instance <- function(DBName = NULL, DBInstanceIdentifier, Allo
 #' -   Cannot end with a hyphen or contain two consecutive hyphens
 #' 
 #' This value is stored as a lowercase string.
-#' @param DBParameterGroupFamily &#91;required&#93; The DB parameter group family name. A DB parameter group can be
-#' associated with one and only one DB parameter group family, and can be
-#' applied only to a DB instance running a database engine and engine
-#' version compatible with that DB parameter group family.
+#' @param DBParameterGroupFamily &#91;required&#93; The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family.
 #' @param Description &#91;required&#93; The description for the DB parameter group.
 #' @param Tags The tags to be assigned to the new DB parameter group.
 #'
@@ -1832,18 +1604,15 @@ neptune_create_db_parameter_group <- function(DBParameterGroupName, DBParameterG
 #' Creates a new DB subnet group
 #'
 #' @description
-#' Creates a new DB subnet group. DB subnet groups must contain at least
-#' one subnet in at least two AZs in the Amazon Region.
+#' Creates a new DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the Amazon Region.
 #'
 #' @usage
 #' neptune_create_db_subnet_group(DBSubnetGroupName,
 #'   DBSubnetGroupDescription, SubnetIds, Tags)
 #'
-#' @param DBSubnetGroupName &#91;required&#93; The name for the DB subnet group. This value is stored as a lowercase
-#' string.
+#' @param DBSubnetGroupName &#91;required&#93; The name for the DB subnet group. This value is stored as a lowercase string.
 #' 
-#' Constraints: Must contain no more than 255 letters, numbers, periods,
-#' underscores, spaces, or hyphens. Must not be default.
+#' Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not be default.
 #' 
 #' Example: `mySubnetgroup`
 #' @param DBSubnetGroupDescription &#91;required&#93; The description for the DB subnet group.
@@ -1917,27 +1686,11 @@ neptune_create_db_subnet_group <- function(DBSubnetGroupName, DBSubnetGroupDescr
 #' Creates an event notification subscription
 #'
 #' @description
-#' Creates an event notification subscription. This action requires a topic
-#' ARN (Amazon Resource Name) created by either the Neptune console, the
-#' SNS console, or the SNS API. To obtain an ARN with SNS, you must create
-#' a topic in Amazon SNS and subscribe to the topic. The ARN is displayed
-#' in the SNS console.
+#' Creates an event notification subscription. This action requires a topic ARN (Amazon Resource Name) created by either the Neptune console, the SNS console, or the SNS API. To obtain an ARN with SNS, you must create a topic in Amazon SNS and subscribe to the topic. The ARN is displayed in the SNS console.
 #' 
-#' You can specify the type of source (SourceType) you want to be notified
-#' of, provide a list of Neptune sources (SourceIds) that triggers the
-#' events, and provide a list of event categories (EventCategories) for
-#' events you want to be notified of. For example, you can specify
-#' SourceType = db-instance, SourceIds = mydbinstance1, mydbinstance2 and
-#' EventCategories = Availability, Backup.
+#' You can specify the type of source (SourceType) you want to be notified of, provide a list of Neptune sources (SourceIds) that triggers the events, and provide a list of event categories (EventCategories) for events you want to be notified of. For example, you can specify SourceType = db-instance, SourceIds = mydbinstance1, mydbinstance2 and EventCategories = Availability, Backup.
 #' 
-#' If you specify both the SourceType and SourceIds, such as SourceType =
-#' db-instance and SourceIdentifier = myDBInstance1, you are notified of
-#' all the db-instance events for the specified source. If you specify a
-#' SourceType but do not specify a SourceIdentifier, you receive notice of
-#' the events for that source type for all your Neptune sources. If you do
-#' not specify either the SourceType nor the SourceIdentifier, you are
-#' notified of events generated from all Neptune sources belonging to your
-#' customer account.
+#' If you specify both the SourceType and SourceIds, such as SourceType = db-instance and SourceIdentifier = myDBInstance1, you are notified of all the db-instance events for the specified source. If you specify a SourceType but do not specify a SourceIdentifier, you receive notice of the events for that source type for all your Neptune sources. If you do not specify either the SourceType nor the SourceIdentifier, you are notified of events generated from all Neptune sources belonging to your customer account.
 #'
 #' @usage
 #' neptune_create_event_subscription(SubscriptionName, SnsTopicArn,
@@ -1946,42 +1699,25 @@ neptune_create_db_subnet_group <- function(DBSubnetGroupName, DBSubnetGroupDescr
 #' @param SubscriptionName &#91;required&#93; The name of the subscription.
 #' 
 #' Constraints: The name must be less than 255 characters.
-#' @param SnsTopicArn &#91;required&#93; The Amazon Resource Name (ARN) of the SNS topic created for event
-#' notification. The ARN is created by Amazon SNS when you create a topic
-#' and subscribe to it.
-#' @param SourceType The type of source that is generating the events. For example, if you
-#' want to be notified of events generated by a DB instance, you would set
-#' this parameter to db-instance. if this value is not specified, all
-#' events are returned.
+#' @param SnsTopicArn &#91;required&#93; The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.
+#' @param SourceType The type of source that is generating the events. For example, if you want to be notified of events generated by a DB instance, you would set this parameter to db-instance. if this value is not specified, all events are returned.
 #' 
-#' Valid values: `db-instance` | `db-cluster` | `db-parameter-group` |
-#' `db-security-group` | `db-snapshot` | `db-cluster-snapshot`
-#' @param EventCategories A list of event categories for a SourceType that you want to subscribe
-#' to. You can see a list of the categories for a given SourceType by using
-#' the **DescribeEventCategories** action.
-#' @param SourceIds The list of identifiers of the event sources for which events are
-#' returned. If not specified, then all sources are included in the
-#' response. An identifier must begin with a letter and must contain only
-#' ASCII letters, digits, and hyphens; it can't end with a hyphen or
-#' contain two consecutive hyphens.
+#' Valid values: `db-instance` | `db-cluster` | `db-parameter-group` | `db-security-group` | `db-snapshot` | `db-cluster-snapshot`
+#' @param EventCategories A list of event categories for a SourceType that you want to subscribe to. You can see a list of the categories for a given SourceType by using the **DescribeEventCategories** action.
+#' @param SourceIds The list of identifiers of the event sources for which events are returned. If not specified, then all sources are included in the response. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.
 #' 
 #' Constraints:
 #' 
 #' -   If SourceIds are supplied, SourceType must also be provided.
 #' 
-#' -   If the source type is a DB instance, then a `DBInstanceIdentifier`
-#'     must be supplied.
+#' -   If the source type is a DB instance, then a `DBInstanceIdentifier` must be supplied.
 #' 
-#' -   If the source type is a DB security group, a `DBSecurityGroupName`
-#'     must be supplied.
+#' -   If the source type is a DB security group, a `DBSecurityGroupName` must be supplied.
 #' 
-#' -   If the source type is a DB parameter group, a `DBParameterGroupName`
-#'     must be supplied.
+#' -   If the source type is a DB parameter group, a `DBParameterGroupName` must be supplied.
 #' 
-#' -   If the source type is a DB snapshot, a `DBSnapshotIdentifier` must
-#'     be supplied.
-#' @param Enabled A Boolean value; set to **true** to activate the subscription, set to
-#' **false** to create the subscription but not active it.
+#' -   If the source type is a DB snapshot, a `DBSnapshotIdentifier` must be supplied.
+#' @param Enabled A Boolean value; set to **true** to activate the subscription, set to **false** to create the subscription but not activate it.
 #' @param Tags The tags to be applied to the new event subscription.
 #'
 #' @return
@@ -2056,33 +1792,26 @@ neptune_create_event_subscription <- function(SubscriptionName, SnsTopicArn, Sou
 #' Creates a Neptune global database spread across multiple Amazon Regions
 #'
 #' @description
-#' Creates a Neptune global database spread across multiple Amazon Regions.
-#' The global database contains a single primary cluster with read-write
-#' capability, and read-only secondary clusters that receive data from the
-#' primary cluster through high-speed replication performed by the Neptune
-#' storage subsystem.
+#' Creates a Neptune global database spread across multiple Amazon Regions. The global database contains a single primary cluster with read-write capability, and read-only secondary clusters that receive data from the primary cluster through high-speed replication performed by the Neptune storage subsystem.
 #' 
-#' You can create a global database that is initially empty, and then add a
-#' primary cluster and secondary clusters to it, or you can specify an
-#' existing Neptune cluster during the create operation to become the
-#' primary cluster of the global database.
+#' You can create a global database that is initially empty, and then add a primary cluster and secondary clusters to it, or you can specify an existing Neptune cluster during the create operation to become the primary cluster of the global database.
 #'
 #' @usage
 #' neptune_create_global_cluster(GlobalClusterIdentifier,
 #'   SourceDBClusterIdentifier, Engine, EngineVersion, DeletionProtection,
-#'   StorageEncrypted)
+#'   DatabaseName, Tags, StorageEncrypted)
 #'
 #' @param GlobalClusterIdentifier &#91;required&#93; The cluster identifier of the new global database cluster.
-#' @param SourceDBClusterIdentifier (*Optional*) The Amazon Resource Name (ARN) of an existing Neptune DB
-#' cluster to use as the primary cluster of the new global database.
+#' @param SourceDBClusterIdentifier (*Optional*) The Amazon Resource Name (ARN) of an existing Neptune DB cluster to use as the primary cluster of the new global database.
 #' @param Engine The name of the database engine to be used in the global database.
 #' 
 #' Valid values: `neptune`
 #' @param EngineVersion The Neptune engine version to be used by the global database.
 #' 
 #' Valid values: `1.2.0.0` or above.
-#' @param DeletionProtection The deletion protection setting for the new global database. The global
-#' database can't be deleted when deletion protection is enabled.
+#' @param DeletionProtection The deletion protection setting for the new global database. The global database can't be deleted when deletion protection is enabled.
+#' @param DatabaseName The name for the new global database (up to 64 alpha-numeric characters).
+#' @param Tags Tags to assign to the global cluster.
 #' @param StorageEncrypted The storage encryption setting for the new global database cluster.
 #'
 #' @return
@@ -2096,6 +1825,7 @@ neptune_create_event_subscription <- function(SubscriptionName, SnsTopicArn, Sou
 #'     Status = "string",
 #'     Engine = "string",
 #'     EngineVersion = "string",
+#'     DatabaseName = "string",
 #'     StorageEncrypted = TRUE|FALSE,
 #'     DeletionProtection = TRUE|FALSE,
 #'     GlobalClusterMembers = list(
@@ -2112,6 +1842,12 @@ neptune_create_event_subscription <- function(SubscriptionName, SnsTopicArn, Sou
 #'       FromDbClusterArn = "string",
 #'       ToDbClusterArn = "string",
 #'       IsDataLossAllowed = TRUE|FALSE
+#'     ),
+#'     TagList = list(
+#'       list(
+#'         Key = "string",
+#'         Value = "string"
+#'       )
 #'     )
 #'   )
 #' )
@@ -2125,6 +1861,13 @@ neptune_create_event_subscription <- function(SubscriptionName, SnsTopicArn, Sou
 #'   Engine = "string",
 #'   EngineVersion = "string",
 #'   DeletionProtection = TRUE|FALSE,
+#'   DatabaseName = "string",
+#'   Tags = list(
+#'     list(
+#'       Key = "string",
+#'       Value = "string"
+#'     )
+#'   ),
 #'   StorageEncrypted = TRUE|FALSE
 #' )
 #' ```
@@ -2134,7 +1877,7 @@ neptune_create_event_subscription <- function(SubscriptionName, SnsTopicArn, Sou
 #' @rdname neptune_create_global_cluster
 #'
 #' @aliases neptune_create_global_cluster
-neptune_create_global_cluster <- function(GlobalClusterIdentifier, SourceDBClusterIdentifier = NULL, Engine = NULL, EngineVersion = NULL, DeletionProtection = NULL, StorageEncrypted = NULL) {
+neptune_create_global_cluster <- function(GlobalClusterIdentifier, SourceDBClusterIdentifier = NULL, Engine = NULL, EngineVersion = NULL, DeletionProtection = NULL, DatabaseName = NULL, Tags = NULL, StorageEncrypted = NULL) {
   op <- new_operation(
     name = "CreateGlobalCluster",
     http_method = "POST",
@@ -2143,7 +1886,7 @@ neptune_create_global_cluster <- function(GlobalClusterIdentifier, SourceDBClust
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .neptune$create_global_cluster_input(GlobalClusterIdentifier = GlobalClusterIdentifier, SourceDBClusterIdentifier = SourceDBClusterIdentifier, Engine = Engine, EngineVersion = EngineVersion, DeletionProtection = DeletionProtection, StorageEncrypted = StorageEncrypted)
+  input <- .neptune$create_global_cluster_input(GlobalClusterIdentifier = GlobalClusterIdentifier, SourceDBClusterIdentifier = SourceDBClusterIdentifier, Engine = Engine, EngineVersion = EngineVersion, DeletionProtection = DeletionProtection, DatabaseName = DatabaseName, Tags = Tags, StorageEncrypted = StorageEncrypted)
   output <- .neptune$create_global_cluster_output()
   config <- get_config()
   svc <- .neptune$service(config, op)
@@ -2156,39 +1899,27 @@ neptune_create_global_cluster <- function(GlobalClusterIdentifier, SourceDBClust
 #' The DeleteDBCluster action deletes a previously provisioned DB cluster
 #'
 #' @description
-#' The DeleteDBCluster action deletes a previously provisioned DB cluster.
-#' When you delete a DB cluster, all automated backups for that DB cluster
-#' are deleted and can't be recovered. Manual DB cluster snapshots of the
-#' specified DB cluster are not deleted.
+#' The DeleteDBCluster action deletes a previously provisioned DB cluster. When you delete a DB cluster, all automated backups for that DB cluster are deleted and can't be recovered. Manual DB cluster snapshots of the specified DB cluster are not deleted.
 #' 
-#' Note that the DB Cluster cannot be deleted if deletion protection is
-#' enabled. To delete it, you must first set its `DeletionProtection` field
-#' to `False`.
+#' Note that the DB Cluster cannot be deleted if deletion protection is enabled. To delete it, you must first set its `DeletionProtection` field to `False`.
 #'
 #' @usage
 #' neptune_delete_db_cluster(DBClusterIdentifier, SkipFinalSnapshot,
 #'   FinalDBSnapshotIdentifier)
 #'
-#' @param DBClusterIdentifier &#91;required&#93; The DB cluster identifier for the DB cluster to be deleted. This
-#' parameter isn't case-sensitive.
+#' @param DBClusterIdentifier &#91;required&#93; The DB cluster identifier for the DB cluster to be deleted. This parameter isn't case-sensitive.
 #' 
 #' Constraints:
 #' 
 #' -   Must match an existing DBClusterIdentifier.
-#' @param SkipFinalSnapshot Determines whether a final DB cluster snapshot is created before the DB
-#' cluster is deleted. If `true` is specified, no DB cluster snapshot is
-#' created. If `false` is specified, a DB cluster snapshot is created
-#' before the DB cluster is deleted.
+#' @param SkipFinalSnapshot Determines whether a final DB cluster snapshot is created before the DB cluster is deleted. If `true` is specified, no DB cluster snapshot is created. If `false` is specified, a DB cluster snapshot is created before the DB cluster is deleted.
 #' 
-#' You must specify a `FinalDBSnapshotIdentifier` parameter if
-#' `SkipFinalSnapshot` is `false`.
+#' You must specify a `FinalDBSnapshotIdentifier` parameter if `SkipFinalSnapshot` is `false`.
 #' 
 #' Default: `false`
-#' @param FinalDBSnapshotIdentifier The DB cluster snapshot identifier of the new DB cluster snapshot
-#' created when `SkipFinalSnapshot` is set to `false`.
+#' @param FinalDBSnapshotIdentifier The DB cluster snapshot identifier of the new DB cluster snapshot created when `SkipFinalSnapshot` is set to `false`.
 #' 
-#' Specifying this parameter and also setting the `SkipFinalShapshot`
-#' parameter to true results in an error.
+#' Specifying this parameter and also setting the `SkipFinalSnapshot` parameter to true results in an error.
 #' 
 #' Constraints:
 #' 
@@ -2347,14 +2078,12 @@ neptune_delete_db_cluster <- function(DBClusterIdentifier, SkipFinalSnapshot = N
 #' cluster
 #'
 #' @description
-#' Deletes a custom endpoint and removes it from an Amazon Neptune DB
-#' cluster.
+#' Deletes a custom endpoint and removes it from an Amazon Neptune DB cluster.
 #'
 #' @usage
 #' neptune_delete_db_cluster_endpoint(DBClusterEndpointIdentifier)
 #'
-#' @param DBClusterEndpointIdentifier &#91;required&#93; The identifier associated with the custom endpoint. This parameter is
-#' stored as a lowercase string.
+#' @param DBClusterEndpointIdentifier &#91;required&#93; The identifier associated with the custom endpoint. This parameter is stored as a lowercase string.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2411,8 +2140,7 @@ neptune_delete_db_cluster_endpoint <- function(DBClusterEndpointIdentifier) {
 #' Deletes a specified DB cluster parameter group
 #'
 #' @description
-#' Deletes a specified DB cluster parameter group. The DB cluster parameter
-#' group to be deleted can't be associated with any DB clusters.
+#' Deletes a specified DB cluster parameter group. The DB cluster parameter group to be deleted can't be associated with any DB clusters.
 #'
 #' @usage
 #' neptune_delete_db_cluster_parameter_group(DBClusterParameterGroupName)
@@ -2464,8 +2192,7 @@ neptune_delete_db_cluster_parameter_group <- function(DBClusterParameterGroupNam
 #' Deletes a DB cluster snapshot
 #'
 #' @description
-#' Deletes a DB cluster snapshot. If the snapshot is being copied, the copy
-#' operation is terminated.
+#' Deletes a DB cluster snapshot. If the snapshot is being copied, the copy operation is terminated.
 #' 
 #' The DB cluster snapshot must be in the `available` state to be deleted.
 #'
@@ -2474,8 +2201,7 @@ neptune_delete_db_cluster_parameter_group <- function(DBClusterParameterGroupNam
 #'
 #' @param DBClusterSnapshotIdentifier &#91;required&#93; The identifier of the DB cluster snapshot to delete.
 #' 
-#' Constraints: Must be the name of an existing DB cluster snapshot in the
-#' `available` state.
+#' Constraints: Must be the name of an existing DB cluster snapshot in the `available` state.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2547,54 +2273,35 @@ neptune_delete_db_cluster_snapshot <- function(DBClusterSnapshotIdentifier) {
 #' The DeleteDBInstance action deletes a previously provisioned DB instance
 #'
 #' @description
-#' The DeleteDBInstance action deletes a previously provisioned DB
-#' instance. When you delete a DB instance, all automated backups for that
-#' instance are deleted and can't be recovered. Manual DB snapshots of the
-#' DB instance to be deleted by
-#' [`delete_db_instance`][neptune_delete_db_instance] are not deleted.
+#' The DeleteDBInstance action deletes a previously provisioned DB instance. When you delete a DB instance, all automated backups for that instance are deleted and can't be recovered. Manual DB snapshots of the DB instance to be deleted by [`delete_db_instance`][neptune_delete_db_instance] are not deleted.
 #' 
-#' If you request a final DB snapshot the status of the Amazon Neptune DB
-#' instance is `deleting` until the DB snapshot is created. The API action
-#' `DescribeDBInstance` is used to monitor the status of this operation.
-#' The action can't be canceled or reverted once submitted.
+#' If you request a final DB snapshot the status of the Amazon Neptune DB instance is `deleting` until the DB snapshot is created. The API action `DescribeDBInstance` is used to monitor the status of this operation. The action can't be canceled or reverted once submitted.
 #' 
-#' Note that when a DB instance is in a failure state and has a status of
-#' `failed`, `incompatible-restore`, or `incompatible-network`, you can
-#' only delete it when the `SkipFinalSnapshot` parameter is set to `true`.
+#' Note that when a DB instance is in a failure state and has a status of `failed`, `incompatible-restore`, or `incompatible-network`, you can only delete it when the `SkipFinalSnapshot` parameter is set to `true`.
 #' 
-#' You can't delete a DB instance if it is the only instance in the DB
-#' cluster, or if it has deletion protection enabled.
+#' You can't delete a DB instance if it is the only instance in the DB cluster, or if it has deletion protection enabled.
 #'
 #' @usage
 #' neptune_delete_db_instance(DBInstanceIdentifier, SkipFinalSnapshot,
 #'   FinalDBSnapshotIdentifier)
 #'
-#' @param DBInstanceIdentifier &#91;required&#93; The DB instance identifier for the DB instance to be deleted. This
-#' parameter isn't case-sensitive.
+#' @param DBInstanceIdentifier &#91;required&#93; The DB instance identifier for the DB instance to be deleted. This parameter isn't case-sensitive.
 #' 
 #' Constraints:
 #' 
 #' -   Must match the name of an existing DB instance.
-#' @param SkipFinalSnapshot Determines whether a final DB snapshot is created before the DB instance
-#' is deleted. If `true` is specified, no DBSnapshot is created. If `false`
-#' is specified, a DB snapshot is created before the DB instance is
-#' deleted.
+#' @param SkipFinalSnapshot Determines whether a final DB snapshot is created before the DB instance is deleted. If `true` is specified, no DBSnapshot is created. If `false` is specified, a DB snapshot is created before the DB instance is deleted.
 #' 
-#' Note that when a DB instance is in a failure state and has a status of
-#' 'failed', 'incompatible-restore', or 'incompatible-network', it can only
-#' be deleted when the SkipFinalSnapshot parameter is set to "true".
+#' Note that when a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore', or 'incompatible-network', it can only be deleted when the SkipFinalSnapshot parameter is set to "true".
 #' 
 #' Specify `true` when deleting a Read Replica.
 #' 
-#' The FinalDBSnapshotIdentifier parameter must be specified if
-#' SkipFinalSnapshot is `false`.
+#' The FinalDBSnapshotIdentifier parameter must be specified if SkipFinalSnapshot is `false`.
 #' 
 #' Default: `false`
-#' @param FinalDBSnapshotIdentifier The DBSnapshotIdentifier of the new DBSnapshot created when
-#' SkipFinalSnapshot is set to `false`.
+#' @param FinalDBSnapshotIdentifier The DBSnapshotIdentifier of the new DBSnapshot created when SkipFinalSnapshot is set to `false`.
 #' 
-#' Specifying this parameter and also setting the SkipFinalShapshot
-#' parameter to true results in an error.
+#' Specifying this parameter and also setting the SkipFinalSnapshot parameter to true results in an error.
 #' 
 #' Constraints:
 #' 
@@ -2789,8 +2496,7 @@ neptune_delete_db_instance <- function(DBInstanceIdentifier, SkipFinalSnapshot =
 #' Deletes a specified DBParameterGroup
 #'
 #' @description
-#' Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted
-#' can't be associated with any DB instances.
+#' Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted can't be associated with any DB instances.
 #'
 #' @usage
 #' neptune_delete_db_parameter_group(DBParameterGroupName)
@@ -2844,8 +2550,7 @@ neptune_delete_db_parameter_group <- function(DBParameterGroupName) {
 #' @description
 #' Deletes a DB subnet group.
 #' 
-#' The specified database subnet group must not be associated with any DB
-#' instances.
+#' The specified database subnet group must not be associated with any DB instances.
 #'
 #' @usage
 #' neptune_delete_db_subnet_group(DBSubnetGroupName)
@@ -2856,8 +2561,7 @@ neptune_delete_db_parameter_group <- function(DBParameterGroupName) {
 #' 
 #' Constraints:
 #' 
-#' Constraints: Must match the name of an existing DBSubnetGroup. Must not
-#' be default.
+#' Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
 #' 
 #' Example: `mySubnetgroup`
 #'
@@ -2962,8 +2666,7 @@ neptune_delete_event_subscription <- function(SubscriptionName) {
 #' Deletes a global database
 #'
 #' @description
-#' Deletes a global database. The primary and all secondary clusters must
-#' already be detached or deleted first.
+#' Deletes a global database. The primary and all secondary clusters must already be detached or deleted first.
 #'
 #' @usage
 #' neptune_delete_global_cluster(GlobalClusterIdentifier)
@@ -2981,6 +2684,7 @@ neptune_delete_event_subscription <- function(SubscriptionName) {
 #'     Status = "string",
 #'     Engine = "string",
 #'     EngineVersion = "string",
+#'     DatabaseName = "string",
 #'     StorageEncrypted = TRUE|FALSE,
 #'     DeletionProtection = TRUE|FALSE,
 #'     GlobalClusterMembers = list(
@@ -2997,6 +2701,12 @@ neptune_delete_event_subscription <- function(SubscriptionName) {
 #'       FromDbClusterArn = "string",
 #'       ToDbClusterArn = "string",
 #'       IsDataLossAllowed = TRUE|FALSE
+#'     ),
+#'     TagList = list(
+#'       list(
+#'         Key = "string",
+#'         Value = "string"
+#'       )
 #'     )
 #'   )
 #' )
@@ -3038,40 +2748,21 @@ neptune_delete_global_cluster <- function(GlobalClusterIdentifier) {
 #' @description
 #' Returns information about endpoints for an Amazon Neptune DB cluster.
 #' 
-#' This operation can also return information for Amazon RDS clusters and
-#' Amazon DocDB clusters.
+#' This operation can also return information for Amazon RDS clusters and Amazon DocDB clusters.
 #'
 #' @usage
 #' neptune_describe_db_cluster_endpoints(DBClusterIdentifier,
 #'   DBClusterEndpointIdentifier, Filters, MaxRecords, Marker)
 #'
-#' @param DBClusterIdentifier The DB cluster identifier of the DB cluster associated with the
-#' endpoint. This parameter is stored as a lowercase string.
-#' @param DBClusterEndpointIdentifier The identifier of the endpoint to describe. This parameter is stored as
-#' a lowercase string.
-#' @param Filters A set of name-value pairs that define which endpoints to include in the
-#' output. The filters are specified as name-value pairs, in the format
-#' `Name=endpoint_type,Values=endpoint_type1,endpoint_type2,...`. `Name`
-#' can be one of: `db-cluster-endpoint-type`,
-#' `db-cluster-endpoint-custom-type`, `db-cluster-endpoint-id`,
-#' `db-cluster-endpoint-status`. `Values` for the
-#' ` db-cluster-endpoint-type` filter can be one or more of: `reader`,
-#' `writer`, `custom`. `Values` for the `db-cluster-endpoint-custom-type`
-#' filter can be one or more of: `reader`, `any`. `Values` for the
-#' `db-cluster-endpoint-status` filter can be one or more of: `available`,
-#' `creating`, `deleting`, `inactive`, `modifying`.
-#' @param MaxRecords The maximum number of records to include in the response. If more
-#' records exist than the specified `MaxRecords` value, a pagination token
-#' called a marker is included in the response so you can retrieve the
-#' remaining results.
+#' @param DBClusterIdentifier The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.
+#' @param DBClusterEndpointIdentifier The identifier of the endpoint to describe. This parameter is stored as a lowercase string.
+#' @param Filters A set of name-value pairs that define which endpoints to include in the output. The filters are specified as name-value pairs, in the format `Name=endpoint_type,Values=endpoint_type1,endpoint_type2,...`. `Name` can be one of: `db-cluster-endpoint-type`, `db-cluster-endpoint-custom-type`, `db-cluster-endpoint-id`, `db-cluster-endpoint-status`. `Values` for the ` db-cluster-endpoint-type` filter can be one or more of: `reader`, `writer`, `custom`. `Values` for the `db-cluster-endpoint-custom-type` filter can be one or more of: `reader`, `any`. `Values` for the `db-cluster-endpoint-status` filter can be one or more of: `available`, `creating`, `deleting`, `inactive`, `modifying`.
+#' @param MaxRecords The maximum number of records to include in the response. If more records exist than the specified `MaxRecords` value, a pagination token called a marker is included in the response so you can retrieve the remaining results.
 #' 
 #' Default: 100
 #' 
 #' Constraints: Minimum 20, maximum 100.
-#' @param Marker An optional pagination token provided by a previous
-#' [`describe_db_cluster_endpoints`][neptune_describe_db_cluster_endpoints]
-#' request. If this parameter is specified, the response includes only
-#' records beyond the marker, up to the value specified by `MaxRecords`.
+#' @param Marker An optional pagination token provided by a previous [`describe_db_cluster_endpoints`][neptune_describe_db_cluster_endpoints] request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by `MaxRecords`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3144,10 +2835,7 @@ neptune_describe_db_cluster_endpoints <- function(DBClusterIdentifier = NULL, DB
 #' Returns a list of DBClusterParameterGroup descriptions
 #'
 #' @description
-#' Returns a list of `DBClusterParameterGroup` descriptions. If a
-#' `DBClusterParameterGroupName` parameter is specified, the list will
-#' contain only the description of the specified DB cluster parameter
-#' group.
+#' Returns a list of `DBClusterParameterGroup` descriptions. If a `DBClusterParameterGroupName` parameter is specified, the list will contain only the description of the specified DB cluster parameter group.
 #'
 #' @usage
 #' neptune_describe_db_cluster_parameter_groups(
@@ -3157,21 +2845,14 @@ neptune_describe_db_cluster_endpoints <- function(DBClusterIdentifier = NULL, DB
 #' 
 #' Constraints:
 #' 
-#' -   If supplied, must match the name of an existing
-#'     DBClusterParameterGroup.
+#' -   If supplied, must match the name of an existing DBClusterParameterGroup.
 #' @param Filters This parameter is not currently supported.
-#' @param MaxRecords The maximum number of records to include in the response. If more
-#' records exist than the specified `MaxRecords` value, a pagination token
-#' called a marker is included in the response so that the remaining
-#' results can be retrieved.
+#' @param MaxRecords The maximum number of records to include in the response. If more records exist than the specified `MaxRecords` value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.
 #' 
 #' Default: 100
 #' 
 #' Constraints: Minimum 20, maximum 100.
-#' @param Marker An optional pagination token provided by a previous
-#' [`describe_db_cluster_parameter_groups`][neptune_describe_db_cluster_parameter_groups]
-#' request. If this parameter is specified, the response includes only
-#' records beyond the marker, up to the value specified by `MaxRecords`.
+#' @param Marker An optional pagination token provided by a previous [`describe_db_cluster_parameter_groups`][neptune_describe_db_cluster_parameter_groups] request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by `MaxRecords`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3234,35 +2915,25 @@ neptune_describe_db_cluster_parameter_groups <- function(DBClusterParameterGroup
 #' parameter group
 #'
 #' @description
-#' Returns the detailed parameter list for a particular DB cluster
-#' parameter group.
+#' Returns the detailed parameter list for a particular DB cluster parameter group.
 #'
 #' @usage
 #' neptune_describe_db_cluster_parameters(DBClusterParameterGroupName,
 #'   Source, Filters, MaxRecords, Marker)
 #'
-#' @param DBClusterParameterGroupName &#91;required&#93; The name of a specific DB cluster parameter group to return parameter
-#' details for.
+#' @param DBClusterParameterGroupName &#91;required&#93; The name of a specific DB cluster parameter group to return parameter details for.
 #' 
 #' Constraints:
 #' 
-#' -   If supplied, must match the name of an existing
-#'     DBClusterParameterGroup.
-#' @param Source A value that indicates to return only parameters for a specific source.
-#' Parameter sources can be `engine`, `service`, or `customer`.
+#' -   If supplied, must match the name of an existing DBClusterParameterGroup.
+#' @param Source A value that indicates to return only parameters for a specific source. Parameter sources can be `engine`, `service`, or `customer`.
 #' @param Filters This parameter is not currently supported.
-#' @param MaxRecords The maximum number of records to include in the response. If more
-#' records exist than the specified `MaxRecords` value, a pagination token
-#' called a marker is included in the response so that the remaining
-#' results can be retrieved.
+#' @param MaxRecords The maximum number of records to include in the response. If more records exist than the specified `MaxRecords` value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.
 #' 
 #' Default: 100
 #' 
 #' Constraints: Minimum 20, maximum 100.
-#' @param Marker An optional pagination token provided by a previous
-#' [`describe_db_cluster_parameters`][neptune_describe_db_cluster_parameters]
-#' request. If this parameter is specified, the response includes only
-#' records beyond the marker, up to the value specified by `MaxRecords`.
+#' @param Marker An optional pagination token provided by a previous [`describe_db_cluster_parameters`][neptune_describe_db_cluster_parameters] request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by `MaxRecords`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3332,29 +3003,17 @@ neptune_describe_db_cluster_parameters <- function(DBClusterParameterGroupName, 
 #' manual DB cluster snapshot
 #'
 #' @description
-#' Returns a list of DB cluster snapshot attribute names and values for a
-#' manual DB cluster snapshot.
+#' Returns a list of DB cluster snapshot attribute names and values for a manual DB cluster snapshot.
 #' 
-#' When sharing snapshots with other Amazon accounts,
-#' [`describe_db_cluster_snapshot_attributes`][neptune_describe_db_cluster_snapshot_attributes]
-#' returns the `restore` attribute and a list of IDs for the Amazon
-#' accounts that are authorized to copy or restore the manual DB cluster
-#' snapshot. If `all` is included in the list of values for the `restore`
-#' attribute, then the manual DB cluster snapshot is public and can be
-#' copied or restored by all Amazon accounts.
+#' When sharing snapshots with other Amazon accounts, [`describe_db_cluster_snapshot_attributes`][neptune_describe_db_cluster_snapshot_attributes] returns the `restore` attribute and a list of IDs for the Amazon accounts that are authorized to copy or restore the manual DB cluster snapshot. If `all` is included in the list of values for the `restore` attribute, then the manual DB cluster snapshot is public and can be copied or restored by all Amazon accounts.
 #' 
-#' To add or remove access for an Amazon account to copy or restore a
-#' manual DB cluster snapshot, or to make the manual DB cluster snapshot
-#' public or private, use the
-#' [`modify_db_cluster_snapshot_attribute`][neptune_modify_db_cluster_snapshot_attribute]
-#' API action.
+#' To add or remove access for an Amazon account to copy or restore a manual DB cluster snapshot, or to make the manual DB cluster snapshot public or private, use the [`modify_db_cluster_snapshot_attribute`][neptune_modify_db_cluster_snapshot_attribute] API action.
 #'
 #' @usage
 #' neptune_describe_db_cluster_snapshot_attributes(
 #'   DBClusterSnapshotIdentifier)
 #'
-#' @param DBClusterSnapshotIdentifier &#91;required&#93; The identifier for the DB cluster snapshot to describe the attributes
-#' for.
+#' @param DBClusterSnapshotIdentifier &#91;required&#93; The identifier for the DB cluster snapshot to describe the attributes for.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3408,87 +3067,51 @@ neptune_describe_db_cluster_snapshot_attributes <- function(DBClusterSnapshotIde
 #' Returns information about DB cluster snapshots
 #'
 #' @description
-#' Returns information about DB cluster snapshots. This API action supports
-#' pagination.
+#' Returns information about DB cluster snapshots. This API action supports pagination.
 #'
 #' @usage
 #' neptune_describe_db_cluster_snapshots(DBClusterIdentifier,
 #'   DBClusterSnapshotIdentifier, SnapshotType, Filters, MaxRecords, Marker,
 #'   IncludeShared, IncludePublic)
 #'
-#' @param DBClusterIdentifier The ID of the DB cluster to retrieve the list of DB cluster snapshots
-#' for. This parameter can't be used in conjunction with the
-#' `DBClusterSnapshotIdentifier` parameter. This parameter is not
-#' case-sensitive.
+#' @param DBClusterIdentifier The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter can't be used in conjunction with the `DBClusterSnapshotIdentifier` parameter. This parameter is not case-sensitive.
 #' 
 #' Constraints:
 #' 
 #' -   If supplied, must match the identifier of an existing DBCluster.
-#' @param DBClusterSnapshotIdentifier A specific DB cluster snapshot identifier to describe. This parameter
-#' can't be used in conjunction with the `DBClusterIdentifier` parameter.
-#' This value is stored as a lowercase string.
+#' @param DBClusterSnapshotIdentifier A specific DB cluster snapshot identifier to describe. This parameter can't be used in conjunction with the `DBClusterIdentifier` parameter. This value is stored as a lowercase string.
 #' 
 #' Constraints:
 #' 
-#' -   If supplied, must match the identifier of an existing
-#'     DBClusterSnapshot.
+#' -   If supplied, must match the identifier of an existing DBClusterSnapshot.
 #' 
-#' -   If this identifier is for an automated snapshot, the `SnapshotType`
-#'     parameter must also be specified.
-#' @param SnapshotType The type of DB cluster snapshots to be returned. You can specify one of
-#' the following values:
+#' -   If this identifier is for an automated snapshot, the `SnapshotType` parameter must also be specified.
+#' @param SnapshotType The type of DB cluster snapshots to be returned. You can specify one of the following values:
 #' 
-#' -   `automated` - Return all DB cluster snapshots that have been
-#'     automatically taken by Amazon Neptune for my Amazon account.
+#' -   `automated` - Return all DB cluster snapshots that have been automatically taken by Amazon Neptune for my Amazon account.
 #' 
-#' -   `manual` - Return all DB cluster snapshots that have been taken by
-#'     my Amazon account.
+#' -   `manual` - Return all DB cluster snapshots that have been taken by my Amazon account.
 #' 
-#' -   `shared` - Return all manual DB cluster snapshots that have been
-#'     shared to my Amazon account.
+#' -   `shared` - Return all manual DB cluster snapshots that have been shared to my Amazon account.
 #' 
-#' -   `public` - Return all DB cluster snapshots that have been marked as
-#'     public.
+#' -   `public` - Return all DB cluster snapshots that have been marked as public.
 #' 
-#' If you don't specify a `SnapshotType` value, then both automated and
-#' manual DB cluster snapshots are returned. You can include shared DB
-#' cluster snapshots with these results by setting the `IncludeShared`
-#' parameter to `true`. You can include public DB cluster snapshots with
-#' these results by setting the `IncludePublic` parameter to `true`.
+#' If you don't specify a `SnapshotType` value, then both automated and manual DB cluster snapshots are returned. You can include shared DB cluster snapshots with these results by setting the `IncludeShared` parameter to `true`. You can include public DB cluster snapshots with these results by setting the `IncludePublic` parameter to `true`.
 #' 
-#' The `IncludeShared` and `IncludePublic` parameters don't apply for
-#' `SnapshotType` values of `manual` or `automated`. The `IncludePublic`
-#' parameter doesn't apply when `SnapshotType` is set to `shared`. The
-#' `IncludeShared` parameter doesn't apply when `SnapshotType` is set to
-#' `public`.
+#' The `IncludeShared` and `IncludePublic` parameters don't apply for `SnapshotType` values of `manual` or `automated`. The `IncludePublic` parameter doesn't apply when `SnapshotType` is set to `shared`. The `IncludeShared` parameter doesn't apply when `SnapshotType` is set to `public`.
 #' @param Filters This parameter is not currently supported.
-#' @param MaxRecords The maximum number of records to include in the response. If more
-#' records exist than the specified `MaxRecords` value, a pagination token
-#' called a marker is included in the response so that the remaining
-#' results can be retrieved.
+#' @param MaxRecords The maximum number of records to include in the response. If more records exist than the specified `MaxRecords` value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.
 #' 
 #' Default: 100
 #' 
 #' Constraints: Minimum 20, maximum 100.
-#' @param Marker An optional pagination token provided by a previous
-#' [`describe_db_cluster_snapshots`][neptune_describe_db_cluster_snapshots]
-#' request. If this parameter is specified, the response includes only
-#' records beyond the marker, up to the value specified by `MaxRecords`.
-#' @param IncludeShared True to include shared manual DB cluster snapshots from other Amazon
-#' accounts that this Amazon account has been given permission to copy or
-#' restore, and otherwise false. The default is `false`.
+#' @param Marker An optional pagination token provided by a previous [`describe_db_cluster_snapshots`][neptune_describe_db_cluster_snapshots] request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by `MaxRecords`.
+#' @param IncludeShared True to include shared manual DB cluster snapshots from other Amazon accounts that this Amazon account has been given permission to copy or restore, and otherwise false. The default is `false`.
 #' 
-#' You can give an Amazon account permission to restore a manual DB cluster
-#' snapshot from another Amazon account by the
-#' [`modify_db_cluster_snapshot_attribute`][neptune_modify_db_cluster_snapshot_attribute]
-#' API action.
-#' @param IncludePublic True to include manual DB cluster snapshots that are public and can be
-#' copied or restored by any Amazon account, and otherwise false. The
-#' default is `false`. The default is false.
+#' You can give an Amazon account permission to restore a manual DB cluster snapshot from another Amazon account by the [`modify_db_cluster_snapshot_attribute`][neptune_modify_db_cluster_snapshot_attribute] API action.
+#' @param IncludePublic True to include manual DB cluster snapshots that are public and can be copied or restored by any Amazon account, and otherwise false. The default is `false`. The default is false.
 #' 
-#' You can share a manual DB cluster snapshot as public by using the
-#' [`modify_db_cluster_snapshot_attribute`][neptune_modify_db_cluster_snapshot_attribute]
-#' API action.
+#' You can share a manual DB cluster snapshot as public by using the [`modify_db_cluster_snapshot_attribute`][neptune_modify_db_cluster_snapshot_attribute] API action.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3578,19 +3201,15 @@ neptune_describe_db_cluster_snapshots <- function(DBClusterIdentifier = NULL, DB
 #' pagination
 #'
 #' @description
-#' Returns information about provisioned DB clusters, and supports
-#' pagination.
+#' Returns information about provisioned DB clusters, and supports pagination.
 #' 
-#' This operation can also return information for Amazon RDS clusters and
-#' Amazon DocDB clusters.
+#' This operation can also return information for Amazon RDS clusters and Amazon DocDB clusters.
 #'
 #' @usage
 #' neptune_describe_db_clusters(DBClusterIdentifier, Filters, MaxRecords,
 #'   Marker)
 #'
-#' @param DBClusterIdentifier The user-supplied DB cluster identifier. If this parameter is specified,
-#' information from only the specific DB cluster is returned. This
-#' parameter isn't case-sensitive.
+#' @param DBClusterIdentifier The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.
 #' 
 #' Constraints:
 #' 
@@ -3599,28 +3218,17 @@ neptune_describe_db_cluster_snapshots <- function(DBClusterIdentifier = NULL, DB
 #' 
 #' Supported filters:
 #' 
-#' -   `db-cluster-id` - Accepts DB cluster identifiers and DB cluster
-#'     Amazon Resource Names (ARNs). The results list will only include
-#'     information about the DB clusters identified by these ARNs.
+#' -   `db-cluster-id` - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB clusters identified by these ARNs.
 #' 
-#' -   `engine` - Accepts an engine name (such as `neptune`), and restricts
-#'     the results list to DB clusters created by that engine.
+#' -   `engine` - Accepts an engine name (such as `neptune`), and restricts the results list to DB clusters created by that engine.
 #' 
-#' For example, to invoke this API from the Amazon CLI and filter so that
-#' only Neptune DB clusters are returned, you could use the following
-#' command:
-#' @param MaxRecords The maximum number of records to include in the response. If more
-#' records exist than the specified `MaxRecords` value, a pagination token
-#' called a marker is included in the response so that the remaining
-#' results can be retrieved.
+#' For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB clusters are returned, you could use the following command:
+#' @param MaxRecords The maximum number of records to include in the response. If more records exist than the specified `MaxRecords` value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.
 #' 
 #' Default: 100
 #' 
 #' Constraints: Minimum 20, maximum 100.
-#' @param Marker An optional pagination token provided by a previous
-#' [`describe_db_clusters`][neptune_describe_db_clusters] request. If this
-#' parameter is specified, the response includes only records beyond the
-#' marker, up to the value specified by `MaxRecords`.
+#' @param Marker An optional pagination token provided by a previous [`describe_db_clusters`][neptune_describe_db_clusters] request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by `MaxRecords`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3798,27 +3406,15 @@ neptune_describe_db_clusters <- function(DBClusterIdentifier = NULL, Filters = N
 #' 
 #' -   If supplied, must match an existing DBParameterGroupFamily.
 #' @param Filters Not currently supported.
-#' @param MaxRecords The maximum number of records to include in the response. If more than
-#' the `MaxRecords` value is available, a pagination token called a marker
-#' is included in the response so that the following results can be
-#' retrieved.
+#' @param MaxRecords The maximum number of records to include in the response. If more than the `MaxRecords` value is available, a pagination token called a marker is included in the response so that the following results can be retrieved.
 #' 
 #' Default: 100
 #' 
 #' Constraints: Minimum 20, maximum 100.
-#' @param Marker An optional pagination token provided by a previous request. If this
-#' parameter is specified, the response includes only records beyond the
-#' marker, up to the value specified by `MaxRecords`.
-#' @param DefaultOnly Indicates that only the default version of the specified engine or
-#' engine and major version combination is returned.
-#' @param ListSupportedCharacterSets If this parameter is specified and the requested engine supports the
-#' `CharacterSetName` parameter for
-#' [`create_db_instance`][neptune_create_db_instance], the response
-#' includes a list of supported character sets for each engine version.
-#' @param ListSupportedTimezones If this parameter is specified and the requested engine supports the
-#' `TimeZone` parameter for
-#' [`create_db_instance`][neptune_create_db_instance], the response
-#' includes a list of supported time zones for each engine version.
+#' @param Marker An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by `MaxRecords`.
+#' @param DefaultOnly Indicates that only the default version of the specified engine or engine and major version combination is returned.
+#' @param ListSupportedCharacterSets If this parameter is specified and the requested engine supports the `CharacterSetName` parameter for [`create_db_instance`][neptune_create_db_instance], the response includes a list of supported character sets for each engine version.
+#' @param ListSupportedTimezones If this parameter is specified and the requested engine supports the `TimeZone` parameter for [`create_db_instance`][neptune_create_db_instance], the response includes a list of supported time zones for each engine version.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3917,19 +3513,15 @@ neptune_describe_db_engine_versions <- function(Engine = NULL, EngineVersion = N
 #' Returns information about provisioned instances, and supports pagination
 #'
 #' @description
-#' Returns information about provisioned instances, and supports
-#' pagination.
+#' Returns information about provisioned instances, and supports pagination.
 #' 
-#' This operation can also return information for Amazon RDS instances and
-#' Amazon DocDB instances.
+#' This operation can also return information for Amazon RDS instances and Amazon DocDB instances.
 #'
 #' @usage
 #' neptune_describe_db_instances(DBInstanceIdentifier, Filters, MaxRecords,
 #'   Marker)
 #'
-#' @param DBInstanceIdentifier The user-supplied instance identifier. If this parameter is specified,
-#' information from only the specific DB instance is returned. This
-#' parameter isn't case-sensitive.
+#' @param DBInstanceIdentifier The user-supplied instance identifier. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.
 #' 
 #' Constraints:
 #' 
@@ -3938,29 +3530,17 @@ neptune_describe_db_engine_versions <- function(Engine = NULL, EngineVersion = N
 #' 
 #' Supported filters:
 #' 
-#' -   `db-cluster-id` - Accepts DB cluster identifiers and DB cluster
-#'     Amazon Resource Names (ARNs). The results list will only include
-#'     information about the DB instances associated with the DB clusters
-#'     identified by these ARNs.
+#' -   `db-cluster-id` - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB instances associated with the DB clusters identified by these ARNs.
 #' 
-#' -   `engine` - Accepts an engine name (such as `neptune`), and restricts
-#'     the results list to DB instances created by that engine.
+#' -   `engine` - Accepts an engine name (such as `neptune`), and restricts the results list to DB instances created by that engine.
 #' 
-#' For example, to invoke this API from the Amazon CLI and filter so that
-#' only Neptune DB instances are returned, you could use the following
-#' command:
-#' @param MaxRecords The maximum number of records to include in the response. If more
-#' records exist than the specified `MaxRecords` value, a pagination token
-#' called a marker is included in the response so that the remaining
-#' results can be retrieved.
+#' For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB instances are returned, you could use the following command:
+#' @param MaxRecords The maximum number of records to include in the response. If more records exist than the specified `MaxRecords` value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.
 #' 
 #' Default: 100
 #' 
 #' Constraints: Minimum 20, maximum 100.
-#' @param Marker An optional pagination token provided by a previous
-#' [`describe_db_instances`][neptune_describe_db_instances] request. If
-#' this parameter is specified, the response includes only records beyond
-#' the marker, up to the value specified by `MaxRecords`.
+#' @param Marker An optional pagination token provided by a previous [`describe_db_instances`][neptune_describe_db_instances] request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by `MaxRecords`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4156,9 +3736,7 @@ neptune_describe_db_instances <- function(DBInstanceIdentifier = NULL, Filters =
 #' Returns a list of DBParameterGroup descriptions
 #'
 #' @description
-#' Returns a list of `DBParameterGroup` descriptions. If a
-#' `DBParameterGroupName` is specified, the list will contain only the
-#' description of the specified DB parameter group.
+#' Returns a list of `DBParameterGroup` descriptions. If a `DBParameterGroupName` is specified, the list will contain only the description of the specified DB parameter group.
 #'
 #' @usage
 #' neptune_describe_db_parameter_groups(DBParameterGroupName, Filters,
@@ -4168,21 +3746,14 @@ neptune_describe_db_instances <- function(DBInstanceIdentifier = NULL, Filters =
 #' 
 #' Constraints:
 #' 
-#' -   If supplied, must match the name of an existing
-#'     DBClusterParameterGroup.
+#' -   If supplied, must match the name of an existing DBClusterParameterGroup.
 #' @param Filters This parameter is not currently supported.
-#' @param MaxRecords The maximum number of records to include in the response. If more
-#' records exist than the specified `MaxRecords` value, a pagination token
-#' called a marker is included in the response so that the remaining
-#' results can be retrieved.
+#' @param MaxRecords The maximum number of records to include in the response. If more records exist than the specified `MaxRecords` value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.
 #' 
 #' Default: 100
 #' 
 #' Constraints: Minimum 20, maximum 100.
-#' @param Marker An optional pagination token provided by a previous
-#' [`describe_db_parameter_groups`][neptune_describe_db_parameter_groups]
-#' request. If this parameter is specified, the response includes only
-#' records beyond the marker, up to the value specified by `MaxRecords`.
+#' @param Marker An optional pagination token provided by a previous [`describe_db_parameter_groups`][neptune_describe_db_parameter_groups] request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by `MaxRecords`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4261,18 +3832,12 @@ neptune_describe_db_parameter_groups <- function(DBParameterGroupName = NULL, Fi
 #' 
 #' Valid Values: `user | system | engine-default`
 #' @param Filters This parameter is not currently supported.
-#' @param MaxRecords The maximum number of records to include in the response. If more
-#' records exist than the specified `MaxRecords` value, a pagination token
-#' called a marker is included in the response so that the remaining
-#' results can be retrieved.
+#' @param MaxRecords The maximum number of records to include in the response. If more records exist than the specified `MaxRecords` value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.
 #' 
 #' Default: 100
 #' 
 #' Constraints: Minimum 20, maximum 100.
-#' @param Marker An optional pagination token provided by a previous
-#' [`describe_db_parameters`][neptune_describe_db_parameters] request. If
-#' this parameter is specified, the response includes only records beyond
-#' the marker, up to the value specified by `MaxRecords`.
+#' @param Marker An optional pagination token provided by a previous [`describe_db_parameters`][neptune_describe_db_parameters] request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by `MaxRecords`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4341,12 +3906,9 @@ neptune_describe_db_parameters <- function(DBParameterGroupName, Source = NULL, 
 #' Returns a list of DBSubnetGroup descriptions
 #'
 #' @description
-#' Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is
-#' specified, the list will contain only the descriptions of the specified
-#' DBSubnetGroup.
+#' Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified, the list will contain only the descriptions of the specified DBSubnetGroup.
 #' 
-#' For an overview of CIDR ranges, go to the [Wikipedia
-#' Tutorial](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing).
+#' For an overview of CIDR ranges, go to the [Wikipedia Tutorial](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing).
 #'
 #' @usage
 #' neptune_describe_db_subnet_groups(DBSubnetGroupName, Filters,
@@ -4354,18 +3916,12 @@ neptune_describe_db_parameters <- function(DBParameterGroupName, Source = NULL, 
 #'
 #' @param DBSubnetGroupName The name of the DB subnet group to return details for.
 #' @param Filters This parameter is not currently supported.
-#' @param MaxRecords The maximum number of records to include in the response. If more
-#' records exist than the specified `MaxRecords` value, a pagination token
-#' called a marker is included in the response so that the remaining
-#' results can be retrieved.
+#' @param MaxRecords The maximum number of records to include in the response. If more records exist than the specified `MaxRecords` value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.
 #' 
 #' Default: 100
 #' 
 #' Constraints: Minimum 20, maximum 100.
-#' @param Marker An optional pagination token provided by a previous
-#' DescribeDBSubnetGroups request. If this parameter is specified, the
-#' response includes only records beyond the marker, up to the value
-#' specified by `MaxRecords`.
+#' @param Marker An optional pagination token provided by a previous DescribeDBSubnetGroups request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by `MaxRecords`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4438,28 +3994,20 @@ neptune_describe_db_subnet_groups <- function(DBSubnetGroupName = NULL, Filters 
 #' cluster database engine
 #'
 #' @description
-#' Returns the default engine and system parameter information for the
-#' cluster database engine.
+#' Returns the default engine and system parameter information for the cluster database engine.
 #'
 #' @usage
 #' neptune_describe_engine_default_cluster_parameters(
 #'   DBParameterGroupFamily, Filters, MaxRecords, Marker)
 #'
-#' @param DBParameterGroupFamily &#91;required&#93; The name of the DB cluster parameter group family to return engine
-#' parameter information for.
+#' @param DBParameterGroupFamily &#91;required&#93; The name of the DB cluster parameter group family to return engine parameter information for.
 #' @param Filters This parameter is not currently supported.
-#' @param MaxRecords The maximum number of records to include in the response. If more
-#' records exist than the specified `MaxRecords` value, a pagination token
-#' called a marker is included in the response so that the remaining
-#' results can be retrieved.
+#' @param MaxRecords The maximum number of records to include in the response. If more records exist than the specified `MaxRecords` value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.
 #' 
 #' Default: 100
 #' 
 #' Constraints: Minimum 20, maximum 100.
-#' @param Marker An optional pagination token provided by a previous
-#' [`describe_engine_default_cluster_parameters`][neptune_describe_engine_default_cluster_parameters]
-#' request. If this parameter is specified, the response includes only
-#' records beyond the marker, up to the value specified by `MaxRecords`.
+#' @param Marker An optional pagination token provided by a previous [`describe_engine_default_cluster_parameters`][neptune_describe_engine_default_cluster_parameters] request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by `MaxRecords`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4531,8 +4079,7 @@ neptune_describe_engine_default_cluster_parameters <- function(DBParameterGroupF
 #' specified database engine
 #'
 #' @description
-#' Returns the default engine and system parameter information for the
-#' specified database engine.
+#' Returns the default engine and system parameter information for the specified database engine.
 #'
 #' @usage
 #' neptune_describe_engine_default_parameters(DBParameterGroupFamily,
@@ -4540,18 +4087,12 @@ neptune_describe_engine_default_cluster_parameters <- function(DBParameterGroupF
 #'
 #' @param DBParameterGroupFamily &#91;required&#93; The name of the DB parameter group family.
 #' @param Filters Not currently supported.
-#' @param MaxRecords The maximum number of records to include in the response. If more
-#' records exist than the specified `MaxRecords` value, a pagination token
-#' called a marker is included in the response so that the remaining
-#' results can be retrieved.
+#' @param MaxRecords The maximum number of records to include in the response. If more records exist than the specified `MaxRecords` value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.
 #' 
 #' Default: 100
 #' 
 #' Constraints: Minimum 20, maximum 100.
-#' @param Marker An optional pagination token provided by a previous
-#' [`describe_engine_default_parameters`][neptune_describe_engine_default_parameters]
-#' request. If this parameter is specified, the response includes only
-#' records beyond the marker, up to the value specified by `MaxRecords`.
+#' @param Marker An optional pagination token provided by a previous [`describe_engine_default_parameters`][neptune_describe_engine_default_parameters] request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by `MaxRecords`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4623,16 +4164,14 @@ neptune_describe_engine_default_parameters <- function(DBParameterGroupFamily, F
 #' specified, for a specified source type
 #'
 #' @description
-#' Displays a list of categories for all event source types, or, if
-#' specified, for a specified source type.
+#' Displays a list of categories for all event source types, or, if specified, for a specified source type.
 #'
 #' @usage
 #' neptune_describe_event_categories(SourceType, Filters)
 #'
 #' @param SourceType The type of source that is generating the events.
 #' 
-#' Valid values: db-instance | db-parameter-group | db-security-group |
-#' db-snapshot
+#' Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot
 #' @param Filters This parameter is not currently supported.
 #'
 #' @return
@@ -4692,12 +4231,9 @@ neptune_describe_event_categories <- function(SourceType = NULL, Filters = NULL)
 #' Lists all the subscription descriptions for a customer account
 #'
 #' @description
-#' Lists all the subscription descriptions for a customer account. The
-#' description for a subscription includes SubscriptionName, SNSTopicARN,
-#' CustomerID, SourceType, SourceID, CreationTime, and Status.
+#' Lists all the subscription descriptions for a customer account. The description for a subscription includes SubscriptionName, SNSTopicARN, CustomerID, SourceType, SourceID, CreationTime, and Status.
 #' 
-#' If you specify a SubscriptionName, lists the description for that
-#' subscription.
+#' If you specify a SubscriptionName, lists the description for that subscription.
 #'
 #' @usage
 #' neptune_describe_event_subscriptions(SubscriptionName, Filters,
@@ -4705,18 +4241,12 @@ neptune_describe_event_categories <- function(SourceType = NULL, Filters = NULL)
 #'
 #' @param SubscriptionName The name of the event notification subscription you want to describe.
 #' @param Filters This parameter is not currently supported.
-#' @param MaxRecords The maximum number of records to include in the response. If more
-#' records exist than the specified `MaxRecords` value, a pagination token
-#' called a marker is included in the response so that the remaining
-#' results can be retrieved.
+#' @param MaxRecords The maximum number of records to include in the response. If more records exist than the specified `MaxRecords` value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.
 #' 
 #' Default: 100
 #' 
 #' Constraints: Minimum 20, maximum 100.
-#' @param Marker An optional pagination token provided by a previous
-#' DescribeOrderableDBInstanceOptions request. If this parameter is
-#' specified, the response includes only records beyond the marker, up to
-#' the value specified by `MaxRecords` .
+#' @param Marker An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by `MaxRecords` .
 #'
 #' @return
 #' A list with the following syntax:
@@ -4789,65 +4319,45 @@ neptune_describe_event_subscriptions <- function(SubscriptionName = NULL, Filter
 #' snapshots, and DB parameter groups for the past 14 days
 #'
 #' @description
-#' Returns events related to DB instances, DB security groups, DB
-#' snapshots, and DB parameter groups for the past 14 days. Events specific
-#' to a particular DB instance, DB security group, database snapshot, or DB
-#' parameter group can be obtained by providing the name as a parameter. By
-#' default, the past hour of events are returned.
+#' Returns events related to DB instances, DB security groups, DB snapshots, and DB parameter groups for the past 14 days. Events specific to a particular DB instance, DB security group, database snapshot, or DB parameter group can be obtained by providing the name as a parameter. By default, the past hour of events are returned.
 #'
 #' @usage
 #' neptune_describe_events(SourceIdentifier, SourceType, StartTime,
 #'   EndTime, Duration, EventCategories, Filters, MaxRecords, Marker)
 #'
-#' @param SourceIdentifier The identifier of the event source for which events are returned. If not
-#' specified, then all sources are included in the response.
+#' @param SourceIdentifier The identifier of the event source for which events are returned. If not specified, then all sources are included in the response.
 #' 
 #' Constraints:
 #' 
 #' -   If SourceIdentifier is supplied, SourceType must also be provided.
 #' 
-#' -   If the source type is `DBInstance`, then a `DBInstanceIdentifier`
-#'     must be supplied.
+#' -   If the source type is `DBInstance`, then a `DBInstanceIdentifier` must be supplied.
 #' 
-#' -   If the source type is `DBSecurityGroup`, a `DBSecurityGroupName`
-#'     must be supplied.
+#' -   If the source type is `DBSecurityGroup`, a `DBSecurityGroupName` must be supplied.
 #' 
-#' -   If the source type is `DBParameterGroup`, a `DBParameterGroupName`
-#'     must be supplied.
+#' -   If the source type is `DBParameterGroup`, a `DBParameterGroupName` must be supplied.
 #' 
-#' -   If the source type is `DBSnapshot`, a `DBSnapshotIdentifier` must be
-#'     supplied.
+#' -   If the source type is `DBSnapshot`, a `DBSnapshotIdentifier` must be supplied.
 #' 
 #' -   Cannot end with a hyphen or contain two consecutive hyphens.
-#' @param SourceType The event source to retrieve events for. If no value is specified, all
-#' events are returned.
-#' @param StartTime The beginning of the time interval to retrieve events for, specified in
-#' ISO 8601 format. For more information about ISO 8601, go to the [ISO8601
-#' Wikipedia page.](https://en.wikipedia.org/wiki/ISO_8601)
+#' @param SourceType The event source to retrieve events for. If no value is specified, all events are returned.
+#' @param StartTime The beginning of the time interval to retrieve events for, specified in ISO 8601 format. For more information about ISO 8601, go to the [ISO8601 Wikipedia page.](https://en.wikipedia.org/wiki/ISO_8601)
 #' 
 #' Example: 2009-07-08T18:00Z
-#' @param EndTime The end of the time interval for which to retrieve events, specified in
-#' ISO 8601 format. For more information about ISO 8601, go to the [ISO8601
-#' Wikipedia page.](https://en.wikipedia.org/wiki/ISO_8601)
+#' @param EndTime The end of the time interval for which to retrieve events, specified in ISO 8601 format. For more information about ISO 8601, go to the [ISO8601 Wikipedia page.](https://en.wikipedia.org/wiki/ISO_8601)
 #' 
 #' Example: 2009-07-08T18:00Z
 #' @param Duration The number of minutes to retrieve events for.
 #' 
 #' Default: 60
-#' @param EventCategories A list of event categories that trigger notifications for a event
-#' notification subscription.
+#' @param EventCategories A list of event categories that trigger notifications for a event notification subscription.
 #' @param Filters This parameter is not currently supported.
-#' @param MaxRecords The maximum number of records to include in the response. If more
-#' records exist than the specified `MaxRecords` value, a pagination token
-#' called a marker is included in the response so that the remaining
-#' results can be retrieved.
+#' @param MaxRecords The maximum number of records to include in the response. If more records exist than the specified `MaxRecords` value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.
 #' 
 #' Default: 100
 #' 
 #' Constraints: Minimum 20, maximum 100.
-#' @param Marker An optional pagination token provided by a previous DescribeEvents
-#' request. If this parameter is specified, the response includes only
-#' records beyond the marker, up to the value specified by `MaxRecords`.
+#' @param Marker An optional pagination token provided by a previous DescribeEvents request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by `MaxRecords`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4926,30 +4436,21 @@ neptune_describe_events <- function(SourceIdentifier = NULL, SourceType = NULL, 
 #' Returns information about Neptune global database clusters
 #'
 #' @description
-#' Returns information about Neptune global database clusters. This API
-#' supports pagination.
+#' Returns information about Neptune global database clusters. This API supports pagination.
 #'
 #' @usage
 #' neptune_describe_global_clusters(GlobalClusterIdentifier, MaxRecords,
 #'   Marker)
 #'
-#' @param GlobalClusterIdentifier The user-supplied DB cluster identifier. If this parameter is specified,
-#' only information about the specified DB cluster is returned. This
-#' parameter is not case-sensitive.
+#' @param GlobalClusterIdentifier The user-supplied DB cluster identifier. If this parameter is specified, only information about the specified DB cluster is returned. This parameter is not case-sensitive.
 #' 
 #' Constraints: If supplied, must match an existing DB cluster identifier.
-#' @param MaxRecords The maximum number of records to include in the response. If more
-#' records exist than the specified `MaxRecords` value, a pagination marker
-#' token is included in the response that you can use to retrieve the
-#' remaining results.
+#' @param MaxRecords The maximum number of records to include in the response. If more records exist than the specified `MaxRecords` value, a pagination marker token is included in the response that you can use to retrieve the remaining results.
 #' 
 #' Default: `100`
 #' 
 #' Constraints: Minimum 20, maximum 100.
-#' @param Marker (*Optional*) A pagination token returned by a previous call to
-#' [`describe_global_clusters`][neptune_describe_global_clusters]. If this
-#' parameter is specified, the response will only include records beyond
-#' the marker, up to the number specified by `MaxRecords`.
+#' @param Marker (*Optional*) A pagination token returned by a previous call to [`describe_global_clusters`][neptune_describe_global_clusters]. If this parameter is specified, the response will only include records beyond the marker, up to the number specified by `MaxRecords`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4964,6 +4465,7 @@ neptune_describe_events <- function(SourceIdentifier = NULL, SourceType = NULL, 
 #'       Status = "string",
 #'       Engine = "string",
 #'       EngineVersion = "string",
+#'       DatabaseName = "string",
 #'       StorageEncrypted = TRUE|FALSE,
 #'       DeletionProtection = TRUE|FALSE,
 #'       GlobalClusterMembers = list(
@@ -4980,6 +4482,12 @@ neptune_describe_events <- function(SourceIdentifier = NULL, SourceType = NULL, 
 #'         FromDbClusterArn = "string",
 #'         ToDbClusterArn = "string",
 #'         IsDataLossAllowed = TRUE|FALSE
+#'       ),
+#'       TagList = list(
+#'         list(
+#'           Key = "string",
+#'           Value = "string"
+#'         )
 #'       )
 #'     )
 #'   )
@@ -5022,35 +4530,24 @@ neptune_describe_global_clusters <- function(GlobalClusterIdentifier = NULL, Max
 #' Returns a list of orderable DB instance options for the specified engine
 #'
 #' @description
-#' Returns a list of orderable DB instance options for the specified
-#' engine.
+#' Returns a list of orderable DB instance options for the specified engine.
 #'
 #' @usage
 #' neptune_describe_orderable_db_instance_options(Engine, EngineVersion,
 #'   DBInstanceClass, LicenseModel, Vpc, Filters, MaxRecords, Marker)
 #'
 #' @param Engine &#91;required&#93; The name of the engine to retrieve DB instance options for.
-#' @param EngineVersion The engine version filter value. Specify this parameter to show only the
-#' available offerings matching the specified engine version.
-#' @param DBInstanceClass The DB instance class filter value. Specify this parameter to show only
-#' the available offerings matching the specified DB instance class.
-#' @param LicenseModel The license model filter value. Specify this parameter to show only the
-#' available offerings matching the specified license model.
-#' @param Vpc The VPC filter value. Specify this parameter to show only the available
-#' VPC or non-VPC offerings.
+#' @param EngineVersion The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version.
+#' @param DBInstanceClass The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.
+#' @param LicenseModel The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.
+#' @param Vpc The VPC filter value. Specify this parameter to show only the available VPC or non-VPC offerings.
 #' @param Filters This parameter is not currently supported.
-#' @param MaxRecords The maximum number of records to include in the response. If more
-#' records exist than the specified `MaxRecords` value, a pagination token
-#' called a marker is included in the response so that the remaining
-#' results can be retrieved.
+#' @param MaxRecords The maximum number of records to include in the response. If more records exist than the specified `MaxRecords` value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.
 #' 
 #' Default: 100
 #' 
 #' Constraints: Minimum 20, maximum 100.
-#' @param Marker An optional pagination token provided by a previous
-#' DescribeOrderableDBInstanceOptions request. If this parameter is
-#' specified, the response includes only records beyond the marker, up to
-#' the value specified by `MaxRecords` .
+#' @param Marker An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by `MaxRecords` .
 #'
 #' @return
 #' A list with the following syntax:
@@ -5138,36 +4635,22 @@ neptune_describe_orderable_db_instance_options <- function(Engine, EngineVersion
 #' least one pending maintenance action
 #'
 #' @description
-#' Returns a list of resources (for example, DB instances) that have at
-#' least one pending maintenance action.
+#' Returns a list of resources (for example, DB instances) that have at least one pending maintenance action.
 #'
 #' @usage
 #' neptune_describe_pending_maintenance_actions(ResourceIdentifier,
 #'   Filters, Marker, MaxRecords)
 #'
 #' @param ResourceIdentifier The ARN of a resource to return pending maintenance actions for.
-#' @param Filters A filter that specifies one or more resources to return pending
-#' maintenance actions for.
+#' @param Filters A filter that specifies one or more resources to return pending maintenance actions for.
 #' 
 #' Supported filters:
 #' 
-#' -   `db-cluster-id` - Accepts DB cluster identifiers and DB cluster
-#'     Amazon Resource Names (ARNs). The results list will only include
-#'     pending maintenance actions for the DB clusters identified by these
-#'     ARNs.
+#' -   `db-cluster-id` - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include pending maintenance actions for the DB clusters identified by these ARNs.
 #' 
-#' -   `db-instance-id` - Accepts DB instance identifiers and DB instance
-#'     ARNs. The results list will only include pending maintenance actions
-#'     for the DB instances identified by these ARNs.
-#' @param Marker An optional pagination token provided by a previous
-#' [`describe_pending_maintenance_actions`][neptune_describe_pending_maintenance_actions]
-#' request. If this parameter is specified, the response includes only
-#' records beyond the marker, up to a number of records specified by
-#' `MaxRecords`.
-#' @param MaxRecords The maximum number of records to include in the response. If more
-#' records exist than the specified `MaxRecords` value, a pagination token
-#' called a marker is included in the response so that the remaining
-#' results can be retrieved.
+#' -   `db-instance-id` - Accepts DB instance identifiers and DB instance ARNs. The results list will only include pending maintenance actions for the DB instances identified by these ARNs.
+#' @param Marker An optional pagination token provided by a previous [`describe_pending_maintenance_actions`][neptune_describe_pending_maintenance_actions] request. If this parameter is specified, the response includes only records beyond the marker, up to a number of records specified by `MaxRecords`.
+#' @param MaxRecords The maximum number of records to include in the response. If more records exist than the specified `MaxRecords` value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.
 #' 
 #' Default: 100
 #' 
@@ -5247,11 +4730,7 @@ neptune_describe_pending_maintenance_actions <- function(ResourceIdentifier = NU
 #' modifications you can make to your DB instance
 #'
 #' @description
-#' You can call
-#' [`describe_valid_db_instance_modifications`][neptune_describe_valid_db_instance_modifications]
-#' to learn what modifications you can make to your DB instance. You can
-#' use this information when you call
-#' [`modify_db_instance`][neptune_modify_db_instance].
+#' You can call [`describe_valid_db_instance_modifications`][neptune_describe_valid_db_instance_modifications] to learn what modifications you can make to your DB instance. You can use this information when you call [`modify_db_instance`][neptune_modify_db_instance].
 #'
 #' @usage
 #' neptune_describe_valid_db_instance_modifications(DBInstanceIdentifier)
@@ -5328,31 +4807,22 @@ neptune_describe_valid_db_instance_modifications <- function(DBInstanceIdentifie
 #' @description
 #' Forces a failover for a DB cluster.
 #' 
-#' A failover for a DB cluster promotes one of the Read Replicas (read-only
-#' instances) in the DB cluster to be the primary instance (the cluster
-#' writer).
+#' A failover for a DB cluster promotes one of the Read Replicas (read-only instances) in the DB cluster to be the primary instance (the cluster writer).
 #' 
-#' Amazon Neptune will automatically fail over to a Read Replica, if one
-#' exists, when the primary instance fails. You can force a failover when
-#' you want to simulate a failure of a primary instance for testing.
-#' Because each instance in a DB cluster has its own endpoint address, you
-#' will need to clean up and re-establish any existing connections that use
-#' those endpoint addresses when the failover is complete.
+#' Amazon Neptune will automatically fail over to a Read Replica, if one exists, when the primary instance fails. You can force a failover when you want to simulate a failure of a primary instance for testing. Because each instance in a DB cluster has its own endpoint address, you will need to clean up and re-establish any existing connections that use those endpoint addresses when the failover is complete.
 #'
 #' @usage
 #' neptune_failover_db_cluster(DBClusterIdentifier,
 #'   TargetDBInstanceIdentifier)
 #'
-#' @param DBClusterIdentifier A DB cluster identifier to force a failover for. This parameter is not
-#' case-sensitive.
+#' @param DBClusterIdentifier A DB cluster identifier to force a failover for. This parameter is not case-sensitive.
 #' 
 #' Constraints:
 #' 
 #' -   Must match the identifier of an existing DBCluster.
 #' @param TargetDBInstanceIdentifier The name of the instance to promote to the primary instance.
 #' 
-#' You must specify the instance identifier for an Read Replica in the DB
-#' cluster. For example, `mydbcluster-replica1`.
+#' You must specify the instance identifier for an Read Replica in the DB cluster. For example, `mydbcluster-replica1`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5503,43 +4973,26 @@ neptune_failover_db_cluster <- function(DBClusterIdentifier = NULL, TargetDBInst
 #' @description
 #' Initiates the failover process for a Neptune global database.
 #' 
-#' A failover for a Neptune global database promotes one of secondary
-#' read-only DB clusters to be the primary DB cluster and demotes the
-#' primary DB cluster to being a secondary (read-only) DB cluster. In other
-#' words, the role of the current primary DB cluster and the selected
-#' target secondary DB cluster are switched. The selected secondary DB
-#' cluster assumes full read/write capabilities for the Neptune global
-#' database.
+#' A failover for a Neptune global database promotes one of secondary read-only DB clusters to be the primary DB cluster and demotes the primary DB cluster to being a secondary (read-only) DB cluster. In other words, the role of the current primary DB cluster and the selected target secondary DB cluster are switched. The selected secondary DB cluster assumes full read/write capabilities for the Neptune global database.
 #' 
-#' This action applies **only** to Neptune global databases. This action is
-#' only intended for use on healthy Neptune global databases with healthy
-#' Neptune DB clusters and no region-wide outages, to test disaster
-#' recovery scenarios or to reconfigure the global database topology.
+#' This action applies **only** to Neptune global databases. This action is only intended for use on healthy Neptune global databases with healthy Neptune DB clusters and no region-wide outages, to test disaster recovery scenarios or to reconfigure the global database topology.
 #'
 #' @usage
 #' neptune_failover_global_cluster(GlobalClusterIdentifier,
 #'   TargetDbClusterIdentifier, AllowDataLoss, Switchover)
 #'
-#' @param GlobalClusterIdentifier &#91;required&#93; Identifier of the Neptune global database that should be failed over.
-#' The identifier is the unique key assigned by the user when the Neptune
-#' global database was created. In other words, it's the name of the global
-#' database that you want to fail over.
+#' @param GlobalClusterIdentifier &#91;required&#93; Identifier of the Neptune global database that should be failed over. The identifier is the unique key assigned by the user when the Neptune global database was created. In other words, it's the name of the global database that you want to fail over.
 #' 
-#' Constraints: Must match the identifier of an existing Neptune global
-#' database.
-#' @param TargetDbClusterIdentifier &#91;required&#93; The Amazon Resource Name (ARN) of the secondary Neptune DB cluster that
-#' you want to promote to primary for the global database.
-#' @param AllowDataLoss Specifies whether to allow data loss for this global database cluster
-#' operation. Allowing data loss triggers a global failover operation.
+#' Constraints: Must match the identifier of an existing Neptune global database.
+#' @param TargetDbClusterIdentifier &#91;required&#93; The Amazon Resource Name (ARN) of the secondary Neptune DB cluster that you want to promote to primary for the global database.
+#' @param AllowDataLoss Specifies whether to allow data loss for this global database cluster operation. Allowing data loss triggers a global failover operation.
 #' 
-#' If you don't specify `AllowDataLoss`, the global database cluster
-#' operation defaults to a switchover.
+#' If you don't specify `AllowDataLoss`, the global database cluster operation defaults to a switchover.
 #' 
-#' Constraints:Can't be specified together with the `Switchover` parameter.
+#' Constraints: Can't be specified together with the `Switchover` parameter.
 #' @param Switchover Specifies whether to switch over this global database cluster.
 #' 
-#' Constraints:Can't be specified together with the `AllowDataLoss`
-#' parameter.
+#' Constraints: Can't be specified together with the `AllowDataLoss` parameter.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5552,6 +5005,7 @@ neptune_failover_db_cluster <- function(DBClusterIdentifier = NULL, TargetDBInst
 #'     Status = "string",
 #'     Engine = "string",
 #'     EngineVersion = "string",
+#'     DatabaseName = "string",
 #'     StorageEncrypted = TRUE|FALSE,
 #'     DeletionProtection = TRUE|FALSE,
 #'     GlobalClusterMembers = list(
@@ -5568,6 +5022,12 @@ neptune_failover_db_cluster <- function(DBClusterIdentifier = NULL, TargetDBInst
 #'       FromDbClusterArn = "string",
 #'       ToDbClusterArn = "string",
 #'       IsDataLossAllowed = TRUE|FALSE
+#'     ),
+#'     TagList = list(
+#'       list(
+#'         Key = "string",
+#'         Value = "string"
+#'       )
 #'     )
 #'   )
 #' )
@@ -5615,10 +5075,7 @@ neptune_failover_global_cluster <- function(GlobalClusterIdentifier, TargetDbClu
 #' @usage
 #' neptune_list_tags_for_resource(ResourceName, Filters)
 #'
-#' @param ResourceName &#91;required&#93; The Amazon Neptune resource with tags to be listed. This value is an
-#' Amazon Resource Name (ARN). For information about creating an ARN, see
-#' [Constructing an Amazon Resource Name
-#' (ARN)](https://docs.aws.amazon.com/neptune/latest/userguide/#tagging.ARN.Constructing).
+#' @param ResourceName &#91;required&#93; The Amazon Neptune resource with tags to be listed. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see [Constructing an Amazon Resource Name (ARN)](https://docs.aws.amazon.com/neptune/latest/userguide/#tagging.ARN.Constructing).
 #' @param Filters This parameter is not currently supported.
 #'
 #' @return
@@ -5676,9 +5133,7 @@ neptune_list_tags_for_resource <- function(ResourceName, Filters = NULL) {
 #' Modify a setting for a DB cluster
 #'
 #' @description
-#' Modify a setting for a DB cluster. You can change one or more database
-#' configuration parameters by specifying these parameters and the new
-#' values in the request.
+#' Modify a setting for a DB cluster. You can change one or more database configuration parameters by specifying these parameters and the new values in the request.
 #'
 #' @usage
 #' neptune_modify_db_cluster(DBClusterIdentifier, NewDBClusterIdentifier,
@@ -5690,14 +5145,12 @@ neptune_list_tags_for_resource <- function(ResourceName, Filters = NULL) {
 #'   DeletionProtection, CopyTagsToSnapshot,
 #'   ServerlessV2ScalingConfiguration, StorageType)
 #'
-#' @param DBClusterIdentifier &#91;required&#93; The DB cluster identifier for the cluster being modified. This parameter
-#' is not case-sensitive.
+#' @param DBClusterIdentifier &#91;required&#93; The DB cluster identifier for the cluster being modified. This parameter is not case-sensitive.
 #' 
 #' Constraints:
 #' 
 #' -   Must match the identifier of an existing DBCluster.
-#' @param NewDBClusterIdentifier The new DB cluster identifier for the DB cluster when renaming a DB
-#' cluster. This value is stored as a lowercase string.
+#' @param NewDBClusterIdentifier The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase string.
 #' 
 #' Constraints:
 #' 
@@ -5708,21 +5161,12 @@ neptune_list_tags_for_resource <- function(ResourceName, Filters = NULL) {
 #' -   Cannot end with a hyphen or contain two consecutive hyphens
 #' 
 #' Example: `my-cluster2`
-#' @param ApplyImmediately A value that specifies whether the modifications in this request and any
-#' pending modifications are asynchronously applied as soon as possible,
-#' regardless of the `PreferredMaintenanceWindow` setting for the DB
-#' cluster. If this parameter is set to `false`, changes to the DB cluster
-#' are applied during the next maintenance window.
+#' @param ApplyImmediately A value that specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the `PreferredMaintenanceWindow` setting for the DB cluster. If this parameter is set to `false`, changes to the DB cluster are applied during the next maintenance window.
 #' 
-#' The `ApplyImmediately` parameter only affects `NewDBClusterIdentifier`
-#' values. If you set the `ApplyImmediately` parameter value to false, then
-#' changes to `NewDBClusterIdentifier` values are applied during the next
-#' maintenance window. All other changes are applied immediately,
-#' regardless of the value of the `ApplyImmediately` parameter.
+#' The `ApplyImmediately` parameter only affects `NewDBClusterIdentifier` values. If you set the `ApplyImmediately` parameter value to false, then changes to `NewDBClusterIdentifier` values are applied during the next maintenance window. All other changes are applied immediately, regardless of the value of the `ApplyImmediately` parameter.
 #' 
 #' Default: `false`
-#' @param BackupRetentionPeriod The number of days for which automated backups are retained. You must
-#' specify a minimum value of 1.
+#' @param BackupRetentionPeriod The number of days for which automated backups are retained. You must specify a minimum value of 1.
 #' 
 #' Default: 1
 #' 
@@ -5738,12 +5182,9 @@ neptune_list_tags_for_resource <- function(ResourceName, Filters = NULL) {
 #' Default: The same port as the original DB cluster.
 #' @param MasterUserPassword Not supported by Neptune.
 #' @param OptionGroupName *Not supported by Neptune.*
-#' @param PreferredBackupWindow The daily time range during which automated backups are created if
-#' automated backups are enabled, using the `BackupRetentionPeriod`
-#' parameter.
+#' @param PreferredBackupWindow The daily time range during which automated backups are created if automated backups are enabled, using the `BackupRetentionPeriod` parameter.
 #' 
-#' The default is a 30-minute window selected at random from an 8-hour
-#' block of time for each Amazon Region.
+#' The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region.
 #' 
 #' Constraints:
 #' 
@@ -5754,82 +5195,50 @@ neptune_list_tags_for_resource <- function(ResourceName, Filters = NULL) {
 #' -   Must not conflict with the preferred maintenance window.
 #' 
 #' -   Must be at least 30 minutes.
-#' @param PreferredMaintenanceWindow The weekly time range during which system maintenance can occur, in
-#' Universal Coordinated Time (UTC).
+#' @param PreferredMaintenanceWindow The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).
 #' 
 #' Format: `ddd:hh24:mi-ddd:hh24:mi`
 #' 
-#' The default is a 30-minute window selected at random from an 8-hour
-#' block of time for each Amazon Region, occurring on a random day of the
-#' week.
+#' The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week.
 #' 
 #' Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
 #' 
 #' Constraints: Minimum 30-minute window.
-#' @param EnableIAMDatabaseAuthentication True to enable mapping of Amazon Identity and Access Management (IAM)
-#' accounts to database accounts, and otherwise false.
+#' @param EnableIAMDatabaseAuthentication True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.
 #' 
 #' Default: `false`
-#' @param CloudwatchLogsExportConfiguration The configuration setting for the log types to be enabled for export to
-#' CloudWatch Logs for a specific DB cluster. See [Using the CLI to publish
-#' Neptune audit logs to CloudWatch
-#' Logs](https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli).
-#' @param EngineVersion The version number of the database engine to which you want to upgrade.
-#' Changing this parameter results in an outage. The change is applied
-#' during the next maintenance window unless the `ApplyImmediately`
-#' parameter is set to true.
+#' @param CloudwatchLogsExportConfiguration The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster. See [Using the CLI to publish Neptune audit logs to CloudWatch Logs](https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli).
+#' @param EngineVersion The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless the `ApplyImmediately` parameter is set to true.
 #' 
-#' For a list of valid engine versions, see [Engine Releases for Amazon
-#' Neptune](https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html),
-#' or call
-#' [`describe_db_engine_versions`][neptune_describe_db_engine_versions].
-#' @param AllowMajorVersionUpgrade A value that indicates whether upgrades between different major versions
-#' are allowed.
+#' For a list of valid engine versions, see [Engine Releases for Amazon Neptune](https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html), or call [`describe_db_engine_versions`][neptune_describe_db_engine_versions].
+#' @param AllowMajorVersionUpgrade A value that indicates whether upgrades between different major versions are allowed.
 #' 
-#' Constraints: You must set the allow-major-version-upgrade flag when
-#' providing an `EngineVersion` parameter that uses a different major
-#' version than the DB cluster's current version.
-#' @param DBInstanceParameterGroupName The name of the DB parameter group to apply to all instances of the DB
-#' cluster.
+#' Constraints: You must set the allow-major-version-upgrade flag when providing an `EngineVersion` parameter that uses a different major version than the DB cluster's current version.
+#' @param DBInstanceParameterGroupName The name of the DB parameter group to apply to all instances of the DB cluster.
 #' 
-#' When you apply a parameter group using `DBInstanceParameterGroupName`,
-#' parameter changes aren't applied during the next maintenance window but
-#' instead are applied immediately.
+#' When you apply a parameter group using `DBInstanceParameterGroupName`, parameter changes aren't applied during the next maintenance window but instead are applied immediately.
 #' 
 #' Default: The existing name setting
 #' 
 #' Constraints:
 #' 
-#' -   The DB parameter group must be in the same DB parameter group family
-#'     as the target DB cluster version.
+#' -   The DB parameter group must be in the same DB parameter group family as the target DB cluster version.
 #' 
-#' -   The `DBInstanceParameterGroupName` parameter is only valid in
-#'     combination with the `AllowMajorVersionUpgrade` parameter.
-#' @param DeletionProtection A value that indicates whether the DB cluster has deletion protection
-#' enabled. The database can't be deleted when deletion protection is
-#' enabled. By default, deletion protection is disabled.
-#' @param CopyTagsToSnapshot *If set to true, tags are copied to any snapshot of the DB cluster that
-#' is created.*
+#' -   The `DBInstanceParameterGroupName` parameter is only valid in combination with the `AllowMajorVersionUpgrade` parameter.
+#' @param DeletionProtection A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled.
+#' @param CopyTagsToSnapshot *If set to true, tags are copied to any snapshot of the DB cluster that is created.*
 #' @param ServerlessV2ScalingConfiguration Contains the scaling configuration of a Neptune Serverless DB cluster.
 #' 
-#' For more information, see [Using Amazon Neptune
-#' Serverless](https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html)
-#' in the *Amazon Neptune User Guide*.
+#' For more information, see [Using Amazon Neptune Serverless](https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html) in the *Amazon Neptune User Guide*.
 #' @param StorageType The storage type to associate with the DB cluster.
 #' 
 #' Valid Values:
 #' 
-#' -   **`standard`**   –   ( *the default* ) Configures cost-effective
-#'     database storage for applications with moderate to small I/O usage.
+#' -   **`standard`**   –   ( *the default* ) Configures cost-effective database storage for applications with moderate to small I/O usage.
 #' 
-#' -   **`iopt1`**   –   Enables [I/O-Optimized
-#'     storage](https://docs.aws.amazon.com/neptune/latest/userguide/storage-types.html#provisioned-iops-storage)
-#'     that's designed to meet the needs of I/O-intensive graph workloads
-#'     that require predictable pricing with low I/O latency and consistent
-#'     I/O throughput.
+#' -   **`iopt1`**   –   Enables [I/O-Optimized storage](https://docs.aws.amazon.com/neptune/latest/userguide/storage-types.html#provisioned-iops-storage) that's designed to meet the needs of I/O-intensive graph workloads that require predictable pricing with low I/O latency and consistent I/O throughput.
 #' 
-#'     Neptune I/O-Optimized storage is only available starting with engine
-#'     release 1.3.0.0.
+#'     Neptune I/O-Optimized storage is only available starting with engine release 1.3.0.0.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6014,14 +5423,10 @@ neptune_modify_db_cluster <- function(DBClusterIdentifier, NewDBClusterIdentifie
 #' neptune_modify_db_cluster_endpoint(DBClusterEndpointIdentifier,
 #'   EndpointType, StaticMembers, ExcludedMembers)
 #'
-#' @param DBClusterEndpointIdentifier &#91;required&#93; The identifier of the endpoint to modify. This parameter is stored as a
-#' lowercase string.
+#' @param DBClusterEndpointIdentifier &#91;required&#93; The identifier of the endpoint to modify. This parameter is stored as a lowercase string.
 #' @param EndpointType The type of the endpoint. One of: `READER`, `WRITER`, `ANY`.
-#' @param StaticMembers List of DB instance identifiers that are part of the custom endpoint
-#' group.
-#' @param ExcludedMembers List of DB instance identifiers that aren't part of the custom endpoint
-#' group. All other eligible instances are reachable through the custom
-#' endpoint. Only relevant if the list of static members is empty.
+#' @param StaticMembers List of DB instance identifiers that are part of the custom endpoint group.
+#' @param ExcludedMembers List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6085,27 +5490,11 @@ neptune_modify_db_cluster_endpoint <- function(DBClusterEndpointIdentifier, Endp
 #' Modifies the parameters of a DB cluster parameter group
 #'
 #' @description
-#' Modifies the parameters of a DB cluster parameter group. To modify more
-#' than one parameter, submit a list of the following: `ParameterName`,
-#' `ParameterValue`, and `ApplyMethod`. A maximum of 20 parameters can be
-#' modified in a single request.
+#' Modifies the parameters of a DB cluster parameter group. To modify more than one parameter, submit a list of the following: `ParameterName`, `ParameterValue`, and `ApplyMethod`. A maximum of 20 parameters can be modified in a single request.
 #' 
-#' Changes to dynamic parameters are applied immediately. Changes to static
-#' parameters require a reboot without failover to the DB cluster
-#' associated with the parameter group before the change can take effect.
+#' Changes to dynamic parameters are applied immediately. Changes to static parameters require a reboot without failover to the DB cluster associated with the parameter group before the change can take effect.
 #' 
-#' After you create a DB cluster parameter group, you should wait at least
-#' 5 minutes before creating your first DB cluster that uses that DB
-#' cluster parameter group as the default parameter group. This allows
-#' Amazon Neptune to fully complete the create action before the parameter
-#' group is used as the default for a new DB cluster. This is especially
-#' important for parameters that are critical when creating the default
-#' database for a DB cluster, such as the character set for the default
-#' database defined by the `character_set_database` parameter. You can use
-#' the *Parameter Groups* option of the Amazon Neptune console or the
-#' [`describe_db_cluster_parameters`][neptune_describe_db_cluster_parameters]
-#' command to verify that your DB cluster parameter group has been created
-#' or modified.
+#' After you create a DB cluster parameter group, you should wait at least 5 minutes before creating your first DB cluster that uses that DB cluster parameter group as the default parameter group. This allows Amazon Neptune to fully complete the create action before the parameter group is used as the default for a new DB cluster. This is especially important for parameters that are critical when creating the default database for a DB cluster, such as the character set for the default database defined by the `character_set_database` parameter. You can use the *Parameter Groups* option of the Amazon Neptune console or the [`describe_db_cluster_parameters`][neptune_describe_db_cluster_parameters] command to verify that your DB cluster parameter group has been created or modified.
 #'
 #' @usage
 #' neptune_modify_db_cluster_parameter_group(DBClusterParameterGroupName,
@@ -6171,27 +5560,11 @@ neptune_modify_db_cluster_parameter_group <- function(DBClusterParameterGroupNam
 #' from, a manual DB cluster snapshot
 #'
 #' @description
-#' Adds an attribute and values to, or removes an attribute and values
-#' from, a manual DB cluster snapshot.
+#' Adds an attribute and values to, or removes an attribute and values from, a manual DB cluster snapshot.
 #' 
-#' To share a manual DB cluster snapshot with other Amazon accounts,
-#' specify `restore` as the `AttributeName` and use the `ValuesToAdd`
-#' parameter to add a list of IDs of the Amazon accounts that are
-#' authorized to restore the manual DB cluster snapshot. Use the value
-#' `all` to make the manual DB cluster snapshot public, which means that it
-#' can be copied or restored by all Amazon accounts. Do not add the `all`
-#' value for any manual DB cluster snapshots that contain private
-#' information that you don't want available to all Amazon accounts. If a
-#' manual DB cluster snapshot is encrypted, it can be shared, but only by
-#' specifying a list of authorized Amazon account IDs for the `ValuesToAdd`
-#' parameter. You can't use `all` as a value for that parameter in this
-#' case.
+#' To share a manual DB cluster snapshot with other Amazon accounts, specify `restore` as the `AttributeName` and use the `ValuesToAdd` parameter to add a list of IDs of the Amazon accounts that are authorized to restore the manual DB cluster snapshot. Use the value `all` to make the manual DB cluster snapshot public, which means that it can be copied or restored by all Amazon accounts. Do not add the `all` value for any manual DB cluster snapshots that contain private information that you don't want available to all Amazon accounts. If a manual DB cluster snapshot is encrypted, it can be shared, but only by specifying a list of authorized Amazon account IDs for the `ValuesToAdd` parameter. You can't use `all` as a value for that parameter in this case.
 #' 
-#' To view which Amazon accounts have access to copy or restore a manual DB
-#' cluster snapshot, or whether a manual DB cluster snapshot public or
-#' private, use the
-#' [`describe_db_cluster_snapshot_attributes`][neptune_describe_db_cluster_snapshot_attributes]
-#' API action.
+#' To view which Amazon accounts have access to copy or restore a manual DB cluster snapshot, or whether a manual DB cluster snapshot public or private, use the [`describe_db_cluster_snapshot_attributes`][neptune_describe_db_cluster_snapshot_attributes] API action.
 #'
 #' @usage
 #' neptune_modify_db_cluster_snapshot_attribute(
@@ -6200,27 +5573,13 @@ neptune_modify_db_cluster_parameter_group <- function(DBClusterParameterGroupNam
 #' @param DBClusterSnapshotIdentifier &#91;required&#93; The identifier for the DB cluster snapshot to modify the attributes for.
 #' @param AttributeName &#91;required&#93; The name of the DB cluster snapshot attribute to modify.
 #' 
-#' To manage authorization for other Amazon accounts to copy or restore a
-#' manual DB cluster snapshot, set this value to `restore`.
-#' @param ValuesToAdd A list of DB cluster snapshot attributes to add to the attribute
-#' specified by `AttributeName`.
+#' To manage authorization for other Amazon accounts to copy or restore a manual DB cluster snapshot, set this value to `restore`.
+#' @param ValuesToAdd A list of DB cluster snapshot attributes to add to the attribute specified by `AttributeName`.
 #' 
-#' To authorize other Amazon accounts to copy or restore a manual DB
-#' cluster snapshot, set this list to include one or more Amazon account
-#' IDs, or `all` to make the manual DB cluster snapshot restorable by any
-#' Amazon account. Do not add the `all` value for any manual DB cluster
-#' snapshots that contain private information that you don't want available
-#' to all Amazon accounts.
-#' @param ValuesToRemove A list of DB cluster snapshot attributes to remove from the attribute
-#' specified by `AttributeName`.
+#' To authorize other Amazon accounts to copy or restore a manual DB cluster snapshot, set this list to include one or more Amazon account IDs, or `all` to make the manual DB cluster snapshot restorable by any Amazon account. Do not add the `all` value for any manual DB cluster snapshots that contain private information that you don't want available to all Amazon accounts.
+#' @param ValuesToRemove A list of DB cluster snapshot attributes to remove from the attribute specified by `AttributeName`.
 #' 
-#' To remove authorization for other Amazon accounts to copy or restore a
-#' manual DB cluster snapshot, set this list to include one or more Amazon
-#' account identifiers, or `all` to remove authorization for any Amazon
-#' account to copy or restore the DB cluster snapshot. If you specify
-#' `all`, an Amazon account whose account ID is explicitly added to the
-#' `restore` attribute can still copy or restore a manual DB cluster
-#' snapshot.
+#' To remove authorization for other Amazon accounts to copy or restore a manual DB cluster snapshot, set this list to include one or more Amazon account identifiers, or `all` to remove authorization for any Amazon account to copy or restore the DB cluster snapshot. If you specify `all`, an Amazon account whose account ID is explicitly added to the `restore` attribute can still copy or restore a manual DB cluster snapshot.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6281,12 +5640,7 @@ neptune_modify_db_cluster_snapshot_attribute <- function(DBClusterSnapshotIdenti
 #' Modifies settings for a DB instance
 #'
 #' @description
-#' Modifies settings for a DB instance. You can change one or more database
-#' configuration parameters by specifying these parameters and the new
-#' values in the request. To learn what modifications you can make to your
-#' DB instance, call
-#' [`describe_valid_db_instance_modifications`][neptune_describe_valid_db_instance_modifications]
-#' before you call [`modify_db_instance`][neptune_modify_db_instance].
+#' Modifies settings for a DB instance. You can change one or more database configuration parameters by specifying these parameters and the new values in the request. To learn what modifications you can make to your DB instance, call [`describe_valid_db_instance_modifications`][neptune_describe_valid_db_instance_modifications] before you call [`modify_db_instance`][neptune_modify_db_instance].
 #'
 #' @usage
 #' neptune_modify_db_instance(DBInstanceIdentifier, AllocatedStorage,
@@ -6309,77 +5663,47 @@ neptune_modify_db_cluster_snapshot_attribute <- function(DBClusterSnapshotIdenti
 #' 
 #' -   Must match the identifier of an existing DBInstance.
 #' @param AllocatedStorage Not supported by Neptune.
-#' @param DBInstanceClass The new compute and memory capacity of the DB instance, for example,
-#' `db.m4.large`. Not all DB instance classes are available in all Amazon
-#' Regions.
+#' @param DBInstanceClass The new compute and memory capacity of the DB instance, for example, `db.m4.large`. Not all DB instance classes are available in all Amazon Regions.
 #' 
-#' If you modify the DB instance class, an outage occurs during the change.
-#' The change is applied during the next maintenance window, unless
-#' `ApplyImmediately` is specified as `true` for this request.
+#' If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless `ApplyImmediately` is specified as `true` for this request.
 #' 
 #' Default: Uses existing setting
-#' @param DBSubnetGroupName The new DB subnet group for the DB instance. You can use this parameter
-#' to move your DB instance to a different VPC.
+#' @param DBSubnetGroupName The new DB subnet group for the DB instance. You can use this parameter to move your DB instance to a different VPC.
 #' 
-#' Changing the subnet group causes an outage during the change. The change
-#' is applied during the next maintenance window, unless you specify `true`
-#' for the `ApplyImmediately` parameter.
+#' Changing the subnet group causes an outage during the change. The change is applied during the next maintenance window, unless you specify `true` for the `ApplyImmediately` parameter.
 #' 
-#' Constraints: If supplied, must match the name of an existing
-#' DBSubnetGroup.
+#' Constraints: If supplied, must match the name of an existing DBSubnetGroup.
 #' 
 #' Example: `mySubnetGroup`
-#' @param DBSecurityGroups A list of DB security groups to authorize on this DB instance. Changing
-#' this setting doesn't result in an outage and the change is
-#' asynchronously applied as soon as possible.
+#' @param DBSecurityGroups A list of DB security groups to authorize on this DB instance. Changing this setting doesn't result in an outage and the change is asynchronously applied as soon as possible.
 #' 
 #' Constraints:
 #' 
 #' -   If supplied, must match existing DBSecurityGroups.
-#' @param VpcSecurityGroupIds A list of EC2 VPC security groups to authorize on this DB instance. This
-#' change is asynchronously applied as soon as possible.
+#' @param VpcSecurityGroupIds A list of EC2 VPC security groups to authorize on this DB instance. This change is asynchronously applied as soon as possible.
 #' 
-#' Not applicable. The associated list of EC2 VPC security groups is
-#' managed by the DB cluster. For more information, see
-#' [`modify_db_cluster`][neptune_modify_db_cluster].
+#' Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see [`modify_db_cluster`][neptune_modify_db_cluster].
 #' 
 #' Constraints:
 #' 
 #' -   If supplied, must match existing VpcSecurityGroupIds.
-#' @param ApplyImmediately Specifies whether the modifications in this request and any pending
-#' modifications are asynchronously applied as soon as possible, regardless
-#' of the `PreferredMaintenanceWindow` setting for the DB instance.
+#' @param ApplyImmediately Specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the `PreferredMaintenanceWindow` setting for the DB instance.
 #' 
-#' If this parameter is set to `false`, changes to the DB instance are
-#' applied during the next maintenance window. Some parameter changes can
-#' cause an outage and are applied on the next call to
-#' [`reboot_db_instance`][neptune_reboot_db_instance], or the next failure
-#' reboot.
+#' If this parameter is set to `false`, changes to the DB instance are applied during the next maintenance window. Some parameter changes can cause an outage and are applied on the next call to [`reboot_db_instance`][neptune_reboot_db_instance], or the next failure reboot.
 #' 
 #' Default: `false`
 #' @param MasterUserPassword Not supported by Neptune.
-#' @param DBParameterGroupName The name of the DB parameter group to apply to the DB instance. Changing
-#' this setting doesn't result in an outage. The parameter group name
-#' itself is changed immediately, but the actual parameter changes are not
-#' applied until you reboot the instance without failover. The db instance
-#' will NOT be rebooted automatically and the parameter changes will NOT be
-#' applied during the next maintenance window.
+#' @param DBParameterGroupName The name of the DB parameter group to apply to the DB instance. Changing this setting doesn't result in an outage. The parameter group name itself is changed immediately, but the actual parameter changes are not applied until you reboot the instance without failover. The db instance will NOT be rebooted automatically and the parameter changes will NOT be applied during the next maintenance window.
 #' 
 #' Default: Uses existing setting
 #' 
-#' Constraints: The DB parameter group must be in the same DB parameter
-#' group family as this DB instance.
-#' @param BackupRetentionPeriod Not applicable. The retention period for automated backups is managed by
-#' the DB cluster. For more information, see
-#' [`modify_db_cluster`][neptune_modify_db_cluster].
+#' Constraints: The DB parameter group must be in the same DB parameter group family as this DB instance.
+#' @param BackupRetentionPeriod Not applicable. The retention period for automated backups is managed by the DB cluster. For more information, see [`modify_db_cluster`][neptune_modify_db_cluster].
 #' 
 #' Default: Uses existing setting
-#' @param PreferredBackupWindow The daily time range during which automated backups are created if
-#' automated backups are enabled.
+#' @param PreferredBackupWindow The daily time range during which automated backups are created if automated backups are enabled.
 #' 
-#' Not applicable. The daily time range for creating automated backups is
-#' managed by the DB cluster. For more information, see
-#' [`modify_db_cluster`][neptune_modify_db_cluster].
+#' Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more information, see [`modify_db_cluster`][neptune_modify_db_cluster].
 #' 
 #' Constraints:
 #' 
@@ -6390,15 +5714,7 @@ neptune_modify_db_cluster_snapshot_attribute <- function(DBClusterSnapshotIdenti
 #' -   Must not conflict with the preferred maintenance window
 #' 
 #' -   Must be at least 30 minutes
-#' @param PreferredMaintenanceWindow The weekly time range (in UTC) during which system maintenance can
-#' occur, which might result in an outage. Changing this parameter doesn't
-#' result in an outage, except in the following situation, and the change
-#' is asynchronously applied as soon as possible. If there are pending
-#' actions that cause a reboot, and the maintenance window is changed to
-#' include the current time, then changing this parameter will cause a
-#' reboot of the DB instance. If moving this window to the current time,
-#' there must be at least 30 minutes between the current time and end of
-#' the window to ensure pending changes are applied.
+#' @param PreferredMaintenanceWindow The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter doesn't result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If there are pending actions that cause a reboot, and the maintenance window is changed to include the current time, then changing this parameter will cause a reboot of the DB instance. If moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.
 #' 
 #' Default: Uses existing setting
 #' 
@@ -6407,40 +5723,18 @@ neptune_modify_db_cluster_snapshot_attribute <- function(DBClusterSnapshotIdenti
 #' Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun
 #' 
 #' Constraints: Must be at least 30 minutes
-#' @param MultiAZ Specifies if the DB instance is a Multi-AZ deployment. Changing this
-#' parameter doesn't result in an outage and the change is applied during
-#' the next maintenance window unless the `ApplyImmediately` parameter is
-#' set to `true` for this request.
-#' @param EngineVersion The version number of the database engine to upgrade to. Currently,
-#' setting this parameter has no effect. To upgrade your database engine to
-#' the most recent release, use the
-#' [`apply_pending_maintenance_action`][neptune_apply_pending_maintenance_action]
-#' API.
-#' @param AllowMajorVersionUpgrade Indicates that major version upgrades are allowed. Changing this
-#' parameter doesn't result in an outage and the change is asynchronously
-#' applied as soon as possible.
-#' @param AutoMinorVersionUpgrade Indicates that minor version upgrades are applied automatically to the
-#' DB instance during the maintenance window. Changing this parameter
-#' doesn't result in an outage except in the following case and the change
-#' is asynchronously applied as soon as possible. An outage will result if
-#' this parameter is set to `true` during the maintenance window, and a
-#' newer minor version is available, and Neptune has enabled auto patching
-#' for that engine version.
+#' @param MultiAZ Specifies if the DB instance is a Multi-AZ deployment. Changing this parameter doesn't result in an outage and the change is applied during the next maintenance window unless the `ApplyImmediately` parameter is set to `true` for this request.
+#' @param EngineVersion The version number of the database engine to upgrade to. Currently, setting this parameter has no effect. To upgrade your database engine to the most recent release, use the [`apply_pending_maintenance_action`][neptune_apply_pending_maintenance_action] API.
+#' @param AllowMajorVersionUpgrade Indicates that major version upgrades are allowed. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible.
+#' @param AutoMinorVersionUpgrade Indicates that minor version upgrades are applied automatically to the DB instance during the maintenance window. Changing this parameter doesn't result in an outage except in the following case and the change is asynchronously applied as soon as possible. An outage will result if this parameter is set to `true` during the maintenance window, and a newer minor version is available, and Neptune has enabled auto patching for that engine version.
 #' @param LicenseModel Not supported by Neptune.
-#' @param Iops The new Provisioned IOPS (I/O operations per second) value for the
-#' instance.
+#' @param Iops The new Provisioned IOPS (I/O operations per second) value for the instance.
 #' 
-#' Changing this setting doesn't result in an outage and the change is
-#' applied during the next maintenance window unless the `ApplyImmediately`
-#' parameter is set to `true` for this request.
+#' Changing this setting doesn't result in an outage and the change is applied during the next maintenance window unless the `ApplyImmediately` parameter is set to `true` for this request.
 #' 
 #' Default: Uses existing setting
 #' @param OptionGroupName *(Not supported by Neptune)*
-#' @param NewDBInstanceIdentifier The new DB instance identifier for the DB instance when renaming a DB
-#' instance. When you change the DB instance identifier, an instance reboot
-#' will occur immediately if you set `Apply Immediately` to true, or will
-#' occur during the next maintenance window if `Apply Immediately` to
-#' false. This value is stored as a lowercase string.
+#' @param NewDBInstanceIdentifier The new DB instance identifier for the DB instance when renaming a DB instance. When you change the DB instance identifier, an instance reboot will occur immediately if you set `Apply Immediately` to true, or will occur during the next maintenance window if `Apply Immediately` to false. This value is stored as a lowercase string.
 #' 
 #' Constraints:
 #' 
@@ -6451,77 +5745,49 @@ neptune_modify_db_cluster_snapshot_attribute <- function(DBClusterSnapshotIdenti
 #' -   Cannot end with a hyphen or contain two consecutive hyphens.
 #' 
 #' Example: `mydbinstance`
-#' @param StorageType Not applicable. In Neptune the storage type is managed at the DB Cluster
-#' level.
-#' @param TdeCredentialArn The ARN from the key store with which to associate the instance for TDE
-#' encryption.
-#' @param TdeCredentialPassword The password for the given ARN from the key store in order to access the
-#' device.
+#' @param StorageType Not applicable. In Neptune the storage type is managed at the DB Cluster level.
+#' @param TdeCredentialArn The ARN from the key store with which to associate the instance for TDE encryption.
+#' @param TdeCredentialPassword The password for the given ARN from the key store in order to access the device.
 #' @param CACertificateIdentifier Indicates the certificate that needs to be associated with the instance.
 #' @param Domain Not supported.
-#' @param CopyTagsToSnapshot True to copy all tags from the DB instance to snapshots of the DB
-#' instance, and otherwise false. The default is false.
-#' @param MonitoringInterval The interval, in seconds, between points when Enhanced Monitoring
-#' metrics are collected for the DB instance. To disable collecting
-#' Enhanced Monitoring metrics, specify 0. The default is 0.
+#' @param CopyTagsToSnapshot True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The default is false.
+#' @param MonitoringInterval The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.
 #' 
-#' If `MonitoringRoleArn` is specified, then you must also set
-#' `MonitoringInterval` to a value other than 0.
+#' If `MonitoringRoleArn` is specified, then you must also set `MonitoringInterval` to a value other than 0.
 #' 
 #' Valid Values: `0, 1, 5, 10, 15, 30, 60`
 #' @param DBPortNumber The port number on which the database accepts connections.
 #' 
-#' The value of the `DBPortNumber` parameter must not match any of the port
-#' values specified for options in the option group for the DB instance.
+#' The value of the `DBPortNumber` parameter must not match any of the port values specified for options in the option group for the DB instance.
 #' 
-#' Your database will restart when you change the `DBPortNumber` value
-#' regardless of the value of the `ApplyImmediately` parameter.
+#' Your database will restart when you change the `DBPortNumber` value regardless of the value of the `ApplyImmediately` parameter.
 #' 
 #' Default: `8182`
 #' @param PubliclyAccessible Indicates whether the DB instance is publicly accessible.
 #' 
-#' When the DB instance is publicly accessible and you connect from outside
-#' of the DB instance's virtual private cloud (VPC), its Domain Name System
-#' (DNS) endpoint resolves to the public IP address. When you connect from
-#' within the same VPC as the DB instance, the endpoint resolves to the
-#' private IP address. Access to the DB instance is ultimately controlled
-#' by the security group it uses. That public access isn't permitted if the
-#' security group assigned to the DB cluster doesn't permit it.
+#' When the DB instance is publicly accessible and you connect from outside of the DB instance's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB instance, the endpoint resolves to the private IP address. Access to the DB instance is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.
 #' 
-#' When the DB instance isn't publicly accessible, it is an internal DB
-#' instance with a DNS name that resolves to a private IP address.
-#' @param MonitoringRoleArn The ARN for the IAM role that permits Neptune to send enhanced
-#' monitoring metrics to Amazon CloudWatch Logs. For example,
-#' `arn:aws:iam:123456789012:role/emaccess`.
+#' When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.
+#' @param MonitoringRoleArn The ARN for the IAM role that permits Neptune to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, `arn:aws:iam:123456789012:role/emaccess`.
 #' 
-#' If `MonitoringInterval` is set to a value other than 0, then you must
-#' supply a `MonitoringRoleArn` value.
+#' If `MonitoringInterval` is set to a value other than 0, then you must supply a `MonitoringRoleArn` value.
 #' @param DomainIAMRoleName Not supported
-#' @param PromotionTier A value that specifies the order in which a Read Replica is promoted to
-#' the primary instance after a failure of the existing primary instance.
+#' @param PromotionTier A value that specifies the order in which a Read Replica is promoted to the primary instance after a failure of the existing primary instance.
 #' 
 #' Default: 1
 #' 
 #' Valid Values: 0 - 15
-#' @param EnableIAMDatabaseAuthentication True to enable mapping of Amazon Identity and Access Management (IAM)
-#' accounts to database accounts, and otherwise false.
+#' @param EnableIAMDatabaseAuthentication True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.
 #' 
-#' You can enable IAM database authentication for the following database
-#' engines
+#' You can enable IAM database authentication for the following database engines
 #' 
-#' Not applicable. Mapping Amazon IAM accounts to database accounts is
-#' managed by the DB cluster. For more information, see
-#' [`modify_db_cluster`][neptune_modify_db_cluster].
+#' Not applicable. Mapping Amazon IAM accounts to database accounts is managed by the DB cluster. For more information, see [`modify_db_cluster`][neptune_modify_db_cluster].
 #' 
 #' Default: `false`
 #' @param EnablePerformanceInsights *(Not supported by Neptune)*
 #' @param PerformanceInsightsKMSKeyId *(Not supported by Neptune)*
-#' @param CloudwatchLogsExportConfiguration The configuration setting for the log types to be enabled for export to
-#' CloudWatch Logs for a specific DB instance or DB cluster.
-#' @param DeletionProtection A value that indicates whether the DB instance has deletion protection
-#' enabled. The database can't be deleted when deletion protection is
-#' enabled. By default, deletion protection is disabled. See [Deleting a DB
-#' Instance](https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html).
+#' @param CloudwatchLogsExportConfiguration The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.
+#' @param DeletionProtection A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. See [Deleting a DB Instance](https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -6751,26 +6017,11 @@ neptune_modify_db_instance <- function(DBInstanceIdentifier, AllocatedStorage = 
 #' Modifies the parameters of a DB parameter group
 #'
 #' @description
-#' Modifies the parameters of a DB parameter group. To modify more than one
-#' parameter, submit a list of the following: `ParameterName`,
-#' `ParameterValue`, and `ApplyMethod`. A maximum of 20 parameters can be
-#' modified in a single request.
+#' Modifies the parameters of a DB parameter group. To modify more than one parameter, submit a list of the following: `ParameterName`, `ParameterValue`, and `ApplyMethod`. A maximum of 20 parameters can be modified in a single request.
 #' 
-#' Changes to dynamic parameters are applied immediately. Changes to static
-#' parameters require a reboot without failover to the DB instance
-#' associated with the parameter group before the change can take effect.
+#' Changes to dynamic parameters are applied immediately. Changes to static parameters require a reboot without failover to the DB instance associated with the parameter group before the change can take effect.
 #' 
-#' After you modify a DB parameter group, you should wait at least 5
-#' minutes before creating your first DB instance that uses that DB
-#' parameter group as the default parameter group. This allows Amazon
-#' Neptune to fully complete the modify action before the parameter group
-#' is used as the default for a new DB instance. This is especially
-#' important for parameters that are critical when creating the default
-#' database for a DB instance, such as the character set for the default
-#' database defined by the `character_set_database` parameter. You can use
-#' the *Parameter Groups* option of the Amazon Neptune console or the
-#' *DescribeDBParameters* command to verify that your DB parameter group
-#' has been created or modified.
+#' After you modify a DB parameter group, you should wait at least 5 minutes before creating your first DB instance that uses that DB parameter group as the default parameter group. This allows Amazon Neptune to fully complete the modify action before the parameter group is used as the default for a new DB instance. This is especially important for parameters that are critical when creating the default database for a DB instance, such as the character set for the default database defined by the `character_set_database` parameter. You can use the *Parameter Groups* option of the Amazon Neptune console or the *DescribeDBParameters* command to verify that your DB parameter group has been created or modified.
 #'
 #' @usage
 #' neptune_modify_db_parameter_group(DBParameterGroupName, Parameters)
@@ -6780,16 +6031,11 @@ neptune_modify_db_instance <- function(DBInstanceIdentifier, AllocatedStorage = 
 #' Constraints:
 #' 
 #' -   If supplied, must match the name of an existing DBParameterGroup.
-#' @param Parameters &#91;required&#93; An array of parameter names, values, and the apply method for the
-#' parameter update. At least one parameter name, value, and apply method
-#' must be supplied; subsequent arguments are optional. A maximum of 20
-#' parameters can be modified in a single request.
+#' @param Parameters &#91;required&#93; An array of parameter names, values, and the apply method for the parameter update. At least one parameter name, value, and apply method must be supplied; subsequent arguments are optional. A maximum of 20 parameters can be modified in a single request.
 #' 
 #' Valid Values (for the application method): `immediate | pending-reboot`
 #' 
-#' You can use the immediate value with dynamic parameters only. You can
-#' use the pending-reboot value for both dynamic and static parameters, and
-#' changes are applied when you reboot the DB instance without failover.
+#' You can use the immediate value with dynamic parameters only. You can use the pending-reboot value for both dynamic and static parameters, and changes are applied when you reboot the DB instance without failover.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6847,18 +6093,15 @@ neptune_modify_db_parameter_group <- function(DBParameterGroupName, Parameters) 
 #' Modifies an existing DB subnet group
 #'
 #' @description
-#' Modifies an existing DB subnet group. DB subnet groups must contain at
-#' least one subnet in at least two AZs in the Amazon Region.
+#' Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the Amazon Region.
 #'
 #' @usage
 #' neptune_modify_db_subnet_group(DBSubnetGroupName,
 #'   DBSubnetGroupDescription, SubnetIds)
 #'
-#' @param DBSubnetGroupName &#91;required&#93; The name for the DB subnet group. This value is stored as a lowercase
-#' string. You can't modify the default subnet group.
+#' @param DBSubnetGroupName &#91;required&#93; The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default subnet group.
 #' 
-#' Constraints: Must match the name of an existing DBSubnetGroup. Must not
-#' be default.
+#' Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
 #' 
 #' Example: `mySubnetgroup`
 #' @param DBSubnetGroupDescription The description for the DB subnet group.
@@ -6925,35 +6168,20 @@ neptune_modify_db_subnet_group <- function(DBSubnetGroupName, DBSubnetGroupDescr
 #' Modifies an existing event notification subscription
 #'
 #' @description
-#' Modifies an existing event notification subscription. Note that you
-#' can't modify the source identifiers using this call; to change source
-#' identifiers for a subscription, use the
-#' [`add_source_identifier_to_subscription`][neptune_add_source_identifier_to_subscription]
-#' and
-#' [`remove_source_identifier_from_subscription`][neptune_remove_source_identifier_from_subscription]
-#' calls.
+#' Modifies an existing event notification subscription. Note that you can't modify the source identifiers using this call; to change source identifiers for a subscription, use the [`add_source_identifier_to_subscription`][neptune_add_source_identifier_to_subscription] and [`remove_source_identifier_from_subscription`][neptune_remove_source_identifier_from_subscription] calls.
 #' 
-#' You can see a list of the event categories for a given SourceType by
-#' using the **DescribeEventCategories** action.
+#' You can see a list of the event categories for a given SourceType by using the **DescribeEventCategories** action.
 #'
 #' @usage
 #' neptune_modify_event_subscription(SubscriptionName, SnsTopicArn,
 #'   SourceType, EventCategories, Enabled)
 #'
 #' @param SubscriptionName &#91;required&#93; The name of the event notification subscription.
-#' @param SnsTopicArn The Amazon Resource Name (ARN) of the SNS topic created for event
-#' notification. The ARN is created by Amazon SNS when you create a topic
-#' and subscribe to it.
-#' @param SourceType The type of source that is generating the events. For example, if you
-#' want to be notified of events generated by a DB instance, you would set
-#' this parameter to db-instance. if this value is not specified, all
-#' events are returned.
+#' @param SnsTopicArn The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.
+#' @param SourceType The type of source that is generating the events. For example, if you want to be notified of events generated by a DB instance, you would set this parameter to db-instance. if this value is not specified, all events are returned.
 #' 
-#' Valid values: db-instance | db-parameter-group | db-security-group |
-#' db-snapshot
-#' @param EventCategories A list of event categories for a SourceType that you want to subscribe
-#' to. You can see a list of the categories for a given SourceType by using
-#' the **DescribeEventCategories** action.
+#' Valid values: db-instance | db-parameter-group | db-security-group | db-snapshot
+#' @param EventCategories A list of event categories for a SourceType that you want to subscribe to. You can see a list of the categories for a given SourceType by using the **DescribeEventCategories** action.
 #' @param Enabled A Boolean value; set to **true** to activate the subscription.
 #'
 #' @return
@@ -7019,22 +6247,17 @@ neptune_modify_event_subscription <- function(SubscriptionName, SnsTopicArn = NU
 #' Modify a setting for an Amazon Neptune global cluster
 #'
 #' @description
-#' Modify a setting for an Amazon Neptune global cluster. You can change
-#' one or more database configuration parameters by specifying these
-#' parameters and their new values in the request.
+#' Modify a setting for an Amazon Neptune global cluster. You can change one or more database configuration parameters by specifying these parameters and their new values in the request.
 #'
 #' @usage
 #' neptune_modify_global_cluster(GlobalClusterIdentifier,
 #'   NewGlobalClusterIdentifier, DeletionProtection, EngineVersion,
 #'   AllowMajorVersionUpgrade)
 #'
-#' @param GlobalClusterIdentifier &#91;required&#93; The DB cluster identifier for the global cluster being modified. This
-#' parameter is not case-sensitive.
+#' @param GlobalClusterIdentifier &#91;required&#93; The DB cluster identifier for the global cluster being modified. This parameter is not case-sensitive.
 #' 
-#' Constraints: Must match the identifier of an existing global database
-#' cluster.
-#' @param NewGlobalClusterIdentifier A new cluster identifier to assign to the global database. This value is
-#' stored as a lowercase string.
+#' Constraints: Must match the identifier of an existing global database cluster.
+#' @param NewGlobalClusterIdentifier A new cluster identifier to assign to the global database. This value is stored as a lowercase string.
 #' 
 #' Constraints:
 #' 
@@ -7045,25 +6268,15 @@ neptune_modify_event_subscription <- function(SubscriptionName, SnsTopicArn = NU
 #' -   Can't end with a hyphen or contain two consecutive hyphens
 #' 
 #' Example: `my-cluster2`
-#' @param DeletionProtection Indicates whether the global database has deletion protection enabled.
-#' The global database cannot be deleted when deletion protection is
-#' enabled.
-#' @param EngineVersion The version number of the database engine to which you want to upgrade.
-#' Changing this parameter will result in an outage. The change is applied
-#' during the next maintenance window unless `ApplyImmediately` is enabled.
+#' @param DeletionProtection Indicates whether the global database has deletion protection enabled. The global database cannot be deleted when deletion protection is enabled.
+#' @param EngineVersion The version number of the database engine to which you want to upgrade. Changing this parameter will result in an outage. The change is applied during the next maintenance window unless `ApplyImmediately` is enabled.
 #' 
-#' To list all of the available Neptune engine versions, use the following
-#' command:
+#' To list all of the available Neptune engine versions, use the following command:
 #' @param AllowMajorVersionUpgrade A value that indicates whether major version upgrades are allowed.
 #' 
-#' Constraints: You must allow major version upgrades if you specify a
-#' value for the `EngineVersion` parameter that is a different major
-#' version than the DB cluster's current version.
+#' Constraints: You must allow major version upgrades if you specify a value for the `EngineVersion` parameter that is a different major version than the DB cluster's current version.
 #' 
-#' If you upgrade the major version of a global database, the cluster and
-#' DB instance parameter groups are set to the default parameter groups for
-#' the new version, so you will need to apply any custom parameter groups
-#' after completing the upgrade.
+#' If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to the default parameter groups for the new version, so you will need to apply any custom parameter groups after completing the upgrade.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7076,6 +6289,7 @@ neptune_modify_event_subscription <- function(SubscriptionName, SnsTopicArn = NU
 #'     Status = "string",
 #'     Engine = "string",
 #'     EngineVersion = "string",
+#'     DatabaseName = "string",
 #'     StorageEncrypted = TRUE|FALSE,
 #'     DeletionProtection = TRUE|FALSE,
 #'     GlobalClusterMembers = list(
@@ -7092,6 +6306,12 @@ neptune_modify_event_subscription <- function(SubscriptionName, SnsTopicArn = NU
 #'       FromDbClusterArn = "string",
 #'       ToDbClusterArn = "string",
 #'       IsDataLossAllowed = TRUE|FALSE
+#'     ),
+#'     TagList = list(
+#'       list(
+#'         Key = "string",
+#'         Value = "string"
+#'       )
 #'     )
 #'   )
 #' )
@@ -7289,28 +6509,21 @@ neptune_promote_read_replica_db_cluster <- function(DBClusterIdentifier) {
 #' reasons
 #'
 #' @description
-#' You might need to reboot your DB instance, usually for maintenance
-#' reasons. For example, if you make certain modifications, or if you
-#' change the DB parameter group associated with the DB instance, you must
-#' reboot the instance for the changes to take effect.
+#' You might need to reboot your DB instance, usually for maintenance reasons. For example, if you make certain modifications, or if you change the DB parameter group associated with the DB instance, you must reboot the instance for the changes to take effect.
 #' 
-#' Rebooting a DB instance restarts the database engine service. Rebooting
-#' a DB instance results in a momentary outage, during which the DB
-#' instance status is set to rebooting.
+#' Rebooting a DB instance restarts the database engine service. Rebooting a DB instance results in a momentary outage, during which the DB instance status is set to rebooting.
 #'
 #' @usage
 #' neptune_reboot_db_instance(DBInstanceIdentifier, ForceFailover)
 #'
-#' @param DBInstanceIdentifier &#91;required&#93; The DB instance identifier. This parameter is stored as a lowercase
-#' string.
+#' @param DBInstanceIdentifier &#91;required&#93; The DB instance identifier. This parameter is stored as a lowercase string.
 #' 
 #' Constraints:
 #' 
 #' -   Must match the identifier of an existing DBInstance.
 #' @param ForceFailover When `true`, the reboot is conducted through a MultiAZ failover.
 #' 
-#' Constraint: You can't specify `true` if the instance is not configured
-#' for MultiAZ.
+#' Constraint: You can't specify `true` if the instance is not configured for MultiAZ.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7494,19 +6707,14 @@ neptune_reboot_db_instance <- function(DBInstanceIdentifier, ForceFailover = NUL
 #' Detaches a Neptune DB cluster from a Neptune global database
 #'
 #' @description
-#' Detaches a Neptune DB cluster from a Neptune global database. A
-#' secondary cluster becomes a normal standalone cluster with read-write
-#' capability instead of being read-only, and no longer receives data from
-#' a the primary cluster.
+#' Detaches a Neptune DB cluster from a Neptune global database. A secondary cluster becomes a normal standalone cluster with read-write capability instead of being read-only, and no longer receives data from the primary cluster.
 #'
 #' @usage
 #' neptune_remove_from_global_cluster(GlobalClusterIdentifier,
 #'   DbClusterIdentifier)
 #'
-#' @param GlobalClusterIdentifier &#91;required&#93; The identifier of the Neptune global database from which to detach the
-#' specified Neptune DB cluster.
-#' @param DbClusterIdentifier &#91;required&#93; The Amazon Resource Name (ARN) identifying the cluster to be detached
-#' from the Neptune global database cluster.
+#' @param GlobalClusterIdentifier &#91;required&#93; The identifier of the Neptune global database from which to detach the specified Neptune DB cluster.
+#' @param DbClusterIdentifier &#91;required&#93; The Amazon Resource Name (ARN) identifying the cluster to be detached from the Neptune global database cluster.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7519,6 +6727,7 @@ neptune_reboot_db_instance <- function(DBInstanceIdentifier, ForceFailover = NUL
 #'     Status = "string",
 #'     Engine = "string",
 #'     EngineVersion = "string",
+#'     DatabaseName = "string",
 #'     StorageEncrypted = TRUE|FALSE,
 #'     DeletionProtection = TRUE|FALSE,
 #'     GlobalClusterMembers = list(
@@ -7535,6 +6744,12 @@ neptune_reboot_db_instance <- function(DBInstanceIdentifier, ForceFailover = NUL
 #'       FromDbClusterArn = "string",
 #'       ToDbClusterArn = "string",
 #'       IsDataLossAllowed = TRUE|FALSE
+#'     ),
+#'     TagList = list(
+#'       list(
+#'         Key = "string",
+#'         Value = "string"
+#'       )
 #'     )
 #'   )
 #' )
@@ -7576,20 +6791,15 @@ neptune_remove_from_global_cluster <- function(GlobalClusterIdentifier, DbCluste
 #' cluster
 #'
 #' @description
-#' Disassociates an Identity and Access Management (IAM) role from a DB
-#' cluster.
+#' Disassociates an Identity and Access Management (IAM) role from a DB cluster.
 #'
 #' @usage
 #' neptune_remove_role_from_db_cluster(DBClusterIdentifier, RoleArn,
 #'   FeatureName)
 #'
 #' @param DBClusterIdentifier &#91;required&#93; The name of the DB cluster to disassociate the IAM role from.
-#' @param RoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role to disassociate from the
-#' DB cluster, for example
-#' `arn:aws:iam::123456789012:role/NeptuneAccessRole`.
-#' @param FeatureName The name of the feature for the DB cluster that the IAM role is to be
-#' disassociated from. For the list of supported feature names, see
-#' [`describe_db_engine_versions`][neptune_describe_db_engine_versions].
+#' @param RoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB cluster, for example `arn:aws:iam::123456789012:role/NeptuneAccessRole`.
+#' @param FeatureName The name of the feature for the DB cluster that the IAM role is to be disassociated from. For the list of supported feature names, see [`describe_db_engine_versions`][neptune_describe_db_engine_versions].
 #'
 #' @return
 #' An empty list.
@@ -7631,18 +6841,14 @@ neptune_remove_role_from_db_cluster <- function(DBClusterIdentifier, RoleArn, Fe
 #' subscription
 #'
 #' @description
-#' Removes a source identifier from an existing event notification
-#' subscription.
+#' Removes a source identifier from an existing event notification subscription.
 #'
 #' @usage
 #' neptune_remove_source_identifier_from_subscription(SubscriptionName,
 #'   SourceIdentifier)
 #'
-#' @param SubscriptionName &#91;required&#93; The name of the event notification subscription you want to remove a
-#' source identifier from.
-#' @param SourceIdentifier &#91;required&#93; The source identifier to be removed from the subscription, such as the
-#' **DB instance identifier** for a DB instance or the name of a security
-#' group.
+#' @param SubscriptionName &#91;required&#93; The name of the event notification subscription you want to remove a source identifier from.
+#' @param SourceIdentifier &#91;required&#93; The source identifier to be removed from the subscription, such as the **DB instance identifier** for a DB instance or the name of a security group.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7707,10 +6913,7 @@ neptune_remove_source_identifier_from_subscription <- function(SubscriptionName,
 #' @usage
 #' neptune_remove_tags_from_resource(ResourceName, TagKeys)
 #'
-#' @param ResourceName &#91;required&#93; The Amazon Neptune resource that the tags are removed from. This value
-#' is an Amazon Resource Name (ARN). For information about creating an ARN,
-#' see [Constructing an Amazon Resource Name
-#' (ARN)](https://docs.aws.amazon.com/neptune/latest/userguide/#tagging.ARN.Constructing).
+#' @param ResourceName &#91;required&#93; The Amazon Neptune resource that the tags are removed from. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see [Constructing an Amazon Resource Name (ARN)](https://docs.aws.amazon.com/neptune/latest/userguide/#tagging.ARN.Constructing).
 #' @param TagKeys &#91;required&#93; The tag key (name) of the tag to be removed.
 #'
 #' @return
@@ -7754,32 +6957,17 @@ neptune_remove_tags_from_resource <- function(ResourceName, TagKeys) {
 #' value
 #'
 #' @description
-#' Modifies the parameters of a DB cluster parameter group to the default
-#' value. To reset specific parameters submit a list of the following:
-#' `ParameterName` and `ApplyMethod`. To reset the entire DB cluster
-#' parameter group, specify the `DBClusterParameterGroupName` and
-#' `ResetAllParameters` parameters.
+#' Modifies the parameters of a DB cluster parameter group to the default value. To reset specific parameters submit a list of the following: `ParameterName` and `ApplyMethod`. To reset the entire DB cluster parameter group, specify the `DBClusterParameterGroupName` and `ResetAllParameters` parameters.
 #' 
-#' When resetting the entire group, dynamic parameters are updated
-#' immediately and static parameters are set to `pending-reboot` to take
-#' effect on the next DB instance restart or
-#' [`reboot_db_instance`][neptune_reboot_db_instance] request. You must
-#' call [`reboot_db_instance`][neptune_reboot_db_instance] for every DB
-#' instance in your DB cluster that you want the updated static parameter
-#' to apply to.
+#' When resetting the entire group, dynamic parameters are updated immediately and static parameters are set to `pending-reboot` to take effect on the next DB instance restart or [`reboot_db_instance`][neptune_reboot_db_instance] request. You must call [`reboot_db_instance`][neptune_reboot_db_instance] for every DB instance in your DB cluster that you want the updated static parameter to apply to.
 #'
 #' @usage
 #' neptune_reset_db_cluster_parameter_group(DBClusterParameterGroupName,
 #'   ResetAllParameters, Parameters)
 #'
 #' @param DBClusterParameterGroupName &#91;required&#93; The name of the DB cluster parameter group to reset.
-#' @param ResetAllParameters A value that is set to `true` to reset all parameters in the DB cluster
-#' parameter group to their default values, and `false` otherwise. You
-#' can't use this parameter if there is a list of parameter names specified
-#' for the `Parameters` parameter.
-#' @param Parameters A list of parameter names in the DB cluster parameter group to reset to
-#' the default values. You can't use this parameter if the
-#' `ResetAllParameters` parameter is set to `true`.
+#' @param ResetAllParameters A value that is set to `true` to reset all parameters in the DB cluster parameter group to their default values, and `false` otherwise. You can't use this parameter if there is a list of parameter names specified for the `Parameters` parameter.
+#' @param Parameters A list of parameter names in the DB cluster parameter group to reset to the default values. You can't use this parameter if the `ResetAllParameters` parameter is set to `true`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7839,14 +7027,7 @@ neptune_reset_db_cluster_parameter_group <- function(DBClusterParameterGroupName
 #' default value
 #'
 #' @description
-#' Modifies the parameters of a DB parameter group to the engine/system
-#' default value. To reset specific parameters, provide a list of the
-#' following: `ParameterName` and `ApplyMethod`. To reset the entire DB
-#' parameter group, specify the `DBParameterGroup` name and
-#' `ResetAllParameters` parameters. When resetting the entire group,
-#' dynamic parameters are updated immediately and static parameters are set
-#' to `pending-reboot` to take effect on the next DB instance restart or
-#' [`reboot_db_instance`][neptune_reboot_db_instance] request.
+#' Modifies the parameters of a DB parameter group to the engine/system default value. To reset specific parameters, provide a list of the following: `ParameterName` and `ApplyMethod`. To reset the entire DB parameter group, specify the `DBParameterGroup` name and `ResetAllParameters` parameters. When resetting the entire group, dynamic parameters are updated immediately and static parameters are set to `pending-reboot` to take effect on the next DB instance restart or [`reboot_db_instance`][neptune_reboot_db_instance] request.
 #'
 #' @usage
 #' neptune_reset_db_parameter_group(DBParameterGroupName,
@@ -7857,14 +7038,10 @@ neptune_reset_db_cluster_parameter_group <- function(DBClusterParameterGroupName
 #' Constraints:
 #' 
 #' -   Must match the name of an existing DBParameterGroup.
-#' @param ResetAllParameters Specifies whether (`true`) or not (`false`) to reset all parameters in
-#' the DB parameter group to default values.
+#' @param ResetAllParameters Specifies whether (`true`) or not (`false`) to reset all parameters in the DB parameter group to default values.
 #' 
 #' Default: `true`
-#' @param Parameters To reset the entire DB parameter group, specify the `DBParameterGroup`
-#' name and `ResetAllParameters` parameters. To reset specific parameters,
-#' provide a list of the following: `ParameterName` and `ApplyMethod`. A
-#' maximum of 20 parameters can be modified in a single request.
+#' @param Parameters To reset the entire DB parameter group, specify the `DBParameterGroup` name and `ResetAllParameters` parameters. To reset specific parameters, provide a list of the following: `ParameterName` and `ApplyMethod`. A maximum of 20 parameters can be modified in a single request.
 #' 
 #' Valid Values (for Apply method): `pending-reboot`
 #'
@@ -7927,14 +7104,9 @@ neptune_reset_db_parameter_group <- function(DBParameterGroupName, ResetAllParam
 #' @description
 #' Creates a new DB cluster from a DB snapshot or DB cluster snapshot.
 #' 
-#' If a DB snapshot is specified, the target DB cluster is created from the
-#' source DB snapshot with a default configuration and default security
-#' group.
+#' If a DB snapshot is specified, the target DB cluster is created from the source DB snapshot with a default configuration and default security group.
 #' 
-#' If a DB cluster snapshot is specified, the target DB cluster is created
-#' from the source DB cluster restore point with the same configuration as
-#' the original source DB cluster, except that the new DB cluster is
-#' created with the default security group.
+#' If a DB cluster snapshot is specified, the target DB cluster is created from the source DB cluster restore point with the same configuration as the original source DB cluster, except that the new DB cluster is created with the default security group.
 #'
 #' @usage
 #' neptune_restore_db_cluster_from_snapshot(AvailabilityZones,
@@ -7945,10 +7117,8 @@ neptune_reset_db_parameter_group <- function(DBParameterGroupName, ResetAllParam
 #'   DeletionProtection, CopyTagsToSnapshot,
 #'   ServerlessV2ScalingConfiguration, StorageType)
 #'
-#' @param AvailabilityZones Provides the list of EC2 Availability Zones that instances in the
-#' restored DB cluster can be created in.
-#' @param DBClusterIdentifier &#91;required&#93; The name of the DB cluster to create from the DB snapshot or DB cluster
-#' snapshot. This parameter isn't case-sensitive.
+#' @param AvailabilityZones Provides the list of EC2 Availability Zones that instances in the restored DB cluster can be created in.
+#' @param DBClusterIdentifier &#91;required&#93; The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case-sensitive.
 #' 
 #' Constraints:
 #' 
@@ -7959,12 +7129,9 @@ neptune_reset_db_parameter_group <- function(DBParameterGroupName, ResetAllParam
 #' -   Cannot end with a hyphen or contain two consecutive hyphens
 #' 
 #' Example: `my-snapshot-id`
-#' @param SnapshotIdentifier &#91;required&#93; The identifier for the DB snapshot or DB cluster snapshot to restore
-#' from.
+#' @param SnapshotIdentifier &#91;required&#93; The identifier for the DB snapshot or DB cluster snapshot to restore from.
 #' 
-#' You can use either the name or the Amazon Resource Name (ARN) to specify
-#' a DB cluster snapshot. However, you can use only the ARN to specify a DB
-#' snapshot.
+#' You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However, you can use only the ARN to specify a DB snapshot.
 #' 
 #' Constraints:
 #' 
@@ -7982,55 +7149,36 @@ neptune_reset_db_parameter_group <- function(DBParameterGroupName, ResetAllParam
 #' Default: The same port as the original DB cluster.
 #' @param DBSubnetGroupName The name of the DB subnet group to use for the new DB cluster.
 #' 
-#' Constraints: If supplied, must match the name of an existing
-#' DBSubnetGroup.
+#' Constraints: If supplied, must match the name of an existing DBSubnetGroup.
 #' 
 #' Example: `mySubnetgroup`
 #' @param DatabaseName Not supported.
 #' @param OptionGroupName *(Not supported by Neptune)*
 #' @param VpcSecurityGroupIds A list of VPC security groups that the new DB cluster will belong to.
 #' @param Tags The tags to be assigned to the restored DB cluster.
-#' @param KmsKeyId The Amazon KMS key identifier to use when restoring an encrypted DB
-#' cluster from a DB snapshot or DB cluster snapshot.
+#' @param KmsKeyId The Amazon KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster snapshot.
 #' 
-#' The KMS key identifier is the Amazon Resource Name (ARN) for the KMS
-#' encryption key. If you are restoring a DB cluster with the same Amazon
-#' account that owns the KMS encryption key used to encrypt the new DB
-#' cluster, then you can use the KMS key alias instead of the ARN for the
-#' KMS encryption key.
+#' The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.
 #' 
-#' If you do not specify a value for the `KmsKeyId` parameter, then the
-#' following will occur:
+#' If you do not specify a value for the `KmsKeyId` parameter, then the following will occur:
 #' 
-#' -   If the DB snapshot or DB cluster snapshot in `SnapshotIdentifier` is
-#'     encrypted, then the restored DB cluster is encrypted using the KMS
-#'     key that was used to encrypt the DB snapshot or DB cluster snapshot.
+#' -   If the DB snapshot or DB cluster snapshot in `SnapshotIdentifier` is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.
 #' 
-#' -   If the DB snapshot or DB cluster snapshot in `SnapshotIdentifier` is
-#'     not encrypted, then the restored DB cluster is not encrypted.
-#' @param EnableIAMDatabaseAuthentication True to enable mapping of Amazon Identity and Access Management (IAM)
-#' accounts to database accounts, and otherwise false.
+#' -   If the DB snapshot or DB cluster snapshot in `SnapshotIdentifier` is not encrypted, then the restored DB cluster is not encrypted.
+#' @param EnableIAMDatabaseAuthentication True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.
 #' 
 #' Default: `false`
-#' @param EnableCloudwatchLogsExports The list of logs that the restored DB cluster is to export to Amazon
-#' CloudWatch Logs.
-#' @param DBClusterParameterGroupName The name of the DB cluster parameter group to associate with the new DB
-#' cluster.
+#' @param EnableCloudwatchLogsExports The list of logs that the restored DB cluster is to export to Amazon CloudWatch Logs.
+#' @param DBClusterParameterGroupName The name of the DB cluster parameter group to associate with the new DB cluster.
 #' 
 #' Constraints:
 #' 
-#' -   If supplied, must match the name of an existing
-#'     DBClusterParameterGroup.
-#' @param DeletionProtection A value that indicates whether the DB cluster has deletion protection
-#' enabled. The database can't be deleted when deletion protection is
-#' enabled. By default, deletion protection is disabled.
-#' @param CopyTagsToSnapshot *If set to true, tags are copied to any snapshot of the restored DB
-#' cluster that is created.*
+#' -   If supplied, must match the name of an existing DBClusterParameterGroup.
+#' @param DeletionProtection A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled.
+#' @param CopyTagsToSnapshot *If set to true, tags are copied to any snapshot of the restored DB cluster that is created.*
 #' @param ServerlessV2ScalingConfiguration Contains the scaling configuration of a Neptune Serverless DB cluster.
 #' 
-#' For more information, see [Using Amazon Neptune
-#' Serverless](https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html)
-#' in the *Amazon Neptune User Guide*.
+#' For more information, see [Using Amazon Neptune Serverless](https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html) in the *Amazon Neptune User Guide*.
 #' @param StorageType Specifies the storage type to be associated with the DB cluster.
 #' 
 #' Valid values: `standard`, `iopt1`
@@ -8215,21 +7363,9 @@ neptune_restore_db_cluster_from_snapshot <- function(AvailabilityZones = NULL, D
 #' Restores a DB cluster to an arbitrary point in time
 #'
 #' @description
-#' Restores a DB cluster to an arbitrary point in time. Users can restore
-#' to any point in time before `LatestRestorableTime` for up to
-#' `BackupRetentionPeriod` days. The target DB cluster is created from the
-#' source DB cluster with the same configuration as the original DB
-#' cluster, except that the new DB cluster is created with the default DB
-#' security group.
+#' Restores a DB cluster to an arbitrary point in time. Users can restore to any point in time before `LatestRestorableTime` for up to `BackupRetentionPeriod` days. The target DB cluster is created from the source DB cluster with the same configuration as the original DB cluster, except that the new DB cluster is created with the default DB security group.
 #' 
-#' This action only restores the DB cluster, not the DB instances for that
-#' DB cluster. You must invoke the
-#' [`create_db_instance`][neptune_create_db_instance] action to create DB
-#' instances for the restored DB cluster, specifying the identifier of the
-#' restored DB cluster in `DBClusterIdentifier`. You can create DB
-#' instances only after the
-#' [`restore_db_cluster_to_point_in_time`][neptune_restore_db_cluster_to_point_in_time]
-#' action has completed and the DB cluster is available.
+#' This action only restores the DB cluster, not the DB instances for that DB cluster. You must invoke the [`create_db_instance`][neptune_create_db_instance] action to create DB instances for the restored DB cluster, specifying the identifier of the restored DB cluster in `DBClusterIdentifier`. You can create DB instances only after the [`restore_db_cluster_to_point_in_time`][neptune_restore_db_cluster_to_point_in_time] action has completed and the DB cluster is available.
 #'
 #' @usage
 #' neptune_restore_db_cluster_to_point_in_time(DBClusterIdentifier,
@@ -8248,17 +7384,13 @@ neptune_restore_db_cluster_from_snapshot <- function(AvailabilityZones = NULL, D
 #' -   First character must be a letter
 #' 
 #' -   Cannot end with a hyphen or contain two consecutive hyphens
-#' @param RestoreType The type of restore to be performed. You can specify one of the
-#' following values:
+#' @param RestoreType The type of restore to be performed. You can specify one of the following values:
 #' 
-#' -   `full-copy` - The new DB cluster is restored as a full copy of the
-#'     source DB cluster.
+#' -   `full-copy` - The new DB cluster is restored as a full copy of the source DB cluster.
 #' 
-#' -   `copy-on-write` - The new DB cluster is restored as a clone of the
-#'     source DB cluster.
+#' -   `copy-on-write` - The new DB cluster is restored as a clone of the source DB cluster.
 #' 
-#' If you don't specify a `RestoreType` value, then the new DB cluster is
-#' restored as a full copy of the source DB cluster.
+#' If you don't specify a `RestoreType` value, then the new DB cluster is restored as a full copy of the source DB cluster.
 #' @param SourceDBClusterIdentifier &#91;required&#93; The identifier of the source DB cluster from which to restore.
 #' 
 #' Constraints:
@@ -8266,28 +7398,24 @@ neptune_restore_db_cluster_from_snapshot <- function(AvailabilityZones = NULL, D
 #' -   Must match the identifier of an existing DBCluster.
 #' @param RestoreToTime The date and time to restore the DB cluster to.
 #' 
-#' Valid Values: Value must be a time in Universal Coordinated Time (UTC)
-#' format
+#' Valid Values: Value must be a time in Universal Coordinated Time (UTC) format
 #' 
 #' Constraints:
 #' 
 #' -   Must be before the latest restorable time for the DB instance
 #' 
-#' -   Must be specified if `UseLatestRestorableTime` parameter is not
-#'     provided
+#' -   Must be specified if `UseLatestRestorableTime` parameter is not provided
 #' 
 #' -   Cannot be specified if `UseLatestRestorableTime` parameter is true
 #' 
 #' -   Cannot be specified if `RestoreType` parameter is `copy-on-write`
 #' 
 #' Example: `2015-03-07T23:45:00Z`
-#' @param UseLatestRestorableTime A value that is set to `true` to restore the DB cluster to the latest
-#' restorable backup time, and `false` otherwise.
+#' @param UseLatestRestorableTime A value that is set to `true` to restore the DB cluster to the latest restorable backup time, and `false` otherwise.
 #' 
 #' Default: `false`
 #' 
-#' Constraints: Cannot be specified if `RestoreToTime` parameter is
-#' provided.
+#' Constraints: Cannot be specified if `RestoreToTime` parameter is provided.
 #' @param Port The port number on which the new DB cluster accepts connections.
 #' 
 #' Constraints: Value must be `1150-65535`
@@ -8295,60 +7423,38 @@ neptune_restore_db_cluster_from_snapshot <- function(AvailabilityZones = NULL, D
 #' Default: The same port as the original DB cluster.
 #' @param DBSubnetGroupName The DB subnet group name to use for the new DB cluster.
 #' 
-#' Constraints: If supplied, must match the name of an existing
-#' DBSubnetGroup.
+#' Constraints: If supplied, must match the name of an existing DBSubnetGroup.
 #' 
 #' Example: `mySubnetgroup`
 #' @param OptionGroupName *(Not supported by Neptune)*
 #' @param VpcSecurityGroupIds A list of VPC security groups that the new DB cluster belongs to.
 #' @param Tags The tags to be applied to the restored DB cluster.
-#' @param KmsKeyId The Amazon KMS key identifier to use when restoring an encrypted DB
-#' cluster from an encrypted DB cluster.
+#' @param KmsKeyId The Amazon KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.
 #' 
-#' The KMS key identifier is the Amazon Resource Name (ARN) for the KMS
-#' encryption key. If you are restoring a DB cluster with the same Amazon
-#' account that owns the KMS encryption key used to encrypt the new DB
-#' cluster, then you can use the KMS key alias instead of the ARN for the
-#' KMS encryption key.
+#' The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.
 #' 
-#' You can restore to a new DB cluster and encrypt the new DB cluster with
-#' a KMS key that is different than the KMS key used to encrypt the source
-#' DB cluster. The new DB cluster is encrypted with the KMS key identified
-#' by the `KmsKeyId` parameter.
+#' You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key that is different than the KMS key used to encrypt the source DB cluster. The new DB cluster is encrypted with the KMS key identified by the `KmsKeyId` parameter.
 #' 
-#' If you do not specify a value for the `KmsKeyId` parameter, then the
-#' following will occur:
+#' If you do not specify a value for the `KmsKeyId` parameter, then the following will occur:
 #' 
-#' -   If the DB cluster is encrypted, then the restored DB cluster is
-#'     encrypted using the KMS key that was used to encrypt the source DB
-#'     cluster.
+#' -   If the DB cluster is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the source DB cluster.
 #' 
-#' -   If the DB cluster is not encrypted, then the restored DB cluster is
-#'     not encrypted.
+#' -   If the DB cluster is not encrypted, then the restored DB cluster is not encrypted.
 #' 
-#' If `DBClusterIdentifier` refers to a DB cluster that is not encrypted,
-#' then the restore request is rejected.
-#' @param EnableIAMDatabaseAuthentication True to enable mapping of Amazon Identity and Access Management (IAM)
-#' accounts to database accounts, and otherwise false.
+#' If `DBClusterIdentifier` refers to a DB cluster that is not encrypted, then the restore request is rejected.
+#' @param EnableIAMDatabaseAuthentication True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.
 #' 
 #' Default: `false`
-#' @param EnableCloudwatchLogsExports The list of logs that the restored DB cluster is to export to CloudWatch
-#' Logs.
-#' @param DBClusterParameterGroupName The name of the DB cluster parameter group to associate with the new DB
-#' cluster.
+#' @param EnableCloudwatchLogsExports The list of logs that the restored DB cluster is to export to CloudWatch Logs.
+#' @param DBClusterParameterGroupName The name of the DB cluster parameter group to associate with the new DB cluster.
 #' 
 #' Constraints:
 #' 
-#' -   If supplied, must match the name of an existing
-#'     DBClusterParameterGroup.
-#' @param DeletionProtection A value that indicates whether the DB cluster has deletion protection
-#' enabled. The database can't be deleted when deletion protection is
-#' enabled. By default, deletion protection is disabled.
+#' -   If supplied, must match the name of an existing DBClusterParameterGroup.
+#' @param DeletionProtection A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled.
 #' @param ServerlessV2ScalingConfiguration Contains the scaling configuration of a Neptune Serverless DB cluster.
 #' 
-#' For more information, see [Using Amazon Neptune
-#' Serverless](https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html)
-#' in the *Amazon Neptune User Guide*.
+#' For more information, see [Using Amazon Neptune Serverless](https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html) in the *Amazon Neptune User Guide*.
 #' @param StorageType Specifies the storage type to be associated with the DB cluster.
 #' 
 #' Valid values: `standard`, `iopt1`
@@ -8533,15 +7639,12 @@ neptune_restore_db_cluster_to_point_in_time <- function(DBClusterIdentifier, Res
 #' API
 #'
 #' @description
-#' Starts an Amazon Neptune DB cluster that was stopped using the Amazon
-#' console, the Amazon CLI stop-db-cluster command, or the StopDBCluster
-#' API.
+#' Starts an Amazon Neptune DB cluster that was stopped using the Amazon console, the Amazon CLI stop-db-cluster command, or the StopDBCluster API.
 #'
 #' @usage
 #' neptune_start_db_cluster(DBClusterIdentifier)
 #'
-#' @param DBClusterIdentifier &#91;required&#93; The DB cluster identifier of the Neptune DB cluster to be started. This
-#' parameter is stored as a lowercase string.
+#' @param DBClusterIdentifier &#91;required&#93; The DB cluster identifier of the Neptune DB cluster to be started. This parameter is stored as a lowercase string.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8689,18 +7792,14 @@ neptune_start_db_cluster <- function(DBClusterIdentifier) {
 #' Stops an Amazon Neptune DB cluster
 #'
 #' @description
-#' Stops an Amazon Neptune DB cluster. When you stop a DB cluster, Neptune
-#' retains the DB cluster's metadata, including its endpoints and DB
-#' parameter groups.
+#' Stops an Amazon Neptune DB cluster. When you stop a DB cluster, Neptune retains the DB cluster's metadata, including its endpoints and DB parameter groups.
 #' 
-#' Neptune also retains the transaction logs so you can do a point-in-time
-#' restore if necessary.
+#' Neptune also retains the transaction logs so you can do a point-in-time restore if necessary.
 #'
 #' @usage
 #' neptune_stop_db_cluster(DBClusterIdentifier)
 #'
-#' @param DBClusterIdentifier &#91;required&#93; The DB cluster identifier of the Neptune DB cluster to be stopped. This
-#' parameter is stored as a lowercase string.
+#' @param DBClusterIdentifier &#91;required&#93; The DB cluster identifier of the Neptune DB cluster to be stopped. This parameter is stored as a lowercase string.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8849,34 +7948,20 @@ neptune_stop_db_cluster <- function(DBClusterIdentifier) {
 #' DB cluster in the global database cluster
 #'
 #' @description
-#' Switches over the specified secondary DB cluster to be the new primary
-#' DB cluster in the global database cluster. Switchover operations were
-#' previously called "managed planned failovers."
+#' Switches over the specified secondary DB cluster to be the new primary DB cluster in the global database cluster. Switchover operations were previously called "managed planned failovers."
 #' 
-#' Promotes the specified secondary cluster to assume full read/write
-#' capabilities and demotes the current primary cluster to a secondary
-#' (read-only) cluster, maintaining the original replication topology. All
-#' secondary clusters are synchronized with the primary at the beginning of
-#' the process so the new primary continues operations for the global
-#' database without losing any data. Your database is unavailable for a
-#' short time while the primary and selected secondary clusters are
-#' assuming their new roles.
+#' Promotes the specified secondary cluster to assume full read/write capabilities and demotes the current primary cluster to a secondary (read-only) cluster, maintaining the original replication topology. All secondary clusters are synchronized with the primary at the beginning of the process so the new primary continues operations for the global database without losing any data. Your database is unavailable for a short time while the primary and selected secondary clusters are assuming their new roles.
 #' 
-#' This operation is intended for controlled environments, for operations
-#' such as "regional rotation" or to fall back to the original primary
-#' after a global database failover.
+#' This operation is intended for controlled environments, for operations such as "regional rotation" or to fall back to the original primary after a global database failover.
 #'
 #' @usage
 #' neptune_switchover_global_cluster(GlobalClusterIdentifier,
 #'   TargetDbClusterIdentifier)
 #'
-#' @param GlobalClusterIdentifier &#91;required&#93; The identifier of the global database cluster to switch over. This
-#' parameter isn't case-sensitive.
+#' @param GlobalClusterIdentifier &#91;required&#93; The identifier of the global database cluster to switch over. This parameter isn't case-sensitive.
 #' 
-#' Constraints: Must match the identifier of an existing global database
-#' cluster.
-#' @param TargetDbClusterIdentifier &#91;required&#93; The Amazon Resource Name (ARN) of the secondary Neptune DB cluster that
-#' you want to promote to primary for the global database.
+#' Constraints: Must match the identifier of an existing global database cluster.
+#' @param TargetDbClusterIdentifier &#91;required&#93; The Amazon Resource Name (ARN) of the secondary Neptune DB cluster that you want to promote to primary for the global database.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8889,6 +7974,7 @@ neptune_stop_db_cluster <- function(DBClusterIdentifier) {
 #'     Status = "string",
 #'     Engine = "string",
 #'     EngineVersion = "string",
+#'     DatabaseName = "string",
 #'     StorageEncrypted = TRUE|FALSE,
 #'     DeletionProtection = TRUE|FALSE,
 #'     GlobalClusterMembers = list(
@@ -8905,6 +7991,12 @@ neptune_stop_db_cluster <- function(DBClusterIdentifier) {
 #'       FromDbClusterArn = "string",
 #'       ToDbClusterArn = "string",
 #'       IsDataLossAllowed = TRUE|FALSE
+#'     ),
+#'     TagList = list(
+#'       list(
+#'         Key = "string",
+#'         Value = "string"
+#'       )
 #'     )
 #'   )
 #' )

@@ -15,24 +15,17 @@ sagemaker_list_algorithms(
 )
 }
 \arguments{
-\item{CreationTimeAfter}{A filter that returns only algorithms created after the specified time
-(timestamp).}
+\item{CreationTimeAfter}{A filter that returns only algorithms created after the specified time (timestamp).}
 
-\item{CreationTimeBefore}{A filter that returns only algorithms created before the specified time
-(timestamp).}
+\item{CreationTimeBefore}{A filter that returns only algorithms created before the specified time (timestamp).}
 
 \item{MaxResults}{The maximum number of algorithms to return in the response.}
 
-\item{NameContains}{A string in the algorithm name. This filter returns only algorithms
-whose name contains the specified string.}
+\item{NameContains}{A string in the algorithm name. This filter returns only algorithms whose name contains the specified string.}
 
-\item{NextToken}{If the response to a previous
-\code{\link[=sagemaker_list_algorithms]{list_algorithms}} request was truncated,
-the response includes a \code{NextToken}. To retrieve the next set of
-algorithms, use the token in the next request.}
+\item{NextToken}{If the response to a previous \code{\link[=sagemaker_list_algorithms]{list_algorithms}} request was truncated, the response includes a \code{NextToken}. To retrieve the next set of algorithms, use the token in the next request.}
 
-\item{SortBy}{The parameter by which to sort the results. The default is
-\code{CreationTime}.}
+\item{SortBy}{The parameter by which to sort the results. The default is \code{CreationTime}.}
 
 \item{SortOrder}{The sort order for the results. The default is \code{Ascending}.}
 }

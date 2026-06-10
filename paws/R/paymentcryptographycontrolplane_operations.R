@@ -8,24 +8,13 @@ NULL
 #' cryptographic operations in additional Amazon Web Services Regions
 #'
 #' @description
-#' Adds replication Amazon Web Services Regions to an existing Amazon Web
-#' Services Payment Cryptography key, enabling the key to be used for
-#' cryptographic operations in additional Amazon Web Services Regions.
+#' Adds replication Amazon Web Services Regions to an existing Amazon Web Services Payment Cryptography key, enabling the key to be used for cryptographic operations in additional Amazon Web Services Regions.
 #' 
-#' [Multi-Region key
-#' replication](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html)
-#' allow you to use the same key material across multiple Amazon Web
-#' Services Regions, providing lower latency for applications distributed
-#' across regions. When you add Replication Regions, Amazon Web Services
-#' Payment Cryptography securely replicates the key material to the
-#' specified Amazon Web Services Regions.
+#' [Multi-Region key replication](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html) allow you to use the same key material across multiple Amazon Web Services Regions, providing lower latency for applications distributed across regions. When you add Replication Regions, Amazon Web Services Payment Cryptography securely replicates the key material to the specified Amazon Web Services Regions.
 #' 
-#' The key must be in an active state to add Replication Regions. You can
-#' add multiple regions in a single operation, and the key will be
-#' available for use in those regions once replication is complete.
+#' The key must be in an active state to add Replication Regions. You can add multiple regions in a single operation, and the key will be available for use in those regions once replication is complete.
 #' 
-#' **Cross-account use:** This operation can't be used across different
-#' Amazon Web Services accounts.
+#' **Cross-account use:** This operation supports cross-account use when the key has a resource-based policy that grants access. For more information, see [Resource-based policies](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html).
 #' 
 #' **Related operations:**
 #' 
@@ -39,17 +28,12 @@ NULL
 #' paymentcryptographycontrolplane_add_key_replication_regions(
 #'   KeyIdentifier, ReplicationRegions)
 #'
-#' @param KeyIdentifier &#91;required&#93; The key identifier (ARN or alias) of the key for which to add
-#' replication regions.
+#' @param KeyIdentifier &#91;required&#93; The key identifier (ARN or alias) of the key for which to add replication regions.
 #' 
 #' This key must exist and be in a valid state for replication operations.
-#' @param ReplicationRegions &#91;required&#93; The list of Amazon Web Services Regions to add to the key's replication
-#' configuration.
+#' @param ReplicationRegions &#91;required&#93; The list of Amazon Web Services Regions to add to the key's replication configuration.
 #' 
-#' Each region must be a valid Amazon Web Services Region where Amazon Web
-#' Services Payment Cryptography is available. The key will be replicated
-#' to these regions, allowing cryptographic operations to be performed
-#' closer to your applications.
+#' Each region must be a valid Amazon Web Services Region where Amazon Web Services Payment Cryptography is available. The key will be replicated to these regions, allowing cryptographic operations to be performed closer to your applications.
 #'
 #' @return
 #' A list with the following syntax:
@@ -103,7 +87,15 @@ NULL
 #'         StatusMessage = "string"
 #'       )
 #'     ),
-#'     UsingDefaultReplicationRegions = TRUE|FALSE
+#'     UsingDefaultReplicationRegions = TRUE|FALSE,
+#'     MpaStatus = list(
+#'       MpaSessionArn = "string",
+#'       Status = "PENDING"|"APPROVED"|"FAILED"|"CANCELLED",
+#'       InitiationDate = as.POSIXct(
+#'         "2015-01-01"
+#'       ),
+#'       StatusMessage = "string"
+#'     )
 #'   )
 #' )
 #' ```
@@ -142,34 +134,93 @@ paymentcryptographycontrolplane_add_key_replication_regions <- function(KeyIdent
 }
 .paymentcryptographycontrolplane$operations$add_key_replication_regions <- paymentcryptographycontrolplane_add_key_replication_regions
 
+#' Associates a Multi-Party Approval (MPA) team with a protected operation
+#'
+#' @description
+#' Associates a Multi-Party Approval (MPA) team with a protected operation. For more information, see [Multi-Party Approval](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/mpa.html) in the *Amazon Web Services Payment Cryptography User Guide.*
+#' 
+#' **Cross-account use:** This operation can't be used across different Amazon Web Services accounts.
+#' 
+#' **Related operations:**
+#' 
+#' -   [`disassociate_mpa_team`][paymentcryptographycontrolplane_disassociate_mpa_team]
+#' 
+#' -   [`get_mpa_team_association`][paymentcryptographycontrolplane_get_mpa_team_association]
+#'
+#' @usage
+#' paymentcryptographycontrolplane_associate_mpa_team(Action, MpaTeamArn,
+#'   RequesterComment)
+#'
+#' @param Action &#91;required&#93; The protected operation to associate with the MPA team. Currently, the only supported value is `IMPORT_ROOT_PUBLIC_KEY_CERTIFICATE`.
+#' @param MpaTeamArn &#91;required&#93; The ARN of the MPA team to associate with the protected operation.
+#' @param RequesterComment The comment from the requester explaining the reason for the association.
+#' 
+#' Don't include personal, confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   MpaTeamAssociation = list(
+#'     Action = "IMPORT_ROOT_PUBLIC_KEY_CERTIFICATE",
+#'     MpaTeamArn = "string",
+#'     AssociationState = "ACTIVE"|"UPDATE_PENDING"|"DELETE_PENDING",
+#'     MpaStatus = list(
+#'       MpaSessionArn = "string",
+#'       Status = "PENDING"|"APPROVED"|"FAILED"|"CANCELLED",
+#'       InitiationDate = as.POSIXct(
+#'         "2015-01-01"
+#'       ),
+#'       StatusMessage = "string"
+#'     )
+#'   )
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$associate_mpa_team(
+#'   Action = "IMPORT_ROOT_PUBLIC_KEY_CERTIFICATE",
+#'   MpaTeamArn = "string",
+#'   RequesterComment = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname paymentcryptographycontrolplane_associate_mpa_team
+#'
+#' @aliases paymentcryptographycontrolplane_associate_mpa_team
+paymentcryptographycontrolplane_associate_mpa_team <- function(Action, MpaTeamArn, RequesterComment = NULL) {
+  op <- new_operation(
+    name = "AssociateMpaTeam",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .paymentcryptographycontrolplane$associate_mpa_team_input(Action = Action, MpaTeamArn = MpaTeamArn, RequesterComment = RequesterComment)
+  output <- .paymentcryptographycontrolplane$associate_mpa_team_output()
+  config <- get_config()
+  svc <- .paymentcryptographycontrolplane$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.paymentcryptographycontrolplane$operations$associate_mpa_team <- paymentcryptographycontrolplane_associate_mpa_team
+
 #' Creates an alias, or a friendly name, for an Amazon Web Services Payment
 #' Cryptography key
 #'
 #' @description
-#' Creates an *alias*, or a friendly name, for an Amazon Web Services
-#' Payment Cryptography key. You can use an alias to identify a key in the
-#' console and when you call cryptographic operations such as
-#' [EncryptData](https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_EncryptData.html)
-#' or
-#' [DecryptData](https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_DecryptData.html).
+#' Creates an *alias*, or a friendly name, for an Amazon Web Services Payment Cryptography key. You can use an alias to identify a key in the console and when you call cryptographic operations such as [EncryptData](https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_EncryptData.html) or [DecryptData](https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/API_DecryptData.html).
 #' 
-#' You can associate the alias with any key in the same Amazon Web Services
-#' Region. Each alias is associated with only one key at a time, but a key
-#' can have multiple aliases. You can't create an alias without a key. The
-#' alias must be unique in the account and Amazon Web Services Region, but
-#' you can create another alias with the same name in a different Amazon
-#' Web Services Region.
+#' You can associate the alias with any key in the same Amazon Web Services Region. Each alias is associated with only one key at a time, but a key can have multiple aliases. You can't create an alias without a key. The alias must be unique in the account and Amazon Web Services Region, but you can create another alias with the same name in a different Amazon Web Services Region.
 #' 
-#' To change the key that's associated with the alias, call
-#' [`update_alias`][paymentcryptographycontrolplane_update_alias]. To
-#' delete the alias, call
-#' [`delete_alias`][paymentcryptographycontrolplane_delete_alias]. These
-#' operations don't affect the underlying key. To get the alias that you
-#' created, call
-#' [`list_aliases`][paymentcryptographycontrolplane_list_aliases].
+#' To change the key that's associated with the alias, call [`update_alias`][paymentcryptographycontrolplane_update_alias]. To delete the alias, call [`delete_alias`][paymentcryptographycontrolplane_delete_alias]. These operations don't affect the underlying key. To get the alias that you created, call [`list_aliases`][paymentcryptographycontrolplane_list_aliases].
 #' 
-#' **Cross-account use**: This operation can't be used across different
-#' Amazon Web Services accounts.
+#' **Cross-account use**: This operation can't be used across different Amazon Web Services accounts.
 #' 
 #' **Related operations:**
 #' 
@@ -184,14 +235,9 @@ paymentcryptographycontrolplane_add_key_replication_regions <- function(KeyIdent
 #' @usage
 #' paymentcryptographycontrolplane_create_alias(AliasName, KeyArn)
 #'
-#' @param AliasName &#91;required&#93; A friendly name that you can use to refer to a key. An alias must begin
-#' with `alias/` followed by a name, for example `alias/ExampleAlias`. It
-#' can contain only alphanumeric characters, forward slashes (/),
-#' underscores (_), and dashes (-).
+#' @param AliasName &#91;required&#93; A friendly name that you can use to refer to a key. An alias must begin with `alias/` followed by a name, for example `alias/ExampleAlias`. It can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-).
 #' 
-#' Don't include personal, confidential or sensitive information in this
-#' field. This field may be displayed in plaintext in CloudTrail logs and
-#' other output.
+#' Don't include personal, confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.
 #' @param KeyArn The `KeyARN` of the key to associate with the alias.
 #'
 #' @return
@@ -242,55 +288,19 @@ paymentcryptographycontrolplane_create_alias <- function(AliasName, KeyArn = NUL
 #' and Amazon Web Services Region
 #'
 #' @description
-#' Creates an Amazon Web Services Payment Cryptography key, a logical
-#' representation of a cryptographic key, that is unique in your account
-#' and Amazon Web Services Region. You use keys for cryptographic functions
-#' such as encryption and decryption.
+#' Creates an Amazon Web Services Payment Cryptography key, a logical representation of a cryptographic key, that is unique in your account and Amazon Web Services Region. You use keys for cryptographic functions such as encryption and decryption.
 #' 
-#' In addition to the key material used in cryptographic operations, an
-#' Amazon Web Services Payment Cryptography key includes metadata such as
-#' the key ARN, key usage, key origin, creation date, description, and key
-#' state.
+#' In addition to the key material used in cryptographic operations, an Amazon Web Services Payment Cryptography key includes metadata such as the key ARN, key usage, key origin, creation date, description, and key state.
 #' 
-#' When you create a key, you specify both immutable and mutable data about
-#' the key. The immutable data contains key attributes that define the
-#' scope and cryptographic operations that you can perform using the key,
-#' for example key class (example: `SYMMETRIC_KEY`), key algorithm
-#' (example: `TDES_2KEY`), key usage (example:
-#' `TR31_P0_PIN_ENCRYPTION_KEY`) and key modes of use (example: `Encrypt`).
-#' Amazon Web Services Payment Cryptography binds key attributes to keys
-#' using key blocks when you store or export them. Amazon Web Services
-#' Payment Cryptography stores the key contents wrapped and never stores or
-#' transmits them in the clear.
+#' When you create a key, you specify both immutable and mutable data about the key. The immutable data contains key attributes that define the scope and cryptographic operations that you can perform using the key, for example key class (example: `SYMMETRIC_KEY`), key algorithm (example: `TDES_2KEY`), key usage (example: `TR31_P0_PIN_ENCRYPTION_KEY`) and key modes of use (example: `Encrypt`). Amazon Web Services Payment Cryptography binds key attributes to keys using key blocks when you store or export them. Amazon Web Services Payment Cryptography stores the key contents wrapped and never stores or transmits them in the clear.
 #' 
-#' For information about valid combinations of key attributes, see
-#' [Understanding key
-#' attributes](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html)
-#' in the *Amazon Web Services Payment Cryptography User Guide*. The
-#' mutable data contained within a key includes usage timestamp and key
-#' deletion timestamp and can be modified after creation.
+#' For information about valid combinations of key attributes, see [Understanding key attributes](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html) in the *Amazon Web Services Payment Cryptography User Guide*. The mutable data contained within a key includes usage timestamp and key deletion timestamp and can be modified after creation.
 #' 
-#' You can use the
-#' [`create_key`][paymentcryptographycontrolplane_create_key] operation to
-#' generate an ECC (Elliptic Curve Cryptography) key pair used for
-#' establishing an ECDH (Elliptic Curve Diffie-Hellman) key agreement
-#' between two parties. In the ECDH key agreement process, both parties
-#' generate their own ECC key pair with key usage K3 and exchange the
-#' public keys. Each party then use their private key, the received public
-#' key from the other party, and the key derivation parameters including
-#' key derivation function, hash algorithm, derivation data, and key
-#' algorithm to derive a shared key.
+#' You can use the [`create_key`][paymentcryptographycontrolplane_create_key] operation to generate an ECC (Elliptic Curve Cryptography) key pair used for establishing an ECDH (Elliptic Curve Diffie-Hellman) key agreement between two parties. In the ECDH key agreement process, both parties generate their own ECC key pair with key usage K3 and exchange the public keys. Each party then use their private key, the received public key from the other party, and the key derivation parameters including key derivation function, hash algorithm, derivation data, and key algorithm to derive a shared key.
 #' 
-#' To maintain the single-use principle of cryptographic keys in payments,
-#' ECDH derived keys should not be used for multiple purposes, such as a
-#' `TR31_P0_PIN_ENCRYPTION_KEY` and `TR31_K1_KEY_BLOCK_PROTECTION_KEY`.
-#' When creating ECC key pairs in Amazon Web Services Payment Cryptography
-#' you can optionally set the `DeriveKeyUsage` parameter, which defines the
-#' key usage bound to the symmetric key that will be derived using the ECC
-#' key pair.
+#' To maintain the single-use principle of cryptographic keys in payments, ECDH derived keys should not be used for multiple purposes, such as a `TR31_P0_PIN_ENCRYPTION_KEY` and `TR31_K1_KEY_BLOCK_PROTECTION_KEY`. When creating ECC key pairs in Amazon Web Services Payment Cryptography you can optionally set the `DeriveKeyUsage` parameter, which defines the key usage bound to the symmetric key that will be derived using the ECC key pair.
 #' 
-#' **Cross-account use**: This operation can't be used across different
-#' Amazon Web Services accounts.
+#' **Cross-account use**: This operation can't be used across different Amazon Web Services accounts.
 #' 
 #' **Related operations:**
 #' 
@@ -305,45 +315,25 @@ paymentcryptographycontrolplane_create_alias <- function(AliasName, KeyArn = NUL
 #'   KeyCheckValueAlgorithm, Exportable, Enabled, Tags, DeriveKeyUsage,
 #'   ReplicationRegions)
 #'
-#' @param KeyAttributes &#91;required&#93; The role of the key, the algorithm it supports, and the cryptographic
-#' operations allowed with the key. This data is immutable after the key is
-#' created.
-#' @param KeyCheckValueAlgorithm The algorithm that Amazon Web Services Payment Cryptography uses to
-#' calculate the key check value (KCV). It is used to validate the key
-#' integrity.
+#' @param KeyAttributes &#91;required&#93; The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.
+#' @param KeyCheckValueAlgorithm The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV). It is used to validate the key integrity.
 #' 
-#' For TDES keys, the KCV is computed by encrypting 8 bytes, each with
-#' value of zero, with the key to be checked and retaining the 3 highest
-#' order bytes of the encrypted result. For AES keys, the KCV is computed
-#' using a CMAC algorithm where the input data is 16 bytes of zero and
-#' retaining the 3 highest order bytes of the encrypted result.
+#' For TDES keys, the KCV is computed by encrypting 8 bytes, each with value of zero, with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES keys, the KCV is computed using a CMAC algorithm where the input data is 16 bytes of zero and retaining the 3 highest order bytes of the encrypted result.
 #' @param Exportable &#91;required&#93; Specifies whether the key is exportable from the service.
-#' @param Enabled Specifies whether to enable the key. If the key is enabled, it is
-#' activated for use within the service. If the key is not enabled, then it
-#' is created but not activated. The default value is enabled.
-#' @param Tags Assigns one or more tags to the Amazon Web Services Payment Cryptography
-#' key. Use this parameter to tag a key when it is created. To tag an
-#' existing Amazon Web Services Payment Cryptography key, use the
-#' [`tag_resource`][paymentcryptographycontrolplane_tag_resource]
-#' operation.
+#' @param Enabled Specifies whether to enable the key. If the key is enabled, it is activated for use within the service. If the key is not enabled, then it is created but not activated. The default value is enabled.
+#' @param Tags Assigns one or more tags to the Amazon Web Services Payment Cryptography key. Use this parameter to tag a key when it is created. To tag an existing Amazon Web Services Payment Cryptography key, use the [`tag_resource`][paymentcryptographycontrolplane_tag_resource] operation.
 #' 
-#' Each tag consists of a tag key and a tag value. Both the tag key and the
-#' tag value are required, but the tag value can be an empty (null) string.
-#' You can't have more than one tag on an Amazon Web Services Payment
-#' Cryptography key with the same tag key.
+#' Each tag consists of a tag key and a tag value. Both the tag key and the tag value are required, but the tag value can be an empty (null) string. You can't have more than one tag on an Amazon Web Services Payment Cryptography key with the same tag key.
 #' 
-#' Don't include personal, confidential or sensitive information in this
-#' field. This field may be displayed in plaintext in CloudTrail logs and
-#' other output.
+#' Don't include personal, confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.
 #' 
-#' Tagging or untagging an Amazon Web Services Payment Cryptography key can
-#' allow or deny permission to the key.
-#' @param DeriveKeyUsage The intended cryptographic usage of keys derived from the ECC key pair
-#' to be created.
+#' Tagging or untagging an Amazon Web Services Payment Cryptography key can allow or deny permission to the key.
+#' @param DeriveKeyUsage The intended cryptographic usage of keys derived from the ECC key pair to be created.
 #' 
-#' After creating an ECC key pair, you cannot change the intended
-#' cryptographic usage of keys derived from it using ECDH.
-#' @param ReplicationRegions 
+#' After creating an ECC key pair, you cannot change the intended cryptographic usage of keys derived from it using ECDH.
+#' @param ReplicationRegions A list of Amazon Web Services Regions for key replication operations.
+#' 
+#' Each region in the list must be a valid Amazon Web Services Region identifier where Amazon Web Services Payment Cryptography is available. This list is used to specify which regions should be added to or removed from a key's replication configuration.
 #'
 #' @return
 #' A list with the following syntax:
@@ -397,7 +387,15 @@ paymentcryptographycontrolplane_create_alias <- function(AliasName, KeyArn = NUL
 #'         StatusMessage = "string"
 #'       )
 #'     ),
-#'     UsingDefaultReplicationRegions = TRUE|FALSE
+#'     UsingDefaultReplicationRegions = TRUE|FALSE,
+#'     MpaStatus = list(
+#'       MpaSessionArn = "string",
+#'       Status = "PENDING"|"APPROVED"|"FAILED"|"CANCELLED",
+#'       InitiationDate = as.POSIXct(
+#'         "2015-01-01"
+#'       ),
+#'       StatusMessage = "string"
+#'     )
 #'   )
 #' )
 #' ```
@@ -466,17 +464,9 @@ paymentcryptographycontrolplane_create_key <- function(KeyAttributes, KeyCheckVa
 #' @description
 #' Deletes the alias, but doesn't affect the underlying key.
 #' 
-#' Each key can have multiple aliases. To get the aliases of all keys, use
-#' the [`update_alias`][paymentcryptographycontrolplane_update_alias]
-#' operation. To change the alias of a key, first use
-#' [`delete_alias`][paymentcryptographycontrolplane_delete_alias] to delete
-#' the current alias and then use
-#' [`create_alias`][paymentcryptographycontrolplane_create_alias] to create
-#' a new alias. To associate an existing alias with a different key, call
-#' [`update_alias`][paymentcryptographycontrolplane_update_alias].
+#' Each key can have multiple aliases. To get the aliases of all keys, use the [`update_alias`][paymentcryptographycontrolplane_update_alias] operation. To change the alias of a key, first use [`delete_alias`][paymentcryptographycontrolplane_delete_alias] to delete the current alias and then use [`create_alias`][paymentcryptographycontrolplane_create_alias] to create a new alias. To associate an existing alias with a different key, call [`update_alias`][paymentcryptographycontrolplane_update_alias].
 #' 
-#' **Cross-account use:** This operation can't be used across different
-#' Amazon Web Services accounts.
+#' **Cross-account use:** This operation can't be used across different Amazon Web Services accounts.
 #' 
 #' **Related operations:**
 #' 
@@ -491,9 +481,7 @@ paymentcryptographycontrolplane_create_key <- function(KeyAttributes, KeyCheckVa
 #' @usage
 #' paymentcryptographycontrolplane_delete_alias(AliasName)
 #'
-#' @param AliasName &#91;required&#93; A friendly name that you can use to refer Amazon Web Services Payment
-#' Cryptography key. This value must begin with `alias/` followed by a
-#' name, such as `alias/ExampleAlias`.
+#' @param AliasName &#91;required&#93; A friendly name that you can use to refer Amazon Web Services Payment Cryptography key. This value must begin with `alias/` followed by a name, such as `alias/ExampleAlias`.
 #'
 #' @return
 #' An empty list.
@@ -533,28 +521,13 @@ paymentcryptographycontrolplane_delete_alias <- function(AliasName) {
 #' Services Payment Cryptography key
 #'
 #' @description
-#' Deletes the key material and metadata associated with Amazon Web
-#' Services Payment Cryptography key.
+#' Deletes the key material and metadata associated with Amazon Web Services Payment Cryptography key.
 #' 
-#' Key deletion is irreversible. After a key is deleted, you can't perform
-#' cryptographic operations using the key. For example, you can't decrypt
-#' data that was encrypted by a deleted Amazon Web Services Payment
-#' Cryptography key, and the data may become unrecoverable. Because key
-#' deletion is destructive, Amazon Web Services Payment Cryptography has a
-#' safety mechanism to prevent accidental deletion of a key. When you call
-#' this operation, Amazon Web Services Payment Cryptography disables the
-#' specified key but doesn't delete it until after a waiting period set
-#' using `DeleteKeyInDays`. The default waiting period is 7 days. During
-#' the waiting period, the `KeyState` is `DELETE_PENDING`. After the key is
-#' deleted, the `KeyState` is `DELETE_COMPLETE`.
+#' Key deletion is irreversible. After a key is deleted, you can't perform cryptographic operations using the key. For example, you can't decrypt data that was encrypted by a deleted Amazon Web Services Payment Cryptography key, and the data may become unrecoverable. Because key deletion is destructive, Amazon Web Services Payment Cryptography has a safety mechanism to prevent accidental deletion of a key. When you call this operation, Amazon Web Services Payment Cryptography disables the specified key but doesn't delete it until after a waiting period set using `DeleteKeyInDays`. The default waiting period is 7 days. During the waiting period, the `KeyState` is `DELETE_PENDING`. After the key is deleted, the `KeyState` is `DELETE_COMPLETE`.
 #' 
-#' You should delete a key only when you are sure that you don't need to
-#' use it anymore and no other parties are utilizing this key. If you
-#' aren't sure, consider deactivating it instead by calling
-#' [`stop_key_usage`][paymentcryptographycontrolplane_stop_key_usage].
+#' You should delete a key only when you are sure that you don't need to use it anymore and no other parties are utilizing this key. If you aren't sure, consider deactivating it instead by calling [`stop_key_usage`][paymentcryptographycontrolplane_stop_key_usage].
 #' 
-#' **Cross-account use:** This operation can't be used across different
-#' Amazon Web Services accounts.
+#' **Cross-account use:** This operation supports cross-account use when the key has a resource-based policy that grants access. For more information, see [Resource-based policies](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html).
 #' 
 #' **Related operations:**
 #' 
@@ -623,7 +596,15 @@ paymentcryptographycontrolplane_delete_alias <- function(AliasName) {
 #'         StatusMessage = "string"
 #'       )
 #'     ),
-#'     UsingDefaultReplicationRegions = TRUE|FALSE
+#'     UsingDefaultReplicationRegions = TRUE|FALSE,
+#'     MpaStatus = list(
+#'       MpaSessionArn = "string",
+#'       Status = "PENDING"|"APPROVED"|"FAILED"|"CANCELLED",
+#'       InitiationDate = as.POSIXct(
+#'         "2015-01-01"
+#'       ),
+#'       StatusMessage = "string"
+#'     )
 #'   )
 #' )
 #' ```
@@ -660,29 +641,71 @@ paymentcryptographycontrolplane_delete_key <- function(KeyIdentifier, DeleteKeyI
 }
 .paymentcryptographycontrolplane$operations$delete_key <- paymentcryptographycontrolplane_delete_key
 
+#' Removes the resource-based policy attached to an Amazon Web Services
+#' Payment Cryptography key
+#'
+#' @description
+#' Removes the resource-based policy attached to an Amazon Web Services Payment Cryptography key.
+#' 
+#' **Cross-account use:** This operation can't be used across different Amazon Web Services accounts.
+#' 
+#' **Related operations:**
+#' 
+#' -   [`put_resource_policy`][paymentcryptographycontrolplane_put_resource_policy]
+#' 
+#' -   [`get_resource_policy`][paymentcryptographycontrolplane_get_resource_policy]
+#'
+#' @usage
+#' paymentcryptographycontrolplane_delete_resource_policy(ResourceArn)
+#'
+#' @param ResourceArn &#91;required&#93; The `KeyARN` of the key whose resource-based policy you want to delete.
+#'
+#' @return
+#' An empty list.
+#'
+#' @section Request syntax:
+#' ```
+#' svc$delete_resource_policy(
+#'   ResourceArn = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname paymentcryptographycontrolplane_delete_resource_policy
+#'
+#' @aliases paymentcryptographycontrolplane_delete_resource_policy
+paymentcryptographycontrolplane_delete_resource_policy <- function(ResourceArn) {
+  op <- new_operation(
+    name = "DeleteResourcePolicy",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .paymentcryptographycontrolplane$delete_resource_policy_input(ResourceArn = ResourceArn)
+  output <- .paymentcryptographycontrolplane$delete_resource_policy_output()
+  config <- get_config()
+  svc <- .paymentcryptographycontrolplane$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.paymentcryptographycontrolplane$operations$delete_resource_policy <- paymentcryptographycontrolplane_delete_resource_policy
+
 #' Disables Multi-Region key replication settings for the specified Amazon
 #' Web Services Regions in your Amazon Web Services account, preventing new
 #' keys from being automatically replicated to those regions
 #'
 #' @description
-#' Disables [Multi-Region key
-#' replication](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html)
-#' settings for the specified Amazon Web Services Regions in your Amazon
-#' Web Services account, preventing new keys from being automatically
-#' replicated to those regions.
+#' Disables [Multi-Region key replication](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html) settings for the specified Amazon Web Services Regions in your Amazon Web Services account, preventing new keys from being automatically replicated to those regions.
 #' 
-#' After disabling Multi-Region key replication for specific regions, new
-#' keys created in your account will not be automatically replicated to
-#' those regions. You can still manually add replication to those regions
-#' for individual keys using the
-#' [`add_key_replication_regions`][paymentcryptographycontrolplane_add_key_replication_regions]
-#' operation.
+#' After disabling Multi-Region key replication for specific regions, new keys created in your account will not be automatically replicated to those regions. You can still manually add replication to those regions for individual keys using the [`add_key_replication_regions`][paymentcryptographycontrolplane_add_key_replication_regions] operation.
 #' 
-#' This operation does not affect existing keys or their current
-#' replication configuration.
+#' This operation does not affect existing keys or their current replication configuration.
 #' 
-#' **Cross-account use:** This operation can't be used across different
-#' Amazon Web Services accounts.
+#' **Cross-account use:** This operation can't be used across different Amazon Web Services accounts.
 #' 
 #' **Related operations:**
 #' 
@@ -694,12 +717,9 @@ paymentcryptographycontrolplane_delete_key <- function(KeyIdentifier, DeleteKeyI
 #' paymentcryptographycontrolplane_disable_default_key_replication_regions(
 #'   ReplicationRegions)
 #'
-#' @param ReplicationRegions &#91;required&#93; The list of Amazon Web Services Regions to remove from the account's
-#' default replication regions.
+#' @param ReplicationRegions &#91;required&#93; The list of Amazon Web Services Regions to remove from the account's default replication regions.
 #' 
-#' New keys created after this operation will not automatically be
-#' replicated to these regions, though existing keys with replication to
-#' these regions will be unaffected.
+#' New keys created after this operation will not automatically be replicated to these regions, though existing keys with replication to these regions will be unaffected.
 #'
 #' @return
 #' A list with the following syntax:
@@ -744,28 +764,93 @@ paymentcryptographycontrolplane_disable_default_key_replication_regions <- funct
 }
 .paymentcryptographycontrolplane$operations$disable_default_key_replication_regions <- paymentcryptographycontrolplane_disable_default_key_replication_regions
 
+#' Removes the association between a Multi-Party Approval (MPA) team and a
+#' protected operation
+#'
+#' @description
+#' Removes the association between a Multi-Party Approval (MPA) team and a protected operation.
+#' 
+#' **Cross-account use:** This operation can't be used across different Amazon Web Services accounts.
+#' 
+#' **Related operations:**
+#' 
+#' -   [`associate_mpa_team`][paymentcryptographycontrolplane_associate_mpa_team]
+#' 
+#' -   [`get_mpa_team_association`][paymentcryptographycontrolplane_get_mpa_team_association]
+#'
+#' @usage
+#' paymentcryptographycontrolplane_disassociate_mpa_team(Action,
+#'   RequesterComment)
+#'
+#' @param Action &#91;required&#93; The protected operation to disassociate from the MPA team. Currently, the only supported value is `IMPORT_ROOT_PUBLIC_KEY_CERTIFICATE`.
+#' @param RequesterComment The comment from the requester explaining the reason for the disassociation.
+#' 
+#' Don't include personal, confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   MpaTeamAssociation = list(
+#'     Action = "IMPORT_ROOT_PUBLIC_KEY_CERTIFICATE",
+#'     MpaTeamArn = "string",
+#'     AssociationState = "ACTIVE"|"UPDATE_PENDING"|"DELETE_PENDING",
+#'     MpaStatus = list(
+#'       MpaSessionArn = "string",
+#'       Status = "PENDING"|"APPROVED"|"FAILED"|"CANCELLED",
+#'       InitiationDate = as.POSIXct(
+#'         "2015-01-01"
+#'       ),
+#'       StatusMessage = "string"
+#'     )
+#'   )
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$disassociate_mpa_team(
+#'   Action = "IMPORT_ROOT_PUBLIC_KEY_CERTIFICATE",
+#'   RequesterComment = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname paymentcryptographycontrolplane_disassociate_mpa_team
+#'
+#' @aliases paymentcryptographycontrolplane_disassociate_mpa_team
+paymentcryptographycontrolplane_disassociate_mpa_team <- function(Action, RequesterComment = NULL) {
+  op <- new_operation(
+    name = "DisassociateMpaTeam",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .paymentcryptographycontrolplane$disassociate_mpa_team_input(Action = Action, RequesterComment = RequesterComment)
+  output <- .paymentcryptographycontrolplane$disassociate_mpa_team_output()
+  config <- get_config()
+  svc <- .paymentcryptographycontrolplane$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.paymentcryptographycontrolplane$operations$disassociate_mpa_team <- paymentcryptographycontrolplane_disassociate_mpa_team
+
 #' Enables Multi-Region key replication settings for your Amazon Web
 #' Services account, causing new keys to be automatically replicated to the
 #' specified Amazon Web Services Regions when created
 #'
 #' @description
-#' Enables [Multi-Region key
-#' replication](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html)
-#' settings for your Amazon Web Services account, causing new keys to be
-#' automatically replicated to the specified Amazon Web Services Regions
-#' when created.
+#' Enables [Multi-Region key replication](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html) settings for your Amazon Web Services account, causing new keys to be automatically replicated to the specified Amazon Web Services Regions when created.
 #' 
-#' When Multi-Region key replication are enabled, any new keys created in
-#' your account will automatically be replicated to these regions unless
-#' you explicitly override this behavior during key creation. This
-#' simplifies key management for applications that operate across multiple
-#' regions.
+#' When Multi-Region key replication are enabled, any new keys created in your account will automatically be replicated to these regions unless you explicitly override this behavior during key creation. This simplifies key management for applications that operate across multiple regions.
 #' 
-#' Existing keys are not affected by this operation - only keys created
-#' after enabling default replication will be automatically replicated.
+#' Existing keys are not affected by this operation - only keys created after enabling default replication will be automatically replicated.
 #' 
-#' **Cross-account use:** This operation can't be used across different
-#' Amazon Web Services accounts.
+#' **Cross-account use:** This operation can't be used across different Amazon Web Services accounts.
 #' 
 #' **Related operations:**
 #' 
@@ -777,12 +862,9 @@ paymentcryptographycontrolplane_disable_default_key_replication_regions <- funct
 #' paymentcryptographycontrolplane_enable_default_key_replication_regions(
 #'   ReplicationRegions)
 #'
-#' @param ReplicationRegions &#91;required&#93; The list of Amazon Web Services Regions to enable as default replication
-#' regions for the Amazon Web Services account for [Multi-Region key
-#' replication](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html).
+#' @param ReplicationRegions &#91;required&#93; The list of Amazon Web Services Regions to enable as default replication regions for the Amazon Web Services account for [Multi-Region key replication](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html).
 #' 
-#' New keys created in this account will automatically be replicated to
-#' these regions unless explicitly overridden during key creation.
+#' New keys created in this account will automatically be replicated to these regions unless explicitly overridden during key creation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -832,207 +914,87 @@ paymentcryptographycontrolplane_enable_default_key_replication_regions <- functi
 #' @description
 #' Exports a key from Amazon Web Services Payment Cryptography.
 #' 
-#' Amazon Web Services Payment Cryptography simplifies key exchange by
-#' replacing the existing paper-based approach with a modern electronic
-#' approach. With
-#' [`export_key`][paymentcryptographycontrolplane_export_key] you can
-#' export symmetric keys using either symmetric and asymmetric key exchange
-#' mechanisms. Using this operation, you can share your Amazon Web Services
-#' Payment Cryptography generated keys with other service partners to
-#' perform cryptographic operations outside of Amazon Web Services Payment
-#' Cryptography
+#' Amazon Web Services Payment Cryptography simplifies key exchange by replacing the existing paper-based approach with a modern electronic approach. With [`export_key`][paymentcryptographycontrolplane_export_key] you can export symmetric keys using either symmetric and asymmetric key exchange mechanisms. Using this operation, you can share your Amazon Web Services Payment Cryptography generated keys with other service partners to perform cryptographic operations outside of Amazon Web Services Payment Cryptography
 #' 
-#' For symmetric key exchange, Amazon Web Services Payment Cryptography
-#' uses the ANSI X9 TR-31 norm in accordance with PCI PIN guidelines. And
-#' for asymmetric key exchange, Amazon Web Services Payment Cryptography
-#' supports ANSI X9 TR-34 norm, RSA unwrap, and ECDH (Elliptic Curve
-#' Diffie-Hellman) key exchange mechanisms. Asymmetric key exchange methods
-#' are typically used to establish bi-directional trust between the two
-#' parties exhanging keys and are used for initial key exchange such as Key
-#' Encryption Key (KEK). After which you can export working keys using
-#' symmetric method to perform various cryptographic operations within
-#' Amazon Web Services Payment Cryptography.
+#' For symmetric key exchange, Amazon Web Services Payment Cryptography uses the ANSI X9 TR-31 norm in accordance with PCI PIN guidelines. And for asymmetric key exchange, Amazon Web Services Payment Cryptography supports ANSI X9 TR-34 norm, RSA unwrap, and ECDH (Elliptic Curve Diffie-Hellman) key exchange mechanisms. Asymmetric key exchange methods are typically used to establish bi-directional trust between the two parties exhanging keys and are used for initial key exchange such as Key Encryption Key (KEK). After which you can export working keys using symmetric method to perform various cryptographic operations within Amazon Web Services Payment Cryptography.
 #' 
-#' PCI requires specific minimum key strength of wrapping keys used to
-#' protect the keys being exchanged electronically. These requirements can
-#' change when PCI standards are revised. The rules specify that wrapping
-#' keys used for transport must be at least as strong as the key being
-#' protected. For more information on recommended key strength of wrapping
-#' keys and key exchange mechanism, see [Importing and exporting
-#' keys](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-importexport.html)
-#' in the *Amazon Web Services Payment Cryptography User Guide*.
+#' PCI requires specific minimum key strength of wrapping keys used to protect the keys being exchanged electronically. These requirements can change when PCI standards are revised. The rules specify that wrapping keys used for transport must be at least as strong as the key being protected. For more information on recommended key strength of wrapping keys and key exchange mechanism, see [Importing and exporting keys](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-importexport.html) in the *Amazon Web Services Payment Cryptography User Guide*.
 #' 
-#' You can also use
-#' [`export_key`][paymentcryptographycontrolplane_export_key] functionality
-#' to generate and export an IPEK (Initial Pin Encryption Key) from Amazon
-#' Web Services Payment Cryptography using either TR-31 or TR-34 export key
-#' exchange. IPEK is generated from BDK (Base Derivation Key) and
-#' `ExportDukptInitialKey` attribute KSN (`KeySerialNumber`). The generated
-#' IPEK does not persist within Amazon Web Services Payment Cryptography
-#' and has to be re-generated each time during export.
+#' You can also use [`export_key`][paymentcryptographycontrolplane_export_key] functionality to generate and export an IPEK (Initial Pin Encryption Key) from Amazon Web Services Payment Cryptography using either TR-31 or TR-34 export key exchange. IPEK is generated from BDK (Base Derivation Key) and `ExportDukptInitialKey` attribute KSN (`KeySerialNumber`). The generated IPEK does not persist within Amazon Web Services Payment Cryptography and has to be re-generated each time during export.
 #' 
-#' For key exchange using TR-31 or TR-34 key blocks, you can also export
-#' optional blocks within the key block header which contain additional
-#' attribute information about the key. The `KeyVersion` within
-#' `KeyBlockHeaders` indicates the version of the key within the key block.
-#' Furthermore, `KeyExportability` within `KeyBlockHeaders` can be used to
-#' further restrict exportability of the key after export from Amazon Web
-#' Services Payment Cryptography.
+#' For key exchange using TR-31 or TR-34 key blocks, you can also export optional blocks within the key block header which contain additional attribute information about the key. The `KeyVersion` within `KeyBlockHeaders` indicates the version of the key within the key block. Furthermore, `KeyExportability` within `KeyBlockHeaders` can be used to further restrict exportability of the key after export from Amazon Web Services Payment Cryptography.
 #' 
-#' The `OptionalBlocks` contain the additional data related to the key. For
-#' information on data type that can be included within optional blocks,
-#' refer to ASC X9.143-2022.
+#' The `OptionalBlocks` contain the additional data related to the key. For information on data type that can be included within optional blocks, refer to ASC X9.143-2022.
 #' 
-#' Data included in key block headers is signed but transmitted in clear
-#' text. Sensitive or confidential information should not be included in
-#' optional blocks. Refer to ASC X9.143-2022 standard for information on
-#' allowed data type.
+#' Data included in key block headers is signed but transmitted in clear text. Sensitive or confidential information should not be included in optional blocks. Refer to ASC X9.143-2022 standard for information on allowed data type.
 #' 
 #' **To export initial keys (KEK) or IPEK using TR-34**
 #' 
-#' Using this operation, you can export initial key using TR-34 asymmetric
-#' key exchange. You can only export KEK generated within Amazon Web
-#' Services Payment Cryptography. In TR-34 terminology, the sending party
-#' of the key is called Key Distribution Host (KDH) and the receiving party
-#' of the key is called Key Receiving Device (KRD). During key export
-#' process, KDH is Amazon Web Services Payment Cryptography which initiates
-#' key export and KRD is the user receiving the key.
+#' Using this operation, you can export initial key using TR-34 asymmetric key exchange. You can only export KEK generated within Amazon Web Services Payment Cryptography. In TR-34 terminology, the sending party of the key is called Key Distribution Host (KDH) and the receiving party of the key is called Key Receiving Device (KRD). During key export process, KDH is Amazon Web Services Payment Cryptography which initiates key export and KRD is the user receiving the key.
 #' 
-#' To initiate TR-34 key export, the KRD must obtain an export token by
-#' calling
-#' [`get_parameters_for_export`][paymentcryptographycontrolplane_get_parameters_for_export].
-#' This operation also generates a key pair for the purpose of key export,
-#' signs the key and returns back the signing public key certificate (also
-#' known as KDH signing certificate) and root certificate chain. The KDH
-#' uses the private key to sign the the export payload and the signing
-#' public key certificate is provided to KRD to verify the signature. The
-#' KRD can import the root certificate into its Hardware Security Module
-#' (HSM), as required. The export token and the associated KDH signing
-#' certificate expires after 30 days.
+#' To initiate TR-34 key export, the KRD must obtain an export token by calling [`get_parameters_for_export`][paymentcryptographycontrolplane_get_parameters_for_export]. This operation also generates a key pair for the purpose of key export, signs the key and returns back the signing public key certificate (also known as KDH signing certificate) and root certificate chain. The KDH uses the private key to sign the the export payload and the signing public key certificate is provided to KRD to verify the signature. The KRD can import the root certificate into its Hardware Security Module (HSM), as required. The export token and the associated KDH signing certificate expires after 30 days.
 #' 
-#' Next the KRD generates a key pair for the the purpose of encrypting the
-#' KDH key and provides the public key cerificate (also known as KRD
-#' wrapping certificate) back to KDH. The KRD will also import the root
-#' cerificate chain into Amazon Web Services Payment Cryptography by
-#' calling [`import_key`][paymentcryptographycontrolplane_import_key] for
-#' `RootCertificatePublicKey`. The KDH, Amazon Web Services Payment
-#' Cryptography, will use the KRD wrapping cerificate to encrypt (wrap) the
-#' key under export and signs it with signing private key to generate a
-#' TR-34 WrappedKeyBlock. For more information on TR-34 key export, see
-#' section [Exporting symmetric
-#' keys](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-export.html)
-#' in the *Amazon Web Services Payment Cryptography User Guide*.
+#' Next the KRD generates a key pair for the the purpose of encrypting the KDH key and provides the public key cerificate (also known as KRD wrapping certificate) back to KDH. The KRD will also import the root cerificate chain into Amazon Web Services Payment Cryptography by calling [`import_key`][paymentcryptographycontrolplane_import_key] for `RootCertificatePublicKey`. The KDH, Amazon Web Services Payment Cryptography, will use the KRD wrapping cerificate to encrypt (wrap) the key under export and signs it with signing private key to generate a TR-34 WrappedKeyBlock. For more information on TR-34 key export, see section [Exporting symmetric keys](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-export.html) in the *Amazon Web Services Payment Cryptography User Guide*.
 #' 
 #' Set the following parameters:
 #' 
-#' -   `ExportAttributes`: Specify export attributes in case of IPEK
-#'     export. This parameter is optional for KEK export.
+#' -   `ExportAttributes`: Specify export attributes in case of IPEK export. This parameter is optional for KEK export.
 #' 
-#' -   `ExportKeyIdentifier`: The `KeyARN` of the KEK or BDK (in case of
-#'     IPEK) under export.
+#' -   `ExportKeyIdentifier`: The `KeyARN` of the KEK or BDK (in case of IPEK) under export.
 #' 
 #' -   `KeyMaterial`: Use `Tr34KeyBlock` parameters.
 #' 
-#' -   `CertificateAuthorityPublicKeyIdentifier`: The `KeyARN` of the
-#'     certificate chain that signed the KRD wrapping key certificate.
+#' -   `CertificateAuthorityPublicKeyIdentifier`: The `KeyARN` of the certificate chain that signed the KRD wrapping key certificate.
 #' 
-#' -   `ExportToken`: Obtained from KDH by calling
-#'     [`get_parameters_for_import`][paymentcryptographycontrolplane_get_parameters_for_import].
+#' -   `ExportToken`: Obtained from KDH by calling [`get_parameters_for_import`][paymentcryptographycontrolplane_get_parameters_for_import].
 #' 
-#' -   `WrappingKeyCertificate`: The public key certificate in PEM format
-#'     (base64 encoded) of the KRD wrapping key Amazon Web Services Payment
-#'     Cryptography uses for encryption of the TR-34 export payload. This
-#'     certificate must be signed by the root certificate
-#'     (CertificateAuthorityPublicKeyIdentifier) imported into Amazon Web
-#'     Services Payment Cryptography.
+#' -   `WrappingKeyCertificate`: The public key certificate in PEM format (base64 encoded) of the KRD wrapping key Amazon Web Services Payment Cryptography uses for encryption of the TR-34 export payload. This certificate must be signed by the root certificate (CertificateAuthorityPublicKeyIdentifier) imported into Amazon Web Services Payment Cryptography.
 #' 
-#' When this operation is successful, Amazon Web Services Payment
-#' Cryptography returns the KEK or IPEK as a TR-34 WrappedKeyBlock.
+#' When this operation is successful, Amazon Web Services Payment Cryptography returns the KEK or IPEK as a TR-34 WrappedKeyBlock.
 #' 
 #' **To export initial keys (KEK) or IPEK using RSA Wrap and Unwrap**
 #' 
-#' Using this operation, you can export initial key using asymmetric RSA
-#' wrap and unwrap key exchange method. To initiate export, generate an
-#' asymmetric key pair on the receiving HSM and obtain the public key
-#' certificate in PEM format (base64 encoded) for the purpose of wrapping
-#' and the root certifiate chain. Import the root certificate into Amazon
-#' Web Services Payment Cryptography by calling
-#' [`import_key`][paymentcryptographycontrolplane_import_key] for
-#' `RootCertificatePublicKey`.
+#' Using this operation, you can export initial key using asymmetric RSA wrap and unwrap key exchange method. To initiate export, generate an asymmetric key pair on the receiving HSM and obtain the public key certificate in PEM format (base64 encoded) for the purpose of wrapping and the root certifiate chain. Import the root certificate into Amazon Web Services Payment Cryptography by calling [`import_key`][paymentcryptographycontrolplane_import_key] for `RootCertificatePublicKey`.
 #' 
-#' Next call [`export_key`][paymentcryptographycontrolplane_export_key] and
-#' set the following parameters:
+#' Next call [`export_key`][paymentcryptographycontrolplane_export_key] and set the following parameters:
 #' 
-#' -   `CertificateAuthorityPublicKeyIdentifier`: The `KeyARN` of the
-#'     certificate chain that signed wrapping key certificate.
+#' -   `CertificateAuthorityPublicKeyIdentifier`: The `KeyARN` of the certificate chain that signed wrapping key certificate.
 #' 
 #' -   `KeyMaterial`: Set to `KeyCryptogram`.
 #' 
-#' -   `WrappingKeyCertificate`: The public key certificate in PEM format
-#'     (base64 encoded) obtained by the receiving HSM and signed by the
-#'     root certificate (CertificateAuthorityPublicKeyIdentifier) imported
-#'     into Amazon Web Services Payment Cryptography. The receiving HSM
-#'     uses its private key component to unwrap the WrappedKeyCryptogram.
+#' -   `WrappingKeyCertificate`: The public key certificate in PEM format (base64 encoded) obtained by the receiving HSM and signed by the root certificate (CertificateAuthorityPublicKeyIdentifier) imported into Amazon Web Services Payment Cryptography. The receiving HSM uses its private key component to unwrap the WrappedKeyCryptogram.
 #' 
-#' When this operation is successful, Amazon Web Services Payment
-#' Cryptography returns the WrappedKeyCryptogram.
+#' When this operation is successful, Amazon Web Services Payment Cryptography returns the WrappedKeyCryptogram.
 #' 
 #' **To export working keys or IPEK using TR-31**
 #' 
-#' Using this operation, you can export working keys or IPEK using TR-31
-#' symmetric key exchange. In TR-31, you must use an initial key such as
-#' KEK to encrypt or wrap the key under export. To establish a KEK, you can
-#' use [`create_key`][paymentcryptographycontrolplane_create_key] or
-#' [`import_key`][paymentcryptographycontrolplane_import_key].
+#' Using this operation, you can export working keys or IPEK using TR-31 symmetric key exchange. In TR-31, you must use an initial key such as KEK to encrypt or wrap the key under export. To establish a KEK, you can use [`create_key`][paymentcryptographycontrolplane_create_key] or [`import_key`][paymentcryptographycontrolplane_import_key].
 #' 
 #' Set the following parameters:
 #' 
-#' -   `ExportAttributes`: Specify export attributes in case of IPEK
-#'     export. This parameter is optional for KEK export.
+#' -   `ExportAttributes`: Specify export attributes in case of IPEK export. This parameter is optional for KEK export.
 #' 
-#' -   `ExportKeyIdentifier`: The `KeyARN` of the KEK or BDK (in case of
-#'     IPEK) under export.
+#' -   `ExportKeyIdentifier`: The `KeyARN` of the KEK or BDK (in case of IPEK) under export.
 #' 
 #' -   `KeyMaterial`: Use `Tr31KeyBlock` parameters.
 #' 
 #' **To export working keys using ECDH**
 #' 
-#' You can also use ECDH key agreement to export working keys in a TR-31
-#' keyblock, where the wrapping key is an ECDH derived key.
+#' You can also use ECDH key agreement to export working keys in a TR-31 keyblock, where the wrapping key is an ECDH derived key.
 #' 
-#' To initiate a TR-31 key export using ECDH, both sides must create an ECC
-#' key pair with key usage K3 and exchange public key certificates. In
-#' Amazon Web Services Payment Cryptography, you can do this by calling
-#' [`create_key`][paymentcryptographycontrolplane_create_key]. If you have
-#' not already done so, you must import the CA chain that issued the
-#' receiving public key certificate by calling
-#' [`import_key`][paymentcryptographycontrolplane_import_key] with input
-#' `RootCertificatePublicKey` for root CA or `TrustedPublicKey` for
-#' intermediate CA. You can then complete a TR-31 key export by deriving a
-#' shared wrapping key using the service ECC key pair, public certificate
-#' of your ECC key pair outside of Amazon Web Services Payment
-#' Cryptography, and the key derivation parameters including key derivation
-#' function, hash algorithm, derivation data, key algorithm.
+#' To initiate a TR-31 key export using ECDH, both sides must create an ECC key pair with key usage K3 and exchange public key certificates. In Amazon Web Services Payment Cryptography, you can do this by calling [`create_key`][paymentcryptographycontrolplane_create_key]. If you have not already done so, you must import the CA chain that issued the receiving public key certificate by calling [`import_key`][paymentcryptographycontrolplane_import_key] with input `RootCertificatePublicKey` for root CA or `TrustedPublicKey` for intermediate CA. You can then complete a TR-31 key export by deriving a shared wrapping key using the service ECC key pair, public certificate of your ECC key pair outside of Amazon Web Services Payment Cryptography, and the key derivation parameters including key derivation function, hash algorithm, derivation data, key algorithm.
 #' 
 #' -   `KeyMaterial`: Use `DiffieHellmanTr31KeyBlock` parameters.
 #' 
-#' -   `PrivateKeyIdentifier`: The `KeyArn` of the ECC key pair created
-#'     within Amazon Web Services Payment Cryptography to derive a shared
-#'     KEK.
+#' -   `PrivateKeyIdentifier`: The `KeyArn` of the ECC key pair created within Amazon Web Services Payment Cryptography to derive a shared KEK.
 #' 
-#' -   `PublicKeyCertificate`: The public key certificate of the receiving
-#'     ECC key pair in PEM format (base64 encoded) to derive a shared KEK.
+#' -   `PublicKeyCertificate`: The public key certificate of the receiving ECC key pair in PEM format (base64 encoded) to derive a shared KEK.
 #' 
-#' -   `CertificateAuthorityPublicKeyIdentifier`: The `keyARN` of the CA
-#'     that signed the public key certificate of the receiving ECC key
-#'     pair.
+#' -   `CertificateAuthorityPublicKeyIdentifier`: The `keyARN` of the CA that signed the public key certificate of the receiving ECC key pair.
 #' 
-#' When this operation is successful, Amazon Web Services Payment
-#' Cryptography returns the working key as a TR-31 WrappedKeyBlock, where
-#' the wrapping key is the ECDH derived key.
+#' When this operation is successful, Amazon Web Services Payment Cryptography returns the working key as a TR-31 WrappedKeyBlock, where the wrapping key is the ECDH derived key.
 #' 
-#' **Cross-account use:** This operation can't be used across different
-#' Amazon Web Services accounts.
+#' **Cross-account use:** This operation supports cross-account use when the key has a resource-based policy that grants access. For more information, see [Resource-based policies](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html).
 #' 
 #' **Related operations:**
 #' 
@@ -1044,10 +1006,8 @@ paymentcryptographycontrolplane_enable_default_key_replication_regions <- functi
 #' paymentcryptographycontrolplane_export_key(KeyMaterial,
 #'   ExportKeyIdentifier, ExportAttributes)
 #'
-#' @param KeyMaterial &#91;required&#93; The key block format type, for example, TR-34 or TR-31, to use during
-#' key material export.
-#' @param ExportKeyIdentifier &#91;required&#93; The `KeyARN` of the key under export from Amazon Web Services Payment
-#' Cryptography.
+#' @param KeyMaterial &#91;required&#93; The key block format type, for example, TR-34 or TR-31, to use during key material export.
+#' @param ExportKeyIdentifier &#91;required&#93; The `KeyARN` of the key under export from Amazon Web Services Payment Cryptography.
 #' @param ExportAttributes The attributes for IPEK generation during export.
 #'
 #' @return
@@ -1193,11 +1153,9 @@ paymentcryptographycontrolplane_export_key <- function(KeyMaterial, ExportKeyIde
 #' the alias
 #'
 #' @description
-#' Gets the Amazon Web Services Payment Cryptography key associated with
-#' the alias.
+#' Gets the Amazon Web Services Payment Cryptography key associated with the alias.
 #' 
-#' **Cross-account use:** This operation can't be used across different
-#' Amazon Web Services accounts.
+#' **Cross-account use:** This operation can't be used across different Amazon Web Services accounts.
 #' 
 #' **Related operations:**
 #' 
@@ -1322,18 +1280,11 @@ paymentcryptographycontrolplane_get_certificate_signing_request <- function(KeyI
 #' replication is currently enabled for your Amazon Web Services account
 #'
 #' @description
-#' Retrieves the list of Amazon Web Services Regions where [Multi-Region
-#' key
-#' replication](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html)
-#' is currently enabled for your Amazon Web Services account.
+#' Retrieves the list of Amazon Web Services Regions where [Multi-Region key replication](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html) is currently enabled for your Amazon Web Services account.
 #' 
-#' This operation returns the current Multi-Region key replication
-#' configuration. New keys created in your account will be automatically
-#' replicated to these regions unless explicitly overridden during key
-#' creation.
+#' This operation returns the current Multi-Region key replication configuration. New keys created in your account will be automatically replicated to these regions unless explicitly overridden during key creation.
 #' 
-#' **Cross-account use:** This operation can't be used across different
-#' Amazon Web Services accounts.
+#' **Cross-account use:** This operation can't be used across different Amazon Web Services accounts.
 #' 
 #' **Related operations:**
 #' 
@@ -1390,13 +1341,9 @@ paymentcryptographycontrolplane_get_default_key_replication_regions <- function(
 #' key was created
 #'
 #' @description
-#' Gets the key metadata for an Amazon Web Services Payment Cryptography
-#' key, including the immutable and mutable attributes specified when the
-#' key was created. Returns key metadata including attributes, state, and
-#' timestamps, but does not return the actual cryptographic key material.
+#' Gets the key metadata for an Amazon Web Services Payment Cryptography key, including the immutable and mutable attributes specified when the key was created. Returns key metadata including attributes, state, and timestamps, but does not return the actual cryptographic key material.
 #' 
-#' **Cross-account use:** This operation can't be used across different
-#' Amazon Web Services accounts.
+#' **Cross-account use:** This operation supports cross-account use when the key has a resource-based policy that grants access. For more information, see [Resource-based policies](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html).
 #' 
 #' **Related operations:**
 #' 
@@ -1463,7 +1410,15 @@ paymentcryptographycontrolplane_get_default_key_replication_regions <- function(
 #'         StatusMessage = "string"
 #'       )
 #'     ),
-#'     UsingDefaultReplicationRegions = TRUE|FALSE
+#'     UsingDefaultReplicationRegions = TRUE|FALSE,
+#'     MpaStatus = list(
+#'       MpaSessionArn = "string",
+#'       Status = "PENDING"|"APPROVED"|"FAILED"|"CANCELLED",
+#'       InitiationDate = as.POSIXct(
+#'         "2015-01-01"
+#'       ),
+#'       StatusMessage = "string"
+#'     )
 #'   )
 #' )
 #' ```
@@ -1499,22 +1454,87 @@ paymentcryptographycontrolplane_get_key <- function(KeyIdentifier) {
 }
 .paymentcryptographycontrolplane$operations$get_key <- paymentcryptographycontrolplane_get_key
 
+#' Returns the Multi-Party Approval (MPA) team association for a protected
+#' operation
+#'
+#' @description
+#' Returns the Multi-Party Approval (MPA) team association for a protected operation.
+#' 
+#' **Cross-account use:** This operation can't be used across different Amazon Web Services accounts.
+#' 
+#' **Related operations:**
+#' 
+#' -   [`associate_mpa_team`][paymentcryptographycontrolplane_associate_mpa_team]
+#' 
+#' -   [`disassociate_mpa_team`][paymentcryptographycontrolplane_disassociate_mpa_team]
+#'
+#' @usage
+#' paymentcryptographycontrolplane_get_mpa_team_association(Action)
+#'
+#' @param Action &#91;required&#93; The protected operation whose MPA team association you want to retrieve. Currently, the only supported value is `IMPORT_ROOT_PUBLIC_KEY_CERTIFICATE`.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   MpaTeamAssociation = list(
+#'     Action = "IMPORT_ROOT_PUBLIC_KEY_CERTIFICATE",
+#'     MpaTeamArn = "string",
+#'     AssociationState = "ACTIVE"|"UPDATE_PENDING"|"DELETE_PENDING",
+#'     MpaStatus = list(
+#'       MpaSessionArn = "string",
+#'       Status = "PENDING"|"APPROVED"|"FAILED"|"CANCELLED",
+#'       InitiationDate = as.POSIXct(
+#'         "2015-01-01"
+#'       ),
+#'       StatusMessage = "string"
+#'     )
+#'   )
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$get_mpa_team_association(
+#'   Action = "IMPORT_ROOT_PUBLIC_KEY_CERTIFICATE"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname paymentcryptographycontrolplane_get_mpa_team_association
+#'
+#' @aliases paymentcryptographycontrolplane_get_mpa_team_association
+paymentcryptographycontrolplane_get_mpa_team_association <- function(Action) {
+  op <- new_operation(
+    name = "GetMpaTeamAssociation",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .paymentcryptographycontrolplane$get_mpa_team_association_input(Action = Action)
+  output <- .paymentcryptographycontrolplane$get_mpa_team_association_output()
+  config <- get_config()
+  svc <- .paymentcryptographycontrolplane$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.paymentcryptographycontrolplane$operations$get_mpa_team_association <- paymentcryptographycontrolplane_get_mpa_team_association
+
 #' Gets the export token and the signing key certificate to initiate a
 #' TR-34 key export from Amazon Web Services Payment Cryptography
 #'
 #' @description
-#' Gets the export token and the signing key certificate to initiate a
-#' TR-34 key export from Amazon Web Services Payment Cryptography.
+#' Gets the export token and the signing key certificate to initiate a TR-34 key export from Amazon Web Services Payment Cryptography.
 #' 
-#' The signing key certificate signs the wrapped key under export within
-#' the TR-34 key payload. The export token and signing key certificate must
-#' be in place and operational before calling
-#' [`export_key`][paymentcryptographycontrolplane_export_key]. The export
-#' token expires in 30 days. You can use the same export token to export
-#' multiple keys from your service account.
+#' The signing key certificate signs the wrapped key under export within the TR-34 key payload. The export token and signing key certificate must be in place and operational before calling [`export_key`][paymentcryptographycontrolplane_export_key]. The export token expires in 30 days. You can use the same export token to export multiple keys from your service account.
 #' 
-#' **Cross-account use:** This operation can't be used across different
-#' Amazon Web Services accounts.
+#' To return a previously generated export token and signing key certificate instead of generating new ones, set `ReuseLastGeneratedToken` to `true`.
+#' 
+#' **Cross-account use:** This operation can't be used across different Amazon Web Services accounts.
 #' 
 #' **Related operations:**
 #' 
@@ -1524,15 +1544,11 @@ paymentcryptographycontrolplane_get_key <- function(KeyIdentifier) {
 #'
 #' @usage
 #' paymentcryptographycontrolplane_get_parameters_for_export(
-#'   KeyMaterialType, SigningKeyAlgorithm)
+#'   KeyMaterialType, SigningKeyAlgorithm, ReuseLastGeneratedToken)
 #'
-#' @param KeyMaterialType &#91;required&#93; The key block format type (for example, TR-34 or TR-31) to use during
-#' key material export. Export token is only required for a TR-34 key
-#' export, `TR34_KEY_BLOCK`. Export token is not required for TR-31 key
-#' export.
-#' @param SigningKeyAlgorithm &#91;required&#93; The signing key algorithm to generate a signing key certificate. This
-#' certificate signs the wrapped key under export within the TR-34 key
-#' block. `RSA_2048` is the only signing key algorithm allowed.
+#' @param KeyMaterialType &#91;required&#93; The key block format type (for example, TR-34 or TR-31) to use during key material export. Export token is only required for a TR-34 key export, `TR34_KEY_BLOCK`. Export token is not required for TR-31 key export.
+#' @param SigningKeyAlgorithm &#91;required&#93; The signing key algorithm to generate a signing key certificate. This certificate signs the wrapped key under export within the TR-34 key block. `RSA_2048` is the only signing key algorithm allowed.
+#' @param ReuseLastGeneratedToken Specifies whether to reuse the existing export token and signing key certificate. If set to `true` and a valid export token exists for the same key material type and signing key algorithm with at least 7 days of remaining validity, the existing token and signing key certificate are returned. Otherwise, a new export token and signing key certificate are generated. The default value is `false`, which generates a new export token and signing key certificate on every call.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1552,7 +1568,8 @@ paymentcryptographycontrolplane_get_key <- function(KeyIdentifier) {
 #' ```
 #' svc$get_parameters_for_export(
 #'   KeyMaterialType = "TR34_KEY_BLOCK"|"TR31_KEY_BLOCK"|"ROOT_PUBLIC_KEY_CERTIFICATE"|"TRUSTED_PUBLIC_KEY_CERTIFICATE"|"KEY_CRYPTOGRAM",
-#'   SigningKeyAlgorithm = "TDES_2KEY"|"TDES_3KEY"|"AES_128"|"AES_192"|"AES_256"|"HMAC_SHA256"|"HMAC_SHA384"|"HMAC_SHA512"|"HMAC_SHA224"|"RSA_2048"|"RSA_3072"|"RSA_4096"|"ECC_NIST_P256"|"ECC_NIST_P384"|"ECC_NIST_P521"
+#'   SigningKeyAlgorithm = "TDES_2KEY"|"TDES_3KEY"|"AES_128"|"AES_192"|"AES_256"|"HMAC_SHA256"|"HMAC_SHA384"|"HMAC_SHA512"|"HMAC_SHA224"|"RSA_2048"|"RSA_3072"|"RSA_4096"|"ECC_NIST_P256"|"ECC_NIST_P384"|"ECC_NIST_P521",
+#'   ReuseLastGeneratedToken = TRUE|FALSE
 #' )
 #' ```
 #'
@@ -1561,7 +1578,7 @@ paymentcryptographycontrolplane_get_key <- function(KeyIdentifier) {
 #' @rdname paymentcryptographycontrolplane_get_parameters_for_export
 #'
 #' @aliases paymentcryptographycontrolplane_get_parameters_for_export
-paymentcryptographycontrolplane_get_parameters_for_export <- function(KeyMaterialType, SigningKeyAlgorithm) {
+paymentcryptographycontrolplane_get_parameters_for_export <- function(KeyMaterialType, SigningKeyAlgorithm, ReuseLastGeneratedToken = NULL) {
   op <- new_operation(
     name = "GetParametersForExport",
     http_method = "POST",
@@ -1570,7 +1587,7 @@ paymentcryptographycontrolplane_get_parameters_for_export <- function(KeyMateria
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .paymentcryptographycontrolplane$get_parameters_for_export_input(KeyMaterialType = KeyMaterialType, SigningKeyAlgorithm = SigningKeyAlgorithm)
+  input <- .paymentcryptographycontrolplane$get_parameters_for_export_input(KeyMaterialType = KeyMaterialType, SigningKeyAlgorithm = SigningKeyAlgorithm, ReuseLastGeneratedToken = ReuseLastGeneratedToken)
   output <- .paymentcryptographycontrolplane$get_parameters_for_export_output()
   config <- get_config()
   svc <- .paymentcryptographycontrolplane$service(config, op)
@@ -1586,20 +1603,13 @@ paymentcryptographycontrolplane_get_parameters_for_export <- function(KeyMateria
 #' Cryptography
 #'
 #' @description
-#' Gets the import token and the wrapping key certificate in PEM format
-#' (base64 encoded) to initiate a TR-34 WrappedKeyBlock or a RSA
-#' WrappedKeyCryptogram import into Amazon Web Services Payment
-#' Cryptography.
+#' Gets the import token and the wrapping key certificate in PEM format (base64 encoded) to initiate a TR-34 WrappedKeyBlock or a RSA WrappedKeyCryptogram import into Amazon Web Services Payment Cryptography.
 #' 
-#' The wrapping key certificate wraps the key under import. The import
-#' token and wrapping key certificate must be in place and operational
-#' before calling
-#' [`import_key`][paymentcryptographycontrolplane_import_key]. The import
-#' token expires in 30 days. You can use the same import token to import
-#' multiple keys into your service account.
+#' The wrapping key certificate wraps the key under import. The import token and wrapping key certificate must be in place and operational before calling [`import_key`][paymentcryptographycontrolplane_import_key]. The import token expires in 30 days. You can use the same import token to import multiple keys into your service account.
 #' 
-#' **Cross-account use:** This operation can't be used across different
-#' Amazon Web Services accounts.
+#' To return a previously generated import token and wrapping key certificate instead of generating new ones, set `ReuseLastGeneratedToken` to `true`.
+#' 
+#' **Cross-account use:** This operation can't be used across different Amazon Web Services accounts.
 #' 
 #' **Related operations:**
 #' 
@@ -1609,20 +1619,15 @@ paymentcryptographycontrolplane_get_parameters_for_export <- function(KeyMateria
 #'
 #' @usage
 #' paymentcryptographycontrolplane_get_parameters_for_import(
-#'   KeyMaterialType, WrappingKeyAlgorithm)
+#'   KeyMaterialType, WrappingKeyAlgorithm, ReuseLastGeneratedToken)
 #'
-#' @param KeyMaterialType &#91;required&#93; The method to use for key material import. Import token is only required
-#' for TR-34 WrappedKeyBlock (`TR34_KEY_BLOCK`) and RSA
-#' WrappedKeyCryptogram (`KEY_CRYPTOGRAM`).
+#' @param KeyMaterialType &#91;required&#93; The method to use for key material import. Import token is only required for TR-34 WrappedKeyBlock (`TR34_KEY_BLOCK`) and RSA WrappedKeyCryptogram (`KEY_CRYPTOGRAM`).
 #' 
-#' Import token is not required for TR-31, root public key cerificate or
-#' trusted public key certificate.
-#' @param WrappingKeyAlgorithm &#91;required&#93; The wrapping key algorithm to generate a wrapping key certificate. This
-#' certificate wraps the key under import.
+#' Import token is not required for TR-31, root public key cerificate or trusted public key certificate.
+#' @param WrappingKeyAlgorithm &#91;required&#93; The wrapping key algorithm to generate a wrapping key certificate. This certificate wraps the key under import.
 #' 
-#' At this time, `RSA_2048` is the allowed algorithm for TR-34
-#' WrappedKeyBlock import. Additionally, `RSA_2048`, `RSA_3072`, `RSA_4096`
-#' are the allowed algorithms for RSA WrappedKeyCryptogram import.
+#' At this time, `RSA_2048` is the allowed algorithm for TR-34 WrappedKeyBlock import. Additionally, `RSA_2048`, `RSA_3072`, `RSA_4096` are the allowed algorithms for RSA WrappedKeyCryptogram import.
+#' @param ReuseLastGeneratedToken Specifies whether to reuse the existing import token and wrapping key certificate. If set to `true` and a valid import token exists for the same key material type and wrapping key algorithm with at least 7 days of remaining validity, the existing token and wrapping key certificate are returned. Otherwise, a new import token and wrapping key certificate are generated. The default value is `false`, which generates a new import token and wrapping key certificate on every call.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1642,7 +1647,8 @@ paymentcryptographycontrolplane_get_parameters_for_export <- function(KeyMateria
 #' ```
 #' svc$get_parameters_for_import(
 #'   KeyMaterialType = "TR34_KEY_BLOCK"|"TR31_KEY_BLOCK"|"ROOT_PUBLIC_KEY_CERTIFICATE"|"TRUSTED_PUBLIC_KEY_CERTIFICATE"|"KEY_CRYPTOGRAM",
-#'   WrappingKeyAlgorithm = "TDES_2KEY"|"TDES_3KEY"|"AES_128"|"AES_192"|"AES_256"|"HMAC_SHA256"|"HMAC_SHA384"|"HMAC_SHA512"|"HMAC_SHA224"|"RSA_2048"|"RSA_3072"|"RSA_4096"|"ECC_NIST_P256"|"ECC_NIST_P384"|"ECC_NIST_P521"
+#'   WrappingKeyAlgorithm = "TDES_2KEY"|"TDES_3KEY"|"AES_128"|"AES_192"|"AES_256"|"HMAC_SHA256"|"HMAC_SHA384"|"HMAC_SHA512"|"HMAC_SHA224"|"RSA_2048"|"RSA_3072"|"RSA_4096"|"ECC_NIST_P256"|"ECC_NIST_P384"|"ECC_NIST_P521",
+#'   ReuseLastGeneratedToken = TRUE|FALSE
 #' )
 #' ```
 #'
@@ -1651,7 +1657,7 @@ paymentcryptographycontrolplane_get_parameters_for_export <- function(KeyMateria
 #' @rdname paymentcryptographycontrolplane_get_parameters_for_import
 #'
 #' @aliases paymentcryptographycontrolplane_get_parameters_for_import
-paymentcryptographycontrolplane_get_parameters_for_import <- function(KeyMaterialType, WrappingKeyAlgorithm) {
+paymentcryptographycontrolplane_get_parameters_for_import <- function(KeyMaterialType, WrappingKeyAlgorithm, ReuseLastGeneratedToken = NULL) {
   op <- new_operation(
     name = "GetParametersForImport",
     http_method = "POST",
@@ -1660,7 +1666,7 @@ paymentcryptographycontrolplane_get_parameters_for_import <- function(KeyMateria
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .paymentcryptographycontrolplane$get_parameters_for_import_input(KeyMaterialType = KeyMaterialType, WrappingKeyAlgorithm = WrappingKeyAlgorithm)
+  input <- .paymentcryptographycontrolplane$get_parameters_for_import_input(KeyMaterialType = KeyMaterialType, WrappingKeyAlgorithm = WrappingKeyAlgorithm, ReuseLastGeneratedToken = ReuseLastGeneratedToken)
   output <- .paymentcryptographycontrolplane$get_parameters_for_import_output()
   config <- get_config()
   svc <- .paymentcryptographycontrolplane$service(config, op)
@@ -1674,19 +1680,11 @@ paymentcryptographycontrolplane_get_parameters_for_import <- function(KeyMateria
 #' within Amazon Web Services Payment Cryptography
 #'
 #' @description
-#' Gets the public key certificate of the asymmetric key pair that exists
-#' within Amazon Web Services Payment Cryptography.
+#' Gets the public key certificate of the asymmetric key pair that exists within Amazon Web Services Payment Cryptography.
 #' 
-#' Unlike the private key of an asymmetric key, which never leaves Amazon
-#' Web Services Payment Cryptography unencrypted, callers with
-#' [`get_public_key_certificate`][paymentcryptographycontrolplane_get_public_key_certificate]
-#' permission can download the public key certificate of the asymmetric
-#' key. You can share the public key certificate to allow others to encrypt
-#' messages and verify signatures outside of Amazon Web Services Payment
-#' Cryptography
+#' Unlike the private key of an asymmetric key, which never leaves Amazon Web Services Payment Cryptography unencrypted, callers with [`get_public_key_certificate`][paymentcryptographycontrolplane_get_public_key_certificate] permission can download the public key certificate of the asymmetric key. You can share the public key certificate to allow others to encrypt messages and verify signatures outside of Amazon Web Services Payment Cryptography
 #' 
-#' **Cross-account use:** This operation can't be used across different
-#' Amazon Web Services accounts.
+#' **Cross-account use:** This operation supports cross-account use when the key has a resource-based policy that grants access. For more information, see [Resource-based policies](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html).
 #'
 #' @usage
 #' paymentcryptographycontrolplane_get_public_key_certificate(
@@ -1734,52 +1732,82 @@ paymentcryptographycontrolplane_get_public_key_certificate <- function(KeyIdenti
 }
 .paymentcryptographycontrolplane$operations$get_public_key_certificate <- paymentcryptographycontrolplane_get_public_key_certificate
 
+#' Returns the resource-based policy attached to an Amazon Web Services
+#' Payment Cryptography key
+#'
+#' @description
+#' Returns the resource-based policy attached to an Amazon Web Services Payment Cryptography key.
+#' 
+#' **Cross-account use:** This operation can't be used across different Amazon Web Services accounts.
+#' 
+#' **Related operations:**
+#' 
+#' -   [`put_resource_policy`][paymentcryptographycontrolplane_put_resource_policy]
+#' 
+#' -   [`delete_resource_policy`][paymentcryptographycontrolplane_delete_resource_policy]
+#'
+#' @usage
+#' paymentcryptographycontrolplane_get_resource_policy(ResourceArn)
+#'
+#' @param ResourceArn &#91;required&#93; The `KeyARN` of the key whose resource-based policy you want to retrieve.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   ResourceArn = "string",
+#'   Policy = "string"
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$get_resource_policy(
+#'   ResourceArn = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname paymentcryptographycontrolplane_get_resource_policy
+#'
+#' @aliases paymentcryptographycontrolplane_get_resource_policy
+paymentcryptographycontrolplane_get_resource_policy <- function(ResourceArn) {
+  op <- new_operation(
+    name = "GetResourcePolicy",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .paymentcryptographycontrolplane$get_resource_policy_input(ResourceArn = ResourceArn)
+  output <- .paymentcryptographycontrolplane$get_resource_policy_output()
+  config <- get_config()
+  svc <- .paymentcryptographycontrolplane$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.paymentcryptographycontrolplane$operations$get_resource_policy <- paymentcryptographycontrolplane_get_resource_policy
+
 #' Imports symmetric keys and public key certificates in PEM format (base64
 #' encoded) into Amazon Web Services Payment Cryptography
 #'
 #' @description
-#' Imports symmetric keys and public key certificates in PEM format (base64
-#' encoded) into Amazon Web Services Payment Cryptography.
+#' Imports symmetric keys and public key certificates in PEM format (base64 encoded) into Amazon Web Services Payment Cryptography.
 #' 
-#' Amazon Web Services Payment Cryptography simplifies key exchange by
-#' replacing the existing paper-based approach with a modern electronic
-#' approach. With
-#' [`import_key`][paymentcryptographycontrolplane_import_key] you can
-#' import symmetric keys using either symmetric and asymmetric key exchange
-#' mechanisms.
+#' Amazon Web Services Payment Cryptography simplifies key exchange by replacing the existing paper-based approach with a modern electronic approach. With [`import_key`][paymentcryptographycontrolplane_import_key] you can import symmetric keys using either symmetric and asymmetric key exchange mechanisms.
 #' 
-#' For symmetric key exchange, Amazon Web Services Payment Cryptography
-#' uses the ANSI X9 TR-31 norm in accordance with PCI PIN guidelines. And
-#' for asymmetric key exchange, Amazon Web Services Payment Cryptography
-#' supports ANSI X9 TR-34 norm, RSA unwrap, and ECDH (Elliptic Curve
-#' Diffie-Hellman) key exchange mechanisms. Asymmetric key exchange methods
-#' are typically used to establish bi-directional trust between the two
-#' parties exhanging keys and are used for initial key exchange such as Key
-#' Encryption Key (KEK) or Zone Master Key (ZMK). After which you can
-#' import working keys using symmetric method to perform various
-#' cryptographic operations within Amazon Web Services Payment
-#' Cryptography.
+#' For symmetric key exchange, Amazon Web Services Payment Cryptography uses the ANSI X9 TR-31 norm in accordance with PCI PIN guidelines. And for asymmetric key exchange, Amazon Web Services Payment Cryptography supports ANSI X9 TR-34 norm, RSA unwrap, and ECDH (Elliptic Curve Diffie-Hellman) key exchange mechanisms. Asymmetric key exchange methods are typically used to establish bi-directional trust between the two parties exhanging keys and are used for initial key exchange such as Key Encryption Key (KEK) or Zone Master Key (ZMK). After which you can import working keys using symmetric method to perform various cryptographic operations within Amazon Web Services Payment Cryptography.
 #' 
-#' PCI requires specific minimum key strength of wrapping keys used to
-#' protect the keys being exchanged electronically. These requirements can
-#' change when PCI standards are revised. The rules specify that wrapping
-#' keys used for transport must be at least as strong as the key being
-#' protected. For more information on recommended key strength of wrapping
-#' keys and key exchange mechanism, see [Importing and exporting
-#' keys](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-importexport.html)
-#' in the *Amazon Web Services Payment Cryptography User Guide*.
+#' PCI requires specific minimum key strength of wrapping keys used to protect the keys being exchanged electronically. These requirements can change when PCI standards are revised. The rules specify that wrapping keys used for transport must be at least as strong as the key being protected. For more information on recommended key strength of wrapping keys and key exchange mechanism, see [Importing and exporting keys](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-importexport.html) in the *Amazon Web Services Payment Cryptography User Guide*.
 #' 
-#' You can also import a *root public key certificate*, used to sign other
-#' public key certificates, or a *trusted public key certificate* under an
-#' already established root public key certificate.
+#' You can also import a *root public key certificate*, used to sign other public key certificates, or a *trusted public key certificate* under an already established root public key certificate.
 #' 
 #' **To import a public root key certificate**
 #' 
-#' Using this operation, you can import the public component (in PEM
-#' cerificate format) of your private root key. You can use the imported
-#' public root key certificate for digital signatures, for example signing
-#' wrapping key or signing key in TR-34, within your Amazon Web Services
-#' Payment Cryptography account.
+#' Using this operation, you can import the public component (in PEM cerificate format) of your private root key. You can use the imported public root key certificate for digital signatures, for example signing wrapping key or signing key in TR-34, within your Amazon Web Services Payment Cryptography account.
 #' 
 #' Set the following parameters:
 #' 
@@ -1791,156 +1819,71 @@ paymentcryptographycontrolplane_get_public_key_certificate <- function(KeyIdenti
 #' 
 #' -   `KeyUsage`: `TR31_S0_ASYMMETRIC_KEY_FOR_DIGITAL_SIGNATURE`
 #' 
-#' -   `PublicKeyCertificate`: The public key certificate in PEM format
-#'     (base64 encoded) of the private root key under import.
+#' -   `PublicKeyCertificate`: The public key certificate in PEM format (base64 encoded) of the private root key under import.
 #' 
 #' **To import a trusted public key certificate**
 #' 
-#' The root public key certificate must be in place and operational before
-#' you import a trusted public key certificate. Set the following
-#' parameters:
+#' The root public key certificate must be in place and operational before you import a trusted public key certificate. Set the following parameters:
 #' 
 #' -   `KeyMaterial`: `TrustedCertificatePublicKey`
 #' 
-#' -   `CertificateAuthorityPublicKeyIdentifier`: `KeyArn` of the
-#'     `RootCertificatePublicKey`.
+#' -   `CertificateAuthorityPublicKeyIdentifier`: `KeyArn` of the `RootCertificatePublicKey`.
 #' 
-#' -   `KeyModesOfUse` and `KeyUsage`: Corresponding to the cryptographic
-#'     operations such as wrap, sign, or encrypt that you will allow the
-#'     trusted public key certificate to perform.
+#' -   `KeyModesOfUse` and `KeyUsage`: Corresponding to the cryptographic operations such as wrap, sign, or encrypt that you will allow the trusted public key certificate to perform.
 #' 
-#' -   `PublicKeyCertificate`: The trusted public key certificate in PEM
-#'     format (base64 encoded) under import.
+#' -   `PublicKeyCertificate`: The trusted public key certificate in PEM format (base64 encoded) under import.
 #' 
 #' **To import initial keys (KEK or ZMK or similar) using TR-34**
 #' 
-#' Using this operation, you can import initial key using TR-34 asymmetric
-#' key exchange. In TR-34 terminology, the sending party of the key is
-#' called Key Distribution Host (KDH) and the receiving party of the key is
-#' called Key Receiving Device (KRD). During the key import process, KDH is
-#' the user who initiates the key import and KRD is Amazon Web Services
-#' Payment Cryptography who receives the key.
+#' Using this operation, you can import initial key using TR-34 asymmetric key exchange. In TR-34 terminology, the sending party of the key is called Key Distribution Host (KDH) and the receiving party of the key is called Key Receiving Device (KRD). During the key import process, KDH is the user who initiates the key import and KRD is Amazon Web Services Payment Cryptography who receives the key.
 #' 
-#' To initiate TR-34 key import, the KDH must obtain an import token by
-#' calling
-#' [`get_parameters_for_import`][paymentcryptographycontrolplane_get_parameters_for_import].
-#' This operation generates an encryption keypair for the purpose of key
-#' import, signs the key and returns back the wrapping key certificate
-#' (also known as KRD wrapping certificate) and the root certificate chain.
-#' The KDH must trust and install the KRD wrapping certificate on its HSM
-#' and use it to encrypt (wrap) the KDH key during TR-34 WrappedKeyBlock
-#' generation. The import token and associated KRD wrapping certificate
-#' expires after 30 days.
+#' To initiate TR-34 key import, the KDH must obtain an import token by calling [`get_parameters_for_import`][paymentcryptographycontrolplane_get_parameters_for_import]. This operation generates an encryption keypair for the purpose of key import, signs the key and returns back the wrapping key certificate (also known as KRD wrapping certificate) and the root certificate chain. The KDH must trust and install the KRD wrapping certificate on its HSM and use it to encrypt (wrap) the KDH key during TR-34 WrappedKeyBlock generation. The import token and associated KRD wrapping certificate expires after 30 days.
 #' 
-#' Next the KDH generates a key pair for the purpose of signing the
-#' encrypted KDH key and provides the public certificate of the signing key
-#' to Amazon Web Services Payment Cryptography. The KDH will also need to
-#' import the root certificate chain of the KDH signing certificate by
-#' calling [`import_key`][paymentcryptographycontrolplane_import_key] for
-#' `RootCertificatePublicKey`. For more information on TR-34 key import,
-#' see section [Importing symmetric
-#' keys](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-import.html)
-#' in the *Amazon Web Services Payment Cryptography User Guide*.
+#' Next the KDH generates a key pair for the purpose of signing the encrypted KDH key and provides the public certificate of the signing key to Amazon Web Services Payment Cryptography. The KDH will also need to import the root certificate chain of the KDH signing certificate by calling [`import_key`][paymentcryptographycontrolplane_import_key] for `RootCertificatePublicKey`. For more information on TR-34 key import, see section [Importing symmetric keys](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-import.html) in the *Amazon Web Services Payment Cryptography User Guide*.
 #' 
 #' Set the following parameters:
 #' 
 #' -   `KeyMaterial`: Use `Tr34KeyBlock` parameters.
 #' 
-#' -   `CertificateAuthorityPublicKeyIdentifier`: The `KeyARN` of the
-#'     certificate chain that signed the KDH signing key certificate.
+#' -   `CertificateAuthorityPublicKeyIdentifier`: The `KeyARN` of the certificate chain that signed the KDH signing key certificate.
 #' 
-#' -   `ImportToken`: Obtained from KRD by calling
-#'     [`get_parameters_for_import`][paymentcryptographycontrolplane_get_parameters_for_import].
+#' -   `ImportToken`: Obtained from KRD by calling [`get_parameters_for_import`][paymentcryptographycontrolplane_get_parameters_for_import].
 #' 
-#' -   `WrappedKeyBlock`: The TR-34 wrapped key material from KDH. It
-#'     contains the KDH key under import, wrapped with KRD wrapping
-#'     certificate and signed by KDH signing private key. This TR-34 key
-#'     block is typically generated by the KDH Hardware Security Module
-#'     (HSM) outside of Amazon Web Services Payment Cryptography.
+#' -   `WrappedKeyBlock`: The TR-34 wrapped key material from KDH. It contains the KDH key under import, wrapped with KRD wrapping certificate and signed by KDH signing private key. This TR-34 key block is typically generated by the KDH Hardware Security Module (HSM) outside of Amazon Web Services Payment Cryptography.
 #' 
-#' -   `SigningKeyCertificate`: The public key certificate in PEM format
-#'     (base64 encoded) of the KDH signing key generated under the root
-#'     certificate (CertificateAuthorityPublicKeyIdentifier) imported in
-#'     Amazon Web Services Payment Cryptography.
+#' -   `SigningKeyCertificate`: The public key certificate in PEM format (base64 encoded) of the KDH signing key generated under the root certificate (CertificateAuthorityPublicKeyIdentifier) imported in Amazon Web Services Payment Cryptography.
 #' 
-#' **To import initial keys (KEK or ZMK or similar) using RSA Wrap and
-#' Unwrap**
+#' **To import initial keys (KEK or ZMK or similar) using RSA Wrap and Unwrap**
 #' 
-#' Using this operation, you can import initial key using asymmetric RSA
-#' wrap and unwrap key exchange method. To initiate import, call
-#' [`get_parameters_for_import`][paymentcryptographycontrolplane_get_parameters_for_import]
-#' with `KeyMaterial` set to `KEY_CRYPTOGRAM` to generate an import token.
-#' This operation also generates an encryption keypair for the purpose of
-#' key import, signs the key and returns back the wrapping key certificate
-#' in PEM format (base64 encoded) and its root certificate chain. The
-#' import token and associated KRD wrapping certificate expires after 30
-#' days.
+#' Using this operation, you can import initial key using asymmetric RSA wrap and unwrap key exchange method. To initiate import, call [`get_parameters_for_import`][paymentcryptographycontrolplane_get_parameters_for_import] with `KeyMaterial` set to `KEY_CRYPTOGRAM` to generate an import token. This operation also generates an encryption keypair for the purpose of key import, signs the key and returns back the wrapping key certificate in PEM format (base64 encoded) and its root certificate chain. The import token and associated KRD wrapping certificate expires after 30 days.
 #' 
-#' You must trust and install the wrapping certificate and its certificate
-#' chain on the sending HSM and use it to wrap the key under export for
-#' WrappedKeyCryptogram generation. Next call
-#' [`import_key`][paymentcryptographycontrolplane_import_key] with
-#' `KeyMaterial` set to `KEY_CRYPTOGRAM` and provide the `ImportToken` and
-#' `KeyAttributes` for the key under import.
+#' You must trust and install the wrapping certificate and its certificate chain on the sending HSM and use it to wrap the key under export for WrappedKeyCryptogram generation. Next call [`import_key`][paymentcryptographycontrolplane_import_key] with `KeyMaterial` set to `KEY_CRYPTOGRAM` and provide the `ImportToken` and `KeyAttributes` for the key under import.
 #' 
 #' **To import working keys using TR-31**
 #' 
-#' Amazon Web Services Payment Cryptography uses TR-31 symmetric key
-#' exchange norm to import working keys. A KEK must be established within
-#' Amazon Web Services Payment Cryptography by using TR-34 key import or by
-#' using [`create_key`][paymentcryptographycontrolplane_create_key]. To
-#' initiate a TR-31 key import, set the following parameters:
+#' Amazon Web Services Payment Cryptography uses TR-31 symmetric key exchange norm to import working keys. A KEK must be established within Amazon Web Services Payment Cryptography by using TR-34 key import or by using [`create_key`][paymentcryptographycontrolplane_create_key]. To initiate a TR-31 key import, set the following parameters:
 #' 
 #' -   `KeyMaterial`: Use `Tr31KeyBlock` parameters.
 #' 
-#' -   `WrappedKeyBlock`: The TR-31 wrapped key material. It contains the
-#'     key under import, encrypted using KEK. The TR-31 key block is
-#'     typically generated by a HSM outside of Amazon Web Services Payment
-#'     Cryptography.
+#' -   `WrappedKeyBlock`: The TR-31 wrapped key material. It contains the key under import, encrypted using KEK. The TR-31 key block is typically generated by a HSM outside of Amazon Web Services Payment Cryptography.
 #' 
-#' -   `WrappingKeyIdentifier`: The `KeyArn` of the KEK that Amazon Web
-#'     Services Payment Cryptography uses to decrypt or unwrap the key
-#'     under import.
+#' -   `WrappingKeyIdentifier`: The `KeyArn` of the KEK that Amazon Web Services Payment Cryptography uses to decrypt or unwrap the key under import.
 #' 
 #' **To import working keys using ECDH**
 #' 
-#' You can also use ECDH key agreement to import working keys as a TR-31
-#' keyblock, where the wrapping key is an ECDH derived key.
+#' You can also use ECDH key agreement to import working keys as a TR-31 keyblock, where the wrapping key is an ECDH derived key.
 #' 
-#' To initiate a TR-31 key import using ECDH, both sides must create an ECC
-#' key pair with key usage K3 and exchange public key certificates. In
-#' Amazon Web Services Payment Cryptography, you can do this by calling
-#' [`create_key`][paymentcryptographycontrolplane_create_key] and then
-#' [`get_public_key_certificate`][paymentcryptographycontrolplane_get_public_key_certificate]
-#' to retrieve its public key certificate. Next, you can then generate a
-#' TR-31 WrappedKeyBlock using your own ECC key pair, the public
-#' certificate of the service's ECC key pair, and the key derivation
-#' parameters including key derivation function, hash algorithm, derivation
-#' data, and key algorithm. If you have not already done so, you must
-#' import the CA chain that issued the receiving public key certificate by
-#' calling [`import_key`][paymentcryptographycontrolplane_import_key] with
-#' input `RootCertificatePublicKey` for root CA or `TrustedPublicKey` for
-#' intermediate CA. To complete the TR-31 key import, you can use the
-#' following parameters. It is important that the ECDH key derivation
-#' parameters you use should match those used during import to derive the
-#' same shared wrapping key within Amazon Web Services Payment
-#' Cryptography.
+#' To initiate a TR-31 key import using ECDH, both sides must create an ECC key pair with key usage K3 and exchange public key certificates. In Amazon Web Services Payment Cryptography, you can do this by calling [`create_key`][paymentcryptographycontrolplane_create_key] and then [`get_public_key_certificate`][paymentcryptographycontrolplane_get_public_key_certificate] to retrieve its public key certificate. Next, you can then generate a TR-31 WrappedKeyBlock using your own ECC key pair, the public certificate of the service's ECC key pair, and the key derivation parameters including key derivation function, hash algorithm, derivation data, and key algorithm. If you have not already done so, you must import the CA chain that issued the receiving public key certificate by calling [`import_key`][paymentcryptographycontrolplane_import_key] with input `RootCertificatePublicKey` for root CA or `TrustedPublicKey` for intermediate CA. To complete the TR-31 key import, you can use the following parameters. It is important that the ECDH key derivation parameters you use should match those used during import to derive the same shared wrapping key within Amazon Web Services Payment Cryptography.
 #' 
 #' -   `KeyMaterial`: Use `DiffieHellmanTr31KeyBlock` parameters.
 #' 
-#' -   `PrivateKeyIdentifier`: The `KeyArn` of the ECC key pair created
-#'     within Amazon Web Services Payment Cryptography to derive a shared
-#'     KEK.
+#' -   `PrivateKeyIdentifier`: The `KeyArn` of the ECC key pair created within Amazon Web Services Payment Cryptography to derive a shared KEK.
 #' 
-#' -   `PublicKeyCertificate`: The public key certificate of the receiving
-#'     ECC key pair in PEM format (base64 encoded) to derive a shared KEK.
+#' -   `PublicKeyCertificate`: The public key certificate of the receiving ECC key pair in PEM format (base64 encoded) to derive a shared KEK.
 #' 
-#' -   `CertificateAuthorityPublicKeyIdentifier`: The `keyARN` of the CA
-#'     that signed the public key certificate of the receiving ECC key
-#'     pair.
+#' -   `CertificateAuthorityPublicKeyIdentifier`: The `keyARN` of the CA that signed the public key certificate of the receiving ECC key pair.
 #' 
-#' **Cross-account use:** This operation can't be used across different
-#' Amazon Web Services accounts.
+#' **Cross-account use:** This operation supports cross-account use when the key has a resource-based policy that grants access. For more information, see [Resource-based policies](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html).
 #' 
 #' **Related operations:**
 #' 
@@ -1950,40 +1893,27 @@ paymentcryptographycontrolplane_get_public_key_certificate <- function(KeyIdenti
 #'
 #' @usage
 #' paymentcryptographycontrolplane_import_key(KeyMaterial,
-#'   KeyCheckValueAlgorithm, Enabled, Tags, ReplicationRegions)
+#'   KeyCheckValueAlgorithm, Enabled, Tags, ReplicationRegions,
+#'   RequesterComment)
 #'
-#' @param KeyMaterial &#91;required&#93; The key or public key certificate type to use during key material
-#' import, for example TR-34 or RootCertificatePublicKey.
-#' @param KeyCheckValueAlgorithm The algorithm that Amazon Web Services Payment Cryptography uses to
-#' calculate the key check value (KCV). It is used to validate the key
-#' integrity.
+#' @param KeyMaterial &#91;required&#93; The key or public key certificate type to use during key material import, for example TR-34 or RootCertificatePublicKey.
+#' @param KeyCheckValueAlgorithm The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV). It is used to validate the key integrity.
 #' 
-#' For TDES keys, the KCV is computed by encrypting 8 bytes, each with
-#' value of zero, with the key to be checked and retaining the 3 highest
-#' order bytes of the encrypted result. For AES keys, the KCV is computed
-#' using a CMAC algorithm where the input data is 16 bytes of zero and
-#' retaining the 3 highest order bytes of the encrypted result.
+#' For TDES keys, the KCV is computed by encrypting 8 bytes, each with value of zero, with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES keys, the KCV is computed using a CMAC algorithm where the input data is 16 bytes of zero and retaining the 3 highest order bytes of the encrypted result.
 #' @param Enabled Specifies whether import key is enabled.
-#' @param Tags Assigns one or more tags to the Amazon Web Services Payment Cryptography
-#' key. Use this parameter to tag a key when it is imported. To tag an
-#' existing Amazon Web Services Payment Cryptography key, use the
-#' [`tag_resource`][paymentcryptographycontrolplane_tag_resource]
-#' operation.
+#' @param Tags Assigns one or more tags to the Amazon Web Services Payment Cryptography key. Use this parameter to tag a key when it is imported. To tag an existing Amazon Web Services Payment Cryptography key, use the [`tag_resource`][paymentcryptographycontrolplane_tag_resource] operation.
 #' 
-#' Each tag consists of a tag key and a tag value. Both the tag key and the
-#' tag value are required, but the tag value can be an empty (null) string.
-#' You can't have more than one tag on an Amazon Web Services Payment
-#' Cryptography key with the same tag key. If you specify an existing tag
-#' key with a different tag value, Amazon Web Services Payment Cryptography
-#' replaces the current tag value with the specified one.
+#' Each tag consists of a tag key and a tag value. Both the tag key and the tag value are required, but the tag value can be an empty (null) string. You can't have more than one tag on an Amazon Web Services Payment Cryptography key with the same tag key. If you specify an existing tag key with a different tag value, Amazon Web Services Payment Cryptography replaces the current tag value with the specified one.
 #' 
-#' Don't include personal, confidential or sensitive information in this
-#' field. This field may be displayed in plaintext in CloudTrail logs and
-#' other output.
+#' Don't include personal, confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.
 #' 
-#' Tagging or untagging an Amazon Web Services Payment Cryptography key can
-#' allow or deny permission to the key.
-#' @param ReplicationRegions 
+#' Tagging or untagging an Amazon Web Services Payment Cryptography key can allow or deny permission to the key.
+#' @param ReplicationRegions A list of Amazon Web Services Regions for key replication operations.
+#' 
+#' Each region in the list must be a valid Amazon Web Services Region identifier where Amazon Web Services Payment Cryptography is available. This list is used to specify which regions should be added to or removed from a key's replication configuration.
+#' @param RequesterComment The comment from the requester explaining the reason for the import.
+#' 
+#' Don't include personal, confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2037,7 +1967,15 @@ paymentcryptographycontrolplane_get_public_key_certificate <- function(KeyIdenti
 #'         StatusMessage = "string"
 #'       )
 #'     ),
-#'     UsingDefaultReplicationRegions = TRUE|FALSE
+#'     UsingDefaultReplicationRegions = TRUE|FALSE,
+#'     MpaStatus = list(
+#'       MpaSessionArn = "string",
+#'       Status = "PENDING"|"APPROVED"|"FAILED"|"CANCELLED",
+#'       InitiationDate = as.POSIXct(
+#'         "2015-01-01"
+#'       ),
+#'       StatusMessage = "string"
+#'     )
 #'   )
 #' )
 #' ```
@@ -2162,7 +2100,8 @@ paymentcryptographycontrolplane_get_public_key_certificate <- function(KeyIdenti
 #'   ),
 #'   ReplicationRegions = list(
 #'     "string"
-#'   )
+#'   ),
+#'   RequesterComment = "string"
 #' )
 #' ```
 #'
@@ -2171,7 +2110,7 @@ paymentcryptographycontrolplane_get_public_key_certificate <- function(KeyIdenti
 #' @rdname paymentcryptographycontrolplane_import_key
 #'
 #' @aliases paymentcryptographycontrolplane_import_key
-paymentcryptographycontrolplane_import_key <- function(KeyMaterial, KeyCheckValueAlgorithm = NULL, Enabled = NULL, Tags = NULL, ReplicationRegions = NULL) {
+paymentcryptographycontrolplane_import_key <- function(KeyMaterial, KeyCheckValueAlgorithm = NULL, Enabled = NULL, Tags = NULL, ReplicationRegions = NULL, RequesterComment = NULL) {
   op <- new_operation(
     name = "ImportKey",
     http_method = "POST",
@@ -2180,7 +2119,7 @@ paymentcryptographycontrolplane_import_key <- function(KeyMaterial, KeyCheckValu
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .paymentcryptographycontrolplane$import_key_input(KeyMaterial = KeyMaterial, KeyCheckValueAlgorithm = KeyCheckValueAlgorithm, Enabled = Enabled, Tags = Tags, ReplicationRegions = ReplicationRegions)
+  input <- .paymentcryptographycontrolplane$import_key_input(KeyMaterial = KeyMaterial, KeyCheckValueAlgorithm = KeyCheckValueAlgorithm, Enabled = Enabled, Tags = Tags, ReplicationRegions = ReplicationRegions, RequesterComment = RequesterComment)
   output <- .paymentcryptographycontrolplane$import_key_output()
   config <- get_config()
   svc <- .paymentcryptographycontrolplane$service(config, op)
@@ -2194,22 +2133,11 @@ paymentcryptographycontrolplane_import_key <- function(KeyMaterial, KeyCheckValu
 #' account and Amazon Web Services Region
 #'
 #' @description
-#' Lists the aliases for all keys in the caller's Amazon Web Services
-#' account and Amazon Web Services Region. You can filter the aliases by
-#' `keyARN`. For more information, see [Using
-#' aliases](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-managealias.html)
-#' in the *Amazon Web Services Payment Cryptography User Guide*.
+#' Lists the aliases for all keys in the caller's Amazon Web Services account and Amazon Web Services Region. You can filter the aliases by `keyARN`. For more information, see [Using aliases](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-managealias.html) in the *Amazon Web Services Payment Cryptography User Guide*.
 #' 
-#' This is a paginated operation, which means that each response might
-#' contain only a subset of all the aliases. When the response contains
-#' only a subset of aliases, it includes a `NextToken` value. Use this
-#' value in a subsequent
-#' [`list_aliases`][paymentcryptographycontrolplane_list_aliases] request
-#' to get more aliases. When you receive a response with no NextToken (or
-#' an empty or null value), that means there are no more aliases to get.
+#' This is a paginated operation, which means that each response might contain only a subset of all the aliases. When the response contains only a subset of aliases, it includes a `NextToken` value. Use this value in a subsequent [`list_aliases`][paymentcryptographycontrolplane_list_aliases] request to get more aliases. When you receive a response with no NextToken (or an empty or null value), that means there are no more aliases to get.
 #' 
-#' **Cross-account use:** This operation can't be used across different
-#' Amazon Web Services accounts.
+#' **Cross-account use:** This operation can't be used across different Amazon Web Services accounts.
 #' 
 #' **Related operations:**
 #' 
@@ -2226,16 +2154,10 @@ paymentcryptographycontrolplane_import_key <- function(KeyMaterial, KeyCheckValu
 #'   MaxResults)
 #'
 #' @param KeyArn The `keyARN` for which you want to list all aliases.
-#' @param NextToken Use this parameter in a subsequent request after you receive a response
-#' with truncated results. Set it to the value of `NextToken` from the
-#' truncated response you just received.
-#' @param MaxResults Use this parameter to specify the maximum number of items to return.
-#' When this value is present, Amazon Web Services Payment Cryptography
-#' does not return more than the specified number of items, but it might
-#' return fewer.
+#' @param NextToken Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of `NextToken` from the truncated response you just received.
+#' @param MaxResults Use this parameter to specify the maximum number of items to return. When this value is present, Amazon Web Services Payment Cryptography does not return more than the specified number of items, but it might return fewer.
 #' 
-#' This value is optional. If you include a value, it must be between 1 and
-#' 100, inclusive. If you do not include a value, it defaults to 50.
+#' This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2288,18 +2210,11 @@ paymentcryptographycontrolplane_list_aliases <- function(KeyArn = NULL, NextToke
 #' Web Services Region
 #'
 #' @description
-#' Lists the keys in the caller's Amazon Web Services account and Amazon
-#' Web Services Region. You can filter the list of keys.
+#' Lists the keys in the caller's Amazon Web Services account and Amazon Web Services Region. You can filter the list of keys.
 #' 
-#' This is a paginated operation, which means that each response might
-#' contain only a subset of all the keys. When the response contains only a
-#' subset of keys, it includes a `NextToken` value. Use this value in a
-#' subsequent [`list_keys`][paymentcryptographycontrolplane_list_keys]
-#' request to get more keys. When you receive a response with no NextToken
-#' (or an empty or null value), that means there are no more keys to get.
+#' This is a paginated operation, which means that each response might contain only a subset of all the keys. When the response contains only a subset of keys, it includes a `NextToken` value. Use this value in a subsequent [`list_keys`][paymentcryptographycontrolplane_list_keys] request to get more keys. When you receive a response with no NextToken (or an empty or null value), that means there are no more keys to get.
 #' 
-#' **Cross-account use:** This operation can't be used across different
-#' Amazon Web Services accounts.
+#' **Cross-account use:** This operation can't be used across different Amazon Web Services accounts.
 #' 
 #' **Related operations:**
 #' 
@@ -2314,16 +2229,10 @@ paymentcryptographycontrolplane_list_aliases <- function(KeyArn = NULL, NextToke
 #'   MaxResults)
 #'
 #' @param KeyState The key state of the keys you want to list.
-#' @param NextToken Use this parameter in a subsequent request after you receive a response
-#' with truncated results. Set it to the value of `NextToken` from the
-#' truncated response you just received.
-#' @param MaxResults Use this parameter to specify the maximum number of items to return.
-#' When this value is present, Amazon Web Services Payment Cryptography
-#' does not return more than the specified number of items, but it might
-#' return fewer.
+#' @param NextToken Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of `NextToken` from the truncated response you just received.
+#' @param MaxResults Use this parameter to specify the maximum number of items to return. When this value is present, Amazon Web Services Payment Cryptography does not return more than the specified number of items, but it might return fewer.
 #' 
-#' This value is optional. If you include a value, it must be between 1 and
-#' 100, inclusive. If you do not include a value, it defaults to 50.
+#' This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2398,16 +2307,9 @@ paymentcryptographycontrolplane_list_keys <- function(KeyState = NULL, NextToken
 #' @description
 #' Lists the tags for an Amazon Web Services resource.
 #' 
-#' This is a paginated operation, which means that each response might
-#' contain only a subset of all the tags. When the response contains only a
-#' subset of tags, it includes a `NextToken` value. Use this value in a
-#' subsequent
-#' [`list_tags_for_resource`][paymentcryptographycontrolplane_list_tags_for_resource]
-#' request to get more tags. When you receive a response with no NextToken
-#' (or an empty or null value), that means there are no more tags to get.
+#' This is a paginated operation, which means that each response might contain only a subset of all the tags. When the response contains only a subset of tags, it includes a `NextToken` value. Use this value in a subsequent [`list_tags_for_resource`][paymentcryptographycontrolplane_list_tags_for_resource] request to get more tags. When you receive a response with no NextToken (or an empty or null value), that means there are no more tags to get.
 #' 
-#' **Cross-account use:** This operation can't be used across different
-#' Amazon Web Services accounts.
+#' **Cross-account use:** This operation supports cross-account use when the key has a resource-based policy that grants access. For more information, see [Resource-based policies](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html).
 #' 
 #' **Related operations:**
 #' 
@@ -2420,16 +2322,10 @@ paymentcryptographycontrolplane_list_keys <- function(KeyState = NULL, NextToken
 #'   NextToken, MaxResults)
 #'
 #' @param ResourceArn &#91;required&#93; The `KeyARN` of the key whose tags you are getting.
-#' @param NextToken Use this parameter in a subsequent request after you receive a response
-#' with truncated results. Set it to the value of `NextToken` from the
-#' truncated response you just received.
-#' @param MaxResults Use this parameter to specify the maximum number of items to return.
-#' When this value is present, Amazon Web Services Payment Cryptography
-#' does not return more than the specified number of items, but it might
-#' return fewer.
+#' @param NextToken Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of `NextToken` from the truncated response you just received.
+#' @param MaxResults Use this parameter to specify the maximum number of items to return. When this value is present, Amazon Web Services Payment Cryptography does not return more than the specified number of items, but it might return fewer.
 #' 
-#' This value is optional. If you include a value, it must be between 1 and
-#' 100, inclusive. If you do not include a value, it defaults to 50.
+#' This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2478,26 +2374,83 @@ paymentcryptographycontrolplane_list_tags_for_resource <- function(ResourceArn, 
 }
 .paymentcryptographycontrolplane$operations$list_tags_for_resource <- paymentcryptographycontrolplane_list_tags_for_resource
 
+#' Attaches or replaces a resource-based policy on an Amazon Web Services
+#' Payment Cryptography key
+#'
+#' @description
+#' Attaches or replaces a resource-based policy on an Amazon Web Services Payment Cryptography key. A resource-based policy can grant cross-account access to your key.
+#' 
+#' If the policy would grant public access, the request fails with a `PublicPolicyException`.
+#' 
+#' To remove a resource-based policy from a key, use [`delete_resource_policy`][paymentcryptographycontrolplane_delete_resource_policy].
+#' 
+#' **Cross-account use:** This operation can't be used across different Amazon Web Services accounts.
+#' 
+#' **Related operations:**
+#' 
+#' -   [`get_resource_policy`][paymentcryptographycontrolplane_get_resource_policy]
+#' 
+#' -   [`delete_resource_policy`][paymentcryptographycontrolplane_delete_resource_policy]
+#'
+#' @usage
+#' paymentcryptographycontrolplane_put_resource_policy(ResourceArn, Policy)
+#'
+#' @param ResourceArn &#91;required&#93; The `KeyARN` of the key to attach the resource-based policy to.
+#' @param Policy &#91;required&#93; The resource-based policy to attach to the key, in JSON format.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   ResourceArn = "string",
+#'   Policy = "string"
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$put_resource_policy(
+#'   ResourceArn = "string",
+#'   Policy = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname paymentcryptographycontrolplane_put_resource_policy
+#'
+#' @aliases paymentcryptographycontrolplane_put_resource_policy
+paymentcryptographycontrolplane_put_resource_policy <- function(ResourceArn, Policy) {
+  op <- new_operation(
+    name = "PutResourcePolicy",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .paymentcryptographycontrolplane$put_resource_policy_input(ResourceArn = ResourceArn, Policy = Policy)
+  output <- .paymentcryptographycontrolplane$put_resource_policy_output()
+  config <- get_config()
+  svc <- .paymentcryptographycontrolplane$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.paymentcryptographycontrolplane$operations$put_resource_policy <- paymentcryptographycontrolplane_put_resource_policy
+
 #' Removes Replication Regions from an existing Amazon Web Services Payment
 #' Cryptography key, disabling the key's availability for cryptographic
 #' operations in the specified Amazon Web Services Regions
 #'
 #' @description
-#' Removes Replication Regions from an existing Amazon Web Services Payment
-#' Cryptography key, disabling the key's availability for cryptographic
-#' operations in the specified Amazon Web Services Regions.
+#' Removes Replication Regions from an existing Amazon Web Services Payment Cryptography key, disabling the key's availability for cryptographic operations in the specified Amazon Web Services Regions.
 #' 
-#' When you remove Replication Regions, the key material is securely
-#' deleted from those regions and can no longer be used for cryptographic
-#' operations there. This operation is irreversible for the specified
-#' Amazon Web Services Regions. For more information, see [Multi-Region key
-#' replication](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html).
+#' When you remove Replication Regions, the key material is securely deleted from those regions and can no longer be used for cryptographic operations there. This operation is irreversible for the specified Amazon Web Services Regions. For more information, see [Multi-Region key replication](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-multi-region-replication.html).
 #' 
-#' Ensure that no active cryptographic operations or applications depend on
-#' the key in the regions you're removing before performing this operation.
+#' Ensure that no active cryptographic operations or applications depend on the key in the regions you're removing before performing this operation.
 #' 
-#' **Cross-account use:** This operation can't be used across different
-#' Amazon Web Services accounts.
+#' **Cross-account use:** This operation supports cross-account use when the key has a resource-based policy that grants access. For more information, see [Resource-based policies](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html).
 #' 
 #' **Related operations:**
 #' 
@@ -2509,17 +2462,12 @@ paymentcryptographycontrolplane_list_tags_for_resource <- function(ResourceArn, 
 #' paymentcryptographycontrolplane_remove_key_replication_regions(
 #'   KeyIdentifier, ReplicationRegions)
 #'
-#' @param KeyIdentifier &#91;required&#93; The key identifier (ARN or alias) of the key from which to remove
-#' replication regions.
+#' @param KeyIdentifier &#91;required&#93; The key identifier (ARN or alias) of the key from which to remove replication regions.
 #' 
-#' This key must exist and have replication enabled in the specified
-#' regions.
-#' @param ReplicationRegions &#91;required&#93; The list of Amazon Web Services Regions to remove from the key's
-#' replication configuration.
+#' This key must exist and have replication enabled in the specified regions.
+#' @param ReplicationRegions &#91;required&#93; The list of Amazon Web Services Regions to remove from the key's replication configuration.
 #' 
-#' The key will no longer be available for cryptographic operations in
-#' these regions after removal. Ensure no active operations depend on the
-#' key in these regions before removal.
+#' The key will no longer be available for cryptographic operations in these regions after removal. Ensure no active operations depend on the key in these regions before removal.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2573,7 +2521,15 @@ paymentcryptographycontrolplane_list_tags_for_resource <- function(ResourceArn, 
 #'         StatusMessage = "string"
 #'       )
 #'     ),
-#'     UsingDefaultReplicationRegions = TRUE|FALSE
+#'     UsingDefaultReplicationRegions = TRUE|FALSE,
+#'     MpaStatus = list(
+#'       MpaSessionArn = "string",
+#'       Status = "PENDING"|"APPROVED"|"FAILED"|"CANCELLED",
+#'       InitiationDate = as.POSIXct(
+#'         "2015-01-01"
+#'       ),
+#'       StatusMessage = "string"
+#'     )
 #'   )
 #' )
 #' ```
@@ -2615,17 +2571,11 @@ paymentcryptographycontrolplane_remove_key_replication_regions <- function(KeyId
 #' Cancels a scheduled key deletion during the waiting period
 #'
 #' @description
-#' Cancels a scheduled key deletion during the waiting period. Use this
-#' operation to restore a `Key` that is scheduled for deletion.
+#' Cancels a scheduled key deletion during the waiting period. Use this operation to restore a `Key` that is scheduled for deletion.
 #' 
-#' During the waiting period, the `KeyState` is `DELETE_PENDING` and
-#' `deletePendingTimestamp` contains the date and time after which the
-#' `Key` will be deleted. After `Key` is restored, the `KeyState` is
-#' `CREATE_COMPLETE`, and the value for `deletePendingTimestamp` is
-#' removed.
+#' During the waiting period, the `KeyState` is `DELETE_PENDING` and `deletePendingTimestamp` contains the date and time after which the `Key` will be deleted. After `Key` is restored, the `KeyState` is `CREATE_COMPLETE`, and the value for `deletePendingTimestamp` is removed.
 #' 
-#' **Cross-account use:** This operation can't be used across different
-#' Amazon Web Services accounts.
+#' **Cross-account use:** This operation supports cross-account use when the key has a resource-based policy that grants access. For more information, see [Resource-based policies](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html).
 #' 
 #' **Related operations:**
 #' 
@@ -2638,8 +2588,7 @@ paymentcryptographycontrolplane_remove_key_replication_regions <- function(KeyId
 #' @usage
 #' paymentcryptographycontrolplane_restore_key(KeyIdentifier)
 #'
-#' @param KeyIdentifier &#91;required&#93; The `KeyARN` of the key to be restored within Amazon Web Services
-#' Payment Cryptography.
+#' @param KeyIdentifier &#91;required&#93; The `KeyARN` of the key to be restored within Amazon Web Services Payment Cryptography.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2693,7 +2642,15 @@ paymentcryptographycontrolplane_remove_key_replication_regions <- function(KeyId
 #'         StatusMessage = "string"
 #'       )
 #'     ),
-#'     UsingDefaultReplicationRegions = TRUE|FALSE
+#'     UsingDefaultReplicationRegions = TRUE|FALSE,
+#'     MpaStatus = list(
+#'       MpaSessionArn = "string",
+#'       Status = "PENDING"|"APPROVED"|"FAILED"|"CANCELLED",
+#'       InitiationDate = as.POSIXct(
+#'         "2015-01-01"
+#'       ),
+#'       StatusMessage = "string"
+#'     )
 #'   )
 #' )
 #' ```
@@ -2734,12 +2691,9 @@ paymentcryptographycontrolplane_restore_key <- function(KeyIdentifier) {
 #' Cryptography
 #'
 #' @description
-#' Enables an Amazon Web Services Payment Cryptography key, which makes it
-#' active for cryptographic operations within Amazon Web Services Payment
-#' Cryptography
+#' Enables an Amazon Web Services Payment Cryptography key, which makes it active for cryptographic operations within Amazon Web Services Payment Cryptography
 #' 
-#' **Cross-account use:** This operation can't be used across different
-#' Amazon Web Services accounts.
+#' **Cross-account use:** This operation supports cross-account use when the key has a resource-based policy that grants access. For more information, see [Resource-based policies](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html).
 #' 
 #' **Related operations:**
 #' 
@@ -2802,7 +2756,15 @@ paymentcryptographycontrolplane_restore_key <- function(KeyIdentifier) {
 #'         StatusMessage = "string"
 #'       )
 #'     ),
-#'     UsingDefaultReplicationRegions = TRUE|FALSE
+#'     UsingDefaultReplicationRegions = TRUE|FALSE,
+#'     MpaStatus = list(
+#'       MpaSessionArn = "string",
+#'       Status = "PENDING"|"APPROVED"|"FAILED"|"CANCELLED",
+#'       InitiationDate = as.POSIXct(
+#'         "2015-01-01"
+#'       ),
+#'       StatusMessage = "string"
+#'     )
 #'   )
 #' )
 #' ```
@@ -2842,16 +2804,11 @@ paymentcryptographycontrolplane_start_key_usage <- function(KeyIdentifier) {
 #' inactive within Amazon Web Services Payment Cryptography
 #'
 #' @description
-#' Disables an Amazon Web Services Payment Cryptography key, which makes it
-#' inactive within Amazon Web Services Payment Cryptography.
+#' Disables an Amazon Web Services Payment Cryptography key, which makes it inactive within Amazon Web Services Payment Cryptography.
 #' 
-#' You can use this operation instead of
-#' [`delete_key`][paymentcryptographycontrolplane_delete_key] to deactivate
-#' a key. You can enable the key in the future by calling
-#' [`start_key_usage`][paymentcryptographycontrolplane_start_key_usage].
+#' You can use this operation instead of [`delete_key`][paymentcryptographycontrolplane_delete_key] to deactivate a key. You can enable the key in the future by calling [`start_key_usage`][paymentcryptographycontrolplane_start_key_usage].
 #' 
-#' **Cross-account use:** This operation can't be used across different
-#' Amazon Web Services accounts.
+#' **Cross-account use:** This operation supports cross-account use when the key has a resource-based policy that grants access. For more information, see [Resource-based policies](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html).
 #' 
 #' **Related operations:**
 #' 
@@ -2916,7 +2873,15 @@ paymentcryptographycontrolplane_start_key_usage <- function(KeyIdentifier) {
 #'         StatusMessage = "string"
 #'       )
 #'     ),
-#'     UsingDefaultReplicationRegions = TRUE|FALSE
+#'     UsingDefaultReplicationRegions = TRUE|FALSE,
+#'     MpaStatus = list(
+#'       MpaSessionArn = "string",
+#'       Status = "PENDING"|"APPROVED"|"FAILED"|"CANCELLED",
+#'       InitiationDate = as.POSIXct(
+#'         "2015-01-01"
+#'       ),
+#'       StatusMessage = "string"
+#'     )
 #'   )
 #' )
 #' ```
@@ -2957,18 +2922,11 @@ paymentcryptographycontrolplane_stop_key_usage <- function(KeyIdentifier) {
 #' @description
 #' Adds or edits tags on an Amazon Web Services Payment Cryptography key.
 #' 
-#' Tagging or untagging an Amazon Web Services Payment Cryptography key can
-#' allow or deny permission to the key.
+#' Tagging or untagging an Amazon Web Services Payment Cryptography key can allow or deny permission to the key.
 #' 
-#' Each tag consists of a tag key and a tag value, both of which are
-#' case-sensitive strings. The tag value can be an empty (null) string. To
-#' add a tag, specify a new tag key and a tag value. To edit a tag, specify
-#' an existing tag key and a new tag value. You can also add tags to an
-#' Amazon Web Services Payment Cryptography key when you create it with
-#' [`create_key`][paymentcryptographycontrolplane_create_key].
+#' Each tag consists of a tag key and a tag value, both of which are case-sensitive strings. The tag value can be an empty (null) string. To add a tag, specify a new tag key and a tag value. To edit a tag, specify an existing tag key and a new tag value. You can also add tags to an Amazon Web Services Payment Cryptography key when you create it with [`create_key`][paymentcryptographycontrolplane_create_key].
 #' 
-#' **Cross-account use:** This operation can't be used across different
-#' Amazon Web Services accounts.
+#' **Cross-account use:** This operation supports cross-account use when the key has a resource-based policy that grants access. For more information, see [Resource-based policies](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html).
 #' 
 #' **Related operations:**
 #' 
@@ -2980,24 +2938,13 @@ paymentcryptographycontrolplane_stop_key_usage <- function(KeyIdentifier) {
 #' paymentcryptographycontrolplane_tag_resource(ResourceArn, Tags)
 #'
 #' @param ResourceArn &#91;required&#93; The `KeyARN` of the key whose tags are being updated.
-#' @param Tags &#91;required&#93; One or more tags. Each tag consists of a tag key and a tag value. The
-#' tag value can be an empty (null) string. You can't have more than one
-#' tag on an Amazon Web Services Payment Cryptography key with the same tag
-#' key. If you specify an existing tag key with a different tag value,
-#' Amazon Web Services Payment Cryptography replaces the current tag value
-#' with the new one.
+#' @param Tags &#91;required&#93; One or more tags. Each tag consists of a tag key and a tag value. The tag value can be an empty (null) string. You can't have more than one tag on an Amazon Web Services Payment Cryptography key with the same tag key. If you specify an existing tag key with a different tag value, Amazon Web Services Payment Cryptography replaces the current tag value with the new one.
 #' 
-#' Don't include personal, confidential or sensitive information in this
-#' field. This field may be displayed in plaintext in CloudTrail logs and
-#' other output.
+#' Don't include personal, confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.
 #' 
-#' To use this parameter, you must have
-#' [`tag_resource`][paymentcryptographycontrolplane_tag_resource]
-#' permission in an IAM policy.
+#' To use this parameter, you must have [`tag_resource`][paymentcryptographycontrolplane_tag_resource] permission in an IAM policy.
 #' 
-#' Don't include personal, confidential or sensitive information in this
-#' field. This field may be displayed in plaintext in CloudTrail logs and
-#' other output.
+#' Don't include personal, confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.
 #'
 #' @return
 #' An empty list.
@@ -3044,11 +2991,9 @@ paymentcryptographycontrolplane_tag_resource <- function(ResourceArn, Tags) {
 #' @description
 #' Deletes a tag from an Amazon Web Services Payment Cryptography key.
 #' 
-#' Tagging or untagging an Amazon Web Services Payment Cryptography key can
-#' allow or deny permission to the key.
+#' Tagging or untagging an Amazon Web Services Payment Cryptography key can allow or deny permission to the key.
 #' 
-#' **Cross-account use:** This operation can't be used across different
-#' Amazon Web Services accounts.
+#' **Cross-account use:** This operation supports cross-account use when the key has a resource-based policy that grants access. For more information, see [Resource-based policies](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html).
 #' 
 #' **Related operations:**
 #' 
@@ -3062,12 +3007,7 @@ paymentcryptographycontrolplane_tag_resource <- function(ResourceArn, Tags) {
 #' @param ResourceArn &#91;required&#93; The `KeyARN` of the key whose tags are being removed.
 #' @param TagKeys &#91;required&#93; One or more tag keys. Don't include the tag values.
 #' 
-#' If the Amazon Web Services Payment Cryptography key doesn't have the
-#' specified tag key, Amazon Web Services Payment Cryptography doesn't
-#' throw an exception or return a response. To confirm that the operation
-#' succeeded, use the
-#' [`list_tags_for_resource`][paymentcryptographycontrolplane_list_tags_for_resource]
-#' operation.
+#' If the Amazon Web Services Payment Cryptography key doesn't have the specified tag key, Amazon Web Services Payment Cryptography doesn't throw an exception or return a response. To confirm that the operation succeeded, use the [`list_tags_for_resource`][paymentcryptographycontrolplane_list_tags_for_resource] operation.
 #'
 #' @return
 #' An empty list.
@@ -3110,15 +3050,9 @@ paymentcryptographycontrolplane_untag_resource <- function(ResourceArn, TagKeys)
 #' with a different key
 #'
 #' @description
-#' Associates an existing Amazon Web Services Payment Cryptography alias
-#' with a different key. Each alias is associated with only one Amazon Web
-#' Services Payment Cryptography key at a time, although a key can have
-#' multiple aliases. The alias and the Amazon Web Services Payment
-#' Cryptography key must be in the same Amazon Web Services account and
-#' Amazon Web Services Region
+#' Associates an existing Amazon Web Services Payment Cryptography alias with a different key. Each alias is associated with only one Amazon Web Services Payment Cryptography key at a time, although a key can have multiple aliases. The alias and the Amazon Web Services Payment Cryptography key must be in the same Amazon Web Services account and Amazon Web Services Region
 #' 
-#' **Cross-account use:** This operation can't be used across different
-#' Amazon Web Services accounts.
+#' **Cross-account use:** This operation can't be used across different Amazon Web Services accounts.
 #' 
 #' **Related operations:**
 #' 
@@ -3134,8 +3068,7 @@ paymentcryptographycontrolplane_untag_resource <- function(ResourceArn, TagKeys)
 #' paymentcryptographycontrolplane_update_alias(AliasName, KeyArn)
 #'
 #' @param AliasName &#91;required&#93; The alias whose associated key is changing.
-#' @param KeyArn The `KeyARN` for the key that you are updating or removing from the
-#' alias.
+#' @param KeyArn The `KeyARN` for the key that you are updating or removing from the alias.
 #'
 #' @return
 #' A list with the following syntax:

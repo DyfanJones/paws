@@ -7,8 +7,7 @@
 drs_get_launch_configuration(sourceServerID)
 }
 \arguments{
-\item{sourceServerID}{[required] The ID of the Source Server that we want to retrieve a Launch
-Configuration for.}
+\item{sourceServerID}{[required] The ID of the Source Server that we want to retrieve a Launch Configuration for.}
 }
 \description{
 Gets a LaunchConfiguration, filtered by Source Server IDs.

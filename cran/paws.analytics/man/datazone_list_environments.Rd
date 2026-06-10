@@ -5,53 +5,41 @@
 \title{Lists Amazon DataZone environments}
 \usage{
 datazone_list_environments(
-  awsAccountId = NULL,
-  awsAccountRegion = NULL,
   domainIdentifier,
-  environmentBlueprintIdentifier = NULL,
-  environmentProfileIdentifier = NULL,
-  maxResults = NULL,
-  name = NULL,
-  nextToken = NULL,
+  awsAccountId = NULL,
+  status = NULL,
+  awsAccountRegion = NULL,
   projectIdentifier,
+  environmentProfileIdentifier = NULL,
+  environmentBlueprintIdentifier = NULL,
   provider = NULL,
-  status = NULL
+  name = NULL,
+  maxResults = NULL,
+  nextToken = NULL
 )
 }
 \arguments{
-\item{awsAccountId}{The identifier of the Amazon Web Services account where you want to list
-environments.}
+\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain.}
+
+\item{awsAccountId}{The identifier of the Amazon Web Services account where you want to list environments.}
+
+\item{status}{The status of the environments that you want to list.}
 
 \item{awsAccountRegion}{The Amazon Web Services region where you want to list environments.}
 
-\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain.}
-
-\item{environmentBlueprintIdentifier}{The identifier of the Amazon DataZone blueprint.}
+\item{projectIdentifier}{[required] The identifier of the Amazon DataZone project.}
 
 \item{environmentProfileIdentifier}{The identifier of the environment profile.}
 
-\item{maxResults}{The maximum number of environments to return in a single call to
-\code{\link[=datazone_list_environments]{list_environments}}. When the number of
-environments to be listed is greater than the value of \code{MaxResults}, the
-response contains a \code{NextToken} value that you can use in a subsequent
-call to \code{\link[=datazone_list_environments]{list_environments}} to list the
-next set of environments.}
-
-\item{name}{The name of the environment.}
-
-\item{nextToken}{When the number of environments is greater than the default value for
-the \code{MaxResults} parameter, or if you explicitly specify a value for
-\code{MaxResults} that is less than the number of environments, the response
-includes a pagination token named \code{NextToken}. You can specify this
-\code{NextToken} value in a subsequent call to
-\code{\link[=datazone_list_environments]{list_environments}} to list the next set
-of environments.}
-
-\item{projectIdentifier}{[required] The identifier of the Amazon DataZone project.}
+\item{environmentBlueprintIdentifier}{The identifier of the Amazon DataZone blueprint.}
 
 \item{provider}{The provider of the environment.}
 
-\item{status}{The status of the environments that you want to list.}
+\item{name}{The name of the environment.}
+
+\item{maxResults}{The maximum number of environments to return in a single call to \code{\link[=datazone_list_environments]{list_environments}}. When the number of environments to be listed is greater than the value of \code{MaxResults}, the response contains a \code{NextToken} value that you can use in a subsequent call to \code{\link[=datazone_list_environments]{list_environments}} to list the next set of environments.}
+
+\item{nextToken}{When the number of environments is greater than the default value for the \code{MaxResults} parameter, or if you explicitly specify a value for \code{MaxResults} that is less than the number of environments, the response includes a pagination token named \code{NextToken}. You can specify this \code{NextToken} value in a subsequent call to \code{\link[=datazone_list_environments]{list_environments}} to list the next set of environments.}
 }
 \description{
 Lists Amazon DataZone environments.

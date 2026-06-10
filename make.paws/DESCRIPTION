@@ -1,7 +1,7 @@
 Package: make.paws
 Type: Package
 Title: Generate Paws AWS SDKs for R
-Version: 0.10.1
+Version: 0.10.2
 Authors@R: c(
     person("David", "Kretch", email = "david.kretch@gmail.com", role = "aut"),
     person("Adam", "Banker", email = "adam.banker39@gmail.com", role = "aut"),
@@ -12,6 +12,7 @@ Description: make.paws generates the Paws AWS SDKs for R.
 License: Apache License (>= 2.0)
 URL: https://github.com/paws-r/paws
 Encoding: UTF-8
+Depends: R (>= 4.1.0)
 Imports:
     cachem,
     desc,
@@ -19,7 +20,6 @@ Imports:
     data.table,
     glue,
     gitcreds,
-    httr,
     httr2,
     jsonlite,
     methods,

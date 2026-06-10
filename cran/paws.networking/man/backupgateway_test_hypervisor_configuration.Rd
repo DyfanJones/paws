@@ -8,19 +8,18 @@ connect with the hypervisor and its resources}
 backupgateway_test_hypervisor_configuration(
   GatewayArn,
   Host,
-  Password = NULL,
-  Username = NULL
+  Username = NULL,
+  Password = NULL
 )
 }
 \arguments{
 \item{GatewayArn}{[required] The Amazon Resource Name (ARN) of the gateway to the hypervisor to test.}
 
-\item{Host}{[required] The server host of the hypervisor. This can be either an IP address or a
-fully-qualified domain name (FQDN).}
-
-\item{Password}{The password for the hypervisor.}
+\item{Host}{[required] The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).}
 
 \item{Username}{The username for the hypervisor.}
+
+\item{Password}{The password for the hypervisor.}
 }
 \description{
 Tests your hypervisor configuration to validate that backup gateway can connect with the hypervisor and its resources.

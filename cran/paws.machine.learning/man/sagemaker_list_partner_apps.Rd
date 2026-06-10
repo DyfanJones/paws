@@ -7,16 +7,9 @@
 sagemaker_list_partner_apps(MaxResults = NULL, NextToken = NULL)
 }
 \arguments{
-\item{MaxResults}{This parameter defines the maximum number of results that can be
-returned in a single response. The \code{MaxResults} parameter is an upper
-bound, not a target. If there are more results available than the value
-specified, a \code{NextToken} is provided in the response. The \code{NextToken}
-indicates that the user should get the next set of results by providing
-this token as a part of a subsequent call. The default value for
-\code{MaxResults} is 10.}
+\item{MaxResults}{This parameter defines the maximum number of results that can be returned in a single response. The \code{MaxResults} parameter is an upper bound, not a target. If there are more results available than the value specified, a \code{NextToken} is provided in the response. The \code{NextToken} indicates that the user should get the next set of results by providing this token as a part of a subsequent call. The default value for \code{MaxResults} is 10.}
 
-\item{NextToken}{If the previous response was truncated, you will receive this token. Use
-it in your next request to receive the next set of results.}
+\item{NextToken}{If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.}
 }
 \description{
 Lists all of the SageMaker Partner AI Apps in an account.

@@ -15,13 +15,11 @@ elbv2_describe_ssl_policies(
 \arguments{
 \item{Names}{The names of the policies.}
 
-\item{Marker}{The marker for the next set of results. (You received this marker from a
-previous call.)}
+\item{Marker}{The marker for the next set of results. (You received this marker from a previous call.)}
 
 \item{PageSize}{The maximum number of results to return with this call.}
 
-\item{LoadBalancerType}{The type of load balancer. The default lists the SSL policies for all
-load balancers.}
+\item{LoadBalancerType}{The type of load balancer. The default lists the SSL policies for all load balancers.}
 }
 \description{
 Describes the specified policies or all policies used for SSL negotiation.

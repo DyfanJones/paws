@@ -5,8 +5,7 @@ NULL
 #' FinSpace User Environment Management service
 #'
 #' @description
-#' The FinSpace management service provides the APIs for managing FinSpace
-#' environments.
+#' The FinSpace management service provides the APIs for managing FinSpace environments.
 #'
 #' @param
 #' config

@@ -14,8 +14,7 @@ workmail_update_impersonation_role(
 )
 }
 \arguments{
-\item{OrganizationId}{[required] The WorkMail organization that contains the impersonation role to
-update.}
+\item{OrganizationId}{[required] The WorkMail organization that contains the impersonation role to update.}
 
 \item{ImpersonationRoleId}{[required] The ID of the impersonation role to update.}
 

@@ -16,36 +16,27 @@ elasticache_describe_events(
 )
 }
 \arguments{
-\item{SourceIdentifier}{The identifier of the event source for which events are returned. If not
-specified, all sources are included in the response.}
+\item{SourceIdentifier}{The identifier of the event source for which events are returned. If not specified, all sources are included in the response.}
 
-\item{SourceType}{The event source to retrieve events for. If no value is specified, all
-events are returned.}
+\item{SourceType}{The event source to retrieve events for. If no value is specified, all events are returned.}
 
-\item{StartTime}{The beginning of the time interval to retrieve events for, specified in
-ISO 8601 format.
+\item{StartTime}{The beginning of the time interval to retrieve events for, specified in ISO 8601 format.
 
 \strong{Example:} 2017-03-30T07:03:49.555Z}
 
-\item{EndTime}{The end of the time interval for which to retrieve events, specified in
-ISO 8601 format.
+\item{EndTime}{The end of the time interval for which to retrieve events, specified in ISO 8601 format.
 
 \strong{Example:} 2017-03-30T07:03:49.555Z}
 
 \item{Duration}{The number of minutes worth of events to retrieve.}
 
-\item{MaxRecords}{The maximum number of records to include in the response. If more
-records exist than the specified \code{MaxRecords} value, a marker is
-included in the response so that the remaining results can be retrieved.
+\item{MaxRecords}{The maximum number of records to include in the response. If more records exist than the specified \code{MaxRecords} value, a marker is included in the response so that the remaining results can be retrieved.
 
 Default: 100
 
 Constraints: minimum 20; maximum 100.}
 
-\item{Marker}{An optional marker returned from a prior request. Use this marker for
-pagination of results from this operation. If this parameter is
-specified, the response includes only records beyond the marker, up to
-the value specified by \code{MaxRecords}.}
+\item{Marker}{An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by \code{MaxRecords}.}
 }
 \description{
 Returns events related to clusters, cache security groups, and cache parameter groups. You can obtain events specific to a particular cluster, cache security group, or cache parameter group by providing the name as a parameter.

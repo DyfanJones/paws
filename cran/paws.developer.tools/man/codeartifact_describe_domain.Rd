@@ -10,8 +10,7 @@ codeartifact_describe_domain(domain, domainOwner = NULL)
 \arguments{
 \item{domain}{[required] A string that specifies the name of the requested domain.}
 
-\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns
-the domain. It does not include dashes or spaces.}
+\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.}
 }
 \description{
 Returns a \href{https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainDescription.html}{DomainDescription} object that contains information about the requested domain.

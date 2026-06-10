@@ -10,8 +10,7 @@ redshift_purchase_reserved_node_offering(
 )
 }
 \arguments{
-\item{ReservedNodeOfferingId}{[required] The unique identifier of the reserved node offering you want to
-purchase.}
+\item{ReservedNodeOfferingId}{[required] The unique identifier of the reserved node offering you want to purchase.}
 
 \item{NodeCount}{The number of reserved nodes that you want to purchase.
 

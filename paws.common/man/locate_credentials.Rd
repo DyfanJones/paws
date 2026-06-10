@@ -4,12 +4,14 @@
 \alias{locate_credentials}
 \title{Locate AWS credentials}
 \usage{
-locate_credentials(profile = "", anonymous = FALSE)
+locate_credentials(profile = "", anonymous = FALSE, signing_name = NULL)
 }
 \arguments{
 \item{profile}{The name of a profile to use. If not given, then the default profile is used.}
 
 \item{anonymous}{Set anonymous credentials.}
+
+\item{signing_name}{lowercase identifier for an AWS service used to locate any aws service bearer tokens i.e. bedrock}
 }
 \value{
 list containing AWS credentials

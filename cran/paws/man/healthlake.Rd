@@ -53,9 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-This is the \emph{AWS HealthLake API Reference}. For an introduction to the
-service, see \href{https://docs.aws.amazon.com/healthlake/latest/devguide/what-is.html}{What is AWS HealthLake?}
-in the \emph{AWS HealthLake Developer Guide}.
+This is the \emph{AWS HealthLake API Reference}. For an introduction to the service, see \href{https://docs.aws.amazon.com/healthlake/latest/devguide/what-is.html}{What is AWS HealthLake?} in the \emph{AWS HealthLake Developer Guide}.
 }
 \section{Service syntax}{
 

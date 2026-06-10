@@ -11,8 +11,7 @@ docdb_create_db_cluster_snapshot(
 )
 }
 \arguments{
-\item{DBClusterSnapshotIdentifier}{[required] The identifier of the cluster snapshot. This parameter is stored as a
-lowercase string.
+\item{DBClusterSnapshotIdentifier}{[required] The identifier of the cluster snapshot. This parameter is stored as a lowercase string.
 
 Constraints:
 \itemize{
@@ -23,8 +22,7 @@ Constraints:
 
 Example: \code{my-cluster-snapshot1}}
 
-\item{DBClusterIdentifier}{[required] The identifier of the cluster to create a snapshot for. This parameter
-is not case sensitive.
+\item{DBClusterIdentifier}{[required] The identifier of the cluster to create a snapshot for. This parameter is not case sensitive.
 
 Constraints:
 \itemize{

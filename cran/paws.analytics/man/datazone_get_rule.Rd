@@ -7,8 +7,7 @@
 datazone_get_rule(domainIdentifier, identifier, revision = NULL)
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the domain where the \code{\link[=datazone_get_rule]{get_rule}} action is
-to be invoked.}
+\item{domainIdentifier}{[required] The ID of the domain where the \code{\link[=datazone_get_rule]{get_rule}} action is to be invoked.}
 
 \item{identifier}{[required] The ID of the rule.}
 

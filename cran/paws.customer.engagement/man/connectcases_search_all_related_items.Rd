@@ -17,18 +17,11 @@ connectcases_search_all_related_items(
 
 \item{maxResults}{The maximum number of results to return per page.}
 
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
-\item{filters}{The list of types of related items and their parameters to use for
-filtering. The filters work as an OR condition: caller gets back related
-items that match any of the specified filter types.}
+\item{filters}{The list of types of related items and their parameters to use for filtering. The filters work as an OR condition: caller gets back related items that match any of the specified filter types.}
 
-\item{sorts}{A structured set of sort terms to specify the order in which related
-items should be returned. Supports sorting by association time or case
-ID. The sorts work in the order specified: first sort term takes
-precedence over subsequent terms.}
+\item{sorts}{A structured set of sort terms to specify the order in which related items should be returned. Supports sorting by association time or case ID. The sorts work in the order specified: first sort term takes precedence over subsequent terms.}
 }
 \description{
 Searches for related items across all cases within a domain. This is a global search operation that returns related items from multiple cases, unlike the case-specific \code{\link[=connectcases_search_related_items]{search_related_items}} API.

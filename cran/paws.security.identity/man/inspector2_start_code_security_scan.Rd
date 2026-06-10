@@ -7,8 +7,7 @@
 inspector2_start_code_security_scan(clientToken = NULL, resource)
 }
 \arguments{
-\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request.}
+\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.}
 
 \item{resource}{[required] The resource identifier for the code repository to scan.}
 }

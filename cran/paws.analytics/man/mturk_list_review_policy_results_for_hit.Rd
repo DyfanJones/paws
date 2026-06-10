@@ -18,15 +18,11 @@ mturk_list_review_policy_results_for_hit(
 \arguments{
 \item{HITId}{[required] The unique identifier of the HIT to retrieve review results for.}
 
-\item{PolicyLevels}{The Policy Level(s) to retrieve review results for - HIT or Assignment.
-If omitted, the default behavior is to retrieve all data for both policy
-levels. For a list of all the described policies, see Review Policies.}
+\item{PolicyLevels}{The Policy Level(s) to retrieve review results for - HIT or Assignment. If omitted, the default behavior is to retrieve all data for both policy levels. For a list of all the described policies, see Review Policies.}
 
-\item{RetrieveActions}{Specify if the operation should retrieve a list of the actions taken
-executing the Review Policies and their outcomes.}
+\item{RetrieveActions}{Specify if the operation should retrieve a list of the actions taken executing the Review Policies and their outcomes.}
 
-\item{RetrieveResults}{Specify if the operation should retrieve a list of the results computed
-by the Review Policies.}
+\item{RetrieveResults}{Specify if the operation should retrieve a list of the results computed by the Review Policies.}
 
 \item{NextToken}{Pagination token}
 

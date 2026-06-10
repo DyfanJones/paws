@@ -8,21 +8,13 @@ NULL
 #' endpoints
 #'
 #' @description
-#' Returns attributes for one or more collections, including the collection
-#' endpoint, the OpenSearch Dashboards endpoint, and FIPS-compliant
-#' endpoints. For more information, see [Creating and managing Amazon
-#' OpenSearch Serverless
-#' collections](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html).
+#' Returns attributes for one or more collections, including the collection endpoint, the OpenSearch Dashboards endpoint, and FIPS-compliant endpoints. For more information, see [Creating and managing Amazon OpenSearch Serverless collections](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html).
 #'
 #' @usage
 #' opensearchserviceserverless_batch_get_collection(ids, names)
 #'
-#' @param ids A list of collection IDs. You can't provide names and IDs in the same
-#' request. The ID is part of the collection endpoint. You can also
-#' retrieve it using the
-#' [`list_collections`][opensearchserviceserverless_list_collections] API.
-#' @param names A list of collection names. You can't provide names and IDs in the same
-#' request.
+#' @param ids A list of collection IDs. You can't provide names and IDs in the same request. The ID is part of the collection endpoint. You can also retrieve it using the [`list_collections`][opensearchserviceserverless_list_collections] API.
+#' @param names A list of collection names. You can't provide names and IDs in the same request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -32,7 +24,7 @@ NULL
 #'     list(
 #'       id = "string",
 #'       name = "string",
-#'       status = "CREATING"|"DELETING"|"ACTIVE"|"FAILED",
+#'       status = "CREATING"|"UPDATING"|"DELETING"|"ACTIVE"|"FAILED"|"UPDATE_FAILED",
 #'       type = "SEARCH"|"TIMESERIES"|"VECTORSEARCH",
 #'       description = "string",
 #'       arn = "string",
@@ -50,7 +42,8 @@ NULL
 #'         dashboardEndpoint = "string"
 #'       ),
 #'       failureCode = "string",
-#'       failureMessage = "string"
+#'       failureMessage = "string",
+#'       collectionGroupName = "string"
 #'     )
 #'   ),
 #'   collectionErrorDetails = list(
@@ -100,13 +93,97 @@ opensearchserviceserverless_batch_get_collection <- function(ids = NULL, names =
 }
 .opensearchserviceserverless$operations$batch_get_collection <- opensearchserviceserverless_batch_get_collection
 
+#' Returns attributes for one or more collection groups, including capacity
+#' limits and the number of collections in each group
+#'
+#' @description
+#' Returns attributes for one or more collection groups, including capacity limits and the number of collections in each group. For more information, see [Creating and managing Amazon OpenSearch Serverless collections](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html).
+#'
+#' @usage
+#' opensearchserviceserverless_batch_get_collection_group(ids, names)
+#'
+#' @param ids A list of collection group IDs. You can't provide names and IDs in the same request.
+#' @param names A list of collection group names. You can't provide names and IDs in the same request.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   collectionGroupDetails = list(
+#'     list(
+#'       id = "string",
+#'       arn = "string",
+#'       name = "string",
+#'       standbyReplicas = "ENABLED"|"DISABLED",
+#'       description = "string",
+#'       tags = list(
+#'         list(
+#'           key = "string",
+#'           value = "string"
+#'         )
+#'       ),
+#'       createdDate = 123,
+#'       capacityLimits = list(
+#'         maxIndexingCapacityInOCU = 123.0,
+#'         maxSearchCapacityInOCU = 123.0,
+#'         minIndexingCapacityInOCU = 123.0,
+#'         minSearchCapacityInOCU = 123.0
+#'       ),
+#'       numberOfCollections = 123
+#'     )
+#'   ),
+#'   collectionGroupErrorDetails = list(
+#'     list(
+#'       id = "string",
+#'       name = "string",
+#'       errorMessage = "string",
+#'       errorCode = "string"
+#'     )
+#'   )
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$batch_get_collection_group(
+#'   ids = list(
+#'     "string"
+#'   ),
+#'   names = list(
+#'     "string"
+#'   )
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname opensearchserviceserverless_batch_get_collection_group
+#'
+#' @aliases opensearchserviceserverless_batch_get_collection_group
+opensearchserviceserverless_batch_get_collection_group <- function(ids = NULL, names = NULL) {
+  op <- new_operation(
+    name = "BatchGetCollectionGroup",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .opensearchserviceserverless$batch_get_collection_group_input(ids = ids, names = names)
+  output <- .opensearchserviceserverless$batch_get_collection_group_output()
+  config <- get_config()
+  svc <- .opensearchserviceserverless$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.opensearchserviceserverless$operations$batch_get_collection_group <- opensearchserviceserverless_batch_get_collection_group
+
 #' Returns a list of successful and failed retrievals for the OpenSearch
 #' Serverless indexes
 #'
 #' @description
-#' Returns a list of successful and failed retrievals for the OpenSearch
-#' Serverless indexes. For more information, see [Viewing data lifecycle
-#' policies](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list).
+#' Returns a list of successful and failed retrievals for the OpenSearch Serverless indexes. For more information, see [Viewing data lifecycle policies](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list).
 #'
 #' @usage
 #' opensearchserviceserverless_batch_get_effective_lifecycle_policy(
@@ -178,9 +255,7 @@ opensearchserviceserverless_batch_get_effective_lifecycle_policy <- function(res
 #' Returns one or more configured OpenSearch Serverless lifecycle policies
 #'
 #' @description
-#' Returns one or more configured OpenSearch Serverless lifecycle policies.
-#' For more information, see [Viewing data lifecycle
-#' policies](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list).
+#' Returns one or more configured OpenSearch Serverless lifecycle policies. For more information, see [Viewing data lifecycle policies](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list).
 #'
 #' @usage
 #' opensearchserviceserverless_batch_get_lifecycle_policy(identifiers)
@@ -253,10 +328,7 @@ opensearchserviceserverless_batch_get_lifecycle_policy <- function(identifiers) 
 #' current account
 #'
 #' @description
-#' Returns attributes for one or more VPC endpoints associated with the
-#' current account. For more information, see [Access Amazon OpenSearch
-#' Serverless using an interface
-#' endpoint](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vpc.html).
+#' Returns attributes for one or more VPC endpoints associated with the current account. For more information, see [Access Amazon OpenSearch Serverless using an interface endpoint](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vpc.html).
 #'
 #' @usage
 #' opensearchserviceserverless_batch_get_vpc_endpoint(ids)
@@ -330,12 +402,7 @@ opensearchserviceserverless_batch_get_vpc_endpoint <- function(ids) {
 #' Creates a data access policy for OpenSearch Serverless
 #'
 #' @description
-#' Creates a data access policy for OpenSearch Serverless. Access policies
-#' limit access to collections and the resources within them, and allow a
-#' user to access that data irrespective of the access mechanism or network
-#' source. For more information, see [Data access control for Amazon
-#' OpenSearch
-#' Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-data-access.html).
+#' Creates a data access policy for OpenSearch Serverless. Access policies limit access to collections and the resources within them, and allow a user to access that data irrespective of the access mechanism or network source. For more information, see [Data access control for Amazon OpenSearch Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-data-access.html).
 #'
 #' @usage
 #' opensearchserviceserverless_create_access_policy(type, name,
@@ -343,8 +410,7 @@ opensearchserviceserverless_batch_get_vpc_endpoint <- function(ids) {
 #'
 #' @param type &#91;required&#93; The type of policy.
 #' @param name &#91;required&#93; The name of the policy.
-#' @param description A description of the policy. Typically used to store information about
-#' the permissions defined in the policy.
+#' @param description A description of the policy. Typically used to store information about the permissions defined in the policy.
 #' @param policy &#91;required&#93; The JSON policy document to use as the content for the policy.
 #' @param clientToken Unique, case-sensitive identifier to ensure idempotency of the request.
 #'
@@ -402,21 +468,21 @@ opensearchserviceserverless_create_access_policy <- function(type, name, descrip
 #' Creates a new OpenSearch Serverless collection
 #'
 #' @description
-#' Creates a new OpenSearch Serverless collection. For more information,
-#' see [Creating and managing Amazon OpenSearch Serverless
-#' collections](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html).
+#' Creates a new OpenSearch Serverless collection. For more information, see [Creating and managing Amazon OpenSearch Serverless collections](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html).
 #'
 #' @usage
 #' opensearchserviceserverless_create_collection(name, type, description,
-#'   tags, standbyReplicas, vectorOptions, clientToken)
+#'   tags, standbyReplicas, vectorOptions, collectionGroupName,
+#'   encryptionConfig, clientToken)
 #'
 #' @param name &#91;required&#93; Name of the collection.
 #' @param type The type of collection.
 #' @param description Description of the collection.
-#' @param tags An arbitrary set of tags (key–value pairs) to associate with the
-#' OpenSearch Serverless collection.
+#' @param tags An arbitrary set of tags (key–value pairs) to associate with the OpenSearch Serverless collection.
 #' @param standbyReplicas Indicates whether standby replicas should be used for a collection.
 #' @param vectorOptions Configuration options for vector search capabilities in the collection.
+#' @param collectionGroupName The name of the collection group to associate with the collection.
+#' @param encryptionConfig Encryption settings for the collection.
 #' @param clientToken Unique, case-sensitive identifier to ensure idempotency of the request.
 #'
 #' @return
@@ -426,7 +492,7 @@ opensearchserviceserverless_create_access_policy <- function(type, name, descrip
 #'   createCollectionDetail = list(
 #'     id = "string",
 #'     name = "string",
-#'     status = "CREATING"|"DELETING"|"ACTIVE"|"FAILED",
+#'     status = "CREATING"|"UPDATING"|"DELETING"|"ACTIVE"|"FAILED"|"UPDATE_FAILED",
 #'     type = "SEARCH"|"TIMESERIES"|"VECTORSEARCH",
 #'     description = "string",
 #'     arn = "string",
@@ -436,7 +502,8 @@ opensearchserviceserverless_create_access_policy <- function(type, name, descrip
 #'       ServerlessVectorAcceleration = "ENABLED"|"DISABLED"|"ALLOWED"
 #'     ),
 #'     createdDate = 123,
-#'     lastModifiedDate = 123
+#'     lastModifiedDate = 123,
+#'     collectionGroupName = "string"
 #'   )
 #' )
 #' ```
@@ -457,6 +524,11 @@ opensearchserviceserverless_create_access_policy <- function(type, name, descrip
 #'   vectorOptions = list(
 #'     ServerlessVectorAcceleration = "ENABLED"|"DISABLED"|"ALLOWED"
 #'   ),
+#'   collectionGroupName = "string",
+#'   encryptionConfig = list(
+#'     aWSOwnedKey = TRUE|FALSE,
+#'     kmsKeyArn = "string"
+#'   ),
 #'   clientToken = "string"
 #' )
 #' ```
@@ -466,7 +538,7 @@ opensearchserviceserverless_create_access_policy <- function(type, name, descrip
 #' @rdname opensearchserviceserverless_create_collection
 #'
 #' @aliases opensearchserviceserverless_create_collection
-opensearchserviceserverless_create_collection <- function(name, type = NULL, description = NULL, tags = NULL, standbyReplicas = NULL, vectorOptions = NULL, clientToken = NULL) {
+opensearchserviceserverless_create_collection <- function(name, type = NULL, description = NULL, tags = NULL, standbyReplicas = NULL, vectorOptions = NULL, collectionGroupName = NULL, encryptionConfig = NULL, clientToken = NULL) {
   op <- new_operation(
     name = "CreateCollection",
     http_method = "POST",
@@ -475,7 +547,7 @@ opensearchserviceserverless_create_collection <- function(name, type = NULL, des
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .opensearchserviceserverless$create_collection_input(name = name, type = type, description = description, tags = tags, standbyReplicas = standbyReplicas, vectorOptions = vectorOptions, clientToken = clientToken)
+  input <- .opensearchserviceserverless$create_collection_input(name = name, type = type, description = description, tags = tags, standbyReplicas = standbyReplicas, vectorOptions = vectorOptions, collectionGroupName = collectionGroupName, encryptionConfig = encryptionConfig, clientToken = clientToken)
   output <- .opensearchserviceserverless$create_collection_output()
   config <- get_config()
   svc <- .opensearchserviceserverless$service(config, op)
@@ -485,24 +557,108 @@ opensearchserviceserverless_create_collection <- function(name, type = NULL, des
 }
 .opensearchserviceserverless$operations$create_collection <- opensearchserviceserverless_create_collection
 
+#' Creates a collection group within OpenSearch Serverless
+#'
+#' @description
+#' Creates a collection group within OpenSearch Serverless. Collection groups let you manage OpenSearch Compute Units (OCUs) at a group level, with multiple collections sharing the group's capacity limits.
+#' 
+#' For more information, see [Managing collection groups](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-collection-groups.html).
+#'
+#' @usage
+#' opensearchserviceserverless_create_collection_group(name,
+#'   standbyReplicas, description, tags, capacityLimits, clientToken)
+#'
+#' @param name &#91;required&#93; The name of the collection group.
+#' @param standbyReplicas &#91;required&#93; Indicates whether standby replicas should be used for a collection group.
+#' @param description A description of the collection group.
+#' @param tags An arbitrary set of tags (key–value pairs) to associate with the OpenSearch Serverless collection group.
+#' @param capacityLimits The capacity limits for the collection group, in OpenSearch Compute Units (OCUs). These limits control the maximum and minimum capacity for collections within the group.
+#' @param clientToken Unique, case-sensitive identifier to ensure idempotency of the request.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   createCollectionGroupDetail = list(
+#'     id = "string",
+#'     arn = "string",
+#'     name = "string",
+#'     standbyReplicas = "ENABLED"|"DISABLED",
+#'     description = "string",
+#'     tags = list(
+#'       list(
+#'         key = "string",
+#'         value = "string"
+#'       )
+#'     ),
+#'     createdDate = 123,
+#'     capacityLimits = list(
+#'       maxIndexingCapacityInOCU = 123.0,
+#'       maxSearchCapacityInOCU = 123.0,
+#'       minIndexingCapacityInOCU = 123.0,
+#'       minSearchCapacityInOCU = 123.0
+#'     )
+#'   )
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$create_collection_group(
+#'   name = "string",
+#'   standbyReplicas = "ENABLED"|"DISABLED",
+#'   description = "string",
+#'   tags = list(
+#'     list(
+#'       key = "string",
+#'       value = "string"
+#'     )
+#'   ),
+#'   capacityLimits = list(
+#'     maxIndexingCapacityInOCU = 123.0,
+#'     maxSearchCapacityInOCU = 123.0,
+#'     minIndexingCapacityInOCU = 123.0,
+#'     minSearchCapacityInOCU = 123.0
+#'   ),
+#'   clientToken = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname opensearchserviceserverless_create_collection_group
+#'
+#' @aliases opensearchserviceserverless_create_collection_group
+opensearchserviceserverless_create_collection_group <- function(name, standbyReplicas, description = NULL, tags = NULL, capacityLimits = NULL, clientToken = NULL) {
+  op <- new_operation(
+    name = "CreateCollectionGroup",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .opensearchserviceserverless$create_collection_group_input(name = name, standbyReplicas = standbyReplicas, description = description, tags = tags, capacityLimits = capacityLimits, clientToken = clientToken)
+  output <- .opensearchserviceserverless$create_collection_group_output()
+  config <- get_config()
+  svc <- .opensearchserviceserverless$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.opensearchserviceserverless$operations$create_collection_group <- opensearchserviceserverless_create_collection_group
+
 #' Creates an index within an OpenSearch Serverless collection
 #'
 #' @description
-#' Creates an index within an OpenSearch Serverless collection. Unlike
-#' other OpenSearch indexes, indexes created by this API are automatically
-#' configured to conduct automatic semantic enrichment ingestion and
-#' search. For more information, see [About automatic semantic
-#' enrichment](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html#serverless-semantic-enrichment)
-#' in the *OpenSearch User Guide*.
+#' Creates an index within an OpenSearch Serverless collection. Unlike other OpenSearch indexes, indexes created by this API are automatically configured to conduct automatic semantic enrichment ingestion and search. For more information, see [About automatic semantic enrichment](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html#serverless-semantic-enrichment) in the *OpenSearch User Guide*.
 #'
 #' @usage
 #' opensearchserviceserverless_create_index(id, indexName, indexSchema)
 #'
 #' @param id &#91;required&#93; The unique identifier of the collection in which to create the index.
-#' @param indexName &#91;required&#93; The name of the index to create. Index names must be lowercase and can't
-#' begin with underscores (_) or hyphens (-).
-#' @param indexSchema The JSON schema definition for the index, including field mappings and
-#' settings.
+#' @param indexName &#91;required&#93; The name of the index to create. Index names must be lowercase and can't begin with underscores (_) or hyphens (-).
+#' @param indexSchema The JSON schema definition for the index, including field mappings and settings.
 #'
 #' @return
 #' An empty list.
@@ -543,11 +699,7 @@ opensearchserviceserverless_create_index <- function(id, indexName, indexSchema 
 #' Creates a lifecyle policy to be applied to OpenSearch Serverless indexes
 #'
 #' @description
-#' Creates a lifecyle policy to be applied to OpenSearch Serverless
-#' indexes. Lifecycle policies define the number of days or hours to retain
-#' the data on an OpenSearch Serverless index. For more information, see
-#' [Creating data lifecycle
-#' policies](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-create).
+#' Creates a lifecyle policy to be applied to OpenSearch Serverless indexes. Lifecycle policies define the number of days or hours to retain the data on an OpenSearch Serverless index. For more information, see [Creating data lifecycle policies](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-create).
 #'
 #' @usage
 #' opensearchserviceserverless_create_lifecycle_policy(type, name,
@@ -557,8 +709,7 @@ opensearchserviceserverless_create_index <- function(id, indexName, indexSchema 
 #' @param name &#91;required&#93; The name of the lifecycle policy.
 #' @param description A description of the lifecycle policy.
 #' @param policy &#91;required&#93; The JSON policy document to use as the content for the lifecycle policy.
-#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the
-#' request.
+#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -614,9 +765,7 @@ opensearchserviceserverless_create_lifecycle_policy <- function(type, name, desc
 #' Specifies a security configuration for OpenSearch Serverless
 #'
 #' @description
-#' Specifies a security configuration for OpenSearch Serverless. For more
-#' information, see [SAML authentication for Amazon OpenSearch
-#' Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-saml.html).
+#' Specifies a security configuration for OpenSearch Serverless. For more information, see [SAML authentication for Amazon OpenSearch Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-saml.html).
 #'
 #' @usage
 #' opensearchserviceserverless_create_security_config(type, name,
@@ -626,14 +775,9 @@ opensearchserviceserverless_create_lifecycle_policy <- function(type, name, desc
 #' @param type &#91;required&#93; The type of security configuration.
 #' @param name &#91;required&#93; The name of the security configuration.
 #' @param description A description of the security configuration.
-#' @param samlOptions Describes SAML options in in the form of a key-value map. This field is
-#' required if you specify `SAML` for the `type` parameter.
-#' @param iamIdentityCenterOptions Describes IAM Identity Center options in the form of a key-value map.
-#' This field is required if you specify iamidentitycenter for the type
-#' parameter.
-#' @param iamFederationOptions Describes IAM federation options in the form of a key-value map. This
-#' field is required if you specify `iamFederation` for the `type`
-#' parameter.
+#' @param samlOptions Describes SAML options in the form of a key-value map. This field is required if you specify `SAML` for the `type` parameter.
+#' @param iamIdentityCenterOptions Describes IAM Identity Center options in the form of a key-value map. This field is required if you specify `iamidentitycenter` for the `type` parameter.
+#' @param iamFederationOptions Describes IAM federation options in the form of a key-value map. This field is required if you specify `iamFederation` for the `type` parameter.
 #' @param clientToken Unique, case-sensitive identifier to ensure idempotency of the request.
 #'
 #' @return
@@ -724,15 +868,7 @@ opensearchserviceserverless_create_security_config <- function(type, name, descr
 #' Serverless collections
 #'
 #' @description
-#' Creates a security policy to be used by one or more OpenSearch
-#' Serverless collections. Security policies provide access to a collection
-#' and its OpenSearch Dashboards endpoint from public networks or specific
-#' VPC endpoints. They also allow you to secure a collection with a KMS
-#' encryption key. For more information, see [Network access for Amazon
-#' OpenSearch
-#' Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-network.html)
-#' and [Encryption at rest for Amazon OpenSearch
-#' Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-encryption.html).
+#' Creates a security policy to be used by one or more OpenSearch Serverless collections. Security policies provide access to a collection and its OpenSearch Dashboards endpoint from public networks or specific VPC endpoints. They also allow you to secure a collection with a KMS encryption key. For more information, see [Network access for Amazon OpenSearch Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-network.html) and [Encryption at rest for Amazon OpenSearch Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-encryption.html).
 #'
 #' @usage
 #' opensearchserviceserverless_create_security_policy(type, name,
@@ -740,8 +876,7 @@ opensearchserviceserverless_create_security_config <- function(type, name, descr
 #'
 #' @param type &#91;required&#93; The type of security policy.
 #' @param name &#91;required&#93; The name of the policy.
-#' @param description A description of the policy. Typically used to store information about
-#' the permissions defined in the policy.
+#' @param description A description of the policy. Typically used to store information about the permissions defined in the policy.
 #' @param policy &#91;required&#93; The JSON policy document to use as the content for the new policy.
 #' @param clientToken Unique, case-sensitive identifier to ensure idempotency of the request.
 #'
@@ -799,10 +934,7 @@ opensearchserviceserverless_create_security_policy <- function(type, name, descr
 #' Creates an OpenSearch Serverless-managed interface VPC endpoint
 #'
 #' @description
-#' Creates an OpenSearch Serverless-managed interface VPC endpoint. For
-#' more information, see [Access Amazon OpenSearch Serverless using an
-#' interface
-#' endpoint](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vpc.html).
+#' Creates an OpenSearch Serverless-managed interface VPC endpoint. For more information, see [Access Amazon OpenSearch Serverless using an interface endpoint](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vpc.html).
 #'
 #' @usage
 #' opensearchserviceserverless_create_vpc_endpoint(name, vpcId, subnetIds,
@@ -810,11 +942,8 @@ opensearchserviceserverless_create_security_policy <- function(type, name, descr
 #'
 #' @param name &#91;required&#93; The name of the interface endpoint.
 #' @param vpcId &#91;required&#93; The ID of the VPC from which you'll access OpenSearch Serverless.
-#' @param subnetIds &#91;required&#93; The ID of one or more subnets from which you'll access OpenSearch
-#' Serverless.
-#' @param securityGroupIds The unique identifiers of the security groups that define the ports,
-#' protocols, and sources for inbound traffic that you are authorizing into
-#' your endpoint.
+#' @param subnetIds &#91;required&#93; The ID of one or more subnets from which you'll access OpenSearch Serverless.
+#' @param securityGroupIds The unique identifiers of the security groups that define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.
 #' @param clientToken Unique, case-sensitive identifier to ensure idempotency of the request.
 #'
 #' @return
@@ -871,9 +1000,7 @@ opensearchserviceserverless_create_vpc_endpoint <- function(name, vpcId, subnetI
 #' Deletes an OpenSearch Serverless access policy
 #'
 #' @description
-#' Deletes an OpenSearch Serverless access policy. For more information,
-#' see [Data access control for Amazon OpenSearch
-#' Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-data-access.html).
+#' Deletes an OpenSearch Serverless access policy. For more information, see [Data access control for Amazon OpenSearch Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-data-access.html).
 #'
 #' @usage
 #' opensearchserviceserverless_delete_access_policy(type, name,
@@ -922,19 +1049,13 @@ opensearchserviceserverless_delete_access_policy <- function(type, name, clientT
 #' Deletes an OpenSearch Serverless collection
 #'
 #' @description
-#' Deletes an OpenSearch Serverless collection. For more information, see
-#' [Creating and managing Amazon OpenSearch Serverless
-#' collections](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html).
+#' Deletes an OpenSearch Serverless collection. For more information, see [Creating and managing Amazon OpenSearch Serverless collections](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html).
 #'
 #' @usage
 #' opensearchserviceserverless_delete_collection(id, clientToken)
 #'
-#' @param id &#91;required&#93; The unique identifier of the collection. For example, `1iu5usc406kd`.
-#' The ID is part of the collection endpoint. You can also retrieve it
-#' using the
-#' [`list_collections`][opensearchserviceserverless_list_collections] API.
-#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the
-#' request.
+#' @param id &#91;required&#93; The unique identifier of the collection. For example, `1iu5usc406kd`. The ID is part of the collection endpoint. You can also retrieve it using the [`list_collections`][opensearchserviceserverless_list_collections] API.
+#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -943,7 +1064,7 @@ opensearchserviceserverless_delete_access_policy <- function(type, name, clientT
 #'   deleteCollectionDetail = list(
 #'     id = "string",
 #'     name = "string",
-#'     status = "CREATING"|"DELETING"|"ACTIVE"|"FAILED"
+#'     status = "CREATING"|"UPDATING"|"DELETING"|"ACTIVE"|"FAILED"|"UPDATE_FAILED"
 #'   )
 #' )
 #' ```
@@ -980,14 +1101,56 @@ opensearchserviceserverless_delete_collection <- function(id, clientToken = NULL
 }
 .opensearchserviceserverless$operations$delete_collection <- opensearchserviceserverless_delete_collection
 
+#' Deletes a collection group
+#'
+#' @description
+#' Deletes a collection group. You can only delete empty collection groups that contain no collections. For more information, see [Creating and managing Amazon OpenSearch Serverless collections](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html).
+#'
+#' @usage
+#' opensearchserviceserverless_delete_collection_group(id, clientToken)
+#'
+#' @param id &#91;required&#93; The unique identifier of the collection group to delete.
+#' @param clientToken Unique, case-sensitive identifier to ensure idempotency of the request.
+#'
+#' @return
+#' An empty list.
+#'
+#' @section Request syntax:
+#' ```
+#' svc$delete_collection_group(
+#'   id = "string",
+#'   clientToken = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname opensearchserviceserverless_delete_collection_group
+#'
+#' @aliases opensearchserviceserverless_delete_collection_group
+opensearchserviceserverless_delete_collection_group <- function(id, clientToken = NULL) {
+  op <- new_operation(
+    name = "DeleteCollectionGroup",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .opensearchserviceserverless$delete_collection_group_input(id = id, clientToken = clientToken)
+  output <- .opensearchserviceserverless$delete_collection_group_output()
+  config <- get_config()
+  svc <- .opensearchserviceserverless$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.opensearchserviceserverless$operations$delete_collection_group <- opensearchserviceserverless_delete_collection_group
+
 #' Deletes an index from an OpenSearch Serverless collection
 #'
 #' @description
-#' Deletes an index from an OpenSearch Serverless collection. Be aware that
-#' the index might be configured to conduct automatic semantic enrichment
-#' ingestion and search. For more information, see [About automatic
-#' semantic
-#' enrichment](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html#serverless-semantic-enrichment).
+#' Deletes an index from an OpenSearch Serverless collection. Be aware that the index might be configured to conduct automatic semantic enrichment ingestion and search. For more information, see [About automatic semantic enrichment](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html#serverless-semantic-enrichment).
 #'
 #' @usage
 #' opensearchserviceserverless_delete_index(id, indexName)
@@ -1033,9 +1196,7 @@ opensearchserviceserverless_delete_index <- function(id, indexName) {
 #' Deletes an OpenSearch Serverless lifecycle policy
 #'
 #' @description
-#' Deletes an OpenSearch Serverless lifecycle policy. For more information,
-#' see [Deleting data lifecycle
-#' policies](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-delete).
+#' Deletes an OpenSearch Serverless lifecycle policy. For more information, see [Deleting data lifecycle policies](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-delete).
 #'
 #' @usage
 #' opensearchserviceserverless_delete_lifecycle_policy(type, name,
@@ -1084,16 +1245,12 @@ opensearchserviceserverless_delete_lifecycle_policy <- function(type, name, clie
 #' Deletes a security configuration for OpenSearch Serverless
 #'
 #' @description
-#' Deletes a security configuration for OpenSearch Serverless. For more
-#' information, see [SAML authentication for Amazon OpenSearch
-#' Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-saml.html).
+#' Deletes a security configuration for OpenSearch Serverless. For more information, see [SAML authentication for Amazon OpenSearch Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-saml.html).
 #'
 #' @usage
 #' opensearchserviceserverless_delete_security_config(id, clientToken)
 #'
-#' @param id &#91;required&#93; The security configuration identifier. For SAML the ID will be
-#' `saml/<accountId>/<idpProviderName>`. For example,
-#' `saml/123456789123/OKTADev`.
+#' @param id &#91;required&#93; The security configuration identifier. For SAML the ID will be `saml/<accountId>/<idpProviderName>`. For example, `saml/123456789123/OKTADev`.
 #' @param clientToken Unique, case-sensitive identifier to ensure idempotency of the request.
 #'
 #' @return
@@ -1183,9 +1340,7 @@ opensearchserviceserverless_delete_security_policy <- function(type, name, clien
 #' Deletes an OpenSearch Serverless-managed interface endpoint
 #'
 #' @description
-#' Deletes an OpenSearch Serverless-managed interface endpoint. For more
-#' information, see [Access Amazon OpenSearch Serverless using an interface
-#' endpoint](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vpc.html).
+#' Deletes an OpenSearch Serverless-managed interface endpoint. For more information, see [Access Amazon OpenSearch Serverless using an interface endpoint](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vpc.html).
 #'
 #' @usage
 #' opensearchserviceserverless_delete_vpc_endpoint(id, clientToken)
@@ -1240,9 +1395,7 @@ opensearchserviceserverless_delete_vpc_endpoint <- function(id, clientToken = NU
 #' Returns an OpenSearch Serverless access policy
 #'
 #' @description
-#' Returns an OpenSearch Serverless access policy. For more information,
-#' see [Data access control for Amazon OpenSearch
-#' Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-data-access.html).
+#' Returns an OpenSearch Serverless access policy. For more information, see [Data access control for Amazon OpenSearch Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-data-access.html).
 #'
 #' @usage
 #' opensearchserviceserverless_get_access_policy(type, name)
@@ -1354,11 +1507,7 @@ opensearchserviceserverless_get_account_settings <- function() {
 #' collection, including its schema definition
 #'
 #' @description
-#' Retrieves information about an index in an OpenSearch Serverless
-#' collection, including its schema definition. The index might be
-#' configured to conduct automatic semantic enrichment ingestion and
-#' search. For more information, see [About automatic semantic
-#' enrichment](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html#serverless-semantic-enrichment).
+#' Retrieves information about an index in an OpenSearch Serverless collection, including its schema definition. The index might be configured to conduct automatic semantic enrichment ingestion and search. For more information, see [About automatic semantic enrichment](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html#serverless-semantic-enrichment).
 #'
 #' @usage
 #' opensearchserviceserverless_get_index(id, indexName)
@@ -1410,8 +1559,7 @@ opensearchserviceserverless_get_index <- function(id, indexName) {
 #' policies, security configurations, and security policies
 #'
 #' @description
-#' Returns statistical information about your OpenSearch Serverless access
-#' policies, security configurations, and security policies.
+#' Returns statistical information about your OpenSearch Serverless access policies, security configurations, and security policies.
 #'
 #' @usage
 #' opensearchserviceserverless_get_policies_stats()
@@ -1472,10 +1620,7 @@ opensearchserviceserverless_get_policies_stats <- function() {
 #' configuration
 #'
 #' @description
-#' Returns information about an OpenSearch Serverless security
-#' configuration. For more information, see [SAML authentication for Amazon
-#' OpenSearch
-#' Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-saml.html).
+#' Returns information about an OpenSearch Serverless security configuration. For more information, see [SAML authentication for Amazon OpenSearch Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-saml.html).
 #'
 #' @usage
 #' opensearchserviceserverless_get_security_config(id)
@@ -1551,11 +1696,7 @@ opensearchserviceserverless_get_security_config <- function(id) {
 #' policy
 #'
 #' @description
-#' Returns information about a configured OpenSearch Serverless security
-#' policy. For more information, see [Network access for Amazon OpenSearch
-#' Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-network.html)
-#' and [Encryption at rest for Amazon OpenSearch
-#' Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-encryption.html).
+#' Returns information about a configured OpenSearch Serverless security policy. For more information, see [Network access for Amazon OpenSearch Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-network.html) and [Encryption at rest for Amazon OpenSearch Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-encryption.html).
 #'
 #' @usage
 #' opensearchserviceserverless_get_security_policy(type, name)
@@ -1615,25 +1756,16 @@ opensearchserviceserverless_get_security_policy <- function(type, name) {
 #' policies
 #'
 #' @description
-#' Returns information about a list of OpenSearch Serverless access
-#' policies.
+#' Returns information about a list of OpenSearch Serverless access policies.
 #'
 #' @usage
 #' opensearchserviceserverless_list_access_policies(type, resource,
 #'   nextToken, maxResults)
 #'
 #' @param type &#91;required&#93; The type of access policy.
-#' @param resource Resource filters (can be collections or indexes) that policies can apply
-#' to.
-#' @param nextToken If your initial
-#' [`list_access_policies`][opensearchserviceserverless_list_access_policies]
-#' operation returns a `nextToken`, you can include the returned
-#' `nextToken` in subsequent
-#' [`list_access_policies`][opensearchserviceserverless_list_access_policies]
-#' operations, which returns results in the next page.
-#' @param maxResults An optional parameter that specifies the maximum number of results to
-#' return. You can use `nextToken` to get the next page of results. The
-#' default is 20.
+#' @param resource Resource filters (can be collections or indexes) that policies can apply to.
+#' @param nextToken If your initial [`list_access_policies`][opensearchserviceserverless_list_access_policies] operation returns a `nextToken`, you can include the returned `nextToken` in subsequent [`list_access_policies`][opensearchserviceserverless_list_access_policies] operations, which returns results in the next page.
+#' @param maxResults An optional parameter that specifies the maximum number of results to return. You can use `nextToken` to get the next page of results. The default is 20.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1689,29 +1821,87 @@ opensearchserviceserverless_list_access_policies <- function(type, resource = NU
 }
 .opensearchserviceserverless$operations$list_access_policies <- opensearchserviceserverless_list_access_policies
 
+#' Returns a list of collection groups
+#'
+#' @description
+#' Returns a list of collection groups. For more information, see [Creating and managing Amazon OpenSearch Serverless collections](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html).
+#'
+#' @usage
+#' opensearchserviceserverless_list_collection_groups(nextToken,
+#'   maxResults)
+#'
+#' @param nextToken If your initial [`list_collection_groups`][opensearchserviceserverless_list_collection_groups] operation returns a `nextToken`, you can include the returned `nextToken` in subsequent [`list_collection_groups`][opensearchserviceserverless_list_collection_groups] operations, which returns results in the next page.
+#' @param maxResults The maximum number of results to return. Default is 20. You can use `nextToken` to get the next page of results.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   collectionGroupSummaries = list(
+#'     list(
+#'       id = "string",
+#'       arn = "string",
+#'       name = "string",
+#'       numberOfCollections = 123,
+#'       createdDate = 123,
+#'       capacityLimits = list(
+#'         maxIndexingCapacityInOCU = 123.0,
+#'         maxSearchCapacityInOCU = 123.0,
+#'         minIndexingCapacityInOCU = 123.0,
+#'         minSearchCapacityInOCU = 123.0
+#'       )
+#'     )
+#'   ),
+#'   nextToken = "string"
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$list_collection_groups(
+#'   nextToken = "string",
+#'   maxResults = 123
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname opensearchserviceserverless_list_collection_groups
+#'
+#' @aliases opensearchserviceserverless_list_collection_groups
+opensearchserviceserverless_list_collection_groups <- function(nextToken = NULL, maxResults = NULL) {
+  op <- new_operation(
+    name = "ListCollectionGroups",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .opensearchserviceserverless$list_collection_groups_input(nextToken = nextToken, maxResults = maxResults)
+  output <- .opensearchserviceserverless$list_collection_groups_output()
+  config <- get_config()
+  svc <- .opensearchserviceserverless$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.opensearchserviceserverless$operations$list_collection_groups <- opensearchserviceserverless_list_collection_groups
+
 #' Lists all OpenSearch Serverless collections
 #'
 #' @description
-#' Lists all OpenSearch Serverless collections. For more information, see
-#' [Creating and managing Amazon OpenSearch Serverless
-#' collections](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html).
+#' Lists all OpenSearch Serverless collections. For more information, see [Creating and managing Amazon OpenSearch Serverless collections](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html).
 #' 
-#' Make sure to include an empty request body \{\} if you don't include
-#' any collection filters in the request.
+#' Make sure to include an empty request body \{\} if you don't include any collection filters in the request.
 #'
 #' @usage
 #' opensearchserviceserverless_list_collections(collectionFilters,
 #'   nextToken, maxResults)
 #'
 #' @param collectionFilters A list of filter names and values that you can use for requests.
-#' @param nextToken If your initial
-#' [`list_collections`][opensearchserviceserverless_list_collections]
-#' operation returns a `nextToken`, you can include the returned
-#' `nextToken` in subsequent
-#' [`list_collections`][opensearchserviceserverless_list_collections]
-#' operations, which returns results in the next page.
-#' @param maxResults The maximum number of results to return. Default is 20. You can use
-#' `nextToken` to get the next page of results.
+#' @param nextToken If your initial [`list_collections`][opensearchserviceserverless_list_collections] operation returns a `nextToken`, you can include the returned `nextToken` in subsequent [`list_collections`][opensearchserviceserverless_list_collections] operations, which returns results in the next page.
+#' @param maxResults The maximum number of results to return. Default is 20. You can use `nextToken` to get the next page of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1721,8 +1911,10 @@ opensearchserviceserverless_list_access_policies <- function(type, resource = NU
 #'     list(
 #'       id = "string",
 #'       name = "string",
-#'       status = "CREATING"|"DELETING"|"ACTIVE"|"FAILED",
-#'       arn = "string"
+#'       status = "CREATING"|"UPDATING"|"DELETING"|"ACTIVE"|"FAILED"|"UPDATE_FAILED",
+#'       arn = "string",
+#'       kmsKeyArn = "string",
+#'       collectionGroupName = "string"
 #'     )
 #'   ),
 #'   nextToken = "string"
@@ -1734,7 +1926,8 @@ opensearchserviceserverless_list_access_policies <- function(type, resource = NU
 #' svc$list_collections(
 #'   collectionFilters = list(
 #'     name = "string",
-#'     status = "CREATING"|"DELETING"|"ACTIVE"|"FAILED"
+#'     status = "CREATING"|"UPDATING"|"DELETING"|"ACTIVE"|"FAILED"|"UPDATE_FAILED",
+#'     collectionGroupName = "string"
 #'   ),
 #'   nextToken = "string",
 #'   maxResults = 123
@@ -1768,26 +1961,16 @@ opensearchserviceserverless_list_collections <- function(collectionFilters = NUL
 #' Returns a list of OpenSearch Serverless lifecycle policies
 #'
 #' @description
-#' Returns a list of OpenSearch Serverless lifecycle policies. For more
-#' information, see [Viewing data lifecycle
-#' policies](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list).
+#' Returns a list of OpenSearch Serverless lifecycle policies. For more information, see [Viewing data lifecycle policies](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-list).
 #'
 #' @usage
 #' opensearchserviceserverless_list_lifecycle_policies(type, resources,
 #'   nextToken, maxResults)
 #'
 #' @param type &#91;required&#93; The type of lifecycle policy.
-#' @param resources Resource filters that policies can apply to. Currently, the only
-#' supported resource type is `index`.
-#' @param nextToken If your initial
-#' [`list_lifecycle_policies`][opensearchserviceserverless_list_lifecycle_policies]
-#' operation returns a `nextToken`, you can include the returned
-#' `nextToken` in subsequent
-#' [`list_lifecycle_policies`][opensearchserviceserverless_list_lifecycle_policies]
-#' operations, which returns results in the next page.
-#' @param maxResults An optional parameter that specifies the maximum number of results to
-#' return. You can use use `nextToken` to get the next page of results. The
-#' default is 10.
+#' @param resources Resource filters that policies can apply to. Currently, the only supported resource type is `index`.
+#' @param nextToken If your initial [`list_lifecycle_policies`][opensearchserviceserverless_list_lifecycle_policies] operation returns a `nextToken`, you can include the returned `nextToken` in subsequent [`list_lifecycle_policies`][opensearchserviceserverless_list_lifecycle_policies] operations, which returns results in the next page.
+#' @param maxResults An optional parameter that specifies the maximum number of results to return. You can use use `nextToken` to get the next page of results. The default is 10.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1847,25 +2030,15 @@ opensearchserviceserverless_list_lifecycle_policies <- function(type, resources 
 #' configurations
 #'
 #' @description
-#' Returns information about configured OpenSearch Serverless security
-#' configurations. For more information, see [SAML authentication for
-#' Amazon OpenSearch
-#' Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-saml.html).
+#' Returns information about configured OpenSearch Serverless security configurations. For more information, see [SAML authentication for Amazon OpenSearch Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-saml.html).
 #'
 #' @usage
 #' opensearchserviceserverless_list_security_configs(type, nextToken,
 #'   maxResults)
 #'
 #' @param type &#91;required&#93; The type of security configuration.
-#' @param nextToken If your initial
-#' [`list_security_configs`][opensearchserviceserverless_list_security_configs]
-#' operation returns a `nextToken`, you can include the returned
-#' `nextToken` in subsequent
-#' [`list_security_configs`][opensearchserviceserverless_list_security_configs]
-#' operations, which returns results in the next page.
-#' @param maxResults An optional parameter that specifies the maximum number of results to
-#' return. You can use `nextToken` to get the next page of results. The
-#' default is 20.
+#' @param nextToken If your initial [`list_security_configs`][opensearchserviceserverless_list_security_configs] operation returns a `nextToken`, you can include the returned `nextToken` in subsequent [`list_security_configs`][opensearchserviceserverless_list_security_configs] operations, which returns results in the next page.
+#' @param maxResults An optional parameter that specifies the maximum number of results to return. You can use `nextToken` to get the next page of results. The default is 20.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1922,25 +2095,16 @@ opensearchserviceserverless_list_security_configs <- function(type, nextToken = 
 #' policies
 #'
 #' @description
-#' Returns information about configured OpenSearch Serverless security
-#' policies.
+#' Returns information about configured OpenSearch Serverless security policies.
 #'
 #' @usage
 #' opensearchserviceserverless_list_security_policies(type, resource,
 #'   nextToken, maxResults)
 #'
 #' @param type &#91;required&#93; The type of policy.
-#' @param resource Resource filters (can be collection or indexes) that policies can apply
-#' to.
-#' @param nextToken If your initial
-#' [`list_security_policies`][opensearchserviceserverless_list_security_policies]
-#' operation returns a `nextToken`, you can include the returned
-#' `nextToken` in subsequent
-#' [`list_security_policies`][opensearchserviceserverless_list_security_policies]
-#' operations, which returns results in the next page.
-#' @param maxResults An optional parameter that specifies the maximum number of results to
-#' return. You can use `nextToken` to get the next page of results. The
-#' default is 20.
+#' @param resource Resource filters (can be collection or indexes) that policies can apply to.
+#' @param nextToken If your initial [`list_security_policies`][opensearchserviceserverless_list_security_policies] operation returns a `nextToken`, you can include the returned `nextToken` in subsequent [`list_security_policies`][opensearchserviceserverless_list_security_policies] operations, which returns results in the next page.
+#' @param maxResults An optional parameter that specifies the maximum number of results to return. You can use `nextToken` to get the next page of results. The default is 20.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1999,16 +2163,12 @@ opensearchserviceserverless_list_security_policies <- function(type, resource = 
 #' Returns the tags for an OpenSearch Serverless resource
 #'
 #' @description
-#' Returns the tags for an OpenSearch Serverless resource. For more
-#' information, see [Tagging Amazon OpenSearch Serverless
-#' collections](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/tag-collection.html).
+#' Returns the tags for an OpenSearch Serverless resource. For more information, see [Tagging Amazon OpenSearch Serverless collections](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/tag-collection.html).
 #'
 #' @usage
 #' opensearchserviceserverless_list_tags_for_resource(resourceArn)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource. The resource must be
-#' active (not in the `DELETING` state), and must be owned by the account
-#' ID included in the request.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource. The resource must be active (not in the `DELETING` state), and must be owned by the account ID included in the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2058,27 +2218,15 @@ opensearchserviceserverless_list_tags_for_resource <- function(resourceArn) {
 #' associated with the current account
 #'
 #' @description
-#' Returns the OpenSearch Serverless-managed interface VPC endpoints
-#' associated with the current account. For more information, see [Access
-#' Amazon OpenSearch Serverless using an interface
-#' endpoint](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vpc.html).
+#' Returns the OpenSearch Serverless-managed interface VPC endpoints associated with the current account. For more information, see [Access Amazon OpenSearch Serverless using an interface endpoint](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vpc.html).
 #'
 #' @usage
 #' opensearchserviceserverless_list_vpc_endpoints(vpcEndpointFilters,
 #'   nextToken, maxResults)
 #'
-#' @param vpcEndpointFilters Filter the results according to the current status of the VPC endpoint.
-#' Possible statuses are `CREATING`, `DELETING`, `UPDATING`, `ACTIVE`, and
-#' `FAILED`.
-#' @param nextToken If your initial
-#' [`list_vpc_endpoints`][opensearchserviceserverless_list_vpc_endpoints]
-#' operation returns a `nextToken`, you can include the returned
-#' `nextToken` in subsequent
-#' [`list_vpc_endpoints`][opensearchserviceserverless_list_vpc_endpoints]
-#' operations, which returns results in the next page.
-#' @param maxResults An optional parameter that specifies the maximum number of results to
-#' return. You can use `nextToken` to get the next page of results. The
-#' default is 20.
+#' @param vpcEndpointFilters Filter the results according to the current status of the VPC endpoint. Possible statuses are `CREATING`, `DELETING`, `UPDATING`, `ACTIVE`, and `FAILED`.
+#' @param nextToken If your initial [`list_vpc_endpoints`][opensearchserviceserverless_list_vpc_endpoints] operation returns a `nextToken`, you can include the returned `nextToken` in subsequent [`list_vpc_endpoints`][opensearchserviceserverless_list_vpc_endpoints] operations, which returns results in the next page.
+#' @param maxResults An optional parameter that specifies the maximum number of results to return. You can use `nextToken` to get the next page of results. The default is 20.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2133,18 +2281,13 @@ opensearchserviceserverless_list_vpc_endpoints <- function(vpcEndpointFilters = 
 #' Associates tags with an OpenSearch Serverless resource
 #'
 #' @description
-#' Associates tags with an OpenSearch Serverless resource. For more
-#' information, see [Tagging Amazon OpenSearch Serverless
-#' collections](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/tag-collection.html).
+#' Associates tags with an OpenSearch Serverless resource. For more information, see [Tagging Amazon OpenSearch Serverless collections](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/tag-collection.html).
 #'
 #' @usage
 #' opensearchserviceserverless_tag_resource(resourceArn, tags)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource. The resource must be
-#' active (not in the `DELETING` state), and must be owned by the account
-#' ID included in the request.
-#' @param tags &#91;required&#93; A list of tags (key-value pairs) to add to the resource. All tag keys in
-#' the request must be unique.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource. The resource must be active (not in the `DELETING` state), and must be owned by the account ID included in the request.
+#' @param tags &#91;required&#93; A list of tags (key-value pairs) to add to the resource. All tag keys in the request must be unique.
 #'
 #' @return
 #' An empty list.
@@ -2189,18 +2332,13 @@ opensearchserviceserverless_tag_resource <- function(resourceArn, tags) {
 #' Removes a tag or set of tags from an OpenSearch Serverless resource
 #'
 #' @description
-#' Removes a tag or set of tags from an OpenSearch Serverless resource. For
-#' more information, see [Tagging Amazon OpenSearch Serverless
-#' collections](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/tag-collection.html).
+#' Removes a tag or set of tags from an OpenSearch Serverless resource. For more information, see [Tagging Amazon OpenSearch Serverless collections](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/tag-collection.html).
 #'
 #' @usage
 #' opensearchserviceserverless_untag_resource(resourceArn, tagKeys)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource to remove tags from. The
-#' resource must be active (not in the `DELETING` state), and must be owned
-#' by the account ID included in the request.
-#' @param tagKeys &#91;required&#93; The tag or set of tags to remove from the resource. All tag keys in the
-#' request must be unique.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource to remove tags from. The resource must be active (not in the `DELETING` state), and must be owned by the account ID included in the request.
+#' @param tagKeys &#91;required&#93; The tag or set of tags to remove from the resource. All tag keys in the request must be unique.
 #'
 #' @return
 #' An empty list.
@@ -2242,9 +2380,7 @@ opensearchserviceserverless_untag_resource <- function(resourceArn, tagKeys) {
 #' Updates an OpenSearch Serverless access policy
 #'
 #' @description
-#' Updates an OpenSearch Serverless access policy. For more information,
-#' see [Data access control for Amazon OpenSearch
-#' Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-data-access.html).
+#' Updates an OpenSearch Serverless access policy. For more information, see [Data access control for Amazon OpenSearch Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-data-access.html).
 #'
 #' @usage
 #' opensearchserviceserverless_update_access_policy(type, name,
@@ -2253,8 +2389,7 @@ opensearchserviceserverless_untag_resource <- function(resourceArn, tagKeys) {
 #' @param type &#91;required&#93; The type of policy.
 #' @param name &#91;required&#93; The name of the policy.
 #' @param policyVersion &#91;required&#93; The version of the policy being updated.
-#' @param description A description of the policy. Typically used to store information about
-#' the permissions defined in the policy.
+#' @param description A description of the policy. Typically used to store information about the permissions defined in the policy.
 #' @param policy The JSON policy document to use as the content for the policy.
 #' @param clientToken Unique, case-sensitive identifier to ensure idempotency of the request.
 #'
@@ -2314,15 +2449,12 @@ opensearchserviceserverless_update_access_policy <- function(type, name, policyV
 #' Services account
 #'
 #' @description
-#' Update the OpenSearch Serverless settings for the current Amazon Web
-#' Services account. For more information, see [Managing capacity limits
-#' for Amazon OpenSearch
-#' Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-scaling.html).
+#' Update the OpenSearch Serverless settings for the current Amazon Web Services account. For more information, see [Managing capacity limits for Amazon OpenSearch Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-scaling.html).
 #'
 #' @usage
 #' opensearchserviceserverless_update_account_settings(capacityLimits)
 #'
-#' @param capacityLimits 
+#' @param capacityLimits The maximum capacity limits for all OpenSearch Serverless collections, in OpenSearch Compute Units (OCUs). These limits are used to scale your collections based on the current workload. For more information, see [Managing capacity limits for Amazon OpenSearch Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-scaling.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -2378,10 +2510,11 @@ opensearchserviceserverless_update_account_settings <- function(capacityLimits =
 #'
 #' @usage
 #' opensearchserviceserverless_update_collection(id, description,
-#'   clientToken)
+#'   vectorOptions, clientToken)
 #'
 #' @param id &#91;required&#93; The unique identifier of the collection.
 #' @param description A description of the collection.
+#' @param vectorOptions Configuration options for vector search capabilities in the collection.
 #' @param clientToken Unique, case-sensitive identifier to ensure idempotency of the request.
 #'
 #' @return
@@ -2391,9 +2524,12 @@ opensearchserviceserverless_update_account_settings <- function(capacityLimits =
 #'   updateCollectionDetail = list(
 #'     id = "string",
 #'     name = "string",
-#'     status = "CREATING"|"DELETING"|"ACTIVE"|"FAILED",
+#'     status = "CREATING"|"UPDATING"|"DELETING"|"ACTIVE"|"FAILED"|"UPDATE_FAILED",
 #'     type = "SEARCH"|"TIMESERIES"|"VECTORSEARCH",
 #'     description = "string",
+#'     vectorOptions = list(
+#'       ServerlessVectorAcceleration = "ENABLED"|"DISABLED"|"ALLOWED"
+#'     ),
 #'     arn = "string",
 #'     createdDate = 123,
 #'     lastModifiedDate = 123
@@ -2406,6 +2542,9 @@ opensearchserviceserverless_update_account_settings <- function(capacityLimits =
 #' svc$update_collection(
 #'   id = "string",
 #'   description = "string",
+#'   vectorOptions = list(
+#'     ServerlessVectorAcceleration = "ENABLED"|"DISABLED"|"ALLOWED"
+#'   ),
 #'   clientToken = "string"
 #' )
 #' ```
@@ -2415,7 +2554,7 @@ opensearchserviceserverless_update_account_settings <- function(capacityLimits =
 #' @rdname opensearchserviceserverless_update_collection
 #'
 #' @aliases opensearchserviceserverless_update_collection
-opensearchserviceserverless_update_collection <- function(id, description = NULL, clientToken = NULL) {
+opensearchserviceserverless_update_collection <- function(id, description = NULL, vectorOptions = NULL, clientToken = NULL) {
   op <- new_operation(
     name = "UpdateCollection",
     http_method = "POST",
@@ -2424,7 +2563,7 @@ opensearchserviceserverless_update_collection <- function(id, description = NULL
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .opensearchserviceserverless$update_collection_input(id = id, description = description, clientToken = clientToken)
+  input <- .opensearchserviceserverless$update_collection_input(id = id, description = description, vectorOptions = vectorOptions, clientToken = clientToken)
   output <- .opensearchserviceserverless$update_collection_output()
   config <- get_config()
   svc <- .opensearchserviceserverless$service(config, op)
@@ -2434,23 +2573,91 @@ opensearchserviceserverless_update_collection <- function(id, description = NULL
 }
 .opensearchserviceserverless$operations$update_collection <- opensearchserviceserverless_update_collection
 
+#' Updates the description and capacity limits of a collection group
+#'
+#' @description
+#' Updates the description and capacity limits of a collection group.
+#'
+#' @usage
+#' opensearchserviceserverless_update_collection_group(id, description,
+#'   capacityLimits, clientToken)
+#'
+#' @param id &#91;required&#93; The unique identifier of the collection group to update.
+#' @param description A new description for the collection group.
+#' @param capacityLimits Updated capacity limits for the collection group, in OpenSearch Compute Units (OCUs).
+#' @param clientToken Unique, case-sensitive identifier to ensure idempotency of the request.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   updateCollectionGroupDetail = list(
+#'     id = "string",
+#'     arn = "string",
+#'     name = "string",
+#'     description = "string",
+#'     capacityLimits = list(
+#'       maxIndexingCapacityInOCU = 123.0,
+#'       maxSearchCapacityInOCU = 123.0,
+#'       minIndexingCapacityInOCU = 123.0,
+#'       minSearchCapacityInOCU = 123.0
+#'     ),
+#'     createdDate = 123,
+#'     lastModifiedDate = 123
+#'   )
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$update_collection_group(
+#'   id = "string",
+#'   description = "string",
+#'   capacityLimits = list(
+#'     maxIndexingCapacityInOCU = 123.0,
+#'     maxSearchCapacityInOCU = 123.0,
+#'     minIndexingCapacityInOCU = 123.0,
+#'     minSearchCapacityInOCU = 123.0
+#'   ),
+#'   clientToken = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname opensearchserviceserverless_update_collection_group
+#'
+#' @aliases opensearchserviceserverless_update_collection_group
+opensearchserviceserverless_update_collection_group <- function(id, description = NULL, capacityLimits = NULL, clientToken = NULL) {
+  op <- new_operation(
+    name = "UpdateCollectionGroup",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .opensearchserviceserverless$update_collection_group_input(id = id, description = description, capacityLimits = capacityLimits, clientToken = clientToken)
+  output <- .opensearchserviceserverless$update_collection_group_output()
+  config <- get_config()
+  svc <- .opensearchserviceserverless$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.opensearchserviceserverless$operations$update_collection_group <- opensearchserviceserverless_update_collection_group
+
 #' Updates an existing index in an OpenSearch Serverless collection
 #'
 #' @description
-#' Updates an existing index in an OpenSearch Serverless collection. This
-#' operation allows you to modify the index schema, including adding new
-#' fields or changing field mappings. You can also enable automatic
-#' semantic enrichment ingestion and search. For more information, see
-#' [About automatic semantic
-#' enrichment](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html#serverless-semantic-enrichment).
+#' Updates an existing index in an OpenSearch Serverless collection. This operation allows you to modify the index schema, including adding new fields or changing field mappings. You can also enable automatic semantic enrichment ingestion and search. For more information, see [About automatic semantic enrichment](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html#serverless-semantic-enrichment).
 #'
 #' @usage
 #' opensearchserviceserverless_update_index(id, indexName, indexSchema)
 #'
 #' @param id &#91;required&#93; The unique identifier of the collection containing the index to update.
 #' @param indexName &#91;required&#93; The name of the index to update.
-#' @param indexSchema The updated JSON schema definition for the index, including field
-#' mappings and settings.
+#' @param indexSchema The updated JSON schema definition for the index, including field mappings and settings.
 #'
 #' @return
 #' An empty list.
@@ -2491,9 +2698,7 @@ opensearchserviceserverless_update_index <- function(id, indexName, indexSchema 
 #' Updates an OpenSearch Serverless access policy
 #'
 #' @description
-#' Updates an OpenSearch Serverless access policy. For more information,
-#' see [Updating data lifecycle
-#' policies](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-update).
+#' Updates an OpenSearch Serverless access policy. For more information, see [Updating data lifecycle policies](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-update).
 #'
 #' @usage
 #' opensearchserviceserverless_update_lifecycle_policy(type, name,
@@ -2504,8 +2709,7 @@ opensearchserviceserverless_update_index <- function(id, indexName, indexSchema 
 #' @param policyVersion &#91;required&#93; The version of the policy being updated.
 #' @param description A description of the lifecycle policy.
 #' @param policy The JSON policy document to use as the content for the lifecycle policy.
-#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the
-#' request.
+#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2562,28 +2766,19 @@ opensearchserviceserverless_update_lifecycle_policy <- function(type, name, poli
 #' Updates a security configuration for OpenSearch Serverless
 #'
 #' @description
-#' Updates a security configuration for OpenSearch Serverless. For more
-#' information, see [SAML authentication for Amazon OpenSearch
-#' Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-saml.html).
+#' Updates a security configuration for OpenSearch Serverless. For more information, see [SAML authentication for Amazon OpenSearch Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-saml.html).
 #'
 #' @usage
 #' opensearchserviceserverless_update_security_config(id, configVersion,
 #'   description, samlOptions, iamIdentityCenterOptionsUpdates,
 #'   iamFederationOptions, clientToken)
 #'
-#' @param id &#91;required&#93; The security configuration identifier. For SAML the ID will be
-#' `saml/<accountId>/<idpProviderName>`. For example,
-#' `saml/123456789123/OKTADev`.
-#' @param configVersion &#91;required&#93; The version of the security configuration to be updated. You can find
-#' the most recent version of a security configuration using the
-#' [`get_security_policy`][opensearchserviceserverless_get_security_policy]
-#' command.
+#' @param id &#91;required&#93; The security configuration identifier. For SAML the ID will be `saml/<accountId>/<idpProviderName>`. For example, `saml/123456789123/OKTADev`.
+#' @param configVersion &#91;required&#93; The version of the security configuration to be updated. You can find the most recent version of a security configuration using the [`get_security_policy`][opensearchserviceserverless_get_security_policy] command.
 #' @param description A description of the security configuration.
 #' @param samlOptions SAML options in in the form of a key-value map.
 #' @param iamIdentityCenterOptionsUpdates Describes IAM Identity Center options in the form of a key-value map.
-#' @param iamFederationOptions Describes IAM federation options in the form of a key-value map for
-#' updating an existing security configuration. Use this field to modify
-#' IAM federation settings for the security configuration.
+#' @param iamFederationOptions Describes IAM federation options in the form of a key-value map for updating an existing security configuration. Use this field to modify IAM federation settings for the security configuration.
 #' @param clientToken Unique, case-sensitive identifier to ensure idempotency of the request.
 #'
 #' @return
@@ -2672,11 +2867,7 @@ opensearchserviceserverless_update_security_config <- function(id, configVersion
 #' Updates an OpenSearch Serverless security policy
 #'
 #' @description
-#' Updates an OpenSearch Serverless security policy. For more information,
-#' see [Network access for Amazon OpenSearch
-#' Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-network.html)
-#' and [Encryption at rest for Amazon OpenSearch
-#' Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-encryption.html).
+#' Updates an OpenSearch Serverless security policy. For more information, see [Network access for Amazon OpenSearch Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-network.html) and [Encryption at rest for Amazon OpenSearch Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-encryption.html).
 #'
 #' @usage
 #' opensearchserviceserverless_update_security_policy(type, name,
@@ -2685,8 +2876,7 @@ opensearchserviceserverless_update_security_config <- function(id, configVersion
 #' @param type &#91;required&#93; The type of access policy.
 #' @param name &#91;required&#93; The name of the policy.
 #' @param policyVersion &#91;required&#93; The version of the policy being updated.
-#' @param description A description of the policy. Typically used to store information about
-#' the permissions defined in the policy.
+#' @param description A description of the policy. Typically used to store information about the permissions defined in the policy.
 #' @param policy The JSON policy document to use as the content for the new policy.
 #' @param clientToken Unique, case-sensitive identifier to ensure idempotency of the request.
 #'
@@ -2745,9 +2935,7 @@ opensearchserviceserverless_update_security_policy <- function(type, name, polic
 #' Updates an OpenSearch Serverless-managed interface endpoint
 #'
 #' @description
-#' Updates an OpenSearch Serverless-managed interface endpoint. For more
-#' information, see [Access Amazon OpenSearch Serverless using an interface
-#' endpoint](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vpc.html).
+#' Updates an OpenSearch Serverless-managed interface endpoint. For more information, see [Access Amazon OpenSearch Serverless using an interface endpoint](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vpc.html).
 #'
 #' @usage
 #' opensearchserviceserverless_update_vpc_endpoint(id, addSubnetIds,
@@ -2757,11 +2945,8 @@ opensearchserviceserverless_update_security_policy <- function(type, name, polic
 #' @param id &#91;required&#93; The unique identifier of the interface endpoint to update.
 #' @param addSubnetIds The ID of one or more subnets to add to the endpoint.
 #' @param removeSubnetIds The unique identifiers of the subnets to remove from the endpoint.
-#' @param addSecurityGroupIds The unique identifiers of the security groups to add to the endpoint.
-#' Security groups define the ports, protocols, and sources for inbound
-#' traffic that you are authorizing into your endpoint.
-#' @param removeSecurityGroupIds The unique identifiers of the security groups to remove from the
-#' endpoint.
+#' @param addSecurityGroupIds The unique identifiers of the security groups to add to the endpoint. Security groups define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.
+#' @param removeSecurityGroupIds The unique identifiers of the security groups to remove from the endpoint.
 #' @param clientToken Unique, case-sensitive identifier to ensure idempotency of the request.
 #'
 #' @return

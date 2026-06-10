@@ -7,11 +7,9 @@
 textract_untag_resource(ResourceARN, TagKeys)
 }
 \arguments{
-\item{ResourceARN}{[required] The Amazon Resource Name (ARN) that specifies the resource to be
-untagged.}
+\item{ResourceARN}{[required] The Amazon Resource Name (ARN) that specifies the resource to be untagged.}
 
-\item{TagKeys}{[required] Specifies the tags to be removed from the resource specified by the
-ResourceARN.}
+\item{TagKeys}{[required] Specifies the tags to be removed from the resource specified by the ResourceARN.}
 }
 \description{
 Removes any tags with the specified keys from the specified resource.

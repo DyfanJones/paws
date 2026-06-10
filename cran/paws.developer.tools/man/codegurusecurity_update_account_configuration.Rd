@@ -7,10 +7,7 @@
 codegurusecurity_update_account_configuration(encryptionConfig)
 }
 \arguments{
-\item{encryptionConfig}{[required] The customer-managed KMS key ARN you want to use for encryption. If not
-specified, CodeGuru Security will use an AWS-managed key for encryption.
-If you previously specified a customer-managed KMS key and want CodeGuru
-Security to use an AWS-managed key for encryption instead, pass nothing.}
+\item{encryptionConfig}{[required] The customer-managed KMS key ARN you want to use for encryption. If not specified, CodeGuru Security will use an AWS-managed key for encryption. If you previously specified a customer-managed KMS key and want CodeGuru Security to use an AWS-managed key for encryption instead, pass nothing.}
 }
 \description{
 Use to update the encryption configuration for an account.

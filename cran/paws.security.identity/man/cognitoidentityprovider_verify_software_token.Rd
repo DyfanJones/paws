@@ -14,13 +14,9 @@ cognitoidentityprovider_verify_software_token(
 )
 }
 \arguments{
-\item{AccessToken}{A valid access token that Amazon Cognito issued to the currently
-signed-in user. Must include a scope claim for
-\code{aws.cognito.signin.user.admin}.}
+\item{AccessToken}{A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for \code{aws.cognito.signin.user.admin}.}
 
-\item{Session}{The session ID from an
-\code{\link[=cognitoidentityprovider_associate_software_token]{associate_software_token}}
-request.}
+\item{Session}{The session ID from an \code{\link[=cognitoidentityprovider_associate_software_token]{associate_software_token}} request.}
 
 \item{UserCode}{[required] A TOTP that the user generated in their configured authenticator app.}
 

@@ -11,15 +11,11 @@ ssoadmin_put_application_authentication_method(
 )
 }
 \arguments{
-\item{ApplicationArn}{[required] Specifies the ARN of the application with the authentication method to
-add or update.}
+\item{ApplicationArn}{[required] Specifies the ARN of the application with the authentication method to add or update.}
 
-\item{AuthenticationMethodType}{[required] Specifies the type of the authentication method that you want to add or
-update.}
+\item{AuthenticationMethodType}{[required] Specifies the type of the authentication method that you want to add or update.}
 
-\item{AuthenticationMethod}{[required] Specifies a structure that describes the authentication method to add or
-update. The structure type you provide is determined by the
-\code{AuthenticationMethodType} parameter.}
+\item{AuthenticationMethod}{[required] Specifies a structure that describes the authentication method to add or update. The structure type you provide is determined by the \code{AuthenticationMethodType} parameter.}
 }
 \description{
 Adds or updates an authentication method for an application.

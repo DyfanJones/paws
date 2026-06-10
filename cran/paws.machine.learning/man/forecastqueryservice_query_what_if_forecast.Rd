@@ -15,27 +15,17 @@ forecastqueryservice_query_what_if_forecast(
 \arguments{
 \item{WhatIfForecastArn}{[required] The Amazon Resource Name (ARN) of the what-if forecast to query.}
 
-\item{StartDate}{The start date for the what-if forecast. Specify the date using this
-format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example,
-2015-01-01T08:00:00.}
+\item{StartDate}{The start date for the what-if forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.}
 
-\item{EndDate}{The end date for the what-if forecast. Specify the date using this
-format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example,
-2015-01-01T20:00:00.}
+\item{EndDate}{The end date for the what-if forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00.}
 
-\item{Filters}{[required] The filtering criteria to apply when retrieving the forecast. For
-example, to get the forecast for \code{client_21} in the electricity usage
-dataset, specify the following:
+\item{Filters}{[required] The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for \code{client_21} in the electricity usage dataset, specify the following:
 
 \code{{"item_id" : "client_21"}}
 
-To get the full what-if forecast, use the
-\href{https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateWhatIfForecastExport.html}{CreateForecastExportJob}
-operation.}
+To get the full what-if forecast, use the \href{https://docs.aws.amazon.com/forecast/latest/dg/API_CreateWhatIfForecastExport.html}{CreateForecastExportJob} operation.}
 
-\item{NextToken}{If the result of the previous request was truncated, the response
-includes a \code{NextToken}. To retrieve the next set of results, use the
-token in the next request. Tokens expire after 24 hours.}
+\item{NextToken}{If the result of the previous request was truncated, the response includes a \code{NextToken}. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.}
 }
 \description{
 Retrieves a what-if forecast.

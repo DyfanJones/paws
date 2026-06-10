@@ -27,7 +27,8 @@ appstream_update_fleet(
   UsbDeviceFilterStrings = NULL,
   SessionScriptS3Location = NULL,
   MaxSessionsPerInstance = NULL,
-  RootVolumeConfig = NULL
+  RootVolumeConfig = NULL,
+  DisableIMDSV1 = NULL
 )
 }
 \arguments{
@@ -37,8 +38,7 @@ appstream_update_fleet(
 
 \item{Name}{A unique name for the fleet.}
 
-\item{InstanceType}{The instance type to use when launching fleet instances. The following
-instance types are available:
+\item{InstanceType}{The instance type to use when launching fleet instances. The following instance types are available:
 \itemize{
 \item stream.standard.small
 \item stream.standard.medium
@@ -99,26 +99,15 @@ The following instance types are available for Elastic fleets:
 \item stream.standard.2xlarge
 }}
 
-\item{ComputeCapacity}{The desired capacity for the fleet. This is not allowed for Elastic
-fleets.}
+\item{ComputeCapacity}{The desired capacity for the fleet. This is not allowed for Elastic fleets.}
 
-\item{VpcConfig}{The VPC configuration for the fleet. This is required for Elastic
-fleets, but not required for other fleet types. Elastic fleets require
-that you specify at least two subnets in different availability zones.}
+\item{VpcConfig}{The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones.}
 
-\item{MaxUserDurationInSeconds}{The maximum amount of time that a streaming session can remain active,
-in seconds. If users are still connected to a streaming instance five
-minutes before this limit is reached, they are prompted to save any open
-documents before being disconnected. After this time elapses, the
-instance is terminated and replaced by a new instance.
+\item{MaxUserDurationInSeconds}{The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.
 
 Specify a value between 600 and 432000.}
 
-\item{DisconnectTimeoutInSeconds}{The amount of time that a streaming session remains active after users
-disconnect. If users try to reconnect to the streaming session after a
-disconnection or network interruption within this time interval, they
-are connected to their previous session. Otherwise, they are connected
-to a new session with a new streaming instance.
+\item{DisconnectTimeoutInSeconds}{The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance.
 
 Specify a value between 60 and 36000.}
 
@@ -130,70 +119,39 @@ Specify a value between 60 and 36000.}
 
 \item{EnableDefaultInternetAccess}{Enables or disables default internet access for the fleet.}
 
-\item{DomainJoinInfo}{The name of the directory and organizational unit (OU) to use to join
-the fleet to a Microsoft Active Directory domain.}
+\item{DomainJoinInfo}{The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain.}
 
-\item{IdleDisconnectTimeoutInSeconds}{The amount of time that users can be idle (inactive) before they are
-disconnected from their streaming session and the
-\code{DisconnectTimeoutInSeconds} time interval begins. Users are notified
-before they are disconnected due to inactivity. If users try to
-reconnect to the streaming session before the time interval specified in
-\code{DisconnectTimeoutInSeconds} elapses, they are connected to their
-previous session. Users are considered idle when they stop providing
-keyboard or mouse input during their streaming session. File uploads and
-downloads, audio in, audio out, and pixels changing do not qualify as
-user activity. If users continue to be idle after the time interval in
-\code{IdleDisconnectTimeoutInSeconds} elapses, they are disconnected.
+\item{IdleDisconnectTimeoutInSeconds}{The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the \code{DisconnectTimeoutInSeconds} time interval begins. Users are notified before they are disconnected due to inactivity. If users try to reconnect to the streaming session before the time interval specified in \code{DisconnectTimeoutInSeconds} elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in \code{IdleDisconnectTimeoutInSeconds} elapses, they are disconnected.
 
-To prevent users from being disconnected due to inactivity, specify a
-value of 0. Otherwise, specify a value between 60 and 36000. The default
-value is 0.
+To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 36000. The default value is 0.
 
-If you enable this feature, we recommend that you specify a value that
-corresponds exactly to a whole number of minutes (for example, 60, 120,
-and 180). If you don't do this, the value is rounded to the nearest
-minute. For example, if you specify a value of 70, users are
-disconnected after 1 minute of inactivity. If you specify a value that
-is at the midpoint between two different minutes, the value is rounded
-up. For example, if you specify a value of 90, users are disconnected
-after 2 minutes of inactivity.}
+If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity.}
 
 \item{AttributesToDelete}{The fleet attributes to delete.}
 
-\item{IamRoleArn}{The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To
-assume a role, a fleet instance calls the AWS Security Token Service
-(STS) \code{AssumeRole} API operation and passes the ARN of the role to use.
-The operation creates a new session with temporary credentials.
-WorkSpaces Applications retrieves the temporary credentials and creates
-the \strong{appstream_machine_role} credential profile on the instance.
+\item{IamRoleArn}{The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) \code{AssumeRole} API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. WorkSpaces Applications retrieves the temporary credentials and creates the \strong{appstream_machine_role} credential profile on the instance.
 
-For more information, see \href{https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html}{Using an IAM Role to Grant Permissions to Applications and Scripts Running on WorkSpaces Applications Streaming Instances}
-in the \emph{Amazon WorkSpaces Applications Administration Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html}{Using an IAM Role to Grant Permissions to Applications and Scripts Running on WorkSpaces Applications Streaming Instances} in the \emph{Amazon WorkSpaces Applications Administration Guide}.}
 
-\item{StreamView}{The WorkSpaces Applications view that is displayed to your users when
-they stream from the fleet. When \code{APP} is specified, only the windows of
-applications opened by users display. When \code{DESKTOP} is specified, the
-standard desktop that is provided by the operating system displays.
+\item{StreamView}{The WorkSpaces Applications view that is displayed to your users when they stream from the fleet. When \code{APP} is specified, only the windows of applications opened by users display. When \code{DESKTOP} is specified, the standard desktop that is provided by the operating system displays.
 
 The default value is \code{APP}.}
 
-\item{Platform}{The platform of the fleet. WINDOWS_SERVER_2019, AMAZON_LINUX2 and
-UBUNTU_PRO_2404 are supported for Elastic fleets.}
+\item{Platform}{The platform of the fleet. WINDOWS_SERVER_2019, AMAZON_LINUX2 and UBUNTU_PRO_2404 are supported for Elastic fleets.}
 
 \item{MaxConcurrentSessions}{The maximum number of concurrent sessions for a fleet.}
 
-\item{UsbDeviceFilterStrings}{The USB device filter strings that specify which USB devices a user can
-redirect to the fleet streaming session, when using the Windows native
-client. This is allowed but not required for Elastic fleets.}
+\item{UsbDeviceFilterStrings}{The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.}
 
-\item{SessionScriptS3Location}{The S3 location of the session scripts configuration zip file. This only
-applies to Elastic fleets.}
+\item{SessionScriptS3Location}{The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.}
 
-\item{MaxSessionsPerInstance}{The maximum number of user sessions on an instance. This only applies to
-multi-session fleets.}
+\item{MaxSessionsPerInstance}{The maximum number of user sessions on an instance. This only applies to multi-session fleets.}
 
-\item{RootVolumeConfig}{The updated configuration for the root volume of fleet instances. Note
-that volume size cannot be decreased below the image volume size.}
+\item{RootVolumeConfig}{The updated configuration for the root volume of fleet instances. Note that volume size cannot be decreased below the image volume size.}
+
+\item{DisableIMDSV1}{Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.
+
+Before disabling IMDSv1, ensure your WorkSpaces Applications images are running the agent version or managed image update released on or after January 16, 2024 to support IMDSv2 enforcement.}
 }
 \description{
 Updates the specified fleet.

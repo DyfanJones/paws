@@ -14,11 +14,9 @@ glue_list_crawls(
 \arguments{
 \item{CrawlerName}{[required] The name of the crawler whose runs you want to retrieve.}
 
-\item{MaxResults}{The maximum number of results to return. The default is 20, and maximum
-is 100.}
+\item{MaxResults}{The maximum number of results to return. The default is 20, and maximum is 100.}
 
-\item{Filters}{Filters the crawls by the criteria you specify in a list of
-\code{CrawlsFilter} objects.}
+\item{Filters}{Filters the crawls by the criteria you specify in a list of \code{CrawlsFilter} objects.}
 
 \item{NextToken}{A continuation token, if this is a continuation call.}
 }

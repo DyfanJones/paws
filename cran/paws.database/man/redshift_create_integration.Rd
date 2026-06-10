@@ -16,27 +16,19 @@ redshift_create_integration(
 )
 }
 \arguments{
-\item{SourceArn}{[required] The Amazon Resource Name (ARN) of the database to use as the source for
-replication.}
+\item{SourceArn}{[required] The Amazon Resource Name (ARN) of the database to use as the source for replication.}
 
-\item{TargetArn}{[required] The Amazon Resource Name (ARN) of the Amazon Redshift data warehouse to
-use as the target for replication.}
+\item{TargetArn}{[required] The Amazon Resource Name (ARN) of the Amazon Redshift data warehouse to use as the target for replication.}
 
 \item{IntegrationName}{[required] The name of the integration.}
 
-\item{KMSKeyId}{An Key Management Service (KMS) key identifier for the key to use to
-encrypt the integration. If you don't specify an encryption key, the
-default Amazon Web Services owned key is used.}
+\item{KMSKeyId}{An Key Management Service (KMS) key identifier for the key to use to encrypt the integration. If you don't specify an encryption key, the default Amazon Web Services owned key is used.}
 
 \item{TagList}{A list of tags.}
 
-\item{AdditionalEncryptionContext}{An optional set of non-secret key–value pairs that contains additional
-contextual information about the data. For more information, see
-\href{https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context}{Encryption context}
-in the \emph{Amazon Web Services Key Management Service Developer Guide}.
+\item{AdditionalEncryptionContext}{An optional set of non-secret key–value pairs that contains additional contextual information about the data. For more information, see \href{https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context}{Encryption context} in the \emph{Amazon Web Services Key Management Service Developer Guide}.
 
-You can only include this parameter if you specify the \code{KMSKeyId}
-parameter.}
+You can only include this parameter if you specify the \code{KMSKeyId} parameter.}
 
 \item{Description}{A description of the integration.}
 }

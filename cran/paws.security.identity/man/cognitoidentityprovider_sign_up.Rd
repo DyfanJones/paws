@@ -20,79 +20,41 @@ cognitoidentityprovider_sign_up(
 \arguments{
 \item{ClientId}{[required] The ID of the app client where the user wants to sign up.}
 
-\item{SecretHash}{A keyed-hash message authentication code (HMAC) calculated using the
-secret key of a user pool client and username plus the client ID in the
-message. For more information about \code{SecretHash}, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash}{Computing secret hash values}.}
+\item{SecretHash}{A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message. For more information about \code{SecretHash}, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash}{Computing secret hash values}.}
 
-\item{Username}{[required] The username of the user that you want to sign up. The value of this
-parameter is typically a username, but can be any alias attribute in
-your user pool.}
+\item{Username}{[required] The username of the user that you want to sign up. The value of this parameter is typically a username, but can be any alias attribute in your user pool.}
 
-\item{Password}{The user's proposed password. The password must comply with the
-\href{https://docs.aws.amazon.com/cognito/latest/developerguide/managing-users-passwords.html}{password requirements}
-of your user pool.
+\item{Password}{The user's proposed password. The password must comply with the \href{https://docs.aws.amazon.com/cognito/latest/developerguide/managing-users-passwords.html}{password requirements} of your user pool.
 
-Users can sign up without a password when your user pool supports
-passwordless sign-in with email or SMS OTPs. To create a user with no
-password, omit this parameter or submit a blank value. You can only
-create a passwordless user when passwordless sign-in is available.}
+Users can sign up without a password when your user pool supports passwordless sign-in with email or SMS OTPs. To create a user with no password, omit this parameter or submit a blank value. You can only create a passwordless user when passwordless sign-in is available.}
 
 \item{UserAttributes}{An array of name-value pairs representing user attributes.
 
-For custom attributes, include a \verb{custom:} prefix in the attribute name,
-for example \code{custom:department}.}
+For custom attributes, include a \verb{custom:} prefix in the attribute name, for example \code{custom:department}.}
 
-\item{ValidationData}{Temporary user attributes that contribute to the outcomes of your pre
-sign-up Lambda trigger. This set of key-value pairs are for custom
-validation of information that you collect from your users but don't
-need to retain.
+\item{ValidationData}{Temporary user attributes that contribute to the outcomes of your pre sign-up Lambda trigger. This set of key-value pairs are for custom validation of information that you collect from your users but don't need to retain.
 
-Your Lambda function can analyze this additional data and act on it.
-Your function can automatically confirm and verify select users or
-perform external API operations like logging user attributes and
-validation data to Amazon CloudWatch Logs.
+Your Lambda function can analyze this additional data and act on it. Your function can automatically confirm and verify select users or perform external API operations like logging user attributes and validation data to Amazon CloudWatch Logs.
 
 For more information about the pre sign-up Lambda trigger, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html}{Pre sign-up Lambda trigger}.}
 
-\item{AnalyticsMetadata}{Information that supports analytics outcomes with Amazon Pinpoint,
-including the user's endpoint ID. The endpoint ID is a destination for
-Amazon Pinpoint push notifications, for example a device identifier,
-email address, or phone number.}
+\item{AnalyticsMetadata}{Information that supports analytics outcomes with Amazon Pinpoint, including the user's endpoint ID. The endpoint ID is a destination for Amazon Pinpoint push notifications, for example a device identifier, email address, or phone number.}
 
-\item{UserContextData}{Contextual data about your user session like the device fingerprint, IP
-address, or location. Amazon Cognito threat protection evaluates the
-risk of an authentication event based on the context that your app
-generates and passes to Amazon Cognito when it makes API requests.
+\item{UserContextData}{Contextual data about your user session like the device fingerprint, IP address, or location. Amazon Cognito threat protection evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.
 
 For more information, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html}{Collecting data for threat protection in applications}.}
 
-\item{ClientMetadata}{A map of custom key-value pairs that you can provide as input for any
-custom workflows that this action triggers.
+\item{ClientMetadata}{A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. You create custom workflows by assigning Lambda functions to user pool triggers.
 
-You create custom workflows by assigning Lambda functions to user pool
-triggers. When you use the SignUp API action, Amazon Cognito invokes any
-functions that are assigned to the following triggers: \emph{pre sign-up},
-\emph{custom message}, and \emph{post confirmation}. When Amazon Cognito invokes
-any of these functions, it passes a JSON payload, which the function
-receives as input. This payload contains a \code{clientMetadata} attribute,
-which provides the data that you assigned to the ClientMetadata
-parameter in your SignUp request. In your function code in Lambda, you
-can process the \code{clientMetadata} value to enhance your workflow for your
-specific needs.
+When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a \code{clientMetadata} attribute that provides the data that you assigned to the ClientMetadata parameter in your request. In your function code, you can process the \code{clientMetadata} value to enhance your workflow for your specific needs.
 
-For more information, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html}{Using Lambda triggers}
-in the \emph{Amazon Cognito Developer Guide}.
+To review the Lambda trigger types that Amazon Cognito invokes at runtime with API requests, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event}{Connecting API actions to Lambda triggers} in the \emph{Amazon Cognito Developer Guide}.
 
-When you use the \code{ClientMetadata} parameter, note that Amazon Cognito
-won't do the following:
+When you use the \code{ClientMetadata} parameter, note that Amazon Cognito won't do the following:
 \itemize{
-\item Store the \code{ClientMetadata} value. This data is available only to
-Lambda triggers that are assigned to a user pool to support custom
-workflows. If your user pool configuration doesn't include triggers,
-the \code{ClientMetadata} parameter serves no purpose.
+\item Store the \code{ClientMetadata} value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the \code{ClientMetadata} parameter serves no purpose.
 \item Validate the \code{ClientMetadata} value.
-\item Encrypt the \code{ClientMetadata} value. Don't send sensitive information
-in this parameter.
+\item Encrypt the \code{ClientMetadata} value. Don't send sensitive information in this parameter.
 }}
 }
 \description{

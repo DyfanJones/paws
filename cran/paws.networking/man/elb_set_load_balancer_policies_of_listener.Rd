@@ -16,9 +16,7 @@ elb_set_load_balancer_policies_of_listener(
 
 \item{LoadBalancerPort}{[required] The external port of the load balancer.}
 
-\item{PolicyNames}{[required] The names of the policies. This list must include all policies to be
-enabled. If you omit a policy that is currently enabled, it is disabled.
-If the list is empty, all current policies are disabled.}
+\item{PolicyNames}{[required] The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.}
 }
 \description{
 Replaces the current set of policies for the specified load balancer port with the specified set of policies.

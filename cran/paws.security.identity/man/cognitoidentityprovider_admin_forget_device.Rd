@@ -9,11 +9,7 @@ cognitoidentityprovider_admin_forget_device(UserPoolId, Username, DeviceKey)
 \arguments{
 \item{UserPoolId}{[required] The ID of the user pool where the device owner is a user.}
 
-\item{Username}{[required] The name of the user that you want to query or modify. The value of this
-parameter is typically your user's username, but it can be any of their
-alias attributes. If \code{username} isn't an alias attribute in your user
-pool, this value must be the \code{sub} of a local user or the username of a
-user from a third-party IdP.}
+\item{Username}{[required] The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If \code{username} isn't an alias attribute in your user pool, this value must be the \code{sub} of a local user or the username of a user from a third-party IdP.}
 
 \item{DeviceKey}{[required] The key ID of the device that you want to delete.}
 }

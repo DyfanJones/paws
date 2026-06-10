@@ -15,17 +15,13 @@ connect_search_data_tables(
 \arguments{
 \item{InstanceId}{[required] The unique identifier for the Amazon Connect instance to search within.}
 
-\item{NextToken}{Specify the pagination token from a previous request to retrieve the
-next page of results.}
+\item{NextToken}{Specify the pagination token from a previous request to retrieve the next page of results.}
 
 \item{MaxResults}{The maximum number of data tables to return in one page of results.}
 
-\item{SearchFilter}{Optional filters to apply to the search results, such as tag-based
-filtering for attribute-based access control.}
+\item{SearchFilter}{Optional filters to apply to the search results, such as tag-based filtering for attribute-based access control.}
 
-\item{SearchCriteria}{Search criteria including string conditions for matching table names,
-descriptions, or resource IDs. Supports STARTS_WITH, CONTAINS, and EXACT
-comparison types.}
+\item{SearchCriteria}{Search criteria including string conditions for matching table names, descriptions, or resource IDs. Supports STARTS_WITH, CONTAINS, and EXACT comparison types.}
 }
 \description{
 Searches for data tables based on the table's ID, name, and description. In the future, this operation can support searching on attribute names and possibly primary values. Follows other search operations closely and supports both search criteria and filters.

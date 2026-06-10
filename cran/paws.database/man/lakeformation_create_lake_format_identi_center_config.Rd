@@ -14,31 +14,19 @@ lakeformation_create_lake_formation_identity_center_configuration(
 )
 }
 \arguments{
-\item{CatalogId}{The identifier for the Data Catalog. By default, the account ID. The
-Data Catalog is the persistent metadata store. It contains database
-definitions, table definitions, view definitions, and other control
-information to manage your Lake Formation environment.}
+\item{CatalogId}{The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, view definitions, and other control information to manage your Lake Formation environment.}
 
-\item{InstanceArn}{The ARN of the IAM Identity Center instance for which the operation will
-be executed. For more information about ARNs, see Amazon Resource Names
-(ARNs) and Amazon Web Services Service Namespaces in the Amazon Web
-Services General Reference.}
+\item{InstanceArn}{The ARN of the IAM Identity Center instance for which the operation will be executed. For more information about ARNs, see Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces in the Amazon Web Services General Reference.}
 
-\item{ExternalFiltering}{A list of the account IDs of Amazon Web Services accounts of third-party
-applications that are allowed to access data managed by Lake Formation.}
+\item{ExternalFiltering}{A list of the account IDs of Amazon Web Services accounts of third-party applications that are allowed to access data managed by Lake Formation.}
 
-\item{ShareRecipients}{A list of Amazon Web Services account IDs and/or Amazon Web Services
-organization/organizational unit ARNs that are allowed to access data
-managed by Lake Formation.
+\item{ShareRecipients}{A list of Amazon Web Services account IDs and/or Amazon Web Services organization/organizational unit ARNs that are allowed to access data managed by Lake Formation.
 
-If the \code{ShareRecipients} list includes valid values, a resource share is
-created with the principals you want to have access to the resources.
+If the \code{ShareRecipients} list includes valid values, a resource share is created with the principals you want to have access to the resources.
 
-If the \code{ShareRecipients} value is null or the list is empty, no resource
-share is created.}
+If the \code{ShareRecipients} value is null or the list is empty, no resource share is created.}
 
-\item{ServiceIntegrations}{A list of service integrations for enabling trusted identity propagation
-with external services such as Redshift.}
+\item{ServiceIntegrations}{A list of service integrations for enabling trusted identity propagation with external services such as Redshift.}
 }
 \description{
 Creates an IAM Identity Center connection with Lake Formation to allow IAM Identity Center users and groups to access Data Catalog resources.

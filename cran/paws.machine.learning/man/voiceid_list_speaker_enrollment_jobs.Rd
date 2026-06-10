@@ -17,14 +17,9 @@ voiceid_list_speaker_enrollment_jobs(
 
 \item{JobStatus}{Provides the status of your speaker enrollment Job.}
 
-\item{MaxResults}{The maximum number of results that are returned per call. You can use
-\code{NextToken} to obtain more pages of results. The default is 100; the
-maximum allowed page size is also 100.}
+\item{MaxResults}{The maximum number of results that are returned per call. You can use \code{NextToken} to obtain more pages of results. The default is 100; the maximum allowed page size is also 100.}
 
-\item{NextToken}{If \code{NextToken} is returned, there are more results available. The value
-of \code{NextToken} is a unique pagination token for each page. Make the call
-again using the returned token to retrieve the next page. Keep all other
-arguments unchanged. Each pagination token expires after 24 hours.}
+\item{NextToken}{If \code{NextToken} is returned, there are more results available. The value of \code{NextToken} is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours.}
 }
 \description{
 Lists all the speaker enrollment jobs in the domain with the specified \code{JobStatus}. If \code{JobStatus} is not provided, this lists all jobs with all possible speaker enrollment job statuses.

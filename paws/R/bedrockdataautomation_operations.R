@@ -63,13 +63,13 @@ bedrockdataautomation_copy_blueprint_stage <- function(blueprintArn, sourceStage
 #' bedrockdataautomation_create_blueprint(blueprintName, type,
 #'   blueprintStage, schema, clientToken, encryptionConfiguration, tags)
 #'
-#' @param blueprintName &#91;required&#93; 
-#' @param type &#91;required&#93; 
-#' @param blueprintStage 
-#' @param schema &#91;required&#93; 
-#' @param clientToken 
-#' @param encryptionConfiguration 
-#' @param tags 
+#' @param blueprintName &#91;required&#93; Name of the Blueprint
+#' @param type &#91;required&#93; Type
+#' @param blueprintStage Stage of the Blueprint
+#' @param schema &#91;required&#93; Schema of the blueprint
+#' @param clientToken Client specified token used for idempotency checks
+#' @param encryptionConfiguration KMS Encryption Configuration
+#' @param tags List of tags
 #'
 #' @return
 #' A list with the following syntax:
@@ -162,15 +162,14 @@ bedrockdataautomation_create_blueprint <- function(blueprintName, type, blueprin
 #' Blueprint
 #'
 #' @description
-#' Creates a new version of an existing Amazon Bedrock Data Automation
-#' Blueprint
+#' Creates a new version of an existing Amazon Bedrock Data Automation Blueprint
 #'
 #' @usage
 #' bedrockdataautomation_create_blueprint_version(blueprintArn,
 #'   clientToken)
 #'
 #' @param blueprintArn &#91;required&#93; ARN generated at the server side when a Blueprint is created
-#' @param clientToken 
+#' @param clientToken Client specified token used for idempotency checks
 #'
 #' @return
 #' A list with the following syntax:
@@ -244,6 +243,75 @@ bedrockdataautomation_create_blueprint_version <- function(blueprintArn, clientT
 }
 .bedrockdataautomation$operations$create_blueprint_version <- bedrockdataautomation_create_blueprint_version
 
+#' Creates an Amazon Bedrock Data Automation Library
+#'
+#' @description
+#' Creates an Amazon Bedrock Data Automation Library
+#'
+#' @usage
+#' bedrockdataautomation_create_data_automation_library(libraryName,
+#'   libraryDescription, clientToken, encryptionConfiguration, tags)
+#'
+#' @param libraryName &#91;required&#93; Name of the DataAutomationLibrary
+#' @param libraryDescription Description of the DataAutomationLibrary
+#' @param clientToken Client specified token used for idempotency checks
+#' @param encryptionConfiguration KMS Encryption Configuration
+#' @param tags List of tags
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   libraryArn = "string",
+#'   status = "ACTIVE"|"DELETING"
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$create_data_automation_library(
+#'   libraryName = "string",
+#'   libraryDescription = "string",
+#'   clientToken = "string",
+#'   encryptionConfiguration = list(
+#'     kmsKeyId = "string",
+#'     kmsEncryptionContext = list(
+#'       "string"
+#'     )
+#'   ),
+#'   tags = list(
+#'     list(
+#'       key = "string",
+#'       value = "string"
+#'     )
+#'   )
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname bedrockdataautomation_create_data_automation_library
+#'
+#' @aliases bedrockdataautomation_create_data_automation_library
+bedrockdataautomation_create_data_automation_library <- function(libraryName, libraryDescription = NULL, clientToken = NULL, encryptionConfiguration = NULL, tags = NULL) {
+  op <- new_operation(
+    name = "CreateDataAutomationLibrary",
+    http_method = "PUT",
+    http_path = "/data-automation-libraries/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .bedrockdataautomation$create_data_automation_library_input(libraryName = libraryName, libraryDescription = libraryDescription, clientToken = clientToken, encryptionConfiguration = encryptionConfiguration, tags = tags)
+  output <- .bedrockdataautomation$create_data_automation_library_output()
+  config <- get_config()
+  svc <- .bedrockdataautomation$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrockdataautomation$operations$create_data_automation_library <- bedrockdataautomation_create_data_automation_library
+
 #' Creates an Amazon Bedrock Data Automation Project
 #'
 #' @description
@@ -253,18 +321,20 @@ bedrockdataautomation_create_blueprint_version <- function(blueprintArn, clientT
 #' bedrockdataautomation_create_data_automation_project(projectName,
 #'   projectDescription, projectStage, projectType,
 #'   standardOutputConfiguration, customOutputConfiguration,
-#'   overrideConfiguration, clientToken, encryptionConfiguration, tags)
+#'   overrideConfiguration, dataAutomationLibraryConfiguration, clientToken,
+#'   encryptionConfiguration, tags)
 #'
-#' @param projectName &#91;required&#93; 
-#' @param projectDescription 
-#' @param projectStage 
-#' @param projectType 
-#' @param standardOutputConfiguration &#91;required&#93; 
-#' @param customOutputConfiguration 
-#' @param overrideConfiguration 
-#' @param clientToken 
-#' @param encryptionConfiguration 
-#' @param tags 
+#' @param projectName &#91;required&#93; Name of the DataAutomationProject
+#' @param projectDescription Description of the DataAutomationProject
+#' @param projectStage Stage of the Project
+#' @param projectType Type of the DataAutomationProject
+#' @param standardOutputConfiguration &#91;required&#93; Standard output configuration
+#' @param customOutputConfiguration Custom output configuration
+#' @param overrideConfiguration Override configuration
+#' @param dataAutomationLibraryConfiguration DataAutomation Library configuration
+#' @param clientToken Client specified token used for idempotency checks
+#' @param encryptionConfiguration KMS Encryption Configuration
+#' @param tags List of tags
 #'
 #' @return
 #' A list with the following syntax:
@@ -381,6 +451,15 @@ bedrockdataautomation_create_blueprint_version <- function(blueprintArn, clientT
 #'         blueprintVersion = "string",
 #'         blueprintStage = "DEVELOPMENT"|"LIVE"
 #'       )
+#'     ),
+#'     document = list(
+#'       fallbackBlueprints = list(
+#'         list(
+#'           blueprintArn = "string",
+#'           blueprintVersion = "string",
+#'           blueprintStage = "DEVELOPMENT"|"LIVE"
+#'         )
+#'       )
 #'     )
 #'   ),
 #'   overrideConfiguration = list(
@@ -469,6 +548,13 @@ bedrockdataautomation_create_blueprint_version <- function(blueprintArn, clientT
 #'       mov = "IMAGE"|"DOCUMENT"|"AUDIO"|"VIDEO"
 #'     )
 #'   ),
+#'   dataAutomationLibraryConfiguration = list(
+#'     libraries = list(
+#'       list(
+#'         libraryArn = "string"
+#'       )
+#'     )
+#'   ),
 #'   clientToken = "string",
 #'   encryptionConfiguration = list(
 #'     kmsKeyId = "string",
@@ -490,7 +576,7 @@ bedrockdataautomation_create_blueprint_version <- function(blueprintArn, clientT
 #' @rdname bedrockdataautomation_create_data_automation_project
 #'
 #' @aliases bedrockdataautomation_create_data_automation_project
-bedrockdataautomation_create_data_automation_project <- function(projectName, projectDescription = NULL, projectStage = NULL, projectType = NULL, standardOutputConfiguration, customOutputConfiguration = NULL, overrideConfiguration = NULL, clientToken = NULL, encryptionConfiguration = NULL, tags = NULL) {
+bedrockdataautomation_create_data_automation_project <- function(projectName, projectDescription = NULL, projectStage = NULL, projectType = NULL, standardOutputConfiguration, customOutputConfiguration = NULL, overrideConfiguration = NULL, dataAutomationLibraryConfiguration = NULL, clientToken = NULL, encryptionConfiguration = NULL, tags = NULL) {
   op <- new_operation(
     name = "CreateDataAutomationProject",
     http_method = "PUT",
@@ -499,7 +585,7 @@ bedrockdataautomation_create_data_automation_project <- function(projectName, pr
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .bedrockdataautomation$create_data_automation_project_input(projectName = projectName, projectDescription = projectDescription, projectStage = projectStage, projectType = projectType, standardOutputConfiguration = standardOutputConfiguration, customOutputConfiguration = customOutputConfiguration, overrideConfiguration = overrideConfiguration, clientToken = clientToken, encryptionConfiguration = encryptionConfiguration, tags = tags)
+  input <- .bedrockdataautomation$create_data_automation_project_input(projectName = projectName, projectDescription = projectDescription, projectStage = projectStage, projectType = projectType, standardOutputConfiguration = standardOutputConfiguration, customOutputConfiguration = customOutputConfiguration, overrideConfiguration = overrideConfiguration, dataAutomationLibraryConfiguration = dataAutomationLibraryConfiguration, clientToken = clientToken, encryptionConfiguration = encryptionConfiguration, tags = tags)
   output <- .bedrockdataautomation$create_data_automation_project_output()
   config <- get_config()
   svc <- .bedrockdataautomation$service(config, op)
@@ -554,6 +640,56 @@ bedrockdataautomation_delete_blueprint <- function(blueprintArn, blueprintVersio
   return(response)
 }
 .bedrockdataautomation$operations$delete_blueprint <- bedrockdataautomation_delete_blueprint
+
+#' Deletes an existing Amazon Bedrock Data Automation Library
+#'
+#' @description
+#' Deletes an existing Amazon Bedrock Data Automation Library
+#'
+#' @usage
+#' bedrockdataautomation_delete_data_automation_library(libraryArn)
+#'
+#' @param libraryArn &#91;required&#93; ARN generated at the server side when a DataAutomationLibrary is created
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   libraryArn = "string",
+#'   status = "ACTIVE"|"DELETING"
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$delete_data_automation_library(
+#'   libraryArn = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname bedrockdataautomation_delete_data_automation_library
+#'
+#' @aliases bedrockdataautomation_delete_data_automation_library
+bedrockdataautomation_delete_data_automation_library <- function(libraryArn) {
+  op <- new_operation(
+    name = "DeleteDataAutomationLibrary",
+    http_method = "DELETE",
+    http_path = "/data-automation-libraries/{libraryArn}/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .bedrockdataautomation$delete_data_automation_library_input(libraryArn = libraryArn)
+  output <- .bedrockdataautomation$delete_data_automation_library_output()
+  config <- get_config()
+  svc <- .bedrockdataautomation$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrockdataautomation$operations$delete_data_automation_library <- bedrockdataautomation_delete_data_automation_library
 
 #' Deletes an existing Amazon Bedrock Data Automation Project
 #'
@@ -748,6 +884,210 @@ bedrockdataautomation_get_blueprint_optimization_status <- function(invocationAr
 }
 .bedrockdataautomation$operations$get_blueprint_optimization_status <- bedrockdataautomation_get_blueprint_optimization_status
 
+#' Gets an existing Amazon Bedrock Data Automation Library
+#'
+#' @description
+#' Gets an existing Amazon Bedrock Data Automation Library
+#'
+#' @usage
+#' bedrockdataautomation_get_data_automation_library(libraryArn)
+#'
+#' @param libraryArn &#91;required&#93; ARN generated at the server side when a DataAutomationLibrary is created
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   library = list(
+#'     libraryArn = "string",
+#'     creationTime = as.POSIXct(
+#'       "2015-01-01"
+#'     ),
+#'     libraryName = "string",
+#'     libraryDescription = "string",
+#'     status = "ACTIVE"|"DELETING",
+#'     entityTypes = list(
+#'       list(
+#'         entityType = "VOCABULARY",
+#'         entityMetadata = "string"
+#'       )
+#'     ),
+#'     kmsKeyId = "string",
+#'     kmsEncryptionContext = list(
+#'       "string"
+#'     )
+#'   )
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$get_data_automation_library(
+#'   libraryArn = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname bedrockdataautomation_get_data_automation_library
+#'
+#' @aliases bedrockdataautomation_get_data_automation_library
+bedrockdataautomation_get_data_automation_library <- function(libraryArn) {
+  op <- new_operation(
+    name = "GetDataAutomationLibrary",
+    http_method = "POST",
+    http_path = "/data-automation-libraries/{libraryArn}/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .bedrockdataautomation$get_data_automation_library_input(libraryArn = libraryArn)
+  output <- .bedrockdataautomation$get_data_automation_library_output()
+  config <- get_config()
+  svc <- .bedrockdataautomation$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrockdataautomation$operations$get_data_automation_library <- bedrockdataautomation_get_data_automation_library
+
+#' Gets an existing entity based on entity type from the library
+#'
+#' @description
+#' Gets an existing entity based on entity type from the library
+#'
+#' @usage
+#' bedrockdataautomation_get_data_automation_library_entity(libraryArn,
+#'   entityType, entityId)
+#'
+#' @param libraryArn &#91;required&#93; ARN generated at the server side when a DataAutomationLibrary is created
+#' @param entityType &#91;required&#93; The entity type for which the entity is requested
+#' @param entityId &#91;required&#93; Unique identifier for the entity
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   entity = list(
+#'     vocabulary = list(
+#'       entityId = "string",
+#'       description = "string",
+#'       language = "EN"|"DE"|"ES"|"FR"|"IT"|"PT"|"JA"|"KO"|"CN"|"TW"|"HK",
+#'       phrases = list(
+#'         list(
+#'           text = "string",
+#'           displayAsText = "string"
+#'         )
+#'       ),
+#'       lastModifiedTime = as.POSIXct(
+#'         "2015-01-01"
+#'       )
+#'     )
+#'   )
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$get_data_automation_library_entity(
+#'   libraryArn = "string",
+#'   entityType = "VOCABULARY",
+#'   entityId = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname bedrockdataautomation_get_data_automation_library_entity
+#'
+#' @aliases bedrockdataautomation_get_data_automation_library_entity
+bedrockdataautomation_get_data_automation_library_entity <- function(libraryArn, entityType, entityId) {
+  op <- new_operation(
+    name = "GetDataAutomationLibraryEntity",
+    http_method = "POST",
+    http_path = "/data-automation-libraries/{libraryArn}/entityType/{entityType}/entities/{entityId}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .bedrockdataautomation$get_data_automation_library_entity_input(libraryArn = libraryArn, entityType = entityType, entityId = entityId)
+  output <- .bedrockdataautomation$get_data_automation_library_entity_output()
+  config <- get_config()
+  svc <- .bedrockdataautomation$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrockdataautomation$operations$get_data_automation_library_entity <- bedrockdataautomation_get_data_automation_library_entity
+
+#' API used to get status of data automation library ingestion job
+#'
+#' @description
+#' API used to get status of data automation library ingestion job
+#'
+#' @usage
+#' bedrockdataautomation_get_data_automation_library_ingestion_job(
+#'   libraryArn, jobArn)
+#'
+#' @param libraryArn &#91;required&#93; ARN generated at the server side when a DataAutomationLibrary is created
+#' @param jobArn &#91;required&#93; ARN of the DataAutomationLibraryIngestionJob
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   job = list(
+#'     jobArn = "string",
+#'     creationTime = as.POSIXct(
+#'       "2015-01-01"
+#'     ),
+#'     entityType = "VOCABULARY",
+#'     operationType = "UPSERT"|"DELETE",
+#'     jobStatus = "IN_PROGRESS"|"COMPLETED"|"COMPLETED_WITH_ERRORS"|"FAILED",
+#'     outputConfiguration = list(
+#'       s3Uri = "string"
+#'     ),
+#'     completionTime = as.POSIXct(
+#'       "2015-01-01"
+#'     ),
+#'     errorMessage = "string",
+#'     errorType = "string"
+#'   )
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$get_data_automation_library_ingestion_job(
+#'   libraryArn = "string",
+#'   jobArn = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname bedrockdataautomation_get_data_auto_libr_inge_job
+#'
+#' @aliases bedrockdataautomation_get_data_automation_library_ingestion_job
+bedrockdataautomation_get_data_automation_library_ingestion_job <- function(libraryArn, jobArn) {
+  op <- new_operation(
+    name = "GetDataAutomationLibraryIngestionJob",
+    http_method = "POST",
+    http_path = "/data-automation-libraries/{libraryArn}/library-ingestion-jobs/{jobArn}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .bedrockdataautomation$get_data_automation_library_ingestion_job_input(libraryArn = libraryArn, jobArn = jobArn)
+  output <- .bedrockdataautomation$get_data_automation_library_ingestion_job_output()
+  config <- get_config()
+  svc <- .bedrockdataautomation$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrockdataautomation$operations$get_data_automation_library_ingestion_job <- bedrockdataautomation_get_data_automation_library_ingestion_job
+
 #' Gets an existing Amazon Bedrock Data Automation Project
 #'
 #' @description
@@ -874,6 +1214,15 @@ bedrockdataautomation_get_blueprint_optimization_status <- function(invocationAr
 #'           blueprintVersion = "string",
 #'           blueprintStage = "DEVELOPMENT"|"LIVE"
 #'         )
+#'       ),
+#'       document = list(
+#'         fallbackBlueprints = list(
+#'           list(
+#'             blueprintArn = "string",
+#'             blueprintVersion = "string",
+#'             blueprintStage = "DEVELOPMENT"|"LIVE"
+#'           )
+#'         )
 #'       )
 #'     ),
 #'     overrideConfiguration = list(
@@ -960,6 +1309,13 @@ bedrockdataautomation_get_blueprint_optimization_status <- function(invocationAr
 #'         png = "IMAGE"|"DOCUMENT"|"AUDIO"|"VIDEO",
 #'         mp4 = "IMAGE"|"DOCUMENT"|"AUDIO"|"VIDEO",
 #'         mov = "IMAGE"|"DOCUMENT"|"AUDIO"|"VIDEO"
+#'       )
+#'     ),
+#'     dataAutomationLibraryConfiguration = list(
+#'       libraries = list(
+#'         list(
+#'           libraryArn = "string"
+#'         )
 #'       )
 #'     ),
 #'     status = "COMPLETED"|"IN_PROGRESS"|"FAILED",
@@ -1093,6 +1449,109 @@ bedrockdataautomation_invoke_blueprint_optimization_async <- function(blueprint,
 }
 .bedrockdataautomation$operations$invoke_blueprint_optimization_async <- bedrockdataautomation_invoke_blueprint_optimization_async
 
+#' Async API: Invoke data automation library ingestion job
+#'
+#' @description
+#' Async API: Invoke data automation library ingestion job
+#'
+#' @usage
+#' bedrockdataautomation_invoke_data_automation_library_ingestion_job(
+#'   libraryArn, clientToken, inputConfiguration, entityType, operationType,
+#'   outputConfiguration, notificationConfiguration, tags)
+#'
+#' @param libraryArn &#91;required&#93; ARN generated at the server side when a DataAutomationLibrary is created
+#' @param clientToken Idempotency token
+#' @param inputConfiguration &#91;required&#93; Input configuration of DataAutomationLibraryIngestionJob request
+#' @param entityType &#91;required&#93; The entity type for which DataAutomationLibraryIngestionJob is being run
+#' @param operationType &#91;required&#93; The operation to be performed by DataAutomationLibraryIngestionJob
+#' @param outputConfiguration &#91;required&#93; Output configuration of DataAutomationLibraryIngestionJob
+#' @param notificationConfiguration Notification configuration.
+#' @param tags List of tags
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   jobArn = "string"
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$invoke_data_automation_library_ingestion_job(
+#'   libraryArn = "string",
+#'   clientToken = "string",
+#'   inputConfiguration = list(
+#'     s3Object = list(
+#'       s3Uri = "string",
+#'       version = "string"
+#'     ),
+#'     inlinePayload = list(
+#'       upsertEntitiesInfo = list(
+#'         list(
+#'           vocabulary = list(
+#'             entityId = "string",
+#'             description = "string",
+#'             language = "EN"|"DE"|"ES"|"FR"|"IT"|"PT"|"JA"|"KO"|"CN"|"TW"|"HK",
+#'             phrases = list(
+#'               list(
+#'                 text = "string",
+#'                 displayAsText = "string"
+#'               )
+#'             )
+#'           )
+#'         )
+#'       ),
+#'       deleteEntitiesInfo = list(
+#'         entityIds = list(
+#'           "string"
+#'         )
+#'       )
+#'     )
+#'   ),
+#'   entityType = "VOCABULARY",
+#'   operationType = "UPSERT"|"DELETE",
+#'   outputConfiguration = list(
+#'     s3Uri = "string"
+#'   ),
+#'   notificationConfiguration = list(
+#'     eventBridgeConfiguration = list(
+#'       eventBridgeEnabled = TRUE|FALSE
+#'     )
+#'   ),
+#'   tags = list(
+#'     list(
+#'       key = "string",
+#'       value = "string"
+#'     )
+#'   )
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname bedrockdataautomation_invo_data_auto_libr_inge_job
+#'
+#' @aliases bedrockdataautomation_invoke_data_automation_library_ingestion_job
+bedrockdataautomation_invoke_data_automation_library_ingestion_job <- function(libraryArn, clientToken = NULL, inputConfiguration, entityType, operationType, outputConfiguration, notificationConfiguration = NULL, tags = NULL) {
+  op <- new_operation(
+    name = "InvokeDataAutomationLibraryIngestionJob",
+    http_method = "PUT",
+    http_path = "/data-automation-libraries/{libraryArn}/library-ingestion-jobs/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .bedrockdataautomation$invoke_data_automation_library_ingestion_job_input(libraryArn = libraryArn, clientToken = clientToken, inputConfiguration = inputConfiguration, entityType = entityType, operationType = operationType, outputConfiguration = outputConfiguration, notificationConfiguration = notificationConfiguration, tags = tags)
+  output <- .bedrockdataautomation$invoke_data_automation_library_ingestion_job_output()
+  config <- get_config()
+  svc <- .bedrockdataautomation$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrockdataautomation$operations$invoke_data_automation_library_ingestion_job <- bedrockdataautomation_invoke_data_automation_library_ingestion_job
+
 #' Lists all existing Amazon Bedrock Data Automation Blueprints
 #'
 #' @description
@@ -1102,12 +1561,12 @@ bedrockdataautomation_invoke_blueprint_optimization_async <- function(blueprint,
 #' bedrockdataautomation_list_blueprints(blueprintArn, resourceOwner,
 #'   blueprintStageFilter, maxResults, nextToken, projectFilter)
 #'
-#' @param blueprintArn 
-#' @param resourceOwner 
-#' @param blueprintStageFilter 
-#' @param maxResults 
-#' @param nextToken 
-#' @param projectFilter 
+#' @param blueprintArn ARN of a Blueprint
+#' @param resourceOwner Resource Owner
+#' @param blueprintStageFilter Blueprint Stage filter
+#' @param maxResults Max Results
+#' @param nextToken Pagination token
+#' @param projectFilter Data Automation Project Filter
 #'
 #' @return
 #' A list with the following syntax:
@@ -1170,6 +1629,209 @@ bedrockdataautomation_list_blueprints <- function(blueprintArn = NULL, resourceO
 }
 .bedrockdataautomation$operations$list_blueprints <- bedrockdataautomation_list_blueprints
 
+#' Lists all existing Amazon Bedrock Data Automation Libraries
+#'
+#' @description
+#' Lists all existing Amazon Bedrock Data Automation Libraries
+#'
+#' @usage
+#' bedrockdataautomation_list_data_automation_libraries(maxResults,
+#'   nextToken, projectFilter)
+#'
+#' @param maxResults Max Results
+#' @param nextToken Pagination token
+#' @param projectFilter Data Automation Project Filter
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   libraries = list(
+#'     list(
+#'       libraryArn = "string",
+#'       libraryName = "string",
+#'       creationTime = as.POSIXct(
+#'         "2015-01-01"
+#'       )
+#'     )
+#'   ),
+#'   nextToken = "string"
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$list_data_automation_libraries(
+#'   maxResults = 123,
+#'   nextToken = "string",
+#'   projectFilter = list(
+#'     projectArn = "string",
+#'     projectStage = "DEVELOPMENT"|"LIVE"
+#'   )
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname bedrockdataautomation_list_data_automation_libraries
+#'
+#' @aliases bedrockdataautomation_list_data_automation_libraries
+bedrockdataautomation_list_data_automation_libraries <- function(maxResults = NULL, nextToken = NULL, projectFilter = NULL) {
+  op <- new_operation(
+    name = "ListDataAutomationLibraries",
+    http_method = "POST",
+    http_path = "/data-automation-libraries/",
+    host_prefix = "",
+    paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults", result_key = "libraries"),
+    stream_api = FALSE
+  )
+  input <- .bedrockdataautomation$list_data_automation_libraries_input(maxResults = maxResults, nextToken = nextToken, projectFilter = projectFilter)
+  output <- .bedrockdataautomation$list_data_automation_libraries_output()
+  config <- get_config()
+  svc <- .bedrockdataautomation$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrockdataautomation$operations$list_data_automation_libraries <- bedrockdataautomation_list_data_automation_libraries
+
+#' Lists all stored entities in the library
+#'
+#' @description
+#' Lists all stored entities in the library
+#'
+#' @usage
+#' bedrockdataautomation_list_data_automation_library_entities(libraryArn,
+#'   entityType, maxResults, nextToken)
+#'
+#' @param libraryArn &#91;required&#93; ARN generated at the server side when a DataAutomationLibrary is created
+#' @param entityType &#91;required&#93; The entity type for which the entity list is requested
+#' @param maxResults Max Results
+#' @param nextToken Pagination token for retrieving the next set of results
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   entities = list(
+#'     list(
+#'       vocabulary = list(
+#'         entityId = "string",
+#'         description = "string",
+#'         language = "EN"|"DE"|"ES"|"FR"|"IT"|"PT"|"JA"|"KO"|"CN"|"TW"|"HK",
+#'         numOfPhrases = 123,
+#'         lastModifiedTime = as.POSIXct(
+#'           "2015-01-01"
+#'         )
+#'       )
+#'     )
+#'   ),
+#'   nextToken = "string"
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$list_data_automation_library_entities(
+#'   libraryArn = "string",
+#'   entityType = "VOCABULARY",
+#'   maxResults = 123,
+#'   nextToken = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname bedrockdataautomation_list_data_automation_library_entities
+#'
+#' @aliases bedrockdataautomation_list_data_automation_library_entities
+bedrockdataautomation_list_data_automation_library_entities <- function(libraryArn, entityType, maxResults = NULL, nextToken = NULL) {
+  op <- new_operation(
+    name = "ListDataAutomationLibraryEntities",
+    http_method = "POST",
+    http_path = "/data-automation-libraries/{libraryArn}/entityType/{entityType}/entities/",
+    host_prefix = "",
+    paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults", result_key = "entities"),
+    stream_api = FALSE
+  )
+  input <- .bedrockdataautomation$list_data_automation_library_entities_input(libraryArn = libraryArn, entityType = entityType, maxResults = maxResults, nextToken = nextToken)
+  output <- .bedrockdataautomation$list_data_automation_library_entities_output()
+  config <- get_config()
+  svc <- .bedrockdataautomation$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrockdataautomation$operations$list_data_automation_library_entities <- bedrockdataautomation_list_data_automation_library_entities
+
+#' Lists all data automation library ingestion jobs
+#'
+#' @description
+#' Lists all data automation library ingestion jobs
+#'
+#' @usage
+#' bedrockdataautomation_list_data_automation_library_ingestion_jobs(
+#'   libraryArn, maxResults, nextToken)
+#'
+#' @param libraryArn &#91;required&#93; ARN generated at the server side when a DataAutomationLibrary is created
+#' @param maxResults Max Results
+#' @param nextToken Pagination token for retrieving the next set of results
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   jobs = list(
+#'     list(
+#'       jobArn = "string",
+#'       jobStatus = "IN_PROGRESS"|"COMPLETED"|"COMPLETED_WITH_ERRORS"|"FAILED",
+#'       entityType = "VOCABULARY",
+#'       operationType = "UPSERT"|"DELETE",
+#'       creationTime = as.POSIXct(
+#'         "2015-01-01"
+#'       ),
+#'       completionTime = as.POSIXct(
+#'         "2015-01-01"
+#'       )
+#'     )
+#'   ),
+#'   nextToken = "string"
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$list_data_automation_library_ingestion_jobs(
+#'   libraryArn = "string",
+#'   maxResults = 123,
+#'   nextToken = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname bedrockdataautomation_list_data_auto_libr_inge_jobs
+#'
+#' @aliases bedrockdataautomation_list_data_automation_library_ingestion_jobs
+bedrockdataautomation_list_data_automation_library_ingestion_jobs <- function(libraryArn, maxResults = NULL, nextToken = NULL) {
+  op <- new_operation(
+    name = "ListDataAutomationLibraryIngestionJobs",
+    http_method = "POST",
+    http_path = "/data-automation-libraries/{libraryArn}/library-ingestion-jobs/",
+    host_prefix = "",
+    paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults", result_key = "jobs"),
+    stream_api = FALSE
+  )
+  input <- .bedrockdataautomation$list_data_automation_library_ingestion_jobs_input(libraryArn = libraryArn, maxResults = maxResults, nextToken = nextToken)
+  output <- .bedrockdataautomation$list_data_automation_library_ingestion_jobs_output()
+  config <- get_config()
+  svc <- .bedrockdataautomation$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrockdataautomation$operations$list_data_automation_library_ingestion_jobs <- bedrockdataautomation_list_data_automation_library_ingestion_jobs
+
 #' Lists all existing Amazon Bedrock Data Automation Projects
 #'
 #' @description
@@ -1177,13 +1839,15 @@ bedrockdataautomation_list_blueprints <- function(blueprintArn = NULL, resourceO
 #'
 #' @usage
 #' bedrockdataautomation_list_data_automation_projects(maxResults,
-#'   nextToken, projectStageFilter, blueprintFilter, resourceOwner)
+#'   nextToken, projectStageFilter, blueprintFilter, resourceOwner,
+#'   libraryFilter)
 #'
-#' @param maxResults 
-#' @param nextToken 
-#' @param projectStageFilter 
-#' @param blueprintFilter 
-#' @param resourceOwner 
+#' @param maxResults Max Results
+#' @param nextToken Pagination token
+#' @param projectStageFilter Project Stage filter
+#' @param blueprintFilter Blueprint Filter
+#' @param resourceOwner Resource Owner
+#' @param libraryFilter Data Automation Library Filter
 #'
 #' @return
 #' A list with the following syntax:
@@ -1215,7 +1879,10 @@ bedrockdataautomation_list_blueprints <- function(blueprintArn = NULL, resourceO
 #'     blueprintVersion = "string",
 #'     blueprintStage = "DEVELOPMENT"|"LIVE"
 #'   ),
-#'   resourceOwner = "SERVICE"|"ACCOUNT"
+#'   resourceOwner = "SERVICE"|"ACCOUNT",
+#'   libraryFilter = list(
+#'     libraryArn = "string"
+#'   )
 #' )
 #' ```
 #'
@@ -1224,7 +1891,7 @@ bedrockdataautomation_list_blueprints <- function(blueprintArn = NULL, resourceO
 #' @rdname bedrockdataautomation_list_data_automation_projects
 #'
 #' @aliases bedrockdataautomation_list_data_automation_projects
-bedrockdataautomation_list_data_automation_projects <- function(maxResults = NULL, nextToken = NULL, projectStageFilter = NULL, blueprintFilter = NULL, resourceOwner = NULL) {
+bedrockdataautomation_list_data_automation_projects <- function(maxResults = NULL, nextToken = NULL, projectStageFilter = NULL, blueprintFilter = NULL, resourceOwner = NULL, libraryFilter = NULL) {
   op <- new_operation(
     name = "ListDataAutomationProjects",
     http_method = "POST",
@@ -1233,7 +1900,7 @@ bedrockdataautomation_list_data_automation_projects <- function(maxResults = NUL
     paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults", result_key = "projects"),
     stream_api = FALSE
   )
-  input <- .bedrockdataautomation$list_data_automation_projects_input(maxResults = maxResults, nextToken = nextToken, projectStageFilter = projectStageFilter, blueprintFilter = blueprintFilter, resourceOwner = resourceOwner)
+  input <- .bedrockdataautomation$list_data_automation_projects_input(maxResults = maxResults, nextToken = nextToken, projectStageFilter = projectStageFilter, blueprintFilter = blueprintFilter, resourceOwner = resourceOwner, libraryFilter = libraryFilter)
   output <- .bedrockdataautomation$list_data_automation_projects_output()
   config <- get_config()
   svc <- .bedrockdataautomation$service(config, op)
@@ -1251,7 +1918,7 @@ bedrockdataautomation_list_data_automation_projects <- function(maxResults = NUL
 #' @usage
 #' bedrockdataautomation_list_tags_for_resource(resourceARN)
 #'
-#' @param resourceARN &#91;required&#93; 
+#' @param resourceARN &#91;required&#93; ARN of a taggable resource
 #'
 #' @return
 #' A list with the following syntax:
@@ -1305,8 +1972,8 @@ bedrockdataautomation_list_tags_for_resource <- function(resourceARN) {
 #' @usage
 #' bedrockdataautomation_tag_resource(resourceARN, tags)
 #'
-#' @param resourceARN &#91;required&#93; 
-#' @param tags &#91;required&#93; 
+#' @param resourceARN &#91;required&#93; ARN of a taggable resource
+#' @param tags &#91;required&#93; List of tags
 #'
 #' @return
 #' An empty list.
@@ -1356,8 +2023,8 @@ bedrockdataautomation_tag_resource <- function(resourceARN, tags) {
 #' @usage
 #' bedrockdataautomation_untag_resource(resourceARN, tagKeys)
 #'
-#' @param resourceARN &#91;required&#93; 
-#' @param tagKeys &#91;required&#93; 
+#' @param resourceARN &#91;required&#93; ARN of a taggable resource
+#' @param tagKeys &#91;required&#93; List of tag keys
 #'
 #' @return
 #' An empty list.
@@ -1406,9 +2073,9 @@ bedrockdataautomation_untag_resource <- function(resourceARN, tagKeys) {
 #'   blueprintStage, encryptionConfiguration)
 #'
 #' @param blueprintArn &#91;required&#93; ARN generated at the server side when a Blueprint is created
-#' @param schema &#91;required&#93; 
-#' @param blueprintStage 
-#' @param encryptionConfiguration 
+#' @param schema &#91;required&#93; Schema of the blueprint
+#' @param blueprintStage Stage of the Blueprint
+#' @param encryptionConfiguration KMS Encryption Configuration
 #'
 #' @return
 #' A list with the following syntax:
@@ -1489,6 +2156,61 @@ bedrockdataautomation_update_blueprint <- function(blueprintArn, schema, bluepri
 }
 .bedrockdataautomation$operations$update_blueprint <- bedrockdataautomation_update_blueprint
 
+#' Updates an existing Amazon Bedrock Data Automation Library
+#'
+#' @description
+#' Updates an existing Amazon Bedrock Data Automation Library
+#'
+#' @usage
+#' bedrockdataautomation_update_data_automation_library(libraryArn,
+#'   libraryDescription, clientToken)
+#'
+#' @param libraryArn &#91;required&#93; ARN generated at the server side when a DataAutomationLibrary is created
+#' @param libraryDescription Description of the DataAutomationLibrary
+#' @param clientToken Client specified token used for idempotency checks
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   libraryArn = "string",
+#'   status = "ACTIVE"|"DELETING"
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$update_data_automation_library(
+#'   libraryArn = "string",
+#'   libraryDescription = "string",
+#'   clientToken = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname bedrockdataautomation_update_data_automation_library
+#'
+#' @aliases bedrockdataautomation_update_data_automation_library
+bedrockdataautomation_update_data_automation_library <- function(libraryArn, libraryDescription = NULL, clientToken = NULL) {
+  op <- new_operation(
+    name = "UpdateDataAutomationLibrary",
+    http_method = "PUT",
+    http_path = "/data-automation-libraries/{libraryArn}/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .bedrockdataautomation$update_data_automation_library_input(libraryArn = libraryArn, libraryDescription = libraryDescription, clientToken = clientToken)
+  output <- .bedrockdataautomation$update_data_automation_library_output()
+  config <- get_config()
+  svc <- .bedrockdataautomation$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrockdataautomation$operations$update_data_automation_library <- bedrockdataautomation_update_data_automation_library
+
 #' Updates an existing Amazon Bedrock Data Automation Project
 #'
 #' @description
@@ -1498,15 +2220,16 @@ bedrockdataautomation_update_blueprint <- function(blueprintArn, schema, bluepri
 #' bedrockdataautomation_update_data_automation_project(projectArn,
 #'   projectStage, projectDescription, standardOutputConfiguration,
 #'   customOutputConfiguration, overrideConfiguration,
-#'   encryptionConfiguration)
+#'   dataAutomationLibraryConfiguration, encryptionConfiguration)
 #'
 #' @param projectArn &#91;required&#93; ARN generated at the server side when a DataAutomationProject is created
-#' @param projectStage 
-#' @param projectDescription 
-#' @param standardOutputConfiguration &#91;required&#93; 
-#' @param customOutputConfiguration 
-#' @param overrideConfiguration 
-#' @param encryptionConfiguration 
+#' @param projectStage Stage of the Project
+#' @param projectDescription Description of the DataAutomationProject
+#' @param standardOutputConfiguration &#91;required&#93; Standard output configuration
+#' @param customOutputConfiguration Custom output configuration
+#' @param overrideConfiguration Override configuration
+#' @param dataAutomationLibraryConfiguration DataAutomation Library configuration
+#' @param encryptionConfiguration KMS Encryption Configuration
 #'
 #' @return
 #' A list with the following syntax:
@@ -1622,6 +2345,15 @@ bedrockdataautomation_update_blueprint <- function(blueprintArn, schema, bluepri
 #'         blueprintVersion = "string",
 #'         blueprintStage = "DEVELOPMENT"|"LIVE"
 #'       )
+#'     ),
+#'     document = list(
+#'       fallbackBlueprints = list(
+#'         list(
+#'           blueprintArn = "string",
+#'           blueprintVersion = "string",
+#'           blueprintStage = "DEVELOPMENT"|"LIVE"
+#'         )
+#'       )
 #'     )
 #'   ),
 #'   overrideConfiguration = list(
@@ -1710,6 +2442,13 @@ bedrockdataautomation_update_blueprint <- function(blueprintArn, schema, bluepri
 #'       mov = "IMAGE"|"DOCUMENT"|"AUDIO"|"VIDEO"
 #'     )
 #'   ),
+#'   dataAutomationLibraryConfiguration = list(
+#'     libraries = list(
+#'       list(
+#'         libraryArn = "string"
+#'       )
+#'     )
+#'   ),
 #'   encryptionConfiguration = list(
 #'     kmsKeyId = "string",
 #'     kmsEncryptionContext = list(
@@ -1724,7 +2463,7 @@ bedrockdataautomation_update_blueprint <- function(blueprintArn, schema, bluepri
 #' @rdname bedrockdataautomation_update_data_automation_project
 #'
 #' @aliases bedrockdataautomation_update_data_automation_project
-bedrockdataautomation_update_data_automation_project <- function(projectArn, projectStage = NULL, projectDescription = NULL, standardOutputConfiguration, customOutputConfiguration = NULL, overrideConfiguration = NULL, encryptionConfiguration = NULL) {
+bedrockdataautomation_update_data_automation_project <- function(projectArn, projectStage = NULL, projectDescription = NULL, standardOutputConfiguration, customOutputConfiguration = NULL, overrideConfiguration = NULL, dataAutomationLibraryConfiguration = NULL, encryptionConfiguration = NULL) {
   op <- new_operation(
     name = "UpdateDataAutomationProject",
     http_method = "PUT",
@@ -1733,7 +2472,7 @@ bedrockdataautomation_update_data_automation_project <- function(projectArn, pro
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .bedrockdataautomation$update_data_automation_project_input(projectArn = projectArn, projectStage = projectStage, projectDescription = projectDescription, standardOutputConfiguration = standardOutputConfiguration, customOutputConfiguration = customOutputConfiguration, overrideConfiguration = overrideConfiguration, encryptionConfiguration = encryptionConfiguration)
+  input <- .bedrockdataautomation$update_data_automation_project_input(projectArn = projectArn, projectStage = projectStage, projectDescription = projectDescription, standardOutputConfiguration = standardOutputConfiguration, customOutputConfiguration = customOutputConfiguration, overrideConfiguration = overrideConfiguration, dataAutomationLibraryConfiguration = dataAutomationLibraryConfiguration, encryptionConfiguration = encryptionConfiguration)
   output <- .bedrockdataautomation$update_data_automation_project_output()
   config <- get_config()
   svc <- .bedrockdataautomation$service(config, op)

@@ -20,14 +20,9 @@ kendra_update_experience(
 
 \item{IndexId}{[required] The identifier of the index for your Amazon Kendra experience.}
 
-\item{RoleArn}{The Amazon Resource Name (ARN) of an IAM role with permission to access
-the \code{\link[=kendra_query]{query}} API, \code{QuerySuggestions} API,
-\code{\link[=kendra_submit_feedback]{submit_feedback}} API, and IAM Identity Center
-that stores your users and groups information. For more information, see
-\href{https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html}{IAM roles for Amazon Kendra}.}
+\item{RoleArn}{The Amazon Resource Name (ARN) of an IAM role with permission to access the \code{\link[=kendra_query]{query}} API, \code{QuerySuggestions} API, \code{\link[=kendra_submit_feedback]{submit_feedback}} API, and IAM Identity Center that stores your users and groups information. For more information, see \href{https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html}{IAM roles for Amazon Kendra}.}
 
-\item{Configuration}{Configuration information you want to update for your Amazon Kendra
-experience.}
+\item{Configuration}{Configuration information you want to update for your Amazon Kendra experience.}
 
 \item{Description}{A new description for your Amazon Kendra experience.}
 }

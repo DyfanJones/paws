@@ -13,25 +13,17 @@ paymentcryptographydataplane_encrypt_data(
 )
 }
 \arguments{
-\item{KeyIdentifier}{[required] The \code{keyARN} of the encryption key that Amazon Web Services Payment
-Cryptography uses for plaintext encryption.
+\item{KeyIdentifier}{[required] The \code{keyARN} of the encryption key that Amazon Web Services Payment Cryptography uses for plaintext encryption.
 
-When a WrappedKeyBlock is provided, this value will be the identifier to
-the key wrapping key. Otherwise, it is the key identifier used to
-perform the operation.}
+When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key. Otherwise, it is the key identifier used to perform the operation.}
 
 \item{PlainText}{[required] The plaintext to be encrypted.
 
-For encryption using asymmetric keys, plaintext data length is
-constrained by encryption key strength that you define in \code{KeyAlgorithm}
-and padding type that you define in \code{AsymmetricEncryptionAttributes}.
-For more information, see \href{https://docs.aws.amazon.com/payment-cryptography/latest/userguide/encrypt-data.html}{Encrypt data}
-in the \emph{Amazon Web Services Payment Cryptography User Guide}.}
+For encryption using asymmetric keys, plaintext data length is constrained by encryption key strength that you define in \code{KeyAlgorithm} and padding type that you define in \code{AsymmetricEncryptionAttributes}. For more information, see \href{https://docs.aws.amazon.com/payment-cryptography/latest/userguide/encrypt-data.html}{Encrypt data} in the \emph{Amazon Web Services Payment Cryptography User Guide}.}
 
 \item{EncryptionAttributes}{[required] The encryption key type and attributes for plaintext encryption.}
 
-\item{WrappedKey}{The WrappedKeyBlock containing the encryption key for plaintext
-encryption.}
+\item{WrappedKey}{The WrappedKeyBlock containing the encryption key for plaintext encryption.}
 }
 \description{
 Encrypts plaintext data to ciphertext using a symmetric (TDES, AES), asymmetric (RSA), or derived (DUKPT or EMV) encryption key scheme. For more information, see \href{https://docs.aws.amazon.com/payment-cryptography/latest/userguide/encrypt-data.html}{Encrypt data} in the \emph{Amazon Web Services Payment Cryptography User Guide}.

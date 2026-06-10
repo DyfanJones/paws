@@ -9,8 +9,7 @@ codeartifact_delete_package_group(domain, domainOwner = NULL, packageGroup)
 \arguments{
 \item{domain}{[required] The domain that contains the package group to be deleted.}
 
-\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns
-the domain. It does not include dashes or spaces.}
+\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.}
 
 \item{packageGroup}{[required] The pattern of the package group to be deleted.}
 }

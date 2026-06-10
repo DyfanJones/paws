@@ -24,124 +24,63 @@ transcribeservice_start_medical_transcription_job(
 )
 }
 \arguments{
-\item{MedicalTranscriptionJobName}{[required] A unique name, chosen by you, for your medical transcription job. The
-name that you specify is also used as the default name of your
-transcription output file. If you want to specify a different name for
-your transcription output, use the \code{OutputKey} parameter.
+\item{MedicalTranscriptionJobName}{[required] A unique name, chosen by you, for your medical transcription job. The name that you specify is also used as the default name of your transcription output file. If you want to specify a different name for your transcription output, use the \code{OutputKey} parameter.
 
-This name is case sensitive, cannot contain spaces, and must be unique
-within an Amazon Web Services account. If you try to create a new job
-with the same name as an existing job, you get a \code{ConflictException}
-error.}
+This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a \code{ConflictException} error.}
 
-\item{LanguageCode}{[required] The language code that represents the language spoken in the input media
-file. US English (\code{en-US}) is the only valid value for medical
-transcription jobs. Any other value you enter for language code results
-in a \code{BadRequestException} error.}
+\item{LanguageCode}{[required] The language code that represents the language spoken in the input media file. US English (\code{en-US}) is the only valid value for medical transcription jobs. Any other value you enter for language code results in a \code{BadRequestException} error.}
 
 \item{MediaSampleRateHertz}{The sample rate, in hertz, of the audio track in your input media file.
 
-If you do not specify the media sample rate, Amazon Transcribe Medical
-determines it for you. If you specify the sample rate, it must match the
-rate detected by Amazon Transcribe Medical; if there's a mismatch
-between the value that you specify and the value detected, your job
-fails. Therefore, in most cases, it's advised to omit
-\code{MediaSampleRateHertz} and let Amazon Transcribe Medical determine the
-sample rate.}
+If you do not specify the media sample rate, Amazon Transcribe Medical determines it for you. If you specify the sample rate, it must match the rate detected by Amazon Transcribe Medical; if there's a mismatch between the value that you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit \code{MediaSampleRateHertz} and let Amazon Transcribe Medical determine the sample rate.}
 
 \item{MediaFormat}{Specify the format of your input media file.}
 
-\item{Media}{[required]}
+\item{Media}{[required] Describes the Amazon S3 location of the media file you want to use in your request.
 
-\item{OutputBucketName}{[required] The name of the Amazon S3 bucket where you want your medical
-transcription output stored. Do not include the \verb{S3://} prefix of the
-specified bucket.
+For information on supported media formats, refer to the \code{MediaFormat} parameter or the \href{https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio}{Media formats} section in the Amazon S3 Developer Guide.}
 
-If you want your output to go to a sub-folder of this bucket, specify it
-using the \code{OutputKey} parameter; \code{OutputBucketName} only accepts the
-name of a bucket.
+\item{OutputBucketName}{[required] The name of the Amazon S3 bucket where you want your medical transcription output stored. Do not include the \verb{S3://} prefix of the specified bucket.
 
-For example, if you want your output stored in
-\verb{S3://DOC-EXAMPLE-BUCKET}, set \code{OutputBucketName} to
-\code{DOC-EXAMPLE-BUCKET}. However, if you want your output stored in
-\verb{S3://DOC-EXAMPLE-BUCKET/test-files/}, set \code{OutputBucketName} to
-\code{DOC-EXAMPLE-BUCKET} and \code{OutputKey} to \verb{test-files/}.
+If you want your output to go to a sub-folder of this bucket, specify it using the \code{OutputKey} parameter; \code{OutputBucketName} only accepts the name of a bucket.
 
-Note that Amazon Transcribe must have permission to use the specified
-location. You can change Amazon S3 permissions using the Amazon Web
-Services Management Console. See also \href{https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user}{Permissions Required for IAM User Roles}.}
+For example, if you want your output stored in \verb{S3://DOC-EXAMPLE-BUCKET}, set \code{OutputBucketName} to \code{DOC-EXAMPLE-BUCKET}. However, if you want your output stored in \verb{S3://DOC-EXAMPLE-BUCKET/test-files/}, set \code{OutputBucketName} to \code{DOC-EXAMPLE-BUCKET} and \code{OutputKey} to \verb{test-files/}.
 
-\item{OutputKey}{Use in combination with \code{OutputBucketName} to specify the output
-location of your transcript and, optionally, a unique name for your
-output file. The default name for your transcription output is the same
-as the name you specified for your medical transcription job
-(\code{MedicalTranscriptionJobName}).
+Note that Amazon Transcribe must have permission to use the specified location. You can change Amazon S3 permissions using the Amazon Web Services Management Console. See also \href{https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user}{Permissions Required for IAM User Roles}.}
+
+\item{OutputKey}{Use in combination with \code{OutputBucketName} to specify the output location of your transcript and, optionally, a unique name for your output file. The default name for your transcription output is the same as the name you specified for your medical transcription job (\code{MedicalTranscriptionJobName}).
 
 Here are some examples of how you can use \code{OutputKey}:
 \itemize{
-\item If you specify 'DOC-EXAMPLE-BUCKET' as the \code{OutputBucketName} and
-'my-transcript.json' as the \code{OutputKey}, your transcription output
-path is \verb{s3://DOC-EXAMPLE-BUCKET/my-transcript.json}.
-\item If you specify 'my-first-transcription' as the
-\code{MedicalTranscriptionJobName}, 'DOC-EXAMPLE-BUCKET' as the
-\code{OutputBucketName}, and 'my-transcript' as the \code{OutputKey}, your
-transcription output path is
-\verb{s3://DOC-EXAMPLE-BUCKET/my-transcript/my-first-transcription.json}.
-\item If you specify 'DOC-EXAMPLE-BUCKET' as the \code{OutputBucketName} and
-'test-files/my-transcript.json' as the \code{OutputKey}, your
-transcription output path is
-\verb{s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript.json}.
-\item If you specify 'my-first-transcription' as the
-\code{MedicalTranscriptionJobName}, 'DOC-EXAMPLE-BUCKET' as the
-\code{OutputBucketName}, and 'test-files/my-transcript' as the
-\code{OutputKey}, your transcription output path is
-\verb{s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript/my-first-transcription.json}.
+\item If you specify 'DOC-EXAMPLE-BUCKET' as the \code{OutputBucketName} and 'my-transcript.json' as the \code{OutputKey}, your transcription output path is \verb{s3://DOC-EXAMPLE-BUCKET/my-transcript.json}.
+\item If you specify 'my-first-transcription' as the \code{MedicalTranscriptionJobName}, 'DOC-EXAMPLE-BUCKET' as the \code{OutputBucketName}, and 'my-transcript' as the \code{OutputKey}, your transcription output path is \verb{s3://DOC-EXAMPLE-BUCKET/my-transcript/my-first-transcription.json}.
+\item If you specify 'DOC-EXAMPLE-BUCKET' as the \code{OutputBucketName} and 'test-files/my-transcript.json' as the \code{OutputKey}, your transcription output path is \verb{s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript.json}.
+\item If you specify 'my-first-transcription' as the \code{MedicalTranscriptionJobName}, 'DOC-EXAMPLE-BUCKET' as the \code{OutputBucketName}, and 'test-files/my-transcript' as the \code{OutputKey}, your transcription output path is \verb{s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript/my-first-transcription.json}.
 }
 
-If you specify the name of an Amazon S3 bucket sub-folder that doesn't
-exist, one is created for you.}
+If you specify the name of an Amazon S3 bucket sub-folder that doesn't exist, one is created for you.}
 
-\item{OutputEncryptionKMSKeyId}{The Amazon Resource Name (ARN) of a KMS key that you want to use to
-encrypt your medical transcription output.
+\item{OutputEncryptionKMSKeyId}{The Amazon Resource Name (ARN) of a KMS key that you want to use to encrypt your medical transcription output.
 
-KMS key ARNs have the format
-\code{arn:partition:kms:region:account:key/key-id}. For example:
-\verb{arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab}.
-For more information, see \href{https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN}{KMS key ARNs}.
+KMS key ARNs have the format \code{arn:partition:kms:region:account:key/key-id}. For example: \verb{arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab}. For more information, see \href{https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN}{KMS key ARNs}.
 
-If you do not specify an encryption key, your output is encrypted with
-the default Amazon S3 key (SSE-S3).
+If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
 
-Note that the role making the request and the role specified in the
-\code{DataAccessRoleArn} request parameter (if present) must have permission
-to use the specified KMS key.}
+Note that the role making the request and the role specified in the \code{DataAccessRoleArn} request parameter (if present) must have permission to use the specified KMS key.}
 
-\item{KMSEncryptionContext}{A map of plain text, non-secret key:value pairs, known as encryption
-context pairs, that provide an added layer of security for your data.
-For more information, see \href{https://docs.aws.amazon.com/transcribe/latest/dg/#kms-context}{KMS encryption context}
-and \href{https://docs.aws.amazon.com/transcribe/latest/dg/}{Asymmetric keys in KMS}.}
+\item{KMSEncryptionContext}{A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added layer of security for your data. For more information, see \href{https://docs.aws.amazon.com/transcribe/latest/dg/#kms-context}{KMS encryption context} and \href{https://docs.aws.amazon.com/transcribe/latest/dg/}{Asymmetric keys in KMS}.}
 
-\item{Settings}{Specify additional optional settings in your request, including channel
-identification, alternative transcriptions, and speaker partitioning.
-You can use that to apply custom vocabularies to your transcription job.}
+\item{Settings}{Specify additional optional settings in your request, including channel identification, alternative transcriptions, and speaker partitioning. You can use that to apply custom vocabularies to your transcription job.}
 
-\item{ContentIdentificationType}{Labels all personal health information (PHI) identified in your
-transcript. For more information, see \href{https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html}{Identifying personal health information (PHI) in a transcription}.}
+\item{ContentIdentificationType}{Labels all personal health information (PHI) identified in your transcript. For more information, see \href{https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html}{Identifying personal health information (PHI) in a transcription}.}
 
-\item{Specialty}{[required] Specify the predominant medical specialty represented in your media. For
-batch transcriptions, \code{PRIMARYCARE} is the only valid value. If you
-require additional specialties, refer to .}
+\item{Specialty}{[required] Specify the predominant medical specialty represented in your media. For batch transcriptions, \code{PRIMARYCARE} is the only valid value. If you require additional specialties, refer to .}
 
-\item{Type}{[required] Specify whether your input media contains only one person (\code{DICTATION})
-or contains a conversation between two people (\code{CONVERSATION}).
+\item{Type}{[required] Specify whether your input media contains only one person (\code{DICTATION}) or contains a conversation between two people (\code{CONVERSATION}).
 
-For example, \code{DICTATION} could be used for a medical professional
-wanting to transcribe voice memos; \code{CONVERSATION} could be used for
-transcribing the doctor-patient dialogue during the patient's office
-visit.}
+For example, \code{DICTATION} could be used for a medical professional wanting to transcribe voice memos; \code{CONVERSATION} could be used for transcribing the doctor-patient dialogue during the patient's office visit.}
 
-\item{Tags}{Adds one or more custom tags, each in the form of a key:value pair, to a
-new medical transcription job at the time you start this new job.
+\item{Tags}{Adds one or more custom tags, each in the form of a key:value pair, to a new medical transcription job at the time you start this new job.
 
 To learn more about using tags with Amazon Transcribe, refer to \href{https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html}{Tagging resources}.}
 }

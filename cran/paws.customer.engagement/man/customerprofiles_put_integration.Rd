@@ -24,28 +24,17 @@ customerprofiles_put_integration(
 
 \item{ObjectTypeName}{The name of the profile object type.}
 
-\item{ObjectTypeNames}{A map in which each key is an event type from an external application
-such as Segment or Shopify, and each value is an \code{ObjectTypeName}
-(template) used to ingest the event. It supports the following event
-types: \code{SegmentIdentify}, \code{ShopifyCreateCustomers},
-\code{ShopifyUpdateCustomers}, \code{ShopifyCreateDraftOrders},
-\code{ShopifyUpdateDraftOrders}, \code{ShopifyCreateOrders}, and
-\code{ShopifyUpdatedOrders}.}
+\item{ObjectTypeNames}{A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an \code{ObjectTypeName} (template) used to ingest the event. It supports the following event types: \code{SegmentIdentify}, \code{ShopifyCreateCustomers}, \code{ShopifyUpdateCustomers}, \code{ShopifyCreateDraftOrders}, \code{ShopifyUpdateDraftOrders}, \code{ShopifyCreateOrders}, and \code{ShopifyUpdatedOrders}.}
 
 \item{Tags}{The tags used to organize, track, or control access for this resource.}
 
-\item{FlowDefinition}{The configuration that controls how Customer Profiles retrieves data
-from the source.}
+\item{FlowDefinition}{The configuration that controls how Customer Profiles retrieves data from the source.}
 
-\item{RoleArn}{The Amazon Resource Name (ARN) of the IAM role. The Integration uses
-this role to make Customer Profiles requests on your behalf.}
+\item{RoleArn}{The Amazon Resource Name (ARN) of the IAM role. The Integration uses this role to make Customer Profiles requests on your behalf.}
 
-\item{EventTriggerNames}{A list of unique names for active event triggers associated with the
-integration.}
+\item{EventTriggerNames}{A list of unique names for active event triggers associated with the integration.}
 
-\item{Scope}{Specifies whether the integration applies to profile level data
-(associated with profiles) or domain level data (not associated with any
-specific profile). The default value is PROFILE.}
+\item{Scope}{Specifies whether the integration applies to profile level data (associated with profiles) or domain level data (not associated with any specific profile). The default value is PROFILE.}
 }
 \description{
 Adds an integration between the service and a third-party service, which includes Amazon AppFlow and Amazon Connect.

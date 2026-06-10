@@ -13,11 +13,9 @@ sagemaker_list_ultra_servers_by_reserved_capacity(
 \arguments{
 \item{ReservedCapacityArn}{[required] The ARN of the reserved capacity to list UltraServers for.}
 
-\item{MaxResults}{The maximum number of UltraServers to return in the response. The
-default value is 10.}
+\item{MaxResults}{The maximum number of UltraServers to return in the response. The default value is 10.}
 
-\item{NextToken}{If the previous response was truncated, you receive this token. Use it
-in your next request to receive the next set of results.}
+\item{NextToken}{If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.}
 }
 \description{
 Lists all UltraServers that are part of a specified reserved capacity.

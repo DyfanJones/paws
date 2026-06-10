@@ -9,9 +9,7 @@ quicksight_delete_user_by_principal_id(PrincipalId, AwsAccountId, Namespace)
 \arguments{
 \item{PrincipalId}{[required] The principal ID of the user.}
 
-\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that the user is in.
-Currently, you use the ID for the Amazon Web Services account that
-contains your Amazon Quick Sight account.}
+\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon Quick Sight account.}
 
 \item{Namespace}{[required] The namespace. Currently, you should set this to \code{default}.}
 }

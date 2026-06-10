@@ -17,8 +17,7 @@ costexplorer_list_savings_plans_purchase_recommendation_generation(
 
 \item{RecommendationIds}{The IDs for each specific recommendation.}
 
-\item{PageSize}{The number of recommendations that you want returned in a single
-response object.}
+\item{PageSize}{The number of recommendations that you want returned in a single response object.}
 
 \item{NextPageToken}{The token to retrieve the next set of results.}
 }

@@ -7,11 +7,9 @@
 kendraranking_untag_resource(ResourceARN, TagKeys)
 }
 \arguments{
-\item{ResourceARN}{[required] The Amazon Resource Name (ARN) of the rescore execution plan to remove
-the tag.}
+\item{ResourceARN}{[required] The Amazon Resource Name (ARN) of the rescore execution plan to remove the tag.}
 
-\item{TagKeys}{[required] A list of tag keys to remove from the rescore execution plan. If a tag
-key does not exist on the resource, it is ignored.}
+\item{TagKeys}{[required] A list of tag keys to remove from the rescore execution plan. If a tag key does not exist on the resource, it is ignored.}
 }
 \description{
 Removes a tag from a rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the \code{\link[=kendraranking_rescore]{rescore}} operation.

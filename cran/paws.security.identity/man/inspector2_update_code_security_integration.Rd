@@ -7,11 +7,9 @@
 inspector2_update_code_security_integration(integrationArn, details)
 }
 \arguments{
-\item{integrationArn}{[required] The Amazon Resource Name (ARN) of the code security integration to
-update.}
+\item{integrationArn}{[required] The Amazon Resource Name (ARN) of the code security integration to update.}
 
-\item{details}{[required] The updated integration details specific to the repository provider
-type.}
+\item{details}{[required] The updated integration details specific to the repository provider type.}
 }
 \description{
 Updates an existing code security integration.

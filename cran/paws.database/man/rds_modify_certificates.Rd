@@ -14,12 +14,9 @@ rds_modify_certificates(
 \arguments{
 \item{CertificateIdentifier}{The new default certificate identifier to override the current one with.
 
-To determine the valid values, use the \code{describe-certificates} CLI
-command or the \code{\link[=rds_describe_certificates]{describe_certificates}} API
-operation.}
+To determine the valid values, use the \code{describe-certificates} CLI command or the \code{\link[=rds_describe_certificates]{describe_certificates}} API operation.}
 
-\item{RemoveCustomerOverride}{Specifies whether to remove the override for the default certificate. If
-the override is removed, the default certificate is the system default.}
+\item{RemoveCustomerOverride}{Specifies whether to remove the override for the default certificate. If the override is removed, the default certificate is the system default.}
 }
 \description{
 Override the system-default Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificate for Amazon RDS for new DB instances, or remove the override.

@@ -13,8 +13,7 @@ kinesisanalyticsv2_describe_application(
 \arguments{
 \item{ApplicationName}{[required] The name of the application.}
 
-\item{IncludeAdditionalDetails}{Displays verbose information about a Managed Service for Apache Flink
-application, including the application's job plan.}
+\item{IncludeAdditionalDetails}{Displays verbose information about a Managed Service for Apache Flink application, including the application's job plan.}
 }
 \description{
 Returns information about a specific Managed Service for Apache Flink application.

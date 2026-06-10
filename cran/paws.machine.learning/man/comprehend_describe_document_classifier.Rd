@@ -7,10 +7,7 @@
 comprehend_describe_document_classifier(DocumentClassifierArn)
 }
 \arguments{
-\item{DocumentClassifierArn}{[required] The Amazon Resource Name (ARN) that identifies the document classifier.
-The
-\code{\link[=comprehend_create_document_classifier]{create_document_classifier}}
-operation returns this identifier in its response.}
+\item{DocumentClassifierArn}{[required] The Amazon Resource Name (ARN) that identifies the document classifier. The \code{\link[=comprehend_create_document_classifier]{create_document_classifier}} operation returns this identifier in its response.}
 }
 \description{
 Gets the properties associated with a document classifier.

@@ -19,141 +19,68 @@ cognitoidentityprovider_admin_create_user(
 \arguments{
 \item{UserPoolId}{[required] The ID of the user pool where you want to create a user.}
 
-\item{Username}{[required] The value that you want to set as the username sign-in attribute. The
-following conditions apply to the username parameter.
+\item{Username}{[required] The value that you want to set as the username sign-in attribute. The following conditions apply to the username parameter.
 \itemize{
-\item The username can't be a duplicate of another username in the same
-user pool.
+\item The username can't be a duplicate of another username in the same user pool.
 \item You can't change the value of a username after you create it.
-\item You can only provide a value if usernames are a valid sign-in
-attribute for your user pool. If your user pool only supports phone
-numbers or email addresses as sign-in attributes, Amazon Cognito
-automatically generates a username value. For more information, see
-\href{https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases}{Customizing sign-in attributes}.
+\item You can only provide a value if usernames are a valid sign-in attribute for your user pool. If your user pool only supports phone numbers or email addresses as sign-in attributes, Amazon Cognito automatically generates a username value. For more information, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases}{Customizing sign-in attributes}.
 }}
 
-\item{UserAttributes}{An array of name-value pairs that contain user attributes and attribute
-values to be set for the user to be created. You can create a user
-without specifying any attributes other than \code{Username}. However, any
-attributes that you specify as required (when creating a user pool or in
-the \strong{Attributes} tab of the console) either you should supply (in your
-call to
-\code{\link[=cognitoidentityprovider_admin_create_user]{admin_create_user}}) or the
-user should supply (when they sign up in response to your welcome
-message).
+\item{UserAttributes}{An array of name-value pairs that contain user attributes and attribute values to be set for the user to be created. You can create a user without specifying any attributes other than \code{Username}. However, any attributes that you specify as required (when creating a user pool or in the \strong{Attributes} tab of the console) either you should supply (in your call to \code{\link[=cognitoidentityprovider_admin_create_user]{admin_create_user}}) or the user should supply (when they sign up in response to your welcome message).
 
-For custom attributes, you must prepend the \verb{custom:} prefix to the
-attribute name.
+For custom attributes, you must prepend the \verb{custom:} prefix to the attribute name.
 
-To send a message inviting the user to sign up, you must specify the
-user's email address or phone number. You can do this in your call to
-AdminCreateUser or in the \strong{Users} tab of the Amazon Cognito console
-for managing your user pools.
+To send a message inviting the user to sign up, you must specify the user's email address or phone number. You can do this in your call to AdminCreateUser or in the \strong{Users} tab of the Amazon Cognito console for managing your user pools.
 
-You must also provide an email address or phone number when you expect
-the user to do passwordless sign-in with an email or SMS OTP. These
-attributes must be provided when passwordless options are the only
-available, or when you don't submit a \code{TemporaryPassword}.
+You must also provide an email address or phone number when you expect the user to do passwordless sign-in with an email or SMS OTP. These attributes must be provided when passwordless options are the only available, or when you don't submit a \code{TemporaryPassword}.
 
-In your \code{\link[=cognitoidentityprovider_admin_create_user]{admin_create_user}}
-request, you can set the \code{email_verified} and \code{phone_number_verified}
-attributes to \code{true}. The following conditions apply:
+In your \code{\link[=cognitoidentityprovider_admin_create_user]{admin_create_user}} request, you can set the \code{email_verified} and \code{phone_number_verified} attributes to \code{true}. The following conditions apply:
 
 \strong{email}
 
-The email address where you want the user to receive their confirmation
-code and username. You must provide a value for \code{email} when you want to
-set \code{email_verified} to \code{true}, or if you set \code{EMAIL} in the
-\code{DesiredDeliveryMediums} parameter.
+The email address where you want the user to receive their confirmation code and username. You must provide a value for \code{email} when you want to set \code{email_verified} to \code{true}, or if you set \code{EMAIL} in the \code{DesiredDeliveryMediums} parameter.
 
 \strong{phone_number}
 
-The phone number where you want the user to receive their confirmation
-code and username. You must provide a value for \code{phone_number} when you
-want to set \code{phone_number_verified} to \code{true}, or if you set \code{SMS} in
-the \code{DesiredDeliveryMediums} parameter.}
+The phone number where you want the user to receive their confirmation code and username. You must provide a value for \code{phone_number} when you want to set \code{phone_number_verified} to \code{true}, or if you set \code{SMS} in the \code{DesiredDeliveryMediums} parameter.}
 
-\item{ValidationData}{Temporary user attributes that contribute to the outcomes of your pre
-sign-up Lambda trigger. This set of key-value pairs are for custom
-validation of information that you collect from your users but don't
-need to retain.
+\item{ValidationData}{Temporary user attributes that contribute to the outcomes of your pre sign-up Lambda trigger. This set of key-value pairs are for custom validation of information that you collect from your users but don't need to retain.
 
-Your Lambda function can analyze this additional data and act on it.
-Your function can automatically confirm and verify select users or
-perform external API operations like logging user attributes and
-validation data to Amazon CloudWatch Logs.
+Your Lambda function can analyze this additional data and act on it. Your function can automatically confirm and verify select users or perform external API operations like logging user attributes and validation data to Amazon CloudWatch Logs.
 
 For more information about the pre sign-up Lambda trigger, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html}{Pre sign-up Lambda trigger}.}
 
-\item{TemporaryPassword}{The user's temporary password. This password must conform to the
-password policy that you specified when you created the user pool.
+\item{TemporaryPassword}{The user's temporary password. This password must conform to the password policy that you specified when you created the user pool.
 
-The exception to the requirement for a password is when your user pool
-supports passwordless sign-in with email or SMS OTPs. To create a user
-with no password, omit this parameter or submit a blank value. You can
-only create a passwordless user when passwordless sign-in is available.
+The exception to the requirement for a password is when your user pool supports passwordless sign-in with email or SMS OTPs. To create a user with no password, omit this parameter or submit a blank value. You can only create a passwordless user when passwordless sign-in is available.
 
-The temporary password is valid only once. To complete the Admin Create
-User flow, the user must enter the temporary password in the sign-in
-page, along with a new password to be used in all future sign-ins.
+The temporary password is valid only once. To complete the Admin Create User flow, the user must enter the temporary password in the sign-in page, along with a new password to be used in all future sign-ins.
 
-If you don't specify a value, Amazon Cognito generates one for you
-unless you have passwordless options active for your user pool.
+If you don't specify a value, Amazon Cognito generates one for you unless you have passwordless options active for your user pool.
 
-The temporary password can only be used until the user account
-expiration limit that you set for your user pool. To reset the account
-after that time limit, you must call
-\code{\link[=cognitoidentityprovider_admin_create_user]{admin_create_user}} again
-and specify \code{RESEND} for the \code{MessageAction} parameter.}
+The temporary password can only be used until the user account expiration limit that you set for your user pool. To reset the account after that time limit, you must call \code{\link[=cognitoidentityprovider_admin_create_user]{admin_create_user}} again and specify \code{RESEND} for the \code{MessageAction} parameter.}
 
-\item{ForceAliasCreation}{This parameter is used only if the \code{phone_number_verified} or
-\code{email_verified} attribute is set to \code{True}. Otherwise, it is ignored.
+\item{ForceAliasCreation}{This parameter is used only if the \code{phone_number_verified} or \code{email_verified} attribute is set to \code{True}. Otherwise, it is ignored.
 
-If this parameter is set to \code{True} and the phone number or email address
-specified in the \code{UserAttributes} parameter already exists as an alias
-with a different user, this request migrates the alias from the previous
-user to the newly-created user. The previous user will no longer be able
-to log in using that alias.
+If this parameter is set to \code{True} and the phone number or email address specified in the \code{UserAttributes} parameter already exists as an alias with a different user, this request migrates the alias from the previous user to the newly-created user. The previous user will no longer be able to log in using that alias.
 
-If this parameter is set to \code{False}, the API throws an
-\code{AliasExistsException} error if the alias already exists. The default
-value is \code{False}.}
+If this parameter is set to \code{False}, the API throws an \code{AliasExistsException} error if the alias already exists. The default value is \code{False}.}
 
-\item{MessageAction}{Set to \code{RESEND} to resend the invitation message to a user that already
-exists, and to reset the temporary-password duration with a new
-temporary password. Set to \code{SUPPRESS} to suppress sending the message.
-You can specify only one value.}
+\item{MessageAction}{Set to \code{RESEND} to resend the invitation message to a user that already exists, and to reset the temporary-password duration with a new temporary password. Set to \code{SUPPRESS} to suppress sending the message. You can specify only one value.}
 
-\item{DesiredDeliveryMediums}{Specify \code{EMAIL} if email will be used to send the welcome message.
-Specify \code{SMS} if the phone number will be used. The default value is
-\code{SMS}. You can specify more than one value.}
+\item{DesiredDeliveryMediums}{Specify \code{EMAIL} if email will be used to send the welcome message. Specify \code{SMS} if the phone number will be used. The default value is \code{SMS}. You can specify more than one value.}
 
-\item{ClientMetadata}{A map of custom key-value pairs that you can provide as input for any
-custom workflows that this action triggers.
+\item{ClientMetadata}{A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. You create custom workflows by assigning Lambda functions to user pool triggers.
 
-You create custom workflows by assigning Lambda functions to user pool
-triggers. When you use the AdminCreateUser API action, Amazon Cognito
-invokes the function that is assigned to the \emph{pre sign-up} trigger. When
-Amazon Cognito invokes this function, it passes a JSON payload, which
-the function receives as input. This payload contains a \code{ClientMetadata}
-attribute, which provides the data that you assigned to the
-ClientMetadata parameter in your AdminCreateUser request. In your
-function code in Lambda, you can process the \code{clientMetadata} value to
-enhance your workflow for your specific needs.
+When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a \code{clientMetadata} attribute that provides the data that you assigned to the ClientMetadata parameter in your request. In your function code, you can process the \code{clientMetadata} value to enhance your workflow for your specific needs.
 
-For more information, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html}{Using Lambda triggers}
-in the \emph{Amazon Cognito Developer Guide}.
+To review the Lambda trigger types that Amazon Cognito invokes at runtime with API requests, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event}{Connecting API actions to Lambda triggers} in the \emph{Amazon Cognito Developer Guide}.
 
-When you use the \code{ClientMetadata} parameter, note that Amazon Cognito
-won't do the following:
+When you use the \code{ClientMetadata} parameter, note that Amazon Cognito won't do the following:
 \itemize{
-\item Store the \code{ClientMetadata} value. This data is available only to
-Lambda triggers that are assigned to a user pool to support custom
-workflows. If your user pool configuration doesn't include triggers,
-the \code{ClientMetadata} parameter serves no purpose.
+\item Store the \code{ClientMetadata} value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the \code{ClientMetadata} parameter serves no purpose.
 \item Validate the \code{ClientMetadata} value.
-\item Encrypt the \code{ClientMetadata} value. Don't send sensitive information
-in this parameter.
+\item Encrypt the \code{ClientMetadata} value. Don't send sensitive information in this parameter.
 }}
 }
 \description{

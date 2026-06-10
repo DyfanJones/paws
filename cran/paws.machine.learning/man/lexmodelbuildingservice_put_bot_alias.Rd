@@ -26,22 +26,13 @@ lexmodelbuildingservice_put_bot_alias(
 
 \item{checksum}{Identifies a specific revision of the \verb{$LATEST} version.
 
-When you create a new bot alias, leave the \code{checksum} field blank. If
-you specify a checksum you get a \code{BadRequestException} exception.
+When you create a new bot alias, leave the \code{checksum} field blank. If you specify a checksum you get a \code{BadRequestException} exception.
 
-When you want to update a bot alias, set the \code{checksum} field to the
-checksum of the most recent revision of the \verb{$LATEST} version. If you
-don't specify the \code{ checksum} field, or if the checksum does not match
-the \verb{$LATEST} version, you get a \code{PreconditionFailedException}
-exception.}
+When you want to update a bot alias, set the \code{checksum} field to the checksum of the most recent revision of the \verb{$LATEST} version. If you don't specify the \code{ checksum} field, or if the checksum does not match the \verb{$LATEST} version, you get a \code{PreconditionFailedException} exception.}
 
 \item{conversationLogs}{Settings for conversation logs for the alias.}
 
-\item{tags}{A list of tags to add to the bot alias. You can only add tags when you
-create an alias, you can't use the
-\code{\link[=lexmodelbuildingservice_put_bot_alias]{put_bot_alias}} operation to
-update the tags on a bot alias. To update tags, use the
-\code{\link[=lexmodelbuildingservice_tag_resource]{tag_resource}} operation.}
+\item{tags}{A list of tags to add to the bot alias. You can only add tags when you create an alias, you can't use the \code{\link[=lexmodelbuildingservice_put_bot_alias]{put_bot_alias}} operation to update the tags on a bot alias. To update tags, use the \code{\link[=lexmodelbuildingservice_tag_resource]{tag_resource}} operation.}
 }
 \description{
 Creates an alias for the specified version of the bot or replaces an alias for the specified bot. To change the version of the bot that the alias points to, replace the alias. For more information about aliases, see versioning-aliases.

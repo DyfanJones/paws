@@ -14,8 +14,7 @@ licensemanager_list_assets_for_license_asset_group(
 \arguments{
 \item{LicenseAssetGroupArn}{[required] Amazon Resource Name (ARN) of the license asset group.}
 
-\item{AssetType}{[required] Asset type. The possible values are \code{Instance} | \code{License} |
-\code{LicenseConfiguration}.}
+\item{AssetType}{[required] Asset type. The possible values are \code{Instance} | \code{License} | \code{LicenseConfiguration}.}
 
 \item{MaxResults}{Maximum number of results to return in a single call.}
 

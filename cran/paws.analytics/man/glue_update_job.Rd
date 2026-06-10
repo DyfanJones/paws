@@ -9,8 +9,7 @@ glue_update_job(JobName, JobUpdate)
 \arguments{
 \item{JobName}{[required] The name of the job definition to update.}
 
-\item{JobUpdate}{[required] Specifies the values with which to update the job definition.
-Unspecified configuration is removed or reset to default values.}
+\item{JobUpdate}{[required] Specifies the values with which to update the job definition. Unspecified configuration is removed or reset to default values.}
 }
 \description{
 Updates an existing job definition. The previous job definition is completely overwritten by this information.

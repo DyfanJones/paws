@@ -18,8 +18,7 @@ sagemaker_list_workforces(
 
 \item{SortOrder}{Sort workforces in ascending or descending order.}
 
-\item{NameContains}{A filter you can use to search for workforces using part of the
-workforce name.}
+\item{NameContains}{A filter you can use to search for workforces using part of the workforce name.}
 
 \item{NextToken}{A token to resume pagination.}
 

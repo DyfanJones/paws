@@ -14,14 +14,9 @@ ssoadmin_update_instance(
 \arguments{
 \item{Name}{Updates the instance name.}
 
-\item{InstanceArn}{[required] The ARN of the instance of IAM Identity Center under which the operation
-will run. For more information about ARNs, see Amazon Resource Names
-(ARNs) and Amazon Web Services Service Namespaces in the \emph{Amazon Web
-Services General Reference}.}
+\item{InstanceArn}{[required] The ARN of the instance of IAM Identity Center under which the operation will run. For more information about ARNs, see Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces in the \emph{Amazon Web Services General Reference}.}
 
-\item{EncryptionConfiguration}{Specifies the encryption configuration for your IAM Identity Center
-instance. You can use this to configure customer managed KMS keys (CMK)
-or Amazon Web Services owned KMS keys for encrypting your instance data.}
+\item{EncryptionConfiguration}{Specifies the encryption configuration for your IAM Identity Center instance. You can use this to configure customer managed KMS keys or Amazon Web Services owned KMS keys for encrypting your instance data.}
 }
 \description{
 Update the details for the instance of IAM Identity Center that is owned by the Amazon Web Services account.

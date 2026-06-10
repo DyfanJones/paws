@@ -75,17 +75,12 @@ kafka_batch_associate_scram_secret <- function(ClusterArn, SecretArnList) {
 #'   NumberOfBrokerNodes, Tags, StorageMode)
 #'
 #' @param BrokerNodeGroupInfo &#91;required&#93; Information about the broker nodes in the cluster.
-#' @param Rebalancing Specifies if intelligent rebalancing should be turned on for the new MSK
-#' Provisioned cluster with Express brokers. By default, intelligent
-#' rebalancing status is ACTIVE for all new clusters.
+#' @param Rebalancing Specifies if intelligent rebalancing should be turned on for the new MSK Provisioned cluster with Express brokers. By default, intelligent rebalancing status is ACTIVE for all new clusters.
 #' @param ClientAuthentication Includes all client authentication related information.
 #' @param ClusterName &#91;required&#93; The name of the cluster.
-#' @param ConfigurationInfo Represents the configuration that you want MSK to use for the brokers in
-#' a cluster.
+#' @param ConfigurationInfo Represents the configuration that you want MSK to use for the brokers in a cluster.
 #' @param EncryptionInfo Includes all encryption-related information.
-#' @param EnhancedMonitoring Specifies the level of monitoring for the MSK cluster. The possible
-#' values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and
-#' PER_TOPIC_PER_PARTITION.
+#' @param EnhancedMonitoring Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.
 #' @param OpenMonitoring The settings for open monitoring.
 #' @param KafkaVersion &#91;required&#93; The version of Apache Kafka.
 #' @param LoggingInfo 
@@ -142,7 +137,8 @@ kafka_batch_associate_scram_secret <- function(ClusterArn, SecretArnList) {
 #'             Enabled = TRUE|FALSE
 #'           )
 #'         )
-#'       )
+#'       ),
+#'       NetworkType = "IPV4"|"DUAL"
 #'     ),
 #'     ZoneIds = list(
 #'       "string"
@@ -313,7 +309,8 @@ kafka_create_cluster <- function(BrokerNodeGroupInfo, Rebalancing = NULL, Client
 #'               Enabled = TRUE|FALSE
 #'             )
 #'           )
-#'         )
+#'         ),
+#'         NetworkType = "IPV4"|"DUAL"
 #'       ),
 #'       ZoneIds = list(
 #'         "string"
@@ -442,13 +439,10 @@ kafka_create_cluster_v2 <- function(ClusterName, Tags = NULL, Provisioned = NULL
 #'   ServerProperties)
 #'
 #' @param Description The description of the configuration.
-#' @param KafkaVersions The versions of Apache Kafka with which you can use this MSK
-#' configuration.
+#' @param KafkaVersions The versions of Apache Kafka with which you can use this MSK configuration.
 #' @param Name &#91;required&#93; The name of the configuration.
-#' @param ServerProperties &#91;required&#93; Contents of the server.properties file. When using the API, you must
-#' ensure that the contents of the file are base64 encoded. When using the
-#' AWS Management Console, the SDK, or the AWS CLI, the contents of
-#' server.properties can be in plaintext.
+#' @param ServerProperties &#91;required&#93; Contents of the server.properties file. When using the API, you must ensure that the contents of the file are base64 encoded.
+#' When using the AWS Management Console, the SDK, or the AWS CLI, the contents of server.properties can be in plaintext.
 #'
 #' @return
 #' A list with the following syntax:
@@ -513,17 +507,15 @@ kafka_create_configuration <- function(Description = NULL, KafkaVersions = NULL,
 #'
 #' @usage
 #' kafka_create_replicator(Description, KafkaClusters, ReplicationInfoList,
-#'   ReplicatorName, ServiceExecutionRoleArn, Tags)
+#'   ReplicatorName, ServiceExecutionRoleArn, Tags, LogDelivery)
 #'
 #' @param Description A summary description of the replicator.
 #' @param KafkaClusters &#91;required&#93; Kafka Clusters to use in setting up sources / targets for replication.
-#' @param ReplicationInfoList &#91;required&#93; A list of replication configurations, where each configuration targets a
-#' given source cluster to target cluster replication flow.
-#' @param ReplicatorName &#91;required&#93; The name of the replicator. Alpha-numeric characters with '-' are
-#' allowed.
-#' @param ServiceExecutionRoleArn &#91;required&#93; The ARN of the IAM role used by the replicator to access resources in
-#' the customer's account (e.g source and target clusters)
+#' @param ReplicationInfoList &#91;required&#93; A list of replication configurations, where each configuration targets a given source cluster to target cluster replication flow.
+#' @param ReplicatorName &#91;required&#93; The name of the replicator. Alpha-numeric characters with '-' are allowed.
+#' @param ServiceExecutionRoleArn &#91;required&#93; The ARN of the IAM role used by the replicator to access resources in the customer's account (e.g source and target clusters)
 #' @param Tags List of tags to attach to created Replicator.
+#' @param LogDelivery Configuration for delivering replicator logs to customer destinations.
 #'
 #' @return
 #' A list with the following syntax:
@@ -544,6 +536,10 @@ kafka_create_configuration <- function(Description = NULL, KafkaVersions = NULL,
 #'       AmazonMskCluster = list(
 #'         MskClusterArn = "string"
 #'       ),
+#'       ApacheKafkaCluster = list(
+#'         ApacheKafkaClusterId = "string",
+#'         BootstrapBrokerString = "string"
+#'       ),
 #'       VpcConfig = list(
 #'         SecurityGroupIds = list(
 #'           "string"
@@ -551,6 +547,16 @@ kafka_create_configuration <- function(Description = NULL, KafkaVersions = NULL,
 #'         SubnetIds = list(
 #'           "string"
 #'         )
+#'       ),
+#'       ClientAuthentication = list(
+#'         SaslScram = list(
+#'           Mechanism = "SHA256"|"SHA512",
+#'           SecretArn = "string"
+#'         )
+#'       ),
+#'       EncryptionInTransit = list(
+#'         EncryptionType = "TLS",
+#'         RootCaCertificate = "string"
 #'       )
 #'     )
 #'   ),
@@ -564,11 +570,14 @@ kafka_create_configuration <- function(Description = NULL, KafkaVersions = NULL,
 #'           "string"
 #'         ),
 #'         DetectAndCopyNewConsumerGroups = TRUE|FALSE,
-#'         SynchroniseConsumerGroupOffsets = TRUE|FALSE
+#'         SynchroniseConsumerGroupOffsets = TRUE|FALSE,
+#'         ConsumerGroupOffsetSyncMode = "LEGACY"|"ENHANCED"
 #'       ),
 #'       SourceKafkaClusterArn = "string",
+#'       SourceKafkaClusterId = "string",
 #'       TargetCompressionType = "NONE"|"GZIP"|"SNAPPY"|"LZ4"|"ZSTD",
 #'       TargetKafkaClusterArn = "string",
+#'       TargetKafkaClusterId = "string",
 #'       TopicReplication = list(
 #'         CopyAccessControlListsForTopics = TRUE|FALSE,
 #'         CopyTopicConfigurations = TRUE|FALSE,
@@ -592,6 +601,23 @@ kafka_create_configuration <- function(Description = NULL, KafkaVersions = NULL,
 #'   ServiceExecutionRoleArn = "string",
 #'   Tags = list(
 #'     "string"
+#'   ),
+#'   LogDelivery = list(
+#'     ReplicatorLogDelivery = list(
+#'       CloudWatchLogs = list(
+#'         Enabled = TRUE|FALSE,
+#'         LogGroup = "string"
+#'       ),
+#'       Firehose = list(
+#'         Enabled = TRUE|FALSE,
+#'         DeliveryStream = "string"
+#'       ),
+#'       S3 = list(
+#'         Enabled = TRUE|FALSE,
+#'         Bucket = "string",
+#'         Prefix = "string"
+#'       )
+#'     )
 #'   )
 #' )
 #' ```
@@ -601,7 +627,7 @@ kafka_create_configuration <- function(Description = NULL, KafkaVersions = NULL,
 #' @rdname kafka_create_replicator
 #'
 #' @aliases kafka_create_replicator
-kafka_create_replicator <- function(Description = NULL, KafkaClusters, ReplicationInfoList, ReplicatorName, ServiceExecutionRoleArn, Tags = NULL) {
+kafka_create_replicator <- function(Description = NULL, KafkaClusters, ReplicationInfoList, ReplicatorName, ServiceExecutionRoleArn, Tags = NULL, LogDelivery = NULL) {
   op <- new_operation(
     name = "CreateReplicator",
     http_method = "POST",
@@ -610,7 +636,7 @@ kafka_create_replicator <- function(Description = NULL, KafkaClusters, Replicati
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .kafka$create_replicator_input(Description = Description, KafkaClusters = KafkaClusters, ReplicationInfoList = ReplicationInfoList, ReplicatorName = ReplicatorName, ServiceExecutionRoleArn = ServiceExecutionRoleArn, Tags = Tags)
+  input <- .kafka$create_replicator_input(Description = Description, KafkaClusters = KafkaClusters, ReplicationInfoList = ReplicationInfoList, ReplicatorName = ReplicatorName, ServiceExecutionRoleArn = ServiceExecutionRoleArn, Tags = Tags, LogDelivery = LogDelivery)
   output <- .kafka$create_replicator_output()
   config <- get_config()
   svc <- .kafka$service(config, op)
@@ -619,6 +645,66 @@ kafka_create_replicator <- function(Description = NULL, KafkaClusters, Replicati
   return(response)
 }
 .kafka$operations$create_replicator <- kafka_create_replicator
+
+#' Creates a topic in the specified MSK cluster
+#'
+#' @description
+#' Creates a topic in the specified MSK cluster.
+#'
+#' @usage
+#' kafka_create_topic(ClusterArn, TopicName, PartitionCount,
+#'   ReplicationFactor, Configs)
+#'
+#' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the cluster.
+#' @param TopicName &#91;required&#93; The name of the topic to create.
+#' @param PartitionCount &#91;required&#93; The number of partitions for the topic.
+#' @param ReplicationFactor &#91;required&#93; The replication factor for the topic.
+#' @param Configs Topic configurations encoded as a Base64 string.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   TopicArn = "string",
+#'   TopicName = "string",
+#'   Status = "CREATING"|"UPDATING"|"DELETING"|"ACTIVE"
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$create_topic(
+#'   ClusterArn = "string",
+#'   TopicName = "string",
+#'   PartitionCount = 123,
+#'   ReplicationFactor = 123,
+#'   Configs = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname kafka_create_topic
+#'
+#' @aliases kafka_create_topic
+kafka_create_topic <- function(ClusterArn, TopicName, PartitionCount, ReplicationFactor, Configs = NULL) {
+  op <- new_operation(
+    name = "CreateTopic",
+    http_method = "POST",
+    http_path = "/v1/clusters/{clusterArn}/topics",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .kafka$create_topic_input(ClusterArn = ClusterArn, TopicName = TopicName, PartitionCount = PartitionCount, ReplicationFactor = ReplicationFactor, Configs = Configs)
+  output <- .kafka$create_topic_output()
+  config <- get_config()
+  svc <- .kafka$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.kafka$operations$create_topic <- kafka_create_topic
 
 #' Creates a new MSK VPC connection
 #'
@@ -705,8 +791,7 @@ kafka_create_vpc_connection <- function(TargetClusterArn, Authentication, VpcId,
 #' the request
 #'
 #' @description
-#' Deletes the MSK cluster specified by the Amazon Resource Name (ARN) in
-#' the request.
+#' Deletes the MSK cluster specified by the Amazon Resource Name (ARN) in the request.
 #'
 #' @usage
 #' kafka_delete_cluster(ClusterArn, CurrentVersion)
@@ -759,8 +844,7 @@ kafka_delete_cluster <- function(ClusterArn, CurrentVersion = NULL) {
 #' (ARN) in the request
 #'
 #' @description
-#' Deletes the MSK cluster policy specified by the Amazon Resource Name
-#' (ARN) in the request.
+#' Deletes the MSK cluster policy specified by the Amazon Resource Name (ARN) in the request.
 #'
 #' @usage
 #' kafka_delete_cluster_policy(ClusterArn)
@@ -809,8 +893,7 @@ kafka_delete_cluster_policy <- function(ClusterArn) {
 #' @usage
 #' kafka_delete_configuration(Arn)
 #'
-#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies an MSK
-#' configuration.
+#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.
 #'
 #' @return
 #' A list with the following syntax:
@@ -904,6 +987,59 @@ kafka_delete_replicator <- function(CurrentVersion = NULL, ReplicatorArn) {
 }
 .kafka$operations$delete_replicator <- kafka_delete_replicator
 
+#' Deletes a topic in the specified MSK cluster
+#'
+#' @description
+#' Deletes a topic in the specified MSK cluster.
+#'
+#' @usage
+#' kafka_delete_topic(ClusterArn, TopicName)
+#'
+#' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the cluster.
+#' @param TopicName &#91;required&#93; The name of the topic to delete.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   TopicArn = "string",
+#'   TopicName = "string",
+#'   Status = "CREATING"|"UPDATING"|"DELETING"|"ACTIVE"
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$delete_topic(
+#'   ClusterArn = "string",
+#'   TopicName = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname kafka_delete_topic
+#'
+#' @aliases kafka_delete_topic
+kafka_delete_topic <- function(ClusterArn, TopicName) {
+  op <- new_operation(
+    name = "DeleteTopic",
+    http_method = "DELETE",
+    http_path = "/v1/clusters/{clusterArn}/topics/{topicName}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .kafka$delete_topic_input(ClusterArn = ClusterArn, TopicName = TopicName)
+  output <- .kafka$delete_topic_output()
+  config <- get_config()
+  svc <- .kafka$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.kafka$operations$delete_topic <- kafka_delete_topic
+
 #' Deletes a MSK VPC connection
 #'
 #' @description
@@ -912,8 +1048,7 @@ kafka_delete_replicator <- function(CurrentVersion = NULL, ReplicatorArn) {
 #' @usage
 #' kafka_delete_vpc_connection(Arn)
 #'
-#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies an MSK VPC
-#' connection.
+#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies an MSK VPC connection.
 #'
 #' @return
 #' A list with the following syntax:
@@ -959,8 +1094,7 @@ kafka_delete_vpc_connection <- function(Arn) {
 #' (ARN) is specified in the request
 #'
 #' @description
-#' Returns a description of the MSK cluster whose Amazon Resource Name
-#' (ARN) is specified in the request.
+#' Returns a description of the MSK cluster whose Amazon Resource Name (ARN) is specified in the request.
 #'
 #' @usage
 #' kafka_describe_cluster(ClusterArn)
@@ -1009,7 +1143,8 @@ kafka_delete_vpc_connection <- function(Arn) {
 #'               Enabled = TRUE|FALSE
 #'             )
 #'           )
-#'         )
+#'         ),
+#'         NetworkType = "IPV4"|"DUAL"
 #'       ),
 #'       ZoneIds = list(
 #'         "string"
@@ -1137,8 +1272,7 @@ kafka_describe_cluster <- function(ClusterArn) {
 #' (ARN) is specified in the request
 #'
 #' @description
-#' Returns a description of the MSK cluster whose Amazon Resource Name
-#' (ARN) is specified in the request.
+#' Returns a description of the MSK cluster whose Amazon Resource Name (ARN) is specified in the request.
 #'
 #' @usage
 #' kafka_describe_cluster_v2(ClusterArn)
@@ -1203,7 +1337,8 @@ kafka_describe_cluster <- function(ClusterArn) {
 #'                 Enabled = TRUE|FALSE
 #'               )
 #'             )
-#'           )
+#'           ),
+#'           NetworkType = "IPV4"|"DUAL"
 #'         ),
 #'         ZoneIds = list(
 #'           "string"
@@ -1296,6 +1431,9 @@ kafka_describe_cluster <- function(ClusterArn) {
 #'             Enabled = TRUE|FALSE
 #'           )
 #'         )
+#'       ),
+#'       ConnectivityInfo = list(
+#'         NetworkType = "IPV4"|"DUAL"
 #'       )
 #'     )
 #'   )
@@ -1341,8 +1479,7 @@ kafka_describe_cluster_v2 <- function(ClusterArn) {
 #' @usage
 #' kafka_describe_cluster_operation(ClusterOperationArn)
 #'
-#' @param ClusterOperationArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster
-#' operation.
+#' @param ClusterOperationArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1399,6 +1536,9 @@ kafka_describe_cluster_v2 <- function(ClusterArn) {
 #'           )
 #'         )
 #'       ),
+#'       ZookeeperAccess = list(
+#'         Enabled = TRUE|FALSE
+#'       ),
 #'       KafkaVersion = "string",
 #'       LoggingInfo = list(
 #'         BrokerLogs = list(
@@ -1464,7 +1604,8 @@ kafka_describe_cluster_v2 <- function(ClusterArn) {
 #'               Enabled = TRUE|FALSE
 #'             )
 #'           )
-#'         )
+#'         ),
+#'         NetworkType = "IPV4"|"DUAL"
 #'       ),
 #'       StorageMode = "LOCAL"|"TIERED",
 #'       BrokerCountUpdateInfo = list(
@@ -1506,6 +1647,9 @@ kafka_describe_cluster_v2 <- function(ClusterArn) {
 #'           )
 #'         )
 #'       ),
+#'       ZookeeperAccess = list(
+#'         Enabled = TRUE|FALSE
+#'       ),
 #'       KafkaVersion = "string",
 #'       LoggingInfo = list(
 #'         BrokerLogs = list(
@@ -1571,7 +1715,8 @@ kafka_describe_cluster_v2 <- function(ClusterArn) {
 #'               Enabled = TRUE|FALSE
 #'             )
 #'           )
-#'         )
+#'         ),
+#'         NetworkType = "IPV4"|"DUAL"
 #'       ),
 #'       StorageMode = "LOCAL"|"TIERED",
 #'       BrokerCountUpdateInfo = list(
@@ -1698,6 +1843,9 @@ kafka_describe_cluster_operation <- function(ClusterOperationArn) {
 #'             )
 #'           )
 #'         ),
+#'         ZookeeperAccess = list(
+#'           Enabled = TRUE|FALSE
+#'         ),
 #'         KafkaVersion = "string",
 #'         LoggingInfo = list(
 #'           BrokerLogs = list(
@@ -1763,7 +1911,8 @@ kafka_describe_cluster_operation <- function(ClusterOperationArn) {
 #'                 Enabled = TRUE|FALSE
 #'               )
 #'             )
-#'           )
+#'           ),
+#'           NetworkType = "IPV4"|"DUAL"
 #'         ),
 #'         StorageMode = "LOCAL"|"TIERED",
 #'         BrokerCountUpdateInfo = list(
@@ -1805,6 +1954,9 @@ kafka_describe_cluster_operation <- function(ClusterOperationArn) {
 #'             )
 #'           )
 #'         ),
+#'         ZookeeperAccess = list(
+#'           Enabled = TRUE|FALSE
+#'         ),
 #'         KafkaVersion = "string",
 #'         LoggingInfo = list(
 #'           BrokerLogs = list(
@@ -1870,7 +2022,8 @@ kafka_describe_cluster_operation <- function(ClusterOperationArn) {
 #'                 Enabled = TRUE|FALSE
 #'               )
 #'             )
-#'           )
+#'           ),
+#'           NetworkType = "IPV4"|"DUAL"
 #'         ),
 #'         StorageMode = "LOCAL"|"TIERED",
 #'         BrokerCountUpdateInfo = list(
@@ -1898,6 +2051,12 @@ kafka_describe_cluster_operation <- function(ClusterOperationArn) {
 #'       )
 #'     ),
 #'     Serverless = list(
+#'       SourceClusterInfo = list(
+#'         NetworkType = "IPV4"|"DUAL"
+#'       ),
+#'       TargetClusterInfo = list(
+#'         NetworkType = "IPV4"|"DUAL"
+#'       ),
 #'       VpcConnectionInfo = list(
 #'         CreationTime = as.POSIXct(
 #'           "2015-01-01"
@@ -1953,8 +2112,7 @@ kafka_describe_cluster_operation_v2 <- function(ClusterOperationArn) {
 #' @usage
 #' kafka_describe_configuration(Arn)
 #'
-#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies an MSK
-#' configuration and all of its revisions.
+#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2019,8 +2177,7 @@ kafka_describe_configuration <- function(Arn) {
 #' @usage
 #' kafka_describe_configuration_revision(Arn, Revision)
 #'
-#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies an MSK
-#' configuration and all of its revisions.
+#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.
 #' @param Revision &#91;required&#93; A string that uniquely identifies a revision of an MSK configuration.
 #'
 #' @return
@@ -2093,6 +2250,10 @@ kafka_describe_configuration_revision <- function(Arn, Revision) {
 #'       AmazonMskCluster = list(
 #'         MskClusterArn = "string"
 #'       ),
+#'       ApacheKafkaCluster = list(
+#'         ApacheKafkaClusterId = "string",
+#'         BootstrapBrokerString = "string"
+#'       ),
 #'       KafkaClusterAlias = "string",
 #'       VpcConfig = list(
 #'         SecurityGroupIds = list(
@@ -2101,6 +2262,16 @@ kafka_describe_configuration_revision <- function(Arn, Revision) {
 #'         SubnetIds = list(
 #'           "string"
 #'         )
+#'       ),
+#'       ClientAuthentication = list(
+#'         SaslScram = list(
+#'           Mechanism = "SHA256"|"SHA512",
+#'           SecretArn = "string"
+#'         )
+#'       ),
+#'       EncryptionInTransit = list(
+#'         EncryptionType = "TLS",
+#'         RootCaCertificate = "string"
 #'       )
 #'     )
 #'   ),
@@ -2114,7 +2285,8 @@ kafka_describe_configuration_revision <- function(Arn, Revision) {
 #'           "string"
 #'         ),
 #'         DetectAndCopyNewConsumerGroups = TRUE|FALSE,
-#'         SynchroniseConsumerGroupOffsets = TRUE|FALSE
+#'         SynchroniseConsumerGroupOffsets = TRUE|FALSE,
+#'         ConsumerGroupOffsetSyncMode = "LEGACY"|"ENHANCED"
 #'       ),
 #'       SourceKafkaClusterAlias = "string",
 #'       TargetCompressionType = "NONE"|"GZIP"|"SNAPPY"|"LZ4"|"ZSTD",
@@ -2150,6 +2322,23 @@ kafka_describe_configuration_revision <- function(Arn, Revision) {
 #'   ),
 #'   Tags = list(
 #'     "string"
+#'   ),
+#'   LogDelivery = list(
+#'     ReplicatorLogDelivery = list(
+#'       CloudWatchLogs = list(
+#'         Enabled = TRUE|FALSE,
+#'         LogGroup = "string"
+#'       ),
+#'       Firehose = list(
+#'         Enabled = TRUE|FALSE,
+#'         DeliveryStream = "string"
+#'       ),
+#'       S3 = list(
+#'         Enabled = TRUE|FALSE,
+#'         Bucket = "string",
+#'         Prefix = "string"
+#'       )
+#'     )
 #'   )
 #' )
 #' ```
@@ -2252,11 +2441,9 @@ kafka_describe_topic <- function(ClusterArn, TopicName) {
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the cluster.
 #' @param TopicName &#91;required&#93; The Kafka topic name that uniquely identifies the topic.
-#' @param MaxResults The maximum number of results to return in the response. If there are
-#' more results, the response includes a NextToken parameter.
-#' @param NextToken The paginated results marker. When the result of the operation is
-#' truncated, the call returns NextToken in the response. To get the next
-#' batch, provide this token in your next request.
+#' @param MaxResults The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.
+#' @param NextToken The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
+#' To get the next batch, provide this token in your next request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2320,8 +2507,7 @@ kafka_describe_topic_partitions <- function(ClusterArn, TopicName, MaxResults = 
 #' @usage
 #' kafka_describe_vpc_connection(Arn)
 #'
-#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies a MSK VPC
-#' connection.
+#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies a MSK VPC connection.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2441,13 +2627,7 @@ kafka_batch_disassociate_scram_secret <- function(ClusterArn, SecretArnList) {
 #' A list of brokers that a client application can use to bootstrap
 #'
 #' @description
-#' A list of brokers that a client application can use to bootstrap. This
-#' list doesn't necessarily include all of the brokers in the cluster. The
-#' following Python 3.6 example shows how you can use the Amazon Resource
-#' Name (ARN) of a cluster to get its bootstrap brokers. If you don't know
-#' the ARN of your cluster, you can use the
-#' [`list_clusters`][kafka_list_clusters] operation to get the ARNs of all
-#' the clusters in this account and Region.
+#' A list of brokers that a client application can use to bootstrap. This list doesn't necessarily include all of the brokers in the cluster. The following Python 3.6 example shows how you can use the Amazon Resource Name (ARN) of a cluster to get its bootstrap brokers. If you don't know the ARN of your cluster, you can use the [`list_clusters`][kafka_list_clusters] operation to get the ARNs of all the clusters in this account and Region.
 #'
 #' @usage
 #' kafka_get_bootstrap_brokers(ClusterArn)
@@ -2467,7 +2647,11 @@ kafka_batch_disassociate_scram_secret <- function(ClusterArn, SecretArnList) {
 #'   BootstrapBrokerStringPublicSaslIam = "string",
 #'   BootstrapBrokerStringVpcConnectivityTls = "string",
 #'   BootstrapBrokerStringVpcConnectivitySaslScram = "string",
-#'   BootstrapBrokerStringVpcConnectivitySaslIam = "string"
+#'   BootstrapBrokerStringVpcConnectivitySaslIam = "string",
+#'   BootstrapBrokerStringIpv6 = "string",
+#'   BootstrapBrokerStringTlsIpv6 = "string",
+#'   BootstrapBrokerStringSaslScramIpv6 = "string",
+#'   BootstrapBrokerStringSaslIamIpv6 = "string"
 #' )
 #' ```
 #'
@@ -2562,8 +2746,7 @@ kafka_get_compatible_kafka_versions <- function(ClusterArn = NULL) {
 #' in the request
 #'
 #' @description
-#' Get the MSK cluster policy specified by the Amazon Resource Name (ARN)
-#' in the request.
+#' Get the MSK cluster policy specified by the Amazon Resource Name (ARN) in the request.
 #'
 #' @usage
 #' kafka_get_cluster_policy(ClusterArn)
@@ -2614,18 +2797,15 @@ kafka_get_cluster_policy <- function(ClusterArn) {
 #' specified MSK cluster
 #'
 #' @description
-#' Returns a list of all the operations that have been performed on the
-#' specified MSK cluster.
+#' Returns a list of all the operations that have been performed on the specified MSK cluster.
 #'
 #' @usage
 #' kafka_list_cluster_operations(ClusterArn, MaxResults, NextToken)
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the cluster.
-#' @param MaxResults The maximum number of results to return in the response. If there are
-#' more results, the response includes a NextToken parameter.
-#' @param NextToken The paginated results marker. When the result of the operation is
-#' truncated, the call returns NextToken in the response. To get the next
-#' batch, provide this token in your next request.
+#' @param MaxResults The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.
+#' @param NextToken The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
+#' To get the next batch, provide this token in your next request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2683,6 +2863,9 @@ kafka_get_cluster_policy <- function(ClusterArn) {
 #'             )
 #'           )
 #'         ),
+#'         ZookeeperAccess = list(
+#'           Enabled = TRUE|FALSE
+#'         ),
 #'         KafkaVersion = "string",
 #'         LoggingInfo = list(
 #'           BrokerLogs = list(
@@ -2748,7 +2931,8 @@ kafka_get_cluster_policy <- function(ClusterArn) {
 #'                 Enabled = TRUE|FALSE
 #'               )
 #'             )
-#'           )
+#'           ),
+#'           NetworkType = "IPV4"|"DUAL"
 #'         ),
 #'         StorageMode = "LOCAL"|"TIERED",
 #'         BrokerCountUpdateInfo = list(
@@ -2790,6 +2974,9 @@ kafka_get_cluster_policy <- function(ClusterArn) {
 #'             )
 #'           )
 #'         ),
+#'         ZookeeperAccess = list(
+#'           Enabled = TRUE|FALSE
+#'         ),
 #'         KafkaVersion = "string",
 #'         LoggingInfo = list(
 #'           BrokerLogs = list(
@@ -2855,7 +3042,8 @@ kafka_get_cluster_policy <- function(ClusterArn) {
 #'                 Enabled = TRUE|FALSE
 #'               )
 #'             )
-#'           )
+#'           ),
+#'           NetworkType = "IPV4"|"DUAL"
 #'         ),
 #'         StorageMode = "LOCAL"|"TIERED",
 #'         BrokerCountUpdateInfo = list(
@@ -2924,8 +3112,7 @@ kafka_list_cluster_operations <- function(ClusterArn, MaxResults = NULL, NextTok
 #' specified MSK cluster
 #'
 #' @description
-#' Returns a list of all the operations that have been performed on the
-#' specified MSK cluster.
+#' Returns a list of all the operations that have been performed on the specified MSK cluster.
 #'
 #' @usage
 #' kafka_list_cluster_operations_v2(ClusterArn, MaxResults, NextToken)
@@ -2998,13 +3185,10 @@ kafka_list_cluster_operations_v2 <- function(ClusterArn, MaxResults = NULL, Next
 #' @usage
 #' kafka_list_clusters(ClusterNameFilter, MaxResults, NextToken)
 #'
-#' @param ClusterNameFilter Specify a prefix of the name of the clusters that you want to list. The
-#' service lists all the clusters whose names start with this prefix.
-#' @param MaxResults The maximum number of results to return in the response. If there are
-#' more results, the response includes a NextToken parameter.
-#' @param NextToken The paginated results marker. When the result of the operation is
-#' truncated, the call returns NextToken in the response. To get the next
-#' batch, provide this token in your next request.
+#' @param ClusterNameFilter Specify a prefix of the name of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.
+#' @param MaxResults The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.
+#' @param NextToken The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
+#' To get the next batch, provide this token in your next request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3049,7 +3233,8 @@ kafka_list_cluster_operations_v2 <- function(ClusterArn, MaxResults = NULL, Next
 #'                 Enabled = TRUE|FALSE
 #'               )
 #'             )
-#'           )
+#'           ),
+#'           NetworkType = "IPV4"|"DUAL"
 #'         ),
 #'         ZoneIds = list(
 #'           "string"
@@ -3186,14 +3371,11 @@ kafka_list_clusters <- function(ClusterNameFilter = NULL, MaxResults = NULL, Nex
 #' kafka_list_clusters_v2(ClusterNameFilter, ClusterTypeFilter, MaxResults,
 #'   NextToken)
 #'
-#' @param ClusterNameFilter Specify a prefix of the names of the clusters that you want to list. The
-#' service lists all the clusters whose names start with this prefix.
+#' @param ClusterNameFilter Specify a prefix of the names of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.
 #' @param ClusterTypeFilter Specify either PROVISIONED or SERVERLESS.
-#' @param MaxResults The maximum number of results to return in the response. If there are
-#' more results, the response includes a NextToken parameter.
-#' @param NextToken The paginated results marker. When the result of the operation is
-#' truncated, the call returns NextToken in the response. To get the next
-#' batch, provide this token in your next request.
+#' @param MaxResults The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.
+#' @param NextToken The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
+#' To get the next batch, provide this token in your next request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3254,7 +3436,8 @@ kafka_list_clusters <- function(ClusterNameFilter = NULL, MaxResults = NULL, Nex
 #'                   Enabled = TRUE|FALSE
 #'                 )
 #'               )
-#'             )
+#'             ),
+#'             NetworkType = "IPV4"|"DUAL"
 #'           ),
 #'           ZoneIds = list(
 #'             "string"
@@ -3347,6 +3530,9 @@ kafka_list_clusters <- function(ClusterNameFilter = NULL, MaxResults = NULL, Nex
 #'               Enabled = TRUE|FALSE
 #'             )
 #'           )
+#'         ),
+#'         ConnectivityInfo = list(
+#'           NetworkType = "IPV4"|"DUAL"
 #'         )
 #'       )
 #'     )
@@ -3397,13 +3583,10 @@ kafka_list_clusters_v2 <- function(ClusterNameFilter = NULL, ClusterTypeFilter =
 #' @usage
 #' kafka_list_configuration_revisions(Arn, MaxResults, NextToken)
 #'
-#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies an MSK
-#' configuration and all of its revisions.
-#' @param MaxResults The maximum number of results to return in the response. If there are
-#' more results, the response includes a NextToken parameter.
-#' @param NextToken The paginated results marker. When the result of the operation is
-#' truncated, the call returns NextToken in the response. To get the next
-#' batch, provide this token in your next request.
+#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.
+#' @param MaxResults The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.
+#' @param NextToken The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
+#' To get the next batch, provide this token in your next request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3463,11 +3646,9 @@ kafka_list_configuration_revisions <- function(Arn, MaxResults = NULL, NextToken
 #' @usage
 #' kafka_list_configurations(MaxResults, NextToken)
 #'
-#' @param MaxResults The maximum number of results to return in the response. If there are
-#' more results, the response includes a NextToken parameter.
-#' @param NextToken The paginated results marker. When the result of the operation is
-#' truncated, the call returns NextToken in the response. To get the next
-#' batch, provide this token in your next request.
+#' @param MaxResults The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.
+#' @param NextToken The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
+#' To get the next batch, provide this token in your next request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3538,11 +3719,8 @@ kafka_list_configurations <- function(MaxResults = NULL, NextToken = NULL) {
 #' @usage
 #' kafka_list_kafka_versions(MaxResults, NextToken)
 #'
-#' @param MaxResults The maximum number of results to return in the response. If there are
-#' more results, the response includes a NextToken parameter.
-#' @param NextToken The paginated results marker. When the result of the operation is
-#' truncated, the call returns NextToken in the response. To get the next
-#' batch, provide this token in your next request.
+#' @param MaxResults The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.
+#' @param NextToken The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3599,11 +3777,9 @@ kafka_list_kafka_versions <- function(MaxResults = NULL, NextToken = NULL) {
 #' kafka_list_nodes(ClusterArn, MaxResults, NextToken)
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the cluster.
-#' @param MaxResults The maximum number of results to return in the response. If there are
-#' more results, the response includes a NextToken parameter.
-#' @param NextToken The paginated results marker. When the result of the operation is
-#' truncated, the call returns NextToken in the response. To get the next
-#' batch, provide this token in your next request.
+#' @param MaxResults The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.
+#' @param NextToken The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
+#' To get the next batch, provide this token in your next request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3690,11 +3866,8 @@ kafka_list_nodes <- function(ClusterArn, MaxResults = NULL, NextToken = NULL) {
 #' @usage
 #' kafka_list_replicators(MaxResults, NextToken, ReplicatorNameFilter)
 #'
-#' @param MaxResults The maximum number of results to return in the response. If there are
-#' more results, the response includes a NextToken parameter.
-#' @param NextToken If the response of ListReplicators is truncated, it returns a NextToken
-#' in the response. This NextToken should be sent in the subsequent request
-#' to ListReplicators.
+#' @param MaxResults The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.
+#' @param NextToken If the response of ListReplicators is truncated, it returns a NextToken in the response. This NextToken should be sent in the subsequent request to ListReplicators.
 #' @param ReplicatorNameFilter Returns replicators starting with given name.
 #'
 #' @return
@@ -3713,6 +3886,10 @@ kafka_list_nodes <- function(ClusterArn, MaxResults = NULL, NextToken = NULL) {
 #'         list(
 #'           AmazonMskCluster = list(
 #'             MskClusterArn = "string"
+#'           ),
+#'           ApacheKafkaCluster = list(
+#'             ApacheKafkaClusterId = "string",
+#'             BootstrapBrokerString = "string"
 #'           ),
 #'           KafkaClusterAlias = "string"
 #'         )
@@ -3769,8 +3946,7 @@ kafka_list_replicators <- function(MaxResults = NULL, NextToken = NULL, Replicat
 #' cluster
 #'
 #' @description
-#' Returns a list of the Scram Secrets associated with an Amazon MSK
-#' cluster.
+#' Returns a list of the Scram Secrets associated with an Amazon MSK cluster.
 #'
 #' @usage
 #' kafka_list_scram_secrets(ClusterArn, MaxResults, NextToken)
@@ -3831,8 +4007,7 @@ kafka_list_scram_secrets <- function(ClusterArn, MaxResults = NULL, NextToken = 
 #' @usage
 #' kafka_list_tags_for_resource(ResourceArn)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the resource
-#' that's associated with the tags.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3884,11 +4059,9 @@ kafka_list_tags_for_resource <- function(ResourceArn) {
 #' kafka_list_client_vpc_connections(ClusterArn, MaxResults, NextToken)
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) of the cluster.
-#' @param MaxResults The maximum number of results to return in the response. If there are
-#' more results, the response includes a NextToken parameter.
-#' @param NextToken The paginated results marker. When the result of the operation is
-#' truncated, the call returns NextToken in the response. To get the next
-#' batch, provide this token in your next request.
+#' @param MaxResults The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.
+#' @param NextToken The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
+#' To get the next batch, provide this token in your next request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3951,11 +4124,9 @@ kafka_list_client_vpc_connections <- function(ClusterArn, MaxResults = NULL, Nex
 #' kafka_list_topics(ClusterArn, MaxResults, NextToken, TopicNameFilter)
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the cluster.
-#' @param MaxResults The maximum number of results to return in the response. If there are
-#' more results, the response includes a NextToken parameter.
-#' @param NextToken The paginated results marker. When the result of the operation is
-#' truncated, the call returns NextToken in the response. To get the next
-#' batch, provide this token in your next request.
+#' @param MaxResults The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.
+#' @param NextToken The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
+#' To get the next batch, provide this token in your next request.
 #' @param TopicNameFilter Returns topics starting with given name.
 #'
 #' @return
@@ -4017,11 +4188,9 @@ kafka_list_topics <- function(ClusterArn, MaxResults = NULL, NextToken = NULL, T
 #' @usage
 #' kafka_list_vpc_connections(MaxResults, NextToken)
 #'
-#' @param MaxResults The maximum number of results to return in the response. If there are
-#' more results, the response includes a NextToken parameter.
-#' @param NextToken The paginated results marker. When the result of the operation is
-#' truncated, the call returns NextToken in the response. To get the next
-#' batch, provide this token in your next request.
+#' @param MaxResults The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.
+#' @param NextToken The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
+#' To get the next batch, provide this token in your next request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4125,8 +4294,7 @@ kafka_reject_client_vpc_connection <- function(ClusterArn, VpcConnectionArn) {
 #' Amazon Resource Name (ARN) in the request
 #'
 #' @description
-#' Creates or updates the MSK cluster policy specified by the cluster
-#' Amazon Resource Name (ARN) in the request.
+#' Creates or updates the MSK cluster policy specified by the cluster Amazon Resource Name (ARN) in the request.
 #'
 #' @usage
 #' kafka_put_cluster_policy(ClusterArn, CurrentVersion, Policy)
@@ -4184,8 +4352,7 @@ kafka_put_cluster_policy <- function(ClusterArn, CurrentVersion = NULL, Policy) 
 #' @usage
 #' kafka_reboot_broker(BrokerIds, ClusterArn)
 #'
-#' @param BrokerIds &#91;required&#93; The list of broker IDs to be rebooted. The reboot-broker operation
-#' supports rebooting one broker at a time.
+#' @param BrokerIds &#91;required&#93; The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting one broker at a time.
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) of the cluster to be updated.
 #'
 #' @return
@@ -4239,8 +4406,7 @@ kafka_reboot_broker <- function(BrokerIds, ClusterArn) {
 #' @usage
 #' kafka_tag_resource(ResourceArn, Tags)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the resource
-#' that's associated with the tags.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.
 #' @param Tags &#91;required&#93; The key-value pair for the resource tag.
 #'
 #' @return
@@ -4283,29 +4449,26 @@ kafka_tag_resource <- function(ResourceArn, Tags) {
 #' Removes the tags associated with the keys that are provided in the query
 #'
 #' @description
-#' Removes the tags associated with the keys that are provided in the
-#' query.
+#' Removes the tags associated with the keys that are provided in the query.
 #'
 #' @usage
 #' kafka_untag_resource(ResourceArn, TagKeys)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the resource
-#' that's associated with the tags.
-#' @param TagKeys &#91;required&#93; Tag keys must be unique for a given cluster. In addition, the following
-#' restrictions apply:
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.
+#' @param TagKeys &#91;required&#93; Tag keys must be unique for a given cluster. In addition, the following restrictions apply:
 #' 
-#' -   Each tag key must be unique. If you add a tag with a key that's
-#'     already in use, your new tag overwrites the existing key-value pair.
+#' -   Each tag key must be unique. If you add a tag with a key that's already in
+#'     use, your new tag overwrites the existing key-value pair.
 #' 
-#' -   You can't start a tag key with aws: because this prefix is reserved
-#'     for use by AWS. AWS creates tags that begin with this prefix on your
-#'     behalf, but you can't edit or delete them.
+#' -   You can't start a tag key with aws: because this prefix is reserved for use
+#'     by AWS. AWS creates tags that begin with this prefix on your behalf, but
+#'     you can't edit or delete them.
 #' 
 #' -   Tag keys must be between 1 and 128 Unicode characters in length.
 #' 
-#' -   Tag keys must consist of the following characters: Unicode letters,
-#'     digits, white space, and the following special characters: _ . /
-#'     = + - @@.
+#' -   Tag keys must consist of the following characters: Unicode letters, digits,
+#'     white space, and the following special characters: _ . / = + -
+#'     @@.
 #'
 #' @return
 #' An empty list.
@@ -4354,10 +4517,8 @@ kafka_untag_resource <- function(ResourceArn, TagKeys) {
 #'   TargetNumberOfBrokerNodes)
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the cluster.
-#' @param CurrentVersion &#91;required&#93; The version of cluster to update from. A successful operation will then
-#' generate a new version.
-#' @param TargetNumberOfBrokerNodes &#91;required&#93; The number of broker nodes that you want the cluster to have after this
-#' operation completes successfully.
+#' @param CurrentVersion &#91;required&#93; The version of cluster to update from. A successful operation will then generate a new version.
+#' @param TargetNumberOfBrokerNodes &#91;required&#93; The number of broker nodes that you want the cluster to have after this operation completes successfully.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4410,10 +4571,8 @@ kafka_update_broker_count <- function(ClusterArn, CurrentVersion, TargetNumberOf
 #' kafka_update_broker_type(ClusterArn, CurrentVersion, TargetInstanceType)
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the cluster.
-#' @param CurrentVersion &#91;required&#93; The cluster version that you want to change. After this operation
-#' completes successfully, the cluster will have a new version.
-#' @param TargetInstanceType &#91;required&#93; The Amazon MSK broker type that you want all of the brokers in this
-#' cluster to be.
+#' @param CurrentVersion &#91;required&#93; The cluster version that you want to change. After this operation completes successfully, the cluster will have a new version.
+#' @param TargetInstanceType &#91;required&#93; The Amazon MSK broker type that you want all of the brokers in this cluster to be.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4467,10 +4626,8 @@ kafka_update_broker_type <- function(ClusterArn, CurrentVersion, TargetInstanceT
 #'   TargetBrokerEBSVolumeInfo)
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the cluster.
-#' @param CurrentVersion &#91;required&#93; The version of cluster to update from. A successful operation will then
-#' generate a new version.
-#' @param TargetBrokerEBSVolumeInfo &#91;required&#93; Describes the target volume size and the ID of the broker to apply the
-#' update to.
+#' @param CurrentVersion &#91;required&#93; The version of cluster to update from. A successful operation will then generate a new version.
+#' @param TargetBrokerEBSVolumeInfo &#91;required&#93; Describes the target volume size and the ID of the broker to apply the update to.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4533,10 +4690,8 @@ kafka_update_broker_storage <- function(ClusterArn, CurrentVersion, TargetBroker
 #'
 #' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) of the configuration.
 #' @param Description The description of the configuration revision.
-#' @param ServerProperties &#91;required&#93; Contents of the server.properties file. When using the API, you must
-#' ensure that the contents of the file are base64 encoded. When using the
-#' AWS Management Console, the SDK, or the AWS CLI, the contents of
-#' server.properties can be in plaintext.
+#' @param ServerProperties &#91;required&#93; Contents of the server.properties file. When using the API, you must ensure that the contents of the file are base64 encoded.
+#' When using the AWS Management Console, the SDK, or the AWS CLI, the contents of server.properties can be in plaintext.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4592,13 +4747,13 @@ kafka_update_configuration <- function(Arn, Description = NULL, ServerProperties
 #' Updates the cluster's connectivity configuration.
 #'
 #' @usage
-#' kafka_update_connectivity(ClusterArn, ConnectivityInfo, CurrentVersion)
+#' kafka_update_connectivity(ClusterArn, ConnectivityInfo, CurrentVersion,
+#'   ZookeeperAccess)
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) of the configuration.
-#' @param ConnectivityInfo &#91;required&#93; Information about the broker access configuration.
-#' @param CurrentVersion &#91;required&#93; The version of the MSK cluster to update. Cluster versions aren't simple
-#' numbers. You can describe an MSK cluster to find its version. When this
-#' update operation is successful, it generates a new cluster version.
+#' @param ConnectivityInfo Information about the broker access configuration.
+#' @param CurrentVersion &#91;required&#93; The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.
+#' @param ZookeeperAccess Access control settings for zookeeper
 #'
 #' @return
 #' A list with the following syntax:
@@ -4631,9 +4786,13 @@ kafka_update_configuration <- function(Arn, Description = NULL, ServerProperties
 #'           Enabled = TRUE|FALSE
 #'         )
 #'       )
-#'     )
+#'     ),
+#'     NetworkType = "IPV4"|"DUAL"
 #'   ),
-#'   CurrentVersion = "string"
+#'   CurrentVersion = "string",
+#'   ZookeeperAccess = list(
+#'     Enabled = TRUE|FALSE
+#'   )
 #' )
 #' ```
 #'
@@ -4642,7 +4801,7 @@ kafka_update_configuration <- function(Arn, Description = NULL, ServerProperties
 #' @rdname kafka_update_connectivity
 #'
 #' @aliases kafka_update_connectivity
-kafka_update_connectivity <- function(ClusterArn, ConnectivityInfo, CurrentVersion) {
+kafka_update_connectivity <- function(ClusterArn, ConnectivityInfo = NULL, CurrentVersion, ZookeeperAccess = NULL) {
   op <- new_operation(
     name = "UpdateConnectivity",
     http_method = "PUT",
@@ -4651,7 +4810,7 @@ kafka_update_connectivity <- function(ClusterArn, ConnectivityInfo, CurrentVersi
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .kafka$update_connectivity_input(ClusterArn = ClusterArn, ConnectivityInfo = ConnectivityInfo, CurrentVersion = CurrentVersion)
+  input <- .kafka$update_connectivity_input(ClusterArn = ClusterArn, ConnectivityInfo = ConnectivityInfo, CurrentVersion = CurrentVersion, ZookeeperAccess = ZookeeperAccess)
   output <- .kafka$update_connectivity_output()
   config <- get_config()
   svc <- .kafka$service(config, op)
@@ -4665,16 +4824,14 @@ kafka_update_connectivity <- function(ClusterArn, ConnectivityInfo, CurrentVersi
 #' request body
 #'
 #' @description
-#' Updates the cluster with the configuration that is specified in the
-#' request body.
+#' Updates the cluster with the configuration that is specified in the request body.
 #'
 #' @usage
 #' kafka_update_cluster_configuration(ClusterArn, ConfigurationInfo,
 #'   CurrentVersion)
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the cluster.
-#' @param ConfigurationInfo &#91;required&#93; Represents the configuration that you want MSK to use for the brokers in
-#' a cluster.
+#' @param ConfigurationInfo &#91;required&#93; Represents the configuration that you want MSK to use for the brokers in a cluster.
 #' @param CurrentVersion &#91;required&#93; The version of the cluster that needs to be updated.
 #'
 #' @return
@@ -4732,8 +4889,7 @@ kafka_update_cluster_configuration <- function(ClusterArn, ConfigurationInfo, Cu
 #'   CurrentVersion, TargetKafkaVersion)
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) of the cluster to be updated.
-#' @param ConfigurationInfo The custom configuration that should be applied on the new version of
-#' cluster.
+#' @param ConfigurationInfo The custom configuration that should be applied on the new version of cluster.
 #' @param CurrentVersion &#91;required&#93; Current cluster version.
 #' @param TargetKafkaVersion &#91;required&#93; Target Kafka version.
 #'
@@ -4786,21 +4942,15 @@ kafka_update_cluster_kafka_version <- function(ClusterArn, ConfigurationInfo = N
 #' Updates the monitoring settings for the cluster
 #'
 #' @description
-#' Updates the monitoring settings for the cluster. You can use this
-#' operation to specify which Apache Kafka metrics you want Amazon MSK to
-#' send to Amazon CloudWatch. You can also specify settings for open
-#' monitoring with Prometheus.
+#' Updates the monitoring settings for the cluster. You can use this operation to specify which Apache Kafka metrics you want Amazon MSK to send to Amazon CloudWatch. You can also specify settings for open monitoring with Prometheus.
 #'
 #' @usage
 #' kafka_update_monitoring(ClusterArn, CurrentVersion, EnhancedMonitoring,
 #'   OpenMonitoring, LoggingInfo)
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the cluster.
-#' @param CurrentVersion &#91;required&#93; The version of the MSK cluster to update. Cluster versions aren't simple
-#' numbers. You can describe an MSK cluster to find its version. When this
-#' update operation is successful, it generates a new cluster version.
-#' @param EnhancedMonitoring Specifies which Apache Kafka metrics Amazon MSK gathers and sends to
-#' Amazon CloudWatch for this cluster.
+#' @param CurrentVersion &#91;required&#93; The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.
+#' @param EnhancedMonitoring Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.
 #' @param OpenMonitoring The settings for open monitoring.
 #' @param LoggingInfo 
 #'
@@ -4877,17 +5027,14 @@ kafka_update_monitoring <- function(ClusterArn, CurrentVersion, EnhancedMonitori
 #' Amazon MSK Provisioned cluster with Express brokers
 #'
 #' @description
-#' Use this resource to update the intelligent rebalancing status of an
-#' Amazon MSK Provisioned cluster with Express brokers.
+#' Use this resource to update the intelligent rebalancing status of an Amazon MSK Provisioned cluster with Express brokers.
 #'
 #' @usage
 #' kafka_update_rebalancing(ClusterArn, CurrentVersion, Rebalancing)
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) of the cluster.
 #' @param CurrentVersion &#91;required&#93; The current version of the cluster.
-#' @param Rebalancing &#91;required&#93; Specifies if intelligent rebalancing should be turned on for your
-#' cluster. The default intelligent rebalancing status is ACTIVE for all
-#' new MSK Provisioned clusters that you create with Express brokers.
+#' @param Rebalancing &#91;required&#93; Specifies if intelligent rebalancing should be turned on for your cluster. The default intelligent rebalancing status is ACTIVE for all new MSK Provisioned clusters that you create with Express brokers.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4940,15 +5087,19 @@ kafka_update_rebalancing <- function(ClusterArn, CurrentVersion, Rebalancing) {
 #'
 #' @usage
 #' kafka_update_replication_info(ConsumerGroupReplication, CurrentVersion,
-#'   ReplicatorArn, SourceKafkaClusterArn, TargetKafkaClusterArn,
-#'   TopicReplication)
+#'   ReplicatorArn, SourceKafkaClusterArn, SourceKafkaClusterId,
+#'   TargetKafkaClusterArn, TargetKafkaClusterId, TopicReplication,
+#'   LogDelivery)
 #'
 #' @param ConsumerGroupReplication Updated consumer group replication information.
 #' @param CurrentVersion &#91;required&#93; Current replicator version.
 #' @param ReplicatorArn &#91;required&#93; The Amazon Resource Name (ARN) of the replicator to be updated.
-#' @param SourceKafkaClusterArn &#91;required&#93; The ARN of the source Kafka cluster.
-#' @param TargetKafkaClusterArn &#91;required&#93; The ARN of the target Kafka cluster.
+#' @param SourceKafkaClusterArn The ARN of the source Kafka cluster.
+#' @param SourceKafkaClusterId The ID of the source Kafka cluster.
+#' @param TargetKafkaClusterArn The ARN of the target Kafka cluster.
+#' @param TargetKafkaClusterId The ID of the target Kafka cluster.
 #' @param TopicReplication Updated topic replication information.
+#' @param LogDelivery Configuration for delivering replicator logs to customer destinations.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4975,7 +5126,9 @@ kafka_update_rebalancing <- function(ClusterArn, CurrentVersion, Rebalancing) {
 #'   CurrentVersion = "string",
 #'   ReplicatorArn = "string",
 #'   SourceKafkaClusterArn = "string",
+#'   SourceKafkaClusterId = "string",
 #'   TargetKafkaClusterArn = "string",
+#'   TargetKafkaClusterId = "string",
 #'   TopicReplication = list(
 #'     CopyAccessControlListsForTopics = TRUE|FALSE,
 #'     CopyTopicConfigurations = TRUE|FALSE,
@@ -4986,6 +5139,23 @@ kafka_update_rebalancing <- function(ClusterArn, CurrentVersion, Rebalancing) {
 #'     TopicsToReplicate = list(
 #'       "string"
 #'     )
+#'   ),
+#'   LogDelivery = list(
+#'     ReplicatorLogDelivery = list(
+#'       CloudWatchLogs = list(
+#'         Enabled = TRUE|FALSE,
+#'         LogGroup = "string"
+#'       ),
+#'       Firehose = list(
+#'         Enabled = TRUE|FALSE,
+#'         DeliveryStream = "string"
+#'       ),
+#'       S3 = list(
+#'         Enabled = TRUE|FALSE,
+#'         Bucket = "string",
+#'         Prefix = "string"
+#'       )
+#'     )
 #'   )
 #' )
 #' ```
@@ -4995,7 +5165,7 @@ kafka_update_rebalancing <- function(ClusterArn, CurrentVersion, Rebalancing) {
 #' @rdname kafka_update_replication_info
 #'
 #' @aliases kafka_update_replication_info
-kafka_update_replication_info <- function(ConsumerGroupReplication = NULL, CurrentVersion, ReplicatorArn, SourceKafkaClusterArn, TargetKafkaClusterArn, TopicReplication = NULL) {
+kafka_update_replication_info <- function(ConsumerGroupReplication = NULL, CurrentVersion, ReplicatorArn, SourceKafkaClusterArn = NULL, SourceKafkaClusterId = NULL, TargetKafkaClusterArn = NULL, TargetKafkaClusterId = NULL, TopicReplication = NULL, LogDelivery = NULL) {
   op <- new_operation(
     name = "UpdateReplicationInfo",
     http_method = "PUT",
@@ -5004,7 +5174,7 @@ kafka_update_replication_info <- function(ConsumerGroupReplication = NULL, Curre
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .kafka$update_replication_info_input(ConsumerGroupReplication = ConsumerGroupReplication, CurrentVersion = CurrentVersion, ReplicatorArn = ReplicatorArn, SourceKafkaClusterArn = SourceKafkaClusterArn, TargetKafkaClusterArn = TargetKafkaClusterArn, TopicReplication = TopicReplication)
+  input <- .kafka$update_replication_info_input(ConsumerGroupReplication = ConsumerGroupReplication, CurrentVersion = CurrentVersion, ReplicatorArn = ReplicatorArn, SourceKafkaClusterArn = SourceKafkaClusterArn, SourceKafkaClusterId = SourceKafkaClusterId, TargetKafkaClusterArn = TargetKafkaClusterArn, TargetKafkaClusterId = TargetKafkaClusterId, TopicReplication = TopicReplication, LogDelivery = LogDelivery)
   output <- .kafka$update_replication_info_output()
   config <- get_config()
   svc <- .kafka$service(config, op)
@@ -5017,8 +5187,7 @@ kafka_update_replication_info <- function(ConsumerGroupReplication = NULL, Curre
 #' Updates the security settings for the cluster
 #'
 #' @description
-#' Updates the security settings for the cluster. You can use this
-#' operation to specify encryption and authentication on existing clusters.
+#' Updates the security settings for the cluster. You can use this operation to specify encryption and authentication on existing clusters.
 #'
 #' @usage
 #' kafka_update_security(ClientAuthentication, ClusterArn, CurrentVersion,
@@ -5026,9 +5195,7 @@ kafka_update_replication_info <- function(ConsumerGroupReplication = NULL, Curre
 #'
 #' @param ClientAuthentication Includes all client authentication related information.
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the cluster.
-#' @param CurrentVersion &#91;required&#93; The version of the MSK cluster to update. Cluster versions aren't simple
-#' numbers. You can describe an MSK cluster to find its version. When this
-#' update operation is successful, it generates a new cluster version.
+#' @param CurrentVersion &#91;required&#93; The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.
 #' @param EncryptionInfo Includes all encryption-related information.
 #'
 #' @return
@@ -5104,16 +5271,14 @@ kafka_update_security <- function(ClientAuthentication = NULL, ClusterArn, Curre
 #' TIERED
 #'
 #' @description
-#' Updates cluster broker volume size (or) sets cluster storage mode to
-#' TIERED.
+#' Updates cluster broker volume size (or) sets cluster storage mode to TIERED.
 #'
 #' @usage
 #' kafka_update_storage(ClusterArn, CurrentVersion, ProvisionedThroughput,
 #'   StorageMode, VolumeSizeGB)
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) of the cluster to be updated.
-#' @param CurrentVersion &#91;required&#93; The version of cluster to update from. A successful operation will then
-#' generate a new version.
+#' @param CurrentVersion &#91;required&#93; The version of cluster to update from. A successful operation will then generate a new version.
 #' @param ProvisionedThroughput EBS volume provisioned throughput information.
 #' @param StorageMode Controls storage mode for supported storage tiers.
 #' @param VolumeSizeGB size of the EBS volume to update.
@@ -5164,3 +5329,60 @@ kafka_update_storage <- function(ClusterArn, CurrentVersion, ProvisionedThroughp
   return(response)
 }
 .kafka$operations$update_storage <- kafka_update_storage
+
+#' Updates the configuration of the specified topic
+#'
+#' @description
+#' Updates the configuration of the specified topic.
+#'
+#' @usage
+#' kafka_update_topic(ClusterArn, TopicName, Configs, PartitionCount)
+#'
+#' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the cluster.
+#' @param TopicName &#91;required&#93; The name of the topic to update configuration for.
+#' @param Configs The new topic configurations encoded as a Base64 string.
+#' @param PartitionCount The new total number of partitions for the topic.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   TopicArn = "string",
+#'   TopicName = "string",
+#'   Status = "CREATING"|"UPDATING"|"DELETING"|"ACTIVE"
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$update_topic(
+#'   ClusterArn = "string",
+#'   TopicName = "string",
+#'   Configs = "string",
+#'   PartitionCount = 123
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname kafka_update_topic
+#'
+#' @aliases kafka_update_topic
+kafka_update_topic <- function(ClusterArn, TopicName, Configs = NULL, PartitionCount = NULL) {
+  op <- new_operation(
+    name = "UpdateTopic",
+    http_method = "PUT",
+    http_path = "/v1/clusters/{clusterArn}/topics/{topicName}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .kafka$update_topic_input(ClusterArn = ClusterArn, TopicName = TopicName, Configs = Configs, PartitionCount = PartitionCount)
+  output <- .kafka$update_topic_output()
+  config <- get_config()
+  svc <- .kafka$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.kafka$operations$update_topic <- kafka_update_topic

@@ -15,26 +15,15 @@ costexplorer_get_reservation_utilization(
 )
 }
 \arguments{
-\item{TimePeriod}{[required] Sets the start and end dates for retrieving Reserved Instance (RI)
-utilization. The start date is inclusive, but the end date is exclusive.
-For example, if \code{start} is \code{2017-01-01} and \code{end} is \code{2017-05-01}, then
-the cost and usage data is retrieved from \code{2017-01-01} up to and
-including \code{2017-04-30} but not including \code{2017-05-01}.}
+\item{TimePeriod}{[required] Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is inclusive, but the end date is exclusive. For example, if \code{start} is \code{2017-01-01} and \code{end} is \code{2017-05-01}, then the cost and usage data is retrieved from \code{2017-01-01} up to and including \code{2017-04-30} but not including \code{2017-05-01}.}
 
 \item{GroupBy}{Groups only by \code{SUBSCRIPTION_ID}. Metadata is included.}
 
-\item{Granularity}{If \code{GroupBy} is set, \code{Granularity} can't be set. If \code{Granularity} isn't
-set, the response object doesn't include \code{Granularity}, either \code{MONTHLY}
-or \code{DAILY}. If both \code{GroupBy} and \code{Granularity} aren't set,
-\code{\link[=costexplorer_get_reservation_utilization]{get_reservation_utilization}}
-defaults to \code{DAILY}.
+\item{Granularity}{If \code{GroupBy} is set, \code{Granularity} can't be set. If \code{Granularity} isn't set, the response object doesn't include \code{Granularity}, either \code{MONTHLY} or \code{DAILY}. If both \code{GroupBy} and \code{Granularity} aren't set, \code{\link[=costexplorer_get_reservation_utilization]{get_reservation_utilization}} defaults to \code{DAILY}.
 
-The
-\code{\link[=costexplorer_get_reservation_utilization]{get_reservation_utilization}}
-operation supports only \code{DAILY} and \code{MONTHLY} granularities.}
+The \code{\link[=costexplorer_get_reservation_utilization]{get_reservation_utilization}} operation supports only \code{DAILY} and \code{MONTHLY} granularities.}
 
-\item{Filter}{Filters utilization data by dimensions. You can filter by the following
-dimensions:
+\item{Filter}{Filters utilization data by dimensions. You can filter by the following dimensions:
 \itemize{
 \item AZ
 \item CACHE_ENGINE
@@ -46,21 +35,12 @@ dimensions:
 \item REGION
 \item SERVICE
 
-If not specified, the \code{SERVICE} filter defaults to Amazon Elastic
-Compute Cloud - Compute. Supported values for \code{SERVICE} are Amazon
-Elastic Compute Cloud - Compute, Amazon Relational Database Service,
-Amazon ElastiCache, Amazon Redshift, and Amazon Elasticsearch
-Service. The value for the \code{SERVICE} filter should not exceed "1".
+If not specified, the \code{SERVICE} filter defaults to Amazon Elastic Compute Cloud - Compute. Supported values for \code{SERVICE} are Amazon Elastic Compute Cloud - Compute, Amazon Relational Database Service, Amazon ElastiCache, Amazon Redshift, and Amazon Elasticsearch Service. The value for the \code{SERVICE} filter should not exceed "1".
 \item SCOPE
 \item TENANCY
 }
 
-\code{\link[=costexplorer_get_reservation_utilization]{get_reservation_utilization}}
-uses the same
-\href{https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html}{Expression}
-object as the other operations, but only \code{AND} is supported among each
-dimension, and nesting is supported up to only one level deep. If there
-are multiple values for a dimension, they are OR'd together.}
+\code{\link[=costexplorer_get_reservation_utilization]{get_reservation_utilization}} uses the same \href{https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html}{Expression} object as the other operations, but only \code{AND} is supported among each dimension, and nesting is supported up to only one level deep. If there are multiple values for a dimension, they are OR'd together.}
 
 \item{SortBy}{The value that you want to sort the data by.
 
@@ -87,14 +67,9 @@ The following values are supported for \code{Key}:
 
 The supported values for \code{SortOrder} are \code{ASCENDING} and \code{DESCENDING}.}
 
-\item{NextPageToken}{The token to retrieve the next set of results. Amazon Web Services
-provides the token when the response from a previous call has more
-results than the maximum page size.}
+\item{NextPageToken}{The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.}
 
-\item{MaxResults}{The maximum number of objects that you returned for this request. If
-more objects are available, in the response, Amazon Web Services
-provides a NextPageToken value that you can use in a subsequent call to
-get the next batch of objects.}
+\item{MaxResults}{The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.}
 }
 \description{
 Retrieves the reservation utilization for your account. Management account in an organization have access to member accounts. You can filter data by dimensions in a time period. You can use \code{\link[=costexplorer_get_dimension_values]{get_dimension_values}} to determine the possible dimension values. Currently, you can group only by \code{SUBSCRIPTION_ID}.

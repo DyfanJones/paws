@@ -16,17 +16,11 @@ opensearchservice_upgrade_domain(
 \arguments{
 \item{DomainName}{[required] Name of the OpenSearch Service domain that you want to upgrade.}
 
-\item{TargetVersion}{[required] OpenSearch or Elasticsearch version to which you want to upgrade, in the
-format Opensearch_X.Y or Elasticsearch_X.Y.}
+\item{TargetVersion}{[required] OpenSearch or Elasticsearch version to which you want to upgrade, in the format Opensearch_X.Y or Elasticsearch_X.Y.}
 
-\item{PerformCheckOnly}{When true, indicates that an upgrade eligibility check needs to be
-performed. Does not actually perform the upgrade.}
+\item{PerformCheckOnly}{When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform the upgrade.}
 
-\item{AdvancedOptions}{Only supports the \code{override_main_response_version} parameter and not
-other advanced options. You can only include this option when upgrading
-to an OpenSearch version. Specifies whether the domain reports its
-version as 7.10 so that it continues to work with Elasticsearch OSS
-clients and plugins.}
+\item{AdvancedOptions}{Only supports the \code{override_main_response_version} parameter and not other advanced options. You can only include this option when upgrading to an OpenSearch version. Specifies whether the domain reports its version as 7.10 so that it continues to work with Elasticsearch OSS clients and plugins.}
 }
 \description{
 Allows you to either upgrade your Amazon OpenSearch Service domain or perform an upgrade eligibility check to a compatible version of OpenSearch or Elasticsearch.

@@ -16,17 +16,13 @@ codeartifact_create_repository(
 \arguments{
 \item{domain}{[required] The name of the domain that contains the created repository.}
 
-\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns
-the domain. It does not include dashes or spaces.}
+\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.}
 
 \item{repository}{[required] The name of the repository to create.}
 
 \item{description}{A description of the created repository.}
 
-\item{upstreams}{A list of upstream repositories to associate with the repository. The
-order of the upstream repositories in the list determines their priority
-order when CodeArtifact looks for a requested package version. For more
-information, see \href{https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html}{Working with upstream repositories}.}
+\item{upstreams}{A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see \href{https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html}{Working with upstream repositories}.}
 
 \item{tags}{One or more tag key-value pairs for the repository.}
 }

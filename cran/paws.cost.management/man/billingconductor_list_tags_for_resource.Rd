@@ -7,8 +7,7 @@
 billingconductor_list_tags_for_resource(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) that identifies the resource to list the
-tags.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) that identifies the resource to list the tags.}
 }
 \description{
 A list the tags for a resource.

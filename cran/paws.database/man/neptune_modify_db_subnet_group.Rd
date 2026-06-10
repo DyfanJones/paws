@@ -11,11 +11,9 @@ neptune_modify_db_subnet_group(
 )
 }
 \arguments{
-\item{DBSubnetGroupName}{[required] The name for the DB subnet group. This value is stored as a lowercase
-string. You can't modify the default subnet group.
+\item{DBSubnetGroupName}{[required] The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default subnet group.
 
-Constraints: Must match the name of an existing DBSubnetGroup. Must not
-be default.
+Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
 
 Example: \code{mySubnetgroup}}
 

@@ -7,12 +7,9 @@
 quicksight_describe_vpc_connection(AwsAccountId, VPCConnectionId)
 }
 \arguments{
-\item{AwsAccountId}{[required] The Amazon Web Services account ID of the account that contains the VPC
-connection that you want described.}
+\item{AwsAccountId}{[required] The Amazon Web Services account ID of the account that contains the VPC connection that you want described.}
 
-\item{VPCConnectionId}{[required] The ID of the VPC connection that you're creating. This ID is a unique
-identifier for each Amazon Web Services Region in an Amazon Web Services
-account.}
+\item{VPCConnectionId}{[required] The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.}
 }
 \description{
 Describes a VPC connection.

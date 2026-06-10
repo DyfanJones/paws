@@ -14,35 +14,15 @@ personalize_create_solution_version(
 \arguments{
 \item{name}{The name of the solution version.}
 
-\item{solutionArn}{[required] The Amazon Resource Name (ARN) of the solution containing the training
-configuration information.}
+\item{solutionArn}{[required] The Amazon Resource Name (ARN) of the solution containing the training configuration information.}
 
-\item{trainingMode}{The scope of training to be performed when creating the solution
-version. The default is \code{FULL}. This creates a completely new model
-based on the entirety of the training data from the datasets in your
-dataset group.
+\item{trainingMode}{The scope of training to be performed when creating the solution version. The default is \code{FULL}. This creates a completely new model based on the entirety of the training data from the datasets in your dataset group.
 
-If you use
-\href{https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html}{User-Personalization},
-you can specify a training mode of \code{UPDATE}. This updates the model to
-consider new items for recommendations. It is not a full retraining. You
-should still complete a full retraining weekly. If you specify \code{UPDATE},
-Amazon Personalize will stop automatic updates for the solution version.
-To resume updates, create a new solution with training mode set to
-\code{FULL} and deploy it in a campaign. For more information about automatic
-updates, see \href{https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#maintaining-with-automatic-updates}{Automatic updates}.
+If you use \href{https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html}{User-Personalization}, you can specify a training mode of \code{UPDATE}. This updates the model to consider new items for recommendations. It is not a full retraining. You should still complete a full retraining weekly. If you specify \code{UPDATE}, Amazon Personalize will stop automatic updates for the solution version. To resume updates, create a new solution with training mode set to \code{FULL} and deploy it in a campaign. For more information about automatic updates, see \href{https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#maintaining-with-automatic-updates}{Automatic updates}.
 
-The \code{UPDATE} option can only be used when you already have an active
-solution version created from the input solution using the \code{FULL} option
-and the input solution was trained with the
-\href{https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html}{User-Personalization}
-recipe or the legacy
-\href{https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html}{HRNN-Coldstart}
-recipe.}
+The \code{UPDATE} option can only be used when you already have an active solution version created from the input solution using the \code{FULL} option and the input solution was trained with the \href{https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html}{User-Personalization} recipe or the legacy \href{https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html}{HRNN-Coldstart} recipe.}
 
-\item{tags}{A list of
-\href{https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html}{tags}
-to apply to the solution version.}
+\item{tags}{A list of \href{https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html}{tags} to apply to the solution version.}
 }
 \description{
 Trains or retrains an active solution in a Custom dataset group. A solution is created using the \code{\link[=personalize_create_solution]{create_solution}} operation and must be in the ACTIVE state before calling \code{\link[=personalize_create_solution_version]{create_solution_version}}. A new version of the solution is created every time you call this operation.

@@ -7,15 +7,11 @@
 cognitoidentityprovider_delete_user_attributes(UserAttributeNames, AccessToken)
 }
 \arguments{
-\item{UserAttributeNames}{[required] An array of strings representing the user attribute names you want to
-delete.
+\item{UserAttributeNames}{[required] An array of strings representing the user attribute names you want to delete.
 
-For custom attributes, you must prepend the \verb{custom:} prefix to the
-attribute name, for example \code{custom:department}.}
+For custom attributes, you must prepend the \verb{custom:} prefix to the attribute name, for example \code{custom:department}.}
 
-\item{AccessToken}{[required] A valid access token that Amazon Cognito issued to the currently
-signed-in user. Must include a scope claim for
-\code{aws.cognito.signin.user.admin}.}
+\item{AccessToken}{[required] A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for \code{aws.cognito.signin.user.admin}.}
 }
 \description{
 Deletes attributes from the currently signed-in user. For example, your application can submit a request to this operation when a user wants to remove their \code{birthdate} attribute value.

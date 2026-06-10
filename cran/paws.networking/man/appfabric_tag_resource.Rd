@@ -9,8 +9,7 @@ appfabric_tag_resource(resourceArn, tags)
 \arguments{
 \item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource that you want to tag.}
 
-\item{tags}{[required] A map of the key-value pairs of the tag or tags to assign to the
-resource.}
+\item{tags}{[required] A map of the key-value pairs of the tag or tags to assign to the resource.}
 }
 \description{
 Assigns one or more tags (key-value pairs) to the specified resource.

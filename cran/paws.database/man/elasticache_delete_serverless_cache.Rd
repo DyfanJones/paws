@@ -12,9 +12,7 @@ elasticache_delete_serverless_cache(
 \arguments{
 \item{ServerlessCacheName}{[required] The identifier of the serverless cache to be deleted.}
 
-\item{FinalSnapshotName}{Name of the final snapshot to be taken before the serverless cache is
-deleted. Available for Valkey, Redis OSS and Serverless Memcached only.
-Default: NULL, i.e. a final snapshot is not taken.}
+\item{FinalSnapshotName}{Name of the final snapshot to be taken before the serverless cache is deleted. Available for Valkey, Redis OSS and Serverless Memcached only. Default: NULL, i.e. a final snapshot is not taken.}
 }
 \description{
 Deletes a specified existing serverless cache.

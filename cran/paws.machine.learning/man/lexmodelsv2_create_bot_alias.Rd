@@ -18,31 +18,19 @@ lexmodelsv2_create_bot_alias(
 \arguments{
 \item{botAliasName}{[required] The alias to create. The name must be unique for the bot.}
 
-\item{description}{A description of the alias. Use this description to help identify the
-alias.}
+\item{description}{A description of the alias. Use this description to help identify the alias.}
 
-\item{botVersion}{The version of the bot that this alias points to. You can use the
-\code{\link[=lexmodelsv2_update_bot_alias]{update_bot_alias}} operation to change
-the bot version associated with the alias.}
+\item{botVersion}{The version of the bot that this alias points to. You can use the \code{\link[=lexmodelsv2_update_bot_alias]{update_bot_alias}} operation to change the bot version associated with the alias.}
 
-\item{botAliasLocaleSettings}{Maps configuration information to a specific locale. You can use this
-parameter to specify a specific Lambda function to run different
-functions in different locales.}
+\item{botAliasLocaleSettings}{Maps configuration information to a specific locale. You can use this parameter to specify a specific Lambda function to run different functions in different locales.}
 
-\item{conversationLogSettings}{Specifies whether Amazon Lex logs text and audio for a conversation with
-the bot. When you enable conversation logs, text logs store text input,
-transcripts of audio input, and associated metadata in Amazon CloudWatch
-Logs. Audio logs store audio input in Amazon S3.}
+\item{conversationLogSettings}{Specifies whether Amazon Lex logs text and audio for a conversation with the bot. When you enable conversation logs, text logs store text input, transcripts of audio input, and associated metadata in Amazon CloudWatch Logs. Audio logs store audio input in Amazon S3.}
 
-\item{sentimentAnalysisSettings}{}
+\item{sentimentAnalysisSettings}{Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.}
 
 \item{botId}{[required] The unique identifier of the bot that the alias applies to.}
 
-\item{tags}{A list of tags to add to the bot alias. You can only add tags when you
-create an alias, you can't use the
-\code{\link[=lexmodelsv2_update_bot_alias]{update_bot_alias}} operation to update
-the tags on a bot alias. To update tags, use the
-\code{\link[=lexmodelsv2_tag_resource]{tag_resource}} operation.}
+\item{tags}{A list of tags to add to the bot alias. You can only add tags when you create an alias, you can't use the \code{\link[=lexmodelsv2_update_bot_alias]{update_bot_alias}} operation to update the tags on a bot alias. To update tags, use the \code{\link[=lexmodelsv2_tag_resource]{tag_resource}} operation.}
 }
 \description{
 Creates an alias for the specified version of a bot. Use an alias to enable you to change the version of a bot without updating applications that use the bot.

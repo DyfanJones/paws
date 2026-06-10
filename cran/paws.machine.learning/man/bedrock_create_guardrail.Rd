@@ -35,15 +35,11 @@ bedrock_create_guardrail(
 
 \item{sensitiveInformationPolicyConfig}{The sensitive information policy to configure for the guardrail.}
 
-\item{contextualGroundingPolicyConfig}{The contextual grounding policy configuration used to create a
-guardrail.}
+\item{contextualGroundingPolicyConfig}{The contextual grounding policy configuration used to create a guardrail.}
 
-\item{automatedReasoningPolicyConfig}{Optional configuration for integrating Automated Reasoning policies with
-the new guardrail.}
+\item{automatedReasoningPolicyConfig}{Optional configuration for integrating Automated Reasoning policies with the new guardrail.}
 
-\item{crossRegionConfig}{The system-defined guardrail profile that you're using with your
-guardrail. Guardrail profiles define the destination Amazon Web Services
-Regions where guardrail inference requests can be automatically routed.
+\item{crossRegionConfig}{The system-defined guardrail profile that you're using with your guardrail. Guardrail profiles define the destination Amazon Web Services Regions where guardrail inference requests can be automatically routed.
 
 For more information, see the \href{https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-cross-region.html}{Amazon Bedrock User Guide}.}
 
@@ -55,11 +51,7 @@ For more information, see the \href{https://docs.aws.amazon.com/bedrock/latest/u
 
 \item{tags}{The tags that you want to attach to the guardrail.}
 
-\item{clientRequestToken}{A unique, case-sensitive identifier to ensure that the API request
-completes no more than once. If this token matches a previous request,
-Amazon Bedrock ignores the request, but does not return an error. For
-more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}
-in the \emph{Amazon S3 User Guide}.}
+\item{clientRequestToken}{A unique, case-sensitive identifier to ensure that the API request completes no more than once. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency} in the \emph{Amazon S3 User Guide}.}
 }
 \description{
 Creates a guardrail to block topics and to implement safeguards for your generative AI applications.

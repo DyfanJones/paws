@@ -48,22 +48,11 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-App Mesh is a service mesh based on the Envoy proxy that makes it easy
-to monitor and control microservices. App Mesh standardizes how your
-microservices communicate, giving you end-to-end visibility and helping
-to ensure high availability for your applications.
+App Mesh is a service mesh based on the Envoy proxy that makes it easy to monitor and control microservices. App Mesh standardizes how your microservices communicate, giving you end-to-end visibility and helping to ensure high availability for your applications.
 
-App Mesh gives you consistent visibility and network traffic controls
-for every microservice in an application. You can use App Mesh with
-Amazon Web Services Fargate, Amazon ECS, Amazon EKS, Kubernetes on
-Amazon Web Services, and Amazon EC2.
+App Mesh gives you consistent visibility and network traffic controls for every microservice in an application. You can use App Mesh with Amazon Web Services Fargate, Amazon ECS, Amazon EKS, Kubernetes on Amazon Web Services, and Amazon EC2.
 
-App Mesh supports microservice applications that use service discovery
-naming for their components. For more information about service
-discovery on Amazon ECS, see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html}{Service Discovery}
-in the \emph{Amazon Elastic Container Service Developer Guide}. Kubernetes
-\code{kube-dns} and \code{coredns} are supported. For more information, see \href{https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/}{DNS for Services and Pods}
-in the Kubernetes documentation.
+App Mesh supports microservice applications that use service discovery naming for their components. For more information about service discovery on Amazon ECS, see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html}{Service Discovery} in the \emph{Amazon Elastic Container Service Developer Guide}. Kubernetes \code{kube-dns} and \code{coredns} are supported. For more information, see \href{https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/}{DNS for Services and Pods} in the Kubernetes documentation.
 }
 \section{Service syntax}{
 

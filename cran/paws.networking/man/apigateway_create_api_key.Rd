@@ -22,21 +22,15 @@ apigateway_create_api_key(
 
 \item{enabled}{Specifies whether the ApiKey can be used by callers.}
 
-\item{generateDistinctId}{Specifies whether (\code{true}) or not (\code{false}) the key identifier is
-distinct from the created API key value. This parameter is deprecated
-and should not be used.}
+\item{generateDistinctId}{Specifies whether (\code{true}) or not (\code{false}) the key identifier is distinct from the created API key value. This parameter is deprecated and should not be used.}
 
 \item{value}{Specifies a value of the API key.}
 
-\item{stageKeys}{DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API
-key.}
+\item{stageKeys}{DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API key.}
 
-\item{customerId}{An Amazon Web Services Marketplace customer identifier, when integrating
-with the Amazon Web Services SaaS Marketplace.}
+\item{customerId}{An Amazon Web Services Marketplace customer identifier, when integrating with the Amazon Web Services SaaS Marketplace.}
 
-\item{tags}{The key-value map of strings. The valid character set is
-[a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not
-start with \verb{aws:}. The tag value can be up to 256 characters.}
+\item{tags}{The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with \verb{aws:}. The tag value can be up to 256 characters.}
 }
 \description{
 Create an ApiKey resource.

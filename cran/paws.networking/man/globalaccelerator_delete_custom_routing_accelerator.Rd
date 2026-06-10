@@ -7,8 +7,7 @@
 globalaccelerator_delete_custom_routing_accelerator(AcceleratorArn)
 }
 \arguments{
-\item{AcceleratorArn}{[required] The Amazon Resource Name (ARN) of the custom routing accelerator to
-delete.}
+\item{AcceleratorArn}{[required] The Amazon Resource Name (ARN) of the custom routing accelerator to delete.}
 }
 \description{
 Delete a custom routing accelerator. Before you can delete an accelerator, you must disable it and remove all dependent resources (listeners and endpoint groups). To disable the accelerator, update the accelerator to set \code{Enabled} to false.

@@ -7,8 +7,7 @@
 ssm_start_access_request(Reason, Targets, Tags = NULL)
 }
 \arguments{
-\item{Reason}{[required] A brief description explaining why you are requesting access to the
-node.}
+\item{Reason}{[required] A brief description explaining why you are requesting access to the node.}
 
 \item{Targets}{[required] The node you are requesting access to.}
 

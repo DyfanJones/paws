@@ -12,13 +12,11 @@ connect_start_contact_media_processing(
 )
 }
 \arguments{
-\item{InstanceId}{The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{ContactId}{The identifier of the contact.}
 
-\item{ProcessorArn}{The Amazon Resource Name (ARN) of the Lambda processor. You can find the
-Amazon Resource Name of the lambda in the lambda console.}
+\item{ProcessorArn}{The Amazon Resource Name (ARN) of the Lambda processor. You can find the Amazon Resource Name of the lambda in the lambda console.}
 
 \item{FailureMode}{The desired behavior for failed message processing.}
 }

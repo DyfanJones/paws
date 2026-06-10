@@ -12,9 +12,7 @@ kafka_update_rebalancing(ClusterArn, CurrentVersion, Rebalancing)
 
 \item{CurrentVersion}{[required] The current version of the cluster.}
 
-\item{Rebalancing}{[required] Specifies if intelligent rebalancing should be turned on for your
-cluster. The default intelligent rebalancing status is ACTIVE for all
-new MSK Provisioned clusters that you create with Express brokers.}
+\item{Rebalancing}{[required] Specifies if intelligent rebalancing should be turned on for your cluster. The default intelligent rebalancing status is ACTIVE for all new MSK Provisioned clusters that you create with Express brokers.}
 }
 \description{
 Use this resource to update the intelligent rebalancing status of an Amazon MSK Provisioned cluster with Express brokers.

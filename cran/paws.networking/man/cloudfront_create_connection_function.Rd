@@ -14,11 +14,11 @@ cloudfront_create_connection_function(
 \arguments{
 \item{Name}{[required] A name for the connection function.}
 
-\item{ConnectionFunctionConfig}{[required]}
+\item{ConnectionFunctionConfig}{[required] Contains configuration information about a CloudFront function.}
 
 \item{ConnectionFunctionCode}{[required] The code for the connection function.}
 
-\item{Tags}{}
+\item{Tags}{A complex type that contains zero or more \code{Tag} elements.}
 }
 \description{
 Creates a connection function.

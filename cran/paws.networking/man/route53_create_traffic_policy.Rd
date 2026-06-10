@@ -10,11 +10,9 @@ route53_create_traffic_policy(Name, Document, Comment = NULL)
 \arguments{
 \item{Name}{[required] The name of the traffic policy.}
 
-\item{Document}{[required] The definition of this traffic policy in JSON format. For more
-information, see \href{https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html}{Traffic Policy Document Format}.}
+\item{Document}{[required] The definition of this traffic policy in JSON format. For more information, see \href{https://docs.aws.amazon.com/Route53/latest/APIReference/}{Traffic Policy Document Format}.}
 
-\item{Comment}{(Optional) Any comments that you want to include about the traffic
-policy.}
+\item{Comment}{(Optional) Any comments that you want to include about the traffic policy.}
 }
 \description{
 Creates a traffic policy, which you use to create multiple DNS resource record sets for one domain name (such as example.com) or one subdomain name (such as www.example.com).

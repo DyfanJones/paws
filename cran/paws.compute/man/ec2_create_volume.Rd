@@ -25,30 +25,19 @@ ec2_create_volume(
 )
 }
 \arguments{
-\item{AvailabilityZone}{The ID of the Availability Zone in which to create the volume. For
-example, \verb{us-east-1a}.
+\item{AvailabilityZone}{The ID of the Availability Zone in which to create the volume. For example, \verb{us-east-1a}.
 
-Either \code{AvailabilityZone} or \code{AvailabilityZoneId} must be specified, but
-not both.}
+Either \code{AvailabilityZone} or \code{AvailabilityZoneId} must be specified, but not both.}
 
-\item{AvailabilityZoneId}{The ID of the Availability Zone in which to create the volume. For
-example, \code{use1-az1}.
+\item{AvailabilityZoneId}{The ID of the Availability Zone in which to create the volume. For example, \code{use1-az1}.
 
-Either \code{AvailabilityZone} or \code{AvailabilityZoneId} must be specified, but
-not both.}
+Either \code{AvailabilityZone} or \code{AvailabilityZoneId} must be specified, but not both.}
 
-\item{Encrypted}{Indicates whether the volume should be encrypted. The effect of setting
-the encryption state to \code{true} depends on the volume origin (new or from
-a snapshot), starting encryption state, ownership, and whether
-encryption by default is enabled. For more information, see \href{https://docs.aws.amazon.com/ebs/latest/userguide/#encryption-by-default}{Encryption by default}
-in the \emph{Amazon EBS User Guide}.
+\item{Encrypted}{Indicates whether the volume should be encrypted. The effect of setting the encryption state to \code{true} depends on the volume origin (new or from a snapshot), starting encryption state, ownership, and whether encryption by default is enabled. For more information, see \href{https://docs.aws.amazon.com/ebs/latest/userguide/#encryption-by-default}{Encryption by default} in the \emph{Amazon EBS User Guide}.
 
-Encrypted Amazon EBS volumes must be attached to instances that support
-Amazon EBS encryption. For more information, see \href{https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances}{Supported instance types}.}
+Encrypted Amazon EBS volumes must be attached to instances that support Amazon EBS encryption. For more information, see \href{https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances}{Supported instance types}.}
 
-\item{Iops}{The number of I/O operations per second (IOPS) to provision for the
-volume. Required for \code{io1} and \code{io2} volumes. Optional for \code{gp3}
-volumes. Omit for all other volume types.
+\item{Iops}{The number of I/O operations per second (IOPS) to provision for the volume. Required for \code{io1} and \code{io2} volumes. Optional for \code{gp3} volumes. Omit for all other volume types.
 
 Valid ranges:
 \itemize{
@@ -57,40 +46,25 @@ Valid ranges:
 \item io2: \verb{100 - 256,000} IOPS
 }
 
-\href{https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html}{Instances built on the Nitro System}
-can support up to 256,000 IOPS. Other instances can support up to 32,000
-IOPS.}
+\href{https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html}{Instances built on the Nitro System} can support up to 256,000 IOPS. Other instances can support up to 32,000 IOPS.}
 
-\item{KmsKeyId}{The identifier of the KMS key to use for Amazon EBS encryption. If this
-parameter is not specified, your KMS key for Amazon EBS is used. If
-\code{KmsKeyId} is specified, the encrypted state must be \code{true}.
+\item{KmsKeyId}{The identifier of the KMS key to use for Amazon EBS encryption. If this parameter is not specified, your KMS key for Amazon EBS is used. If \code{KmsKeyId} is specified, the encrypted state must be \code{true}.
 
 You can specify the KMS key using any of the following:
 \itemize{
 \item Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.
 \item Key alias. For example, alias/ExampleAlias.
-\item Key ARN. For example,
-arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.
-\item Alias ARN. For example,
-arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.
+\item Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.
+\item Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.
 }
 
-Amazon Web Services authenticates the KMS key asynchronously. Therefore,
-if you specify an ID, alias, or ARN that is not valid, the action can
-appear to complete, but eventually fails.}
+Amazon Web Services authenticates the KMS key asynchronously. Therefore, if you specify an ID, alias, or ARN that is not valid, the action can appear to complete, but eventually fails.}
 
-\item{OutpostArn}{The Amazon Resource Name (ARN) of the Outpost on which to create the
-volume.
+\item{OutpostArn}{The Amazon Resource Name (ARN) of the Outpost on which to create the volume.
 
-If you intend to use a volume with an instance running on an outpost,
-then you must create the volume on the same outpost as the instance. You
-can't use a volume created in an Amazon Web Services Region with an
-instance on an Amazon Web Services outpost, or the other way around.}
+If you intend to use a volume with an instance running on an outpost, then you must create the volume on the same outpost as the instance. You can't use a volume created in an Amazon Web Services Region with an instance on an Amazon Web Services outpost, or the other way around.}
 
-\item{Size}{The size of the volume, in GiBs. You must specify either a snapshot ID
-or a volume size. If you specify a snapshot, the default is the snapshot
-size, and you can specify a volume size that is equal to or larger than
-the snapshot size.
+\item{Size}{The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size, and you can specify a volume size that is equal to or larger than the snapshot size.
 
 Valid sizes:
 \itemize{
@@ -102,8 +76,7 @@ Valid sizes:
 \item standard: \code{1 - 1024} GiB
 }}
 
-\item{SnapshotId}{The snapshot from which to create the volume. You must specify either a
-snapshot ID or a volume size.}
+\item{SnapshotId}{The snapshot from which to create the volume. You must specify either a snapshot ID or a volume size.}
 
 \item{VolumeType}{The volume type. This parameter can be one of the following values:
 \itemize{
@@ -114,61 +87,39 @@ snapshot ID or a volume size.}
 \item Magnetic: \code{standard}
 }
 
-Throughput Optimized HDD (\code{st1}) and Cold HDD (\code{sc1}) volumes can't be
-used as boot volumes.
+Throughput Optimized HDD (\code{st1}) and Cold HDD (\code{sc1}) volumes can't be used as boot volumes.
 
-For more information, see \href{https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html}{Amazon EBS volume types}
-in the \emph{Amazon EBS User Guide}.
+For more information, see \href{https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html}{Amazon EBS volume types} in the \emph{Amazon EBS User Guide}.
 
 Default: \code{gp2}}
 
 \item{TagSpecifications}{The tags to apply to the volume during creation.}
 
-\item{MultiAttachEnabled}{Indicates whether to enable Amazon EBS Multi-Attach. If you enable
-Multi-Attach, you can attach the volume to up to 16 \href{https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html}{Instances built on the Nitro System}
-in the same Availability Zone. This parameter is supported with \code{io1}
-and \code{io2} volumes only. For more information, see \href{https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html}{Amazon EBS Multi-Attach}
-in the \emph{Amazon EBS User Guide}.}
+\item{MultiAttachEnabled}{Indicates whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you can attach the volume to up to 16 \href{https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html}{Instances built on the Nitro System} in the same Availability Zone. This parameter is supported with \code{io1} and \code{io2} volumes only. For more information, see \href{https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html}{Amazon EBS Multi-Attach} in the \emph{Amazon EBS User Guide}.}
 
-\item{Throughput}{The throughput to provision for the volume, in MiB/s. Supported for
-\code{gp3} volumes only. Omit for all other volume types.
+\item{Throughput}{The throughput to provision for the volume, in MiB/s. Supported for \code{gp3} volumes only. Omit for all other volume types.
 
 Valid Range: \code{125 - 2000} MiB/s}
 
-\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensure Idempotency}.}
+\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensure Idempotency}.}
 
-\item{VolumeInitializationRate}{Specifies the Amazon EBS Provisioned Rate for Volume Initialization
-(volume initialization rate), in MiB/s, at which to download the
-snapshot blocks from Amazon S3 to the volume. This is also known as
-\emph{volume initialization}. Specifying a volume initialization rate ensures
-that the volume is initialized at a predictable and consistent rate
-after creation.
+\item{VolumeInitializationRate}{Specifies the Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate), in MiB/s, at which to download the snapshot blocks from Amazon S3 to the volume. This is also known as \emph{volume initialization}. Specifying a volume initialization rate ensures that the volume is initialized at a predictable and consistent rate after creation.
 
-This parameter is supported only for volumes created from snapshots.
-Omit this parameter if:
+This parameter is supported only for volumes created from snapshots. Omit this parameter if:
 \itemize{
-\item You want to create the volume using fast snapshot restore. You must
-specify a snapshot that is enabled for fast snapshot restore. In
-this case, the volume is fully initialized at creation.
+\item You want to create the volume using fast snapshot restore. You must specify a snapshot that is enabled for fast snapshot restore. In this case, the volume is fully initialized at creation.
 
-If you specify a snapshot that is enabled for fast snapshot restore
-and a volume initialization rate, the volume will be initialized at
-the specified rate instead of fast snapshot restore.
+If you specify a snapshot that is enabled for fast snapshot restore and a volume initialization rate, the volume will be initialized at the specified rate instead of fast snapshot restore.
 \item You want to create a volume that is initialized at the default rate.
 }
 
-For more information, see \href{https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html}{Initialize Amazon EBS volumes}
-in the \emph{Amazon EC2 User Guide}.
+For more information, see \href{https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html}{Initialize Amazon EBS volumes} in the \emph{Amazon EC2 User Guide}.
 
 Valid range: 100 - 300 MiB/s}
 
 \item{Operator}{Reserved for internal use.}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 }
 \description{
 Creates an EBS volume that can be attached to an instance in the same Availability Zone.

@@ -11,8 +11,7 @@ glue_start_ml_labeling_set_generation_task_run(TransformId, OutputS3Path)
 \arguments{
 \item{TransformId}{[required] The unique identifier of the machine learning transform.}
 
-\item{OutputS3Path}{[required] The Amazon Simple Storage Service (Amazon S3) path where you generate
-the labeling set.}
+\item{OutputS3Path}{[required] The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling set.}
 }
 \description{
 Starts the active learning workflow for your machine learning transform to improve the transform's quality by generating label sets and adding labels.

@@ -14,8 +14,7 @@ networkfirewall_create_proxy_configuration(
 )
 }
 \arguments{
-\item{ProxyConfigurationName}{[required] The descriptive name of the proxy configuration. You can't change the
-name of a proxy configuration after you create it.}
+\item{ProxyConfigurationName}{[required] The descriptive name of the proxy configuration. You can't change the name of a proxy configuration after you create it.}
 
 \item{Description}{A description of the proxy configuration.}
 
@@ -27,8 +26,7 @@ You must specify the ARNs or the names, and you can specify both.}
 
 You must specify the ARNs or the names, and you can specify both.}
 
-\item{DefaultRulePhaseActions}{[required] Evaluation points in the traffic flow where rules are applied. There are
-three phases in a traffic where the rule match is applied.}
+\item{DefaultRulePhaseActions}{[required] Evaluation points in the traffic flow where rules are applied. There are three phases in a traffic where the rule match is applied.}
 
 \item{Tags}{The key:value pairs to associate with the resource.}
 }

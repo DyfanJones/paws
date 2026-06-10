@@ -11,10 +11,7 @@ glue_create_catalog(Name, CatalogInput, Tags = NULL)
 
 \item{CatalogInput}{[required] A \code{CatalogInput} object that defines the metadata for the catalog.}
 
-\item{Tags}{A map array of key-value pairs, not more than 50 pairs. Each key is a
-UTF-8 string, not less than 1 or more than 128 bytes long. Each value is
-a UTF-8 string, not more than 256 bytes long. The tags you assign to the
-catalog.}
+\item{Tags}{A map array of key-value pairs, not more than 50 pairs. Each key is a UTF-8 string, not less than 1 or more than 128 bytes long. Each value is a UTF-8 string, not more than 256 bytes long. The tags you assign to the catalog.}
 }
 \description{
 Creates a new catalog in the Glue Data Catalog.

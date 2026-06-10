@@ -20,8 +20,7 @@ appstream_describe_images(
 
 \item{Type}{The type of image (public, private, or shared) to describe.}
 
-\item{NextToken}{The pagination token to use to retrieve the next page of results for
-this operation. If this value is null, it retrieves the first page.}
+\item{NextToken}{The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.}
 
 \item{MaxResults}{The maximum size of each page of results.}
 }

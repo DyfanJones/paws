@@ -7,11 +7,11 @@
 wellarchitected_update_workload_share(ShareId, WorkloadId, PermissionType)
 }
 \arguments{
-\item{ShareId}{[required]}
+\item{ShareId}{[required] The ID associated with the share.}
 
-\item{WorkloadId}{[required]}
+\item{WorkloadId}{[required] The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.}
 
-\item{PermissionType}{[required]}
+\item{PermissionType}{[required] Permission granted on a share request.}
 }
 \description{
 Update a workload share.

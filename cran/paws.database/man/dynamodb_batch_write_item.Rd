@@ -12,45 +12,30 @@ dynamodb_batch_write_item(
 )
 }
 \arguments{
-\item{RequestItems}{[required] A map of one or more table names or table ARNs and, for each table, a
-list of operations to be performed (\code{DeleteRequest} or \code{PutRequest}).
-Each element in the map consists of the following:
+\item{RequestItems}{[required] A map of one or more table names or table ARNs and, for each table, a list of operations to be performed (\code{DeleteRequest} or \code{PutRequest}). Each element in the map consists of the following:
 \itemize{
-\item \code{DeleteRequest} - Perform a \code{\link[=dynamodb_delete_item]{delete_item}}
-operation on the specified item. The item to be deleted is
-identified by a \code{Key} subelement:
+\item \code{DeleteRequest} - Perform a \code{\link[=dynamodb_delete_item]{delete_item}} operation on the specified item. The item to be deleted is identified by a \code{Key} subelement:
 \itemize{
-\item \code{Key} - A map of primary key attribute values that uniquely
-identify the item. Each entry in this map consists of an
-attribute name and an attribute value. For each primary key, you
-must provide \emph{all} of the key attributes. For example, with a
-simple primary key, you only need to provide a value for the
-partition key. For a composite primary key, you must provide
-values for \emph{both} the partition key and the sort key.
+\item \code{Key} - A map of primary key attribute values that uniquely identify the item. Each entry in this map consists of an attribute name and an attribute value. For each primary key, you must provide \emph{all} of the key attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for \emph{both} the partition key and the sort key.
 }
-\item \code{PutRequest} - Perform a \code{\link[=dynamodb_put_item]{put_item}} operation
-on the specified item. The item to be put is identified by an \code{Item}
-subelement:
+\item \code{PutRequest} - Perform a \code{\link[=dynamodb_put_item]{put_item}} operation on the specified item. The item to be put is identified by an \code{Item} subelement:
 \itemize{
-\item \code{Item} - A map of attributes and their values. Each entry in
-this map consists of an attribute name and an attribute value.
-Attribute values must not be null; string and binary type
-attributes must have lengths greater than zero; and set type
-attributes must not be empty. Requests that contain empty values
-are rejected with a \code{ValidationException} exception.
+\item \code{Item} - A map of attributes and their values. Each entry in this map consists of an attribute name and an attribute value. Attribute values must not be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests that contain empty values are rejected with a \code{ValidationException} exception.
 
-If you specify any attributes that are part of an index key,
-then the data types for those attributes must match those of the
-schema in the table's attribute definition.
+If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.
 }
 }}
 
-\item{ReturnConsumedCapacity}{}
+\item{ReturnConsumedCapacity}{Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:
+\itemize{
+\item \code{INDEXES} - The response includes the aggregate \code{ConsumedCapacity} for the operation, together with \code{ConsumedCapacity} for each table and secondary index that was accessed.
 
-\item{ReturnItemCollectionMetrics}{Determines whether item collection metrics are returned. If set to
-\code{SIZE}, the response includes statistics about item collections, if any,
-that were modified during the operation are returned in the response. If
-set to \code{NONE} (the default), no statistics are returned.}
+Note that some operations, such as \code{\link[=dynamodb_get_item]{get_item}} and \code{\link[=dynamodb_batch_get_item]{batch_get_item}}, do not access any indexes at all. In these cases, specifying \code{INDEXES} will only return \code{ConsumedCapacity} information for table(s).
+\item \code{TOTAL} - The response includes only the aggregate \code{ConsumedCapacity} for the operation.
+\item \code{NONE} - No \code{ConsumedCapacity} details are included in the response.
+}}
+
+\item{ReturnItemCollectionMetrics}{Determines whether item collection metrics are returned. If set to \code{SIZE}, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to \code{NONE} (the default), no statistics are returned.}
 }
 \description{
 The \code{\link[=dynamodb_batch_write_item]{batch_write_item}} operation puts or deletes multiple items in one or more tables. A single call to \code{\link[=dynamodb_batch_write_item]{batch_write_item}} can transmit up to 16MB of data over the network, consisting of up to 25 item put or delete operations. While individual items can be up to 400 KB once stored, it's important to note that an item's representation might be greater than 400KB while being sent in DynamoDB's JSON format for the API call. For more details on this distinction, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html}{Naming Rules and Data Types}.

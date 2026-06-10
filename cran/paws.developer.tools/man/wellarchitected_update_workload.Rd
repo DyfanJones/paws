@@ -26,43 +26,74 @@ wellarchitected_update_workload(
 )
 }
 \arguments{
-\item{WorkloadId}{[required]}
+\item{WorkloadId}{[required] The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.}
 
-\item{WorkloadName}{}
+\item{WorkloadName}{The name of the workload.
 
-\item{Description}{}
+The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.}
 
-\item{Environment}{}
+\item{Description}{The description for the workload.}
 
-\item{AccountIds}{}
+\item{Environment}{The environment for the workload.}
 
-\item{AwsRegions}{}
+\item{AccountIds}{The list of Amazon Web Services account IDs associated with the workload.}
 
-\item{NonAwsRegions}{}
+\item{AwsRegions}{The list of Amazon Web Services Regions associated with the workload, for example, \code{us-east-2}, or \code{ca-central-1}.}
 
-\item{PillarPriorities}{}
+\item{NonAwsRegions}{The list of non-Amazon Web Services Regions associated with the workload.}
 
-\item{ArchitecturalDesign}{}
+\item{PillarPriorities}{The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its PillarReviewSummary$PillarId.}
 
-\item{ReviewOwner}{}
+\item{ArchitecturalDesign}{The URL of the architectural design for the workload.}
 
-\item{IsReviewOwnerUpdateAcknowledged}{Flag indicating whether the workload owner has acknowledged that the
-\emph{Review owner} field is required.
+\item{ReviewOwner}{The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.}
 
-If a \strong{Review owner} is not added to the workload within 60 days of
-acknowledgement, access to the workload is restricted until an owner is
-added.}
+\item{IsReviewOwnerUpdateAcknowledged}{Flag indicating whether the workload owner has acknowledged that the \emph{Review owner} field is required.
 
-\item{IndustryType}{}
+If a \strong{Review owner} is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.}
 
-\item{Industry}{}
+\item{IndustryType}{The industry type for the workload.
 
-\item{Notes}{}
+If specified, must be one of the following:
+\itemize{
+\item \code{Agriculture}
+\item \code{Automobile}
+\item \code{Defense}
+\item \verb{Design and Engineering}
+\item \verb{Digital Advertising}
+\item \code{Education}
+\item \verb{Environmental Protection}
+\item \verb{Financial Services}
+\item \code{Gaming}
+\item \verb{General Public Services}
+\item \code{Healthcare}
+\item \code{Hospitality}
+\item \code{InfoTech}
+\item \verb{Justice and Public Safety}
+\item \verb{Life Sciences}
+\item \code{Manufacturing}
+\item \code{Media & Entertainment}
+\item \code{Mining & Resources}
+\item \code{Oil & Gas}
+\item \code{Power & Utilities}
+\item \verb{Professional Services}
+\item \verb{Real Estate & Construction}
+\item \code{Retail & Wholesale}
+\item \verb{Social Protection}
+\item \code{Telecommunications}
+\item \verb{Travel, Transportation & Logistics}
+\item \code{Other}
+}}
 
-\item{ImprovementStatus}{}
+\item{Industry}{The industry for the workload.}
 
-\item{DiscoveryConfig}{Well-Architected discovery configuration settings to associate to the
-workload.}
+\item{Notes}{The notes associated with the workload.
+
+For a review template, these are the notes that will be associated with the workload when the template is applied.}
+
+\item{ImprovementStatus}{The improvement status for a workload.}
+
+\item{DiscoveryConfig}{Well-Architected discovery configuration settings to associate to the workload.}
 
 \item{Applications}{List of AppRegistry application ARNs to associate to the workload.}
 

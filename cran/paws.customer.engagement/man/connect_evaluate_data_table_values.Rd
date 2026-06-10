@@ -16,20 +16,15 @@ connect_evaluate_data_table_values(
 \arguments{
 \item{InstanceId}{[required] The unique identifier for the Amazon Connect instance.}
 
-\item{DataTableId}{[required] The unique identifier for the data table. Must also accept the table ARN
-with or without a version alias.}
+\item{DataTableId}{[required] The unique identifier for the data table. Must also accept the table ARN with or without a version alias.}
 
-\item{Values}{[required] A list of value evaluation sets specifying which primary values and
-attributes to evaluate.}
+\item{Values}{[required] A list of value evaluation sets specifying which primary values and attributes to evaluate.}
 
-\item{TimeZone}{Optional IANA timezone identifier to use when resolving time based
-dynamic values. Defaults to the data table time zone if not provided.}
+\item{TimeZone}{Optional IANA timezone identifier to use when resolving time based dynamic values. Defaults to the data table time zone if not provided.}
 
-\item{NextToken}{Specify the pagination token from a previous request to retrieve the
-next page of results.}
+\item{NextToken}{Specify the pagination token from a previous request to retrieve the next page of results.}
 
-\item{MaxResults}{The maximum number of data table values to return in one page of
-results.}
+\item{MaxResults}{The maximum number of data table values to return in one page of results.}
 }
 \description{
 Evaluates values at the time of the request and returns them. It considers the request's timezone or the table's timezone, in that order, when accessing time based tables. When a value is accessed, the accessor's identity and the time of access are saved alongside the value to help identify values that are actively in use. The term "Batch" is not included in the operation name since it does not meet all the criteria for a batch operation as specified in Batch Operations: Amazon Web Services API Standards.

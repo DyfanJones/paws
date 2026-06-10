@@ -9,10 +9,7 @@ glue_update_crawler_schedule(CrawlerName, Schedule = NULL)
 \arguments{
 \item{CrawlerName}{[required] The name of the crawler whose schedule to update.}
 
-\item{Schedule}{The updated \code{cron} expression used to specify the schedule (see
-\href{https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html}{Time-Based Schedules for Jobs and Crawlers}.
-For example, to run something every day at 12:15 UTC, you would specify:
-\verb{cron(15 12 * * ? *)}.}
+\item{Schedule}{The updated \code{cron} expression used to specify the schedule (see \href{https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html}{Time-Based Schedules for Jobs and Crawlers}. For example, to run something every day at 12:15 UTC, you would specify: \verb{cron(15 12 * * ? *)}.}
 }
 \description{
 Updates the schedule of a crawler using a \code{cron} expression.

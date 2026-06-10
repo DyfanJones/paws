@@ -8,12 +8,9 @@ for this account}
 codepipeline_list_webhooks(NextToken = NULL, MaxResults = NULL)
 }
 \arguments{
-\item{NextToken}{The token that was returned from the previous ListWebhooks call, which
-can be used to return the next set of webhooks in the list.}
+\item{NextToken}{The token that was returned from the previous ListWebhooks call, which can be used to return the next set of webhooks in the list.}
 
-\item{MaxResults}{The maximum number of results to return in a single call. To retrieve
-the remaining results, make another call with the returned nextToken
-value.}
+\item{MaxResults}{The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value.}
 }
 \description{
 Gets a listing of all the webhooks in this Amazon Web Services Region for this account. The output lists all webhooks and includes the webhook URL and ARN and the configuration for each webhook.

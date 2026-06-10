@@ -15,19 +15,21 @@ wellarchitected_list_check_details(
 )
 }
 \arguments{
-\item{WorkloadId}{[required]}
+\item{WorkloadId}{[required] The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.}
 
-\item{NextToken}{}
+\item{NextToken}{The token to use to retrieve the next set of results.}
 
-\item{MaxResults}{}
+\item{MaxResults}{The maximum number of results to return for this request.}
 
 \item{LensArn}{[required] Well-Architected Lens ARN.}
 
-\item{PillarId}{[required]}
+\item{PillarId}{[required] The ID used to identify a pillar, for example, \code{security}.
 
-\item{QuestionId}{[required]}
+A pillar is identified by its PillarReviewSummary$PillarId.}
 
-\item{ChoiceId}{[required]}
+\item{QuestionId}{[required] The ID of the question.}
+
+\item{ChoiceId}{[required] The ID of a choice.}
 }
 \description{
 List of Trusted Advisor check details by account related to the workload.

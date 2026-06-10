@@ -18,21 +18,57 @@ costexplorer_get_cost_categories(
 \arguments{
 \item{SearchString}{The value that you want to search the filter values for.
 
-If you don't specify a \code{CostCategoryName}, \code{SearchString} is used to
-filter cost category names that match the \code{SearchString} pattern. If you
-specify a \code{CostCategoryName}, \code{SearchString} is used to filter cost
-category values that match the \code{SearchString} pattern.}
+If you don't specify a \code{CostCategoryName}, \code{SearchString} is used to filter cost category names that match the \code{SearchString} pattern. If you specify a \code{CostCategoryName}, \code{SearchString} is used to filter cost category values that match the \code{SearchString} pattern.}
 
-\item{TimePeriod}{[required]}
+\item{TimePeriod}{[required] The time period of the request.}
 
-\item{CostCategoryName}{}
+\item{CostCategoryName}{The unique name of the cost category.}
 
-\item{Filter}{}
+\item{Filter}{Use \code{Expression} to filter in various Cost Explorer APIs.
+
+Not all \code{Expression} types are supported in each API. Refer to the documentation for each specific API to see what is supported.
+
+There are two patterns:
+\itemize{
+\item Simple dimension values.
+\itemize{
+\item There are three types of simple dimension values: \code{CostCategories}, \code{Tags}, and \code{Dimensions}.
+\itemize{
+\item Specify the \code{CostCategories} field to define a filter that acts on Cost Categories.
+\item Specify the \code{Tags} field to define a filter that acts on Cost Allocation Tags.
+\item Specify the \code{Dimensions} field to define a filter that acts on the \href{https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html}{\code{DimensionValues}} .
+}
+\item For each filter type, you can set the dimension name and values for the filters that you plan to use.
+\itemize{
+\item For example, you can filter for \verb{REGION==us-east-1 OR REGION==us-west-1}. For \code{\link[=costexplorer_get_rightsizing_recommendation]{get_rightsizing_recommendation}}, the Region is a full name (for example, \verb{REGION==US East (N. Virginia)}.
+\item The corresponding \code{Expression} for this example is as follows: \verb{\{ "Dimensions": \{ "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] \} \}}
+\item As shown in the previous example, lists of dimension values are combined with \code{OR} when applying the filter.
+}
+\item You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.
+\itemize{
+\item For example, you can filter for linked account names that start with "a".
+\item The corresponding \code{Expression} for this example is as follows: \verb{\{ "Dimensions": \{ "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] \} \}}
+}
+}
+\item Compound \code{Expression} types with logical operations.
+\itemize{
+\item You can use multiple \code{Expression} types and the logical operators \code{AND/OR/NOT} to create a list of one or more \code{Expression} objects. By doing this, you can filter by more advanced options.
+\item For example, you can filter by \verb{((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)}.
+\item The corresponding \code{Expression} for this example is as follows: \verb{\{ "And": [ \{"Or": [ \{"Dimensions": \{ "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] \}\}, \{"Tags": \{ "Key": "TagName", "Values": ["Value1"] \} \} ]\}, \{"Not": \{"Dimensions": \{ "Key": "USAGE_TYPE", "Values": ["DataTransfer"] \}\}\} ] \} }
+}
+
+Because each \code{Expression} can have only one operator, the service returns an error if more than one is specified. The following example shows an \code{Expression} object that creates an error: \verb{\{ "And": [ ... ], "Dimensions": \{ "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] \} \}}
+
+The following is an example of the corresponding error message: \code{"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"}
+}
+
+For the \code{\link[=costexplorer_get_rightsizing_recommendation]{get_rightsizing_recommendation}} action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to \code{LINKED_ACCOUNT}, \code{REGION}, or \code{RIGHTSIZING_TYPE}.
+
+For the \code{\link[=costexplorer_get_reservation_purchase_recommendation]{get_reservation_purchase_recommendation}} action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to \code{LINKED_ACCOUNT}.}
 
 \item{SortBy}{The value that you sort the data by.
 
-The key represents the cost and usage metrics. The following values are
-supported:
+The key represents the cost and usage metrics. The following values are supported:
 \itemize{
 \item \code{BlendedCost}
 \item \code{UnblendedCost}
@@ -43,33 +79,19 @@ supported:
 \item \code{NormalizedUsageAmount}
 }
 
-The supported key values for the \code{SortOrder} value are \code{ASCENDING} and
-\code{DESCENDING}.
+The supported key values for the \code{SortOrder} value are \code{ASCENDING} and \code{DESCENDING}.
 
-When you use the \code{SortBy} value, the \code{NextPageToken} and \code{SearchString}
-key values aren't supported.}
+When you use the \code{SortBy} value, the \code{NextPageToken} and \code{SearchString} key values aren't supported.}
 
-\item{BillingViewArn}{The Amazon Resource Name (ARN) that uniquely identifies a specific
-billing view. The ARN is used to specify which particular billing view
-you want to interact with or retrieve information from when making API
-calls related to Amazon Web Services Billing and Cost Management
-features. The BillingViewArn can be retrieved by calling the
-ListBillingViews API.}
+\item{BillingViewArn}{The Amazon Resource Name (ARN) that uniquely identifies a specific billing view. The ARN is used to specify which particular billing view you want to interact with or retrieve information from when making API calls related to Amazon Web Services Billing and Cost Management features. The BillingViewArn can be retrieved by calling the ListBillingViews API.}
 
-\item{MaxResults}{This field is only used when the \code{SortBy} value is provided in the
-request.
+\item{MaxResults}{This field is only used when the \code{SortBy} value is provided in the request.
 
-The maximum number of objects that are returned for this request. If
-\code{MaxResults} isn't specified with the \code{SortBy} value, the request
-returns 1000 results as the default value for this parameter.
+The maximum number of objects that are returned for this request. If \code{MaxResults} isn't specified with the \code{SortBy} value, the request returns 1000 results as the default value for this parameter.
 
-For \code{\link[=costexplorer_get_cost_categories]{get_cost_categories}},
-MaxResults has an upper quota of 1000.}
+For \code{\link[=costexplorer_get_cost_categories]{get_cost_categories}}, MaxResults has an upper quota of 1000.}
 
-\item{NextPageToken}{If the number of objects that are still available for retrieval exceeds
-the quota, Amazon Web Services returns a NextPageToken value in the
-response. To retrieve the next batch of objects, provide the
-NextPageToken from the previous call in your next request.}
+\item{NextPageToken}{If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the previous call in your next request.}
 }
 \description{
 Retrieves an array of cost category names and values incurred cost.

@@ -7,8 +7,7 @@
 kinesis_update_account_settings(MinimumThroughputBillingCommitment)
 }
 \arguments{
-\item{MinimumThroughputBillingCommitment}{[required] Specifies the minimum throughput billing commitment configuration for
-your account.}
+\item{MinimumThroughputBillingCommitment}{[required] Specifies the minimum throughput billing commitment configuration for your account.}
 }
 \description{
 Updates the account-level settings for Amazon Kinesis Data Streams.

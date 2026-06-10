@@ -15,11 +15,9 @@ ivsrealtime_list_compositions(
 \arguments{
 \item{filterByStageArn}{Filters the Composition list to match the specified Stage ARN.}
 
-\item{filterByEncoderConfigurationArn}{Filters the Composition list to match the specified EncoderConfiguration
-attached to at least one of its output.}
+\item{filterByEncoderConfigurationArn}{Filters the Composition list to match the specified EncoderConfiguration attached to at least one of its output.}
 
-\item{nextToken}{The first Composition to retrieve. This is used for pagination; see the
-\code{nextToken} response field.}
+\item{nextToken}{The first Composition to retrieve. This is used for pagination; see the \code{nextToken} response field.}
 
 \item{maxResults}{Maximum number of results to return. Default: 100.}
 }

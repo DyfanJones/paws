@@ -7,11 +7,9 @@
 opensearchingestion_create_pipeline_endpoint(PipelineArn, VpcOptions)
 }
 \arguments{
-\item{PipelineArn}{[required] The Amazon Resource Name (ARN) of the pipeline to create the endpoint
-for.}
+\item{PipelineArn}{[required] The Amazon Resource Name (ARN) of the pipeline to create the endpoint for.}
 
-\item{VpcOptions}{[required] Container for the VPC configuration for the pipeline endpoint, including
-subnet IDs and security group IDs.}
+\item{VpcOptions}{[required] Container for the VPC configuration for the pipeline endpoint, including subnet IDs and security group IDs.}
 }
 \description{
 Creates a VPC endpoint for an OpenSearch Ingestion pipeline. Pipeline endpoints allow you to ingest data from your VPC into pipelines that you have access to.

@@ -7,19 +7,14 @@ NULL
 #' Services Region
 #'
 #' @description
-#' Deletes the specified pronunciation lexicon stored in an Amazon Web
-#' Services Region. A lexicon which has been deleted is not available for
-#' speech synthesis, nor is it possible to retrieve it using either the
-#' [`get_lexicon`][polly_get_lexicon] or `ListLexicon` APIs.
+#' Deletes the specified pronunciation lexicon stored in an Amazon Web Services Region. A lexicon which has been deleted is not available for speech synthesis, nor is it possible to retrieve it using either the [`get_lexicon`][polly_get_lexicon] or `ListLexicon` APIs.
 #' 
-#' For more information, see [Managing
-#' Lexicons](https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html).
+#' For more information, see [Managing Lexicons](https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html).
 #'
 #' @usage
 #' polly_delete_lexicon(Name)
 #'
-#' @param Name &#91;required&#93; The name of the lexicon to delete. Must be an existing lexicon in the
-#' region.
+#' @param Name &#91;required&#93; The name of the lexicon to delete. Must be an existing lexicon in the region.
 #'
 #' @return
 #' An empty list.
@@ -67,46 +62,24 @@ polly_delete_lexicon <- function(Name) {
 #' speech synthesis
 #'
 #' @description
-#' Returns the list of voices that are available for use when requesting
-#' speech synthesis. Each voice speaks a specified language, is either male
-#' or female, and is identified by an ID, which is the ASCII version of the
-#' voice name.
+#' Returns the list of voices that are available for use when requesting speech synthesis. Each voice speaks a specified language, is either male or female, and is identified by an ID, which is the ASCII version of the voice name.
 #' 
-#' When synthesizing speech (
-#' [`synthesize_speech`][polly_synthesize_speech] ), you provide the voice
-#' ID for the voice you want from the list of voices returned by
-#' [`describe_voices`][polly_describe_voices].
+#' When synthesizing speech ( [`synthesize_speech`][polly_synthesize_speech] ), you provide the voice ID for the voice you want from the list of voices returned by [`describe_voices`][polly_describe_voices].
 #' 
-#' For example, you want your news reader application to read news in a
-#' specific language, but giving a user the option to choose the voice.
-#' Using the [`describe_voices`][polly_describe_voices] operation you can
-#' provide the user with a list of available voices to select from.
+#' For example, you want your news reader application to read news in a specific language, but giving a user the option to choose the voice. Using the [`describe_voices`][polly_describe_voices] operation you can provide the user with a list of available voices to select from.
 #' 
-#' You can optionally specify a language code to filter the available
-#' voices. For example, if you specify `en-US`, the operation returns a
-#' list of all available US English voices.
+#' You can optionally specify a language code to filter the available voices. For example, if you specify `en-US`, the operation returns a list of all available US English voices.
 #' 
-#' This operation requires permissions to perform the
-#' `polly:DescribeVoices` action.
+#' This operation requires permissions to perform the `polly:DescribeVoices` action.
 #'
 #' @usage
 #' polly_describe_voices(Engine, LanguageCode,
 #'   IncludeAdditionalLanguageCodes, NextToken)
 #'
-#' @param Engine Specifies the engine (`standard`, `neural`, `long-form` or `generative`)
-#' used by Amazon Polly when processing input text for speech synthesis.
-#' @param LanguageCode The language identification tag (ISO 639 code for the language name-ISO
-#' 3166 country code) for filtering the list of voices returned. If you
-#' don't specify this optional parameter, all available voices are
-#' returned.
-#' @param IncludeAdditionalLanguageCodes Boolean value indicating whether to return any bilingual voices that use
-#' the specified language as an additional language. For instance, if you
-#' request all languages that use US English (es-US), and there is an
-#' Italian voice that speaks both Italian (it-IT) and US English, that
-#' voice will be included if you specify `yes` but not if you specify `no`.
-#' @param NextToken An opaque pagination token returned from the previous
-#' [`describe_voices`][polly_describe_voices] operation. If present, this
-#' indicates where to continue the listing.
+#' @param Engine Specifies the engine (`standard`, `neural`, `long-form` or `generative`) used by Amazon Polly when processing input text for speech synthesis.
+#' @param LanguageCode The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned.
+#' @param IncludeAdditionalLanguageCodes Boolean value indicating whether to return any bilingual voices that use the specified language as an additional language. For instance, if you request all languages that use US English (es-US), and there is an Italian voice that speaks both Italian (it-IT) and US English, that voice will be included if you specify `yes` but not if you specify `no`.
+#' @param NextToken An opaque pagination token returned from the previous [`describe_voices`][polly_describe_voices] operation. If present, this indicates where to continue the listing.
 #'
 #' @return
 #' A list with the following syntax:
@@ -115,7 +88,7 @@ polly_delete_lexicon <- function(Name) {
 #'   Voices = list(
 #'     list(
 #'       Gender = "Female"|"Male",
-#'       Id = "Aditi"|"Amy"|"Astrid"|"Bianca"|"Brian"|"Camila"|"Carla"|"Carmen"|"Celine"|"Chantal"|"Conchita"|"Cristiano"|"Dora"|"Emma"|"Enrique"|"Ewa"|"Filiz"|"Gabrielle"|"Geraint"|"Giorgio"|"Gwyneth"|"Hans"|"Ines"|"Ivy"|"Jacek"|"Jan"|"Joanna"|"Joey"|"Justin"|"Karl"|"Kendra"|"Kevin"|"Kimberly"|"Lea"|"Liv"|"Lotte"|"Lucia"|"Lupe"|"Mads"|"Maja"|"Marlene"|"Mathieu"|"Matthew"|"Maxim"|"Mia"|"Miguel"|"Mizuki"|"Naja"|"Nicole"|"Olivia"|"Penelope"|"Raveena"|"Ricardo"|"Ruben"|"Russell"|"Salli"|"Seoyeon"|"Takumi"|"Tatyana"|"Vicki"|"Vitoria"|"Zeina"|"Zhiyu"|"Aria"|"Ayanda"|"Arlet"|"Hannah"|"Arthur"|"Daniel"|"Liam"|"Pedro"|"Kajal"|"Hiujin"|"Laura"|"Elin"|"Ida"|"Suvi"|"Ola"|"Hala"|"Andres"|"Sergio"|"Remi"|"Adriano"|"Thiago"|"Ruth"|"Stephen"|"Kazuha"|"Tomoko"|"Niamh"|"Sofie"|"Lisa"|"Isabelle"|"Zayd"|"Danielle"|"Gregory"|"Burcu"|"Jitka"|"Sabrina"|"Jasmine"|"Jihye",
+#'       Id = "Aditi"|"Amy"|"Astrid"|"Bianca"|"Brian"|"Camila"|"Carla"|"Carmen"|"Celine"|"Chantal"|"Conchita"|"Cristiano"|"Dora"|"Emma"|"Enrique"|"Ewa"|"Filiz"|"Gabrielle"|"Geraint"|"Giorgio"|"Gwyneth"|"Hans"|"Ines"|"Ivy"|"Jacek"|"Jan"|"Joanna"|"Joey"|"Justin"|"Karl"|"Kendra"|"Kevin"|"Kimberly"|"Lea"|"Liv"|"Lotte"|"Lucia"|"Lupe"|"Mads"|"Maja"|"Marlene"|"Mathieu"|"Matthew"|"Maxim"|"Mia"|"Miguel"|"Mizuki"|"Naja"|"Nicole"|"Olivia"|"Penelope"|"Raveena"|"Ricardo"|"Ruben"|"Russell"|"Salli"|"Seoyeon"|"Takumi"|"Tatyana"|"Vicki"|"Vitoria"|"Zeina"|"Zhiyu"|"Aria"|"Ayanda"|"Arlet"|"Hannah"|"Arthur"|"Daniel"|"Liam"|"Pedro"|"Kajal"|"Hiujin"|"Laura"|"Elin"|"Ida"|"Suvi"|"Ola"|"Hala"|"Andres"|"Sergio"|"Remi"|"Adriano"|"Thiago"|"Ruth"|"Stephen"|"Kazuha"|"Tomoko"|"Niamh"|"Sofie"|"Lisa"|"Isabelle"|"Zayd"|"Danielle"|"Gregory"|"Burcu"|"Jitka"|"Sabrina"|"Jasmine"|"Jihye"|"Ambre"|"Beatrice"|"Florian"|"Lennart"|"Lorenzo"|"Tiffany",
 #'       LanguageCode = "arb"|"cmn-CN"|"cy-GB"|"da-DK"|"de-DE"|"en-AU"|"en-GB"|"en-GB-WLS"|"en-IN"|"en-US"|"es-ES"|"es-MX"|"es-US"|"fr-CA"|"fr-FR"|"is-IS"|"it-IT"|"ja-JP"|"hi-IN"|"ko-KR"|"nb-NO"|"nl-NL"|"pl-PL"|"pt-BR"|"pt-PT"|"ro-RO"|"ru-RU"|"sv-SE"|"tr-TR"|"en-NZ"|"en-ZA"|"ca-ES"|"de-AT"|"yue-CN"|"ar-AE"|"fi-FI"|"en-IE"|"nl-BE"|"fr-BE"|"cs-CZ"|"de-CH"|"en-SG",
 #'       LanguageName = "string",
 #'       Name = "string",
@@ -180,9 +153,7 @@ polly_describe_voices <- function(Engine = NULL, LanguageCode = NULL, IncludeAdd
 #' Amazon Web Services Region
 #'
 #' @description
-#' Returns the content of the specified pronunciation lexicon stored in an
-#' Amazon Web Services Region. For more information, see [Managing
-#' Lexicons](https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html).
+#' Returns the content of the specified pronunciation lexicon stored in an Amazon Web Services Region. For more information, see [Managing Lexicons](https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html).
 #'
 #' @usage
 #' polly_get_lexicon(Name)
@@ -253,10 +224,7 @@ polly_get_lexicon <- function(Name) {
 #' Retrieves a specific SpeechSynthesisTask object based on its TaskID
 #'
 #' @description
-#' Retrieves a specific SpeechSynthesisTask object based on its TaskID.
-#' This object contains information about the given speech synthesis task,
-#' including the status of the task, and a link to the S3 bucket containing
-#' the output of the task.
+#' Retrieves a specific SpeechSynthesisTask object based on its TaskID. This object contains information about the given speech synthesis task, including the status of the task, and a link to the S3 bucket containing the output of the task.
 #'
 #' @usage
 #' polly_get_speech_synthesis_task(TaskId)
@@ -281,13 +249,13 @@ polly_get_lexicon <- function(Name) {
 #'     LexiconNames = list(
 #'       "string"
 #'     ),
-#'     OutputFormat = "json"|"mp3"|"ogg_opus"|"ogg_vorbis"|"pcm",
+#'     OutputFormat = "json"|"mp3"|"ogg_opus"|"ogg_vorbis"|"pcm"|"mulaw"|"alaw",
 #'     SampleRate = "string",
 #'     SpeechMarkTypes = list(
 #'       "sentence"|"ssml"|"viseme"|"word"
 #'     ),
 #'     TextType = "ssml"|"text",
-#'     VoiceId = "Aditi"|"Amy"|"Astrid"|"Bianca"|"Brian"|"Camila"|"Carla"|"Carmen"|"Celine"|"Chantal"|"Conchita"|"Cristiano"|"Dora"|"Emma"|"Enrique"|"Ewa"|"Filiz"|"Gabrielle"|"Geraint"|"Giorgio"|"Gwyneth"|"Hans"|"Ines"|"Ivy"|"Jacek"|"Jan"|"Joanna"|"Joey"|"Justin"|"Karl"|"Kendra"|"Kevin"|"Kimberly"|"Lea"|"Liv"|"Lotte"|"Lucia"|"Lupe"|"Mads"|"Maja"|"Marlene"|"Mathieu"|"Matthew"|"Maxim"|"Mia"|"Miguel"|"Mizuki"|"Naja"|"Nicole"|"Olivia"|"Penelope"|"Raveena"|"Ricardo"|"Ruben"|"Russell"|"Salli"|"Seoyeon"|"Takumi"|"Tatyana"|"Vicki"|"Vitoria"|"Zeina"|"Zhiyu"|"Aria"|"Ayanda"|"Arlet"|"Hannah"|"Arthur"|"Daniel"|"Liam"|"Pedro"|"Kajal"|"Hiujin"|"Laura"|"Elin"|"Ida"|"Suvi"|"Ola"|"Hala"|"Andres"|"Sergio"|"Remi"|"Adriano"|"Thiago"|"Ruth"|"Stephen"|"Kazuha"|"Tomoko"|"Niamh"|"Sofie"|"Lisa"|"Isabelle"|"Zayd"|"Danielle"|"Gregory"|"Burcu"|"Jitka"|"Sabrina"|"Jasmine"|"Jihye",
+#'     VoiceId = "Aditi"|"Amy"|"Astrid"|"Bianca"|"Brian"|"Camila"|"Carla"|"Carmen"|"Celine"|"Chantal"|"Conchita"|"Cristiano"|"Dora"|"Emma"|"Enrique"|"Ewa"|"Filiz"|"Gabrielle"|"Geraint"|"Giorgio"|"Gwyneth"|"Hans"|"Ines"|"Ivy"|"Jacek"|"Jan"|"Joanna"|"Joey"|"Justin"|"Karl"|"Kendra"|"Kevin"|"Kimberly"|"Lea"|"Liv"|"Lotte"|"Lucia"|"Lupe"|"Mads"|"Maja"|"Marlene"|"Mathieu"|"Matthew"|"Maxim"|"Mia"|"Miguel"|"Mizuki"|"Naja"|"Nicole"|"Olivia"|"Penelope"|"Raveena"|"Ricardo"|"Ruben"|"Russell"|"Salli"|"Seoyeon"|"Takumi"|"Tatyana"|"Vicki"|"Vitoria"|"Zeina"|"Zhiyu"|"Aria"|"Ayanda"|"Arlet"|"Hannah"|"Arthur"|"Daniel"|"Liam"|"Pedro"|"Kajal"|"Hiujin"|"Laura"|"Elin"|"Ida"|"Suvi"|"Ola"|"Hala"|"Andres"|"Sergio"|"Remi"|"Adriano"|"Thiago"|"Ruth"|"Stephen"|"Kazuha"|"Tomoko"|"Niamh"|"Sofie"|"Lisa"|"Isabelle"|"Zayd"|"Danielle"|"Gregory"|"Burcu"|"Jitka"|"Sabrina"|"Jasmine"|"Jihye"|"Ambre"|"Beatrice"|"Florian"|"Lennart"|"Lorenzo"|"Tiffany",
 #'     LanguageCode = "arb"|"cmn-CN"|"cy-GB"|"da-DK"|"de-DE"|"en-AU"|"en-GB"|"en-GB-WLS"|"en-IN"|"en-US"|"es-ES"|"es-MX"|"es-US"|"fr-CA"|"fr-FR"|"is-IS"|"it-IT"|"ja-JP"|"hi-IN"|"ko-KR"|"nb-NO"|"nl-NL"|"pl-PL"|"pt-BR"|"pt-PT"|"ro-RO"|"ru-RU"|"sv-SE"|"tr-TR"|"en-NZ"|"en-ZA"|"ca-ES"|"de-AT"|"yue-CN"|"ar-AE"|"fi-FI"|"en-IE"|"nl-BE"|"fr-BE"|"cs-CZ"|"de-CH"|"en-SG"
 #'   )
 #' )
@@ -328,16 +296,12 @@ polly_get_speech_synthesis_task <- function(TaskId) {
 #' Services Region
 #'
 #' @description
-#' Returns a list of pronunciation lexicons stored in an Amazon Web
-#' Services Region. For more information, see [Managing
-#' Lexicons](https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html).
+#' Returns a list of pronunciation lexicons stored in an Amazon Web Services Region. For more information, see [Managing Lexicons](https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html).
 #'
 #' @usage
 #' polly_list_lexicons(NextToken)
 #'
-#' @param NextToken An opaque pagination token returned from previous
-#' [`list_lexicons`][polly_list_lexicons] operation. If present, indicates
-#' where to continue the list of lexicons.
+#' @param NextToken An opaque pagination token returned from previous [`list_lexicons`][polly_list_lexicons] operation. If present, indicates where to continue the list of lexicons.
 #'
 #' @return
 #' A list with the following syntax:
@@ -403,16 +367,13 @@ polly_list_lexicons <- function(NextToken = NULL) {
 #' date
 #'
 #' @description
-#' Returns a list of SpeechSynthesisTask objects ordered by their creation
-#' date. This operation can filter the tasks by their status, for example,
-#' allowing users to list only tasks that are completed.
+#' Returns a list of SpeechSynthesisTask objects ordered by their creation date. This operation can filter the tasks by their status, for example, allowing users to list only tasks that are completed.
 #'
 #' @usage
 #' polly_list_speech_synthesis_tasks(MaxResults, NextToken, Status)
 #'
 #' @param MaxResults Maximum number of speech synthesis tasks returned in a List operation.
-#' @param NextToken The pagination token to use in the next request to continue the listing
-#' of speech synthesis tasks.
+#' @param NextToken The pagination token to use in the next request to continue the listing of speech synthesis tasks.
 #' @param Status Status of the speech synthesis tasks returned in a List operation
 #'
 #' @return
@@ -435,13 +396,13 @@ polly_list_lexicons <- function(NextToken = NULL) {
 #'       LexiconNames = list(
 #'         "string"
 #'       ),
-#'       OutputFormat = "json"|"mp3"|"ogg_opus"|"ogg_vorbis"|"pcm",
+#'       OutputFormat = "json"|"mp3"|"ogg_opus"|"ogg_vorbis"|"pcm"|"mulaw"|"alaw",
 #'       SampleRate = "string",
 #'       SpeechMarkTypes = list(
 #'         "sentence"|"ssml"|"viseme"|"word"
 #'       ),
 #'       TextType = "ssml"|"text",
-#'       VoiceId = "Aditi"|"Amy"|"Astrid"|"Bianca"|"Brian"|"Camila"|"Carla"|"Carmen"|"Celine"|"Chantal"|"Conchita"|"Cristiano"|"Dora"|"Emma"|"Enrique"|"Ewa"|"Filiz"|"Gabrielle"|"Geraint"|"Giorgio"|"Gwyneth"|"Hans"|"Ines"|"Ivy"|"Jacek"|"Jan"|"Joanna"|"Joey"|"Justin"|"Karl"|"Kendra"|"Kevin"|"Kimberly"|"Lea"|"Liv"|"Lotte"|"Lucia"|"Lupe"|"Mads"|"Maja"|"Marlene"|"Mathieu"|"Matthew"|"Maxim"|"Mia"|"Miguel"|"Mizuki"|"Naja"|"Nicole"|"Olivia"|"Penelope"|"Raveena"|"Ricardo"|"Ruben"|"Russell"|"Salli"|"Seoyeon"|"Takumi"|"Tatyana"|"Vicki"|"Vitoria"|"Zeina"|"Zhiyu"|"Aria"|"Ayanda"|"Arlet"|"Hannah"|"Arthur"|"Daniel"|"Liam"|"Pedro"|"Kajal"|"Hiujin"|"Laura"|"Elin"|"Ida"|"Suvi"|"Ola"|"Hala"|"Andres"|"Sergio"|"Remi"|"Adriano"|"Thiago"|"Ruth"|"Stephen"|"Kazuha"|"Tomoko"|"Niamh"|"Sofie"|"Lisa"|"Isabelle"|"Zayd"|"Danielle"|"Gregory"|"Burcu"|"Jitka"|"Sabrina"|"Jasmine"|"Jihye",
+#'       VoiceId = "Aditi"|"Amy"|"Astrid"|"Bianca"|"Brian"|"Camila"|"Carla"|"Carmen"|"Celine"|"Chantal"|"Conchita"|"Cristiano"|"Dora"|"Emma"|"Enrique"|"Ewa"|"Filiz"|"Gabrielle"|"Geraint"|"Giorgio"|"Gwyneth"|"Hans"|"Ines"|"Ivy"|"Jacek"|"Jan"|"Joanna"|"Joey"|"Justin"|"Karl"|"Kendra"|"Kevin"|"Kimberly"|"Lea"|"Liv"|"Lotte"|"Lucia"|"Lupe"|"Mads"|"Maja"|"Marlene"|"Mathieu"|"Matthew"|"Maxim"|"Mia"|"Miguel"|"Mizuki"|"Naja"|"Nicole"|"Olivia"|"Penelope"|"Raveena"|"Ricardo"|"Ruben"|"Russell"|"Salli"|"Seoyeon"|"Takumi"|"Tatyana"|"Vicki"|"Vitoria"|"Zeina"|"Zhiyu"|"Aria"|"Ayanda"|"Arlet"|"Hannah"|"Arthur"|"Daniel"|"Liam"|"Pedro"|"Kajal"|"Hiujin"|"Laura"|"Elin"|"Ida"|"Suvi"|"Ola"|"Hala"|"Andres"|"Sergio"|"Remi"|"Adriano"|"Thiago"|"Ruth"|"Stephen"|"Kazuha"|"Tomoko"|"Niamh"|"Sofie"|"Lisa"|"Isabelle"|"Zayd"|"Danielle"|"Gregory"|"Burcu"|"Jitka"|"Sabrina"|"Jasmine"|"Jihye"|"Ambre"|"Beatrice"|"Florian"|"Lennart"|"Lorenzo"|"Tiffany",
 #'       LanguageCode = "arb"|"cmn-CN"|"cy-GB"|"da-DK"|"de-DE"|"en-AU"|"en-GB"|"en-GB-WLS"|"en-IN"|"en-US"|"es-ES"|"es-MX"|"es-US"|"fr-CA"|"fr-FR"|"is-IS"|"it-IT"|"ja-JP"|"hi-IN"|"ko-KR"|"nb-NO"|"nl-NL"|"pl-PL"|"pt-BR"|"pt-PT"|"ro-RO"|"ru-RU"|"sv-SE"|"tr-TR"|"en-NZ"|"en-ZA"|"ca-ES"|"de-AT"|"yue-CN"|"ar-AE"|"fi-FI"|"en-IE"|"nl-BE"|"fr-BE"|"cs-CZ"|"de-CH"|"en-SG"
 #'     )
 #'   )
@@ -484,21 +445,14 @@ polly_list_speech_synthesis_tasks <- function(MaxResults = NULL, NextToken = NUL
 #' Stores a pronunciation lexicon in an Amazon Web Services Region
 #'
 #' @description
-#' Stores a pronunciation lexicon in an Amazon Web Services Region. If a
-#' lexicon with the same name already exists in the region, it is
-#' overwritten by the new lexicon. Lexicon operations have eventual
-#' consistency, therefore, it might take some time before the lexicon is
-#' available to the SynthesizeSpeech operation.
+#' Stores a pronunciation lexicon in an Amazon Web Services Region. If a lexicon with the same name already exists in the region, it is overwritten by the new lexicon. Lexicon operations have eventual consistency, therefore, it might take some time before the lexicon is available to the SynthesizeSpeech operation.
 #' 
-#' For more information, see [Managing
-#' Lexicons](https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html).
+#' For more information, see [Managing Lexicons](https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html).
 #'
 #' @usage
 #' polly_put_lexicon(Name, Content)
 #'
-#' @param Name &#91;required&#93; Name of the lexicon. The name must follow the regular express format
-#' \[0-9A-Za-z\]\{1,20\}. That is, the name is a case-sensitive
-#' alphanumeric string up to 20 characters long.
+#' @param Name &#91;required&#93; Name of the lexicon. The name must follow the regular express format \[0-9A-Za-z\]\{1,20\}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long.
 #' @param Content &#91;required&#93; Content of the PLS lexicon as string data.
 #'
 #' @return
@@ -545,64 +499,150 @@ polly_put_lexicon <- function(Name, Content) {
 }
 .polly$operations$put_lexicon <- polly_put_lexicon
 
+#' Synthesizes UTF-8 input, plain text, or SSML over a bidirectional
+#' streaming connection
+#'
+#' @description
+#' Synthesizes UTF-8 input, plain text, or SSML over a bidirectional streaming connection. Specify synthesis parameters in HTTP/2 headers, send text incrementally as events on the input stream, and receive synthesized audio as it becomes available.
+#' 
+#' This operation serves as a bidirectional counterpart to [`synthesize_speech`][polly_synthesize_speech]:
+#' 
+#' -   [`synthesize_speech`][polly_synthesize_speech]
+#'
+#' @usage
+#' polly_start_speech_synthesis_stream(Engine, LanguageCode, LexiconNames,
+#'   OutputFormat, SampleRate, VoiceId, ActionStream)
+#'
+#' @param Engine &#91;required&#93; Specifies the engine for Amazon Polly to use when processing input text for speech synthesis. Currently, only the `generative` engine is supported. If you specify a voice that the selected engine doesn't support, Amazon Polly returns an error.
+#' @param LanguageCode An optional parameter that sets the language code for the speech synthesis request. Specify this parameter only when using a bilingual voice. If a bilingual voice is used and no language code is specified, Amazon Polly uses the default language of the bilingual voice.
+#' @param LexiconNames The names of one or more pronunciation lexicons for the service to apply during synthesis. Amazon Polly applies lexicons only when the lexicon language matches the voice language.
+#' @param OutputFormat &#91;required&#93; The audio format for the synthesized speech. Currently, Amazon Polly does not support JSON speech marks.
+#' @param SampleRate The audio frequency, specified in Hz.
+#' @param VoiceId &#91;required&#93; The voice to use in synthesis. To get a list of available voice IDs, use the [`describe_voices`][polly_describe_voices] operation.
+#' @param ActionStream The input event stream that contains text events and stream control events.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   EventStream = list(
+#'     AudioEvent = list(
+#'       AudioChunk = raw
+#'     ),
+#'     StreamClosedEvent = list(
+#'       RequestCharacters = 123
+#'     ),
+#'     ValidationException = list(
+#'       message = "string",
+#'       reason = "unsupportedOperation"|"fieldValidationFailed"|"other"|"invalidInboundEvent",
+#'       fields = list(
+#'         list(
+#'           name = "string",
+#'           message = "string"
+#'         )
+#'       )
+#'     ),
+#'     ServiceQuotaExceededException = list(
+#'       message = "string",
+#'       quotaCode = "input-stream-inbound-event-timeout"|"input-stream-timeout",
+#'       serviceCode = "polly"
+#'     ),
+#'     ServiceFailureException = list(
+#'       message = "string"
+#'     ),
+#'     ThrottlingException = list(
+#'       message = "string",
+#'       throttlingReasons = list(
+#'         list(
+#'           reason = "string",
+#'           resource = "string"
+#'         )
+#'       )
+#'     )
+#'   )
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$start_speech_synthesis_stream(
+#'   Engine = "standard"|"neural"|"long-form"|"generative",
+#'   LanguageCode = "arb"|"cmn-CN"|"cy-GB"|"da-DK"|"de-DE"|"en-AU"|"en-GB"|"en-GB-WLS"|"en-IN"|"en-US"|"es-ES"|"es-MX"|"es-US"|"fr-CA"|"fr-FR"|"is-IS"|"it-IT"|"ja-JP"|"hi-IN"|"ko-KR"|"nb-NO"|"nl-NL"|"pl-PL"|"pt-BR"|"pt-PT"|"ro-RO"|"ru-RU"|"sv-SE"|"tr-TR"|"en-NZ"|"en-ZA"|"ca-ES"|"de-AT"|"yue-CN"|"ar-AE"|"fi-FI"|"en-IE"|"nl-BE"|"fr-BE"|"cs-CZ"|"de-CH"|"en-SG",
+#'   LexiconNames = list(
+#'     "string"
+#'   ),
+#'   OutputFormat = "json"|"mp3"|"ogg_opus"|"ogg_vorbis"|"pcm"|"mulaw"|"alaw",
+#'   SampleRate = "string",
+#'   VoiceId = "Aditi"|"Amy"|"Astrid"|"Bianca"|"Brian"|"Camila"|"Carla"|"Carmen"|"Celine"|"Chantal"|"Conchita"|"Cristiano"|"Dora"|"Emma"|"Enrique"|"Ewa"|"Filiz"|"Gabrielle"|"Geraint"|"Giorgio"|"Gwyneth"|"Hans"|"Ines"|"Ivy"|"Jacek"|"Jan"|"Joanna"|"Joey"|"Justin"|"Karl"|"Kendra"|"Kevin"|"Kimberly"|"Lea"|"Liv"|"Lotte"|"Lucia"|"Lupe"|"Mads"|"Maja"|"Marlene"|"Mathieu"|"Matthew"|"Maxim"|"Mia"|"Miguel"|"Mizuki"|"Naja"|"Nicole"|"Olivia"|"Penelope"|"Raveena"|"Ricardo"|"Ruben"|"Russell"|"Salli"|"Seoyeon"|"Takumi"|"Tatyana"|"Vicki"|"Vitoria"|"Zeina"|"Zhiyu"|"Aria"|"Ayanda"|"Arlet"|"Hannah"|"Arthur"|"Daniel"|"Liam"|"Pedro"|"Kajal"|"Hiujin"|"Laura"|"Elin"|"Ida"|"Suvi"|"Ola"|"Hala"|"Andres"|"Sergio"|"Remi"|"Adriano"|"Thiago"|"Ruth"|"Stephen"|"Kazuha"|"Tomoko"|"Niamh"|"Sofie"|"Lisa"|"Isabelle"|"Zayd"|"Danielle"|"Gregory"|"Burcu"|"Jitka"|"Sabrina"|"Jasmine"|"Jihye"|"Ambre"|"Beatrice"|"Florian"|"Lennart"|"Lorenzo"|"Tiffany",
+#'   ActionStream = list(
+#'     TextEvent = list(
+#'       Text = "string",
+#'       TextType = "ssml"|"text",
+#'       FlushStreamConfiguration = list(
+#'         Force = TRUE|FALSE
+#'       )
+#'     ),
+#'     CloseStreamEvent = list()
+#'   )
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname polly_start_speech_synthesis_stream
+#'
+#' @aliases polly_start_speech_synthesis_stream
+polly_start_speech_synthesis_stream <- function(Engine, LanguageCode = NULL, LexiconNames = NULL, OutputFormat, SampleRate = NULL, VoiceId, ActionStream = NULL) {
+  op <- new_operation(
+    name = "StartSpeechSynthesisStream",
+    http_method = "POST",
+    http_path = "/v1/synthesisStream",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = TRUE
+  )
+  input <- .polly$start_speech_synthesis_stream_input(Engine = Engine, LanguageCode = LanguageCode, LexiconNames = LexiconNames, OutputFormat = OutputFormat, SampleRate = SampleRate, VoiceId = VoiceId, ActionStream = ActionStream)
+  output <- .polly$start_speech_synthesis_stream_output()
+  config <- get_config()
+  svc <- .polly$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.polly$operations$start_speech_synthesis_stream <- polly_start_speech_synthesis_stream
+
 #' Allows the creation of an asynchronous synthesis task, by starting a new
 #' SpeechSynthesisTask
 #'
 #' @description
-#' Allows the creation of an asynchronous synthesis task, by starting a new
-#' `SpeechSynthesisTask`. This operation requires all the standard
-#' information needed for speech synthesis, plus the name of an Amazon S3
-#' bucket for the service to store the output of the synthesis task and two
-#' optional parameters (`OutputS3KeyPrefix` and `SnsTopicArn`). Once the
-#' synthesis task is created, this operation will return a
-#' `SpeechSynthesisTask` object, which will include an identifier of this
-#' task as well as the current status. The `SpeechSynthesisTask` object is
-#' available for 72 hours after starting the asynchronous synthesis task.
+#' Allows the creation of an asynchronous synthesis task, by starting a new `SpeechSynthesisTask`. This operation requires all the standard information needed for speech synthesis, plus the name of an Amazon S3 bucket for the service to store the output of the synthesis task and two optional parameters (`OutputS3KeyPrefix` and `SnsTopicArn`). Once the synthesis task is created, this operation will return a `SpeechSynthesisTask` object, which will include an identifier of this task as well as the current status. The `SpeechSynthesisTask` object is available for 72 hours after starting the asynchronous synthesis task.
 #'
 #' @usage
 #' polly_start_speech_synthesis_task(Engine, LanguageCode, LexiconNames,
 #'   OutputFormat, OutputS3BucketName, OutputS3KeyPrefix, SampleRate,
 #'   SnsTopicArn, SpeechMarkTypes, Text, TextType, VoiceId)
 #'
-#' @param Engine Specifies the engine (`standard`, `neural`, `long-form` or `generative`)
-#' for Amazon Polly to use when processing input text for speech synthesis.
-#' Using a voice that is not supported for the engine selected will result
-#' in an error.
-#' @param LanguageCode Optional language code for the Speech Synthesis request. This is only
-#' necessary if using a bilingual voice, such as Aditi, which can be used
-#' for either Indian English (en-IN) or Hindi (hi-IN).
+#' @param Engine Specifies the engine (`standard`, `neural`, `long-form` or `generative`) for Amazon Polly to use when processing input text for speech synthesis. Using a voice that is not supported for the engine selected will result in an error.
+#' @param LanguageCode Optional language code for the Speech Synthesis request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN).
 #' 
-#' If a bilingual voice is used and no language code is specified, Amazon
-#' Polly uses the default language of the bilingual voice. The default
-#' language for any voice is the one returned by the
-#' [`describe_voices`][polly_describe_voices] operation for the
-#' `LanguageCode` parameter. For example, if no language code is specified,
-#' Aditi will use Indian English rather than Hindi.
-#' @param LexiconNames List of one or more pronunciation lexicon names you want the service to
-#' apply during synthesis. Lexicons are applied only if the language of the
-#' lexicon is the same as the language of the voice.
-#' @param OutputFormat &#91;required&#93; The format in which the returned output will be encoded. For audio
-#' stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this
-#' will be json.
+#' If a bilingual voice is used and no language code is specified, Amazon Polly uses the default language of the bilingual voice. The default language for any voice is the one returned by the [`describe_voices`][polly_describe_voices] operation for the `LanguageCode` parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.
+#' @param LexiconNames List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice.
+#' @param OutputFormat &#91;required&#93; The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, ogg_opus, mu-law, a-law, or pcm. For speech marks, this will be json.
 #' @param OutputS3BucketName &#91;required&#93; Amazon S3 bucket name to which the output file will be saved.
 #' @param OutputS3KeyPrefix The Amazon S3 key prefix for the output speech file.
 #' @param SampleRate The audio frequency specified in Hz.
 #' 
-#' The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050",
-#' and "24000". The default value for standard voices is "22050". The
-#' default value for neural voices is "24000". The default value for
-#' long-form voices is "24000". The default value for generative voices is
-#' "24000".
+#' The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for standard voices is "22050". The default value for neural voices is "24000". The default value for long-form voices is "24000". The default value for generative voices is "24000".
 #' 
-#' Valid values for pcm are "8000" and "16000" The default value is
-#' "16000".
-#' @param SnsTopicArn ARN for the SNS topic optionally used for providing status notification
-#' for a speech synthesis task.
+#' Valid values for pcm are "8000" and "16000" The default value is "16000".
+#' 
+#' Valid value for ogg_opus is "48000".
+#' 
+#' Valid value for mu-law and a-law is "8000".
+#' @param SnsTopicArn ARN for the SNS topic optionally used for providing status notification for a speech synthesis task.
 #' @param SpeechMarkTypes The type of speech marks returned for the input text.
-#' @param Text &#91;required&#93; The input text to synthesize. If you specify ssml as the TextType,
-#' follow the SSML format for the input text.
-#' @param TextType Specifies whether the input text is plain text or SSML. The default
-#' value is plain text.
+#' @param Text &#91;required&#93; The input text to synthesize. If you specify ssml as the TextType, follow the SSML format for the input text.
+#' @param TextType Specifies whether the input text is plain text or SSML. The default value is plain text.
 #' @param VoiceId &#91;required&#93; Voice ID to use for the synthesis.
 #'
 #' @return
@@ -623,13 +663,13 @@ polly_put_lexicon <- function(Name, Content) {
 #'     LexiconNames = list(
 #'       "string"
 #'     ),
-#'     OutputFormat = "json"|"mp3"|"ogg_opus"|"ogg_vorbis"|"pcm",
+#'     OutputFormat = "json"|"mp3"|"ogg_opus"|"ogg_vorbis"|"pcm"|"mulaw"|"alaw",
 #'     SampleRate = "string",
 #'     SpeechMarkTypes = list(
 #'       "sentence"|"ssml"|"viseme"|"word"
 #'     ),
 #'     TextType = "ssml"|"text",
-#'     VoiceId = "Aditi"|"Amy"|"Astrid"|"Bianca"|"Brian"|"Camila"|"Carla"|"Carmen"|"Celine"|"Chantal"|"Conchita"|"Cristiano"|"Dora"|"Emma"|"Enrique"|"Ewa"|"Filiz"|"Gabrielle"|"Geraint"|"Giorgio"|"Gwyneth"|"Hans"|"Ines"|"Ivy"|"Jacek"|"Jan"|"Joanna"|"Joey"|"Justin"|"Karl"|"Kendra"|"Kevin"|"Kimberly"|"Lea"|"Liv"|"Lotte"|"Lucia"|"Lupe"|"Mads"|"Maja"|"Marlene"|"Mathieu"|"Matthew"|"Maxim"|"Mia"|"Miguel"|"Mizuki"|"Naja"|"Nicole"|"Olivia"|"Penelope"|"Raveena"|"Ricardo"|"Ruben"|"Russell"|"Salli"|"Seoyeon"|"Takumi"|"Tatyana"|"Vicki"|"Vitoria"|"Zeina"|"Zhiyu"|"Aria"|"Ayanda"|"Arlet"|"Hannah"|"Arthur"|"Daniel"|"Liam"|"Pedro"|"Kajal"|"Hiujin"|"Laura"|"Elin"|"Ida"|"Suvi"|"Ola"|"Hala"|"Andres"|"Sergio"|"Remi"|"Adriano"|"Thiago"|"Ruth"|"Stephen"|"Kazuha"|"Tomoko"|"Niamh"|"Sofie"|"Lisa"|"Isabelle"|"Zayd"|"Danielle"|"Gregory"|"Burcu"|"Jitka"|"Sabrina"|"Jasmine"|"Jihye",
+#'     VoiceId = "Aditi"|"Amy"|"Astrid"|"Bianca"|"Brian"|"Camila"|"Carla"|"Carmen"|"Celine"|"Chantal"|"Conchita"|"Cristiano"|"Dora"|"Emma"|"Enrique"|"Ewa"|"Filiz"|"Gabrielle"|"Geraint"|"Giorgio"|"Gwyneth"|"Hans"|"Ines"|"Ivy"|"Jacek"|"Jan"|"Joanna"|"Joey"|"Justin"|"Karl"|"Kendra"|"Kevin"|"Kimberly"|"Lea"|"Liv"|"Lotte"|"Lucia"|"Lupe"|"Mads"|"Maja"|"Marlene"|"Mathieu"|"Matthew"|"Maxim"|"Mia"|"Miguel"|"Mizuki"|"Naja"|"Nicole"|"Olivia"|"Penelope"|"Raveena"|"Ricardo"|"Ruben"|"Russell"|"Salli"|"Seoyeon"|"Takumi"|"Tatyana"|"Vicki"|"Vitoria"|"Zeina"|"Zhiyu"|"Aria"|"Ayanda"|"Arlet"|"Hannah"|"Arthur"|"Daniel"|"Liam"|"Pedro"|"Kajal"|"Hiujin"|"Laura"|"Elin"|"Ida"|"Suvi"|"Ola"|"Hala"|"Andres"|"Sergio"|"Remi"|"Adriano"|"Thiago"|"Ruth"|"Stephen"|"Kazuha"|"Tomoko"|"Niamh"|"Sofie"|"Lisa"|"Isabelle"|"Zayd"|"Danielle"|"Gregory"|"Burcu"|"Jitka"|"Sabrina"|"Jasmine"|"Jihye"|"Ambre"|"Beatrice"|"Florian"|"Lennart"|"Lorenzo"|"Tiffany",
 #'     LanguageCode = "arb"|"cmn-CN"|"cy-GB"|"da-DK"|"de-DE"|"en-AU"|"en-GB"|"en-GB-WLS"|"en-IN"|"en-US"|"es-ES"|"es-MX"|"es-US"|"fr-CA"|"fr-FR"|"is-IS"|"it-IT"|"ja-JP"|"hi-IN"|"ko-KR"|"nb-NO"|"nl-NL"|"pl-PL"|"pt-BR"|"pt-PT"|"ro-RO"|"ru-RU"|"sv-SE"|"tr-TR"|"en-NZ"|"en-ZA"|"ca-ES"|"de-AT"|"yue-CN"|"ar-AE"|"fi-FI"|"en-IE"|"nl-BE"|"fr-BE"|"cs-CZ"|"de-CH"|"en-SG"
 #'   )
 #' )
@@ -643,7 +683,7 @@ polly_put_lexicon <- function(Name, Content) {
 #'   LexiconNames = list(
 #'     "string"
 #'   ),
-#'   OutputFormat = "json"|"mp3"|"ogg_opus"|"ogg_vorbis"|"pcm",
+#'   OutputFormat = "json"|"mp3"|"ogg_opus"|"ogg_vorbis"|"pcm"|"mulaw"|"alaw",
 #'   OutputS3BucketName = "string",
 #'   OutputS3KeyPrefix = "string",
 #'   SampleRate = "string",
@@ -653,7 +693,7 @@ polly_put_lexicon <- function(Name, Content) {
 #'   ),
 #'   Text = "string",
 #'   TextType = "ssml"|"text",
-#'   VoiceId = "Aditi"|"Amy"|"Astrid"|"Bianca"|"Brian"|"Camila"|"Carla"|"Carmen"|"Celine"|"Chantal"|"Conchita"|"Cristiano"|"Dora"|"Emma"|"Enrique"|"Ewa"|"Filiz"|"Gabrielle"|"Geraint"|"Giorgio"|"Gwyneth"|"Hans"|"Ines"|"Ivy"|"Jacek"|"Jan"|"Joanna"|"Joey"|"Justin"|"Karl"|"Kendra"|"Kevin"|"Kimberly"|"Lea"|"Liv"|"Lotte"|"Lucia"|"Lupe"|"Mads"|"Maja"|"Marlene"|"Mathieu"|"Matthew"|"Maxim"|"Mia"|"Miguel"|"Mizuki"|"Naja"|"Nicole"|"Olivia"|"Penelope"|"Raveena"|"Ricardo"|"Ruben"|"Russell"|"Salli"|"Seoyeon"|"Takumi"|"Tatyana"|"Vicki"|"Vitoria"|"Zeina"|"Zhiyu"|"Aria"|"Ayanda"|"Arlet"|"Hannah"|"Arthur"|"Daniel"|"Liam"|"Pedro"|"Kajal"|"Hiujin"|"Laura"|"Elin"|"Ida"|"Suvi"|"Ola"|"Hala"|"Andres"|"Sergio"|"Remi"|"Adriano"|"Thiago"|"Ruth"|"Stephen"|"Kazuha"|"Tomoko"|"Niamh"|"Sofie"|"Lisa"|"Isabelle"|"Zayd"|"Danielle"|"Gregory"|"Burcu"|"Jitka"|"Sabrina"|"Jasmine"|"Jihye"
+#'   VoiceId = "Aditi"|"Amy"|"Astrid"|"Bianca"|"Brian"|"Camila"|"Carla"|"Carmen"|"Celine"|"Chantal"|"Conchita"|"Cristiano"|"Dora"|"Emma"|"Enrique"|"Ewa"|"Filiz"|"Gabrielle"|"Geraint"|"Giorgio"|"Gwyneth"|"Hans"|"Ines"|"Ivy"|"Jacek"|"Jan"|"Joanna"|"Joey"|"Justin"|"Karl"|"Kendra"|"Kevin"|"Kimberly"|"Lea"|"Liv"|"Lotte"|"Lucia"|"Lupe"|"Mads"|"Maja"|"Marlene"|"Mathieu"|"Matthew"|"Maxim"|"Mia"|"Miguel"|"Mizuki"|"Naja"|"Nicole"|"Olivia"|"Penelope"|"Raveena"|"Ricardo"|"Ruben"|"Russell"|"Salli"|"Seoyeon"|"Takumi"|"Tatyana"|"Vicki"|"Vitoria"|"Zeina"|"Zhiyu"|"Aria"|"Ayanda"|"Arlet"|"Hannah"|"Arthur"|"Daniel"|"Liam"|"Pedro"|"Kajal"|"Hiujin"|"Laura"|"Elin"|"Ida"|"Suvi"|"Ola"|"Hala"|"Andres"|"Sergio"|"Remi"|"Adriano"|"Thiago"|"Ruth"|"Stephen"|"Kazuha"|"Tomoko"|"Niamh"|"Sofie"|"Lisa"|"Isabelle"|"Zayd"|"Danielle"|"Gregory"|"Burcu"|"Jitka"|"Sabrina"|"Jasmine"|"Jihye"|"Ambre"|"Beatrice"|"Florian"|"Lennart"|"Lorenzo"|"Tiffany"
 #' )
 #' ```
 #'
@@ -684,63 +724,33 @@ polly_start_speech_synthesis_task <- function(Engine = NULL, LanguageCode = NULL
 #' Synthesizes UTF-8 input, plain text or SSML, to a stream of bytes
 #'
 #' @description
-#' Synthesizes UTF-8 input, plain text or SSML, to a stream of bytes. SSML
-#' input must be valid, well-formed SSML. Some alphabets might not be
-#' available with all the voices (for example, Cyrillic might not be read
-#' at all by English voices) unless phoneme mapping is used. For more
-#' information, see [How it
-#' Works](https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html).
+#' Synthesizes UTF-8 input, plain text or SSML, to a stream of bytes. SSML input must be valid, well-formed SSML. Some alphabets might not be available with all the voices (for example, Cyrillic might not be read at all by English voices) unless phoneme mapping is used. For more information, see [How it Works](https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html).
 #'
 #' @usage
 #' polly_synthesize_speech(Engine, LanguageCode, LexiconNames,
 #'   OutputFormat, SampleRate, SpeechMarkTypes, Text, TextType, VoiceId)
 #'
-#' @param Engine Specifies the engine (`standard`, `neural`, `long-form`, or
-#' `generative`) for Amazon Polly to use when processing input text for
-#' speech synthesis. Provide an engine that is supported by the voice you
-#' select. If you don't provide an engine, the standard engine is selected
-#' by default. If a chosen voice isn't supported by the standard engine,
-#' this will result in an error. For information on Amazon Polly voices and
-#' which voices are available for each engine, see [Available
-#' Voices](https://docs.aws.amazon.com/polly/latest/dg/available-voices.html).
-#' @param LanguageCode Optional language code for the Synthesize Speech request. This is only
-#' necessary if using a bilingual voice, such as Aditi, which can be used
-#' for either Indian English (en-IN) or Hindi (hi-IN).
+#' @param Engine Specifies the engine (`standard`, `neural`, `long-form`, or `generative`) for Amazon Polly to use when processing input text for speech synthesis. Provide an engine that is supported by the voice you select. If you don't provide an engine, the standard engine is selected by default. If a chosen voice isn't supported by the standard engine, this will result in an error. For information on Amazon Polly voices and which voices are available for each engine, see [Available Voices](https://docs.aws.amazon.com/polly/latest/dg/available-voices.html).
+#' @param LanguageCode Optional language code for the Synthesize Speech request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN).
 #' 
-#' If a bilingual voice is used and no language code is specified, Amazon
-#' Polly uses the default language of the bilingual voice. The default
-#' language for any voice is the one returned by the
-#' [`describe_voices`][polly_describe_voices] operation for the
-#' `LanguageCode` parameter. For example, if no language code is specified,
-#' Aditi will use Indian English rather than Hindi.
-#' @param LexiconNames List of one or more pronunciation lexicon names you want the service to
-#' apply during synthesis. Lexicons are applied only if the language of the
-#' lexicon is the same as the language of the voice. For information about
-#' storing lexicons, see [`put_lexicon`][polly_put_lexicon].
-#' @param OutputFormat &#91;required&#93; The format in which the returned output will be encoded. For audio
-#' stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this
-#' will be json.
+#' If a bilingual voice is used and no language code is specified, Amazon Polly uses the default language of the bilingual voice. The default language for any voice is the one returned by the [`describe_voices`][polly_describe_voices] operation for the `LanguageCode` parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.
+#' @param LexiconNames List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see [`put_lexicon`][polly_put_lexicon].
+#' @param OutputFormat &#91;required&#93; The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, ogg_opus, mu-law, a-law or pcm. For speech marks, this will be json.
 #' 
-#' When pcm is used, the content returned is audio/pcm in a signed 16-bit,
-#' 1 channel (mono), little-endian format.
+#' When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.
 #' @param SampleRate The audio frequency specified in Hz.
 #' 
-#' The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050",
-#' "24000", "44100" and "48000". The default value for standard voices is
-#' "22050". The default value for neural voices is "24000". The default
-#' value for long-form voices is "24000". The default value for generative
-#' voices is "24000".
+#' The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", "24000", "44100" and "48000". The default value for standard voices is "22050". The default value for neural voices is "24000". The default value for long-form voices is "24000". The default value for generative voices is "24000".
 #' 
-#' Valid values for pcm are "8000" and "16000" The default value is
-#' "16000".
+#' Valid values for pcm are "8000" and "16000" The default value is "16000".
+#' 
+#' Valid value for ogg_opus is "48000".
+#' 
+#' Valid value for mu-law and a-law is "8000".
 #' @param SpeechMarkTypes The type of speech marks returned for the input text.
-#' @param Text &#91;required&#93; Input text to synthesize. If you specify `ssml` as the `TextType`,
-#' follow the SSML format for the input text.
-#' @param TextType Specifies whether the input text is plain text or SSML. The default
-#' value is plain text. For more information, see [Using
-#' SSML](https://docs.aws.amazon.com/polly/latest/dg/ssml.html).
-#' @param VoiceId &#91;required&#93; Voice ID to use for the synthesis. You can get a list of available voice
-#' IDs by calling the [`describe_voices`][polly_describe_voices] operation.
+#' @param Text &#91;required&#93; Input text to synthesize. If you specify `ssml` as the `TextType`, follow the SSML format for the input text.
+#' @param TextType Specifies whether the input text is plain text or SSML. The default value is plain text. For more information, see [Using SSML](https://docs.aws.amazon.com/polly/latest/dg/ssml.html).
+#' @param VoiceId &#91;required&#93; Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the [`describe_voices`][polly_describe_voices] operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -760,14 +770,14 @@ polly_start_speech_synthesis_task <- function(Engine = NULL, LanguageCode = NULL
 #'   LexiconNames = list(
 #'     "string"
 #'   ),
-#'   OutputFormat = "json"|"mp3"|"ogg_opus"|"ogg_vorbis"|"pcm",
+#'   OutputFormat = "json"|"mp3"|"ogg_opus"|"ogg_vorbis"|"pcm"|"mulaw"|"alaw",
 #'   SampleRate = "string",
 #'   SpeechMarkTypes = list(
 #'     "sentence"|"ssml"|"viseme"|"word"
 #'   ),
 #'   Text = "string",
 #'   TextType = "ssml"|"text",
-#'   VoiceId = "Aditi"|"Amy"|"Astrid"|"Bianca"|"Brian"|"Camila"|"Carla"|"Carmen"|"Celine"|"Chantal"|"Conchita"|"Cristiano"|"Dora"|"Emma"|"Enrique"|"Ewa"|"Filiz"|"Gabrielle"|"Geraint"|"Giorgio"|"Gwyneth"|"Hans"|"Ines"|"Ivy"|"Jacek"|"Jan"|"Joanna"|"Joey"|"Justin"|"Karl"|"Kendra"|"Kevin"|"Kimberly"|"Lea"|"Liv"|"Lotte"|"Lucia"|"Lupe"|"Mads"|"Maja"|"Marlene"|"Mathieu"|"Matthew"|"Maxim"|"Mia"|"Miguel"|"Mizuki"|"Naja"|"Nicole"|"Olivia"|"Penelope"|"Raveena"|"Ricardo"|"Ruben"|"Russell"|"Salli"|"Seoyeon"|"Takumi"|"Tatyana"|"Vicki"|"Vitoria"|"Zeina"|"Zhiyu"|"Aria"|"Ayanda"|"Arlet"|"Hannah"|"Arthur"|"Daniel"|"Liam"|"Pedro"|"Kajal"|"Hiujin"|"Laura"|"Elin"|"Ida"|"Suvi"|"Ola"|"Hala"|"Andres"|"Sergio"|"Remi"|"Adriano"|"Thiago"|"Ruth"|"Stephen"|"Kazuha"|"Tomoko"|"Niamh"|"Sofie"|"Lisa"|"Isabelle"|"Zayd"|"Danielle"|"Gregory"|"Burcu"|"Jitka"|"Sabrina"|"Jasmine"|"Jihye"
+#'   VoiceId = "Aditi"|"Amy"|"Astrid"|"Bianca"|"Brian"|"Camila"|"Carla"|"Carmen"|"Celine"|"Chantal"|"Conchita"|"Cristiano"|"Dora"|"Emma"|"Enrique"|"Ewa"|"Filiz"|"Gabrielle"|"Geraint"|"Giorgio"|"Gwyneth"|"Hans"|"Ines"|"Ivy"|"Jacek"|"Jan"|"Joanna"|"Joey"|"Justin"|"Karl"|"Kendra"|"Kevin"|"Kimberly"|"Lea"|"Liv"|"Lotte"|"Lucia"|"Lupe"|"Mads"|"Maja"|"Marlene"|"Mathieu"|"Matthew"|"Maxim"|"Mia"|"Miguel"|"Mizuki"|"Naja"|"Nicole"|"Olivia"|"Penelope"|"Raveena"|"Ricardo"|"Ruben"|"Russell"|"Salli"|"Seoyeon"|"Takumi"|"Tatyana"|"Vicki"|"Vitoria"|"Zeina"|"Zhiyu"|"Aria"|"Ayanda"|"Arlet"|"Hannah"|"Arthur"|"Daniel"|"Liam"|"Pedro"|"Kajal"|"Hiujin"|"Laura"|"Elin"|"Ida"|"Suvi"|"Ola"|"Hala"|"Andres"|"Sergio"|"Remi"|"Adriano"|"Thiago"|"Ruth"|"Stephen"|"Kazuha"|"Tomoko"|"Niamh"|"Sofie"|"Lisa"|"Isabelle"|"Zayd"|"Danielle"|"Gregory"|"Burcu"|"Jitka"|"Sabrina"|"Jasmine"|"Jihye"|"Ambre"|"Beatrice"|"Florian"|"Lennart"|"Lorenzo"|"Tiffany"
 #' )
 #' ```
 #'

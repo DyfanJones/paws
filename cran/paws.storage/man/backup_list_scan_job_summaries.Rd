@@ -19,28 +19,19 @@ backup_list_scan_job_summaries(
 \arguments{
 \item{AccountId}{Returns the job count for the specified account.
 
-If the request is sent from a member account or an account not part of
-Amazon Web Services Organizations, jobs within requestor's account will
-be returned.
+If the request is sent from a member account or an account not part of Amazon Web Services Organizations, jobs within requestor's account will be returned.
 
-Root, admin, and delegated administrator accounts can use the value
-\code{ANY} to return job counts from every account in the organization.
+Root, admin, and delegated administrator accounts can use the value \code{ANY} to return job counts from every account in the organization.
 
-\code{AGGREGATE_ALL} aggregates job counts from all accounts within the
-authenticated organization, then returns the sum.}
+\code{AGGREGATE_ALL} aggregates job counts from all accounts within the authenticated organization, then returns the sum.}
 
-\item{ResourceType}{Returns the job count for the specified resource type. Use request
-\code{\link[=backup_get_supported_resource_types]{get_supported_resource_types}} to
-obtain strings for supported resource types.
+\item{ResourceType}{Returns the job count for the specified resource type. Use request \code{\link[=backup_get_supported_resource_types]{get_supported_resource_types}} to obtain strings for supported resource types.
 
 The the value \code{ANY} returns count of all resource types.
 
-\code{AGGREGATE_ALL} aggregates job counts for all resource types and returns
-the sum.}
+\code{AGGREGATE_ALL} aggregates job counts for all resource types and returns the sum.}
 
-\item{MalwareScanner}{Returns only the scan jobs for the specified malware scanner. Currently
-the only MalwareScanner is \code{GUARDDUTY}. But the field also supports
-\code{ANY}, and \code{AGGREGATE_ALL}.}
+\item{MalwareScanner}{Returns only the scan jobs for the specified malware scanner. Currently the only MalwareScanner is \code{GUARDDUTY}. But the field also supports \code{ANY}, and \code{AGGREGATE_ALL}.}
 
 \item{ScanResultStatus}{Returns only the scan jobs for the specified scan results.}
 
@@ -57,10 +48,7 @@ the only MalwareScanner is \code{GUARDDUTY}. But the field also supports
 
 The value is an integer. Range of accepted values is from 1 to 500.}
 
-\item{NextToken}{The next item following a partial list of returned items. For example,
-if a request is made to return \code{MaxResults} number of items, \code{NextToken}
-allows you to return more items in your list starting at the location
-pointed to by the next token.}
+\item{NextToken}{The next item following a partial list of returned items. For example, if a request is made to return \code{MaxResults} number of items, \code{NextToken} allows you to return more items in your list starting at the location pointed to by the next token.}
 }
 \description{
 This is a request for a summary of scan jobs created or running within the most recent 30 days.

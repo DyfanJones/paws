@@ -12,13 +12,9 @@ textract_list_adapters(
 )
 }
 \arguments{
-\item{AfterCreationTime}{Specifies the lower bound for the ListAdapters operation. Ensures
-ListAdapters returns only adapters created after the specified creation
-time.}
+\item{AfterCreationTime}{Specifies the lower bound for the ListAdapters operation. Ensures ListAdapters returns only adapters created after the specified creation time.}
 
-\item{BeforeCreationTime}{Specifies the upper bound for the ListAdapters operation. Ensures
-ListAdapters returns only adapters created before the specified creation
-time.}
+\item{BeforeCreationTime}{Specifies the upper bound for the ListAdapters operation. Ensures ListAdapters returns only adapters created before the specified creation time.}
 
 \item{MaxResults}{The maximum number of results to return when listing adapters.}
 

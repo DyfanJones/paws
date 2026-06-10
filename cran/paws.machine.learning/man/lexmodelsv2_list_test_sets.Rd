@@ -9,14 +9,9 @@ lexmodelsv2_list_test_sets(sortBy = NULL, maxResults = NULL, nextToken = NULL)
 \arguments{
 \item{sortBy}{The sort order for the list of test sets.}
 
-\item{maxResults}{The maximum number of test sets to return in each page. If there are
-fewer results than the max page size, only the actual number of results
-are returned.}
+\item{maxResults}{The maximum number of test sets to return in each page. If there are fewer results than the max page size, only the actual number of results are returned.}
 
-\item{nextToken}{If the response from the ListTestSets operation contains more results
-than specified in the maxResults parameter, a token is returned in the
-response. Use that token in the nextToken parameter to return the next
-page of results.}
+\item{nextToken}{If the response from the ListTestSets operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.}
 }
 \description{
 The list of the test sets

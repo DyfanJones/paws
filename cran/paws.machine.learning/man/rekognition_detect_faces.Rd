@@ -7,31 +7,15 @@
 rekognition_detect_faces(Image, Attributes = NULL)
 }
 \arguments{
-\item{Image}{[required] The input image as base64-encoded bytes or an S3 object. If you use the
-AWS CLI to call Amazon Rekognition operations, passing base64-encoded
-image bytes is not supported.
+\item{Image}{[required] The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported.
 
-If you are using an AWS SDK to call Amazon Rekognition, you might not
-need to base64-encode image bytes passed using the \code{Bytes} field. For
-more information, see Images in the Amazon Rekognition developer guide.}
+If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the \code{Bytes} field. For more information, see Images in the Amazon Rekognition developer guide.}
 
-\item{Attributes}{An array of facial attributes you want to be returned. A \code{DEFAULT}
-subset of facial attributes - \code{BoundingBox}, \code{Confidence}, \code{Pose},
-\code{Quality}, and \code{Landmarks} - will always be returned. You can request
-for specific facial attributes (in addition to the default list) - by
-using [\verb{"DEFAULT", "FACE_OCCLUDED"}] or just [\code{"FACE_OCCLUDED"}].
-You can request for all facial attributes by using [\verb{"ALL"]}.
-Requesting more attributes may increase response time.
+\item{Attributes}{An array of facial attributes you want to be returned. A \code{DEFAULT} subset of facial attributes - \code{BoundingBox}, \code{Confidence}, \code{Pose}, \code{Quality}, and \code{Landmarks} - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using [\verb{"DEFAULT", "FACE_OCCLUDED"}] or just [\code{"FACE_OCCLUDED"}]. You can request for all facial attributes by using [\verb{"ALL"]}. Requesting more attributes may increase response time.
 
-If you provide both, \verb{["ALL", "DEFAULT"]}, the service uses a logical
-"AND" operator to determine which attributes to return (in this case,
-all attributes).
+If you provide both, \verb{["ALL", "DEFAULT"]}, the service uses a logical "AND" operator to determine which attributes to return (in this case, all attributes).
 
-Note that while the FaceOccluded and EyeDirection attributes are
-supported when using \code{\link[=rekognition_detect_faces]{detect_faces}}, they
-aren't supported when analyzing videos with
-\code{\link[=rekognition_start_face_detection]{start_face_detection}} and
-\code{\link[=rekognition_get_face_detection]{get_face_detection}}.}
+Note that while the FaceOccluded and EyeDirection attributes are supported when using \code{\link[=rekognition_detect_faces]{detect_faces}}, they aren't supported when analyzing videos with \code{\link[=rekognition_start_face_detection]{start_face_detection}} and \code{\link[=rekognition_get_face_detection]{get_face_detection}}.}
 }
 \description{
 Detects faces within an image that is provided as input.

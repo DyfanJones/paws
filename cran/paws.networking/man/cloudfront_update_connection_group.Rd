@@ -15,11 +15,9 @@ cloudfront_update_connection_group(
 \arguments{
 \item{Id}{[required] The ID of the connection group.}
 
-\item{Ipv6Enabled}{Enable IPv6 for the connection group. For more information, see \href{https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesEnableIPv6}{Enable IPv6}
-in the \emph{Amazon CloudFront Developer Guide}.}
+\item{Ipv6Enabled}{Enable IPv6 for the connection group. For more information, see \href{https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesEnableIPv6}{Enable IPv6} in the \emph{Amazon CloudFront Developer Guide}.}
 
-\item{IfMatch}{[required] The value of the \code{ETag} header that you received when retrieving the
-connection group that you're updating.}
+\item{IfMatch}{[required] The value of the \code{ETag} header that you received when retrieving the connection group that you're updating.}
 
 \item{AnycastIpListId}{The ID of the Anycast static IP list.}
 

@@ -13,19 +13,11 @@ glue_create_integration_table_properties(
 )
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the target table for which to create
-integration table properties. Currently, this API only supports creating
-integration table properties for target tables, and the provided ARN
-should be the ARN of the target table in the Glue Data Catalog. Support
-for creating integration table properties for source connections (using
-the connection ARN) is not yet implemented and will be added in a future
-release.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the target table for which to create integration table properties. Currently, this API only supports creating integration table properties for target tables, and the provided ARN should be the ARN of the target table in the Glue Data Catalog. Support for creating integration table properties for source connections (using the connection ARN) is not yet implemented and will be added in a future release.}
 
 \item{TableName}{[required] The name of the table to be replicated.}
 
-\item{SourceTableConfig}{A structure for the source table configuration. See the
-\code{SourceTableConfig} structure to see list of supported source
-properties.}
+\item{SourceTableConfig}{A structure for the source table configuration. See the \code{SourceTableConfig} structure to see list of supported source properties.}
 
 \item{TargetTableConfig}{A structure for the target table configuration.}
 }

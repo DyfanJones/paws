@@ -12,8 +12,7 @@ budgets_update_notification(
 )
 }
 \arguments{
-\item{AccountId}{[required] The \code{accountId} that is associated with the budget whose notification
-you want to update.}
+\item{AccountId}{[required] The \code{accountId} that is associated with the budget whose notification you want to update.}
 
 \item{BudgetName}{[required] The name of the budget whose notification you want to update.}
 

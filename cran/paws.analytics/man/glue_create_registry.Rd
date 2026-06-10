@@ -7,15 +7,11 @@
 glue_create_registry(RegistryName, Description = NULL, Tags = NULL)
 }
 \arguments{
-\item{RegistryName}{[required] Name of the registry to be created of max length of 255, and may only
-contain letters, numbers, hyphen, underscore, dollar sign, or hash mark.
-No whitespace.}
+\item{RegistryName}{[required] Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.}
 
-\item{Description}{A description of the registry. If description is not provided, there
-will not be any default value for this.}
+\item{Description}{A description of the registry. If description is not provided, there will not be any default value for this.}
 
-\item{Tags}{Amazon Web Services tags that contain a key value pair and may be
-searched by console, command line, or API.}
+\item{Tags}{Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API.}
 }
 \description{
 Creates a new registry which may be used to hold a collection of schemas.

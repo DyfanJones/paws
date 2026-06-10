@@ -10,8 +10,7 @@ s3tables_put_table_record_expiration_configuration(tableArn, value)
 \arguments{
 \item{tableArn}{[required] The Amazon Resource Name (ARN) of the table.}
 
-\item{value}{[required] The record expiration configuration to apply to the table, including the
-status (\code{enabled} or \code{disabled}) and retention period in days.}
+\item{value}{[required] The record expiration configuration to apply to the table, including the status (\code{enabled} or \code{disabled}) and retention period in days.}
 }
 \description{
 Creates or updates the expiration configuration settings for records in a table, including the status of the configuration. If you enable record expiration for a table, records expire and are automatically removed from the table after the number of days that you specify.

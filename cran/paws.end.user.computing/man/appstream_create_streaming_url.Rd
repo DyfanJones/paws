@@ -21,17 +21,11 @@ appstream_create_streaming_url(
 
 \item{UserId}{[required] The identifier of the user.}
 
-\item{ApplicationId}{The name of the application to launch after the session starts. This is
-the name that you specified as \strong{Name} in the Image Assistant. If your
-fleet is enabled for the \strong{Desktop} stream view, you can also choose to
-launch directly to the operating system desktop. To do so, specify
-\strong{Desktop}.}
+\item{ApplicationId}{The name of the application to launch after the session starts. This is the name that you specified as \strong{Name} in the Image Assistant. If your fleet is enabled for the \strong{Desktop} stream view, you can also choose to launch directly to the operating system desktop. To do so, specify \strong{Desktop}.}
 
-\item{Validity}{The time that the streaming URL will be valid, in seconds. Specify a
-value between 1 and 604800 seconds. The default is 60 seconds.}
+\item{Validity}{The time that the streaming URL will be valid, in seconds. Specify a value between 1 and 604800 seconds. The default is 60 seconds.}
 
-\item{SessionContext}{The session context. For more information, see \href{https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters}{Session Context}
-in the \emph{Amazon WorkSpaces Applications Administration Guide}.}
+\item{SessionContext}{The session context. For more information, see \href{https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters}{Session Context} in the \emph{Amazon WorkSpaces Applications Administration Guide}.}
 }
 \description{
 Creates a temporary URL to start an WorkSpaces Applications streaming session for the specified user. A streaming URL enables application streaming to be tested without user setup.

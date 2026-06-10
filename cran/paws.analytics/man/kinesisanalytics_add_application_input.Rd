@@ -12,16 +12,11 @@ kinesisanalytics_add_application_input(
 )
 }
 \arguments{
-\item{ApplicationName}{[required] Name of your existing Amazon Kinesis Analytics application to which you
-want to add the streaming source.}
+\item{ApplicationName}{[required] Name of your existing Amazon Kinesis Analytics application to which you want to add the streaming source.}
 
-\item{CurrentApplicationVersionId}{[required] Current version of your Amazon Kinesis Analytics application. You can
-use the \code{\link[=kinesisanalytics_describe_application]{describe_application}}
-operation to find the current application version.}
+\item{CurrentApplicationVersionId}{[required] Current version of your Amazon Kinesis Analytics application. You can use the \code{\link[=kinesisanalytics_describe_application]{describe_application}} operation to find the current application version.}
 
-\item{Input}{[required] The
-\href{https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html}{Input}
-to add.}
+\item{Input}{[required] The \href{https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html}{Input} to add.}
 }
 \description{
 This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see Amazon Kinesis Data Analytics API V2 Documentation.

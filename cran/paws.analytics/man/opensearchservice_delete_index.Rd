@@ -7,7 +7,7 @@
 opensearchservice_delete_index(DomainName, IndexName)
 }
 \arguments{
-\item{DomainName}{[required]}
+\item{DomainName}{[required] The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.}
 
 \item{IndexName}{[required] The name of the index to delete.}
 }

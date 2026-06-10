@@ -12,8 +12,7 @@ NULL
 #'
 #' @param KvsARN &#91;required&#93; The Amazon Resource Name (ARN) of the Key Value Store.
 #' @param Key &#91;required&#93; The key to delete.
-#' @param IfMatch &#91;required&#93; The current version (ETag) of the Key Value Store that you are deleting
-#' keys from, which you can get using DescribeKeyValueStore.
+#' @param IfMatch &#91;required&#93; The current version (ETag) of the Key Value Store that you are deleting keys from, which you can get using DescribeKeyValueStore.
 #'
 #' @keywords internal
 #'
@@ -108,11 +107,8 @@ cloudfrontkeyvaluestore_get_key <- function(KvsARN, Key) {
 #' See [https://www.paws-r-sdk.com/docs/cloudfrontkeyvaluestore_list_keys/](https://www.paws-r-sdk.com/docs/cloudfrontkeyvaluestore_list_keys/) for full documentation.
 #'
 #' @param KvsARN &#91;required&#93; The Amazon Resource Name (ARN) of the Key Value Store.
-#' @param NextToken If nextToken is returned in the response, there are more results
-#' available. Make the next call using the returned token to retrieve the
-#' next page.
-#' @param MaxResults Maximum number of results that are returned per call. The default is 10
-#' and maximum allowed page is 50.
+#' @param NextToken If nextToken is returned in the response, there are more results available. Make the next call using the returned token to retrieve the next page.
+#' @param MaxResults Maximum number of results that are returned per call. The default is 10 and maximum allowed page is 50.
 #'
 #' @keywords internal
 #'
@@ -146,8 +142,7 @@ cloudfrontkeyvaluestore_list_keys <- function(KvsARN, NextToken = NULL, MaxResul
 #' @param Key &#91;required&#93; The key to put.
 #' @param Value &#91;required&#93; The value to put.
 #' @param KvsARN &#91;required&#93; The Amazon Resource Name (ARN) of the Key Value Store.
-#' @param IfMatch &#91;required&#93; The current version (ETag) of the Key Value Store that you are putting
-#' keys into, which you can get using DescribeKeyValueStore.
+#' @param IfMatch &#91;required&#93; The current version (ETag) of the Key Value Store that you are putting keys into, which you can get using DescribeKeyValueStore.
 #'
 #' @keywords internal
 #'
@@ -180,8 +175,7 @@ cloudfrontkeyvaluestore_put_key <- function(Key, Value, KvsARN, IfMatch) {
 #' See [https://www.paws-r-sdk.com/docs/cloudfrontkeyvaluestore_update_keys/](https://www.paws-r-sdk.com/docs/cloudfrontkeyvaluestore_update_keys/) for full documentation.
 #'
 #' @param KvsARN &#91;required&#93; The Amazon Resource Name (ARN) of the Key Value Store.
-#' @param IfMatch &#91;required&#93; The current version (ETag) of the Key Value Store that you are updating
-#' keys of, which you can get using DescribeKeyValueStore.
+#' @param IfMatch &#91;required&#93; The current version (ETag) of the Key Value Store that you are updating keys of, which you can get using DescribeKeyValueStore.
 #' @param Puts List of key value pairs to put.
 #' @param Deletes List of keys to delete.
 #'

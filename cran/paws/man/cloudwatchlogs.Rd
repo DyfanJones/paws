@@ -53,39 +53,13 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-You can use Amazon CloudWatch Logs to monitor, store, and access your
-log files from EC2 instances, CloudTrail, and other sources. You can
-then retrieve the associated log data from CloudWatch Logs using the
-CloudWatch console. Alternatively, you can use CloudWatch Logs commands
-in the Amazon Web Services CLI, CloudWatch Logs API, or CloudWatch Logs
-SDK.
+You can use Amazon CloudWatch Logs to monitor, store, and access your log files from EC2 instances, CloudTrail, and other sources. You can then retrieve the associated log data from CloudWatch Logs using the CloudWatch console. Alternatively, you can use CloudWatch Logs commands in the Amazon Web Services CLI, CloudWatch Logs API, or CloudWatch Logs SDK.
 
 You can use CloudWatch Logs to:
 \itemize{
-\item \strong{Monitor logs from EC2 instances in real time}: You can use
-CloudWatch Logs to monitor applications and systems using log data.
-For example, CloudWatch Logs can track the number of errors that
-occur in your application logs. Then, it can send you a notification
-whenever the rate of errors exceeds a threshold that you specify.
-CloudWatch Logs uses your log data for monitoring so no code changes
-are required. For example, you can monitor application logs for
-specific literal terms (such as "NullReferenceException"). You can
-also count the number of occurrences of a literal term at a
-particular position in log data (such as "404" status codes in an
-Apache access log). When the term you are searching for is found,
-CloudWatch Logs reports the data to a CloudWatch metric that you
-specify.
-\item \strong{Monitor CloudTrail logged events}: You can create alarms in
-CloudWatch and receive notifications of particular API activity as
-captured by CloudTrail. You can use the notification to perform
-troubleshooting.
-\item \strong{Archive log data}: You can use CloudWatch Logs to store your log
-data in highly durable storage. You can change the log retention
-setting so that any log events earlier than this setting are
-automatically deleted. The CloudWatch Logs agent helps to quickly
-send both rotated and non-rotated log data off of a host and into
-the log service. You can then access the raw log data when you need
-it.
+\item \strong{Monitor logs from EC2 instances in real time}: You can use CloudWatch Logs to monitor applications and systems using log data. For example, CloudWatch Logs can track the number of errors that occur in your application logs. Then, it can send you a notification whenever the rate of errors exceeds a threshold that you specify. CloudWatch Logs uses your log data for monitoring so no code changes are required. For example, you can monitor application logs for specific literal terms (such as "NullReferenceException"). You can also count the number of occurrences of a literal term at a particular position in log data (such as "404" status codes in an Apache access log). When the term you are searching for is found, CloudWatch Logs reports the data to a CloudWatch metric that you specify.
+\item \strong{Monitor CloudTrail logged events}: You can create alarms in CloudWatch and receive notifications of particular API activity as captured by CloudTrail. You can use the notification to perform troubleshooting.
+\item \strong{Archive log data}: You can use CloudWatch Logs to store your log data in highly durable storage. You can change the log retention setting so that any log events earlier than this setting are automatically deleted. The CloudWatch Logs agent helps to quickly send both rotated and non-rotated log data off of a host and into the log service. You can then access the raw log data when you need it.
 }
 }
 \section{Service syntax}{
@@ -137,6 +111,7 @@ it.
 \link[paws.management:cloudwatchlogs_create_log_anomaly_detector]{create_log_anomaly_detector} \tab Creates an anomaly detector that regularly scans one or more log groups and look for patterns and anomalies in the logs\cr
 \link[paws.management:cloudwatchlogs_create_log_group]{create_log_group} \tab Creates a log group with the specified name\cr
 \link[paws.management:cloudwatchlogs_create_log_stream]{create_log_stream} \tab Creates a log stream for the specified log group\cr
+\link[paws.management:cloudwatchlogs_create_lookup_table]{create_lookup_table} \tab Creates a lookup table by uploading CSV data\cr
 \link[paws.management:cloudwatchlogs_create_scheduled_query]{create_scheduled_query} \tab Creates a scheduled query that runs CloudWatch Logs Insights queries at regular intervals\cr
 \link[paws.management:cloudwatchlogs_delete_account_policy]{delete_account_policy} \tab Deletes a CloudWatch Logs account policy\cr
 \link[paws.management:cloudwatchlogs_delete_data_protection_policy]{delete_data_protection_policy} \tab Deletes the data protection policy from the specified log group\cr
@@ -150,6 +125,7 @@ it.
 \link[paws.management:cloudwatchlogs_delete_log_anomaly_detector]{delete_log_anomaly_detector} \tab Deletes the specified CloudWatch Logs anomaly detector\cr
 \link[paws.management:cloudwatchlogs_delete_log_group]{delete_log_group} \tab Deletes the specified log group and permanently deletes all the archived log events associated with the log group\cr
 \link[paws.management:cloudwatchlogs_delete_log_stream]{delete_log_stream} \tab Deletes the specified log stream and permanently deletes all the archived log events associated with the log stream\cr
+\link[paws.management:cloudwatchlogs_delete_lookup_table]{delete_lookup_table} \tab Deletes a lookup table permanently\cr
 \link[paws.management:cloudwatchlogs_delete_metric_filter]{delete_metric_filter} \tab Deletes the specified metric filter\cr
 \link[paws.management:cloudwatchlogs_delete_query_definition]{delete_query_definition} \tab Deletes a saved CloudWatch Logs Insights query definition\cr
 \link[paws.management:cloudwatchlogs_delete_resource_policy]{delete_resource_policy} \tab Deletes a resource policy from this account\cr
@@ -170,6 +146,7 @@ it.
 \link[paws.management:cloudwatchlogs_describe_index_policies]{describe_index_policies} \tab Returns the field index policies of the specified log group\cr
 \link[paws.management:cloudwatchlogs_describe_log_groups]{describe_log_groups} \tab Returns information about log groups, including data sources that ingest into each log group\cr
 \link[paws.management:cloudwatchlogs_describe_log_streams]{describe_log_streams} \tab Lists the log streams for the specified log group\cr
+\link[paws.management:cloudwatchlogs_describe_lookup_tables]{describe_lookup_tables} \tab Retrieves metadata about lookup tables in your account\cr
 \link[paws.management:cloudwatchlogs_describe_metric_filters]{describe_metric_filters} \tab Lists the specified metric filters\cr
 \link[paws.management:cloudwatchlogs_describe_queries]{describe_queries} \tab Returns a list of CloudWatch Logs Insights queries that are scheduled, running, or have been run recently in this account\cr
 \link[paws.management:cloudwatchlogs_describe_query_definitions]{describe_query_definitions} \tab This operation returns a paginated list of your saved CloudWatch Logs Insights query definitions\cr
@@ -190,6 +167,7 @@ it.
 \link[paws.management:cloudwatchlogs_get_log_group_fields]{get_log_group_fields} \tab Returns a list of the fields that are included in log events in the specified log group\cr
 \link[paws.management:cloudwatchlogs_get_log_object]{get_log_object} \tab Retrieves a large logging object (LLO) and streams it back\cr
 \link[paws.management:cloudwatchlogs_get_log_record]{get_log_record} \tab Retrieves all of the fields and values of a single log event\cr
+\link[paws.management:cloudwatchlogs_get_lookup_table]{get_lookup_table} \tab Retrieves the full content of a lookup table, including the CSV data\cr
 \link[paws.management:cloudwatchlogs_get_query_results]{get_query_results} \tab Returns the results from the specified query\cr
 \link[paws.management:cloudwatchlogs_get_scheduled_query]{get_scheduled_query} \tab Retrieves details about a specific scheduled query, including its configuration, execution status, and metadata\cr
 \link[paws.management:cloudwatchlogs_get_scheduled_query_history]{get_scheduled_query_history} \tab Retrieves the execution history of a scheduled query within a specified time range, including query results and destination processing status\cr
@@ -205,6 +183,7 @@ it.
 \link[paws.management:cloudwatchlogs_list_tags_for_resource]{list_tags_for_resource} \tab Displays the tags associated with a CloudWatch Logs resource\cr
 \link[paws.management:cloudwatchlogs_list_tags_log_group]{list_tags_log_group} \tab The ListTagsLogGroup operation is on the path to deprecation\cr
 \link[paws.management:cloudwatchlogs_put_account_policy]{put_account_policy} \tab Creates an account-level data protection policy, subscription filter policy, field index policy, transformer policy, or metric extraction policy that applies to all log groups, a subset of log groups, or a data source name and type combination in the account\cr
+\link[paws.management:cloudwatchlogs_put_bearer_token_authentication]{put_bearer_token_authentication} \tab Enables or disables bearer token authentication for the specified log group\cr
 \link[paws.management:cloudwatchlogs_put_data_protection_policy]{put_data_protection_policy} \tab Creates a data protection policy for the specified log group\cr
 \link[paws.management:cloudwatchlogs_put_delivery_destination]{put_delivery_destination} \tab Creates or updates a logical delivery destination\cr
 \link[paws.management:cloudwatchlogs_put_delivery_destination_policy]{put_delivery_destination_policy} \tab Creates and assigns an IAM policy that grants permissions to CloudWatch Logs to deliver logs cross-account to a specified destination in this account\cr
@@ -233,6 +212,7 @@ it.
 \link[paws.management:cloudwatchlogs_update_anomaly]{update_anomaly} \tab Use this operation to suppress anomaly detection for a specified anomaly or pattern\cr
 \link[paws.management:cloudwatchlogs_update_delivery_configuration]{update_delivery_configuration} \tab Use this operation to update the configuration of a delivery to change either the S3 path pattern or the format of the delivered logs\cr
 \link[paws.management:cloudwatchlogs_update_log_anomaly_detector]{update_log_anomaly_detector} \tab Updates an existing log anomaly detector\cr
+\link[paws.management:cloudwatchlogs_update_lookup_table]{update_lookup_table} \tab Updates an existing lookup table by replacing all of its CSV content\cr
 \link[paws.management:cloudwatchlogs_update_scheduled_query]{update_scheduled_query} \tab Updates an existing scheduled query with new configuration
 }
 }

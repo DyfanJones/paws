@@ -9,8 +9,7 @@ cloudfront_delete_field_level_encryption_config(Id, IfMatch = NULL)
 \arguments{
 \item{Id}{[required] The ID of the configuration you want to delete from CloudFront.}
 
-\item{IfMatch}{The value of the \code{ETag} header that you received when retrieving the
-configuration identity to delete. For example: \code{E2QWRUHAPOMQZL}.}
+\item{IfMatch}{The value of the \code{ETag} header that you received when retrieving the configuration identity to delete. For example: \code{E2QWRUHAPOMQZL}.}
 }
 \description{
 Remove a field-level encryption configuration.

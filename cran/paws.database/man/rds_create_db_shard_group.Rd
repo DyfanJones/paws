@@ -19,58 +19,40 @@ rds_create_db_shard_group(
 
 \item{DBClusterIdentifier}{[required] The name of the primary DB cluster for the DB shard group.}
 
-\item{ComputeRedundancy}{Specifies whether to create standby standby DB data access shard for the
-DB shard group. Valid values are the following:
+\item{ComputeRedundancy}{Specifies whether to create standby standby DB data access shard for the DB shard group. Valid values are the following:
 \itemize{
-\item 0 - Creates a DB shard group without a standby DB data access shard.
-This is the default value.
-\item 1 - Creates a DB shard group with a standby DB data access shard in
-a different Availability Zone (AZ).
-\item 2 - Creates a DB shard group with two standby DB data access shard
-in two different AZs.
+\item 0 - Creates a DB shard group without a standby DB data access shard. This is the default value.
+\item 1 - Creates a DB shard group with a standby DB data access shard in a different Availability Zone (AZ).
+\item 2 - Creates a DB shard group with two standby DB data access shard in two different AZs.
 }}
 
-\item{MaxACU}{[required] The maximum capacity of the DB shard group in Aurora capacity units
-(ACUs).}
+\item{MaxACU}{[required] The maximum capacity of the DB shard group in Aurora capacity units (ACUs).}
 
-\item{MinACU}{The minimum capacity of the DB shard group in Aurora capacity units
-(ACUs).}
+\item{MinACU}{The minimum capacity of the DB shard group in Aurora capacity units (ACUs).}
 
 \item{PubliclyAccessible}{Specifies whether the DB shard group is publicly accessible.
 
-When the DB shard group is publicly accessible, its Domain Name System
-(DNS) endpoint resolves to the private IP address from within the DB
-shard group's virtual private cloud (VPC). It resolves to the public IP
-address from outside of the DB shard group's VPC. Access to the DB shard
-group is ultimately controlled by the security group it uses. That
-public access is not permitted if the security group assigned to the DB
-shard group doesn't permit it.
+When the DB shard group is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB shard group's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB shard group's VPC. Access to the DB shard group is ultimately controlled by the security group it uses. That public access is not permitted if the security group assigned to the DB shard group doesn't permit it.
 
-When the DB shard group isn't publicly accessible, it is an internal DB
-shard group with a DNS name that resolves to a private IP address.
+When the DB shard group isn't publicly accessible, it is an internal DB shard group with a DNS name that resolves to a private IP address.
 
-Default: The default behavior varies depending on whether
-\code{DBSubnetGroupName} is specified.
+Default: The default behavior varies depending on whether \code{DBSubnetGroupName} is specified.
 
-If \code{DBSubnetGroupName} isn't specified, and \code{PubliclyAccessible} isn't
-specified, the following applies:
+If \code{DBSubnetGroupName} isn't specified, and \code{PubliclyAccessible} isn't specified, the following applies:
 \itemize{
-\item If the default VPC in the target Region doesn’t have an internet
-gateway attached to it, the DB shard group is private.
-\item If the default VPC in the target Region has an internet gateway
-attached to it, the DB shard group is public.
+\item If the default VPC in the target Region doesn’t have an internet gateway attached to it, the DB shard group is private.
+\item If the default VPC in the target Region has an internet gateway attached to it, the DB shard group is public.
 }
 
-If \code{DBSubnetGroupName} is specified, and \code{PubliclyAccessible} isn't
-specified, the following applies:
+If \code{DBSubnetGroupName} is specified, and \code{PubliclyAccessible} isn't specified, the following applies:
 \itemize{
-\item If the subnets are part of a VPC that doesn’t have an internet
-gateway attached to it, the DB shard group is private.
-\item If the subnets are part of a VPC that has an internet gateway
-attached to it, the DB shard group is public.
+\item If the subnets are part of a VPC that doesn’t have an internet gateway attached to it, the DB shard group is private.
+\item If the subnets are part of a VPC that has an internet gateway attached to it, the DB shard group is public.
 }}
 
-\item{Tags}{}
+\item{Tags}{A list of tags.
+
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html}{Tagging Amazon RDS resources} in the \emph{Amazon RDS User Guide} or \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html}{Tagging Amazon Aurora and Amazon RDS resources} in the \emph{Amazon Aurora User Guide}.}
 }
 \description{
 Creates a new DB shard group for Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.

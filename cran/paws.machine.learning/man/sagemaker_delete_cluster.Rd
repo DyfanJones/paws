@@ -7,8 +7,7 @@
 sagemaker_delete_cluster(ClusterName)
 }
 \arguments{
-\item{ClusterName}{[required] The string name or the Amazon Resource Name (ARN) of the SageMaker
-HyperPod cluster to delete.}
+\item{ClusterName}{[required] The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster to delete.}
 }
 \description{
 Delete a SageMaker HyperPod cluster.

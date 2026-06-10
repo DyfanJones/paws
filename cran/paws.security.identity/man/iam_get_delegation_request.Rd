@@ -12,18 +12,11 @@ iam_get_delegation_request(
 \arguments{
 \item{DelegationRequestId}{[required] The unique identifier of the delegation request to retrieve.}
 
-\item{DelegationPermissionCheck}{Specifies whether to perform a permission check for the delegation
-request.
+\item{DelegationPermissionCheck}{Specifies whether to perform a permission check for the delegation request.
 
-If set to true, the
-\code{\link[=iam_get_delegation_request]{get_delegation_request}} API call will
-start a permission check process. This process calculates whether the
-caller has sufficient permissions to cover the asks from this delegation
-request.
+If set to true, the \code{\link[=iam_get_delegation_request]{get_delegation_request}} API call will start a permission check process. This process calculates whether the caller has sufficient permissions to cover the asks from this delegation request.
 
-Setting this parameter to true does not guarantee an answer in the
-response. See the \code{PermissionCheckStatus} and the
-\code{PermissionCheckResult} response attributes for further details.}
+Setting this parameter to true does not guarantee an answer in the response. See the \code{PermissionCheckStatus} and the \code{PermissionCheckResult} response attributes for further details.}
 }
 \description{
 Retrieves information about a specific delegation request.

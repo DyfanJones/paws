@@ -27,11 +27,9 @@ lexruntimev2_recognize_text(
 
 \item{sessionState}{The current state of the dialog between the user and the bot.}
 
-\item{requestAttributes}{Request-specific information passed between the client application and
-Amazon Lex V2
+\item{requestAttributes}{Request-specific information passed between the client application and Amazon Lex V2
 
-The namespace \verb{x-amz-lex:} is reserved for special attributes. Don't
-create any request attributes with the prefix \verb{x-amz-lex:}.}
+The namespace \verb{x-amz-lex:} is reserved for special attributes. Don't create any request attributes with the prefix \verb{x-amz-lex:}.}
 }
 \description{
 Sends user input to Amazon Lex V2. Client applications use this API to send requests to Amazon Lex V2 at runtime. Amazon Lex V2 then interprets the user input using the machine learning model that it build for the bot.

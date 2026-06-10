@@ -5,53 +5,23 @@ NULL
 #' Amazon Cognito Identity Provider
 #'
 #' @description
-#' With the Amazon Cognito user pools API, you can configure user pools and
-#' authenticate users. To authenticate users from third-party identity
-#' providers (IdPs) in this API, you can [link IdP users to native user
-#' profiles](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation-consolidate-users.html).
-#' Learn more about the authentication and authorization of federated users
-#' at [Adding user pool sign-in through a third
-#' party](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html)
-#' and in the [User pool federation endpoints and managed login
-#' reference](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-userpools-server-contract-reference.html).
+#' With the Amazon Cognito user pools API, you can configure user pools and authenticate users. To authenticate users from third-party identity providers (IdPs) in this API, you can [link IdP users to native user profiles](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation-consolidate-users.html). Learn more about the authentication and authorization of federated users at [Adding user pool sign-in through a third party](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html) and in the [User pool federation endpoints and managed login reference](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-userpools-server-contract-reference.html).
 #' 
-#' This API reference provides detailed information about API operations
-#' and object types in Amazon Cognito.
+#' This API reference provides detailed information about API operations and object types in Amazon Cognito.
 #' 
-#' Along with resource management operations, the Amazon Cognito user pools
-#' API includes classes of operations and authorization models for
-#' client-side and server-side authentication of users. You can interact
-#' with operations in the Amazon Cognito user pools API as any of the
-#' following subjects.
+#' Along with resource management operations, the Amazon Cognito user pools API includes classes of operations and authorization models for client-side and server-side authentication of users. You can interact with operations in the Amazon Cognito user pools API as any of the following subjects.
 #' 
-#' 1.  An administrator who wants to configure user pools, app clients,
-#'     users, groups, or other user pool functions.
+#' 1.  An administrator who wants to configure user pools, app clients, users, groups, or other user pool functions.
 #' 
-#' 2.  A server-side app, like a web application, that wants to use its
-#'     Amazon Web Services privileges to manage, authenticate, or authorize
-#'     a user.
+#' 2.  A server-side app, like a web application, that wants to use its Amazon Web Services privileges to manage, authenticate, or authorize a user.
 #' 
-#' 3.  A client-side app, like a mobile app, that wants to make
-#'     unauthenticated requests to manage, authenticate, or authorize a
-#'     user.
+#' 3.  A client-side app, like a mobile app, that wants to make unauthenticated requests to manage, authenticate, or authorize a user.
 #' 
-#' For more information, see [Understanding API, OIDC, and managed login
-#' pages
-#' authentication](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html#user-pools-API-operations)
-#' in the *Amazon Cognito Developer Guide*.
+#' For more information, see [Understanding API, OIDC, and managed login pages authentication](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html#user-pools-API-operations) in the *Amazon Cognito Developer Guide*.
 #' 
-#' With your Amazon Web Services SDK, you can build the logic to support
-#' operational flows in every use case for this API. You can also make
-#' direct REST API requests to [Amazon Cognito user pools service
-#' endpoints](https://docs.aws.amazon.com/general/latest/gr/cognito.html#cognito_identity_your_user_pools_region).
-#' The following links can get you started with the
-#' `CognitoIdentityProvider` client in supported Amazon Web Services SDKs.
+#' With your Amazon Web Services SDK, you can build the logic to support operational flows in every use case for this API. You can also make direct REST API requests to [Amazon Cognito user pools service endpoints](https://docs.aws.amazon.com/general/latest/gr/cognito.html#cognito_identity_your_user_pools_region). The following links can get you started with the `CognitoIdentityProvider` client in supported Amazon Web Services SDKs.
 #' 
-#' To get started with an Amazon Web Services SDK, see [Tools to Build on
-#' Amazon Web Services](https://builder.aws.com/build/tools). For example
-#' actions and scenarios, see [Code examples for Amazon Cognito Identity
-#' Provider using Amazon Web Services
-#' SDKs](https://docs.aws.amazon.com/cognito/latest/developerguide/service_code_examples_cognito-identity-provider.html).
+#' To get started with an Amazon Web Services SDK, see [Tools to Build on Amazon Web Services](https://builder.aws.com/build/tools). For example actions and scenarios, see [Code examples for Amazon Cognito Identity Provider using Amazon Web Services SDKs](https://docs.aws.amazon.com/cognito/latest/developerguide/service_code_examples_cognito-identity-provider.html).
 #'
 #' @param
 #' config
@@ -137,6 +107,7 @@ NULL
 #' @section Operations:
 #' \tabular{ll}{
 #'  \link[=cognitoidentityprovider_add_custom_attributes]{add_custom_attributes} \tab Adds additional user attributes to the user pool schema\cr
+#'  \link[=cognitoidentityprovider_add_user_pool_client_secret]{add_user_pool_client_secret} \tab Creates a new client secret for an existing confidential user pool app client\cr
 #'  \link[=cognitoidentityprovider_admin_add_user_to_group]{admin_add_user_to_group} \tab Adds a user to a group\cr
 #'  \link[=cognitoidentityprovider_admin_confirm_sign_up]{admin_confirm_sign_up} \tab Confirms user sign-up as an administrator\cr
 #'  \link[=cognitoidentityprovider_admin_create_user]{admin_create_user} \tab Creates a new user in the specified user pool\cr
@@ -187,6 +158,7 @@ NULL
 #'  \link[=cognitoidentityprovider_delete_user_attributes]{delete_user_attributes} \tab Deletes attributes from the currently signed-in user\cr
 #'  \link[=cognitoidentityprovider_delete_user_pool]{delete_user_pool} \tab Deletes a user pool\cr
 #'  \link[=cognitoidentityprovider_delete_user_pool_client]{delete_user_pool_client} \tab Deletes a user pool app client\cr
+#'  \link[=cognitoidentityprovider_delete_user_pool_client_secret]{delete_user_pool_client_secret} \tab Deletes a specific client secret from a user pool app client\cr
 #'  \link[=cognitoidentityprovider_delete_user_pool_domain]{delete_user_pool_domain} \tab Given a user pool ID and domain identifier, deletes a user pool domain\cr
 #'  \link[=cognitoidentityprovider_delete_web_authn_credential]{delete_web_authn_credential} \tab Deletes a registered passkey, or WebAuthn, authenticator for the currently signed-in user\cr
 #'  \link[=cognitoidentityprovider_describe_identity_provider]{describe_identity_provider} \tab Given a user pool ID and identity provider (IdP) name, returns details about the IdP\cr
@@ -223,6 +195,7 @@ NULL
 #'  \link[=cognitoidentityprovider_list_terms]{list_terms} \tab Returns details about all terms documents for the requested user pool\cr
 #'  \link[=cognitoidentityprovider_list_user_import_jobs]{list_user_import_jobs} \tab Given a user pool ID, returns user import jobs and their details\cr
 #'  \link[=cognitoidentityprovider_list_user_pool_clients]{list_user_pool_clients} \tab Given a user pool ID, lists app clients\cr
+#'  \link[=cognitoidentityprovider_list_user_pool_client_secrets]{list_user_pool_client_secrets} \tab Lists all client secrets associated with a user pool app client\cr
 #'  \link[=cognitoidentityprovider_list_user_pools]{list_user_pools} \tab Lists user pools and their details in the current Amazon Web Services account\cr
 #'  \link[=cognitoidentityprovider_list_users]{list_users} \tab Given a user pool ID, returns a list of users and their basic details in a user pool\cr
 #'  \link[=cognitoidentityprovider_list_users_in_group]{list_users_in_group} \tab Given a user pool ID and a group name, returns a list of users in the group\cr

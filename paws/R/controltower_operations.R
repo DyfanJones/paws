@@ -6,22 +6,16 @@ NULL
 #' Creates a new landing zone
 #'
 #' @description
-#' Creates a new landing zone. This API call starts an asynchronous
-#' operation that creates and configures a landing zone, based on the
-#' parameters specified in the manifest JSON file.
+#' Creates a new landing zone. This API call starts an asynchronous operation that creates and configures a landing zone, based on the parameters specified in the manifest JSON file.
 #'
 #' @usage
 #' controltower_create_landing_zone(version, remediationTypes, tags,
 #'   manifest)
 #'
 #' @param version &#91;required&#93; The landing zone version, for example, 3.0.
-#' @param remediationTypes Specifies the types of remediation actions to apply when creating the
-#' landing zone, such as automatic drift correction or compliance
-#' enforcement.
+#' @param remediationTypes Specifies the types of remediation actions to apply when creating the landing zone, such as automatic drift correction or compliance enforcement.
 #' @param tags Tags to be applied to the landing zone.
-#' @param manifest The manifest JSON file is a text file that describes your Amazon Web
-#' Services resources. For examples, review [Launch your landing
-#' zone](https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch.html).
+#' @param manifest The manifest JSON file is a text file that describes your Amazon Web Services resources. For examples, review [Launch your landing zone](https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -73,14 +67,9 @@ controltower_create_landing_zone <- function(version, remediationTypes = NULL, t
 #' Decommissions a landing zone
 #'
 #' @description
-#' Decommissions a landing zone. This API call starts an asynchronous
-#' operation that deletes Amazon Web Services Control Tower resources
-#' deployed in accounts managed by Amazon Web Services Control Tower.
+#' Decommissions a landing zone. This API call starts an asynchronous operation that deletes Amazon Web Services Control Tower resources deployed in accounts managed by Amazon Web Services Control Tower.
 #' 
-#' Decommissioning a landing zone is a process with significant
-#' consequences, and it cannot be undone. We strongly recommend that you
-#' perform this decommissioning process only if you intend to stop using
-#' your landing zone.
+#' Decommissioning a landing zone is a process with significant consequences, and it cannot be undone. We strongly recommend that you perform this decommissioning process only if you intend to stop using your landing zone.
 #'
 #' @usage
 #' controltower_delete_landing_zone(landingZoneIdentifier)
@@ -129,19 +118,12 @@ controltower_delete_landing_zone <- function(landingZoneIdentifier) {
 #' Disable an EnabledBaseline resource on the specified Target
 #'
 #' @description
-#' Disable an `EnabledBaseline` resource on the specified Target. This API
-#' starts an asynchronous operation to remove all resources deployed as
-#' part of the baseline enablement. The resource will vary depending on the
-#' enabled baseline. For usage examples, see [*the Amazon Web Services
-#' Control Tower User
-#' Guide*](https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html)
-#' .
+#' Disable an `EnabledBaseline` resource on the specified Target. This API starts an asynchronous operation to remove all resources deployed as part of the baseline enablement. The resource will vary depending on the enabled baseline. For usage examples, see [*the Amazon Web Services Control Tower User Guide*](https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html) .
 #'
 #' @usage
 #' controltower_disable_baseline(enabledBaselineIdentifier)
 #'
-#' @param enabledBaselineIdentifier &#91;required&#93; Identifier of the `EnabledBaseline` resource to be deactivated, in ARN
-#' format.
+#' @param enabledBaselineIdentifier &#91;required&#93; Identifier of the `EnabledBaseline` resource to be deactivated, in ARN format.
 #'
 #' @return
 #' A list with the following syntax:
@@ -185,28 +167,15 @@ controltower_disable_baseline <- function(enabledBaselineIdentifier) {
 #' This API call turns off a control
 #'
 #' @description
-#' This API call turns off a control. It starts an asynchronous operation
-#' that deletes Amazon Web Services resources on the specified
-#' organizational unit and the accounts it contains. The resources will
-#' vary according to the control that you specify. For usage examples, see
-#' the [*Controls Reference
-#' Guide*](https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html)
-#' .
+#' This API call turns off a control. It starts an asynchronous operation that deletes Amazon Web Services resources on the specified organizational unit and the accounts it contains. The resources will vary according to the control that you specify. For usage examples, see the [*Controls Reference Guide*](https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html) .
 #'
 #' @usage
 #' controltower_disable_control(controlIdentifier, targetIdentifier,
 #'   enabledControlIdentifier)
 #'
-#' @param controlIdentifier The ARN of the control. Only **Strongly recommended** and **Elective**
-#' controls are permitted, with the exception of the **Region deny**
-#' control. For information on how to find the `controlIdentifier`, see
-#' [the overview
-#' page](https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html).
-#' @param targetIdentifier The ARN of the organizational unit. For information on how to find the
-#' `targetIdentifier`, see [the overview
-#' page](https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html).
-#' @param enabledControlIdentifier The ARN of the enabled control to be disabled, which uniquely identifies
-#' the control instance on the target organizational unit.
+#' @param controlIdentifier The ARN of the control. Only **Strongly recommended** and **Elective** controls are permitted, with the exception of the **Region deny** control. For information on how to find the `controlIdentifier`, see [the overview page](https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html).
+#' @param targetIdentifier The ARN of the organizational unit. For information on how to find the `targetIdentifier`, see [the overview page](https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html).
+#' @param enabledControlIdentifier The ARN of the enabled control to be disabled, which uniquely identifies the control instance on the target organizational unit.
 #'
 #' @return
 #' A list with the following syntax:
@@ -252,25 +221,17 @@ controltower_disable_control <- function(controlIdentifier = NULL, targetIdentif
 #' Enable (apply) a Baseline to a Target
 #'
 #' @description
-#' Enable (apply) a `Baseline` to a Target. This API starts an asynchronous
-#' operation to deploy resources specified by the `Baseline` to the
-#' specified Target. For usage examples, see [*the Amazon Web Services
-#' Control Tower User
-#' Guide*](https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html)
-#' .
+#' Enable (apply) a `Baseline` to a Target. This API starts an asynchronous operation to deploy resources specified by the `Baseline` to the specified Target. For usage examples, see [*the Amazon Web Services Control Tower User Guide*](https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html) .
 #'
 #' @usage
 #' controltower_enable_baseline(baselineVersion, parameters,
 #'   baselineIdentifier, targetIdentifier, tags)
 #'
 #' @param baselineVersion &#91;required&#93; The specific version to be enabled of the specified baseline.
-#' @param parameters A list of `key-value` objects that specify enablement parameters, where
-#' `key` is a string and `value` is a document of any type.
+#' @param parameters A list of `key-value` objects that specify enablement parameters, where `key` is a string and `value` is a document of any type.
 #' @param baselineIdentifier &#91;required&#93; The ARN of the baseline to be enabled.
-#' @param targetIdentifier &#91;required&#93; The ARN of the target on which the baseline will be enabled. Only OUs
-#' are supported as targets.
-#' @param tags Tags associated with input to
-#' [`enable_baseline`][controltower_enable_baseline].
+#' @param targetIdentifier &#91;required&#93; The ARN of the target on which the baseline will be enabled. Only OUs are supported as targets.
+#' @param tags Tags associated with input to [`enable_baseline`][controltower_enable_baseline].
 #'
 #' @return
 #' A list with the following syntax:
@@ -326,29 +287,16 @@ controltower_enable_baseline <- function(baselineVersion, parameters = NULL, bas
 #' This API call activates a control
 #'
 #' @description
-#' This API call activates a control. It starts an asynchronous operation
-#' that creates Amazon Web Services resources on the specified
-#' organizational unit and the accounts it contains. The resources created
-#' will vary according to the control that you specify. For usage examples,
-#' see the [*Controls Reference
-#' Guide*](https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html)
-#' .
+#' This API call activates a control. It starts an asynchronous operation that creates Amazon Web Services resources on the specified organizational unit and the accounts it contains. The resources created will vary according to the control that you specify. For usage examples, see the [*Controls Reference Guide*](https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html) .
 #'
 #' @usage
 #' controltower_enable_control(controlIdentifier, targetIdentifier, tags,
 #'   parameters)
 #'
-#' @param controlIdentifier &#91;required&#93; The ARN of the control. Only **Strongly recommended** and **Elective**
-#' controls are permitted, with the exception of the **Region deny**
-#' control. For information on how to find the `controlIdentifier`, see
-#' [the overview
-#' page](https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html).
-#' @param targetIdentifier &#91;required&#93; The ARN of the organizational unit. For information on how to find the
-#' `targetIdentifier`, see [the overview
-#' page](https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html).
+#' @param controlIdentifier &#91;required&#93; The ARN of the control. Only **Strongly recommended** and **Elective** controls are permitted, with the exception of the **Region deny** control. For information on how to find the `controlIdentifier`, see [the overview page](https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html).
+#' @param targetIdentifier &#91;required&#93; The ARN of the organizational unit. For information on how to find the `targetIdentifier`, see [the overview page](https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html).
 #' @param tags Tags to be applied to the `EnabledControl` resource.
-#' @param parameters A list of input parameter values, which are specified to configure the
-#' control when you enable it.
+#' @param parameters A list of input parameter values, which are specified to configure the control when you enable it.
 #'
 #' @return
 #' A list with the following syntax:
@@ -404,11 +352,7 @@ controltower_enable_control <- function(controlIdentifier, targetIdentifier, tag
 #' identifier
 #'
 #' @description
-#' Retrieve details about an existing `Baseline` resource by specifying its
-#' identifier. For usage examples, see [*the Amazon Web Services Control
-#' Tower User
-#' Guide*](https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html)
-#' .
+#' Retrieve details about an existing `Baseline` resource by specifying its identifier. For usage examples, see [*the Amazon Web Services Control Tower User Guide*](https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html) .
 #'
 #' @usage
 #' controltower_get_baseline(baselineIdentifier)
@@ -461,21 +405,12 @@ controltower_get_baseline <- function(baselineIdentifier) {
 #' UpdateEnabledBaseline, ResetEnabledBaseline
 #'
 #' @description
-#' Returns the details of an asynchronous baseline operation, as initiated
-#' by any of these APIs: [`enable_baseline`][controltower_enable_baseline],
-#' [`disable_baseline`][controltower_disable_baseline],
-#' [`update_enabled_baseline`][controltower_update_enabled_baseline],
-#' [`reset_enabled_baseline`][controltower_reset_enabled_baseline]. A
-#' status message is displayed in case of operation failure. For usage
-#' examples, see [*the Amazon Web Services Control Tower User
-#' Guide*](https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html)
-#' .
+#' Returns the details of an asynchronous baseline operation, as initiated by any of these APIs: [`enable_baseline`][controltower_enable_baseline], [`disable_baseline`][controltower_disable_baseline], [`update_enabled_baseline`][controltower_update_enabled_baseline], [`reset_enabled_baseline`][controltower_reset_enabled_baseline]. A status message is displayed in case of operation failure. For usage examples, see [*the Amazon Web Services Control Tower User Guide*](https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html) .
 #'
 #' @usage
 #' controltower_get_baseline_operation(operationIdentifier)
 #'
-#' @param operationIdentifier &#91;required&#93; The operation ID returned from mutating asynchronous APIs (Enable,
-#' Disable, Update, Reset).
+#' @param operationIdentifier &#91;required&#93; The operation ID returned from mutating asynchronous APIs (Enable, Disable, Update, Reset).
 #'
 #' @return
 #' A list with the following syntax:
@@ -531,19 +466,12 @@ controltower_get_baseline_operation <- function(operationIdentifier) {
 #' operation
 #'
 #' @description
-#' Returns the status of a particular
-#' [`enable_control`][controltower_enable_control] or
-#' [`disable_control`][controltower_disable_control] operation. Displays a
-#' message in case of error. Details for an operation are available for 90
-#' days. For usage examples, see the [*Controls Reference
-#' Guide*](https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html)
-#' .
+#' Returns the status of a particular [`enable_control`][controltower_enable_control] or [`disable_control`][controltower_disable_control] operation. Displays a message in case of error. Details for an operation are available for 90 days. For usage examples, see the [*Controls Reference Guide*](https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html) .
 #'
 #' @usage
 #' controltower_get_control_operation(operationIdentifier)
 #'
-#' @param operationIdentifier &#91;required&#93; The ID of the asynchronous operation, which is used to track status. The
-#' operation is available for 90 days.
+#' @param operationIdentifier &#91;required&#93; The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.
 #'
 #' @return
 #' A list with the following syntax:
@@ -602,14 +530,12 @@ controltower_get_control_operation <- function(operationIdentifier) {
 #' identifier
 #'
 #' @description
-#' Retrieve details of an `EnabledBaseline` resource by specifying its
-#' identifier.
+#' Retrieve details of an `EnabledBaseline` resource by specifying its identifier.
 #'
 #' @usage
 #' controltower_get_enabled_baseline(enabledBaselineIdentifier)
 #'
-#' @param enabledBaselineIdentifier &#91;required&#93; Identifier of the `EnabledBaseline` resource to be retrieved, in ARN
-#' format.
+#' @param enabledBaselineIdentifier &#91;required&#93; Identifier of the `EnabledBaseline` resource to be retrieved, in ARN format.
 #'
 #' @return
 #' A list with the following syntax:
@@ -676,10 +602,7 @@ controltower_get_enabled_baseline <- function(enabledBaselineIdentifier) {
 #' Retrieves details about an enabled control
 #'
 #' @description
-#' Retrieves details about an enabled control. For usage examples, see the
-#' [*Controls Reference
-#' Guide*](https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html)
-#' .
+#' Retrieves details about an enabled control. For usage examples, see the [*Controls Reference Guide*](https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html) .
 #'
 #' @usage
 #' controltower_get_enabled_control(enabledControlIdentifier)
@@ -759,8 +682,7 @@ controltower_get_enabled_control <- function(enabledControlIdentifier) {
 #' Returns details about the landing zone
 #'
 #' @description
-#' Returns details about the landing zone. Displays a message in case of
-#' error.
+#' Returns details about the landing zone. Displays a message in case of error.
 #'
 #' @usage
 #' controltower_get_landing_zone(landingZoneIdentifier)
@@ -821,8 +743,7 @@ controltower_get_landing_zone <- function(landingZoneIdentifier) {
 #' Returns the status of the specified landing zone operation
 #'
 #' @description
-#' Returns the status of the specified landing zone operation. Details for
-#' an operation are available for 90 days.
+#' Returns the status of the specified landing zone operation. Details for an operation are available for 90 days.
 #'
 #' @usage
 #' controltower_get_landing_zone_operation(operationIdentifier)
@@ -882,10 +803,7 @@ controltower_get_landing_zone_operation <- function(operationIdentifier) {
 #' Returns a summary list of all available baselines
 #'
 #' @description
-#' Returns a summary list of all available baselines. For usage examples,
-#' see [*the Amazon Web Services Control Tower User
-#' Guide*](https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html)
-#' .
+#' Returns a summary list of all available baselines. For usage examples, see [*the Amazon Web Services Control Tower User Guide*](https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html) .
 #'
 #' @usage
 #' controltower_list_baselines(nextToken, maxResults)
@@ -943,16 +861,12 @@ controltower_list_baselines <- function(nextToken = NULL, maxResults = NULL) {
 #' Provides a list of operations in progress or queued
 #'
 #' @description
-#' Provides a list of operations in progress or queued. For usage examples,
-#' see [ListControlOperation
-#' examples](https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html#list-control-operations-api-examples).
+#' Provides a list of operations in progress or queued. For usage examples, see [ListControlOperation examples](https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html#list-control-operations-api-examples).
 #'
 #' @usage
 #' controltower_list_control_operations(filter, nextToken, maxResults)
 #'
-#' @param filter An input filter for the
-#' [`list_control_operations`][controltower_list_control_operations] API
-#' that lets you select the types of control operations to view.
+#' @param filter An input filter for the [`list_control_operations`][controltower_list_control_operations] API that lets you select the types of control operations to view.
 #' @param nextToken A pagination token.
 #' @param maxResults The maximum number of results to be shown.
 #'
@@ -1033,24 +947,16 @@ controltower_list_control_operations <- function(filter = NULL, nextToken = NULL
 #' Returns a list of summaries describing EnabledBaseline resources
 #'
 #' @description
-#' Returns a list of summaries describing `EnabledBaseline` resources. You
-#' can filter the list by the corresponding `Baseline` or `Target` of the
-#' `EnabledBaseline` resources. For usage examples, see [*the Amazon Web
-#' Services Control Tower User
-#' Guide*](https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html)
-#' .
+#' Returns a list of summaries describing `EnabledBaseline` resources. You can filter the list by the corresponding `Baseline` or `Target` of the `EnabledBaseline` resources. For usage examples, see [*the Amazon Web Services Control Tower User Guide*](https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html) .
 #'
 #' @usage
 #' controltower_list_enabled_baselines(filter, nextToken, maxResults,
 #'   includeChildren)
 #'
-#' @param filter A filter applied on the `ListEnabledBaseline` operation. Allowed filters
-#' are `baselineIdentifiers` and `targetIdentifiers`. The filter can be
-#' applied for either, or both.
+#' @param filter A filter applied on the `ListEnabledBaseline` operation. Allowed filters are `baselineIdentifiers` and `targetIdentifiers`. The filter can be applied for either, or both.
 #' @param nextToken A pagination token.
 #' @param maxResults The maximum number of results to be shown.
-#' @param includeChildren A value that can be set to include the child enabled baselines in
-#' responses. The default value is false.
+#' @param includeChildren A value that can be set to include the child enabled baselines in responses. The default value is false.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1134,27 +1040,17 @@ controltower_list_enabled_baselines <- function(filter = NULL, nextToken = NULL,
 #' specified organizational unit and the accounts it contains
 #'
 #' @description
-#' Lists the controls enabled by Amazon Web Services Control Tower on the
-#' specified organizational unit and the accounts it contains. For usage
-#' examples, see the [*Controls Reference
-#' Guide*](https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html)
-#' .
+#' Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational unit and the accounts it contains. For usage examples, see the [*Controls Reference Guide*](https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html) .
 #'
 #' @usage
 #' controltower_list_enabled_controls(targetIdentifier, nextToken,
 #'   maxResults, filter, includeChildren)
 #'
-#' @param targetIdentifier The ARN of the organizational unit. For information on how to find the
-#' `targetIdentifier`, see [the overview
-#' page](https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html).
-#' @param nextToken The token to continue the list from a previous API call with the same
-#' parameters.
+#' @param targetIdentifier The ARN of the organizational unit. For information on how to find the `targetIdentifier`, see [the overview page](https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html).
+#' @param nextToken The token to continue the list from a previous API call with the same parameters.
 #' @param maxResults How many results to return per API call.
-#' @param filter An input filter for the
-#' [`list_enabled_controls`][controltower_list_enabled_controls] API that
-#' lets you select the types of control operations to view.
-#' @param includeChildren A boolean value that determines whether to include enabled controls from
-#' child organizational units in the response.
+#' @param filter An input filter for the [`list_enabled_controls`][controltower_list_enabled_controls] API that lets you select the types of control operations to view.
+#' @param includeChildren A boolean value that determines whether to include enabled controls from child organizational units in the response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1244,17 +1140,13 @@ controltower_list_enabled_controls <- function(targetIdentifier = NULL, nextToke
 #' Lists all landing zone operations from the past 90 days
 #'
 #' @description
-#' Lists all landing zone operations from the past 90 days. Results are
-#' sorted by time, with the most recent operation first.
+#' Lists all landing zone operations from the past 90 days. Results are sorted by time, with the most recent operation first.
 #'
 #' @usage
 #' controltower_list_landing_zone_operations(filter, nextToken, maxResults)
 #'
-#' @param filter An input filter for the
-#' [`list_landing_zone_operations`][controltower_list_landing_zone_operations]
-#' API that lets you select the types of landing zone operations to view.
-#' @param nextToken The token to continue the list from a previous API call with the same
-#' parameters.
+#' @param filter An input filter for the [`list_landing_zone_operations`][controltower_list_landing_zone_operations] API that lets you select the types of landing zone operations to view.
+#' @param nextToken The token to continue the list from a previous API call with the same parameters.
 #' @param maxResults How many results to return per API call.
 #'
 #' @return
@@ -1316,17 +1208,14 @@ controltower_list_landing_zone_operations <- function(filter = NULL, nextToken =
 #' managed account
 #'
 #' @description
-#' Returns the landing zone ARN for the landing zone deployed in your
-#' managed account. This API also creates an ARN for existing accounts that
-#' do not yet have a landing zone ARN.
+#' Returns the landing zone ARN for the landing zone deployed in your managed account. This API also creates an ARN for existing accounts that do not yet have a landing zone ARN.
 #' 
 #' Returns one landing zone ARN.
 #'
 #' @usage
 #' controltower_list_landing_zones(nextToken, maxResults)
 #'
-#' @param nextToken The token to continue the list from a previous API call with the same
-#' parameters.
+#' @param nextToken The token to continue the list from a previous API call with the same parameters.
 #' @param maxResults The maximum number of returned landing zone ARNs, which is one.
 #'
 #' @return
@@ -1377,10 +1266,7 @@ controltower_list_landing_zones <- function(nextToken = NULL, maxResults = NULL)
 #' Returns a list of tags associated with the resource
 #'
 #' @description
-#' Returns a list of tags associated with the resource. For usage examples,
-#' see the [*Controls Reference
-#' Guide*](https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html)
-#' .
+#' Returns a list of tags associated with the resource. For usage examples, see the [*Controls Reference Guide*](https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html) .
 #'
 #' @usage
 #' controltower_list_tags_for_resource(resourceArn)
@@ -1431,18 +1317,12 @@ controltower_list_tags_for_resource <- function(resourceArn) {
 #' Re-enables an EnabledBaseline resource
 #'
 #' @description
-#' Re-enables an `EnabledBaseline` resource. For example, this API can
-#' re-apply the existing `Baseline` after a new member account is moved to
-#' the target OU. For usage examples, see [*the Amazon Web Services Control
-#' Tower User
-#' Guide*](https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html)
-#' .
+#' Re-enables an `EnabledBaseline` resource. For example, this API can re-apply the existing `Baseline` after a new member account is moved to the target OU. For usage examples, see [*the Amazon Web Services Control Tower User Guide*](https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html) .
 #'
 #' @usage
 #' controltower_reset_enabled_baseline(enabledBaselineIdentifier)
 #'
-#' @param enabledBaselineIdentifier &#91;required&#93; Specifies the ID of the `EnabledBaseline` resource to be re-enabled, in
-#' ARN format.
+#' @param enabledBaselineIdentifier &#91;required&#93; Specifies the ID of the `EnabledBaseline` resource to be re-enabled, in ARN format.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1486,8 +1366,7 @@ controltower_reset_enabled_baseline <- function(enabledBaselineIdentifier) {
 #' Resets an enabled control
 #'
 #' @description
-#' Resets an enabled control. Does not work for controls implemented with
-#' SCPs.
+#' Resets an enabled control. Does not work for controls implemented with SCPs.
 #'
 #' @usage
 #' controltower_reset_enabled_control(enabledControlIdentifier)
@@ -1536,12 +1415,7 @@ controltower_reset_enabled_control <- function(enabledControlIdentifier) {
 #' This API call resets a landing zone
 #'
 #' @description
-#' This API call resets a landing zone. It starts an asynchronous operation
-#' that resets the landing zone to the parameters specified in the original
-#' configuration, which you specified in the manifest file. Nothing in the
-#' manifest file's original landing zone configuration is changed during
-#' the reset process, by default. This API is not the same as a rollback of
-#' a landing zone version, which is not a supported operation.
+#' This API call resets a landing zone. It starts an asynchronous operation that resets the landing zone to the parameters specified in the original configuration, which you specified in the manifest file. Nothing in the manifest file's original landing zone configuration is changed during the reset process, by default. This API is not the same as a rollback of a landing zone version, which is not a supported operation.
 #'
 #' @usage
 #' controltower_reset_landing_zone(landingZoneIdentifier)
@@ -1590,10 +1464,7 @@ controltower_reset_landing_zone <- function(landingZoneIdentifier) {
 #' Applies tags to a resource
 #'
 #' @description
-#' Applies tags to a resource. For usage examples, see the [*Controls
-#' Reference
-#' Guide*](https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html)
-#' .
+#' Applies tags to a resource. For usage examples, see the [*Controls Reference Guide*](https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html) .
 #'
 #' @usage
 #' controltower_tag_resource(resourceArn, tags)
@@ -1641,10 +1512,7 @@ controltower_tag_resource <- function(resourceArn, tags) {
 #' Removes tags from a resource
 #'
 #' @description
-#' Removes tags from a resource. For usage examples, see the [*Controls
-#' Reference
-#' Guide*](https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html)
-#' .
+#' Removes tags from a resource. For usage examples, see the [*Controls Reference Guide*](https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html) .
 #'
 #' @usage
 #' controltower_untag_resource(resourceArn, tagKeys)
@@ -1692,17 +1560,13 @@ controltower_untag_resource <- function(resourceArn, tagKeys) {
 #' Updates an EnabledBaseline resource's applied parameters or version
 #'
 #' @description
-#' Updates an `EnabledBaseline` resource's applied parameters or version.
-#' For usage examples, see [*the Amazon Web Services Control Tower User
-#' Guide*](https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html)
-#' .
+#' Updates an `EnabledBaseline` resource's applied parameters or version. For usage examples, see [*the Amazon Web Services Control Tower User Guide*](https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html) .
 #'
 #' @usage
 #' controltower_update_enabled_baseline(baselineVersion, parameters,
 #'   enabledBaselineIdentifier)
 #'
-#' @param baselineVersion &#91;required&#93; Specifies the new `Baseline` version, to which the `EnabledBaseline`
-#' should be updated.
+#' @param baselineVersion &#91;required&#93; Specifies the new `Baseline` version, to which the `EnabledBaseline` should be updated.
 #' @param parameters Parameters to apply when making an update.
 #' @param enabledBaselineIdentifier &#91;required&#93; Specifies the `EnabledBaseline` resource to be updated.
 #'
@@ -1757,32 +1621,17 @@ controltower_update_enabled_baseline <- function(baselineVersion, parameters = N
 #' @description
 #' Updates the configuration of an already enabled control.
 #' 
-#' If the enabled control shows an `EnablementStatus` of SUCCEEDED, supply
-#' parameters that are different from the currently configured parameters.
-#' Otherwise, Amazon Web Services Control Tower will not accept the
-#' request.
+#' If the enabled control shows an `EnablementStatus` of SUCCEEDED, supply parameters that are different from the currently configured parameters. Otherwise, Amazon Web Services Control Tower will not accept the request.
 #' 
-#' If the enabled control shows an `EnablementStatus` of FAILED, Amazon Web
-#' Services Control Tower updates the control to match any valid parameters
-#' that you supply.
+#' If the enabled control shows an `EnablementStatus` of FAILED, Amazon Web Services Control Tower updates the control to match any valid parameters that you supply.
 #' 
-#' If the `DriftSummary` status for the control shows as `DRIFTED`, you
-#' cannot call this API. Instead, you can update the control by calling the
-#' [`reset_enabled_control`][controltower_reset_enabled_control] API.
-#' Alternatively, you can call
-#' [`disable_control`][controltower_disable_control] and then call
-#' [`enable_control`][controltower_enable_control] again. Also, you can run
-#' an extending governance operation to repair drift. For usage examples,
-#' see the [*Controls Reference
-#' Guide*](https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html)
-#' .
+#' If the `DriftSummary` status for the control shows as `DRIFTED`, you cannot call this API. Instead, you can update the control by calling the [`reset_enabled_control`][controltower_reset_enabled_control] API. Alternatively, you can call [`disable_control`][controltower_disable_control] and then call [`enable_control`][controltower_enable_control] again. Also, you can run an extending governance operation to repair drift. For usage examples, see the [*Controls Reference Guide*](https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html) .
 #'
 #' @usage
 #' controltower_update_enabled_control(parameters,
 #'   enabledControlIdentifier)
 #'
-#' @param parameters &#91;required&#93; A key/value pair, where `Key` is of type `String` and `Value` is of type
-#' `Document`.
+#' @param parameters &#91;required&#93; A key/value pair, where `Key` is of type `String` and `Value` is of type `Document`.
 #' @param enabledControlIdentifier &#91;required&#93; The ARN of the enabled control that will be updated.
 #'
 #' @return
@@ -1833,25 +1682,16 @@ controltower_update_enabled_control <- function(parameters, enabledControlIdenti
 #' This API call updates the landing zone
 #'
 #' @description
-#' This API call updates the landing zone. It starts an asynchronous
-#' operation that updates the landing zone based on the new landing zone
-#' version, or on the changed parameters specified in the updated manifest
-#' file.
+#' This API call updates the landing zone. It starts an asynchronous operation that updates the landing zone based on the new landing zone version, or on the changed parameters specified in the updated manifest file.
 #'
 #' @usage
 #' controltower_update_landing_zone(version, remediationTypes,
 #'   landingZoneIdentifier, manifest)
 #'
 #' @param version &#91;required&#93; The landing zone version, for example, 3.2.
-#' @param remediationTypes Specifies the types of remediation actions to apply when updating the
-#' landing zone configuration.
+#' @param remediationTypes Specifies the types of remediation actions to apply when updating the landing zone configuration.
 #' @param landingZoneIdentifier &#91;required&#93; The unique identifier of the landing zone.
-#' @param manifest The manifest file (JSON) is a text file that describes your Amazon Web
-#' Services resources. For an example, review [Launch your landing
-#' zone](https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch.html).
-#' The example manifest file contains each of the available parameters. The
-#' schema for the landing zone's JSON manifest file is not published, by
-#' design.
+#' @param manifest The manifest file (JSON) is a text file that describes your Amazon Web Services resources. For an example, review [Launch your landing zone](https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch.html). The example manifest file contains each of the available parameters. The schema for the landing zone's JSON manifest file is not published, by design.
 #'
 #' @return
 #' A list with the following syntax:

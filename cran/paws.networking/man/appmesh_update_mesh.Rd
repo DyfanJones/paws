@@ -7,9 +7,7 @@
 appmesh_update_mesh(clientToken = NULL, meshName, spec = NULL)
 }
 \arguments{
-\item{clientToken}{Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. Up to 36 letters, numbers, hyphens, and
-underscores are allowed.}
+\item{clientToken}{Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.}
 
 \item{meshName}{[required] The name of the service mesh to update.}
 

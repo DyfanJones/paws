@@ -8,8 +8,7 @@ or CREATE IN_PROGRESS}
 personalize_stop_solution_version_creation(solutionVersionArn)
 }
 \arguments{
-\item{solutionVersionArn}{[required] The Amazon Resource Name (ARN) of the solution version you want to stop
-creating.}
+\item{solutionVersionArn}{[required] The Amazon Resource Name (ARN) of the solution version you want to stop creating.}
 }
 \description{
 Stops creating a solution version that is in a state of CREATE_PENDING or CREATE IN_PROGRESS.

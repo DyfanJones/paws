@@ -11,8 +11,7 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/billing_associate_source_views/](https://www.paws-r-sdk.com/docs/billing_associate_source_views/) for full documentation.
 #'
-#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) of the billing view to associate source
-#' views with.
+#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) of the billing view to associate source views with.
 #' @param sourceViews &#91;required&#93; A list of ARNs of the source billing views to associate.
 #'
 #' @keywords internal
@@ -46,18 +45,10 @@ billing_associate_source_views <- function(arn, sourceViews) {
 #'
 #' @param name &#91;required&#93; The name of the billing view.
 #' @param description The description of the billing view.
-#' @param sourceViews &#91;required&#93; A list of billing views used as the data source for the custom billing
-#' view.
-#' @param dataFilterExpression See
-#' [Expression](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html).
-#' Billing view only supports `LINKED_ACCOUNT` and `Tags`.
-#' @param clientToken A unique, case-sensitive identifier you specify to ensure idempotency of
-#' the request. Idempotency ensures that an API request completes no more
-#' than one time. If the original request completes successfully, any
-#' subsequent retries complete successfully without performing any further
-#' actions with an idempotent request.
-#' @param resourceTags A list of key value map specifying tags associated to the billing view
-#' being created.
+#' @param sourceViews &#91;required&#93; A list of billing views used as the data source for the custom billing view.
+#' @param dataFilterExpression See [Expression](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html). Billing view only supports `LINKED_ACCOUNT`, `Tags`, and `CostCategories`.
+#' @param clientToken A unique, case-sensitive identifier you specify to ensure idempotency of the request. Idempotency ensures that an API request completes no more than one time. If the original request completes successfully, any subsequent retries complete successfully without performing any further actions with an idempotent request.
+#' @param resourceTags A list of key value map specifying tags associated to the billing view being created.
 #'
 #' @keywords internal
 #'
@@ -88,11 +79,8 @@ billing_create_billing_view <- function(name, description = NULL, sourceViews, d
 #'
 #' See [https://www.paws-r-sdk.com/docs/billing_delete_billing_view/](https://www.paws-r-sdk.com/docs/billing_delete_billing_view/) for full documentation.
 #'
-#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) that can be used to uniquely identify the
-#' billing view.
-#' @param force If set to true, forces deletion of the billing view even if it has
-#' derived resources (e.g. other billing views or budgets). Use with
-#' caution as this may break dependent resources.
+#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.
+#' @param force If set to true, forces deletion of the billing view even if it has derived resources (e.g. other billing views or budgets). Use with caution as this may break dependent resources.
 #'
 #' @keywords internal
 #'
@@ -124,8 +112,7 @@ billing_delete_billing_view <- function(arn, force = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/billing_disassociate_source_views/](https://www.paws-r-sdk.com/docs/billing_disassociate_source_views/) for full documentation.
 #'
-#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) of the billing view to disassociate
-#' source views from.
+#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) of the billing view to disassociate source views from.
 #' @param sourceViews &#91;required&#93; A list of ARNs of the source billing views to disassociate.
 #'
 #' @keywords internal
@@ -157,8 +144,7 @@ billing_disassociate_source_views <- function(arn, sourceViews) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/billing_get_billing_view/](https://www.paws-r-sdk.com/docs/billing_get_billing_view/) for full documentation.
 #'
-#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) that can be used to uniquely identify the
-#' billing view.
+#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.
 #'
 #' @keywords internal
 #'
@@ -190,8 +176,7 @@ billing_get_billing_view <- function(arn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/billing_get_resource_policy/](https://www.paws-r-sdk.com/docs/billing_get_resource_policy/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the billing view resource to which the
-#' policy is attached to.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the billing view resource to which the policy is attached to.
 #'
 #' @keywords internal
 #'
@@ -222,22 +207,14 @@ billing_get_resource_policy <- function(resourceArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/billing_list_billing_views/](https://www.paws-r-sdk.com/docs/billing_list_billing_views/) for full documentation.
 #'
-#' @param activeTimeRange The time range for the billing views listed. `PRIMARY` billing view is
-#' always listed. `BILLING_GROUP` billing views are listed for time ranges
-#' when the associated billing group resource in Billing Conductor is
-#' active. The time range must be within one calendar month.
-#' @param arns The Amazon Resource Name (ARN) that can be used to uniquely identify the
-#' billing view.
+#' @param activeTimeRange The time range for the billing views listed. `PRIMARY` billing view is always listed. `BILLING_GROUP` billing views are listed for time ranges when the associated billing group resource in Billing Conductor is active. The time range must be within one calendar month.
+#' @param arns The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.
 #' @param billingViewTypes The type of billing view.
-#' @param names Filters the list of billing views by name. You can specify search
-#' criteria to match billing view names based on the search option
-#' provided.
+#' @param names Filters the list of billing views by name. You can specify search criteria to match billing view names based on the search option provided.
 #' @param ownerAccountId The list of owners of the billing view.
-#' @param sourceAccountId Filters the results to include only billing views that use the specified
-#' account as a source.
+#' @param sourceAccountId Filters the results to include only billing views that use the specified account as a source.
 #' @param maxResults The maximum number of billing views to retrieve. Default is 100.
-#' @param nextToken The pagination token that is used on subsequent calls to list billing
-#' views.
+#' @param nextToken The pagination token that is used on subsequent calls to list billing views.
 #'
 #' @keywords internal
 #'
@@ -269,11 +246,9 @@ billing_list_billing_views <- function(activeTimeRange = NULL, arns = NULL, bill
 #'
 #' See [https://www.paws-r-sdk.com/docs/billing_list_source_views_for_billing_view/](https://www.paws-r-sdk.com/docs/billing_list_source_views_for_billing_view/) for full documentation.
 #'
-#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) that can be used to uniquely identify the
-#' billing view.
+#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.
 #' @param maxResults The number of entries a paginated response contains.
-#' @param nextToken The pagination token that is used on subsequent calls to list billing
-#' views.
+#' @param nextToken The pagination token that is used on subsequent calls to list billing views.
 #'
 #' @keywords internal
 #'
@@ -400,13 +375,10 @@ billing_untag_resource <- function(resourceArn, resourceTagKeys) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/billing_update_billing_view/](https://www.paws-r-sdk.com/docs/billing_update_billing_view/) for full documentation.
 #'
-#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) that can be used to uniquely identify the
-#' billing view.
+#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.
 #' @param name The name of the billing view.
 #' @param description The description of the billing view.
-#' @param dataFilterExpression See
-#' [Expression](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html).
-#' Billing view only supports `LINKED_ACCOUNT` and `Tags`.
+#' @param dataFilterExpression See [Expression](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html). Billing view only supports `LINKED_ACCOUNT`, `Tags`, and `CostCategories`.
 #'
 #' @keywords internal
 #'

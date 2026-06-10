@@ -7,9 +7,7 @@
 paymentcryptographycontrolplane_delete_alias(AliasName)
 }
 \arguments{
-\item{AliasName}{[required] A friendly name that you can use to refer Amazon Web Services Payment
-Cryptography key. This value must begin with \verb{alias/} followed by a
-name, such as \code{alias/ExampleAlias}.}
+\item{AliasName}{[required] A friendly name that you can use to refer Amazon Web Services Payment Cryptography key. This value must begin with \verb{alias/} followed by a name, such as \code{alias/ExampleAlias}.}
 }
 \description{
 Deletes the alias, but doesn't affect the underlying key.

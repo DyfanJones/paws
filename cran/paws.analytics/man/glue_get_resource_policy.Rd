@@ -7,10 +7,7 @@
 glue_get_resource_policy(ResourceArn = NULL)
 }
 \arguments{
-\item{ResourceArn}{The ARN of the Glue resource for which to retrieve the resource policy.
-If not supplied, the Data Catalog resource policy is returned. Use
-\code{\link[=glue_get_resource_policies]{get_resource_policies}} to view all
-existing resource policies. For more information see \href{https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html}{Specifying Glue Resource ARNs}.}
+\item{ResourceArn}{The ARN of the Glue resource for which to retrieve the resource policy. If not supplied, the Data Catalog resource policy is returned. Use \code{\link[=glue_get_resource_policies]{get_resource_policies}} to view all existing resource policies. For more information see \href{https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html}{Specifying Glue Resource ARNs}.}
 }
 \description{
 Retrieves a specified resource policy.

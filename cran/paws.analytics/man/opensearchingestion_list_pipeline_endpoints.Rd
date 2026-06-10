@@ -12,12 +12,7 @@ opensearchingestion_list_pipeline_endpoints(
 \arguments{
 \item{MaxResults}{The maximum number of pipeline endpoints to return in the response.}
 
-\item{NextToken}{If your initial
-\code{\link[=opensearchingestion_list_pipeline_endpoints]{list_pipeline_endpoints}}
-operation returns a \code{NextToken}, you can include the returned
-\code{NextToken} in subsequent
-\code{\link[=opensearchingestion_list_pipeline_endpoints]{list_pipeline_endpoints}}
-operations, which returns results in the next page.}
+\item{NextToken}{If your initial \code{\link[=opensearchingestion_list_pipeline_endpoints]{list_pipeline_endpoints}} operation returns a \code{NextToken}, you can include the returned \code{NextToken} in subsequent \code{\link[=opensearchingestion_list_pipeline_endpoints]{list_pipeline_endpoints}} operations, which returns results in the next page.}
 }
 \description{
 Lists all pipeline endpoints in your account.

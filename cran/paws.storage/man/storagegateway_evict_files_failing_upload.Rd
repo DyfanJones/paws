@@ -8,25 +8,16 @@ entries that are failing upload to Amazon S3}
 storagegateway_evict_files_failing_upload(FileShareARN, ForceRemove = NULL)
 }
 \arguments{
-\item{FileShareARN}{[required] The Amazon Resource Name (ARN) of the file share for which you want to
-start the cache clean operation.}
+\item{FileShareARN}{[required] The Amazon Resource Name (ARN) of the file share for which you want to start the cache clean operation.}
 
-\item{ForceRemove}{Specifies whether cache entries with full or partial file data currently
-stored on the gateway will be forcibly removed by the cache clean
-operation.
+\item{ForceRemove}{Specifies whether cache entries with full or partial file data currently stored on the gateway will be forcibly removed by the cache clean operation.
 
 Valid arguments:
 \itemize{
-\item \code{False} - The cache clean operation skips cache entries failing
-upload if they are associated with data currently stored on the
-gateway. This preserves the cached data.
-\item \code{True} - The cache clean operation removes cache entries failing
-upload even if they are associated with data currently stored on the
-gateway. This deletes the cached data.
+\item \code{False} - The cache clean operation skips cache entries failing upload if they are associated with data currently stored on the gateway. This preserves the cached data.
+\item \code{True} - The cache clean operation removes cache entries failing upload even if they are associated with data currently stored on the gateway. This deletes the cached data.
 
-If \code{ForceRemove} is set to \code{True}, the cache clean operation will
-delete file data from the gateway which might otherwise be
-recoverable.
+If \code{ForceRemove} is set to \code{True}, the cache clean operation will delete file data from the gateway which might otherwise be recoverable.
 }}
 }
 \description{

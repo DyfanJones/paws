@@ -13,10 +13,7 @@ simpledb_put_attributes(DomainName, ItemName, Attributes, Expected = NULL)
 
 \item{Attributes}{[required] The list of attributes.}
 
-\item{Expected}{The update condition which, if specified, determines whether the
-specified attributes will be updated or not. The update condition must
-be satisfied in order for this request to be processed and the
-attributes to be updated.}
+\item{Expected}{The update condition which, if specified, determines whether the specified attributes will be updated or not. The update condition must be satisfied in order for this request to be processed and the attributes to be updated.}
 }
 \description{
 The PutAttributes operation creates or replaces attributes in an item. The client may specify new attributes using a combination of the \code{Attribute.X.Name} and \code{Attribute.X.Value} parameters. The client specifies the first attribute by the parameters \code{Attribute.0.Name} and \code{Attribute.0.Value}, the second attribute by the parameters \code{Attribute.1.Name} and \code{Attribute.1.Value}, and so on.

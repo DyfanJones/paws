@@ -12,18 +12,11 @@ organizations_list_delegated_services_for_account(
 )
 }
 \arguments{
-\item{AccountId}{[required] The account ID number of a delegated administrator account in the
-organization.}
+\item{AccountId}{[required] The account ID number of a delegated administrator account in the organization.}
 
-\item{NextToken}{The parameter for receiving additional results if you receive a
-\code{NextToken} response in a previous request. A \code{NextToken} response
-indicates that more output is available. Set this parameter to the value
-of the previous call's \code{NextToken} response to indicate where the output
-should continue from.}
+\item{NextToken}{The parameter for receiving additional results if you receive a \code{NextToken} response in a previous request. A \code{NextToken} response indicates that more output is available. Set this parameter to the value of the previous call's \code{NextToken} response to indicate where the output should continue from.}
 
-\item{MaxResults}{The maximum number of items to return in the response. If more results
-exist than the specified \code{MaxResults} value, a token is included in the
-response so that you can retrieve the remaining results.}
+\item{MaxResults}{The maximum number of items to return in the response. If more results exist than the specified \code{MaxResults} value, a token is included in the response so that you can retrieve the remaining results.}
 }
 \description{
 List the Amazon Web Services services for which the specified account is a delegated administrator.

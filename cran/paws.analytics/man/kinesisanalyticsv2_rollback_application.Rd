@@ -12,9 +12,7 @@ kinesisanalyticsv2_rollback_application(
 \arguments{
 \item{ApplicationName}{[required] The name of the application.}
 
-\item{CurrentApplicationVersionId}{[required] The current application version ID. You can retrieve the application
-version ID using
-\code{\link[=kinesisanalyticsv2_describe_application]{describe_application}}.}
+\item{CurrentApplicationVersionId}{[required] The current application version ID. You can retrieve the application version ID using \code{\link[=kinesisanalyticsv2_describe_application]{describe_application}}.}
 }
 \description{
 Reverts the application to the previous running version. You can roll back an application if you suspect it is stuck in a transient status or in the running status.

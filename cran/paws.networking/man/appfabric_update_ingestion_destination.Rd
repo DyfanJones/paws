@@ -14,14 +14,11 @@ appfabric_update_ingestion_destination(
 )
 }
 \arguments{
-\item{appBundleIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-the app bundle to use for the request.}
+\item{appBundleIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.}
 
-\item{ingestionIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-the ingestion to use for the request.}
+\item{ingestionIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion to use for the request.}
 
-\item{ingestionDestinationIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-the ingestion destination to use for the request.}
+\item{ingestionDestinationIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the ingestion destination to use for the request.}
 
 \item{destinationConfiguration}{[required] Contains information about the destination of ingested data.}
 }

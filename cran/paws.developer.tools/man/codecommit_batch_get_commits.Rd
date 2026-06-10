@@ -10,8 +10,7 @@ codecommit_batch_get_commits(commitIds, repositoryName)
 \arguments{
 \item{commitIds}{[required] The full commit IDs of the commits to get information about.
 
-You must supply the full SHA IDs of each commit. You cannot use
-shortened SHA IDs.}
+You must supply the full SHA IDs of each commit. You cannot use shortened SHA IDs.}
 
 \item{repositoryName}{[required] The name of the repository that contains the commits.}
 }

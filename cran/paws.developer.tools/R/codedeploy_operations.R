@@ -12,8 +12,7 @@ NULL
 #'
 #' @param tags &#91;required&#93; The tag key-value pairs to add to the on-premises instances.
 #' 
-#' Keys and values are both required. Keys cannot be null or empty strings.
-#' Value-only tags are not allowed.
+#' Keys and values are both required. Keys cannot be null or empty strings. Value-only tags are not allowed.
 #' @param instanceNames &#91;required&#93; The names of the on-premises instances to which to add tags.
 #'
 #' @keywords internal
@@ -45,11 +44,8 @@ codedeploy_add_tags_to_on_premises_instances <- function(tags, instanceNames) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_batch_get_application_revisions/](https://www.paws-r-sdk.com/docs/codedeploy_batch_get_application_revisions/) for full documentation.
 #'
-#' @param applicationName &#91;required&#93; The name of an CodeDeploy application about which to get revision
-#' information.
-#' @param revisions &#91;required&#93; An array of `RevisionLocation` objects that specify information to get
-#' about the application revisions, including type and location. The
-#' maximum number of `RevisionLocation` objects you can specify is 25.
+#' @param applicationName &#91;required&#93; The name of an CodeDeploy application about which to get revision information.
+#' @param revisions &#91;required&#93; An array of `RevisionLocation` objects that specify information to get about the application revisions, including type and location. The maximum number of `RevisionLocation` objects you can specify is 25.
 #'
 #' @keywords internal
 #'
@@ -80,8 +76,7 @@ codedeploy_batch_get_application_revisions <- function(applicationName, revision
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_batch_get_applications/](https://www.paws-r-sdk.com/docs/codedeploy_batch_get_applications/) for full documentation.
 #'
-#' @param applicationNames &#91;required&#93; A list of application names separated by spaces. The maximum number of
-#' application names you can specify is 100.
+#' @param applicationNames &#91;required&#93; A list of application names separated by spaces. The maximum number of application names you can specify is 100.
 #'
 #' @keywords internal
 #'
@@ -112,8 +107,7 @@ codedeploy_batch_get_applications <- function(applicationNames) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_batch_get_deployment_groups/](https://www.paws-r-sdk.com/docs/codedeploy_batch_get_deployment_groups/) for full documentation.
 #'
-#' @param applicationName &#91;required&#93; The name of an CodeDeploy application associated with the applicable
-#' user or Amazon Web Services account.
+#' @param applicationName &#91;required&#93; The name of an CodeDeploy application associated with the applicable user or Amazon Web Services account.
 #' @param deploymentGroupNames &#91;required&#93; The names of the deployment groups.
 #'
 #' @keywords internal
@@ -146,8 +140,7 @@ codedeploy_batch_get_deployment_groups <- function(applicationName, deploymentGr
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_batch_get_deployment_instances/](https://www.paws-r-sdk.com/docs/codedeploy_batch_get_deployment_instances/) for full documentation.
 #'
 #' @param deploymentId &#91;required&#93; The unique ID of a deployment.
-#' @param instanceIds &#91;required&#93; The unique IDs of instances used in the deployment. The maximum number
-#' of instance IDs you can specify is 25.
+#' @param instanceIds &#91;required&#93; The unique IDs of instances used in the deployment. The maximum number of instance IDs you can specify is 25.
 #'
 #' @keywords internal
 #'
@@ -179,26 +172,15 @@ codedeploy_batch_get_deployment_instances <- function(deploymentId, instanceIds)
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_batch_get_deployment_targets/](https://www.paws-r-sdk.com/docs/codedeploy_batch_get_deployment_targets/) for full documentation.
 #'
 #' @param deploymentId &#91;required&#93; The unique ID of a deployment.
-#' @param targetIds &#91;required&#93; The unique IDs of the deployment targets. The compute platform of the
-#' deployment determines the type of the targets and their formats. The
-#' maximum number of deployment target IDs you can specify is 25.
+#' @param targetIds &#91;required&#93; The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.
 #' 
-#' -   For deployments that use the EC2/On-premises compute platform, the
-#'     target IDs are Amazon EC2 or on-premises instances IDs, and their
-#'     target type is `instanceTarget`.
+#' -   For deployments that use the EC2/On-premises compute platform, the target IDs are Amazon EC2 or on-premises instances IDs, and their target type is `instanceTarget`.
 #' 
-#' -   For deployments that use the Lambda compute platform, the target IDs
-#'     are the names of Lambda functions, and their target type is
-#'     `instanceTarget`.
+#' -   For deployments that use the Lambda compute platform, the target IDs are the names of Lambda functions, and their target type is `instanceTarget`.
 #' 
-#' -   For deployments that use the Amazon ECS compute platform, the target
-#'     IDs are pairs of Amazon ECS clusters and services specified using
-#'     the format `<clustername>:<servicename>`. Their target type is
-#'     `ecsTarget`.
+#' -   For deployments that use the Amazon ECS compute platform, the target IDs are pairs of Amazon ECS clusters and services specified using the format `<clustername>:<servicename>`. Their target type is `ecsTarget`.
 #' 
-#' -   For deployments that are deployed with CloudFormation, the target
-#'     IDs are CloudFormation stack IDs. Their target type is
-#'     `cloudFormationTarget`.
+#' -   For deployments that are deployed with CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is `cloudFormationTarget`.
 #'
 #' @keywords internal
 #'
@@ -229,8 +211,7 @@ codedeploy_batch_get_deployment_targets <- function(deploymentId, targetIds) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_batch_get_deployments/](https://www.paws-r-sdk.com/docs/codedeploy_batch_get_deployments/) for full documentation.
 #'
-#' @param deploymentIds &#91;required&#93; A list of deployment IDs, separated by spaces. The maximum number of
-#' deployment IDs you can specify is 25.
+#' @param deploymentIds &#91;required&#93; A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.
 #'
 #' @keywords internal
 #'
@@ -261,8 +242,7 @@ codedeploy_batch_get_deployments <- function(deploymentIds) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_batch_get_on_premises_instances/](https://www.paws-r-sdk.com/docs/codedeploy_batch_get_on_premises_instances/) for full documentation.
 #'
-#' @param instanceNames &#91;required&#93; The names of the on-premises instances about which to get information.
-#' The maximum number of instance names you can specify is 25.
+#' @param instanceNames &#91;required&#93; The names of the on-premises instances about which to get information. The maximum number of instance names you can specify is 25.
 #'
 #' @keywords internal
 #'
@@ -296,12 +276,8 @@ codedeploy_batch_get_on_premises_instances <- function(instanceNames) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_continue_deployment/](https://www.paws-r-sdk.com/docs/codedeploy_continue_deployment/) for full documentation.
 #'
-#' @param deploymentId The unique ID of a blue/green deployment for which you want to start
-#' rerouting traffic to the replacement environment.
-#' @param deploymentWaitType The status of the deployment's waiting period. `READY_WAIT` indicates
-#' that the deployment is ready to start shifting traffic.
-#' `TERMINATION_WAIT` indicates that the traffic is shifted, but the
-#' original target is not terminated.
+#' @param deploymentId The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement environment.
+#' @param deploymentWaitType The status of the deployment's waiting period. `READY_WAIT` indicates that the deployment is ready to start shifting traffic. `TERMINATION_WAIT` indicates that the traffic is shifted, but the original target is not terminated.
 #'
 #' @keywords internal
 #'
@@ -332,13 +308,9 @@ codedeploy_continue_deployment <- function(deploymentId = NULL, deploymentWaitTy
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_create_application/](https://www.paws-r-sdk.com/docs/codedeploy_create_application/) for full documentation.
 #'
-#' @param applicationName &#91;required&#93; The name of the application. This name must be unique with the
-#' applicable user or Amazon Web Services account.
-#' @param computePlatform The destination platform type for the deployment (`Lambda`, `Server`, or
-#' `ECS`).
-#' @param tags The metadata that you apply to CodeDeploy applications to help you
-#' organize and categorize them. Each tag consists of a key and an optional
-#' value, both of which you define.
+#' @param applicationName &#91;required&#93; The name of the application. This name must be unique with the applicable user or Amazon Web Services account.
+#' @param computePlatform The destination platform type for the deployment (`Lambda`, `Server`, or `ECS`).
+#' @param tags The metadata that you apply to CodeDeploy applications to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define.
 #'
 #' @keywords internal
 #'
@@ -369,81 +341,35 @@ codedeploy_create_application <- function(applicationName, computePlatform = NUL
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_create_deployment/](https://www.paws-r-sdk.com/docs/codedeploy_create_deployment/) for full documentation.
 #'
-#' @param applicationName &#91;required&#93; The name of an CodeDeploy application associated with the user or Amazon
-#' Web Services account.
+#' @param applicationName &#91;required&#93; The name of an CodeDeploy application associated with the user or Amazon Web Services account.
 #' @param deploymentGroupName The name of the deployment group.
 #' @param revision The type and location of the revision to deploy.
-#' @param deploymentConfigName The name of a deployment configuration associated with the user or
-#' Amazon Web Services account.
+#' @param deploymentConfigName The name of a deployment configuration associated with the user or Amazon Web Services account.
 #' 
-#' If not specified, the value configured in the deployment group is used
-#' as the default. If the deployment group does not have a deployment
-#' configuration associated with it, `CodeDeployDefault`.`OneAtATime` is
-#' used by default.
+#' If not specified, the value configured in the deployment group is used as the default. If the deployment group does not have a deployment configuration associated with it, `CodeDeployDefault`.`OneAtATime` is used by default.
 #' @param description A comment about the deployment.
-#' @param ignoreApplicationStopFailures If true, then if an `ApplicationStop`, `BeforeBlockTraffic`, or
-#' `AfterBlockTraffic` deployment lifecycle event to an instance fails,
-#' then the deployment continues to the next deployment lifecycle event.
-#' For example, if `ApplicationStop` fails, the deployment continues with
-#' `DownloadBundle`. If `BeforeBlockTraffic` fails, the deployment
-#' continues with `BlockTraffic`. If `AfterBlockTraffic` fails, the
-#' deployment continues with `ApplicationStop`.
+#' @param ignoreApplicationStopFailures If true, then if an `ApplicationStop`, `BeforeBlockTraffic`, or `AfterBlockTraffic` deployment lifecycle event to an instance fails, then the deployment continues to the next deployment lifecycle event. For example, if `ApplicationStop` fails, the deployment continues with `DownloadBundle`. If `BeforeBlockTraffic` fails, the deployment continues with `BlockTraffic`. If `AfterBlockTraffic` fails, the deployment continues with `ApplicationStop`.
 #' 
-#' If false or not specified, then if a lifecycle event fails during a
-#' deployment to an instance, that deployment fails. If deployment to that
-#' instance is part of an overall deployment and the number of healthy
-#' hosts is not less than the minimum number of healthy hosts, then a
-#' deployment to the next instance is attempted.
+#' If false or not specified, then if a lifecycle event fails during a deployment to an instance, that deployment fails. If deployment to that instance is part of an overall deployment and the number of healthy hosts is not less than the minimum number of healthy hosts, then a deployment to the next instance is attempted.
 #' 
-#' During a deployment, the CodeDeploy agent runs the scripts specified for
-#' `ApplicationStop`, `BeforeBlockTraffic`, and `AfterBlockTraffic` in the
-#' AppSpec file from the previous successful deployment. (All other scripts
-#' are run from the AppSpec file in the current deployment.) If one of
-#' these scripts contains an error and does not run successfully, the
-#' deployment can fail.
+#' During a deployment, the CodeDeploy agent runs the scripts specified for `ApplicationStop`, `BeforeBlockTraffic`, and `AfterBlockTraffic` in the AppSpec file from the previous successful deployment. (All other scripts are run from the AppSpec file in the current deployment.) If one of these scripts contains an error and does not run successfully, the deployment can fail.
 #' 
-#' If the cause of the failure is a script from the last successful
-#' deployment that will never run successfully, create a new deployment and
-#' use `ignoreApplicationStopFailures` to specify that the
-#' `ApplicationStop`, `BeforeBlockTraffic`, and `AfterBlockTraffic`
-#' failures should be ignored.
-#' @param targetInstances Information about the instances that belong to the replacement
-#' environment in a blue/green deployment.
-#' @param autoRollbackConfiguration Configuration information for an automatic rollback that is added when a
-#' deployment is created.
-#' @param updateOutdatedInstancesOnly Indicates whether to deploy to all instances or only to instances that
-#' are not running the latest application revision.
-#' @param fileExistsBehavior Information about how CodeDeploy handles files that already exist in a
-#' deployment target location but weren't part of the previous successful
-#' deployment.
+#' If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and use `ignoreApplicationStopFailures` to specify that the `ApplicationStop`, `BeforeBlockTraffic`, and `AfterBlockTraffic` failures should be ignored.
+#' @param targetInstances Information about the instances that belong to the replacement environment in a blue/green deployment.
+#' @param autoRollbackConfiguration Configuration information for an automatic rollback that is added when a deployment is created.
+#' @param updateOutdatedInstancesOnly Indicates whether to deploy to all instances or only to instances that are not running the latest application revision.
+#' @param fileExistsBehavior Information about how CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.
 #' 
 #' The `fileExistsBehavior` parameter takes any of the following values:
 #' 
-#' -   DISALLOW: The deployment fails. This is also the default behavior if
-#'     no option is specified.
+#' -   DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
 #' 
-#' -   OVERWRITE: The version of the file from the application revision
-#'     currently being deployed replaces the version already on the
-#'     instance.
+#' -   OVERWRITE: The version of the file from the application revision currently being deployed replaces the version already on the instance.
 #' 
-#' -   RETAIN: The version of the file already on the instance is kept and
-#'     used as part of the new deployment.
-#' @param overrideAlarmConfiguration Allows you to specify information about alarms associated with a
-#' deployment. The alarm configuration that you specify here will override
-#' the alarm configuration at the deployment group level. Consider
-#' overriding the alarm configuration if you have set up alarms at the
-#' deployment group level that are causing deployment failures. In this
-#' case, you would call [`create_deployment`][codedeploy_create_deployment]
-#' to create a new deployment that uses a previous application revision
-#' that is known to work, and set its alarm configuration to turn off alarm
-#' polling. Turning off alarm polling ensures that the new deployment
-#' proceeds without being blocked by the alarm that was generated by the
-#' previous, failed, deployment.
+#' -   RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+#' @param overrideAlarmConfiguration Allows you to specify information about alarms associated with a deployment. The alarm configuration that you specify here will override the alarm configuration at the deployment group level. Consider overriding the alarm configuration if you have set up alarms at the deployment group level that are causing deployment failures. In this case, you would call [`create_deployment`][codedeploy_create_deployment] to create a new deployment that uses a previous application revision that is known to work, and set its alarm configuration to turn off alarm polling. Turning off alarm polling ensures that the new deployment proceeds without being blocked by the alarm that was generated by the previous, failed, deployment.
 #' 
-#' If you specify an `overrideAlarmConfiguration`, you need the
-#' [`update_deployment_group`][codedeploy_update_deployment_group] IAM
-#' permission when calling
-#' [`create_deployment`][codedeploy_create_deployment].
+#' If you specify an `overrideAlarmConfiguration`, you need the [`update_deployment_group`][codedeploy_update_deployment_group] IAM permission when calling [`create_deployment`][codedeploy_create_deployment].
 #'
 #' @keywords internal
 #'
@@ -475,36 +401,22 @@ codedeploy_create_deployment <- function(applicationName, deploymentGroupName = 
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_create_deployment_config/](https://www.paws-r-sdk.com/docs/codedeploy_create_deployment_config/) for full documentation.
 #'
 #' @param deploymentConfigName &#91;required&#93; The name of the deployment configuration to create.
-#' @param minimumHealthyHosts The minimum number of healthy instances that should be available at any
-#' time during the deployment. There are two parameters expected in the
-#' input: type and value.
+#' @param minimumHealthyHosts The minimum number of healthy instances that should be available at any time during the deployment. There are two parameters expected in the input: type and value.
 #' 
 #' The type parameter takes either of the following values:
 #' 
-#' -   HOST_COUNT: The value parameter represents the minimum number of
-#'     healthy instances as an absolute value.
+#' -   HOST_COUNT: The value parameter represents the minimum number of healthy instances as an absolute value.
 #' 
-#' -   FLEET_PERCENT: The value parameter represents the minimum number of
-#'     healthy instances as a percentage of the total number of instances
-#'     in the deployment. If you specify FLEET_PERCENT, at the start of the
-#'     deployment, CodeDeploy converts the percentage to the equivalent
-#'     number of instances and rounds up fractional instances.
+#' -   FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, CodeDeploy converts the percentage to the equivalent number of instances and rounds up fractional instances.
 #' 
 #' The value parameter takes an integer.
 #' 
-#' For example, to set a minimum of 95% healthy instance, specify a type of
-#' FLEET_PERCENT and a value of 95.
+#' For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of 95.
 #' @param trafficRoutingConfig The configuration that specifies how the deployment traffic is routed.
-#' @param computePlatform The destination platform type for the deployment (`Lambda`, `Server`, or
-#' `ECS`).
-#' @param zonalConfig Configure the `ZonalConfig` object if you want CodeDeploy to deploy your
-#' application to one [Availability
-#' Zone](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones)
-#' at a time, within an Amazon Web Services Region.
+#' @param computePlatform The destination platform type for the deployment (`Lambda`, `Server`, or `ECS`).
+#' @param zonalConfig Configure the `ZonalConfig` object if you want CodeDeploy to deploy your application to one [Availability Zone](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones) at a time, within an Amazon Web Services Region.
 #' 
-#' For more information about the zonal configuration feature, see [zonal
-#' configuration](https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config)
-#' in the *CodeDeploy User Guide*.
+#' For more information about the zonal configuration feature, see [zonal configuration](https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config) in the *CodeDeploy User Guide*.
 #'
 #' @keywords internal
 #'
@@ -535,87 +447,39 @@ codedeploy_create_deployment_config <- function(deploymentConfigName, minimumHea
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_create_deployment_group/](https://www.paws-r-sdk.com/docs/codedeploy_create_deployment_group/) for full documentation.
 #'
-#' @param applicationName &#91;required&#93; The name of an CodeDeploy application associated with the user or Amazon
-#' Web Services account.
+#' @param applicationName &#91;required&#93; The name of an CodeDeploy application associated with the user or Amazon Web Services account.
 #' @param deploymentGroupName &#91;required&#93; The name of a new deployment group for the specified application.
-#' @param deploymentConfigName If specified, the deployment configuration name can be either one of the
-#' predefined configurations provided with CodeDeploy or a custom
-#' deployment configuration that you create by calling the create
-#' deployment configuration operation.
+#' @param deploymentConfigName If specified, the deployment configuration name can be either one of the predefined configurations provided with CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration operation.
 #' 
-#' `CodeDeployDefault.OneAtATime` is the default deployment configuration.
-#' It is used if a configuration isn't specified for the deployment or
-#' deployment group.
+#' `CodeDeployDefault.OneAtATime` is the default deployment configuration. It is used if a configuration isn't specified for the deployment or deployment group.
 #' 
-#' For more information about the predefined deployment configurations in
-#' CodeDeploy, see [Working with Deployment Configurations in
-#' CodeDeploy](https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html)
-#' in the *CodeDeploy User Guide*.
-#' @param ec2TagFilters The Amazon EC2 tags on which to filter. The deployment group includes
-#' Amazon EC2 instances with any of the specified tags. Cannot be used in
-#' the same call as ec2TagSet.
-#' @param onPremisesInstanceTagFilters The on-premises instance tags on which to filter. The deployment group
-#' includes on-premises instances with any of the specified tags. Cannot be
-#' used in the same call as `OnPremisesTagSet`.
+#' For more information about the predefined deployment configurations in CodeDeploy, see [Working with Deployment Configurations in CodeDeploy](https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html) in the *CodeDeploy User Guide*.
+#' @param ec2TagFilters The Amazon EC2 tags on which to filter. The deployment group includes Amazon EC2 instances with any of the specified tags. Cannot be used in the same call as ec2TagSet.
+#' @param onPremisesInstanceTagFilters The on-premises instance tags on which to filter. The deployment group includes on-premises instances with any of the specified tags. Cannot be used in the same call as `OnPremisesTagSet`.
 #' @param autoScalingGroups A list of associated Amazon EC2 Auto Scaling groups.
-#' @param serviceRoleArn &#91;required&#93; A service role Amazon Resource Name (ARN) that allows CodeDeploy to act
-#' on the user's behalf when interacting with Amazon Web Services services.
-#' @param triggerConfigurations Information about triggers to create when the deployment group is
-#' created. For examples, see [Create a Trigger for an CodeDeploy
-#' Event](https://docs.aws.amazon.com/codedeploy/latest/userguide/monitoring-sns-event-notifications-create-trigger.html)
-#' in the *CodeDeploy User Guide*.
-#' @param alarmConfiguration Information to add about Amazon CloudWatch alarms when the deployment
-#' group is created.
-#' @param autoRollbackConfiguration Configuration information for an automatic rollback that is added when a
-#' deployment group is created.
-#' @param outdatedInstancesStrategy Indicates what happens when new Amazon EC2 instances are launched
-#' mid-deployment and do not receive the deployed application revision.
+#' @param serviceRoleArn &#91;required&#93; A service role Amazon Resource Name (ARN) that allows CodeDeploy to act on the user's behalf when interacting with Amazon Web Services services.
+#' @param triggerConfigurations Information about triggers to create when the deployment group is created. For examples, see [Create a Trigger for an CodeDeploy Event](https://docs.aws.amazon.com/codedeploy/latest/userguide/monitoring-sns-event-notifications-create-trigger.html) in the *CodeDeploy User Guide*.
+#' @param alarmConfiguration Information to add about Amazon CloudWatch alarms when the deployment group is created.
+#' @param autoRollbackConfiguration Configuration information for an automatic rollback that is added when a deployment group is created.
+#' @param outdatedInstancesStrategy Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed application revision.
 #' 
-#' If this option is set to `UPDATE` or is unspecified, CodeDeploy
-#' initiates one or more 'auto-update outdated instances' deployments to
-#' apply the deployed application revision to the new Amazon EC2 instances.
+#' If this option is set to `UPDATE` or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.
 #' 
-#' If this option is set to `IGNORE`, CodeDeploy does not initiate a
-#' deployment to update the new Amazon EC2 instances. This may result in
-#' instances having different revisions.
-#' @param deploymentStyle Information about the type of deployment, in-place or blue/green, that
-#' you want to run and whether to route deployment traffic behind a load
-#' balancer.
+#' If this option is set to `IGNORE`, CodeDeploy does not initiate a deployment to update the new Amazon EC2 instances. This may result in instances having different revisions.
+#' @param deploymentStyle Information about the type of deployment, in-place or blue/green, that you want to run and whether to route deployment traffic behind a load balancer.
 #' @param blueGreenDeploymentConfiguration Information about blue/green deployment options for a deployment group.
 #' @param loadBalancerInfo Information about the load balancer used in a deployment.
-#' @param ec2TagSet Information about groups of tags applied to Amazon EC2 instances. The
-#' deployment group includes only Amazon EC2 instances identified by all
-#' the tag groups. Cannot be used in the same call as `ec2TagFilters`.
-#' @param ecsServices The target Amazon ECS services in the deployment group. This applies
-#' only to deployment groups that use the Amazon ECS compute platform. A
-#' target Amazon ECS service is specified as an Amazon ECS cluster and
-#' service name pair using the format `<clustername>:<servicename>`.
-#' @param onPremisesTagSet Information about groups of tags applied to on-premises instances. The
-#' deployment group includes only on-premises instances identified by all
-#' of the tag groups. Cannot be used in the same call as
-#' `onPremisesInstanceTagFilters`.
-#' @param tags The metadata that you apply to CodeDeploy deployment groups to help you
-#' organize and categorize them. Each tag consists of a key and an optional
-#' value, both of which you define.
-#' @param terminationHookEnabled This parameter only applies if you are using CodeDeploy with Amazon EC2
-#' Auto Scaling. For more information, see [Integrating CodeDeploy with
-#' Amazon EC2 Auto
-#' Scaling](https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html)
-#' in the *CodeDeploy User Guide*.
+#' @param ec2TagSet Information about groups of tags applied to Amazon EC2 instances. The deployment group includes only Amazon EC2 instances identified by all the tag groups. Cannot be used in the same call as `ec2TagFilters`.
+#' @param ecsServices The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format `<clustername>:<servicename>`.
+#' @param onPremisesTagSet Information about groups of tags applied to on-premises instances. The deployment group includes only on-premises instances identified by all of the tag groups. Cannot be used in the same call as `onPremisesInstanceTagFilters`.
+#' @param tags The metadata that you apply to CodeDeploy deployment groups to help you organize and categorize them. Each tag consists of a key and an optional value, both of which you define.
+#' @param terminationHookEnabled This parameter only applies if you are using CodeDeploy with Amazon EC2 Auto Scaling. For more information, see [Integrating CodeDeploy with Amazon EC2 Auto Scaling](https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html) in the *CodeDeploy User Guide*.
 #' 
-#' Set `terminationHookEnabled` to `true` to have CodeDeploy install a
-#' termination hook into your Auto Scaling group when you create a
-#' deployment group. When this hook is installed, CodeDeploy will perform
-#' termination deployments.
+#' Set `terminationHookEnabled` to `true` to have CodeDeploy install a termination hook into your Auto Scaling group when you create a deployment group. When this hook is installed, CodeDeploy will perform termination deployments.
 #' 
-#' For information about termination deployments, see [Enabling termination
-#' deployments during Auto Scaling scale-in
-#' events](https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable)
-#' in the *CodeDeploy User Guide*.
+#' For information about termination deployments, see [Enabling termination deployments during Auto Scaling scale-in events](https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable) in the *CodeDeploy User Guide*.
 #' 
-#' For more information about Auto Scaling scale-in events, see the [Scale
-#' in](https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html#as-lifecycle-scale-in)
-#' topic in the *Amazon EC2 Auto Scaling User Guide*.
+#' For more information about Auto Scaling scale-in events, see the [Scale in](https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html#as-lifecycle-scale-in) topic in the *Amazon EC2 Auto Scaling User Guide*.
 #'
 #' @keywords internal
 #'
@@ -646,8 +510,7 @@ codedeploy_create_deployment_group <- function(applicationName, deploymentGroupN
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_delete_application/](https://www.paws-r-sdk.com/docs/codedeploy_delete_application/) for full documentation.
 #'
-#' @param applicationName &#91;required&#93; The name of an CodeDeploy application associated with the user or Amazon
-#' Web Services account.
+#' @param applicationName &#91;required&#93; The name of an CodeDeploy application associated with the user or Amazon Web Services account.
 #'
 #' @keywords internal
 #'
@@ -678,8 +541,7 @@ codedeploy_delete_application <- function(applicationName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_delete_deployment_config/](https://www.paws-r-sdk.com/docs/codedeploy_delete_deployment_config/) for full documentation.
 #'
-#' @param deploymentConfigName &#91;required&#93; The name of a deployment configuration associated with the user or
-#' Amazon Web Services account.
+#' @param deploymentConfigName &#91;required&#93; The name of a deployment configuration associated with the user or Amazon Web Services account.
 #'
 #' @keywords internal
 #'
@@ -710,8 +572,7 @@ codedeploy_delete_deployment_config <- function(deploymentConfigName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_delete_deployment_group/](https://www.paws-r-sdk.com/docs/codedeploy_delete_deployment_group/) for full documentation.
 #'
-#' @param applicationName &#91;required&#93; The name of an CodeDeploy application associated with the user or Amazon
-#' Web Services account.
+#' @param applicationName &#91;required&#93; The name of an CodeDeploy application associated with the user or Amazon Web Services account.
 #' @param deploymentGroupName &#91;required&#93; The name of a deployment group for the specified application.
 #'
 #' @keywords internal
@@ -774,8 +635,7 @@ codedeploy_delete_git_hub_account_token <- function(tokenName = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_delete_resources_by_external_id/](https://www.paws-r-sdk.com/docs/codedeploy_delete_resources_by_external_id/) for full documentation.
 #'
-#' @param externalId The unique ID of an external resource (for example, a CloudFormation
-#' stack ID) that is linked to one or more CodeDeploy resources.
+#' @param externalId The unique ID of an external resource (for example, a CloudFormation stack ID) that is linked to one or more CodeDeploy resources.
 #'
 #' @keywords internal
 #'
@@ -837,8 +697,7 @@ codedeploy_deregister_on_premises_instance <- function(instanceName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_get_application/](https://www.paws-r-sdk.com/docs/codedeploy_get_application/) for full documentation.
 #'
-#' @param applicationName &#91;required&#93; The name of an CodeDeploy application associated with the user or Amazon
-#' Web Services account.
+#' @param applicationName &#91;required&#93; The name of an CodeDeploy application associated with the user or Amazon Web Services account.
 #'
 #' @keywords internal
 #'
@@ -870,8 +729,7 @@ codedeploy_get_application <- function(applicationName) {
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_get_application_revision/](https://www.paws-r-sdk.com/docs/codedeploy_get_application_revision/) for full documentation.
 #'
 #' @param applicationName &#91;required&#93; The name of the application that corresponds to the revision.
-#' @param revision &#91;required&#93; Information about the application revision to get, including type and
-#' location.
+#' @param revision &#91;required&#93; Information about the application revision to get, including type and location.
 #'
 #' @keywords internal
 #'
@@ -902,8 +760,7 @@ codedeploy_get_application_revision <- function(applicationName, revision) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_get_deployment/](https://www.paws-r-sdk.com/docs/codedeploy_get_deployment/) for full documentation.
 #'
-#' @param deploymentId &#91;required&#93; The unique ID of a deployment associated with the user or Amazon Web
-#' Services account.
+#' @param deploymentId &#91;required&#93; The unique ID of a deployment associated with the user or Amazon Web Services account.
 #'
 #' @keywords internal
 #'
@@ -934,8 +791,7 @@ codedeploy_get_deployment <- function(deploymentId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_get_deployment_config/](https://www.paws-r-sdk.com/docs/codedeploy_get_deployment_config/) for full documentation.
 #'
-#' @param deploymentConfigName &#91;required&#93; The name of a deployment configuration associated with the user or
-#' Amazon Web Services account.
+#' @param deploymentConfigName &#91;required&#93; The name of a deployment configuration associated with the user or Amazon Web Services account.
 #'
 #' @keywords internal
 #'
@@ -966,8 +822,7 @@ codedeploy_get_deployment_config <- function(deploymentConfigName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_get_deployment_group/](https://www.paws-r-sdk.com/docs/codedeploy_get_deployment_group/) for full documentation.
 #'
-#' @param applicationName &#91;required&#93; The name of an CodeDeploy application associated with the user or Amazon
-#' Web Services account.
+#' @param applicationName &#91;required&#93; The name of an CodeDeploy application associated with the user or Amazon Web Services account.
 #' @param deploymentGroupName &#91;required&#93; The name of a deployment group for the specified application.
 #'
 #' @keywords internal
@@ -1094,21 +949,16 @@ codedeploy_get_on_premises_instance <- function(instanceName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_list_application_revisions/](https://www.paws-r-sdk.com/docs/codedeploy_list_application_revisions/) for full documentation.
 #'
-#' @param applicationName &#91;required&#93; The name of an CodeDeploy application associated with the user or Amazon
-#' Web Services account.
+#' @param applicationName &#91;required&#93; The name of an CodeDeploy application associated with the user or Amazon Web Services account.
 #' @param sortBy The column name to use to sort the list results:
 #' 
-#' -   `registerTime`: Sort by the time the revisions were registered with
-#'     CodeDeploy.
+#' -   `registerTime`: Sort by the time the revisions were registered with CodeDeploy.
 #' 
-#' -   `firstUsedTime`: Sort by the time the revisions were first used in a
-#'     deployment.
+#' -   `firstUsedTime`: Sort by the time the revisions were first used in a deployment.
 #' 
-#' -   `lastUsedTime`: Sort by the time the revisions were last used in a
-#'     deployment.
+#' -   `lastUsedTime`: Sort by the time the revisions were last used in a deployment.
 #' 
-#' If not specified or set to null, the results are returned in an
-#' arbitrary order.
+#' If not specified or set to null, the results are returned in an arbitrary order.
 #' @param sortOrder The order in which to sort the list results:
 #' 
 #' -   `ascending`: ascending order.
@@ -1121,21 +971,15 @@ codedeploy_get_on_premises_instance <- function(instanceName) {
 #' @param s3Bucket An Amazon S3 bucket name to limit the search for revisions.
 #' 
 #' If set to null, all of the user's buckets are searched.
-#' @param s3KeyPrefix A key prefix for the set of Amazon S3 objects to limit the search for
-#' revisions.
-#' @param deployed Whether to list revisions based on whether the revision is the target
-#' revision of a deployment group:
+#' @param s3KeyPrefix A key prefix for the set of Amazon S3 objects to limit the search for revisions.
+#' @param deployed Whether to list revisions based on whether the revision is the target revision of a deployment group:
 #' 
-#' -   `include`: List revisions that are target revisions of a deployment
-#'     group.
+#' -   `include`: List revisions that are target revisions of a deployment group.
 #' 
-#' -   `exclude`: Do not list revisions that are target revisions of a
-#'     deployment group.
+#' -   `exclude`: Do not list revisions that are target revisions of a deployment group.
 #' 
 #' -   `ignore`: List all revisions.
-#' @param nextToken An identifier returned from the previous
-#' [`list_application_revisions`][codedeploy_list_application_revisions]
-#' call. It can be used to return the next set of applications in the list.
+#' @param nextToken An identifier returned from the previous [`list_application_revisions`][codedeploy_list_application_revisions] call. It can be used to return the next set of applications in the list.
 #'
 #' @keywords internal
 #'
@@ -1167,8 +1011,7 @@ codedeploy_list_application_revisions <- function(applicationName, sortBy = NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_list_applications/](https://www.paws-r-sdk.com/docs/codedeploy_list_applications/) for full documentation.
 #'
-#' @param nextToken An identifier returned from the previous list applications call. It can
-#' be used to return the next set of applications in the list.
+#' @param nextToken An identifier returned from the previous list applications call. It can be used to return the next set of applications in the list.
 #'
 #' @keywords internal
 #'
@@ -1200,10 +1043,7 @@ codedeploy_list_applications <- function(nextToken = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_list_deployment_configs/](https://www.paws-r-sdk.com/docs/codedeploy_list_deployment_configs/) for full documentation.
 #'
-#' @param nextToken An identifier returned from the previous
-#' [`list_deployment_configs`][codedeploy_list_deployment_configs] call. It
-#' can be used to return the next set of deployment configurations in the
-#' list.
+#' @param nextToken An identifier returned from the previous [`list_deployment_configs`][codedeploy_list_deployment_configs] call. It can be used to return the next set of deployment configurations in the list.
 #'
 #' @keywords internal
 #'
@@ -1235,10 +1075,8 @@ codedeploy_list_deployment_configs <- function(nextToken = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_list_deployment_groups/](https://www.paws-r-sdk.com/docs/codedeploy_list_deployment_groups/) for full documentation.
 #'
-#' @param applicationName &#91;required&#93; The name of an CodeDeploy application associated with the user or Amazon
-#' Web Services account.
-#' @param nextToken An identifier returned from the previous list deployment groups call. It
-#' can be used to return the next set of deployment groups in the list.
+#' @param applicationName &#91;required&#93; The name of an CodeDeploy application associated with the user or Amazon Web Services account.
+#' @param nextToken An identifier returned from the previous list deployment groups call. It can be used to return the next set of deployment groups in the list.
 #'
 #' @keywords internal
 #'
@@ -1271,15 +1109,12 @@ codedeploy_list_deployment_groups <- function(applicationName, nextToken = NULL)
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_list_deployment_instances/](https://www.paws-r-sdk.com/docs/codedeploy_list_deployment_instances/) for full documentation.
 #'
 #' @param deploymentId &#91;required&#93; The unique ID of a deployment.
-#' @param nextToken An identifier returned from the previous list deployment instances call.
-#' It can be used to return the next set of deployment instances in the
-#' list.
+#' @param nextToken An identifier returned from the previous list deployment instances call. It can be used to return the next set of deployment instances in the list.
 #' @param instanceStatusFilter A subset of instances to list by status:
 #' 
 #' -   `Pending`: Include those instances with pending deployments.
 #' 
-#' -   `InProgress`: Include those instances where deployments are still in
-#'     progress.
+#' -   `InProgress`: Include those instances where deployments are still in progress.
 #' 
 #' -   `Succeeded`: Include those instances with successful deployments.
 #' 
@@ -1287,11 +1122,8 @@ codedeploy_list_deployment_groups <- function(applicationName, nextToken = NULL)
 #' 
 #' -   `Skipped`: Include those instances with skipped deployments.
 #' 
-#' -   `Unknown`: Include those instances with deployments in an unknown
-#'     state.
-#' @param instanceTypeFilter The set of instances in a blue/green deployment, either those in the
-#' original environment ("BLUE") or those in the replacement environment
-#' ("GREEN"), for which you want to view instance information.
+#' -   `Unknown`: Include those instances with deployments in an unknown state.
+#' @param instanceTypeFilter The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or those in the replacement environment ("GREEN"), for which you want to view instance information.
 #'
 #' @keywords internal
 #'
@@ -1323,17 +1155,12 @@ codedeploy_list_deployment_instances <- function(deploymentId, nextToken = NULL,
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_list_deployment_targets/](https://www.paws-r-sdk.com/docs/codedeploy_list_deployment_targets/) for full documentation.
 #'
 #' @param deploymentId &#91;required&#93; The unique ID of a deployment.
-#' @param nextToken A token identifier returned from the previous
-#' [`list_deployment_targets`][codedeploy_list_deployment_targets] call. It
-#' can be used to return the next set of deployment targets in the list.
+#' @param nextToken A token identifier returned from the previous [`list_deployment_targets`][codedeploy_list_deployment_targets] call. It can be used to return the next set of deployment targets in the list.
 #' @param targetFilters A key used to filter the returned targets. The two valid values are:
 #' 
-#' -   `TargetStatus` - A `TargetStatus` filter string can be `Failed`,
-#'     `InProgress`, `Pending`, `Ready`, `Skipped`, `Succeeded`, or
-#'     `Unknown`.
+#' -   `TargetStatus` - A `TargetStatus` filter string can be `Failed`, `InProgress`, `Pending`, `Ready`, `Skipped`, `Succeeded`, or `Unknown`.
 #' 
-#' -   `ServerInstanceLabel` - A `ServerInstanceLabel` filter string can be
-#'     `Blue` or `Green`.
+#' -   `ServerInstanceLabel` - A `ServerInstanceLabel` filter string can be `Blue` or `Green`.
 #'
 #' @keywords internal
 #'
@@ -1365,37 +1192,28 @@ codedeploy_list_deployment_targets <- function(deploymentId, nextToken = NULL, t
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_list_deployments/](https://www.paws-r-sdk.com/docs/codedeploy_list_deployments/) for full documentation.
 #'
-#' @param applicationName The name of an CodeDeploy application associated with the user or Amazon
-#' Web Services account.
+#' @param applicationName The name of an CodeDeploy application associated with the user or Amazon Web Services account.
 #' 
-#' If `applicationName` is specified, then `deploymentGroupName` must be
-#' specified. If it is not specified, then `deploymentGroupName` must not
-#' be specified.
+#' If `applicationName` is specified, then `deploymentGroupName` must be specified. If it is not specified, then `deploymentGroupName` must not be specified.
 #' @param deploymentGroupName The name of a deployment group for the specified application.
 #' 
-#' If `deploymentGroupName` is specified, then `applicationName` must be
-#' specified. If it is not specified, then `applicationName` must not be
-#' specified.
-#' @param externalId The unique ID of an external resource for returning deployments linked
-#' to the external resource.
+#' If `deploymentGroupName` is specified, then `applicationName` must be specified. If it is not specified, then `applicationName` must not be specified.
+#' @param externalId The unique ID of an external resource for returning deployments linked to the external resource.
 #' @param includeOnlyStatuses A subset of deployments to list by status:
 #' 
 #' -   `Created`: Include created deployments in the resulting list.
 #' 
 #' -   `Queued`: Include queued deployments in the resulting list.
 #' 
-#' -   `In Progress`: Include in-progress deployments in the resulting
-#'     list.
+#' -   `In Progress`: Include in-progress deployments in the resulting list.
 #' 
 #' -   `Succeeded`: Include successful deployments in the resulting list.
 #' 
 #' -   `Failed`: Include failed deployments in the resulting list.
 #' 
 #' -   `Stopped`: Include stopped deployments in the resulting list.
-#' @param createTimeRange A time range (start and end) for returning a subset of the list of
-#' deployments.
-#' @param nextToken An identifier returned from the previous list deployments call. It can
-#' be used to return the next set of deployments in the list.
+#' @param createTimeRange A time range (start and end) for returning a subset of the list of deployments.
+#' @param nextToken An identifier returned from the previous list deployments call. It can be used to return the next set of deployments in the list.
 #'
 #' @keywords internal
 #'
@@ -1426,9 +1244,7 @@ codedeploy_list_deployments <- function(applicationName = NULL, deploymentGroupN
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_list_git_hub_account_token_names/](https://www.paws-r-sdk.com/docs/codedeploy_list_git_hub_account_token_names/) for full documentation.
 #'
-#' @param nextToken An identifier returned from the previous
-#' [`list_git_hub_account_token_names`][codedeploy_list_git_hub_account_token_names]
-#' call. It can be used to return the next set of names in the list.
+#' @param nextToken An identifier returned from the previous [`list_git_hub_account_token_names`][codedeploy_list_git_hub_account_token_names] call. It can be used to return the next set of names in the list.
 #'
 #' @keywords internal
 #'
@@ -1461,16 +1277,11 @@ codedeploy_list_git_hub_account_token_names <- function(nextToken = NULL) {
 #'
 #' @param registrationStatus The registration status of the on-premises instances:
 #' 
-#' -   `Deregistered`: Include deregistered on-premises instances in the
-#'     resulting list.
+#' -   `Deregistered`: Include deregistered on-premises instances in the resulting list.
 #' 
-#' -   `Registered`: Include registered on-premises instances in the
-#'     resulting list.
-#' @param tagFilters The on-premises instance tags that are used to restrict the on-premises
-#' instance names returned.
-#' @param nextToken An identifier returned from the previous list on-premises instances
-#' call. It can be used to return the next set of on-premises instances in
-#' the list.
+#' -   `Registered`: Include registered on-premises instances in the resulting list.
+#' @param tagFilters The on-premises instance tags that are used to restrict the on-premises instance names returned.
+#' @param nextToken An identifier returned from the previous list on-premises instances call. It can be used to return the next set of on-premises instances in the list.
 #'
 #' @keywords internal
 #'
@@ -1502,13 +1313,8 @@ codedeploy_list_on_premises_instances <- function(registrationStatus = NULL, tag
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/codedeploy_list_tags_for_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The ARN of a CodeDeploy resource.
-#' [`list_tags_for_resource`][codedeploy_list_tags_for_resource] returns
-#' all the tags associated with the resource that is identified by the
-#' `ResourceArn`.
-#' @param NextToken An identifier returned from the previous
-#' [`list_tags_for_resource`][codedeploy_list_tags_for_resource] call. It
-#' can be used to return the next set of applications in the list.
+#' @param ResourceArn &#91;required&#93; The ARN of a CodeDeploy resource. [`list_tags_for_resource`][codedeploy_list_tags_for_resource] returns all the tags associated with the resource that is identified by the `ResourceArn`.
+#' @param NextToken An identifier returned from the previous [`list_tags_for_resource`][codedeploy_list_tags_for_resource] call. It can be used to return the next set of applications in the list.
 #'
 #' @keywords internal
 #'
@@ -1539,14 +1345,9 @@ codedeploy_list_tags_for_resource <- function(ResourceArn, NextToken = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_put_lifecycle_event_hook_execution_status/](https://www.paws-r-sdk.com/docs/codedeploy_put_lifecycle_event_hook_execution_status/) for full documentation.
 #'
-#' @param deploymentId The unique ID of a deployment. Pass this ID to a Lambda function that
-#' validates a deployment lifecycle event.
-#' @param lifecycleEventHookExecutionId The execution ID of a deployment's lifecycle hook. A deployment
-#' lifecycle hook is specified in the `hooks` section of the AppSpec file.
-#' @param status The result of a Lambda function that validates a deployment lifecycle
-#' event. The values listed in **Valid Values** are valid for lifecycle
-#' statuses in general; however, only `Succeeded` and `Failed` can be
-#' passed successfully in your API call.
+#' @param deploymentId The unique ID of a deployment. Pass this ID to a Lambda function that validates a deployment lifecycle event.
+#' @param lifecycleEventHookExecutionId The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is specified in the `hooks` section of the AppSpec file.
+#' @param status The result of a Lambda function that validates a deployment lifecycle event. The values listed in **Valid Values** are valid for lifecycle statuses in general; however, only `Succeeded` and `Failed` can be passed successfully in your API call.
 #'
 #' @keywords internal
 #'
@@ -1577,11 +1378,9 @@ codedeploy_put_lifecycle_event_hook_execution_status <- function(deploymentId = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_register_application_revision/](https://www.paws-r-sdk.com/docs/codedeploy_register_application_revision/) for full documentation.
 #'
-#' @param applicationName &#91;required&#93; The name of an CodeDeploy application associated with the user or Amazon
-#' Web Services account.
+#' @param applicationName &#91;required&#93; The name of an CodeDeploy application associated with the user or Amazon Web Services account.
 #' @param description A comment about the revision.
-#' @param revision &#91;required&#93; Information about the application revision to register, including type
-#' and location.
+#' @param revision &#91;required&#93; Information about the application revision to register, including type and location.
 #'
 #' @keywords internal
 #'
@@ -1678,8 +1477,7 @@ codedeploy_remove_tags_from_on_premises_instances <- function(tags, instanceName
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_skip_wait_time_for_instance_termination/](https://www.paws-r-sdk.com/docs/codedeploy_skip_wait_time_for_instance_termination/) for full documentation.
 #'
-#' @param deploymentId The unique ID of a blue/green deployment for which you want to skip the
-#' instance termination wait time.
+#' @param deploymentId The unique ID of a blue/green deployment for which you want to skip the instance termination wait time.
 #'
 #' @keywords internal
 #'
@@ -1711,9 +1509,7 @@ codedeploy_skip_wait_time_for_instance_termination <- function(deploymentId = NU
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_stop_deployment/](https://www.paws-r-sdk.com/docs/codedeploy_stop_deployment/) for full documentation.
 #'
 #' @param deploymentId &#91;required&#93; The unique ID of a deployment.
-#' @param autoRollbackEnabled Indicates, when a deployment is stopped, whether instances that have
-#' been updated should be rolled back to the previous version of the
-#' application revision.
+#' @param autoRollbackEnabled Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the previous version of the application revision.
 #'
 #' @keywords internal
 #'
@@ -1745,11 +1541,8 @@ codedeploy_stop_deployment <- function(deploymentId, autoRollbackEnabled = NULL)
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_tag_resource/](https://www.paws-r-sdk.com/docs/codedeploy_tag_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The ARN of a resource, such as a CodeDeploy application or deployment
-#' group.
-#' @param Tags &#91;required&#93; A list of tags that [`tag_resource`][codedeploy_tag_resource] associates
-#' with a resource. The resource is identified by the `ResourceArn` input
-#' parameter.
+#' @param ResourceArn &#91;required&#93; The ARN of a resource, such as a CodeDeploy application or deployment group.
+#' @param Tags &#91;required&#93; A list of tags that [`tag_resource`][codedeploy_tag_resource] associates with a resource. The resource is identified by the `ResourceArn` input parameter.
 #'
 #' @keywords internal
 #'
@@ -1780,11 +1573,8 @@ codedeploy_tag_resource <- function(ResourceArn, Tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codedeploy_untag_resource/](https://www.paws-r-sdk.com/docs/codedeploy_untag_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that specifies from which resource to
-#' disassociate the tags with the keys in the `TagKeys` input parameter.
-#' @param TagKeys &#91;required&#93; A list of keys of `Tag` objects. The `Tag` objects identified by the
-#' keys are disassociated from the resource specified by the `ResourceArn`
-#' input parameter.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that specifies from which resource to disassociate the tags with the keys in the `TagKeys` input parameter.
+#' @param TagKeys &#91;required&#93; A list of keys of `Tag` objects. The `Tag` objects identified by the keys are disassociated from the resource specified by the `ResourceArn` input parameter.
 #'
 #' @keywords internal
 #'
@@ -1850,79 +1640,36 @@ codedeploy_update_application <- function(applicationName = NULL, newApplication
 #' @param applicationName &#91;required&#93; The application name that corresponds to the deployment group to update.
 #' @param currentDeploymentGroupName &#91;required&#93; The current name of the deployment group.
 #' @param newDeploymentGroupName The new name of the deployment group, if you want to change it.
-#' @param deploymentConfigName The replacement deployment configuration name to use, if you want to
-#' change it.
-#' @param ec2TagFilters The replacement set of Amazon EC2 tags on which to filter, if you want
-#' to change them. To keep the existing tags, enter their names. To remove
-#' tags, do not enter any tag names.
-#' @param onPremisesInstanceTagFilters The replacement set of on-premises instance tags on which to filter, if
-#' you want to change them. To keep the existing tags, enter their names.
-#' To remove tags, do not enter any tag names.
-#' @param autoScalingGroups The replacement list of Auto Scaling groups to be included in the
-#' deployment group, if you want to change them.
+#' @param deploymentConfigName The replacement deployment configuration name to use, if you want to change it.
+#' @param ec2TagFilters The replacement set of Amazon EC2 tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.
+#' @param onPremisesInstanceTagFilters The replacement set of on-premises instance tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.
+#' @param autoScalingGroups The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change them.
 #' 
-#' -   To keep the Auto Scaling groups, enter their names or do not specify
-#'     this parameter.
+#' -   To keep the Auto Scaling groups, enter their names or do not specify this parameter.
 #' 
-#' -   To remove Auto Scaling groups, specify a non-null empty list of Auto
-#'     Scaling group names to detach all CodeDeploy-managed Auto Scaling
-#'     lifecycle hooks. For examples, see [Amazon EC2 instances in an
-#'     Amazon EC2 Auto Scaling group fail to launch and receive the error
-#'     "Heartbeat
-#'     Timeout"](https://docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat)
-#'     in the *CodeDeploy User Guide*.
+#' -   To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see [Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error "Heartbeat Timeout"](https://docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat) in the *CodeDeploy User Guide*.
 #' @param serviceRoleArn A replacement ARN for the service role, if you want to change it.
-#' @param triggerConfigurations Information about triggers to change when the deployment group is
-#' updated. For examples, see [Edit a Trigger in a CodeDeploy Deployment
-#' Group](https://docs.aws.amazon.com/codedeploy/latest/userguide/monitoring-sns-event-notifications-edit-trigger.html)
-#' in the *CodeDeploy User Guide*.
-#' @param alarmConfiguration Information to add or change about Amazon CloudWatch alarms when the
-#' deployment group is updated.
-#' @param autoRollbackConfiguration Information for an automatic rollback configuration that is added or
-#' changed when a deployment group is updated.
-#' @param outdatedInstancesStrategy Indicates what happens when new Amazon EC2 instances are launched
-#' mid-deployment and do not receive the deployed application revision.
+#' @param triggerConfigurations Information about triggers to change when the deployment group is updated. For examples, see [Edit a Trigger in a CodeDeploy Deployment Group](https://docs.aws.amazon.com/codedeploy/latest/userguide/monitoring-sns-event-notifications-edit-trigger.html) in the *CodeDeploy User Guide*.
+#' @param alarmConfiguration Information to add or change about Amazon CloudWatch alarms when the deployment group is updated.
+#' @param autoRollbackConfiguration Information for an automatic rollback configuration that is added or changed when a deployment group is updated.
+#' @param outdatedInstancesStrategy Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed application revision.
 #' 
-#' If this option is set to `UPDATE` or is unspecified, CodeDeploy
-#' initiates one or more 'auto-update outdated instances' deployments to
-#' apply the deployed application revision to the new Amazon EC2 instances.
+#' If this option is set to `UPDATE` or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.
 #' 
-#' If this option is set to `IGNORE`, CodeDeploy does not initiate a
-#' deployment to update the new Amazon EC2 instances. This may result in
-#' instances having different revisions.
-#' @param deploymentStyle Information about the type of deployment, either in-place or blue/green,
-#' you want to run and whether to route deployment traffic behind a load
-#' balancer.
+#' If this option is set to `IGNORE`, CodeDeploy does not initiate a deployment to update the new Amazon EC2 instances. This may result in instances having different revisions.
+#' @param deploymentStyle Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.
 #' @param blueGreenDeploymentConfiguration Information about blue/green deployment options for a deployment group.
 #' @param loadBalancerInfo Information about the load balancer used in a deployment.
-#' @param ec2TagSet Information about groups of tags applied to on-premises instances. The
-#' deployment group includes only Amazon EC2 instances identified by all
-#' the tag groups.
-#' @param ecsServices The target Amazon ECS services in the deployment group. This applies
-#' only to deployment groups that use the Amazon ECS compute platform. A
-#' target Amazon ECS service is specified as an Amazon ECS cluster and
-#' service name pair using the format `<clustername>:<servicename>`.
-#' @param onPremisesTagSet Information about an on-premises instance tag set. The deployment group
-#' includes only on-premises instances identified by all the tag groups.
-#' @param terminationHookEnabled This parameter only applies if you are using CodeDeploy with Amazon EC2
-#' Auto Scaling. For more information, see [Integrating CodeDeploy with
-#' Amazon EC2 Auto
-#' Scaling](https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html)
-#' in the *CodeDeploy User Guide*.
+#' @param ec2TagSet Information about groups of tags applied to on-premises instances. The deployment group includes only Amazon EC2 instances identified by all the tag groups.
+#' @param ecsServices The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format `<clustername>:<servicename>`.
+#' @param onPremisesTagSet Information about an on-premises instance tag set. The deployment group includes only on-premises instances identified by all the tag groups.
+#' @param terminationHookEnabled This parameter only applies if you are using CodeDeploy with Amazon EC2 Auto Scaling. For more information, see [Integrating CodeDeploy with Amazon EC2 Auto Scaling](https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html) in the *CodeDeploy User Guide*.
 #' 
-#' Set `terminationHookEnabled` to `true` to have CodeDeploy install a
-#' termination hook into your Auto Scaling group when you update a
-#' deployment group. When this hook is installed, CodeDeploy will perform
-#' termination deployments.
+#' Set `terminationHookEnabled` to `true` to have CodeDeploy install a termination hook into your Auto Scaling group when you update a deployment group. When this hook is installed, CodeDeploy will perform termination deployments.
 #' 
-#' For information about termination deployments, see [Enabling termination
-#' deployments during Auto Scaling scale-in
-#' events](https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable)
-#' in the *CodeDeploy User Guide*.
+#' For information about termination deployments, see [Enabling termination deployments during Auto Scaling scale-in events](https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable) in the *CodeDeploy User Guide*.
 #' 
-#' For more information about Auto Scaling scale-in events, see the [Scale
-#' in](https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html#as-lifecycle-scale-in)
-#' topic in the *Amazon EC2 Auto Scaling User Guide*.
+#' For more information about Auto Scaling scale-in events, see the [Scale in](https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html#as-lifecycle-scale-in) topic in the *Amazon EC2 Auto Scaling User Guide*.
 #'
 #' @keywords internal
 #'

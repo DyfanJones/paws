@@ -8,9 +8,7 @@ status of the Evaluation}
 machinelearning_get_evaluation(EvaluationId)
 }
 \arguments{
-\item{EvaluationId}{[required] The ID of the \code{Evaluation} to retrieve. The evaluation of each \code{MLModel}
-is recorded and cataloged. The ID provides the means to access the
-information.}
+\item{EvaluationId}{[required] The ID of the \code{Evaluation} to retrieve. The evaluation of each \code{MLModel} is recorded and cataloged. The ID provides the means to access the information.}
 }
 \description{
 Returns an \code{Evaluation} that includes metadata as well as the current status of the \code{Evaluation}.

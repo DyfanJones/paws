@@ -20,33 +20,23 @@ comprehend_start_pii_entities_detection_job(
 \arguments{
 \item{InputDataConfig}{[required] The input properties for a PII entities detection job.}
 
-\item{OutputDataConfig}{[required] Provides configuration parameters for the output of PII entity detection
-jobs.}
+\item{OutputDataConfig}{[required] Provides configuration parameters for the output of PII entity detection jobs.}
 
-\item{Mode}{[required] Specifies whether the output provides the locations (offsets) of PII
-entities or a file in which PII entities are redacted.}
+\item{Mode}{[required] Specifies whether the output provides the locations (offsets) of PII entities or a file in which PII entities are redacted.}
 
 \item{RedactionConfig}{Provides configuration parameters for PII entity redaction.
 
-This parameter is required if you set the \code{Mode} parameter to
-\code{ONLY_REDACTION}. In that case, you must provide a \code{RedactionConfig}
-definition that includes the \code{PiiEntityTypes} parameter.}
+This parameter is required if you set the \code{Mode} parameter to \code{ONLY_REDACTION}. In that case, you must provide a \code{RedactionConfig} definition that includes the \code{PiiEntityTypes} parameter.}
 
-\item{DataAccessRoleArn}{[required] The Amazon Resource Name (ARN) of the IAM role that grants Amazon
-Comprehend read access to your input data.}
+\item{DataAccessRoleArn}{[required] The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.}
 
 \item{JobName}{The identifier of the job.}
 
-\item{LanguageCode}{[required] The language of the input documents. Enter the language code for English
-(en) or Spanish (es).}
+\item{LanguageCode}{[required] The language of the input documents. Enter the language code for English (en) or Spanish (es).}
 
-\item{ClientRequestToken}{A unique identifier for the request. If you don't set the client request
-token, Amazon Comprehend generates one.}
+\item{ClientRequestToken}{A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.}
 
-\item{Tags}{Tags to associate with the PII entities detection job. A tag is a
-key-value pair that adds metadata to a resource used by Amazon
-Comprehend. For example, a tag with "Sales" as the key might be added to
-a resource to indicate its use by the sales department.}
+\item{Tags}{Tags to associate with the PII entities detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.}
 }
 \description{
 Starts an asynchronous PII entity detection job for a collection of documents.

@@ -12,8 +12,7 @@ redshiftserverless_update_endpoint_access(
 \arguments{
 \item{endpointName}{[required] The name of the VPC endpoint to update.}
 
-\item{vpcSecurityGroupIds}{The list of VPC security groups associated with the endpoint after the
-endpoint is modified.}
+\item{vpcSecurityGroupIds}{The list of VPC security groups associated with the endpoint after the endpoint is modified.}
 }
 \description{
 Updates an Amazon Redshift Serverless managed endpoint.

@@ -13,16 +13,13 @@ codestarconnections_create_repository_link(
 )
 }
 \arguments{
-\item{ConnectionArn}{[required] The Amazon Resource Name (ARN) of the connection to be associated with
-the repository link.}
+\item{ConnectionArn}{[required] The Amazon Resource Name (ARN) of the connection to be associated with the repository link.}
 
-\item{OwnerId}{[required] The owner ID for the repository associated with a specific sync
-configuration, such as the owner ID in GitHub.}
+\item{OwnerId}{[required] The owner ID for the repository associated with a specific sync configuration, such as the owner ID in GitHub.}
 
 \item{RepositoryName}{[required] The name of the repository to be associated with the repository link.}
 
-\item{EncryptionKeyArn}{The Amazon Resource Name (ARN) encryption key for the repository to be
-associated with the repository link.}
+\item{EncryptionKeyArn}{The Amazon Resource Name (ARN) encryption key for the repository to be associated with the repository link.}
 
 \item{Tags}{The tags for the repository to be associated with the repository link.}
 }

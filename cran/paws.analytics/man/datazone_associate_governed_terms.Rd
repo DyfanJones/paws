@@ -12,8 +12,7 @@ datazone_associate_governed_terms(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the domain where governed terms are to be associated with an
-asset.}
+\item{domainIdentifier}{[required] The ID of the domain where governed terms are to be associated with an asset.}
 
 \item{entityIdentifier}{[required] The ID of the asset with which you want to associate a governed term.}
 

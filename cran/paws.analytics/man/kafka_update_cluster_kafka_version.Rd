@@ -14,8 +14,7 @@ kafka_update_cluster_kafka_version(
 \arguments{
 \item{ClusterArn}{[required] The Amazon Resource Name (ARN) of the cluster to be updated.}
 
-\item{ConfigurationInfo}{The custom configuration that should be applied on the new version of
-cluster.}
+\item{ConfigurationInfo}{The custom configuration that should be applied on the new version of cluster.}
 
 \item{CurrentVersion}{[required] Current cluster version.}
 

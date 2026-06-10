@@ -14,15 +14,13 @@ workspaces_describe_workspace_directories(
 )
 }
 \arguments{
-\item{DirectoryIds}{The identifiers of the directories. If the value is null, all
-directories are retrieved.}
+\item{DirectoryIds}{The identifiers of the directories. If the value is null, all directories are retrieved.}
 
 \item{WorkspaceDirectoryNames}{The names of the WorkSpace directories.}
 
 \item{Limit}{The maximum number of directories to return.}
 
-\item{NextToken}{If you received a \code{NextToken} from a previous call that was paginated,
-provide this token to receive the next set of results.}
+\item{NextToken}{If you received a \code{NextToken} from a previous call that was paginated, provide this token to receive the next set of results.}
 
 \item{Filters}{The filter condition for the WorkSpaces.}
 }

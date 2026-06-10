@@ -12,16 +12,13 @@ billing_update_billing_view(
 )
 }
 \arguments{
-\item{arn}{[required] The Amazon Resource Name (ARN) that can be used to uniquely identify the
-billing view.}
+\item{arn}{[required] The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.}
 
 \item{name}{The name of the billing view.}
 
 \item{description}{The description of the billing view.}
 
-\item{dataFilterExpression}{See
-\href{https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html}{Expression}.
-Billing view only supports \code{LINKED_ACCOUNT} and \code{Tags}.}
+\item{dataFilterExpression}{See \href{https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html}{Expression}. Billing view only supports \code{LINKED_ACCOUNT}, \code{Tags}, and \code{CostCategories}.}
 }
 \description{
 An API to update the attributes of the billing view.

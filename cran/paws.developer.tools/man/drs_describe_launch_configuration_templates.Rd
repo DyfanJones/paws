@@ -12,8 +12,7 @@ drs_describe_launch_configuration_templates(
 )
 }
 \arguments{
-\item{launchConfigurationTemplateIDs}{Request to filter Launch Configuration Templates list by Launch
-Configuration Template ID.}
+\item{launchConfigurationTemplateIDs}{Request to filter Launch Configuration Templates list by Launch Configuration Template ID.}
 
 \item{maxResults}{Maximum results to be returned in DescribeLaunchConfigurationTemplates.}
 

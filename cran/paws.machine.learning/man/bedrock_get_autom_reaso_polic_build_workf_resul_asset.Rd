@@ -9,18 +9,18 @@ generated policy artifacts}
 bedrock_get_automated_reasoning_policy_build_workflow_result_assets(
   policyArn,
   buildWorkflowId,
-  assetType
+  assetType,
+  assetId = NULL
 )
 }
 \arguments{
-\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy whose
-build workflow assets you want to retrieve.}
+\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy whose build workflow assets you want to retrieve.}
 
-\item{buildWorkflowId}{[required] The unique identifier of the build workflow whose result assets you want
-to retrieve.}
+\item{buildWorkflowId}{[required] The unique identifier of the build workflow whose result assets you want to retrieve.}
 
-\item{assetType}{[required] The type of asset to retrieve (e.g., BUILD_LOG, QUALITY_REPORT,
-POLICY_DEFINITION).}
+\item{assetType}{[required] The type of asset to retrieve (e.g., BUILD_LOG, QUALITY_REPORT, POLICY_DEFINITION, GENERATED_TEST_CASES, POLICY_SCENARIOS, FIDELITY_REPORT, ASSET_MANIFEST, SOURCE_DOCUMENT).}
+
+\item{assetId}{The unique identifier of the specific asset to retrieve when multiple assets of the same type exist. This is required when retrieving SOURCE_DOCUMENT assets, as multiple source documents may have been used in the workflow. The asset ID can be obtained from the asset manifest.}
 }
 \description{
 Retrieves the resulting assets from a completed Automated Reasoning policy build workflow, including build logs, quality reports, and generated policy artifacts.

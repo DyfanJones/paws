@@ -30,83 +30,57 @@ ecs_update_service(
 )
 }
 \arguments{
-\item{cluster}{The short name or full Amazon Resource Name (ARN) of the cluster that
-your service runs on. If you do not specify a cluster, the default
-cluster is assumed.
+\item{cluster}{The short name or full Amazon Resource Name (ARN) of the cluster that your service runs on. If you do not specify a cluster, the default cluster is assumed.
 
 You can't change the cluster name.}
 
 \item{service}{[required] The name of the service to update.}
 
-\item{desiredCount}{The number of instantiations of the task to place and keep running in
-your service.
+\item{desiredCount}{The number of instantiations of the task to place and keep running in your service.
 
 This parameter doesn't trigger a new service deployment.}
 
-\item{taskDefinition}{The \code{family} and \code{revision} (\code{family:revision}) or full ARN of the task
-definition to run in your service. If a \code{revision} is not specified, the
-latest \code{ACTIVE} revision is used. If you modify the task definition with
-\code{\link[=ecs_update_service]{update_service}}, Amazon ECS spawns a task with
-the new version of the task definition and then stops an old task after
-the new version is running.
+\item{taskDefinition}{The \code{family} and \code{revision} (\code{family:revision}) or full ARN of the task definition to run in your service. If a \code{revision} is not specified, the latest \code{ACTIVE} revision is used. If you modify the task definition with \code{\link[=ecs_update_service]{update_service}}, Amazon ECS spawns a task with the new version of the task definition and then stops an old task after the new version is running.
 
 This parameter triggers a new service deployment.}
 
-\item{capacityProviderStrategy}{The details of a capacity provider strategy. You can set a capacity
-provider when you create a cluster, run a task, or update a service.
+\item{capacityProviderStrategy}{The details of a capacity provider strategy. You can set a capacity provider when you create a cluster, run a task, or update a service.
 
-If you want to use Amazon ECS Managed Instances, you must use the
-\code{capacityProviderStrategy} request parameter.
+If you want to use Amazon ECS Managed Instances, you must use the \code{capacityProviderStrategy} request parameter.
 
-When you use Fargate, the capacity providers are \code{FARGATE} or
-\code{FARGATE_SPOT}.
+When you use Fargate, the capacity providers are \code{FARGATE} or \code{FARGATE_SPOT}.
 
 When you use Amazon EC2, the capacity providers are Auto Scaling groups.
 
-You can change capacity providers for rolling deployments and blue/green
-deployments.
+You can change capacity providers for rolling deployments and blue/green deployments.
 
 The following list provides the valid transitions:
 \itemize{
-\item Update the Fargate launch type to an Auto Scaling group capacity
-provider.
+\item Update the Fargate launch type to an Auto Scaling group capacity provider.
 \item Update the Amazon EC2 launch type to a Fargate capacity provider.
-\item Update the Fargate capacity provider to an Auto Scaling group
-capacity provider.
-\item Update the Amazon EC2 capacity provider to a Fargate capacity
-provider.
-\item Update the Auto Scaling group or Fargate capacity provider back to
-the launch type.
+\item Update the Fargate capacity provider to an Auto Scaling group capacity provider.
+\item Update the Amazon EC2 capacity provider to a Fargate capacity provider.
+\item Update the Auto Scaling group or Fargate capacity provider back to the launch type.
 
 Pass an empty list in the \code{capacityProviderStrategy} parameter.
 }
 
-For information about Amazon Web Services CDK considerations, see
-\href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/update-service-parameters.html}{Amazon Web Services CDK considerations}.
+For information about Amazon Web Services CDK considerations, see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/update-service-parameters.html}{Amazon Web Services CDK considerations}.
 
 This parameter doesn't trigger a new service deployment.}
 
-\item{deploymentConfiguration}{Optional deployment parameters that control how many tasks run during
-the deployment and the ordering of stopping and starting tasks.
+\item{deploymentConfiguration}{Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.
 
 This parameter doesn't trigger a new service deployment.}
 
 \item{availabilityZoneRebalancing}{Indicates whether to use Availability Zone rebalancing for the service.
 
-For more information, see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html}{Balancing an Amazon ECS service across Availability Zones}
-in the \emph{Amazon Elastic Container Service Developer Guide} .
+For more information, see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html}{Balancing an Amazon ECS service across Availability Zones} in the \emph{Amazon Elastic Container Service Developer Guide} .
 
-The default behavior of \code{AvailabilityZoneRebalancing} differs between
-create and update requests:
+The default behavior of \code{AvailabilityZoneRebalancing} differs between create and update requests:
 \itemize{
-\item For create service requests, when no value is specified for
-\code{AvailabilityZoneRebalancing}, Amazon ECS defaults the value to
-\code{ENABLED}.
-\item For update service requests, when no value is specified for
-\code{AvailabilityZoneRebalancing}, Amazon ECS defaults to the existing
-service’s \code{AvailabilityZoneRebalancing} value. If the service never
-had an \code{AvailabilityZoneRebalancing} value set, Amazon ECS treats
-this as \code{DISABLED}.
+\item For create service requests, when no value is specified for \code{AvailabilityZoneRebalancing}, Amazon ECS defaults the value to \code{ENABLED}.
+\item For update service requests, when no value is specified for \code{AvailabilityZoneRebalancing}, Amazon ECS defaults to the existing service’s \code{AvailabilityZoneRebalancing} value. If the service never had an \code{AvailabilityZoneRebalancing} value set, Amazon ECS treats this as \code{DISABLED}.
 }
 
 This parameter doesn't trigger a new service deployment.}
@@ -115,172 +89,91 @@ This parameter doesn't trigger a new service deployment.}
 
 This parameter triggers a new service deployment.}
 
-\item{placementConstraints}{An array of task placement constraint objects to update the service to
-use. If no value is specified, the existing placement constraints for
-the service will remain unchanged. If this value is specified, it will
-override any existing placement constraints defined for the service. To
-remove all existing placement constraints, specify an empty array.
+\item{placementConstraints}{An array of task placement constraint objects to update the service to use. If no value is specified, the existing placement constraints for the service will remain unchanged. If this value is specified, it will override any existing placement constraints defined for the service. To remove all existing placement constraints, specify an empty array.
 
-You can specify a maximum of 10 constraints for each task. This limit
-includes constraints in the task definition and those specified at
-runtime.
+You can specify a maximum of 10 constraints for each task. This limit includes constraints in the task definition and those specified at runtime.
 
 This parameter doesn't trigger a new service deployment.}
 
-\item{placementStrategy}{The task placement strategy objects to update the service to use. If no
-value is specified, the existing placement strategy for the service will
-remain unchanged. If this value is specified, it will override the
-existing placement strategy defined for the service. To remove an
-existing placement strategy, specify an empty object.
+\item{placementStrategy}{The task placement strategy objects to update the service to use. If no value is specified, the existing placement strategy for the service will remain unchanged. If this value is specified, it will override the existing placement strategy defined for the service. To remove an existing placement strategy, specify an empty object.
 
 You can specify a maximum of five strategy rules for each service.
 
 This parameter doesn't trigger a new service deployment.}
 
-\item{platformVersion}{The platform version that your tasks in the service run on. A platform
-version is only specified for tasks using the Fargate launch type. If a
-platform version is not specified, the \code{LATEST} platform version is
-used. For more information, see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform-fargate.html}{Fargate Platform Versions}
-in the \emph{Amazon Elastic Container Service Developer Guide}.
+\item{platformVersion}{The platform version that your tasks in the service run on. A platform version is only specified for tasks using the Fargate launch type. If a platform version is not specified, the \code{LATEST} platform version is used. For more information, see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform-fargate.html}{Fargate Platform Versions} in the \emph{Amazon Elastic Container Service Developer Guide}.
 
 This parameter triggers a new service deployment.}
 
-\item{forceNewDeployment}{Determines whether to force a new deployment of the service. By default,
-deployments aren't forced. You can use this option to start a new
-deployment with no service definition changes. For example, you can
-update a service's tasks to use a newer Docker image with the same
-image/tag combination (\code{my_image:latest}) or to roll Fargate tasks onto
-a newer platform version.}
+\item{forceNewDeployment}{Determines whether to force a new deployment of the service. By default, deployments aren't forced. You can use this option to start a new deployment with no service definition changes. For example, you can update a service's tasks to use a newer Docker image with the same image/tag combination (\code{my_image:latest}) or to roll Fargate tasks onto a newer platform version.}
 
-\item{healthCheckGracePeriodSeconds}{The period of time, in seconds, that the Amazon ECS service scheduler
-ignores unhealthy Elastic Load Balancing, VPC Lattice, and container
-health checks after a task has first started. If you don't specify a
-health check grace period value, the default value of \code{0} is used. If
-you don't use any of the health checks, then
-\code{healthCheckGracePeriodSeconds} is unused.
+\item{healthCheckGracePeriodSeconds}{The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing, VPC Lattice, and container health checks after a task has first started. If you don't specify a health check grace period value, the default value of \code{0} is used. If you don't use any of the health checks, then \code{healthCheckGracePeriodSeconds} is unused.
 
-If your service's tasks take a while to start and respond to health
-checks, you can specify a health check grace period of up to
-2,147,483,647 seconds (about 69 years). During that time, the Amazon ECS
-service scheduler ignores health check status. This grace period can
-prevent the service scheduler from marking tasks as unhealthy and
-stopping them before they have time to come up.
+If your service's tasks take a while to start and respond to health checks, you can specify a health check grace period of up to 2,147,483,647 seconds (about 69 years). During that time, the Amazon ECS service scheduler ignores health check status. This grace period can prevent the service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
 
-If your service has more running tasks than desired, unhealthy tasks in
-the grace period might be stopped to reach the desired count.
+If your service has more running tasks than desired, unhealthy tasks in the grace period might be stopped to reach the desired count.
 
 This parameter doesn't trigger a new service deployment.}
 
-\item{deploymentController}{}
+\item{deploymentController}{The deployment controller to use for the service.}
 
-\item{enableExecuteCommand}{If \code{true}, this enables execute command functionality on all task
-containers.
+\item{enableExecuteCommand}{If \code{true}, this enables execute command functionality on all task containers.
 
-If you do not want to override the value that was set when the service
-was created, you can set this to \code{null} when performing this action.
+If you do not want to override the value that was set when the service was created, you can set this to \code{null} when performing this action.
 
 This parameter doesn't trigger a new service deployment.}
 
-\item{enableECSManagedTags}{Determines whether to turn on Amazon ECS managed tags for the tasks in
-the service. For more information, see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html}{Tagging Your Amazon ECS Resources}
-in the \emph{Amazon Elastic Container Service Developer Guide}.
+\item{enableECSManagedTags}{Determines whether to turn on Amazon ECS managed tags for the tasks in the service. For more information, see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html}{Tagging Your Amazon ECS Resources} in the \emph{Amazon Elastic Container Service Developer Guide}.
 
-Only tasks launched after the update will reflect the update. To update
-the tags on all tasks, set \code{forceNewDeployment} to \code{true}, so that
-Amazon ECS starts new tasks with the updated tags.
+Only tasks launched after the update will reflect the update. To update the tags on all tasks, set \code{forceNewDeployment} to \code{true}, so that Amazon ECS starts new tasks with the updated tags.
 
 This parameter doesn't trigger a new service deployment.}
 
 \item{loadBalancers}{You must have a service-linked role when you update this property
 
-A list of Elastic Load Balancing load balancer objects. It contains the
-load balancer name, the container name, and the container port to access
-from the load balancer. The container name is as it appears in a
-container definition.
+A list of Elastic Load Balancing load balancer objects. It contains the load balancer name, the container name, and the container port to access from the load balancer. The container name is as it appears in a container definition.
 
-When you add, update, or remove a load balancer configuration, Amazon
-ECS starts new tasks with the updated Elastic Load Balancing
-configuration, and then stops the old tasks when the new tasks are
-running.
+When you add, update, or remove a load balancer configuration, Amazon ECS starts new tasks with the updated Elastic Load Balancing configuration, and then stops the old tasks when the new tasks are running.
 
-For services that use rolling updates, you can add, update, or remove
-Elastic Load Balancing target groups. You can update from a single
-target group to multiple target groups and from multiple target groups
-to a single target group.
+For services that use rolling updates, you can add, update, or remove Elastic Load Balancing target groups. You can update from a single target group to multiple target groups and from multiple target groups to a single target group.
 
-For services that use blue/green deployments, you can update Elastic
-Load Balancing target groups by using \code{CreateDeployment} through
-CodeDeploy. Note that multiple target groups are not supported for
-blue/green deployments. For more information see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html}{Register multiple target groups with a service}
-in the \emph{Amazon Elastic Container Service Developer Guide}.
+For services that use blue/green deployments, you can update Elastic Load Balancing target groups by using \code{CreateDeployment} through CodeDeploy. Note that multiple target groups are not supported for blue/green deployments. For more information see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html}{Register multiple target groups with a service} in the \emph{Amazon Elastic Container Service Developer Guide}.
 
-For services that use the external deployment controller, you can add,
-update, or remove load balancers by using
-\code{\link[=ecs_create_task_set]{create_task_set}}. Note that multiple target
-groups are not supported for external deployments. For more information
-see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html}{Register multiple target groups with a service}
-in the \emph{Amazon Elastic Container Service Developer Guide}.
+For services that use the external deployment controller, you can add, update, or remove load balancers by using \code{\link[=ecs_create_task_set]{create_task_set}}. Note that multiple target groups are not supported for external deployments. For more information see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html}{Register multiple target groups with a service} in the \emph{Amazon Elastic Container Service Developer Guide}.
 
 You can remove existing \code{loadBalancers} by passing an empty list.
 
 This parameter triggers a new service deployment.}
 
-\item{propagateTags}{Determines whether to propagate the tags from the task definition or the
-service to the task. If no value is specified, the tags aren't
-propagated.
+\item{propagateTags}{Determines whether to propagate the tags from the task definition or the service to the task. If no value is specified, the tags aren't propagated.
 
-Only tasks launched after the update will reflect the update. To update
-the tags on all tasks, set \code{forceNewDeployment} to \code{true}, so that
-Amazon ECS starts new tasks with the updated tags.
+Only tasks launched after the update will reflect the update. To update the tags on all tasks, set \code{forceNewDeployment} to \code{true}, so that Amazon ECS starts new tasks with the updated tags.
 
 This parameter doesn't trigger a new service deployment.}
 
 \item{serviceRegistries}{You must have a service-linked role when you update this property.
 
-For more information about the role see the
-\code{\link[=ecs_create_service]{create_service}} request parameter
-\href{https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html#ECS-CreateService-request-role}{\code{role}}
-.
+For more information about the role see the \code{\link[=ecs_create_service]{create_service}} request parameter \href{https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html#ECS-CreateService-request-role}{\code{role}} .
 
-The details for the service discovery registries to assign to this
-service. For more information, see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html}{Service Discovery}.
+The details for the service discovery registries to assign to this service. For more information, see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html}{Service Discovery}.
 
-When you add, update, or remove the service registries configuration,
-Amazon ECS starts new tasks with the updated service registries
-configuration, and then stops the old tasks when the new tasks are
-running.
+When you add, update, or remove the service registries configuration, Amazon ECS starts new tasks with the updated service registries configuration, and then stops the old tasks when the new tasks are running.
 
 You can remove existing \code{serviceRegistries} by passing an empty list.
 
 This parameter triggers a new service deployment.}
 
-\item{serviceConnectConfiguration}{The configuration for this service to discover and connect to services,
-and be discovered by, and connected from, other services within a
-namespace.
+\item{serviceConnectConfiguration}{The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace.
 
-Tasks that run in a namespace can use short names to connect to services
-in the namespace. Tasks can connect to services across all of the
-clusters in the namespace. Tasks connect through a managed proxy
-container that collects logs and metrics for increased visibility. Only
-the tasks that Amazon ECS services create are supported with Service
-Connect. For more information, see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html}{Service Connect}
-in the \emph{Amazon Elastic Container Service Developer Guide}.
+Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html}{Service Connect} in the \emph{Amazon Elastic Container Service Developer Guide}.
 
 This parameter triggers a new service deployment.}
 
-\item{volumeConfigurations}{The details of the volume that was \code{configuredAtLaunch}. You can
-configure the size, volumeType, IOPS, throughput, snapshot and
-encryption in
-\href{https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ServiceManagedEBSVolumeConfiguration.html}{ServiceManagedEBSVolumeConfiguration}.
-The \code{name} of the volume must match the \code{name} from the task definition.
-If set to null, no new deployment is triggered. Otherwise, if this
-configuration differs from the existing one, it triggers a new
-deployment.
+\item{volumeConfigurations}{The details of the volume that was \code{configuredAtLaunch}. You can configure the size, volumeType, IOPS, throughput, snapshot and encryption in \href{https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ServiceManagedEBSVolumeConfiguration.html}{ServiceManagedEBSVolumeConfiguration}. The \code{name} of the volume must match the \code{name} from the task definition. If set to null, no new deployment is triggered. Otherwise, if this configuration differs from the existing one, it triggers a new deployment.
 
 This parameter triggers a new service deployment.}
 
-\item{vpcLatticeConfigurations}{An object representing the VPC Lattice configuration for the service
-being updated.
+\item{vpcLatticeConfigurations}{An object representing the VPC Lattice configuration for the service being updated.
 
 This parameter triggers a new service deployment.}
 }

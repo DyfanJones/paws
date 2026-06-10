@@ -13,13 +13,9 @@ lexmodelbuildingservice_get_bot_versions(
 \arguments{
 \item{name}{[required] The name of the bot for which versions should be returned.}
 
-\item{nextToken}{A pagination token for fetching the next page of bot versions. If the
-response to this call is truncated, Amazon Lex returns a pagination
-token in the response. To fetch the next page of versions, specify the
-pagination token in the next request.}
+\item{nextToken}{A pagination token for fetching the next page of bot versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request.}
 
-\item{maxResults}{The maximum number of bot versions to return in the response. The
-default is 10.}
+\item{maxResults}{The maximum number of bot versions to return in the response. The default is 10.}
 }
 \description{
 Gets information about all of the versions of a bot.

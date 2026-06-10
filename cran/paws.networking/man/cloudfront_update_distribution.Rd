@@ -11,8 +11,7 @@ cloudfront_update_distribution(DistributionConfig, Id, IfMatch = NULL)
 
 \item{Id}{[required] The distribution's id.}
 
-\item{IfMatch}{The value of the \code{ETag} header that you received when retrieving the
-distribution's configuration. For example: \code{E2QWRUHAPOMQZL}.}
+\item{IfMatch}{The value of the \code{ETag} header that you received when retrieving the distribution's configuration. For example: \code{E2QWRUHAPOMQZL}.}
 }
 \description{
 Updates the configuration for a CloudFront distribution.

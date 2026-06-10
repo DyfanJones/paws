@@ -13,8 +13,7 @@ bedrock_get_automated_reasoning_policy_test_result(
 \arguments{
 \item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy.}
 
-\item{buildWorkflowId}{[required] The build workflow identifier. The build workflow must display a
-\code{COMPLETED} status to get results.}
+\item{buildWorkflowId}{[required] The build workflow identifier. The build workflow must display a \code{COMPLETED} status to get results.}
 
 \item{testCaseId}{[required] The unique identifier of the test for which to retrieve results.}
 }

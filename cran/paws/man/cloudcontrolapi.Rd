@@ -53,8 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-For more information about Amazon Web Services Cloud Control API, see
-the \href{https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/what-is-cloudcontrolapi.html}{Amazon Web Services Cloud Control API User Guide}.
+For more information about Amazon Web Services Cloud Control API, see the \href{https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/what-is-cloudcontrolapi.html}{Amazon Web Services Cloud Control API User Guide}.
 }
 \section{Service syntax}{
 

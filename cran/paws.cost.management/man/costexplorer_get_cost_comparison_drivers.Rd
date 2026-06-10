@@ -18,32 +18,57 @@ costexplorer_get_cost_comparison_drivers(
 )
 }
 \arguments{
-\item{BillingViewArn}{The Amazon Resource Name (ARN) that uniquely identifies a specific
-billing view. The ARN is used to specify which particular billing view
-you want to interact with or retrieve information from when making API
-calls related to Amazon Web Services Billing and Cost Management
-features. The BillingViewArn can be retrieved by calling the
-ListBillingViews API.}
+\item{BillingViewArn}{The Amazon Resource Name (ARN) that uniquely identifies a specific billing view. The ARN is used to specify which particular billing view you want to interact with or retrieve information from when making API calls related to Amazon Web Services Billing and Cost Management features. The BillingViewArn can be retrieved by calling the ListBillingViews API.}
 
-\item{BaselineTimePeriod}{[required] The reference time period for comparison. This time period serves as the
-baseline against which other cost and usage data will be compared. The
-interval must start and end on the first day of a month, with a duration
-of exactly one month.}
+\item{BaselineTimePeriod}{[required] The reference time period for comparison. This time period serves as the baseline against which other cost and usage data will be compared. The interval must start and end on the first day of a month, with a duration of exactly one month.}
 
-\item{ComparisonTimePeriod}{[required] The comparison time period for analysis. This time period's cost and
-usage data will be compared against the baseline time period. The
-interval must start and end on the first day of a month, with a duration
-of exactly one month.}
+\item{ComparisonTimePeriod}{[required] The comparison time period for analysis. This time period's cost and usage data will be compared against the baseline time period. The interval must start and end on the first day of a month, with a duration of exactly one month.}
 
-\item{MetricForComparison}{[required] The cost and usage metric to compare. Valid values are \code{AmortizedCost},
-\code{BlendedCost}, \code{NetAmortizedCost}, \code{NetUnblendedCost},
-\code{NormalizedUsageAmount}, \code{UnblendedCost}, and \code{UsageQuantity}.}
+\item{MetricForComparison}{[required] The cost and usage metric to compare. Valid values are \code{AmortizedCost}, \code{BlendedCost}, \code{NetAmortizedCost}, \code{NetUnblendedCost}, \code{NormalizedUsageAmount}, \code{UnblendedCost}, and \code{UsageQuantity}.}
 
-\item{Filter}{}
+\item{Filter}{Use \code{Expression} to filter in various Cost Explorer APIs.
 
-\item{GroupBy}{You can group results using the attributes \code{DIMENSION}, \code{TAG}, and
-\code{COST_CATEGORY}. Note that \code{SERVICE} and \code{USAGE_TYPE} dimensions are
-automatically included in the cost comparison drivers analysis.}
+Not all \code{Expression} types are supported in each API. Refer to the documentation for each specific API to see what is supported.
+
+There are two patterns:
+\itemize{
+\item Simple dimension values.
+\itemize{
+\item There are three types of simple dimension values: \code{CostCategories}, \code{Tags}, and \code{Dimensions}.
+\itemize{
+\item Specify the \code{CostCategories} field to define a filter that acts on Cost Categories.
+\item Specify the \code{Tags} field to define a filter that acts on Cost Allocation Tags.
+\item Specify the \code{Dimensions} field to define a filter that acts on the \href{https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html}{\code{DimensionValues}} .
+}
+\item For each filter type, you can set the dimension name and values for the filters that you plan to use.
+\itemize{
+\item For example, you can filter for \verb{REGION==us-east-1 OR REGION==us-west-1}. For \code{\link[=costexplorer_get_rightsizing_recommendation]{get_rightsizing_recommendation}}, the Region is a full name (for example, \verb{REGION==US East (N. Virginia)}.
+\item The corresponding \code{Expression} for this example is as follows: \verb{\{ "Dimensions": \{ "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] \} \}}
+\item As shown in the previous example, lists of dimension values are combined with \code{OR} when applying the filter.
+}
+\item You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.
+\itemize{
+\item For example, you can filter for linked account names that start with "a".
+\item The corresponding \code{Expression} for this example is as follows: \verb{\{ "Dimensions": \{ "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] \} \}}
+}
+}
+\item Compound \code{Expression} types with logical operations.
+\itemize{
+\item You can use multiple \code{Expression} types and the logical operators \code{AND/OR/NOT} to create a list of one or more \code{Expression} objects. By doing this, you can filter by more advanced options.
+\item For example, you can filter by \verb{((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)}.
+\item The corresponding \code{Expression} for this example is as follows: \verb{\{ "And": [ \{"Or": [ \{"Dimensions": \{ "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] \}\}, \{"Tags": \{ "Key": "TagName", "Values": ["Value1"] \} \} ]\}, \{"Not": \{"Dimensions": \{ "Key": "USAGE_TYPE", "Values": ["DataTransfer"] \}\}\} ] \} }
+}
+
+Because each \code{Expression} can have only one operator, the service returns an error if more than one is specified. The following example shows an \code{Expression} object that creates an error: \verb{\{ "And": [ ... ], "Dimensions": \{ "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] \} \}}
+
+The following is an example of the corresponding error message: \code{"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"}
+}
+
+For the \code{\link[=costexplorer_get_rightsizing_recommendation]{get_rightsizing_recommendation}} action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to \code{LINKED_ACCOUNT}, \code{REGION}, or \code{RIGHTSIZING_TYPE}.
+
+For the \code{\link[=costexplorer_get_reservation_purchase_recommendation]{get_reservation_purchase_recommendation}} action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to \code{LINKED_ACCOUNT}.}
+
+\item{GroupBy}{You can group results using the attributes \code{DIMENSION}, \code{TAG}, and \code{COST_CATEGORY}. Note that \code{SERVICE} and \code{USAGE_TYPE} dimensions are automatically included in the cost comparison drivers analysis.}
 
 \item{MaxResults}{The maximum number of results that are returned for the request.}
 

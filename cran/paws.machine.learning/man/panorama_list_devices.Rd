@@ -20,13 +20,11 @@ panorama_list_devices(
 
 \item{NameFilter}{Filter based on device's name. Prefixes supported.}
 
-\item{NextToken}{Specify the pagination token from a previous request to retrieve the
-next page of results.}
+\item{NextToken}{Specify the pagination token from a previous request to retrieve the next page of results.}
 
 \item{SortBy}{The target column to be sorted on. Default column sort is CREATED_TIME.}
 
-\item{SortOrder}{The sorting order for the returned list. SortOrder is DESCENDING by
-default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.}
+\item{SortOrder}{The sorting order for the returned list. SortOrder is DESCENDING by default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.}
 }
 \description{
 Returns a list of devices.

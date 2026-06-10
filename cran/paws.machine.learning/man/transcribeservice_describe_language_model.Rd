@@ -7,8 +7,7 @@
 transcribeservice_describe_language_model(ModelName)
 }
 \arguments{
-\item{ModelName}{[required] The name of the custom language model you want information about. Model
-names are case sensitive.}
+\item{ModelName}{[required] The name of the custom language model you want information about. Model names are case sensitive.}
 }
 \description{
 Provides information about the specified custom language model.

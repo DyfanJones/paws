@@ -18,8 +18,7 @@ customerprofiles_list_object_type_attribute_values(
 \arguments{
 \item{NextToken}{The pagination token from the previous call.}
 
-\item{MaxResults}{The maximum number of objects returned per page. Valid Range: Minimum
-value of 1. Maximum value of 100. If not provided default as 100.}
+\item{MaxResults}{The maximum number of objects returned per page. Valid Range: Minimum value of 1. Maximum value of 100. If not provided default as 100.}
 
 \item{DomainName}{[required] The unique name of the domain.}
 

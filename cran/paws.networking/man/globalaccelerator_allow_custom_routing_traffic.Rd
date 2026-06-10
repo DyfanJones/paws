@@ -17,33 +17,19 @@ globalaccelerator_allow_custom_routing_traffic(
 \arguments{
 \item{EndpointGroupArn}{[required] The Amazon Resource Name (ARN) of the endpoint group.}
 
-\item{EndpointId}{[required] An ID for the endpoint. For custom routing accelerators, this is the
-virtual private cloud (VPC) subnet ID.}
+\item{EndpointId}{[required] An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.}
 
-\item{DestinationAddresses}{A list of specific Amazon EC2 instance IP addresses (destination
-addresses) in a subnet that you want to allow to receive traffic. The IP
-addresses must be a subset of the IP addresses that you specified for
-the endpoint group.
+\item{DestinationAddresses}{A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.
 
-\code{DestinationAddresses} is required if \code{AllowAllTrafficToEndpoint} is
-\code{FALSE} or is not specified.}
+\code{DestinationAddresses} is required if \code{AllowAllTrafficToEndpoint} is \code{FALSE} or is not specified.}
 
-\item{DestinationPorts}{A list of specific Amazon EC2 instance ports (destination ports) that
-you want to allow to receive traffic.}
+\item{DestinationPorts}{A list of specific Amazon EC2 instance ports (destination ports) that you want to allow to receive traffic.}
 
-\item{AllowAllTrafficToEndpoint}{Indicates whether all destination IP addresses and ports for a specified
-VPC subnet endpoint can receive traffic from a custom routing
-accelerator. The value is TRUE or FALSE.
+\item{AllowAllTrafficToEndpoint}{Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint can receive traffic from a custom routing accelerator. The value is TRUE or FALSE.
 
-When set to TRUE, \emph{all} destinations in the custom routing VPC subnet
-can receive traffic. Note that you cannot specify destination IP
-addresses and ports when the value is set to TRUE.
+When set to TRUE, \emph{all} destinations in the custom routing VPC subnet can receive traffic. Note that you cannot specify destination IP addresses and ports when the value is set to TRUE.
 
-When set to FALSE (or not specified), you \emph{must} specify a list of
-destination IP addresses that are allowed to receive traffic. A list of
-ports is optional. If you don't specify a list of ports, the ports that
-can accept traffic is the same as the ports configured for the endpoint
-group.
+When set to FALSE (or not specified), you \emph{must} specify a list of destination IP addresses that are allowed to receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is the same as the ports configured for the endpoint group.
 
 The default value is FALSE.}
 }

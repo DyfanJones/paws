@@ -10,16 +10,14 @@ lakeformation_register_resource(
   RoleArn = NULL,
   WithFederation = NULL,
   HybridAccessEnabled = NULL,
-  WithPrivilegedAccess = NULL
+  WithPrivilegedAccess = NULL,
+  ExpectedResourceOwnerAccount = NULL
 )
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource that you want to
-register.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource that you want to register.}
 
-\item{UseServiceLinkedRole}{Designates an Identity and Access Management (IAM) service-linked role
-by registering this role with the Data Catalog. A service-linked role is
-a unique type of IAM role that is linked directly to Lake Formation.
+\item{UseServiceLinkedRole}{Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.
 
 For more information, see \href{https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html}{Using Service-Linked Roles for Lake Formation}.}
 
@@ -27,12 +25,11 @@ For more information, see \href{https://docs.aws.amazon.com/lake-formation/lates
 
 \item{WithFederation}{Whether or not the resource is a federated resource.}
 
-\item{HybridAccessEnabled}{Specifies whether the data access of tables pointing to the location can
-be managed by both Lake Formation permissions as well as Amazon S3
-bucket policies.}
+\item{HybridAccessEnabled}{Specifies whether the data access of tables pointing to the location can be managed by both Lake Formation permissions as well as Amazon S3 bucket policies.}
 
-\item{WithPrivilegedAccess}{Grants the calling principal the permissions to perform all supported
-Lake Formation operations on the registered data location.}
+\item{WithPrivilegedAccess}{Grants the calling principal the permissions to perform all supported Lake Formation operations on the registered data location.}
+
+\item{ExpectedResourceOwnerAccount}{The Amazon Web Services account that owns the Glue tables associated with specific Amazon S3 locations.}
 }
 \description{
 Registers the resource as managed by the Data Catalog.

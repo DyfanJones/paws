@@ -13,13 +13,9 @@ apigateway_get_domain_name_access_associations(
 \arguments{
 \item{position}{The current pagination position in the paged result set.}
 
-\item{limit}{The maximum number of returned results per page. The default value is 25
-and the maximum value is 500.}
+\item{limit}{The maximum number of returned results per page. The default value is 25 and the maximum value is 500.}
 
-\item{resourceOwner}{The owner of the domain name access association. Use \code{SELF} to only list
-the domain name access associations owned by your own account. Use
-\code{OTHER_ACCOUNTS} to list the domain name access associations with your
-private custom domain names that are owned by other AWS accounts.}
+\item{resourceOwner}{The owner of the domain name access association. Use \code{SELF} to only list the domain name access associations owned by your own account. Use \code{OTHER_ACCOUNTS} to list the domain name access associations with your private custom domain names that are owned by other AWS accounts.}
 }
 \description{
 Represents a collection on DomainNameAccessAssociations resources.

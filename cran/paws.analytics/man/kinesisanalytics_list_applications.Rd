@@ -13,10 +13,7 @@ kinesisanalytics_list_applications(
 \arguments{
 \item{Limit}{Maximum number of applications to list.}
 
-\item{ExclusiveStartApplicationName}{Name of the application to start the list with. When using pagination to
-retrieve the list, you don't need to specify this parameter in the first
-request. However, in subsequent requests, you add the last application
-name from the previous response to get the next page of applications.}
+\item{ExclusiveStartApplicationName}{Name of the application to start the list with. When using pagination to retrieve the list, you don't need to specify this parameter in the first request. However, in subsequent requests, you add the last application name from the previous response to get the next page of applications.}
 }
 \description{
 This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see Amazon Kinesis Data Analytics API V2 Documentation.

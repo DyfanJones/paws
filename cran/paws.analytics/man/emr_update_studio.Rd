@@ -21,17 +21,11 @@ emr_update_studio(
 
 \item{Description}{A detailed description to assign to the Amazon EMR Studio.}
 
-\item{SubnetIds}{A list of subnet IDs to associate with the Amazon EMR Studio. The list
-can include new subnet IDs, but must also include all of the subnet IDs
-previously associated with the Studio. The list order does not matter. A
-Studio can have a maximum of 5 subnets. The subnets must belong to the
-same VPC as the Studio.}
+\item{SubnetIds}{A list of subnet IDs to associate with the Amazon EMR Studio. The list can include new subnet IDs, but must also include all of the subnet IDs previously associated with the Studio. The list order does not matter. A Studio can have a maximum of 5 subnets. The subnets must belong to the same VPC as the Studio.}
 
-\item{DefaultS3Location}{The Amazon S3 location to back up Workspaces and notebook files for the
-Amazon EMR Studio.}
+\item{DefaultS3Location}{The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.}
 
-\item{EncryptionKeyArn}{The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace
-and notebook files when backed up to Amazon S3.}
+\item{EncryptionKeyArn}{The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.}
 }
 \description{
 Updates an Amazon EMR Studio configuration, including attributes such as name, description, and subnets.

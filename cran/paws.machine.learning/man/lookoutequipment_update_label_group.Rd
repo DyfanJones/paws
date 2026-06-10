@@ -9,11 +9,9 @@ lookoutequipment_update_label_group(LabelGroupName, FaultCodes = NULL)
 \arguments{
 \item{LabelGroupName}{[required] The name of the label group to be updated.}
 
-\item{FaultCodes}{Updates the code indicating the type of anomaly associated with the
-label.
+\item{FaultCodes}{Updates the code indicating the type of anomaly associated with the label.
 
-Data in this field will be retained for service usage. Follow best
-practices for the security of your data.}
+Data in this field will be retained for service usage. Follow best practices for the security of your data.}
 }
 \description{
 Updates the label group.

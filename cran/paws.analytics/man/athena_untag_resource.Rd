@@ -9,8 +9,7 @@ athena_untag_resource(ResourceARN, TagKeys)
 \arguments{
 \item{ResourceARN}{[required] Specifies the ARN of the resource from which tags are to be removed.}
 
-\item{TagKeys}{[required] A comma-separated list of one or more tag keys whose tags are to be
-removed from the specified resource.}
+\item{TagKeys}{[required] A comma-separated list of one or more tag keys whose tags are to be removed from the specified resource.}
 }
 \description{
 Removes one or more tags from an Athena resource.

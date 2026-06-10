@@ -9,23 +9,12 @@ codedeploy_batch_get_deployment_targets(deploymentId, targetIds)
 \arguments{
 \item{deploymentId}{[required] The unique ID of a deployment.}
 
-\item{targetIds}{[required] The unique IDs of the deployment targets. The compute platform of the
-deployment determines the type of the targets and their formats. The
-maximum number of deployment target IDs you can specify is 25.
+\item{targetIds}{[required] The unique IDs of the deployment targets. The compute platform of the deployment determines the type of the targets and their formats. The maximum number of deployment target IDs you can specify is 25.
 \itemize{
-\item For deployments that use the EC2/On-premises compute platform, the
-target IDs are Amazon EC2 or on-premises instances IDs, and their
-target type is \code{instanceTarget}.
-\item For deployments that use the Lambda compute platform, the target IDs
-are the names of Lambda functions, and their target type is
-\code{instanceTarget}.
-\item For deployments that use the Amazon ECS compute platform, the target
-IDs are pairs of Amazon ECS clusters and services specified using
-the format \verb{<clustername>:<servicename>}. Their target type is
-\code{ecsTarget}.
-\item For deployments that are deployed with CloudFormation, the target
-IDs are CloudFormation stack IDs. Their target type is
-\code{cloudFormationTarget}.
+\item For deployments that use the EC2/On-premises compute platform, the target IDs are Amazon EC2 or on-premises instances IDs, and their target type is \code{instanceTarget}.
+\item For deployments that use the Lambda compute platform, the target IDs are the names of Lambda functions, and their target type is \code{instanceTarget}.
+\item For deployments that use the Amazon ECS compute platform, the target IDs are pairs of Amazon ECS clusters and services specified using the format \verb{<clustername>:<servicename>}. Their target type is \code{ecsTarget}.
+\item For deployments that are deployed with CloudFormation, the target IDs are CloudFormation stack IDs. Their target type is \code{cloudFormationTarget}.
 }}
 }
 \description{

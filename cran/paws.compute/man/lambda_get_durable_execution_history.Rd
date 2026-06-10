@@ -16,22 +16,13 @@ lambda_get_durable_execution_history(
 \arguments{
 \item{DurableExecutionArn}{[required] The Amazon Resource Name (ARN) of the durable execution.}
 
-\item{IncludeExecutionData}{Specifies whether to include execution data such as step results and
-callback payloads in the history events. Set to \code{true} to include data,
-or \code{false} to exclude it for a more compact response. The default is
-\code{true}.}
+\item{IncludeExecutionData}{Specifies whether to include execution data such as step results and callback payloads in the history events. Set to \code{true} to include data, or \code{false} to exclude it for a more compact response. The default is \code{true}.}
 
-\item{MaxItems}{The maximum number of history events to return per call. You can use
-\code{Marker} to retrieve additional pages of results. The default is 100 and
-the maximum allowed is 1000. A value of 0 uses the default.}
+\item{MaxItems}{The maximum number of history events to return per call. You can use \code{Marker} to retrieve additional pages of results. The default is 100 and the maximum allowed is 1000. A value of 0 uses the default.}
 
-\item{Marker}{If \code{NextMarker} was returned from a previous request, use this value to
-retrieve the next page of results. Each pagination token expires after
-24 hours.}
+\item{Marker}{If \code{NextMarker} was returned from a previous request, use this value to retrieve the next page of results. Each pagination token expires after 24 hours.}
 
-\item{ReverseOrder}{When set to \code{true}, returns the history events in reverse chronological
-order (newest first). By default, events are returned in chronological
-order (oldest first).}
+\item{ReverseOrder}{When set to \code{true}, returns the history events in reverse chronological order (newest first). By default, events are returned in chronological order (oldest first).}
 }
 \description{
 Retrieves the execution history for a \href{https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html}{durable execution}, showing all the steps, callbacks, and events that occurred during the execution. This provides a detailed audit trail of the execution's progress over time.

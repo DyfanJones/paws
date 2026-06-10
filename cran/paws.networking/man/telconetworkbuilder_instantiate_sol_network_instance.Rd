@@ -14,18 +14,11 @@ telconetworkbuilder_instantiate_sol_network_instance(
 \arguments{
 \item{additionalParamsForNs}{Provides values for the configurable properties.}
 
-\item{dryRun}{A check for whether you have the required permissions for the action
-without actually making the request and provides an error response. If
-you have the required permissions, the error response is
-\code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
+\item{dryRun}{A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
 \item{nsInstanceId}{[required] ID of the network instance.}
 
-\item{tags}{A tag is a label that you assign to an Amazon Web Services resource.
-Each tag consists of a key and an optional value. When you use this API,
-the tags are only applied to the network operation that is created.
-These tags are not applied to the network instance. Use tags to search
-and filter your resources or track your Amazon Web Services costs.}
+\item{tags}{A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are only applied to the network operation that is created. These tags are not applied to the network instance. Use tags to search and filter your resources or track your Amazon Web Services costs.}
 }
 \description{
 Instantiates a network instance.

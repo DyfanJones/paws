@@ -8,8 +8,7 @@ Bedrock Marketplace}
 bedrock_get_marketplace_model_endpoint(endpointArn)
 }
 \arguments{
-\item{endpointArn}{[required] The Amazon Resource Name (ARN) of the endpoint you want to get
-information about.}
+\item{endpointArn}{[required] The Amazon Resource Name (ARN) of the endpoint you want to get information about.}
 }
 \description{
 Retrieves details about a specific endpoint for a model from Amazon Bedrock Marketplace.

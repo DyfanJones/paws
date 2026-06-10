@@ -10,12 +10,9 @@ requirements for the pull request}
 codecommit_get_pull_request_override_state(pullRequestId, revisionId)
 }
 \arguments{
-\item{pullRequestId}{[required] The ID of the pull request for which you want to get information about
-whether approval rules have been set aside (overridden).}
+\item{pullRequestId}{[required] The ID of the pull request for which you want to get information about whether approval rules have been set aside (overridden).}
 
-\item{revisionId}{[required] The system-generated ID of the revision for the pull request. To
-retrieve the most recent revision ID, use
-\code{\link[=codecommit_get_pull_request]{get_pull_request}}.}
+\item{revisionId}{[required] The system-generated ID of the revision for the pull request. To retrieve the most recent revision ID, use \code{\link[=codecommit_get_pull_request]{get_pull_request}}.}
 }
 \description{
 Returns information about whether approval rules have been set aside (overridden) for a pull request, and if so, the Amazon Resource Name (ARN) of the user or identity that overrode the rules and their requirements for the pull request.

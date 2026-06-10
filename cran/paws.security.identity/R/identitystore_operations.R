@@ -11,10 +11,7 @@ NULL
 #' See [https://www.paws-r-sdk.com/docs/identitystore_create_group/](https://www.paws-r-sdk.com/docs/identitystore_create_group/) for full documentation.
 #'
 #' @param IdentityStoreId &#91;required&#93; The globally unique identifier for the identity store.
-#' @param DisplayName A string containing the name of the group. This value is commonly
-#' displayed when the group is referenced. `Administrator` and
-#' `AWSAdministrators` are reserved names and can't be used for users or
-#' groups.
+#' @param DisplayName A string containing the name of the group. This value is commonly displayed when the group is referenced. `Administrator` and `AWSAdministrators` are reserved names and can't be used for users or groups.
 #' @param Description A string containing the description of the group.
 #'
 #' @keywords internal
@@ -48,9 +45,7 @@ identitystore_create_group <- function(IdentityStoreId, DisplayName = NULL, Desc
 #'
 #' @param IdentityStoreId &#91;required&#93; The globally unique identifier for the identity store.
 #' @param GroupId &#91;required&#93; The identifier for a group in the identity store.
-#' @param MemberId &#91;required&#93; An object that contains the identifier of a group member. Setting the
-#' `UserID` field to the specific identifier for a user indicates that the
-#' user is a member of the group.
+#' @param MemberId &#91;required&#93; An object that contains the identifier of a group member. Setting the `UserID` field to the specific identifier for a user indicates that the user is a member of the group.
 #'
 #' @keywords internal
 #'
@@ -82,50 +77,29 @@ identitystore_create_group_membership <- function(IdentityStoreId, GroupId, Memb
 #' See [https://www.paws-r-sdk.com/docs/identitystore_create_user/](https://www.paws-r-sdk.com/docs/identitystore_create_user/) for full documentation.
 #'
 #' @param IdentityStoreId &#91;required&#93; The globally unique identifier for the identity store.
-#' @param UserName A unique string used to identify the user. The length limit is 128
-#' characters. This value can consist of letters, accented characters,
-#' symbols, numbers, and punctuation. This value is specified at the time
-#' the user is created and stored as an attribute of the user object in the
-#' identity store. `Administrator` and `AWSAdministrators` are reserved
-#' names and can't be used for users or groups.
-#' @param Name An object containing the name of the user. When used in IAM Identity
-#' Center, this parameter is required.
-#' @param DisplayName A string containing the name of the user. This value is typically
-#' formatted for display when the user is referenced. For example, "John
-#' Doe." When used in IAM Identity Center, this parameter is required.
+#' @param UserName A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store. `Administrator` and `AWSAdministrators` are reserved names and can't be used for users or groups.
+#' @param Name An object containing the name of the user. When used in IAM Identity Center, this parameter is required.
+#' @param DisplayName A string containing the name of the user. This value is typically formatted for display when the user is referenced. For example, "John Doe." When used in IAM Identity Center, this parameter is required.
 #' @param NickName A string containing an alternate name for the user.
 #' @param ProfileUrl A string containing a URL that might be associated with the user.
-#' @param Emails A list of `Email` objects containing email addresses associated with the
-#' user.
-#' @param Addresses A list of `Address` objects containing addresses associated with the
-#' user.
-#' @param PhoneNumbers A list of `PhoneNumber` objects containing phone numbers associated with
-#' the user.
-#' @param UserType A string indicating the type of user. Possible values are left
-#' unspecified. The value can vary based on your specific use case.
-#' @param Title A string containing the title of the user. Possible values are left
-#' unspecified. The value can vary based on your specific use case.
-#' @param PreferredLanguage A string containing the preferred language of the user. For example,
-#' "American English" or "en-us."
+#' @param Emails A list of `Email` objects containing email addresses associated with the user.
+#' @param Addresses A list of `Address` objects containing addresses associated with the user.
+#' @param PhoneNumbers A list of `PhoneNumber` objects containing phone numbers associated with the user.
+#' @param UserType A string indicating the type of user. Possible values are left unspecified. The value can vary based on your specific use case.
+#' @param Title A string containing the title of the user. Possible values are left unspecified. The value can vary based on your specific use case.
+#' @param PreferredLanguage A string containing the preferred language of the user. For example, "American English" or "en-us."
 #' @param Locale A string containing the geographical region or location of the user.
 #' @param Timezone A string containing the time zone of the user.
-#' @param Photos A list of photos associated with the user. You can add up to 3 photos
-#' per user. Each photo can include a value, type, display name, and
-#' primary designation.
-#' @param Website The user's personal website or blog URL. This field allows users to
-#' provide a link to their personal or professional website.
-#' @param Birthdate The user's birthdate in YYYY-MM-DD format. This field supports standard
-#' date format for storing personal information.
-#' @param Extensions A map with additional attribute extensions for the user. Each map key
-#' corresponds to an extension name, while map values represent extension
-#' data in `Document` type (not supported by Java V1, Go V1 and older
-#' versions of the CLI). `aws:identitystore:enterprise` is the only
-#' supported extension name.
+#' @param Photos A list of photos associated with the user. You can add up to 3 photos per user. Each photo can include a value, type, display name, and primary designation.
+#' @param Website The user's personal website or blog URL. This field allows users to provide a link to their personal or professional website.
+#' @param Birthdate The user's birthdate in YYYY-MM-DD format. This field supports standard date format for storing personal information.
+#' @param Roles A list of `Role` objects containing roles associated with the user.
+#' @param Extensions A map with additional attribute extensions for the user. Each map key corresponds to an extension name, while map values represent extension data in `Document` type (not supported by Java V1, Go V1 and older versions of the CLI). `aws:identitystore:enterprise` is the only supported extension name.
 #'
 #' @keywords internal
 #'
 #' @rdname identitystore_create_user
-identitystore_create_user <- function(IdentityStoreId, UserName = NULL, Name = NULL, DisplayName = NULL, NickName = NULL, ProfileUrl = NULL, Emails = NULL, Addresses = NULL, PhoneNumbers = NULL, UserType = NULL, Title = NULL, PreferredLanguage = NULL, Locale = NULL, Timezone = NULL, Photos = NULL, Website = NULL, Birthdate = NULL, Extensions = NULL) {
+identitystore_create_user <- function(IdentityStoreId, UserName = NULL, Name = NULL, DisplayName = NULL, NickName = NULL, ProfileUrl = NULL, Emails = NULL, Addresses = NULL, PhoneNumbers = NULL, UserType = NULL, Title = NULL, PreferredLanguage = NULL, Locale = NULL, Timezone = NULL, Photos = NULL, Website = NULL, Birthdate = NULL, Roles = NULL, Extensions = NULL) {
   op <- new_operation(
     name = "CreateUser",
     http_method = "POST",
@@ -134,7 +108,7 @@ identitystore_create_user <- function(IdentityStoreId, UserName = NULL, Name = N
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .identitystore$create_user_input(IdentityStoreId = IdentityStoreId, UserName = UserName, Name = Name, DisplayName = DisplayName, NickName = NickName, ProfileUrl = ProfileUrl, Emails = Emails, Addresses = Addresses, PhoneNumbers = PhoneNumbers, UserType = UserType, Title = Title, PreferredLanguage = PreferredLanguage, Locale = Locale, Timezone = Timezone, Photos = Photos, Website = Website, Birthdate = Birthdate, Extensions = Extensions)
+  input <- .identitystore$create_user_input(IdentityStoreId = IdentityStoreId, UserName = UserName, Name = Name, DisplayName = DisplayName, NickName = NickName, ProfileUrl = ProfileUrl, Emails = Emails, Addresses = Addresses, PhoneNumbers = PhoneNumbers, UserType = UserType, Title = Title, PreferredLanguage = PreferredLanguage, Locale = Locale, Timezone = Timezone, Photos = Photos, Website = Website, Birthdate = Birthdate, Roles = Roles, Extensions = Extensions)
   output <- .identitystore$create_user_output()
   config <- get_config()
   svc <- .identitystore$service(config, op)
@@ -248,11 +222,7 @@ identitystore_delete_user <- function(IdentityStoreId, UserId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/identitystore_describe_group/](https://www.paws-r-sdk.com/docs/identitystore_describe_group/) for full documentation.
 #'
-#' @param IdentityStoreId &#91;required&#93; The globally unique identifier for the identity store, such as
-#' `d-1234567890`. In this example, `d-` is a fixed prefix, and
-#' `1234567890` is a randomly generated string that contains numbers and
-#' lower case letters. This value is generated at the time that a new
-#' identity store is created.
+#' @param IdentityStoreId &#91;required&#93; The globally unique identifier for the identity store, such as `d-1234567890`. In this example, `d-` is a fixed prefix, and `1234567890` is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.
 #' @param GroupId &#91;required&#93; The identifier for a group in the identity store.
 #'
 #' @keywords internal
@@ -318,15 +288,9 @@ identitystore_describe_group_membership <- function(IdentityStoreId, MembershipI
 #'
 #' See [https://www.paws-r-sdk.com/docs/identitystore_describe_user/](https://www.paws-r-sdk.com/docs/identitystore_describe_user/) for full documentation.
 #'
-#' @param IdentityStoreId &#91;required&#93; The globally unique identifier for the identity store, such as
-#' `d-1234567890`. In this example, `d-` is a fixed prefix, and
-#' `1234567890` is a randomly generated string that contains numbers and
-#' lower case letters. This value is generated at the time that a new
-#' identity store is created.
+#' @param IdentityStoreId &#91;required&#93; The globally unique identifier for the identity store, such as `d-1234567890`. In this example, `d-` is a fixed prefix, and `1234567890` is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.
 #' @param UserId &#91;required&#93; The identifier for a user in the identity store.
-#' @param Extensions A collection of extension names indicating what extensions the service
-#' should retrieve alongside other user attributes.
-#' `aws:identitystore:enterprise` is the only supported extension name.
+#' @param Extensions A collection of extension names indicating what extensions the service should retrieve alongside other user attributes. `aws:identitystore:enterprise` is the only supported extension name.
 #'
 #' @keywords internal
 #'
@@ -358,11 +322,7 @@ identitystore_describe_user <- function(IdentityStoreId, UserId, Extensions = NU
 #' See [https://www.paws-r-sdk.com/docs/identitystore_get_group_id/](https://www.paws-r-sdk.com/docs/identitystore_get_group_id/) for full documentation.
 #'
 #' @param IdentityStoreId &#91;required&#93; The globally unique identifier for the identity store.
-#' @param AlternateIdentifier &#91;required&#93; A unique identifier for a user or group that is not the primary
-#' identifier. This value can be an identifier from an external identity
-#' provider (IdP) that is associated with the user, the group, or a unique
-#' attribute. For the unique attribute, the only valid path is
-#' ` displayName`.
+#' @param AlternateIdentifier &#91;required&#93; A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is ` displayName`.
 #'
 #' @keywords internal
 #'
@@ -395,9 +355,7 @@ identitystore_get_group_id <- function(IdentityStoreId, AlternateIdentifier) {
 #'
 #' @param IdentityStoreId &#91;required&#93; The globally unique identifier for the identity store.
 #' @param GroupId &#91;required&#93; The identifier for a group in the identity store.
-#' @param MemberId &#91;required&#93; An object that contains the identifier of a group member. Setting the
-#' `UserID` field to the specific identifier for a user indicates that the
-#' user is a member of the group.
+#' @param MemberId &#91;required&#93; An object that contains the identifier of a group member. Setting the `UserID` field to the specific identifier for a user indicates that the user is a member of the group.
 #'
 #' @keywords internal
 #'
@@ -429,11 +387,7 @@ identitystore_get_group_membership_id <- function(IdentityStoreId, GroupId, Memb
 #' See [https://www.paws-r-sdk.com/docs/identitystore_get_user_id/](https://www.paws-r-sdk.com/docs/identitystore_get_user_id/) for full documentation.
 #'
 #' @param IdentityStoreId &#91;required&#93; The globally unique identifier for the identity store.
-#' @param AlternateIdentifier &#91;required&#93; A unique identifier for a user or group that is not the primary
-#' identifier. This value can be an identifier from an external identity
-#' provider (IdP) that is associated with the user, the group, or a unique
-#' attribute. For the unique attribute, the only valid paths are
-#' ` userName` and `emails.value`.
+#' @param AlternateIdentifier &#91;required&#93; A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid paths are ` userName` and `emails.value`.
 #'
 #' @keywords internal
 #'
@@ -502,17 +456,8 @@ identitystore_is_member_in_groups <- function(IdentityStoreId, MemberId, GroupId
 #'
 #' @param IdentityStoreId &#91;required&#93; The globally unique identifier for the identity store.
 #' @param GroupId &#91;required&#93; The identifier for a group in the identity store.
-#' @param MaxResults The maximum number of results to be returned per request. This parameter
-#' is used in all ` List` requests to specify how many results to return in
-#' one page.
-#' @param NextToken The pagination token used for the
-#' [`list_users`][identitystore_list_users],
-#' [`list_groups`][identitystore_list_groups] and
-#' [`list_group_memberships`][identitystore_list_group_memberships] API
-#' operations. This value is generated by the identity store service. It is
-#' returned in the API response if the total results are more than the size
-#' of one page. This token is also returned when it is used in the API
-#' request to search for the next page.
+#' @param MaxResults The maximum number of results to be returned per request. This parameter is used in all ` List` requests to specify how many results to return in one page.
+#' @param NextToken The pagination token used for the [`list_users`][identitystore_list_users], [`list_groups`][identitystore_list_groups] and [`list_group_memberships`][identitystore_list_group_memberships] API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.
 #'
 #' @keywords internal
 #'
@@ -546,21 +491,9 @@ identitystore_list_group_memberships <- function(IdentityStoreId, GroupId, MaxRe
 #' See [https://www.paws-r-sdk.com/docs/identitystore_list_group_memberships_for_member/](https://www.paws-r-sdk.com/docs/identitystore_list_group_memberships_for_member/) for full documentation.
 #'
 #' @param IdentityStoreId &#91;required&#93; The globally unique identifier for the identity store.
-#' @param MemberId &#91;required&#93; An object that contains the identifier of a group member. Setting the
-#' `UserID` field to the specific identifier for a user indicates that the
-#' user is a member of the group.
-#' @param MaxResults The maximum number of results to be returned per request. This parameter
-#' is used in the [`list_users`][identitystore_list_users] and
-#' [`list_groups`][identitystore_list_groups] requests to specify how many
-#' results to return in one page. The length limit is 50 characters.
-#' @param NextToken The pagination token used for the
-#' [`list_users`][identitystore_list_users],
-#' [`list_groups`][identitystore_list_groups], and
-#' [`list_group_memberships`][identitystore_list_group_memberships] API
-#' operations. This value is generated by the identity store service. It is
-#' returned in the API response if the total results are more than the size
-#' of one page. This token is also returned when it is used in the API
-#' request to search for the next page.
+#' @param MemberId &#91;required&#93; An object that contains the identifier of a group member. Setting the `UserID` field to the specific identifier for a user indicates that the user is a member of the group.
+#' @param MaxResults The maximum number of results to be returned per request. This parameter is used in the [`list_users`][identitystore_list_users] and [`list_groups`][identitystore_list_groups] requests to specify how many results to return in one page. The length limit is 50 characters.
+#' @param NextToken The pagination token used for the [`list_users`][identitystore_list_users], [`list_groups`][identitystore_list_groups], and [`list_group_memberships`][identitystore_list_group_memberships] API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.
 #'
 #' @keywords internal
 #'
@@ -591,25 +524,10 @@ identitystore_list_group_memberships_for_member <- function(IdentityStoreId, Mem
 #'
 #' See [https://www.paws-r-sdk.com/docs/identitystore_list_groups/](https://www.paws-r-sdk.com/docs/identitystore_list_groups/) for full documentation.
 #'
-#' @param IdentityStoreId &#91;required&#93; The globally unique identifier for the identity store, such as
-#' `d-1234567890`. In this example, `d-` is a fixed prefix, and
-#' `1234567890` is a randomly generated string that contains numbers and
-#' lower case letters. This value is generated at the time that a new
-#' identity store is created.
-#' @param MaxResults The maximum number of results to be returned per request. This parameter
-#' is used in the [`list_users`][identitystore_list_users] and
-#' [`list_groups`][identitystore_list_groups] requests to specify how many
-#' results to return in one page. The length limit is 50 characters.
-#' @param NextToken The pagination token used for the
-#' [`list_users`][identitystore_list_users] and
-#' [`list_groups`][identitystore_list_groups] API operations. This value is
-#' generated by the identity store service. It is returned in the API
-#' response if the total results are more than the size of one page. This
-#' token is also returned when it is used in the API request to search for
-#' the next page.
-#' @param Filters A list of `Filter` objects, which is used in the
-#' [`list_users`][identitystore_list_users] and
-#' [`list_groups`][identitystore_list_groups] requests.
+#' @param IdentityStoreId &#91;required&#93; The globally unique identifier for the identity store, such as `d-1234567890`. In this example, `d-` is a fixed prefix, and `1234567890` is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.
+#' @param MaxResults The maximum number of results to be returned per request. This parameter is used in the [`list_users`][identitystore_list_users] and [`list_groups`][identitystore_list_groups] requests to specify how many results to return in one page. The length limit is 50 characters.
+#' @param NextToken The pagination token used for the [`list_users`][identitystore_list_users] and [`list_groups`][identitystore_list_groups] API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.
+#' @param Filters A list of `Filter` objects, which is used in the [`list_users`][identitystore_list_users] and [`list_groups`][identitystore_list_groups] requests.
 #'
 #' @keywords internal
 #'
@@ -640,28 +558,11 @@ identitystore_list_groups <- function(IdentityStoreId, MaxResults = NULL, NextTo
 #'
 #' See [https://www.paws-r-sdk.com/docs/identitystore_list_users/](https://www.paws-r-sdk.com/docs/identitystore_list_users/) for full documentation.
 #'
-#' @param IdentityStoreId &#91;required&#93; The globally unique identifier for the identity store, such as
-#' `d-1234567890`. In this example, `d-` is a fixed prefix, and
-#' `1234567890` is a randomly generated string that contains numbers and
-#' lower case letters. This value is generated at the time that a new
-#' identity store is created.
-#' @param Extensions A collection of extension names indicating what extensions the service
-#' should retrieve alongside other user attributes.
-#' `aws:identitystore:enterprise` is the only supported extension name.
-#' @param MaxResults The maximum number of results to be returned per request. This parameter
-#' is used in the [`list_users`][identitystore_list_users] and
-#' [`list_groups`][identitystore_list_groups] requests to specify how many
-#' results to return in one page. The length limit is 50 characters.
-#' @param NextToken The pagination token used for the
-#' [`list_users`][identitystore_list_users] and
-#' [`list_groups`][identitystore_list_groups] API operations. This value is
-#' generated by the identity store service. It is returned in the API
-#' response if the total results are more than the size of one page. This
-#' token is also returned when it is used in the API request to search for
-#' the next page.
-#' @param Filters A list of `Filter` objects, which is used in the
-#' [`list_users`][identitystore_list_users] and
-#' [`list_groups`][identitystore_list_groups] requests.
+#' @param IdentityStoreId &#91;required&#93; The globally unique identifier for the identity store, such as `d-1234567890`. In this example, `d-` is a fixed prefix, and `1234567890` is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.
+#' @param Extensions A collection of extension names indicating what extensions the service should retrieve alongside other user attributes. `aws:identitystore:enterprise` is the only supported extension name.
+#' @param MaxResults The maximum number of results to be returned per request. This parameter is used in the [`list_users`][identitystore_list_users] and [`list_groups`][identitystore_list_groups] requests to specify how many results to return in one page. The length limit is 50 characters.
+#' @param NextToken The pagination token used for the [`list_users`][identitystore_list_users] and [`list_groups`][identitystore_list_groups] API operations. This value is generated by the identity store service. It is returned in the API response if the total results are more than the size of one page. This token is also returned when it is used in the API request to search for the next page.
+#' @param Filters A list of `Filter` objects, which is used in the [`list_users`][identitystore_list_users] and [`list_groups`][identitystore_list_groups] requests.
 #'
 #' @keywords internal
 #'
@@ -695,11 +596,7 @@ identitystore_list_users <- function(IdentityStoreId, Extensions = NULL, MaxResu
 #'
 #' @param IdentityStoreId &#91;required&#93; The globally unique identifier for the identity store.
 #' @param GroupId &#91;required&#93; The identifier for a group in the identity store.
-#' @param Operations &#91;required&#93; A list of `AttributeOperation` objects to apply to the requested group.
-#' These operations might add, replace, or remove an attribute. For more
-#' information on the attributes that can be added, replaced, or removed,
-#' see
-#' [Group](https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html).
+#' @param Operations &#91;required&#93; A list of `AttributeOperation` objects to apply to the requested group. These operations might add, replace, or remove an attribute. For more information on the attributes that can be added, replaced, or removed, see [Group](https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html).
 #'
 #' @keywords internal
 #'
@@ -733,11 +630,7 @@ identitystore_update_group <- function(IdentityStoreId, GroupId, Operations) {
 #'
 #' @param IdentityStoreId &#91;required&#93; The globally unique identifier for the identity store.
 #' @param UserId &#91;required&#93; The identifier for a user in the identity store.
-#' @param Operations &#91;required&#93; A list of `AttributeOperation` objects to apply to the requested user.
-#' These operations might add, replace, or remove an attribute. For more
-#' information on the attributes that can be added, replaced, or removed,
-#' see
-#' [User](https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html).
+#' @param Operations &#91;required&#93; A list of `AttributeOperation` objects to apply to the requested user. These operations might add, replace, or remove an attribute. For more information on the attributes that can be added, replaced, or removed, see [User](https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html).
 #'
 #' @keywords internal
 #'

@@ -7,8 +7,7 @@
 bedrockagentruntime_delete_session(sessionIdentifier)
 }
 \arguments{
-\item{sessionIdentifier}{[required] The unique identifier for the session to be deleted. You can specify
-either the session's \code{sessionId} or its Amazon Resource Name (ARN).}
+\item{sessionIdentifier}{[required] The unique identifier for the session to be deleted. You can specify either the session's \code{sessionId} or its Amazon Resource Name (ARN).}
 }
 \description{
 Deletes a session that you ended. You can't delete a session with an \code{ACTIVE} status. To delete an active session, you must first end it with the \code{\link[=bedrockagentruntime_end_session]{end_session}} API operation. For more information about sessions, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html}{Store and retrieve conversation history and context with Amazon Bedrock sessions}.

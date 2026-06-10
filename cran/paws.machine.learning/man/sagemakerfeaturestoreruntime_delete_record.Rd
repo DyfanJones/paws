@@ -13,21 +13,15 @@ sagemakerfeaturestoreruntime_delete_record(
 )
 }
 \arguments{
-\item{FeatureGroupName}{[required] The name or Amazon Resource Name (ARN) of the feature group to delete
-the record from.}
+\item{FeatureGroupName}{[required] The name or Amazon Resource Name (ARN) of the feature group to delete the record from.}
 
-\item{RecordIdentifierValueAsString}{[required] The value for the \code{RecordIdentifier} that uniquely identifies the
-record, in string format.}
+\item{RecordIdentifierValueAsString}{[required] The value for the \code{RecordIdentifier} that uniquely identifies the record, in string format.}
 
-\item{EventTime}{[required] Timestamp indicating when the deletion event occurred. \code{EventTime} can
-be used to query data at a certain point in time.}
+\item{EventTime}{[required] Timestamp indicating when the deletion event occurred. \code{EventTime} can be used to query data at a certain point in time.}
 
-\item{TargetStores}{A list of stores from which you're deleting the record. By default,
-Feature Store deletes the record from all of the stores that you're
-using for the \code{FeatureGroup}.}
+\item{TargetStores}{A list of stores from which you're deleting the record. By default, Feature Store deletes the record from all of the stores that you're using for the \code{FeatureGroup}.}
 
-\item{DeletionMode}{The name of the deletion mode for deleting the record. By default, the
-deletion mode is set to \code{SoftDelete}.}
+\item{DeletionMode}{The name of the deletion mode for deleting the record. By default, the deletion mode is set to \code{SoftDelete}.}
 }
 \description{
 Deletes a \code{Record} from a \code{FeatureGroup} in the \code{OnlineStore}. Feature Store supports both \code{SoftDelete} and \code{HardDelete}. For \code{SoftDelete} (default), feature columns are set to \code{null} and the record is no longer retrievable by \code{\link[=sagemakerfeaturestoreruntime_get_record]{get_record}} or \code{\link[=sagemakerfeaturestoreruntime_batch_get_record]{batch_get_record}}. For \code{HardDelete}, the complete \code{Record} is removed from the \code{OnlineStore}. In both cases, Feature Store appends the deleted record marker to the \code{OfflineStore}. The deleted record marker is a record with the same \code{RecordIdentifer} as the original, but with \code{is_deleted} value set to \code{True}, \code{EventTime} set to the delete input \code{EventTime}, and other feature values set to \code{null}.

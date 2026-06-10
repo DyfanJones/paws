@@ -50,9 +50,7 @@ Operations section.
 \description{
 \strong{Overview}
 
-This is the \emph{AWS Panorama API Reference}. For an introduction to the
-service, see \href{https://docs.aws.amazon.com/panorama/latest/dev/panorama-welcome.html}{What is AWS Panorama?}
-in the \emph{AWS Panorama Developer Guide}.
+This is the \emph{AWS Panorama API Reference}. For an introduction to the service, see \href{https://docs.aws.amazon.com/panorama/latest/dev/panorama-welcome.html}{What is AWS Panorama?} in the \emph{AWS Panorama Developer Guide}.
 }
 \section{Service syntax}{
 

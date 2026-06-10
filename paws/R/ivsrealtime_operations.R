@@ -12,15 +12,8 @@ NULL
 #' ivsrealtime_create_encoder_configuration(name, video, tags)
 #'
 #' @param name Optional name to identify the resource.
-#' @param video Video configuration. Default: video resolution 1280x720, bitrate 2500
-#' kbps, 30 fps.
-#' @param tags Tags attached to the resource. Array of maps, each of the form
-#' `string:string (key:value)`. See [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging AWS Resources and Tag Editor* for details, including
-#' restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no constraints on tags beyond what is
-#' documented there.
+#' @param video Video configuration. Default: video resolution 1280x720, bitrate 2500 kbps, 30 fps.
+#' @param tags Tags attached to the resource. Array of maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging AWS Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.
 #'
 #' @return
 #' A list with the following syntax:
@@ -86,37 +79,20 @@ ivsrealtime_create_encoder_configuration <- function(name = NULL, video = NULL, 
 #' protocol for a stage
 #'
 #' @description
-#' Creates a new IngestConfiguration resource, used to specify the ingest
-#' protocol for a stage.
+#' Creates a new IngestConfiguration resource, used to specify the ingest protocol for a stage.
 #'
 #' @usage
 #' ivsrealtime_create_ingest_configuration(name, stageArn, userId,
-#'   attributes, ingestProtocol, insecureIngest, tags)
+#'   attributes, ingestProtocol, insecureIngest, redundantIngest, tags)
 #'
-#' @param name Optional name that can be specified for the IngestConfiguration being
-#' created.
+#' @param name Optional name that can be specified for the IngestConfiguration being created.
 #' @param stageArn ARN of the stage with which the IngestConfiguration is associated.
-#' @param userId Customer-assigned name to help identify the participant using the
-#' IngestConfiguration; this can be used to link a participant to a user in
-#' the customer’s own systems. This can be any UTF-8 encoded text. *This
-#' field is exposed to all stage participants and should not be used for
-#' personally identifying, confidential, or sensitive information.*
-#' @param attributes Application-provided attributes to store in the IngestConfiguration and
-#' attach to a stage. Map keys and values can contain UTF-8 encoded text.
-#' The maximum length of this field is 1 KB total. *This field is exposed
-#' to all stage participants and should not be used for personally
-#' identifying, confidential, or sensitive information.*
-#' @param ingestProtocol &#91;required&#93; Type of ingest protocol that the user employs to broadcast. If this is
-#' set to `RTMP`, `insecureIngest` must be set to `true`.
-#' @param insecureIngest Whether the stage allows insecure RTMP ingest. This must be set to
-#' `true`, if `ingestProtocol` is set to `RTMP`. Default: `false`.
-#' @param tags Tags attached to the resource. Array of maps, each of the form
-#' `string:string (key:value)`. See [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging AWS Resources and Tag Editor* for details, including
-#' restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no constraints on tags beyond what is
-#' documented there.
+#' @param userId Customer-assigned name to help identify the participant using the IngestConfiguration; this can be used to link a participant to a user in the customer’s own systems. This can be any UTF-8 encoded text. *This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.*
+#' @param attributes Application-provided attributes to store in the IngestConfiguration and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. *This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.*
+#' @param ingestProtocol &#91;required&#93; Type of ingest protocol that the user employs to broadcast. If this is set to `RTMP`, `insecureIngest` must be set to `true`.
+#' @param insecureIngest Whether the stage allows insecure RTMP ingest. This must be set to `true`, if `ingestProtocol` is set to `RTMP`. Default: `false`.
+#' @param redundantIngest Indicates whether redundant ingest is enabled for the ingest configuration. Default: `false`.
+#' @param tags Tags attached to the resource. Array of maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging AWS Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.
 #'
 #' @return
 #' A list with the following syntax:
@@ -131,6 +107,13 @@ ivsrealtime_create_encoder_configuration <- function(name = NULL, video = NULL, 
 #'     participantId = "string",
 #'     state = "ACTIVE"|"INACTIVE",
 #'     userId = "string",
+#'     redundantIngest = TRUE|FALSE,
+#'     redundantIngestCredentials = list(
+#'       list(
+#'         participantId = "string",
+#'         streamKey = "string"
+#'       )
+#'     ),
 #'     attributes = list(
 #'       "string"
 #'     ),
@@ -152,6 +135,7 @@ ivsrealtime_create_encoder_configuration <- function(name = NULL, video = NULL, 
 #'   ),
 #'   ingestProtocol = "RTMP"|"RTMPS",
 #'   insecureIngest = TRUE|FALSE,
+#'   redundantIngest = TRUE|FALSE,
 #'   tags = list(
 #'     "string"
 #'   )
@@ -163,7 +147,7 @@ ivsrealtime_create_encoder_configuration <- function(name = NULL, video = NULL, 
 #' @rdname ivsrealtime_create_ingest_configuration
 #'
 #' @aliases ivsrealtime_create_ingest_configuration
-ivsrealtime_create_ingest_configuration <- function(name = NULL, stageArn = NULL, userId = NULL, attributes = NULL, ingestProtocol, insecureIngest = NULL, tags = NULL) {
+ivsrealtime_create_ingest_configuration <- function(name = NULL, stageArn = NULL, userId = NULL, attributes = NULL, ingestProtocol, insecureIngest = NULL, redundantIngest = NULL, tags = NULL) {
   op <- new_operation(
     name = "CreateIngestConfiguration",
     http_method = "POST",
@@ -172,7 +156,7 @@ ivsrealtime_create_ingest_configuration <- function(name = NULL, stageArn = NULL
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .ivsrealtime$create_ingest_configuration_input(name = name, stageArn = stageArn, userId = userId, attributes = attributes, ingestProtocol = ingestProtocol, insecureIngest = insecureIngest, tags = tags)
+  input <- .ivsrealtime$create_ingest_configuration_input(name = name, stageArn = stageArn, userId = userId, attributes = attributes, ingestProtocol = ingestProtocol, insecureIngest = insecureIngest, redundantIngest = redundantIngest, tags = tags)
   output <- .ivsrealtime$create_ingest_configuration_output()
   config <- get_config()
   svc <- .ivsrealtime$service(config, op)
@@ -185,31 +169,19 @@ ivsrealtime_create_ingest_configuration <- function(name = NULL, stageArn = NULL
 #' Creates an additional token for a specified stage
 #'
 #' @description
-#' Creates an additional token for a specified stage. This can be done
-#' after stage creation or when tokens expire. Tokens always are scoped to
-#' the stage for which they are created.
+#' Creates an additional token for a specified stage. This can be done after stage creation or when tokens expire. Tokens always are scoped to the stage for which they are created.
 #' 
-#' Encryption keys are owned by Amazon IVS and never used directly by your
-#' application.
+#' Encryption keys are owned by Amazon IVS and never used directly by your application.
 #'
 #' @usage
 #' ivsrealtime_create_participant_token(stageArn, duration, userId,
 #'   attributes, capabilities)
 #'
 #' @param stageArn &#91;required&#93; ARN of the stage to which this token is scoped.
-#' @param duration Duration (in minutes), after which the token expires. Default: 720 (12
-#' hours).
-#' @param userId Name that can be specified to help identify the token. This can be any
-#' UTF-8 encoded text. *This field is exposed to all stage participants and
-#' should not be used for personally identifying, confidential, or
-#' sensitive information.*
-#' @param attributes Application-provided attributes to encode into the token and attach to a
-#' stage. Map keys and values can contain UTF-8 encoded text. The maximum
-#' length of this field is 1 KB total. *This field is exposed to all stage
-#' participants and should not be used for personally identifying,
-#' confidential, or sensitive information.*
-#' @param capabilities Set of capabilities that the user is allowed to perform in the stage.
-#' Default: `PUBLISH, SUBSCRIBE`.
+#' @param duration Duration (in minutes), after which the token expires. Default: 720 (12 hours).
+#' @param userId Name that can be specified to help identify the token. This can be any UTF-8 encoded text. *This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.*
+#' @param attributes Application-provided attributes to encode into the token and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. *This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.*
+#' @param capabilities Set of capabilities that the user is allowed to perform in the stage. Default: `PUBLISH, SUBSCRIBE`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -282,17 +254,9 @@ ivsrealtime_create_participant_token <- function(stageArn, duration = NULL, user
 #'   autoParticipantRecordingConfiguration)
 #'
 #' @param name Optional name that can be specified for the stage being created.
-#' @param participantTokenConfigurations Array of participant token configuration objects to attach to the new
-#' stage.
-#' @param tags Tags attached to the resource. Array of maps, each of the form
-#' `string:string (key:value)`. See [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging AWS Resources and Tag Editor* for details, including
-#' restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no constraints on tags beyond what is
-#' documented there.
-#' @param autoParticipantRecordingConfiguration Configuration object for individual participant recording, to attach to
-#' the new stage.
+#' @param participantTokenConfigurations Array of participant token configuration objects to attach to the new stage.
+#' @param tags Tags attached to the resource. Array of maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging AWS Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.
+#' @param autoParticipantRecordingConfiguration Configuration object for individual participant recording, to attach to the new stage.
 #'
 #' @return
 #' A list with the following syntax:
@@ -418,24 +382,14 @@ ivsrealtime_create_stage <- function(name = NULL, participantTokenConfigurations
 #' S3
 #'
 #' @description
-#' Creates a new storage configuration, used to enable recording to Amazon
-#' S3. When a StorageConfiguration is created, IVS will modify the S3
-#' bucketPolicy of the provided bucket. This will ensure that IVS has
-#' sufficient permissions to write content to the provided bucket.
+#' Creates a new storage configuration, used to enable recording to Amazon S3. When a StorageConfiguration is created, IVS will modify the S3 bucketPolicy of the provided bucket. This will ensure that IVS has sufficient permissions to write content to the provided bucket.
 #'
 #' @usage
 #' ivsrealtime_create_storage_configuration(name, s3, tags)
 #'
 #' @param name Storage configuration name. The value does not need to be unique.
-#' @param s3 &#91;required&#93; A complex type that contains a storage configuration for where recorded
-#' video will be stored.
-#' @param tags Tags attached to the resource. Array of maps, each of the form
-#' `string:string (key:value)`. See [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging AWS Resources and Tag Editor* for details, including
-#' restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no constraints on tags beyond what is
-#' documented there.
+#' @param s3 &#91;required&#93; A complex type that contains a storage configuration for where recorded video will be stored.
+#' @param tags Tags attached to the resource. Array of maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging AWS Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.
 #'
 #' @return
 #' A list with the following syntax:
@@ -494,8 +448,7 @@ ivsrealtime_create_storage_configuration <- function(name = NULL, s3, tags = NUL
 #' Deletes an EncoderConfiguration resource
 #'
 #' @description
-#' Deletes an EncoderConfiguration resource. Ensures that no Compositions
-#' are using this template; otherwise, returns an error.
+#' Deletes an EncoderConfiguration resource. Ensures that no Compositions are using this template; otherwise, returns an error.
 #'
 #' @usage
 #' ivsrealtime_delete_encoder_configuration(arn)
@@ -540,18 +493,13 @@ ivsrealtime_delete_encoder_configuration <- function(arn) {
 #' broadcast
 #'
 #' @description
-#' Deletes a specified IngestConfiguration, so it can no longer be used to
-#' broadcast. An IngestConfiguration cannot be deleted if the publisher is
-#' actively streaming to a stage, unless `force` is set to `true`.
+#' Deletes a specified IngestConfiguration, so it can no longer be used to broadcast. An IngestConfiguration cannot be deleted if the publisher is actively streaming to a stage, unless `force` is set to `true`.
 #'
 #' @usage
 #' ivsrealtime_delete_ingest_configuration(arn, force)
 #'
 #' @param arn &#91;required&#93; ARN of the IngestConfiguration.
-#' @param force Optional field to force deletion of the IngestConfiguration. If this is
-#' set to `true` when a participant is actively publishing, the participant
-#' is disconnected from the stage, followed by deletion of the
-#' IngestConfiguration. Default: `false`.
+#' @param force Optional field to force deletion of the IngestConfiguration. If this is set to `true` when a participant is actively publishing, the participant is disconnected from the stage, followed by deletion of the IngestConfiguration. Default: `false`.
 #'
 #' @return
 #' An empty list.
@@ -591,9 +539,7 @@ ivsrealtime_delete_ingest_configuration <- function(arn, force = NULL) {
 #' Deletes the specified public key used to sign stage participant tokens
 #'
 #' @description
-#' Deletes the specified public key used to sign stage participant tokens.
-#' This invalidates future participant tokens generated using the key
-#' pair’s private key.
+#' Deletes the specified public key used to sign stage participant tokens. This invalidates future participant tokens generated using the key pair’s private key.
 #'
 #' @usage
 #' ivsrealtime_delete_public_key(arn)
@@ -638,10 +584,7 @@ ivsrealtime_delete_public_key <- function(arn) {
 #' participants)
 #'
 #' @description
-#' Shuts down and deletes the specified stage (disconnecting all
-#' participants). This operation also removes the `stageArn` from the
-#' associated IngestConfiguration, if there are participants using the
-#' IngestConfiguration to publish to the stage.
+#' Shuts down and deletes the specified stage (disconnecting all participants). This operation also removes the `stageArn` from the associated IngestConfiguration, if there are participants using the IngestConfiguration to publish to the stage.
 #'
 #' @usage
 #' ivsrealtime_delete_stage(arn)
@@ -687,11 +630,7 @@ ivsrealtime_delete_stage <- function(arn) {
 #' @description
 #' Deletes the storage configuration for the specified ARN.
 #' 
-#' If you try to delete a storage configuration that is used by a
-#' Composition, you will get an error (409 ConflictException). To avoid
-#' this, for all Compositions that reference the storage configuration,
-#' first use [`stop_composition`][ivsrealtime_stop_composition] and wait
-#' for it to complete, then use DeleteStorageConfiguration.
+#' If you try to delete a storage configuration that is used by a Composition, you will get an error (409 ConflictException). To avoid this, for all Compositions that reference the storage configuration, first use [`stop_composition`][ivsrealtime_stop_composition] and wait for it to complete, then use DeleteStorageConfiguration.
 #'
 #' @usage
 #' ivsrealtime_delete_storage_configuration(arn)
@@ -735,21 +674,13 @@ ivsrealtime_delete_storage_configuration <- function(arn) {
 #' Disconnects a specified participant from a specified stage
 #'
 #' @description
-#' Disconnects a specified participant from a specified stage. If the
-#' participant is publishing using an IngestConfiguration,
-#' DisconnectParticipant also updates the `stageArn` in the
-#' IngestConfiguration to be an empty string.
+#' Disconnects a specified participant from a specified stage. If the participant is publishing using an IngestConfiguration, DisconnectParticipant also updates the `stageArn` in the IngestConfiguration to be an empty string.
 #'
 #' @usage
 #' ivsrealtime_disconnect_participant(stageArn, participantId, reason)
 #'
 #' @param stageArn &#91;required&#93; ARN of the stage to which the participant is attached.
-#' @param participantId &#91;required&#93; Identifier of the participant to be disconnected. IVS assigns this; it
-#' is returned by
-#' [`create_participant_token`][ivsrealtime_create_participant_token] (for
-#' streams using WebRTC ingest) or
-#' [`create_ingest_configuration`][ivsrealtime_create_ingest_configuration]
-#' (for streams using RTMP ingest).
+#' @param participantId &#91;required&#93; Identifier of the participant to be disconnected. IVS assigns this; it is returned by [`create_participant_token`][ivsrealtime_create_participant_token] (for streams using WebRTC ingest) or [`create_ingest_configuration`][ivsrealtime_create_ingest_configuration] (for streams using RTMP ingest).
 #' @param reason Description of why this participant is being disconnected.
 #'
 #' @return
@@ -1001,6 +932,13 @@ ivsrealtime_get_encoder_configuration <- function(arn) {
 #'     participantId = "string",
 #'     state = "ACTIVE"|"INACTIVE",
 #'     userId = "string",
+#'     redundantIngest = TRUE|FALSE,
+#'     redundantIngestCredentials = list(
+#'       list(
+#'         participantId = "string",
+#'         streamKey = "string"
+#'       )
+#'     ),
 #'     attributes = list(
 #'       "string"
 #'     ),
@@ -1052,9 +990,7 @@ ivsrealtime_get_ingest_configuration <- function(arn) {
 #'
 #' @param stageArn &#91;required&#93; Stage ARN.
 #' @param sessionId &#91;required&#93; ID of a session within the stage.
-#' @param participantId &#91;required&#93; Unique identifier for the participant. This is assigned by IVS and
-#' returned by
-#' [`create_participant_token`][ivsrealtime_create_participant_token].
+#' @param participantId &#91;required&#93; Unique identifier for the participant. This is assigned by IVS and returned by [`create_participant_token`][ivsrealtime_create_participant_token].
 #'
 #' @return
 #' A list with the following syntax:
@@ -1084,7 +1020,9 @@ ivsrealtime_get_ingest_configuration <- function(arn) {
 #'     replicationType = "SOURCE"|"REPLICA"|"NONE",
 #'     replicationState = "ACTIVE"|"STOPPED",
 #'     sourceStageArn = "string",
-#'     sourceSessionId = "string"
+#'     sourceSessionId = "string",
+#'     redundantIngest = TRUE|FALSE,
+#'     ingestConfigurationArn = "string"
 #'   )
 #' )
 #' ```
@@ -1386,13 +1324,7 @@ ivsrealtime_get_storage_configuration <- function(arn) {
 #'
 #' @param publicKeyMaterial &#91;required&#93; The content of the public key to be imported.
 #' @param name Name of the public key to be imported.
-#' @param tags Tags attached to the resource. Array of maps, each of the form
-#' `string:string (key:value)`. See [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging AWS Resources and Tag Editor* for details, including
-#' restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no constraints on tags beyond what is
-#' documented there.
+#' @param tags Tags attached to the resource. Array of maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging AWS Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1449,18 +1381,15 @@ ivsrealtime_import_public_key <- function(publicKeyMaterial, name = NULL, tags =
 #' AWS region where the API request is processed
 #'
 #' @description
-#' Gets summary information about all Compositions in your account, in the
-#' AWS region where the API request is processed.
+#' Gets summary information about all Compositions in your account, in the AWS region where the API request is processed.
 #'
 #' @usage
 #' ivsrealtime_list_compositions(filterByStageArn,
 #'   filterByEncoderConfigurationArn, nextToken, maxResults)
 #'
 #' @param filterByStageArn Filters the Composition list to match the specified Stage ARN.
-#' @param filterByEncoderConfigurationArn Filters the Composition list to match the specified EncoderConfiguration
-#' attached to at least one of its output.
-#' @param nextToken The first Composition to retrieve. This is used for pagination; see the
-#' `nextToken` response field.
+#' @param filterByEncoderConfigurationArn Filters the Composition list to match the specified EncoderConfiguration attached to at least one of its output.
+#' @param nextToken The first Composition to retrieve. This is used for pagination; see the `nextToken` response field.
 #' @param maxResults Maximum number of results to return. Default: 100.
 #'
 #' @return
@@ -1537,14 +1466,12 @@ ivsrealtime_list_compositions <- function(filterByStageArn = NULL, filterByEncod
 #' account, in the AWS region where the API request is processed
 #'
 #' @description
-#' Gets summary information about all EncoderConfigurations in your
-#' account, in the AWS region where the API request is processed.
+#' Gets summary information about all EncoderConfigurations in your account, in the AWS region where the API request is processed.
 #'
 #' @usage
 #' ivsrealtime_list_encoder_configurations(nextToken, maxResults)
 #'
-#' @param nextToken The first encoder configuration to retrieve. This is used for
-#' pagination; see the `nextToken` response field.
+#' @param nextToken The first encoder configuration to retrieve. This is used for pagination; see the `nextToken` response field.
 #' @param maxResults Maximum number of results to return. Default: 100.
 #'
 #' @return
@@ -1600,19 +1527,15 @@ ivsrealtime_list_encoder_configurations <- function(nextToken = NULL, maxResults
 #' the API request is processed
 #'
 #' @description
-#' Lists all IngestConfigurations in your account, in the AWS region where
-#' the API request is processed.
+#' Lists all IngestConfigurations in your account, in the AWS region where the API request is processed.
 #'
 #' @usage
 #' ivsrealtime_list_ingest_configurations(filterByStageArn, filterByState,
 #'   nextToken, maxResults)
 #'
-#' @param filterByStageArn Filters the response list to match the specified stage ARN. Only one
-#' filter (by stage ARN or by state) can be used at a time.
-#' @param filterByState Filters the response list to match the specified state. Only one filter
-#' (by stage ARN or by state) can be used at a time.
-#' @param nextToken The first IngestConfiguration to retrieve. This is used for pagination;
-#' see the `nextToken` response field.
+#' @param filterByStageArn Filters the response list to match the specified stage ARN. Only one filter (by stage ARN or by state) can be used at a time.
+#' @param filterByState Filters the response list to match the specified state. Only one filter (by stage ARN or by state) can be used at a time.
+#' @param nextToken The first IngestConfiguration to retrieve. This is used for pagination; see the `nextToken` response field.
 #' @param maxResults Maximum number of results to return. Default: 50.
 #'
 #' @return
@@ -1627,7 +1550,8 @@ ivsrealtime_list_encoder_configurations <- function(nextToken = NULL, maxResults
 #'       stageArn = "string",
 #'       participantId = "string",
 #'       state = "ACTIVE"|"INACTIVE",
-#'       userId = "string"
+#'       userId = "string",
+#'       redundantIngest = TRUE|FALSE
 #'     )
 #'   ),
 #'   nextToken = "string"
@@ -1672,8 +1596,7 @@ ivsrealtime_list_ingest_configurations <- function(filterByStageArn = NULL, filt
 #' specified stage session
 #'
 #' @description
-#' Lists events for a specified participant that occurred during a
-#' specified stage session.
+#' Lists events for a specified participant that occurred during a specified stage session.
 #'
 #' @usage
 #' ivsrealtime_list_participant_events(stageArn, sessionId, participantId,
@@ -1681,11 +1604,8 @@ ivsrealtime_list_ingest_configurations <- function(filterByStageArn = NULL, filt
 #'
 #' @param stageArn &#91;required&#93; Stage ARN.
 #' @param sessionId &#91;required&#93; ID of a session within the stage.
-#' @param participantId &#91;required&#93; Unique identifier for this participant. This is assigned by IVS and
-#' returned by
-#' [`create_participant_token`][ivsrealtime_create_participant_token].
-#' @param nextToken The first participant event to retrieve. This is used for pagination;
-#' see the `nextToken` response field.
+#' @param participantId &#91;required&#93; Unique identifier for this participant. This is assigned by IVS and returned by [`create_participant_token`][ivsrealtime_create_participant_token].
+#' @param nextToken The first participant event to retrieve. This is used for pagination; see the `nextToken` response field.
 #' @param maxResults Maximum number of results to return. Default: 50.
 #'
 #' @return
@@ -1779,13 +1699,8 @@ ivsrealtime_list_participant_events <- function(stageArn, sessionId, participant
 #'   nextToken, maxResults)
 #'
 #' @param sourceStageArn &#91;required&#93; ARN of the stage where the participant is publishing.
-#' @param participantId &#91;required&#93; Participant ID of the publisher that has been replicated. This is
-#' assigned by IVS and returned by
-#' [`create_participant_token`][ivsrealtime_create_participant_token] or
-#' the `jti` (JWT ID) used to [create a self signed
-#' token](https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started-distribute-tokens.html#getting-started-distribute-tokens-self-signed).
-#' @param nextToken The first participant to retrieve. This is used for pagination; see the
-#' `nextToken` response field.
+#' @param participantId &#91;required&#93; Participant ID of the publisher that has been replicated. This is assigned by IVS and returned by [`create_participant_token`][ivsrealtime_create_participant_token] or the `jti` (JWT ID) used to [create a self signed token](https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started-distribute-tokens.html#getting-started-distribute-tokens-self-signed).
+#' @param nextToken The first participant to retrieve. This is used for pagination; see the `nextToken` response field.
 #' @param maxResults Maximum number of results to return. Default: 50.
 #'
 #' @return
@@ -1852,26 +1767,12 @@ ivsrealtime_list_participant_replicas <- function(sourceStageArn, participantId,
 #'
 #' @param stageArn &#91;required&#93; Stage ARN.
 #' @param sessionId &#91;required&#93; ID of the session within the stage.
-#' @param filterByUserId Filters the response list to match the specified user ID. Only one of
-#' `filterByUserId`, `filterByPublished`, `filterByState`, or
-#' `filterByRecordingState` can be provided per request. A `userId` is a
-#' customer-assigned name to help identify the token; this can be used to
-#' link a participant to a user in the customer’s own systems.
-#' @param filterByPublished Filters the response list to only show participants who published during
-#' the stage session. Only one of `filterByUserId`, `filterByPublished`,
-#' `filterByState`, or `filterByRecordingState` can be provided per
-#' request.
-#' @param filterByState Filters the response list to only show participants in the specified
-#' state. Only one of `filterByUserId`, `filterByPublished`,
-#' `filterByState`, or `filterByRecordingState` can be provided per
-#' request.
-#' @param nextToken The first participant to retrieve. This is used for pagination; see the
-#' `nextToken` response field.
+#' @param filterByUserId Filters the response list to match the specified user ID. Only one of `filterByUserId`, `filterByPublished`, `filterByState`, or `filterByRecordingState` can be provided per request. A `userId` is a customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems.
+#' @param filterByPublished Filters the response list to only show participants who published during the stage session. Only one of `filterByUserId`, `filterByPublished`, `filterByState`, or `filterByRecordingState` can be provided per request.
+#' @param filterByState Filters the response list to only show participants in the specified state. Only one of `filterByUserId`, `filterByPublished`, `filterByState`, or `filterByRecordingState` can be provided per request.
+#' @param nextToken The first participant to retrieve. This is used for pagination; see the `nextToken` response field.
 #' @param maxResults Maximum number of results to return. Default: 50.
-#' @param filterByRecordingState Filters the response list to only show participants with the specified
-#' recording state. Only one of `filterByUserId`, `filterByPublished`,
-#' `filterByState`, or `filterByRecordingState` can be provided per
-#' request.
+#' @param filterByRecordingState Filters the response list to only show participants with the specified recording state. Only one of `filterByUserId`, `filterByPublished`, `filterByState`, or `filterByRecordingState` can be provided per request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1890,7 +1791,9 @@ ivsrealtime_list_participant_replicas <- function(sourceStageArn, participantId,
 #'       replicationType = "SOURCE"|"REPLICA"|"NONE",
 #'       replicationState = "ACTIVE"|"STOPPED",
 #'       sourceStageArn = "string",
-#'       sourceSessionId = "string"
+#'       sourceSessionId = "string",
+#'       redundantIngest = TRUE|FALSE,
+#'       ingestConfigurationArn = "string"
 #'     )
 #'   ),
 #'   nextToken = "string"
@@ -1939,14 +1842,12 @@ ivsrealtime_list_participants <- function(stageArn, sessionId, filterByUserId = 
 #' AWS region where the API request is processed
 #'
 #' @description
-#' Gets summary information about all public keys in your account, in the
-#' AWS region where the API request is processed.
+#' Gets summary information about all public keys in your account, in the AWS region where the API request is processed.
 #'
 #' @usage
 #' ivsrealtime_list_public_keys(nextToken, maxResults)
 #'
-#' @param nextToken The first public key to retrieve. This is used for pagination; see the
-#' `nextToken` response field.
+#' @param nextToken The first public key to retrieve. This is used for pagination; see the `nextToken` response field.
 #' @param maxResults Maximum number of results to return. Default: 50.
 #'
 #' @return
@@ -2007,8 +1908,7 @@ ivsrealtime_list_public_keys <- function(nextToken = NULL, maxResults = NULL) {
 #' ivsrealtime_list_stage_sessions(stageArn, nextToken, maxResults)
 #'
 #' @param stageArn &#91;required&#93; Stage ARN.
-#' @param nextToken The first stage session to retrieve. This is used for pagination; see
-#' the `nextToken` response field.
+#' @param nextToken The first stage session to retrieve. This is used for pagination; see the `nextToken` response field.
 #' @param maxResults Maximum number of results to return. Default: 50.
 #'
 #' @return
@@ -2067,14 +1967,12 @@ ivsrealtime_list_stage_sessions <- function(stageArn, nextToken = NULL, maxResul
 #' region where the API request is processed
 #'
 #' @description
-#' Gets summary information about all stages in your account, in the AWS
-#' region where the API request is processed.
+#' Gets summary information about all stages in your account, in the AWS region where the API request is processed.
 #'
 #' @usage
 #' ivsrealtime_list_stages(nextToken, maxResults)
 #'
-#' @param nextToken The first stage to retrieve. This is used for pagination; see the
-#' `nextToken` response field.
+#' @param nextToken The first stage to retrieve. This is used for pagination; see the `nextToken` response field.
 #' @param maxResults Maximum number of results to return. Default: 50.
 #'
 #' @return
@@ -2131,16 +2029,13 @@ ivsrealtime_list_stages <- function(nextToken = NULL, maxResults = NULL) {
 #' account, in the AWS region where the API request is processed
 #'
 #' @description
-#' Gets summary information about all storage configurations in your
-#' account, in the AWS region where the API request is processed.
+#' Gets summary information about all storage configurations in your account, in the AWS region where the API request is processed.
 #'
 #' @usage
 #' ivsrealtime_list_storage_configurations(nextToken, maxResults)
 #'
-#' @param nextToken The first storage configuration to retrieve. This is used for
-#' pagination; see the `nextToken` response field.
-#' @param maxResults Maximum number of storage configurations to return. Default: your
-#' service quota or 100, whichever is smaller.
+#' @param nextToken The first storage configuration to retrieve. This is used for pagination; see the `nextToken` response field.
+#' @param maxResults Maximum number of storage configurations to return. Default: your service quota or 100, whichever is smaller.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2249,25 +2144,19 @@ ivsrealtime_list_tags_for_resource <- function(resourceArn) {
 #' the request
 #'
 #' @description
-#' Starts a Composition from a stage based on the configuration provided in
-#' the request.
+#' Starts a Composition from a stage based on the configuration provided in the request.
 #' 
-#' A Composition is an ephemeral resource that exists after this operation
-#' returns successfully. Composition stops and the resource is deleted:
+#' A Composition is an ephemeral resource that exists after this operation returns successfully. Composition stops and the resource is deleted:
 #' 
 #' -   When [`stop_composition`][ivsrealtime_stop_composition] is called.
 #' 
-#' -   After a 1-minute timeout, when all participants are disconnected
-#'     from the stage.
+#' -   After a 1-minute timeout, when all participants are disconnected from the stage.
 #' 
-#' -   After a 1-minute timeout, if there are no participants in the stage
-#'     when StartComposition is called.
+#' -   After a 1-minute timeout, if there are no participants in the stage when StartComposition is called.
 #' 
-#' -   When broadcasting to the IVS channel fails and all retries are
-#'     exhausted.
+#' -   When broadcasting to the IVS channel fails and all retries are exhausted.
 #' 
-#' -   When broadcasting is disconnected and all attempts to reconnect are
-#'     exhausted.
+#' -   When broadcasting is disconnected and all attempts to reconnect are exhausted.
 #'
 #' @usage
 #' ivsrealtime_start_composition(stageArn, idempotencyToken, layout,
@@ -2277,13 +2166,7 @@ ivsrealtime_list_tags_for_resource <- function(resourceArn) {
 #' @param idempotencyToken Idempotency token.
 #' @param layout Layout object to configure composition parameters.
 #' @param destinations &#91;required&#93; Array of destination configuration.
-#' @param tags Tags attached to the resource. Array of maps, each of the form
-#' `string:string (key:value)`. See [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging AWS Resources and Tag Editor* for details, including
-#' restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no constraints on tags beyond what is
-#' documented there.
+#' @param tags Tags attached to the resource. Array of maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging AWS Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2464,8 +2347,7 @@ ivsrealtime_start_composition <- function(stageArn, idempotencyToken = NULL, lay
 #' destination stage
 #'
 #' @description
-#' Starts replicating a publishing participant from a source stage to a
-#' destination stage.
+#' Starts replicating a publishing participant from a source stage to a destination stage.
 #'
 #' @usage
 #' ivsrealtime_start_participant_replication(sourceStageArn,
@@ -2473,22 +2355,11 @@ ivsrealtime_start_composition <- function(stageArn, idempotencyToken = NULL, lay
 #'
 #' @param sourceStageArn &#91;required&#93; ARN of the stage where the participant is publishing.
 #' @param destinationStageArn &#91;required&#93; ARN of the stage to which the participant will be replicated.
-#' @param participantId &#91;required&#93; Participant ID of the publisher that will be replicated. This is
-#' assigned by IVS and returned by
-#' [`create_participant_token`][ivsrealtime_create_participant_token] or
-#' the `jti` (JWT ID) used to [create a self signed
-#' token](https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started-distribute-tokens.html#getting-started-distribute-tokens-self-signed).
-#' @param reconnectWindowSeconds If the participant disconnects and then reconnects within the specified
-#' interval, replication will continue to be `ACTIVE`. Default: 0.
-#' @param attributes Application-provided attributes to set on the replicated participant in
-#' the destination stage. Map keys and values can contain UTF-8 encoded
-#' text. The maximum length of this field is 1 KB total. *This field is
-#' exposed to all stage participants and should not be used for personally
-#' identifying, confidential, or sensitive information.*
+#' @param participantId &#91;required&#93; Participant ID of the publisher that will be replicated. This is assigned by IVS and returned by [`create_participant_token`][ivsrealtime_create_participant_token] or the `jti` (JWT ID) used to [create a self signed token](https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started-distribute-tokens.html#getting-started-distribute-tokens-self-signed).
+#' @param reconnectWindowSeconds If the participant disconnects and then reconnects within the specified interval, replication will continue to be `ACTIVE`. Default: 0.
+#' @param attributes Application-provided attributes to set on the replicated participant in the destination stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. *This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.*
 #' 
-#' These attributes are merged with any attributes set for this participant
-#' when creating the token. If there is overlap in keys, the values in
-#' these attributes are replaced.
+#' These attributes are merged with any attributes set for this participant when creating the token. If there is overlap in keys, the values in these attributes are replaced.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2544,8 +2415,7 @@ ivsrealtime_start_participant_replication <- function(sourceStageArn, destinatio
 #' Stops and deletes a Composition resource
 #'
 #' @description
-#' Stops and deletes a Composition resource. Any broadcast from the
-#' Composition resource is stopped.
+#' Stops and deletes a Composition resource. Any broadcast from the Composition resource is stopped.
 #'
 #' @usage
 #' ivsrealtime_stop_composition(arn)
@@ -2597,11 +2467,7 @@ ivsrealtime_stop_composition <- function(arn) {
 #'
 #' @param sourceStageArn &#91;required&#93; ARN of the stage where the participant is publishing.
 #' @param destinationStageArn &#91;required&#93; ARN of the stage where the participant has been replicated.
-#' @param participantId &#91;required&#93; Participant ID of the publisher that has been replicated. This is
-#' assigned by IVS and returned by
-#' [`create_participant_token`][ivsrealtime_create_participant_token] or
-#' the `jti` (JWT ID) used to [create a self signed
-#' token](https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started-distribute-tokens.html#getting-started-distribute-tokens-self-signed).
+#' @param participantId &#91;required&#93; Participant ID of the publisher that has been replicated. This is assigned by IVS and returned by [`create_participant_token`][ivsrealtime_create_participant_token] or the `jti` (JWT ID) used to [create a self signed token](https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started-distribute-tokens.html#getting-started-distribute-tokens-self-signed).
 #'
 #' @return
 #' A list with the following syntax:
@@ -2659,13 +2525,7 @@ ivsrealtime_stop_participant_replication <- function(sourceStageArn, destination
 #' ivsrealtime_tag_resource(resourceArn, tags)
 #'
 #' @param resourceArn &#91;required&#93; The ARN of the resource to be tagged. The ARN must be URL-encoded.
-#' @param tags &#91;required&#93; Array of tags to be added or updated. Array of maps, each of the form
-#' `string:string (key:value)`. See [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging AWS Resources and Tag Editor* for details, including
-#' restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no constraints on tags beyond what is
-#' documented there.
+#' @param tags &#91;required&#93; Array of tags to be added or updated. Array of maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging AWS Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.
 #'
 #' @return
 #' An empty list.
@@ -2713,13 +2573,7 @@ ivsrealtime_tag_resource <- function(resourceArn, tags) {
 #' ivsrealtime_untag_resource(resourceArn, tagKeys)
 #'
 #' @param resourceArn &#91;required&#93; The ARN of the resource to be untagged. The ARN must be URL-encoded.
-#' @param tagKeys &#91;required&#93; Array of tag keys (strings) for the tags to be removed. See [Best
-#' practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging AWS Resources and Tag Editor* for details, including
-#' restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no constraints on tags beyond what is
-#' documented there.
+#' @param tagKeys &#91;required&#93; Array of tag keys (strings) for the tags to be removed. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging AWS Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.
 #'
 #' @return
 #' An empty list.
@@ -2761,16 +2615,14 @@ ivsrealtime_untag_resource <- function(resourceArn, tagKeys) {
 #' Updates a specified IngestConfiguration
 #'
 #' @description
-#' Updates a specified IngestConfiguration. Only the stage ARN attached to
-#' the IngestConfiguration can be updated. An IngestConfiguration that is
-#' active cannot be updated.
+#' Updates a specified IngestConfiguration. Only the stage ARN attached to the IngestConfiguration can be updated. An IngestConfiguration that is active cannot be updated.
 #'
 #' @usage
-#' ivsrealtime_update_ingest_configuration(arn, stageArn)
+#' ivsrealtime_update_ingest_configuration(arn, stageArn, redundantIngest)
 #'
-#' @param arn &#91;required&#93; ARN of the IngestConfiguration, for which the related stage ARN needs to
-#' be updated.
+#' @param arn &#91;required&#93; ARN of the IngestConfiguration, for which the related stage ARN needs to be updated.
 #' @param stageArn Stage ARN that needs to be updated.
+#' @param redundantIngest Indicates whether redundant ingest is enabled for the ingest configuration. Default: `false`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2785,6 +2637,13 @@ ivsrealtime_untag_resource <- function(resourceArn, tagKeys) {
 #'     participantId = "string",
 #'     state = "ACTIVE"|"INACTIVE",
 #'     userId = "string",
+#'     redundantIngest = TRUE|FALSE,
+#'     redundantIngestCredentials = list(
+#'       list(
+#'         participantId = "string",
+#'         streamKey = "string"
+#'       )
+#'     ),
 #'     attributes = list(
 #'       "string"
 #'     ),
@@ -2799,7 +2658,8 @@ ivsrealtime_untag_resource <- function(resourceArn, tagKeys) {
 #' ```
 #' svc$update_ingest_configuration(
 #'   arn = "string",
-#'   stageArn = "string"
+#'   stageArn = "string",
+#'   redundantIngest = TRUE|FALSE
 #' )
 #' ```
 #'
@@ -2808,7 +2668,7 @@ ivsrealtime_untag_resource <- function(resourceArn, tagKeys) {
 #' @rdname ivsrealtime_update_ingest_configuration
 #'
 #' @aliases ivsrealtime_update_ingest_configuration
-ivsrealtime_update_ingest_configuration <- function(arn, stageArn = NULL) {
+ivsrealtime_update_ingest_configuration <- function(arn, stageArn = NULL, redundantIngest = NULL) {
   op <- new_operation(
     name = "UpdateIngestConfiguration",
     http_method = "POST",
@@ -2817,7 +2677,7 @@ ivsrealtime_update_ingest_configuration <- function(arn, stageArn = NULL) {
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .ivsrealtime$update_ingest_configuration_input(arn = arn, stageArn = stageArn)
+  input <- .ivsrealtime$update_ingest_configuration_input(arn = arn, stageArn = stageArn, redundantIngest = redundantIngest)
   output <- .ivsrealtime$update_ingest_configuration_output()
   config <- get_config()
   svc <- .ivsrealtime$service(config, op)
@@ -2838,8 +2698,7 @@ ivsrealtime_update_ingest_configuration <- function(arn, stageArn = NULL) {
 #'
 #' @param arn &#91;required&#93; ARN of the stage to be updated.
 #' @param name Name of the stage to be updated.
-#' @param autoParticipantRecordingConfiguration Configuration object for individual participant recording, to attach to
-#' the stage. Note that this cannot be updated while recording is active.
+#' @param autoParticipantRecordingConfiguration Configuration object for individual participant recording, to attach to the stage. Note that this cannot be updated while recording is active.
 #'
 #' @return
 #' A list with the following syntax:

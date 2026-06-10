@@ -6,33 +6,16 @@ NULL
 #' Creates an activity
 #'
 #' @description
-#' Creates an activity. An activity is a task that you write in any
-#' programming language and host on any machine that has access to Step
-#' Functions. Activities must poll Step Functions using the
-#' [`get_activity_task`][sfn_get_activity_task] API action and respond
-#' using `SendTask*` API actions. This function lets Step Functions know
-#' the existence of your activity and returns an identifier for use in a
-#' state machine and when polling from the activity.
+#' Creates an activity. An activity is a task that you write in any programming language and host on any machine that has access to Step Functions. Activities must poll Step Functions using the [`get_activity_task`][sfn_get_activity_task] API action and respond using `SendTask*` API actions. This function lets Step Functions know the existence of your activity and returns an identifier for use in a state machine and when polling from the activity.
 #' 
-#' This operation is eventually consistent. The results are best effort and
-#' may not reflect very recent updates and changes.
+#' This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.
 #' 
-#' [`create_activity`][sfn_create_activity] is an idempotent API.
-#' Subsequent requests won’t create a duplicate resource if it was already
-#' created. [`create_activity`][sfn_create_activity]'s idempotency check is
-#' based on the activity `name`. If a following request has different
-#' `tags` values, Step Functions will ignore these differences and treat it
-#' as an idempotent request of the previous. In this case, `tags` will not
-#' be updated, even if they are different.
+#' [`create_activity`][sfn_create_activity] is an idempotent API. Subsequent requests won’t create a duplicate resource if it was already created. [`create_activity`][sfn_create_activity]'s idempotency check is based on the activity `name`. If a following request has different `tags` values, Step Functions will ignore these differences and treat it as an idempotent request of the previous. In this case, `tags` will not be updated, even if they are different.
 #'
 #' @usage
 #' sfn_create_activity(name, tags, encryptionConfiguration)
 #'
-#' @param name &#91;required&#93; The name of the activity to create. This name must be unique for your
-#' Amazon Web Services account and region for 90 days. For more
-#' information, see [Limits Related to State Machine
-#' Executions](https://docs.aws.amazon.com/step-functions/latest/dg/service-quotas.html#service-limits-state-machine-executions)
-#' in the *Step Functions Developer Guide*.
+#' @param name &#91;required&#93; The name of the activity to create. This name must be unique for your Amazon Web Services account and region for 90 days. For more information, see [Limits Related to State Machine Executions](https://docs.aws.amazon.com/step-functions/latest/dg/service-quotas.html#service-limits-state-machine-executions) in the *Step Functions Developer Guide*.
 #' 
 #' A name must *not* contain:
 #' 
@@ -50,19 +33,12 @@ NULL
 #' 
 #' -   invalid characters (` U+10FFFF`)
 #' 
-#' To enable logging with CloudWatch Logs, the name should only contain
-#' 0-9, A-Z, a-z, - and _.
+#' To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
 #' @param tags The list of tags to add to a resource.
 #' 
-#' An array of key-value pairs. For more information, see [Using Cost
-#' Allocation
-#' Tags](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html)
-#' in the *Amazon Web Services Billing and Cost Management User Guide*, and
-#' [Controlling Access Using IAM
-#' Tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html).
+#' An array of key-value pairs. For more information, see [Using Cost Allocation Tags](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html) in the *Amazon Web Services Billing and Cost Management User Guide*, and [Controlling Access Using IAM Tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html).
 #' 
-#' Tags may only contain Unicode letters, digits, white space, or these
-#' symbols: `_ . : / = + - @@`.
+#' Tags may only contain Unicode letters, digits, white space, or these symbols: `_ . : / = + - @@`.
 #' @param encryptionConfiguration Settings to configure server-side encryption.
 #'
 #' @return
@@ -121,37 +97,15 @@ sfn_create_activity <- function(name, tags = NULL, encryptionConfiguration = NUL
 #' Creates a state machine
 #'
 #' @description
-#' Creates a state machine. A state machine consists of a collection of
-#' states that can do work (`Task` states), determine to which states to
-#' transition next (`Choice` states), stop an execution with an error
-#' (`Fail` states), and so on. State machines are specified using a
-#' JSON-based, structured language. For more information, see [Amazon
-#' States
-#' Language](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html)
-#' in the Step Functions User Guide.
+#' Creates a state machine. A state machine consists of a collection of states that can do work (`Task` states), determine to which states to transition next (`Choice` states), stop an execution with an error (`Fail` states), and so on. State machines are specified using a JSON-based, structured language. For more information, see [Amazon States Language](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html) in the Step Functions User Guide.
 #' 
-#' If you set the `publish` parameter of this API action to `true`, it
-#' publishes version `1` as the first revision of the state machine.
+#' If you set the `publish` parameter of this API action to `true`, it publishes version `1` as the first revision of the state machine.
 #' 
-#' For additional control over security, you can encrypt your data using a
-#' **customer-managed key** for Step Functions state machines. You can
-#' configure a symmetric KMS key and data key reuse period when creating or
-#' updating a **State Machine**. The execution history and state machine
-#' definition will be encrypted with the key applied to the State Machine.
+#' For additional control over security, you can encrypt your data using a **customer-managed key** for Step Functions state machines. You can configure a symmetric KMS key and data key reuse period when creating or updating a **State Machine**. The execution history and state machine definition will be encrypted with the key applied to the State Machine.
 #' 
-#' This operation is eventually consistent. The results are best effort and
-#' may not reflect very recent updates and changes.
+#' This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.
 #' 
-#' [`create_state_machine`][sfn_create_state_machine] is an idempotent API.
-#' Subsequent requests won’t create a duplicate resource if it was already
-#' created. [`create_state_machine`][sfn_create_state_machine]'s
-#' idempotency check is based on the state machine `name`, `definition`,
-#' `type`, `LoggingConfiguration`, `TracingConfiguration`, and
-#' `EncryptionConfiguration` The check is also based on the `publish` and
-#' `versionDescription` parameters. If a following request has a different
-#' `roleArn` or `tags`, Step Functions will ignore these differences and
-#' treat it as an idempotent request of the previous. In this case,
-#' `roleArn` and `tags` will not be updated, even if they are different.
+#' [`create_state_machine`][sfn_create_state_machine] is an idempotent API. Subsequent requests won’t create a duplicate resource if it was already created. [`create_state_machine`][sfn_create_state_machine]'s idempotency check is based on the state machine `name`, `definition`, `type`, `LoggingConfiguration`, `TracingConfiguration`, and `EncryptionConfiguration` The check is also based on the `publish` and `versionDescription` parameters. If a following request has a different `roleArn` or `tags`, Step Functions will ignore these differences and treat it as an idempotent request of the previous. In this case, `roleArn` and `tags` will not be updated, even if they are different.
 #'
 #' @usage
 #' sfn_create_state_machine(name, definition, roleArn, type,
@@ -176,40 +130,21 @@ sfn_create_activity <- function(name, tags = NULL, encryptionConfiguration = NUL
 #' 
 #' -   invalid characters (` U+10FFFF`)
 #' 
-#' To enable logging with CloudWatch Logs, the name should only contain
-#' 0-9, A-Z, a-z, - and _.
-#' @param definition &#91;required&#93; The Amazon States Language definition of the state machine. See [Amazon
-#' States
-#' Language](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html).
-#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role to use for this state
-#' machine.
-#' @param type Determines whether a Standard or Express state machine is created. The
-#' default is `STANDARD`. You cannot update the `type` of a state machine
-#' once it has been created.
-#' @param loggingConfiguration Defines what execution history events are logged and where they are
-#' logged.
+#' To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
+#' @param definition &#91;required&#93; The Amazon States Language definition of the state machine. See [Amazon States Language](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html).
+#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role to use for this state machine.
+#' @param type Determines whether a Standard or Express state machine is created. The default is `STANDARD`. You cannot update the `type` of a state machine once it has been created.
+#' @param loggingConfiguration Defines what execution history events are logged and where they are logged.
 #' 
-#' By default, the `level` is set to `OFF`. For more information see [Log
-#' Levels](https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html)
-#' in the Step Functions User Guide.
+#' By default, the `level` is set to `OFF`. For more information see [Log Levels](https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html) in the Step Functions User Guide.
 #' @param tags Tags to be added when creating a state machine.
 #' 
-#' An array of key-value pairs. For more information, see [Using Cost
-#' Allocation
-#' Tags](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html)
-#' in the *Amazon Web Services Billing and Cost Management User Guide*, and
-#' [Controlling Access Using IAM
-#' Tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html).
+#' An array of key-value pairs. For more information, see [Using Cost Allocation Tags](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html) in the *Amazon Web Services Billing and Cost Management User Guide*, and [Controlling Access Using IAM Tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html).
 #' 
-#' Tags may only contain Unicode letters, digits, white space, or these
-#' symbols: `_ . : / = + - @@`.
+#' Tags may only contain Unicode letters, digits, white space, or these symbols: `_ . : / = + - @@`.
 #' @param tracingConfiguration Selects whether X-Ray tracing is enabled.
-#' @param publish Set to `true` to publish the first version of the state machine during
-#' creation. The default is `false`.
-#' @param versionDescription Sets description about the state machine version. You can only set the
-#' description if the `publish` parameter is set to `true`. Otherwise, if
-#' you set `versionDescription`, but `publish` to `false`, this API action
-#' throws `ValidationException`.
+#' @param publish Set to `true` to publish the first version of the state machine during creation. The default is `false`.
+#' @param versionDescription Sets description about the state machine version. You can only set the description if the `publish` parameter is set to `true`. Otherwise, if you set `versionDescription`, but `publish` to `false`, this API action throws `ValidationException`.
 #' @param encryptionConfiguration Settings to configure server-side encryption.
 #'
 #' @return
@@ -289,36 +224,15 @@ sfn_create_state_machine <- function(name, definition, roleArn, type = NULL, log
 #' of the same state machine
 #'
 #' @description
-#' Creates an
-#' [alias](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html)
-#' for a state machine that points to one or two
-#' [versions](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html)
-#' of the same state machine. You can set your application to call
-#' [`start_execution`][sfn_start_execution] with an alias and update the
-#' version the alias uses without changing the client's code.
+#' Creates an [alias](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html) for a state machine that points to one or two [versions](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html) of the same state machine. You can set your application to call [`start_execution`][sfn_start_execution] with an alias and update the version the alias uses without changing the client's code.
 #' 
-#' You can also map an alias to split
-#' [`start_execution`][sfn_start_execution] requests between two versions
-#' of a state machine. To do this, add a second `RoutingConfig` object in
-#' the `routingConfiguration` parameter. You must also specify the
-#' percentage of execution run requests each version should receive in both
-#' `RoutingConfig` objects. Step Functions randomly chooses which version
-#' runs a given execution based on the percentage you specify.
+#' You can also map an alias to split [`start_execution`][sfn_start_execution] requests between two versions of a state machine. To do this, add a second `RoutingConfig` object in the `routingConfiguration` parameter. You must also specify the percentage of execution run requests each version should receive in both `RoutingConfig` objects. Step Functions randomly chooses which version runs a given execution based on the percentage you specify.
 #' 
-#' To create an alias that points to a single version, specify a single
-#' `RoutingConfig` object with a `weight` set to 100.
+#' To create an alias that points to a single version, specify a single `RoutingConfig` object with a `weight` set to 100.
 #' 
-#' You can create up to 100 aliases for each state machine. You must delete
-#' unused aliases using the
-#' [`delete_state_machine_alias`][sfn_delete_state_machine_alias] API
-#' action.
+#' You can create up to 100 aliases for each state machine. You must delete unused aliases using the [`delete_state_machine_alias`][sfn_delete_state_machine_alias] API action.
 #' 
-#' [`create_state_machine_alias`][sfn_create_state_machine_alias] is an
-#' idempotent API. Step Functions bases the idempotency check on the
-#' `stateMachineArn`, `description`, `name`, and `routingConfiguration`
-#' parameters. Requests that contain the same values for these parameters
-#' return a successful idempotent response without creating a duplicate
-#' resource.
+#' [`create_state_machine_alias`][sfn_create_state_machine_alias] is an idempotent API. Step Functions bases the idempotency check on the `stateMachineArn`, `description`, `name`, and `routingConfiguration` parameters. Requests that contain the same values for these parameters return a successful idempotent response without creating a duplicate resource.
 #' 
 #' **Related operations:**
 #' 
@@ -336,14 +250,8 @@ sfn_create_state_machine <- function(name, definition, roleArn, type = NULL, log
 #' @param description A description for the state machine alias.
 #' @param name &#91;required&#93; The name of the state machine alias.
 #' 
-#' To avoid conflict with version ARNs, don't use an integer in the name of
-#' the alias.
-#' @param routingConfiguration &#91;required&#93; The routing configuration of a state machine alias. The routing
-#' configuration shifts execution traffic between two state machine
-#' versions. `routingConfiguration` contains an array of `RoutingConfig`
-#' objects that specify up to two state machine versions. Step Functions
-#' then randomly choses which version to run an execution with based on the
-#' weight assigned to each `RoutingConfig`.
+#' To avoid conflict with version ARNs, don't use an integer in the name of the alias.
+#' @param routingConfiguration &#91;required&#93; The routing configuration of a state machine alias. The routing configuration shifts execution traffic between two state machine versions. `routingConfiguration` contains an array of `RoutingConfig` objects that specify up to two state machine versions. Step Functions then randomly choses which version to run an execution with based on the weight assigned to each `RoutingConfig`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -441,42 +349,25 @@ sfn_delete_activity <- function(activityArn) {
 #' Deletes a state machine
 #'
 #' @description
-#' Deletes a state machine. This is an asynchronous operation. It sets the
-#' state machine's status to `DELETING` and begins the deletion process. A
-#' state machine is deleted only when all its executions are completed. On
-#' the next state transition, the state machine's executions are
-#' terminated.
+#' Deletes a state machine. This is an asynchronous operation. It sets the state machine's status to `DELETING` and begins the deletion process. A state machine is deleted only when all its executions are completed. On the next state transition, the state machine's executions are terminated.
 #' 
-#' A qualified state machine ARN can either refer to a *Distributed Map
-#' state* defined within a state machine, a version ARN, or an alias ARN.
+#' A qualified state machine ARN can either refer to a *Distributed Map state* defined within a state machine, a version ARN, or an alias ARN.
 #' 
-#' The following are some examples of qualified and unqualified state
-#' machine ARNs:
+#' The following are some examples of qualified and unqualified state machine ARNs:
 #' 
-#' -   The following qualified state machine ARN refers to a *Distributed
-#'     Map state* with a label `mapStateLabel` in a state machine named
-#'     `myStateMachine`.
+#' -   The following qualified state machine ARN refers to a *Distributed Map state* with a label `mapStateLabel` in a state machine named `myStateMachine`.
 #' 
 #'     `arn:partition:states:region:account-id:stateMachine:myStateMachine/mapStateLabel`
 #' 
-#'     If you provide a qualified state machine ARN that refers to a
-#'     *Distributed Map state*, the request fails with
-#'     `ValidationException`.
+#'     If you provide a qualified state machine ARN that refers to a *Distributed Map state*, the request fails with `ValidationException`.
 #' 
-#' -   The following unqualified state machine ARN refers to a state
-#'     machine named `myStateMachine`.
+#' -   The following unqualified state machine ARN refers to a state machine named `myStateMachine`.
 #' 
 #'     `arn:partition:states:region:account-id:stateMachine:myStateMachine`
 #' 
-#' This API action also deletes all
-#' [versions](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html)
-#' and
-#' [aliases](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html)
-#' associated with a state machine.
+#' This API action also deletes all [versions](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html) and [aliases](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html) associated with a state machine.
 #' 
-#' For `EXPRESS` state machines, the deletion happens eventually (usually
-#' in less than a minute). Running executions may emit logs after
-#' [`delete_state_machine`][sfn_delete_state_machine] API is called.
+#' For `EXPRESS` state machines, the deletion happens eventually (usually in less than a minute). Running executions may emit logs after [`delete_state_machine`][sfn_delete_state_machine] API is called.
 #'
 #' @usage
 #' sfn_delete_state_machine(stateMachineArn)
@@ -520,12 +411,9 @@ sfn_delete_state_machine <- function(stateMachineArn) {
 #' Deletes a state machine alias
 #'
 #' @description
-#' Deletes a state machine
-#' [alias](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html).
+#' Deletes a state machine [alias](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html).
 #' 
-#' After you delete a state machine alias, you can't use it to start
-#' executions. When you delete a state machine alias, Step Functions
-#' doesn't delete the state machine versions that alias references.
+#' After you delete a state machine alias, you can't use it to start executions. When you delete a state machine alias, Step Functions doesn't delete the state machine versions that alias references.
 #' 
 #' **Related operations:**
 #' 
@@ -579,19 +467,11 @@ sfn_delete_state_machine_alias <- function(stateMachineAliasArn) {
 #' Deletes a state machine version
 #'
 #' @description
-#' Deletes a state machine
-#' [version](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html).
-#' After you delete a version, you can't call
-#' [`start_execution`][sfn_start_execution] using that version's ARN or use
-#' the version with a state machine
-#' [alias](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html).
+#' Deletes a state machine [version](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html). After you delete a version, you can't call [`start_execution`][sfn_start_execution] using that version's ARN or use the version with a state machine [alias](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html).
 #' 
-#' Deleting a state machine version won't terminate its in-progress
-#' executions.
+#' Deleting a state machine version won't terminate its in-progress executions.
 #' 
-#' You can't delete a state machine version currently referenced by one or
-#' more aliases. Before you delete a version, you must either delete the
-#' aliases or update them to point to another state machine version.
+#' You can't delete a state machine version currently referenced by one or more aliases. Before you delete a version, you must either delete the aliases or update them to point to another state machine version.
 #' 
 #' **Related operations:**
 #' 
@@ -643,8 +523,7 @@ sfn_delete_state_machine_version <- function(stateMachineVersionArn) {
 #' @description
 #' Describes an activity.
 #' 
-#' This operation is eventually consistent. The results are best effort and
-#' may not reflect very recent updates and changes.
+#' This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.
 #'
 #' @usage
 #' sfn_describe_activity(activityArn)
@@ -704,35 +583,19 @@ sfn_describe_activity <- function(activityArn) {
 #' and relevant execution metadata
 #'
 #' @description
-#' Provides information about a state machine execution, such as the state
-#' machine associated with the execution, the execution input and output,
-#' and relevant execution metadata. If you've
-#' [redriven](https://docs.aws.amazon.com/step-functions/latest/dg/redrive-executions.html)
-#' an execution, you can use this API action to return information about
-#' the redrives of that execution. In addition, you can use this API action
-#' to return the Map Run Amazon Resource Name (ARN) if the execution was
-#' dispatched by a Map Run.
+#' Provides information about a state machine execution, such as the state machine associated with the execution, the execution input and output, and relevant execution metadata. If you've [redriven](https://docs.aws.amazon.com/step-functions/latest/dg/redrive-executions.html) an execution, you can use this API action to return information about the redrives of that execution. In addition, you can use this API action to return the Map Run Amazon Resource Name (ARN) if the execution was dispatched by a Map Run.
 #' 
-#' If you specify a version or alias ARN when you call the
-#' [`start_execution`][sfn_start_execution] API action,
-#' [`describe_execution`][sfn_describe_execution] returns that ARN.
+#' If you specify a version or alias ARN when you call the [`start_execution`][sfn_start_execution] API action, [`describe_execution`][sfn_describe_execution] returns that ARN.
 #' 
-#' This operation is eventually consistent. The results are best effort and
-#' may not reflect very recent updates and changes.
+#' This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.
 #' 
-#' Executions of an `EXPRESS` state machine aren't supported by
-#' [`describe_execution`][sfn_describe_execution] unless a Map Run
-#' dispatched them.
+#' Executions of an `EXPRESS` state machine aren't supported by [`describe_execution`][sfn_describe_execution] unless a Map Run dispatched them.
 #'
 #' @usage
 #' sfn_describe_execution(executionArn, includedData)
 #'
 #' @param executionArn &#91;required&#93; The Amazon Resource Name (ARN) of the execution to describe.
-#' @param includedData If your state machine definition is encrypted with a KMS key, callers
-#' must have `kms:Decrypt` permission to decrypt the definition.
-#' Alternatively, you can call DescribeStateMachine API with
-#' `includedData = METADATA_ONLY` to get a successful response without the
-#' encrypted definition.
+#' @param includedData If your state machine definition is encrypted with a KMS key, callers must have `kms:Decrypt` permission to decrypt the definition. Alternatively, you can call DescribeStateMachine API with `includedData = METADATA_ONLY` to get a successful response without the encrypted definition.
 #'
 #' @return
 #' A list with the following syntax:
@@ -807,13 +670,7 @@ sfn_describe_execution <- function(executionArn, includedData = NULL) {
 #' results
 #'
 #' @description
-#' Provides information about a Map Run's configuration, progress, and
-#' results. If you've
-#' [redriven](https://docs.aws.amazon.com/step-functions/latest/dg/redrive-map-run.html)
-#' a Map Run, this API action also returns information about the redrives
-#' of that Map Run. For more information, see [Examining Map
-#' Run](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html)
-#' in the *Step Functions Developer Guide*.
+#' Provides information about a Map Run's configuration, progress, and results. If you've [redriven](https://docs.aws.amazon.com/step-functions/latest/dg/redrive-map-run.html) a Map Run, this API action also returns information about the redrives of that Map Run. For more information, see [Examining Map Run](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html) in the *Step Functions Developer Guide*.
 #'
 #' @usage
 #' sfn_describe_map_run(mapRunArn)
@@ -902,65 +759,41 @@ sfn_describe_map_run <- function(mapRunArn) {
 #' Amazon Resource Name (ARN), and configuration
 #'
 #' @description
-#' Provides information about a state machine's definition, its IAM role
-#' Amazon Resource Name (ARN), and configuration.
+#' Provides information about a state machine's definition, its IAM role Amazon Resource Name (ARN), and configuration.
 #' 
-#' A qualified state machine ARN can either refer to a *Distributed Map
-#' state* defined within a state machine, a version ARN, or an alias ARN.
+#' A qualified state machine ARN can either refer to a *Distributed Map state* defined within a state machine, a version ARN, or an alias ARN.
 #' 
-#' The following are some examples of qualified and unqualified state
-#' machine ARNs:
+#' The following are some examples of qualified and unqualified state machine ARNs:
 #' 
-#' -   The following qualified state machine ARN refers to a *Distributed
-#'     Map state* with a label `mapStateLabel` in a state machine named
-#'     `myStateMachine`.
+#' -   The following qualified state machine ARN refers to a *Distributed Map state* with a label `mapStateLabel` in a state machine named `myStateMachine`.
 #' 
 #'     `arn:partition:states:region:account-id:stateMachine:myStateMachine/mapStateLabel`
 #' 
-#'     If you provide a qualified state machine ARN that refers to a
-#'     *Distributed Map state*, the request fails with
-#'     `ValidationException`.
+#'     If you provide a qualified state machine ARN that refers to a *Distributed Map state*, the request fails with `ValidationException`.
 #' 
-#' -   The following qualified state machine ARN refers to an alias named
-#'     `PROD`.
+#' -   The following qualified state machine ARN refers to an alias named `PROD`.
 #' 
 #'     `arn:<partition>:states:<region>:<account-id>:stateMachine:<myStateMachine:PROD>`
 #' 
-#'     If you provide a qualified state machine ARN that refers to a
-#'     version ARN or an alias ARN, the request starts execution for that
-#'     version or alias.
+#'     If you provide a qualified state machine ARN that refers to a version ARN or an alias ARN, the request starts execution for that version or alias.
 #' 
-#' -   The following unqualified state machine ARN refers to a state
-#'     machine named `myStateMachine`.
+#' -   The following unqualified state machine ARN refers to a state machine named `myStateMachine`.
 #' 
 #'     `arn:<partition>:states:<region>:<account-id>:stateMachine:<myStateMachine>`
 #' 
-#' This API action returns the details for a state machine version if the
-#' `stateMachineArn` you specify is a state machine version ARN.
+#' This API action returns the details for a state machine version if the `stateMachineArn` you specify is a state machine version ARN.
 #' 
-#' This operation is eventually consistent. The results are best effort and
-#' may not reflect very recent updates and changes.
+#' This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.
 #'
 #' @usage
 #' sfn_describe_state_machine(stateMachineArn, includedData)
 #'
-#' @param stateMachineArn &#91;required&#93; The Amazon Resource Name (ARN) of the state machine for which you want
-#' the information.
+#' @param stateMachineArn &#91;required&#93; The Amazon Resource Name (ARN) of the state machine for which you want the information.
 #' 
-#' If you specify a state machine version ARN, this API returns details
-#' about that version. The version ARN is a combination of state machine
-#' ARN and the version number separated by a colon (:). For example,
-#' `stateMachineARN:1`.
-#' @param includedData If your state machine definition is encrypted with a KMS key, callers
-#' must have `kms:Decrypt` permission to decrypt the definition.
-#' Alternatively, you can call the API with `includedData = METADATA_ONLY`
-#' to get a successful response without the encrypted definition.
+#' If you specify a state machine version ARN, this API returns details about that version. The version ARN is a combination of state machine ARN and the version number separated by a colon (:). For example, `stateMachineARN:1`.
+#' @param includedData If your state machine definition is encrypted with a KMS key, callers must have `kms:Decrypt` permission to decrypt the definition. Alternatively, you can call the API with `includedData = METADATA_ONLY` to get a successful response without the encrypted definition.
 #' 
-#' When calling a labelled ARN for an encrypted state machine, the
-#' `includedData = METADATA_ONLY` parameter will not apply because Step
-#' Functions needs to decrypt the entire state machine definition to get
-#' the Distributed Map state’s definition. In this case, the API caller
-#' needs to have `kms:Decrypt` permission.
+#' When calling a labelled ARN for an encrypted state machine, the `includedData = METADATA_ONLY` parameter will not apply because Step Functions needs to decrypt the entire state machine definition to get the Distributed Map state’s definition. In this case, the API caller needs to have `kms:Decrypt` permission.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1040,8 +873,7 @@ sfn_describe_state_machine <- function(stateMachineArn, includedData = NULL) {
 #' Returns details about a state machine alias
 #'
 #' @description
-#' Returns details about a state machine
-#' [alias](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html).
+#' Returns details about a state machine [alias](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html).
 #' 
 #' **Related operations:**
 #' 
@@ -1115,26 +947,17 @@ sfn_describe_state_machine_alias <- function(stateMachineAliasArn) {
 #' role ARN, and configuration
 #'
 #' @description
-#' Provides information about a state machine's definition, its execution
-#' role ARN, and configuration. If a Map Run dispatched the execution, this
-#' action returns the Map Run Amazon Resource Name (ARN) in the response.
-#' The state machine returned is the state machine associated with the Map
-#' Run.
+#' Provides information about a state machine's definition, its execution role ARN, and configuration. If a Map Run dispatched the execution, this action returns the Map Run Amazon Resource Name (ARN) in the response. The state machine returned is the state machine associated with the Map Run.
 #' 
-#' This operation is eventually consistent. The results are best effort and
-#' may not reflect very recent updates and changes.
+#' This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.
 #' 
 #' This API action is not supported by `EXPRESS` state machines.
 #'
 #' @usage
 #' sfn_describe_state_machine_for_execution(executionArn, includedData)
 #'
-#' @param executionArn &#91;required&#93; The Amazon Resource Name (ARN) of the execution you want state machine
-#' information for.
-#' @param includedData If your state machine definition is encrypted with a KMS key, callers
-#' must have `kms:Decrypt` permission to decrypt the definition.
-#' Alternatively, you can call the API with `includedData = METADATA_ONLY`
-#' to get a successful response without the encrypted definition.
+#' @param executionArn &#91;required&#93; The Amazon Resource Name (ARN) of the execution you want state machine information for.
+#' @param includedData If your state machine definition is encrypted with a KMS key, callers must have `kms:Decrypt` permission to decrypt the definition. Alternatively, you can call the API with `includedData = METADATA_ONLY` to get a successful response without the encrypted definition.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1213,35 +1036,19 @@ sfn_describe_state_machine_for_execution <- function(executionArn, includedData 
 #' which has been scheduled for execution by a running state machine
 #'
 #' @description
-#' Used by workers to retrieve a task (with the specified activity ARN)
-#' which has been scheduled for execution by a running state machine. This
-#' initiates a long poll, where the service holds the HTTP connection open
-#' and responds as soon as a task becomes available (i.e. an execution of a
-#' task of this type is needed.) The maximum time the service holds on to
-#' the request before responding is 60 seconds. If no task is available
-#' within 60 seconds, the poll returns a `taskToken` with a null string.
+#' Used by workers to retrieve a task (with the specified activity ARN) which has been scheduled for execution by a running state machine. This initiates a long poll, where the service holds the HTTP connection open and responds as soon as a task becomes available (i.e. an execution of a task of this type is needed.) The maximum time the service holds on to the request before responding is 60 seconds. If no task is available within 60 seconds, the poll returns a `taskToken` with a null string.
 #' 
 #' This API action isn't logged in CloudTrail.
 #' 
-#' Workers should set their client side socket timeout to at least 65
-#' seconds (5 seconds higher than the maximum time the service may hold the
-#' poll request).
+#' Workers should set their client side socket timeout to at least 65 seconds (5 seconds higher than the maximum time the service may hold the poll request).
 #' 
-#' Polling with [`get_activity_task`][sfn_get_activity_task] can cause
-#' latency in some implementations. See [Avoid Latency When Polling for
-#' Activity
-#' Tasks](https://docs.aws.amazon.com/step-functions/latest/dg/sfn-best-practices.html#bp-activity-pollers)
-#' in the Step Functions Developer Guide.
+#' Polling with [`get_activity_task`][sfn_get_activity_task] can cause latency in some implementations. See [Avoid Latency When Polling for Activity Tasks](https://docs.aws.amazon.com/step-functions/latest/dg/sfn-best-practices.html) in the Step Functions Developer Guide.
 #'
 #' @usage
 #' sfn_get_activity_task(activityArn, workerName)
 #'
-#' @param activityArn &#91;required&#93; The Amazon Resource Name (ARN) of the activity to retrieve tasks from
-#' (assigned when you create the task using
-#' [`create_activity`][sfn_create_activity].)
-#' @param workerName You can provide an arbitrary name in order to identify the worker that
-#' the task is assigned to. This name is used when it is logged in the
-#' execution history.
+#' @param activityArn &#91;required&#93; The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task using [`create_activity`][sfn_create_activity].)
+#' @param workerName You can provide an arbitrary name in order to identify the worker that the task is assigned to. This name is used when it is logged in the execution history.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1287,17 +1094,9 @@ sfn_get_activity_task <- function(activityArn, workerName = NULL) {
 #' Returns the history of the specified execution as a list of events
 #'
 #' @description
-#' Returns the history of the specified execution as a list of events. By
-#' default, the results are returned in ascending order of the `timeStamp`
-#' of the events. Use the `reverseOrder` parameter to get the latest events
-#' first.
+#' Returns the history of the specified execution as a list of events. By default, the results are returned in ascending order of the `timeStamp` of the events. Use the `reverseOrder` parameter to get the latest events first.
 #' 
-#' If `nextToken` is returned, there are more results available. The value
-#' of `nextToken` is a unique pagination token for each page. Make the call
-#' again using the returned token to retrieve the next page. Keep all other
-#' arguments unchanged. Each pagination token expires after 24 hours. Using
-#' an expired pagination token will return an *HTTP 400 InvalidToken*
-#' error.
+#' If `nextToken` is returned, there are more results available. The value of `nextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an *HTTP 400 InvalidToken* error.
 #' 
 #' This API action is not supported by `EXPRESS` state machines.
 #'
@@ -1306,21 +1105,12 @@ sfn_get_activity_task <- function(activityArn, workerName = NULL) {
 #'   nextToken, includeExecutionData)
 #'
 #' @param executionArn &#91;required&#93; The Amazon Resource Name (ARN) of the execution.
-#' @param maxResults The maximum number of results that are returned per call. You can use
-#' `nextToken` to obtain further pages of results. The default is 100 and
-#' the maximum allowed page size is 1000. A value of 0 uses the default.
+#' @param maxResults The maximum number of results that are returned per call. You can use `nextToken` to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.
 #' 
-#' This is only an upper limit. The actual number of results returned per
-#' call might be fewer than the specified maximum.
+#' This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.
 #' @param reverseOrder Lists events in descending order of their `timeStamp`.
-#' @param nextToken If `nextToken` is returned, there are more results available. The value
-#' of `nextToken` is a unique pagination token for each page. Make the call
-#' again using the returned token to retrieve the next page. Keep all other
-#' arguments unchanged. Each pagination token expires after 24 hours. Using
-#' an expired pagination token will return an *HTTP 400 InvalidToken*
-#' error.
-#' @param includeExecutionData You can select whether execution data (input or output of a history
-#' event) is returned. The default is `true`.
+#' @param nextToken If `nextToken` is returned, there are more results available. The value of `nextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an *HTTP 400 InvalidToken* error.
+#' @param includeExecutionData You can select whether execution data (input or output of a history event) is returned. The default is `true`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1584,31 +1374,17 @@ sfn_get_execution_history <- function(executionArn, maxResults = NULL, reverseOr
 #' @description
 #' Lists the existing activities.
 #' 
-#' If `nextToken` is returned, there are more results available. The value
-#' of `nextToken` is a unique pagination token for each page. Make the call
-#' again using the returned token to retrieve the next page. Keep all other
-#' arguments unchanged. Each pagination token expires after 24 hours. Using
-#' an expired pagination token will return an *HTTP 400 InvalidToken*
-#' error.
+#' If `nextToken` is returned, there are more results available. The value of `nextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an *HTTP 400 InvalidToken* error.
 #' 
-#' This operation is eventually consistent. The results are best effort and
-#' may not reflect very recent updates and changes.
+#' This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.
 #'
 #' @usage
 #' sfn_list_activities(maxResults, nextToken)
 #'
-#' @param maxResults The maximum number of results that are returned per call. You can use
-#' `nextToken` to obtain further pages of results. The default is 100 and
-#' the maximum allowed page size is 1000. A value of 0 uses the default.
+#' @param maxResults The maximum number of results that are returned per call. You can use `nextToken` to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.
 #' 
-#' This is only an upper limit. The actual number of results returned per
-#' call might be fewer than the specified maximum.
-#' @param nextToken If `nextToken` is returned, there are more results available. The value
-#' of `nextToken` is a unique pagination token for each page. Make the call
-#' again using the returned token to retrieve the next page. Keep all other
-#' arguments unchanged. Each pagination token expires after 24 hours. Using
-#' an expired pagination token will return an *HTTP 400 InvalidToken*
-#' error.
+#' This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.
+#' @param nextToken If `nextToken` is returned, there are more results available. The value of `nextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an *HTTP 400 InvalidToken* error.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1662,30 +1438,15 @@ sfn_list_activities <- function(maxResults = NULL, nextToken = NULL) {
 #' Lists all executions of a state machine or a Map Run
 #'
 #' @description
-#' Lists all executions of a state machine or a Map Run. You can list all
-#' executions related to a state machine by specifying a state machine
-#' Amazon Resource Name (ARN), or those related to a Map Run by specifying
-#' a Map Run ARN. Using this API action, you can also list all
-#' [redriven](https://docs.aws.amazon.com/step-functions/latest/dg/redrive-executions.html)
-#' executions.
+#' Lists all executions of a state machine or a Map Run. You can list all executions related to a state machine by specifying a state machine Amazon Resource Name (ARN), or those related to a Map Run by specifying a Map Run ARN. Using this API action, you can also list all [redriven](https://docs.aws.amazon.com/step-functions/latest/dg/redrive-executions.html) executions.
 #' 
-#' You can also provide a state machine
-#' [alias](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html)
-#' ARN or
-#' [version](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html)
-#' ARN to list the executions associated with a specific alias or version.
+#' You can also provide a state machine [alias](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html) ARN or [version](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html) ARN to list the executions associated with a specific alias or version.
 #' 
 #' Results are sorted by time, with the most recent execution first.
 #' 
-#' If `nextToken` is returned, there are more results available. The value
-#' of `nextToken` is a unique pagination token for each page. Make the call
-#' again using the returned token to retrieve the next page. Keep all other
-#' arguments unchanged. Each pagination token expires after 24 hours. Using
-#' an expired pagination token will return an *HTTP 400 InvalidToken*
-#' error.
+#' If `nextToken` is returned, there are more results available. The value of `nextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an *HTTP 400 InvalidToken* error.
 #' 
-#' This operation is eventually consistent. The results are best effort and
-#' may not reflect very recent updates and changes.
+#' This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.
 #' 
 #' This API action is not supported by `EXPRESS` state machines.
 #'
@@ -1693,60 +1454,30 @@ sfn_list_activities <- function(maxResults = NULL, nextToken = NULL) {
 #' sfn_list_executions(stateMachineArn, statusFilter, maxResults,
 #'   nextToken, mapRunArn, redriveFilter)
 #'
-#' @param stateMachineArn The Amazon Resource Name (ARN) of the state machine whose executions is
-#' listed.
+#' @param stateMachineArn The Amazon Resource Name (ARN) of the state machine whose executions is listed.
 #' 
-#' You can specify either a `mapRunArn` or a `stateMachineArn`, but not
-#' both.
+#' You can specify either a `mapRunArn` or a `stateMachineArn`, but not both.
 #' 
-#' You can also return a list of executions associated with a specific
-#' [alias](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html)
-#' or
-#' [version](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html),
-#' by specifying an alias ARN or a version ARN in the `stateMachineArn`
-#' parameter.
-#' @param statusFilter If specified, only list the executions whose current execution status
-#' matches the given filter.
+#' You can also return a list of executions associated with a specific [alias](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html) or [version](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html), by specifying an alias ARN or a version ARN in the `stateMachineArn` parameter.
+#' @param statusFilter If specified, only list the executions whose current execution status matches the given filter.
 #' 
-#' If you provide a `PENDING_REDRIVE` statusFilter, you must specify
-#' `mapRunArn`. For more information, see [Child workflow execution redrive
-#' behaviour](https://docs.aws.amazon.com/step-functions/latest/dg/redrive-map-run.html#redrive-child-workflow-behavior)
-#' in the *Step Functions Developer Guide*.
+#' If you provide a `PENDING_REDRIVE` statusFilter, you must specify `mapRunArn`. For more information, see [Child workflow execution redrive behaviour](https://docs.aws.amazon.com/step-functions/latest/dg/redrive-map-run.html#redrive-child-workflow-behavior) in the *Step Functions Developer Guide*.
 #' 
-#' If you provide a stateMachineArn and a `PENDING_REDRIVE` statusFilter,
-#' the API returns a validation exception.
-#' @param maxResults The maximum number of results that are returned per call. You can use
-#' `nextToken` to obtain further pages of results. The default is 100 and
-#' the maximum allowed page size is 1000. A value of 0 uses the default.
+#' If you provide a stateMachineArn and a `PENDING_REDRIVE` statusFilter, the API returns a validation exception.
+#' @param maxResults The maximum number of results that are returned per call. You can use `nextToken` to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.
 #' 
-#' This is only an upper limit. The actual number of results returned per
-#' call might be fewer than the specified maximum.
-#' @param nextToken If `nextToken` is returned, there are more results available. The value
-#' of `nextToken` is a unique pagination token for each page. Make the call
-#' again using the returned token to retrieve the next page. Keep all other
-#' arguments unchanged. Each pagination token expires after 24 hours. Using
-#' an expired pagination token will return an *HTTP 400 InvalidToken*
-#' error.
-#' @param mapRunArn The Amazon Resource Name (ARN) of the Map Run that started the child
-#' workflow executions. If the `mapRunArn` field is specified, a list of
-#' all of the child workflow executions started by a Map Run is returned.
-#' For more information, see [Examining Map
-#' Run](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html)
-#' in the *Step Functions Developer Guide*.
+#' This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.
+#' @param nextToken If `nextToken` is returned, there are more results available. The value of `nextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an *HTTP 400 InvalidToken* error.
+#' @param mapRunArn The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the `mapRunArn` field is specified, a list of all of the child workflow executions started by a Map Run is returned. For more information, see [Examining Map Run](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html) in the *Step Functions Developer Guide*.
 #' 
-#' You can specify either a `mapRunArn` or a `stateMachineArn`, but not
-#' both.
-#' @param redriveFilter Sets a filter to list executions based on whether or not they have been
-#' redriven.
+#' You can specify either a `mapRunArn` or a `stateMachineArn`, but not both.
+#' @param redriveFilter Sets a filter to list executions based on whether or not they have been redriven.
 #' 
-#' For a Distributed Map, `redriveFilter` sets a filter to list child
-#' workflow executions based on whether or not they have been redriven.
+#' For a Distributed Map, `redriveFilter` sets a filter to list child workflow executions based on whether or not they have been redriven.
 #' 
-#' If you do not provide a `redriveFilter`, Step Functions returns a list
-#' of both redriven and non-redriven executions.
+#' If you do not provide a `redriveFilter`, Step Functions returns a list of both redriven and non-redriven executions.
 #' 
-#' If you provide a state machine ARN in `redriveFilter`, the API returns a
-#' validation exception.
+#' If you provide a state machine ARN in `redriveFilter`, the API returns a validation exception.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1817,28 +1548,16 @@ sfn_list_executions <- function(stateMachineArn = NULL, statusFilter = NULL, max
 #' Lists all Map Runs that were started by a given state machine execution
 #'
 #' @description
-#' Lists all Map Runs that were started by a given state machine execution.
-#' Use this API action to obtain Map Run ARNs, and then call
-#' [`describe_map_run`][sfn_describe_map_run] to obtain more information,
-#' if needed.
+#' Lists all Map Runs that were started by a given state machine execution. Use this API action to obtain Map Run ARNs, and then call [`describe_map_run`][sfn_describe_map_run] to obtain more information, if needed.
 #'
 #' @usage
 #' sfn_list_map_runs(executionArn, maxResults, nextToken)
 #'
-#' @param executionArn &#91;required&#93; The Amazon Resource Name (ARN) of the execution for which the Map Runs
-#' must be listed.
-#' @param maxResults The maximum number of results that are returned per call. You can use
-#' `nextToken` to obtain further pages of results. The default is 100 and
-#' the maximum allowed page size is 1000. A value of 0 uses the default.
+#' @param executionArn &#91;required&#93; The Amazon Resource Name (ARN) of the execution for which the Map Runs must be listed.
+#' @param maxResults The maximum number of results that are returned per call. You can use `nextToken` to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.
 #' 
-#' This is only an upper limit. The actual number of results returned per
-#' call might be fewer than the specified maximum.
-#' @param nextToken If `nextToken` is returned, there are more results available. The value
-#' of `nextToken` is a unique pagination token for each page. Make the call
-#' again using the returned token to retrieve the next page. Keep all other
-#' arguments unchanged. Each pagination token expires after 24 hours. Using
-#' an expired pagination token will return an *HTTP 400 InvalidToken*
-#' error.
+#' This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.
+#' @param nextToken If `nextToken` is returned, there are more results available. The value of `nextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an *HTTP 400 InvalidToken* error.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1897,21 +1616,11 @@ sfn_list_map_runs <- function(executionArn, maxResults = NULL, nextToken = NULL)
 #' Lists aliases for a specified state machine ARN
 #'
 #' @description
-#' Lists
-#' [aliases](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html)
-#' for a specified state machine ARN. Results are sorted by time, with the
-#' most recently created aliases listed first.
+#' Lists [aliases](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html) for a specified state machine ARN. Results are sorted by time, with the most recently created aliases listed first.
 #' 
-#' To list aliases that reference a state machine
-#' [version](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html),
-#' you can specify the version ARN in the `stateMachineArn` parameter.
+#' To list aliases that reference a state machine [version](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html), you can specify the version ARN in the `stateMachineArn` parameter.
 #' 
-#' If `nextToken` is returned, there are more results available. The value
-#' of `nextToken` is a unique pagination token for each page. Make the call
-#' again using the returned token to retrieve the next page. Keep all other
-#' arguments unchanged. Each pagination token expires after 24 hours. Using
-#' an expired pagination token will return an *HTTP 400 InvalidToken*
-#' error.
+#' If `nextToken` is returned, there are more results available. The value of `nextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an *HTTP 400 InvalidToken* error.
 #' 
 #' **Related operations:**
 #' 
@@ -1926,23 +1635,13 @@ sfn_list_map_runs <- function(executionArn, maxResults = NULL, nextToken = NULL)
 #' @usage
 #' sfn_list_state_machine_aliases(stateMachineArn, nextToken, maxResults)
 #'
-#' @param stateMachineArn &#91;required&#93; The Amazon Resource Name (ARN) of the state machine for which you want
-#' to list aliases.
+#' @param stateMachineArn &#91;required&#93; The Amazon Resource Name (ARN) of the state machine for which you want to list aliases.
 #' 
-#' If you specify a state machine version ARN, this API returns a list of
-#' aliases for that version.
-#' @param nextToken If `nextToken` is returned, there are more results available. The value
-#' of `nextToken` is a unique pagination token for each page. Make the call
-#' again using the returned token to retrieve the next page. Keep all other
-#' arguments unchanged. Each pagination token expires after 24 hours. Using
-#' an expired pagination token will return an *HTTP 400 InvalidToken*
-#' error.
-#' @param maxResults The maximum number of results that are returned per call. You can use
-#' `nextToken` to obtain further pages of results. The default is 100 and
-#' the maximum allowed page size is 1000. A value of 0 uses the default.
+#' If you specify a state machine version ARN, this API returns a list of aliases for that version.
+#' @param nextToken If `nextToken` is returned, there are more results available. The value of `nextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an *HTTP 400 InvalidToken* error.
+#' @param maxResults The maximum number of results that are returned per call. You can use `nextToken` to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.
 #' 
-#' This is only an upper limit. The actual number of results returned per
-#' call might be fewer than the specified maximum.
+#' This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1997,18 +1696,11 @@ sfn_list_state_machine_aliases <- function(stateMachineArn, nextToken = NULL, ma
 #' (ARN)
 #'
 #' @description
-#' Lists
-#' [versions](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html)
-#' for the specified state machine Amazon Resource Name (ARN).
+#' Lists [versions](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html) for the specified state machine Amazon Resource Name (ARN).
 #' 
 #' The results are sorted in descending order of the version creation time.
 #' 
-#' If `nextToken` is returned, there are more results available. The value
-#' of `nextToken` is a unique pagination token for each page. Make the call
-#' again using the returned token to retrieve the next page. Keep all other
-#' arguments unchanged. Each pagination token expires after 24 hours. Using
-#' an expired pagination token will return an *HTTP 400 InvalidToken*
-#' error.
+#' If `nextToken` is returned, there are more results available. The value of `nextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an *HTTP 400 InvalidToken* error.
 #' 
 #' **Related operations:**
 #' 
@@ -2020,18 +1712,10 @@ sfn_list_state_machine_aliases <- function(stateMachineArn, nextToken = NULL, ma
 #' sfn_list_state_machine_versions(stateMachineArn, nextToken, maxResults)
 #'
 #' @param stateMachineArn &#91;required&#93; The Amazon Resource Name (ARN) of the state machine.
-#' @param nextToken If `nextToken` is returned, there are more results available. The value
-#' of `nextToken` is a unique pagination token for each page. Make the call
-#' again using the returned token to retrieve the next page. Keep all other
-#' arguments unchanged. Each pagination token expires after 24 hours. Using
-#' an expired pagination token will return an *HTTP 400 InvalidToken*
-#' error.
-#' @param maxResults The maximum number of results that are returned per call. You can use
-#' `nextToken` to obtain further pages of results. The default is 100 and
-#' the maximum allowed page size is 1000. A value of 0 uses the default.
+#' @param nextToken If `nextToken` is returned, there are more results available. The value of `nextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an *HTTP 400 InvalidToken* error.
+#' @param maxResults The maximum number of results that are returned per call. You can use `nextToken` to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.
 #' 
-#' This is only an upper limit. The actual number of results returned per
-#' call might be fewer than the specified maximum.
+#' This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2087,31 +1771,17 @@ sfn_list_state_machine_versions <- function(stateMachineArn, nextToken = NULL, m
 #' @description
 #' Lists the existing state machines.
 #' 
-#' If `nextToken` is returned, there are more results available. The value
-#' of `nextToken` is a unique pagination token for each page. Make the call
-#' again using the returned token to retrieve the next page. Keep all other
-#' arguments unchanged. Each pagination token expires after 24 hours. Using
-#' an expired pagination token will return an *HTTP 400 InvalidToken*
-#' error.
+#' If `nextToken` is returned, there are more results available. The value of `nextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an *HTTP 400 InvalidToken* error.
 #' 
-#' This operation is eventually consistent. The results are best effort and
-#' may not reflect very recent updates and changes.
+#' This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.
 #'
 #' @usage
 #' sfn_list_state_machines(maxResults, nextToken)
 #'
-#' @param maxResults The maximum number of results that are returned per call. You can use
-#' `nextToken` to obtain further pages of results. The default is 100 and
-#' the maximum allowed page size is 1000. A value of 0 uses the default.
+#' @param maxResults The maximum number of results that are returned per call. You can use `nextToken` to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.
 #' 
-#' This is only an upper limit. The actual number of results returned per
-#' call might be fewer than the specified maximum.
-#' @param nextToken If `nextToken` is returned, there are more results available. The value
-#' of `nextToken` is a unique pagination token for each page. Make the call
-#' again using the returned token to retrieve the next page. Keep all other
-#' arguments unchanged. Each pagination token expires after 24 hours. Using
-#' an expired pagination token will return an *HTTP 400 InvalidToken*
-#' error.
+#' This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.
+#' @param nextToken If `nextToken` is returned, there are more results available. The value of `nextToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an *HTTP 400 InvalidToken* error.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2168,14 +1838,12 @@ sfn_list_state_machines <- function(maxResults = NULL, nextToken = NULL) {
 #' @description
 #' List tags for a given resource.
 #' 
-#' Tags may only contain Unicode letters, digits, white space, or these
-#' symbols: `_ . : / = + - @@`.
+#' Tags may only contain Unicode letters, digits, white space, or these symbols: `_ . : / = + - @@`.
 #'
 #' @usage
 #' sfn_list_tags_for_resource(resourceArn)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) for the Step Functions state machine or
-#' activity.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) for the Step Functions state machine or activity.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2224,27 +1892,11 @@ sfn_list_tags_for_resource <- function(resourceArn) {
 #' Creates a version from the current revision of a state machine
 #'
 #' @description
-#' Creates a
-#' [version](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html)
-#' from the current revision of a state machine. Use versions to create
-#' immutable snapshots of your state machine. You can start executions from
-#' versions either directly or with an alias. To create an alias, use
-#' [`create_state_machine_alias`][sfn_create_state_machine_alias].
+#' Creates a [version](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html) from the current revision of a state machine. Use versions to create immutable snapshots of your state machine. You can start executions from versions either directly or with an alias. To create an alias, use [`create_state_machine_alias`][sfn_create_state_machine_alias].
 #' 
-#' You can publish up to 1000 versions for each state machine. You must
-#' manually delete unused versions using the
-#' [`delete_state_machine_version`][sfn_delete_state_machine_version] API
-#' action.
+#' You can publish up to 1000 versions for each state machine. You must manually delete unused versions using the [`delete_state_machine_version`][sfn_delete_state_machine_version] API action.
 #' 
-#' [`publish_state_machine_version`][sfn_publish_state_machine_version] is
-#' an idempotent API. It doesn't create a duplicate state machine version
-#' if it already exists for the current revision. Step Functions bases
-#' [`publish_state_machine_version`][sfn_publish_state_machine_version]'s
-#' idempotency check on the `stateMachineArn`, `name`, and `revisionId`
-#' parameters. Requests with the same parameters return a successful
-#' idempotent response. If you don't specify a `revisionId`, Step Functions
-#' checks for a previously published version of the state machine's current
-#' revision.
+#' [`publish_state_machine_version`][sfn_publish_state_machine_version] is an idempotent API. It doesn't create a duplicate state machine version if it already exists for the current revision. Step Functions bases [`publish_state_machine_version`][sfn_publish_state_machine_version]'s idempotency check on the `stateMachineArn`, `name`, and `revisionId` parameters. Requests with the same parameters return a successful idempotent response. If you don't specify a `revisionId`, Step Functions checks for a previously published version of the state machine's current revision.
 #' 
 #' **Related operations:**
 #' 
@@ -2257,19 +1909,11 @@ sfn_list_tags_for_resource <- function(resourceArn) {
 #'   description)
 #'
 #' @param stateMachineArn &#91;required&#93; The Amazon Resource Name (ARN) of the state machine.
-#' @param revisionId Only publish the state machine version if the current state machine's
-#' revision ID matches the specified ID.
+#' @param revisionId Only publish the state machine version if the current state machine's revision ID matches the specified ID.
 #' 
-#' Use this option to avoid publishing a version if the state machine
-#' changed since you last updated it. If the specified revision ID doesn't
-#' match the state machine's current revision ID, the API returns
-#' `ConflictException`.
+#' Use this option to avoid publishing a version if the state machine changed since you last updated it. If the specified revision ID doesn't match the state machine's current revision ID, the API returns `ConflictException`.
 #' 
-#' To specify an initial revision ID for a state machine with no revision
-#' ID assigned, specify the string `INITIAL` for the `revisionId`
-#' parameter. For example, you can specify a `revisionID` of `INITIAL` when
-#' you create a state machine using the
-#' [`create_state_machine`][sfn_create_state_machine] API action.
+#' To specify an initial revision ID for a state machine with no revision ID assigned, specify the string `INITIAL` for the `revisionId` parameter. For example, you can specify a `revisionID` of `INITIAL` when you create a state machine using the [`create_state_machine`][sfn_create_state_machine] API action.
 #' @param description An optional description of the state machine version.
 #'
 #' @return
@@ -2320,72 +1964,31 @@ sfn_publish_state_machine_version <- function(stateMachineArn, revisionId = NULL
 #' complete successfully in the last 14 days
 #'
 #' @description
-#' Restarts unsuccessful executions of Standard workflows that didn't
-#' complete successfully in the last 14 days. These include failed,
-#' aborted, or timed out executions. When you
-#' [redrive](https://docs.aws.amazon.com/step-functions/latest/dg/redrive-executions.html)
-#' an execution, it continues the failed execution from the unsuccessful
-#' step and uses the same input. Step Functions preserves the results and
-#' execution history of the successful steps, and doesn't rerun these steps
-#' when you redrive an execution. Redriven executions use the same state
-#' machine definition and execution ARN as the original execution attempt.
+#' Restarts unsuccessful executions of Standard workflows that didn't complete successfully in the last 14 days. These include failed, aborted, or timed out executions. When you [redrive](https://docs.aws.amazon.com/step-functions/latest/dg/redrive-executions.html) an execution, it continues the failed execution from the unsuccessful step and uses the same input. Step Functions preserves the results and execution history of the successful steps, and doesn't rerun these steps when you redrive an execution. Redriven executions use the same state machine definition and execution ARN as the original execution attempt.
 #' 
-#' For workflows that include an [Inline
-#' Map](https://docs.aws.amazon.com/step-functions/latest/dg/state-map.html)
-#' or
-#' [Parallel](https://docs.aws.amazon.com/step-functions/latest/dg/state-parallel.html)
-#' state, [`redrive_execution`][sfn_redrive_execution] API action
-#' reschedules and redrives only the iterations and branches that failed or
-#' aborted.
+#' For workflows that include an [Inline Map](https://docs.aws.amazon.com/step-functions/latest/dg/state-map.html) or [Parallel](https://docs.aws.amazon.com/step-functions/latest/dg/state-parallel.html) state, [`redrive_execution`][sfn_redrive_execution] API action reschedules and redrives only the iterations and branches that failed or aborted.
 #' 
-#' To redrive a workflow that includes a Distributed Map state whose Map
-#' Run failed, you must redrive the [parent
-#' workflow](https://docs.aws.amazon.com/step-functions/latest/dg/state-map-distributed.html#dist-map-orchestrate-parallel-workloads-key-terms).
-#' The parent workflow redrives all the unsuccessful states, including a
-#' failed Map Run. If a Map Run was not started in the original execution
-#' attempt, the redriven parent workflow starts the Map Run.
+#' To redrive a workflow that includes a Distributed Map state whose Map Run failed, you must redrive the [parent workflow](https://docs.aws.amazon.com/step-functions/latest/dg/state-map-distributed.html#dist-map-orchestrate-parallel-workloads-key-terms). The parent workflow redrives all the unsuccessful states, including a failed Map Run. If a Map Run was not started in the original execution attempt, the redriven parent workflow starts the Map Run.
 #' 
 #' This API action is not supported by `EXPRESS` state machines.
 #' 
-#' However, you can restart the unsuccessful executions of Express child
-#' workflows in a Distributed Map by redriving its Map Run. When you
-#' redrive a Map Run, the Express child workflows are rerun using the
-#' [`start_execution`][sfn_start_execution] API action. For more
-#' information, see [Redriving Map
-#' Runs](https://docs.aws.amazon.com/step-functions/latest/dg/redrive-map-run.html).
+#' However, you can restart the unsuccessful executions of Express child workflows in a Distributed Map by redriving its Map Run. When you redrive a Map Run, the Express child workflows are rerun using the [`start_execution`][sfn_start_execution] API action. For more information, see [Redriving Map Runs](https://docs.aws.amazon.com/step-functions/latest/dg/redrive-map-run.html).
 #' 
-#' You can redrive executions if your original execution meets the
-#' following conditions:
+#' You can redrive executions if your original execution meets the following conditions:
 #' 
 #' -   The execution status isn't `SUCCEEDED`.
 #' 
-#' -   Your workflow execution has not exceeded the redrivable period of 14
-#'     days. Redrivable period refers to the time during which you can
-#'     redrive a given execution. This period starts from the day a state
-#'     machine completes its execution.
+#' -   Your workflow execution has not exceeded the redrivable period of 14 days. Redrivable period refers to the time during which you can redrive a given execution. This period starts from the day a state machine completes its execution.
 #' 
-#' -   The workflow execution has not exceeded the maximum open time of one
-#'     year. For more information about state machine quotas, see [Quotas
-#'     related to state machine
-#'     executions](https://docs.aws.amazon.com/step-functions/latest/dg/service-quotas.html#service-limits-state-machine-executions).
+#' -   The workflow execution has not exceeded the maximum open time of one year. For more information about state machine quotas, see [Quotas related to state machine executions](https://docs.aws.amazon.com/step-functions/latest/dg/service-quotas.html#service-limits-state-machine-executions).
 #' 
-#' -   The execution event history count is less than 24,999. Redriven
-#'     executions append their event history to the existing event history.
-#'     Make sure your workflow execution contains less than 24,999 events
-#'     to accommodate the `ExecutionRedriven` history event and at least
-#'     one other history event.
+#' -   The execution event history count is less than 24,999. Redriven executions append their event history to the existing event history. Make sure your workflow execution contains less than 24,999 events to accommodate the `ExecutionRedriven` history event and at least one other history event.
 #'
 #' @usage
 #' sfn_redrive_execution(executionArn, clientToken)
 #'
 #' @param executionArn &#91;required&#93; The Amazon Resource Name (ARN) of the execution to be redriven.
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you don’t specify a client token, the
-#' Amazon Web Services SDK automatically generates a client token and uses
-#' it for the request to ensure idempotency. The API will return idempotent
-#' responses for the last 10 client tokens used to successfully redrive the
-#' execution. These client tokens are valid for up to 15 minutes after they
-#' are first used.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency. The API will return idempotent responses for the last 10 client tokens used to successfully redrive the execution. These client tokens are valid for up to 15 minutes after they are first used.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2434,27 +2037,16 @@ sfn_redrive_execution <- function(executionArn, clientToken = NULL) {
 #' identified by the taskToken failed
 #'
 #' @description
-#' Used by activity workers, Task states using the
-#' [callback](https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token)
-#' pattern, and optionally Task states using the [job
-#' run](https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-sync)
-#' pattern to report that the task identified by the `taskToken` failed.
+#' Used by activity workers, Task states using the [callback](https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token) pattern, and optionally Task states using the [job run](https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-sync) pattern to report that the task identified by the `taskToken` failed.
 #' 
-#' For an execution with encryption enabled, Step Functions will encrypt
-#' the error and cause fields using the KMS key for the execution role.
+#' For an execution with encryption enabled, Step Functions will encrypt the error and cause fields using the KMS key for the execution role.
 #' 
-#' A caller can mark a task as fail without using any KMS permissions in
-#' the execution role if the caller provides a null value for both `error`
-#' and `cause` fields because no data needs to be encrypted.
+#' A caller can mark a task as fail without using any KMS permissions in the execution role if the caller provides a null value for both `error` and `cause` fields because no data needs to be encrypted.
 #'
 #' @usage
 #' sfn_send_task_failure(taskToken, error, cause)
 #'
-#' @param taskToken &#91;required&#93; The token that represents this task. Task tokens are generated by Step
-#' Functions when tasks are assigned to a worker, or in the [context
-#' object](https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html)
-#' when a workflow enters a task state. See
-#' GetActivityTaskOutput$taskToken.
+#' @param taskToken &#91;required&#93; The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the [context object](https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html) when a workflow enters a task state. See GetActivityTaskOutput$taskToken.
 #' @param error The error code of the failure.
 #' @param cause A more detailed explanation of the cause of the failure.
 #'
@@ -2500,37 +2092,14 @@ sfn_send_task_failure <- function(taskToken, error = NULL, cause = NULL) {
 #' making progress
 #'
 #' @description
-#' Used by activity workers and Task states using the
-#' [callback](https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token)
-#' pattern, and optionally Task states using the [job
-#' run](https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-sync)
-#' pattern to report to Step Functions that the task represented by the
-#' specified `taskToken` is still making progress. This action resets the
-#' `Heartbeat` clock. The `Heartbeat` threshold is specified in the state
-#' machine's Amazon States Language definition (`HeartbeatSeconds`). This
-#' action does not in itself create an event in the execution history.
-#' However, if the task times out, the execution history contains an
-#' `ActivityTimedOut` entry for activities, or a `TaskTimedOut` entry for
-#' tasks using the [job
-#' run](https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-sync)
-#' or
-#' [callback](https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token)
-#' pattern.
+#' Used by activity workers and Task states using the [callback](https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token) pattern, and optionally Task states using the [job run](https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-sync) pattern to report to Step Functions that the task represented by the specified `taskToken` is still making progress. This action resets the `Heartbeat` clock. The `Heartbeat` threshold is specified in the state machine's Amazon States Language definition (`HeartbeatSeconds`). This action does not in itself create an event in the execution history. However, if the task times out, the execution history contains an `ActivityTimedOut` entry for activities, or a `TaskTimedOut` entry for tasks using the [job run](https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-sync) or [callback](https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token) pattern.
 #' 
-#' The `Timeout` of a task, defined in the state machine's Amazon States
-#' Language definition, is its maximum allowed duration, regardless of the
-#' number of [`send_task_heartbeat`][sfn_send_task_heartbeat] requests
-#' received. Use `HeartbeatSeconds` to configure the timeout interval for
-#' heartbeats.
+#' The `Timeout` of a task, defined in the state machine's Amazon States Language definition, is its maximum allowed duration, regardless of the number of [`send_task_heartbeat`][sfn_send_task_heartbeat] requests received. Use `HeartbeatSeconds` to configure the timeout interval for heartbeats.
 #'
 #' @usage
 #' sfn_send_task_heartbeat(taskToken)
 #'
-#' @param taskToken &#91;required&#93; The token that represents this task. Task tokens are generated by Step
-#' Functions when tasks are assigned to a worker, or in the [context
-#' object](https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html)
-#' when a workflow enters a task state. See
-#' GetActivityTaskOutput$taskToken.
+#' @param taskToken &#91;required&#93; The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the [context object](https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html) when a workflow enters a task state. See GetActivityTaskOutput$taskToken.
 #'
 #' @return
 #' An empty list.
@@ -2571,23 +2140,13 @@ sfn_send_task_heartbeat <- function(taskToken) {
 #' identified by the taskToken completed successfully
 #'
 #' @description
-#' Used by activity workers, Task states using the
-#' [callback](https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token)
-#' pattern, and optionally Task states using the [job
-#' run](https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-sync)
-#' pattern to report that the task identified by the `taskToken` completed
-#' successfully.
+#' Used by activity workers, Task states using the [callback](https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token) pattern, and optionally Task states using the [job run](https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-sync) pattern to report that the task identified by the `taskToken` completed successfully.
 #'
 #' @usage
 #' sfn_send_task_success(taskToken, output)
 #'
-#' @param taskToken &#91;required&#93; The token that represents this task. Task tokens are generated by Step
-#' Functions when tasks are assigned to a worker, or in the [context
-#' object](https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html)
-#' when a workflow enters a task state. See
-#' GetActivityTaskOutput$taskToken.
-#' @param output &#91;required&#93; The JSON output of the task. Length constraints apply to the payload
-#' size, and are expressed as bytes in UTF-8 encoding.
+#' @param taskToken &#91;required&#93; The token that represents this task. Task tokens are generated by Step Functions when tasks are assigned to a worker, or in the [context object](https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html) when a workflow enters a task state. See GetActivityTaskOutput$taskToken.
+#' @param output &#91;required&#93; The JSON output of the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.
 #'
 #' @return
 #' An empty list.
@@ -2629,57 +2188,33 @@ sfn_send_task_success <- function(taskToken, output) {
 #' @description
 #' Starts a state machine execution.
 #' 
-#' A qualified state machine ARN can either refer to a *Distributed Map
-#' state* defined within a state machine, a version ARN, or an alias ARN.
+#' A qualified state machine ARN can either refer to a *Distributed Map state* defined within a state machine, a version ARN, or an alias ARN.
 #' 
-#' The following are some examples of qualified and unqualified state
-#' machine ARNs:
+#' The following are some examples of qualified and unqualified state machine ARNs:
 #' 
-#' -   The following qualified state machine ARN refers to a *Distributed
-#'     Map state* with a label `mapStateLabel` in a state machine named
-#'     `myStateMachine`.
+#' -   The following qualified state machine ARN refers to a *Distributed Map state* with a label `mapStateLabel` in a state machine named `myStateMachine`.
 #' 
 #'     `arn:partition:states:region:account-id:stateMachine:myStateMachine/mapStateLabel`
 #' 
-#'     If you provide a qualified state machine ARN that refers to a
-#'     *Distributed Map state*, the request fails with
-#'     `ValidationException`.
+#'     If you provide a qualified state machine ARN that refers to a *Distributed Map state*, the request fails with `ValidationException`.
 #' 
-#' -   The following qualified state machine ARN refers to an alias named
-#'     `PROD`.
+#' -   The following qualified state machine ARN refers to an alias named `PROD`.
 #' 
 #'     `arn:<partition>:states:<region>:<account-id>:stateMachine:<myStateMachine:PROD>`
 #' 
-#'     If you provide a qualified state machine ARN that refers to a
-#'     version ARN or an alias ARN, the request starts execution for that
-#'     version or alias.
+#'     If you provide a qualified state machine ARN that refers to a version ARN or an alias ARN, the request starts execution for that version or alias.
 #' 
-#' -   The following unqualified state machine ARN refers to a state
-#'     machine named `myStateMachine`.
+#' -   The following unqualified state machine ARN refers to a state machine named `myStateMachine`.
 #' 
 #'     `arn:<partition>:states:<region>:<account-id>:stateMachine:<myStateMachine>`
 #' 
-#' If you start an execution with an unqualified state machine ARN, Step
-#' Functions uses the latest revision of the state machine for the
-#' execution.
+#' If you start an execution with an unqualified state machine ARN, Step Functions uses the latest revision of the state machine for the execution.
 #' 
-#' To start executions of a state machine
-#' [version](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html),
-#' call [`start_execution`][sfn_start_execution] and provide the version
-#' ARN or the ARN of an
-#' [alias](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html)
-#' that points to the version.
+#' To start executions of a state machine [version](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html), call [`start_execution`][sfn_start_execution] and provide the version ARN or the ARN of an [alias](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html) that points to the version.
 #' 
-#' [`start_execution`][sfn_start_execution] is idempotent for `STANDARD`
-#' workflows. For a `STANDARD` workflow, if you call
-#' [`start_execution`][sfn_start_execution] with the same name and input as
-#' a running execution, the call succeeds and return the same response as
-#' the original request. If the execution is closed or if the input is
-#' different, it returns a `400 ExecutionAlreadyExists` error. You can
-#' reuse names after 90 days.
+#' [`start_execution`][sfn_start_execution] is idempotent for `STANDARD` workflows. For a `STANDARD` workflow, if you call [`start_execution`][sfn_start_execution] with the same name and input as a running execution, the call succeeds and return the same response as the original request. If the execution is closed or if the input is different, it returns a `400 ExecutionAlreadyExists` error. You can reuse names after 90 days.
 #' 
-#' [`start_execution`][sfn_start_execution] isn't idempotent for `EXPRESS`
-#' workflows.
+#' [`start_execution`][sfn_start_execution] isn't idempotent for `EXPRESS` workflows.
 #'
 #' @usage
 #' sfn_start_execution(stateMachineArn, name, input, traceHeader)
@@ -2688,45 +2223,26 @@ sfn_send_task_success <- function(taskToken, output) {
 #' 
 #' The `stateMachineArn` parameter accepts one of the following inputs:
 #' 
-#' -   **An unqualified state machine ARN** – Refers to a state machine ARN
-#'     that isn't qualified with a version or alias ARN. The following is
-#'     an example of an unqualified state machine ARN.
+#' -   **An unqualified state machine ARN** – Refers to a state machine ARN that isn't qualified with a version or alias ARN. The following is an example of an unqualified state machine ARN.
 #' 
 #'     `arn:<partition>:states:<region>:<account-id>:stateMachine:<myStateMachine>`
 #' 
-#'     Step Functions doesn't associate state machine executions that you
-#'     start with an unqualified ARN with a version. This is true even if
-#'     that version uses the same revision that the execution used.
+#'     Step Functions doesn't associate state machine executions that you start with an unqualified ARN with a version. This is true even if that version uses the same revision that the execution used.
 #' 
-#' -   **A state machine version ARN** – Refers to a version ARN, which is
-#'     a combination of state machine ARN and the version number separated
-#'     by a colon (:). The following is an example of the ARN for version
-#'     10.
+#' -   **A state machine version ARN** – Refers to a version ARN, which is a combination of state machine ARN and the version number separated by a colon (:). The following is an example of the ARN for version 10.
 #' 
 #'     `arn:<partition>:states:<region>:<account-id>:stateMachine:<myStateMachine>:10`
 #' 
-#'     Step Functions doesn't associate executions that you start with a
-#'     version ARN with any aliases that point to that version.
+#'     Step Functions doesn't associate executions that you start with a version ARN with any aliases that point to that version.
 #' 
-#' -   **A state machine alias ARN** – Refers to an alias ARN, which is a
-#'     combination of state machine ARN and the alias name separated by a
-#'     colon (:). The following is an example of the ARN for an alias named
-#'     `PROD`.
+#' -   **A state machine alias ARN** – Refers to an alias ARN, which is a combination of state machine ARN and the alias name separated by a colon (:). The following is an example of the ARN for an alias named `PROD`.
 #' 
 #'     `arn:<partition>:states:<region>:<account-id>:stateMachine:<myStateMachine:PROD>`
 #' 
-#'     Step Functions associates executions that you start with an alias
-#'     ARN with that alias and the state machine version used for that
-#'     execution.
-#' @param name Optional name of the execution. This name must be unique for your Amazon
-#' Web Services account, Region, and state machine for 90 days. For more
-#' information, see [Limits Related to State Machine
-#' Executions](https://docs.aws.amazon.com/step-functions/latest/dg/service-quotas.html#service-limits-state-machine-executions)
-#' in the *Step Functions Developer Guide*.
+#'     Step Functions associates executions that you start with an alias ARN with that alias and the state machine version used for that execution.
+#' @param name Optional name of the execution. This name must be unique for your Amazon Web Services account, Region, and state machine for 90 days. For more information, see [Limits Related to State Machine Executions](https://docs.aws.amazon.com/step-functions/latest/dg/service-quotas.html#service-limits-state-machine-executions) in the *Step Functions Developer Guide*.
 #' 
-#' If you don't provide a name for the execution, Step Functions
-#' automatically generates a universally unique identifier (UUID) as the
-#' execution name.
+#' If you don't provide a name for the execution, Step Functions automatically generates a universally unique identifier (UUID) as the execution name.
 #' 
 #' A name must *not* contain:
 #' 
@@ -2744,29 +2260,17 @@ sfn_send_task_success <- function(taskToken, output) {
 #' 
 #' -   invalid characters (` U+10FFFF`)
 #' 
-#' To enable logging with CloudWatch Logs, the name should only contain
-#' 0-9, A-Z, a-z, - and _.
-#' @param input The string that contains the JSON input data for the execution, for
-#' example:
+#' To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
+#' @param input The string that contains the JSON input data for the execution, for example:
 #' 
 #' `"{\"first_name\" : \"Alejandro\"}"`
 #' 
-#' If you don't include any JSON input data, you still must include the two
-#' braces, for example: `"{}"`
+#' If you don't include any JSON input data, you still must include the two braces, for example: `"{}"`
 #' 
-#' Length constraints apply to the payload size, and are expressed as bytes
-#' in UTF-8 encoding.
-#' @param traceHeader Passes the X-Ray trace header. The trace header can also be passed in
-#' the request payload.
+#' Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.
+#' @param traceHeader Passes the X-Ray trace header. The trace header can also be passed in the request payload.
 #' 
-#' For X-Ray traces, all Amazon Web Services services use the
-#' `X-Amzn-Trace-Id` header from the HTTP request. Using the header is the
-#' preferred mechanism to identify a trace.
-#' [`start_execution`][sfn_start_execution] and
-#' [`start_sync_execution`][sfn_start_sync_execution] API operations can
-#' also use `traceHeader` from the body of the request payload. If **both**
-#' sources are provided, Step Functions will use the **header value**
-#' (preferred) over the value in the request body.
+#' For X-Ray traces, all Amazon Web Services services use the `X-Amzn-Trace-Id` header from the HTTP request. Using the header is the preferred mechanism to identify a trace. [`start_execution`][sfn_start_execution] and [`start_sync_execution`][sfn_start_sync_execution] API operations can also use `traceHeader` from the body of the request payload. If **both** sources are provided, Step Functions will use the **header value** (preferred) over the value in the request body.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2816,16 +2320,9 @@ sfn_start_execution <- function(stateMachineArn, name = NULL, input = NULL, trac
 #' Starts a Synchronous Express state machine execution
 #'
 #' @description
-#' Starts a Synchronous Express state machine execution.
-#' [`start_sync_execution`][sfn_start_sync_execution] is not available for
-#' `STANDARD` workflows.
+#' Starts a Synchronous Express state machine execution. [`start_sync_execution`][sfn_start_sync_execution] is not available for `STANDARD` workflows.
 #' 
-#' [`start_sync_execution`][sfn_start_sync_execution] will return a
-#' `200 OK` response, even if your execution fails, because the status code
-#' in the API response doesn't reflect function errors. Error codes are
-#' reserved for errors that prevent your execution from running, such as
-#' permissions errors, limit errors, or issues with your state machine code
-#' and configuration.
+#' [`start_sync_execution`][sfn_start_sync_execution] will return a `200 OK` response, even if your execution fails, because the status code in the API response doesn't reflect function errors. Error codes are reserved for errors that prevent your execution from running, such as permissions errors, limit errors, or issues with your state machine code and configuration.
 #' 
 #' This API action isn't logged in CloudTrail.
 #'
@@ -2835,31 +2332,17 @@ sfn_start_execution <- function(stateMachineArn, name = NULL, input = NULL, trac
 #'
 #' @param stateMachineArn &#91;required&#93; The Amazon Resource Name (ARN) of the state machine to execute.
 #' @param name The name of the execution.
-#' @param input The string that contains the JSON input data for the execution, for
-#' example:
+#' @param input The string that contains the JSON input data for the execution, for example:
 #' 
 #' `"{\"first_name\" : \"Alejandro\"}"`
 #' 
-#' If you don't include any JSON input data, you still must include the two
-#' braces, for example: `"{}"`
+#' If you don't include any JSON input data, you still must include the two braces, for example: `"{}"`
 #' 
-#' Length constraints apply to the payload size, and are expressed as bytes
-#' in UTF-8 encoding.
-#' @param traceHeader Passes the X-Ray trace header. The trace header can also be passed in
-#' the request payload.
+#' Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.
+#' @param traceHeader Passes the X-Ray trace header. The trace header can also be passed in the request payload.
 #' 
-#' For X-Ray traces, all Amazon Web Services services use the
-#' `X-Amzn-Trace-Id` header from the HTTP request. Using the header is the
-#' preferred mechanism to identify a trace.
-#' [`start_execution`][sfn_start_execution] and
-#' [`start_sync_execution`][sfn_start_sync_execution] API operations can
-#' also use `traceHeader` from the body of the request payload. If **both**
-#' sources are provided, Step Functions will use the **header value**
-#' (preferred) over the value in the request body.
-#' @param includedData If your state machine definition is encrypted with a KMS key, callers
-#' must have `kms:Decrypt` permission to decrypt the definition.
-#' Alternatively, you can call the API with `includedData = METADATA_ONLY`
-#' to get a successful response without the encrypted definition.
+#' For X-Ray traces, all Amazon Web Services services use the `X-Amzn-Trace-Id` header from the HTTP request. Using the header is the preferred mechanism to identify a trace. [`start_execution`][sfn_start_execution] and [`start_sync_execution`][sfn_start_sync_execution] API operations can also use `traceHeader` from the body of the request payload. If **both** sources are provided, Step Functions will use the **header value** (preferred) over the value in the request body.
+#' @param includedData If your state machine definition is encrypted with a KMS key, callers must have `kms:Decrypt` permission to decrypt the definition. Alternatively, you can call the API with `includedData = METADATA_ONLY` to get a successful response without the encrypted definition.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2935,12 +2418,9 @@ sfn_start_sync_execution <- function(stateMachineArn, name = NULL, input = NULL,
 #' 
 #' This API action is not supported by `EXPRESS` state machines.
 #' 
-#' For an execution with encryption enabled, Step Functions will encrypt
-#' the error and cause fields using the KMS key for the execution role.
+#' For an execution with encryption enabled, Step Functions will encrypt the error and cause fields using the KMS key for the execution role.
 #' 
-#' A caller can stop an execution without using any KMS permissions in the
-#' execution role if the caller provides a null value for both `error` and
-#' `cause` fields because no data needs to be encrypted.
+#' A caller can stop an execution without using any KMS permissions in the execution role if the caller provides a null value for both `error` and `cause` fields because no data needs to be encrypted.
 #'
 #' @usage
 #' sfn_stop_execution(executionArn, error, cause)
@@ -2997,25 +2477,17 @@ sfn_stop_execution <- function(executionArn, error = NULL, cause = NULL) {
 #' @description
 #' Add a tag to a Step Functions resource.
 #' 
-#' An array of key-value pairs. For more information, see [Using Cost
-#' Allocation
-#' Tags](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html)
-#' in the *Amazon Web Services Billing and Cost Management User Guide*, and
-#' [Controlling Access Using IAM
-#' Tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html).
+#' An array of key-value pairs. For more information, see [Using Cost Allocation Tags](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html) in the *Amazon Web Services Billing and Cost Management User Guide*, and [Controlling Access Using IAM Tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html).
 #' 
-#' Tags may only contain Unicode letters, digits, white space, or these
-#' symbols: `_ . : / = + - @@`.
+#' Tags may only contain Unicode letters, digits, white space, or these symbols: `_ . : / = + - @@`.
 #'
 #' @usage
 #' sfn_tag_resource(resourceArn, tags)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) for the Step Functions state machine or
-#' activity.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) for the Step Functions state machine or activity.
 #' @param tags &#91;required&#93; The list of tags to add to a resource.
 #' 
-#' Tags may only contain Unicode letters, digits, white space, or these
-#' symbols: `_ . : / = + - @@`.
+#' Tags may only contain Unicode letters, digits, white space, or these symbols: `_ . : / = + - @@`.
 #'
 #' @return
 #' An empty list.
@@ -3060,29 +2532,17 @@ sfn_tag_resource <- function(resourceArn, tags) {
 #' Accepts the definition of a single state and executes it
 #'
 #' @description
-#' Accepts the definition of a single state and executes it. You can test a
-#' state without creating a state machine or updating an existing state
-#' machine. Using this API, you can test the following:
+#' Accepts the definition of a single state and executes it. You can test a state without creating a state machine or updating an existing state machine. Using this API, you can test the following:
 #' 
-#' -   A state's [input and output
-#'     processing](https://docs.aws.amazon.com/step-functions/latest/dg/test-state-isolation.html#test-state-input-output-dataflow)
-#'     data flow
+#' -   A state's [input and output processing](https://docs.aws.amazon.com/step-functions/latest/dg/test-state-isolation.html#test-state-input-output-dataflow) data flow
 #' 
-#' -   An [Amazon Web Services service
-#'     integration](https://docs.aws.amazon.com/step-functions/latest/dg/integrate-services.html)
-#'     request and response
+#' -   An [Amazon Web Services service integration](https://docs.aws.amazon.com/step-functions/latest/dg/integrate-services.html) request and response
 #' 
-#' -   An [HTTP
-#'     Task](https://docs.aws.amazon.com/step-functions/latest/dg/call-https-apis.html)
-#'     request and response
+#' -   An [HTTP Task](https://docs.aws.amazon.com/step-functions/latest/dg/call-https-apis.html) request and response
 #' 
-#' You can call this API on only one state at a time. The states that you
-#' can test include the following:
+#' You can call this API on only one state at a time. The states that you can test include the following:
 #' 
-#' -   [All Task
-#'     types](https://docs.aws.amazon.com/step-functions/latest/dg/state-task.html#task-types)
-#'     except
-#'     [Activity](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-activities.html)
+#' -   [All Task types](https://docs.aws.amazon.com/step-functions/latest/dg/state-task.html#task-types) except [Activity](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-activities.html)
 #' 
 #' -   [Pass](https://docs.aws.amazon.com/step-functions/latest/dg/state-pass.html)
 #' 
@@ -3094,78 +2554,39 @@ sfn_tag_resource <- function(resourceArn, tags) {
 #' 
 #' -   [Fail](https://docs.aws.amazon.com/step-functions/latest/dg/state-fail.html)
 #' 
-#' The [`test_state`][sfn_test_state] API assumes an IAM role which must
-#' contain the required IAM permissions for the resources your state is
-#' accessing. For information about the permissions a state might need, see
-#' [IAM permissions to test a
-#' state](https://docs.aws.amazon.com/step-functions/latest/dg/test-state-isolation.html#test-state-permissions).
+#' The [`test_state`][sfn_test_state] API assumes an IAM role which must contain the required IAM permissions for the resources your state is accessing. For information about the permissions a state might need, see [IAM permissions to test a state](https://docs.aws.amazon.com/step-functions/latest/dg/test-state-isolation.html#test-state-permissions).
 #' 
-#' The [`test_state`][sfn_test_state] API can run for up to five minutes.
-#' If the execution of a state exceeds this duration, it fails with the
-#' `States.Timeout` error.
+#' The [`test_state`][sfn_test_state] API can run for up to five minutes. If the execution of a state exceeds this duration, it fails with the `States.Timeout` error.
 #' 
-#' [`test_state`][sfn_test_state] only supports the following when a mock
-#' is specified: [Activity
-#' tasks](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-activities.html),
-#' `.sync` or `.waitForTaskToken` [service integration
-#' patterns](https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html),
-#' [Parallel](https://docs.aws.amazon.com/step-functions/latest/dg/state-parallel.html),
-#' or
-#' [Map](https://docs.aws.amazon.com/step-functions/latest/dg/state-map.html)
-#' states.
+#' [`test_state`][sfn_test_state] only supports the following when a mock is specified: [Activity tasks](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-activities.html), `.sync` or `.waitForTaskToken` [service integration patterns](https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html), [Parallel](https://docs.aws.amazon.com/step-functions/latest/dg/state-parallel.html), or [Map](https://docs.aws.amazon.com/step-functions/latest/dg/state-map.html) states.
 #'
 #' @usage
 #' sfn_test_state(definition, roleArn, input, inspectionLevel,
 #'   revealSecrets, variables, stateName, mock, context, stateConfiguration)
 #'
-#' @param definition &#91;required&#93; The [Amazon States
-#' Language](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html)
-#' (ASL) definition of the state or state machine.
-#' @param roleArn The Amazon Resource Name (ARN) of the execution role with the required
-#' IAM permissions for the state.
+#' @param definition &#91;required&#93; The [Amazon States Language](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html) (ASL) definition of the state or state machine.
+#' @param roleArn The Amazon Resource Name (ARN) of the execution role with the required IAM permissions for the state.
 #' @param input A string that contains the JSON input data for the state.
-#' @param inspectionLevel Determines the values to return when a state is tested. You can specify
-#' one of the following types:
+#' @param inspectionLevel Determines the values to return when a state is tested. You can specify one of the following types:
 #' 
-#' -   `INFO`: Shows the final state output. By default, Step Functions
-#'     sets `inspectionLevel` to `INFO` if you don't specify a level.
+#' -   `INFO`: Shows the final state output. By default, Step Functions sets `inspectionLevel` to `INFO` if you don't specify a level.
 #' 
-#' -   `DEBUG`: Shows the final state output along with the input and
-#'     output data processing result.
+#' -   `DEBUG`: Shows the final state output along with the input and output data processing result.
 #' 
-#' -   `TRACE`: Shows the HTTP request and response for an HTTP Task. This
-#'     level also shows the final state output along with the input and
-#'     output data processing result.
+#' -   `TRACE`: Shows the HTTP request and response for an HTTP Task. This level also shows the final state output along with the input and output data processing result.
 #' 
-#' Each of these levels also provide information about the status of the
-#' state execution and the next state to transition to.
-#' @param revealSecrets Specifies whether or not to include secret information in the test
-#' result. For HTTP Tasks, a secret includes the data that an EventBridge
-#' connection adds to modify the HTTP request headers, query parameters,
-#' and body. Step Functions doesn't omit any information included in the
-#' state definition or the HTTP response.
+#' Each of these levels also provide information about the status of the state execution and the next state to transition to.
+#' @param revealSecrets Specifies whether or not to include secret information in the test result. For HTTP Tasks, a secret includes the data that an EventBridge connection adds to modify the HTTP request headers, query parameters, and body. Step Functions doesn't omit any information included in the state definition or the HTTP response.
 #' 
-#' If you set `revealSecrets` to `true`, you must make sure that the IAM
-#' user that calls the [`test_state`][sfn_test_state] API has permission
-#' for the `states:RevealSecrets` action. For an example of IAM policy that
-#' sets the `states:RevealSecrets` permission, see [IAM permissions to test
-#' a
-#' state](https://docs.aws.amazon.com/step-functions/latest/dg/test-state-isolation.html#test-state-permissions).
-#' Without this permission, Step Functions throws an access denied error.
+#' If you set `revealSecrets` to `true`, you must make sure that the IAM user that calls the [`test_state`][sfn_test_state] API has permission for the `states:RevealSecrets` action. For an example of IAM policy that sets the `states:RevealSecrets` permission, see [IAM permissions to test a state](https://docs.aws.amazon.com/step-functions/latest/dg/test-state-isolation.html#test-state-permissions). Without this permission, Step Functions throws an access denied error.
 #' 
 #' By default, `revealSecrets` is set to `false`.
-#' @param variables JSON object literal that sets variables used in the state under test.
-#' Object keys are the variable names and values are the variable values.
-#' @param stateName Denotes the particular state within a state machine definition to be
-#' tested. If this field is specified, the `definition` must contain a
-#' fully-formed state machine definition.
+#' @param variables JSON object literal that sets variables used in the state under test. Object keys are the variable names and values are the variable values.
+#' @param stateName Denotes the particular state within a state machine definition to be tested. If this field is specified, the `definition` must contain a fully-formed state machine definition.
 #' @param mock Defines a mocked result or error for the state under test.
 #' 
-#' A mock can only be specified for Task, Map, or Parallel states. If it is
-#' specified for another state type, an exception will be thrown.
-#' @param context A JSON string representing a valid Context object for the state under
-#' test. This field may only be specified if a mock is specified in the
-#' same request.
+#' A mock can only be specified for Task, Map, or Parallel states. If it is specified for another state type, an exception will be thrown.
+#' @param context A JSON string representing a valid Context object for the state under test. This field may only be specified if a mock is specified in the same request.
 #' @param stateConfiguration Contains configurations for the state under test.
 #'
 #' @return
@@ -3276,8 +2697,7 @@ sfn_test_state <- function(definition, roleArn = NULL, input = NULL, inspectionL
 #' @usage
 #' sfn_untag_resource(resourceArn, tagKeys)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) for the Step Functions state machine or
-#' activity.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) for the Step Functions state machine or activity.
 #' @param tagKeys &#91;required&#93; The list of tags to remove from the resource.
 #'
 #' @return
@@ -3321,16 +2741,14 @@ sfn_untag_resource <- function(resourceArn, tagKeys) {
 #' settings that control maximum concurrency and Map Run failure
 #'
 #' @description
-#' Updates an in-progress Map Run's configuration to include changes to the
-#' settings that control maximum concurrency and Map Run failure.
+#' Updates an in-progress Map Run's configuration to include changes to the settings that control maximum concurrency and Map Run failure.
 #'
 #' @usage
 #' sfn_update_map_run(mapRunArn, maxConcurrency,
 #'   toleratedFailurePercentage, toleratedFailureCount)
 #'
 #' @param mapRunArn &#91;required&#93; The Amazon Resource Name (ARN) of a Map Run.
-#' @param maxConcurrency The maximum number of child workflow executions that can be specified to
-#' run in parallel for the Map Run at the same time.
+#' @param maxConcurrency The maximum number of child workflow executions that can be specified to run in parallel for the Map Run at the same time.
 #' @param toleratedFailurePercentage The maximum percentage of failed items before the Map Run fails.
 #' @param toleratedFailureCount The maximum number of failed items before the Map Run fails.
 #'
@@ -3375,62 +2793,35 @@ sfn_update_map_run <- function(mapRunArn, maxConcurrency = NULL, toleratedFailur
 #' loggingConfiguration, or EncryptionConfiguration
 #'
 #' @description
-#' Updates an existing state machine by modifying its `definition`,
-#' `roleArn`, `loggingConfiguration`, or `EncryptionConfiguration`. Running
-#' executions will continue to use the previous `definition` and `roleArn`.
-#' You must include at least one of `definition` or `roleArn` or you will
-#' receive a `MissingRequiredParameter` error.
+#' Updates an existing state machine by modifying its `definition`, `roleArn`, `loggingConfiguration`, or `EncryptionConfiguration`. Running executions will continue to use the previous `definition` and `roleArn`. You must include at least one of `definition` or `roleArn` or you will receive a `MissingRequiredParameter` error.
 #' 
-#' A qualified state machine ARN refers to a *Distributed Map state*
-#' defined within a state machine. For example, the qualified state machine
-#' ARN
-#' `arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel`
-#' refers to a *Distributed Map state* with a label `mapStateLabel` in the
-#' state machine named `stateMachineName`.
+#' A qualified state machine ARN refers to a *Distributed Map state* defined within a state machine. For example, the qualified state machine ARN `arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel` refers to a *Distributed Map state* with a label `mapStateLabel` in the state machine named `stateMachineName`.
 #' 
-#' A qualified state machine ARN can either refer to a *Distributed Map
-#' state* defined within a state machine, a version ARN, or an alias ARN.
+#' A qualified state machine ARN can either refer to a *Distributed Map state* defined within a state machine, a version ARN, or an alias ARN.
 #' 
-#' The following are some examples of qualified and unqualified state
-#' machine ARNs:
+#' The following are some examples of qualified and unqualified state machine ARNs:
 #' 
-#' -   The following qualified state machine ARN refers to a *Distributed
-#'     Map state* with a label `mapStateLabel` in a state machine named
-#'     `myStateMachine`.
+#' -   The following qualified state machine ARN refers to a *Distributed Map state* with a label `mapStateLabel` in a state machine named `myStateMachine`.
 #' 
 #'     `arn:partition:states:region:account-id:stateMachine:myStateMachine/mapStateLabel`
 #' 
-#'     If you provide a qualified state machine ARN that refers to a
-#'     *Distributed Map state*, the request fails with
-#'     `ValidationException`.
+#'     If you provide a qualified state machine ARN that refers to a *Distributed Map state*, the request fails with `ValidationException`.
 #' 
-#' -   The following qualified state machine ARN refers to an alias named
-#'     `PROD`.
+#' -   The following qualified state machine ARN refers to an alias named `PROD`.
 #' 
 #'     `arn:<partition>:states:<region>:<account-id>:stateMachine:<myStateMachine:PROD>`
 #' 
-#'     If you provide a qualified state machine ARN that refers to a
-#'     version ARN or an alias ARN, the request starts execution for that
-#'     version or alias.
+#'     If you provide a qualified state machine ARN that refers to a version ARN or an alias ARN, the request starts execution for that version or alias.
 #' 
-#' -   The following unqualified state machine ARN refers to a state
-#'     machine named `myStateMachine`.
+#' -   The following unqualified state machine ARN refers to a state machine named `myStateMachine`.
 #' 
 #'     `arn:<partition>:states:<region>:<account-id>:stateMachine:<myStateMachine>`
 #' 
-#' After you update your state machine, you can set the `publish` parameter
-#' to `true` in the same action to publish a new
-#' [version](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html).
-#' This way, you can opt-in to strict versioning of your state machine.
+#' After you update your state machine, you can set the `publish` parameter to `true` in the same action to publish a new [version](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html). This way, you can opt-in to strict versioning of your state machine.
 #' 
-#' Step Functions assigns monotonically increasing integers for state
-#' machine versions, starting at version number 1.
+#' Step Functions assigns monotonically increasing integers for state machine versions, starting at version number 1.
 #' 
-#' All [`start_execution`][sfn_start_execution] calls within a few seconds
-#' use the updated `definition` and `roleArn`. Executions started
-#' immediately after you call
-#' [`update_state_machine`][sfn_update_state_machine] may use the previous
-#' state machine `definition` and `roleArn`.
+#' All [`start_execution`][sfn_start_execution] calls within a few seconds use the updated `definition` and `roleArn`. Executions started immediately after you call [`update_state_machine`][sfn_update_state_machine] may use the previous state machine `definition` and `roleArn`.
 #'
 #' @usage
 #' sfn_update_state_machine(stateMachineArn, definition, roleArn,
@@ -3438,19 +2829,14 @@ sfn_update_map_run <- function(mapRunArn, maxConcurrency = NULL, toleratedFailur
 #'   encryptionConfiguration)
 #'
 #' @param stateMachineArn &#91;required&#93; The Amazon Resource Name (ARN) of the state machine.
-#' @param definition The Amazon States Language definition of the state machine. See [Amazon
-#' States
-#' Language](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html).
+#' @param definition The Amazon States Language definition of the state machine. See [Amazon States Language](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html).
 #' @param roleArn The Amazon Resource Name (ARN) of the IAM role of the state machine.
 #' @param loggingConfiguration Use the `LoggingConfiguration` data type to set CloudWatch Logs options.
 #' @param tracingConfiguration Selects whether X-Ray tracing is enabled.
-#' @param publish Specifies whether the state machine version is published. The default is
-#' `false`. To publish a version after updating the state machine, set
-#' `publish` to `true`.
+#' @param publish Specifies whether the state machine version is published. The default is `false`. To publish a version after updating the state machine, set `publish` to `true`.
 #' @param versionDescription An optional description of the state machine version to publish.
 #' 
-#' You can only specify the `versionDescription` parameter if you've set
-#' `publish` to `true`.
+#' You can only specify the `versionDescription` parameter if you've set `publish` to `true`.
 #' @param encryptionConfiguration Settings to configure server-side encryption.
 #'
 #' @return
@@ -3523,25 +2909,13 @@ sfn_update_state_machine <- function(stateMachineArn, definition = NULL, roleArn
 #' modifying its description or routingConfiguration
 #'
 #' @description
-#' Updates the configuration of an existing state machine
-#' [alias](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html)
-#' by modifying its `description` or `routingConfiguration`.
+#' Updates the configuration of an existing state machine [alias](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html) by modifying its `description` or `routingConfiguration`.
 #' 
-#' You must specify at least one of the `description` or
-#' `routingConfiguration` parameters to update a state machine alias.
+#' You must specify at least one of the `description` or `routingConfiguration` parameters to update a state machine alias.
 #' 
-#' [`update_state_machine_alias`][sfn_update_state_machine_alias] is an
-#' idempotent API. Step Functions bases the idempotency check on the
-#' `stateMachineAliasArn`, `description`, and `routingConfiguration`
-#' parameters. Requests with the same parameters return an idempotent
-#' response.
+#' [`update_state_machine_alias`][sfn_update_state_machine_alias] is an idempotent API. Step Functions bases the idempotency check on the `stateMachineAliasArn`, `description`, and `routingConfiguration` parameters. Requests with the same parameters return an idempotent response.
 #' 
-#' This operation is eventually consistent. All
-#' [`start_execution`][sfn_start_execution] requests made within a few
-#' seconds use the latest alias configuration. Executions started
-#' immediately after calling
-#' [`update_state_machine_alias`][sfn_update_state_machine_alias] may use
-#' the previous routing configuration.
+#' This operation is eventually consistent. All [`start_execution`][sfn_start_execution] requests made within a few seconds use the latest alias configuration. Executions started immediately after calling [`update_state_machine_alias`][sfn_update_state_machine_alias] may use the previous routing configuration.
 #' 
 #' **Related operations:**
 #' 
@@ -3561,8 +2935,7 @@ sfn_update_state_machine <- function(stateMachineArn, definition = NULL, roleArn
 #' @param description A description of the state machine alias.
 #' @param routingConfiguration The routing configuration of the state machine alias.
 #' 
-#' An array of `RoutingConfig` objects that specifies up to two state
-#' machine versions that the alias starts executions for.
+#' An array of `RoutingConfig` objects that specifies up to two state machine versions that the alias starts executions for.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3616,64 +2989,34 @@ sfn_update_state_machine_alias <- function(stateMachineAliasArn, description = N
 #' States Language (ASL), a JSON-based, structured language
 #'
 #' @description
-#' Validates the syntax of a state machine definition specified in [Amazon
-#' States
-#' Language](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html)
-#' (ASL), a JSON-based, structured language.
+#' Validates the syntax of a state machine definition specified in [Amazon States Language](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html) (ASL), a JSON-based, structured language.
 #' 
-#' You can validate that a state machine definition is correct without
-#' creating a state machine resource.
+#' You can validate that a state machine definition is correct without creating a state machine resource.
 #' 
-#' Suggested uses for
-#' [`validate_state_machine_definition`][sfn_validate_state_machine_definition]:
+#' Suggested uses for [`validate_state_machine_definition`][sfn_validate_state_machine_definition]:
 #' 
-#' -   Integrate automated checks into your code review or Continuous
-#'     Integration (CI) process to check state machine definitions before
-#'     starting deployments.
+#' -   Integrate automated checks into your code review or Continuous Integration (CI) process to check state machine definitions before starting deployments.
 #' 
-#' -   Run validation from a Git pre-commit hook to verify the definition
-#'     before committing to your source repository.
+#' -   Run validation from a Git pre-commit hook to verify the definition before committing to your source repository.
 #' 
-#' Validation will look for problems in your state machine definition and
-#' return a **result** and a list of **diagnostic elements**.
+#' Validation will look for problems in your state machine definition and return a **result** and a list of **diagnostic elements**.
 #' 
-#' The **result** value will be `OK` when your workflow definition can be
-#' successfully created or updated. Note the result can be `OK` even when
-#' diagnostic warnings are present in the response. The **result** value
-#' will be `FAIL` when the workflow definition contains errors that would
-#' prevent you from creating or updating your state machine.
+#' The **result** value will be `OK` when your workflow definition can be successfully created or updated. Note the result can be `OK` even when diagnostic warnings are present in the response. The **result** value will be `FAIL` when the workflow definition contains errors that would prevent you from creating or updating your state machine.
 #' 
-#' The list of
-#' [ValidateStateMachineDefinitionDiagnostic](https://docs.aws.amazon.com/step-functions/latest/apireference/API_ValidateStateMachineDefinitionDiagnostic.html)
-#' data elements can contain zero or more **WARNING** and/or **ERROR**
-#' elements.
+#' The list of [ValidateStateMachineDefinitionDiagnostic](https://docs.aws.amazon.com/step-functions/latest/apireference/API_ValidateStateMachineDefinitionDiagnostic.html) data elements can contain zero or more **WARNING** and/or **ERROR** elements.
 #' 
-#' The **ValidateStateMachineDefinition API** might add new diagnostics in
-#' the future, adjust diagnostic codes, or change the message wording. Your
-#' automated processes should only rely on the value of the **result**
-#' field value (OK, FAIL). Do **not** rely on the exact order, count, or
-#' wording of diagnostic messages.
+#' The **ValidateStateMachineDefinition API** might add new diagnostics in the future, adjust diagnostic codes, or change the message wording. Your automated processes should only rely on the value of the **result** field value (OK, FAIL). Do **not** rely on the exact order, count, or wording of diagnostic messages.
 #'
 #' @usage
 #' sfn_validate_state_machine_definition(definition, type, severity,
 #'   maxResults)
 #'
-#' @param definition &#91;required&#93; The Amazon States Language definition of the state machine. For more
-#' information, see [Amazon States
-#' Language](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html)
-#' (ASL).
-#' @param type The target type of state machine for this definition. The default is
-#' `STANDARD`.
-#' @param severity Minimum level of diagnostics to return. `ERROR` returns only `ERROR`
-#' diagnostics, whereas `WARNING` returns both `WARNING` and `ERROR`
-#' diagnostics. The default is `ERROR`.
-#' @param maxResults The maximum number of diagnostics that are returned per call. The
-#' default and maximum value is 100. Setting the value to 0 will also use
-#' the default of 100.
+#' @param definition &#91;required&#93; The Amazon States Language definition of the state machine. For more information, see [Amazon States Language](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html) (ASL).
+#' @param type The target type of state machine for this definition. The default is `STANDARD`.
+#' @param severity Minimum level of diagnostics to return. `ERROR` returns only `ERROR` diagnostics, whereas `WARNING` returns both `WARNING` and `ERROR` diagnostics. The default is `ERROR`.
+#' @param maxResults The maximum number of diagnostics that are returned per call. The default and maximum value is 100. Setting the value to 0 will also use the default of 100.
 #' 
-#' If the number of diagnostics returned in the response exceeds
-#' `maxResults`, the value of the `truncated` field in the response will be
-#' set to `true`.
+#' If the number of diagnostics returned in the response exceeds `maxResults`, the value of the `truncated` field in the response will be set to `true`.
 #'
 #' @return
 #' A list with the following syntax:

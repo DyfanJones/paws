@@ -7,14 +7,12 @@ NULL
 #' Recovery Controller
 #'
 #' @description
-#' Cancel an in-progress practice run zonal shift in Amazon Application
-#' Recovery Controller.
+#' Cancel an in-progress practice run zonal shift in Amazon Application Recovery Controller.
 #'
 #' @usage
 #' arczonalshift_cancel_practice_run(zonalShiftId)
 #'
-#' @param zonalShiftId &#91;required&#93; The identifier of a practice run zonal shift in Amazon Application
-#' Recovery Controller that you want to cancel.
+#' @param zonalShiftId &#91;required&#93; The identifier of a practice run zonal shift in Amazon Application Recovery Controller that you want to cancel.
 #'
 #' @return
 #' A list with the following syntax:
@@ -68,12 +66,9 @@ arczonalshift_cancel_practice_run <- function(zonalShiftId) {
 #' Cancel a zonal shift in Amazon Application Recovery Controller
 #'
 #' @description
-#' Cancel a zonal shift in Amazon Application Recovery Controller. To
-#' cancel the zonal shift, specify the zonal shift ID.
+#' Cancel a zonal shift in Amazon Application Recovery Controller. To cancel the zonal shift, specify the zonal shift ID.
 #' 
-#' A zonal shift can be one that you've started for a resource in your
-#' Amazon Web Services account in an Amazon Web Services Region, or it can
-#' be a zonal shift started by a practice run with zonal autoshift.
+#' A zonal shift can be one that you've started for a resource in your Amazon Web Services account in an Amazon Web Services Region, or it can be a zonal shift started by a practice run with zonal autoshift.
 #'
 #' @usage
 #' arczonalshift_cancel_zonal_shift(zonalShiftId)
@@ -133,99 +128,51 @@ arczonalshift_cancel_zonal_shift <- function(zonalShiftId) {
 #' enable zonal autoshift
 #'
 #' @description
-#' A practice run configuration for zonal autoshift is required when you
-#' enable zonal autoshift. A practice run configuration includes
-#' specifications for blocked dates and blocked time windows, and for
-#' Amazon CloudWatch alarms that you create to use with practice runs. The
-#' alarms that you specify are an *outcome alarm*, to monitor application
-#' health during practice runs and, optionally, a *blocking alarm*, to
-#' block practice runs from starting.
+#' A practice run configuration for zonal autoshift is required when you enable zonal autoshift. A practice run configuration includes specifications for blocked dates and blocked time windows, and for Amazon CloudWatch alarms that you create to use with practice runs. The alarms that you specify are an *outcome alarm*, to monitor application health during practice runs and, optionally, a *blocking alarm*, to block practice runs from starting.
 #' 
-#' When a resource has a practice run configuration, ARC starts zonal
-#' shifts for the resource weekly, to shift traffic for practice runs.
-#' Practice runs help you to ensure that shifting away traffic from an
-#' Availability Zone during an autoshift is safe for your application.
+#' When a resource has a practice run configuration, ARC starts zonal shifts for the resource weekly, to shift traffic for practice runs. Practice runs help you to ensure that shifting away traffic from an Availability Zone during an autoshift is safe for your application.
 #' 
-#' For more information, see [Considerations when you configure zonal
-#' autoshift](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.considerations.html)
-#' in the Amazon Application Recovery Controller Developer Guide.
+#' For more information, see [Considerations when you configure zonal autoshift](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.considerations.html) in the Amazon Application Recovery Controller Developer Guide.
 #'
 #' @usage
 #' arczonalshift_create_practice_run_configuration(resourceIdentifier,
 #'   blockedWindows, blockedDates, blockingAlarms, allowedWindows,
 #'   outcomeAlarms)
 #'
-#' @param resourceIdentifier &#91;required&#93; The identifier of the resource that Amazon Web Services shifts traffic
-#' for with a practice run zonal shift. The identifier is the Amazon
-#' Resource Name (ARN) for the resource.
+#' @param resourceIdentifier &#91;required&#93; The identifier of the resource that Amazon Web Services shifts traffic for with a practice run zonal shift. The identifier is the Amazon Resource Name (ARN) for the resource.
 #' 
-#' Amazon Application Recovery Controller currently supports enabling the
-#' following resources for zonal shift and zonal autoshift:
+#' Amazon Application Recovery Controller currently supports enabling the following resources for zonal shift and zonal autoshift:
 #' 
-#' -   [Amazon EC2 Auto Scaling
-#'     groups](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.ec2-auto-scaling-groups.html)
+#' -   [Amazon EC2 Auto Scaling groups](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.ec2-auto-scaling-groups.html)
 #' 
-#' -   [Amazon Elastic Kubernetes
-#'     Service](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.eks.html)
+#' -   [Amazon Elastic Kubernetes Service](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.eks.html)
 #' 
-#' -   [Application Load
-#'     Balancer](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.app-load-balancers.html)
+#' -   [Application Load Balancer](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.app-load-balancers.html)
 #' 
-#' -   [Network Load
-#'     Balancer](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.network-load-balancers.html)
-#' @param blockedWindows Optionally, you can block ARC from starting practice runs for specific
-#' windows of days and times.
+#' -   [Network Load Balancer](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.network-load-balancers.html)
+#' @param blockedWindows Optionally, you can block ARC from starting practice runs for specific windows of days and times.
 #' 
-#' The format for blocked windows is: DAY:HH:SS-DAY:HH:SS. Keep in mind,
-#' when you specify dates, that dates and times for practice runs are in
-#' UTC. Also, be aware of potential time adjustments that might be required
-#' for daylight saving time differences. Separate multiple blocked windows
-#' with spaces.
+#' The format for blocked windows is: DAY:HH:SS-DAY:HH:SS. Keep in mind, when you specify dates, that dates and times for practice runs are in UTC. Also, be aware of potential time adjustments that might be required for daylight saving time differences. Separate multiple blocked windows with spaces.
 #' 
-#' For example, say you run business report summaries three days a week.
-#' For this scenario, you could set the following recurring days and times
-#' as blocked windows, for example:
-#' `Mon:00:00-Mon:10:00 Wed-20:30-Wed:21:30 Fri-20:30-Fri:21:30`.
+#' For example, say you run business report summaries three days a week. For this scenario, you could set the following recurring days and times as blocked windows, for example: `Mon:00:00-Mon:10:00 Wed-20:30-Wed:21:30 Fri-20:30-Fri:21:30`.
 #' 
-#' The `blockedWindows` have to start and end on the same day. Windows that
-#' span multiple days aren't supported.
-#' @param blockedDates Optionally, you can block ARC from starting practice runs for a resource
-#' on specific calendar dates.
+#' The `blockedWindows` have to start and end on the same day. Windows that span multiple days aren't supported.
+#' @param blockedDates Optionally, you can block ARC from starting practice runs for a resource on specific calendar dates.
 #' 
-#' The format for blocked dates is: YYYY-MM-DD. Keep in mind, when you
-#' specify dates, that dates and times for practice runs are in UTC.
-#' Separate multiple blocked dates with spaces.
+#' The format for blocked dates is: YYYY-MM-DD. Keep in mind, when you specify dates, that dates and times for practice runs are in UTC. Separate multiple blocked dates with spaces.
 #' 
-#' For example, if you have an application update scheduled to launch on
-#' May 1, 2024, and you don't want practice runs to shift traffic away at
-#' that time, you could set a blocked date for `2024-05-01`.
-#' @param blockingAlarms *Blocking alarms* for practice runs are optional alarms that you can
-#' specify that block practice runs when one or more of the alarms is in an
-#' `ALARM` state.
-#' @param allowedWindows Optionally, you can allow ARC to start practice runs for specific
-#' windows of days and times.
+#' For example, if you have an application update scheduled to launch on May 1, 2024, and you don't want practice runs to shift traffic away at that time, you could set a blocked date for `2024-05-01`.
+#' @param blockingAlarms *Blocking alarms* for practice runs are optional alarms that you can specify that block practice runs when one or more of the alarms is in an `ALARM` state.
+#' @param allowedWindows Optionally, you can allow ARC to start practice runs for specific windows of days and times.
 #' 
-#' The format for allowed windows is: DAY:HH:SS-DAY:HH:SS. Keep in mind,
-#' when you specify dates, that dates and times for practice runs are in
-#' UTC. Also, be aware of potential time adjustments that might be required
-#' for daylight saving time differences. Separate multiple allowed windows
-#' with spaces.
+#' The format for allowed windows is: DAY:HH:SS-DAY:HH:SS. Keep in mind, when you specify dates, that dates and times for practice runs are in UTC. Also, be aware of potential time adjustments that might be required for daylight saving time differences. Separate multiple allowed windows with spaces.
 #' 
-#' For example, say you want to allow practice runs only on Wednesdays and
-#' Fridays from noon to 5 p.m. For this scenario, you could set the
-#' following recurring days and times as allowed windows, for example:
-#' `Wed-12:00-Wed:17:00 Fri-12:00-Fri:17:00`.
+#' For example, say you want to allow practice runs only on Wednesdays and Fridays from noon to 5 p.m. For this scenario, you could set the following recurring days and times as allowed windows, for example: `Wed-12:00-Wed:17:00 Fri-12:00-Fri:17:00`.
 #' 
-#' The `allowedWindows` have to start and end on the same day. Windows that
-#' span multiple days aren't supported.
-#' @param outcomeAlarms &#91;required&#93; *Outcome alarms* for practice runs are alarms that you specify that end
-#' a practice run when one or more of the alarms is in an `ALARM` state.
+#' The `allowedWindows` have to start and end on the same day. Windows that span multiple days aren't supported.
+#' @param outcomeAlarms &#91;required&#93; *Outcome alarms* for practice runs are alarms that you specify that end a practice run when one or more of the alarms is in an `ALARM` state.
 #' 
-#' Configure one or more of these alarms to monitor the health of your
-#' application when traffic is shifted away from an Availability Zone
-#' during each practice run. You should configure these alarms to go into
-#' an `ALARM` state if you want to stop a zonal shift, to let traffic for
-#' the resource return to the original Availability Zone.
+#' Configure one or more of these alarms to monitor the health of your application when traffic is shifted away from an Availability Zone during each practice run. You should configure these alarms to go into an `ALARM` state if you want to stop a zonal shift, to let traffic for the resource return to the original Availability Zone.
 #'
 #' @return
 #' A list with the following syntax:
@@ -315,17 +262,12 @@ arczonalshift_create_practice_run_configuration <- function(resourceIdentifier, 
 #' Deletes the practice run configuration for a resource
 #'
 #' @description
-#' Deletes the practice run configuration for a resource. Before you can
-#' delete a practice run configuration for a resource., you must disable
-#' zonal autoshift for the resource. Practice runs must be configured for
-#' zonal autoshift to be enabled.
+#' Deletes the practice run configuration for a resource. Before you can delete a practice run configuration for a resource., you must disable zonal autoshift for the resource. Practice runs must be configured for zonal autoshift to be enabled.
 #'
 #' @usage
 #' arczonalshift_delete_practice_run_configuration(resourceIdentifier)
 #'
-#' @param resourceIdentifier &#91;required&#93; The identifier for the resource that you want to delete the practice run
-#' configuration for. The identifier is the Amazon Resource Name (ARN) for
-#' the resource.
+#' @param resourceIdentifier &#91;required&#93; The identifier for the resource that you want to delete the practice run configuration for. The identifier is the Amazon Resource Name (ARN) for the resource.
 #'
 #' @return
 #' A list with the following syntax:
@@ -371,11 +313,7 @@ arczonalshift_delete_practice_run_configuration <- function(resourceIdentifier) 
 #' Returns the status of the autoshift observer notification
 #'
 #' @description
-#' Returns the status of the autoshift observer notification. Autoshift
-#' observer notifications notify you through Amazon EventBridge when there
-#' is an autoshift event for zonal autoshift. The status can be `ENABLED`
-#' or `DISABLED`. When `ENABLED`, a notification is sent when an autoshift
-#' is triggered. When `DISABLED`, notifications are not sent.
+#' Returns the status of the autoshift observer notification. Autoshift observer notifications notify you through Amazon EventBridge when there is an autoshift event for zonal autoshift. The status can be `ENABLED` or `DISABLED`. When `ENABLED`, a notification is sent when an autoshift is triggered. When `DISABLED`, notifications are not sent.
 #'
 #' @usage
 #' arczonalshift_get_autoshift_observer_notification_status()
@@ -424,32 +362,22 @@ arczonalshift_get_autoshift_observer_notification_status <- function() {
 #' Region
 #'
 #' @description
-#' Get information about a resource that's been registered for zonal shifts
-#' with Amazon Application Recovery Controller in this Amazon Web Services
-#' Region. Resources that are registered for zonal shifts are managed
-#' resources in ARC. You can start zonal shifts and configure zonal
-#' autoshift for managed resources.
+#' Get information about a resource that's been registered for zonal shifts with Amazon Application Recovery Controller in this Amazon Web Services Region. Resources that are registered for zonal shifts are managed resources in ARC. You can start zonal shifts and configure zonal autoshift for managed resources.
 #'
 #' @usage
 #' arczonalshift_get_managed_resource(resourceIdentifier)
 #'
-#' @param resourceIdentifier &#91;required&#93; The identifier for the resource that Amazon Web Services shifts traffic
-#' for. The identifier is the Amazon Resource Name (ARN) for the resource.
+#' @param resourceIdentifier &#91;required&#93; The identifier for the resource that Amazon Web Services shifts traffic for. The identifier is the Amazon Resource Name (ARN) for the resource.
 #' 
-#' Amazon Application Recovery Controller currently supports enabling the
-#' following resources for zonal shift and zonal autoshift:
+#' Amazon Application Recovery Controller currently supports enabling the following resources for zonal shift and zonal autoshift:
 #' 
-#' -   [Amazon EC2 Auto Scaling
-#'     groups](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.ec2-auto-scaling-groups.html)
+#' -   [Amazon EC2 Auto Scaling groups](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.ec2-auto-scaling-groups.html)
 #' 
-#' -   [Amazon Elastic Kubernetes
-#'     Service](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.eks.html)
+#' -   [Amazon Elastic Kubernetes Service](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.eks.html)
 #' 
-#' -   [Application Load
-#'     Balancer](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.app-load-balancers.html)
+#' -   [Application Load Balancer](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.app-load-balancers.html)
 #' 
-#' -   [Network Load
-#'     Balancer](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.network-load-balancers.html)
+#' -   [Network Load Balancer](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.network-load-balancers.html)
 #'
 #' @return
 #' A list with the following syntax:
@@ -547,18 +475,12 @@ arczonalshift_get_managed_resource <- function(resourceIdentifier) {
 #' Returns the autoshifts for an Amazon Web Services Region
 #'
 #' @description
-#' Returns the autoshifts for an Amazon Web Services Region. By default,
-#' the call returns only `ACTIVE` autoshifts. Optionally, you can specify
-#' the `status` parameter to return `COMPLETED` autoshifts.
+#' Returns the autoshifts for an Amazon Web Services Region. By default, the call returns only `ACTIVE` autoshifts. Optionally, you can specify the `status` parameter to return `COMPLETED` autoshifts.
 #'
 #' @usage
 #' arczonalshift_list_autoshifts(nextToken, status, maxResults)
 #'
-#' @param nextToken Specifies that you want to receive the next page of results. Valid only
-#' if you received a `nextToken` response in the previous request. If you
-#' did, it indicates that more output is available. Set this parameter to
-#' the value provided by the previous call's `nextToken` response to
-#' request the next page of results.
+#' @param nextToken Specifies that you want to receive the next page of results. Valid only if you received a `nextToken` response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's `nextToken` response to request the next page of results.
 #' @param status The status of the autoshift.
 #' @param maxResults The number of objects that you want to return with this call.
 #'
@@ -620,21 +542,12 @@ arczonalshift_list_autoshifts <- function(nextToken = NULL, status = NULL, maxRe
 #' Application Recovery Controller, and information about them
 #'
 #' @description
-#' Lists all the resources in your Amazon Web Services account in this
-#' Amazon Web Services Region that are managed for zonal shifts in Amazon
-#' Application Recovery Controller, and information about them. The
-#' information includes the zonal autoshift status for the resource, as
-#' well as the Amazon Resource Name (ARN), the Availability Zones that each
-#' resource is deployed in, and the resource name.
+#' Lists all the resources in your Amazon Web Services account in this Amazon Web Services Region that are managed for zonal shifts in Amazon Application Recovery Controller, and information about them. The information includes the zonal autoshift status for the resource, as well as the Amazon Resource Name (ARN), the Availability Zones that each resource is deployed in, and the resource name.
 #'
 #' @usage
 #' arczonalshift_list_managed_resources(nextToken, maxResults)
 #'
-#' @param nextToken Specifies that you want to receive the next page of results. Valid only
-#' if you received a `nextToken` response in the previous request. If you
-#' did, it indicates that more output is available. Set this parameter to
-#' the value provided by the previous call's `nextToken` response to
-#' request the next page of results.
+#' @param nextToken Specifies that you want to receive the next page of results. Valid only if you received a `nextToken` response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's `nextToken` response to request the next page of results.
 #' @param maxResults The number of objects that you want to return with this call.
 #'
 #' @return
@@ -722,38 +635,26 @@ arczonalshift_list_managed_resources <- function(nextToken = NULL, maxResults = 
 #' Web Services Region
 #'
 #' @description
-#' Lists all active and completed zonal shifts in Amazon Application
-#' Recovery Controller in your Amazon Web Services account in this Amazon
-#' Web Services Region.
-#' [`list_zonal_shifts`][arczonalshift_list_zonal_shifts] returns
-#' customer-initiated zonal shifts, as well as practice run zonal shifts
-#' that ARC started on your behalf for zonal autoshift.
+#' Lists all active and completed zonal shifts in Amazon Application Recovery Controller in your Amazon Web Services account in this Amazon Web Services Region. [`list_zonal_shifts`][arczonalshift_list_zonal_shifts] returns customer-initiated zonal shifts, as well as practice run zonal shifts that ARC started on your behalf for zonal autoshift.
 #' 
-#' For more information about listing autoshifts, see
-#' ["\>ListAutoshifts](https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_ListAutoshifts.html).
+#' For more information about listing autoshifts, see ["\>ListAutoshifts](https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_ListAutoshifts.html).
 #'
 #' @usage
 #' arczonalshift_list_zonal_shifts(nextToken, status, maxResults,
 #'   resourceIdentifier)
 #'
-#' @param nextToken Specifies that you want to receive the next page of results. Valid only
-#' if you received a `nextToken` response in the previous request. If you
-#' did, it indicates that more output is available. Set this parameter to
-#' the value provided by the previous call's `nextToken` response to
-#' request the next page of results.
+#' @param nextToken Specifies that you want to receive the next page of results. Valid only if you received a `nextToken` response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's `nextToken` response to request the next page of results.
 #' @param status A status for a zonal shift.
 #' 
 #' The `Status` for a zonal shift can have one of the following values:
 #' 
 #' -   **ACTIVE**: The zonal shift has been started and is active.
 #' 
-#' -   **EXPIRED**: The zonal shift has expired (the expiry time was
-#'     exceeded).
+#' -   **EXPIRED**: The zonal shift has expired (the expiry time was exceeded).
 #' 
 #' -   **CANCELED**: The zonal shift was canceled.
 #' @param maxResults The number of objects that you want to return with this call.
-#' @param resourceIdentifier The identifier for the resource that you want to list zonal shifts for.
-#' The identifier is the Amazon Resource Name (ARN) for the resource.
+#' @param resourceIdentifier The identifier for the resource that you want to list zonal shifts for. The identifier is the Amazon Resource Name (ARN) for the resource.
 #'
 #' @return
 #' A list with the following syntax:
@@ -818,30 +719,16 @@ arczonalshift_list_zonal_shifts <- function(nextToken = NULL, status = NULL, max
 #' Recovery Controller
 #'
 #' @description
-#' Start an on-demand practice run zonal shift in Amazon Application
-#' Recovery Controller. With zonal autoshift enabled, you can start an
-#' on-demand practice run to verify preparedness at any time. Amazon Web
-#' Services also runs automated practice runs about weekly when you have
-#' enabled zonal autoshift.
+#' Start an on-demand practice run zonal shift in Amazon Application Recovery Controller. With zonal autoshift enabled, you can start an on-demand practice run to verify preparedness at any time. Amazon Web Services also runs automated practice runs about weekly when you have enabled zonal autoshift.
 #' 
-#' For more information, see [Considerations when you configure zonal
-#' autoshift](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.considerations.html)
-#' in the Amazon Application Recovery Controller Developer Guide.
+#' For more information, see [Considerations when you configure zonal autoshift](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.considerations.html) in the Amazon Application Recovery Controller Developer Guide.
 #'
 #' @usage
 #' arczonalshift_start_practice_run(resourceIdentifier, awayFrom, comment)
 #'
-#' @param resourceIdentifier &#91;required&#93; The identifier for the resource that you want to start a practice run
-#' zonal shift for. The identifier is the Amazon Resource Name (ARN) for
-#' the resource.
-#' @param awayFrom &#91;required&#93; The Availability Zone (for example, `use1-az1`) that traffic is shifted
-#' away from for the resource that you specify for the practice run.
-#' @param comment &#91;required&#93; The initial comment that you enter about the practice run. Be aware that
-#' this comment can be overwritten by Amazon Web Services if the automatic
-#' check for balanced capacity fails. For more information, see [Capacity
-#' checks for practice
-#' runs](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.how-it-works.capacity-check.html)
-#' in the Amazon Application Recovery Controller Developer Guide.
+#' @param resourceIdentifier &#91;required&#93; The identifier for the resource that you want to start a practice run zonal shift for. The identifier is the Amazon Resource Name (ARN) for the resource.
+#' @param awayFrom &#91;required&#93; The Availability Zone (for example, `use1-az1`) that traffic is shifted away from for the resource that you specify for the practice run.
+#' @param comment &#91;required&#93; The initial comment that you enter about the practice run. Be aware that this comment can be overwritten by Amazon Web Services if the automatic check for balanced capacity fails. For more information, see [Capacity checks for practice runs](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.how-it-works.capacity-check.html) in the Amazon Application Recovery Controller Developer Guide.
 #'
 #' @return
 #' A list with the following syntax:
@@ -901,87 +788,50 @@ arczonalshift_start_practice_run <- function(resourceIdentifier, awayFrom, comme
 #' a single Availability Zone
 #'
 #' @description
-#' You start a zonal shift to temporarily move load balancer traffic away
-#' from an Availability Zone in an Amazon Web Services Region, to help your
-#' application recover immediately, for example, from a developer's bad
-#' code deployment or from an Amazon Web Services infrastructure failure in
-#' a single Availability Zone. You can start a zonal shift in ARC only for
-#' managed resources in your Amazon Web Services account in an Amazon Web
-#' Services Region. Resources are automatically registered with ARC by
-#' Amazon Web Services services.
+#' You start a zonal shift to temporarily move load balancer traffic away from an Availability Zone in an Amazon Web Services Region, to help your application recover immediately, for example, from a developer's bad code deployment or from an Amazon Web Services infrastructure failure in a single Availability Zone. You can start a zonal shift in ARC only for managed resources in your Amazon Web Services account in an Amazon Web Services Region. Resources are automatically registered with ARC by Amazon Web Services services.
 #' 
-#' Amazon Application Recovery Controller currently supports enabling the
-#' following resources for zonal shift and zonal autoshift:
+#' Amazon Application Recovery Controller currently supports enabling the following resources for zonal shift and zonal autoshift:
 #' 
-#' -   [Amazon EC2 Auto Scaling
-#'     groups](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.ec2-auto-scaling-groups.html)
+#' -   [Amazon EC2 Auto Scaling groups](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.ec2-auto-scaling-groups.html)
 #' 
-#' -   [Amazon Elastic Kubernetes
-#'     Service](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.eks.html)
+#' -   [Amazon Elastic Kubernetes Service](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.eks.html)
 #' 
-#' -   [Application Load
-#'     Balancer](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.app-load-balancers.html)
+#' -   [Application Load Balancer](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.app-load-balancers.html)
 #' 
-#' -   [Network Load
-#'     Balancer](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.network-load-balancers.html)
+#' -   [Network Load Balancer](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.network-load-balancers.html)
 #' 
-#' When you start a zonal shift, traffic for the resource is no longer
-#' routed to the Availability Zone. The zonal shift is created immediately
-#' in ARC. However, it can take a short time, typically up to a few
-#' minutes, for existing, in-progress connections in the Availability Zone
-#' to complete.
+#' When you start a zonal shift, traffic for the resource is no longer routed to the Availability Zone. The zonal shift is created immediately in ARC. However, it can take a short time, typically up to a few minutes, for existing, in-progress connections in the Availability Zone to complete.
 #' 
-#' For more information, see [Zonal
-#' shift](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.html)
-#' in the Amazon Application Recovery Controller Developer Guide.
+#' For more information, see [Zonal shift](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.html) in the Amazon Application Recovery Controller Developer Guide.
 #'
 #' @usage
 #' arczonalshift_start_zonal_shift(resourceIdentifier, awayFrom, expiresIn,
 #'   comment)
 #'
-#' @param resourceIdentifier &#91;required&#93; The identifier for the resource that Amazon Web Services shifts traffic
-#' for. The identifier is the Amazon Resource Name (ARN) for the resource.
+#' @param resourceIdentifier &#91;required&#93; The identifier for the resource that Amazon Web Services shifts traffic for. The identifier is the Amazon Resource Name (ARN) for the resource.
 #' 
-#' Amazon Application Recovery Controller currently supports enabling the
-#' following resources for zonal shift and zonal autoshift:
+#' Amazon Application Recovery Controller currently supports enabling the following resources for zonal shift and zonal autoshift:
 #' 
-#' -   [Amazon EC2 Auto Scaling
-#'     groups](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.ec2-auto-scaling-groups.html)
+#' -   [Amazon EC2 Auto Scaling groups](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.ec2-auto-scaling-groups.html)
 #' 
-#' -   [Amazon Elastic Kubernetes
-#'     Service](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.eks.html)
+#' -   [Amazon Elastic Kubernetes Service](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.eks.html)
 #' 
-#' -   [Application Load
-#'     Balancer](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.app-load-balancers.html)
+#' -   [Application Load Balancer](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.app-load-balancers.html)
 #' 
-#' -   [Network Load
-#'     Balancer](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.network-load-balancers.html)
-#' @param awayFrom &#91;required&#93; The Availability Zone (for example, `use1-az1`) that traffic is moved
-#' away from for a resource when you start a zonal shift. Until the zonal
-#' shift expires or you cancel it, traffic for the resource is instead
-#' moved to other Availability Zones in the Amazon Web Services Region.
-#' @param expiresIn &#91;required&#93; The length of time that you want a zonal shift to be active, which ARC
-#' converts to an expiry time (expiration time). Zonal shifts are
-#' temporary. You can set a zonal shift to be active initially for up to
-#' three days (72 hours).
+#' -   [Network Load Balancer](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.resource-types.network-load-balancers.html)
+#' @param awayFrom &#91;required&#93; The Availability Zone (for example, `use1-az1`) that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the Amazon Web Services Region.
+#' @param expiresIn &#91;required&#93; The length of time that you want a zonal shift to be active, which ARC converts to an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal shift to be active initially for up to three days (72 hours).
 #' 
-#' If you want to still keep traffic away from an Availability Zone, you
-#' can update the zonal shift and set a new expiration. You can also cancel
-#' a zonal shift, before it expires, for example, if you're ready to
-#' restore traffic to the Availability Zone.
+#' If you want to still keep traffic away from an Availability Zone, you can update the zonal shift and set a new expiration. You can also cancel a zonal shift, before it expires, for example, if you're ready to restore traffic to the Availability Zone.
 #' 
-#' To set a length of time for a zonal shift to be active, specify a whole
-#' number, and then one of the following, with no space:
+#' To set a length of time for a zonal shift to be active, specify a whole number, and then one of the following, with no space:
 #' 
 #' -   **A lowercase letter m:** To specify that the value is in minutes.
 #' 
 #' -   **A lowercase letter h:** To specify that the value is in hours.
 #' 
-#' For example: `20h` means the zonal shift expires in 20 hours. `120m`
-#' means the zonal shift expires in 120 minutes (2 hours).
-#' @param comment &#91;required&#93; A comment that you enter about the zonal shift. Only the latest comment
-#' is retained; no comment history is maintained. A new comment overwrites
-#' any existing comment string.
+#' For example: `20h` means the zonal shift expires in 20 hours. `120m` means the zonal shift expires in 120 minutes (2 hours).
+#' @param comment &#91;required&#93; A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. A new comment overwrites any existing comment string.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1038,27 +888,16 @@ arczonalshift_start_zonal_shift <- function(resourceIdentifier, awayFrom, expire
 #' Update the status of autoshift observer notification
 #'
 #' @description
-#' Update the status of autoshift observer notification. Autoshift observer
-#' notification enables you to be notified, through Amazon EventBridge,
-#' when there is an autoshift event for zonal autoshift.
+#' Update the status of autoshift observer notification. Autoshift observer notification enables you to be notified, through Amazon EventBridge, when there is an autoshift event for zonal autoshift.
 #' 
-#' If the status is `ENABLED`, ARC includes all autoshift events when you
-#' use the EventBridge pattern `Autoshift In Progress`. When the status is
-#' `DISABLED`, ARC includes only autoshift events for autoshifts when one
-#' or more of your resources is included in the autoshift.
+#' If the status is `ENABLED`, ARC includes all autoshift events when you use the EventBridge pattern `Autoshift In Progress`. When the status is `DISABLED`, ARC includes only autoshift events for autoshifts when one or more of your resources is included in the autoshift.
 #' 
-#' For more information, see [Notifications for practice runs and
-#' autoshifts](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.how-it-works.html#ZAShiftNotification)
-#' in the Amazon Application Recovery Controller Developer Guide.
+#' For more information, see [Notifications for practice runs and autoshifts](https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.how-it-works.html#ZAShiftNotification) in the Amazon Application Recovery Controller Developer Guide.
 #'
 #' @usage
 #' arczonalshift_update_autoshift_observer_notification_status(status)
 #'
-#' @param status &#91;required&#93; The status to set for autoshift observer notification. If the status is
-#' `ENABLED`, ARC includes all autoshift events when you use the Amazon
-#' EventBridge pattern `Autoshift In Progress`. When the status is
-#' `DISABLED`, ARC includes only autoshift events for autoshifts when one
-#' or more of your resources is included in the autoshift.
+#' @param status &#91;required&#93; The status to set for autoshift observer notification. If the status is `ENABLED`, ARC includes all autoshift events when you use the Amazon EventBridge pattern `Autoshift In Progress`. When the status is `DISABLED`, ARC includes only autoshift events for autoshifts when one or more of your resources is included in the autoshift.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1104,62 +943,33 @@ arczonalshift_update_autoshift_observer_notification_status <- function(status) 
 #' alarm; or add, change, or remove blocking dates or time windows
 #'
 #' @description
-#' Update a practice run configuration to change one or more of the
-#' following: add, change, or remove the blocking alarm; change the outcome
-#' alarm; or add, change, or remove blocking dates or time windows.
+#' Update a practice run configuration to change one or more of the following: add, change, or remove the blocking alarm; change the outcome alarm; or add, change, or remove blocking dates or time windows.
 #'
 #' @usage
 #' arczonalshift_update_practice_run_configuration(resourceIdentifier,
 #'   blockedWindows, blockedDates, blockingAlarms, allowedWindows,
 #'   outcomeAlarms)
 #'
-#' @param resourceIdentifier &#91;required&#93; The identifier for the resource that you want to update the practice run
-#' configuration for. The identifier is the Amazon Resource Name (ARN) for
-#' the resource.
-#' @param blockedWindows Add, change, or remove windows of days and times for when you can,
-#' optionally, block ARC from starting a practice run for a resource.
+#' @param resourceIdentifier &#91;required&#93; The identifier for the resource that you want to update the practice run configuration for. The identifier is the Amazon Resource Name (ARN) for the resource.
+#' @param blockedWindows Add, change, or remove windows of days and times for when you can, optionally, block ARC from starting a practice run for a resource.
 #' 
-#' The format for blocked windows is: DAY:HH:SS-DAY:HH:SS. Keep in mind,
-#' when you specify dates, that dates and times for practice runs are in
-#' UTC. Also, be aware of potential time adjustments that might be required
-#' for daylight saving time differences. Separate multiple blocked windows
-#' with spaces.
+#' The format for blocked windows is: DAY:HH:SS-DAY:HH:SS. Keep in mind, when you specify dates, that dates and times for practice runs are in UTC. Also, be aware of potential time adjustments that might be required for daylight saving time differences. Separate multiple blocked windows with spaces.
 #' 
-#' For example, say you run business report summaries three days a week.
-#' For this scenario, you might set the following recurring days and times
-#' as blocked windows, for example:
-#' `MON-20:30-21:30 WED-20:30-21:30 FRI-20:30-21:30`.
-#' @param blockedDates Add, change, or remove blocked dates for a practice run in zonal
-#' autoshift.
+#' For example, say you run business report summaries three days a week. For this scenario, you might set the following recurring days and times as blocked windows, for example: `MON-20:30-21:30 WED-20:30-21:30 FRI-20:30-21:30`.
+#' @param blockedDates Add, change, or remove blocked dates for a practice run in zonal autoshift.
 #' 
-#' Optionally, you can block practice runs for specific calendar dates. The
-#' format for blocked dates is: YYYY-MM-DD. Keep in mind, when you specify
-#' dates, that dates and times for practice runs are in UTC. Separate
-#' multiple blocked dates with spaces.
+#' Optionally, you can block practice runs for specific calendar dates. The format for blocked dates is: YYYY-MM-DD. Keep in mind, when you specify dates, that dates and times for practice runs are in UTC. Separate multiple blocked dates with spaces.
 #' 
-#' For example, if you have an application update scheduled to launch on
-#' May 1, 2024, and you don't want practice runs to shift traffic away at
-#' that time, you could set a blocked date for `2024-05-01`.
-#' @param blockingAlarms Add, change, or remove the Amazon CloudWatch alarms that you optionally
-#' specify as the blocking alarms for practice runs.
-#' @param allowedWindows Add, change, or remove windows of days and times for when you can,
-#' optionally, allow ARC to start a practice run for a resource.
+#' For example, if you have an application update scheduled to launch on May 1, 2024, and you don't want practice runs to shift traffic away at that time, you could set a blocked date for `2024-05-01`.
+#' @param blockingAlarms Add, change, or remove the Amazon CloudWatch alarms that you optionally specify as the blocking alarms for practice runs.
+#' @param allowedWindows Add, change, or remove windows of days and times for when you can, optionally, allow ARC to start a practice run for a resource.
 #' 
-#' The format for allowed windows is: DAY:HH:SS-DAY:HH:SS. Keep in mind,
-#' when you specify dates, that dates and times for practice runs are in
-#' UTC. Also, be aware of potential time adjustments that might be required
-#' for daylight saving time differences. Separate multiple allowed windows
-#' with spaces.
+#' The format for allowed windows is: DAY:HH:SS-DAY:HH:SS. Keep in mind, when you specify dates, that dates and times for practice runs are in UTC. Also, be aware of potential time adjustments that might be required for daylight saving time differences. Separate multiple allowed windows with spaces.
 #' 
-#' For example, say you want to allow practice runs only on Wednesdays and
-#' Fridays from noon to 5 p.m. For this scenario, you could set the
-#' following recurring days and times as allowed windows, for example:
-#' `Wed-12:00-Wed:17:00 Fri-12:00-Fri:17:00`.
+#' For example, say you want to allow practice runs only on Wednesdays and Fridays from noon to 5 p.m. For this scenario, you could set the following recurring days and times as allowed windows, for example: `Wed-12:00-Wed:17:00 Fri-12:00-Fri:17:00`.
 #' 
-#' The `allowedWindows` have to start and end on the same day. Windows that
-#' span multiple days aren't supported.
-#' @param outcomeAlarms Specify one or more Amazon CloudWatch alarms as the outcome alarms for
-#' practice runs.
+#' The `allowedWindows` have to start and end on the same day. Windows that span multiple days aren't supported.
+#' @param outcomeAlarms Specify one or more Amazon CloudWatch alarms as the outcome alarms for practice runs.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1251,33 +1061,16 @@ arczonalshift_update_practice_run_configuration <- function(resourceIdentifier, 
 #' status
 #'
 #' @description
-#' The zonal autoshift configuration for a resource includes the practice
-#' run configuration and the status for running autoshifts, zonal autoshift
-#' status. When a resource has a practice run configuration, ARC starts
-#' weekly zonal shifts for the resource, to shift traffic away from an
-#' Availability Zone. Weekly practice runs help you to make sure that your
-#' application can continue to operate normally with the loss of one
-#' Availability Zone.
+#' The zonal autoshift configuration for a resource includes the practice run configuration and the status for running autoshifts, zonal autoshift status. When a resource has a practice run configuration, ARC starts weekly zonal shifts for the resource, to shift traffic away from an Availability Zone. Weekly practice runs help you to make sure that your application can continue to operate normally with the loss of one Availability Zone.
 #' 
-#' You can update the zonal autoshift status to enable or disable zonal
-#' autoshift. When zonal autoshift is `ENABLED`, you authorize Amazon Web
-#' Services to shift away resource traffic for an application from an
-#' Availability Zone during events, on your behalf, to help reduce time to
-#' recovery. Traffic is also shifted away for the required weekly practice
-#' runs.
+#' You can update the zonal autoshift status to enable or disable zonal autoshift. When zonal autoshift is `ENABLED`, you authorize Amazon Web Services to shift away resource traffic for an application from an Availability Zone during events, on your behalf, to help reduce time to recovery. Traffic is also shifted away for the required weekly practice runs.
 #'
 #' @usage
 #' arczonalshift_update_zonal_autoshift_configuration(resourceIdentifier,
 #'   zonalAutoshiftStatus)
 #'
-#' @param resourceIdentifier &#91;required&#93; The identifier for the resource that you want to update the zonal
-#' autoshift configuration for. The identifier is the Amazon Resource Name
-#' (ARN) for the resource.
-#' @param zonalAutoshiftStatus &#91;required&#93; The zonal autoshift status for the resource that you want to update the
-#' zonal autoshift configuration for. Choose `ENABLED` to authorize Amazon
-#' Web Services to shift away resource traffic for an application from an
-#' Availability Zone during events, on your behalf, to help reduce time to
-#' recovery.
+#' @param resourceIdentifier &#91;required&#93; The identifier for the resource that you want to update the zonal autoshift configuration for. The identifier is the Amazon Resource Name (ARN) for the resource.
+#' @param zonalAutoshiftStatus &#91;required&#93; The zonal autoshift status for the resource that you want to update the zonal autoshift configuration for. Choose `ENABLED` to authorize Amazon Web Services to shift away resource traffic for an application from an Availability Zone during events, on your behalf, to help reduce time to recovery.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1324,36 +1117,24 @@ arczonalshift_update_zonal_autoshift_configuration <- function(resourceIdentifie
 #' in your Amazon Web Services account
 #'
 #' @description
-#' Update an active zonal shift in Amazon Application Recovery Controller
-#' in your Amazon Web Services account. You can update a zonal shift to set
-#' a new expiration, or edit or replace the comment for the zonal shift.
+#' Update an active zonal shift in Amazon Application Recovery Controller in your Amazon Web Services account. You can update a zonal shift to set a new expiration, or edit or replace the comment for the zonal shift.
 #'
 #' @usage
 #' arczonalshift_update_zonal_shift(zonalShiftId, comment, expiresIn)
 #'
 #' @param zonalShiftId &#91;required&#93; The identifier of a zonal shift.
-#' @param comment A comment that you enter about the zonal shift. Only the latest comment
-#' is retained; no comment history is maintained. A new comment overwrites
-#' any existing comment string.
-#' @param expiresIn The length of time that you want a zonal shift to be active, which ARC
-#' converts to an expiry time (expiration time). Zonal shifts are
-#' temporary. You can set a zonal shift to be active initially for up to
-#' three days (72 hours).
+#' @param comment A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. A new comment overwrites any existing comment string.
+#' @param expiresIn The length of time that you want a zonal shift to be active, which ARC converts to an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal shift to be active initially for up to three days (72 hours).
 #' 
-#' If you want to still keep traffic away from an Availability Zone, you
-#' can update the zonal shift and set a new expiration. You can also cancel
-#' a zonal shift, before it expires, for example, if you're ready to
-#' restore traffic to the Availability Zone.
+#' If you want to still keep traffic away from an Availability Zone, you can update the zonal shift and set a new expiration. You can also cancel a zonal shift, before it expires, for example, if you're ready to restore traffic to the Availability Zone.
 #' 
-#' To set a length of time for a zonal shift to be active, specify a whole
-#' number, and then one of the following, with no space:
+#' To set a length of time for a zonal shift to be active, specify a whole number, and then one of the following, with no space:
 #' 
 #' -   **A lowercase letter m:** To specify that the value is in minutes.
 #' 
 #' -   **A lowercase letter h:** To specify that the value is in hours.
 #' 
-#' For example: `20h` means the zonal shift expires in 20 hours. `120m`
-#' means the zonal shift expires in 120 minutes (2 hours).
+#' For example: `20h` means the zonal shift expires in 20 hours. `120m` means the zonal shift expires in 120 minutes (2 hours).
 #'
 #' @return
 #' A list with the following syntax:

@@ -12,9 +12,7 @@ s3tables_put_table_bucket_storage_class(
 \arguments{
 \item{tableBucketARN}{[required] The Amazon Resource Name (ARN) of the table bucket.}
 
-\item{storageClassConfiguration}{[required] The storage class configuration to apply to the table bucket. This
-configuration will serve as the default for new tables created in this
-bucket.}
+\item{storageClassConfiguration}{[required] The storage class configuration to apply to the table bucket. This configuration will serve as the default for new tables created in this bucket.}
 }
 \description{
 Sets or updates the storage class configuration for a table bucket. This configuration serves as the default storage class for all new tables created in the bucket, allowing you to optimize storage costs at the bucket level.

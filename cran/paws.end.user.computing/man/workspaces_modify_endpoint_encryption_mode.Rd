@@ -10,8 +10,7 @@ workspaces_modify_endpoint_encryption_mode(DirectoryId, EndpointEncryptionMode)
 \arguments{
 \item{DirectoryId}{[required] The identifier of the directory.}
 
-\item{EndpointEncryptionMode}{[required] The encryption mode used for endpoint connections when streaming to
-WorkSpaces Personal or WorkSpace Pools.}
+\item{EndpointEncryptionMode}{[required] The encryption mode used for endpoint connections when streaming to WorkSpaces Personal or WorkSpace Pools.}
 }
 \description{
 Modifies the endpoint encryption mode that allows you to configure the specified directory between Standard TLS and FIPS 140-2 validated mode.

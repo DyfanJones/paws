@@ -11,11 +11,7 @@ cognitoidentityprovider_admin_get_device(DeviceKey, UserPoolId, Username)
 
 \item{UserPoolId}{[required] The ID of the user pool where the device owner is a user.}
 
-\item{Username}{[required] The name of the user that you want to query or modify. The value of this
-parameter is typically your user's username, but it can be any of their
-alias attributes. If \code{username} isn't an alias attribute in your user
-pool, this value must be the \code{sub} of a local user or the username of a
-user from a third-party IdP.}
+\item{Username}{[required] The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If \code{username} isn't an alias attribute in your user pool, this value must be the \code{sub} of a local user or the username of a user from a third-party IdP.}
 }
 \description{
 Given the device key, returns details for a user's device. For more information, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html}{Working with devices}.

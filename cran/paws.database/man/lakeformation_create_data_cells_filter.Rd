@@ -8,8 +8,7 @@ columns on certain rows}
 lakeformation_create_data_cells_filter(TableData)
 }
 \arguments{
-\item{TableData}{[required] A \code{DataCellsFilter} structure containing information about the data
-cells filter.}
+\item{TableData}{[required] A \code{DataCellsFilter} structure containing information about the data cells filter.}
 }
 \description{
 Creates a data cell filter to allow one to grant access to certain columns on certain rows.

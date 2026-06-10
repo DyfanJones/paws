@@ -14,20 +14,13 @@ vpclattice_create_service_network_resource_association(
 )
 }
 \arguments{
-\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If you retry a request that completed
-successfully using the same client token and parameters, the retry
-succeeds without performing any actions. If the parameters aren't
-identical, the retry fails.}
+\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.}
 
-\item{resourceConfigurationIdentifier}{[required] The ID of the resource configuration to associate with the service
-network.}
+\item{resourceConfigurationIdentifier}{[required] The ID of the resource configuration to associate with the service network.}
 
-\item{serviceNetworkIdentifier}{[required] The ID of the service network to associate with the resource
-configuration.}
+\item{serviceNetworkIdentifier}{[required] The ID of the service network to associate with the resource configuration.}
 
-\item{privateDnsEnabled}{Indicates if private DNS is enabled for the service network resource
-association.}
+\item{privateDnsEnabled}{Indicates if private DNS is enabled for the service network resource association.}
 
 \item{tags}{A key-value pair to associate with a resource.}
 }

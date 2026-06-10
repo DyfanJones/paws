@@ -11,8 +11,7 @@ datazone_associate_environment_role(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the environment role is
-associated.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the environment role is associated.}
 
 \item{environmentIdentifier}{[required] The ID of the Amazon DataZone environment.}
 

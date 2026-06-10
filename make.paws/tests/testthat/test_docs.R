@@ -495,7 +495,7 @@ test_that("check links part1", {
 test_that("check links part2", {
   skip_on_ci()
   text <- "<a href='https://httpbin.org/anything#foo?bar=baz'>foo</a>"
-  expected <- c("[foo](https://httpbin.org/anything#foo?bar=baz)")
+  expected <- c("[foo](https://httpbin.org/anything#foo?bar%3Dbaz)")
   expect_equal(convert(text), expected)
 })
 

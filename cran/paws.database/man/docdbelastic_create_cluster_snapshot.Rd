@@ -7,8 +7,7 @@
 docdbelastic_create_cluster_snapshot(clusterArn, snapshotName, tags = NULL)
 }
 \arguments{
-\item{clusterArn}{[required] The ARN identifier of the elastic cluster of which you want to create a
-snapshot.}
+\item{clusterArn}{[required] The ARN identifier of the elastic cluster of which you want to create a snapshot.}
 
 \item{snapshotName}{[required] The name of the new elastic cluster snapshot.}
 

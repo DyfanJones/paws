@@ -13,18 +13,15 @@ sagemaker_create_trial(
 )
 }
 \arguments{
-\item{TrialName}{[required] The name of the trial. The name must be unique in your Amazon Web
-Services account and is not case-sensitive.}
+\item{TrialName}{[required] The name of the trial. The name must be unique in your Amazon Web Services account and is not case-sensitive.}
 
-\item{DisplayName}{The name of the trial as displayed. The name doesn't need to be unique.
-If \code{DisplayName} isn't specified, \code{TrialName} is displayed.}
+\item{DisplayName}{The name of the trial as displayed. The name doesn't need to be unique. If \code{DisplayName} isn't specified, \code{TrialName} is displayed.}
 
 \item{ExperimentName}{[required] The name of the experiment to associate the trial with.}
 
-\item{MetadataProperties}{}
+\item{MetadataProperties}{Metadata properties of the tracking entity, trial, or trial component.}
 
-\item{Tags}{A list of tags to associate with the trial. You can use
-\code{\link[=sagemaker_search]{search}} API to search on the tags.}
+\item{Tags}{A list of tags to associate with the trial. You can use \code{\link[=sagemaker_search]{search}} API to search on the tags.}
 }
 \description{
 Creates an SageMaker \emph{trial}. A trial is a set of steps called \emph{trial components} that produce a machine learning model. A trial is part of a single SageMaker \emph{experiment}.

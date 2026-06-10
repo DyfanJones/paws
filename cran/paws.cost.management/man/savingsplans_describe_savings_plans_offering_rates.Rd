@@ -31,15 +31,13 @@ savingsplans_describe_savings_plans_offering_rates(
 
 \item{usageTypes}{The usage details of the line item in the billing report.}
 
-\item{operations}{The specific Amazon Web Services operation for the line item in the
-billing report.}
+\item{operations}{The specific Amazon Web Services operation for the line item in the billing report.}
 
 \item{filters}{The filters.}
 
 \item{nextToken}{The token for the next page of results.}
 
-\item{maxResults}{The maximum number of results to return with a single call. To retrieve
-additional results, make another call with the returned token value.}
+\item{maxResults}{The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.}
 }
 \description{
 Describes the offering rates for Savings Plans you might want to purchase.

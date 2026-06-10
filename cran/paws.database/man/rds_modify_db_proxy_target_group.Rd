@@ -16,12 +16,9 @@ rds_modify_db_proxy_target_group(
 
 \item{DBProxyName}{[required] The name of the proxy.}
 
-\item{ConnectionPoolConfig}{The settings that determine the size and behavior of the connection pool
-for the target group.}
+\item{ConnectionPoolConfig}{The settings that determine the size and behavior of the connection pool for the target group.}
 
-\item{NewName}{The new name for the modified \code{DBProxyTarget}. An identifier must begin
-with a letter and must contain only ASCII letters, digits, and hyphens;
-it can't end with a hyphen or contain two consecutive hyphens.
+\item{NewName}{The new name for the modified \code{DBProxyTarget}. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.
 
 You can't rename the \code{default} target group.}
 }

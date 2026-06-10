@@ -13,11 +13,9 @@ cloudfront_update_continuous_deployment_policy(
 \arguments{
 \item{ContinuousDeploymentPolicyConfig}{[required] The continuous deployment policy configuration.}
 
-\item{Id}{[required] The identifier of the continuous deployment policy that you are
-updating.}
+\item{Id}{[required] The identifier of the continuous deployment policy that you are updating.}
 
-\item{IfMatch}{The current version (\code{ETag} value) of the continuous deployment policy
-that you are updating.}
+\item{IfMatch}{The current version (\code{ETag} value) of the continuous deployment policy that you are updating.}
 }
 \description{
 Updates a continuous deployment policy. You can update a continuous deployment policy to enable or disable it, to change the percentage of traffic that it sends to the staging distribution, or to change the staging distribution that it sends traffic to.

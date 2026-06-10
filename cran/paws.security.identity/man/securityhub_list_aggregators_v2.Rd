@@ -7,10 +7,7 @@
 securityhub_list_aggregators_v2(NextToken = NULL, MaxResults = NULL)
 }
 \arguments{
-\item{NextToken}{The token required for pagination. On your first call, set the value of
-this parameter to \code{NULL}. For subsequent calls, to continue listing
-data, set the value of this parameter to the value returned in the
-previous response.}
+\item{NextToken}{The token required for pagination. On your first call, set the value of this parameter to \code{NULL}. For subsequent calls, to continue listing data, set the value of this parameter to the value returned in the previous response.}
 
 \item{MaxResults}{The maximum number of results to return.}
 }

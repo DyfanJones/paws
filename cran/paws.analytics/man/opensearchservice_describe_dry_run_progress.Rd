@@ -16,9 +16,7 @@ opensearchservice_describe_dry_run_progress(
 
 \item{DryRunId}{The unique identifier of the dry run.}
 
-\item{LoadDryRunConfig}{Whether to include the configuration of the dry run in the response. The
-configuration specifies the updates that you're planning to make on the
-domain.}
+\item{LoadDryRunConfig}{Whether to include the configuration of the dry run in the response. The configuration specifies the updates that you're planning to make on the domain.}
 }
 \description{
 Describes the progress of a pre-update dry run analysis on an Amazon OpenSearch Service domain. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes.html#dryrun}{Determining whether a change will cause a blue/green deployment}.

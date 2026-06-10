@@ -17,14 +17,10 @@ redshift_copy_cluster_snapshot(
 
 Constraints:
 \itemize{
-\item Must be the identifier for a valid automated snapshot whose state is
-\code{available}.
+\item Must be the identifier for a valid automated snapshot whose state is \code{available}.
 }}
 
-\item{SourceSnapshotClusterIdentifier}{The identifier of the cluster the source snapshot was created from. This
-parameter is required if your IAM user has a policy containing a
-snapshot resource element that specifies anything other than * for the
-cluster name.
+\item{SourceSnapshotClusterIdentifier}{The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.
 
 Constraints:
 \itemize{
@@ -39,12 +35,10 @@ Constraints:
 \item Must contain from 1 to 255 alphanumeric characters or hyphens.
 \item First character must be a letter.
 \item Cannot end with a hyphen or contain two consecutive hyphens.
-\item Must be unique for the Amazon Web Services account that is making
-the request.
+\item Must be unique for the Amazon Web Services account that is making the request.
 }}
 
-\item{ManualSnapshotRetentionPeriod}{The number of days that a manual snapshot is retained. If the value is
--1, the manual snapshot is retained indefinitely.
+\item{ManualSnapshotRetentionPeriod}{The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.
 
 The value must be either -1 or an integer between 1 and 3,653.
 

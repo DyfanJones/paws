@@ -16,8 +16,7 @@ Constraints:
 
 \item{ForceFailover}{When \code{true}, the reboot is conducted through a Multi-AZ failover.
 
-Constraint: You can't specify \code{true} if the instance is not configured
-for Multi-AZ.}
+Constraint: You can't specify \code{true} if the instance is not configured for Multi-AZ.}
 }
 \description{
 You might need to reboot your instance, usually for maintenance reasons. For example, if you make certain changes, or if you change the cluster parameter group that is associated with the instance, you must reboot the instance for the changes to take effect.

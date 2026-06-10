@@ -15,11 +15,7 @@ bedrock_create_guardrail_version(
 
 \item{description}{A description of the guardrail version.}
 
-\item{clientRequestToken}{A unique, case-sensitive identifier to ensure that the API request
-completes no more than once. If this token matches a previous request,
-Amazon Bedrock ignores the request, but does not return an error. For
-more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}
-in the \emph{Amazon S3 User Guide}.}
+\item{clientRequestToken}{A unique, case-sensitive identifier to ensure that the API request completes no more than once. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency} in the \emph{Amazon S3 User Guide}.}
 }
 \description{
 Creates a version of the guardrail. Use this API to create a snapshot of the guardrail when you are satisfied with a configuration, or to compare the configuration with another version.

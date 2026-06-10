@@ -12,13 +12,11 @@ appstream_describe_users(
 )
 }
 \arguments{
-\item{AuthenticationType}{[required] The authentication type for the users in the user pool to describe. You
-must specify USERPOOL.}
+\item{AuthenticationType}{[required] The authentication type for the users in the user pool to describe. You must specify USERPOOL.}
 
 \item{MaxResults}{The maximum size of each page of results.}
 
-\item{NextToken}{The pagination token to use to retrieve the next page of results for
-this operation. If this value is null, it retrieves the first page.}
+\item{NextToken}{The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.}
 }
 \description{
 Retrieves a list that describes one or more specified users in the user pool.

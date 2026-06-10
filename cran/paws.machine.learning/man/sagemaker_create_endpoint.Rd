@@ -13,20 +13,13 @@ sagemaker_create_endpoint(
 )
 }
 \arguments{
-\item{EndpointName}{[required] The name of the endpoint.The name must be unique within an Amazon Web
-Services Region in your Amazon Web Services account. The name is
-case-insensitive in \code{\link[=sagemaker_create_endpoint]{create_endpoint}}, but
-the case is preserved and must be matched in
-\href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html}{InvokeEndpoint}.}
+\item{EndpointName}{[required] The name of the endpoint.The name must be unique within an Amazon Web Services Region in your Amazon Web Services account. The name is case-insensitive in \code{\link[=sagemaker_create_endpoint]{create_endpoint}}, but the case is preserved and must be matched in \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html}{InvokeEndpoint}.}
 
-\item{EndpointConfigName}{[required] The name of an endpoint configuration. For more information, see
-\code{\link[=sagemaker_create_endpoint_config]{create_endpoint_config}}.}
+\item{EndpointConfigName}{[required] The name of an endpoint configuration. For more information, see \code{\link[=sagemaker_create_endpoint_config]{create_endpoint_config}}.}
 
-\item{DeploymentConfig}{}
+\item{DeploymentConfig}{The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations.}
 
-\item{Tags}{An array of key-value pairs. You can use tags to categorize your Amazon
-Web Services resources in different ways, for example, by purpose,
-owner, or environment. For more information, see \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web Services Resources}.}
+\item{Tags}{An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web Services Resources}.}
 }
 \description{
 Creates an endpoint using the endpoint configuration specified in the request. SageMaker uses the endpoint to provision resources and deploy models. You create the endpoint configuration with the \code{\link[=sagemaker_create_endpoint_config]{create_endpoint_config}} API.

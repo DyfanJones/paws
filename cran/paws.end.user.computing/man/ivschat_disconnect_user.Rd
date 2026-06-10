@@ -7,8 +7,7 @@
 ivschat_disconnect_user(roomIdentifier, userId, reason = NULL)
 }
 \arguments{
-\item{roomIdentifier}{[required] Identifier of the room from which the user's clients should be
-disconnected. Currently this must be an ARN.}
+\item{roomIdentifier}{[required] Identifier of the room from which the user's clients should be disconnected. Currently this must be an ARN.}
 
 \item{userId}{[required] ID of the user (connection) to disconnect from the room.}
 

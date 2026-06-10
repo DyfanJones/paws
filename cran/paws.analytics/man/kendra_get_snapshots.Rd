@@ -15,33 +15,21 @@ kendra_get_snapshots(
 \arguments{
 \item{IndexId}{[required] The identifier of the index to get search metrics data.}
 
-\item{Interval}{[required] The time interval or time window to get search metrics data. The time
-interval uses the time zone of your index. You can view data in the
-following time windows:
+\item{Interval}{[required] The time interval or time window to get search metrics data. The time interval uses the time zone of your index. You can view data in the following time windows:
 \itemize{
-\item \code{THIS_WEEK}: The current week, starting on the Sunday and ending on
-the day before the current date.
-\item \code{ONE_WEEK_AGO}: The previous week, starting on the Sunday and ending
-on the following Saturday.
-\item \code{TWO_WEEKS_AGO}: The week before the previous week, starting on the
-Sunday and ending on the following Saturday.
-\item \code{THIS_MONTH}: The current month, starting on the first day of the
-month and ending on the day before the current date.
-\item \code{ONE_MONTH_AGO}: The previous month, starting on the first day of
-the month and ending on the last day of the month.
-\item \code{TWO_MONTHS_AGO}: The month before the previous month, starting on
-the first day of the month and ending on last day of the month.
+\item \code{THIS_WEEK}: The current week, starting on the Sunday and ending on the day before the current date.
+\item \code{ONE_WEEK_AGO}: The previous week, starting on the Sunday and ending on the following Saturday.
+\item \code{TWO_WEEKS_AGO}: The week before the previous week, starting on the Sunday and ending on the following Saturday.
+\item \code{THIS_MONTH}: The current month, starting on the first day of the month and ending on the day before the current date.
+\item \code{ONE_MONTH_AGO}: The previous month, starting on the first day of the month and ending on the last day of the month.
+\item \code{TWO_MONTHS_AGO}: The month before the previous month, starting on the first day of the month and ending on last day of the month.
 }}
 
-\item{MetricType}{[required] The metric you want to retrieve. You can specify only one metric per
-call.
+\item{MetricType}{[required] The metric you want to retrieve. You can specify only one metric per call.
 
 For more information about the metrics you can view, see \href{https://docs.aws.amazon.com/kendra/latest/dg/search-analytics.html}{Gaining insights with search analytics}.}
 
-\item{NextToken}{If the previous response was incomplete (because there is more data to
-retrieve), Amazon Kendra returns a pagination token in the response. You
-can use this pagination token to retrieve the next set of search metrics
-data.}
+\item{NextToken}{If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of search metrics data.}
 
 \item{MaxResults}{The maximum number of returned data for the metric.}
 }

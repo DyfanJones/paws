@@ -5,8 +5,7 @@ NULL
 #' Amazon Kendra Intelligent Ranking
 #'
 #' @description
-#' Amazon Kendra Intelligent Ranking uses Amazon Kendra semantic search
-#' capabilities to intelligently re-rank a search service's results.
+#' Amazon Kendra Intelligent Ranking uses Amazon Kendra semantic search capabilities to intelligently re-rank a search service's results.
 #'
 #' @param
 #' config

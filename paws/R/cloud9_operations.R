@@ -8,13 +8,9 @@ NULL
 #' to the environment
 #'
 #' @description
-#' Creates an Cloud9 development environment, launches an Amazon Elastic
-#' Compute Cloud (Amazon EC2) instance, and then connects from the instance
-#' to the environment.
+#' Creates an Cloud9 development environment, launches an Amazon Elastic Compute Cloud (Amazon EC2) instance, and then connects from the instance to the environment.
 #' 
-#' Cloud9 is no longer available to new customers. Existing customers of
-#' Cloud9 can continue to use the service as normal. [Learn
-#' more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
+#' Cloud9 is no longer available to new customers. Existing customers of Cloud9 can continue to use the service as normal. [Learn more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
 #'
 #' @usage
 #' cloud9_create_environment_ec2(name, description, clientRequestToken,
@@ -23,33 +19,20 @@ NULL
 #'
 #' @param name &#91;required&#93; The name of the environment to create.
 #' 
-#' This name is visible to other IAM users in the same Amazon Web Services
-#' account.
+#' This name is visible to other IAM users in the same Amazon Web Services account.
 #' @param description The description of the environment to create.
-#' @param clientRequestToken A unique, case-sensitive string that helps Cloud9 to ensure this
-#' operation completes no more than one time.
+#' @param clientRequestToken A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one time.
 #' 
-#' For more information, see [Client
-#' Tokens](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html)
-#' in the *Amazon EC2 API Reference*.
-#' @param instanceType &#91;required&#93; The type of instance to connect to the environment (for example,
-#' `t2.micro`).
-#' @param subnetId The ID of the subnet in Amazon VPC that Cloud9 will use to communicate
-#' with the Amazon EC2 instance.
-#' @param imageId &#91;required&#93; The identifier for the Amazon Machine Image (AMI) that's used to create
-#' the EC2 instance. To choose an AMI for the instance, you must specify a
-#' valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.
+#' For more information, see [Client Tokens](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html) in the *Amazon EC2 API Reference*.
+#' @param instanceType &#91;required&#93; The type of instance to connect to the environment (for example, `t2.micro`).
+#' @param subnetId The ID of the subnet in Amazon VPC that Cloud9 will use to communicate with the Amazon EC2 instance.
+#' @param imageId &#91;required&#93; The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.
 #' 
-#' We recommend using Amazon Linux 2023 as the AMI to create your
-#' environment as it is fully supported.
+#' We recommend using Amazon Linux 2023 as the AMI to create your environment as it is fully supported.
 #' 
-#' From December 16, 2024, Ubuntu 18.04 will be removed from the list of
-#' available `imageIds` for Cloud9. This change is necessary as Ubuntu
-#' 18.04 has ended standard support on May 31, 2023. This change will only
-#' affect direct API consumers, and not Cloud9 console users.
+#' From December 16, 2024, Ubuntu 18.04 will be removed from the list of available `imageIds` for Cloud9. This change is necessary as Ubuntu 18.04 has ended standard support on May 31, 2023. This change will only affect direct API consumers, and not Cloud9 console users.
 #' 
-#' Since Ubuntu 18.04 has ended standard support as of May 31, 2023, we
-#' recommend you choose Ubuntu 22.04.
+#' Since Ubuntu 18.04 has ended standard support as of May 31, 2023, we recommend you choose Ubuntu 22.04.
 #' 
 #' **AMI aliases**
 #' 
@@ -63,36 +46,20 @@ NULL
 #' 
 #' **SSM paths**
 #' 
-#' -   Amazon Linux 2:
-#'     `resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64`
+#' -   Amazon Linux 2: `resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64`
 #' 
-#' -   Amazon Linux 2023 (recommended):
-#'     `resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2023-x86_64`
+#' -   Amazon Linux 2023 (recommended): `resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2023-x86_64`
 #' 
-#' -   Ubuntu 18.04:
-#'     `resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64`
+#' -   Ubuntu 18.04: `resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64`
 #' 
-#' -   Ubuntu 22.04:
-#'     `resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64`
-#' @param automaticStopTimeMinutes The number of minutes until the running instance is shut down after the
-#' environment has last been used.
-#' @param ownerArn The Amazon Resource Name (ARN) of the environment owner. This ARN can be
-#' the ARN of any IAM principal. If this value is not specified, the ARN
-#' defaults to this environment's creator.
-#' @param tags An array of key-value pairs that will be associated with the new Cloud9
-#' development environment.
-#' @param connectionType The connection type used for connecting to an Amazon EC2 environment.
-#' Valid values are `CONNECT_SSH` (default) and `CONNECT_SSM` (connected
-#' through Amazon EC2 Systems Manager).
+#' -   Ubuntu 22.04: `resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64`
+#' @param automaticStopTimeMinutes The number of minutes until the running instance is shut down after the environment has last been used.
+#' @param ownerArn The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any IAM principal. If this value is not specified, the ARN defaults to this environment's creator.
+#' @param tags An array of key-value pairs that will be associated with the new Cloud9 development environment.
+#' @param connectionType The connection type used for connecting to an Amazon EC2 environment. Valid values are `CONNECT_SSH` (default) and `CONNECT_SSM` (connected through Amazon EC2 Systems Manager).
 #' 
-#' For more information, see [Accessing no-ingress EC2 instances with
-#' Amazon EC2 Systems
-#' Manager](https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html)
-#' in the *Cloud9 User Guide*.
-#' @param dryRun Checks whether you have the required permissions for the action, without
-#' actually making the request, and provides an error response. If you have
-#' the required permissions, the error response is `DryRunOperation`.
-#' Otherwise, it is `UnauthorizedOperation`.
+#' For more information, see [Accessing no-ingress EC2 instances with Amazon EC2 Systems Manager](https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html) in the *Cloud9 User Guide*.
+#' @param dryRun Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is `DryRunOperation`. Otherwise, it is `UnauthorizedOperation`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -166,20 +133,15 @@ cloud9_create_environment_ec2 <- function(name, description = NULL, clientReques
 #' @description
 #' Adds an environment member to an Cloud9 development environment.
 #' 
-#' Cloud9 is no longer available to new customers. Existing customers of
-#' Cloud9 can continue to use the service as normal. [Learn
-#' more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
+#' Cloud9 is no longer available to new customers. Existing customers of Cloud9 can continue to use the service as normal. [Learn more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
 #'
 #' @usage
 #' cloud9_create_environment_membership(environmentId, userArn,
 #'   permissions)
 #'
-#' @param environmentId &#91;required&#93; The ID of the environment that contains the environment member you want
-#' to add.
-#' @param userArn &#91;required&#93; The Amazon Resource Name (ARN) of the environment member you want to
-#' add.
-#' @param permissions &#91;required&#93; The type of environment member permissions you want to associate with
-#' this environment member. Available values include:
+#' @param environmentId &#91;required&#93; The ID of the environment that contains the environment member you want to add.
+#' @param userArn &#91;required&#93; The Amazon Resource Name (ARN) of the environment member you want to add.
+#' @param permissions &#91;required&#93; The type of environment member permissions you want to associate with this environment member. Available values include:
 #' 
 #' -   `read-only`: Has read-only access to the environment.
 #' 
@@ -247,12 +209,9 @@ cloud9_create_environment_membership <- function(environmentId, userArn, permiss
 #' Deletes an Cloud9 development environment
 #'
 #' @description
-#' Deletes an Cloud9 development environment. If an Amazon EC2 instance is
-#' connected to the environment, also terminates the instance.
+#' Deletes an Cloud9 development environment. If an Amazon EC2 instance is connected to the environment, also terminates the instance.
 #' 
-#' Cloud9 is no longer available to new customers. Existing customers of
-#' Cloud9 can continue to use the service as normal. [Learn
-#' more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
+#' Cloud9 is no longer available to new customers. Existing customers of Cloud9 can continue to use the service as normal. [Learn more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
 #'
 #' @usage
 #' cloud9_delete_environment(environmentId)
@@ -306,16 +265,13 @@ cloud9_delete_environment <- function(environmentId) {
 #' @description
 #' Deletes an environment member from a development environment.
 #' 
-#' Cloud9 is no longer available to new customers. Existing customers of
-#' Cloud9 can continue to use the service as normal. [Learn
-#' more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
+#' Cloud9 is no longer available to new customers. Existing customers of Cloud9 can continue to use the service as normal. [Learn more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
 #'
 #' @usage
 #' cloud9_delete_environment_membership(environmentId, userArn)
 #'
 #' @param environmentId &#91;required&#93; The ID of the environment to delete the environment member from.
-#' @param userArn &#91;required&#93; The Amazon Resource Name (ARN) of the environment member to delete from
-#' the environment.
+#' @param userArn &#91;required&#93; The Amazon Resource Name (ARN) of the environment member to delete from the environment.
 #'
 #' @return
 #' An empty list.
@@ -365,23 +321,17 @@ cloud9_delete_environment_membership <- function(environmentId, userArn) {
 #' environment
 #'
 #' @description
-#' Gets information about environment members for an Cloud9 development
-#' environment.
+#' Gets information about environment members for an Cloud9 development environment.
 #' 
-#' Cloud9 is no longer available to new customers. Existing customers of
-#' Cloud9 can continue to use the service as normal. [Learn
-#' more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
+#' Cloud9 is no longer available to new customers. Existing customers of Cloud9 can continue to use the service as normal. [Learn more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
 #'
 #' @usage
 #' cloud9_describe_environment_memberships(userArn, environmentId,
 #'   permissions, nextToken, maxResults)
 #'
-#' @param userArn The Amazon Resource Name (ARN) of an individual environment member to
-#' get information about. If no value is specified, information about all
-#' environment members are returned.
+#' @param userArn The Amazon Resource Name (ARN) of an individual environment member to get information about. If no value is specified, information about all environment members are returned.
 #' @param environmentId The ID of the environment to get environment member information about.
-#' @param permissions The type of environment member permissions to get information about.
-#' Available values include:
+#' @param permissions The type of environment member permissions to get information about. Available values include:
 #' 
 #' -   `owner`: Owns the environment.
 #' 
@@ -389,14 +339,8 @@ cloud9_delete_environment_membership <- function(environmentId, userArn) {
 #' 
 #' -   `read-write`: Has read-write access to the environment.
 #' 
-#' If no value is specified, information about all environment members are
-#' returned.
-#' @param nextToken During a previous call, if there are more than 25 items in the list,
-#' only the first 25 items are returned, along with a unique string called
-#' a *next token*. To get the next batch of items in the list, call this
-#' operation again, adding the next token to the call. To get all of the
-#' items in the list, keep calling this operation with each subsequent next
-#' token that is returned, until no more next tokens are returned.
+#' If no value is specified, information about all environment members are returned.
+#' @param nextToken During a previous call, if there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a *next token*. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.
 #' @param maxResults The maximum number of environment members to get information about.
 #'
 #' @return
@@ -484,9 +428,7 @@ cloud9_describe_environment_memberships <- function(userArn = NULL, environmentI
 #' @description
 #' Gets status information for an Cloud9 development environment.
 #' 
-#' Cloud9 is no longer available to new customers. Existing customers of
-#' Cloud9 can continue to use the service as normal. [Learn
-#' more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
+#' Cloud9 is no longer available to new customers. Existing customers of Cloud9 can continue to use the service as normal. [Learn more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
 #'
 #' @usage
 #' cloud9_describe_environment_status(environmentId)
@@ -546,9 +488,7 @@ cloud9_describe_environment_status <- function(environmentId) {
 #' @description
 #' Gets information about Cloud9 development environments.
 #' 
-#' Cloud9 is no longer available to new customers. Existing customers of
-#' Cloud9 can continue to use the service as normal. [Learn
-#' more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
+#' Cloud9 is no longer available to new customers. Existing customers of Cloud9 can continue to use the service as normal. [Learn more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
 #'
 #' @usage
 #' cloud9_describe_environments(environmentIds)
@@ -628,23 +568,14 @@ cloud9_describe_environments <- function(environmentIds) {
 #' @description
 #' Gets a list of Cloud9 development environment identifiers.
 #' 
-#' Cloud9 is no longer available to new customers. Existing customers of
-#' Cloud9 can continue to use the service as normal. [Learn
-#' more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
+#' Cloud9 is no longer available to new customers. Existing customers of Cloud9 can continue to use the service as normal. [Learn more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
 #' 
-#' Cloud9 is no longer available to new customers. Existing customers of
-#' Cloud9 can continue to use the service as normal. [Learn
-#' more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
+#' Cloud9 is no longer available to new customers. Existing customers of Cloud9 can continue to use the service as normal. [Learn more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
 #'
 #' @usage
 #' cloud9_list_environments(nextToken, maxResults)
 #'
-#' @param nextToken During a previous call, if there are more than 25 items in the list,
-#' only the first 25 items are returned, along with a unique string called
-#' a *next token*. To get the next batch of items in the list, call this
-#' operation again, adding the next token to the call. To get all of the
-#' items in the list, keep calling this operation with each subsequent next
-#' token that is returned, until no more next tokens are returned.
+#' @param nextToken During a previous call, if there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a *next token*. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.
 #' @param maxResults The maximum number of environments to get identifiers for.
 #'
 #' @return
@@ -700,18 +631,14 @@ cloud9_list_environments <- function(nextToken = NULL, maxResults = NULL) {
 #' environment
 #'
 #' @description
-#' Gets a list of the tags associated with an Cloud9 development
-#' environment.
+#' Gets a list of the tags associated with an Cloud9 development environment.
 #' 
-#' Cloud9 is no longer available to new customers. Existing customers of
-#' Cloud9 can continue to use the service as normal. [Learn
-#' more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
+#' Cloud9 is no longer available to new customers. Existing customers of Cloud9 can continue to use the service as normal. [Learn more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
 #'
 #' @usage
 #' cloud9_list_tags_for_resource(ResourceARN)
 #'
-#' @param ResourceARN &#91;required&#93; The Amazon Resource Name (ARN) of the Cloud9 development environment to
-#' get the tags for.
+#' @param ResourceARN &#91;required&#93; The Amazon Resource Name (ARN) of the Cloud9 development environment to get the tags for.
 #'
 #' @return
 #' A list with the following syntax:
@@ -762,18 +689,14 @@ cloud9_list_tags_for_resource <- function(ResourceARN) {
 #' @description
 #' Adds tags to an Cloud9 development environment.
 #' 
-#' Cloud9 is no longer available to new customers. Existing customers of
-#' Cloud9 can continue to use the service as normal. [Learn
-#' more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
+#' Cloud9 is no longer available to new customers. Existing customers of Cloud9 can continue to use the service as normal. [Learn more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
 #' 
-#' Tags that you add to an Cloud9 environment by using this method will NOT
-#' be automatically propagated to underlying resources.
+#' Tags that you add to an Cloud9 environment by using this method will NOT be automatically propagated to underlying resources.
 #'
 #' @usage
 #' cloud9_tag_resource(ResourceARN, Tags)
 #'
-#' @param ResourceARN &#91;required&#93; The Amazon Resource Name (ARN) of the Cloud9 development environment to
-#' add tags to.
+#' @param ResourceARN &#91;required&#93; The Amazon Resource Name (ARN) of the Cloud9 development environment to add tags to.
 #' @param Tags &#91;required&#93; The list of tags to add to the given Cloud9 development environment.
 #'
 #' @return
@@ -821,17 +744,13 @@ cloud9_tag_resource <- function(ResourceARN, Tags) {
 #' @description
 #' Removes tags from an Cloud9 development environment.
 #' 
-#' Cloud9 is no longer available to new customers. Existing customers of
-#' Cloud9 can continue to use the service as normal. [Learn
-#' more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
+#' Cloud9 is no longer available to new customers. Existing customers of Cloud9 can continue to use the service as normal. [Learn more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
 #'
 #' @usage
 #' cloud9_untag_resource(ResourceARN, TagKeys)
 #'
-#' @param ResourceARN &#91;required&#93; The Amazon Resource Name (ARN) of the Cloud9 development environment to
-#' remove tags from.
-#' @param TagKeys &#91;required&#93; The tag names of the tags to remove from the given Cloud9 development
-#' environment.
+#' @param ResourceARN &#91;required&#93; The Amazon Resource Name (ARN) of the Cloud9 development environment to remove tags from.
+#' @param TagKeys &#91;required&#93; The tag names of the tags to remove from the given Cloud9 development environment.
 #'
 #' @return
 #' An empty list.
@@ -875,9 +794,7 @@ cloud9_untag_resource <- function(ResourceARN, TagKeys) {
 #' @description
 #' Changes the settings of an existing Cloud9 development environment.
 #' 
-#' Cloud9 is no longer available to new customers. Existing customers of
-#' Cloud9 can continue to use the service as normal. [Learn
-#' more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
+#' Cloud9 is no longer available to new customers. Existing customers of Cloud9 can continue to use the service as normal. [Learn more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
 #'
 #' @usage
 #' cloud9_update_environment(environmentId, name, description,
@@ -886,18 +803,13 @@ cloud9_untag_resource <- function(ResourceARN, TagKeys) {
 #' @param environmentId &#91;required&#93; The ID of the environment to change settings.
 #' @param name A replacement name for the environment.
 #' @param description Any new or replacement description for the environment.
-#' @param managedCredentialsAction Allows the environment owner to turn on or turn off the Amazon Web
-#' Services managed temporary credentials for an Cloud9 environment by
-#' using one of the following values:
+#' @param managedCredentialsAction Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary credentials for an Cloud9 environment by using one of the following values:
 #' 
 #' -   `ENABLE`
 #' 
 #' -   `DISABLE`
 #' 
-#' Only the environment owner can change the status of managed temporary
-#' credentials. An `AccessDeniedException` is thrown if an attempt to turn
-#' on or turn off managed temporary credentials is made by an account
-#' that's not the environment owner.
+#' Only the environment owner can change the status of managed temporary credentials. An `AccessDeniedException` is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment owner.
 #'
 #' @return
 #' An empty list.
@@ -950,23 +862,17 @@ cloud9_update_environment <- function(environmentId, name = NULL, description = 
 #' development environment
 #'
 #' @description
-#' Changes the settings of an existing environment member for an Cloud9
-#' development environment.
+#' Changes the settings of an existing environment member for an Cloud9 development environment.
 #' 
-#' Cloud9 is no longer available to new customers. Existing customers of
-#' Cloud9 can continue to use the service as normal. [Learn
-#' more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
+#' Cloud9 is no longer available to new customers. Existing customers of Cloud9 can continue to use the service as normal. [Learn more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
 #'
 #' @usage
 #' cloud9_update_environment_membership(environmentId, userArn,
 #'   permissions)
 #'
-#' @param environmentId &#91;required&#93; The ID of the environment for the environment member whose settings you
-#' want to change.
-#' @param userArn &#91;required&#93; The Amazon Resource Name (ARN) of the environment member whose settings
-#' you want to change.
-#' @param permissions &#91;required&#93; The replacement type of environment member permissions you want to
-#' associate with this environment member. Available values include:
+#' @param environmentId &#91;required&#93; The ID of the environment for the environment member whose settings you want to change.
+#' @param userArn &#91;required&#93; The Amazon Resource Name (ARN) of the environment member whose settings you want to change.
+#' @param permissions &#91;required&#93; The replacement type of environment member permissions you want to associate with this environment member. Available values include:
 #' 
 #' -   `read-only`: Has read-only access to the environment.
 #' 

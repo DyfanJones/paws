@@ -12,18 +12,11 @@ opensearchservice_list_domains_for_package(
 )
 }
 \arguments{
-\item{PackageID}{[required] The unique identifier of the package for which to list associated
-domains.}
+\item{PackageID}{[required] The unique identifier of the package for which to list associated domains.}
 
-\item{MaxResults}{An optional parameter that specifies the maximum number of results to
-return. You can use \code{nextToken} to get the next page of results.}
+\item{MaxResults}{An optional parameter that specifies the maximum number of results to return. You can use \code{nextToken} to get the next page of results.}
 
-\item{NextToken}{If your initial
-\code{\link[=opensearchservice_list_domains_for_package]{list_domains_for_package}}
-operation returns a \code{nextToken}, you can include the returned
-\code{nextToken} in subsequent
-\code{\link[=opensearchservice_list_domains_for_package]{list_domains_for_package}}
-operations, which returns results in the next page.}
+\item{NextToken}{If your initial \code{\link[=opensearchservice_list_domains_for_package]{list_domains_for_package}} operation returns a \code{nextToken}, you can include the returned \code{nextToken} in subsequent \code{\link[=opensearchservice_list_domains_for_package]{list_domains_for_package}} operations, which returns results in the next page.}
 }
 \description{
 Lists all Amazon OpenSearch Service domains associated with a given package. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html}{Custom packages for Amazon OpenSearch Service}.

@@ -12,18 +12,13 @@ bedrock_start_automated_reasoning_policy_build_workflow(
 )
 }
 \arguments{
-\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy for
-which to start the build workflow.}
+\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy for which to start the build workflow.}
 
-\item{buildWorkflowType}{[required] The type of build workflow to start (e.g., DOCUMENT_INGESTION for
-processing new documents, POLICY_REPAIR for fixing existing policies).}
+\item{buildWorkflowType}{[required] The type of build workflow to start (e.g., DOCUMENT_INGESTION for processing new documents, POLICY_REPAIR for fixing existing policies).}
 
-\item{clientRequestToken}{A unique, case-sensitive identifier to ensure that the operation
-completes no more than once. If this token matches a previous request,
-Amazon Bedrock ignores the request but doesn't return an error.}
+\item{clientRequestToken}{A unique, case-sensitive identifier to ensure that the operation completes no more than once. If this token matches a previous request, Amazon Bedrock ignores the request but doesn't return an error.}
 
-\item{sourceContent}{[required] The source content for the build workflow, such as documents to analyze
-or repair instructions for existing policies.}
+\item{sourceContent}{[required] The source content for the build workflow, such as documents to analyze or repair instructions for existing policies.}
 }
 \description{
 Starts a new build workflow for an Automated Reasoning policy. This initiates the process of analyzing source documents and generating policy rules, variables, and types.

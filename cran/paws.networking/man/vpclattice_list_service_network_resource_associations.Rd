@@ -20,11 +20,9 @@ vpclattice_list_service_network_resource_associations(
 
 \item{maxResults}{The maximum page size.}
 
-\item{nextToken}{If there are additional results, a pagination token for the next page of
-results.}
+\item{nextToken}{If there are additional results, a pagination token for the next page of results.}
 
-\item{includeChildren}{Include service network resource associations of the child resource
-configuration with the grouped resource configuration.
+\item{includeChildren}{Include service network resource associations of the child resource configuration with the grouped resource configuration.
 
 The type is boolean and the default value is false.}
 }

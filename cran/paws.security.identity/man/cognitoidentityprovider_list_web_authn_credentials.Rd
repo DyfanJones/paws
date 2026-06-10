@@ -12,19 +12,11 @@ cognitoidentityprovider_list_web_authn_credentials(
 )
 }
 \arguments{
-\item{AccessToken}{[required] A valid access token that Amazon Cognito issued to the currently
-signed-in user. Must include a scope claim for
-\code{aws.cognito.signin.user.admin}.}
+\item{AccessToken}{[required] A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for \code{aws.cognito.signin.user.admin}.}
 
-\item{NextToken}{This API operation returns a limited number of results. The pagination
-token is an identifier that you can present in an additional API request
-with the same parameters. When you include the pagination token, Amazon
-Cognito returns the next set of items after the current list. Subsequent
-requests return a new pagination token. By use of this token, you can
-paginate through the full list of items.}
+\item{NextToken}{This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.}
 
-\item{MaxResults}{The maximum number of the user's passkey credentials that you want to
-return.}
+\item{MaxResults}{The maximum number of the user's passkey credentials that you want to return.}
 }
 \description{
 Generates a list of the currently signed-in user's registered passkey, or WebAuthn, credentials.

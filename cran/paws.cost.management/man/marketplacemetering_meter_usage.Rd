@@ -2,7 +2,9 @@
 % Please edit documentation in R/marketplacemetering_operations.R
 \name{marketplacemetering_meter_usage}
 \alias{marketplacemetering_meter_usage}
-\title{API to emit metering records}
+\title{As a seller, your software hosted in the buyer's Amazon Web Services
+account uses this API action to emit metering records directly to Amazon
+Web Services Marketplace}
 \usage{
 marketplacemetering_meter_usage(
   ProductCode,
@@ -15,47 +17,28 @@ marketplacemetering_meter_usage(
 )
 }
 \arguments{
-\item{ProductCode}{[required] Product code is used to uniquely identify a product in Amazon Web
-Services Marketplace. The product code should be the same as the one
-used during the publishing of a new product.}
+\item{ProductCode}{[required] Product code is used to uniquely identify a product in Amazon Web Services Marketplace. The product code should be the same as the one used during the publishing of a new product.}
 
-\item{Timestamp}{[required] Timestamp, in UTC, for which the usage is being reported. Your
-application can meter usage for up to six hours in the past. Make sure
-the \code{timestamp} value is not before the start of the software usage.}
+\item{Timestamp}{[required] Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to six hours in the past. Make sure the \code{timestamp} value is not before the start of the software usage.}
 
-\item{UsageDimension}{[required] It will be one of the fcp dimension name provided during the publishing
-of the product.}
+\item{UsageDimension}{[required] It will be one of the fcp dimension name provided during the publishing of the product.}
 
 \item{UsageQuantity}{Consumption value for the hour. Defaults to \code{0} if not specified.}
 
-\item{DryRun}{Checks whether you have the permissions required for the action, but
-does not make the request. If you have the permissions, the request
-returns \code{DryRunOperation}; otherwise, it returns
-\code{UnauthorizedException}. Defaults to \code{false} if not specified.}
+\item{DryRun}{Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns \code{DryRunOperation}; otherwise, it returns \code{UnauthorizedException}. Defaults to \code{false} if not specified.}
 
 \item{UsageAllocations}{The set of \code{UsageAllocations} to submit.
 
-The sum of all \code{UsageAllocation} quantities must equal the
-\code{UsageQuantity} of the \code{\link[=marketplacemetering_meter_usage]{meter_usage}}
-request, and each \code{UsageAllocation} must have a unique set of tags
-(include no tags).}
+The sum of all \code{UsageAllocation} quantities must equal the \code{UsageQuantity} of the \code{\link[=marketplacemetering_meter_usage]{meter_usage}} request, and each \code{UsageAllocation} must have a unique set of tags (include no tags).}
 
-\item{ClientToken}{Specifies a unique, case-sensitive identifier that you provide to ensure
-the idempotency of the request. This lets you safely retry the request
-without accidentally performing the same operation a second time.
-Passing the same value to a later call to an operation requires that you
-also pass the same value for all other parameters. We recommend that you
-use a \href{https://en.wikipedia.org/wiki/Universally_unique_identifier}{UUID type of value}.
+\item{ClientToken}{Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a \href{https://en.wikipedia.org/wiki/Universally_unique_identifier}{UUID type of value}.
 
-If you don't provide this value, then Amazon Web Services generates a
-random one for you.
+If you don't provide this value, then Amazon Web Services generates a random one for you.
 
-If you retry the operation with the same \code{ClientToken}, but with
-different parameters, the retry fails with an
-\code{IdempotencyConflictException} error.}
+If you retry the operation with the same \code{ClientToken}, but with different parameters, the retry fails with an \code{IdempotencyConflictException} error.}
 }
 \description{
-API to emit metering records. For identical requests, the API is idempotent and returns the metering record ID. This is used for metering flexible consumption pricing (FCP) Amazon Machine Images (AMI) and container products.
+As a seller, your software hosted in the buyer's Amazon Web Services account uses this API action to emit metering records directly to Amazon Web Services Marketplace. You must use the following buyer Amazon Web Services account credentials to sign the API request.
 
 See \url{https://www.paws-r-sdk.com/docs/marketplacemetering_meter_usage/} for full documentation.
 }

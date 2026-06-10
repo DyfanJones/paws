@@ -5,18 +5,9 @@ NULL
 #' Amazon Managed Grafana
 #'
 #' @description
-#' Amazon Managed Grafana is a fully managed and secure data visualization
-#' service that you can use to instantly query, correlate, and visualize
-#' operational metrics, logs, and traces from multiple sources. Amazon
-#' Managed Grafana makes it easy to deploy, operate, and scale Grafana, a
-#' widely deployed data visualization tool that is popular for its
-#' extensible data support.
+#' Amazon Managed Grafana is a fully managed and secure data visualization service that you can use to instantly query, correlate, and visualize operational metrics, logs, and traces from multiple sources. Amazon Managed Grafana makes it easy to deploy, operate, and scale Grafana, a widely deployed data visualization tool that is popular for its extensible data support.
 #' 
-#' With Amazon Managed Grafana, you create logically isolated Grafana
-#' servers called *workspaces*. In a workspace, you can create Grafana
-#' dashboards and visualizations to analyze your metrics, logs, and traces
-#' without having to build, package, or deploy any hardware to run Grafana
-#' servers.
+#' With Amazon Managed Grafana, you create logically isolated Grafana servers called *workspaces*. In a workspace, you can create Grafana dashboards and visualizations to analyze your metrics, logs, and traces without having to build, package, or deploy any hardware to run Grafana servers.
 #'
 #' @param
 #' config
@@ -161,7 +152,7 @@ managedgrafana <- function(config = list(), credentials = list(), endpoint = NUL
   service_id = "grafana",
   api_version = "2020-08-18",
   signing_name = "grafana",
-  json_version = "1.1",
+  json_version = "",
   target_prefix = ""
 )
 

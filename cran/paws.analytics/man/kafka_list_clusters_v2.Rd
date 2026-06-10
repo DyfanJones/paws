@@ -12,17 +12,14 @@ kafka_list_clusters_v2(
 )
 }
 \arguments{
-\item{ClusterNameFilter}{Specify a prefix of the names of the clusters that you want to list. The
-service lists all the clusters whose names start with this prefix.}
+\item{ClusterNameFilter}{Specify a prefix of the names of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.}
 
 \item{ClusterTypeFilter}{Specify either PROVISIONED or SERVERLESS.}
 
-\item{MaxResults}{The maximum number of results to return in the response. If there are
-more results, the response includes a NextToken parameter.}
+\item{MaxResults}{The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.}
 
-\item{NextToken}{The paginated results marker. When the result of the operation is
-truncated, the call returns NextToken in the response. To get the next
-batch, provide this token in your next request.}
+\item{NextToken}{The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
+To get the next batch, provide this token in your next request.}
 }
 \description{
 Returns a list of all the MSK clusters in the current Region.

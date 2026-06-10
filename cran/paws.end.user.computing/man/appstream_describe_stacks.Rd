@@ -10,8 +10,7 @@ appstream_describe_stacks(Names = NULL, NextToken = NULL)
 \arguments{
 \item{Names}{The names of the stacks to describe.}
 
-\item{NextToken}{The pagination token to use to retrieve the next page of results for
-this operation. If this value is null, it retrieves the first page.}
+\item{NextToken}{The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.}
 }
 \description{
 Retrieves a list that describes one or more specified stacks, if the stack names are provided. Otherwise, all stacks in the account are described.

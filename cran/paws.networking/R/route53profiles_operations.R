@@ -13,8 +13,7 @@ NULL
 #' @param Name &#91;required&#93; A name for the association.
 #' @param ProfileId &#91;required&#93; ID of the Profile.
 #' @param ResourceId &#91;required&#93; The ID of the VPC.
-#' @param Tags A list of the tag keys and values that you want to identify the Profile
-#' association.
+#' @param Tags A list of the tag keys and values that you want to identify the Profile association.
 #'
 #' @keywords internal
 #'
@@ -48,9 +47,7 @@ route53profiles_associate_profile <- function(Name, ProfileId, ResourceId, Tags 
 #' @param Name &#91;required&#93; Name for the resource association.
 #' @param ProfileId &#91;required&#93; ID of the Profile.
 #' @param ResourceArn &#91;required&#93; Amazon resource number, ARN, of the DNS resource.
-#' @param ResourceProperties If you are adding a DNS Firewall rule group, include also a priority.
-#' The priority indicates the processing order for the rule groups,
-#' starting with the priority assinged the lowest value.
+#' @param ResourceProperties If you are adding a DNS Firewall rule group, include also a priority. The priority indicates the processing order for the rule groups, starting with the priority assinged the lowest value.
 #' 
 #' The allowed values for priority are between 100 and 9900.
 #'
@@ -83,17 +80,9 @@ route53profiles_associate_resource_to_profile <- function(Name, ProfileId, Resou
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53profiles_create_profile/](https://www.paws-r-sdk.com/docs/route53profiles_create_profile/) for full documentation.
 #'
-#' @param ClientToken &#91;required&#93; `ClientToken` is an idempotency token that ensures a call to
-#' [`create_profile`][route53profiles_create_profile] completes only once.
-#' You choose the value to pass. For example, an issue might prevent you
-#' from getting a response from
-#' [`create_profile`][route53profiles_create_profile]. In this case, safely
-#' retry your call to [`create_profile`][route53profiles_create_profile] by
-#' using the same [`create_profile`][route53profiles_create_profile]
-#' parameter value.
+#' @param ClientToken &#91;required&#93; `ClientToken` is an idempotency token that ensures a call to [`create_profile`][route53profiles_create_profile] completes only once. You choose the value to pass. For example, an issue might prevent you from getting a response from [`create_profile`][route53profiles_create_profile]. In this case, safely retry your call to [`create_profile`][route53profiles_create_profile] by using the same [`create_profile`][route53profiles_create_profile] parameter value.
 #' @param Name &#91;required&#93; A name for the Profile.
-#' @param Tags A list of the tag keys and values that you want to associate with the
-#' Route 53 Profile.
+#' @param Tags A list of the tag keys and values that you want to associate with the Route 53 Profile.
 #'
 #' @keywords internal
 #'
@@ -283,8 +272,7 @@ route53profiles_get_profile_association <- function(ProfileAssociationId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53profiles_get_profile_resource_association/](https://www.paws-r-sdk.com/docs/route53profiles_get_profile_resource_association/) for full documentation.
 #'
-#' @param ProfileResourceAssociationId &#91;required&#93; The ID of the profile resource association that you want to get
-#' information about.
+#' @param ProfileResourceAssociationId &#91;required&#93; The ID of the profile resource association that you want to get information about.
 #'
 #' @keywords internal
 #'
@@ -316,20 +304,12 @@ route53profiles_get_profile_resource_association <- function(ProfileResourceAsso
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53profiles_list_profile_associations/](https://www.paws-r-sdk.com/docs/route53profiles_list_profile_associations/) for full documentation.
 #'
-#' @param MaxResults The maximum number of objects that you want to return for this request.
-#' If more objects are available, in the response, a `NextToken` value,
-#' which you can use in a subsequent call to get the next batch of objects,
-#' is provided.
+#' @param MaxResults The maximum number of objects that you want to return for this request. If more objects are available, in the response, a `NextToken` value, which you can use in a subsequent call to get the next batch of objects, is provided.
 #' 
-#' If you don't specify a value for `MaxResults`, up to 100 objects are
-#' returned.
+#' If you don't specify a value for `MaxResults`, up to 100 objects are returned.
 #' @param NextToken For the first call to this list request, omit this value.
 #' 
-#' When you request a list of objects, at most the number of objects
-#' specified by `MaxResults` is returned. If more objects are available for
-#' retrieval, a `NextToken` value is returned in the response. To retrieve
-#' the next batch of objects, use the token that was returned for the prior
-#' request in your next request.
+#' When you request a list of objects, at most the number of objects specified by `MaxResults` is returned. If more objects are available for retrieval, a `NextToken` value is returned in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.
 #' @param ProfileId ID of the Profile.
 #' @param ResourceId ID of the VPC.
 #'
@@ -362,20 +342,12 @@ route53profiles_list_profile_associations <- function(MaxResults = NULL, NextTok
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53profiles_list_profile_resource_associations/](https://www.paws-r-sdk.com/docs/route53profiles_list_profile_resource_associations/) for full documentation.
 #'
-#' @param MaxResults The maximum number of objects that you want to return for this request.
-#' If more objects are available, in the response, a `NextToken` value,
-#' which you can use in a subsequent call to get the next batch of objects,
-#' is provided.
+#' @param MaxResults The maximum number of objects that you want to return for this request. If more objects are available, in the response, a `NextToken` value, which you can use in a subsequent call to get the next batch of objects, is provided.
 #' 
-#' If you don't specify a value for `MaxResults`, up to 100 objects are
-#' returned.
+#' If you don't specify a value for `MaxResults`, up to 100 objects are returned.
 #' @param NextToken For the first call to this list request, omit this value.
 #' 
-#' When you request a list of objects, at most the number of objects
-#' specified by `MaxResults` is returned. If more objects are available for
-#' retrieval, a `NextToken` value is returned in the response. To retrieve
-#' the next batch of objects, use the token that was returned for the prior
-#' request in your next request.
+#' When you request a list of objects, at most the number of objects specified by `MaxResults` is returned. If more objects are available for retrieval, a `NextToken` value is returned in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.
 #' @param ProfileId &#91;required&#93; The ID of the Profile.
 #' @param ResourceType ID of a resource if you want information on only one type.
 #'
@@ -409,20 +381,12 @@ route53profiles_list_profile_resource_associations <- function(MaxResults = NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53profiles_list_profiles/](https://www.paws-r-sdk.com/docs/route53profiles_list_profiles/) for full documentation.
 #'
-#' @param MaxResults The maximum number of objects that you want to return for this request.
-#' If more objects are available, in the response, a `NextToken` value,
-#' which you can use in a subsequent call to get the next batch of objects,
-#' is provided.
+#' @param MaxResults The maximum number of objects that you want to return for this request. If more objects are available, in the response, a `NextToken` value, which you can use in a subsequent call to get the next batch of objects, is provided.
 #' 
-#' If you don't specify a value for `MaxResults`, up to 100 objects are
-#' returned.
+#' If you don't specify a value for `MaxResults`, up to 100 objects are returned.
 #' @param NextToken For the first call to this list request, omit this value.
 #' 
-#' When you request a list of objects, at most the number of objects
-#' specified by `MaxResults` is returned. If more objects are available for
-#' retrieval, a `NextToken` value is returned in the response. To retrieve
-#' the next batch of objects, use the token that was returned for the prior
-#' request in your next request.
+#' When you request a list of objects, at most the number of objects specified by `MaxResults` is returned. If more objects are available for retrieval, a `NextToken` value is returned in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.
 #'
 #' @keywords internal
 #'
@@ -453,8 +417,7 @@ route53profiles_list_profiles <- function(MaxResults = NULL, NextToken = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53profiles_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/route53profiles_list_tags_for_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) for the resource that you want to list
-#' the tags for.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) for the resource that you want to list the tags for.
 #'
 #' @keywords internal
 #'
@@ -485,8 +448,7 @@ route53profiles_list_tags_for_resource <- function(ResourceArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53profiles_tag_resource/](https://www.paws-r-sdk.com/docs/route53profiles_tag_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) for the resource that you want to add
-#' tags to.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) for the resource that you want to add tags to.
 #' @param Tags &#91;required&#93; The tags that you want to add to the specified resource.
 #'
 #' @keywords internal
@@ -518,8 +480,7 @@ route53profiles_tag_resource <- function(ResourceArn, Tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53profiles_untag_resource/](https://www.paws-r-sdk.com/docs/route53profiles_untag_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) for the resource that you want to remove
-#' tags from.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) for the resource that you want to remove tags from.
 #' @param TagKeys &#91;required&#93; The tags that you want to remove to the specified resource.
 #'
 #' @keywords internal
@@ -553,9 +514,7 @@ route53profiles_untag_resource <- function(ResourceArn, TagKeys) {
 #'
 #' @param Name Name of the resource association.
 #' @param ProfileResourceAssociationId &#91;required&#93; ID of the resource association.
-#' @param ResourceProperties If you are adding a DNS Firewall rule group, include also a priority.
-#' The priority indicates the processing order for the rule groups,
-#' starting with the priority assinged the lowest value.
+#' @param ResourceProperties If you are adding a DNS Firewall rule group, include also a priority. The priority indicates the processing order for the rule groups, starting with the priority assinged the lowest value.
 #' 
 #' The allowed values for priority are between 100 and 9900.
 #'

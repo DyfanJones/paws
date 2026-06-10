@@ -15,7 +15,7 @@ billingconductor_batch_associate_resources_to_custom_line_item(
 
 \item{ResourceArns}{[required] A list containing the ARNs of the resources to be associated.}
 
-\item{BillingPeriodRange}{}
+\item{BillingPeriodRange}{A time range for which the margin summary is effective. The time range can be up to 12 months.}
 }
 \description{
 Associates a batch of resources to a percentage custom line item.

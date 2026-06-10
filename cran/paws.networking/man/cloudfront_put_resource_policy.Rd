@@ -7,8 +7,7 @@
 cloudfront_put_resource_policy(ResourceArn, PolicyDocument)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the CloudFront resource for which the
-policy is being created.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the CloudFront resource for which the policy is being created.}
 
 \item{PolicyDocument}{[required] The JSON-formatted resource policy to create.}
 }

@@ -13,16 +13,10 @@ NULL
 #'   upfrontPaymentAmount, purchaseTime, clientToken, tags)
 #'
 #' @param savingsPlanOfferingId &#91;required&#93; The ID of the offering.
-#' @param commitment &#91;required&#93; The hourly commitment, in the same currency of the
-#' `savingsPlanOfferingId`. This is a value between 0.001 and 1 million.
-#' You cannot specify more than five digits after the decimal point.
-#' @param upfrontPaymentAmount The up-front payment amount. This is a whole number between 50 and 99
-#' percent of the total value of the Savings Plan. This parameter is only
-#' supported if the payment option is `Partial Upfront`.
-#' @param purchaseTime The purchase time of the Savings Plan in UTC format
-#' (YYYY-MM-DDTHH:MM:SSZ).
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request.
+#' @param commitment &#91;required&#93; The hourly commitment, in the same currency of the `savingsPlanOfferingId`. This is a value between 0.001 and 1 million. You cannot specify more than five digits after the decimal point.
+#' @param upfrontPaymentAmount The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan. This parameter is only supported if the payment option is `Partial Upfront`.
+#' @param purchaseTime The purchase time of the Savings Plan in UTC format (YYYY-MM-DDTHH:MM:SSZ).
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #' @param tags One or more tags.
 #'
 #' @return
@@ -129,8 +123,7 @@ savingsplans_delete_queued_savings_plan <- function(savingsPlanId) {
 #' @param savingsPlanId &#91;required&#93; The ID of the Savings Plan.
 #' @param filters The filters.
 #' @param nextToken The token for the next page of results.
-#' @param maxResults The maximum number of results to return with a single call. To retrieve
-#' additional results, make another call with the returned token value.
+#' @param maxResults The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.
 #'
 #' @return
 #' A list with the following syntax:
@@ -141,9 +134,9 @@ savingsplans_delete_queued_savings_plan <- function(savingsPlanId) {
 #'     list(
 #'       rate = "string",
 #'       currency = "CNY"|"USD"|"EUR",
-#'       unit = "Hrs"|"Lambda-GB-Second"|"Request"|"ACU-Hr"|"ReadRequestUnits"|"WriteRequestUnits"|"ReadCapacityUnit-Hrs"|"WriteCapacityUnit-Hrs"|"ReplicatedWriteRequestUnits"|"ReplicatedWriteCapacityUnit-Hrs"|"GB-Hours"|"DPU"|"ElastiCacheProcessingUnit"|"DCU-Hr"|"NCU-hr",
-#'       productType = "EC2"|"Fargate"|"Lambda"|"SageMaker"|"RDS"|"DSQL"|"DynamoDB"|"ElastiCache"|"DocDB"|"Neptune"|"Timestream"|"Keyspaces"|"DMS",
-#'       serviceCode = "AmazonEC2"|"AmazonECS"|"AmazonEKS"|"AWSLambda"|"AmazonSageMaker"|"AmazonRDS"|"AuroraDSQL"|"AmazonDynamoDB"|"AmazonElastiCache"|"AmazonDocDB"|"AmazonNeptune"|"AmazonTimestream"|"AmazonMCS"|"AWSDatabaseMigrationSvc",
+#'       unit = "Hrs"|"Lambda-GB-Second"|"Request"|"ACU-Hr"|"ReadRequestUnits"|"WriteRequestUnits"|"ReadCapacityUnit-Hrs"|"WriteCapacityUnit-Hrs"|"ReplicatedWriteRequestUnits"|"ReplicatedWriteCapacityUnit-Hrs"|"GB-Hours"|"DPU"|"ElastiCacheProcessingUnit"|"DCU-Hr"|"NCU-hr"|"OCU-hours"|"Jobs",
+#'       productType = "EC2"|"Fargate"|"Lambda"|"SageMaker"|"RDS"|"DSQL"|"DynamoDB"|"ElastiCache"|"DocDB"|"Neptune"|"Timestream"|"Keyspaces"|"DMS"|"OpenSearch",
+#'       serviceCode = "AmazonEC2"|"AmazonECS"|"AmazonEKS"|"AWSLambda"|"AmazonSageMaker"|"AmazonRDS"|"AuroraDSQL"|"AmazonDynamoDB"|"AmazonElastiCache"|"AmazonDocDB"|"AmazonNeptune"|"AmazonTimestream"|"AmazonMCS"|"AWSDatabaseMigrationSvc"|"AmazonES",
 #'       usageType = "string",
 #'       operation = "string",
 #'       properties = list(
@@ -211,8 +204,7 @@ savingsplans_describe_savings_plan_rates <- function(savingsPlanId, filters = NU
 #' @param savingsPlanArns The Amazon Resource Names (ARN) of the Savings Plans.
 #' @param savingsPlanIds The IDs of the Savings Plans.
 #' @param nextToken The token for the next page of results.
-#' @param maxResults The maximum number of results to return with a single call. To retrieve
-#' additional results, make another call with the returned token value.
+#' @param maxResults The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.
 #' @param states The current states of the Savings Plans.
 #' @param filters The filters.
 #'
@@ -234,7 +226,7 @@ savingsplans_describe_savings_plan_rates <- function(savingsPlanId, filters = NU
 #'       savingsPlanType = "Compute"|"EC2Instance"|"SageMaker"|"Database",
 #'       paymentOption = "All Upfront"|"Partial Upfront"|"No Upfront",
 #'       productTypes = list(
-#'         "EC2"|"Fargate"|"Lambda"|"SageMaker"|"RDS"|"DSQL"|"DynamoDB"|"ElastiCache"|"DocDB"|"Neptune"|"Timestream"|"Keyspaces"|"DMS"
+#'         "EC2"|"Fargate"|"Lambda"|"SageMaker"|"RDS"|"DSQL"|"DynamoDB"|"ElastiCache"|"DocDB"|"Neptune"|"Timestream"|"Keyspaces"|"DMS"|"OpenSearch"
 #'       ),
 #'       currency = "CNY"|"USD"|"EUR",
 #'       commitment = "string",
@@ -304,8 +296,7 @@ savingsplans_describe_savings_plans <- function(savingsPlanArns = NULL, savingsP
 #' purchase
 #'
 #' @description
-#' Describes the offering rates for Savings Plans you might want to
-#' purchase.
+#' Describes the offering rates for Savings Plans you might want to purchase.
 #'
 #' @usage
 #' savingsplans_describe_savings_plans_offering_rates(
@@ -319,12 +310,10 @@ savingsplans_describe_savings_plans <- function(savingsPlanArns = NULL, savingsP
 #' @param products The Amazon Web Services products.
 #' @param serviceCodes The services.
 #' @param usageTypes The usage details of the line item in the billing report.
-#' @param operations The specific Amazon Web Services operation for the line item in the
-#' billing report.
+#' @param operations The specific Amazon Web Services operation for the line item in the billing report.
 #' @param filters The filters.
 #' @param nextToken The token for the next page of results.
-#' @param maxResults The maximum number of results to return with a single call. To retrieve
-#' additional results, make another call with the returned token value.
+#' @param maxResults The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.
 #'
 #' @return
 #' A list with the following syntax:
@@ -341,9 +330,9 @@ savingsplans_describe_savings_plans <- function(savingsPlanArns = NULL, savingsP
 #'         planDescription = "string"
 #'       ),
 #'       rate = "string",
-#'       unit = "Hrs"|"Lambda-GB-Second"|"Request"|"ACU-Hr"|"ReadRequestUnits"|"WriteRequestUnits"|"ReadCapacityUnit-Hrs"|"WriteCapacityUnit-Hrs"|"ReplicatedWriteRequestUnits"|"ReplicatedWriteCapacityUnit-Hrs"|"GB-Hours"|"DPU"|"ElastiCacheProcessingUnit"|"DCU-Hr"|"NCU-hr",
-#'       productType = "EC2"|"Fargate"|"Lambda"|"SageMaker"|"RDS"|"DSQL"|"DynamoDB"|"ElastiCache"|"DocDB"|"Neptune"|"Timestream"|"Keyspaces"|"DMS",
-#'       serviceCode = "AmazonEC2"|"AmazonECS"|"AmazonEKS"|"AWSLambda"|"AmazonSageMaker"|"AmazonRDS"|"AuroraDSQL"|"AmazonDynamoDB"|"AmazonElastiCache"|"AmazonDocDB"|"AmazonNeptune"|"AmazonTimestream"|"AmazonMCS"|"AWSDatabaseMigrationSvc",
+#'       unit = "Hrs"|"Lambda-GB-Second"|"Request"|"ACU-Hr"|"ReadRequestUnits"|"WriteRequestUnits"|"ReadCapacityUnit-Hrs"|"WriteCapacityUnit-Hrs"|"ReplicatedWriteRequestUnits"|"ReplicatedWriteCapacityUnit-Hrs"|"GB-Hours"|"DPU"|"ElastiCacheProcessingUnit"|"DCU-Hr"|"NCU-hr"|"OCU-hours"|"Jobs",
+#'       productType = "EC2"|"Fargate"|"Lambda"|"SageMaker"|"RDS"|"DSQL"|"DynamoDB"|"ElastiCache"|"DocDB"|"Neptune"|"Timestream"|"Keyspaces"|"DMS"|"OpenSearch",
+#'       serviceCode = "AmazonEC2"|"AmazonECS"|"AmazonEKS"|"AWSLambda"|"AmazonSageMaker"|"AmazonRDS"|"AuroraDSQL"|"AmazonDynamoDB"|"AmazonElastiCache"|"AmazonDocDB"|"AmazonNeptune"|"AmazonTimestream"|"AmazonMCS"|"AWSDatabaseMigrationSvc"|"AmazonES",
 #'       usageType = "string",
 #'       operation = "string",
 #'       properties = list(
@@ -371,10 +360,10 @@ savingsplans_describe_savings_plans <- function(savingsPlanArns = NULL, savingsP
 #'     "Compute"|"EC2Instance"|"SageMaker"|"Database"
 #'   ),
 #'   products = list(
-#'     "EC2"|"Fargate"|"Lambda"|"SageMaker"|"RDS"|"DSQL"|"DynamoDB"|"ElastiCache"|"DocDB"|"Neptune"|"Timestream"|"Keyspaces"|"DMS"
+#'     "EC2"|"Fargate"|"Lambda"|"SageMaker"|"RDS"|"DSQL"|"DynamoDB"|"ElastiCache"|"DocDB"|"Neptune"|"Timestream"|"Keyspaces"|"DMS"|"OpenSearch"
 #'   ),
 #'   serviceCodes = list(
-#'     "AmazonEC2"|"AmazonECS"|"AmazonEKS"|"AWSLambda"|"AmazonSageMaker"|"AmazonRDS"|"AuroraDSQL"|"AmazonDynamoDB"|"AmazonElastiCache"|"AmazonDocDB"|"AmazonNeptune"|"AmazonTimestream"|"AmazonMCS"|"AWSDatabaseMigrationSvc"
+#'     "AmazonEC2"|"AmazonECS"|"AmazonEKS"|"AWSLambda"|"AmazonSageMaker"|"AmazonRDS"|"AuroraDSQL"|"AmazonDynamoDB"|"AmazonElastiCache"|"AmazonDocDB"|"AmazonNeptune"|"AmazonTimestream"|"AmazonMCS"|"AWSDatabaseMigrationSvc"|"AmazonES"
 #'   ),
 #'   usageTypes = list(
 #'     "string"
@@ -439,12 +428,10 @@ savingsplans_describe_savings_plans_offering_rates <- function(savingsPlanOfferi
 #' @param descriptions The descriptions.
 #' @param serviceCodes The services.
 #' @param usageTypes The usage details of the line item in the billing report.
-#' @param operations The specific Amazon Web Services operation for the line item in the
-#' billing report.
+#' @param operations The specific Amazon Web Services operation for the line item in the billing report.
 #' @param filters The filters.
 #' @param nextToken The token for the next page of results.
-#' @param maxResults The maximum number of results to return with a single call. To retrieve
-#' additional results, make another call with the returned token value.
+#' @param maxResults The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.
 #'
 #' @return
 #' A list with the following syntax:
@@ -454,7 +441,7 @@ savingsplans_describe_savings_plans_offering_rates <- function(savingsPlanOfferi
 #'     list(
 #'       offeringId = "string",
 #'       productTypes = list(
-#'         "EC2"|"Fargate"|"Lambda"|"SageMaker"|"RDS"|"DSQL"|"DynamoDB"|"ElastiCache"|"DocDB"|"Neptune"|"Timestream"|"Keyspaces"|"DMS"
+#'         "EC2"|"Fargate"|"Lambda"|"SageMaker"|"RDS"|"DSQL"|"DynamoDB"|"ElastiCache"|"DocDB"|"Neptune"|"Timestream"|"Keyspaces"|"DMS"|"OpenSearch"
 #'       ),
 #'       planType = "Compute"|"EC2Instance"|"SageMaker"|"Database",
 #'       description = "string",
@@ -485,7 +472,7 @@ savingsplans_describe_savings_plans_offering_rates <- function(savingsPlanOfferi
 #'   paymentOptions = list(
 #'     "All Upfront"|"Partial Upfront"|"No Upfront"
 #'   ),
-#'   productType = "EC2"|"Fargate"|"Lambda"|"SageMaker"|"RDS"|"DSQL"|"DynamoDB"|"ElastiCache"|"DocDB"|"Neptune"|"Timestream"|"Keyspaces"|"DMS",
+#'   productType = "EC2"|"Fargate"|"Lambda"|"SageMaker"|"RDS"|"DSQL"|"DynamoDB"|"ElastiCache"|"DocDB"|"Neptune"|"Timestream"|"Keyspaces"|"DMS"|"OpenSearch",
 #'   planTypes = list(
 #'     "Compute"|"EC2Instance"|"SageMaker"|"Database"
 #'   ),
@@ -604,8 +591,7 @@ savingsplans_list_tags_for_resource <- function(resourceArn) {
 #' savingsplans_return_savings_plan(savingsPlanId, clientToken)
 #'
 #' @param savingsPlanId &#91;required&#93; The ID of the Savings Plan.
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -656,8 +642,7 @@ savingsplans_return_savings_plan <- function(savingsPlanId, clientToken = NULL) 
 #' savingsplans_tag_resource(resourceArn, tags)
 #'
 #' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource.
-#' @param tags &#91;required&#93; One or more tags. For example, \{ "tags": \{"key1":"value1",
-#' "key2":"value2"\} \}.
+#' @param tags &#91;required&#93; One or more tags. For example, \{ "tags": \{"key1":"value1", "key2":"value2"\} \}.
 #'
 #' @return
 #' An empty list.

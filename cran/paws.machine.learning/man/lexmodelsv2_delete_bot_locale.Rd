@@ -11,9 +11,7 @@ lexmodelsv2_delete_bot_locale(botId, botVersion, localeId)
 
 \item{botVersion}{[required] The version of the bot that contains the locale.}
 
-\item{localeId}{[required] The identifier of the language and locale that will be deleted. The
-string must match one of the supported locales. For more information,
-see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
+\item{localeId}{[required] The identifier of the language and locale that will be deleted. The string must match one of the supported locales. For more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
 }
 \description{
 Removes a locale from a bot.

@@ -10,10 +10,9 @@ elasticsearchservice_list_elasticsearch_versions(
 )
 }
 \arguments{
-\item{MaxResults}{Set this value to limit the number of results returned. Value provided
-must be greater than 10 else it wont be honored.}
+\item{MaxResults}{Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored.}
 
-\item{NextToken}{}
+\item{NextToken}{Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results.}
 }
 \description{
 List all supported Elasticsearch versions

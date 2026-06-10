@@ -14,8 +14,7 @@ lambda_list_function_versions_by_capacity_provider(
 \arguments{
 \item{CapacityProviderName}{[required] The name of the capacity provider to list function versions for.}
 
-\item{Marker}{Specify the pagination token that's returned by a previous request to
-retrieve the next page of results.}
+\item{Marker}{Specify the pagination token that's returned by a previous request to retrieve the next page of results.}
 
 \item{MaxItems}{The maximum number of function versions to return in the response.}
 }

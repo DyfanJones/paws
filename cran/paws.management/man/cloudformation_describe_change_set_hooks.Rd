@@ -13,17 +13,13 @@ cloudformation_describe_change_set_hooks(
 )
 }
 \arguments{
-\item{ChangeSetName}{[required] The name or Amazon Resource Name (ARN) of the change set that you want
-to describe.}
+\item{ChangeSetName}{[required] The name or Amazon Resource Name (ARN) of the change set that you want to describe.}
 
-\item{StackName}{If you specified the name of a change set, specify the stack name or
-stack ID (ARN) of the change set you want to describe.}
+\item{StackName}{If you specified the name of a change set, specify the stack name or stack ID (ARN) of the change set you want to describe.}
 
-\item{NextToken}{The token for the next set of items to return. (You received this token
-from a previous call.)}
+\item{NextToken}{The token for the next set of items to return. (You received this token from a previous call.)}
 
-\item{LogicalResourceId}{If specified, lists only the Hooks related to the specified
-\code{LogicalResourceId}.}
+\item{LogicalResourceId}{If specified, lists only the Hooks related to the specified \code{LogicalResourceId}.}
 }
 \description{
 Returns Hook-related information for the change set and a list of changes that CloudFormation makes when you run the change set.

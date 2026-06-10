@@ -7,17 +7,11 @@
 codepipeline_enable_stage_transition(pipelineName, stageName, transitionType)
 }
 \arguments{
-\item{pipelineName}{[required] The name of the pipeline in which you want to enable the flow of
-artifacts from one stage to another.}
+\item{pipelineName}{[required] The name of the pipeline in which you want to enable the flow of artifacts from one stage to another.}
 
-\item{stageName}{[required] The name of the stage where you want to enable the transition of
-artifacts, either into the stage (inbound) or from that stage to the
-next stage (outbound).}
+\item{stageName}{[required] The name of the stage where you want to enable the transition of artifacts, either into the stage (inbound) or from that stage to the next stage (outbound).}
 
-\item{transitionType}{[required] Specifies whether artifacts are allowed to enter the stage and be
-processed by the actions in that stage (inbound) or whether already
-processed artifacts are allowed to transition to the next stage
-(outbound).}
+\item{transitionType}{[required] Specifies whether artifacts are allowed to enter the stage and be processed by the actions in that stage (inbound) or whether already processed artifacts are allowed to transition to the next stage (outbound).}
 }
 \description{
 Enables artifacts in a pipeline to transition to a stage in a pipeline.

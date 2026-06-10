@@ -9,8 +9,7 @@ organizations_remove_account_from_organization(AccountId)
 \arguments{
 \item{AccountId}{[required] ID for the member account that you want to remove from the organization.
 
-The \href{https://en.wikipedia.org/wiki/Regex}{regex pattern} for an account
-ID string requires exactly 12 digits.}
+The \href{https://en.wikipedia.org/wiki/Regex}{regex pattern} for an account ID string requires exactly 12 digits.}
 }
 \description{
 Removes the specified account from the organization.

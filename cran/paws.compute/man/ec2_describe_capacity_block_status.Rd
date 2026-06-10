@@ -18,21 +18,14 @@ ec2_describe_capacity_block_status(
 
 \item{NextToken}{The token to use to retrieve the next page of results.}
 
-\item{MaxResults}{The maximum number of items to return for this request. To get the next
-page of items, make another request with the token returned in the
-output. For more information, see
-\href{https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination}{Pagination}.}
+\item{MaxResults}{The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/Query-Requests.html#api-pagination}{Pagination}.}
 
 \item{Filters}{One or more filters.
 \itemize{
-\item \code{interconnect-status} - The status of the interconnect for the
-Capacity Block (\code{ok} | \code{impaired} | \code{insufficient-data}).
+\item \code{interconnect-status} - The status of the interconnect for the Capacity Block (\code{ok} | \code{impaired} | \code{insufficient-data}).
 }}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 }
 \description{
 Describes the availability of capacity for the specified Capacity blocks, or all of your Capacity Blocks.

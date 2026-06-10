@@ -15,11 +15,9 @@ paymentcryptographydataplane_generate_mac(
 \arguments{
 \item{KeyIdentifier}{[required] The \code{keyARN} of the MAC generation encryption key.}
 
-\item{MessageData}{[required] The data for which a MAC is under generation. This value must be
-hexBinary.}
+\item{MessageData}{[required] The data for which a MAC is under generation. This value must be hexBinary.}
 
-\item{GenerationAttributes}{[required] The attributes and data values to use for MAC generation within Amazon
-Web Services Payment Cryptography.}
+\item{GenerationAttributes}{[required] The attributes and data values to use for MAC generation within Amazon Web Services Payment Cryptography.}
 
 \item{MacLength}{The length of a MAC under generation.}
 }

@@ -19,14 +19,11 @@ glue_get_entity_records(
 )
 }
 \arguments{
-\item{ConnectionName}{The name of the connection that contains the connection type
-credentials.}
+\item{ConnectionName}{The name of the connection that contains the connection type credentials.}
 
-\item{CatalogId}{The catalog ID of the catalog that contains the connection. This can be
-null, By default, the Amazon Web Services Account ID is the catalog ID.}
+\item{CatalogId}{The catalog ID of the catalog that contains the connection. This can be null, By default, the Amazon Web Services Account ID is the catalog ID.}
 
-\item{EntityName}{[required] Name of the entity that we want to query the preview data from the given
-connection type.}
+\item{EntityName}{[required] Name of the entity that we want to query the preview data from the given connection type.}
 
 \item{NextToken}{A continuation token, included if this is a continuation call.}
 

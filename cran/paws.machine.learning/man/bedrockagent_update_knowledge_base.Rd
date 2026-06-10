@@ -21,16 +21,11 @@ bedrockagent_update_knowledge_base(
 
 \item{description}{Specifies a new description for the knowledge base.}
 
-\item{roleArn}{[required] Specifies a different Amazon Resource Name (ARN) of the IAM role with
-permissions to invoke API operations on the knowledge base.}
+\item{roleArn}{[required] Specifies a different Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations on the knowledge base.}
 
-\item{knowledgeBaseConfiguration}{[required] Specifies the configuration for the embeddings model used for the
-knowledge base. You must use the same configuration as when the
-knowledge base was created.}
+\item{knowledgeBaseConfiguration}{[required] Specifies the configuration for the embeddings model used for the knowledge base. You must use the same configuration as when the knowledge base was created.}
 
-\item{storageConfiguration}{Specifies the configuration for the vector store used for the knowledge
-base. You must use the same configuration as when the knowledge base was
-created.}
+\item{storageConfiguration}{Specifies the configuration for the vector store used for the knowledge base. You must use the same configuration as when the knowledge base was created.}
 }
 \description{
 Updates the configuration of a knowledge base with the fields that you specify. Because all fields will be overwritten, you must include the same values for fields that you want to keep the same.

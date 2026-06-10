@@ -8,13 +8,9 @@ parameters to be stored by Timestream for later running}
 timestreamquery_prepare_query(QueryString, ValidateOnly = NULL)
 }
 \arguments{
-\item{QueryString}{[required] The Timestream query string that you want to use as a prepared
-statement. Parameter names can be specified in the query string \code{@}
-character followed by an identifier.}
+\item{QueryString}{[required] The Timestream query string that you want to use as a prepared statement. Parameter names can be specified in the query string \code{@} character followed by an identifier.}
 
-\item{ValidateOnly}{By setting this value to \code{true}, Timestream will only validate that the
-query string is a valid Timestream query, and not store the prepared
-query for later use.}
+\item{ValidateOnly}{By setting this value to \code{true}, Timestream will only validate that the query string is a valid Timestream query, and not store the prepared query for later use.}
 }
 \description{
 A synchronous operation that allows you to submit a query with parameters to be stored by Timestream for later running. Timestream only supports using this operation with \code{ValidateOnly} set to \code{true}.

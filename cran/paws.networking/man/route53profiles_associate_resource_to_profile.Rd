@@ -18,9 +18,7 @@ route53profiles_associate_resource_to_profile(
 
 \item{ResourceArn}{[required] Amazon resource number, ARN, of the DNS resource.}
 
-\item{ResourceProperties}{If you are adding a DNS Firewall rule group, include also a priority.
-The priority indicates the processing order for the rule groups,
-starting with the priority assinged the lowest value.
+\item{ResourceProperties}{If you are adding a DNS Firewall rule group, include also a priority. The priority indicates the processing order for the rule groups, starting with the priority assinged the lowest value.
 
 The allowed values for priority are between 100 and 9900.}
 }

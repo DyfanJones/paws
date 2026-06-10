@@ -15,15 +15,11 @@ codeartifact_put_domain_permissions_policy(
 \arguments{
 \item{domain}{[required] The name of the domain on which to set the resource policy.}
 
-\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns
-the domain. It does not include dashes or spaces.}
+\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.}
 
-\item{policyRevision}{The current revision of the resource policy to be set. This revision is
-used for optimistic locking, which prevents others from overwriting your
-changes to the domain's resource policy.}
+\item{policyRevision}{The current revision of the resource policy to be set. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy.}
 
-\item{policyDocument}{[required] A valid displayable JSON Aspen policy string to be set as the access
-control resource policy on the provided domain.}
+\item{policyDocument}{[required] A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided domain.}
 }
 \description{
 Sets a resource policy on a domain that specifies permissions to access it.

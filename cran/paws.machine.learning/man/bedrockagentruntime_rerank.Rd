@@ -12,17 +12,13 @@ bedrockagentruntime_rerank(
 )
 }
 \arguments{
-\item{nextToken}{If the total number of results was greater than could fit in a response,
-a token is returned in the \code{nextToken} field. You can enter that token
-in this field to return the next batch of results.}
+\item{nextToken}{If the total number of results was greater than could fit in a response, a token is returned in the \code{nextToken} field. You can enter that token in this field to return the next batch of results.}
 
-\item{queries}{[required] An array of objects, each of which contains information about a query to
-submit to the reranker model.}
+\item{queries}{[required] An array of objects, each of which contains information about a query to submit to the reranker model.}
 
 \item{rerankingConfiguration}{[required] Contains configurations for reranking.}
 
-\item{sources}{[required] An array of objects, each of which contains information about the
-sources to rerank.}
+\item{sources}{[required] An array of objects, each of which contains information about the sources to rerank.}
 }
 \description{
 Reranks the relevance of sources based on queries. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/rerank.html}{Improve the relevance of query responses with a reranker model}.

@@ -14,11 +14,9 @@ cloudwatchapplicationsignals_batch_update_exclusion_windows(
 \arguments{
 \item{SloIds}{[required] The list of SLO IDs to add or remove exclusion windows from.}
 
-\item{AddExclusionWindows}{A list of exclusion windows to add to the specified SLOs. You can add up
-to 10 exclusion windows per SLO.}
+\item{AddExclusionWindows}{A list of exclusion windows to add to the specified SLOs. You can add up to 10 exclusion windows per SLO.}
 
-\item{RemoveExclusionWindows}{A list of exclusion windows to remove from the specified SLOs. The
-window configuration must match an existing exclusion window.}
+\item{RemoveExclusionWindows}{A list of exclusion windows to remove from the specified SLOs. The window configuration must match an existing exclusion window.}
 }
 \description{
 Add or remove time window exclusions for one or more Service Level Objectives (SLOs).

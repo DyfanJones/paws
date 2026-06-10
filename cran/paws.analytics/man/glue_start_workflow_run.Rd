@@ -11,10 +11,7 @@ glue_start_workflow_run(Name, RunProperties = NULL)
 
 \item{RunProperties}{The workflow run properties for the new workflow run.
 
-Run properties may be logged. Do not pass plaintext secrets as
-properties. Retrieve secrets from a Glue Connection, Amazon Web Services
-Secrets Manager or other secret management mechanism if you intend to
-use them within the workflow run.}
+Run properties may be logged. Do not pass plaintext secrets as properties. Retrieve secrets from a Glue Connection, Amazon Web Services Secrets Manager or other secret management mechanism if you intend to use them within the workflow run.}
 }
 \description{
 Starts a new run of the specified workflow.

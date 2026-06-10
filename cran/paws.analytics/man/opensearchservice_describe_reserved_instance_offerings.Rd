@@ -12,19 +12,11 @@ opensearchservice_describe_reserved_instance_offerings(
 )
 }
 \arguments{
-\item{ReservedInstanceOfferingId}{The Reserved Instance identifier filter value. Use this parameter to
-show only the available instance types that match the specified
-reservation identifier.}
+\item{ReservedInstanceOfferingId}{The Reserved Instance identifier filter value. Use this parameter to show only the available instance types that match the specified reservation identifier.}
 
-\item{MaxResults}{An optional parameter that specifies the maximum number of results to
-return. You can use \code{nextToken} to get the next page of results.}
+\item{MaxResults}{An optional parameter that specifies the maximum number of results to return. You can use \code{nextToken} to get the next page of results.}
 
-\item{NextToken}{If your initial
-\code{\link[=opensearchservice_describe_reserved_instance_offerings]{describe_reserved_instance_offerings}}
-operation returns a \code{nextToken}, you can include the returned
-\code{nextToken} in subsequent
-\code{\link[=opensearchservice_describe_reserved_instance_offerings]{describe_reserved_instance_offerings}}
-operations, which returns results in the next page.}
+\item{NextToken}{If your initial \code{\link[=opensearchservice_describe_reserved_instance_offerings]{describe_reserved_instance_offerings}} operation returns a \code{nextToken}, you can include the returned \code{nextToken} in subsequent \code{\link[=opensearchservice_describe_reserved_instance_offerings]{describe_reserved_instance_offerings}} operations, which returns results in the next page.}
 }
 \description{
 Describes the available Amazon OpenSearch Service Reserved Instance offerings for a given Region. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ri.html}{Reserved Instances in Amazon OpenSearch Service}.

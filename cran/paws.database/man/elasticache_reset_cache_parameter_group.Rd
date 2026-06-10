@@ -14,16 +14,11 @@ elasticache_reset_cache_parameter_group(
 \arguments{
 \item{CacheParameterGroupName}{[required] The name of the cache parameter group to reset.}
 
-\item{ResetAllParameters}{If \code{true}, all parameters in the cache parameter group are reset to
-their default values. If \code{false}, only the parameters listed by
-\code{ParameterNameValues} are reset to their default values.
+\item{ResetAllParameters}{If \code{true}, all parameters in the cache parameter group are reset to their default values. If \code{false}, only the parameters listed by \code{ParameterNameValues} are reset to their default values.
 
 Valid values: \code{true} | \code{false}}
 
-\item{ParameterNameValues}{An array of parameter names to reset to their default values. If
-\code{ResetAllParameters} is \code{true}, do not use \code{ParameterNameValues}. If
-\code{ResetAllParameters} is \code{false}, you must specify the name of at least
-one parameter to reset.}
+\item{ParameterNameValues}{An array of parameter names to reset to their default values. If \code{ResetAllParameters} is \code{true}, do not use \code{ParameterNameValues}. If \code{ResetAllParameters} is \code{false}, you must specify the name of at least one parameter to reset.}
 }
 \description{
 Modifies the parameters of a cache parameter group to the engine or system default value. You can reset specific parameters by submitting a list of parameter names. To reset the entire cache parameter group, specify the \code{ResetAllParameters} and \code{CacheParameterGroupName} parameters.

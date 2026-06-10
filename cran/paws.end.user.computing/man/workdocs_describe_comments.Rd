@@ -13,8 +13,7 @@ workdocs_describe_comments(
 )
 }
 \arguments{
-\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web
-Services administrator credentials to access the API.}
+\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.}
 
 \item{DocumentId}{[required] The ID of the document.}
 
@@ -22,8 +21,7 @@ Services administrator credentials to access the API.}
 
 \item{Limit}{The maximum number of items to return.}
 
-\item{Marker}{The marker for the next set of results. This marker was received from a
-previous call.}
+\item{Marker}{The marker for the next set of results. This marker was received from a previous call.}
 }
 \description{
 List all the comments for the specified document version.

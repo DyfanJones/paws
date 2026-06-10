@@ -11,8 +11,7 @@ datazone_disassociate_environment_role(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which an environment role is
-disassociated.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which an environment role is disassociated.}
 
 \item{environmentIdentifier}{[required] The ID of the environment.}
 

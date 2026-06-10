@@ -8,8 +8,7 @@ data}
 elasticsearchservice_delete_elasticsearch_domain(DomainName)
 }
 \arguments{
-\item{DomainName}{[required] The name of the Elasticsearch domain that you want to permanently
-delete.}
+\item{DomainName}{[required] The name of the Elasticsearch domain that you want to permanently delete.}
 }
 \description{
 Permanently deletes the specified Elasticsearch domain and all of its data. Once a domain is deleted, it cannot be recovered.

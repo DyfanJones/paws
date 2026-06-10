@@ -9,8 +9,7 @@ sesv2_delete_tenant_resource_association(TenantName, ResourceArn)
 \arguments{
 \item{TenantName}{[required] The name of the tenant to remove the resource association from.}
 
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource to remove from the tenant
-association.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource to remove from the tenant association.}
 }
 \description{
 Delete an association between a tenant and a resource.

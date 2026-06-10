@@ -13,9 +13,7 @@ NULL
 #'
 #' @param ApplicationName &#91;required&#93; The Kinesis Analytics application name.
 #' @param CurrentApplicationVersionId &#91;required&#93; The version ID of the Kinesis Analytics application.
-#' @param CloudWatchLoggingOption &#91;required&#93; Provides the CloudWatch log stream Amazon Resource Name (ARN) and the
-#' IAM role ARN. Note: To write application messages to CloudWatch, the IAM
-#' role that is used must have the `PutLogEvents` policy action enabled.
+#' @param CloudWatchLoggingOption &#91;required&#93; Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN. Note: To write application messages to CloudWatch, the IAM role that is used must have the `PutLogEvents` policy action enabled.
 #'
 #' @keywords internal
 #'
@@ -47,14 +45,9 @@ kinesisanalytics_add_application_cloud_watch_logging_option <- function(Applicat
 #'
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalytics_add_application_input/](https://www.paws-r-sdk.com/docs/kinesisanalytics_add_application_input/) for full documentation.
 #'
-#' @param ApplicationName &#91;required&#93; Name of your existing Amazon Kinesis Analytics application to which you
-#' want to add the streaming source.
-#' @param CurrentApplicationVersionId &#91;required&#93; Current version of your Amazon Kinesis Analytics application. You can
-#' use the [`describe_application`][kinesisanalytics_describe_application]
-#' operation to find the current application version.
-#' @param Input &#91;required&#93; The
-#' [Input](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html)
-#' to add.
+#' @param ApplicationName &#91;required&#93; Name of your existing Amazon Kinesis Analytics application to which you want to add the streaming source.
+#' @param CurrentApplicationVersionId &#91;required&#93; Current version of your Amazon Kinesis Analytics application. You can use the [`describe_application`][kinesisanalytics_describe_application] operation to find the current application version.
+#' @param Input &#91;required&#93; The [Input](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html) to add.
 #'
 #' @keywords internal
 #'
@@ -86,22 +79,10 @@ kinesisanalytics_add_application_input <- function(ApplicationName, CurrentAppli
 #'
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalytics_add_application_input_processing_configuration/](https://www.paws-r-sdk.com/docs/kinesisanalytics_add_application_input_processing_configuration/) for full documentation.
 #'
-#' @param ApplicationName &#91;required&#93; Name of the application to which you want to add the input processing
-#' configuration.
-#' @param CurrentApplicationVersionId &#91;required&#93; Version of the application to which you want to add the input processing
-#' configuration. You can use the
-#' [`describe_application`][kinesisanalytics_describe_application]
-#' operation to get the current application version. If the version
-#' specified is not the current version, the
-#' `ConcurrentModificationException` is returned.
-#' @param InputId &#91;required&#93; The ID of the input configuration to add the input processing
-#' configuration to. You can get a list of the input IDs for an application
-#' using the
-#' [`describe_application`][kinesisanalytics_describe_application]
-#' operation.
-#' @param InputProcessingConfiguration &#91;required&#93; The
-#' [InputProcessingConfiguration](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html)
-#' to add to the application.
+#' @param ApplicationName &#91;required&#93; Name of the application to which you want to add the input processing configuration.
+#' @param CurrentApplicationVersionId &#91;required&#93; Version of the application to which you want to add the input processing configuration. You can use the [`describe_application`][kinesisanalytics_describe_application] operation to get the current application version. If the version specified is not the current version, the `ConcurrentModificationException` is returned.
+#' @param InputId &#91;required&#93; The ID of the input configuration to add the input processing configuration to. You can get a list of the input IDs for an application using the [`describe_application`][kinesisanalytics_describe_application] operation.
+#' @param InputProcessingConfiguration &#91;required&#93; The [InputProcessingConfiguration](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html) to add to the application.
 #'
 #' @keywords internal
 #'
@@ -133,19 +114,9 @@ kinesisanalytics_add_application_input_processing_configuration <- function(Appl
 #'
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalytics_add_application_output/](https://www.paws-r-sdk.com/docs/kinesisanalytics_add_application_output/) for full documentation.
 #'
-#' @param ApplicationName &#91;required&#93; Name of the application to which you want to add the output
-#' configuration.
-#' @param CurrentApplicationVersionId &#91;required&#93; Version of the application to which you want to add the output
-#' configuration. You can use the
-#' [`describe_application`][kinesisanalytics_describe_application]
-#' operation to get the current application version. If the version
-#' specified is not the current version, the
-#' `ConcurrentModificationException` is returned.
-#' @param Output &#91;required&#93; An array of objects, each describing one output configuration. In the
-#' output configuration, you specify the name of an in-application stream,
-#' a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis
-#' Firehose delivery stream, or an AWS Lambda function), and record the
-#' formation to use when writing to the destination.
+#' @param ApplicationName &#91;required&#93; Name of the application to which you want to add the output configuration.
+#' @param CurrentApplicationVersionId &#91;required&#93; Version of the application to which you want to add the output configuration. You can use the [`describe_application`][kinesisanalytics_describe_application] operation to get the current application version. If the version specified is not the current version, the `ConcurrentModificationException` is returned.
+#' @param Output &#91;required&#93; An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS Lambda function), and record the formation to use when writing to the destination.
 #'
 #' @keywords internal
 #'
@@ -178,19 +149,8 @@ kinesisanalytics_add_application_output <- function(ApplicationName, CurrentAppl
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalytics_add_application_reference_data_source/](https://www.paws-r-sdk.com/docs/kinesisanalytics_add_application_reference_data_source/) for full documentation.
 #'
 #' @param ApplicationName &#91;required&#93; Name of an existing application.
-#' @param CurrentApplicationVersionId &#91;required&#93; Version of the application for which you are adding the reference data
-#' source. You can use the
-#' [`describe_application`][kinesisanalytics_describe_application]
-#' operation to get the current application version. If the version
-#' specified is not the current version, the
-#' `ConcurrentModificationException` is returned.
-#' @param ReferenceDataSource &#91;required&#93; The reference data source can be an object in your Amazon S3 bucket.
-#' Amazon Kinesis Analytics reads the object and copies the data into the
-#' in-application table that is created. You provide an S3 bucket, object
-#' key name, and the resulting in-application table that is created. You
-#' must also provide an IAM role with the necessary permissions that Amazon
-#' Kinesis Analytics can assume to read the object from your S3 bucket on
-#' your behalf.
+#' @param CurrentApplicationVersionId &#91;required&#93; Version of the application for which you are adding the reference data source. You can use the [`describe_application`][kinesisanalytics_describe_application] operation to get the current application version. If the version specified is not the current version, the `ConcurrentModificationException` is returned.
+#' @param ReferenceDataSource &#91;required&#93; The reference data source can be an object in your Amazon S3 bucket. Amazon Kinesis Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created. You must also provide an IAM role with the necessary permissions that Amazon Kinesis Analytics can assume to read the object from your S3 bucket on your behalf.
 #'
 #' @keywords internal
 #'
@@ -222,69 +182,29 @@ kinesisanalytics_add_application_reference_data_source <- function(ApplicationNa
 #'
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalytics_create_application/](https://www.paws-r-sdk.com/docs/kinesisanalytics_create_application/) for full documentation.
 #'
-#' @param ApplicationName &#91;required&#93; Name of your Amazon Kinesis Analytics application (for example,
-#' `sample-app`).
+#' @param ApplicationName &#91;required&#93; Name of your Amazon Kinesis Analytics application (for example, `sample-app`).
 #' @param ApplicationDescription Summary description of the application.
 #' @param Inputs Use this parameter to configure the application input.
 #' 
-#' You can configure your application to receive input from a single
-#' streaming source. In this configuration, you map this streaming source
-#' to an in-application stream that is created. Your application code can
-#' then query the in-application stream like a table (you can think of it
-#' as a constantly updating table).
+#' You can configure your application to receive input from a single streaming source. In this configuration, you map this streaming source to an in-application stream that is created. Your application code can then query the in-application stream like a table (you can think of it as a constantly updating table).
 #' 
-#' For the streaming source, you provide its Amazon Resource Name (ARN) and
-#' format of data on the stream (for example, JSON, CSV, etc.). You also
-#' must provide an IAM role that Amazon Kinesis Analytics can assume to
-#' read this stream on your behalf.
+#' For the streaming source, you provide its Amazon Resource Name (ARN) and format of data on the stream (for example, JSON, CSV, etc.). You also must provide an IAM role that Amazon Kinesis Analytics can assume to read this stream on your behalf.
 #' 
-#' To create the in-application stream, you need to specify a schema to
-#' transform your data into a schematized version used in SQL. In the
-#' schema, you provide the necessary mapping of the data elements in the
-#' streaming source to record columns in the in-app stream.
-#' @param Outputs You can configure application output to write data from any of the
-#' in-application streams to up to three destinations.
+#' To create the in-application stream, you need to specify a schema to transform your data into a schematized version used in SQL. In the schema, you provide the necessary mapping of the data elements in the streaming source to record columns in the in-app stream.
+#' @param Outputs You can configure application output to write data from any of the in-application streams to up to three destinations.
 #' 
-#' These destinations can be Amazon Kinesis streams, Amazon Kinesis
-#' Firehose delivery streams, AWS Lambda destinations, or any combination
-#' of the three.
+#' These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, AWS Lambda destinations, or any combination of the three.
 #' 
-#' In the configuration, you specify the in-application stream name, the
-#' destination stream or Lambda function Amazon Resource Name (ARN), and
-#' the format to use when writing data. You must also provide an IAM role
-#' that Amazon Kinesis Analytics can assume to write to the destination
-#' stream or Lambda function on your behalf.
+#' In the configuration, you specify the in-application stream name, the destination stream or Lambda function Amazon Resource Name (ARN), and the format to use when writing data. You must also provide an IAM role that Amazon Kinesis Analytics can assume to write to the destination stream or Lambda function on your behalf.
 #' 
-#' In the output configuration, you also provide the output stream or
-#' Lambda function ARN. For stream destinations, you provide the format of
-#' data in the stream (for example, JSON, CSV). You also must provide an
-#' IAM role that Amazon Kinesis Analytics can assume to write to the stream
-#' or Lambda function on your behalf.
-#' @param CloudWatchLoggingOptions Use this parameter to configure a CloudWatch log stream to monitor
-#' application configuration errors. For more information, see [Working
-#' with Amazon CloudWatch
-#' Logs](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html).
-#' @param ApplicationCode One or more SQL statements that read input data, transform it, and
-#' generate output. For example, you can write a SQL statement that reads
-#' data from one in-application stream, generates a running average of the
-#' number of advertisement clicks by vendor, and insert resulting rows in
-#' another in-application stream using pumps. For more information about
-#' the typical pattern, see [Application
-#' Code](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html).
+#' In the output configuration, you also provide the output stream or Lambda function ARN. For stream destinations, you provide the format of data in the stream (for example, JSON, CSV). You also must provide an IAM role that Amazon Kinesis Analytics can assume to write to the stream or Lambda function on your behalf.
+#' @param CloudWatchLoggingOptions Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For more information, see [Working with Amazon CloudWatch Logs](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html).
+#' @param ApplicationCode One or more SQL statements that read input data, transform it, and generate output. For example, you can write a SQL statement that reads data from one in-application stream, generates a running average of the number of advertisement clicks by vendor, and insert resulting rows in another in-application stream using pumps. For more information about the typical pattern, see [Application Code](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html).
 #' 
-#' You can provide such series of SQL statements, where output of one
-#' statement can be used as the input for the next statement. You store
-#' intermediate results by creating in-application streams and pumps.
+#' You can provide such series of SQL statements, where output of one statement can be used as the input for the next statement. You store intermediate results by creating in-application streams and pumps.
 #' 
-#' Note that the application code must create the streams with names
-#' specified in the `Outputs`. For example, if your `Outputs` defines
-#' output streams named `ExampleOutputStream1` and `ExampleOutputStream2`,
-#' then your application code must create these streams.
-#' @param Tags A list of one or more tags to assign to the application. A tag is a
-#' key-value pair that identifies an application. Note that the maximum
-#' number of application tags includes system tags. The maximum number of
-#' user-defined application tags is 50. For more information, see [Using
-#' Tagging](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html).
+#' Note that the application code must create the streams with names specified in the `Outputs`. For example, if your `Outputs` defines output streams named `ExampleOutputStream1` and `ExampleOutputStream2`, then your application code must create these streams.
+#' @param Tags A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see [Using Tagging](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html).
 #'
 #' @keywords internal
 #'
@@ -317,9 +237,7 @@ kinesisanalytics_create_application <- function(ApplicationName, ApplicationDesc
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalytics_delete_application/](https://www.paws-r-sdk.com/docs/kinesisanalytics_delete_application/) for full documentation.
 #'
 #' @param ApplicationName &#91;required&#93; Name of the Amazon Kinesis Analytics application to delete.
-#' @param CreateTimestamp &#91;required&#93; You can use the
-#' [`describe_application`][kinesisanalytics_describe_application]
-#' operation to get this value.
+#' @param CreateTimestamp &#91;required&#93; You can use the [`describe_application`][kinesisanalytics_describe_application] operation to get this value.
 #'
 #' @keywords internal
 #'
@@ -353,10 +271,7 @@ kinesisanalytics_delete_application <- function(ApplicationName, CreateTimestamp
 #'
 #' @param ApplicationName &#91;required&#93; The Kinesis Analytics application name.
 #' @param CurrentApplicationVersionId &#91;required&#93; The version ID of the Kinesis Analytics application.
-#' @param CloudWatchLoggingOptionId &#91;required&#93; The `CloudWatchLoggingOptionId` of the CloudWatch logging option to
-#' delete. You can get the `CloudWatchLoggingOptionId` by using the
-#' [`describe_application`][kinesisanalytics_describe_application]
-#' operation.
+#' @param CloudWatchLoggingOptionId &#91;required&#93; The `CloudWatchLoggingOptionId` of the CloudWatch logging option to delete. You can get the `CloudWatchLoggingOptionId` by using the [`describe_application`][kinesisanalytics_describe_application] operation.
 #'
 #' @keywords internal
 #'
@@ -390,11 +305,7 @@ kinesisanalytics_delete_application_cloud_watch_logging_option <- function(Appli
 #'
 #' @param ApplicationName &#91;required&#93; The Kinesis Analytics application name.
 #' @param CurrentApplicationVersionId &#91;required&#93; The version ID of the Kinesis Analytics application.
-#' @param InputId &#91;required&#93; The ID of the input configuration from which to delete the input
-#' processing configuration. You can get a list of the input IDs for an
-#' application by using the
-#' [`describe_application`][kinesisanalytics_describe_application]
-#' operation.
+#' @param InputId &#91;required&#93; The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the [`describe_application`][kinesisanalytics_describe_application] operation.
 #'
 #' @keywords internal
 #'
@@ -427,20 +338,8 @@ kinesisanalytics_delete_application_input_processing_configuration <- function(A
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalytics_delete_application_output/](https://www.paws-r-sdk.com/docs/kinesisanalytics_delete_application_output/) for full documentation.
 #'
 #' @param ApplicationName &#91;required&#93; Amazon Kinesis Analytics application name.
-#' @param CurrentApplicationVersionId &#91;required&#93; Amazon Kinesis Analytics application version. You can use the
-#' [`describe_application`][kinesisanalytics_describe_application]
-#' operation to get the current application version. If the version
-#' specified is not the current version, the
-#' `ConcurrentModificationException` is returned.
-#' @param OutputId &#91;required&#93; The ID of the configuration to delete. Each output configuration that is
-#' added to the application, either when the application is created or
-#' later using the
-#' [`add_application_output`][kinesisanalytics_add_application_output]
-#' operation, has a unique ID. You need to provide the ID to uniquely
-#' identify the output configuration that you want to delete from the
-#' application configuration. You can use the
-#' [`describe_application`][kinesisanalytics_describe_application]
-#' operation to get the specific `OutputId`.
+#' @param CurrentApplicationVersionId &#91;required&#93; Amazon Kinesis Analytics application version. You can use the [`describe_application`][kinesisanalytics_describe_application] operation to get the current application version. If the version specified is not the current version, the `ConcurrentModificationException` is returned.
+#' @param OutputId &#91;required&#93; The ID of the configuration to delete. Each output configuration that is added to the application, either when the application is created or later using the [`add_application_output`][kinesisanalytics_add_application_output] operation, has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the [`describe_application`][kinesisanalytics_describe_application] operation to get the specific `OutputId`.
 #'
 #' @keywords internal
 #'
@@ -473,17 +372,8 @@ kinesisanalytics_delete_application_output <- function(ApplicationName, CurrentA
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalytics_delete_application_reference_data_source/](https://www.paws-r-sdk.com/docs/kinesisanalytics_delete_application_reference_data_source/) for full documentation.
 #'
 #' @param ApplicationName &#91;required&#93; Name of an existing application.
-#' @param CurrentApplicationVersionId &#91;required&#93; Version of the application. You can use the
-#' [`describe_application`][kinesisanalytics_describe_application]
-#' operation to get the current application version. If the version
-#' specified is not the current version, the
-#' `ConcurrentModificationException` is returned.
-#' @param ReferenceId &#91;required&#93; ID of the reference data source. When you add a reference data source to
-#' your application using the
-#' [`add_application_reference_data_source`][kinesisanalytics_add_application_reference_data_source],
-#' Amazon Kinesis Analytics assigns an ID. You can use the
-#' [`describe_application`][kinesisanalytics_describe_application]
-#' operation to get the reference ID.
+#' @param CurrentApplicationVersionId &#91;required&#93; Version of the application. You can use the [`describe_application`][kinesisanalytics_describe_application] operation to get the current application version. If the version specified is not the current version, the `ConcurrentModificationException` is returned.
+#' @param ReferenceId &#91;required&#93; ID of the reference data source. When you add a reference data source to your application using the [`add_application_reference_data_source`][kinesisanalytics_add_application_reference_data_source], Amazon Kinesis Analytics assigns an ID. You can use the [`describe_application`][kinesisanalytics_describe_application] operation to get the reference ID.
 #'
 #' @keywords internal
 #'
@@ -548,16 +438,10 @@ kinesisanalytics_describe_application <- function(ApplicationName) {
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalytics_discover_input_schema/](https://www.paws-r-sdk.com/docs/kinesisanalytics_discover_input_schema/) for full documentation.
 #'
 #' @param ResourceARN Amazon Resource Name (ARN) of the streaming source.
-#' @param RoleARN ARN of the IAM role that Amazon Kinesis Analytics can assume to access
-#' the stream on your behalf.
-#' @param InputStartingPositionConfiguration Point at which you want Amazon Kinesis Analytics to start reading
-#' records from the specified streaming source discovery purposes.
-#' @param S3Configuration Specify this parameter to discover a schema from data in an Amazon S3
-#' object.
-#' @param InputProcessingConfiguration The
-#' [InputProcessingConfiguration](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html)
-#' to use to preprocess the records before discovering the schema of the
-#' records.
+#' @param RoleARN ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf.
+#' @param InputStartingPositionConfiguration Point at which you want Amazon Kinesis Analytics to start reading records from the specified streaming source discovery purposes.
+#' @param S3Configuration Specify this parameter to discover a schema from data in an Amazon S3 object.
+#' @param InputProcessingConfiguration The [InputProcessingConfiguration](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html) to use to preprocess the records before discovering the schema of the records.
 #'
 #' @keywords internal
 #'
@@ -590,10 +474,7 @@ kinesisanalytics_discover_input_schema <- function(ResourceARN = NULL, RoleARN =
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalytics_list_applications/](https://www.paws-r-sdk.com/docs/kinesisanalytics_list_applications/) for full documentation.
 #'
 #' @param Limit Maximum number of applications to list.
-#' @param ExclusiveStartApplicationName Name of the application to start the list with. When using pagination to
-#' retrieve the list, you don't need to specify this parameter in the first
-#' request. However, in subsequent requests, you add the last application
-#' name from the previous response to get the next page of applications.
+#' @param ExclusiveStartApplicationName Name of the application to start the list with. When using pagination to retrieve the list, you don't need to specify this parameter in the first request. However, in subsequent requests, you add the last application name from the previous response to get the next page of applications.
 #'
 #' @keywords internal
 #'
@@ -657,10 +538,7 @@ kinesisanalytics_list_tags_for_resource <- function(ResourceARN) {
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalytics_start_application/](https://www.paws-r-sdk.com/docs/kinesisanalytics_start_application/) for full documentation.
 #'
 #' @param ApplicationName &#91;required&#93; Name of the application.
-#' @param InputConfigurations &#91;required&#93; Identifies the specific input, by ID, that the application starts
-#' consuming. Amazon Kinesis Analytics starts reading the streaming source
-#' associated with the input. You can also specify where in the streaming
-#' source you want Amazon Kinesis Analytics to start reading.
+#' @param InputConfigurations &#91;required&#93; Identifies the specific input, by ID, that the application starts consuming. Amazon Kinesis Analytics starts reading the streaming source associated with the input. You can also specify where in the streaming source you want Amazon Kinesis Analytics to start reading.
 #'
 #' @keywords internal
 #'
@@ -755,8 +633,7 @@ kinesisanalytics_tag_resource <- function(ResourceARN, Tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalytics_untag_resource/](https://www.paws-r-sdk.com/docs/kinesisanalytics_untag_resource/) for full documentation.
 #'
-#' @param ResourceARN &#91;required&#93; The ARN of the Kinesis Analytics application from which to remove the
-#' tags.
+#' @param ResourceARN &#91;required&#93; The ARN of the Kinesis Analytics application from which to remove the tags.
 #' @param TagKeys &#91;required&#93; A list of keys of tags to remove from the specified application.
 #'
 #' @keywords internal
@@ -790,9 +667,7 @@ kinesisanalytics_untag_resource <- function(ResourceARN, TagKeys) {
 #' See [https://www.paws-r-sdk.com/docs/kinesisanalytics_update_application/](https://www.paws-r-sdk.com/docs/kinesisanalytics_update_application/) for full documentation.
 #'
 #' @param ApplicationName &#91;required&#93; Name of the Amazon Kinesis Analytics application to update.
-#' @param CurrentApplicationVersionId &#91;required&#93; The current application version ID. You can use the
-#' [`describe_application`][kinesisanalytics_describe_application]
-#' operation to get this value.
+#' @param CurrentApplicationVersionId &#91;required&#93; The current application version ID. You can use the [`describe_application`][kinesisanalytics_describe_application] operation to get this value.
 #' @param ApplicationUpdate &#91;required&#93; Describes application updates.
 #'
 #' @keywords internal

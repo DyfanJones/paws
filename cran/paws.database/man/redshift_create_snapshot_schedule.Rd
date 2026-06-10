@@ -15,19 +15,13 @@ redshift_create_snapshot_schedule(
 )
 }
 \arguments{
-\item{ScheduleDefinitions}{The definition of the snapshot schedule. The definition is made up of
-schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)".}
+\item{ScheduleDefinitions}{The definition of the snapshot schedule. The definition is made up of schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)".}
 
-\item{ScheduleIdentifier}{A unique identifier for a snapshot schedule. Only alphanumeric
-characters are allowed for the identifier.}
+\item{ScheduleIdentifier}{A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed for the identifier.}
 
 \item{ScheduleDescription}{The description of the snapshot schedule.}
 
 \item{Tags}{An optional set of tags you can use to search for the schedule.}
-
-\item{DryRun}{}
-
-\item{NextInvocations}{}
 }
 \description{
 Create a snapshot schedule that can be associated to a cluster and which overrides the default system backup schedule.

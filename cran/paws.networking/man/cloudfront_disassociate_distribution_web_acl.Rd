@@ -9,8 +9,7 @@ cloudfront_disassociate_distribution_web_acl(Id, IfMatch = NULL)
 \arguments{
 \item{Id}{[required] The ID of the distribution.}
 
-\item{IfMatch}{The value of the \code{ETag} header that you received when retrieving the
-distribution that you're disassociating from the WAF web ACL.}
+\item{IfMatch}{The value of the \code{ETag} header that you received when retrieving the distribution that you're disassociating from the WAF web ACL.}
 }
 \description{
 Disassociates a distribution from the WAF web ACL.

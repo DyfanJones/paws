@@ -7,11 +7,7 @@
 emr_list_supported_instance_types(ReleaseLabel, Marker = NULL)
 }
 \arguments{
-\item{ReleaseLabel}{[required] The Amazon EMR release label determines the \href{https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-app-versions-6.x.html}{versions of open-source application packages}
-that Amazon EMR has installed on the cluster. Release labels are in the
-format \code{emr-x.x.x}, where x.x.x is an Amazon EMR release number such as
-\verb{emr-6.10.0}. For more information about Amazon EMR releases and their
-included application versions and features, see the \emph{\href{https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-components.html}{Amazon EMR Release Guide}} .}
+\item{ReleaseLabel}{[required] The Amazon EMR release label determines the \href{https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-app-versions-6.x.html}{versions of open-source application packages} that Amazon EMR has installed on the cluster. Release labels are in the format \code{emr-x.x.x}, where x.x.x is an Amazon EMR release number such as \verb{emr-6.10.0}. For more information about Amazon EMR releases and their included application versions and features, see the \emph{\href{https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-components.html}{Amazon EMR Release Guide}} .}
 
 \item{Marker}{The pagination token that marks the next set of results to retrieve.}
 }

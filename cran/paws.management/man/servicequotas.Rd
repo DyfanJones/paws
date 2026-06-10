@@ -53,14 +53,9 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-With Service Quotas, you can view and manage your quotas easily as your
-Amazon Web Services workloads grow. Quotas, also referred to as limits,
-are the maximum number of resources that you can create in your Amazon
-Web Services account. For more information, see the \href{https://docs.aws.amazon.com/servicequotas/latest/userguide/}{Service Quotas User Guide}.
+With Service Quotas, you can view and manage your quotas easily as your Amazon Web Services workloads grow. Quotas, also referred to as limits, are the maximum number of resources that you can create in your Amazon Web Services account. For more information, see the \href{https://docs.aws.amazon.com/servicequotas/latest/userguide/}{Service Quotas User Guide}.
 
-You need Amazon Web Services CLI version 2.13.20 or higher to view and
-manage resource-level quotas such as \verb{Instances per domain} for Amazon
-OpenSearch Service.
+You need Amazon Web Services CLI version 2.13.20 or higher to view and manage resource-level quotas such as \verb{Instances per domain} for Amazon OpenSearch Service.
 }
 \section{Service syntax}{
 

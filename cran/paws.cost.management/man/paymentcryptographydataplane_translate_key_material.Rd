@@ -12,14 +12,11 @@ paymentcryptographydataplane_translate_key_material(
 )
 }
 \arguments{
-\item{IncomingKeyMaterial}{[required] Parameter information of the TR31WrappedKeyBlock containing the
-transaction key.}
+\item{IncomingKeyMaterial}{[required] Parameter information of the TR31WrappedKeyBlock containing the transaction key.}
 
-\item{OutgoingKeyMaterial}{[required] Parameter information of the wrapping key used to wrap the transaction
-key in the outgoing TR31WrappedKeyBlock.}
+\item{OutgoingKeyMaterial}{[required] Parameter information of the wrapping key used to wrap the transaction key in the outgoing TR31WrappedKeyBlock.}
 
-\item{KeyCheckValueAlgorithm}{The key check value (KCV) algorithm used for calculating the KCV of the
-derived key.}
+\item{KeyCheckValueAlgorithm}{The key check value (KCV) algorithm used for calculating the KCV of the derived key.}
 }
 \description{
 Translates an cryptographic key between different wrapping keys without importing the key into Amazon Web Services Payment Cryptography.

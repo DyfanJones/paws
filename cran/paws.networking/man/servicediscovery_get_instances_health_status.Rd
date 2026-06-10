@@ -13,37 +13,19 @@ servicediscovery_get_instances_health_status(
 )
 }
 \arguments{
-\item{ServiceId}{[required] The ID or Amazon Resource Name (ARN) of the service that the instance is
-associated with. For services created in a shared namespace, specify the
-service ARN. For more information about shared namespaces, see
-\href{https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html}{Cross-account Cloud Map namespace sharing}
-in the \emph{Cloud Map Developer Guide}.}
+\item{ServiceId}{[required] The ID or Amazon Resource Name (ARN) of the service that the instance is associated with. For services created in a shared namespace, specify the service ARN. For more information about shared namespaces, see \href{https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html}{Cross-account Cloud Map namespace sharing} in the \emph{Cloud Map Developer Guide}.}
 
-\item{Instances}{An array that contains the IDs of all the instances that you want to get
-the health status for.
+\item{Instances}{An array that contains the IDs of all the instances that you want to get the health status for.
 
-If you omit \code{Instances}, Cloud Map returns the health status for all the
-instances that are associated with the specified service.
+If you omit \code{Instances}, Cloud Map returns the health status for all the instances that are associated with the specified service.
 
-To get the IDs for the instances that you've registered by using a
-specified service, submit a
-\code{\link[=servicediscovery_list_instances]{list_instances}} request.}
+To get the IDs for the instances that you've registered by using a specified service, submit a \code{\link[=servicediscovery_list_instances]{list_instances}} request.}
 
-\item{MaxResults}{The maximum number of instances that you want Cloud Map to return in the
-response to a
-\code{\link[=servicediscovery_get_instances_health_status]{get_instances_health_status}}
-request. If you don't specify a value for \code{MaxResults}, Cloud Map
-returns up to 100 instances.}
+\item{MaxResults}{The maximum number of instances that you want Cloud Map to return in the response to a \code{\link[=servicediscovery_get_instances_health_status]{get_instances_health_status}} request. If you don't specify a value for \code{MaxResults}, Cloud Map returns up to 100 instances.}
 
-\item{NextToken}{For the first
-\code{\link[=servicediscovery_get_instances_health_status]{get_instances_health_status}}
-request, omit this value.
+\item{NextToken}{For the first \code{\link[=servicediscovery_get_instances_health_status]{get_instances_health_status}} request, omit this value.
 
-If more than \code{MaxResults} instances match the specified criteria, you
-can submit another
-\code{\link[=servicediscovery_get_instances_health_status]{get_instances_health_status}}
-request to get the next group of results. Specify the value of
-\code{NextToken} from the previous response in the next request.}
+If more than \code{MaxResults} instances match the specified criteria, you can submit another \code{\link[=servicediscovery_get_instances_health_status]{get_instances_health_status}} request to get the next group of results. Specify the value of \code{NextToken} from the previous response in the next request.}
 }
 \description{
 Gets the current health status (\code{Healthy}, \code{Unhealthy}, or \code{Unknown}) of one or more instances that are associated with a specified service.

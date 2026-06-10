@@ -14,11 +14,9 @@ sagemaker_create_presigned_mlflow_app_url(
 \arguments{
 \item{Arn}{[required] The ARN of the MLflow App to connect to your MLflow UI.}
 
-\item{ExpiresInSeconds}{The duration in seconds that your presigned URL is valid. The presigned
-URL can be used only once.}
+\item{ExpiresInSeconds}{The duration in seconds that your presigned URL is valid. The presigned URL can be used only once.}
 
-\item{SessionExpirationDurationInSeconds}{The duration in seconds that your presigned URL is valid. The presigned
-URL can be used only once.}
+\item{SessionExpirationDurationInSeconds}{The duration in seconds that your presigned URL is valid. The presigned URL can be used only once.}
 }
 \description{
 Returns a presigned URL that you can use to connect to the MLflow UI attached to your MLflow App. For more information, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/mlflow-launch-ui.html}{Launch the MLflow UI using a presigned URL}.

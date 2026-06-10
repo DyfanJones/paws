@@ -36,167 +36,84 @@ sagemaker_create_training_job(
 )
 }
 \arguments{
-\item{TrainingJobName}{[required] The name of the training job. The name must be unique within an Amazon
-Web Services Region in an Amazon Web Services account.}
+\item{TrainingJobName}{[required] The name of the training job. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account.}
 
-\item{HyperParameters}{Algorithm-specific parameters that influence the quality of the model.
-You set hyperparameters before you start the learning process. For a
-list of hyperparameters for each training algorithm provided by
-SageMaker, see
-\href{https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html}{Algorithms}.
+\item{HyperParameters}{Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by SageMaker, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html}{Algorithms}.
 
-You can specify a maximum of 100 hyperparameters. Each hyperparameter is
-a key-value pair. Each key and value is limited to 256 characters, as
-specified by the \verb{Length Constraint}.
+You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the \verb{Length Constraint}.
 
-Do not include any security-sensitive information including account
-access IDs, secrets, or tokens in any hyperparameter fields. As part of
-the shared responsibility model, you are responsible for any potential
-exposure, unauthorized access, or compromise of your sensitive data if
-caused by any security-sensitive information included in the request
-hyperparameter variable or plain text fields.}
+Do not include any security-sensitive information including account access IDs, secrets, or tokens in any hyperparameter fields. As part of the shared responsibility model, you are responsible for any potential exposure, unauthorized access, or compromise of your sensitive data if caused by any security-sensitive information included in the request hyperparameter variable or plain text fields.}
 
-\item{AlgorithmSpecification}{The registry path of the Docker image that contains the training
-algorithm and algorithm-specific metadata, including the input mode. For
-more information about algorithms provided by SageMaker, see
-\href{https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html}{Algorithms}.
-For information about providing your own algorithms, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/docker-containers.html}{Using Your Own Algorithms with Amazon SageMaker}.}
+\item{AlgorithmSpecification}{The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by SageMaker, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html}{Algorithms}. For information about providing your own algorithms, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/docker-containers.html}{Using Your Own Algorithms with Amazon SageMaker}.}
 
-\item{RoleArn}{[required] The Amazon Resource Name (ARN) of an IAM role that SageMaker can assume
-to perform tasks on your behalf.
+\item{RoleArn}{[required] The Amazon Resource Name (ARN) of an IAM role that SageMaker can assume to perform tasks on your behalf.
 
-During model training, SageMaker needs your permission to read input
-data from an S3 bucket, download a Docker image that contains training
-code, write model artifacts to an S3 bucket, write logs to Amazon
-CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant
-permissions for all of these tasks to an IAM role. For more information,
-see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html}{SageMaker Roles}.
+During model training, SageMaker needs your permission to read input data from an S3 bucket, download a Docker image that contains training code, write model artifacts to an S3 bucket, write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant permissions for all of these tasks to an IAM role. For more information, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html}{SageMaker Roles}.
 
-To be able to pass this role to SageMaker, the caller of this API must
-have the \code{iam:PassRole} permission.}
+To be able to pass this role to SageMaker, the caller of this API must have the \code{iam:PassRole} permission.}
 
-\item{InputDataConfig}{An array of \code{Channel} objects. Each channel is a named input source.
-\code{InputDataConfig} describes the input data and its location.
+\item{InputDataConfig}{An array of \code{Channel} objects. Each channel is a named input source. \code{InputDataConfig} describes the input data and its location.
 
-Algorithms can accept input data from one or more channels. For example,
-an algorithm might have two channels of input data, \code{training_data} and
-\code{validation_data}. The configuration for each channel provides the S3,
-EFS, or FSx location where the input data is stored. It also provides
-information about the stored data: the MIME type, compression method,
-and whether the data is wrapped in RecordIO format.
+Algorithms can accept input data from one or more channels. For example, an algorithm might have two channels of input data, \code{training_data} and \code{validation_data}. The configuration for each channel provides the S3, EFS, or FSx location where the input data is stored. It also provides information about the stored data: the MIME type, compression method, and whether the data is wrapped in RecordIO format.
 
-Depending on the input mode that the algorithm supports, SageMaker
-either copies input data files from an S3 bucket to a local directory in
-the Docker container, or makes it available as input streams. For
-example, if you specify an EFS location, input data files are available
-as input streams. They do not need to be downloaded.
+Depending on the input mode that the algorithm supports, SageMaker either copies input data files from an S3 bucket to a local directory in the Docker container, or makes it available as input streams. For example, if you specify an EFS location, input data files are available as input streams. They do not need to be downloaded.
 
-Your input must be in the same Amazon Web Services region as your
-training job.}
+Your input must be in the same Amazon Web Services region as your training job.}
 
-\item{OutputDataConfig}{[required] Specifies the path to the S3 location where you want to store model
-artifacts. SageMaker creates subfolders for the artifacts.}
+\item{OutputDataConfig}{[required] Specifies the path to the S3 location where you want to store model artifacts. SageMaker creates subfolders for the artifacts.}
 
-\item{ResourceConfig}{The resources, including the ML compute instances and ML storage
-volumes, to use for model training.
+\item{ResourceConfig}{The resources, including the ML compute instances and ML storage volumes, to use for model training.
 
-ML storage volumes store model artifacts and incremental states.
-Training algorithms might also use ML storage volumes for scratch space.
-If you want SageMaker to use the ML storage volume to store the training
-data, choose \code{File} as the \code{TrainingInputMode} in the algorithm
-specification. For distributed training algorithms, specify an instance
-count greater than 1.}
+ML storage volumes store model artifacts and incremental states. Training algorithms might also use ML storage volumes for scratch space. If you want SageMaker to use the ML storage volume to store the training data, choose \code{File} as the \code{TrainingInputMode} in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.}
 
-\item{VpcConfig}{A
-\href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html}{VpcConfig}
-object that specifies the VPC that you want your training job to connect
-to. Control access to and from your training container by configuring
-the VPC. For more information, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html}{Protect Training Jobs by Using an Amazon Virtual Private Cloud}.}
+\item{VpcConfig}{A \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html}{VpcConfig} object that specifies the VPC that you want your training job to connect to. Control access to and from your training container by configuring the VPC. For more information, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html}{Protect Training Jobs by Using an Amazon Virtual Private Cloud}.}
 
-\item{StoppingCondition}{Specifies a limit to how long a model training job can run. It also
-specifies how long a managed Spot training job has to complete. When the
-job reaches the time limit, SageMaker ends the training job. Use this
-API to cap model training costs.
+\item{StoppingCondition}{Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, SageMaker ends the training job. Use this API to cap model training costs.
 
-To stop a job, SageMaker sends the algorithm the \code{SIGTERM} signal, which
-delays job termination for 120 seconds. Algorithms can use this
-120-second window to save the model artifacts, so the results of
-training are not lost.}
+To stop a job, SageMaker sends the algorithm the \code{SIGTERM} signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost.}
 
-\item{Tags}{An array of key-value pairs. You can use tags to categorize your Amazon
-Web Services resources in different ways, for example, by purpose,
-owner, or environment. For more information, see \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web Services Resources}.
+\item{Tags}{An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web Services Resources}.
 
-Do not include any security-sensitive information including account
-access IDs, secrets, or tokens in any tags. As part of the shared
-responsibility model, you are responsible for any potential exposure,
-unauthorized access, or compromise of your sensitive data if caused by
-any security-sensitive information included in the request tag variable
-or plain text fields.}
+Do not include any security-sensitive information including account access IDs, secrets, or tokens in any tags. As part of the shared responsibility model, you are responsible for any potential exposure, unauthorized access, or compromise of your sensitive data if caused by any security-sensitive information included in the request tag variable or plain text fields.}
 
-\item{EnableNetworkIsolation}{Isolates the training container. No inbound or outbound network calls
-can be made, except for calls between peers within a training cluster
-for distributed training. If you enable network isolation for training
-jobs that are configured to use a VPC, SageMaker downloads and uploads
-customer data and model artifacts through the specified VPC, but the
-training container does not have network access.}
+\item{EnableNetworkIsolation}{Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers within a training cluster for distributed training. If you enable network isolation for training jobs that are configured to use a VPC, SageMaker downloads and uploads customer data and model artifacts through the specified VPC, but the training container does not have network access.}
 
-\item{EnableInterContainerTrafficEncryption}{To encrypt all communications between ML compute instances in
-distributed training, choose \code{True}. Encryption provides greater
-security for distributed training, but training might take longer. How
-long it takes depends on the amount of communication between compute
-instances, especially if you use a deep learning algorithm in
-distributed training. For more information, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/train-encrypt.html}{Protect Communications Between ML Compute Instances in a Distributed Training Job}.}
+\item{EnableInterContainerTrafficEncryption}{To encrypt all communications between ML compute instances in distributed training, choose \code{True}. Encryption provides greater security for distributed training, but training might take longer. How long it takes depends on the amount of communication between compute instances, especially if you use a deep learning algorithm in distributed training. For more information, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/train-encrypt.html}{Protect Communications Between ML Compute Instances in a Distributed Training Job}.}
 
-\item{EnableManagedSpotTraining}{To train models using managed spot training, choose \code{True}. Managed spot
-training provides a fully managed and scalable infrastructure for
-training machine learning models. this option is useful when training
-jobs can be interrupted and when there is flexibility when the training
-job is run.
+\item{EnableManagedSpotTraining}{To train models using managed spot training, choose \code{True}. Managed spot training provides a fully managed and scalable infrastructure for training machine learning models. this option is useful when training jobs can be interrupted and when there is flexibility when the training job is run.
 
-The complete and intermediate results of jobs are stored in an Amazon S3
-bucket, and can be used as a starting point to train models
-incrementally. Amazon SageMaker provides metrics and logs in CloudWatch.
-They can be used to see when managed spot training jobs are running,
-interrupted, resumed, or completed.}
+The complete and intermediate results of jobs are stored in an Amazon S3 bucket, and can be used as a starting point to train models incrementally. Amazon SageMaker provides metrics and logs in CloudWatch. They can be used to see when managed spot training jobs are running, interrupted, resumed, or completed.}
 
-\item{CheckpointConfig}{Contains information about the output location for managed spot training
-checkpoint data.}
+\item{CheckpointConfig}{Contains information about the output location for managed spot training checkpoint data.}
 
-\item{DebugHookConfig}{}
+\item{DebugHookConfig}{Configuration information for the Amazon SageMaker Debugger hook parameters, metric and tensor collections, and storage paths. To learn more about how to configure the \code{DebugHookConfig} parameter, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html}{Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job}.}
 
-\item{DebugRuleConfigurations}{Configuration information for Amazon SageMaker Debugger rules for
-debugging output tensors.}
+\item{DebugRuleConfigurations}{Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.}
 
-\item{TensorBoardOutputConfig}{}
+\item{TensorBoardOutputConfig}{Configuration of storage locations for the Amazon SageMaker Debugger TensorBoard output data.}
 
-\item{ExperimentConfig}{}
+\item{ExperimentConfig}{Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:
+\itemize{
+\item \code{\link[=sagemaker_create_processing_job]{create_processing_job}}
+\item \code{\link[=sagemaker_create_training_job]{create_training_job}}
+\item \code{\link[=sagemaker_create_transform_job]{create_transform_job}}
+}}
 
-\item{ProfilerConfig}{}
+\item{ProfilerConfig}{Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.}
 
-\item{ProfilerRuleConfigurations}{Configuration information for Amazon SageMaker Debugger rules for
-profiling system and framework metrics.}
+\item{ProfilerRuleConfigurations}{Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.}
 
 \item{Environment}{The environment variables to set in the Docker container.
 
-Do not include any security-sensitive information including account
-access IDs, secrets, or tokens in any environment fields. As part of the
-shared responsibility model, you are responsible for any potential
-exposure, unauthorized access, or compromise of your sensitive data if
-caused by security-sensitive information included in the request
-environment variable or plain text fields.}
+Do not include any security-sensitive information including account access IDs, secrets, or tokens in any environment fields. As part of the shared responsibility model, you are responsible for any potential exposure, unauthorized access, or compromise of your sensitive data if caused by security-sensitive information included in the request environment variable or plain text fields.}
 
-\item{RetryStrategy}{The number of times to retry the job when the job fails due to an
-\code{InternalServerError}.}
+\item{RetryStrategy}{The number of times to retry the job when the job fails due to an \code{InternalServerError}.}
 
-\item{RemoteDebugConfig}{Configuration for remote debugging. To learn more about the remote
-debugging functionality of SageMaker, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html}{Access a training container through Amazon Web Services Systems Manager (SSM) for remote debugging}.}
+\item{RemoteDebugConfig}{Configuration for remote debugging. To learn more about the remote debugging functionality of SageMaker, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html}{Access a training container through Amazon Web Services Systems Manager (SSM) for remote debugging}.}
 
-\item{InfraCheckConfig}{Contains information about the infrastructure health check configuration
-for the training job.}
+\item{InfraCheckConfig}{Contains information about the infrastructure health check configuration for the training job.}
 
-\item{SessionChainingConfig}{Contains information about attribute-based access control (ABAC) for the
-training job.}
+\item{SessionChainingConfig}{Contains information about attribute-based access control (ABAC) for the training job.}
 
 \item{ServerlessJobConfig}{The configuration for serverless training jobs.}
 

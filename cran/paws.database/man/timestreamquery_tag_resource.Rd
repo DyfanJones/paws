@@ -7,8 +7,7 @@
 timestreamquery_tag_resource(ResourceARN, Tags)
 }
 \arguments{
-\item{ResourceARN}{[required] Identifies the Timestream resource to which tags should be added. This
-value is an Amazon Resource Name (ARN).}
+\item{ResourceARN}{[required] Identifies the Timestream resource to which tags should be added. This value is an Amazon Resource Name (ARN).}
 
 \item{Tags}{[required] The tags to be assigned to the Timestream resource.}
 }

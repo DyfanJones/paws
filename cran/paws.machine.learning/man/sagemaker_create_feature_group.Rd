@@ -18,94 +18,63 @@ sagemaker_create_feature_group(
 )
 }
 \arguments{
-\item{FeatureGroupName}{[required] The name of the \code{FeatureGroup}. The name must be unique within an Amazon
-Web Services Region in an Amazon Web Services account.
+\item{FeatureGroupName}{[required] The name of the \code{FeatureGroup}. The name must be unique within an Amazon Web Services Region in an Amazon Web Services account.
 
 The name:
 \itemize{
 \item Must start with an alphanumeric character.
-\item Can only include alphanumeric characters, underscores, and hyphens.
-Spaces are not allowed.
+\item Can only include alphanumeric characters, underscores, and hyphens. Spaces are not allowed.
 }}
 
-\item{RecordIdentifierFeatureName}{[required] The name of the \code{Feature} whose value uniquely identifies a \code{Record}
-defined in the \code{FeatureStore}. Only the latest record per identifier
-value will be stored in the \code{OnlineStore}. \code{RecordIdentifierFeatureName}
-must be one of feature definitions' names.
+\item{RecordIdentifierFeatureName}{[required] The name of the \code{Feature} whose value uniquely identifies a \code{Record} defined in the \code{FeatureStore}. Only the latest record per identifier value will be stored in the \code{OnlineStore}. \code{RecordIdentifierFeatureName} must be one of feature definitions' names.
 
-You use the \code{RecordIdentifierFeatureName} to access data in a
-\code{FeatureStore}.
+You use the \code{RecordIdentifierFeatureName} to access data in a \code{FeatureStore}.
 
 This name:
 \itemize{
 \item Must start with an alphanumeric character.
-\item Can only contains alphanumeric characters, hyphens, underscores.
-Spaces are not allowed.
+\item Can only contains alphanumeric characters, hyphens, underscores. Spaces are not allowed.
 }}
 
-\item{EventTimeFeatureName}{[required] The name of the feature that stores the \code{EventTime} of a \code{Record} in a
-\code{FeatureGroup}.
+\item{EventTimeFeatureName}{[required] The name of the feature that stores the \code{EventTime} of a \code{Record} in a \code{FeatureGroup}.
 
-An \code{EventTime} is a point in time when a new event occurs that
-corresponds to the creation or update of a \code{Record} in a \code{FeatureGroup}.
-All \code{Records} in the \code{FeatureGroup} must have a corresponding
-\code{EventTime}.
+An \code{EventTime} is a point in time when a new event occurs that corresponds to the creation or update of a \code{Record} in a \code{FeatureGroup}. All \code{Records} in the \code{FeatureGroup} must have a corresponding \code{EventTime}.
 
 An \code{EventTime} can be a \code{String} or \code{Fractional}.
 \itemize{
-\item \code{Fractional}: \code{EventTime} feature values must be a Unix timestamp in
-seconds.
-\item \code{String}: \code{EventTime} feature values must be an ISO-8601 string in
-the format. The following formats are supported
-\verb{yyyy-MM-dd'T'HH:mm:ssZ} and \verb{yyyy-MM-dd'T'HH:mm:ss.SSSZ} where
-\code{yyyy}, \code{MM}, and \code{dd} represent the year, month, and day
-respectively and \code{HH}, \code{mm}, \code{ss}, and if applicable, \code{SSS}
-represent the hour, month, second and milliseconds respsectively.
-\code{'T'} and \code{Z} are constants.
+\item \code{Fractional}: \code{EventTime} feature values must be a Unix timestamp in seconds.
+\item \code{String}: \code{EventTime} feature values must be an ISO-8601 string in the format. The following formats are supported \verb{yyyy-MM-dd'T'HH:mm:ssZ} and \verb{yyyy-MM-dd'T'HH:mm:ss.SSSZ} where \code{yyyy}, \code{MM}, and \code{dd} represent the year, month, and day respectively and \code{HH}, \code{mm}, \code{ss}, and if applicable, \code{SSS} represent the hour, month, second and milliseconds respsectively. \code{'T'} and \code{Z} are constants.
 }}
 
-\item{FeatureDefinitions}{[required] A list of \code{Feature} names and types. \code{Name} and \code{Type} is compulsory per
-\code{Feature}.
+\item{FeatureDefinitions}{[required] A list of \code{Feature} names and types. \code{Name} and \code{Type} is compulsory per \code{Feature}.
 
 Valid feature \code{FeatureType}s are \code{Integral}, \code{Fractional} and \code{String}.
 
-\code{FeatureName}s cannot be any of the following: \code{is_deleted},
-\code{write_time}, \code{api_invocation_time}
+\code{FeatureName}s cannot be any of the following: \code{is_deleted}, \code{write_time}, \code{api_invocation_time}
 
 You can create up to 2,500 \code{FeatureDefinition}s per \code{FeatureGroup}.}
 
-\item{OnlineStoreConfig}{You can turn the \code{OnlineStore} on or off by specifying \code{True} for the
-\code{EnableOnlineStore} flag in \code{OnlineStoreConfig}.
+\item{OnlineStoreConfig}{You can turn the \code{OnlineStore} on or off by specifying \code{True} for the \code{EnableOnlineStore} flag in \code{OnlineStoreConfig}.
 
-You can also include an Amazon Web Services KMS key ID (\code{KMSKeyId}) for
-at-rest encryption of the \code{OnlineStore}.
+You can also include an Amazon Web Services KMS key ID (\code{KMSKeyId}) for at-rest encryption of the \code{OnlineStore}.
 
 The default value is \code{False}.}
 
-\item{OfflineStoreConfig}{Use this to configure an \code{OfflineFeatureStore}. This parameter allows
-you to specify:
+\item{OfflineStoreConfig}{Use this to configure an \code{OfflineFeatureStore}. This parameter allows you to specify:
 \itemize{
-\item The Amazon Simple Storage Service (Amazon S3) location of an
-\code{OfflineStore}.
-\item A configuration for an Amazon Web Services Glue or Amazon Web
-Services Hive data catalog.
-\item An KMS encryption key to encrypt the Amazon S3 location used for
-\code{OfflineStore}. If KMS encryption key is not specified, by default
-we encrypt all data at rest using Amazon Web Services KMS key. By
-defining your \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html}{bucket-level key}
-for SSE, you can reduce Amazon Web Services KMS requests costs by up
-to 99 percent.
-\item Format for the offline store table. Supported formats are Glue
-(Default) and \href{https://iceberg.apache.org/}{Apache Iceberg}.
+\item The Amazon Simple Storage Service (Amazon S3) location of an \code{OfflineStore}.
+\item A configuration for an Amazon Web Services Glue or Amazon Web Services Hive data catalog.
+\item An KMS encryption key to encrypt the Amazon S3 location used for \code{OfflineStore}. If KMS encryption key is not specified, by default we encrypt all data at rest using Amazon Web Services KMS key. By defining your \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html}{bucket-level key} for SSE, you can reduce Amazon Web Services KMS requests costs by up to 99 percent.
+\item Format for the offline store table. Supported formats are Glue (Default) and \href{https://iceberg.apache.org/}{Apache Iceberg}.
 }
 
-To learn more about this parameter, see
-\href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OfflineStoreConfig.html}{OfflineStoreConfig}.}
+To learn more about this parameter, see \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OfflineStoreConfig.html}{OfflineStoreConfig}.}
 
-\item{ThroughputConfig}{}
+\item{ThroughputConfig}{Used to set feature group throughput configuration. There are two modes: \code{ON_DEMAND} and \code{PROVISIONED}. With on-demand mode, you are charged for data reads and writes that your application performs on your feature group. You do not need to specify read and write throughput because Feature Store accommodates your workloads as they ramp up and down. You can switch a feature group to on-demand only once in a 24 hour period. With provisioned throughput mode, you specify the read and write capacity per second that you expect your application to require, and you are billed based on those limits. Exceeding provisioned throughput will result in your requests being throttled.
 
-\item{RoleArn}{The Amazon Resource Name (ARN) of the IAM execution role used to persist
-data into the \code{OfflineStore} if an \code{OfflineStoreConfig} is provided.}
+Note: \code{PROVISIONED} throughput mode is supported only for feature groups that are offline-only, or use the \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OnlineStoreConfig.html#sagemaker-Type-OnlineStoreConfig-StorageType}{\code{Standard}} tier online store.}
+
+\item{RoleArn}{The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the \code{OfflineStore} if an \code{OfflineStoreConfig} is provided.}
 
 \item{Description}{A free-form description of a \code{FeatureGroup}.}
 

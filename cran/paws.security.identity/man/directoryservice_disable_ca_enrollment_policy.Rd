@@ -8,8 +8,7 @@ specified directory}
 directoryservice_disable_ca_enrollment_policy(DirectoryId)
 }
 \arguments{
-\item{DirectoryId}{[required] The identifier of the directory for which to disable the CA enrollment
-policy.}
+\item{DirectoryId}{[required] The identifier of the directory for which to disable the CA enrollment policy.}
 }
 \description{
 Disables the certificate authority (CA) enrollment policy for the specified directory. This stops automatic certificate enrollment and management for domain-joined clients, but does not affect existing certificates.

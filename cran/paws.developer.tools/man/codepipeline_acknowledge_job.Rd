@@ -8,13 +8,9 @@ received by the job worker}
 codepipeline_acknowledge_job(jobId, nonce)
 }
 \arguments{
-\item{jobId}{[required] The unique system-generated ID of the job for which you want to confirm
-receipt.}
+\item{jobId}{[required] The unique system-generated ID of the job for which you want to confirm receipt.}
 
-\item{nonce}{[required] A system-generated random number that CodePipeline uses to ensure that
-the job is being worked on by only one job worker. Get this number from
-the response of the \code{\link[=codepipeline_poll_for_jobs]{poll_for_jobs}}
-request that returned this job.}
+\item{nonce}{[required] A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the \code{\link[=codepipeline_poll_for_jobs]{poll_for_jobs}} request that returned this job.}
 }
 \description{
 Returns information about a specified job and whether that job has been received by the job worker. Used for custom actions only.

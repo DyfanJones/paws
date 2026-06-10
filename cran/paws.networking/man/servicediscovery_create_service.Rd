@@ -19,75 +19,43 @@ servicediscovery_create_service(
 \arguments{
 \item{Name}{[required] The name that you want to assign to the service.
 
-Do not include sensitive information in the name if the namespace is
-discoverable by public DNS queries.
+Do not include sensitive information in the name if the namespace is discoverable by public DNS queries.
 
-If you want Cloud Map to create an \code{SRV} record when you register an
-instance and you're using a system that requires a specific \code{SRV}
-format, such as \href{http://www.haproxy.org/}{HAProxy}, specify the
-following for \code{Name}:
+If you want Cloud Map to create an \code{SRV} record when you register an instance and you're using a system that requires a specific \code{SRV} format, such as \href{http://www.haproxy.org/}{HAProxy}, specify the following for \code{Name}:
 \itemize{
 \item Start the name with an underscore (_), such as \verb{_exampleservice}.
 \item End the name with \emph{._protocol}, such as \code{._tcp}.
 }
 
-When you register an instance, Cloud Map creates an \code{SRV} record and
-assigns a name to the record by concatenating the service name and the
-namespace name (for example,
+When you register an instance, Cloud Map creates an \code{SRV} record and assigns a name to the record by concatenating the service name and the namespace name (for example,
 
 \verb{_exampleservice._tcp.example.com}).
 
-For services that are accessible by DNS queries, you can't create
-multiple services with names that differ only by case (such as EXAMPLE
-and example). Otherwise, these services have the same DNS name and can't
-be distinguished. However, if you use a namespace that's only accessible
-by API calls, then you can create services that with names that differ
-only by case.}
+For services that are accessible by DNS queries, you can't create multiple services with names that differ only by case (such as EXAMPLE and example). Otherwise, these services have the same DNS name and can't be distinguished. However, if you use a namespace that's only accessible by API calls, then you can create services that with names that differ only by case.}
 
-\item{NamespaceId}{The ID or Amazon Resource Name (ARN) of the namespace that you want to
-use to create the service. For namespaces shared with your Amazon Web
-Services account, specify the namespace ARN. For more information about
-shared namespaces, see \href{https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html}{Cross-account Cloud Map namespace sharing}
-in the \emph{Cloud Map Developer Guide}.}
+\item{NamespaceId}{The ID or Amazon Resource Name (ARN) of the namespace that you want to use to create the service. For namespaces shared with your Amazon Web Services account, specify the namespace ARN. For more information about shared namespaces, see \href{https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html}{Cross-account Cloud Map namespace sharing} in the \emph{Cloud Map Developer Guide}.}
 
-\item{CreatorRequestId}{A unique string that identifies the request and that allows failed
-\code{\link[=servicediscovery_create_service]{create_service}} requests to be
-retried without the risk of running the operation twice.
-\code{CreatorRequestId} can be any unique string (for example, a
-date/timestamp).}
+\item{CreatorRequestId}{A unique string that identifies the request and that allows failed \code{\link[=servicediscovery_create_service]{create_service}} requests to be retried without the risk of running the operation twice. \code{CreatorRequestId} can be any unique string (for example, a date/timestamp).}
 
 \item{Description}{A description for the service.}
 
-\item{DnsConfig}{A complex type that contains information about the Amazon Route 53
-records that you want Cloud Map to create when you register an instance.}
+\item{DnsConfig}{A complex type that contains information about the Amazon Route 53 records that you want Cloud Map to create when you register an instance.}
 
-\item{HealthCheckConfig}{\emph{Public DNS and HTTP namespaces only.} A complex type that contains
-settings for an optional Route 53 health check. If you specify settings
-for a health check, Cloud Map associates the health check with all the
-Route 53 DNS records that you specify in \code{DnsConfig}.
+\item{HealthCheckConfig}{\emph{Public DNS and HTTP namespaces only.} A complex type that contains settings for an optional Route 53 health check. If you specify settings for a health check, Cloud Map associates the health check with all the Route 53 DNS records that you specify in \code{DnsConfig}.
 
-If you specify a health check configuration, you can specify either
-\code{HealthCheckCustomConfig} or \code{HealthCheckConfig} but not both.
+If you specify a health check configuration, you can specify either \code{HealthCheckCustomConfig} or \code{HealthCheckConfig} but not both.
 
 For information about the charges for health checks, see \href{https://aws.amazon.com/cloud-map/pricing/}{Cloud Map Pricing}.}
 
-\item{HealthCheckCustomConfig}{A complex type that contains information about an optional custom health
-check.
+\item{HealthCheckCustomConfig}{A complex type that contains information about an optional custom health check.
 
-If you specify a health check configuration, you can specify either
-\code{HealthCheckCustomConfig} or \code{HealthCheckConfig} but not both.
+If you specify a health check configuration, you can specify either \code{HealthCheckCustomConfig} or \code{HealthCheckConfig} but not both.
 
-You can't add, update, or delete a \code{HealthCheckCustomConfig}
-configuration from an existing service.}
+You can't add, update, or delete a \code{HealthCheckCustomConfig} configuration from an existing service.}
 
-\item{Tags}{The tags to add to the service. Each tag consists of a key and an
-optional value that you define. Tags keys can be up to 128 characters in
-length, and tag values can be up to 256 characters in length.}
+\item{Tags}{The tags to add to the service. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.}
 
-\item{Type}{If present, specifies that the service instances are only discoverable
-using the \code{\link[=servicediscovery_discover_instances]{discover_instances}}
-API operation. No DNS records is registered for the service instances.
-The only valid value is \code{HTTP}.}
+\item{Type}{If present, specifies that the service instances are only discoverable using the \code{\link[=servicediscovery_discover_instances]{discover_instances}} API operation. No DNS records is registered for the service instances. The only valid value is \code{HTTP}.}
 }
 \description{
 Creates a service. This action defines the configuration for the following entities:

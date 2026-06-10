@@ -10,8 +10,7 @@ appstream_associate_software_to_image_builder(ImageBuilderName, SoftwareNames)
 \arguments{
 \item{ImageBuilderName}{[required] The name of the target image builder instance.}
 
-\item{SoftwareNames}{[required] The list of license included applications to associate with the image
-builder.
+\item{SoftwareNames}{[required] The list of license included applications to associate with the image builder.
 
 Possible values include the following:
 \itemize{

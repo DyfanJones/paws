@@ -7,8 +7,7 @@
 devopsguru_put_feedback(InsightFeedback = NULL)
 }
 \arguments{
-\item{InsightFeedback}{The feedback from customers is about the recommendations in this
-insight.}
+\item{InsightFeedback}{The feedback from customers is about the recommendations in this insight.}
 }
 \description{
 Collects customer feedback about the specified insight.

@@ -18,8 +18,7 @@ fis_create_experiment_template(
 )
 }
 \arguments{
-\item{clientToken}{[required] Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request.}
+\item{clientToken}{[required] Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.}
 
 \item{description}{[required] A description for the experiment template.}
 
@@ -29,8 +28,7 @@ idempotency of the request.}
 
 \item{actions}{[required] The actions for the experiment.}
 
-\item{roleArn}{[required] The Amazon Resource Name (ARN) of an IAM role that grants the FIS
-service permission to perform service actions on your behalf.}
+\item{roleArn}{[required] The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.}
 
 \item{tags}{The tags to apply to the experiment template.}
 

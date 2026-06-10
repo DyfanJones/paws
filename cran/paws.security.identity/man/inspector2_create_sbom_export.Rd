@@ -11,13 +11,11 @@ inspector2_create_sbom_export(
 )
 }
 \arguments{
-\item{resourceFilterCriteria}{The resource filter criteria for the software bill of materials (SBOM)
-report.}
+\item{resourceFilterCriteria}{The resource filter criteria for the software bill of materials (SBOM) report.}
 
 \item{reportFormat}{[required] The output format for the software bill of materials (SBOM) report.}
 
-\item{s3Destination}{[required] Contains details of the Amazon S3 bucket and KMS key used to export
-findings.}
+\item{s3Destination}{[required] Contains details of the Amazon S3 bucket and KMS key used to export findings.}
 }
 \description{
 Creates a software bill of materials (SBOM) report.

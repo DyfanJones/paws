@@ -13,8 +13,7 @@ NULL
 #' @param OrganizationId &#91;required&#93; The organization under which the resource exists.
 #' @param ResourceId &#91;required&#93; The resource for which members (users or groups) are associated.
 #' 
-#' The identifier can accept *ResourceId*, *Resourcename*, or *email*. The
-#' following identity formats are available:
+#' The identifier can accept *ResourceId*, *Resourcename*, or *email*. The following identity formats are available:
 #' 
 #' -   Resource ID: r-0123456789a0123456789b0123456789
 #' 
@@ -23,11 +22,9 @@ NULL
 #' -   Resource name: resource
 #' @param EntityId &#91;required&#93; The member (user or group) to associate to the resource.
 #' 
-#' The entity ID can accept *UserId or GroupID*, *Username or Groupname*,
-#' or *email*.
+#' The entity ID can accept *UserId or GroupID*, *Username or Groupname*, or *email*.
 #' 
-#' -   Entity: 12345678-1234-1234-1234-123456789012 or
-#'     S-1-1-12-1234567890-123456789-123456789-1234
+#' -   Entity: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
 #' 
 #' -   Email address: entity@@domain.tld
 #' 
@@ -65,22 +62,18 @@ workmail_associate_delegate_to_resource <- function(OrganizationId, ResourceId, 
 #' @param OrganizationId &#91;required&#93; The organization under which the group exists.
 #' @param GroupId &#91;required&#93; The group to which the member (user or group) is associated.
 #' 
-#' The identifier can accept *GroupId*, *Groupname*, or *email*. The
-#' following identity formats are available:
+#' The identifier can accept *GroupId*, *Groupname*, or *email*. The following identity formats are available:
 #' 
-#' -   Group ID: 12345678-1234-1234-1234-123456789012 or
-#'     S-1-1-12-1234567890-123456789-123456789-1234
+#' -   Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
 #' 
 #' -   Email address: group@@domain.tld
 #' 
 #' -   Group name: group
 #' @param MemberId &#91;required&#93; The member (user or group) to associate to the group.
 #' 
-#' The member ID can accept *UserID or GroupId*, *Username or Groupname*,
-#' or *email*.
+#' The member ID can accept *UserID or GroupId*, *Username or Groupname*, or *email*.
 #' 
-#' -   Member: 12345678-1234-1234-1234-123456789012 or
-#'     S-1-1-12-1234567890-123456789-123456789-1234
+#' -   Member: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
 #' 
 #' -   Email address: member@@domain.tld
 #' 
@@ -115,8 +108,7 @@ workmail_associate_member_to_group <- function(OrganizationId, GroupId, MemberId
 #'
 #' See [https://www.paws-r-sdk.com/docs/workmail_assume_impersonation_role/](https://www.paws-r-sdk.com/docs/workmail_assume_impersonation_role/) for full documentation.
 #'
-#' @param OrganizationId &#91;required&#93; The WorkMail organization under which the impersonation role will be
-#' assumed.
+#' @param OrganizationId &#91;required&#93; The WorkMail organization under which the impersonation role will be assumed.
 #' @param ImpersonationRoleId &#91;required&#93; The impersonation role ID to assume.
 #'
 #' @keywords internal
@@ -215,17 +207,11 @@ workmail_create_alias <- function(OrganizationId, EntityId, Alias) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/workmail_create_availability_configuration/](https://www.paws-r-sdk.com/docs/workmail_create_availability_configuration/) for full documentation.
 #'
-#' @param ClientToken An idempotent token that ensures that an API request is executed only
-#' once.
-#' @param OrganizationId &#91;required&#93; The WorkMail organization for which the `AvailabilityConfiguration` will
-#' be created.
+#' @param ClientToken An idempotent token that ensures that an API request is executed only once.
+#' @param OrganizationId &#91;required&#93; The WorkMail organization for which the `AvailabilityConfiguration` will be created.
 #' @param DomainName &#91;required&#93; The domain to which the provider applies.
-#' @param EwsProvider Exchange Web Services (EWS) availability provider definition. The
-#' request must contain exactly one provider definition, either
-#' `EwsProvider` or `LambdaProvider`.
-#' @param LambdaProvider Lambda availability provider definition. The request must contain
-#' exactly one provider definition, either `EwsProvider` or
-#' `LambdaProvider`.
+#' @param EwsProvider Exchange Web Services (EWS) availability provider definition. The request must contain exactly one provider definition, either `EwsProvider` or `LambdaProvider`.
+#' @param LambdaProvider Lambda availability provider definition. The request must contain exactly one provider definition, either `EwsProvider` or `LambdaProvider`.
 #'
 #' @keywords internal
 #'
@@ -259,8 +245,7 @@ workmail_create_availability_configuration <- function(ClientToken = NULL, Organ
 #'
 #' @param OrganizationId &#91;required&#93; The organization under which the group is to be created.
 #' @param Name &#91;required&#93; The name of the group.
-#' @param HiddenFromGlobalAddressList If this parameter is enabled, the group will be hidden from the address
-#' book.
+#' @param HiddenFromGlobalAddressList If this parameter is enabled, the group will be hidden from the address book.
 #'
 #' @keywords internal
 #'
@@ -328,8 +313,7 @@ workmail_create_identity_center_application <- function(Name, InstanceArn, Clien
 #' @param ClientToken The idempotency token for the client request.
 #' @param OrganizationId &#91;required&#93; The WorkMail organization to create the new impersonation role within.
 #' @param Name &#91;required&#93; The name of the new impersonation role.
-#' @param Type &#91;required&#93; The impersonation role's type. The available impersonation role types
-#' are `READ_ONLY` or `FULL_ACCESS`.
+#' @param Type &#91;required&#93; The impersonation role's type. The available impersonation role types are `READ_ONLY` or `FULL_ACCESS`.
 #' @param Description The description of the new impersonation role.
 #' @param Rules &#91;required&#93; The list of rules for the impersonation role.
 #'
@@ -367,20 +351,15 @@ workmail_create_impersonation_role <- function(ClientToken = NULL, OrganizationI
 #' @param ClientToken The idempotency token for the client request.
 #' @param Name &#91;required&#93; The rule name.
 #' @param Description The rule description.
-#' @param Effect &#91;required&#93; The effect of the rule when it matches. Allowed values are `ALLOW` or
-#' `DENY`.
+#' @param Effect &#91;required&#93; The effect of the rule when it matches. Allowed values are `ALLOW` or `DENY`.
 #' @param DeviceTypes Device types that the rule will match.
-#' @param NotDeviceTypes Device types that the rule **will not** match. All other device types
-#' will match.
+#' @param NotDeviceTypes Device types that the rule **will not** match. All other device types will match.
 #' @param DeviceModels Device models that the rule will match.
-#' @param NotDeviceModels Device models that the rule **will not** match. All other device models
-#' will match.
+#' @param NotDeviceModels Device models that the rule **will not** match. All other device models will match.
 #' @param DeviceOperatingSystems Device operating systems that the rule will match.
-#' @param NotDeviceOperatingSystems Device operating systems that the rule **will not** match. All other
-#' device operating systems will match.
+#' @param NotDeviceOperatingSystems Device operating systems that the rule **will not** match. All other device operating systems will match.
 #' @param DeviceUserAgents Device user agents that the rule will match.
-#' @param NotDeviceUserAgents Device user agents that the rule **will not** match. All other device
-#' user agents will match.
+#' @param NotDeviceUserAgents Device user agents that the rule **will not** match. All other device user agents will match.
 #'
 #' @keywords internal
 #'
@@ -416,9 +395,7 @@ workmail_create_mobile_device_access_rule <- function(OrganizationId, ClientToke
 #' @param ClientToken The idempotency token associated with the request.
 #' @param Domains The email domains to associate with the organization.
 #' @param KmsKeyArn The Amazon Resource Name (ARN) of a customer managed key from AWS KMS.
-#' @param EnableInteroperability When `true`, allows organization interoperability between WorkMail and
-#' Microsoft Exchange. If `true`, you must include a AD Connector directory
-#' ID in the request.
+#' @param EnableInteroperability When `true`, allows organization interoperability between WorkMail and Microsoft Exchange. If `true`, you must include a AD Connector directory ID in the request.
 #'
 #' @keywords internal
 #'
@@ -449,14 +426,11 @@ workmail_create_organization <- function(DirectoryId = NULL, Alias, ClientToken 
 #'
 #' See [https://www.paws-r-sdk.com/docs/workmail_create_resource/](https://www.paws-r-sdk.com/docs/workmail_create_resource/) for full documentation.
 #'
-#' @param OrganizationId &#91;required&#93; The identifier associated with the organization for which the resource
-#' is created.
+#' @param OrganizationId &#91;required&#93; The identifier associated with the organization for which the resource is created.
 #' @param Name &#91;required&#93; The name of the new resource.
-#' @param Type &#91;required&#93; The type of the new resource. The available types are `equipment` and
-#' `room`.
+#' @param Type &#91;required&#93; The type of the new resource. The available types are `equipment` and `room`.
 #' @param Description Resource description.
-#' @param HiddenFromGlobalAddressList If this parameter is enabled, the resource will be hidden from the
-#' address book.
+#' @param HiddenFromGlobalAddressList If this parameter is enabled, the resource will be hidden from the address book.
 #'
 #' @keywords internal
 #'
@@ -489,22 +463,16 @@ workmail_create_resource <- function(OrganizationId, Name, Type, Description = N
 #' See [https://www.paws-r-sdk.com/docs/workmail_create_user/](https://www.paws-r-sdk.com/docs/workmail_create_user/) for full documentation.
 #'
 #' @param OrganizationId &#91;required&#93; The identifier of the organization for which the user is created.
-#' @param Name &#91;required&#93; The name for the new user. WorkMail directory user names have a maximum
-#' length of 64. All others have a maximum length of 20.
+#' @param Name &#91;required&#93; The name for the new user. WorkMail directory user names have a maximum length of 64. All others have a maximum length of 20.
 #' @param DisplayName &#91;required&#93; The display name for the new user.
 #' @param Password The password for the new user.
 #' @param Role The role of the new user.
 #' 
-#' You cannot pass *SYSTEM_USER* or *RESOURCE* role in a single request.
-#' When a user role is not selected, the default role of *USER* is
-#' selected.
+#' You cannot pass *SYSTEM_USER* or *RESOURCE* role in a single request. When a user role is not selected, the default role of *USER* is selected.
 #' @param FirstName The first name of the new user.
 #' @param LastName The last name of the new user.
-#' @param HiddenFromGlobalAddressList If this parameter is enabled, the user will be hidden from the address
-#' book.
-#' @param IdentityProviderUserId User ID from the IAM Identity Center. If this parameter is empty it will
-#' be updated automatically when the user logs in for the first time to the
-#' mailbox associated with WorkMail.
+#' @param HiddenFromGlobalAddressList If this parameter is enabled, the user will be hidden from the address book.
+#' @param IdentityProviderUserId User ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.
 #'
 #' @keywords internal
 #'
@@ -569,11 +537,8 @@ workmail_delete_access_control_rule <- function(OrganizationId, Name) {
 #' See [https://www.paws-r-sdk.com/docs/workmail_delete_alias/](https://www.paws-r-sdk.com/docs/workmail_delete_alias/) for full documentation.
 #'
 #' @param OrganizationId &#91;required&#93; The identifier for the organization under which the user exists.
-#' @param EntityId &#91;required&#93; The identifier for the member (user or group) from which to have the
-#' aliases removed.
-#' @param Alias &#91;required&#93; The aliases to be removed from the user's set of aliases. Duplicate
-#' entries in the list are collapsed into single entries (the list is
-#' transformed into a set).
+#' @param EntityId &#91;required&#93; The identifier for the member (user or group) from which to have the aliases removed.
+#' @param Alias &#91;required&#93; The aliases to be removed from the user's set of aliases. Duplicate entries in the list are collapsed into single entries (the list is transformed into a set).
 #'
 #' @keywords internal
 #'
@@ -605,8 +570,7 @@ workmail_delete_alias <- function(OrganizationId, EntityId, Alias) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/workmail_delete_availability_configuration/](https://www.paws-r-sdk.com/docs/workmail_delete_availability_configuration/) for full documentation.
 #'
-#' @param OrganizationId &#91;required&#93; The WorkMail organization for which the `AvailabilityConfiguration` will
-#' be deleted.
+#' @param OrganizationId &#91;required&#93; The WorkMail organization for which the `AvailabilityConfiguration` will be deleted.
 #' @param DomainName &#91;required&#93; The domain for which the `AvailabilityConfiguration` will be deleted.
 #'
 #' @keywords internal
@@ -638,8 +602,7 @@ workmail_delete_availability_configuration <- function(OrganizationId, DomainNam
 #'
 #' See [https://www.paws-r-sdk.com/docs/workmail_delete_email_monitoring_configuration/](https://www.paws-r-sdk.com/docs/workmail_delete_email_monitoring_configuration/) for full documentation.
 #'
-#' @param OrganizationId &#91;required&#93; The ID of the organization from which the email monitoring configuration
-#' is deleted.
+#' @param OrganizationId &#91;required&#93; The ID of the organization from which the email monitoring configuration is deleted.
 #'
 #' @keywords internal
 #'
@@ -673,11 +636,9 @@ workmail_delete_email_monitoring_configuration <- function(OrganizationId) {
 #' @param OrganizationId &#91;required&#93; The organization that contains the group.
 #' @param GroupId &#91;required&#93; The identifier of the group to be deleted.
 #' 
-#' The identifier can be the *GroupId*, or *Groupname*. The following
-#' identity formats are available:
+#' The identifier can be the *GroupId*, or *Groupname*. The following identity formats are available:
 #' 
-#' -   Group ID: 12345678-1234-1234-1234-123456789012 or
-#'     S-1-1-12-1234567890-123456789-123456789-1234
+#' -   Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
 #' 
 #' -   Group name: group
 #'
@@ -804,28 +765,21 @@ workmail_delete_impersonation_role <- function(OrganizationId, ImpersonationRole
 #'
 #' See [https://www.paws-r-sdk.com/docs/workmail_delete_mailbox_permissions/](https://www.paws-r-sdk.com/docs/workmail_delete_mailbox_permissions/) for full documentation.
 #'
-#' @param OrganizationId &#91;required&#93; The identifier of the organization under which the member (user or
-#' group) exists.
+#' @param OrganizationId &#91;required&#93; The identifier of the organization under which the member (user or group) exists.
 #' @param EntityId &#91;required&#93; The identifier of the entity that owns the mailbox.
 #' 
-#' The identifier can be *UserId or Group Id*, *Username or Groupname*, or
-#' *email*.
+#' The identifier can be *UserId or Group Id*, *Username or Groupname*, or *email*.
 #' 
-#' -   Entity ID: 12345678-1234-1234-1234-123456789012,
-#'     r-0123456789a0123456789b0123456789, or
-#'     S-1-1-12-1234567890-123456789-123456789-1234
+#' -   Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789, or S-1-1-12-1234567890-123456789-123456789-1234
 #' 
 #' -   Email address: entity@@domain.tld
 #' 
 #' -   Entity name: entity
 #' @param GranteeId &#91;required&#93; The identifier of the entity for which to delete granted permissions.
 #' 
-#' The identifier can be *UserId, ResourceID, or Group Id*, *Username or
-#' Groupname*, or *email*.
+#' The identifier can be *UserId, ResourceID, or Group Id*, *Username or Groupname*, or *email*.
 #' 
-#' -   Grantee ID:
-#'     12345678-1234-1234-1234-123456789012,r-0123456789a0123456789b0123456789,
-#'     or S-1-1-12-1234567890-123456789-123456789-1234
+#' -   Grantee ID: 12345678-1234-1234-1234-123456789012,r-0123456789a0123456789b0123456789, or S-1-1-12-1234567890-123456789-123456789-1234
 #' 
 #' -   Email address: grantee@@domain.tld
 #' 
@@ -862,17 +816,14 @@ workmail_delete_mailbox_permissions <- function(OrganizationId, EntityId, Grante
 #' See [https://www.paws-r-sdk.com/docs/workmail_delete_mobile_device_access_override/](https://www.paws-r-sdk.com/docs/workmail_delete_mobile_device_access_override/) for full documentation.
 #'
 #' @param OrganizationId &#91;required&#93; The WorkMail organization for which the access override will be deleted.
-#' @param UserId &#91;required&#93; The WorkMail user for which you want to delete the override. Accepts the
-#' following types of user identities:
+#' @param UserId &#91;required&#93; The WorkMail user for which you want to delete the override. Accepts the following types of user identities:
 #' 
-#' -   User ID: `12345678-1234-1234-1234-123456789012` or
-#'     `S-1-1-12-1234567890-123456789-123456789-1234`
+#' -   User ID: `12345678-1234-1234-1234-123456789012` or `S-1-1-12-1234567890-123456789-123456789-1234`
 #' 
 #' -   Email address: `user@@domain.tld`
 #' 
 #' -   User name: `user`
-#' @param DeviceId &#91;required&#93; The mobile device for which you delete the override. `DeviceId` is case
-#' insensitive.
+#' @param DeviceId &#91;required&#93; The mobile device for which you delete the override. `DeviceId` is case insensitive.
 #'
 #' @keywords internal
 #'
@@ -939,12 +890,9 @@ workmail_delete_mobile_device_access_rule <- function(OrganizationId, MobileDevi
 #'
 #' @param ClientToken The idempotency token associated with the request.
 #' @param OrganizationId &#91;required&#93; The organization ID.
-#' @param DeleteDirectory &#91;required&#93; If true, deletes the AWS Directory Service directory associated with the
-#' organization.
-#' @param ForceDelete Deletes a WorkMail organization even if the organization has enabled
-#' users.
-#' @param DeleteIdentityCenterApplication Deletes IAM Identity Center application for WorkMail. This action does
-#' not affect authentication settings for any organization.
+#' @param DeleteDirectory &#91;required&#93; If true, deletes the AWS Directory Service directory associated with the organization.
+#' @param ForceDelete Deletes a WorkMail organization even if the organization has enabled users.
+#' @param DeleteIdentityCenterApplication Deletes IAM Identity Center application for WorkMail. This action does not affect authentication settings for any organization.
 #'
 #' @keywords internal
 #'
@@ -1008,12 +956,10 @@ workmail_delete_personal_access_token <- function(OrganizationId, PersonalAccess
 #'
 #' See [https://www.paws-r-sdk.com/docs/workmail_delete_resource/](https://www.paws-r-sdk.com/docs/workmail_delete_resource/) for full documentation.
 #'
-#' @param OrganizationId &#91;required&#93; The identifier associated with the organization from which the resource
-#' is deleted.
+#' @param OrganizationId &#91;required&#93; The identifier associated with the organization from which the resource is deleted.
 #' @param ResourceId &#91;required&#93; The identifier of the resource to be deleted.
 #' 
-#' The identifier can accept *ResourceId*, or *Resourcename*. The following
-#' identity formats are available:
+#' The identifier can accept *ResourceId*, or *Resourcename*. The following identity formats are available:
 #' 
 #' -   Resource ID: r-0123456789a0123456789b0123456789
 #' 
@@ -1083,11 +1029,9 @@ workmail_delete_retention_policy <- function(OrganizationId, Id) {
 #' @param OrganizationId &#91;required&#93; The organization that contains the user to be deleted.
 #' @param UserId &#91;required&#93; The identifier of the user to be deleted.
 #' 
-#' The identifier can be the *UserId* or *Username*. The following identity
-#' formats are available:
+#' The identifier can be the *UserId* or *Username*. The following identity formats are available:
 #' 
-#' -   User ID: 12345678-1234-1234-1234-123456789012 or
-#'     S-1-1-12-1234567890-123456789-123456789-1234
+#' -   User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
 #' 
 #' -   User name: user
 #'
@@ -1120,16 +1064,12 @@ workmail_delete_user <- function(OrganizationId, UserId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/workmail_deregister_from_work_mail/](https://www.paws-r-sdk.com/docs/workmail_deregister_from_work_mail/) for full documentation.
 #'
-#' @param OrganizationId &#91;required&#93; The identifier for the organization under which the WorkMail entity
-#' exists.
+#' @param OrganizationId &#91;required&#93; The identifier for the organization under which the WorkMail entity exists.
 #' @param EntityId &#91;required&#93; The identifier for the member to be updated.
 #' 
-#' The identifier can be *UserId, ResourceId, or Group Id*, *Username,
-#' Resourcename, or Groupname*, or *email*.
+#' The identifier can be *UserId, ResourceId, or Group Id*, *Username, Resourcename, or Groupname*, or *email*.
 #' 
-#' -   Entity ID: 12345678-1234-1234-1234-123456789012,
-#'     r-0123456789a0123456789b0123456789, or
-#'     S-1-1-12-1234567890-123456789-123456789-1234
+#' -   Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789, or S-1-1-12-1234567890-123456789-123456789-1234
 #' 
 #' -   Email address: entity@@domain.tld
 #' 
@@ -1198,8 +1138,7 @@ workmail_deregister_mail_domain <- function(OrganizationId, DomainName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/workmail_describe_email_monitoring_configuration/](https://www.paws-r-sdk.com/docs/workmail_describe_email_monitoring_configuration/) for full documentation.
 #'
-#' @param OrganizationId &#91;required&#93; The ID of the organization for which the email monitoring configuration
-#' is described.
+#' @param OrganizationId &#91;required&#93; The ID of the organization for which the email monitoring configuration is described.
 #'
 #' @keywords internal
 #'
@@ -1265,11 +1204,9 @@ workmail_describe_entity <- function(OrganizationId, Email) {
 #' @param OrganizationId &#91;required&#93; The identifier for the organization under which the group exists.
 #' @param GroupId &#91;required&#93; The identifier for the group to be described.
 #' 
-#' The identifier can accept *GroupId*, *Groupname*, or *email*. The
-#' following identity formats are available:
+#' The identifier can accept *GroupId*, *Groupname*, or *email*. The following identity formats are available:
 #' 
-#' -   Group ID: 12345678-1234-1234-1234-123456789012 or
-#'     S-1-1-12-1234567890-123456789-123456789-1234
+#' -   Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
 #' 
 #' -   Email address: group@@domain.tld
 #' 
@@ -1431,12 +1368,10 @@ workmail_describe_organization <- function(OrganizationId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/workmail_describe_resource/](https://www.paws-r-sdk.com/docs/workmail_describe_resource/) for full documentation.
 #'
-#' @param OrganizationId &#91;required&#93; The identifier associated with the organization for which the resource
-#' is described.
+#' @param OrganizationId &#91;required&#93; The identifier associated with the organization for which the resource is described.
 #' @param ResourceId &#91;required&#93; The identifier of the resource to be described.
 #' 
-#' The identifier can accept *ResourceId*, *Resourcename*, or *email*. The
-#' following identity formats are available:
+#' The identifier can accept *ResourceId*, *Resourcename*, or *email*. The following identity formats are available:
 #' 
 #' -   Resource ID: r-0123456789a0123456789b0123456789
 #' 
@@ -1476,11 +1411,9 @@ workmail_describe_resource <- function(OrganizationId, ResourceId) {
 #' @param OrganizationId &#91;required&#93; The identifier for the organization under which the user exists.
 #' @param UserId &#91;required&#93; The identifier for the user to be described.
 #' 
-#' The identifier can be the *UserId*, *Username*, or *email*. The
-#' following identity formats are available:
+#' The identifier can be the *UserId*, *Username*, or *email*. The following identity formats are available:
 #' 
-#' -   User ID: 12345678-1234-1234-1234-123456789012 or
-#'     S-1-1-12-1234567890-123456789-123456789-1234
+#' -   User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
 #' 
 #' -   Email address: user@@domain.tld
 #' 
@@ -1516,25 +1449,20 @@ workmail_describe_user <- function(OrganizationId, UserId) {
 #' See [https://www.paws-r-sdk.com/docs/workmail_disassociate_delegate_from_resource/](https://www.paws-r-sdk.com/docs/workmail_disassociate_delegate_from_resource/) for full documentation.
 #'
 #' @param OrganizationId &#91;required&#93; The identifier for the organization under which the resource exists.
-#' @param ResourceId &#91;required&#93; The identifier of the resource from which delegates' set members are
-#' removed.
+#' @param ResourceId &#91;required&#93; The identifier of the resource from which delegates' set members are removed.
 #' 
-#' The identifier can accept *ResourceId*, *Resourcename*, or *email*. The
-#' following identity formats are available:
+#' The identifier can accept *ResourceId*, *Resourcename*, or *email*. The following identity formats are available:
 #' 
 #' -   Resource ID: r-0123456789a0123456789b0123456789
 #' 
 #' -   Email address: resource@@domain.tld
 #' 
 #' -   Resource name: resource
-#' @param EntityId &#91;required&#93; The identifier for the member (user, group) to be removed from the
-#' resource's delegates.
+#' @param EntityId &#91;required&#93; The identifier for the member (user, group) to be removed from the resource's delegates.
 #' 
-#' The entity ID can accept *UserId or GroupID*, *Username or Groupname*,
-#' or *email*.
+#' The entity ID can accept *UserId or GroupID*, *Username or Groupname*, or *email*.
 #' 
-#' -   Entity: 12345678-1234-1234-1234-123456789012 or
-#'     S-1-1-12-1234567890-123456789-123456789-1234
+#' -   Entity: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
 #' 
 #' -   Email address: entity@@domain.tld
 #' 
@@ -1572,22 +1500,18 @@ workmail_disassociate_delegate_from_resource <- function(OrganizationId, Resourc
 #' @param OrganizationId &#91;required&#93; The identifier for the organization under which the group exists.
 #' @param GroupId &#91;required&#93; The identifier for the group from which members are removed.
 #' 
-#' The identifier can accept *GroupId*, *Groupname*, or *email*. The
-#' following identity formats are available:
+#' The identifier can accept *GroupId*, *Groupname*, or *email*. The following identity formats are available:
 #' 
-#' -   Group ID: 12345678-1234-1234-1234-123456789012 or
-#'     S-1-1-12-1234567890-123456789-123456789-1234
+#' -   Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
 #' 
 #' -   Email address: group@@domain.tld
 #' 
 #' -   Group name: group
 #' @param MemberId &#91;required&#93; The identifier for the member to be removed from the group.
 #' 
-#' The member ID can accept *UserID or GroupId*, *Username or Groupname*,
-#' or *email*.
+#' The member ID can accept *UserID or GroupId*, *Username or Groupname*, or *email*.
 #' 
-#' -   Member ID: 12345678-1234-1234-1234-123456789012 or
-#'     S-1-1-12-1234567890-123456789-123456789-1234
+#' -   Member ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
 #' 
 #' -   Email address: member@@domain.tld
 #' 
@@ -1626,8 +1550,7 @@ workmail_disassociate_member_from_group <- function(OrganizationId, GroupId, Mem
 #'
 #' @param OrganizationId &#91;required&#93; The identifier for the organization.
 #' @param IpAddress &#91;required&#93; The IPv4 address.
-#' @param Action &#91;required&#93; The access protocol action. Valid values include `ActiveSync`,
-#' `AutoDiscover`, `EWS`, `IMAP`, `SMTP`, `WindowsOutlook`, and `WebMail`.
+#' @param Action &#91;required&#93; The access protocol action. Valid values include `ActiveSync`, `AutoDiscover`, `EWS`, `IMAP`, `SMTP`, `WindowsOutlook`, and `WebMail`.
 #' @param UserId The user ID.
 #' @param ImpersonationRoleId The impersonation role ID.
 #'
@@ -1725,11 +1648,9 @@ workmail_get_impersonation_role <- function(OrganizationId, ImpersonationRoleId)
 #'
 #' @param OrganizationId &#91;required&#93; The WorkMail organization where the impersonation role is defined.
 #' @param ImpersonationRoleId &#91;required&#93; The impersonation role ID to test.
-#' @param TargetUser &#91;required&#93; The WorkMail organization user chosen to test the impersonation role.
-#' The following identity formats are available:
+#' @param TargetUser &#91;required&#93; The WorkMail organization user chosen to test the impersonation role. The following identity formats are available:
 #' 
-#' -   User ID: `12345678-1234-1234-1234-123456789012` or
-#'     `S-1-1-12-1234567890-123456789-123456789-1234`
+#' -   User ID: `12345678-1234-1234-1234-123456789012` or `S-1-1-12-1234567890-123456789-123456789-1234`
 #' 
 #' -   Email address: `user@@domain.tld`
 #' 
@@ -1797,15 +1718,12 @@ workmail_get_mail_domain <- function(OrganizationId, DomainName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/workmail_get_mailbox_details/](https://www.paws-r-sdk.com/docs/workmail_get_mailbox_details/) for full documentation.
 #'
-#' @param OrganizationId &#91;required&#93; The identifier for the organization that contains the user whose mailbox
-#' details are being requested.
+#' @param OrganizationId &#91;required&#93; The identifier for the organization that contains the user whose mailbox details are being requested.
 #' @param UserId &#91;required&#93; The identifier for the user whose mailbox details are being requested.
 #' 
-#' The identifier can be the *UserId*, *Username*, or *email*. The
-#' following identity formats are available:
+#' The identifier can be the *UserId*, *Username*, or *email*. The following identity formats are available:
 #' 
-#' -   User ID: 12345678-1234-1234-1234-123456789012 or
-#'     S-1-1-12-1234567890-123456789-123456789-1234
+#' -   User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
 #' 
 #' -   Email address: user@@domain.tld
 #' 
@@ -1878,17 +1796,14 @@ workmail_get_mobile_device_access_effect <- function(OrganizationId, DeviceType 
 #' See [https://www.paws-r-sdk.com/docs/workmail_get_mobile_device_access_override/](https://www.paws-r-sdk.com/docs/workmail_get_mobile_device_access_override/) for full documentation.
 #'
 #' @param OrganizationId &#91;required&#93; The WorkMail organization to which you want to apply the override.
-#' @param UserId &#91;required&#93; Identifies the WorkMail user for the override. Accepts the following
-#' types of user identities:
+#' @param UserId &#91;required&#93; Identifies the WorkMail user for the override. Accepts the following types of user identities:
 #' 
-#' -   User ID: `12345678-1234-1234-1234-123456789012` or
-#'     `S-1-1-12-1234567890-123456789-123456789-1234`
+#' -   User ID: `12345678-1234-1234-1234-123456789012` or `S-1-1-12-1234567890-123456789-123456789-1234`
 #' 
 #' -   Email address: `user@@domain.tld`
 #' 
 #' -   User name: `user`
-#' @param DeviceId &#91;required&#93; The mobile device to which the override applies. `DeviceId` is case
-#' insensitive.
+#' @param DeviceId &#91;required&#93; The mobile device to which the override applies. `DeviceId` is case insensitive.
 #'
 #' @keywords internal
 #'
@@ -1986,8 +1901,7 @@ workmail_list_access_control_rules <- function(OrganizationId) {
 #'
 #' @param OrganizationId &#91;required&#93; The identifier for the organization under which the entity exists.
 #' @param EntityId &#91;required&#93; The identifier for the entity for which to list the aliases.
-#' @param NextToken The token to use to retrieve the next page of results. The first call
-#' does not contain any tokens.
+#' @param NextToken The token to use to retrieve the next page of results. The first call does not contain any tokens.
 #' @param MaxResults The maximum number of results to return in a single call.
 #'
 #' @keywords internal
@@ -2020,11 +1934,9 @@ workmail_list_aliases <- function(OrganizationId, EntityId, NextToken = NULL, Ma
 #'
 #' See [https://www.paws-r-sdk.com/docs/workmail_list_availability_configurations/](https://www.paws-r-sdk.com/docs/workmail_list_availability_configurations/) for full documentation.
 #'
-#' @param OrganizationId &#91;required&#93; The WorkMail organization for which the `AvailabilityConfiguration`'s
-#' will be listed.
+#' @param OrganizationId &#91;required&#93; The WorkMail organization for which the `AvailabilityConfiguration`'s will be listed.
 #' @param MaxResults The maximum number of results to return in a single call.
-#' @param NextToken The token to use to retrieve the next page of results. The first call
-#' does not require a token.
+#' @param NextToken The token to use to retrieve the next page of results. The first call does not require a token.
 #'
 #' @keywords internal
 #'
@@ -2056,20 +1968,16 @@ workmail_list_availability_configurations <- function(OrganizationId, MaxResults
 #' See [https://www.paws-r-sdk.com/docs/workmail_list_group_members/](https://www.paws-r-sdk.com/docs/workmail_list_group_members/) for full documentation.
 #'
 #' @param OrganizationId &#91;required&#93; The identifier for the organization under which the group exists.
-#' @param GroupId &#91;required&#93; The identifier for the group to which the members (users or groups) are
-#' associated.
+#' @param GroupId &#91;required&#93; The identifier for the group to which the members (users or groups) are associated.
 #' 
-#' The identifier can accept *GroupId*, *Groupname*, or *email*. The
-#' following identity formats are available:
+#' The identifier can accept *GroupId*, *Groupname*, or *email*. The following identity formats are available:
 #' 
-#' -   Group ID: 12345678-1234-1234-1234-123456789012 or
-#'     S-1-1-12-1234567890-123456789-123456789-1234
+#' -   Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
 #' 
 #' -   Email address: group@@domain.tld
 #' 
 #' -   Group name: group
-#' @param NextToken The token to use to retrieve the next page of results. The first call
-#' does not contain any tokens.
+#' @param NextToken The token to use to retrieve the next page of results. The first call does not contain any tokens.
 #' @param MaxResults The maximum number of results to return in a single call.
 #'
 #' @keywords internal
@@ -2102,11 +2010,9 @@ workmail_list_group_members <- function(OrganizationId, GroupId, NextToken = NUL
 #' See [https://www.paws-r-sdk.com/docs/workmail_list_groups/](https://www.paws-r-sdk.com/docs/workmail_list_groups/) for full documentation.
 #'
 #' @param OrganizationId &#91;required&#93; The identifier for the organization under which the groups exist.
-#' @param NextToken The token to use to retrieve the next page of results. The first call
-#' does not contain any tokens.
+#' @param NextToken The token to use to retrieve the next page of results. The first call does not contain any tokens.
 #' @param MaxResults The maximum number of results to return in a single call.
-#' @param Filters Limit the search results based on the filter criteria. Only one filter
-#' per request is supported.
+#' @param Filters Limit the search results based on the filter criteria. Only one filter per request is supported.
 #'
 #' @keywords internal
 #'
@@ -2140,18 +2046,15 @@ workmail_list_groups <- function(OrganizationId, NextToken = NULL, MaxResults = 
 #' @param OrganizationId &#91;required&#93; The identifier for the organization under which the entity exists.
 #' @param EntityId &#91;required&#93; The identifier for the entity.
 #' 
-#' The entity ID can accept *UserId or GroupID*, *Username or Groupname*,
-#' or *email*.
+#' The entity ID can accept *UserId or GroupID*, *Username or Groupname*, or *email*.
 #' 
-#' -   Entity ID: 12345678-1234-1234-1234-123456789012 or
-#'     S-1-1-12-1234567890-123456789-123456789-1234
+#' -   Entity ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
 #' 
 #' -   Email address: entity@@domain.tld
 #' 
 #' -   Entity name: entity
 #' @param Filters Limit the search results based on the filter criteria.
-#' @param NextToken The token to use to retrieve the next page of results. The first call
-#' does not contain any tokens.
+#' @param NextToken The token to use to retrieve the next page of results. The first call does not contain any tokens.
 #' @param MaxResults The maximum number of results to return in a single call.
 #'
 #' @keywords internal
@@ -2183,10 +2086,8 @@ workmail_list_groups_for_entity <- function(OrganizationId, EntityId, Filters = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/workmail_list_impersonation_roles/](https://www.paws-r-sdk.com/docs/workmail_list_impersonation_roles/) for full documentation.
 #'
-#' @param OrganizationId &#91;required&#93; The WorkMail organization to which the listed impersonation roles
-#' belong.
-#' @param NextToken The token used to retrieve the next page of results. The first call
-#' doesn't require a token.
+#' @param OrganizationId &#91;required&#93; The WorkMail organization to which the listed impersonation roles belong.
+#' @param NextToken The token used to retrieve the next page of results. The first call doesn't require a token.
 #' @param MaxResults The maximum number of results returned in a single call.
 #'
 #' @keywords internal
@@ -2220,8 +2121,7 @@ workmail_list_impersonation_roles <- function(OrganizationId, NextToken = NULL, 
 #'
 #' @param OrganizationId &#91;required&#93; The WorkMail organization for which to list domains.
 #' @param MaxResults The maximum number of results to return in a single call.
-#' @param NextToken The token to use to retrieve the next page of results. The first call
-#' does not require a token.
+#' @param NextToken The token to use to retrieve the next page of results. The first call does not require a token.
 #'
 #' @keywords internal
 #'
@@ -2287,22 +2187,17 @@ workmail_list_mailbox_export_jobs <- function(OrganizationId, NextToken = NULL, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/workmail_list_mailbox_permissions/](https://www.paws-r-sdk.com/docs/workmail_list_mailbox_permissions/) for full documentation.
 #'
-#' @param OrganizationId &#91;required&#93; The identifier of the organization under which the user, group, or
-#' resource exists.
-#' @param EntityId &#91;required&#93; The identifier of the user, or resource for which to list mailbox
-#' permissions.
+#' @param OrganizationId &#91;required&#93; The identifier of the organization under which the user, group, or resource exists.
+#' @param EntityId &#91;required&#93; The identifier of the user, or resource for which to list mailbox permissions.
 #' 
-#' The entity ID can accept *UserId or ResourceId*, *Username or
-#' Resourcename*, or *email*.
+#' The entity ID can accept *UserId or ResourceId*, *Username or Resourcename*, or *email*.
 #' 
-#' -   Entity ID: 12345678-1234-1234-1234-123456789012, or
-#'     r-0123456789a0123456789b0123456789
+#' -   Entity ID: 12345678-1234-1234-1234-123456789012, or r-0123456789a0123456789b0123456789
 #' 
 #' -   Email address: entity@@domain.tld
 #' 
 #' -   Entity name: entity
-#' @param NextToken The token to use to retrieve the next page of results. The first call
-#' does not contain any tokens.
+#' @param NextToken The token to use to retrieve the next page of results. The first call does not contain any tokens.
 #' @param MaxResults The maximum number of results to return in a single call.
 #'
 #' @keywords internal
@@ -2335,20 +2230,16 @@ workmail_list_mailbox_permissions <- function(OrganizationId, EntityId, NextToke
 #'
 #' See [https://www.paws-r-sdk.com/docs/workmail_list_mobile_device_access_overrides/](https://www.paws-r-sdk.com/docs/workmail_list_mobile_device_access_overrides/) for full documentation.
 #'
-#' @param OrganizationId &#91;required&#93; The WorkMail organization under which to list mobile device access
-#' overrides.
-#' @param UserId The WorkMail user under which you list the mobile device access
-#' overrides. Accepts the following types of user identities:
+#' @param OrganizationId &#91;required&#93; The WorkMail organization under which to list mobile device access overrides.
+#' @param UserId The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:
 #' 
-#' -   User ID: `12345678-1234-1234-1234-123456789012` or
-#'     `S-1-1-12-1234567890-123456789-123456789-1234`
+#' -   User ID: `12345678-1234-1234-1234-123456789012` or `S-1-1-12-1234567890-123456789-123456789-1234`
 #' 
 #' -   Email address: `user@@domain.tld`
 #' 
 #' -   User name: `user`
 #' @param DeviceId The mobile device to which the access override applies.
-#' @param NextToken The token to use to retrieve the next page of results. The first call
-#' does not require a token.
+#' @param NextToken The token to use to retrieve the next page of results. The first call does not require a token.
 #' @param MaxResults The maximum number of results to return in a single call.
 #'
 #' @keywords internal
@@ -2412,8 +2303,7 @@ workmail_list_mobile_device_access_rules <- function(OrganizationId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/workmail_list_organizations/](https://www.paws-r-sdk.com/docs/workmail_list_organizations/) for full documentation.
 #'
-#' @param NextToken The token to use to retrieve the next page of results. The first call
-#' does not contain any tokens.
+#' @param NextToken The token to use to retrieve the next page of results. The first call does not contain any tokens.
 #' @param MaxResults The maximum number of results to return in a single call.
 #'
 #' @keywords internal
@@ -2479,20 +2369,17 @@ workmail_list_personal_access_tokens <- function(OrganizationId, UserId = NULL, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/workmail_list_resource_delegates/](https://www.paws-r-sdk.com/docs/workmail_list_resource_delegates/) for full documentation.
 #'
-#' @param OrganizationId &#91;required&#93; The identifier for the organization that contains the resource for which
-#' delegates are listed.
+#' @param OrganizationId &#91;required&#93; The identifier for the organization that contains the resource for which delegates are listed.
 #' @param ResourceId &#91;required&#93; The identifier for the resource whose delegates are listed.
 #' 
-#' The identifier can accept *ResourceId*, *Resourcename*, or *email*. The
-#' following identity formats are available:
+#' The identifier can accept *ResourceId*, *Resourcename*, or *email*. The following identity formats are available:
 #' 
 #' -   Resource ID: r-0123456789a0123456789b0123456789
 #' 
 #' -   Email address: resource@@domain.tld
 #' 
 #' -   Resource name: resource
-#' @param NextToken The token used to paginate through the delegates associated with a
-#' resource.
+#' @param NextToken The token used to paginate through the delegates associated with a resource.
 #' @param MaxResults The number of maximum results in a page.
 #'
 #' @keywords internal
@@ -2525,11 +2412,9 @@ workmail_list_resource_delegates <- function(OrganizationId, ResourceId, NextTok
 #' See [https://www.paws-r-sdk.com/docs/workmail_list_resources/](https://www.paws-r-sdk.com/docs/workmail_list_resources/) for full documentation.
 #'
 #' @param OrganizationId &#91;required&#93; The identifier for the organization under which the resources exist.
-#' @param NextToken The token to use to retrieve the next page of results. The first call
-#' does not contain any tokens.
+#' @param NextToken The token to use to retrieve the next page of results. The first call does not contain any tokens.
 #' @param MaxResults The maximum number of results to return in a single call.
-#' @param Filters Limit the resource search results based on the filter criteria. You can
-#' only use one filter per request.
+#' @param Filters Limit the resource search results based on the filter criteria. You can only use one filter per request.
 #'
 #' @keywords internal
 #'
@@ -2592,11 +2477,9 @@ workmail_list_tags_for_resource <- function(ResourceARN) {
 #' See [https://www.paws-r-sdk.com/docs/workmail_list_users/](https://www.paws-r-sdk.com/docs/workmail_list_users/) for full documentation.
 #'
 #' @param OrganizationId &#91;required&#93; The identifier for the organization under which the users exist.
-#' @param NextToken The token to use to retrieve the next page of results. The first call
-#' does not contain any tokens.
+#' @param NextToken The token to use to retrieve the next page of results. The first call does not contain any tokens.
 #' @param MaxResults The maximum number of results to return in a single call.
-#' @param Filters Limit the user search results based on the filter criteria. You can only
-#' use one filter per request.
+#' @param Filters Limit the user search results based on the filter criteria. You can only use one filter per request.
 #'
 #' @keywords internal
 #'
@@ -2632,12 +2515,8 @@ workmail_list_users <- function(OrganizationId, NextToken = NULL, MaxResults = N
 #' @param Description &#91;required&#93; The rule description.
 #' @param IpRanges IPv4 CIDR ranges to include in the rule.
 #' @param NotIpRanges IPv4 CIDR ranges to exclude from the rule.
-#' @param Actions Access protocol actions to include in the rule. Valid values include
-#' `ActiveSync`, `AutoDiscover`, `EWS`, `IMAP`, `SMTP`, `WindowsOutlook`,
-#' and `WebMail`.
-#' @param NotActions Access protocol actions to exclude from the rule. Valid values include
-#' `ActiveSync`, `AutoDiscover`, `EWS`, `IMAP`, `SMTP`, `WindowsOutlook`,
-#' and `WebMail`.
+#' @param Actions Access protocol actions to include in the rule. Valid values include `ActiveSync`, `AutoDiscover`, `EWS`, `IMAP`, `SMTP`, `WindowsOutlook`, and `WebMail`.
+#' @param NotActions Access protocol actions to exclude from the rule. Valid values include `ActiveSync`, `AutoDiscover`, `EWS`, `IMAP`, `SMTP`, `WindowsOutlook`, and `WebMail`.
 #' @param UserIds User IDs to include in the rule.
 #' @param NotUserIds User IDs to exclude from the rule.
 #' @param OrganizationId &#91;required&#93; The identifier of the organization.
@@ -2674,13 +2553,9 @@ workmail_put_access_control_rule <- function(Name, Effect, Description, IpRanges
 #'
 #' See [https://www.paws-r-sdk.com/docs/workmail_put_email_monitoring_configuration/](https://www.paws-r-sdk.com/docs/workmail_put_email_monitoring_configuration/) for full documentation.
 #'
-#' @param OrganizationId &#91;required&#93; The ID of the organization for which the email monitoring configuration
-#' is set.
-#' @param RoleArn The Amazon Resource Name (ARN) of the IAM Role associated with the email
-#' monitoring configuration. If absent, the IAM Role Arn of
-#' AWSServiceRoleForAmazonWorkMailEvents will be used.
-#' @param LogGroupArn &#91;required&#93; The Amazon Resource Name (ARN) of the CloudWatch Log group associated
-#' with the email monitoring configuration.
+#' @param OrganizationId &#91;required&#93; The ID of the organization for which the email monitoring configuration is set.
+#' @param RoleArn The Amazon Resource Name (ARN) of the IAM Role associated with the email monitoring configuration. If absent, the IAM Role Arn of AWSServiceRoleForAmazonWorkMailEvents will be used.
+#' @param LogGroupArn &#91;required&#93; The Amazon Resource Name (ARN) of the CloudWatch Log group associated with the email monitoring configuration.
 #'
 #' @keywords internal
 #'
@@ -2778,41 +2653,26 @@ workmail_put_inbound_dmarc_settings <- function(OrganizationId, Enforced) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/workmail_put_mailbox_permissions/](https://www.paws-r-sdk.com/docs/workmail_put_mailbox_permissions/) for full documentation.
 #'
-#' @param OrganizationId &#91;required&#93; The identifier of the organization under which the user, group, or
-#' resource exists.
-#' @param EntityId &#91;required&#93; The identifier of the user or resource for which to update mailbox
-#' permissions.
+#' @param OrganizationId &#91;required&#93; The identifier of the organization under which the user, group, or resource exists.
+#' @param EntityId &#91;required&#93; The identifier of the user or resource for which to update mailbox permissions.
 #' 
-#' The identifier can be *UserId, ResourceID, or Group Id*, *Username,
-#' Resourcename, or Groupname*, or *email*.
+#' The identifier can be *UserId, ResourceID, or Group Id*, *Username, Resourcename, or Groupname*, or *email*.
 #' 
-#' -   Entity ID: 12345678-1234-1234-1234-123456789012,
-#'     r-0123456789a0123456789b0123456789, or
-#'     S-1-1-12-1234567890-123456789-123456789-1234
+#' -   Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789, or S-1-1-12-1234567890-123456789-123456789-1234
 #' 
 #' -   Email address: entity@@domain.tld
 #' 
 #' -   Entity name: entity
-#' @param GranteeId &#91;required&#93; The identifier of the user, group, or resource to which to grant the
-#' permissions.
+#' @param GranteeId &#91;required&#93; The identifier of the user, group, or resource to which to grant the permissions.
 #' 
-#' The identifier can be *UserId, ResourceID, or Group Id*, *Username,
-#' Resourcename, or Groupname*, or *email*.
+#' The identifier can be *UserId, ResourceID, or Group Id*, *Username, Resourcename, or Groupname*, or *email*.
 #' 
-#' -   Grantee ID: 12345678-1234-1234-1234-123456789012,
-#'     r-0123456789a0123456789b0123456789, or
-#'     S-1-1-12-1234567890-123456789-123456789-1234
+#' -   Grantee ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789, or S-1-1-12-1234567890-123456789-123456789-1234
 #' 
 #' -   Email address: grantee@@domain.tld
 #' 
 #' -   Grantee name: grantee
-#' @param PermissionValues &#91;required&#93; The permissions granted to the grantee. SEND_AS allows the grantee to
-#' send email as the owner of the mailbox (the grantee is not mentioned on
-#' these emails). SEND_ON_BEHALF allows the grantee to send email on behalf
-#' of the owner of the mailbox (the grantee is not mentioned as the
-#' physical sender of these emails). FULL_ACCESS allows the grantee full
-#' access to the mailbox, irrespective of other folder-level permissions
-#' set on the mailbox.
+#' @param PermissionValues &#91;required&#93; The permissions granted to the grantee. SEND_AS allows the grantee to send email as the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective of other folder-level permissions set on the mailbox.
 #'
 #' @keywords internal
 #'
@@ -2845,17 +2705,14 @@ workmail_put_mailbox_permissions <- function(OrganizationId, EntityId, GranteeId
 #' See [https://www.paws-r-sdk.com/docs/workmail_put_mobile_device_access_override/](https://www.paws-r-sdk.com/docs/workmail_put_mobile_device_access_override/) for full documentation.
 #'
 #' @param OrganizationId &#91;required&#93; Identifies the WorkMail organization for which you create the override.
-#' @param UserId &#91;required&#93; The WorkMail user for which you create the override. Accepts the
-#' following types of user identities:
+#' @param UserId &#91;required&#93; The WorkMail user for which you create the override. Accepts the following types of user identities:
 #' 
-#' -   User ID: `12345678-1234-1234-1234-123456789012` or
-#'     `S-1-1-12-1234567890-123456789-123456789-1234`
+#' -   User ID: `12345678-1234-1234-1234-123456789012` or `S-1-1-12-1234567890-123456789-123456789-1234`
 #' 
 #' -   Email address: `user@@domain.tld`
 #' 
 #' -   User name: `user`
-#' @param DeviceId &#91;required&#93; The mobile device for which you create the override. `DeviceId` is case
-#' insensitive.
+#' @param DeviceId &#91;required&#93; The mobile device for which you create the override. `DeviceId` is case insensitive.
 #' @param Effect &#91;required&#93; The effect of the override, `ALLOW` or `DENY`.
 #' @param Description A description of the override.
 #'
@@ -2958,17 +2815,12 @@ workmail_register_mail_domain <- function(ClientToken = NULL, OrganizationId, Do
 #'
 #' See [https://www.paws-r-sdk.com/docs/workmail_register_to_work_mail/](https://www.paws-r-sdk.com/docs/workmail_register_to_work_mail/) for full documentation.
 #'
-#' @param OrganizationId &#91;required&#93; The identifier for the organization under which the user, group, or
-#' resource exists.
+#' @param OrganizationId &#91;required&#93; The identifier for the organization under which the user, group, or resource exists.
 #' @param EntityId &#91;required&#93; The identifier for the user, group, or resource to be updated.
 #' 
-#' The identifier can accept *UserId, ResourceId, or GroupId*, or
-#' *Username, Resourcename, or Groupname*. The following identity formats
-#' are available:
+#' The identifier can accept *UserId, ResourceId, or GroupId*, or *Username, Resourcename, or Groupname*. The following identity formats are available:
 #' 
-#' -   Entity ID: 12345678-1234-1234-1234-123456789012,
-#'     r-0123456789a0123456789b0123456789, or
-#'     S-1-1-12-1234567890-123456789-123456789-1234
+#' -   Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789, or S-1-1-12-1234567890-123456789-123456789-1234
 #' 
 #' -   Entity name: entity
 #' @param Email &#91;required&#93; The email for the user, group, or resource to be updated.
@@ -3002,8 +2854,7 @@ workmail_register_to_work_mail <- function(OrganizationId, EntityId, Email) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/workmail_reset_password/](https://www.paws-r-sdk.com/docs/workmail_reset_password/) for full documentation.
 #'
-#' @param OrganizationId &#91;required&#93; The identifier of the organization that contains the user for which the
-#' password is reset.
+#' @param OrganizationId &#91;required&#93; The identifier of the organization that contains the user for which the password is reset.
 #' @param UserId &#91;required&#93; The identifier of the user for whom the password is reset.
 #' @param Password &#91;required&#93; The new password for the user.
 #'
@@ -3042,21 +2893,16 @@ workmail_reset_password <- function(OrganizationId, UserId, Password) {
 #' @param OrganizationId &#91;required&#93; The identifier associated with the organization.
 #' @param EntityId &#91;required&#93; The identifier of the user or resource associated with the mailbox.
 #' 
-#' The identifier can accept *UserId or ResourceId*, *Username or
-#' Resourcename*, or *email*. The following identity formats are available:
+#' The identifier can accept *UserId or ResourceId*, *Username or Resourcename*, or *email*. The following identity formats are available:
 #' 
-#' -   Entity ID: 12345678-1234-1234-1234-123456789012,
-#'     r-0123456789a0123456789b0123456789 , or
-#'     S-1-1-12-1234567890-123456789-123456789-1234
+#' -   Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789 , or S-1-1-12-1234567890-123456789-123456789-1234
 #' 
 #' -   Email address: entity@@domain.tld
 #' 
 #' -   Entity name: entity
 #' @param Description The mailbox export job description.
-#' @param RoleArn &#91;required&#93; The ARN of the AWS Identity and Access Management (IAM) role that grants
-#' write permission to the S3 bucket.
-#' @param KmsKeyArn &#91;required&#93; The Amazon Resource Name (ARN) of the symmetric AWS Key Management
-#' Service (AWS KMS) key that encrypts the exported mailbox content.
+#' @param RoleArn &#91;required&#93; The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the S3 bucket.
+#' @param KmsKeyArn &#91;required&#93; The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.
 #' @param S3BucketName &#91;required&#93; The name of the S3 bucket.
 #' @param S3Prefix &#91;required&#93; The S3 bucket prefix.
 #'
@@ -3123,13 +2969,10 @@ workmail_tag_resource <- function(ResourceARN, Tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/workmail_test_availability_configuration/](https://www.paws-r-sdk.com/docs/workmail_test_availability_configuration/) for full documentation.
 #'
-#' @param OrganizationId &#91;required&#93; The WorkMail organization where the availability provider will be
-#' tested.
-#' @param DomainName The domain to which the provider applies. If this field is provided, a
-#' stored availability provider associated to this domain name will be
-#' tested.
-#' @param EwsProvider 
-#' @param LambdaProvider 
+#' @param OrganizationId &#91;required&#93; The WorkMail organization where the availability provider will be tested.
+#' @param DomainName The domain to which the provider applies. If this field is provided, a stored availability provider associated to this domain name will be tested.
+#' @param EwsProvider Describes an EWS based availability provider. This is only used as input to the service.
+#' @param LambdaProvider Describes a Lambda based availability provider.
 #'
 #' @keywords internal
 #'
@@ -3194,17 +3037,10 @@ workmail_untag_resource <- function(ResourceARN, TagKeys) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/workmail_update_availability_configuration/](https://www.paws-r-sdk.com/docs/workmail_update_availability_configuration/) for full documentation.
 #'
-#' @param OrganizationId &#91;required&#93; The WorkMail organization for which the `AvailabilityConfiguration` will
-#' be updated.
+#' @param OrganizationId &#91;required&#93; The WorkMail organization for which the `AvailabilityConfiguration` will be updated.
 #' @param DomainName &#91;required&#93; The domain to which the provider applies the availability configuration.
-#' @param EwsProvider The EWS availability provider definition. The request must contain
-#' exactly one provider definition, either `EwsProvider` or
-#' `LambdaProvider`. The previously stored provider will be overridden by
-#' the one provided.
-#' @param LambdaProvider The Lambda availability provider definition. The request must contain
-#' exactly one provider definition, either `EwsProvider` or
-#' `LambdaProvider`. The previously stored provider will be overridden by
-#' the one provided.
+#' @param EwsProvider The EWS availability provider definition. The request must contain exactly one provider definition, either `EwsProvider` or `LambdaProvider`. The previously stored provider will be overridden by the one provided.
+#' @param LambdaProvider The Lambda availability provider definition. The request must contain exactly one provider definition, either `EwsProvider` or `LambdaProvider`. The previously stored provider will be overridden by the one provided.
 #'
 #' @keywords internal
 #'
@@ -3270,11 +3106,9 @@ workmail_update_default_mail_domain <- function(OrganizationId, DomainName) {
 #' @param OrganizationId &#91;required&#93; The identifier for the organization under which the group exists.
 #' @param GroupId &#91;required&#93; The identifier for the group to be updated.
 #' 
-#' The identifier can accept *GroupId*, *Groupname*, or *email*. The
-#' following identity formats are available:
+#' The identifier can accept *GroupId*, *Groupname*, or *email*. The following identity formats are available:
 #' 
-#' -   Group ID: 12345678-1234-1234-1234-123456789012 or
-#'     S-1-1-12-1234567890-123456789-123456789-1234
+#' -   Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
 #' 
 #' -   Email address: group@@domain.tld
 #' 
@@ -3310,8 +3144,7 @@ workmail_update_group <- function(OrganizationId, GroupId, HiddenFromGlobalAddre
 #'
 #' See [https://www.paws-r-sdk.com/docs/workmail_update_impersonation_role/](https://www.paws-r-sdk.com/docs/workmail_update_impersonation_role/) for full documentation.
 #'
-#' @param OrganizationId &#91;required&#93; The WorkMail organization that contains the impersonation role to
-#' update.
+#' @param OrganizationId &#91;required&#93; The WorkMail organization that contains the impersonation role to update.
 #' @param ImpersonationRoleId &#91;required&#93; The ID of the impersonation role to update.
 #' @param Name &#91;required&#93; The updated impersonation role name.
 #' @param Type &#91;required&#93; The updated impersonation role type.
@@ -3348,15 +3181,12 @@ workmail_update_impersonation_role <- function(OrganizationId, ImpersonationRole
 #'
 #' See [https://www.paws-r-sdk.com/docs/workmail_update_mailbox_quota/](https://www.paws-r-sdk.com/docs/workmail_update_mailbox_quota/) for full documentation.
 #'
-#' @param OrganizationId &#91;required&#93; The identifier for the organization that contains the user for whom to
-#' update the mailbox quota.
+#' @param OrganizationId &#91;required&#93; The identifier for the organization that contains the user for whom to update the mailbox quota.
 #' @param UserId &#91;required&#93; The identifer for the user for whom to update the mailbox quota.
 #' 
-#' The identifier can be the *UserId*, *Username*, or *email*. The
-#' following identity formats are available:
+#' The identifier can be the *UserId*, *Username*, or *email*. The following identity formats are available:
 #' 
-#' -   User ID: 12345678-1234-1234-1234-123456789012 or
-#'     S-1-1-12-1234567890-123456789-123456789-1234
+#' -   User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
 #' 
 #' -   Email address: user@@domain.tld
 #' 
@@ -3397,20 +3227,15 @@ workmail_update_mailbox_quota <- function(OrganizationId, UserId, MailboxQuota) 
 #' @param MobileDeviceAccessRuleId &#91;required&#93; The identifier of the rule to be updated.
 #' @param Name &#91;required&#93; The updated rule name.
 #' @param Description The updated rule description.
-#' @param Effect &#91;required&#93; The effect of the rule when it matches. Allowed values are `ALLOW` or
-#' `DENY`.
+#' @param Effect &#91;required&#93; The effect of the rule when it matches. Allowed values are `ALLOW` or `DENY`.
 #' @param DeviceTypes Device types that the updated rule will match.
-#' @param NotDeviceTypes Device types that the updated rule **will not** match. All other device
-#' types will match.
+#' @param NotDeviceTypes Device types that the updated rule **will not** match. All other device types will match.
 #' @param DeviceModels Device models that the updated rule will match.
-#' @param NotDeviceModels Device models that the updated rule **will not** match. All other device
-#' models will match.
+#' @param NotDeviceModels Device models that the updated rule **will not** match. All other device models will match.
 #' @param DeviceOperatingSystems Device operating systems that the updated rule will match.
-#' @param NotDeviceOperatingSystems Device operating systems that the updated rule **will not** match. All
-#' other device operating systems will match.
+#' @param NotDeviceOperatingSystems Device operating systems that the updated rule **will not** match. All other device operating systems will match.
 #' @param DeviceUserAgents User agents that the updated rule will match.
-#' @param NotDeviceUserAgents User agents that the updated rule **will not** match. All other user
-#' agents will match.
+#' @param NotDeviceUserAgents User agents that the updated rule **will not** match. All other user agents will match.
 #'
 #' @keywords internal
 #'
@@ -3444,13 +3269,9 @@ workmail_update_mobile_device_access_rule <- function(OrganizationId, MobileDevi
 #' @param OrganizationId &#91;required&#93; The organization that contains the user, group, or resource to update.
 #' @param EntityId &#91;required&#93; The user, group, or resource to update.
 #' 
-#' The identifier can accept *UseriD, ResourceId, or GroupId*, *Username,
-#' Resourcename, or Groupname*, or *email*. The following identity formats
-#' are available:
+#' The identifier can accept *UseriD, ResourceId, or GroupId*, *Username, Resourcename, or Groupname*, or *email*. The following identity formats are available:
 #' 
-#' -   Entity ID: 12345678-1234-1234-1234-123456789012,
-#'     r-0123456789a0123456789b0123456789, or
-#'     S-1-1-12-1234567890-123456789-123456789-1234
+#' -   Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789, or S-1-1-12-1234567890-123456789-123456789-1234
 #' 
 #' -   Email address: entity@@domain.tld
 #' 
@@ -3486,12 +3307,10 @@ workmail_update_primary_email_address <- function(OrganizationId, EntityId, Emai
 #'
 #' See [https://www.paws-r-sdk.com/docs/workmail_update_resource/](https://www.paws-r-sdk.com/docs/workmail_update_resource/) for full documentation.
 #'
-#' @param OrganizationId &#91;required&#93; The identifier associated with the organization for which the resource
-#' is updated.
+#' @param OrganizationId &#91;required&#93; The identifier associated with the organization for which the resource is updated.
 #' @param ResourceId &#91;required&#93; The identifier of the resource to be updated.
 #' 
-#' The identifier can accept *ResourceId*, *Resourcename*, or *email*. The
-#' following identity formats are available:
+#' The identifier can accept *ResourceId*, *Resourcename*, or *email*. The following identity formats are available:
 #' 
 #' -   Resource ID: r-0123456789a0123456789b0123456789
 #' 
@@ -3536,11 +3355,9 @@ workmail_update_resource <- function(OrganizationId, ResourceId, Name = NULL, Bo
 #' @param OrganizationId &#91;required&#93; The identifier for the organization under which the user exists.
 #' @param UserId &#91;required&#93; The identifier for the user to be updated.
 #' 
-#' The identifier can be the *UserId*, *Username*, or *email*. The
-#' following identity formats are available:
+#' The identifier can be the *UserId*, *Username*, or *email*. The following identity formats are available:
 #' 
-#' -   User ID: 12345678-1234-1234-1234-123456789012 or
-#'     S-1-1-12-1234567890-123456789-123456789-1234
+#' -   User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
 #' 
 #' -   Email address: user@@domain.tld
 #' 
@@ -3562,9 +3379,7 @@ workmail_update_resource <- function(OrganizationId, ResourceId, Name = NULL, Bo
 #' @param Department Updates the user's department.
 #' @param Country Updates the user's country.
 #' @param Office Updates the user's office.
-#' @param IdentityProviderUserId User ID from the IAM Identity Center. If this parameter is empty it will
-#' be updated automatically when the user logs in for the first time to the
-#' mailbox associated with WorkMail.
+#' @param IdentityProviderUserId User ID from the IAM Identity Center. If this parameter is empty it will be updated automatically when the user logs in for the first time to the mailbox associated with WorkMail.
 #'
 #' @keywords internal
 #'

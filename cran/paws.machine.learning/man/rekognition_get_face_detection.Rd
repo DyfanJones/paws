@@ -8,17 +8,11 @@ started by StartFaceDetection}
 rekognition_get_face_detection(JobId, MaxResults = NULL, NextToken = NULL)
 }
 \arguments{
-\item{JobId}{[required] Unique identifier for the face detection job. The \code{JobId} is returned
-from \code{\link[=rekognition_start_face_detection]{start_face_detection}}.}
+\item{JobId}{[required] Unique identifier for the face detection job. The \code{JobId} is returned from \code{\link[=rekognition_start_face_detection]{start_face_detection}}.}
 
-\item{MaxResults}{Maximum number of results to return per paginated call. The largest
-value you can specify is 1000. If you specify a value greater than 1000,
-a maximum of 1000 results is returned. The default value is 1000.}
+\item{MaxResults}{Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.}
 
-\item{NextToken}{If the previous response was incomplete (because there are more faces to
-retrieve), Amazon Rekognition Video returns a pagination token in the
-response. You can use this pagination token to retrieve the next set of
-faces.}
+\item{NextToken}{If the previous response was incomplete (because there are more faces to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.}
 }
 \description{
 Gets face detection results for a Amazon Rekognition Video analysis started by \code{\link[=rekognition_start_face_detection]{start_face_detection}}.

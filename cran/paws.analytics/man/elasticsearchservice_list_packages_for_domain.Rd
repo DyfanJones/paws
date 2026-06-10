@@ -15,9 +15,7 @@ elasticsearchservice_list_packages_for_domain(
 
 \item{MaxResults}{Limits results to a maximum number of packages.}
 
-\item{NextToken}{Used for pagination. Only necessary if a previous API call includes a
-non-null NextToken value. If provided, returns results for the next
-page.}
+\item{NextToken}{Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.}
 }
 \description{
 Lists all packages associated with the Amazon ES domain.

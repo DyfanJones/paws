@@ -15,21 +15,16 @@ sagemaker_stop_inference_experiment(
 \arguments{
 \item{Name}{[required] The name of the inference experiment to stop.}
 
-\item{ModelVariantActions}{[required] Array of key-value pairs, with names of variants mapped to actions. The
-possible actions are the following:
+\item{ModelVariantActions}{[required] Array of key-value pairs, with names of variants mapped to actions. The possible actions are the following:
 \itemize{
 \item \code{Promote} - Promote the shadow variant to a production variant
 \item \code{Remove} - Delete the variant
 \item \code{Retain} - Keep the variant as it is
 }}
 
-\item{DesiredModelVariants}{An array of \code{ModelVariantConfig} objects. There is one for each variant
-that you want to deploy after the inference experiment stops. Each
-\code{ModelVariantConfig} describes the infrastructure configuration for
-deploying the corresponding variant.}
+\item{DesiredModelVariants}{An array of \code{ModelVariantConfig} objects. There is one for each variant that you want to deploy after the inference experiment stops. Each \code{ModelVariantConfig} describes the infrastructure configuration for deploying the corresponding variant.}
 
-\item{DesiredState}{The desired state of the experiment after stopping. The possible states
-are the following:
+\item{DesiredState}{The desired state of the experiment after stopping. The possible states are the following:
 \itemize{
 \item \code{Completed}: The experiment completed successfully
 \item \code{Cancelled}: The experiment was canceled

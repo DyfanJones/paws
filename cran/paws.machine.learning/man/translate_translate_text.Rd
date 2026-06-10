@@ -13,44 +13,27 @@ translate_translate_text(
 )
 }
 \arguments{
-\item{Text}{[required] The text to translate. The text string can be a maximum of 10,000 bytes
-long. Depending on your character set, this may be fewer than 10,000
-characters.}
+\item{Text}{[required] The text to translate. The text string can be a maximum of 10,000 bytes long. Depending on your character set, this may be fewer than 10,000 characters.}
 
-\item{TerminologyNames}{The name of a terminology list file to add to the translation job. This
-file provides source terms and the desired translation for each term. A
-terminology list can contain a maximum of 256 terms. You can use one
-custom terminology resource in your translation request.
+\item{TerminologyNames}{The name of a terminology list file to add to the translation job. This file provides source terms and the desired translation for each term. A terminology list can contain a maximum of 256 terms. You can use one custom terminology resource in your translation request.
 
-Use the \code{\link[=translate_list_terminologies]{list_terminologies}} operation
-to get the available terminology lists.
+Use the \code{\link[=translate_list_terminologies]{list_terminologies}} operation to get the available terminology lists.
 
 For more information about custom terminology lists, see \href{https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html}{Custom terminology}.}
 
-\item{SourceLanguageCode}{[required] The language code for the language of the source text. For a list of
-language codes, see \href{https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html}{Supported languages}.
+\item{SourceLanguageCode}{[required] The language code for the language of the source text. For a list of language codes, see \href{https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html}{Supported languages}.
 
-To have Amazon Translate determine the source language of your text, you
-can specify \code{auto} in the \code{SourceLanguageCode} field. If you specify
-\code{auto}, Amazon Translate will call \href{https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html}{Amazon Comprehend}
-to determine the source language.
+To have Amazon Translate determine the source language of your text, you can specify \code{auto} in the \code{SourceLanguageCode} field. If you specify \code{auto}, Amazon Translate will call \href{https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html}{Amazon Comprehend} to determine the source language.
 
-If you specify \code{auto}, you must send the
-\code{\link[=translate_translate_text]{translate_text}} request in a region that
-supports Amazon Comprehend. Otherwise, the request returns an error
-indicating that autodetect is not supported.}
+If you specify \code{auto}, you must send the \code{\link[=translate_translate_text]{translate_text}} request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported.}
 
-\item{TargetLanguageCode}{[required] The language code requested for the language of the target text. For a
-list of language codes, see \href{https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html}{Supported languages}.}
+\item{TargetLanguageCode}{[required] The language code requested for the language of the target text. For a list of language codes, see \href{https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html}{Supported languages}.}
 
-\item{Settings}{Settings to configure your translation output. You can configure the
-following options:
+\item{Settings}{Settings to configure your translation output. You can configure the following options:
 \itemize{
-\item Brevity: reduces the length of the translated output for most
-translations.
+\item Brevity: reduces the length of the translated output for most translations.
 \item Formality: sets the formality level of the output text.
-\item Profanity: masks profane words and phrases in your translation
-output.
+\item Profanity: masks profane words and phrases in your translation output.
 }}
 }
 \description{

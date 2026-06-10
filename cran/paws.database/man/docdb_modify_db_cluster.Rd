@@ -28,16 +28,14 @@ docdb_modify_db_cluster(
 )
 }
 \arguments{
-\item{DBClusterIdentifier}{[required] The cluster identifier for the cluster that is being modified. This
-parameter is not case sensitive.
+\item{DBClusterIdentifier}{[required] The cluster identifier for the cluster that is being modified. This parameter is not case sensitive.
 
 Constraints:
 \itemize{
 \item Must match the identifier of an existing \code{DBCluster}.
 }}
 
-\item{NewDBClusterIdentifier}{The new cluster identifier for the cluster when renaming a cluster. This
-value is stored as a lowercase string.
+\item{NewDBClusterIdentifier}{The new cluster identifier for the cluster when renaming a cluster. This value is stored as a lowercase string.
 
 Constraints:
 \itemize{
@@ -48,24 +46,13 @@ Constraints:
 
 Example: \code{my-cluster2}}
 
-\item{ApplyImmediately}{A value that specifies whether the changes in this request and any
-pending changes are asynchronously applied as soon as possible,
-regardless of the \code{PreferredMaintenanceWindow} setting for the cluster.
-If this parameter is set to \code{false}, changes to the cluster are applied
-during the next maintenance window.
+\item{ApplyImmediately}{A value that specifies whether the changes in this request and any pending changes are asynchronously applied as soon as possible, regardless of the \code{PreferredMaintenanceWindow} setting for the cluster. If this parameter is set to \code{false}, changes to the cluster are applied during the next maintenance window.
 
-The \code{ApplyImmediately} parameter affects only the
-\code{NewDBClusterIdentifier} and \code{MasterUserPassword} values. If you set
-this parameter value to \code{false}, the changes to the
-\code{NewDBClusterIdentifier} and \code{MasterUserPassword} values are applied
-during the next maintenance window. All other changes are applied
-immediately, regardless of the value of the \code{ApplyImmediately}
-parameter.
+The \code{ApplyImmediately} parameter affects only the \code{NewDBClusterIdentifier} and \code{MasterUserPassword} values. If you set this parameter value to \code{false}, the changes to the \code{NewDBClusterIdentifier} and \code{MasterUserPassword} values are applied during the next maintenance window. All other changes are applied immediately, regardless of the value of the \code{ApplyImmediately} parameter.
 
 Default: \code{false}}
 
-\item{BackupRetentionPeriod}{The number of days for which automated backups are retained. You must
-specify a minimum value of 1.
+\item{BackupRetentionPeriod}{The number of days for which automated backups are retained. You must specify a minimum value of 1.
 
 Default: 1
 
@@ -76,8 +63,7 @@ Constraints:
 
 \item{DBClusterParameterGroupName}{The name of the cluster parameter group to use for the cluster.}
 
-\item{VpcSecurityGroupIds}{A list of virtual private cloud (VPC) security groups that the cluster
-will belong to.}
+\item{VpcSecurityGroupIds}{A list of virtual private cloud (VPC) security groups that the cluster will belong to.}
 
 \item{Port}{The port number on which the cluster accepts connections.
 
@@ -85,18 +71,13 @@ Constraints: Must be a value from \code{1150} to \code{65535}.
 
 Default: The same port as the original cluster.}
 
-\item{MasterUserPassword}{The password for the master database user. This password can contain any
-printable ASCII character except forward slash (/), double quote ("), or
-the "at" symbol (@).
+\item{MasterUserPassword}{The password for the master database user. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).
 
 Constraints: Must contain from 8 to 100 characters.}
 
-\item{PreferredBackupWindow}{The daily time range during which automated backups are created if
-automated backups are enabled, using the \code{BackupRetentionPeriod}
-parameter.
+\item{PreferredBackupWindow}{The daily time range during which automated backups are created if automated backups are enabled, using the \code{BackupRetentionPeriod} parameter.
 
-The default is a 30-minute window selected at random from an 8-hour
-block of time for each Amazon Web Services Region.
+The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region.
 
 Constraints:
 \itemize{
@@ -106,30 +87,21 @@ Constraints:
 \item Must be at least 30 minutes.
 }}
 
-\item{PreferredMaintenanceWindow}{The weekly time range during which system maintenance can occur, in
-Universal Coordinated Time (UTC).
+\item{PreferredMaintenanceWindow}{The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).
 
 Format: \code{ddd:hh24:mi-ddd:hh24:mi}
 
-The default is a 30-minute window selected at random from an 8-hour
-block of time for each Amazon Web Services Region, occurring on a random
-day of the week.
+The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.
 
 Valid days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
 
 Constraints: Minimum 30-minute window.}
 
-\item{CloudwatchLogsExportConfiguration}{The configuration setting for the log types to be enabled for export to
-Amazon CloudWatch Logs for a specific instance or cluster. The
-\code{EnableLogTypes} and \code{DisableLogTypes} arrays determine which logs are
-exported (or not exported) to CloudWatch Logs.}
+\item{CloudwatchLogsExportConfiguration}{The configuration setting for the log types to be enabled for export to Amazon CloudWatch Logs for a specific instance or cluster. The \code{EnableLogTypes} and \code{DisableLogTypes} arrays determine which logs are exported (or not exported) to CloudWatch Logs.}
 
-\item{EngineVersion}{The version number of the database engine to which you want to upgrade.
-Changing this parameter results in an outage. The change is applied
-during the next maintenance window unless \code{ApplyImmediately} is enabled.
+\item{EngineVersion}{The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless \code{ApplyImmediately} is enabled.
 
-To list all of the available engine versions for Amazon DocumentDB use
-the following command:
+To list all of the available engine versions for Amazon DocumentDB use the following command:
 
 \verb{aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions[].EngineVersion"}}
 
@@ -137,12 +109,8 @@ the following command:
 
 Constraints:
 \itemize{
-\item You must allow major version upgrades when specifying a value for
-the \code{EngineVersion} parameter that is a different major version than
-the cluster's current version.
-\item Since some parameters are version specific, changing them requires
-executing a new \code{\link[=docdb_modify_db_cluster]{modify_db_cluster}} API
-call after the in-place MVU completes.
+\item You must allow major version upgrades when specifying a value for the \code{EngineVersion} parameter that is a different major version than the cluster's current version.
+\item Since some parameters are version specific, changing them requires executing a new \code{\link[=docdb_modify_db_cluster]{modify_db_cluster}} API call after the in-place MVU completes.
 }
 
 Performing an MVU directly impacts the following parameters:
@@ -153,81 +121,43 @@ Performing an MVU directly impacts the following parameters:
 \item \code{Port}
 }}
 
-\item{DeletionProtection}{Specifies whether this cluster can be deleted. If \code{DeletionProtection}
-is enabled, the cluster cannot be deleted unless it is modified and
-\code{DeletionProtection} is disabled. \code{DeletionProtection} protects clusters
-from being accidentally deleted.}
+\item{DeletionProtection}{Specifies whether this cluster can be deleted. If \code{DeletionProtection} is enabled, the cluster cannot be deleted unless it is modified and \code{DeletionProtection} is disabled. \code{DeletionProtection} protects clusters from being accidentally deleted.}
 
 \item{StorageType}{The storage type to associate with the DB cluster.
 
-For information on storage types for Amazon DocumentDB clusters, see
-Cluster storage configurations in the \emph{Amazon DocumentDB Developer
-Guide}.
+For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the \emph{Amazon DocumentDB Developer Guide}.
 
 Valid values for storage type - \code{standard | iopt1}
 
 Default value is \code{standard }}
 
-\item{ServerlessV2ScalingConfiguration}{Contains the scaling configuration of an Amazon DocumentDB Serverless
-cluster.}
+\item{ServerlessV2ScalingConfiguration}{Contains the scaling configuration of an Amazon DocumentDB Serverless cluster.}
 
-\item{ManageMasterUserPassword}{Specifies whether to manage the master user password with Amazon Web
-Services Secrets Manager. If the cluster doesn't manage the master user
-password with Amazon Web Services Secrets Manager, you can turn on this
-management. In this case, you can't specify \code{MasterUserPassword}. If the
-cluster already manages the master user password with Amazon Web
-Services Secrets Manager, and you specify that the master user password
-is not managed with Amazon Web Services Secrets Manager, then you must
-specify \code{MasterUserPassword}. In this case, Amazon DocumentDB deletes
-the secret and uses the new password for the master user specified by
-\code{MasterUserPassword}.}
+\item{ManageMasterUserPassword}{Specifies whether to manage the master user password with Amazon Web Services Secrets Manager. If the cluster doesn't manage the master user password with Amazon Web Services Secrets Manager, you can turn on this management. In this case, you can't specify \code{MasterUserPassword}. If the cluster already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify \code{MasterUserPassword}. In this case, Amazon DocumentDB deletes the secret and uses the new password for the master user specified by \code{MasterUserPassword}.}
 
-\item{MasterUserSecretKmsKeyId}{The Amazon Web Services KMS key identifier to encrypt a secret that is
-automatically generated and managed in Amazon Web Services Secrets
-Manager.
+\item{MasterUserSecretKmsKeyId}{The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.
 
 This setting is valid only if both of the following conditions are met:
 \itemize{
-\item The cluster doesn't manage the master user password in Amazon Web
-Services Secrets Manager. If the cluster already manages the master
-user password in Amazon Web Services Secrets Manager, you can't
-change the KMS key that is used to encrypt the secret.
-\item You are enabling \code{ManageMasterUserPassword} to manage the master
-user password in Amazon Web Services Secrets Manager. If you are
-turning on \code{ManageMasterUserPassword} and don't specify
-\code{MasterUserSecretKmsKeyId}, then the \code{aws/secretsmanager} KMS key is
-used to encrypt the secret. If the secret is in a different Amazon
-Web Services account, then you can't use the \code{aws/secretsmanager}
-KMS key to encrypt the secret, and you must use a customer managed
-KMS key.
+\item The cluster doesn't manage the master user password in Amazon Web Services Secrets Manager. If the cluster already manages the master user password in Amazon Web Services Secrets Manager, you can't change the KMS key that is used to encrypt the secret.
+\item You are enabling \code{ManageMasterUserPassword} to manage the master user password in Amazon Web Services Secrets Manager. If you are turning on \code{ManageMasterUserPassword} and don't specify \code{MasterUserSecretKmsKeyId}, then the \code{aws/secretsmanager} KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the \code{aws/secretsmanager} KMS key to encrypt the secret, and you must use a customer managed KMS key.
 }
 
-The Amazon Web Services KMS key identifier is the key ARN, key ID, alias
-ARN, or alias name for the KMS key. To use a KMS key in a different
-Amazon Web Services account, specify the key ARN or alias ARN.
+The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.
 
-There is a default KMS key for your Amazon Web Services account. Your
-Amazon Web Services account has a different default KMS key for each
-Amazon Web Services Region.}
+There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.}
 
-\item{RotateMasterUserPassword}{Specifies whether to rotate the secret managed by Amazon Web Services
-Secrets Manager for the master user password.
+\item{RotateMasterUserPassword}{Specifies whether to rotate the secret managed by Amazon Web Services Secrets Manager for the master user password.
 
-This setting is valid only if the master user password is managed by
-Amazon DocumentDB in Amazon Web Services Secrets Manager for the
-cluster. The secret value contains the updated password.
+This setting is valid only if the master user password is managed by Amazon DocumentDB in Amazon Web Services Secrets Manager for the cluster. The secret value contains the updated password.
 
-Constraint: You must apply the change immediately when rotating the
-master user password.}
+Constraint: You must apply the change immediately when rotating the master user password.}
 
 \item{NetworkType}{The network type of the cluster.
 
-The network type is determined by the \code{DBSubnetGroup} specified for the
-cluster. A \code{DBSubnetGroup} can support only the IPv4 protocol or the
-IPv4 and the IPv6 protocols (\code{DUAL}).
+The network type is determined by the \code{DBSubnetGroup} specified for the cluster. A \code{DBSubnetGroup} can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (\code{DUAL}).
 
-For more information, see \href{https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html}{DocumentDB clusters in a VPC}
-in the Amazon DocumentDB Developer Guide.
+For more information, see \href{https://docs.aws.amazon.com/documentdb/latest/devguide/vpc-clusters.html}{DocumentDB clusters in a VPC} in the Amazon DocumentDB Developer Guide.
 
 Valid Values: \code{IPV4} | \code{DUAL}}
 }

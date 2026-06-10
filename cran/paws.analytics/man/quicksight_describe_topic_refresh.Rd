@@ -7,14 +7,11 @@
 quicksight_describe_topic_refresh(AwsAccountId, TopicId, RefreshId)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the topic whose
-refresh you want to describe.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the topic whose refresh you want to describe.}
 
-\item{TopicId}{[required] The ID of the topic that you want to describe. This ID is unique per
-Amazon Web Services Region for each Amazon Web Services account.}
+\item{TopicId}{[required] The ID of the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.}
 
-\item{RefreshId}{[required] The ID of the refresh, which is performed when the topic is created or
-updated.}
+\item{RefreshId}{[required] The ID of the refresh, which is performed when the topic is created or updated.}
 }
 \description{
 Describes the status of a topic refresh.

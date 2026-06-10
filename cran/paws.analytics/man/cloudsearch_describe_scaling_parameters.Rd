@@ -7,7 +7,7 @@
 cloudsearch_describe_scaling_parameters(DomainName)
 }
 \arguments{
-\item{DomainName}{[required]}
+\item{DomainName}{[required] A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).}
 }
 \description{
 Gets the scaling parameters configured for a domain. A domain's scaling parameters specify the desired search instance type and replication count. For more information, see \if{html}{\out{<a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html" target="_blank">}}Configuring Scaling Options\if{html}{\out{</a>}} in the \emph{Amazon CloudSearch Developer Guide}.

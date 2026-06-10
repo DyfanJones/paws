@@ -12,13 +12,11 @@ appstream_describe_software_associations(
 )
 }
 \arguments{
-\item{AssociatedResource}{[required] The ARN of the resource to describe software associations. Possible
-resources are Image and ImageBuilder.}
+\item{AssociatedResource}{[required] The ARN of the resource to describe software associations. Possible resources are Image and ImageBuilder.}
 
 \item{MaxResults}{The maximum number of results to return.}
 
-\item{NextToken}{The pagination token to use to retrieve the next page of results for
-this operation.}
+\item{NextToken}{The pagination token to use to retrieve the next page of results for this operation.}
 }
 \description{
 Retrieves license included application associations for a specified resource.

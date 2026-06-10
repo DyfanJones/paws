@@ -7,9 +7,7 @@
 workspaces_deregister_workspace_directory(DirectoryId)
 }
 \arguments{
-\item{DirectoryId}{[required] The identifier of the directory. If any WorkSpaces are registered to
-this directory, you must remove them before you deregister the
-directory, or you will receive an OperationNotSupportedException error.}
+\item{DirectoryId}{[required] The identifier of the directory. If any WorkSpaces are registered to this directory, you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException error.}
 }
 \description{
 Deregisters the specified directory. This operation is asynchronous and returns before the WorkSpace directory is deregistered. If any WorkSpaces are registered to this directory, you must remove them before you can deregister the directory.

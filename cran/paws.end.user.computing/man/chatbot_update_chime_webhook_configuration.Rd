@@ -14,24 +14,19 @@ chatbot_update_chime_webhook_configuration(
 )
 }
 \arguments{
-\item{ChatConfigurationArn}{[required] The Amazon Resource Name (ARN) of the ChimeWebhookConfiguration to
-update.}
+\item{ChatConfigurationArn}{[required] The Amazon Resource Name (ARN) of the ChimeWebhookConfiguration to update.}
 
-\item{WebhookDescription}{A description of the webhook. We recommend using the convention
-\code{RoomName/WebhookName}.
+\item{WebhookDescription}{A description of the webhook. We recommend using the convention \code{RoomName/WebhookName}.
 
-For more information, see \href{https://docs.aws.amazon.com/chatbot/latest/adminguide/chime-setup.html}{Tutorial: Get started with Amazon Chime}
-in the \emph{AWS Chatbot Administrator Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/chatbot/latest/adminguide/chime-setup.html}{Tutorial: Get started with Amazon Chime} in the \emph{AWS Chatbot Administrator Guide}.}
 
 \item{WebhookUrl}{The URL for the Amazon Chime webhook.}
 
 \item{SnsTopicArns}{The ARNs of the SNS topics that deliver notifications to AWS Chatbot.}
 
-\item{IamRoleArn}{A user-defined role that AWS Chatbot assumes. This is not the
-service-linked role.
+\item{IamRoleArn}{A user-defined role that AWS Chatbot assumes. This is not the service-linked role.
 
-For more information, see \href{https://docs.aws.amazon.com/chatbot/latest/adminguide/chatbot-iam-policies.html}{IAM policies for AWS Chatbot}
-in the \emph{AWS Chatbot Administrator Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/chatbot/latest/adminguide/chatbot-iam-policies.html}{IAM policies for AWS Chatbot} in the \emph{AWS Chatbot Administrator Guide}.}
 
 \item{LoggingLevel}{Logging levels include \code{ERROR}, \code{INFO}, or \code{NONE}.}
 }

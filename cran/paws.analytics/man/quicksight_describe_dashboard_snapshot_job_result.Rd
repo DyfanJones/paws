@@ -12,15 +12,11 @@ quicksight_describe_dashboard_snapshot_job_result(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that the dashboard snapshot
-job is executed in.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.}
 
 \item{DashboardId}{[required] The ID of the dashboard that you have started a snapshot job for.}
 
-\item{SnapshotJobId}{[required] The ID of the job to be described. The job ID is set when you start a
-new job with a
-\code{\link[=quicksight_start_dashboard_snapshot_job]{start_dashboard_snapshot_job}}
-API call.}
+\item{SnapshotJobId}{[required] The ID of the job to be described. The job ID is set when you start a new job with a \code{\link[=quicksight_start_dashboard_snapshot_job]{start_dashboard_snapshot_job}} API call.}
 }
 \description{
 Describes the result of an existing snapshot job that has finished running.

@@ -9,9 +9,7 @@ bedrockagent_delete_agent(agentId, skipResourceInUseCheck = NULL)
 \arguments{
 \item{agentId}{[required] The unique identifier of the agent to delete.}
 
-\item{skipResourceInUseCheck}{By default, this value is \code{false} and deletion is stopped if the
-resource is in use. If you set it to \code{true}, the resource will be
-deleted even if the resource is in use.}
+\item{skipResourceInUseCheck}{By default, this value is \code{false} and deletion is stopped if the resource is in use. If you set it to \code{true}, the resource will be deleted even if the resource is in use.}
 }
 \description{
 Deletes an agent.

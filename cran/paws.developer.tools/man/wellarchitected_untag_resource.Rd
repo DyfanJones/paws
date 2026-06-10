@@ -7,10 +7,9 @@
 wellarchitected_untag_resource(WorkloadArn, TagKeys)
 }
 \arguments{
-\item{WorkloadArn}{[required]}
+\item{WorkloadArn}{[required] The ARN for the workload.}
 
-\item{TagKeys}{[required] A list of tag keys. Existing tags of the resource whose keys are members
-of this list are removed from the resource.}
+\item{TagKeys}{[required] A list of tag keys. Existing tags of the resource whose keys are members of this list are removed from the resource.}
 }
 \description{
 Deletes specified tags from a resource.

@@ -9,8 +9,7 @@ datazone_untag_resource(resourceArn, tagKeys)
 \arguments{
 \item{resourceArn}{[required] The ARN of the resource to be untagged in Amazon DataZone.}
 
-\item{tagKeys}{[required] Specifies the tag keys for the
-\code{\link[=datazone_untag_resource]{untag_resource}} action.}
+\item{tagKeys}{[required] Specifies the tag keys for the \code{\link[=datazone_untag_resource]{untag_resource}} action.}
 }
 \description{
 Untags a resource in Amazon DataZone.

@@ -12,15 +12,9 @@ NULL
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_batch_create_custom_vocabulary_item/](https://www.paws-r-sdk.com/docs/lexmodelsv2_batch_create_custom_vocabulary_item/) for full documentation.
 #'
 #' @param botId &#91;required&#93; The identifier of the bot associated with this custom vocabulary.
-#' @param botVersion &#91;required&#93; The identifier of the version of the bot associated with this custom
-#' vocabulary.
-#' @param localeId &#91;required&#93; The identifier of the language and locale where this custom vocabulary
-#' is used. The string must match one of the supported locales. For more
-#' information, see [Supported
-#' Languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html)
-#' .
-#' @param customVocabularyItemList &#91;required&#93; A list of new custom vocabulary items. Each entry must contain a phrase
-#' and can optionally contain a displayAs and/or a weight.
+#' @param botVersion &#91;required&#93; The identifier of the version of the bot associated with this custom vocabulary.
+#' @param localeId &#91;required&#93; The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see [Supported Languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html) .
+#' @param customVocabularyItemList &#91;required&#93; A list of new custom vocabulary items. Each entry must contain a phrase and can optionally contain a displayAs and/or a weight.
 #'
 #' @keywords internal
 #'
@@ -53,15 +47,9 @@ lexmodelsv2_batch_create_custom_vocabulary_item <- function(botId, botVersion, l
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_batch_delete_custom_vocabulary_item/](https://www.paws-r-sdk.com/docs/lexmodelsv2_batch_delete_custom_vocabulary_item/) for full documentation.
 #'
 #' @param botId &#91;required&#93; The identifier of the bot associated with this custom vocabulary.
-#' @param botVersion &#91;required&#93; The identifier of the version of the bot associated with this custom
-#' vocabulary.
-#' @param localeId &#91;required&#93; The identifier of the language and locale where this custom vocabulary
-#' is used. The string must match one of the supported locales. For more
-#' information, see [Supported
-#' Languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html)
-#' .
-#' @param customVocabularyItemList &#91;required&#93; A list of custom vocabulary items requested to be deleted. Each entry
-#' must contain the unique custom vocabulary entry identifier.
+#' @param botVersion &#91;required&#93; The identifier of the version of the bot associated with this custom vocabulary.
+#' @param localeId &#91;required&#93; The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see [Supported Languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html) .
+#' @param customVocabularyItemList &#91;required&#93; A list of custom vocabulary items requested to be deleted. Each entry must contain the unique custom vocabulary entry identifier.
 #'
 #' @keywords internal
 #'
@@ -94,15 +82,9 @@ lexmodelsv2_batch_delete_custom_vocabulary_item <- function(botId, botVersion, l
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_batch_update_custom_vocabulary_item/](https://www.paws-r-sdk.com/docs/lexmodelsv2_batch_update_custom_vocabulary_item/) for full documentation.
 #'
 #' @param botId &#91;required&#93; The identifier of the bot associated with this custom vocabulary
-#' @param botVersion &#91;required&#93; The identifier of the version of the bot associated with this custom
-#' vocabulary.
-#' @param localeId &#91;required&#93; The identifier of the language and locale where this custom vocabulary
-#' is used. The string must match one of the supported locales. For more
-#' information, see [Supported
-#' Languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html)
-#' .
-#' @param customVocabularyItemList &#91;required&#93; A list of custom vocabulary items with updated fields. Each entry must
-#' contain a phrase and can optionally contain a displayAs and/or a weight.
+#' @param botVersion &#91;required&#93; The identifier of the version of the bot associated with this custom vocabulary.
+#' @param localeId &#91;required&#93; The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see [Supported Languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html) .
+#' @param customVocabularyItemList &#91;required&#93; A list of custom vocabulary items with updated fields. Each entry must contain a phrase and can optionally contain a displayAs and/or a weight.
 #'
 #' @keywords internal
 #'
@@ -133,15 +115,9 @@ lexmodelsv2_batch_update_custom_vocabulary_item <- function(botId, botVersion, l
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_build_bot_locale/](https://www.paws-r-sdk.com/docs/lexmodelsv2_build_bot_locale/) for full documentation.
 #'
-#' @param botId &#91;required&#93; The identifier of the bot to build. The identifier is returned in the
-#' response from the [`create_bot`][lexmodelsv2_create_bot] operation.
-#' @param botVersion &#91;required&#93; The version of the bot to build. This can only be the draft version of
-#' the bot.
-#' @param localeId &#91;required&#93; The identifier of the language and locale that the bot will be used in.
-#' The string must match one of the supported locales. All of the intents,
-#' slot types, and slots used in the bot must have the same locale. For
-#' more information, see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
+#' @param botId &#91;required&#93; The identifier of the bot to build. The identifier is returned in the response from the [`create_bot`][lexmodelsv2_create_bot] operation.
+#' @param botVersion &#91;required&#93; The version of the bot to build. This can only be the draft version of the bot.
+#' @param localeId &#91;required&#93; The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
 #'
 #' @keywords internal
 #'
@@ -172,30 +148,17 @@ lexmodelsv2_build_bot_locale <- function(botId, botVersion, localeId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_create_bot/](https://www.paws-r-sdk.com/docs/lexmodelsv2_create_bot/) for full documentation.
 #'
-#' @param botName &#91;required&#93; The name of the bot. The bot name must be unique in the account that
-#' creates the bot.
-#' @param description A description of the bot. It appears in lists to help you identify a
-#' particular bot.
-#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of an IAM role that has permission to
-#' access the bot.
-#' @param dataPrivacy &#91;required&#93; Provides information on additional privacy protections Amazon Lex should
-#' use with the bot's data.
-#' @param idleSessionTTLInSeconds &#91;required&#93; The time, in seconds, that Amazon Lex should keep information about a
-#' user's conversation with the bot.
+#' @param botName &#91;required&#93; The name of the bot. The bot name must be unique in the account that creates the bot.
+#' @param description A description of the bot. It appears in lists to help you identify a particular bot.
+#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot.
+#' @param dataPrivacy &#91;required&#93; Provides information on additional privacy protections Amazon Lex should use with the bot's data.
+#' @param idleSessionTTLInSeconds &#91;required&#93; The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.
 #' 
-#' A user interaction remains active for the amount of time specified. If
-#' no conversation occurs during this time, the session expires and Amazon
-#' Lex deletes any data provided before the timeout.
+#' A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.
 #' 
 #' You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.
-#' @param botTags A list of tags to add to the bot. You can only add tags when you create
-#' a bot. You can't use the [`update_bot`][lexmodelsv2_update_bot]
-#' operation to update tags. To update tags, use the
-#' [`tag_resource`][lexmodelsv2_tag_resource] operation.
-#' @param testBotAliasTags A list of tags to add to the test alias for a bot. You can only add tags
-#' when you create a bot. You can't use the `UpdateAlias` operation to
-#' update tags. To update tags on the test alias, use the
-#' [`tag_resource`][lexmodelsv2_tag_resource] operation.
+#' @param botTags A list of tags to add to the bot. You can only add tags when you create a bot. You can't use the [`update_bot`][lexmodelsv2_update_bot] operation to update tags. To update tags, use the [`tag_resource`][lexmodelsv2_tag_resource] operation.
+#' @param testBotAliasTags A list of tags to add to the test alias for a bot. You can only add tags when you create a bot. You can't use the `UpdateAlias` operation to update tags. To update tags on the test alias, use the [`tag_resource`][lexmodelsv2_tag_resource] operation.
 #' @param botType The type of a bot to create.
 #' @param botMembers The list of bot members in a network to be created.
 #' @param errorLogSettings Specifies the configuration for error logging during bot creation.
@@ -230,25 +193,13 @@ lexmodelsv2_create_bot <- function(botName, description = NULL, roleArn, dataPri
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_create_bot_alias/](https://www.paws-r-sdk.com/docs/lexmodelsv2_create_bot_alias/) for full documentation.
 #'
 #' @param botAliasName &#91;required&#93; The alias to create. The name must be unique for the bot.
-#' @param description A description of the alias. Use this description to help identify the
-#' alias.
-#' @param botVersion The version of the bot that this alias points to. You can use the
-#' [`update_bot_alias`][lexmodelsv2_update_bot_alias] operation to change
-#' the bot version associated with the alias.
-#' @param botAliasLocaleSettings Maps configuration information to a specific locale. You can use this
-#' parameter to specify a specific Lambda function to run different
-#' functions in different locales.
-#' @param conversationLogSettings Specifies whether Amazon Lex logs text and audio for a conversation with
-#' the bot. When you enable conversation logs, text logs store text input,
-#' transcripts of audio input, and associated metadata in Amazon CloudWatch
-#' Logs. Audio logs store audio input in Amazon S3.
-#' @param sentimentAnalysisSettings 
+#' @param description A description of the alias. Use this description to help identify the alias.
+#' @param botVersion The version of the bot that this alias points to. You can use the [`update_bot_alias`][lexmodelsv2_update_bot_alias] operation to change the bot version associated with the alias.
+#' @param botAliasLocaleSettings Maps configuration information to a specific locale. You can use this parameter to specify a specific Lambda function to run different functions in different locales.
+#' @param conversationLogSettings Specifies whether Amazon Lex logs text and audio for a conversation with the bot. When you enable conversation logs, text logs store text input, transcripts of audio input, and associated metadata in Amazon CloudWatch Logs. Audio logs store audio input in Amazon S3.
+#' @param sentimentAnalysisSettings Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.
 #' @param botId &#91;required&#93; The unique identifier of the bot that the alias applies to.
-#' @param tags A list of tags to add to the bot alias. You can only add tags when you
-#' create an alias, you can't use the
-#' [`update_bot_alias`][lexmodelsv2_update_bot_alias] operation to update
-#' the tags on a bot alias. To update tags, use the
-#' [`tag_resource`][lexmodelsv2_tag_resource] operation.
+#' @param tags A list of tags to add to the bot alias. You can only add tags when you create an alias, you can't use the [`update_bot_alias`][lexmodelsv2_update_bot_alias] operation to update the tags on a bot alias. To update tags, use the [`tag_resource`][lexmodelsv2_tag_resource] operation.
 #'
 #' @keywords internal
 #'
@@ -280,26 +231,12 @@ lexmodelsv2_create_bot_alias <- function(botAliasName, description = NULL, botVe
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_create_bot_locale/](https://www.paws-r-sdk.com/docs/lexmodelsv2_create_bot_locale/) for full documentation.
 #'
 #' @param botId &#91;required&#93; The identifier of the bot to create the locale for.
-#' @param botVersion &#91;required&#93; The version of the bot to create the locale for. This can only be the
-#' draft version of the bot.
-#' @param localeId &#91;required&#93; The identifier of the language and locale that the bot will be used in.
-#' The string must match one of the supported locales. All of the intents,
-#' slot types, and slots used in the bot must have the same locale. For
-#' more information, see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
-#' @param description A description of the bot locale. Use this to help identify the bot
-#' locale in lists.
-#' @param nluIntentConfidenceThreshold &#91;required&#93; Determines the threshold where Amazon Lex will insert the
-#' `AMAZON.FallbackIntent`, `AMAZON.KendraSearchIntent`, or both when
-#' returning alternative intents. `AMAZON.FallbackIntent` and
-#' `AMAZON.KendraSearchIntent` are only inserted if they are configured for
-#' the bot.
+#' @param botVersion &#91;required&#93; The version of the bot to create the locale for. This can only be the draft version of the bot.
+#' @param localeId &#91;required&#93; The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
+#' @param description A description of the bot locale. Use this to help identify the bot locale in lists.
+#' @param nluIntentConfidenceThreshold &#91;required&#93; Determines the threshold where Amazon Lex will insert the `AMAZON.FallbackIntent`, `AMAZON.KendraSearchIntent`, or both when returning alternative intents. `AMAZON.FallbackIntent` and `AMAZON.KendraSearchIntent` are only inserted if they are configured for the bot.
 #' 
-#' For example, suppose a bot is configured with the confidence threshold
-#' of 0.80 and the `AMAZON.FallbackIntent`. Amazon Lex returns three
-#' alternative intents with the following confidence scores: IntentA
-#' (0.70), IntentB (0.60), IntentC (0.50). The response from the
-#' `RecognizeText` operation would be:
+#' For example, suppose a bot is configured with the confidence threshold of 0.80 and the `AMAZON.FallbackIntent`. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the `RecognizeText` operation would be:
 #' 
 #' -   AMAZON.FallbackIntent
 #' 
@@ -308,20 +245,17 @@ lexmodelsv2_create_bot_alias <- function(botAliasName, description = NULL, botVe
 #' -   IntentB
 #' 
 #' -   IntentC
-#' @param voiceSettings The Amazon Polly voice ID that Amazon Lex uses for voice interaction
-#' with the user.
+#' @param voiceSettings The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.
 #' @param unifiedSpeechSettings Unified speech settings to configure for the new bot locale.
+#' @param audioFillerSettings Audio filler settings to configure for the new bot locale. When enabled, Amazon Lex plays a brief background audio filler during speech-to-speech interactions to mask processing delays. Requires `unifiedSpeechSettings` (speech-to-speech) to be configured on the bot locale.
 #' @param speechRecognitionSettings Speech-to-text settings to configure for the new bot locale.
-#' @param generativeAISettings 
-#' @param speechDetectionSensitivity The sensitivity level for voice activity detection (VAD) in the bot
-#' locale. This setting helps optimize speech recognition accuracy by
-#' adjusting how the system responds to background noise during voice
-#' interactions.
+#' @param generativeAISettings Contains specifications about the generative AI capabilities from Amazon Bedrock that you can turn on for your bot.
+#' @param speechDetectionSensitivity The sensitivity level for voice activity detection (VAD) in the bot locale. This setting helps optimize speech recognition accuracy by adjusting how the system responds to background noise during voice interactions.
 #'
 #' @keywords internal
 #'
 #' @rdname lexmodelsv2_create_bot_locale
-lexmodelsv2_create_bot_locale <- function(botId, botVersion, localeId, description = NULL, nluIntentConfidenceThreshold, voiceSettings = NULL, unifiedSpeechSettings = NULL, speechRecognitionSettings = NULL, generativeAISettings = NULL, speechDetectionSensitivity = NULL) {
+lexmodelsv2_create_bot_locale <- function(botId, botVersion, localeId, description = NULL, nluIntentConfidenceThreshold, voiceSettings = NULL, unifiedSpeechSettings = NULL, audioFillerSettings = NULL, speechRecognitionSettings = NULL, generativeAISettings = NULL, speechDetectionSensitivity = NULL) {
   op <- new_operation(
     name = "CreateBotLocale",
     http_method = "PUT",
@@ -330,7 +264,7 @@ lexmodelsv2_create_bot_locale <- function(botId, botVersion, localeId, descripti
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .lexmodelsv2$create_bot_locale_input(botId = botId, botVersion = botVersion, localeId = localeId, description = description, nluIntentConfidenceThreshold = nluIntentConfidenceThreshold, voiceSettings = voiceSettings, unifiedSpeechSettings = unifiedSpeechSettings, speechRecognitionSettings = speechRecognitionSettings, generativeAISettings = generativeAISettings, speechDetectionSensitivity = speechDetectionSensitivity)
+  input <- .lexmodelsv2$create_bot_locale_input(botId = botId, botVersion = botVersion, localeId = localeId, description = description, nluIntentConfidenceThreshold = nluIntentConfidenceThreshold, voiceSettings = voiceSettings, unifiedSpeechSettings = unifiedSpeechSettings, audioFillerSettings = audioFillerSettings, speechRecognitionSettings = speechRecognitionSettings, generativeAISettings = generativeAISettings, speechDetectionSensitivity = speechDetectionSensitivity)
   output <- .lexmodelsv2$create_bot_locale_output()
   config <- get_config()
   svc <- .lexmodelsv2$service(config, op)
@@ -347,10 +281,8 @@ lexmodelsv2_create_bot_locale <- function(botId, botVersion, localeId, descripti
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_create_bot_replica/](https://www.paws-r-sdk.com/docs/lexmodelsv2_create_bot_replica/) for full documentation.
 #'
-#' @param botId &#91;required&#93; The request for the unique bot ID of the source bot to be replicated in
-#' the secondary region.
-#' @param replicaRegion &#91;required&#93; The request for the secondary region that will be used in the
-#' replication of the source bot.
+#' @param botId &#91;required&#93; The request for the unique bot ID of the source bot to be replicated in the secondary region.
+#' @param replicaRegion &#91;required&#93; The request for the secondary region that will be used in the replication of the source bot.
 #'
 #' @keywords internal
 #'
@@ -382,12 +314,8 @@ lexmodelsv2_create_bot_replica <- function(botId, replicaRegion) {
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_create_bot_version/](https://www.paws-r-sdk.com/docs/lexmodelsv2_create_bot_version/) for full documentation.
 #'
 #' @param botId &#91;required&#93; The identifier of the bot to create the version for.
-#' @param description A description of the version. Use the description to help identify the
-#' version in lists.
-#' @param botVersionLocaleSpecification &#91;required&#93; Specifies the locales that Amazon Lex adds to this version. You can
-#' choose the `Draft` version or any other previously published version for
-#' each locale. When you specify a source version, the locale data is
-#' copied from the source version to the new version.
+#' @param description A description of the version. Use the description to help identify the version in lists.
+#' @param botVersionLocaleSpecification &#91;required&#93; Specifies the locales that Amazon Lex adds to this version. You can choose the `Draft` version or any other previously published version for each locale. When you specify a source version, the locale data is copied from the source version to the new version.
 #'
 #' @keywords internal
 #'
@@ -418,12 +346,9 @@ lexmodelsv2_create_bot_version <- function(botId, description = NULL, botVersion
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_create_export/](https://www.paws-r-sdk.com/docs/lexmodelsv2_create_export/) for full documentation.
 #'
-#' @param resourceSpecification &#91;required&#93; Specifies the type of resource to export, either a bot or a bot locale.
-#' You can only specify one type of resource to export.
+#' @param resourceSpecification &#91;required&#93; Specifies the type of resource to export, either a bot or a bot locale. You can only specify one type of resource to export.
 #' @param fileFormat &#91;required&#93; The file format of the bot or bot locale definition files.
-#' @param filePassword An password to use to encrypt the exported archive. Using a password is
-#' optional, but you should encrypt the archive to protect the data in
-#' transit between Amazon Lex and your local computer.
+#' @param filePassword An password to use to encrypt the exported archive. Using a password is optional, but you should encrypt the archive to protect the data in transit between Amazon Lex and your local computer.
 #'
 #' @keywords internal
 #'
@@ -454,87 +379,41 @@ lexmodelsv2_create_export <- function(resourceSpecification, fileFormat, filePas
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_create_intent/](https://www.paws-r-sdk.com/docs/lexmodelsv2_create_intent/) for full documentation.
 #'
-#' @param intentName &#91;required&#93; The name of the intent. Intent names must be unique in the locale that
-#' contains the intent and cannot match the name of any built-in intent.
-#' @param intentDisplayName A display name for the intent. If configured, This name will be shown to
-#' users during Intent Disambiguation instead of the intent name. Display
-#' names should be user-friendly, descriptive and match the intent's
-#' purpose to improve user experience during disambiguation.
-#' @param description A description of the intent. Use the description to help identify the
-#' intent in lists.
+#' @param intentName &#91;required&#93; The name of the intent. Intent names must be unique in the locale that contains the intent and cannot match the name of any built-in intent.
+#' @param intentDisplayName A display name for the intent. If configured, This name will be shown to users during Intent Disambiguation instead of the intent name. Display names should be user-friendly, descriptive and match the intent's purpose to improve user experience during disambiguation.
+#' @param description A description of the intent. Use the description to help identify the intent in lists.
 #' @param parentIntentSignature A unique identifier for the built-in intent to base this intent on.
-#' @param sampleUtterances An array of strings that a user might say to signal the intent. For
-#' example, "I want a pizza", or "I want a \{PizzaSize\} pizza".
+#' @param sampleUtterances An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a \{PizzaSize\} pizza".
 #' 
-#' In an utterance, slot names are enclosed in curly braces ("\{", "\}")
-#' to indicate where they should be displayed in the utterance shown to the
-#' user..
-#' @param dialogCodeHook Specifies that Amazon Lex invokes the alias Lambda function for each
-#' user input. You can invoke this Lambda function to personalize user
-#' interaction.
+#' In an utterance, slot names are enclosed in curly braces ("\{", "\}") to indicate where they should be displayed in the utterance shown to the user..
+#' @param dialogCodeHook Specifies that Amazon Lex invokes the alias Lambda function for each user input. You can invoke this Lambda function to personalize user interaction.
 #' 
-#' For example, suppose that your bot determines that the user's name is
-#' John. You Lambda function might retrieve John's information from a
-#' backend database and prepopulate some of the values. For example, if you
-#' find that John is gluten intolerant, you might set the corresponding
-#' intent slot, `glutenIntolerant` to `true`. You might find John's phone
-#' number and set the corresponding session attribute.
-#' @param fulfillmentCodeHook Specifies that Amazon Lex invokes the alias Lambda function when the
-#' intent is ready for fulfillment. You can invoke this function to
-#' complete the bot's transaction with the user.
+#' For example, suppose that your bot determines that the user's name is John. You Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, `glutenIntolerant` to `true`. You might find John's phone number and set the corresponding session attribute.
+#' @param fulfillmentCodeHook Specifies that Amazon Lex invokes the alias Lambda function when the intent is ready for fulfillment. You can invoke this function to complete the bot's transaction with the user.
 #' 
-#' For example, in a pizza ordering bot, the Lambda function can look up
-#' the closest pizza restaurant to the customer's location and then place
-#' an order on the customer's behalf.
-#' @param intentConfirmationSetting Provides prompts that Amazon Lex sends to the user to confirm the
-#' completion of an intent. If the user answers "no," the settings contain
-#' a statement that is sent to the user to end the intent.
-#' @param intentClosingSetting Sets the response that Amazon Lex sends to the user when the intent is
-#' closed.
-#' @param inputContexts A list of contexts that must be active for this intent to be considered
-#' by Amazon Lex.
+#' For example, in a pizza ordering bot, the Lambda function can look up the closest pizza restaurant to the customer's location and then place an order on the customer's behalf.
+#' @param intentConfirmationSetting Provides prompts that Amazon Lex sends to the user to confirm the completion of an intent. If the user answers "no," the settings contain a statement that is sent to the user to end the intent.
+#' @param intentClosingSetting Sets the response that Amazon Lex sends to the user when the intent is closed.
+#' @param inputContexts A list of contexts that must be active for this intent to be considered by Amazon Lex.
 #' 
-#' When an intent has an input context list, Amazon Lex only considers
-#' using the intent in an interaction with the user when the specified
-#' contexts are included in the active context list for the session. If the
-#' contexts are not active, then Amazon Lex will not use the intent.
+#' When an intent has an input context list, Amazon Lex only considers using the intent in an interaction with the user when the specified contexts are included in the active context list for the session. If the contexts are not active, then Amazon Lex will not use the intent.
 #' 
-#' A context can be automatically activated using the `outputContexts`
-#' property or it can be set at runtime.
+#' A context can be automatically activated using the `outputContexts` property or it can be set at runtime.
 #' 
-#' For example, if there are two intents with different input contexts that
-#' respond to the same utterances, only the intent with the active context
-#' will respond.
+#' For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.
 #' 
-#' An intent may have up to 5 input contexts. If an intent has multiple
-#' input contexts, all of the contexts must be active to consider the
-#' intent.
+#' An intent may have up to 5 input contexts. If an intent has multiple input contexts, all of the contexts must be active to consider the intent.
 #' @param outputContexts A lists of contexts that the intent activates when it is fulfilled.
 #' 
-#' You can use an output context to indicate the intents that Amazon Lex
-#' should consider for the next turn of the conversation with a customer.
+#' You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer.
 #' 
-#' When you use the `outputContextsList` property, all of the contexts
-#' specified in the list are activated when the intent is fulfilled. You
-#' can set up to 10 output contexts. You can also set the number of
-#' conversation turns that the context should be active, or the length of
-#' time that the context should be active.
-#' @param kendraConfiguration Configuration information required to use the
-#' `AMAZON.KendraSearchIntent` intent to connect to an Amazon Kendra index.
-#' The `AMAZON.KendraSearchIntent` intent is called when Amazon Lex can't
-#' determine another intent to invoke.
+#' When you use the `outputContextsList` property, all of the contexts specified in the list are activated when the intent is fulfilled. You can set up to 10 output contexts. You can also set the number of conversation turns that the context should be active, or the length of time that the context should be active.
+#' @param kendraConfiguration Configuration information required to use the `AMAZON.KendraSearchIntent` intent to connect to an Amazon Kendra index. The `AMAZON.KendraSearchIntent` intent is called when Amazon Lex can't determine another intent to invoke.
 #' @param botId &#91;required&#93; The identifier of the bot associated with this intent.
 #' @param botVersion &#91;required&#93; The version of the bot associated with this intent.
-#' @param localeId &#91;required&#93; The identifier of the language and locale where this intent is used. All
-#' of the bots, slot types, and slots used by the intent must have the same
-#' locale. For more information, see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
-#' @param initialResponseSetting Configuration settings for the response that is sent to the user at the
-#' beginning of a conversation, before eliciting slot values.
-#' @param qnAIntentConfiguration Specifies the configuration of the built-in `Amazon.QnAIntent`. The
-#' `AMAZON.QnAIntent` intent is called when Amazon Lex can't determine
-#' another intent to invoke. If you specify this field, you can't specify
-#' the `kendraConfiguration` field.
+#' @param localeId &#91;required&#93; The identifier of the language and locale where this intent is used. All of the bots, slot types, and slots used by the intent must have the same locale. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
+#' @param initialResponseSetting Configuration settings for the response that is sent to the user at the beginning of a conversation, before eliciting slot values.
+#' @param qnAIntentConfiguration Specifies the configuration of the built-in `Amazon.QnAIntent`. The `AMAZON.QnAIntent` intent is called when Amazon Lex can't determine another intent to invoke. If you specify this field, you can't specify the `kendraConfiguration` field.
 #' @param qInConnectIntentConfiguration Qinconnect intent configuration details for the create intent request.
 #'
 #' @keywords internal
@@ -566,14 +445,8 @@ lexmodelsv2_create_intent <- function(intentName, intentDisplayName = NULL, desc
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_create_resource_policy/](https://www.paws-r-sdk.com/docs/lexmodelsv2_create_resource_policy/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the bot or bot alias that the resource
-#' policy is attached to.
-#' @param policy &#91;required&#93; A resource policy to add to the resource. The policy is a JSON structure
-#' that contains one or more statements that define the policy. The policy
-#' must follow the IAM syntax. For more information about the contents of a
-#' JSON policy document, see [IAM JSON policy
-#' reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html)
-#' .
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.
+#' @param policy &#91;required&#93; A resource policy to add to the resource. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see [IAM JSON policy reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) .
 #' 
 #' If the policy isn't valid, Amazon Lex returns a validation exception.
 #'
@@ -606,36 +479,17 @@ lexmodelsv2_create_resource_policy <- function(resourceArn, policy) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_create_resource_policy_statement/](https://www.paws-r-sdk.com/docs/lexmodelsv2_create_resource_policy_statement/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the bot or bot alias that the resource
-#' policy is attached to.
-#' @param statementId &#91;required&#93; The name of the statement. The ID is the same as the `Sid` IAM property.
-#' The statement name must be unique within the policy. For more
-#' information, see [IAM JSON policy elements:
-#' Sid](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html).
-#' @param effect &#91;required&#93; Determines whether the statement allows or denies access to the
-#' resource.
-#' @param principal &#91;required&#93; An IAM principal, such as an IAM user, IAM role, or Amazon Web Services
-#' services that is allowed or denied access to a resource. For more
-#' information, see [Amazon Web Services JSON policy elements:
-#' Principal](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html).
-#' @param action &#91;required&#93; The Amazon Lex action that this policy either allows or denies. The
-#' action must apply to the resource type of the specified ARN. For more
-#' information, see [Actions, resources, and condition keys for Amazon Lex
-#' V2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlexv2.html).
-#' @param condition Specifies a condition when the policy is in effect. If the principal of
-#' the policy is a service principal, you must provide two condition
-#' blocks, one with a SourceAccount global condition key and one with a
-#' SourceArn global condition key.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.
+#' @param statementId &#91;required&#93; The name of the statement. The ID is the same as the `Sid` IAM property. The statement name must be unique within the policy. For more information, see [IAM JSON policy elements: Sid](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html).
+#' @param effect &#91;required&#93; Determines whether the statement allows or denies access to the resource.
+#' @param principal &#91;required&#93; An IAM principal, such as an IAM user, IAM role, or Amazon Web Services services that is allowed or denied access to a resource. For more information, see [Amazon Web Services JSON policy elements: Principal](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html).
+#' @param action &#91;required&#93; The Amazon Lex action that this policy either allows or denies. The action must apply to the resource type of the specified ARN. For more information, see [Actions, resources, and condition keys for Amazon Lex V2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlexv2.html).
+#' @param condition Specifies a condition when the policy is in effect. If the principal of the policy is a service principal, you must provide two condition blocks, one with a SourceAccount global condition key and one with a SourceArn global condition key.
 #' 
-#' For more information, see [IAM JSON policy elements:
-#' Condition](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html)
-#' .
-#' @param expectedRevisionId The identifier of the revision of the policy to edit. If this revision
-#' ID doesn't match the current revision ID, Amazon Lex throws an
-#' exception.
+#' For more information, see [IAM JSON policy elements: Condition](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html) .
+#' @param expectedRevisionId The identifier of the revision of the policy to edit. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.
 #' 
-#' If you don't specify a revision, Amazon Lex overwrites the contents of
-#' the policy with the new values.
+#' If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.
 #'
 #' @keywords internal
 #'
@@ -666,35 +520,21 @@ lexmodelsv2_create_resource_policy_statement <- function(resourceArn, statementI
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_create_slot/](https://www.paws-r-sdk.com/docs/lexmodelsv2_create_slot/) for full documentation.
 #'
-#' @param slotName &#91;required&#93; The name of the slot. Slot names must be unique within the bot that
-#' contains the slot.
+#' @param slotName &#91;required&#93; The name of the slot. Slot names must be unique within the bot that contains the slot.
 #' @param description A description of the slot. Use this to help identify the slot in lists.
-#' @param slotTypeId The unique identifier for the slot type associated with this slot. The
-#' slot type determines the values that can be entered into the slot.
-#' @param valueElicitationSetting &#91;required&#93; Specifies prompts that Amazon Lex sends to the user to elicit a response
-#' that provides the value for the slot.
-#' @param obfuscationSetting Determines how slot values are used in Amazon CloudWatch logs. If the
-#' value of the `obfuscationSetting` parameter is `DefaultObfuscation`,
-#' slot values are obfuscated in the log output. If the value is `None`,
-#' the actual value is present in the log output.
+#' @param slotTypeId The unique identifier for the slot type associated with this slot. The slot type determines the values that can be entered into the slot.
+#' @param valueElicitationSetting &#91;required&#93; Specifies prompts that Amazon Lex sends to the user to elicit a response that provides the value for the slot.
+#' @param obfuscationSetting Determines how slot values are used in Amazon CloudWatch logs. If the value of the `obfuscationSetting` parameter is `DefaultObfuscation`, slot values are obfuscated in the log output. If the value is `None`, the actual value is present in the log output.
 #' 
 #' The default is to obfuscate values in the CloudWatch logs.
 #' @param botId &#91;required&#93; The identifier of the bot associated with the slot.
 #' @param botVersion &#91;required&#93; The version of the bot associated with the slot.
-#' @param localeId &#91;required&#93; The identifier of the language and locale that the slot will be used in.
-#' The string must match one of the supported locales. All of the bots,
-#' intents, slot types used by the slot must have the same locale. For more
-#' information, see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
+#' @param localeId &#91;required&#93; The identifier of the language and locale that the slot will be used in. The string must match one of the supported locales. All of the bots, intents, slot types used by the slot must have the same locale. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
 #' @param intentId &#91;required&#93; The identifier of the intent that contains the slot.
-#' @param multipleValuesSetting Indicates whether the slot returns multiple values in one response.
-#' Multi-value slots are only available in the `en-US` locale. If you set
-#' this value to `true` in any other locale, Amazon Lex throws a
-#' `ValidationException`.
+#' @param multipleValuesSetting Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the `en-US` locale. If you set this value to `true` in any other locale, Amazon Lex throws a `ValidationException`.
 #' 
 #' If the `multipleValuesSetting` is not set, the default value is `false`.
-#' @param subSlotSetting Specifications for the constituent sub slots and the expression for the
-#' composite slot.
+#' @param subSlotSetting Specifications for the constituent sub slots and the expression for the composite slot.
 #'
 #' @keywords internal
 #'
@@ -725,39 +565,22 @@ lexmodelsv2_create_slot <- function(slotName, description = NULL, slotTypeId = N
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_create_slot_type/](https://www.paws-r-sdk.com/docs/lexmodelsv2_create_slot_type/) for full documentation.
 #'
-#' @param slotTypeName &#91;required&#93; The name for the slot. A slot type name must be unique within the
-#' intent.
-#' @param description A description of the slot type. Use the description to help identify the
-#' slot type in lists.
-#' @param slotTypeValues A list of `SlotTypeValue` objects that defines the values that the slot
-#' type can take. Each value can have a list of synonyms, additional values
-#' that help train the machine learning model about the values that it
-#' resolves for a slot.
-#' @param valueSelectionSetting Determines the strategy that Amazon Lex uses to select a value from the
-#' list of possible values. The field can be set to one of the following
-#' values:
+#' @param slotTypeName &#91;required&#93; The name for the slot. A slot type name must be unique within the intent.
+#' @param description A description of the slot type. Use the description to help identify the slot type in lists.
+#' @param slotTypeValues A list of `SlotTypeValue` objects that defines the values that the slot type can take. Each value can have a list of synonyms, additional values that help train the machine learning model about the values that it resolves for a slot.
+#' @param valueSelectionSetting Determines the strategy that Amazon Lex uses to select a value from the list of possible values. The field can be set to one of the following values:
 #' 
-#' -   `ORIGINAL_VALUE` - Returns the value entered by the user, if the
-#'     user value is similar to the slot value.
+#' -   `ORIGINAL_VALUE` - Returns the value entered by the user, if the user value is similar to the slot value.
 #' 
-#' -   `TOP_RESOLUTION` - If there is a resolution list for the slot,
-#'     return the first value in the resolution list. If there is no
-#'     resolution list, return null.
+#' -   `TOP_RESOLUTION` - If there is a resolution list for the slot, return the first value in the resolution list. If there is no resolution list, return null.
 #' 
-#' If you don't specify the `valueSelectionSetting` parameter, the default
-#' is `ORIGINAL_VALUE`.
-#' @param parentSlotTypeSignature The built-in slot type used as a parent of this slot type. When you
-#' define a parent slot type, the new slot type has the configuration of
-#' the parent slot type.
+#' If you don't specify the `valueSelectionSetting` parameter, the default is `ORIGINAL_VALUE`.
+#' @param parentSlotTypeSignature The built-in slot type used as a parent of this slot type. When you define a parent slot type, the new slot type has the configuration of the parent slot type.
 #' 
 #' Only `AMAZON.AlphaNumeric` is supported.
 #' @param botId &#91;required&#93; The identifier of the bot associated with this slot type.
 #' @param botVersion &#91;required&#93; The identifier of the bot version associated with this slot type.
-#' @param localeId &#91;required&#93; The identifier of the language and locale that the slot type will be
-#' used in. The string must match one of the supported locales. All of the
-#' bots, intents, and slots used by the slot type must have the same
-#' locale. For more information, see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
+#' @param localeId &#91;required&#93; The identifier of the language and locale that the slot type will be used in. The string must match one of the supported locales. All of the bots, intents, and slots used by the slot type must have the same locale. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
 #' @param externalSourceSetting Sets the type of external information used to create the slot type.
 #' @param compositeSlotTypeSetting Specifications for a composite slot type.
 #'
@@ -856,11 +679,7 @@ lexmodelsv2_create_upload_url <- function() {
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_delete_bot/](https://www.paws-r-sdk.com/docs/lexmodelsv2_delete_bot/) for full documentation.
 #'
 #' @param botId &#91;required&#93; The identifier of the bot to delete.
-#' @param skipResourceInUseCheck By default, Amazon Lex checks if any other resource, such as an alias or
-#' bot network, is using the bot version before it is deleted and throws a
-#' `ResourceInUseException` exception if the bot is being used by another
-#' resource. Set this parameter to `true` to skip this check and remove the
-#' bot even if it is being used by another resource.
+#' @param skipResourceInUseCheck By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot version before it is deleted and throws a `ResourceInUseException` exception if the bot is being used by another resource. Set this parameter to `true` to skip this check and remove the bot even if it is being used by another resource.
 #'
 #' @keywords internal
 #'
@@ -893,11 +712,7 @@ lexmodelsv2_delete_bot <- function(botId, skipResourceInUseCheck = NULL) {
 #'
 #' @param botAliasId &#91;required&#93; The unique identifier of the bot alias to delete.
 #' @param botId &#91;required&#93; The unique identifier of the bot associated with the alias to delete.
-#' @param skipResourceInUseCheck By default, Amazon Lex checks if any other resource, such as a bot
-#' network, is using the bot alias before it is deleted and throws a
-#' `ResourceInUseException` exception if the alias is being used by another
-#' resource. Set this parameter to `true` to skip this check and remove the
-#' alias even if it is being used by another resource.
+#' @param skipResourceInUseCheck By default, Amazon Lex checks if any other resource, such as a bot network, is using the bot alias before it is deleted and throws a `ResourceInUseException` exception if the alias is being used by another resource. Set this parameter to `true` to skip this check and remove the alias even if it is being used by another resource.
 #'
 #' @keywords internal
 #'
@@ -921,6 +736,39 @@ lexmodelsv2_delete_bot_alias <- function(botAliasId, botId, skipResourceInUseChe
 }
 .lexmodelsv2$operations$delete_bot_alias <- lexmodelsv2_delete_bot_alias
 
+#' Permanently deletes the recommendations and analysis results for a
+#' specific bot analysis request
+#'
+#' @description
+#' Permanently deletes the recommendations and analysis results for a specific bot analysis request. This operation is provided for GDPR compliance and cannot be undone.
+#'
+#' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_delete_bot_analyzer_recommendation/](https://www.paws-r-sdk.com/docs/lexmodelsv2_delete_bot_analyzer_recommendation/) for full documentation.
+#'
+#' @param botId &#91;required&#93; The unique identifier of the bot.
+#' @param botAnalyzerRequestId &#91;required&#93; The unique identifier of the analysis request whose recommendations should be deleted.
+#'
+#' @keywords internal
+#'
+#' @rdname lexmodelsv2_delete_bot_analyzer_recommendation
+lexmodelsv2_delete_bot_analyzer_recommendation <- function(botId, botAnalyzerRequestId) {
+  op <- new_operation(
+    name = "DeleteBotAnalyzerRecommendation",
+    http_method = "DELETE",
+    http_path = "/bots/{botId}/botanalyzer/{botAnalyzerRequestId}/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .lexmodelsv2$delete_bot_analyzer_recommendation_input(botId = botId, botAnalyzerRequestId = botAnalyzerRequestId)
+  output <- .lexmodelsv2$delete_bot_analyzer_recommendation_output()
+  config <- get_config()
+  svc <- .lexmodelsv2$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.lexmodelsv2$operations$delete_bot_analyzer_recommendation <- lexmodelsv2_delete_bot_analyzer_recommendation
+
 #' Removes a locale from a bot
 #'
 #' @description
@@ -930,10 +778,7 @@ lexmodelsv2_delete_bot_alias <- function(botAliasId, botId, skipResourceInUseChe
 #'
 #' @param botId &#91;required&#93; The unique identifier of the bot that contains the locale.
 #' @param botVersion &#91;required&#93; The version of the bot that contains the locale.
-#' @param localeId &#91;required&#93; The identifier of the language and locale that will be deleted. The
-#' string must match one of the supported locales. For more information,
-#' see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
+#' @param localeId &#91;required&#93; The identifier of the language and locale that will be deleted. The string must match one of the supported locales. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
 #'
 #' @keywords internal
 #'
@@ -964,8 +809,7 @@ lexmodelsv2_delete_bot_locale <- function(botId, botVersion, localeId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_delete_bot_replica/](https://www.paws-r-sdk.com/docs/lexmodelsv2_delete_bot_replica/) for full documentation.
 #'
-#' @param botId &#91;required&#93; The unique ID of the replicated bot to be deleted from the secondary
-#' region
+#' @param botId &#91;required&#93; The unique ID of the replicated bot to be deleted from the secondary region
 #' @param replicaRegion &#91;required&#93; The secondary region of the replicated bot that will be deleted.
 #'
 #' @keywords internal
@@ -999,11 +843,7 @@ lexmodelsv2_delete_bot_replica <- function(botId, replicaRegion) {
 #'
 #' @param botId &#91;required&#93; The identifier of the bot that contains the version.
 #' @param botVersion &#91;required&#93; The version of the bot to delete.
-#' @param skipResourceInUseCheck By default, Amazon Lex checks if any other resource, such as an alias or
-#' bot network, is using the bot version before it is deleted and throws a
-#' `ResourceInUseException` exception if the version is being used by
-#' another resource. Set this parameter to `true` to skip this check and
-#' remove the version even if it is being used by another resource.
+#' @param skipResourceInUseCheck By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot version before it is deleted and throws a `ResourceInUseException` exception if the version is being used by another resource. Set this parameter to `true` to skip this check and remove the version even if it is being used by another resource.
 #'
 #' @keywords internal
 #'
@@ -1037,8 +877,7 @@ lexmodelsv2_delete_bot_version <- function(botId, botVersion, skipResourceInUseC
 #'
 #' @param botId &#91;required&#93; The unique identifier of the bot to remove the custom vocabulary from.
 #' @param botVersion &#91;required&#93; The version of the bot to remove the custom vocabulary from.
-#' @param localeId &#91;required&#93; The locale identifier for the locale that contains the custom vocabulary
-#' to remove.
+#' @param localeId &#91;required&#93; The locale identifier for the locale that contains the custom vocabulary to remove.
 #'
 #' @keywords internal
 #'
@@ -1135,10 +974,7 @@ lexmodelsv2_delete_import <- function(importId) {
 #' @param intentId &#91;required&#93; The unique identifier of the intent to delete.
 #' @param botId &#91;required&#93; The identifier of the bot associated with the intent.
 #' @param botVersion &#91;required&#93; The version of the bot associated with the intent.
-#' @param localeId &#91;required&#93; The identifier of the language and locale where the bot will be deleted.
-#' The string must match one of the supported locales. For more
-#' information, see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
+#' @param localeId &#91;required&#93; The identifier of the language and locale where the bot will be deleted. The string must match one of the supported locales. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
 #'
 #' @keywords internal
 #'
@@ -1169,13 +1005,10 @@ lexmodelsv2_delete_intent <- function(intentId, botId, botVersion, localeId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_delete_resource_policy/](https://www.paws-r-sdk.com/docs/lexmodelsv2_delete_resource_policy/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the bot or bot alias that has the
-#' resource policy attached.
-#' @param expectedRevisionId The identifier of the revision to edit. If this ID doesn't match the
-#' current revision number, Amazon Lex returns an exception
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the bot or bot alias that has the resource policy attached.
+#' @param expectedRevisionId The identifier of the revision to edit. If this ID doesn't match the current revision number, Amazon Lex returns an exception
 #' 
-#' If you don't specify a revision ID, Amazon Lex will delete the current
-#' policy.
+#' If you don't specify a revision ID, Amazon Lex will delete the current policy.
 #'
 #' @keywords internal
 #'
@@ -1206,15 +1039,11 @@ lexmodelsv2_delete_resource_policy <- function(resourceArn, expectedRevisionId =
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_delete_resource_policy_statement/](https://www.paws-r-sdk.com/docs/lexmodelsv2_delete_resource_policy_statement/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the bot or bot alias that the resource
-#' policy is attached to.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.
 #' @param statementId &#91;required&#93; The name of the statement (SID) to delete from the policy.
-#' @param expectedRevisionId The identifier of the revision of the policy to delete the statement
-#' from. If this revision ID doesn't match the current revision ID, Amazon
-#' Lex throws an exception.
+#' @param expectedRevisionId The identifier of the revision of the policy to delete the statement from. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.
 #' 
-#' If you don't specify a revision, Amazon Lex removes the current contents
-#' of the statement.
+#' If you don't specify a revision, Amazon Lex removes the current contents of the statement.
 #'
 #' @keywords internal
 #'
@@ -1248,10 +1077,7 @@ lexmodelsv2_delete_resource_policy_statement <- function(resourceArn, statementI
 #' @param slotId &#91;required&#93; The identifier of the slot to delete.
 #' @param botId &#91;required&#93; The identifier of the bot associated with the slot to delete.
 #' @param botVersion &#91;required&#93; The version of the bot associated with the slot to delete.
-#' @param localeId &#91;required&#93; The identifier of the language and locale that the slot will be deleted
-#' from. The string must match one of the supported locales. For more
-#' information, see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
+#' @param localeId &#91;required&#93; The identifier of the language and locale that the slot will be deleted from. The string must match one of the supported locales. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
 #' @param intentId &#91;required&#93; The identifier of the intent associated with the slot.
 #'
 #' @keywords internal
@@ -1286,15 +1112,8 @@ lexmodelsv2_delete_slot <- function(slotId, botId, botVersion, localeId, intentI
 #' @param slotTypeId &#91;required&#93; The identifier of the slot type to delete.
 #' @param botId &#91;required&#93; The identifier of the bot associated with the slot type.
 #' @param botVersion &#91;required&#93; The version of the bot associated with the slot type.
-#' @param localeId &#91;required&#93; The identifier of the language and locale that the slot type will be
-#' deleted from. The string must match one of the supported locales. For
-#' more information, see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
-#' @param skipResourceInUseCheck By default, the [`delete_slot_type`][lexmodelsv2_delete_slot_type]
-#' operations throws a `ResourceInUseException` exception if you try to
-#' delete a slot type used by a slot. Set the `skipResourceInUseCheck`
-#' parameter to `true` to skip this check and remove the slot type even if
-#' a slot uses it.
+#' @param localeId &#91;required&#93; The identifier of the language and locale that the slot type will be deleted from. The string must match one of the supported locales. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
+#' @param skipResourceInUseCheck By default, the [`delete_slot_type`][lexmodelsv2_delete_slot_type] operations throws a `ResourceInUseException` exception if you try to delete a slot type used by a slot. Set the `skipResourceInUseCheck` parameter to `true` to skip this check and remove the slot type even if a slot uses it.
 #'
 #' @keywords internal
 #'
@@ -1357,16 +1176,8 @@ lexmodelsv2_delete_test_set <- function(testSetId) {
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_delete_utterances/](https://www.paws-r-sdk.com/docs/lexmodelsv2_delete_utterances/) for full documentation.
 #'
 #' @param botId &#91;required&#93; The unique identifier of the bot that contains the utterances.
-#' @param localeId The identifier of the language and locale where the utterances were
-#' collected. The string must match one of the supported locales. For more
-#' information, see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
-#' @param sessionId The unique identifier of the session with the user. The ID is returned
-#' in the response from the
-#' [RecognizeText](https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_RecognizeText.html)
-#' and
-#' [RecognizeUtterance](https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_RecognizeUtterance.html)
-#' operations.
+#' @param localeId The identifier of the language and locale where the utterances were collected. The string must match one of the supported locales. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
+#' @param sessionId The unique identifier of the session with the user. The ID is returned in the response from the [RecognizeText](https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_RecognizeText.html) and [RecognizeUtterance](https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_RecognizeUtterance.html) operations.
 #'
 #' @keywords internal
 #'
@@ -1453,6 +1264,40 @@ lexmodelsv2_describe_bot_alias <- function(botAliasId, botId) {
 }
 .lexmodelsv2$operations$describe_bot_alias <- lexmodelsv2_describe_bot_alias
 
+#' Retrieves the analysis results and recommendations for bot optimization
+#'
+#' @description
+#' Retrieves the analysis results and recommendations for bot optimization. The analysis must be in `Available` status before recommendations can be retrieved.
+#'
+#' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_describe_bot_analyzer_recommendation/](https://www.paws-r-sdk.com/docs/lexmodelsv2_describe_bot_analyzer_recommendation/) for full documentation.
+#'
+#' @param botId &#91;required&#93; The unique identifier of the bot.
+#' @param botAnalyzerRequestId &#91;required&#93; The unique identifier of the analysis request.
+#' @param nextToken If the response from a previous request was truncated, the `nextToken` value is used to retrieve the next page of recommendations.
+#' @param maxResults The maximum number of recommendations to return in the response. The default is 5.
+#'
+#' @keywords internal
+#'
+#' @rdname lexmodelsv2_describe_bot_analyzer_recommendation
+lexmodelsv2_describe_bot_analyzer_recommendation <- function(botId, botAnalyzerRequestId, nextToken = NULL, maxResults = NULL) {
+  op <- new_operation(
+    name = "DescribeBotAnalyzerRecommendation",
+    http_method = "POST",
+    http_path = "/bots/{botId}/botanalyzer/describe/{botAnalyzerRequestId}/",
+    host_prefix = "",
+    paginator = list(input_token = "nextToken", limit_key = "maxResults", non_aggregate_keys = list( "creationDateTime", "localeId", "botId", "botVersion", "botAnalyzerStatus"), output_token = "nextToken", result_key = "botAnalyzerRecommendationList"),
+    stream_api = FALSE
+  )
+  input <- .lexmodelsv2$describe_bot_analyzer_recommendation_input(botId = botId, botAnalyzerRequestId = botAnalyzerRequestId, nextToken = nextToken, maxResults = maxResults)
+  output <- .lexmodelsv2$describe_bot_analyzer_recommendation_output()
+  config <- get_config()
+  svc <- .lexmodelsv2$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.lexmodelsv2$operations$describe_bot_analyzer_recommendation <- lexmodelsv2_describe_bot_analyzer_recommendation
+
 #' Describes the settings that a bot has for a specific locale
 #'
 #' @description
@@ -1462,9 +1307,7 @@ lexmodelsv2_describe_bot_alias <- function(botAliasId, botId) {
 #'
 #' @param botId &#91;required&#93; The identifier of the bot associated with the locale.
 #' @param botVersion &#91;required&#93; The version of the bot associated with the locale.
-#' @param localeId &#91;required&#93; The unique identifier of the locale to describe. The string must match
-#' one of the supported locales. For more information, see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
+#' @param localeId &#91;required&#93; The unique identifier of the locale to describe. The string must match one of the supported locales. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
 #'
 #' @keywords internal
 #'
@@ -1497,10 +1340,7 @@ lexmodelsv2_describe_bot_locale <- function(botId, botVersion, localeId) {
 #'
 #' @param botId &#91;required&#93; The unique identifier of the bot associated with the bot recommendation.
 #' @param botVersion &#91;required&#93; The version of the bot associated with the bot recommendation.
-#' @param localeId &#91;required&#93; The identifier of the language and locale of the bot recommendation to
-#' describe. The string must match one of the supported locales. For more
-#' information, see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
+#' @param localeId &#91;required&#93; The identifier of the language and locale of the bot recommendation to describe. The string must match one of the supported locales. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
 #' @param botRecommendationId &#91;required&#93; The identifier of the bot recommendation to describe.
 #'
 #' @keywords internal
@@ -1565,12 +1405,10 @@ lexmodelsv2_describe_bot_replica <- function(botId, replicaRegion) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_describe_bot_resource_generation/](https://www.paws-r-sdk.com/docs/lexmodelsv2_describe_bot_resource_generation/) for full documentation.
 #'
-#' @param botId &#91;required&#93; The unique identifier of the bot for which to return the generation
-#' details.
+#' @param botId &#91;required&#93; The unique identifier of the bot for which to return the generation details.
 #' @param botVersion &#91;required&#93; The version of the bot for which to return the generation details.
 #' @param localeId &#91;required&#93; The locale of the bot for which to return the generation details.
-#' @param generationId &#91;required&#93; The unique identifier of the generation request for which to return the
-#' generation details.
+#' @param generationId &#91;required&#93; The unique identifier of the generation request for which to return the generation details.
 #'
 #' @keywords internal
 #'
@@ -1635,8 +1473,7 @@ lexmodelsv2_describe_bot_version <- function(botId, botVersion) {
 #'
 #' @param botId &#91;required&#93; The unique identifier of the bot that contains the custom vocabulary.
 #' @param botVersion &#91;required&#93; The bot version of the bot to return metadata for.
-#' @param localeId &#91;required&#93; The locale to return the custom vocabulary information for. The locale
-#' must be `en_GB`.
+#' @param localeId &#91;required&#93; The locale to return the custom vocabulary information for. The locale must be `en_GB`.
 #'
 #' @keywords internal
 #'
@@ -1732,10 +1569,7 @@ lexmodelsv2_describe_import <- function(importId) {
 #' @param intentId &#91;required&#93; The identifier of the intent to describe.
 #' @param botId &#91;required&#93; The identifier of the bot associated with the intent.
 #' @param botVersion &#91;required&#93; The version of the bot associated with the intent.
-#' @param localeId &#91;required&#93; The identifier of the language and locale of the intent to describe. The
-#' string must match one of the supported locales. For more information,
-#' see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
+#' @param localeId &#91;required&#93; The identifier of the language and locale of the intent to describe. The string must match one of the supported locales. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
 #'
 #' @keywords internal
 #'
@@ -1766,8 +1600,7 @@ lexmodelsv2_describe_intent <- function(intentId, botId, botVersion, localeId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_describe_resource_policy/](https://www.paws-r-sdk.com/docs/lexmodelsv2_describe_resource_policy/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the bot or bot alias that the resource
-#' policy is attached to.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.
 #'
 #' @keywords internal
 #'
@@ -1801,10 +1634,7 @@ lexmodelsv2_describe_resource_policy <- function(resourceArn) {
 #' @param slotId &#91;required&#93; The unique identifier for the slot.
 #' @param botId &#91;required&#93; The identifier of the bot associated with the slot.
 #' @param botVersion &#91;required&#93; The version of the bot associated with the slot.
-#' @param localeId &#91;required&#93; The identifier of the language and locale of the slot to describe. The
-#' string must match one of the supported locales. For more information,
-#' see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
+#' @param localeId &#91;required&#93; The identifier of the language and locale of the slot to describe. The string must match one of the supported locales. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
 #' @param intentId &#91;required&#93; The identifier of the intent that contains the slot.
 #'
 #' @keywords internal
@@ -1839,10 +1669,7 @@ lexmodelsv2_describe_slot <- function(slotId, botId, botVersion, localeId, inten
 #' @param slotTypeId &#91;required&#93; The identifier of the slot type.
 #' @param botId &#91;required&#93; The identifier of the bot associated with the slot type.
 #' @param botVersion &#91;required&#93; The version of the bot associated with the slot type.
-#' @param localeId &#91;required&#93; The identifier of the language and locale of the slot type to describe.
-#' The string must match one of the supported locales. For more
-#' information, see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
+#' @param localeId &#91;required&#93; The identifier of the language and locale of the slot type to describe. The string must match one of the supported locales. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
 #'
 #' @keywords internal
 #'
@@ -2064,30 +1891,14 @@ lexmodelsv2_get_test_execution_artifacts_url <- function(testExecutionId) {
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_list_aggregated_utterances/](https://www.paws-r-sdk.com/docs/lexmodelsv2_list_aggregated_utterances/) for full documentation.
 #'
 #' @param botId &#91;required&#93; The unique identifier of the bot associated with this request.
-#' @param botAliasId The identifier of the bot alias associated with this request. If you
-#' specify the bot alias, you can't specify the bot version.
-#' @param botVersion The identifier of the bot version associated with this request. If you
-#' specify the bot version, you can't specify the bot alias.
-#' @param localeId &#91;required&#93; The identifier of the language and locale where the utterances were
-#' collected. For more information, see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
-#' @param aggregationDuration &#91;required&#93; The time window for aggregating the utterance information. You can
-#' specify a time between one hour and two weeks.
-#' @param sortBy Specifies sorting parameters for the list of utterances. You can sort by
-#' the hit count, the missed count, or the number of distinct sessions the
-#' utterance appeared in.
-#' @param filters Provides the specification of a filter used to limit the utterances in
-#' the response to only those that match the filter specification. You can
-#' only specify one filter and one string to filter on.
-#' @param maxResults The maximum number of utterances to return in each page of results. If
-#' there are fewer results than the maximum page size, only the actual
-#' number of results are returned. If you don't specify the `maxResults`
-#' parameter, 1,000 results are returned.
-#' @param nextToken If the response from the
-#' [`list_aggregated_utterances`][lexmodelsv2_list_aggregated_utterances]
-#' operation contains more results that specified in the `maxResults`
-#' parameter, a token is returned in the response. Use that token in the
-#' `nextToken` parameter to return the next page of results.
+#' @param botAliasId The identifier of the bot alias associated with this request. If you specify the bot alias, you can't specify the bot version.
+#' @param botVersion The identifier of the bot version associated with this request. If you specify the bot version, you can't specify the bot alias.
+#' @param localeId &#91;required&#93; The identifier of the language and locale where the utterances were collected. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
+#' @param aggregationDuration &#91;required&#93; The time window for aggregating the utterance information. You can specify a time between one hour and two weeks.
+#' @param sortBy Specifies sorting parameters for the list of utterances. You can sort by the hit count, the missed count, or the number of distinct sessions the utterance appeared in.
+#' @param filters Provides the specification of a filter used to limit the utterances in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.
+#' @param maxResults The maximum number of utterances to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned. If you don't specify the `maxResults` parameter, 1,000 results are returned.
+#' @param nextToken If the response from the [`list_aggregated_utterances`][lexmodelsv2_list_aggregated_utterances] operation contains more results that specified in the `maxResults` parameter, a token is returned in the response. Use that token in the `nextToken` parameter to return the next page of results.
 #'
 #' @keywords internal
 #'
@@ -2118,14 +1929,10 @@ lexmodelsv2_list_aggregated_utterances <- function(botId, botAliasId = NULL, bot
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_list_bot_alias_replicas/](https://www.paws-r-sdk.com/docs/lexmodelsv2_list_bot_alias_replicas/) for full documentation.
 #'
-#' @param botId &#91;required&#93; The request for the unique bot ID of the replicated bot created from the
-#' source bot alias.
-#' @param replicaRegion &#91;required&#93; The request for the secondary region of the replicated bot created from
-#' the source bot alias.
-#' @param maxResults The request for maximum results to list the replicated bots created from
-#' the source bot alias.
-#' @param nextToken The request for the next token for the replicated bot created from the
-#' source bot alias.
+#' @param botId &#91;required&#93; The request for the unique bot ID of the replicated bot created from the source bot alias.
+#' @param replicaRegion &#91;required&#93; The request for the secondary region of the replicated bot created from the source bot alias.
+#' @param maxResults The request for maximum results to list the replicated bots created from the source bot alias.
+#' @param nextToken The request for the next token for the replicated bot created from the source bot alias.
 #'
 #' @keywords internal
 #'
@@ -2157,14 +1964,8 @@ lexmodelsv2_list_bot_alias_replicas <- function(botId, replicaRegion, maxResults
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_list_bot_aliases/](https://www.paws-r-sdk.com/docs/lexmodelsv2_list_bot_aliases/) for full documentation.
 #'
 #' @param botId &#91;required&#93; The identifier of the bot to list aliases for.
-#' @param maxResults The maximum number of aliases to return in each page of results. If
-#' there are fewer results than the max page size, only the actual number
-#' of results are returned.
-#' @param nextToken If the response from the
-#' [`list_bot_aliases`][lexmodelsv2_list_bot_aliases] operation contains
-#' more results than specified in the `maxResults` parameter, a token is
-#' returned in the response. Use that token in the `nextToken` parameter to
-#' return the next page of results.
+#' @param maxResults The maximum number of aliases to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.
+#' @param nextToken If the response from the [`list_bot_aliases`][lexmodelsv2_list_bot_aliases] operation contains more results than specified in the `maxResults` parameter, a token is returned in the response. Use that token in the `nextToken` parameter to return the next page of results.
 #'
 #' @keywords internal
 #'
@@ -2188,6 +1989,42 @@ lexmodelsv2_list_bot_aliases <- function(botId, maxResults = NULL, nextToken = N
 }
 .lexmodelsv2$operations$list_bot_aliases <- lexmodelsv2_list_bot_aliases
 
+#' Retrieves a list of historical bot analysis executions for a specific
+#' bot
+#'
+#' @description
+#' Retrieves a list of historical bot analysis executions for a specific bot. You can filter the results by locale and bot version.
+#'
+#' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_list_bot_analyzer_history/](https://www.paws-r-sdk.com/docs/lexmodelsv2_list_bot_analyzer_history/) for full documentation.
+#'
+#' @param botId &#91;required&#93; The unique identifier of the bot.
+#' @param localeId The locale identifier to filter the history. If not specified, returns history for all locales.
+#' @param botVersion The bot version to filter the history. If not specified, defaults to `DRAFT`.
+#' @param nextToken If the response from a previous request was truncated, the `nextToken` value is used to retrieve the next page of history entries.
+#' @param maxResults The maximum number of history entries to return in the response. The default is 10.
+#'
+#' @keywords internal
+#'
+#' @rdname lexmodelsv2_list_bot_analyzer_history
+lexmodelsv2_list_bot_analyzer_history <- function(botId, localeId = NULL, botVersion = NULL, nextToken = NULL, maxResults = NULL) {
+  op <- new_operation(
+    name = "ListBotAnalyzerHistory",
+    http_method = "POST",
+    http_path = "/bots/{botId}/botanalyzer/history/",
+    host_prefix = "",
+    paginator = list(input_token = "nextToken", limit_key = "maxResults", non_aggregate_keys = list( "localeId", "botId", "botVersion"), output_token = "nextToken", result_key = "botAnalyzerHistoryList"),
+    stream_api = FALSE
+  )
+  input <- .lexmodelsv2$list_bot_analyzer_history_input(botId = botId, localeId = localeId, botVersion = botVersion, nextToken = nextToken, maxResults = maxResults)
+  output <- .lexmodelsv2$list_bot_analyzer_history_output()
+  config <- get_config()
+  svc <- .lexmodelsv2$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.lexmodelsv2$operations$list_bot_analyzer_history <- lexmodelsv2_list_bot_analyzer_history
+
 #' Gets a list of locales for the specified bot
 #'
 #' @description
@@ -2197,19 +2034,10 @@ lexmodelsv2_list_bot_aliases <- function(botId, maxResults = NULL, nextToken = N
 #'
 #' @param botId &#91;required&#93; The identifier of the bot to list locales for.
 #' @param botVersion &#91;required&#93; The version of the bot to list locales for.
-#' @param sortBy Specifies sorting parameters for the list of locales. You can sort by
-#' locale name in ascending or descending order.
-#' @param filters Provides the specification for a filter used to limit the response to
-#' only those locales that match the filter specification. You can only
-#' specify one filter and one value to filter on.
-#' @param maxResults The maximum number of aliases to return in each page of results. If
-#' there are fewer results than the max page size, only the actual number
-#' of results are returned.
-#' @param nextToken If the response from the
-#' [`list_bot_locales`][lexmodelsv2_list_bot_locales] operation contains
-#' more results than specified in the `maxResults` parameter, a token is
-#' returned in the response. Use that token as the `nextToken` parameter to
-#' return the next page of results.
+#' @param sortBy Specifies sorting parameters for the list of locales. You can sort by locale name in ascending or descending order.
+#' @param filters Provides the specification for a filter used to limit the response to only those locales that match the filter specification. You can only specify one filter and one value to filter on.
+#' @param maxResults The maximum number of aliases to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.
+#' @param nextToken If the response from the [`list_bot_locales`][lexmodelsv2_list_bot_locales] operation contains more results than specified in the `maxResults` parameter, a token is returned in the response. Use that token as the `nextToken` parameter to return the next page of results.
 #'
 #' @keywords internal
 #'
@@ -2240,18 +2068,11 @@ lexmodelsv2_list_bot_locales <- function(botId, botVersion, sortBy = NULL, filte
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_list_bot_recommendations/](https://www.paws-r-sdk.com/docs/lexmodelsv2_list_bot_recommendations/) for full documentation.
 #'
-#' @param botId &#91;required&#93; The unique identifier of the bot that contains the bot recommendation
-#' list.
+#' @param botId &#91;required&#93; The unique identifier of the bot that contains the bot recommendation list.
 #' @param botVersion &#91;required&#93; The version of the bot that contains the bot recommendation list.
-#' @param localeId &#91;required&#93; The identifier of the language and locale of the bot recommendation
-#' list.
-#' @param maxResults The maximum number of bot recommendations to return in each page of
-#' results. If there are fewer results than the max page size, only the
-#' actual number of results are returned.
-#' @param nextToken If the response from the ListBotRecommendation operation contains more
-#' results than specified in the maxResults parameter, a token is returned
-#' in the response. Use that token in the nextToken parameter to return the
-#' next page of results.
+#' @param localeId &#91;required&#93; The identifier of the language and locale of the bot recommendation list.
+#' @param maxResults The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.
+#' @param nextToken If the response from the ListBotRecommendation operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.
 #'
 #' @keywords internal
 #'
@@ -2313,17 +2134,12 @@ lexmodelsv2_list_bot_replicas <- function(botId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_list_bot_resource_generations/](https://www.paws-r-sdk.com/docs/lexmodelsv2_list_bot_resource_generations/) for full documentation.
 #'
-#' @param botId &#91;required&#93; The unique identifier of the bot whose generation requests you want to
-#' view.
+#' @param botId &#91;required&#93; The unique identifier of the bot whose generation requests you want to view.
 #' @param botVersion &#91;required&#93; The version of the bot whose generation requests you want to view.
 #' @param localeId &#91;required&#93; The locale of the bot whose generation requests you want to view.
-#' @param sortBy An object containing information about the attribute and the method by
-#' which to sort the results
+#' @param sortBy An object containing information about the attribute and the method by which to sort the results
 #' @param maxResults The maximum number of results to return in the response.
-#' @param nextToken If the total number of results is greater than the number specified in
-#' the `maxResults`, the response returns a token in the `nextToken` field.
-#' Use this token when making a request to return the next batch of
-#' results.
+#' @param nextToken If the total number of results is greater than the number specified in the `maxResults`, the response returns a token in the `nextToken` field. Use this token when making a request to return the next batch of results.
 #'
 #' @keywords internal
 #'
@@ -2391,16 +2207,9 @@ lexmodelsv2_list_bot_version_replicas <- function(botId, replicaRegion, maxResul
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_list_bot_versions/](https://www.paws-r-sdk.com/docs/lexmodelsv2_list_bot_versions/) for full documentation.
 #'
 #' @param botId &#91;required&#93; The identifier of the bot to list versions for.
-#' @param sortBy Specifies sorting parameters for the list of versions. You can specify
-#' that the list be sorted by version name in either ascending or
-#' descending order.
-#' @param maxResults The maximum number of versions to return in each page of results. If
-#' there are fewer results than the max page size, only the actual number
-#' of results are returned.
-#' @param nextToken If the response to the `ListBotVersion` operation contains more results
-#' than specified in the `maxResults` parameter, a token is returned in the
-#' response. Use that token in the `nextToken` parameter to return the next
-#' page of results.
+#' @param sortBy Specifies sorting parameters for the list of versions. You can specify that the list be sorted by version name in either ascending or descending order.
+#' @param maxResults The maximum number of versions to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.
+#' @param nextToken If the response to the `ListBotVersion` operation contains more results than specified in the `maxResults` parameter, a token is returned in the response. Use that token in the `nextToken` parameter to return the next page of results.
 #'
 #' @keywords internal
 #'
@@ -2431,23 +2240,12 @@ lexmodelsv2_list_bot_versions <- function(botId, sortBy = NULL, maxResults = NUL
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_list_bots/](https://www.paws-r-sdk.com/docs/lexmodelsv2_list_bots/) for full documentation.
 #'
-#' @param sortBy Specifies sorting parameters for the list of bots. You can specify that
-#' the list be sorted by bot name in ascending or descending order.
-#' @param filters Provides the specification of a filter used to limit the bots in the
-#' response to only those that match the filter specification. You can only
-#' specify one filter and one string to filter on.
-#' @param maxResults The maximum number of bots to return in each page of results. If there
-#' are fewer results than the maximum page size, only the actual number of
-#' results are returned.
-#' @param nextToken If the response from the [`list_bots`][lexmodelsv2_list_bots] operation
-#' contains more results than specified in the `maxResults` parameter, a
-#' token is returned in the response.
+#' @param sortBy Specifies sorting parameters for the list of bots. You can specify that the list be sorted by bot name in ascending or descending order.
+#' @param filters Provides the specification of a filter used to limit the bots in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.
+#' @param maxResults The maximum number of bots to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.
+#' @param nextToken If the response from the [`list_bots`][lexmodelsv2_list_bots] operation contains more results than specified in the `maxResults` parameter, a token is returned in the response.
 #' 
-#' Use the returned token in the `nextToken` parameter of a
-#' [`list_bots`][lexmodelsv2_list_bots] request to return the next page of
-#' results. For a complete set of results, call the
-#' [`list_bots`][lexmodelsv2_list_bots] operation until the `nextToken`
-#' returned in the response is null.
+#' Use the returned token in the `nextToken` parameter of a [`list_bots`][lexmodelsv2_list_bots] request to return the next page of results. For a complete set of results, call the [`list_bots`][lexmodelsv2_list_bots] operation until the `nextToken` returned in the response is null.
 #'
 #' @keywords internal
 #'
@@ -2479,21 +2277,10 @@ lexmodelsv2_list_bots <- function(sortBy = NULL, filters = NULL, maxResults = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_list_built_in_intents/](https://www.paws-r-sdk.com/docs/lexmodelsv2_list_built_in_intents/) for full documentation.
 #'
-#' @param localeId &#91;required&#93; The identifier of the language and locale of the intents to list. The
-#' string must match one of the supported locales. For more information,
-#' see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
-#' @param sortBy Specifies sorting parameters for the list of built-in intents. You can
-#' specify that the list be sorted by the built-in intent signature in
-#' either ascending or descending order.
-#' @param maxResults The maximum number of built-in intents to return in each page of
-#' results. If there are fewer results than the max page size, only the
-#' actual number of results are returned.
-#' @param nextToken If the response from the
-#' [`list_built_in_intents`][lexmodelsv2_list_built_in_intents] operation
-#' contains more results than specified in the `maxResults` parameter, a
-#' token is returned in the response. Use that token in the `nextToken`
-#' parameter to return the next page of results.
+#' @param localeId &#91;required&#93; The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
+#' @param sortBy Specifies sorting parameters for the list of built-in intents. You can specify that the list be sorted by the built-in intent signature in either ascending or descending order.
+#' @param maxResults The maximum number of built-in intents to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.
+#' @param nextToken If the response from the [`list_built_in_intents`][lexmodelsv2_list_built_in_intents] operation contains more results than specified in the `maxResults` parameter, a token is returned in the response. Use that token in the `nextToken` parameter to return the next page of results.
 #'
 #' @keywords internal
 #'
@@ -2524,22 +2311,10 @@ lexmodelsv2_list_built_in_intents <- function(localeId, sortBy = NULL, maxResult
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_list_built_in_slot_types/](https://www.paws-r-sdk.com/docs/lexmodelsv2_list_built_in_slot_types/) for full documentation.
 #'
-#' @param localeId &#91;required&#93; The identifier of the language and locale of the slot types to list. The
-#' string must match one of the supported locales. For more information,
-#' see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
-#' @param sortBy Determines the sort order for the response from the
-#' [`list_built_in_slot_types`][lexmodelsv2_list_built_in_slot_types]
-#' operation. You can choose to sort by the slot type signature in either
-#' ascending or descending order.
-#' @param maxResults The maximum number of built-in slot types to return in each page of
-#' results. If there are fewer results than the max page size, only the
-#' actual number of results are returned.
-#' @param nextToken If the response from the
-#' [`list_built_in_slot_types`][lexmodelsv2_list_built_in_slot_types]
-#' operation contains more results than specified in the `maxResults`
-#' parameter, a token is returned in the response. Use that token in the
-#' `nextToken` parameter to return the next page of results.
+#' @param localeId &#91;required&#93; The identifier of the language and locale of the slot types to list. The string must match one of the supported locales. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
+#' @param sortBy Determines the sort order for the response from the [`list_built_in_slot_types`][lexmodelsv2_list_built_in_slot_types] operation. You can choose to sort by the slot type signature in either ascending or descending order.
+#' @param maxResults The maximum number of built-in slot types to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.
+#' @param nextToken If the response from the [`list_built_in_slot_types`][lexmodelsv2_list_built_in_slot_types] operation contains more results than specified in the `maxResults` parameter, a token is returned in the response. Use that token in the `nextToken` parameter to return the next page of results.
 #'
 #' @keywords internal
 #'
@@ -2571,13 +2346,9 @@ lexmodelsv2_list_built_in_slot_types <- function(localeId, sortBy = NULL, maxRes
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_list_custom_vocabulary_items/](https://www.paws-r-sdk.com/docs/lexmodelsv2_list_custom_vocabulary_items/) for full documentation.
 #'
-#' @param botId &#91;required&#93; The identifier of the version of the bot associated with this custom
-#' vocabulary.
+#' @param botId &#91;required&#93; The identifier of the version of the bot associated with this custom vocabulary.
 #' @param botVersion &#91;required&#93; The bot version of the bot to the list custom vocabulary request.
-#' @param localeId &#91;required&#93; The identifier of the language and locale where this custom vocabulary
-#' is used. The string must match one of the supported locales. For more
-#' information, see Supported languages
-#' (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
+#' @param localeId &#91;required&#93; The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see Supported languages (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
 #' @param maxResults The maximum number of items returned by the list operation.
 #' @param nextToken The nextToken identifier to the list custom vocabulary request.
 #'
@@ -2612,26 +2383,13 @@ lexmodelsv2_list_custom_vocabulary_items <- function(botId, botVersion, localeId
 #'
 #' @param botId The unique identifier that Amazon Lex assigned to the bot.
 #' @param botVersion The version of the bot to list exports for.
-#' @param sortBy Determines the field that the list of exports is sorted by. You can sort
-#' by the `LastUpdatedDateTime` field in ascending or descending order.
-#' @param filters Provides the specification of a filter used to limit the exports in the
-#' response to only those that match the filter specification. You can only
-#' specify one filter and one string to filter on.
-#' @param maxResults The maximum number of exports to return in each page of results. If
-#' there are fewer results than the max page size, only the actual number
-#' of results are returned.
-#' @param nextToken If the response from the [`list_exports`][lexmodelsv2_list_exports]
-#' operation contains more results that specified in the `maxResults`
-#' parameter, a token is returned in the response.
+#' @param sortBy Determines the field that the list of exports is sorted by. You can sort by the `LastUpdatedDateTime` field in ascending or descending order.
+#' @param filters Provides the specification of a filter used to limit the exports in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.
+#' @param maxResults The maximum number of exports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.
+#' @param nextToken If the response from the [`list_exports`][lexmodelsv2_list_exports] operation contains more results that specified in the `maxResults` parameter, a token is returned in the response.
 #' 
-#' Use the returned token in the `nextToken` parameter of a
-#' [`list_exports`][lexmodelsv2_list_exports] request to return the next
-#' page of results. For a complete set of results, call the
-#' [`list_exports`][lexmodelsv2_list_exports] operation until the
-#' `nextToken` returned in the response is null.
-#' @param localeId Specifies the resources that should be exported. If you don't specify a
-#' resource type in the `filters` parameter, both bot locales and custom
-#' vocabularies are exported.
+#' Use the returned token in the `nextToken` parameter of a [`list_exports`][lexmodelsv2_list_exports] request to return the next page of results. For a complete set of results, call the [`list_exports`][lexmodelsv2_list_exports] operation until the `nextToken` returned in the response is null.
+#' @param localeId Specifies the resources that should be exported. If you don't specify a resource type in the `filters` parameter, both bot locales and custom vocabularies are exported.
 #'
 #' @keywords internal
 #'
@@ -2664,26 +2422,13 @@ lexmodelsv2_list_exports <- function(botId = NULL, botVersion = NULL, sortBy = N
 #'
 #' @param botId The unique identifier that Amazon Lex assigned to the bot.
 #' @param botVersion The version of the bot to list imports for.
-#' @param sortBy Determines the field that the list of imports is sorted by. You can sort
-#' by the `LastUpdatedDateTime` field in ascending or descending order.
-#' @param filters Provides the specification of a filter used to limit the bots in the
-#' response to only those that match the filter specification. You can only
-#' specify one filter and one string to filter on.
-#' @param maxResults The maximum number of imports to return in each page of results. If
-#' there are fewer results than the max page size, only the actual number
-#' of results are returned.
-#' @param nextToken If the response from the [`list_imports`][lexmodelsv2_list_imports]
-#' operation contains more results than specified in the `maxResults`
-#' parameter, a token is returned in the response.
+#' @param sortBy Determines the field that the list of imports is sorted by. You can sort by the `LastUpdatedDateTime` field in ascending or descending order.
+#' @param filters Provides the specification of a filter used to limit the bots in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.
+#' @param maxResults The maximum number of imports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.
+#' @param nextToken If the response from the [`list_imports`][lexmodelsv2_list_imports] operation contains more results than specified in the `maxResults` parameter, a token is returned in the response.
 #' 
-#' Use the returned token in the `nextToken` parameter of a
-#' [`list_imports`][lexmodelsv2_list_imports] request to return the next
-#' page of results. For a complete set of results, call the
-#' [`list_imports`][lexmodelsv2_list_imports] operation until the
-#' `nextToken` returned in the response is null.
-#' @param localeId Specifies the locale that should be present in the list. If you don't
-#' specify a resource type in the `filters` parameter, the list contains
-#' both bot locales and custom vocabularies.
+#' Use the returned token in the `nextToken` parameter of a [`list_imports`][lexmodelsv2_list_imports] request to return the next page of results. For a complete set of results, call the [`list_imports`][lexmodelsv2_list_imports] operation until the `nextToken` returned in the response is null.
+#' @param localeId Specifies the locale that should be present in the list. If you don't specify a resource type in the `filters` parameter, the list contains both bot locales and custom vocabularies.
 #'
 #' @keywords internal
 #'
@@ -2714,37 +2459,21 @@ lexmodelsv2_list_imports <- function(botId = NULL, botVersion = NULL, sortBy = N
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_list_intent_metrics/](https://www.paws-r-sdk.com/docs/lexmodelsv2_list_intent_metrics/) for full documentation.
 #'
-#' @param botId &#91;required&#93; The identifier for the bot for which you want to retrieve intent
-#' metrics.
-#' @param startDateTime &#91;required&#93; The timestamp that marks the beginning of the range of time for which
-#' you want to see intent metrics.
-#' @param endDateTime &#91;required&#93; The date and time that marks the end of the range of time for which you
-#' want to see intent metrics.
-#' @param metrics &#91;required&#93; A list of objects, each of which contains a metric you want to list, the
-#' statistic for the metric you want to return, and the order by which to
-#' organize the results.
-#' @param binBy A list of objects, each of which contains specifications for organizing
-#' the results by time.
-#' @param groupBy A list of objects, each of which specifies how to group the results. You
-#' can group by the following criteria:
+#' @param botId &#91;required&#93; The identifier for the bot for which you want to retrieve intent metrics.
+#' @param startDateTime &#91;required&#93; The timestamp that marks the beginning of the range of time for which you want to see intent metrics.
+#' @param endDateTime &#91;required&#93; The date and time that marks the end of the range of time for which you want to see intent metrics.
+#' @param metrics &#91;required&#93; A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the order by which to organize the results.
+#' @param binBy A list of objects, each of which contains specifications for organizing the results by time.
+#' @param groupBy A list of objects, each of which specifies how to group the results. You can group by the following criteria:
 #' 
 #' -   `IntentName` – The name of the intent.
 #' 
-#' -   `IntentEndState` – The final state of the intent. The possible end
-#'     states are detailed in Key definitions in the user guide.
-#' @param filters A list of objects, each of which describes a condition by which you want
-#' to filter the results.
-#' @param maxResults The maximum number of results to return in each page of results. If
-#' there are fewer results than the maximum page size, only the actual
-#' number of results are returned.
-#' @param nextToken If the response from the ListIntentMetrics operation contains more
-#' results than specified in the maxResults parameter, a token is returned
-#' in the response.
+#' -   `IntentEndState` – The final state of the intent. The possible end states are detailed in Key definitions in the user guide.
+#' @param filters A list of objects, each of which describes a condition by which you want to filter the results.
+#' @param maxResults The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.
+#' @param nextToken If the response from the ListIntentMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.
 #' 
-#' Use the returned token in the nextToken parameter of a ListIntentMetrics
-#' request to return the next page of results. For a complete set of
-#' results, call the ListIntentMetrics operation until the nextToken
-#' returned in the response is null.
+#' Use the returned token in the nextToken parameter of a ListIntentMetrics request to return the next page of results. For a complete set of results, call the ListIntentMetrics operation until the nextToken returned in the response is null.
 #'
 #' @keywords internal
 #'
@@ -2776,22 +2505,17 @@ lexmodelsv2_list_intent_metrics <- function(botId, startDateTime, endDateTime, m
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_list_intent_paths/](https://www.paws-r-sdk.com/docs/lexmodelsv2_list_intent_paths/) for full documentation.
 #'
-#' @param botId &#91;required&#93; The identifier for the bot for which you want to retrieve intent path
-#' metrics.
-#' @param startDateTime &#91;required&#93; The date and time that marks the beginning of the range of time for
-#' which you want to see intent path metrics.
-#' @param endDateTime &#91;required&#93; The date and time that marks the end of the range of time for which you
-#' want to see intent path metrics.
-#' @param intentPath &#91;required&#93; The intent path for which you want to retrieve metrics. Use a forward
-#' slash to separate intents in the path. For example:
+#' @param botId &#91;required&#93; The identifier for the bot for which you want to retrieve intent path metrics.
+#' @param startDateTime &#91;required&#93; The date and time that marks the beginning of the range of time for which you want to see intent path metrics.
+#' @param endDateTime &#91;required&#93; The date and time that marks the end of the range of time for which you want to see intent path metrics.
+#' @param intentPath &#91;required&#93; The intent path for which you want to retrieve metrics. Use a forward slash to separate intents in the path. For example:
 #' 
 #' -   /BookCar
 #' 
 #' -   /BookCar/BookHotel
 #' 
 #' -   /BookHotel/BookCar
-#' @param filters A list of objects, each describes a condition by which you want to
-#' filter the results.
+#' @param filters A list of objects, each describes a condition by which you want to filter the results.
 #'
 #' @keywords internal
 #'
@@ -2822,37 +2546,21 @@ lexmodelsv2_list_intent_paths <- function(botId, startDateTime, endDateTime, int
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_list_intent_stage_metrics/](https://www.paws-r-sdk.com/docs/lexmodelsv2_list_intent_stage_metrics/) for full documentation.
 #'
-#' @param botId &#91;required&#93; The identifier for the bot for which you want to retrieve intent stage
-#' metrics.
-#' @param startDateTime &#91;required&#93; The date and time that marks the beginning of the range of time for
-#' which you want to see intent stage metrics.
-#' @param endDateTime &#91;required&#93; The date and time that marks the end of the range of time for which you
-#' want to see intent stage metrics.
-#' @param metrics &#91;required&#93; A list of objects, each of which contains a metric you want to list, the
-#' statistic for the metric you want to return, and the method by which to
-#' organize the results.
-#' @param binBy A list of objects, each of which contains specifications for organizing
-#' the results by time.
-#' @param groupBy A list of objects, each of which specifies how to group the results. You
-#' can group by the following criteria:
+#' @param botId &#91;required&#93; The identifier for the bot for which you want to retrieve intent stage metrics.
+#' @param startDateTime &#91;required&#93; The date and time that marks the beginning of the range of time for which you want to see intent stage metrics.
+#' @param endDateTime &#91;required&#93; The date and time that marks the end of the range of time for which you want to see intent stage metrics.
+#' @param metrics &#91;required&#93; A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.
+#' @param binBy A list of objects, each of which contains specifications for organizing the results by time.
+#' @param groupBy A list of objects, each of which specifies how to group the results. You can group by the following criteria:
 #' 
 #' -   `IntentStageName` – The name of the intent stage.
 #' 
-#' -   `SwitchedToIntent` – The intent to which the conversation was
-#'     switched (if any).
-#' @param filters A list of objects, each of which describes a condition by which you want
-#' to filter the results.
-#' @param maxResults The maximum number of results to return in each page of results. If
-#' there are fewer results than the maximum page size, only the actual
-#' number of results are returned.
-#' @param nextToken If the response from the ListIntentStageMetrics operation contains more
-#' results than specified in the maxResults parameter, a token is returned
-#' in the response.
+#' -   `SwitchedToIntent` – The intent to which the conversation was switched (if any).
+#' @param filters A list of objects, each of which describes a condition by which you want to filter the results.
+#' @param maxResults The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.
+#' @param nextToken If the response from the ListIntentStageMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.
 #' 
-#' Use the returned token in the nextToken parameter of a
-#' ListIntentStageMetrics request to return the next page of results. For a
-#' complete set of results, call the ListIntentStageMetrics operation until
-#' the nextToken returned in the response is null.
+#' Use the returned token in the nextToken parameter of a ListIntentStageMetrics request to return the next page of results. For a complete set of results, call the ListIntentStageMetrics operation until the nextToken returned in the response is null.
 #'
 #' @keywords internal
 #'
@@ -2885,29 +2593,13 @@ lexmodelsv2_list_intent_stage_metrics <- function(botId, startDateTime, endDateT
 #'
 #' @param botId &#91;required&#93; The unique identifier of the bot that contains the intent.
 #' @param botVersion &#91;required&#93; The version of the bot that contains the intent.
-#' @param localeId &#91;required&#93; The identifier of the language and locale of the intents to list. The
-#' string must match one of the supported locales. For more information,
-#' see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
-#' @param sortBy Determines the sort order for the response from the
-#' [`list_intents`][lexmodelsv2_list_intents] operation. You can choose to
-#' sort by the intent name or last updated date in either ascending or
-#' descending order.
-#' @param filters Provides the specification of a filter used to limit the intents in the
-#' response to only those that match the filter specification. You can only
-#' specify one filter and only one string to filter on.
-#' @param maxResults The maximum number of intents to return in each page of results. If
-#' there are fewer results than the max page size, only the actual number
-#' of results are returned.
-#' @param nextToken If the response from the [`list_intents`][lexmodelsv2_list_intents]
-#' operation contains more results than specified in the `maxResults`
-#' parameter, a token is returned in the response.
+#' @param localeId &#91;required&#93; The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
+#' @param sortBy Determines the sort order for the response from the [`list_intents`][lexmodelsv2_list_intents] operation. You can choose to sort by the intent name or last updated date in either ascending or descending order.
+#' @param filters Provides the specification of a filter used to limit the intents in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.
+#' @param maxResults The maximum number of intents to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.
+#' @param nextToken If the response from the [`list_intents`][lexmodelsv2_list_intents] operation contains more results than specified in the `maxResults` parameter, a token is returned in the response.
 #' 
-#' Use the returned token in the `nextToken` parameter of a
-#' [`list_intents`][lexmodelsv2_list_intents] request to return the next
-#' page of results. For a complete set of results, call the
-#' [`list_intents`][lexmodelsv2_list_intents] operation until the
-#' `nextToken` returned in the response is null.
+#' Use the returned token in the `nextToken` parameter of a [`list_intents`][lexmodelsv2_list_intents] request to return the next page of results. For a complete set of results, call the [`list_intents`][lexmodelsv2_list_intents] operation until the `nextToken` returned in the response is null.
 #'
 #' @keywords internal
 #'
@@ -2939,19 +2631,12 @@ lexmodelsv2_list_intents <- function(botId, botVersion, localeId, sortBy = NULL,
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_list_recommended_intents/](https://www.paws-r-sdk.com/docs/lexmodelsv2_list_recommended_intents/) for full documentation.
 #'
-#' @param botId &#91;required&#93; The unique identifier of the bot associated with the recommended
-#' intents.
+#' @param botId &#91;required&#93; The unique identifier of the bot associated with the recommended intents.
 #' @param botVersion &#91;required&#93; The version of the bot that contains the recommended intents.
 #' @param localeId &#91;required&#93; The identifier of the language and locale of the recommended intents.
-#' @param botRecommendationId &#91;required&#93; The identifier of the bot recommendation that contains the recommended
-#' intents.
-#' @param nextToken If the response from the ListRecommendedIntents operation contains more
-#' results than specified in the maxResults parameter, a token is returned
-#' in the response. Use that token in the nextToken parameter to return the
-#' next page of results.
-#' @param maxResults The maximum number of bot recommendations to return in each page of
-#' results. If there are fewer results than the max page size, only the
-#' actual number of results are returned.
+#' @param botRecommendationId &#91;required&#93; The identifier of the bot recommendation that contains the recommended intents.
+#' @param nextToken If the response from the ListRecommendedIntents operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.
+#' @param maxResults The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.
 #'
 #' @keywords internal
 #'
@@ -2982,27 +2667,15 @@ lexmodelsv2_list_recommended_intents <- function(botId, botVersion, localeId, bo
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_list_session_analytics_data/](https://www.paws-r-sdk.com/docs/lexmodelsv2_list_session_analytics_data/) for full documentation.
 #'
-#' @param botId &#91;required&#93; The identifier for the bot for which you want to retrieve session
-#' analytics.
-#' @param startDateTime &#91;required&#93; The date and time that marks the beginning of the range of time for
-#' which you want to see session analytics.
-#' @param endDateTime &#91;required&#93; The date and time that marks the end of the range of time for which you
-#' want to see session analytics.
-#' @param sortBy An object specifying the measure and method by which to sort the session
-#' analytics data.
-#' @param filters A list of objects, each of which describes a condition by which you want
-#' to filter the results.
-#' @param maxResults The maximum number of results to return in each page of results. If
-#' there are fewer results than the maximum page size, only the actual
-#' number of results are returned.
-#' @param nextToken If the response from the ListSessionAnalyticsData operation contains
-#' more results than specified in the maxResults parameter, a token is
-#' returned in the response.
+#' @param botId &#91;required&#93; The identifier for the bot for which you want to retrieve session analytics.
+#' @param startDateTime &#91;required&#93; The date and time that marks the beginning of the range of time for which you want to see session analytics.
+#' @param endDateTime &#91;required&#93; The date and time that marks the end of the range of time for which you want to see session analytics.
+#' @param sortBy An object specifying the measure and method by which to sort the session analytics data.
+#' @param filters A list of objects, each of which describes a condition by which you want to filter the results.
+#' @param maxResults The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.
+#' @param nextToken If the response from the ListSessionAnalyticsData operation contains more results than specified in the maxResults parameter, a token is returned in the response.
 #' 
-#' Use the returned token in the nextToken parameter of a
-#' ListSessionAnalyticsData request to return the next page of results. For
-#' a complete set of results, call the ListSessionAnalyticsData operation
-#' until the nextToken returned in the response is null.
+#' Use the returned token in the nextToken parameter of a ListSessionAnalyticsData request to return the next page of results. For a complete set of results, call the ListSessionAnalyticsData operation until the nextToken returned in the response is null.
 #'
 #' @keywords internal
 #'
@@ -3033,38 +2706,21 @@ lexmodelsv2_list_session_analytics_data <- function(botId, startDateTime, endDat
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_list_session_metrics/](https://www.paws-r-sdk.com/docs/lexmodelsv2_list_session_metrics/) for full documentation.
 #'
-#' @param botId &#91;required&#93; The identifier for the bot for which you want to retrieve session
-#' metrics.
-#' @param startDateTime &#91;required&#93; The date and time that marks the beginning of the range of time for
-#' which you want to see session metrics.
-#' @param endDateTime &#91;required&#93; The date and time that marks the end of the range of time for which you
-#' want to see session metrics.
-#' @param metrics &#91;required&#93; A list of objects, each of which contains a metric you want to list, the
-#' statistic for the metric you want to return, and the method by which to
-#' organize the results.
-#' @param binBy A list of objects, each of which contains specifications for organizing
-#' the results by time.
-#' @param groupBy A list of objects, each of which specifies how to group the results. You
-#' can group by the following criteria:
+#' @param botId &#91;required&#93; The identifier for the bot for which you want to retrieve session metrics.
+#' @param startDateTime &#91;required&#93; The date and time that marks the beginning of the range of time for which you want to see session metrics.
+#' @param endDateTime &#91;required&#93; The date and time that marks the end of the range of time for which you want to see session metrics.
+#' @param metrics &#91;required&#93; A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.
+#' @param binBy A list of objects, each of which contains specifications for organizing the results by time.
+#' @param groupBy A list of objects, each of which specifies how to group the results. You can group by the following criteria:
 #' 
-#' -   `ConversationEndState` – The final state of the conversation. The
-#'     possible end states are detailed in Key definitions in the user
-#'     guide.
+#' -   `ConversationEndState` – The final state of the conversation. The possible end states are detailed in Key definitions in the user guide.
 #' 
 #' -   `LocaleId` – The unique identifier of the bot locale.
-#' @param filters A list of objects, each of which describes a condition by which you want
-#' to filter the results.
-#' @param maxResults The maximum number of results to return in each page of results. If
-#' there are fewer results than the maximum page size, only the actual
-#' number of results are returned.
-#' @param nextToken If the response from the ListSessionMetrics operation contains more
-#' results than specified in the maxResults parameter, a token is returned
-#' in the response.
+#' @param filters A list of objects, each of which describes a condition by which you want to filter the results.
+#' @param maxResults The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.
+#' @param nextToken If the response from the ListSessionMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.
 #' 
-#' Use the returned token in the nextToken parameter of a
-#' ListSessionMetrics request to return the next page of results. For a
-#' complete set of results, call the ListSessionMetrics operation until the
-#' nextToken returned in the response is null.
+#' Use the returned token in the nextToken parameter of a ListSessionMetrics request to return the next page of results. For a complete set of results, call the ListSessionMetrics operation until the nextToken returned in the response is null.
 #'
 #' @keywords internal
 #'
@@ -3097,25 +2753,11 @@ lexmodelsv2_list_session_metrics <- function(botId, startDateTime, endDateTime, 
 #'
 #' @param botId &#91;required&#93; The unique identifier of the bot that contains the slot types.
 #' @param botVersion &#91;required&#93; The version of the bot that contains the slot type.
-#' @param localeId &#91;required&#93; The identifier of the language and locale of the slot types to list. The
-#' string must match one of the supported locales. For more information,
-#' see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
-#' @param sortBy Determines the sort order for the response from the
-#' [`list_slot_types`][lexmodelsv2_list_slot_types] operation. You can
-#' choose to sort by the slot type name or last updated date in either
-#' ascending or descending order.
-#' @param filters Provides the specification of a filter used to limit the slot types in
-#' the response to only those that match the filter specification. You can
-#' only specify one filter and only one string to filter on.
-#' @param maxResults The maximum number of slot types to return in each page of results. If
-#' there are fewer results than the max page size, only the actual number
-#' of results are returned.
-#' @param nextToken If the response from the
-#' [`list_slot_types`][lexmodelsv2_list_slot_types] operation contains more
-#' results than specified in the `maxResults` parameter, a token is
-#' returned in the response. Use that token in the `nextToken` parameter to
-#' return the next page of results.
+#' @param localeId &#91;required&#93; The identifier of the language and locale of the slot types to list. The string must match one of the supported locales. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
+#' @param sortBy Determines the sort order for the response from the [`list_slot_types`][lexmodelsv2_list_slot_types] operation. You can choose to sort by the slot type name or last updated date in either ascending or descending order.
+#' @param filters Provides the specification of a filter used to limit the slot types in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.
+#' @param maxResults The maximum number of slot types to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.
+#' @param nextToken If the response from the [`list_slot_types`][lexmodelsv2_list_slot_types] operation contains more results than specified in the `maxResults` parameter, a token is returned in the response. Use that token in the `nextToken` parameter to return the next page of results.
 #'
 #' @keywords internal
 #'
@@ -3148,25 +2790,12 @@ lexmodelsv2_list_slot_types <- function(botId, botVersion, localeId, sortBy = NU
 #'
 #' @param botId &#91;required&#93; The identifier of the bot that contains the slot.
 #' @param botVersion &#91;required&#93; The version of the bot that contains the slot.
-#' @param localeId &#91;required&#93; The identifier of the language and locale of the slots to list. The
-#' string must match one of the supported locales. For more information,
-#' see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
+#' @param localeId &#91;required&#93; The identifier of the language and locale of the slots to list. The string must match one of the supported locales. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
 #' @param intentId &#91;required&#93; The unique identifier of the intent that contains the slot.
-#' @param sortBy Determines the sort order for the response from the
-#' [`list_slots`][lexmodelsv2_list_slots] operation. You can choose to sort
-#' by the slot name or last updated date in either ascending or descending
-#' order.
-#' @param filters Provides the specification of a filter used to limit the slots in the
-#' response to only those that match the filter specification. You can only
-#' specify one filter and only one string to filter on.
-#' @param maxResults The maximum number of slots to return in each page of results. If there
-#' are fewer results than the max page size, only the actual number of
-#' results are returned.
-#' @param nextToken If the response from the [`list_slots`][lexmodelsv2_list_slots]
-#' operation contains more results than specified in the `maxResults`
-#' parameter, a token is returned in the response. Use that token in the
-#' `nextToken` parameter to return the next page of results.
+#' @param sortBy Determines the sort order for the response from the [`list_slots`][lexmodelsv2_list_slots] operation. You can choose to sort by the slot name or last updated date in either ascending or descending order.
+#' @param filters Provides the specification of a filter used to limit the slots in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.
+#' @param maxResults The maximum number of slots to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.
+#' @param nextToken If the response from the [`list_slots`][lexmodelsv2_list_slots] operation contains more results than specified in the `maxResults` parameter, a token is returned in the response. Use that token in the `nextToken` parameter to return the next page of results.
 #'
 #' @keywords internal
 #'
@@ -3197,8 +2826,7 @@ lexmodelsv2_list_slots <- function(botId, botVersion, localeId, intentId, sortBy
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/lexmodelsv2_list_tags_for_resource/) for full documentation.
 #'
-#' @param resourceARN &#91;required&#93; The Amazon Resource Name (ARN) of the resource to get a list of tags
-#' for.
+#' @param resourceARN &#91;required&#93; The Amazon Resource Name (ARN) of the resource to get a list of tags for.
 #'
 #' @keywords internal
 #'
@@ -3231,14 +2859,8 @@ lexmodelsv2_list_tags_for_resource <- function(resourceARN) {
 #'
 #' @param testExecutionId &#91;required&#93; The unique identifier of the test execution to list the result items.
 #' @param resultFilterBy &#91;required&#93; The filter for the list of results from the test set execution.
-#' @param maxResults The maximum number of test execution result items to return in each
-#' page. If there are fewer results than the max page size, only the actual
-#' number of results are returned.
-#' @param nextToken If the response from the
-#' [`list_test_execution_result_items`][lexmodelsv2_list_test_execution_result_items]
-#' operation contains more results than specified in the `maxResults`
-#' parameter, a token is returned in the response. Use that token in the
-#' `nextToken` parameter to return the next page of results.
+#' @param maxResults The maximum number of test execution result items to return in each page. If there are fewer results than the max page size, only the actual number of results are returned.
+#' @param nextToken If the response from the [`list_test_execution_result_items`][lexmodelsv2_list_test_execution_result_items] operation contains more results than specified in the `maxResults` parameter, a token is returned in the response. Use that token in the `nextToken` parameter to return the next page of results.
 #'
 #' @keywords internal
 #'
@@ -3270,13 +2892,8 @@ lexmodelsv2_list_test_execution_result_items <- function(testExecutionId, result
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_list_test_executions/](https://www.paws-r-sdk.com/docs/lexmodelsv2_list_test_executions/) for full documentation.
 #'
 #' @param sortBy The sort order of the test set executions.
-#' @param maxResults The maximum number of test executions to return in each page. If there
-#' are fewer results than the max page size, only the actual number of
-#' results are returned.
-#' @param nextToken If the response from the ListTestExecutions operation contains more
-#' results than specified in the maxResults parameter, a token is returned
-#' in the response. Use that token in the nextToken parameter to return the
-#' next page of results.
+#' @param maxResults The maximum number of test executions to return in each page. If there are fewer results than the max page size, only the actual number of results are returned.
+#' @param nextToken If the response from the ListTestExecutions operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.
 #'
 #' @keywords internal
 #'
@@ -3308,13 +2925,8 @@ lexmodelsv2_list_test_executions <- function(sortBy = NULL, maxResults = NULL, n
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_list_test_set_records/](https://www.paws-r-sdk.com/docs/lexmodelsv2_list_test_set_records/) for full documentation.
 #'
 #' @param testSetId &#91;required&#93; The identifier of the test set to list its test set records.
-#' @param maxResults The maximum number of test set records to return in each page. If there
-#' are fewer records than the max page size, only the actual number of
-#' records are returned.
-#' @param nextToken If the response from the ListTestSetRecords operation contains more
-#' results than specified in the maxResults parameter, a token is returned
-#' in the response. Use that token in the nextToken parameter to return the
-#' next page of results.
+#' @param maxResults The maximum number of test set records to return in each page. If there are fewer records than the max page size, only the actual number of records are returned.
+#' @param nextToken If the response from the ListTestSetRecords operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.
 #'
 #' @keywords internal
 #'
@@ -3346,13 +2958,8 @@ lexmodelsv2_list_test_set_records <- function(testSetId, maxResults = NULL, next
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_list_test_sets/](https://www.paws-r-sdk.com/docs/lexmodelsv2_list_test_sets/) for full documentation.
 #'
 #' @param sortBy The sort order for the list of test sets.
-#' @param maxResults The maximum number of test sets to return in each page. If there are
-#' fewer results than the max page size, only the actual number of results
-#' are returned.
-#' @param nextToken If the response from the ListTestSets operation contains more results
-#' than specified in the maxResults parameter, a token is returned in the
-#' response. Use that token in the nextToken parameter to return the next
-#' page of results.
+#' @param maxResults The maximum number of test sets to return in each page. If there are fewer results than the max page size, only the actual number of results are returned.
+#' @param nextToken If the response from the ListTestSets operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.
 #'
 #' @keywords internal
 #'
@@ -3385,27 +2992,15 @@ lexmodelsv2_list_test_sets <- function(sortBy = NULL, maxResults = NULL, nextTok
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_list_utterance_analytics_data/](https://www.paws-r-sdk.com/docs/lexmodelsv2_list_utterance_analytics_data/) for full documentation.
 #'
-#' @param botId &#91;required&#93; The identifier for the bot for which you want to retrieve utterance
-#' analytics.
-#' @param startDateTime &#91;required&#93; The date and time that marks the beginning of the range of time for
-#' which you want to see utterance analytics.
-#' @param endDateTime &#91;required&#93; The date and time that marks the end of the range of time for which you
-#' want to see utterance analytics.
-#' @param sortBy An object specifying the measure and method by which to sort the
-#' utterance analytics data.
-#' @param filters A list of objects, each of which describes a condition by which you want
-#' to filter the results.
-#' @param maxResults The maximum number of results to return in each page of results. If
-#' there are fewer results than the maximum page size, only the actual
-#' number of results are returned.
-#' @param nextToken If the response from the ListUtteranceAnalyticsData operation contains
-#' more results than specified in the maxResults parameter, a token is
-#' returned in the response.
+#' @param botId &#91;required&#93; The identifier for the bot for which you want to retrieve utterance analytics.
+#' @param startDateTime &#91;required&#93; The date and time that marks the beginning of the range of time for which you want to see utterance analytics.
+#' @param endDateTime &#91;required&#93; The date and time that marks the end of the range of time for which you want to see utterance analytics.
+#' @param sortBy An object specifying the measure and method by which to sort the utterance analytics data.
+#' @param filters A list of objects, each of which describes a condition by which you want to filter the results.
+#' @param maxResults The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.
+#' @param nextToken If the response from the ListUtteranceAnalyticsData operation contains more results than specified in the maxResults parameter, a token is returned in the response.
 #' 
-#' Use the returned token in the nextToken parameter of a
-#' ListUtteranceAnalyticsData request to return the next page of results.
-#' For a complete set of results, call the ListUtteranceAnalyticsData
-#' operation until the nextToken returned in the response is null.
+#' Use the returned token in the nextToken parameter of a ListUtteranceAnalyticsData request to return the next page of results. For a complete set of results, call the ListUtteranceAnalyticsData operation until the nextToken returned in the response is null.
 #'
 #' @keywords internal
 #'
@@ -3438,42 +3033,24 @@ lexmodelsv2_list_utterance_analytics_data <- function(botId, startDateTime, endD
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_list_utterance_metrics/](https://www.paws-r-sdk.com/docs/lexmodelsv2_list_utterance_metrics/) for full documentation.
 #'
-#' @param botId &#91;required&#93; The identifier for the bot for which you want to retrieve utterance
-#' metrics.
-#' @param startDateTime &#91;required&#93; The date and time that marks the beginning of the range of time for
-#' which you want to see utterance metrics.
-#' @param endDateTime &#91;required&#93; The date and time that marks the end of the range of time for which you
-#' want to see utterance metrics.
-#' @param metrics &#91;required&#93; A list of objects, each of which contains a metric you want to list, the
-#' statistic for the metric you want to return, and the method by which to
-#' organize the results.
-#' @param binBy A list of objects, each of which contains specifications for organizing
-#' the results by time.
-#' @param groupBy A list of objects, each of which specifies how to group the results. You
-#' can group by the following criteria:
+#' @param botId &#91;required&#93; The identifier for the bot for which you want to retrieve utterance metrics.
+#' @param startDateTime &#91;required&#93; The date and time that marks the beginning of the range of time for which you want to see utterance metrics.
+#' @param endDateTime &#91;required&#93; The date and time that marks the end of the range of time for which you want to see utterance metrics.
+#' @param metrics &#91;required&#93; A list of objects, each of which contains a metric you want to list, the statistic for the metric you want to return, and the method by which to organize the results.
+#' @param binBy A list of objects, each of which contains specifications for organizing the results by time.
+#' @param groupBy A list of objects, each of which specifies how to group the results. You can group by the following criteria:
 #' 
 #' -   `UtteranceText` – The transcription of the utterance.
 #' 
-#' -   `UtteranceState` – The state of the utterance. The possible states
-#'     are detailed in Key definitions in the user guide.
-#' @param attributes A list containing attributes related to the utterance that you want the
-#' response to return. The following attributes are possible:
+#' -   `UtteranceState` – The state of the utterance. The possible states are detailed in Key definitions in the user guide.
+#' @param attributes A list containing attributes related to the utterance that you want the response to return. The following attributes are possible:
 #' 
-#' -   `LastUsedIntent` – The last used intent at the time of the
-#'     utterance.
-#' @param filters A list of objects, each of which describes a condition by which you want
-#' to filter the results.
-#' @param maxResults The maximum number of results to return in each page of results. If
-#' there are fewer results than the maximum page size, only the actual
-#' number of results are returned.
-#' @param nextToken If the response from the ListUtteranceMetrics operation contains more
-#' results than specified in the maxResults parameter, a token is returned
-#' in the response.
+#' -   `LastUsedIntent` – The last used intent at the time of the utterance.
+#' @param filters A list of objects, each of which describes a condition by which you want to filter the results.
+#' @param maxResults The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.
+#' @param nextToken If the response from the ListUtteranceMetrics operation contains more results than specified in the maxResults parameter, a token is returned in the response.
 #' 
-#' Use the returned token in the nextToken parameter of a
-#' ListUtteranceMetrics request to return the next page of results. For a
-#' complete set of results, call the ListUtteranceMetrics operation until
-#' the nextToken returned in the response is null.
+#' Use the returned token in the nextToken parameter of a ListUtteranceMetrics request to return the next page of results. For a complete set of results, call the ListUtteranceMetrics operation until the nextToken returned in the response is null.
 #'
 #' @keywords internal
 #'
@@ -3504,26 +3081,14 @@ lexmodelsv2_list_utterance_metrics <- function(botId, startDateTime, endDateTime
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_search_associated_transcripts/](https://www.paws-r-sdk.com/docs/lexmodelsv2_search_associated_transcripts/) for full documentation.
 #'
-#' @param botId &#91;required&#93; The unique identifier of the bot associated with the transcripts that
-#' you are searching.
-#' @param botVersion &#91;required&#93; The version of the bot containing the transcripts that you are
-#' searching.
-#' @param localeId &#91;required&#93; The identifier of the language and locale of the transcripts to search.
-#' The string must match one of the supported locales. For more
-#' information, see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html)
-#' @param botRecommendationId &#91;required&#93; The unique identifier of the bot recommendation associated with the
-#' transcripts to search.
-#' @param searchOrder How SearchResults are ordered. Valid values are Ascending or Descending.
-#' The default is Descending.
+#' @param botId &#91;required&#93; The unique identifier of the bot associated with the transcripts that you are searching.
+#' @param botVersion &#91;required&#93; The version of the bot containing the transcripts that you are searching.
+#' @param localeId &#91;required&#93; The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html)
+#' @param botRecommendationId &#91;required&#93; The unique identifier of the bot recommendation associated with the transcripts to search.
+#' @param searchOrder How SearchResults are ordered. Valid values are Ascending or Descending. The default is Descending.
 #' @param filters &#91;required&#93; A list of filter objects.
-#' @param maxResults The maximum number of bot recommendations to return in each page of
-#' results. If there are fewer results than the max page size, only the
-#' actual number of results are returned.
-#' @param nextIndex If the response from the SearchAssociatedTranscriptsRequest operation
-#' contains more results than specified in the maxResults parameter, an
-#' index is returned in the response. Use that index in the nextIndex
-#' parameter to return the next page of results.
+#' @param maxResults The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.
+#' @param nextIndex If the response from the SearchAssociatedTranscriptsRequest operation contains more results than specified in the maxResults parameter, an index is returned in the response. Use that index in the nextIndex parameter to return the next page of results.
 #'
 #' @keywords internal
 #'
@@ -3547,6 +3112,44 @@ lexmodelsv2_search_associated_transcripts <- function(botId, botVersion, localeI
 }
 .lexmodelsv2$operations$search_associated_transcripts <- lexmodelsv2_search_associated_transcripts
 
+#' Initiates an asynchronous analysis of your bot configuration using
+#' AI-powered analysis to identify potential issues and recommend
+#' improvements based on AWS best practices
+#'
+#' @description
+#' Initiates an asynchronous analysis of your bot configuration using AI-powered analysis to identify potential issues and recommend improvements based on AWS best practices.
+#'
+#' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_start_bot_analyzer/](https://www.paws-r-sdk.com/docs/lexmodelsv2_start_bot_analyzer/) for full documentation.
+#'
+#' @param botId &#91;required&#93; The unique identifier of the bot to analyze.
+#' @param analysisScope &#91;required&#93; The scope of analysis to perform. Currently only `BotLocale` scope is supported.
+#' 
+#' Valid Values: `BotLocale`
+#' @param localeId The locale identifier for the bot locale to analyze. Required when `analysisScope` is `BotLocale`.
+#' @param botVersion The version of the bot to analyze. Defaults to `DRAFT` if not specified.
+#'
+#' @keywords internal
+#'
+#' @rdname lexmodelsv2_start_bot_analyzer
+lexmodelsv2_start_bot_analyzer <- function(botId, analysisScope, localeId = NULL, botVersion = NULL) {
+  op <- new_operation(
+    name = "StartBotAnalyzer",
+    http_method = "POST",
+    http_path = "/bots/{botId}/botanalyzer/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .lexmodelsv2$start_bot_analyzer_input(botId = botId, analysisScope = analysisScope, localeId = localeId, botVersion = botVersion)
+  output <- .lexmodelsv2$start_bot_analyzer_output()
+  config <- get_config()
+  svc <- .lexmodelsv2$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.lexmodelsv2$operations$start_bot_analyzer <- lexmodelsv2_start_bot_analyzer
+
 #' Use this to provide your transcript data, and to start the bot
 #' recommendation process
 #'
@@ -3557,15 +3160,9 @@ lexmodelsv2_search_associated_transcripts <- function(botId, botVersion, localeI
 #'
 #' @param botId &#91;required&#93; The unique identifier of the bot containing the bot recommendation.
 #' @param botVersion &#91;required&#93; The version of the bot containing the bot recommendation.
-#' @param localeId &#91;required&#93; The identifier of the language and locale of the bot recommendation to
-#' start. The string must match one of the supported locales. For more
-#' information, see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html)
-#' @param transcriptSourceSetting &#91;required&#93; The object representing the Amazon S3 bucket containing the transcript,
-#' as well as the associated metadata.
-#' @param encryptionSetting The object representing the passwords that will be used to encrypt the
-#' data related to the bot recommendation results, as well as the KMS key
-#' ARN used to encrypt the associated metadata.
+#' @param localeId &#91;required&#93; The identifier of the language and locale of the bot recommendation to start. The string must match one of the supported locales. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html)
+#' @param transcriptSourceSetting &#91;required&#93; The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.
+#' @param encryptionSetting The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.
 #'
 #' @keywords internal
 #'
@@ -3597,12 +3194,8 @@ lexmodelsv2_start_bot_recommendation <- function(botId, botVersion, localeId, tr
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_start_bot_resource_generation/](https://www.paws-r-sdk.com/docs/lexmodelsv2_start_bot_resource_generation/) for full documentation.
 #'
-#' @param generationInputPrompt &#91;required&#93; The prompt to generate intents and slot types for the bot locale. Your
-#' description should be both *detailed* and *precise* to help generate
-#' appropriate and sufficient intents for your bot. Include a list of
-#' actions to improve the intent creation process.
-#' @param botId &#91;required&#93; The unique identifier of the bot for which to generate intents and slot
-#' types.
+#' @param generationInputPrompt &#91;required&#93; The prompt to generate intents and slot types for the bot locale. Your description should be both *detailed* and *precise* to help generate appropriate and sufficient intents for your bot. Include a list of actions to improve the intent creation process.
+#' @param botId &#91;required&#93; The unique identifier of the bot for which to generate intents and slot types.
 #' @param botVersion &#91;required&#93; The version of the bot for which to generate intents and slot types.
 #' @param localeId &#91;required&#93; The locale of the bot for which to generate intents and slot types.
 #'
@@ -3636,16 +3229,10 @@ lexmodelsv2_start_bot_resource_generation <- function(generationInputPrompt, bot
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_start_import/](https://www.paws-r-sdk.com/docs/lexmodelsv2_start_import/) for full documentation.
 #'
-#' @param importId &#91;required&#93; The unique identifier for the import. It is included in the response
-#' from the [`create_upload_url`][lexmodelsv2_create_upload_url] operation.
+#' @param importId &#91;required&#93; The unique identifier for the import. It is included in the response from the [`create_upload_url`][lexmodelsv2_create_upload_url] operation.
 #' @param resourceSpecification &#91;required&#93; Parameters for creating the bot, bot locale or custom vocabulary.
-#' @param mergeStrategy &#91;required&#93; The strategy to use when there is a name conflict between the imported
-#' resource and an existing resource. When the merge strategy is
-#' `FailOnConflict` existing resources are not overwritten and the import
-#' fails.
-#' @param filePassword The password used to encrypt the zip archive that contains the resource
-#' definition. You should always encrypt the zip archive to protect it
-#' during transit between your site and Amazon Lex.
+#' @param mergeStrategy &#91;required&#93; The strategy to use when there is a name conflict between the imported resource and an existing resource. When the merge strategy is `FailOnConflict` existing resources are not overwritten and the import fails.
+#' @param filePassword The password used to encrypt the zip archive that contains the resource definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.
 #'
 #' @keywords internal
 #'
@@ -3678,10 +3265,7 @@ lexmodelsv2_start_import <- function(importId, resourceSpecification, mergeStrat
 #'
 #' @param testSetId &#91;required&#93; The test set Id for the test set execution.
 #' @param target &#91;required&#93; The target bot for the test set execution.
-#' @param apiMode &#91;required&#93; Indicates whether we use streaming or non-streaming APIs for the test
-#' set execution. For streaming, StartConversation Runtime API is used.
-#' Whereas, for non-streaming, RecognizeUtterance and RecognizeText Amazon
-#' Lex Runtime API are used.
+#' @param apiMode &#91;required&#93; Indicates whether we use streaming or non-streaming APIs for the test set execution. For streaming, StartConversation Runtime API is used. Whereas, for non-streaming, RecognizeUtterance and RecognizeText Amazon Lex Runtime API are used.
 #' @param testExecutionModality Indicates whether audio or text is used.
 #'
 #' @keywords internal
@@ -3717,13 +3301,8 @@ lexmodelsv2_start_test_execution <- function(testSetId, target, apiMode, testExe
 #' @param description The test set description for the test set generation request.
 #' @param storageLocation &#91;required&#93; The Amazon S3 storage location for the test set generation.
 #' @param generationDataSource &#91;required&#93; The data source for the test set generation.
-#' @param roleArn &#91;required&#93; The roleARN used for any operation in the test set to access resources
-#' in the Amazon Web Services account.
-#' @param testSetTags A list of tags to add to the test set. You can only add tags when you
-#' import/generate a new test set. You can't use the
-#' [`update_test_set`][lexmodelsv2_update_test_set] operation to update
-#' tags. To update tags, use the [`tag_resource`][lexmodelsv2_tag_resource]
-#' operation.
+#' @param roleArn &#91;required&#93; The roleARN used for any operation in the test set to access resources in the Amazon Web Services account.
+#' @param testSetTags A list of tags to add to the test set. You can only add tags when you import/generate a new test set. You can't use the [`update_test_set`][lexmodelsv2_update_test_set] operation to update tags. To update tags, use the [`tag_resource`][lexmodelsv2_tag_resource] operation.
 #'
 #' @keywords internal
 #'
@@ -3747,6 +3326,38 @@ lexmodelsv2_start_test_set_generation <- function(testSetName, description = NUL
 }
 .lexmodelsv2$operations$start_test_set_generation <- lexmodelsv2_start_test_set_generation
 
+#' Cancels an ongoing bot analysis execution
+#'
+#' @description
+#' Cancels an ongoing bot analysis execution. Once stopped, the analysis cannot be resumed and no recommendations will be generated.
+#'
+#' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_stop_bot_analyzer/](https://www.paws-r-sdk.com/docs/lexmodelsv2_stop_bot_analyzer/) for full documentation.
+#'
+#' @param botId &#91;required&#93; The unique identifier of the bot.
+#' @param botAnalyzerRequestId &#91;required&#93; The unique identifier of the analysis request to stop.
+#'
+#' @keywords internal
+#'
+#' @rdname lexmodelsv2_stop_bot_analyzer
+lexmodelsv2_stop_bot_analyzer <- function(botId, botAnalyzerRequestId) {
+  op <- new_operation(
+    name = "StopBotAnalyzer",
+    http_method = "PUT",
+    http_path = "/bots/{botId}/botanalyzer/{botAnalyzerRequestId}/stop/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .lexmodelsv2$stop_bot_analyzer_input(botId = botId, botAnalyzerRequestId = botAnalyzerRequestId)
+  output <- .lexmodelsv2$stop_bot_analyzer_output()
+  config <- get_config()
+  svc <- .lexmodelsv2$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.lexmodelsv2$operations$stop_bot_analyzer <- lexmodelsv2_stop_bot_analyzer
+
 #' Stop an already running Bot Recommendation request
 #'
 #' @description
@@ -3754,13 +3365,9 @@ lexmodelsv2_start_test_set_generation <- function(testSetName, description = NUL
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_stop_bot_recommendation/](https://www.paws-r-sdk.com/docs/lexmodelsv2_stop_bot_recommendation/) for full documentation.
 #'
-#' @param botId &#91;required&#93; The unique identifier of the bot containing the bot recommendation to be
-#' stopped.
+#' @param botId &#91;required&#93; The unique identifier of the bot containing the bot recommendation to be stopped.
 #' @param botVersion &#91;required&#93; The version of the bot containing the bot recommendation.
-#' @param localeId &#91;required&#93; The identifier of the language and locale of the bot recommendation to
-#' stop. The string must match one of the supported locales. For more
-#' information, see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html)
+#' @param localeId &#91;required&#93; The identifier of the language and locale of the bot recommendation to stop. The string must match one of the supported locales. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html)
 #' @param botRecommendationId &#91;required&#93; The unique identifier of the bot recommendation to be stopped.
 #'
 #' @keywords internal
@@ -3792,10 +3399,8 @@ lexmodelsv2_stop_bot_recommendation <- function(botId, botVersion, localeId, bot
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_tag_resource/](https://www.paws-r-sdk.com/docs/lexmodelsv2_tag_resource/) for full documentation.
 #'
-#' @param resourceARN &#91;required&#93; The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel to
-#' tag.
-#' @param tags &#91;required&#93; A list of tag keys to add to the resource. If a tag key already exists,
-#' the existing value is replaced with the new value.
+#' @param resourceARN &#91;required&#93; The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel to tag.
+#' @param tags &#91;required&#93; A list of tag keys to add to the resource. If a tag key already exists, the existing value is replaced with the new value.
 #'
 #' @keywords internal
 #'
@@ -3827,8 +3432,7 @@ lexmodelsv2_tag_resource <- function(resourceARN, tags) {
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_untag_resource/](https://www.paws-r-sdk.com/docs/lexmodelsv2_untag_resource/) for full documentation.
 #'
 #' @param resourceARN &#91;required&#93; The Amazon Resource Name (ARN) of the resource to remove the tags from.
-#' @param tagKeys &#91;required&#93; A list of tag keys to remove from the resource. If a tag key does not
-#' exist on the resource, it is ignored.
+#' @param tagKeys &#91;required&#93; A list of tag keys to remove from the resource. If a tag key does not exist on the resource, it is ignored.
 #'
 #' @keywords internal
 #'
@@ -3859,29 +3463,19 @@ lexmodelsv2_untag_resource <- function(resourceARN, tagKeys) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_update_bot/](https://www.paws-r-sdk.com/docs/lexmodelsv2_update_bot/) for full documentation.
 #'
-#' @param botId &#91;required&#93; The unique identifier of the bot to update. This identifier is returned
-#' by the [`create_bot`][lexmodelsv2_create_bot] operation.
-#' @param botName &#91;required&#93; The new name of the bot. The name must be unique in the account that
-#' creates the bot.
+#' @param botId &#91;required&#93; The unique identifier of the bot to update. This identifier is returned by the [`create_bot`][lexmodelsv2_create_bot] operation.
+#' @param botName &#91;required&#93; The new name of the bot. The name must be unique in the account that creates the bot.
 #' @param description A description of the bot.
-#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of an IAM role that has permissions to
-#' access the bot.
-#' @param dataPrivacy &#91;required&#93; Provides information on additional privacy protections Amazon Lex should
-#' use with the bot's data.
-#' @param idleSessionTTLInSeconds &#91;required&#93; The time, in seconds, that Amazon Lex should keep information about a
-#' user's conversation with the bot.
+#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of an IAM role that has permissions to access the bot.
+#' @param dataPrivacy &#91;required&#93; Provides information on additional privacy protections Amazon Lex should use with the bot's data.
+#' @param idleSessionTTLInSeconds &#91;required&#93; The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.
 #' 
-#' A user interaction remains active for the amount of time specified. If
-#' no conversation occurs during this time, the session expires and Amazon
-#' Lex deletes any data provided before the timeout.
+#' A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.
 #' 
 #' You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.
 #' @param botType The type of the bot to be updated.
-#' @param botMembers The list of bot members in the network associated with the update
-#' action.
-#' @param errorLogSettings Allows you to modify how Amazon Lex logs errors during bot interactions,
-#' including destinations for error logs and the types of errors to be
-#' captured.
+#' @param botMembers The list of bot members in the network associated with the update action.
+#' @param errorLogSettings Allows you to modify how Amazon Lex logs errors during bot interactions, including destinations for error logs and the types of errors to be captured.
 #'
 #' @keywords internal
 #'
@@ -3917,9 +3511,8 @@ lexmodelsv2_update_bot <- function(botId, botName, description = NULL, roleArn, 
 #' @param description The new description to assign to the bot alias.
 #' @param botVersion The new bot version to assign to the bot alias.
 #' @param botAliasLocaleSettings The new Lambda functions to use in each locale for the bot alias.
-#' @param conversationLogSettings The new settings for storing conversation logs in Amazon CloudWatch Logs
-#' and Amazon S3 buckets.
-#' @param sentimentAnalysisSettings 
+#' @param conversationLogSettings The new settings for storing conversation logs in Amazon CloudWatch Logs and Amazon S3 buckets.
+#' @param sentimentAnalysisSettings Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.
 #' @param botId &#91;required&#93; The identifier of the bot with the updated alias.
 #'
 #' @keywords internal
@@ -3952,32 +3545,21 @@ lexmodelsv2_update_bot_alias <- function(botAliasId, botAliasName, description =
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_update_bot_locale/](https://www.paws-r-sdk.com/docs/lexmodelsv2_update_bot_locale/) for full documentation.
 #'
 #' @param botId &#91;required&#93; The unique identifier of the bot that contains the locale.
-#' @param botVersion &#91;required&#93; The version of the bot that contains the locale to be updated. The
-#' version can only be the `DRAFT` version.
-#' @param localeId &#91;required&#93; The identifier of the language and locale to update. The string must
-#' match one of the supported locales. For more information, see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
+#' @param botVersion &#91;required&#93; The version of the bot that contains the locale to be updated. The version can only be the `DRAFT` version.
+#' @param localeId &#91;required&#93; The identifier of the language and locale to update. The string must match one of the supported locales. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
 #' @param description The new description of the locale.
-#' @param nluIntentConfidenceThreshold &#91;required&#93; The new confidence threshold where Amazon Lex inserts the
-#' `AMAZON.FallbackIntent` and `AMAZON.KendraSearchIntent` intents in the
-#' list of possible intents for an utterance.
-#' @param voiceSettings The new Amazon Polly voice Amazon Lex should use for voice interaction
-#' with the user.
+#' @param nluIntentConfidenceThreshold &#91;required&#93; The new confidence threshold where Amazon Lex inserts the `AMAZON.FallbackIntent` and `AMAZON.KendraSearchIntent` intents in the list of possible intents for an utterance.
+#' @param voiceSettings The new Amazon Polly voice Amazon Lex should use for voice interaction with the user.
 #' @param unifiedSpeechSettings Updated unified speech settings to apply to the bot locale.
+#' @param audioFillerSettings Updated audio filler settings to apply to the bot locale. When enabled, requires `unifiedSpeechSettings` (speech-to-speech) to be configured on the bot locale.
 #' @param speechRecognitionSettings Updated speech-to-text settings to apply to the bot locale.
-#' @param generativeAISettings Contains settings for generative AI features powered by Amazon Bedrock
-#' for your bot locale. Use this object to turn generative AI features on
-#' and off. Pricing may differ if you turn a feature on. For more
-#' information, see LINK.
-#' @param speechDetectionSensitivity The new sensitivity level for voice activity detection (VAD) in the bot
-#' locale. This setting helps optimize speech recognition accuracy by
-#' adjusting how the system responds to background noise during voice
-#' interactions.
+#' @param generativeAISettings Contains settings for generative AI features powered by Amazon Bedrock for your bot locale. Use this object to turn generative AI features on and off. Pricing may differ if you turn a feature on. For more information, see LINK.
+#' @param speechDetectionSensitivity The new sensitivity level for voice activity detection (VAD) in the bot locale. This setting helps optimize speech recognition accuracy by adjusting how the system responds to background noise during voice interactions.
 #'
 #' @keywords internal
 #'
 #' @rdname lexmodelsv2_update_bot_locale
-lexmodelsv2_update_bot_locale <- function(botId, botVersion, localeId, description = NULL, nluIntentConfidenceThreshold, voiceSettings = NULL, unifiedSpeechSettings = NULL, speechRecognitionSettings = NULL, generativeAISettings = NULL, speechDetectionSensitivity = NULL) {
+lexmodelsv2_update_bot_locale <- function(botId, botVersion, localeId, description = NULL, nluIntentConfidenceThreshold, voiceSettings = NULL, unifiedSpeechSettings = NULL, audioFillerSettings = NULL, speechRecognitionSettings = NULL, generativeAISettings = NULL, speechDetectionSensitivity = NULL) {
   op <- new_operation(
     name = "UpdateBotLocale",
     http_method = "PUT",
@@ -3986,7 +3568,7 @@ lexmodelsv2_update_bot_locale <- function(botId, botVersion, localeId, descripti
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .lexmodelsv2$update_bot_locale_input(botId = botId, botVersion = botVersion, localeId = localeId, description = description, nluIntentConfidenceThreshold = nluIntentConfidenceThreshold, voiceSettings = voiceSettings, unifiedSpeechSettings = unifiedSpeechSettings, speechRecognitionSettings = speechRecognitionSettings, generativeAISettings = generativeAISettings, speechDetectionSensitivity = speechDetectionSensitivity)
+  input <- .lexmodelsv2$update_bot_locale_input(botId = botId, botVersion = botVersion, localeId = localeId, description = description, nluIntentConfidenceThreshold = nluIntentConfidenceThreshold, voiceSettings = voiceSettings, unifiedSpeechSettings = unifiedSpeechSettings, audioFillerSettings = audioFillerSettings, speechRecognitionSettings = speechRecognitionSettings, generativeAISettings = generativeAISettings, speechDetectionSensitivity = speechDetectionSensitivity)
   output <- .lexmodelsv2$update_bot_locale_output()
   config <- get_config()
   svc <- .lexmodelsv2$service(config, op)
@@ -4003,17 +3585,11 @@ lexmodelsv2_update_bot_locale <- function(botId, botVersion, localeId, descripti
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_update_bot_recommendation/](https://www.paws-r-sdk.com/docs/lexmodelsv2_update_bot_recommendation/) for full documentation.
 #'
-#' @param botId &#91;required&#93; The unique identifier of the bot containing the bot recommendation to be
-#' updated.
+#' @param botId &#91;required&#93; The unique identifier of the bot containing the bot recommendation to be updated.
 #' @param botVersion &#91;required&#93; The version of the bot containing the bot recommendation to be updated.
-#' @param localeId &#91;required&#93; The identifier of the language and locale of the bot recommendation to
-#' update. The string must match one of the supported locales. For more
-#' information, see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html)
+#' @param localeId &#91;required&#93; The identifier of the language and locale of the bot recommendation to update. The string must match one of the supported locales. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html)
 #' @param botRecommendationId &#91;required&#93; The unique identifier of the bot recommendation to be updated.
-#' @param encryptionSetting &#91;required&#93; The object representing the passwords that will be used to encrypt the
-#' data related to the bot recommendation results, as well as the KMS key
-#' ARN used to encrypt the associated metadata.
+#' @param encryptionSetting &#91;required&#93; The object representing the passwords that will be used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.
 #'
 #' @keywords internal
 #'
@@ -4080,36 +3656,21 @@ lexmodelsv2_update_export <- function(exportId, filePassword = NULL) {
 #' @param intentName &#91;required&#93; The new name for the intent.
 #' @param intentDisplayName The new display name for the intent.
 #' @param description The new description of the intent.
-#' @param parentIntentSignature The signature of the new built-in intent to use as the parent of this
-#' intent.
+#' @param parentIntentSignature The signature of the new built-in intent to use as the parent of this intent.
 #' @param sampleUtterances New utterances used to invoke the intent.
-#' @param dialogCodeHook The new Lambda function to use between each turn of the conversation
-#' with the bot.
-#' @param fulfillmentCodeHook The new Lambda function to call when all of the intents required slots
-#' are provided and the intent is ready for fulfillment.
-#' @param slotPriorities A new list of slots and their priorities that are contained by the
-#' intent.
-#' @param intentConfirmationSetting New prompts that Amazon Lex sends to the user to confirm the completion
-#' of an intent.
-#' @param intentClosingSetting The new response that Amazon Lex sends the user when the intent is
-#' closed.
-#' @param inputContexts A new list of contexts that must be active in order for Amazon Lex to
-#' consider the intent.
-#' @param outputContexts A new list of contexts that Amazon Lex activates when the intent is
-#' fulfilled.
+#' @param dialogCodeHook The new Lambda function to use between each turn of the conversation with the bot.
+#' @param fulfillmentCodeHook The new Lambda function to call when all of the intents required slots are provided and the intent is ready for fulfillment.
+#' @param slotPriorities A new list of slots and their priorities that are contained by the intent.
+#' @param intentConfirmationSetting New prompts that Amazon Lex sends to the user to confirm the completion of an intent.
+#' @param intentClosingSetting The new response that Amazon Lex sends the user when the intent is closed.
+#' @param inputContexts A new list of contexts that must be active in order for Amazon Lex to consider the intent.
+#' @param outputContexts A new list of contexts that Amazon Lex activates when the intent is fulfilled.
 #' @param kendraConfiguration New configuration settings for connecting to an Amazon Kendra index.
 #' @param botId &#91;required&#93; The identifier of the bot that contains the intent.
 #' @param botVersion &#91;required&#93; The version of the bot that contains the intent. Must be `DRAFT`.
-#' @param localeId &#91;required&#93; The identifier of the language and locale where this intent is used. The
-#' string must match one of the supported locales. For more information,
-#' see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
-#' @param initialResponseSetting Configuration settings for a response sent to the user before Amazon Lex
-#' starts eliciting slots.
-#' @param qnAIntentConfiguration Specifies the configuration of the built-in `Amazon.QnAIntent`. The
-#' `AMAZON.QnAIntent` intent is called when Amazon Lex can't determine
-#' another intent to invoke. If you specify this field, you can't specify
-#' the `kendraConfiguration` field.
+#' @param localeId &#91;required&#93; The identifier of the language and locale where this intent is used. The string must match one of the supported locales. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
+#' @param initialResponseSetting Configuration settings for a response sent to the user before Amazon Lex starts eliciting slots.
+#' @param qnAIntentConfiguration Specifies the configuration of the built-in `Amazon.QnAIntent`. The `AMAZON.QnAIntent` intent is called when Amazon Lex can't determine another intent to invoke. If you specify this field, you can't specify the `kendraConfiguration` field.
 #' @param qInConnectIntentConfiguration Qinconnect intent configuration details for the update intent request.
 #'
 #' @keywords internal
@@ -4142,22 +3703,13 @@ lexmodelsv2_update_intent <- function(intentId, intentName, intentDisplayName = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/lexmodelsv2_update_resource_policy/](https://www.paws-r-sdk.com/docs/lexmodelsv2_update_resource_policy/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the bot or bot alias that the resource
-#' policy is attached to.
-#' @param policy &#91;required&#93; A resource policy to add to the resource. The policy is a JSON structure
-#' that contains one or more statements that define the policy. The policy
-#' must follow the IAM syntax. For more information about the contents of a
-#' JSON policy document, see [IAM JSON policy
-#' reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html)
-#' .
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.
+#' @param policy &#91;required&#93; A resource policy to add to the resource. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see [IAM JSON policy reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) .
 #' 
 #' If the policy isn't valid, Amazon Lex returns a validation exception.
-#' @param expectedRevisionId The identifier of the revision of the policy to update. If this revision
-#' ID doesn't match the current revision ID, Amazon Lex throws an
-#' exception.
+#' @param expectedRevisionId The identifier of the revision of the policy to update. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.
 #' 
-#' If you don't specify a revision, Amazon Lex overwrites the contents of
-#' the policy with the new values.
+#' If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.
 #'
 #' @keywords internal
 #'
@@ -4192,25 +3744,16 @@ lexmodelsv2_update_resource_policy <- function(resourceArn, policy, expectedRevi
 #' @param slotName &#91;required&#93; The new name for the slot.
 #' @param description The new description for the slot.
 #' @param slotTypeId The unique identifier of the new slot type to associate with this slot.
-#' @param valueElicitationSetting &#91;required&#93; A new set of prompts that Amazon Lex sends to the user to elicit a
-#' response the provides a value for the slot.
-#' @param obfuscationSetting New settings that determine how slot values are formatted in Amazon
-#' CloudWatch logs.
+#' @param valueElicitationSetting &#91;required&#93; A new set of prompts that Amazon Lex sends to the user to elicit a response the provides a value for the slot.
+#' @param obfuscationSetting New settings that determine how slot values are formatted in Amazon CloudWatch logs.
 #' @param botId &#91;required&#93; The unique identifier of the bot that contains the slot.
 #' @param botVersion &#91;required&#93; The version of the bot that contains the slot. Must always be `DRAFT`.
-#' @param localeId &#91;required&#93; The identifier of the language and locale that contains the slot. The
-#' string must match one of the supported locales. For more information,
-#' see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
+#' @param localeId &#91;required&#93; The identifier of the language and locale that contains the slot. The string must match one of the supported locales. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
 #' @param intentId &#91;required&#93; The identifier of the intent that contains the slot.
-#' @param multipleValuesSetting Determines whether the slot accepts multiple values in one response.
-#' Multiple value slots are only available in the en-US locale. If you set
-#' this value to `true` in any other locale, Amazon Lex throws a
-#' `ValidationException`.
+#' @param multipleValuesSetting Determines whether the slot accepts multiple values in one response. Multiple value slots are only available in the en-US locale. If you set this value to `true` in any other locale, Amazon Lex throws a `ValidationException`.
 #' 
 #' If the `multipleValuesSetting` is not set, the default value is `false`.
-#' @param subSlotSetting Specifications for the constituent sub slots and the expression for the
-#' composite slot.
+#' @param subSlotSetting Specifications for the constituent sub slots and the expression for the composite slot.
 #'
 #' @keywords internal
 #'
@@ -4244,19 +3787,13 @@ lexmodelsv2_update_slot <- function(slotId, slotName, description = NULL, slotTy
 #' @param slotTypeId &#91;required&#93; The unique identifier of the slot type to update.
 #' @param slotTypeName &#91;required&#93; The new name of the slot type.
 #' @param description The new description of the slot type.
-#' @param slotTypeValues A new list of values and their optional synonyms that define the values
-#' that the slot type can take.
-#' @param valueSelectionSetting The strategy that Amazon Lex should use when deciding on a value from
-#' the list of slot type values.
-#' @param parentSlotTypeSignature The new built-in slot type that should be used as the parent of this
-#' slot type.
+#' @param slotTypeValues A new list of values and their optional synonyms that define the values that the slot type can take.
+#' @param valueSelectionSetting The strategy that Amazon Lex should use when deciding on a value from the list of slot type values.
+#' @param parentSlotTypeSignature The new built-in slot type that should be used as the parent of this slot type.
 #' @param botId &#91;required&#93; The identifier of the bot that contains the slot type.
 #' @param botVersion &#91;required&#93; The version of the bot that contains the slot type. Must be `DRAFT`.
-#' @param localeId &#91;required&#93; The identifier of the language and locale that contains the slot type.
-#' The string must match one of the supported locales. For more
-#' information, see [Supported
-#' languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
-#' @param externalSourceSetting 
+#' @param localeId &#91;required&#93; The identifier of the language and locale that contains the slot type. The string must match one of the supported locales. For more information, see [Supported languages](https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).
+#' @param externalSourceSetting Provides information about the external source of the slot type's definition.
 #' @param compositeSlotTypeSetting Specifications for a composite slot type.
 #'
 #' @keywords internal

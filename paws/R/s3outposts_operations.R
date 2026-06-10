@@ -21,18 +21,12 @@ NULL
 #'   AccessType, CustomerOwnedIpv4Pool)
 #'
 #' @param OutpostId &#91;required&#93; The ID of the Outposts.
-#' @param SubnetId &#91;required&#93; The ID of the subnet in the selected VPC. The endpoint subnet must
-#' belong to the Outpost that has Amazon S3 on Outposts provisioned.
+#' @param SubnetId &#91;required&#93; The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost that has Amazon S3 on Outposts provisioned.
 #' @param SecurityGroupId &#91;required&#93; The ID of the security group to use with the endpoint.
-#' @param AccessType The type of access for the network connectivity for the Amazon S3 on
-#' Outposts endpoint. To use the Amazon Web Services VPC, choose `Private`.
-#' To use the endpoint with an on-premises network, choose
-#' `CustomerOwnedIp`. If you choose `CustomerOwnedIp`, you must also
-#' provide the customer-owned IP address pool (CoIP pool).
+#' @param AccessType The type of access for the network connectivity for the Amazon S3 on Outposts endpoint. To use the Amazon Web Services VPC, choose `Private`. To use the endpoint with an on-premises network, choose `CustomerOwnedIp`. If you choose `CustomerOwnedIp`, you must also provide the customer-owned IP address pool (CoIP pool).
 #' 
 #' `Private` is the default access type value.
-#' @param CustomerOwnedIpv4Pool The ID of the customer-owned IPv4 address pool (CoIP pool) for the
-#' endpoint. IP addresses are allocated from this pool for the endpoint.
+#' @param CustomerOwnedIpv4Pool The ID of the customer-owned IPv4 address pool (CoIP pool) for the endpoint. IP addresses are allocated from this pool for the endpoint.
 #'
 #' @return
 #' A list with the following syntax:
@@ -145,8 +139,7 @@ s3outposts_delete_endpoint <- function(EndpointId, OutpostId) {
 #' @usage
 #' s3outposts_list_endpoints(NextToken, MaxResults)
 #'
-#' @param NextToken If a previous response from this operation included a `NextToken` value,
-#' provide that value here to retrieve the next page of results.
+#' @param NextToken If a previous response from this operation included a `NextToken` value, provide that value here to retrieve the next page of results.
 #' @param MaxResults The maximum number of endpoints that will be returned in the response.
 #'
 #' @return
@@ -218,18 +211,12 @@ s3outposts_list_endpoints <- function(NextToken = NULL, MaxResults = NULL) {
 #' Services account
 #'
 #' @description
-#' Lists the Outposts with S3 on Outposts capacity for your Amazon Web
-#' Services account. Includes S3 on Outposts that you have access to as the
-#' Outposts owner, or as a shared user from Resource Access Manager (RAM).
+#' Lists the Outposts with S3 on Outposts capacity for your Amazon Web Services account. Includes S3 on Outposts that you have access to as the Outposts owner, or as a shared user from Resource Access Manager (RAM).
 #'
 #' @usage
 #' s3outposts_list_outposts_with_s3(NextToken, MaxResults)
 #'
-#' @param NextToken When you can get additional results from the
-#' [`list_outposts_with_s3`][s3outposts_list_outposts_with_s3] call, a
-#' `NextToken` parameter is returned in the output. You can then pass in a
-#' subsequent command to the `NextToken` parameter to continue listing
-#' additional Outposts.
+#' @param NextToken When you can get additional results from the [`list_outposts_with_s3`][s3outposts_list_outposts_with_s3] call, a `NextToken` parameter is returned in the output. You can then pass in a subsequent command to the `NextToken` parameter to continue listing additional Outposts.
 #' @param MaxResults The maximum number of Outposts to return. The limit is 100.
 #'
 #' @return
@@ -285,8 +272,7 @@ s3outposts_list_outposts_with_s3 <- function(NextToken = NULL, MaxResults = NULL
 #' Amazon Web Services Resource Access Manager (RAM)
 #'
 #' @description
-#' Lists all endpoints associated with an Outpost that has been shared by
-#' Amazon Web Services Resource Access Manager (RAM).
+#' Lists all endpoints associated with an Outpost that has been shared by Amazon Web Services Resource Access Manager (RAM).
 #' 
 #' Related actions include:
 #' 
@@ -297,8 +283,7 @@ s3outposts_list_outposts_with_s3 <- function(NextToken = NULL, MaxResults = NULL
 #' @usage
 #' s3outposts_list_shared_endpoints(NextToken, MaxResults, OutpostId)
 #'
-#' @param NextToken If a previous response from this operation included a `NextToken` value,
-#' you can provide that value here to retrieve the next page of results.
+#' @param NextToken If a previous response from this operation included a `NextToken` value, you can provide that value here to retrieve the next page of results.
 #' @param MaxResults The maximum number of endpoints that will be returned in the response.
 #' @param OutpostId &#91;required&#93; The ID of the Amazon Web Services Outpost.
 #'

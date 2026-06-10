@@ -7,11 +7,9 @@
 vpclattice_put_auth_policy(resourceIdentifier, policy)
 }
 \arguments{
-\item{resourceIdentifier}{[required] The ID or ARN of the service network or service for which the policy is
-created.}
+\item{resourceIdentifier}{[required] The ID or ARN of the service network or service for which the policy is created.}
 
-\item{policy}{[required] The auth policy. The policy string in JSON must not contain newlines or
-blank lines.}
+\item{policy}{[required] The auth policy. The policy string in JSON must not contain newlines or blank lines.}
 }
 \description{
 Creates or updates the auth policy. The policy string in JSON must not contain newlines or blank lines.

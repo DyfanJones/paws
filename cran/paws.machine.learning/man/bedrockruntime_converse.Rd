@@ -16,90 +16,53 @@ bedrockruntime_converse(
   additionalModelResponseFieldPaths = NULL,
   requestMetadata = NULL,
   performanceConfig = NULL,
-  serviceTier = NULL
+  serviceTier = NULL,
+  outputConfig = NULL
 )
 }
 \arguments{
-\item{modelId}{[required] Specifies the model or throughput with which to run inference, or the
-prompt resource to use in inference. The value depends on the resource
-that you use:
+\item{modelId}{[required] Specifies the model or throughput with which to run inference, or the prompt resource to use in inference. The value depends on the resource that you use:
 \itemize{
-\item If you use a base model, specify the model ID or its ARN. For a list
-of model IDs for base models, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html#model-ids-arns}{Amazon Bedrock base model IDs (on-demand throughput)}
-in the Amazon Bedrock User Guide.
-\item If you use an inference profile, specify the inference profile ID or
-its ARN. For a list of inference profile IDs, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-support.html}{Supported Regions and models for cross-region inference}
-in the Amazon Bedrock User Guide.
-\item If you use a provisioned model, specify the ARN of the Provisioned
-Throughput. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html}{Run inference using a Provisioned Throughput}
-in the Amazon Bedrock User Guide.
-\item If you use a custom model, first purchase Provisioned Throughput for
-it. Then specify the ARN of the resulting provisioned model. For
-more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html}{Use a custom model in Amazon Bedrock}
-in the Amazon Bedrock User Guide.
-\item To include a prompt that was defined in \href{https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html}{Prompt management},
-specify the ARN of the prompt version to use.
+\item If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html#model-ids-arns}{Amazon Bedrock base model IDs (on-demand throughput)} in the Amazon Bedrock User Guide.
+\item If you use an inference profile, specify the inference profile ID or its ARN. For a list of inference profile IDs, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-support.html}{Supported Regions and models for cross-region inference} in the Amazon Bedrock User Guide.
+\item If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html}{Run inference using a Provisioned Throughput} in the Amazon Bedrock User Guide.
+\item If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the resulting provisioned model. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html}{Use a custom model in Amazon Bedrock} in the Amazon Bedrock User Guide.
+\item To include a prompt that was defined in \href{https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html}{Prompt management}, specify the ARN of the prompt version to use.
 }
 
 The Converse API doesn't support \href{https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html}{imported models}.}
 
 \item{messages}{The messages that you want to send to the model.}
 
-\item{system}{A prompt that provides instructions or context to the model about the
-task it should perform, or the persona it should adopt during the
-conversation.}
+\item{system}{A prompt that provides instructions or context to the model about the task it should perform, or the persona it should adopt during the conversation.}
 
-\item{inferenceConfig}{Inference parameters to pass to the model.
-\code{\link[=bedrockruntime_converse]{converse}} and
-\code{\link[=bedrockruntime_converse_stream]{converse_stream}} support a base set
-of inference parameters. If you need to pass additional parameters that
-the model supports, use the \code{additionalModelRequestFields} request
-field.}
+\item{inferenceConfig}{Inference parameters to pass to the model. \code{\link[=bedrockruntime_converse]{converse}} and \code{\link[=bedrockruntime_converse_stream]{converse_stream}} support a base set of inference parameters. If you need to pass additional parameters that the model supports, use the \code{additionalModelRequestFields} request field.}
 
-\item{toolConfig}{Configuration information for the tools that the model can use when
-generating a response.
+\item{toolConfig}{Configuration information for the tools that the model can use when generating a response.
 
 For information about models that support tool use, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features}{Supported models and model features}.}
 
-\item{guardrailConfig}{Configuration information for a guardrail that you want to use in the
-request. If you include \code{guardContent} blocks in the \code{content} field in
-the \code{messages} field, the guardrail operates only on those messages. If
-you include no \code{guardContent} blocks, the guardrail operates on all
-messages in the request body and in any included prompt resource.}
+\item{guardrailConfig}{Configuration information for a guardrail that you want to use in the request. If you include \code{guardContent} blocks in the \code{content} field in the \code{messages} field, the guardrail operates only on those messages. If you include no \code{guardContent} blocks, the guardrail operates on all messages in the request body and in any included prompt resource.}
 
-\item{additionalModelRequestFields}{Additional inference parameters that the model supports, beyond the base
-set of inference parameters that \code{\link[=bedrockruntime_converse]{converse}}
-and \code{\link[=bedrockruntime_converse_stream]{converse_stream}} support in the
-\code{inferenceConfig} field. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html}{Model parameters}.}
+\item{additionalModelRequestFields}{Additional inference parameters that the model supports, beyond the base set of inference parameters that \code{\link[=bedrockruntime_converse]{converse}} and \code{\link[=bedrockruntime_converse_stream]{converse_stream}} support in the \code{inferenceConfig} field. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html}{Model parameters}.}
 
-\item{promptVariables}{Contains a map of variables in a prompt from Prompt management to
-objects containing the values to fill in for them when running model
-invocation. This field is ignored if you don't specify a prompt resource
-in the \code{modelId} field.}
+\item{promptVariables}{Contains a map of variables in a prompt from Prompt management to objects containing the values to fill in for them when running model invocation. This field is ignored if you don't specify a prompt resource in the \code{modelId} field.}
 
-\item{additionalModelResponseFieldPaths}{Additional model parameters field paths to return in the response.
-\code{\link[=bedrockruntime_converse]{converse}} and
-\code{\link[=bedrockruntime_converse_stream]{converse_stream}} return the requested
-fields as a JSON Pointer object in the \code{additionalModelResponseFields}
-field. The following is example JSON for
-\code{additionalModelResponseFieldPaths}.
+\item{additionalModelResponseFieldPaths}{Additional model parameters field paths to return in the response. \code{\link[=bedrockruntime_converse]{converse}} and \code{\link[=bedrockruntime_converse_stream]{converse_stream}} return the requested fields as a JSON Pointer object in the \code{additionalModelResponseFields} field. The following is example JSON for \code{additionalModelResponseFieldPaths}.
 
 \verb{[ "/stop_sequence" ]}
 
 For information about the JSON Pointer syntax, see the \href{https://datatracker.ietf.org/doc/html/rfc6901}{Internet Engineering Task Force (IETF)} documentation.
 
-\code{\link[=bedrockruntime_converse]{converse}} and
-\code{\link[=bedrockruntime_converse_stream]{converse_stream}} reject an empty JSON
-Pointer or incorrectly structured JSON Pointer with a \code{400} error code.
-if the JSON Pointer is valid, but the requested field is not in the
-model response, it is ignored by \code{\link[=bedrockruntime_converse]{converse}}.}
+\code{\link[=bedrockruntime_converse]{converse}} and \code{\link[=bedrockruntime_converse_stream]{converse_stream}} reject an empty JSON Pointer or incorrectly structured JSON Pointer with a \code{400} error code. if the JSON Pointer is valid, but the requested field is not in the model response, it is ignored by \code{\link[=bedrockruntime_converse]{converse}}.}
 
 \item{requestMetadata}{Key-value pairs that you can use to filter invocation logs.}
 
 \item{performanceConfig}{Model performance settings for the request.}
 
-\item{serviceTier}{Specifies the processing tier configuration used for serving the
-request.}
+\item{serviceTier}{Specifies the processing tier configuration used for serving the request.}
+
+\item{outputConfig}{Output configuration for a model response.}
 }
 \description{
 Sends messages to the specified Amazon Bedrock model. \code{\link[=bedrockruntime_converse]{converse}} provides a consistent interface that works with all models that support messages. This allows you to write code once and use it with different models. If a model has unique inference parameters, you can also pass those unique parameters to the model.

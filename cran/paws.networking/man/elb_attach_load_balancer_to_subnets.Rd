@@ -10,8 +10,7 @@ elb_attach_load_balancer_to_subnets(LoadBalancerName, Subnets)
 \arguments{
 \item{LoadBalancerName}{[required] The name of the load balancer.}
 
-\item{Subnets}{[required] The IDs of the subnets to add. You can add only one subnet per
-Availability Zone.}
+\item{Subnets}{[required] The IDs of the subnets to add. You can add only one subnet per Availability Zone.}
 }
 \description{
 Adds one or more subnets to the set of configured subnets for the specified load balancer.

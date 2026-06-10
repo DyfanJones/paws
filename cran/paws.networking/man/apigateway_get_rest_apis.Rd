@@ -9,8 +9,7 @@ apigateway_get_rest_apis(position = NULL, limit = NULL)
 \arguments{
 \item{position}{The current pagination position in the paged result set.}
 
-\item{limit}{The maximum number of returned results per page. The default value is 25
-and the maximum value is 500.}
+\item{limit}{The maximum number of returned results per page. The default value is 25 and the maximum value is 500.}
 }
 \description{
 Lists the RestApis resources for your collection.

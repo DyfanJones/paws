@@ -13,12 +13,9 @@ elasticache_authorize_cache_security_group_ingress(
 \arguments{
 \item{CacheSecurityGroupName}{[required] The cache security group that allows network ingress.}
 
-\item{EC2SecurityGroupName}{[required] The Amazon EC2 security group to be authorized for ingress to the cache
-security group.}
+\item{EC2SecurityGroupName}{[required] The Amazon EC2 security group to be authorized for ingress to the cache security group.}
 
-\item{EC2SecurityGroupOwnerId}{[required] The Amazon account number of the Amazon EC2 security group owner. Note
-that this is not the same thing as an Amazon access key ID - you must
-provide a valid Amazon account number for this parameter.}
+\item{EC2SecurityGroupOwnerId}{[required] The Amazon account number of the Amazon EC2 security group owner. Note that this is not the same thing as an Amazon access key ID - you must provide a valid Amazon account number for this parameter.}
 }
 \description{
 Allows network ingress to a cache security group. Applications using ElastiCache must be running on Amazon EC2, and Amazon EC2 security groups are used as the authorization mechanism.

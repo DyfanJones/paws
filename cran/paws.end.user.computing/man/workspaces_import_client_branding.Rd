@@ -15,8 +15,7 @@ workspaces_import_client_branding(
 )
 }
 \arguments{
-\item{ResourceId}{[required] The directory identifier of the WorkSpace for which you want to import
-client branding.}
+\item{ResourceId}{[required] The directory identifier of the WorkSpace for which you want to import client branding.}
 
 \item{DeviceTypeWindows}{The branding information to import for Windows devices.}
 

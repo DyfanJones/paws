@@ -17,24 +17,25 @@ budgets_update_budget_action(
 )
 }
 \arguments{
-\item{AccountId}{[required]}
+\item{AccountId}{[required] The account ID of the user. It's a 12-digit number.}
 
-\item{BudgetName}{[required]}
+\item{BudgetName}{[required] A string that represents the budget name. The ":" and "\\" characters, and the "/action/" substring, aren't allowed.
+
+Budget names are validated for content. Names that contain phone numbers, URLs, or email addresses combined with certain terms may be rejected.}
 
 \item{ActionId}{[required] A system-generated universally unique identifier (UUID) for the action.}
 
-\item{NotificationType}{}
+\item{NotificationType}{The type of a notification. It must be ACTUAL or FORECASTED.}
 
-\item{ActionThreshold}{}
+\item{ActionThreshold}{The trigger threshold of the action.}
 
-\item{Definition}{}
+\item{Definition}{Specifies all of the type-specific parameters.}
 
-\item{ExecutionRoleArn}{The role passed for action execution and reversion. Roles and actions
-must be in the same account.}
+\item{ExecutionRoleArn}{The role passed for action execution and reversion. Roles and actions must be in the same account.}
 
 \item{ApprovalModel}{This specifies if the action needs manual or automatic approval.}
 
-\item{Subscribers}{}
+\item{Subscribers}{A list of subscribers.}
 }
 \description{
 Updates a budget action.

@@ -18,30 +18,31 @@ sagemaker_create_model_explainability_job_definition(
 )
 }
 \arguments{
-\item{JobDefinitionName}{[required] The name of the model explainability job definition. The name must be
-unique within an Amazon Web Services Region in the Amazon Web Services
-account.}
+\item{JobDefinitionName}{[required] The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.}
 
 \item{ModelExplainabilityBaselineConfig}{The baseline configuration for a model explainability job.}
 
-\item{ModelExplainabilityAppSpecification}{[required] Configures the model explainability job to run a specified Docker
-container image.}
+\item{ModelExplainabilityAppSpecification}{[required] Configures the model explainability job to run a specified Docker container image.}
 
 \item{ModelExplainabilityJobInput}{[required] Inputs for the model explainability job.}
 
-\item{ModelExplainabilityJobOutputConfig}{[required]}
+\item{ModelExplainabilityJobOutputConfig}{[required] The output configuration for monitoring jobs.}
 
-\item{JobResources}{[required]}
+\item{JobResources}{[required] Identifies the resources to deploy for a monitoring job.}
 
 \item{NetworkConfig}{Networking options for a model explainability job.}
 
-\item{RoleArn}{[required] The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker AI
-can assume to perform tasks on your behalf.}
+\item{RoleArn}{[required] The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker AI can assume to perform tasks on your behalf.}
 
-\item{StoppingCondition}{}
+\item{StoppingCondition}{Specifies a limit to how long a job can run. When the job reaches the time limit, SageMaker ends the job. Use this API to cap costs.
 
-\item{Tags}{(Optional) An array of key-value pairs. For more information, see \href{https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL}{Using Cost Allocation Tags}
-in the \emph{Amazon Web Services Billing and Cost Management User Guide}.}
+To stop a training job, SageMaker sends the algorithm the \code{SIGTERM} signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost.
+
+The training algorithms provided by SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with \code{\link[=sagemaker_create_model]{create_model}}.
+
+The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.}
+
+\item{Tags}{(Optional) An array of key-value pairs. For more information, see \href{https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL}{Using Cost Allocation Tags} in the \emph{Amazon Web Services Billing and Cost Management User Guide}.}
 }
 \description{
 Creates the definition for a model explainability job.

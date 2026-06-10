@@ -23,18 +23,13 @@ Constraints:
 
 This value is stored as a lowercase string.}
 
-\item{DBParameterGroupFamily}{[required] The DB parameter group family name. A DB parameter group can be
-associated with one and only one DB parameter group family, and can be
-applied only to a DB instance running a database engine and engine
-version compatible with that DB parameter group family.
+\item{DBParameterGroupFamily}{[required] The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family.
 
-To list all of the available parameter group families for a DB engine,
-use the following command:
+To list all of the available parameter group families for a DB engine, use the following command:
 
 \verb{aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine <engine>}
 
-For example, to list all of the available parameter group families for
-the MySQL DB engine, use the following command:
+For example, to list all of the available parameter group families for the MySQL DB engine, use the following command:
 
 \verb{aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine mysql}
 

@@ -7,16 +7,11 @@
 apigatewayv2_import_api(Basepath = NULL, Body, FailOnWarnings = NULL)
 }
 \arguments{
-\item{Basepath}{Specifies how to interpret the base path of the API during import. Valid
-values are ignore, prepend, and split. The default value is ignore. To
-learn more, see \href{https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html}{Set the OpenAPI basePath Property}.
-Supported only for HTTP APIs.}
+\item{Basepath}{Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split. The default value is ignore. To learn more, see \href{https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html}{Set the OpenAPI basePath Property}. Supported only for HTTP APIs.}
 
 \item{Body}{[required] The OpenAPI definition. Supported only for HTTP APIs.}
 
-\item{FailOnWarnings}{Specifies whether to rollback the API creation when a warning is
-encountered. By default, API creation continues if a warning is
-encountered.}
+\item{FailOnWarnings}{Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.}
 }
 \description{
 Imports an API.

@@ -216,8 +216,7 @@ panorama_delete_device <- function(DeviceId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/panorama_delete_package/](https://www.paws-r-sdk.com/docs/panorama_delete_package/) for full documentation.
 #'
-#' @param ForceDelete Delete the package even if it has artifacts stored in its access point.
-#' Deletes the package's artifacts from Amazon S3.
+#' @param ForceDelete Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.
 #' @param PackageId &#91;required&#93; The package's ID.
 #'
 #' @keywords internal
@@ -569,10 +568,8 @@ panorama_describe_package_version <- function(OwnerAccount = NULL, PackageId, Pa
 #' See [https://www.paws-r-sdk.com/docs/panorama_list_application_instance_dependencies/](https://www.paws-r-sdk.com/docs/panorama_list_application_instance_dependencies/) for full documentation.
 #'
 #' @param ApplicationInstanceId &#91;required&#93; The application instance's ID.
-#' @param MaxResults The maximum number of application instance dependencies to return in one
-#' page of results.
-#' @param NextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param MaxResults The maximum number of application instance dependencies to return in one page of results.
+#' @param NextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #'
 #' @keywords internal
 #'
@@ -605,8 +602,7 @@ panorama_list_application_instance_dependencies <- function(ApplicationInstanceI
 #'
 #' @param ApplicationInstanceId &#91;required&#93; The node instances' application instance ID.
 #' @param MaxResults The maximum number of node instances to return in one page of results.
-#' @param NextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param NextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #'
 #' @keywords internal
 #'
@@ -638,10 +634,8 @@ panorama_list_application_instance_node_instances <- function(ApplicationInstanc
 #' See [https://www.paws-r-sdk.com/docs/panorama_list_application_instances/](https://www.paws-r-sdk.com/docs/panorama_list_application_instances/) for full documentation.
 #'
 #' @param DeviceId The application instances' device ID.
-#' @param MaxResults The maximum number of application instances to return in one page of
-#' results.
-#' @param NextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param MaxResults The maximum number of application instances to return in one page of results.
+#' @param NextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #' @param StatusFilter Only include instances with a specific status.
 #'
 #' @keywords internal
@@ -676,11 +670,9 @@ panorama_list_application_instances <- function(DeviceId = NULL, MaxResults = NU
 #' @param DeviceAggregatedStatusFilter Filter based on a device's status.
 #' @param MaxResults The maximum number of devices to return in one page of results.
 #' @param NameFilter Filter based on device's name. Prefixes supported.
-#' @param NextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param NextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #' @param SortBy The target column to be sorted on. Default column sort is CREATED_TIME.
-#' @param SortOrder The sorting order for the returned list. SortOrder is DESCENDING by
-#' default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.
+#' @param SortOrder The sorting order for the returned list. SortOrder is DESCENDING by default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.
 #'
 #' @keywords internal
 #'
@@ -713,8 +705,7 @@ panorama_list_devices <- function(DeviceAggregatedStatusFilter = NULL, MaxResult
 #'
 #' @param DeviceId Filter results by the job's target device ID.
 #' @param MaxResults The maximum number of device jobs to return in one page of results.
-#' @param NextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param NextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #'
 #' @keywords internal
 #'
@@ -745,10 +736,8 @@ panorama_list_devices_jobs <- function(DeviceId = NULL, MaxResults = NULL, NextT
 #'
 #' See [https://www.paws-r-sdk.com/docs/panorama_list_node_from_template_jobs/](https://www.paws-r-sdk.com/docs/panorama_list_node_from_template_jobs/) for full documentation.
 #'
-#' @param MaxResults The maximum number of node from template jobs to return in one page of
-#' results.
-#' @param NextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param MaxResults The maximum number of node from template jobs to return in one page of results.
+#' @param NextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #'
 #' @keywords internal
 #'
@@ -781,8 +770,7 @@ panorama_list_node_from_template_jobs <- function(MaxResults = NULL, NextToken =
 #'
 #' @param Category Search for nodes by category.
 #' @param MaxResults The maximum number of nodes to return in one page of results.
-#' @param NextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param NextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #' @param OwnerAccount Search for nodes by the account ID of the nodes' owner.
 #' @param PackageName Search for nodes by name.
 #' @param PackageVersion Search for nodes by version.
@@ -817,10 +805,8 @@ panorama_list_nodes <- function(Category = NULL, MaxResults = NULL, NextToken = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/panorama_list_package_import_jobs/](https://www.paws-r-sdk.com/docs/panorama_list_package_import_jobs/) for full documentation.
 #'
-#' @param MaxResults The maximum number of package import jobs to return in one page of
-#' results.
-#' @param NextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param MaxResults The maximum number of package import jobs to return in one page of results.
+#' @param NextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #'
 #' @keywords internal
 #'
@@ -852,8 +838,7 @@ panorama_list_package_import_jobs <- function(MaxResults = NULL, NextToken = NUL
 #' See [https://www.paws-r-sdk.com/docs/panorama_list_packages/](https://www.paws-r-sdk.com/docs/panorama_list_packages/) for full documentation.
 #'
 #' @param MaxResults The maximum number of packages to return in one page of results.
-#' @param NextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param NextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #'
 #' @keywords internal
 #'

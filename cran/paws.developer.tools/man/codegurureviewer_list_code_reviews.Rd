@@ -15,13 +15,9 @@ codegurureviewer_list_code_reviews(
 )
 }
 \arguments{
-\item{ProviderTypes}{List of provider types for filtering that needs to be applied before
-displaying the result. For example, \verb{providerTypes=[GitHub]} lists code
-reviews from GitHub.}
+\item{ProviderTypes}{List of provider types for filtering that needs to be applied before displaying the result. For example, \verb{providerTypes=[GitHub]} lists code reviews from GitHub.}
 
-\item{States}{List of states for filtering that needs to be applied before displaying
-the result. For example, \verb{states=[Pending]} lists code reviews in the
-Pending state.
+\item{States}{List of states for filtering that needs to be applied before displaying the result. For example, \verb{states=[Pending]} lists code reviews in the Pending state.
 
 The valid code review states are:
 \itemize{
@@ -31,18 +27,13 @@ The valid code review states are:
 \item \code{Deleting}: The code review is being deleted.
 }}
 
-\item{RepositoryNames}{List of repository names for filtering that needs to be applied before
-displaying the result.}
+\item{RepositoryNames}{List of repository names for filtering that needs to be applied before displaying the result.}
 
 \item{Type}{[required] The type of code reviews to list in the response.}
 
-\item{MaxResults}{The maximum number of results that are returned per call. The default is
-100.}
+\item{MaxResults}{The maximum number of results that are returned per call. The default is 100.}
 
-\item{NextToken}{If \code{nextToken} is returned, there are more results available. The value
-of \code{nextToken} is a unique pagination token for each page. Make the call
-again using the returned token to retrieve the next page. Keep all other
-arguments unchanged.}
+\item{NextToken}{If \code{nextToken} is returned, there are more results available. The value of \code{nextToken} is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.}
 }
 \description{
 Lists all the code reviews that the customer has created in the past 90 days.

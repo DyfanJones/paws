@@ -13,9 +13,7 @@ costexplorer_get_anomaly_monitors(
 \arguments{
 \item{MonitorArnList}{A list of cost anomaly monitor ARNs.}
 
-\item{NextPageToken}{The token to retrieve the next set of results. Amazon Web Services
-provides the token when the response from a previous call has more
-results than the maximum page size.}
+\item{NextPageToken}{The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.}
 
 \item{MaxResults}{The number of entries that a paginated response contains.}
 }

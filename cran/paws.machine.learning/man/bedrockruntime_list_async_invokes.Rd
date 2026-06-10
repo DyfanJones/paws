@@ -23,8 +23,7 @@ bedrockruntime_list_async_invokes(
 
 \item{maxResults}{The maximum number of invocations to return in one page of results.}
 
-\item{nextToken}{Specify the pagination token from a previous request to retrieve the
-next page of results.}
+\item{nextToken}{Specify the pagination token from a previous request to retrieve the next page of results.}
 
 \item{sortBy}{How to sort the response.}
 

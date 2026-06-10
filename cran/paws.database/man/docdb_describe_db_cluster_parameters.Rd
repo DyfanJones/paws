@@ -14,32 +14,24 @@ docdb_describe_db_cluster_parameters(
 )
 }
 \arguments{
-\item{DBClusterParameterGroupName}{[required] The name of a specific cluster parameter group to return parameter
-details for.
+\item{DBClusterParameterGroupName}{[required] The name of a specific cluster parameter group to return parameter details for.
 
 Constraints:
 \itemize{
-\item If provided, must match the name of an existing
-\code{DBClusterParameterGroup}.
+\item If provided, must match the name of an existing \code{DBClusterParameterGroup}.
 }}
 
-\item{Source}{A value that indicates to return only parameters for a specific source.
-Parameter sources can be \code{engine}, \code{service}, or \code{customer}.}
+\item{Source}{A value that indicates to return only parameters for a specific source. Parameter sources can be \code{engine}, \code{service}, or \code{customer}.}
 
 \item{Filters}{This parameter is not currently supported.}
 
-\item{MaxRecords}{The maximum number of records to include in the response. If more
-records exist than the specified \code{MaxRecords} value, a pagination token
-(marker) is included in the response so that the remaining results can
-be retrieved.
+\item{MaxRecords}{The maximum number of records to include in the response. If more records exist than the specified \code{MaxRecords} value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.
 
 Default: 100
 
 Constraints: Minimum 20, maximum 100.}
 
-\item{Marker}{An optional pagination token provided by a previous request. If this
-parameter is specified, the response includes only records beyond the
-marker, up to the value specified by \code{MaxRecords}.}
+\item{Marker}{An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by \code{MaxRecords}.}
 }
 \description{
 Returns the detailed parameter list for a particular cluster parameter group.

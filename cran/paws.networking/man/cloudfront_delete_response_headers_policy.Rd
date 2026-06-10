@@ -9,17 +9,11 @@ cloudfront_delete_response_headers_policy(Id, IfMatch = NULL)
 \arguments{
 \item{Id}{[required] The identifier for the response headers policy that you are deleting.
 
-To get the identifier, you can use
-\code{\link[=cloudfront_list_response_headers_policies]{list_response_headers_policies}}.}
+To get the identifier, you can use \code{\link[=cloudfront_list_response_headers_policies]{list_response_headers_policies}}.}
 
 \item{IfMatch}{The version of the response headers policy that you are deleting.
 
-The version is the response headers policy's \code{ETag} value, which you can
-get using
-\code{\link[=cloudfront_list_response_headers_policies]{list_response_headers_policies}},
-\code{\link[=cloudfront_get_response_headers_policy]{get_response_headers_policy}},
-or
-\code{\link[=cloudfront_get_response_headers_policy_config]{get_response_headers_policy_config}}.}
+The version is the response headers policy's \code{ETag} value, which you can get using \code{\link[=cloudfront_list_response_headers_policies]{list_response_headers_policies}}, \code{\link[=cloudfront_get_response_headers_policy]{get_response_headers_policy}}, or \code{\link[=cloudfront_get_response_headers_policy_config]{get_response_headers_policy_config}}.}
 }
 \description{
 Deletes a response headers policy.

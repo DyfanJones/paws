@@ -17,13 +17,9 @@ ec2_get_route_server_routing_database(
 
 \item{NextToken}{The token for the next page of results.}
 
-\item{MaxResults}{The maximum number of routing database entries to return in a single
-response.}
+\item{MaxResults}{The maximum number of routing database entries to return in a single response.}
 
-\item{DryRun}{A check for whether you have the required permissions for the action
-without actually making the request and provides an error response. If
-you have the required permissions, the error response is
-\code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
 \item{Filters}{Filters to apply to the routing database query.}
 }

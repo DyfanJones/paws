@@ -48,8 +48,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Amazon Route 53 is a highly available and scalable Domain Name System
-(DNS) web service.
+Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service.
 
 You can use Route 53 to:
 \itemize{

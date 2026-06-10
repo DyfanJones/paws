@@ -4,12 +4,19 @@
 \alias{cloudfront_update_trust_store}
 \title{Updates a trust store}
 \usage{
-cloudfront_update_trust_store(Id, CaCertificatesBundleSource, IfMatch)
+cloudfront_update_trust_store(
+  Id,
+  CaCertificatesBundleSource = NULL,
+  UseClientCertificateOCSPEndpoint = NULL,
+  IfMatch
+)
 }
 \arguments{
 \item{Id}{[required] The trust store ID.}
 
-\item{CaCertificatesBundleSource}{[required] The CA certificates bundle source.}
+\item{CaCertificatesBundleSource}{The CA certificates bundle source.}
+
+\item{UseClientCertificateOCSPEndpoint}{A Boolean that determines whether to use the CA certificate's OCSP endpoint to check certificate revocation status.}
 
 \item{IfMatch}{[required] The current version (\code{ETag} value) of the trust store you are updating.}
 }

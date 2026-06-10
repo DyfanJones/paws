@@ -15,39 +15,19 @@ sagemaker_update_workteam(
 \arguments{
 \item{WorkteamName}{[required] The name of the work team to update.}
 
-\item{MemberDefinitions}{A list of \code{MemberDefinition} objects that contains objects that identify
-the workers that make up the work team.
+\item{MemberDefinitions}{A list of \code{MemberDefinition} objects that contains objects that identify the workers that make up the work team.
 
-Workforces can be created using Amazon Cognito or your own OIDC Identity
-Provider (IdP). For private workforces created using Amazon Cognito use
-\code{CognitoMemberDefinition}. For workforces created using your own OIDC
-identity provider (IdP) use \code{OidcMemberDefinition}. You should not
-provide input for both of these parameters in a single request.
+Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces created using Amazon Cognito use \code{CognitoMemberDefinition}. For workforces created using your own OIDC identity provider (IdP) use \code{OidcMemberDefinition}. You should not provide input for both of these parameters in a single request.
 
-For workforces created using Amazon Cognito, private work teams
-correspond to Amazon Cognito \emph{user groups} within the user pool used to
-create a workforce. All of the \code{CognitoMemberDefinition} objects that
-make up the member definition must have the same \code{ClientId} and
-\code{UserPool} values. To add a Amazon Cognito user group to an existing
-worker pool, see Adding groups to a User Pool. For more information
-about user pools, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools.html}{Amazon Cognito User Pools}.
+For workforces created using Amazon Cognito, private work teams correspond to Amazon Cognito \emph{user groups} within the user pool used to create a workforce. All of the \code{CognitoMemberDefinition} objects that make up the member definition must have the same \code{ClientId} and \code{UserPool} values. To add a Amazon Cognito user group to an existing worker pool, see Adding groups to a User Pool. For more information about user pools, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools.html}{Amazon Cognito User Pools}.
 
-For workforces created using your own OIDC IdP, specify the user groups
-that you want to include in your private work team in
-\code{OidcMemberDefinition} by listing those groups in \code{Groups}. Be aware
-that user groups that are already in the work team must also be listed
-in \code{Groups} when you make this request to remain on the work team. If
-you do not include these user groups, they will no longer be associated
-with the work team you update.}
+For workforces created using your own OIDC IdP, specify the user groups that you want to include in your private work team in \code{OidcMemberDefinition} by listing those groups in \code{Groups}. Be aware that user groups that are already in the work team must also be listed in \code{Groups} when you make this request to remain on the work team. If you do not include these user groups, they will no longer be associated with the work team you update.}
 
 \item{Description}{An updated description for the work team.}
 
 \item{NotificationConfiguration}{Configures SNS topic notifications for available or expiring work items}
 
-\item{WorkerAccessConfiguration}{Use this optional parameter to constrain access to an Amazon S3 resource
-based on the IP address using supported IAM global condition keys. The
-Amazon S3 resource is accessed in the worker portal using a Amazon S3
-presigned URL.}
+\item{WorkerAccessConfiguration}{Use this optional parameter to constrain access to an Amazon S3 resource based on the IP address using supported IAM global condition keys. The Amazon S3 resource is accessed in the worker portal using a Amazon S3 presigned URL.}
 }
 \description{
 Updates an existing work team with new member definitions or description.

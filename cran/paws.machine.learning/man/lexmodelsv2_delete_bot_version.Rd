@@ -15,11 +15,7 @@ lexmodelsv2_delete_bot_version(
 
 \item{botVersion}{[required] The version of the bot to delete.}
 
-\item{skipResourceInUseCheck}{By default, Amazon Lex checks if any other resource, such as an alias or
-bot network, is using the bot version before it is deleted and throws a
-\code{ResourceInUseException} exception if the version is being used by
-another resource. Set this parameter to \code{true} to skip this check and
-remove the version even if it is being used by another resource.}
+\item{skipResourceInUseCheck}{By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot version before it is deleted and throws a \code{ResourceInUseException} exception if the version is being used by another resource. Set this parameter to \code{true} to skip this check and remove the version even if it is being used by another resource.}
 }
 \description{
 Deletes a specific version of a bot. To delete all versions of a bot, use the \code{\link[=lexmodelsv2_delete_bot]{delete_bot}} operation.

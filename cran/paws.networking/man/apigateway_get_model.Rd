@@ -11,9 +11,7 @@ apigateway_get_model(restApiId, modelName, flatten = NULL)
 
 \item{modelName}{[required] The name of the model as an identifier.}
 
-\item{flatten}{A query parameter of a Boolean value to resolve (\code{true}) all external
-model references and returns a flattened model schema or not (\code{false})
-The default is \code{false}.}
+\item{flatten}{A query parameter of a Boolean value to resolve (\code{true}) all external model references and returns a flattened model schema or not (\code{false}) The default is \code{false}.}
 }
 \description{
 Describes an existing model defined for a RestApi resource.

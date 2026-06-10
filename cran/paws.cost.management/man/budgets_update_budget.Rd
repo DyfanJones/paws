@@ -7,8 +7,7 @@
 budgets_update_budget(AccountId, NewBudget)
 }
 \arguments{
-\item{AccountId}{[required] The \code{accountId} that is associated with the budget that you want to
-update.}
+\item{AccountId}{[required] The \code{accountId} that is associated with the budget that you want to update.}
 
 \item{NewBudget}{[required] The budget that you want to update your budget to.}
 }

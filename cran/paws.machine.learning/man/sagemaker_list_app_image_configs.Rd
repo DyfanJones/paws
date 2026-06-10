@@ -17,29 +17,19 @@ sagemaker_list_app_image_configs(
 )
 }
 \arguments{
-\item{MaxResults}{The total number of items to return in the response. If the total number
-of items available is more than the value specified, a \code{NextToken} is
-provided in the response. To resume pagination, provide the \code{NextToken}
-value in the as part of a subsequent call. The default value is 10.}
+\item{MaxResults}{The total number of items to return in the response. If the total number of items available is more than the value specified, a \code{NextToken} is provided in the response. To resume pagination, provide the \code{NextToken} value in the as part of a subsequent call. The default value is 10.}
 
-\item{NextToken}{If the previous call to \code{\link[=sagemaker_list_images]{list_images}} didn't
-return the full set of AppImageConfigs, the call returns a token for
-getting the next set of AppImageConfigs.}
+\item{NextToken}{If the previous call to \code{\link[=sagemaker_list_images]{list_images}} didn't return the full set of AppImageConfigs, the call returns a token for getting the next set of AppImageConfigs.}
 
-\item{NameContains}{A filter that returns only AppImageConfigs whose name contains the
-specified string.}
+\item{NameContains}{A filter that returns only AppImageConfigs whose name contains the specified string.}
 
-\item{CreationTimeBefore}{A filter that returns only AppImageConfigs created on or before the
-specified time.}
+\item{CreationTimeBefore}{A filter that returns only AppImageConfigs created on or before the specified time.}
 
-\item{CreationTimeAfter}{A filter that returns only AppImageConfigs created on or after the
-specified time.}
+\item{CreationTimeAfter}{A filter that returns only AppImageConfigs created on or after the specified time.}
 
-\item{ModifiedTimeBefore}{A filter that returns only AppImageConfigs modified on or before the
-specified time.}
+\item{ModifiedTimeBefore}{A filter that returns only AppImageConfigs modified on or before the specified time.}
 
-\item{ModifiedTimeAfter}{A filter that returns only AppImageConfigs modified on or after the
-specified time.}
+\item{ModifiedTimeAfter}{A filter that returns only AppImageConfigs modified on or after the specified time.}
 
 \item{SortBy}{The property used to sort results. The default value is \code{CreationTime}.}
 

@@ -3,34 +3,24 @@
 #' @include securityhub_service.R
 NULL
 
-#' We recommend using Organizations instead of Security Hub invitations to
-#' manage your member accounts
+#' We recommend using Organizations instead of Security Hub CSPM
+#' invitations to manage your member accounts
 #'
 #' @description
-#' We recommend using Organizations instead of Security Hub invitations to
-#' manage your member accounts. For information, see [Managing Security Hub
-#' administrator and member accounts with
-#' Organizations](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html)
-#' in the *Security Hub User Guide*.
+#' We recommend using Organizations instead of Security Hub CSPM invitations to manage your member accounts. For information, see [Managing Security Hub CSPM administrator and member accounts with Organizations](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html) in the *Security Hub CSPM User Guide*.
 #' 
-#' Accepts the invitation to be a member account and be monitored by the
-#' Security Hub administrator account that the invitation was sent from.
+#' Accepts the invitation to be a member account and be monitored by the Security Hub CSPM administrator account that the invitation was sent from.
 #' 
-#' This operation is only used by member accounts that are not added
-#' through Organizations.
+#' This operation is only used by member accounts that are not added through Organizations.
 #' 
-#' When the member account accepts the invitation, permission is granted to
-#' the administrator account to view findings generated in the member
-#' account.
+#' When the member account accepts the invitation, permission is granted to the administrator account to view findings generated in the member account.
 #'
 #' @usage
 #' securityhub_accept_administrator_invitation(AdministratorId,
 #'   InvitationId)
 #'
-#' @param AdministratorId &#91;required&#93; The account ID of the Security Hub administrator account that sent the
-#' invitation.
-#' @param InvitationId &#91;required&#93; The identifier of the invitation sent from the Security Hub
-#' administrator account.
+#' @param AdministratorId &#91;required&#93; The account ID of the Security Hub CSPM administrator account that sent the invitation.
+#' @param InvitationId &#91;required&#93; The identifier of the invitation sent from the Security Hub CSPM administrator account.
 #'
 #' @return
 #' An empty list.
@@ -70,38 +60,21 @@ securityhub_accept_administrator_invitation <- function(AdministratorId, Invitat
 #' This method is deprecated
 #'
 #' @description
-#' This method is deprecated. Instead, use
-#' [`accept_administrator_invitation`][securityhub_accept_administrator_invitation].
+#' This method is deprecated. Instead, use [`accept_administrator_invitation`][securityhub_accept_administrator_invitation].
 #' 
-#' The Security Hub console continues to use
-#' [`accept_invitation`][securityhub_accept_invitation]. It will eventually
-#' change to use
-#' [`accept_administrator_invitation`][securityhub_accept_administrator_invitation].
-#' Any IAM policies that specifically control access to this function must
-#' continue to use [`accept_invitation`][securityhub_accept_invitation].
-#' You should also add
-#' [`accept_administrator_invitation`][securityhub_accept_administrator_invitation]
-#' to your policies to ensure that the correct permissions are in place
-#' after the console begins to use
-#' [`accept_administrator_invitation`][securityhub_accept_administrator_invitation].
+#' The Security Hub CSPM console continues to use [`accept_invitation`][securityhub_accept_invitation]. It will eventually change to use [`accept_administrator_invitation`][securityhub_accept_administrator_invitation]. Any IAM policies that specifically control access to this function must continue to use [`accept_invitation`][securityhub_accept_invitation]. You should also add [`accept_administrator_invitation`][securityhub_accept_administrator_invitation] to your policies to ensure that the correct permissions are in place after the console begins to use [`accept_administrator_invitation`][securityhub_accept_administrator_invitation].
 #' 
-#' Accepts the invitation to be a member account and be monitored by the
-#' Security Hub administrator account that the invitation was sent from.
+#' Accepts the invitation to be a member account and be monitored by the Security Hub CSPM administrator account that the invitation was sent from.
 #' 
-#' This operation is only used by member accounts that are not added
-#' through Organizations.
+#' This operation is only used by member accounts that are not added through Organizations.
 #' 
-#' When the member account accepts the invitation, permission is granted to
-#' the administrator account to view findings generated in the member
-#' account.
+#' When the member account accepts the invitation, permission is granted to the administrator account to view findings generated in the member account.
 #'
 #' @usage
 #' securityhub_accept_invitation(MasterId, InvitationId)
 #'
-#' @param MasterId &#91;required&#93; The account ID of the Security Hub administrator account that sent the
-#' invitation.
-#' @param InvitationId &#91;required&#93; The identifier of the invitation sent from the Security Hub
-#' administrator account.
+#' @param MasterId &#91;required&#93; The account ID of the Security Hub CSPM administrator account that sent the invitation.
+#' @param InvitationId &#91;required&#93; The identifier of the invitation sent from the Security Hub CSPM administrator account.
 #'
 #' @return
 #' An empty list.
@@ -146,8 +119,7 @@ securityhub_accept_invitation <- function(MasterId, InvitationId) {
 #' @usage
 #' securityhub_batch_delete_automation_rules(AutomationRulesArns)
 #'
-#' @param AutomationRulesArns &#91;required&#93; A list of Amazon Resource Names (ARNs) for the rules that are to be
-#' deleted.
+#' @param AutomationRulesArns &#91;required&#93; A list of Amazon Resource Names (ARNs) for the rules that are to be deleted.
 #'
 #' @return
 #' A list with the following syntax:
@@ -203,12 +175,9 @@ securityhub_batch_delete_automation_rules <- function(AutomationRulesArns) {
 #' StandardsSubscriptionArns
 #'
 #' @description
-#' Disables the standards specified by the provided
-#' `StandardsSubscriptionArns`.
+#' Disables the standards specified by the provided `StandardsSubscriptionArns`.
 #' 
-#' For more information, see [Security
-#' Standards](https://docs.aws.amazon.com/securityhub/latest/userguide/standards-view-manage.html)
-#' section of the *Security Hub User Guide*.
+#' For more information, see [Security Standards](https://docs.aws.amazon.com/securityhub/latest/userguide/standards-view-manage.html) section of the *Security Hub CSPM User Guide*.
 #'
 #' @usage
 #' securityhub_batch_disable_standards(StandardsSubscriptionArns)
@@ -272,13 +241,9 @@ securityhub_batch_disable_standards <- function(StandardsSubscriptionArns) {
 #' Enables the standards specified by the provided StandardsArn
 #'
 #' @description
-#' Enables the standards specified by the provided `StandardsArn`. To
-#' obtain the ARN for a standard, use the
-#' [`describe_standards`][securityhub_describe_standards] operation.
+#' Enables the standards specified by the provided `StandardsArn`. To obtain the ARN for a standard, use the [`describe_standards`][securityhub_describe_standards] operation.
 #' 
-#' For more information, see the [Security
-#' Standards](https://docs.aws.amazon.com/securityhub/latest/userguide/standards-view-manage.html)
-#' section of the *Security Hub User Guide*.
+#' For more information, see the [Security Standards](https://docs.aws.amazon.com/securityhub/latest/userguide/standards-view-manage.html) section of the *Security Hub CSPM User Guide*.
 #'
 #' @usage
 #' securityhub_batch_enable_standards(StandardsSubscriptionRequests)
@@ -348,8 +313,7 @@ securityhub_batch_enable_standards <- function(StandardsSubscriptionRequests) {
 #' Resource Names (ARNs)
 #'
 #' @description
-#' Retrieves a list of details for automation rules based on rule Amazon
-#' Resource Names (ARNs).
+#' Retrieves a list of details for automation rules based on rule Amazon Resource Names (ARNs).
 #'
 #' @usage
 #' securityhub_batch_get_automation_rules(AutomationRulesArns)
@@ -405,7 +369,8 @@ securityhub_batch_enable_standards <- function(StandardsSubscriptionRequests) {
 #'             End = "string",
 #'             DateRange = list(
 #'               Value = 123,
-#'               Unit = "DAYS"
+#'               Unit = "DAYS",
+#'               Comparison = "WITHIN"|"OLDER_THAN"
 #'             )
 #'           )
 #'         ),
@@ -415,7 +380,8 @@ securityhub_batch_enable_standards <- function(StandardsSubscriptionRequests) {
 #'             End = "string",
 #'             DateRange = list(
 #'               Value = 123,
-#'               Unit = "DAYS"
+#'               Unit = "DAYS",
+#'               Comparison = "WITHIN"|"OLDER_THAN"
 #'             )
 #'           )
 #'         ),
@@ -425,7 +391,8 @@ securityhub_batch_enable_standards <- function(StandardsSubscriptionRequests) {
 #'             End = "string",
 #'             DateRange = list(
 #'               Value = 123,
-#'               Unit = "DAYS"
+#'               Unit = "DAYS",
+#'               Comparison = "WITHIN"|"OLDER_THAN"
 #'             )
 #'           )
 #'         ),
@@ -435,7 +402,8 @@ securityhub_batch_enable_standards <- function(StandardsSubscriptionRequests) {
 #'             End = "string",
 #'             DateRange = list(
 #'               Value = 123,
-#'               Unit = "DAYS"
+#'               Unit = "DAYS",
+#'               Comparison = "WITHIN"|"OLDER_THAN"
 #'             )
 #'           )
 #'         ),
@@ -591,7 +559,8 @@ securityhub_batch_enable_standards <- function(StandardsSubscriptionRequests) {
 #'             End = "string",
 #'             DateRange = list(
 #'               Value = 123,
-#'               Unit = "DAYS"
+#'               Unit = "DAYS",
+#'               Comparison = "WITHIN"|"OLDER_THAN"
 #'             )
 #'           )
 #'         ),
@@ -713,22 +682,17 @@ securityhub_batch_get_automation_rules <- function(AutomationRulesArns) {
 }
 .securityhub$operations$batch_get_automation_rules <- securityhub_batch_get_automation_rules
 
-#' Returns associations between an Security Hub configuration and a batch
-#' of target accounts, organizational units, or the root
+#' Returns associations between an Security Hub CSPM configuration and a
+#' batch of target accounts, organizational units, or the root
 #'
 #' @description
-#' Returns associations between an Security Hub configuration and a batch
-#' of target accounts, organizational units, or the root. Only the Security
-#' Hub delegated administrator can invoke this operation from the home
-#' Region. A configuration can refer to a configuration policy or to a
-#' self-managed configuration.
+#' Returns associations between an Security Hub CSPM configuration and a batch of target accounts, organizational units, or the root. Only the Security Hub CSPM delegated administrator can invoke this operation from the home Region. A configuration can refer to a configuration policy or to a self-managed configuration.
 #'
 #' @usage
 #' securityhub_batch_get_configuration_policy_associations(
 #'   ConfigurationPolicyAssociationIdentifiers)
 #'
-#' @param ConfigurationPolicyAssociationIdentifiers &#91;required&#93; Specifies one or more target account IDs, organizational unit (OU) IDs,
-#' or the root ID to retrieve associations for.
+#' @param ConfigurationPolicyAssociationIdentifiers &#91;required&#93; Specifies one or more target account IDs, organizational unit (OU) IDs, or the root ID to retrieve associations for.
 #'
 #' @return
 #' A list with the following syntax:
@@ -806,15 +770,12 @@ securityhub_batch_get_configuration_policy_associations <- function(Configuratio
 #' Amazon Web Services account and Amazon Web Services Region
 #'
 #' @description
-#' Provides details about a batch of security controls for the current
-#' Amazon Web Services account and Amazon Web Services Region.
+#' Provides details about a batch of security controls for the current Amazon Web Services account and Amazon Web Services Region.
 #'
 #' @usage
 #' securityhub_batch_get_security_controls(SecurityControlIds)
 #'
-#' @param SecurityControlIds &#91;required&#93; A list of security controls (identified with `SecurityControlId`,
-#' `SecurityControlArn`, or a mix of both parameters). The security control
-#' ID or Amazon Resource Name (ARN) is the same across standards.
+#' @param SecurityControlIds &#91;required&#93; A list of security controls (identified with `SecurityControlId`, `SecurityControlArn`, or a mix of both parameters). The security control ID or Amazon Resource Name (ARN) is the same across standards.
 #'
 #' @return
 #' A list with the following syntax:
@@ -901,22 +862,15 @@ securityhub_batch_get_security_controls <- function(SecurityControlIds) {
 #' control is currently enabled or disabled in a standard
 #'
 #' @description
-#' For a batch of security controls and standards, identifies whether each
-#' control is currently enabled or disabled in a standard.
+#' For a batch of security controls and standards, identifies whether each control is currently enabled or disabled in a standard.
 #' 
-#' Calls to this operation return a `RESOURCE_NOT_FOUND_EXCEPTION` error
-#' when the standard subscription for the association has a
-#' `NOT_READY_FOR_UPDATES` value for `StandardsControlsUpdatable`.
+#' Calls to this operation return a `RESOURCE_NOT_FOUND_EXCEPTION` error when the standard subscription for the association has a `NOT_READY_FOR_UPDATES` value for `StandardsControlsUpdatable`.
 #'
 #' @usage
 #' securityhub_batch_get_standards_control_associations(
 #'   StandardsControlAssociationIds)
 #'
-#' @param StandardsControlAssociationIds &#91;required&#93; An array with one or more objects that includes a security control
-#' (identified with `SecurityControlId`, `SecurityControlArn`, or a mix of
-#' both parameters) and the Amazon Resource Name (ARN) of a standard. This
-#' field is used to query the enablement status of a control in a specified
-#' standard. The security control ID or ARN is the same across standards.
+#' @param StandardsControlAssociationIds &#91;required&#93; An array with one or more objects that includes a security control (identified with `SecurityControlId`, `SecurityControlArn`, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards.
 #'
 #' @return
 #' A list with the following syntax:
@@ -992,39 +946,20 @@ securityhub_batch_get_standards_control_associations <- function(StandardsContro
 .securityhub$operations$batch_get_standards_control_associations <- securityhub_batch_get_standards_control_associations
 
 #' Imports security findings generated by a finding provider into Security
-#' Hub
+#' Hub CSPM
 #'
 #' @description
-#' Imports security findings generated by a finding provider into Security
-#' Hub. This action is requested by the finding provider to import its
-#' findings into Security Hub.
+#' Imports security findings generated by a finding provider into Security Hub CSPM. This action is requested by the finding provider to import its findings into Security Hub CSPM.
 #' 
-#' [`batch_import_findings`][securityhub_batch_import_findings] must be
-#' called by one of the following:
+#' [`batch_import_findings`][securityhub_batch_import_findings] must be called by one of the following:
 #' 
-#' -   The Amazon Web Services account that is associated with a finding if
-#'     you are using the [default product
-#'     ARN](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-custom-providers.html#securityhub-custom-providers-bfi-reqs)
-#'     or are a partner sending findings from within a customer's Amazon
-#'     Web Services account. In these cases, the identifier of the account
-#'     that you are calling
-#'     [`batch_import_findings`][securityhub_batch_import_findings] from
-#'     needs to be the same as the `AwsAccountId` attribute for the
-#'     finding.
+#' -   The Amazon Web Services account that is associated with a finding if you are using the [default product ARN](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-custom-providers.html#securityhub-custom-providers-bfi-reqs) or are a partner sending findings from within a customer's Amazon Web Services account. In these cases, the identifier of the account that you are calling [`batch_import_findings`][securityhub_batch_import_findings] from needs to be the same as the `AwsAccountId` attribute for the finding.
 #' 
-#' -   An Amazon Web Services account that Security Hub has allow-listed
-#'     for an official partner integration. In this case, you can call
-#'     [`batch_import_findings`][securityhub_batch_import_findings] from
-#'     the allow-listed account and send findings from different customer
-#'     accounts in the same batch.
+#' -   An Amazon Web Services account that Security Hub CSPM has allow-listed for an official partner integration. In this case, you can call [`batch_import_findings`][securityhub_batch_import_findings] from the allow-listed account and send findings from different customer accounts in the same batch.
 #' 
-#' The maximum allowed size for a finding is 240 Kb. An error is returned
-#' for any finding larger than 240 Kb.
+#' The maximum allowed size for a finding is 240 Kb. An error is returned for any finding larger than 240 Kb.
 #' 
-#' After a finding is created,
-#' [`batch_import_findings`][securityhub_batch_import_findings] cannot be
-#' used to update the following finding fields and objects, which Security
-#' Hub customers use to manage their investigation workflow.
+#' After a finding is created, [`batch_import_findings`][securityhub_batch_import_findings] cannot be used to update the following finding fields and objects, which Security Hub CSPM customers use to manage their investigation workflow.
 #' 
 #' -   `Note`
 #' 
@@ -1034,9 +969,7 @@ securityhub_batch_get_standards_control_associations <- function(StandardsContro
 #' 
 #' -   `Workflow`
 #' 
-#' Finding providers also should not use
-#' [`batch_import_findings`][securityhub_batch_import_findings] to update
-#' the following attributes.
+#' Finding providers also should not use [`batch_import_findings`][securityhub_batch_import_findings] to update the following attributes.
 #' 
 #' -   `Confidence`
 #' 
@@ -1048,16 +981,12 @@ securityhub_batch_get_standards_control_associations <- function(StandardsContro
 #' 
 #' -   `Types`
 #' 
-#' Instead, finding providers use `FindingProviderFields` to provide values
-#' for these attributes.
+#' Instead, finding providers use `FindingProviderFields` to provide values for these attributes.
 #'
 #' @usage
 #' securityhub_batch_import_findings(Findings)
 #'
-#' @param Findings &#91;required&#93; A list of findings to import. To successfully import a finding, it must
-#' follow the [Amazon Web Services Security Finding
-#' Format](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html).
-#' Maximum of 100 findings per request.
+#' @param Findings &#91;required&#93; A list of findings to import. To successfully import a finding, it must follow the [Amazon Web Services Security Finding Format](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html). Maximum of 100 findings per request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5689,15 +5618,13 @@ securityhub_batch_import_findings <- function(Findings) {
 #' (ARNs) and input parameters
 #'
 #' @description
-#' Updates one or more automation rules based on rule Amazon Resource Names
-#' (ARNs) and input parameters.
+#' Updates one or more automation rules based on rule Amazon Resource Names (ARNs) and input parameters.
 #'
 #' @usage
 #' securityhub_batch_update_automation_rules(
 #'   UpdateAutomationRulesRequestItems)
 #'
-#' @param UpdateAutomationRulesRequestItems &#91;required&#93; An array of ARNs for the rules that are to be updated. Optionally, you
-#' can also include `RuleStatus` and `RuleOrder`.
+#' @param UpdateAutomationRulesRequestItems &#91;required&#93; An array of ARNs for the rules that are to be updated. Optionally, you can also include `RuleStatus` and `RuleOrder`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5764,7 +5691,8 @@ securityhub_batch_import_findings <- function(Findings) {
 #'             End = "string",
 #'             DateRange = list(
 #'               Value = 123,
-#'               Unit = "DAYS"
+#'               Unit = "DAYS",
+#'               Comparison = "WITHIN"|"OLDER_THAN"
 #'             )
 #'           )
 #'         ),
@@ -5774,7 +5702,8 @@ securityhub_batch_import_findings <- function(Findings) {
 #'             End = "string",
 #'             DateRange = list(
 #'               Value = 123,
-#'               Unit = "DAYS"
+#'               Unit = "DAYS",
+#'               Comparison = "WITHIN"|"OLDER_THAN"
 #'             )
 #'           )
 #'         ),
@@ -5784,7 +5713,8 @@ securityhub_batch_import_findings <- function(Findings) {
 #'             End = "string",
 #'             DateRange = list(
 #'               Value = 123,
-#'               Unit = "DAYS"
+#'               Unit = "DAYS",
+#'               Comparison = "WITHIN"|"OLDER_THAN"
 #'             )
 #'           )
 #'         ),
@@ -5794,7 +5724,8 @@ securityhub_batch_import_findings <- function(Findings) {
 #'             End = "string",
 #'             DateRange = list(
 #'               Value = 123,
-#'               Unit = "DAYS"
+#'               Unit = "DAYS",
+#'               Comparison = "WITHIN"|"OLDER_THAN"
 #'             )
 #'           )
 #'         ),
@@ -5950,7 +5881,8 @@ securityhub_batch_import_findings <- function(Findings) {
 #'             End = "string",
 #'             DateRange = list(
 #'               Value = 123,
-#'               Unit = "DAYS"
+#'               Unit = "DAYS",
+#'               Comparison = "WITHIN"|"OLDER_THAN"
 #'             )
 #'           )
 #'         ),
@@ -6049,17 +5981,11 @@ securityhub_batch_update_automation_rules <- function(UpdateAutomationRulesReque
 }
 .securityhub$operations$batch_update_automation_rules <- securityhub_batch_update_automation_rules
 
-#' Used by Security Hub customers to update information about their
+#' Used by Security Hub CSPM customers to update information about their
 #' investigation into one or more findings
 #'
 #' @description
-#' Used by Security Hub customers to update information about their
-#' investigation into one or more findings. Requested by administrator
-#' accounts or member accounts. Administrator accounts can update findings
-#' for their account and their member accounts. A member account can update
-#' findings only for their own account. Administrator and member accounts
-#' can use this operation to update the following fields and objects for
-#' one or more findings:
+#' Used by Security Hub CSPM customers to update information about their investigation into one or more findings. Requested by administrator accounts or member accounts. Administrator accounts can update findings for their account and their member accounts. A member account can update findings only for their own account. Administrator and member accounts can use this operation to update the following fields and objects for one or more findings:
 #' 
 #' -   `Confidence`
 #' 
@@ -6079,30 +6005,19 @@ securityhub_batch_update_automation_rules <- function(UpdateAutomationRulesReque
 #' 
 #' -   `Workflow`
 #' 
-#' If you use this operation to update a finding, your updates don’t affect
-#' the value for the `UpdatedAt` field of the finding. Also note that it
-#' can take several minutes for Security Hub to process your request and
-#' update each finding specified in the request.
+#' If you use this operation to update a finding, your updates don’t affect the value for the `UpdatedAt` field of the finding. Also note that it can take several minutes for Security Hub CSPM to process your request and update each finding specified in the request.
 #' 
-#' You can configure IAM policies to restrict access to fields and field
-#' values. For example, you might not want member accounts to be able to
-#' suppress findings or change the finding severity. For more information
-#' see [Configuring access to
-#' BatchUpdateFindings](https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access)
-#' in the *Security Hub User Guide*.
+#' You can configure IAM policies to restrict access to fields and field values. For example, you might not want member accounts to be able to suppress findings or change the finding severity. For more information see [Configuring access to BatchUpdateFindings](https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access) in the *Security Hub CSPM User Guide*.
 #'
 #' @usage
 #' securityhub_batch_update_findings(FindingIdentifiers, Note, Severity,
 #'   VerificationState, Confidence, Criticality, Types, UserDefinedFields,
 #'   Workflow, RelatedFindings)
 #'
-#' @param FindingIdentifiers &#91;required&#93; The list of findings to update.
-#' [`batch_update_findings`][securityhub_batch_update_findings] can be used
-#' to update up to 100 findings at a time.
+#' @param FindingIdentifiers &#91;required&#93; The list of findings to update. [`batch_update_findings`][securityhub_batch_update_findings] can be used to update up to 100 findings at a time.
 #' 
-#' For each finding, the list provides the finding identifier and the ARN
-#' of the finding provider.
-#' @param Note 
+#' For each finding, the list provides the finding identifier and the ARN of the finding provider.
+#' @param Note A user-defined note added to a finding.
 #' @param Severity Used to update the finding severity.
 #' @param VerificationState Indicates the veracity of a finding.
 #' 
@@ -6112,24 +6027,16 @@ securityhub_batch_update_automation_rules <- function(UpdateAutomationRulesReque
 #' 
 #' -   `TRUE_POSITIVE` – The security finding is confirmed
 #' 
-#' -   `FALSE_POSITIVE` – The security finding was determined to be a false
-#'     alarm
+#' -   `FALSE_POSITIVE` – The security finding was determined to be a false alarm
 #' 
-#' -   `BENIGN_POSITIVE` – A special case of `TRUE_POSITIVE` where the
-#'     finding doesn't pose any threat, is expected, or both
-#' @param Confidence The updated value for the finding confidence. Confidence is defined as
-#' the likelihood that a finding accurately identifies the behavior or
-#' issue that it was intended to identify.
+#' -   `BENIGN_POSITIVE` – A special case of `TRUE_POSITIVE` where the finding doesn't pose any threat, is expected, or both
+#' @param Confidence The updated value for the finding confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.
 #' 
-#' Confidence is scored on a 0-100 basis using a ratio scale, where 0 means
-#' zero percent confidence and 100 means 100 percent confidence.
-#' @param Criticality The updated value for the level of importance assigned to the resources
-#' associated with the findings.
+#' Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.
+#' @param Criticality The updated value for the level of importance assigned to the resources associated with the findings.
 #' 
-#' A score of 0 means that the underlying resources have no criticality,
-#' and a score of 100 is reserved for the most critical resources.
-#' @param Types One or more finding types in the format of namespace/category/classifier
-#' that classify a finding.
+#' A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.
+#' @param Types One or more finding types in the format of namespace/category/classifier that classify a finding.
 #' 
 #' Valid namespace values are as follows.
 #' 
@@ -6142,12 +6049,10 @@ securityhub_batch_update_automation_rules <- function(UpdateAutomationRulesReque
 #' -   Unusual Behaviors
 #' 
 #' -   Sensitive Data Identifications
-#' @param UserDefinedFields A list of name/value string pairs associated with the finding. These are
-#' custom, user-defined fields added to a finding.
+#' @param UserDefinedFields A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.
 #' @param Workflow Used to update the workflow status of a finding.
 #' 
-#' The workflow status indicates the progress of the investigation into the
-#' finding.
+#' The workflow status indicates the progress of the investigation into the finding.
 #' @param RelatedFindings A list of findings that are related to the updated findings.
 #'
 #' @return
@@ -6236,42 +6141,26 @@ securityhub_batch_update_findings <- function(FindingIdentifiers, Note = NULL, S
 }
 .securityhub$operations$batch_update_findings <- securityhub_batch_update_findings
 
-#' Used by customers to update information about their investigation into a
-#' finding
+#' Updates information about a customer's investigation into a finding
 #'
 #' @description
-#' Used by customers to update information about their investigation into a
-#' finding. Requested by delegated administrator accounts or member
-#' accounts. Delegated administrator accounts can update findings for their
-#' account and their member accounts. Member accounts can update findings
-#' for their account.
-#' [`batch_update_findings`][securityhub_batch_update_findings] and
-#' `BatchUpdateFindingV2` both use `securityhub:BatchUpdateFindings` in the
-#' `Action` element of an IAM policy statement. You must have permission to
-#' perform the `securityhub:BatchUpdateFindings` action. Updates from
-#' [`batch_update_findings_v2`][securityhub_batch_update_findings_v2] don't
-#' affect the value of f`inding_info.modified_time`,
-#' `finding_info.modified_time_dt`, `time`, `time_dt for a finding`.
+#' Updates information about a customer's investigation into a finding. Delegated administrator accounts can update findings for their account and their member accounts. Member accounts can update findings for their own account.
+#' 
+#' [`batch_update_findings`][securityhub_batch_update_findings] and [`batch_update_findings_v2`][securityhub_batch_update_findings_v2] both use `securityhub:BatchUpdateFindings` in the `Action` element of an IAM policy statement. You must have permission to perform the `securityhub:BatchUpdateFindings` action. You can configure IAM policies to restrict access to specific finding fields or field values by using the `securityhub:OCSFSyntaxPath/<fieldName>` condition key, where `<fieldName>` is one of the following supported fields: `SeverityId`, `StatusId`, or `Comment`.
+#' 
+#' To prevent a user from updating a specific field, use a `Null` condition with `securityhub:OCSFSyntaxPath/<fieldName>` set to `"false"`. To prevent a user from setting a field to a specific value, use a `StringEquals` condition with `securityhub:OCSFSyntaxPath/<fieldName>` set to the disallowed value or list of values.
+#' 
+#' Updates from [`batch_update_findings_v2`][securityhub_batch_update_findings_v2] don't affect the value of `finding_info.modified_time`, `finding_info.modified_time_dt`, `time`, or `time_dt` for a finding.
 #'
 #' @usage
 #' securityhub_batch_update_findings_v2(MetadataUids, FindingIdentifiers,
 #'   Comment, SeverityId, StatusId)
 #'
-#' @param MetadataUids The list of finding `metadata.uid` to indicate findings to update.
-#' Finding `metadata.uid` is a globally unique identifier associated with
-#' the finding. Customers cannot use `MetadataUids` together with
-#' `FindingIdentifiers`.
+#' @param MetadataUids The list of finding `metadata.uid` to indicate findings to update. Finding `metadata.uid` is a globally unique identifier associated with the finding. Customers cannot use `MetadataUids` together with `FindingIdentifiers`.
 #' @param FindingIdentifiers Provides information to identify a specific V2 finding.
-#' @param Comment The updated value for a user provided comment about the finding. Minimum
-#' character length 1. Maximum character length 512.
-#' @param SeverityId The updated value for the normalized severity identifier. The severity
-#' ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 99\].
-#' When customer provides the updated severity ID, the string sibling
-#' severity will automatically be updated in the finding.
-#' @param StatusId The updated value for the normalized status identifier. The status ID is
-#' an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 6, 99\].
-#' When customer provides the updated status ID, the string sibling status
-#' will automatically be updated in the finding.
+#' @param Comment The updated value for a user provided comment about the finding. Minimum character length 1. Maximum character length 512.
+#' @param SeverityId The updated value for the normalized severity identifier. The severity ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 6, 99\]. When customer provides the updated severity ID, the string sibling severity will automatically be updated in the finding.
+#' @param StatusId The updated value for the normalized status identifier. The status ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 99\]. When customer provides the updated status ID, the string sibling status will automatically be updated in the finding.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6349,19 +6238,15 @@ securityhub_batch_update_findings_v2 <- function(MetadataUids = NULL, FindingIde
 #' the enablement status of a control in a standard
 #'
 #' @description
-#' For a batch of security controls and standards, this operation updates
-#' the enablement status of a control in a standard.
+#' For a batch of security controls and standards, this operation updates the enablement status of a control in a standard.
 #'
 #' @usage
 #' securityhub_batch_update_standards_control_associations(
 #'   StandardsControlAssociationUpdates)
 #'
-#' @param StandardsControlAssociationUpdates &#91;required&#93; Updates the enablement status of a security control in a specified
-#' standard.
+#' @param StandardsControlAssociationUpdates &#91;required&#93; Updates the enablement status of a security control in a specified standard.
 #' 
-#' Calls to this operation return a `RESOURCE_NOT_FOUND_EXCEPTION` error
-#' when the standard subscription for the control has
-#' `StandardsControlsUpdatable` value `NOT_READY_FOR_UPDATES`.
+#' Calls to this operation return a `RESOURCE_NOT_FOUND_EXCEPTION` error when the standard subscription for the control has `StandardsControlsUpdatable` value `NOT_READY_FOR_UPDATES`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6420,21 +6305,19 @@ securityhub_batch_update_standards_control_associations <- function(StandardsCon
 }
 .securityhub$operations$batch_update_standards_control_associations <- securityhub_batch_update_standards_control_associations
 
-#' Creates a custom action target in Security Hub
+#' Creates a custom action target in Security Hub CSPM
 #'
 #' @description
-#' Creates a custom action target in Security Hub.
+#' Creates a custom action target in Security Hub CSPM.
 #' 
-#' You can use custom actions on findings and insights in Security Hub to
-#' trigger target actions in Amazon CloudWatch Events.
+#' You can use custom actions on findings and insights in Security Hub CSPM to trigger target actions in Amazon CloudWatch Events.
 #'
 #' @usage
 #' securityhub_create_action_target(Name, Description, Id)
 #'
 #' @param Name &#91;required&#93; The name of the custom action target. Can contain up to 20 characters.
 #' @param Description &#91;required&#93; The description for the custom action target.
-#' @param Id &#91;required&#93; The ID for the custom action target. Can contain up to 20 alphanumeric
-#' characters.
+#' @param Id &#91;required&#93; The ID for the custom action target. Can contain up to 20 alphanumeric characters.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6552,29 +6435,13 @@ securityhub_create_aggregator_v2 <- function(RegionLinkingMode, LinkedRegions = 
 #'   RuleName, Description, IsTerminal, Criteria, Actions)
 #'
 #' @param Tags User-defined tags associated with an automation rule.
-#' @param RuleStatus Whether the rule is active after it is created. If this parameter is
-#' equal to `ENABLED`, Security Hub starts applying the rule to findings
-#' and finding updates after the rule is created. To change the value of
-#' this parameter after creating a rule, use
-#' [`batch_update_automation_rules`](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateAutomationRules.html)
-#' .
-#' @param RuleOrder &#91;required&#93; An integer ranging from 1 to 1000 that represents the order in which the
-#' rule action is applied to findings. Security Hub applies rules with
-#' lower values for this parameter first.
+#' @param RuleStatus Whether the rule is active after it is created. If this parameter is equal to `ENABLED`, Security Hub CSPM starts applying the rule to findings and finding updates after the rule is created. To change the value of this parameter after creating a rule, use [`batch_update_automation_rules`](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateAutomationRules.html) .
+#' @param RuleOrder &#91;required&#93; An integer ranging from 1 to 1000 that represents the order in which the rule action is applied to findings. Security Hub CSPM applies rules with lower values for this parameter first.
 #' @param RuleName &#91;required&#93; The name of the rule.
 #' @param Description &#91;required&#93; A description of the rule.
-#' @param IsTerminal Specifies whether a rule is the last to be applied with respect to a
-#' finding that matches the rule criteria. This is useful when a finding
-#' matches the criteria for multiple rules, and each rule has different
-#' actions. If a rule is terminal, Security Hub applies the rule action to
-#' a finding that matches the rule criteria and doesn't evaluate other
-#' rules for the finding. By default, a rule isn't terminal.
-#' @param Criteria &#91;required&#93; A set of ASFF finding field attributes and corresponding expected values
-#' that Security Hub uses to filter findings. If a rule is enabled and a
-#' finding matches the conditions specified in this parameter, Security Hub
-#' applies the rule action to the finding.
-#' @param Actions &#91;required&#93; One or more actions to update finding fields if a finding matches the
-#' conditions specified in `Criteria`.
+#' @param IsTerminal Specifies whether a rule is the last to be applied with respect to a finding that matches the rule criteria. This is useful when a finding matches the criteria for multiple rules, and each rule has different actions. If a rule is terminal, Security Hub CSPM applies the rule action to a finding that matches the rule criteria and doesn't evaluate other rules for the finding. By default, a rule isn't terminal.
+#' @param Criteria &#91;required&#93; A set of ASFF finding field attributes and corresponding expected values that Security Hub CSPM uses to filter findings. If a rule is enabled and a finding matches the conditions specified in this parameter, Security Hub CSPM applies the rule action to the finding.
+#' @param Actions &#91;required&#93; One or more actions to update finding fields if a finding matches the conditions specified in `Criteria`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6632,7 +6499,8 @@ securityhub_create_aggregator_v2 <- function(RegionLinkingMode, LinkedRegions = 
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -6642,7 +6510,8 @@ securityhub_create_aggregator_v2 <- function(RegionLinkingMode, LinkedRegions = 
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -6652,7 +6521,8 @@ securityhub_create_aggregator_v2 <- function(RegionLinkingMode, LinkedRegions = 
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -6662,7 +6532,8 @@ securityhub_create_aggregator_v2 <- function(RegionLinkingMode, LinkedRegions = 
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -6818,7 +6689,8 @@ securityhub_create_aggregator_v2 <- function(RegionLinkingMode, LinkedRegions = 
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -6970,7 +6842,8 @@ securityhub_create_automation_rule <- function(Tags = NULL, RuleStatus = NULL, R
 #'                 End = "string",
 #'                 DateRange = list(
 #'                   Value = 123,
-#'                   Unit = "DAYS"
+#'                   Unit = "DAYS",
+#'                   Comparison = "WITHIN"|"OLDER_THAN"
 #'                 )
 #'               )
 #'             )
@@ -7067,30 +6940,16 @@ securityhub_create_automation_rule_v2 <- function(RuleName, RuleStatus = NULL, D
 #' Creates a configuration policy with the defined configuration
 #'
 #' @description
-#' Creates a configuration policy with the defined configuration. Only the
-#' Security Hub delegated administrator can invoke this operation from the
-#' home Region.
+#' Creates a configuration policy with the defined configuration. Only the Security Hub CSPM delegated administrator can invoke this operation from the home Region.
 #'
 #' @usage
 #' securityhub_create_configuration_policy(Name, Description,
 #'   ConfigurationPolicy, Tags)
 #'
-#' @param Name &#91;required&#93; The name of the configuration policy. Alphanumeric characters and the
-#' following ASCII characters are permitted: `-, ., !, *, /`.
+#' @param Name &#91;required&#93; The name of the configuration policy. Alphanumeric characters and the following ASCII characters are permitted: `-, ., !, *, /`.
 #' @param Description The description of the configuration policy.
-#' @param ConfigurationPolicy &#91;required&#93; An object that defines how Security Hub is configured. It includes
-#' whether Security Hub is enabled or disabled, a list of enabled security
-#' standards, a list of enabled or disabled security controls, and a list
-#' of custom parameter values for specified controls. If you provide a list
-#' of security controls that are enabled in the configuration policy,
-#' Security Hub disables all other controls (including newly released
-#' controls). If you provide a list of security controls that are disabled
-#' in the configuration policy, Security Hub enables all other controls
-#' (including newly released controls).
-#' @param Tags User-defined tags associated with a configuration policy. For more
-#' information, see [Tagging Security Hub
-#' resources](https://docs.aws.amazon.com/securityhub/latest/userguide/tagging-resources.html)
-#' in the *Security Hub user guide*.
+#' @param ConfigurationPolicy &#91;required&#93; An object that defines how Security Hub CSPM is configured. It includes whether Security Hub CSPM is enabled or disabled, a list of enabled security standards, a list of enabled or disabled security controls, and a list of custom parameter values for specified controls. If you provide a list of security controls that are enabled in the configuration policy, Security Hub CSPM disables all other controls (including newly released controls). If you provide a list of security controls that are disabled in the configuration policy, Security Hub CSPM enables all other controls (including newly released controls).
+#' @param Tags User-defined tags associated with a configuration policy. For more information, see [Tagging Security Hub CSPM resources](https://docs.aws.amazon.com/securityhub/latest/userguide/tagging-resources.html) in the *Security Hub CSPM user guide*.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7240,8 +7099,7 @@ securityhub_create_configuration_policy <- function(Name, Description = NULL, Co
 #' @param Name &#91;required&#93; The unique name of the connectorV2.
 #' @param Description The description of the connectorV2.
 #' @param Provider &#91;required&#93; The third-party provider’s service configuration.
-#' @param KmsKeyArn The Amazon Resource Name (ARN) of KMS key used to encrypt secrets for
-#' the connectorV2.
+#' @param KmsKeyArn The Amazon Resource Name (ARN) of KMS key used to encrypt secrets for the connectorV2.
 #' @param Tags The tags to add to the connectorV2 when you create.
 #' @param ClientToken A unique identifier used to ensure idempotency.
 #'
@@ -7307,54 +7165,31 @@ securityhub_create_connector_v2 <- function(Name, Description = NULL, Provider, 
 #' @description
 #' The *aggregation Region* is now called the *home Region*.
 #' 
-#' Used to enable cross-Region aggregation. This operation can be invoked
-#' from the home Region only.
+#' Used to enable cross-Region aggregation. This operation can be invoked from the home Region only.
 #' 
-#' For information about how cross-Region aggregation works, see
-#' [Understanding cross-Region aggregation in Security
-#' Hub](https://docs.aws.amazon.com/securityhub/latest/userguide/finding-aggregation.html)
-#' in the *Security Hub User Guide*.
+#' For information about how cross-Region aggregation works, see [Understanding cross-Region aggregation in Security Hub CSPM](https://docs.aws.amazon.com/securityhub/latest/userguide/finding-aggregation.html) in the *Security Hub CSPM User Guide*.
 #'
 #' @usage
 #' securityhub_create_finding_aggregator(RegionLinkingMode, Regions)
 #'
-#' @param RegionLinkingMode &#91;required&#93; Indicates whether to aggregate findings from all of the available
-#' Regions in the current partition. Also determines whether to
-#' automatically aggregate findings from new Regions as Security Hub
-#' supports them and you opt into them.
+#' @param RegionLinkingMode &#91;required&#93; Indicates whether to aggregate findings from all of the available Regions in the current partition. Also determines whether to automatically aggregate findings from new Regions as Security Hub CSPM supports them and you opt into them.
 #' 
-#' The selected option also determines how to use the Regions provided in
-#' the Regions list.
+#' The selected option also determines how to use the Regions provided in the Regions list.
 #' 
 #' The options are as follows:
 #' 
-#' -   `ALL_REGIONS` - Aggregates findings from all of the Regions where
-#'     Security Hub is enabled. When you choose this option, Security Hub
-#'     also automatically aggregates findings from new Regions as Security
-#'     Hub supports them and you opt into them.
+#' -   `ALL_REGIONS` - Aggregates findings from all of the Regions where Security Hub CSPM is enabled. When you choose this option, Security Hub CSPM also automatically aggregates findings from new Regions as Security Hub CSPM supports them and you opt into them.
 #' 
-#' -   `ALL_REGIONS_EXCEPT_SPECIFIED` - Aggregates findings from all of the
-#'     Regions where Security Hub is enabled, except for the Regions listed
-#'     in the `Regions` parameter. When you choose this option, Security
-#'     Hub also automatically aggregates findings from new Regions as
-#'     Security Hub supports them and you opt into them.
+#' -   `ALL_REGIONS_EXCEPT_SPECIFIED` - Aggregates findings from all of the Regions where Security Hub CSPM is enabled, except for the Regions listed in the `Regions` parameter. When you choose this option, Security Hub CSPM also automatically aggregates findings from new Regions as Security Hub CSPM supports them and you opt into them.
 #' 
-#' -   `SPECIFIED_REGIONS` - Aggregates findings only from the Regions
-#'     listed in the `Regions` parameter. Security Hub does not
-#'     automatically aggregate findings from new Regions.
+#' -   `SPECIFIED_REGIONS` - Aggregates findings only from the Regions listed in the `Regions` parameter. Security Hub CSPM does not automatically aggregate findings from new Regions.
 #' 
-#' -   `NO_REGIONS` - Aggregates no data because no Regions are selected as
-#'     linked Regions.
-#' @param Regions If `RegionLinkingMode` is `ALL_REGIONS_EXCEPT_SPECIFIED`, then this is a
-#' space-separated list of Regions that don't replicate and send findings
-#' to the home Region.
+#' -   `NO_REGIONS` - Aggregates no data because no Regions are selected as linked Regions.
+#' @param Regions If `RegionLinkingMode` is `ALL_REGIONS_EXCEPT_SPECIFIED`, then this is a space-separated list of Regions that don't replicate and send findings to the home Region.
 #' 
-#' If `RegionLinkingMode` is `SPECIFIED_REGIONS`, then this is a
-#' space-separated list of Regions that do replicate and send findings to
-#' the home Region.
+#' If `RegionLinkingMode` is `SPECIFIED_REGIONS`, then this is a space-separated list of Regions that do replicate and send findings to the home Region.
 #' 
-#' An `InvalidInputException` error results if you populate this field
-#' while `RegionLinkingMode` is `NO_REGIONS`.
+#' An `InvalidInputException` error results if you populate this field while `RegionLinkingMode` is `NO_REGIONS`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7403,27 +7238,19 @@ securityhub_create_finding_aggregator <- function(RegionLinkingMode, Regions = N
 }
 .securityhub$operations$create_finding_aggregator <- securityhub_create_finding_aggregator
 
-#' Creates a custom insight in Security Hub
+#' Creates a custom insight in Security Hub CSPM
 #'
 #' @description
-#' Creates a custom insight in Security Hub. An insight is a consolidation
-#' of findings that relate to a security issue that requires attention or
-#' remediation.
+#' Creates a custom insight in Security Hub CSPM. An insight is a consolidation of findings that relate to a security issue that requires attention or remediation.
 #' 
-#' To group the related findings in the insight, use the
-#' `GroupByAttribute`.
+#' To group the related findings in the insight, use the `GroupByAttribute`.
 #'
 #' @usage
 #' securityhub_create_insight(Name, Filters, GroupByAttribute)
 #'
 #' @param Name &#91;required&#93; The name of the custom insight to create.
-#' @param Filters &#91;required&#93; One or more attributes used to filter the findings included in the
-#' insight. The insight only includes findings that match the criteria
-#' defined in the filters.
-#' @param GroupByAttribute &#91;required&#93; The attribute used to group the findings for the insight. The grouping
-#' attribute identifies the type of item that the insight applies to. For
-#' example, if an insight is grouped by resource identifier, then the
-#' insight produces a list of resource identifiers.
+#' @param Filters &#91;required&#93; One or more attributes used to filter the findings included in the insight. The insight only includes findings that match the criteria defined in the filters.
+#' @param GroupByAttribute &#91;required&#93; The attribute used to group the findings for the insight. The grouping attribute identifies the type of item that the insight applies to. For example, if an insight is grouped by resource identifier, then the insight produces a list of resource identifiers.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7480,7 +7307,8 @@ securityhub_create_finding_aggregator <- function(RegionLinkingMode, Regions = N
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -7490,7 +7318,8 @@ securityhub_create_finding_aggregator <- function(RegionLinkingMode, Regions = N
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -7500,7 +7329,8 @@ securityhub_create_finding_aggregator <- function(RegionLinkingMode, Regions = N
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -7510,7 +7340,8 @@ securityhub_create_finding_aggregator <- function(RegionLinkingMode, Regions = N
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -7734,7 +7565,8 @@ securityhub_create_finding_aggregator <- function(RegionLinkingMode, Regions = N
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -7744,7 +7576,8 @@ securityhub_create_finding_aggregator <- function(RegionLinkingMode, Regions = N
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -7772,7 +7605,8 @@ securityhub_create_finding_aggregator <- function(RegionLinkingMode, Regions = N
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -7871,7 +7705,8 @@ securityhub_create_finding_aggregator <- function(RegionLinkingMode, Regions = N
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -7911,7 +7746,8 @@ securityhub_create_finding_aggregator <- function(RegionLinkingMode, Regions = N
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -7945,7 +7781,8 @@ securityhub_create_finding_aggregator <- function(RegionLinkingMode, Regions = N
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -8010,7 +7847,8 @@ securityhub_create_finding_aggregator <- function(RegionLinkingMode, Regions = N
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -8161,68 +7999,39 @@ securityhub_create_insight <- function(Name, Filters, GroupByAttribute) {
 }
 .securityhub$operations$create_insight <- securityhub_create_insight
 
-#' Creates a member association in Security Hub between the specified
+#' Creates a member association in Security Hub CSPM between the specified
 #' accounts and the account used to make the request, which is the
 #' administrator account
 #'
 #' @description
-#' Creates a member association in Security Hub between the specified
-#' accounts and the account used to make the request, which is the
-#' administrator account. If you are integrated with Organizations, then
-#' the administrator account is designated by the organization management
-#' account.
+#' Creates a member association in Security Hub CSPM between the specified accounts and the account used to make the request, which is the administrator account. If you are integrated with Organizations, then the administrator account is designated by the organization management account.
 #' 
-#' [`create_members`][securityhub_create_members] is always used to add
-#' accounts that are not organization members.
+#' [`create_members`][securityhub_create_members] is always used to add accounts that are not organization members.
 #' 
-#' For accounts that are managed using Organizations,
-#' [`create_members`][securityhub_create_members] is only used in the
-#' following cases:
+#' For accounts that are managed using Organizations, [`create_members`][securityhub_create_members] is only used in the following cases:
 #' 
-#' -   Security Hub is not configured to automatically add new organization
-#'     accounts.
+#' -   Security Hub CSPM is not configured to automatically add new organization accounts.
 #' 
-#' -   The account was disassociated or deleted in Security Hub.
+#' -   The account was disassociated or deleted in Security Hub CSPM.
 #' 
-#' This action can only be used by an account that has Security Hub
-#' enabled. To enable Security Hub, you can use the
-#' [`enable_security_hub`][securityhub_enable_security_hub] operation.
+#' This action can only be used by an account that has Security Hub CSPM enabled. To enable Security Hub CSPM, you can use the [`enable_security_hub`][securityhub_enable_security_hub] operation.
 #' 
-#' For accounts that are not organization members, you create the account
-#' association and then send an invitation to the member account. To send
-#' the invitation, you use the
-#' [`invite_members`][securityhub_invite_members] operation. If the account
-#' owner accepts the invitation, the account becomes a member account in
-#' Security Hub.
+#' For accounts that are not organization members, you create the account association and then send an invitation to the member account. To send the invitation, you use the [`invite_members`][securityhub_invite_members] operation. If the account owner accepts the invitation, the account becomes a member account in Security Hub CSPM.
 #' 
-#' Accounts that are managed using Organizations don't receive an
-#' invitation. They automatically become a member account in Security Hub.
+#' Accounts that are managed using Organizations don't receive an invitation. They automatically become a member account in Security Hub CSPM.
 #' 
-#' -   If the organization account does not have Security Hub enabled, then
-#'     Security Hub and the default standards are automatically enabled.
-#'     Note that Security Hub cannot be enabled automatically for the
-#'     organization management account. The organization management account
-#'     must enable Security Hub before the administrator account enables it
-#'     as a member account.
+#' -   If the organization account does not have Security Hub CSPM enabled, then Security Hub CSPM and the default standards are automatically enabled. Note that Security Hub CSPM cannot be enabled automatically for the organization management account. The organization management account must enable Security Hub CSPM before the administrator account enables it as a member account.
 #' 
-#' -   For organization accounts that already have Security Hub enabled,
-#'     Security Hub does not make any other changes to those accounts. It
-#'     does not change their enabled standards or controls.
+#' -   For organization accounts that already have Security Hub CSPM enabled, Security Hub CSPM does not make any other changes to those accounts. It does not change their enabled standards or controls.
 #' 
-#' A permissions policy is added that permits the administrator account to
-#' view the findings generated in the member account.
+#' A permissions policy is added that permits the administrator account to view the findings generated in the member account.
 #' 
-#' To remove the association between the administrator and member accounts,
-#' use the
-#' [`disassociate_from_master_account`][securityhub_disassociate_from_master_account]
-#' or [`disassociate_members`][securityhub_disassociate_members] operation.
+#' To remove the association between the administrator and member accounts, use the [`disassociate_from_master_account`][securityhub_disassociate_from_master_account] or [`disassociate_members`][securityhub_disassociate_members] operation.
 #'
 #' @usage
 #' securityhub_create_members(AccountDetails)
 #'
-#' @param AccountDetails &#91;required&#93; The list of accounts to associate with the Security Hub administrator
-#' account. For each account, the list includes the account ID and
-#' optionally the email address.
+#' @param AccountDetails &#91;required&#93; The list of accounts to associate with the Security Hub CSPM administrator account. For each account, the list includes the account ID and optionally the email address.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8277,8 +8086,7 @@ securityhub_create_members <- function(AccountDetails) {
 #' information for the provided finding metadata UID
 #'
 #' @description
-#' Grants permission to create a ticket in the chosen ITSM based on finding
-#' information for the provided finding metadata UID.
+#' Grants permission to create a ticket in the chosen ITSM based on finding information for the provided finding metadata UID.
 #'
 #' @usage
 #' securityhub_create_ticket_v2(ConnectorId, FindingMetadataUid,
@@ -8287,9 +8095,7 @@ securityhub_create_members <- function(AccountDetails) {
 #' @param ConnectorId &#91;required&#93; The UUID of the connectorV2 to identify connectorV2 resource.
 #' @param FindingMetadataUid &#91;required&#93; The the unique ID for the finding.
 #' @param ClientToken The client idempotency token.
-#' @param Mode The mode for ticket creation. When set to DRYRUN, the ticket is created
-#' using a Security Hub owned template test finding to verify the
-#' integration is working correctly.
+#' @param Mode The mode for ticket creation. When set to DRYRUN, the ticket is created using a Security Hub owned template test finding to verify the integration is working correctly.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8334,30 +8140,22 @@ securityhub_create_ticket_v2 <- function(ConnectorId, FindingMetadataUid, Client
 }
 .securityhub$operations$create_ticket_v2 <- securityhub_create_ticket_v2
 
-#' We recommend using Organizations instead of Security Hub invitations to
-#' manage your member accounts
+#' We recommend using Organizations instead of Security Hub CSPM
+#' invitations to manage your member accounts
 #'
 #' @description
-#' We recommend using Organizations instead of Security Hub invitations to
-#' manage your member accounts. For information, see [Managing Security Hub
-#' administrator and member accounts with
-#' Organizations](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html)
-#' in the *Security Hub User Guide*.
+#' We recommend using Organizations instead of Security Hub CSPM invitations to manage your member accounts. For information, see [Managing Security Hub CSPM administrator and member accounts with Organizations](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html) in the *Security Hub CSPM User Guide*.
 #' 
-#' Declines invitations to become a Security Hub member account.
+#' Declines invitations to become a Security Hub CSPM member account.
 #' 
-#' A prospective member account uses this operation to decline an
-#' invitation to become a member.
+#' A prospective member account uses this operation to decline an invitation to become a member.
 #' 
-#' Only member accounts that aren't part of an Amazon Web Services
-#' organization should use this operation. Organization accounts don't
-#' receive invitations.
+#' Only member accounts that aren't part of an Amazon Web Services organization should use this operation. Organization accounts don't receive invitations.
 #'
 #' @usage
 #' securityhub_decline_invitations(AccountIds)
 #'
-#' @param AccountIds &#91;required&#93; The list of prospective member account IDs for which to decline an
-#' invitation.
+#' @param AccountIds &#91;required&#93; The list of prospective member account IDs for which to decline an invitation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8405,14 +8203,12 @@ securityhub_decline_invitations <- function(AccountIds) {
 }
 .securityhub$operations$decline_invitations <- securityhub_decline_invitations
 
-#' Deletes a custom action target from Security Hub
+#' Deletes a custom action target from Security Hub CSPM
 #'
 #' @description
-#' Deletes a custom action target from Security Hub.
+#' Deletes a custom action target from Security Hub CSPM.
 #' 
-#' Deleting a custom action target does not affect any findings or insights
-#' that were already sent to Amazon CloudWatch Events using the custom
-#' action.
+#' Deleting a custom action target does not affect any findings or insights that were already sent to Amazon CloudWatch Events using the custom action.
 #'
 #' @usage
 #' securityhub_delete_action_target(ActionTargetArn)
@@ -8549,18 +8345,12 @@ securityhub_delete_automation_rule_v2 <- function(Identifier) {
 #' Deletes a configuration policy
 #'
 #' @description
-#' Deletes a configuration policy. Only the Security Hub delegated
-#' administrator can invoke this operation from the home Region. For the
-#' deletion to succeed, you must first disassociate a configuration policy
-#' from target accounts, organizational units, or the root by invoking the
-#' [`start_configuration_policy_disassociation`][securityhub_start_configuration_policy_disassociation]
-#' operation.
+#' Deletes a configuration policy. Only the Security Hub CSPM delegated administrator can invoke this operation from the home Region. For the deletion to succeed, you must first disassociate a configuration policy from target accounts, organizational units, or the root by invoking the [`start_configuration_policy_disassociation`][securityhub_start_configuration_policy_disassociation] operation.
 #'
 #' @usage
 #' securityhub_delete_configuration_policy(Identifier)
 #'
-#' @param Identifier &#91;required&#93; The Amazon Resource Name (ARN) or universally unique identifier (UUID)
-#' of the configuration policy.
+#' @param Identifier &#91;required&#93; The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.
 #'
 #' @return
 #' An empty list.
@@ -8645,20 +8435,14 @@ securityhub_delete_connector_v2 <- function(ConnectorId) {
 #' @description
 #' The *aggregation Region* is now called the *home Region*.
 #' 
-#' Deletes a finding aggregator. When you delete the finding aggregator,
-#' you stop cross-Region aggregation. Finding replication stops occurring
-#' from the linked Regions to the home Region.
+#' Deletes a finding aggregator. When you delete the finding aggregator, you stop cross-Region aggregation. Finding replication stops occurring from the linked Regions to the home Region.
 #' 
-#' When you stop cross-Region aggregation, findings that were already
-#' replicated and sent to the home Region are still visible from the home
-#' Region. However, new findings and finding updates are no longer
-#' replicated and sent to the home Region.
+#' When you stop cross-Region aggregation, findings that were already replicated and sent to the home Region are still visible from the home Region. However, new findings and finding updates are no longer replicated and sent to the home Region.
 #'
 #' @usage
 #' securityhub_delete_finding_aggregator(FindingAggregatorArn)
 #'
-#' @param FindingAggregatorArn &#91;required&#93; The ARN of the finding aggregator to delete. To obtain the ARN, use
-#' [`list_finding_aggregators`][securityhub_list_finding_aggregators].
+#' @param FindingAggregatorArn &#91;required&#93; The ARN of the finding aggregator to delete. To obtain the ARN, use [`list_finding_aggregators`][securityhub_list_finding_aggregators].
 #'
 #' @return
 #' An empty list.
@@ -8743,30 +8527,22 @@ securityhub_delete_insight <- function(InsightArn) {
 }
 .securityhub$operations$delete_insight <- securityhub_delete_insight
 
-#' We recommend using Organizations instead of Security Hub invitations to
-#' manage your member accounts
+#' We recommend using Organizations instead of Security Hub CSPM
+#' invitations to manage your member accounts
 #'
 #' @description
-#' We recommend using Organizations instead of Security Hub invitations to
-#' manage your member accounts. For information, see [Managing Security Hub
-#' administrator and member accounts with
-#' Organizations](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html)
-#' in the *Security Hub User Guide*.
+#' We recommend using Organizations instead of Security Hub CSPM invitations to manage your member accounts. For information, see [Managing Security Hub CSPM administrator and member accounts with Organizations](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html) in the *Security Hub CSPM User Guide*.
 #' 
-#' Deletes invitations to become a Security Hub member account.
+#' Deletes invitations to become a Security Hub CSPM member account.
 #' 
-#' A Security Hub administrator account can use this operation to delete
-#' invitations sent to one or more prospective member accounts.
+#' A Security Hub CSPM administrator account can use this operation to delete invitations sent to one or more prospective member accounts.
 #' 
-#' This operation is only used to delete invitations that are sent to
-#' prospective member accounts that aren't part of an Amazon Web Services
-#' organization. Organization accounts don't receive invitations.
+#' This operation is only used to delete invitations that are sent to prospective member accounts that aren't part of an Amazon Web Services organization. Organization accounts don't receive invitations.
 #'
 #' @usage
 #' securityhub_delete_invitations(AccountIds)
 #'
-#' @param AccountIds &#91;required&#93; The list of member account IDs that received the invitations you want to
-#' delete.
+#' @param AccountIds &#91;required&#93; The list of member account IDs that received the invitations you want to delete.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8814,14 +8590,12 @@ securityhub_delete_invitations <- function(AccountIds) {
 }
 .securityhub$operations$delete_invitations <- securityhub_delete_invitations
 
-#' Deletes the specified member accounts from Security Hub
+#' Deletes the specified member accounts from Security Hub CSPM
 #'
 #' @description
-#' Deletes the specified member accounts from Security Hub.
+#' Deletes the specified member accounts from Security Hub CSPM.
 #' 
-#' You can invoke this API only to delete accounts that became members
-#' through invitation. You can't invoke this API to delete accounts that
-#' belong to an Organizations organization.
+#' You can invoke this API only to delete accounts that became members through invitation. You can't invoke this API to delete accounts that belong to an Organizations organization.
 #'
 #' @usage
 #' securityhub_delete_members(AccountIds)
@@ -8874,26 +8648,20 @@ securityhub_delete_members <- function(AccountIds) {
 }
 .securityhub$operations$delete_members <- securityhub_delete_members
 
-#' Returns a list of the custom action targets in Security Hub in your
+#' Returns a list of the custom action targets in Security Hub CSPM in your
 #' account
 #'
 #' @description
-#' Returns a list of the custom action targets in Security Hub in your
-#' account.
+#' Returns a list of the custom action targets in Security Hub CSPM in your account.
 #'
 #' @usage
 #' securityhub_describe_action_targets(ActionTargetArns, NextToken,
 #'   MaxResults)
 #'
-#' @param ActionTargetArns A list of custom action target ARNs for the custom action targets to
-#' retrieve.
-#' @param NextToken The token that is required for pagination. On your first call to the
-#' [`describe_action_targets`][securityhub_describe_action_targets]
-#' operation, set the value of this parameter to `NULL`.
+#' @param ActionTargetArns A list of custom action target ARNs for the custom action targets to retrieve.
+#' @param NextToken The token that is required for pagination. On your first call to the [`describe_action_targets`][securityhub_describe_action_targets] operation, set the value of this parameter to `NULL`.
 #' 
-#' For subsequent calls to the operation, to continue listing data, set the
-#' value of this parameter to the value returned from the previous
-#' response.
+#' For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.
 #' @param MaxResults The maximum number of results to return.
 #'
 #' @return
@@ -8947,11 +8715,10 @@ securityhub_describe_action_targets <- function(ActionTargetArns = NULL, NextTok
 .securityhub$operations$describe_action_targets <- securityhub_describe_action_targets
 
 #' Returns details about the Hub resource in your account, including the
-#' HubArn and the time when you enabled Security Hub
+#' HubArn and the time when you enabled Security Hub CSPM
 #'
 #' @description
-#' Returns details about the Hub resource in your account, including the
-#' `HubArn` and the time when you enabled Security Hub.
+#' Returns details about the Hub resource in your account, including the `HubArn` and the time when you enabled Security Hub CSPM.
 #'
 #' @usage
 #' securityhub_describe_hub(HubArn)
@@ -9001,12 +8768,10 @@ securityhub_describe_hub <- function(HubArn = NULL) {
 .securityhub$operations$describe_hub <- securityhub_describe_hub
 
 #' Returns information about the way your organization is configured in
-#' Security Hub
+#' Security Hub CSPM
 #'
 #' @description
-#' Returns information about the way your organization is configured in
-#' Security Hub. Only the Security Hub administrator account can invoke
-#' this operation.
+#' Returns information about the way your organization is configured in Security Hub CSPM. Only the Security Hub CSPM administrator account can invoke this operation.
 #'
 #' @usage
 #' securityhub_describe_organization_configuration()
@@ -9057,27 +8822,21 @@ securityhub_describe_organization_configuration <- function() {
 }
 .securityhub$operations$describe_organization_configuration <- securityhub_describe_organization_configuration
 
-#' Returns information about product integrations in Security Hub
+#' Returns information about product integrations in Security Hub CSPM
 #'
 #' @description
-#' Returns information about product integrations in Security Hub.
+#' Returns information about product integrations in Security Hub CSPM.
 #' 
-#' You can optionally provide an integration ARN. If you provide an
-#' integration ARN, then the results only include that integration.
+#' You can optionally provide an integration ARN. If you provide an integration ARN, then the results only include that integration.
 #' 
-#' If you don't provide an integration ARN, then the results include all of
-#' the available product integrations.
+#' If you don't provide an integration ARN, then the results include all of the available product integrations.
 #'
 #' @usage
 #' securityhub_describe_products(NextToken, MaxResults, ProductArn)
 #'
-#' @param NextToken The token that is required for pagination. On your first call to the
-#' [`describe_products`][securityhub_describe_products] operation, set the
-#' value of this parameter to `NULL`.
+#' @param NextToken The token that is required for pagination. On your first call to the [`describe_products`][securityhub_describe_products] operation, set the value of this parameter to `NULL`.
 #' 
-#' For subsequent calls to the operation, to continue listing data, set the
-#' value of this parameter to the value returned from the previous
-#' response.
+#' For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.
 #' @param MaxResults The maximum number of results to return.
 #' @param ProductArn The ARN of the integration to return.
 #'
@@ -9147,10 +8906,7 @@ securityhub_describe_products <- function(NextToken = NULL, MaxResults = NULL, P
 #' @usage
 #' securityhub_describe_products_v2(NextToken, MaxResults)
 #'
-#' @param NextToken The token required for pagination. On your first call, set the value of
-#' this parameter to `NULL`. For subsequent calls, to continue listing
-#' data, set the value of this parameter to the value returned in the
-#' previous response.
+#' @param NextToken The token required for pagination. On your first call, set the value of this parameter to `NULL`. For subsequent calls, to continue listing data, set the value of this parameter to the value returned in the previous response.
 #' @param MaxResults The maximum number of results to return.
 #'
 #' @return
@@ -9166,10 +8922,11 @@ securityhub_describe_products <- function(NextToken = NULL, MaxResults = NULL, P
 #'         "string"
 #'       ),
 #'       IntegrationV2Types = list(
-#'         "SEND_FINDINGS_TO_SECURITY_HUB"|"RECEIVE_FINDINGS_FROM_SECURITY_HUB"|"UPDATE_FINDINGS_IN_SECURITY_HUB"
+#'         "SEND_FINDINGS_TO_SECURITY_HUB"|"RECEIVE_FINDINGS_FROM_SECURITY_HUB"|"UPDATE_FINDINGS_IN_SECURITY_HUB"|"EXTENDED_PLAN"
 #'       ),
 #'       MarketplaceUrl = "string",
-#'       ActivationUrl = "string"
+#'       ActivationUrl = "string",
+#'       MarketplaceProductId = "string"
 #'     )
 #'   ),
 #'   NextToken = "string"
@@ -9256,24 +9013,19 @@ securityhub_describe_security_hub_v2 <- function() {
 }
 .securityhub$operations$describe_security_hub_v2 <- securityhub_describe_security_hub_v2
 
-#' Returns a list of the available standards in Security Hub
+#' Returns a list of the available standards in Security Hub CSPM
 #'
 #' @description
-#' Returns a list of the available standards in Security Hub.
+#' Returns a list of the available standards in Security Hub CSPM.
 #' 
-#' For each standard, the results include the standard ARN, the name, and a
-#' description.
+#' For each standard, the results include the standard ARN, the name, and a description.
 #'
 #' @usage
 #' securityhub_describe_standards(NextToken, MaxResults)
 #'
-#' @param NextToken The token that is required for pagination. On your first call to the
-#' [`describe_standards`][securityhub_describe_standards] operation, set
-#' the value of this parameter to `NULL`.
+#' @param NextToken The token that is required for pagination. On your first call to the [`describe_standards`][securityhub_describe_standards] operation, set the value of this parameter to `NULL`.
 #' 
-#' For subsequent calls to the operation, to continue listing data, set the
-#' value of this parameter to the value returned from the previous
-#' response.
+#' For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.
 #' @param MaxResults The maximum number of standards to return.
 #'
 #' @return
@@ -9333,27 +9085,18 @@ securityhub_describe_standards <- function(NextToken = NULL, MaxResults = NULL) 
 #' @description
 #' Returns a list of security standards controls.
 #' 
-#' For each control, the results include information about whether it is
-#' currently enabled, the severity, and a link to remediation information.
+#' For each control, the results include information about whether it is currently enabled, the severity, and a link to remediation information.
 #' 
-#' This operation returns an empty list for standard subscriptions where
-#' `StandardsControlsUpdatable` has value `NOT_READY_FOR_UPDATES`.
+#' This operation returns an empty list for standard subscriptions where `StandardsControlsUpdatable` has value `NOT_READY_FOR_UPDATES`.
 #'
 #' @usage
 #' securityhub_describe_standards_controls(StandardsSubscriptionArn,
 #'   NextToken, MaxResults)
 #'
-#' @param StandardsSubscriptionArn &#91;required&#93; The ARN of a resource that represents your subscription to a supported
-#' standard. To get the subscription ARNs of the standards you have
-#' enabled, use the
-#' [`get_enabled_standards`][securityhub_get_enabled_standards] operation.
-#' @param NextToken The token that is required for pagination. On your first call to the
-#' [`describe_standards_controls`][securityhub_describe_standards_controls]
-#' operation, set the value of this parameter to `NULL`.
+#' @param StandardsSubscriptionArn &#91;required&#93; The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of the standards you have enabled, use the [`get_enabled_standards`][securityhub_get_enabled_standards] operation.
+#' @param NextToken The token that is required for pagination. On your first call to the [`describe_standards_controls`][securityhub_describe_standards_controls] operation, set the value of this parameter to `NULL`.
 #' 
-#' For subsequent calls to the operation, to continue listing data, set the
-#' value of this parameter to the value returned from the previous
-#' response.
+#' For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.
 #' @param MaxResults The maximum number of security standard controls to return.
 #'
 #' @return
@@ -9415,12 +9158,10 @@ securityhub_describe_standards_controls <- function(StandardsSubscriptionArn, Ne
 }
 .securityhub$operations$describe_standards_controls <- securityhub_describe_standards_controls
 
-#' Disables the integration of the specified product with Security Hub
+#' Disables the integration of the specified product with Security Hub CSPM
 #'
 #' @description
-#' Disables the integration of the specified product with Security Hub.
-#' After the integration is disabled, findings from that product are no
-#' longer sent to Security Hub.
+#' Disables the integration of the specified product with Security Hub CSPM. After the integration is disabled, findings from that product are no longer sent to Security Hub CSPM.
 #'
 #' @usage
 #' securityhub_disable_import_findings_for_product(ProductSubscriptionArn)
@@ -9461,19 +9202,16 @@ securityhub_disable_import_findings_for_product <- function(ProductSubscriptionA
 }
 .securityhub$operations$disable_import_findings_for_product <- securityhub_disable_import_findings_for_product
 
-#' Disables a Security Hub administrator account
+#' Disables a Security Hub CSPM administrator account
 #'
 #' @description
-#' Disables a Security Hub administrator account. Can only be called by the
-#' organization management account.
+#' Disables a Security Hub CSPM administrator account. Can only be called by the organization management account.
 #'
 #' @usage
 #' securityhub_disable_organization_admin_account(AdminAccountId, Feature)
 #'
-#' @param AdminAccountId &#91;required&#93; The Amazon Web Services account identifier of the Security Hub
-#' administrator account.
-#' @param Feature The feature for which the delegated admin account is disabled. Defaults
-#' to Security Hub if not specified.
+#' @param AdminAccountId &#91;required&#93; The Amazon Web Services account identifier of the Security Hub CSPM administrator account.
+#' @param Feature The feature for which the delegated admin account is disabled. Defaults to Security Hub CSPM if not specified.
 #'
 #' @return
 #' An empty list.
@@ -9510,24 +9248,17 @@ securityhub_disable_organization_admin_account <- function(AdminAccountId, Featu
 }
 .securityhub$operations$disable_organization_admin_account <- securityhub_disable_organization_admin_account
 
-#' Disables Security Hub in your account only in the current Amazon Web
-#' Services Region
+#' Disables Security Hub CSPM in your account only in the current Amazon
+#' Web Services Region
 #'
 #' @description
-#' Disables Security Hub in your account only in the current Amazon Web
-#' Services Region. To disable Security Hub in all Regions, you must submit
-#' one request per Region where you have enabled Security Hub.
+#' Disables Security Hub CSPM in your account only in the current Amazon Web Services Region. To disable Security Hub CSPM in all Regions, you must submit one request per Region where you have enabled Security Hub CSPM.
 #' 
-#' You can't disable Security Hub in an account that is currently the
-#' Security Hub administrator.
+#' You can't disable Security Hub CSPM in an account that is currently the Security Hub CSPM administrator.
 #' 
-#' When you disable Security Hub, your existing findings and insights and
-#' any Security Hub configuration settings are deleted after 90 days and
-#' cannot be recovered. Any standards that were enabled are disabled, and
-#' your administrator and member account associations are removed.
+#' When you disable Security Hub CSPM, your existing findings and insights and any Security Hub CSPM configuration settings are deleted after 90 days and cannot be recovered. Any standards that were enabled are disabled, and your administrator and member account associations are removed.
 #' 
-#' If you want to save your existing findings, you must export them before
-#' you disable Security Hub.
+#' If you want to save your existing findings, you must export them before you disable Security Hub CSPM.
 #'
 #' @usage
 #' securityhub_disable_security_hub()
@@ -9570,8 +9301,7 @@ securityhub_disable_security_hub <- function() {
 #' specified Amazon Web Services Region
 #'
 #' @description
-#' Disable the service for the current Amazon Web Services Region or
-#' specified Amazon Web Services Region.
+#' Disable the service for the current Amazon Web Services Region or specified Amazon Web Services Region.
 #'
 #' @usage
 #' securityhub_disable_security_hub_v2()
@@ -9610,16 +9340,13 @@ securityhub_disable_security_hub_v2 <- function() {
 }
 .securityhub$operations$disable_security_hub_v2 <- securityhub_disable_security_hub_v2
 
-#' Disassociates the current Security Hub member account from the
+#' Disassociates the current Security Hub CSPM member account from the
 #' associated administrator account
 #'
 #' @description
-#' Disassociates the current Security Hub member account from the
-#' associated administrator account.
+#' Disassociates the current Security Hub CSPM member account from the associated administrator account.
 #' 
-#' This operation is only used by accounts that are not part of an
-#' organization. For organization accounts, only the administrator account
-#' can disassociate a member account.
+#' This operation is only used by accounts that are not part of an organization. For organization accounts, only the administrator account can disassociate a member account.
 #'
 #' @usage
 #' securityhub_disassociate_from_administrator_account()
@@ -9661,28 +9388,13 @@ securityhub_disassociate_from_administrator_account <- function() {
 #' This method is deprecated
 #'
 #' @description
-#' This method is deprecated. Instead, use
-#' [`disassociate_from_administrator_account`][securityhub_disassociate_from_administrator_account].
+#' This method is deprecated. Instead, use [`disassociate_from_administrator_account`][securityhub_disassociate_from_administrator_account].
 #' 
-#' The Security Hub console continues to use
-#' [`disassociate_from_master_account`][securityhub_disassociate_from_master_account].
-#' It will eventually change to use
-#' [`disassociate_from_administrator_account`][securityhub_disassociate_from_administrator_account].
-#' Any IAM policies that specifically control access to this function must
-#' continue to use
-#' [`disassociate_from_master_account`][securityhub_disassociate_from_master_account].
-#' You should also add
-#' [`disassociate_from_administrator_account`][securityhub_disassociate_from_administrator_account]
-#' to your policies to ensure that the correct permissions are in place
-#' after the console begins to use
-#' [`disassociate_from_administrator_account`][securityhub_disassociate_from_administrator_account].
+#' The Security Hub CSPM console continues to use [`disassociate_from_master_account`][securityhub_disassociate_from_master_account]. It will eventually change to use [`disassociate_from_administrator_account`][securityhub_disassociate_from_administrator_account]. Any IAM policies that specifically control access to this function must continue to use [`disassociate_from_master_account`][securityhub_disassociate_from_master_account]. You should also add [`disassociate_from_administrator_account`][securityhub_disassociate_from_administrator_account] to your policies to ensure that the correct permissions are in place after the console begins to use [`disassociate_from_administrator_account`][securityhub_disassociate_from_administrator_account].
 #' 
-#' Disassociates the current Security Hub member account from the
-#' associated administrator account.
+#' Disassociates the current Security Hub CSPM member account from the associated administrator account.
 #' 
-#' This operation is only used by accounts that are not part of an
-#' organization. For organization accounts, only the administrator account
-#' can disassociate a member account.
+#' This operation is only used by accounts that are not part of an organization. For organization accounts, only the administrator account can disassociate a member account.
 #'
 #' @usage
 #' securityhub_disassociate_from_master_account()
@@ -9725,17 +9437,14 @@ securityhub_disassociate_from_master_account <- function() {
 #' administrator account
 #'
 #' @description
-#' Disassociates the specified member accounts from the associated
-#' administrator account.
+#' Disassociates the specified member accounts from the associated administrator account.
 #' 
-#' Can be used to disassociate both accounts that are managed using
-#' Organizations and accounts that were invited manually.
+#' Can be used to disassociate both accounts that are managed using Organizations and accounts that were invited manually.
 #'
 #' @usage
 #' securityhub_disassociate_members(AccountIds)
 #'
-#' @param AccountIds &#91;required&#93; The account IDs of the member accounts to disassociate from the
-#' administrator account.
+#' @param AccountIds &#91;required&#93; The account IDs of the member accounts to disassociate from the administrator account.
 #'
 #' @return
 #' An empty list.
@@ -9773,14 +9482,12 @@ securityhub_disassociate_members <- function(AccountIds) {
 }
 .securityhub$operations$disassociate_members <- securityhub_disassociate_members
 
-#' Enables the integration of a partner product with Security Hub
+#' Enables the integration of a partner product with Security Hub CSPM
 #'
 #' @description
-#' Enables the integration of a partner product with Security Hub.
-#' Integrated products send findings to Security Hub.
+#' Enables the integration of a partner product with Security Hub CSPM. Integrated products send findings to Security Hub CSPM.
 #' 
-#' When you enable a product integration, a permissions policy that grants
-#' permission for the product to send findings to Security Hub is applied.
+#' When you enable a product integration, a permissions policy that grants permission for the product to send findings to Security Hub CSPM is applied.
 #'
 #' @usage
 #' securityhub_enable_import_findings_for_product(ProductArn)
@@ -9826,19 +9533,17 @@ securityhub_enable_import_findings_for_product <- function(ProductArn) {
 }
 .securityhub$operations$enable_import_findings_for_product <- securityhub_enable_import_findings_for_product
 
-#' Designates the Security Hub administrator account for an organization
+#' Designates the Security Hub CSPM administrator account for an
+#' organization
 #'
 #' @description
-#' Designates the Security Hub administrator account for an organization.
-#' Can only be called by the organization management account.
+#' Designates the Security Hub CSPM administrator account for an organization. Can only be called by the organization management account.
 #'
 #' @usage
 #' securityhub_enable_organization_admin_account(AdminAccountId, Feature)
 #'
-#' @param AdminAccountId &#91;required&#93; The Amazon Web Services account identifier of the account to designate
-#' as the Security Hub administrator account.
-#' @param Feature The feature for which the delegated admin account is enabled. Defaults
-#' to Security Hub if not specified.
+#' @param AdminAccountId &#91;required&#93; The Amazon Web Services account identifier of the account to designate as the Security Hub CSPM administrator account.
+#' @param Feature The feature for which the delegated admin account is enabled. Defaults to Security Hub CSPM if not specified.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9881,66 +9586,39 @@ securityhub_enable_organization_admin_account <- function(AdminAccountId, Featur
 }
 .securityhub$operations$enable_organization_admin_account <- securityhub_enable_organization_admin_account
 
-#' Enables Security Hub for your account in the current Region or the
+#' Enables Security Hub CSPM for your account in the current Region or the
 #' Region you specify in the request
 #'
 #' @description
-#' Enables Security Hub for your account in the current Region or the
-#' Region you specify in the request.
+#' Enables Security Hub CSPM for your account in the current Region or the Region you specify in the request.
 #' 
-#' When you enable Security Hub, you grant to Security Hub the permissions
-#' necessary to gather findings from other services that are integrated
-#' with Security Hub.
+#' When you enable Security Hub CSPM, you grant to Security Hub CSPM the permissions necessary to gather findings from other services that are integrated with Security Hub CSPM.
 #' 
-#' When you use the
-#' [`enable_security_hub`][securityhub_enable_security_hub] operation to
-#' enable Security Hub, you also automatically enable the following
-#' standards:
+#' When you use the [`enable_security_hub`][securityhub_enable_security_hub] operation to enable Security Hub CSPM, you also automatically enable the following standards:
 #' 
-#' -   Center for Internet Security (CIS) Amazon Web Services Foundations
-#'     Benchmark v1.2.0
+#' -   Center for Internet Security (CIS) Amazon Web Services Foundations Benchmark v1.2.0
 #' 
 #' -   Amazon Web Services Foundational Security Best Practices
 #' 
 #' Other standards are not automatically enabled.
 #' 
-#' To opt out of automatically enabled standards, set
-#' `EnableDefaultStandards` to `false`.
+#' To opt out of automatically enabled standards, set `EnableDefaultStandards` to `false`.
 #' 
-#' After you enable Security Hub, to enable a standard, use the
-#' [`batch_enable_standards`][securityhub_batch_enable_standards]
-#' operation. To disable a standard, use the
-#' [`batch_disable_standards`][securityhub_batch_disable_standards]
-#' operation.
+#' After you enable Security Hub CSPM, to enable a standard, use the [`batch_enable_standards`][securityhub_batch_enable_standards] operation. To disable a standard, use the [`batch_disable_standards`][securityhub_batch_disable_standards] operation.
 #' 
-#' To learn more, see the [setup
-#' information](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html)
-#' in the *Security Hub User Guide*.
+#' To learn more, see the [setup information](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html) in the *Security Hub CSPM User Guide*.
 #'
 #' @usage
 #' securityhub_enable_security_hub(Tags, EnableDefaultStandards,
 #'   ControlFindingGenerator)
 #'
-#' @param Tags The tags to add to the hub resource when you enable Security Hub.
-#' @param EnableDefaultStandards Whether to enable the security standards that Security Hub has
-#' designated as automatically enabled. If you don't provide a value for
-#' `EnableDefaultStandards`, it is set to `true`. To not enable the
-#' automatically enabled standards, set `EnableDefaultStandards` to
-#' `false`.
-#' @param ControlFindingGenerator This field, used when enabling Security Hub, specifies whether the
-#' calling account has consolidated control findings turned on. If the
-#' value for this field is set to `SECURITY_CONTROL`, Security Hub
-#' generates a single finding for a control check even when the check
-#' applies to multiple enabled standards.
+#' @param Tags The tags to add to the hub resource when you enable Security Hub CSPM.
+#' @param EnableDefaultStandards Whether to enable the security standards that Security Hub CSPM has designated as automatically enabled. If you don't provide a value for `EnableDefaultStandards`, it is set to `true`. To not enable the automatically enabled standards, set `EnableDefaultStandards` to `false`.
+#' @param ControlFindingGenerator This field, used when enabling Security Hub CSPM, specifies whether the calling account has consolidated control findings turned on. If the value for this field is set to `SECURITY_CONTROL`, Security Hub CSPM generates a single finding for a control check even when the check applies to multiple enabled standards.
 #' 
-#' If the value for this field is set to `STANDARD_CONTROL`, Security Hub
-#' generates separate findings for a control check when the check applies
-#' to multiple enabled standards.
+#' If the value for this field is set to `STANDARD_CONTROL`, Security Hub CSPM generates separate findings for a control check when the check applies to multiple enabled standards.
 #' 
-#' The value for this field in a member account matches the value in the
-#' administrator account. For accounts that aren't part of an organization,
-#' the default value of this field is `SECURITY_CONTROL` if you enabled
-#' Security Hub on or after February 23, 2023.
+#' The value for this field in a member account matches the value in the administrator account. For accounts that aren't part of an organization, the default value of this field is `SECURITY_CONTROL` if you enabled Security Hub CSPM on or after February 23, 2023.
 #'
 #' @return
 #' An empty list.
@@ -9984,8 +9662,7 @@ securityhub_enable_security_hub <- function(Tags = NULL, EnableDefaultStandards 
 #' Region or specified Amazon Web Services Region
 #'
 #' @description
-#' Enables the service in account for the current Amazon Web Services
-#' Region or specified Amazon Web Services Region.
+#' Enables the service in account for the current Amazon Web Services Region or specified Amazon Web Services Region.
 #'
 #' @usage
 #' securityhub_enable_security_hub_v2(Tags)
@@ -10033,15 +9710,58 @@ securityhub_enable_security_hub_v2 <- function(Tags = NULL) {
 }
 .securityhub$operations$enable_security_hub_v2 <- securityhub_enable_security_hub_v2
 
-#' Provides the details for the Security Hub administrator account for the
-#' current member account
+#' Begins the recommended policy generation to remediate a Security Hub
+#' finding
 #'
 #' @description
-#' Provides the details for the Security Hub administrator account for the
-#' current member account.
+#' Begins the recommended policy generation to remediate a Security Hub finding. [`generate_recommended_policy_v2`][securityhub_generate_recommended_policy_v2] only supports findings for unused permissions.
+#'
+#' @usage
+#' securityhub_generate_recommended_policy_v2(MetadataUid)
+#'
+#' @param MetadataUid &#91;required&#93; The unique identifier (ID) of Security Hub OCSF findings found under the `metadata.uid` field of the finding.
+#'
+#' @return
+#' An empty list.
+#'
+#' @section Request syntax:
+#' ```
+#' svc$generate_recommended_policy_v2(
+#'   MetadataUid = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname securityhub_generate_recommended_policy_v2
+#'
+#' @aliases securityhub_generate_recommended_policy_v2
+securityhub_generate_recommended_policy_v2 <- function(MetadataUid) {
+  op <- new_operation(
+    name = "GenerateRecommendedPolicyV2",
+    http_method = "POST",
+    http_path = "/recommendedPolicyV2/{MetadataUid}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .securityhub$generate_recommended_policy_v2_input(MetadataUid = MetadataUid)
+  output <- .securityhub$generate_recommended_policy_v2_output()
+  config <- get_config()
+  svc <- .securityhub$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.securityhub$operations$generate_recommended_policy_v2 <- securityhub_generate_recommended_policy_v2
+
+#' Provides the details for the Security Hub CSPM administrator account for
+#' the current member account
+#'
+#' @description
+#' Provides the details for the Security Hub CSPM administrator account for the current member account.
 #' 
-#' Can be used by both member accounts that are managed using Organizations
-#' and accounts that were invited manually.
+#' Can be used by both member accounts that are managed using Organizations and accounts that were invited manually.
 #'
 #' @usage
 #' securityhub_get_administrator_account()
@@ -10187,7 +9907,8 @@ securityhub_get_aggregator_v2 <- function(AggregatorV2Arn) {
 #'                 End = "string",
 #'                 DateRange = list(
 #'                   Value = 123,
-#'                   Unit = "DAYS"
+#'                   Unit = "DAYS",
+#'                   Comparison = "WITHIN"|"OLDER_THAN"
 #'                 )
 #'               )
 #'             )
@@ -10293,14 +10014,12 @@ securityhub_get_automation_rule_v2 <- function(Identifier) {
 #' Provides information about a configuration policy
 #'
 #' @description
-#' Provides information about a configuration policy. Only the Security Hub
-#' delegated administrator can invoke this operation from the home Region.
+#' Provides information about a configuration policy. Only the Security Hub CSPM delegated administrator can invoke this operation from the home Region.
 #'
 #' @usage
 #' securityhub_get_configuration_policy(Identifier)
 #'
-#' @param Identifier &#91;required&#93; The Amazon Resource Name (ARN) or universally unique identifier (UUID)
-#' of the configuration policy.
+#' @param Identifier &#91;required&#93; The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.
 #'
 #' @return
 #' A list with the following syntax:
@@ -10396,16 +10115,12 @@ securityhub_get_configuration_policy <- function(Identifier) {
 #' organizational unit, or the root
 #'
 #' @description
-#' Returns the association between a configuration and a target account,
-#' organizational unit, or the root. The configuration can be a
-#' configuration policy or self-managed behavior. Only the Security Hub
-#' delegated administrator can invoke this operation from the home Region.
+#' Returns the association between a configuration and a target account, organizational unit, or the root. The configuration can be a configuration policy or self-managed behavior. Only the Security Hub CSPM delegated administrator can invoke this operation from the home Region.
 #'
 #' @usage
 #' securityhub_get_configuration_policy_association(Target)
 #'
-#' @param Target &#91;required&#93; The target account ID, organizational unit ID, or the root ID to
-#' retrieve the association for.
+#' @param Target &#91;required&#93; The target account ID, organizational unit ID, or the root ID to retrieve the association for.
 #'
 #' @return
 #' A list with the following syntax:
@@ -10462,8 +10177,7 @@ securityhub_get_configuration_policy_association <- function(Target) {
 #' connector id
 #'
 #' @description
-#' Grants permission to retrieve details for a connectorV2 based on
-#' connector id.
+#' Grants permission to retrieve details for a connectorV2 based on connector id.
 #'
 #' @usage
 #' securityhub_get_connector_v2(ConnectorId)
@@ -10549,15 +10263,10 @@ securityhub_get_connector_v2 <- function(ConnectorId) {
 #' securityhub_get_enabled_standards(StandardsSubscriptionArns, NextToken,
 #'   MaxResults)
 #'
-#' @param StandardsSubscriptionArns The list of the standards subscription ARNs for the standards to
-#' retrieve.
-#' @param NextToken The token that is required for pagination. On your first call to the
-#' [`get_enabled_standards`][securityhub_get_enabled_standards] operation,
-#' set the value of this parameter to `NULL`.
+#' @param StandardsSubscriptionArns The list of the standards subscription ARNs for the standards to retrieve.
+#' @param NextToken The token that is required for pagination. On your first call to the [`get_enabled_standards`][securityhub_get_enabled_standards] operation, set the value of this parameter to `NULL`.
 #' 
-#' For subsequent calls to the operation, to continue listing data, set the
-#' value of this parameter to the value returned from the previous
-#' response.
+#' For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.
 #' @param MaxResults The maximum number of results to return in the response.
 #'
 #' @return
@@ -10622,16 +10331,12 @@ securityhub_get_enabled_standards <- function(StandardsSubscriptionArns = NULL, 
 #' @description
 #' The *aggregation Region* is now called the *home Region*.
 #' 
-#' Returns the current configuration in the calling account for
-#' cross-Region aggregation. A finding aggregator is a resource that
-#' establishes the home Region and any linked Regions.
+#' Returns the current configuration in the calling account for cross-Region aggregation. A finding aggregator is a resource that establishes the home Region and any linked Regions.
 #'
 #' @usage
 #' securityhub_get_finding_aggregator(FindingAggregatorArn)
 #'
-#' @param FindingAggregatorArn &#91;required&#93; The ARN of the finding aggregator to return details for. To obtain the
-#' ARN, use
-#' [`list_finding_aggregators`][securityhub_list_finding_aggregators].
+#' @param FindingAggregatorArn &#91;required&#93; The ARN of the finding aggregator to return details for. To obtain the ARN, use [`list_finding_aggregators`][securityhub_list_finding_aggregators].
 #'
 #' @return
 #' A list with the following syntax:
@@ -10677,73 +10382,30 @@ securityhub_get_finding_aggregator <- function(FindingAggregatorArn) {
 }
 .securityhub$operations$get_finding_aggregator <- securityhub_get_finding_aggregator
 
-#' Returns the history of a Security Hub finding
+#' Returns the history of a Security Hub CSPM finding
 #'
 #' @description
-#' Returns the history of a Security Hub finding. The history includes
-#' changes made to any fields in the Amazon Web Services Security Finding
-#' Format (ASFF) except top-level timestamp fields, such as the `CreatedAt`
-#' and `UpdatedAt` fields.
+#' Returns the history of a Security Hub CSPM finding. The history includes changes made to any fields in the Amazon Web Services Security Finding Format (ASFF) except top-level timestamp fields, such as the `CreatedAt` and `UpdatedAt` fields.
 #' 
-#' This operation might return fewer results than the maximum number of
-#' results (`MaxResults`) specified in a request, even when more results
-#' are available. If this occurs, the response includes a `NextToken`
-#' value, which you should use to retrieve the next set of results in the
-#' response. The presence of a `NextToken` value in a response doesn't
-#' necessarily indicate that the results are incomplete. However, you
-#' should continue to specify a `NextToken` value until you receive a
-#' response that doesn't include this value.
+#' This operation might return fewer results than the maximum number of results (`MaxResults`) specified in a request, even when more results are available. If this occurs, the response includes a `NextToken` value, which you should use to retrieve the next set of results in the response. The presence of a `NextToken` value in a response doesn't necessarily indicate that the results are incomplete. However, you should continue to specify a `NextToken` value until you receive a response that doesn't include this value.
 #'
 #' @usage
 #' securityhub_get_finding_history(FindingIdentifier, StartTime, EndTime,
 #'   NextToken, MaxResults)
 #'
-#' @param FindingIdentifier &#91;required&#93; 
-#' @param StartTime A timestamp that indicates the start time of the requested finding
-#' history.
+#' @param FindingIdentifier &#91;required&#93; Identifies which finding to get the finding history for.
+#' @param StartTime A timestamp that indicates the start time of the requested finding history.
 #' 
-#' If you provide values for both `StartTime` and `EndTime`, Security Hub
-#' returns finding history for the specified time period. If you provide a
-#' value for `StartTime` but not for `EndTime`, Security Hub returns
-#' finding history from the `StartTime` to the time at which the API is
-#' called. If you provide a value for `EndTime` but not for `StartTime`,
-#' Security Hub returns finding history from the
-#' [CreatedAt](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AwsSecurityFindingFilters.html#securityhub-Type-AwsSecurityFindingFilters-CreatedAt)
-#' timestamp of the finding to the `EndTime`. If you provide neither
-#' `StartTime` nor `EndTime`, Security Hub returns finding history from the
-#' `CreatedAt` timestamp of the finding to the time at which the API is
-#' called. In all of these scenarios, the response is limited to 100
-#' results.
+#' If you provide values for both `StartTime` and `EndTime`, Security Hub CSPM returns finding history for the specified time period. If you provide a value for `StartTime` but not for `EndTime`, Security Hub CSPM returns finding history from the `StartTime` to the time at which the API is called. If you provide a value for `EndTime` but not for `StartTime`, Security Hub CSPM returns finding history from the [CreatedAt](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AwsSecurityFindingFilters.html#securityhub-Type-AwsSecurityFindingFilters-CreatedAt) timestamp of the finding to the `EndTime`. If you provide neither `StartTime` nor `EndTime`, Security Hub CSPM returns finding history from the `CreatedAt` timestamp of the finding to the time at which the API is called. In all of these scenarios, the response is limited to 100 results.
 #' 
-#' For more information about the validation and formatting of timestamp
-#' fields in Security Hub, see
-#' [Timestamps](https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps).
-#' @param EndTime An ISO 8601-formatted timestamp that indicates the end time of the
-#' requested finding history.
+#' For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see [Timestamps](https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps).
+#' @param EndTime An ISO 8601-formatted timestamp that indicates the end time of the requested finding history.
 #' 
-#' If you provide values for both `StartTime` and `EndTime`, Security Hub
-#' returns finding history for the specified time period. If you provide a
-#' value for `StartTime` but not for `EndTime`, Security Hub returns
-#' finding history from the `StartTime` to the time at which the API is
-#' called. If you provide a value for `EndTime` but not for `StartTime`,
-#' Security Hub returns finding history from the
-#' [CreatedAt](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AwsSecurityFindingFilters.html#securityhub-Type-AwsSecurityFindingFilters-CreatedAt)
-#' timestamp of the finding to the `EndTime`. If you provide neither
-#' `StartTime` nor `EndTime`, Security Hub returns finding history from the
-#' `CreatedAt` timestamp of the finding to the time at which the API is
-#' called. In all of these scenarios, the response is limited to 100
-#' results.
+#' If you provide values for both `StartTime` and `EndTime`, Security Hub CSPM returns finding history for the specified time period. If you provide a value for `StartTime` but not for `EndTime`, Security Hub CSPM returns finding history from the `StartTime` to the time at which the API is called. If you provide a value for `EndTime` but not for `StartTime`, Security Hub CSPM returns finding history from the [CreatedAt](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AwsSecurityFindingFilters.html#securityhub-Type-AwsSecurityFindingFilters-CreatedAt) timestamp of the finding to the `EndTime`. If you provide neither `StartTime` nor `EndTime`, Security Hub CSPM returns finding history from the `CreatedAt` timestamp of the finding to the time at which the API is called. In all of these scenarios, the response is limited to 100 results.
 #' 
-#' For more information about the validation and formatting of timestamp
-#' fields in Security Hub, see
-#' [Timestamps](https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps).
-#' @param NextToken A token for pagination purposes. Provide `NULL` as the initial value. In
-#' subsequent requests, provide the token included in the response to get
-#' up to an additional 100 results of finding history. If you don’t provide
-#' `NextToken`, Security Hub returns up to 100 results of finding history
-#' for each request.
-#' @param MaxResults The maximum number of results to be returned. If you don’t provide it,
-#' Security Hub returns up to 100 results of finding history.
+#' For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see [Timestamps](https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps).
+#' @param NextToken A token for pagination purposes. Provide `NULL` as the initial value. In subsequent requests, provide the token included in the response to get up to an additional 100 results of finding history. If you don’t provide `NextToken`, Security Hub CSPM returns up to 100 results of finding history for each request.
+#' @param MaxResults The maximum number of results to be returned. If you don’t provide it, Security Hub CSPM returns up to 100 results of finding history.
 #'
 #' @return
 #' A list with the following syntax:
@@ -10823,19 +10485,22 @@ securityhub_get_finding_history <- function(FindingIdentifier, StartTime = NULL,
 #'
 #' @description
 #' Returns aggregated statistical data about findings.
-#' [`get_finding_statistics_v2`][securityhub_get_finding_statistics_v2] use
-#' `securityhub:GetAdhocInsightResults` in the `Action` element of an IAM
-#' policy statement. You must have permission to perform the `s` action.
+#' 
+#' You can use the `Scopes` parameter to define the data boundary for the query. Currently, `Scopes` supports `AwsOrganizations`, which lets you aggregate findings from your entire organization or from specific organizational units. Only the delegated administrator account can use `Scopes`.
+#' 
+#' [`get_finding_statistics_v2`][securityhub_get_finding_statistics_v2] uses `securityhub:GetAdhocInsightResults` in the `Action` element of an IAM policy statement. You must have permission to perform the `securityhub:GetAdhocInsightResults` action.
 #'
 #' @usage
-#' securityhub_get_finding_statistics_v2(GroupByRules, SortOrder,
+#' securityhub_get_finding_statistics_v2(GroupByRules, Scopes, SortOrder,
 #'   MaxStatisticResults)
 #'
-#' @param GroupByRules &#91;required&#93; Specifies how security findings should be aggregated and organized in
-#' the statistical analysis. It can accept up to 5 `groupBy` fields in a
-#' single call.
-#' @param SortOrder Orders the aggregation count in descending or ascending order.
-#' Descending order is the default.
+#' @param GroupByRules &#91;required&#93; Specifies how security findings should be aggregated and organized in the statistical analysis. It can accept up to 5 `groupBy` fields in a single call.
+#' @param Scopes Limits the results to findings from specific organizational units or from the delegated administrator's organization. Only the delegated administrator account can use this parameter. Other accounts receive an `AccessDeniedException`.
+#' 
+#' This parameter is optional. If you omit it, the delegated administrator sees statistics from all accounts across the entire organization. Other accounts see only statistics for their own findings.
+#' 
+#' You can specify up to 10 entries in `Scopes.AwsOrganizations`. If multiple entries are specified, the entries are combined using OR logic.
+#' @param SortOrder Orders the aggregation count in descending or ascending order. Descending order is the default.
 #' @param MaxStatisticResults The maximum number of results to be returned.
 #'
 #' @return
@@ -10881,7 +10546,8 @@ securityhub_get_finding_history <- function(FindingIdentifier, StartTime = NULL,
 #'                   End = "string",
 #'                   DateRange = list(
 #'                     Value = 123,
-#'                     Unit = "DAYS"
+#'                     Unit = "DAYS",
+#'                     Comparison = "WITHIN"|"OLDER_THAN"
 #'                   )
 #'                 )
 #'               )
@@ -10930,7 +10596,15 @@ securityhub_get_finding_history <- function(FindingIdentifier, StartTime = NULL,
 #'         ),
 #'         CompositeOperator = "AND"|"OR"
 #'       ),
-#'       GroupByField = "activity_name"|"cloud.account.uid"|"cloud.provider"|"cloud.region"|"compliance.assessments.name"|"compliance.status"|"compliance.control"|"finding_info.title"|"finding_info.related_events.traits.category"|"finding_info.types"|"metadata.product.name"|"metadata.product.uid"|"resources.type"|"resources.uid"|"severity"|"status"|"vulnerabilities.fix_coverage"|"class_name"|"vulnerabilities.affected_packages.name"|"finding_info.analytic.name"|"compliance.standards"|"cloud.account.name"|"vendor_attributes.severity"
+#'       GroupByField = "activity_name"|"cloud.account.uid"|"cloud.provider"|"cloud.region"|"compliance.assessments.name"|"compliance.status"|"compliance.control"|"finding_info.title"|"finding_info.related_events.traits.category"|"finding_info.types"|"metadata.product.name"|"metadata.product.uid"|"resources.type"|"resources.uid"|"severity"|"status"|"vulnerabilities.fix_coverage"|"class_name"|"vulnerabilities.affected_packages.name"|"finding_info.analytic.name"|"compliance.standards"|"cloud.account.name"|"vendor_attributes.severity"|"metadata.product.vendor_name"
+#'     )
+#'   ),
+#'   Scopes = list(
+#'     AwsOrganizations = list(
+#'       list(
+#'         OrganizationId = "string",
+#'         OrganizationalUnitId = "string"
+#'       )
 #'     )
 #'   ),
 #'   SortOrder = "asc"|"desc",
@@ -10943,7 +10617,7 @@ securityhub_get_finding_history <- function(FindingIdentifier, StartTime = NULL,
 #' @rdname securityhub_get_finding_statistics_v2
 #'
 #' @aliases securityhub_get_finding_statistics_v2
-securityhub_get_finding_statistics_v2 <- function(GroupByRules, SortOrder = NULL, MaxStatisticResults = NULL) {
+securityhub_get_finding_statistics_v2 <- function(GroupByRules, Scopes = NULL, SortOrder = NULL, MaxStatisticResults = NULL) {
   op <- new_operation(
     name = "GetFindingStatisticsV2",
     http_method = "POST",
@@ -10952,7 +10626,7 @@ securityhub_get_finding_statistics_v2 <- function(GroupByRules, SortOrder = NULL
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .securityhub$get_finding_statistics_v2_input(GroupByRules = GroupByRules, SortOrder = SortOrder, MaxStatisticResults = MaxStatisticResults)
+  input <- .securityhub$get_finding_statistics_v2_input(GroupByRules = GroupByRules, Scopes = Scopes, SortOrder = SortOrder, MaxStatisticResults = MaxStatisticResults)
   output <- .securityhub$get_finding_statistics_v2_output()
   config <- get_config()
   svc <- .securityhub$service(config, op)
@@ -10967,31 +10641,20 @@ securityhub_get_finding_statistics_v2 <- function(GroupByRules, SortOrder = NULL
 #' @description
 #' Returns a list of findings that match the specified criteria.
 #' 
-#' If cross-Region aggregation is enabled, then when you call
-#' [`get_findings`][securityhub_get_findings] from the home Region, the
-#' results include all of the matching findings from both the home Region
-#' and linked Regions.
+#' If cross-Region aggregation is enabled, then when you call [`get_findings`][securityhub_get_findings] from the home Region, the results include all of the matching findings from both the home Region and linked Regions.
 #'
 #' @usage
 #' securityhub_get_findings(Filters, SortCriteria, NextToken, MaxResults)
 #'
-#' @param Filters The finding attributes used to define a condition to filter the returned
-#' findings.
+#' @param Filters The finding attributes used to define a condition to filter the returned findings.
 #' 
-#' You can filter by up to 10 finding attributes. For each attribute, you
-#' can provide up to 20 filter values.
+#' You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values.
 #' 
-#' Note that in the available filter fields, `WorkflowState` is deprecated.
-#' To search for a finding based on its workflow status, use
-#' `WorkflowStatus`.
+#' Note that in the available filter fields, `WorkflowState` is deprecated. To search for a finding based on its workflow status, use `WorkflowStatus`.
 #' @param SortCriteria The finding attributes used to sort the list of returned findings.
-#' @param NextToken The token that is required for pagination. On your first call to the
-#' [`get_findings`][securityhub_get_findings] operation, set the value of
-#' this parameter to `NULL`.
+#' @param NextToken The token that is required for pagination. On your first call to the [`get_findings`][securityhub_get_findings] operation, set the value of this parameter to `NULL`.
 #' 
-#' For subsequent calls to the operation, to continue listing data, set the
-#' value of this parameter to the value returned from the previous
-#' response.
+#' For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.
 #' @param MaxResults The maximum number of findings to return.
 #'
 #' @return
@@ -15628,7 +15291,8 @@ securityhub_get_finding_statistics_v2 <- function(GroupByRules, SortOrder = NULL
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -15638,7 +15302,8 @@ securityhub_get_finding_statistics_v2 <- function(GroupByRules, SortOrder = NULL
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -15648,7 +15313,8 @@ securityhub_get_finding_statistics_v2 <- function(GroupByRules, SortOrder = NULL
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -15658,7 +15324,8 @@ securityhub_get_finding_statistics_v2 <- function(GroupByRules, SortOrder = NULL
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -15882,7 +15549,8 @@ securityhub_get_finding_statistics_v2 <- function(GroupByRules, SortOrder = NULL
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -15892,7 +15560,8 @@ securityhub_get_finding_statistics_v2 <- function(GroupByRules, SortOrder = NULL
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -15920,7 +15589,8 @@ securityhub_get_finding_statistics_v2 <- function(GroupByRules, SortOrder = NULL
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -16019,7 +15689,8 @@ securityhub_get_finding_statistics_v2 <- function(GroupByRules, SortOrder = NULL
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -16059,7 +15730,8 @@ securityhub_get_finding_statistics_v2 <- function(GroupByRules, SortOrder = NULL
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -16093,7 +15765,8 @@ securityhub_get_finding_statistics_v2 <- function(GroupByRules, SortOrder = NULL
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -16158,7 +15831,8 @@ securityhub_get_finding_statistics_v2 <- function(GroupByRules, SortOrder = NULL
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -16319,20 +15993,16 @@ securityhub_get_findings <- function(Filters = NULL, SortCriteria = NULL, NextTo
 #' Returns findings trend data based on the specified criteria
 #'
 #' @description
-#' Returns findings trend data based on the specified criteria. This
-#' operation helps you analyze patterns and changes in findings over time.
+#' Returns findings trend data based on the specified criteria. This operation helps you analyze patterns and changes in findings over time.
 #'
 #' @usage
 #' securityhub_get_findings_trends_v2(Filters, StartTime, EndTime,
 #'   NextToken, MaxResults)
 #'
 #' @param Filters The filters to apply to the findings trend data.
-#' @param StartTime &#91;required&#93; The starting timestamp for the time period to analyze findings trends,
-#' in ISO 8601 format.
-#' @param EndTime &#91;required&#93; The ending timestamp for the time period to analyze findings trends, in
-#' ISO 8601 format.
-#' @param NextToken The token to use for paginating results. This value is returned in the
-#' response if more results are available.
+#' @param StartTime &#91;required&#93; The starting timestamp for the time period to analyze findings trends, in ISO 8601 format.
+#' @param EndTime &#91;required&#93; The ending timestamp for the time period to analyze findings trends, in ISO 8601 format.
+#' @param NextToken The token to use for paginating results. This value is returned in the response if more results are available.
 #' @param MaxResults The maximum number of trend data points to return in a single response.
 #'
 #' @return
@@ -16419,29 +16089,29 @@ securityhub_get_findings_trends_v2 <- function(Filters = NULL, StartTime, EndTim
 }
 .securityhub$operations$get_findings_trends_v2 <- securityhub_get_findings_trends_v2
 
-#' Return a list of findings that match the specified criteria
+#' Returns a list of findings that match the specified criteria
 #'
 #' @description
-#' Return a list of findings that match the specified criteria.
-#' [`get_findings`][securityhub_get_findings] and
-#' [`get_findings_v2`][securityhub_get_findings_v2] both use
-#' `securityhub:GetFindings` in the `Action` element of an IAM policy
-#' statement. You must have permission to perform the
-#' `securityhub:GetFindings` action.
+#' Returns a list of findings that match the specified criteria.
+#' 
+#' You can use the `Scopes` parameter to define the data boundary for the query. Currently, `Scopes` supports `AwsOrganizations`, which lets you retrieve findings from your entire organization or from specific organizational units. Only the delegated administrator account can use `Scopes`.
+#' 
+#' You can use the `Filters` parameter to refine results based on finding attributes. You can use `Scopes` and `Filters` independently or together. When both are provided, `Scopes` narrows the data set first, and then `Filters` refines results within that scoped data set.
+#' 
+#' [`get_findings`][securityhub_get_findings] and [`get_findings_v2`][securityhub_get_findings_v2] both use `securityhub:GetFindings` in the `Action` element of an IAM policy statement. You must have permission to perform the `securityhub:GetFindings` action.
 #'
 #' @usage
-#' securityhub_get_findings_v2(Filters, SortCriteria, NextToken,
+#' securityhub_get_findings_v2(Filters, Scopes, SortCriteria, NextToken,
 #'   MaxResults)
 #'
-#' @param Filters The finding attributes used to define a condition to filter the returned
-#' OCSF findings. You can filter up to 10 composite filters. For each
-#' filter type inside of a composite filter, you can provide up to 20
-#' filters.
+#' @param Filters The finding attributes used to define a condition to filter the returned OCSF findings. You can filter up to 10 composite filters. For each filter type inside of a composite filter, you can provide up to 20 filters.
+#' @param Scopes Limits the results to findings from specific organizational units or from the delegated administrator's organization. Only the delegated administrator account can use this parameter. Other accounts receive an `AccessDeniedException`.
+#' 
+#' This parameter is optional. If you omit it, the delegated administrator sees findings from all accounts across the entire organization. Other accounts see only their own findings.
+#' 
+#' You can specify up to 10 entries in `Scopes.AwsOrganizations`. If multiple entries are specified, the entries are combined using OR logic.
 #' @param SortCriteria The finding attributes used to sort the list of returned findings.
-#' @param NextToken The token required for pagination. On your first call, set the value of
-#' this parameter to `NULL`. For subsequent calls, to continue listing
-#' data, set the value of this parameter to the value returned in the
-#' previous response.
+#' @param NextToken The token required for pagination. On your first call, set the value of this parameter to `NULL`. For subsequent calls, to continue listing data, set the value of this parameter to the value returned in the previous response.
 #' @param MaxResults The maximum number of results to return.
 #'
 #' @return
@@ -16478,7 +16148,8 @@ securityhub_get_findings_trends_v2 <- function(Filters = NULL, StartTime, EndTim
 #'               End = "string",
 #'               DateRange = list(
 #'                 Value = 123,
-#'                 Unit = "DAYS"
+#'                 Unit = "DAYS",
+#'                 Comparison = "WITHIN"|"OLDER_THAN"
 #'               )
 #'             )
 #'           )
@@ -16527,6 +16198,14 @@ securityhub_get_findings_trends_v2 <- function(Filters = NULL, StartTime, EndTim
 #'     ),
 #'     CompositeOperator = "AND"|"OR"
 #'   ),
+#'   Scopes = list(
+#'     AwsOrganizations = list(
+#'       list(
+#'         OrganizationId = "string",
+#'         OrganizationalUnitId = "string"
+#'       )
+#'     )
+#'   ),
 #'   SortCriteria = list(
 #'     list(
 #'       Field = "string",
@@ -16543,7 +16222,7 @@ securityhub_get_findings_trends_v2 <- function(Filters = NULL, StartTime, EndTim
 #' @rdname securityhub_get_findings_v2
 #'
 #' @aliases securityhub_get_findings_v2
-securityhub_get_findings_v2 <- function(Filters = NULL, SortCriteria = NULL, NextToken = NULL, MaxResults = NULL) {
+securityhub_get_findings_v2 <- function(Filters = NULL, Scopes = NULL, SortCriteria = NULL, NextToken = NULL, MaxResults = NULL) {
   op <- new_operation(
     name = "GetFindingsV2",
     http_method = "POST",
@@ -16552,7 +16231,7 @@ securityhub_get_findings_v2 <- function(Filters = NULL, SortCriteria = NULL, Nex
     paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "Findings"),
     stream_api = FALSE
   )
-  input <- .securityhub$get_findings_v2_input(Filters = Filters, SortCriteria = SortCriteria, NextToken = NextToken, MaxResults = MaxResults)
+  input <- .securityhub$get_findings_v2_input(Filters = Filters, Scopes = Scopes, SortCriteria = SortCriteria, NextToken = NextToken, MaxResults = MaxResults)
   output <- .securityhub$get_findings_v2_output()
   config <- get_config()
   svc <- .securityhub$service(config, op)
@@ -16562,12 +16241,11 @@ securityhub_get_findings_v2 <- function(Filters = NULL, SortCriteria = NULL, Nex
 }
 .securityhub$operations$get_findings_v2 <- securityhub_get_findings_v2
 
-#' Lists the results of the Security Hub insight specified by the insight
-#' ARN
+#' Lists the results of the Security Hub CSPM insight specified by the
+#' insight ARN
 #'
 #' @description
-#' Lists the results of the Security Hub insight specified by the insight
-#' ARN.
+#' Lists the results of the Security Hub CSPM insight specified by the insight ARN.
 #'
 #' @usage
 #' securityhub_get_insight_results(InsightArn)
@@ -16630,16 +16308,10 @@ securityhub_get_insight_results <- function(InsightArn) {
 #' @usage
 #' securityhub_get_insights(InsightArns, NextToken, MaxResults)
 #'
-#' @param InsightArns The ARNs of the insights to describe. If you don't provide any insight
-#' ARNs, then [`get_insights`][securityhub_get_insights] returns all of
-#' your custom insights. It does not return any managed insights.
-#' @param NextToken The token that is required for pagination. On your first call to the
-#' [`get_insights`][securityhub_get_insights] operation, set the value of
-#' this parameter to `NULL`.
+#' @param InsightArns The ARNs of the insights to describe. If you don't provide any insight ARNs, then [`get_insights`][securityhub_get_insights] returns all of your custom insights. It does not return any managed insights.
+#' @param NextToken The token that is required for pagination. On your first call to the [`get_insights`][securityhub_get_insights] operation, set the value of this parameter to `NULL`.
 #' 
-#' For subsequent calls to the operation, to continue listing data, set the
-#' value of this parameter to the value returned from the previous
-#' response.
+#' For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.
 #' @param MaxResults The maximum number of items to return in the response.
 #'
 #' @return
@@ -16693,7 +16365,8 @@ securityhub_get_insight_results <- function(InsightArn) {
 #'             End = "string",
 #'             DateRange = list(
 #'               Value = 123,
-#'               Unit = "DAYS"
+#'               Unit = "DAYS",
+#'               Comparison = "WITHIN"|"OLDER_THAN"
 #'             )
 #'           )
 #'         ),
@@ -16703,7 +16376,8 @@ securityhub_get_insight_results <- function(InsightArn) {
 #'             End = "string",
 #'             DateRange = list(
 #'               Value = 123,
-#'               Unit = "DAYS"
+#'               Unit = "DAYS",
+#'               Comparison = "WITHIN"|"OLDER_THAN"
 #'             )
 #'           )
 #'         ),
@@ -16713,7 +16387,8 @@ securityhub_get_insight_results <- function(InsightArn) {
 #'             End = "string",
 #'             DateRange = list(
 #'               Value = 123,
-#'               Unit = "DAYS"
+#'               Unit = "DAYS",
+#'               Comparison = "WITHIN"|"OLDER_THAN"
 #'             )
 #'           )
 #'         ),
@@ -16723,7 +16398,8 @@ securityhub_get_insight_results <- function(InsightArn) {
 #'             End = "string",
 #'             DateRange = list(
 #'               Value = 123,
-#'               Unit = "DAYS"
+#'               Unit = "DAYS",
+#'               Comparison = "WITHIN"|"OLDER_THAN"
 #'             )
 #'           )
 #'         ),
@@ -16947,7 +16623,8 @@ securityhub_get_insight_results <- function(InsightArn) {
 #'             End = "string",
 #'             DateRange = list(
 #'               Value = 123,
-#'               Unit = "DAYS"
+#'               Unit = "DAYS",
+#'               Comparison = "WITHIN"|"OLDER_THAN"
 #'             )
 #'           )
 #'         ),
@@ -16957,7 +16634,8 @@ securityhub_get_insight_results <- function(InsightArn) {
 #'             End = "string",
 #'             DateRange = list(
 #'               Value = 123,
-#'               Unit = "DAYS"
+#'               Unit = "DAYS",
+#'               Comparison = "WITHIN"|"OLDER_THAN"
 #'             )
 #'           )
 #'         ),
@@ -16985,7 +16663,8 @@ securityhub_get_insight_results <- function(InsightArn) {
 #'             End = "string",
 #'             DateRange = list(
 #'               Value = 123,
-#'               Unit = "DAYS"
+#'               Unit = "DAYS",
+#'               Comparison = "WITHIN"|"OLDER_THAN"
 #'             )
 #'           )
 #'         ),
@@ -17084,7 +16763,8 @@ securityhub_get_insight_results <- function(InsightArn) {
 #'             End = "string",
 #'             DateRange = list(
 #'               Value = 123,
-#'               Unit = "DAYS"
+#'               Unit = "DAYS",
+#'               Comparison = "WITHIN"|"OLDER_THAN"
 #'             )
 #'           )
 #'         ),
@@ -17124,7 +16804,8 @@ securityhub_get_insight_results <- function(InsightArn) {
 #'             End = "string",
 #'             DateRange = list(
 #'               Value = 123,
-#'               Unit = "DAYS"
+#'               Unit = "DAYS",
+#'               Comparison = "WITHIN"|"OLDER_THAN"
 #'             )
 #'           )
 #'         ),
@@ -17158,7 +16839,8 @@ securityhub_get_insight_results <- function(InsightArn) {
 #'             End = "string",
 #'             DateRange = list(
 #'               Value = 123,
-#'               Unit = "DAYS"
+#'               Unit = "DAYS",
+#'               Comparison = "WITHIN"|"OLDER_THAN"
 #'             )
 #'           )
 #'         ),
@@ -17223,7 +16905,8 @@ securityhub_get_insight_results <- function(InsightArn) {
 #'             End = "string",
 #'             DateRange = list(
 #'               Value = 123,
-#'               Unit = "DAYS"
+#'               Unit = "DAYS",
+#'               Comparison = "WITHIN"|"OLDER_THAN"
 #'             )
 #'           )
 #'         ),
@@ -17388,19 +17071,13 @@ securityhub_get_insights <- function(InsightArns = NULL, NextToken = NULL, MaxRe
 }
 .securityhub$operations$get_insights <- securityhub_get_insights
 
-#' We recommend using Organizations instead of Security Hub invitations to
-#' manage your member accounts
+#' We recommend using Organizations instead of Security Hub CSPM
+#' invitations to manage your member accounts
 #'
 #' @description
-#' We recommend using Organizations instead of Security Hub invitations to
-#' manage your member accounts. For information, see [Managing Security Hub
-#' administrator and member accounts with
-#' Organizations](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html)
-#' in the *Security Hub User Guide*.
+#' We recommend using Organizations instead of Security Hub CSPM invitations to manage your member accounts. For information, see [Managing Security Hub CSPM administrator and member accounts with Organizations](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html) in the *Security Hub CSPM User Guide*.
 #' 
-#' Returns the count of all Security Hub membership invitations that were
-#' sent to the calling member account, not including the currently accepted
-#' invitation.
+#' Returns the count of all Security Hub CSPM membership invitations that were sent to the calling member account, not including the currently accepted invitation.
 #'
 #' @usage
 #' securityhub_get_invitations_count()
@@ -17447,26 +17124,13 @@ securityhub_get_invitations_count <- function() {
 #' This method is deprecated
 #'
 #' @description
-#' This method is deprecated. Instead, use
-#' [`get_administrator_account`][securityhub_get_administrator_account].
+#' This method is deprecated. Instead, use [`get_administrator_account`][securityhub_get_administrator_account].
 #' 
-#' The Security Hub console continues to use
-#' [`get_master_account`][securityhub_get_master_account]. It will
-#' eventually change to use
-#' [`get_administrator_account`][securityhub_get_administrator_account].
-#' Any IAM policies that specifically control access to this function must
-#' continue to use [`get_master_account`][securityhub_get_master_account].
-#' You should also add
-#' [`get_administrator_account`][securityhub_get_administrator_account] to
-#' your policies to ensure that the correct permissions are in place after
-#' the console begins to use
-#' [`get_administrator_account`][securityhub_get_administrator_account].
+#' The Security Hub CSPM console continues to use [`get_master_account`][securityhub_get_master_account]. It will eventually change to use [`get_administrator_account`][securityhub_get_administrator_account]. Any IAM policies that specifically control access to this function must continue to use [`get_master_account`][securityhub_get_master_account]. You should also add [`get_administrator_account`][securityhub_get_administrator_account] to your policies to ensure that the correct permissions are in place after the console begins to use [`get_administrator_account`][securityhub_get_administrator_account].
 #' 
-#' Provides the details for the Security Hub administrator account for the
-#' current member account.
+#' Provides the details for the Security Hub CSPM administrator account for the current member account.
 #' 
-#' Can be used by both member accounts that are managed using Organizations
-#' and accounts that were invited manually.
+#' Can be used by both member accounts that are managed using Organizations and accounts that were invited manually.
 #'
 #' @usage
 #' securityhub_get_master_account()
@@ -17517,25 +17181,20 @@ securityhub_get_master_account <- function() {
 }
 .securityhub$operations$get_master_account <- securityhub_get_master_account
 
-#' Returns the details for the Security Hub member accounts for the
+#' Returns the details for the Security Hub CSPM member accounts for the
 #' specified account IDs
 #'
 #' @description
-#' Returns the details for the Security Hub member accounts for the
-#' specified account IDs.
+#' Returns the details for the Security Hub CSPM member accounts for the specified account IDs.
 #' 
-#' An administrator account can be either the delegated Security Hub
-#' administrator account for an organization or an administrator account
-#' that enabled Security Hub manually.
+#' An administrator account can be either the delegated Security Hub CSPM administrator account for an organization or an administrator account that enabled Security Hub CSPM manually.
 #' 
-#' The results include both member accounts that are managed using
-#' Organizations and accounts that were invited manually.
+#' The results include both member accounts that are managed using Organizations and accounts that were invited manually.
 #'
 #' @usage
 #' securityhub_get_members(AccountIds)
 #'
-#' @param AccountIds &#91;required&#93; The list of account IDs for the Security Hub member accounts to return
-#' the details for.
+#' @param AccountIds &#91;required&#93; The list of account IDs for the Security Hub CSPM member accounts to return the details for.
 #'
 #' @return
 #' A list with the following syntax:
@@ -17598,19 +17257,98 @@ securityhub_get_members <- function(AccountIds) {
 }
 .securityhub$operations$get_members <- securityhub_get_members
 
+#' Retrieves the recommended policy to remediate a Security Hub finding
+#'
+#' @description
+#' Retrieves the recommended policy to remediate a Security Hub finding. [`get_recommended_policy_v2`][securityhub_get_recommended_policy_v2] only supports findings for unused permissions.
+#'
+#' @usage
+#' securityhub_get_recommended_policy_v2(MetadataUid, NextToken,
+#'   MaxResults)
+#'
+#' @param MetadataUid &#91;required&#93; The unique identifier (ID) of Security Hub OCSF findings found under the `metadata.uid` field of the finding.
+#' @param NextToken The token used to paginate the `RecommendationSteps` list returned. On your first call to [`get_recommended_policy_v2`][securityhub_get_recommended_policy_v2], omit this parameter or set it to `NULL`. For subsequent calls, use the `NextToken` value returned in the previous response to retrieve the next page of results.
+#' @param MaxResults The maximum number of recommendation steps to return.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   NextToken = "string",
+#'   RecommendationType = "UNUSED_PERMISSION_RECOMMENDATION",
+#'   RecommendationSteps = list(
+#'     list(
+#'       UnusedPermissions = list(
+#'         RecommendedAction = "string",
+#'         ExistingPolicy = "string",
+#'         ExistingPolicyId = "string",
+#'         PolicyUpdatedAt = as.POSIXct(
+#'           "2015-01-01"
+#'         ),
+#'         RecommendedPolicy = "string"
+#'       )
+#'     )
+#'   ),
+#'   Error = list(
+#'     Code = "string",
+#'     Message = "string"
+#'   ),
+#'   Status = "IN_PROGRESS"|"SUCCEEDED"|"FAILED",
+#'   ResourceArn = "string"
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$get_recommended_policy_v2(
+#'   MetadataUid = "string",
+#'   NextToken = "string",
+#'   MaxResults = 123
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname securityhub_get_recommended_policy_v2
+#'
+#' @aliases securityhub_get_recommended_policy_v2
+securityhub_get_recommended_policy_v2 <- function(MetadataUid, NextToken = NULL, MaxResults = NULL) {
+  op <- new_operation(
+    name = "GetRecommendedPolicyV2",
+    http_method = "GET",
+    http_path = "/recommendedPolicyV2/{MetadataUid}",
+    host_prefix = "",
+    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "RecommendationSteps"),
+    stream_api = FALSE
+  )
+  input <- .securityhub$get_recommended_policy_v2_input(MetadataUid = MetadataUid, NextToken = NextToken, MaxResults = MaxResults)
+  output <- .securityhub$get_recommended_policy_v2_output()
+  config <- get_config()
+  svc <- .securityhub$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.securityhub$operations$get_recommended_policy_v2 <- securityhub_get_recommended_policy_v2
+
 #' Retrieves statistical information about Amazon Web Services resources
 #' and their associated security findings
 #'
 #' @description
-#' Retrieves statistical information about Amazon Web Services resources
-#' and their associated security findings.
+#' Retrieves statistical information about Amazon Web Services resources and their associated security findings.
+#' 
+#' You can use the `Scopes` parameter to define the data boundary for the query. Currently, `Scopes` supports `AwsOrganizations`, which lets you aggregate resources from your entire organization or from specific organizational units. Only the delegated administrator account can use `Scopes`.
 #'
 #' @usage
-#' securityhub_get_resources_statistics_v2(GroupByRules, SortOrder,
+#' securityhub_get_resources_statistics_v2(GroupByRules, Scopes, SortOrder,
 #'   MaxStatisticResults)
 #'
-#' @param GroupByRules &#91;required&#93; How resource statistics should be aggregated and organized in the
-#' response.
+#' @param GroupByRules &#91;required&#93; How resource statistics should be aggregated and organized in the response.
+#' @param Scopes Limits the results to resources from specific organizational units or from the delegated administrator's organization. Only the delegated administrator account can use this parameter. Other accounts receive an `AccessDeniedException`.
+#' 
+#' This parameter is optional. If you omit it, the delegated administrator sees statistics from all accounts across the entire organization. Other accounts see only statistics for their own resources.
+#' 
+#' You can specify up to 10 entries in `Scopes.AwsOrganizations`. If multiple entries are specified, the entries are combined using OR logic.
 #' @param SortOrder Sorts aggregated statistics.
 #' @param MaxStatisticResults The maximum number of results to be returned.
 #'
@@ -17658,7 +17396,8 @@ securityhub_get_members <- function(AccountIds) {
 #'                   End = "string",
 #'                   DateRange = list(
 #'                     Value = 123,
-#'                     Unit = "DAYS"
+#'                     Unit = "DAYS",
+#'                     Comparison = "WITHIN"|"OLDER_THAN"
 #'                   )
 #'                 )
 #'               )
@@ -17693,6 +17432,14 @@ securityhub_get_members <- function(AccountIds) {
 #'       )
 #'     )
 #'   ),
+#'   Scopes = list(
+#'     AwsOrganizations = list(
+#'       list(
+#'         OrganizationId = "string",
+#'         OrganizationalUnitId = "string"
+#'       )
+#'     )
+#'   ),
 #'   SortOrder = "asc"|"desc",
 #'   MaxStatisticResults = 123
 #' )
@@ -17703,7 +17450,7 @@ securityhub_get_members <- function(AccountIds) {
 #' @rdname securityhub_get_resources_statistics_v2
 #'
 #' @aliases securityhub_get_resources_statistics_v2
-securityhub_get_resources_statistics_v2 <- function(GroupByRules, SortOrder = NULL, MaxStatisticResults = NULL) {
+securityhub_get_resources_statistics_v2 <- function(GroupByRules, Scopes = NULL, SortOrder = NULL, MaxStatisticResults = NULL) {
   op <- new_operation(
     name = "GetResourcesStatisticsV2",
     http_method = "POST",
@@ -17712,7 +17459,7 @@ securityhub_get_resources_statistics_v2 <- function(GroupByRules, SortOrder = NU
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .securityhub$get_resources_statistics_v2_input(GroupByRules = GroupByRules, SortOrder = SortOrder, MaxStatisticResults = MaxStatisticResults)
+  input <- .securityhub$get_resources_statistics_v2_input(GroupByRules = GroupByRules, Scopes = Scopes, SortOrder = SortOrder, MaxStatisticResults = MaxStatisticResults)
   output <- .securityhub$get_resources_statistics_v2_output()
   config <- get_config()
   svc <- .securityhub$service(config, op)
@@ -17725,21 +17472,16 @@ securityhub_get_resources_statistics_v2 <- function(GroupByRules, SortOrder = NU
 #' Returns resource trend data based on the specified criteria
 #'
 #' @description
-#' Returns resource trend data based on the specified criteria. This
-#' operation helps you analyze patterns and changes in resource compliance
-#' over time.
+#' Returns resource trend data based on the specified criteria. This operation helps you analyze patterns and changes in resource compliance over time.
 #'
 #' @usage
 #' securityhub_get_resources_trends_v2(Filters, StartTime, EndTime,
 #'   NextToken, MaxResults)
 #'
 #' @param Filters The filters to apply to the resources trend data.
-#' @param StartTime &#91;required&#93; The starting timestamp for the time period to analyze resources trends,
-#' in ISO 8601 format.
-#' @param EndTime &#91;required&#93; The ending timestamp for the time period to analyze resources trends, in
-#' ISO 8601 format.
-#' @param NextToken The token to use for paginating results. This value is returned in the
-#' response if more results are available.
+#' @param StartTime &#91;required&#93; The starting timestamp for the time period to analyze resources trends, in ISO 8601 format.
+#' @param EndTime &#91;required&#93; The ending timestamp for the time period to analyze resources trends, in ISO 8601 format.
+#' @param NextToken The token to use for paginating results. This value is returned in the response if more results are available.
 #' @param MaxResults The maximum number of trend data points to return in a single response.
 #'
 #' @return
@@ -17823,17 +17565,23 @@ securityhub_get_resources_trends_v2 <- function(Filters = NULL, StartTime, EndTi
 #'
 #' @description
 #' Returns a list of resources.
+#' 
+#' You can use the `Scopes` parameter to define the data boundary for the query. Currently, `Scopes` supports `AwsOrganizations`, which lets you retrieve resources from your entire organization or from specific organizational units. Only the delegated administrator account can use `Scopes`.
+#' 
+#' You can use the `Filters` parameter to refine results based on resource attributes. You can use `Scopes` and `Filters` independently or together. When both are provided, `Scopes` narrows the data set first, and then `Filters` refines results within that scoped data set.
 #'
 #' @usage
-#' securityhub_get_resources_v2(Filters, SortCriteria, NextToken,
+#' securityhub_get_resources_v2(Filters, Scopes, SortCriteria, NextToken,
 #'   MaxResults)
 #'
 #' @param Filters Filters resources based on a set of criteria.
-#' @param SortCriteria The finding attributes used to sort the list of returned findings.
-#' @param NextToken The token required for pagination. On your first call, set the value of
-#' this parameter to `NULL`. For subsequent calls, to continue listing
-#' data, set the value of this parameter to the value returned in the
-#' previous response.
+#' @param Scopes Limits the results to resources from specific organizational units or from the delegated administrator's organization. Only the delegated administrator account can use this parameter. Other accounts receive an `AccessDeniedException`.
+#' 
+#' This parameter is optional. If you omit it, the delegated administrator sees resources from all accounts across the entire organization. Other accounts see only their own resources.
+#' 
+#' You can specify up to 10 entries in `Scopes.AwsOrganizations`. If multiple entries are specified, the entries are combined using OR logic.
+#' @param SortCriteria The resource attributes used to sort the list of returned resources.
+#' @param NextToken The token required for pagination. On your first call, set the value of this parameter to `NULL`. For subsequent calls, to continue listing data, set the value of this parameter to the value returned in the previous response.
 #' @param MaxResults The maximum number of results to return.
 #'
 #' @return
@@ -17904,7 +17652,8 @@ securityhub_get_resources_trends_v2 <- function(Filters = NULL, StartTime, EndTi
 #'               End = "string",
 #'               DateRange = list(
 #'                 Value = 123,
-#'                 Unit = "DAYS"
+#'                 Unit = "DAYS",
+#'                 Comparison = "WITHIN"|"OLDER_THAN"
 #'               )
 #'             )
 #'           )
@@ -17937,6 +17686,14 @@ securityhub_get_resources_trends_v2 <- function(Filters = NULL, StartTime, EndTi
 #'     ),
 #'     CompositeOperator = "AND"|"OR"
 #'   ),
+#'   Scopes = list(
+#'     AwsOrganizations = list(
+#'       list(
+#'         OrganizationId = "string",
+#'         OrganizationalUnitId = "string"
+#'       )
+#'     )
+#'   ),
 #'   SortCriteria = list(
 #'     list(
 #'       Field = "string",
@@ -17953,7 +17710,7 @@ securityhub_get_resources_trends_v2 <- function(Filters = NULL, StartTime, EndTi
 #' @rdname securityhub_get_resources_v2
 #'
 #' @aliases securityhub_get_resources_v2
-securityhub_get_resources_v2 <- function(Filters = NULL, SortCriteria = NULL, NextToken = NULL, MaxResults = NULL) {
+securityhub_get_resources_v2 <- function(Filters = NULL, Scopes = NULL, SortCriteria = NULL, NextToken = NULL, MaxResults = NULL) {
   op <- new_operation(
     name = "GetResourcesV2",
     http_method = "POST",
@@ -17962,7 +17719,7 @@ securityhub_get_resources_v2 <- function(Filters = NULL, SortCriteria = NULL, Ne
     paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "Resources"),
     stream_api = FALSE
   )
-  input <- .securityhub$get_resources_v2_input(Filters = Filters, SortCriteria = SortCriteria, NextToken = NextToken, MaxResults = MaxResults)
+  input <- .securityhub$get_resources_v2_input(Filters = Filters, Scopes = Scopes, SortCriteria = SortCriteria, NextToken = NextToken, MaxResults = MaxResults)
   output <- .securityhub$get_resources_v2_output()
   config <- get_config()
   svc <- .securityhub$service(config, op)
@@ -17975,15 +17732,12 @@ securityhub_get_resources_v2 <- function(Filters = NULL, SortCriteria = NULL, Ne
 #' Retrieves the definition of a security control
 #'
 #' @description
-#' Retrieves the definition of a security control. The definition includes
-#' the control title, description, Region availability, parameter
-#' definitions, and other details.
+#' Retrieves the definition of a security control. The definition includes the control title, description, Region availability, parameter definitions, and other details.
 #'
 #' @usage
 #' securityhub_get_security_control_definition(SecurityControlId)
 #'
-#' @param SecurityControlId &#91;required&#93; The ID of the security control to retrieve the definition for. This
-#' field doesn’t accept an Amazon Resource Name (ARN).
+#' @param SecurityControlId &#91;required&#93; The ID of the security control to retrieve the definition for. This field doesn’t accept an Amazon Resource Name (ARN).
 #'
 #' @return
 #' A list with the following syntax:
@@ -18090,36 +17844,24 @@ securityhub_get_security_control_definition <- function(SecurityControlId) {
 }
 .securityhub$operations$get_security_control_definition <- securityhub_get_security_control_definition
 
-#' We recommend using Organizations instead of Security Hub invitations to
-#' manage your member accounts
+#' We recommend using Organizations instead of Security Hub CSPM
+#' invitations to manage your member accounts
 #'
 #' @description
-#' We recommend using Organizations instead of Security Hub invitations to
-#' manage your member accounts. For information, see [Managing Security Hub
-#' administrator and member accounts with
-#' Organizations](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html)
-#' in the *Security Hub User Guide*.
+#' We recommend using Organizations instead of Security Hub CSPM invitations to manage your member accounts. For information, see [Managing Security Hub CSPM administrator and member accounts with Organizations](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html) in the *Security Hub CSPM User Guide*.
 #' 
-#' Invites other Amazon Web Services accounts to become member accounts for
-#' the Security Hub administrator account that the invitation is sent from.
+#' Invites other Amazon Web Services accounts to become member accounts for the Security Hub CSPM administrator account that the invitation is sent from.
 #' 
-#' This operation is only used to invite accounts that don't belong to an
-#' Amazon Web Services organization. Organization accounts don't receive
-#' invitations.
+#' This operation is only used to invite accounts that don't belong to an Amazon Web Services organization. Organization accounts don't receive invitations.
 #' 
-#' Before you can use this action to invite a member, you must first use
-#' the [`create_members`][securityhub_create_members] action to create the
-#' member account in Security Hub.
+#' Before you can use this action to invite a member, you must first use the [`create_members`][securityhub_create_members] action to create the member account in Security Hub CSPM.
 #' 
-#' When the account owner enables Security Hub and accepts the invitation
-#' to become a member account, the administrator account can view the
-#' findings generated in the member account.
+#' When the account owner enables Security Hub CSPM and accepts the invitation to become a member account, the administrator account can view the findings generated in the member account.
 #'
 #' @usage
 #' securityhub_invite_members(AccountIds)
 #'
-#' @param AccountIds &#91;required&#93; The list of account IDs of the Amazon Web Services accounts to invite to
-#' Security Hub as members.
+#' @param AccountIds &#91;required&#93; The list of account IDs of the Amazon Web Services accounts to invite to Security Hub CSPM as members.
 #'
 #' @return
 #' A list with the following syntax:
@@ -18175,10 +17917,7 @@ securityhub_invite_members <- function(AccountIds) {
 #' @usage
 #' securityhub_list_aggregators_v2(NextToken, MaxResults)
 #'
-#' @param NextToken The token required for pagination. On your first call, set the value of
-#' this parameter to `NULL`. For subsequent calls, to continue listing
-#' data, set the value of this parameter to the value returned in the
-#' previous response.
+#' @param NextToken The token required for pagination. On your first call, set the value of this parameter to `NULL`. For subsequent calls, to continue listing data, set the value of this parameter to the value returned in the previous response.
 #' @param MaxResults The maximum number of results to return.
 #'
 #' @return
@@ -18234,12 +17973,8 @@ securityhub_list_aggregators_v2 <- function(NextToken = NULL, MaxResults = NULL)
 #' @usage
 #' securityhub_list_automation_rules(NextToken, MaxResults)
 #'
-#' @param NextToken A token to specify where to start paginating the response. This is the
-#' `NextToken` from a previously truncated response. On your first call to
-#' the [`list_automation_rules`][securityhub_list_automation_rules] API,
-#' set the value of this parameter to `NULL`.
-#' @param MaxResults The maximum number of rules to return in the response. This currently
-#' ranges from 1 to 100.
+#' @param NextToken A token to specify where to start paginating the response. This is the `NextToken` from a previously truncated response. On your first call to the [`list_automation_rules`][securityhub_list_automation_rules] API, set the value of this parameter to `NULL`.
+#' @param MaxResults The maximum number of rules to return in the response. This currently ranges from 1 to 100.
 #'
 #' @return
 #' A list with the following syntax:
@@ -18306,10 +18041,7 @@ securityhub_list_automation_rules <- function(NextToken = NULL, MaxResults = NUL
 #' @usage
 #' securityhub_list_automation_rules_v2(NextToken, MaxResults)
 #'
-#' @param NextToken The token required for pagination. On your first call, set the value of
-#' this parameter to `NULL`. For subsequent calls, to continue listing
-#' data, set the value of this parameter to the value returned in the
-#' previous response.
+#' @param NextToken The token required for pagination. On your first call, set the value of this parameter to `NULL`. For subsequent calls, to continue listing data, set the value of this parameter to the value returned in the previous response.
 #' @param MaxResults The maximum number of results to return.
 #'
 #' @return
@@ -18373,35 +18105,17 @@ securityhub_list_automation_rules_v2 <- function(NextToken = NULL, MaxResults = 
 }
 .securityhub$operations$list_automation_rules_v2 <- securityhub_list_automation_rules_v2
 
-#' Lists the configuration policies that the Security Hub delegated
+#' Lists the configuration policies that the Security Hub CSPM delegated
 #' administrator has created for your organization
 #'
 #' @description
-#' Lists the configuration policies that the Security Hub delegated
-#' administrator has created for your organization. Only the delegated
-#' administrator can invoke this operation from the home Region.
+#' Lists the configuration policies that the Security Hub CSPM delegated administrator has created for your organization. Only the delegated administrator can invoke this operation from the home Region.
 #'
 #' @usage
 #' securityhub_list_configuration_policies(NextToken, MaxResults)
 #'
-#' @param NextToken The NextToken value that's returned from a previous paginated
-#' [`list_configuration_policies`][securityhub_list_configuration_policies]
-#' request where `MaxResults` was used but the results exceeded the value
-#' of that parameter. Pagination continues from the `MaxResults` was used
-#' but the results exceeded the value of that parameter. Pagination
-#' continues from the end of the previous response that returned the
-#' `NextToken` value. This value is `null` when there are no more results
-#' to return.
-#' @param MaxResults The maximum number of results that's returned by
-#' [`list_configuration_policies`][securityhub_list_configuration_policies]
-#' in each page of the response. When this parameter is used,
-#' [`list_configuration_policies`][securityhub_list_configuration_policies]
-#' returns the specified number of results in a single page and a
-#' `NextToken` response element. You can see the remaining results of the
-#' initial request by sending another
-#' [`list_configuration_policies`][securityhub_list_configuration_policies]
-#' request with the returned `NextToken` value. A valid range for
-#' `MaxResults` is between 1 and 100.
+#' @param NextToken The NextToken value that's returned from a previous paginated [`list_configuration_policies`][securityhub_list_configuration_policies] request where `MaxResults` was used but the results exceeded the value of that parameter. Pagination continues from the `MaxResults` was used but the results exceeded the value of that parameter. Pagination continues from the end of the previous response that returned the `NextToken` value. This value is `null` when there are no more results to return.
+#' @param MaxResults The maximum number of results that's returned by [`list_configuration_policies`][securityhub_list_configuration_policies] in each page of the response. When this parameter is used, [`list_configuration_policies`][securityhub_list_configuration_policies] returns the specified number of results in a single page and a `NextToken` response element. You can see the remaining results of the initial request by sending another [`list_configuration_policies`][securityhub_list_configuration_policies] request with the returned `NextToken` value. A valid range for `MaxResults` is between 1 and 100.
 #'
 #' @return
 #' A list with the following syntax:
@@ -18459,35 +18173,15 @@ securityhub_list_configuration_policies <- function(NextToken = NULL, MaxResults
 #' policies and self-managed behavior
 #'
 #' @description
-#' Provides information about the associations for your configuration
-#' policies and self-managed behavior. Only the Security Hub delegated
-#' administrator can invoke this operation from the home Region.
+#' Provides information about the associations for your configuration policies and self-managed behavior. Only the Security Hub CSPM delegated administrator can invoke this operation from the home Region.
 #'
 #' @usage
 #' securityhub_list_configuration_policy_associations(NextToken,
 #'   MaxResults, Filters)
 #'
-#' @param NextToken The `NextToken` value that's returned from a previous paginated
-#' [`list_configuration_policy_associations`][securityhub_list_configuration_policy_associations]
-#' request where `MaxResults` was used but the results exceeded the value
-#' of that parameter. Pagination continues from the end of the previous
-#' response that returned the `NextToken` value. This value is `null` when
-#' there are no more results to return.
-#' @param MaxResults The maximum number of results that's returned by
-#' [`list_configuration_policies`][securityhub_list_configuration_policies]
-#' in each page of the response. When this parameter is used,
-#' [`list_configuration_policy_associations`][securityhub_list_configuration_policy_associations]
-#' returns the specified number of results in a single page and a
-#' `NextToken` response element. You can see the remaining results of the
-#' initial request by sending another
-#' [`list_configuration_policy_associations`][securityhub_list_configuration_policy_associations]
-#' request with the returned `NextToken` value. A valid range for
-#' `MaxResults` is between 1 and 100.
-#' @param Filters Options for filtering the
-#' [`list_configuration_policy_associations`][securityhub_list_configuration_policy_associations]
-#' response. You can filter by the Amazon Resource Name (ARN) or
-#' universally unique identifier (UUID) of a configuration,
-#' `AssociationType`, or `AssociationStatus`.
+#' @param NextToken The `NextToken` value that's returned from a previous paginated [`list_configuration_policy_associations`][securityhub_list_configuration_policy_associations] request where `MaxResults` was used but the results exceeded the value of that parameter. Pagination continues from the end of the previous response that returned the `NextToken` value. This value is `null` when there are no more results to return.
+#' @param MaxResults The maximum number of results that's returned by [`list_configuration_policies`][securityhub_list_configuration_policies] in each page of the response. When this parameter is used, [`list_configuration_policy_associations`][securityhub_list_configuration_policy_associations] returns the specified number of results in a single page and a `NextToken` response element. You can see the remaining results of the initial request by sending another [`list_configuration_policy_associations`][securityhub_list_configuration_policy_associations] request with the returned `NextToken` value. A valid range for `MaxResults` is between 1 and 100.
+#' @param Filters Options for filtering the [`list_configuration_policy_associations`][securityhub_list_configuration_policy_associations] response. You can filter by the Amazon Resource Name (ARN) or universally unique identifier (UUID) of a configuration, `AssociationType`, or `AssociationStatus`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -18551,8 +18245,7 @@ securityhub_list_configuration_policy_associations <- function(NextToken = NULL,
 #' for the calling account
 #'
 #' @description
-#' Grants permission to retrieve a list of connectorsV2 and their metadata
-#' for the calling account.
+#' Grants permission to retrieve a list of connectorsV2 and their metadata for the calling account.
 #'
 #' @usage
 #' securityhub_list_connectors_v2(NextToken, MaxResults, ProviderName,
@@ -18621,22 +18314,17 @@ securityhub_list_connectors_v2 <- function(NextToken = NULL, MaxResults = NULL, 
 .securityhub$operations$list_connectors_v2 <- securityhub_list_connectors_v2
 
 #' Lists all findings-generating solutions (products) that you are
-#' subscribed to receive findings from in Security Hub
+#' subscribed to receive findings from in Security Hub CSPM
 #'
 #' @description
-#' Lists all findings-generating solutions (products) that you are
-#' subscribed to receive findings from in Security Hub.
+#' Lists all findings-generating solutions (products) that you are subscribed to receive findings from in Security Hub CSPM.
 #'
 #' @usage
 #' securityhub_list_enabled_products_for_import(NextToken, MaxResults)
 #'
-#' @param NextToken The token that is required for pagination. On your first call to the
-#' [`list_enabled_products_for_import`][securityhub_list_enabled_products_for_import]
-#' operation, set the value of this parameter to `NULL`.
+#' @param NextToken The token that is required for pagination. On your first call to the [`list_enabled_products_for_import`][securityhub_list_enabled_products_for_import] operation, set the value of this parameter to `NULL`.
 #' 
-#' For subsequent calls to the operation, to continue listing data, set the
-#' value of this parameter to the value returned from the previous
-#' response.
+#' For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.
 #' @param MaxResults The maximum number of items to return in the response.
 #'
 #' @return
@@ -18686,18 +18374,13 @@ securityhub_list_enabled_products_for_import <- function(NextToken = NULL, MaxRe
 #' returns the Amazon Resource Name (ARN) of the finding aggregator
 #'
 #' @description
-#' If cross-Region aggregation is enabled, then
-#' [`list_finding_aggregators`][securityhub_list_finding_aggregators]
-#' returns the Amazon Resource Name (ARN) of the finding aggregator. You
-#' can run this operation from any Amazon Web Services Region.
+#' If cross-Region aggregation is enabled, then [`list_finding_aggregators`][securityhub_list_finding_aggregators] returns the Amazon Resource Name (ARN) of the finding aggregator. You can run this operation from any Amazon Web Services Region.
 #'
 #' @usage
 #' securityhub_list_finding_aggregators(NextToken, MaxResults)
 #'
-#' @param NextToken The token returned with the previous set of results. Identifies the next
-#' set of results to return.
-#' @param MaxResults The maximum number of results to return. This operation currently only
-#' returns a single result.
+#' @param NextToken The token returned with the previous set of results. Identifies the next set of results to return.
+#' @param MaxResults The maximum number of results to return. This operation currently only returns a single result.
 #'
 #' @return
 #' A list with the following syntax:
@@ -18744,34 +18427,23 @@ securityhub_list_finding_aggregators <- function(NextToken = NULL, MaxResults = 
 }
 .securityhub$operations$list_finding_aggregators <- securityhub_list_finding_aggregators
 
-#' We recommend using Organizations instead of Security Hub invitations to
-#' manage your member accounts
+#' We recommend using Organizations instead of Security Hub CSPM
+#' invitations to manage your member accounts
 #'
 #' @description
-#' We recommend using Organizations instead of Security Hub invitations to
-#' manage your member accounts. For information, see [Managing Security Hub
-#' administrator and member accounts with
-#' Organizations](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html)
-#' in the *Security Hub User Guide*.
+#' We recommend using Organizations instead of Security Hub CSPM invitations to manage your member accounts. For information, see [Managing Security Hub CSPM administrator and member accounts with Organizations](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html) in the *Security Hub CSPM User Guide*.
 #' 
-#' Lists all Security Hub membership invitations that were sent to the
-#' calling account.
+#' Lists all Security Hub CSPM membership invitations that were sent to the calling account.
 #' 
-#' Only accounts that are managed by invitation can use this operation.
-#' Accounts that are managed using the integration with Organizations don't
-#' receive invitations.
+#' Only accounts that are managed by invitation can use this operation. Accounts that are managed using the integration with Organizations don't receive invitations.
 #'
 #' @usage
 #' securityhub_list_invitations(MaxResults, NextToken)
 #'
 #' @param MaxResults The maximum number of items to return in the response.
-#' @param NextToken The token that is required for pagination. On your first call to the
-#' [`list_invitations`][securityhub_list_invitations] operation, set the
-#' value of this parameter to `NULL`.
+#' @param NextToken The token that is required for pagination. On your first call to the [`list_invitations`][securityhub_list_invitations] operation, set the value of this parameter to `NULL`.
 #' 
-#' For subsequent calls to the operation, to continue listing data, set the
-#' value of this parameter to the value returned from the previous
-#' response.
+#' For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -18824,36 +18496,25 @@ securityhub_list_invitations <- function(MaxResults = NULL, NextToken = NULL) {
 .securityhub$operations$list_invitations <- securityhub_list_invitations
 
 #' Lists details about all member accounts for the current Security Hub
-#' administrator account
+#' CSPM administrator account
 #'
 #' @description
-#' Lists details about all member accounts for the current Security Hub
-#' administrator account.
+#' Lists details about all member accounts for the current Security Hub CSPM administrator account.
 #' 
-#' The results include both member accounts that belong to an organization
-#' and member accounts that were invited manually.
+#' The results include both member accounts that belong to an organization and member accounts that were invited manually.
 #'
 #' @usage
 #' securityhub_list_members(OnlyAssociated, MaxResults, NextToken)
 #'
-#' @param OnlyAssociated Specifies which member accounts to include in the response based on
-#' their relationship status with the administrator account. The default
-#' value is `TRUE`.
+#' @param OnlyAssociated Specifies which member accounts to include in the response based on their relationship status with the administrator account. The default value is `TRUE`.
 #' 
-#' If `OnlyAssociated` is set to `TRUE`, the response includes member
-#' accounts whose relationship status with the administrator account is set
-#' to `ENABLED`.
+#' If `OnlyAssociated` is set to `TRUE`, the response includes member accounts whose relationship status with the administrator account is set to `ENABLED`.
 #' 
-#' If `OnlyAssociated` is set to `FALSE`, the response includes all
-#' existing member accounts.
+#' If `OnlyAssociated` is set to `FALSE`, the response includes all existing member accounts.
 #' @param MaxResults The maximum number of items to return in the response.
-#' @param NextToken The token that is required for pagination. On your first call to the
-#' [`list_members`][securityhub_list_members] operation, set the value of
-#' this parameter to `NULL`.
+#' @param NextToken The token that is required for pagination. On your first call to the [`list_members`][securityhub_list_members] operation, set the value of this parameter to `NULL`.
 #' 
-#' For subsequent calls to the operation, to continue listing data, set the
-#' value of this parameter to the value returned from the previous
-#' response.
+#' For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -18911,24 +18572,18 @@ securityhub_list_members <- function(OnlyAssociated = NULL, MaxResults = NULL, N
 }
 .securityhub$operations$list_members <- securityhub_list_members
 
-#' Lists the Security Hub administrator accounts
+#' Lists the Security Hub CSPM administrator accounts
 #'
 #' @description
-#' Lists the Security Hub administrator accounts. Can only be called by the
-#' organization management account.
+#' Lists the Security Hub CSPM administrator accounts. Can only be called by the organization management account.
 #'
 #' @usage
 #' securityhub_list_organization_admin_accounts(MaxResults, NextToken,
 #'   Feature)
 #'
 #' @param MaxResults The maximum number of items to return in the response.
-#' @param NextToken The token that is required for pagination. On your first call to the
-#' [`list_organization_admin_accounts`][securityhub_list_organization_admin_accounts]
-#' operation, set the value of this parameter to `NULL`. For subsequent
-#' calls to the operation, to continue listing data, set the value of this
-#' parameter to the value returned from the previous response.
-#' @param Feature The feature where the delegated administrator account is listed.
-#' Defaults to Security Hub if not specified.
+#' @param NextToken The token that is required for pagination. On your first call to the [`list_organization_admin_accounts`][securityhub_list_organization_admin_accounts] operation, set the value of this parameter to `NULL`. For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.
+#' @param Feature The feature where the delegated administrator account is listed. Defaults to Security Hub CSPM if not specified.
 #'
 #' @return
 #' A list with the following syntax:
@@ -18987,15 +18642,9 @@ securityhub_list_organization_admin_accounts <- function(MaxResults = NULL, Next
 #' securityhub_list_security_control_definitions(StandardsArn, NextToken,
 #'   MaxResults)
 #'
-#' @param StandardsArn The Amazon Resource Name (ARN) of the standard that you want to view
-#' controls for.
+#' @param StandardsArn The Amazon Resource Name (ARN) of the standard that you want to view controls for.
 #' @param NextToken Optional pagination parameter.
-#' @param MaxResults An optional parameter that limits the total results of the API response
-#' to the specified number. If this parameter isn't provided in the
-#' request, the results include the first 25 security controls that apply
-#' to the specified standard. The results also include a `NextToken`
-#' parameter that you can use in a subsequent API call to get the next 25
-#' controls. This repeats until all controls for the standard are returned.
+#' @param MaxResults An optional parameter that limits the total results of the API response to the specified number. If this parameter isn't provided in the request, the results include the first 25 security controls that apply to the specified standard. The results also include a `NextToken` parameter that you can use in a subsequent API call to get the next 25 controls. This repeats until all controls for the standard are returned.
 #'
 #' @return
 #' A list with the following syntax:
@@ -19111,29 +18760,17 @@ securityhub_list_security_control_definitions <- function(StandardsArn = NULL, N
 #' enabled standard in the calling account
 #'
 #' @description
-#' Specifies whether a control is currently enabled or disabled in each
-#' enabled standard in the calling account.
+#' Specifies whether a control is currently enabled or disabled in each enabled standard in the calling account.
 #' 
-#' This operation omits standards control associations for standard
-#' subscriptions where `StandardsControlsUpdatable` has value
-#' `NOT_READY_FOR_UPDATES`.
+#' This operation omits standards control associations for standard subscriptions where `StandardsControlsUpdatable` has value `NOT_READY_FOR_UPDATES`.
 #'
 #' @usage
 #' securityhub_list_standards_control_associations(SecurityControlId,
 #'   NextToken, MaxResults)
 #'
-#' @param SecurityControlId &#91;required&#93; The identifier of the control (identified with `SecurityControlId`,
-#' `SecurityControlArn`, or a mix of both parameters) that you want to
-#' determine the enablement status of in each enabled standard.
+#' @param SecurityControlId &#91;required&#93; The identifier of the control (identified with `SecurityControlId`, `SecurityControlArn`, or a mix of both parameters) that you want to determine the enablement status of in each enabled standard.
 #' @param NextToken Optional pagination parameter.
-#' @param MaxResults An optional parameter that limits the total results of the API response
-#' to the specified number. If this parameter isn't provided in the
-#' request, the results include the first 25 standard and control
-#' associations. The results also include a `NextToken` parameter that you
-#' can use in a subsequent API call to get the next 25 associations. This
-#' repeats until all associations for the specified control are returned.
-#' The number of results is limited by the number of supported Security Hub
-#' standards that you've enabled in the calling account.
+#' @param MaxResults An optional parameter that limits the total results of the API response to the specified number. If this parameter isn't provided in the request, the results include the first 25 standard and control associations. The results also include a `NextToken` parameter that you can use in a subsequent API call to get the next 25 associations. This repeats until all associations for the specified control are returned. The number of results is limited by the number of supported Security Hub CSPM standards that you've enabled in the calling account.
 #'
 #' @return
 #' A list with the following syntax:
@@ -19248,16 +18885,13 @@ securityhub_list_tags_for_resource <- function(ResourceArn) {
 #' parameters
 #'
 #' @description
-#' Grants permission to complete the authorization based on input
-#' parameters.
+#' Grants permission to complete the authorization based on input parameters.
 #'
 #' @usage
 #' securityhub_register_connector_v2(AuthCode, AuthState)
 #'
-#' @param AuthCode &#91;required&#93; The authCode retrieved from authUrl to complete the OAuth 2.0
-#' authorization code flow.
-#' @param AuthState &#91;required&#93; The authState retrieved from authUrl to complete the OAuth 2.0
-#' authorization code flow.
+#' @param AuthCode &#91;required&#93; The authCode retrieved from authUrl to complete the OAuth 2.0 authorization code flow.
+#' @param AuthState &#91;required&#93; The authState retrieved from authUrl to complete the OAuth 2.0 authorization code flow.
 #'
 #' @return
 #' A list with the following syntax:
@@ -19304,20 +18938,14 @@ securityhub_register_connector_v2 <- function(AuthCode, AuthState) {
 #' specified configuration
 #'
 #' @description
-#' Associates a target account, organizational unit, or the root with a
-#' specified configuration. The target can be associated with a
-#' configuration policy or self-managed behavior. Only the Security Hub
-#' delegated administrator can invoke this operation from the home Region.
+#' Associates a target account, organizational unit, or the root with a specified configuration. The target can be associated with a configuration policy or self-managed behavior. Only the Security Hub CSPM delegated administrator can invoke this operation from the home Region.
 #'
 #' @usage
 #' securityhub_start_configuration_policy_association(
 #'   ConfigurationPolicyIdentifier, Target)
 #'
-#' @param ConfigurationPolicyIdentifier &#91;required&#93; The Amazon Resource Name (ARN) of a configuration policy, the
-#' universally unique identifier (UUID) of a configuration policy, or a
-#' value of `SELF_MANAGED_SECURITY_HUB` for a self-managed configuration.
-#' @param Target &#91;required&#93; The identifier of the target account, organizational unit, or the root
-#' to associate with the specified configuration.
+#' @param ConfigurationPolicyIdentifier &#91;required&#93; The Amazon Resource Name (ARN) of a configuration policy, the universally unique identifier (UUID) of a configuration policy, or a value of `SELF_MANAGED_SECURITY_HUB` for a self-managed configuration.
+#' @param Target &#91;required&#93; The identifier of the target account, organizational unit, or the root to associate with the specified configuration.
 #'
 #' @return
 #' A list with the following syntax:
@@ -19375,23 +19003,14 @@ securityhub_start_configuration_policy_association <- function(ConfigurationPoli
 #' specified configuration
 #'
 #' @description
-#' Disassociates a target account, organizational unit, or the root from a
-#' specified configuration. When you disassociate a configuration from its
-#' target, the target inherits the configuration of the closest parent. If
-#' there’s no configuration to inherit, the target retains its settings but
-#' becomes a self-managed account. A target can be disassociated from a
-#' configuration policy or self-managed behavior. Only the Security Hub
-#' delegated administrator can invoke this operation from the home Region.
+#' Disassociates a target account, organizational unit, or the root from a specified configuration. When you disassociate a configuration from its target, the target inherits the configuration of the closest parent. If there’s no configuration to inherit, the target retains its settings but becomes a self-managed account. A target can be disassociated from a configuration policy or self-managed behavior. Only the Security Hub CSPM delegated administrator can invoke this operation from the home Region.
 #'
 #' @usage
 #' securityhub_start_configuration_policy_disassociation(Target,
 #'   ConfigurationPolicyIdentifier)
 #'
-#' @param Target The identifier of the target account, organizational unit, or the root
-#' to disassociate from the specified configuration.
-#' @param ConfigurationPolicyIdentifier &#91;required&#93; The Amazon Resource Name (ARN) of a configuration policy, the
-#' universally unique identifier (UUID) of a configuration policy, or a
-#' value of `SELF_MANAGED_SECURITY_HUB` for a self-managed configuration.
+#' @param Target The identifier of the target account, organizational unit, or the root to disassociate from the specified configuration.
+#' @param ConfigurationPolicyIdentifier &#91;required&#93; The Amazon Resource Name (ARN) of a configuration policy, the universally unique identifier (UUID) of a configuration policy, or a value of `SELF_MANAGED_SECURITY_HUB` for a self-managed configuration.
 #'
 #' @return
 #' An empty list.
@@ -19441,9 +19060,7 @@ securityhub_start_configuration_policy_disassociation <- function(Target = NULL,
 #' securityhub_tag_resource(ResourceArn, Tags)
 #'
 #' @param ResourceArn &#91;required&#93; The ARN of the resource to apply the tags to.
-#' @param Tags &#91;required&#93; The tags to add to the resource. You can add up to 50 tags at a time.
-#' The tag keys can be no longer than 128 characters. The tag values can be
-#' no longer than 256 characters.
+#' @param Tags &#91;required&#93; The tags to add to the resource. You can add up to 50 tags at a time. The tag keys can be no longer than 128 characters. The tag values can be no longer than 256 characters.
 #'
 #' @return
 #' An empty list.
@@ -19491,8 +19108,7 @@ securityhub_tag_resource <- function(ResourceArn, Tags) {
 #' securityhub_untag_resource(ResourceArn, TagKeys)
 #'
 #' @param ResourceArn &#91;required&#93; The ARN of the resource to remove the tags from.
-#' @param TagKeys &#91;required&#93; The tag keys associated with the tags to remove from the resource. You
-#' can remove up to 50 tags at a time.
+#' @param TagKeys &#91;required&#93; The tag keys associated with the tags to remove from the resource. You can remove up to 50 tags at a time.
 #'
 #' @return
 #' An empty list.
@@ -19532,11 +19148,10 @@ securityhub_untag_resource <- function(ResourceArn, TagKeys) {
 .securityhub$operations$untag_resource <- securityhub_untag_resource
 
 #' Updates the name and description of a custom action target in Security
-#' Hub
+#' Hub CSPM
 #'
 #' @description
-#' Updates the name and description of a custom action target in Security
-#' Hub.
+#' Updates the name and description of a custom action target in Security Hub CSPM.
 #'
 #' @usage
 #' securityhub_update_action_target(ActionTargetArn, Name, Description)
@@ -19591,8 +19206,7 @@ securityhub_update_action_target <- function(ActionTargetArn, Name = NULL, Descr
 #'   LinkedRegions)
 #'
 #' @param AggregatorV2Arn &#91;required&#93; The ARN of the Aggregator V2.
-#' @param RegionLinkingMode &#91;required&#93; Determines how Amazon Web Services Regions should be linked to the
-#' Aggregator V2.
+#' @param RegionLinkingMode &#91;required&#93; Determines how Amazon Web Services Regions should be linked to the Aggregator V2.
 #' @param LinkedRegions A list of Amazon Web Services Regions linked to the aggegation Region.
 #'
 #' @return
@@ -19692,7 +19306,8 @@ securityhub_update_aggregator_v2 <- function(AggregatorV2Arn, RegionLinkingMode,
 #'                 End = "string",
 #'                 DateRange = list(
 #'                   Value = 123,
-#'                   Unit = "DAYS"
+#'                   Unit = "DAYS",
+#'                   Comparison = "WITHIN"|"OLDER_THAN"
 #'                 )
 #'               )
 #'             )
@@ -19785,33 +19400,19 @@ securityhub_update_automation_rule_v2 <- function(Identifier, RuleStatus = NULL,
 #' Updates a configuration policy
 #'
 #' @description
-#' Updates a configuration policy. Only the Security Hub delegated
-#' administrator can invoke this operation from the home Region.
+#' Updates a configuration policy. Only the Security Hub CSPM delegated administrator can invoke this operation from the home Region.
 #'
 #' @usage
 #' securityhub_update_configuration_policy(Identifier, Name, Description,
 #'   UpdatedReason, ConfigurationPolicy)
 #'
-#' @param Identifier &#91;required&#93; The Amazon Resource Name (ARN) or universally unique identifier (UUID)
-#' of the configuration policy.
-#' @param Name The name of the configuration policy. Alphanumeric characters and the
-#' following ASCII characters are permitted: `-, ., !, *, /`.
+#' @param Identifier &#91;required&#93; The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.
+#' @param Name The name of the configuration policy. Alphanumeric characters and the following ASCII characters are permitted: `-, ., !, *, /`.
 #' @param Description The description of the configuration policy.
 #' @param UpdatedReason The reason for updating the configuration policy.
-#' @param ConfigurationPolicy An object that defines how Security Hub is configured. It includes
-#' whether Security Hub is enabled or disabled, a list of enabled security
-#' standards, a list of enabled or disabled security controls, and a list
-#' of custom parameter values for specified controls. If you provide a list
-#' of security controls that are enabled in the configuration policy,
-#' Security Hub disables all other controls (including newly released
-#' controls). If you provide a list of security controls that are disabled
-#' in the configuration policy, Security Hub enables all other controls
-#' (including newly released controls).
+#' @param ConfigurationPolicy An object that defines how Security Hub CSPM is configured. It includes whether Security Hub CSPM is enabled or disabled, a list of enabled security standards, a list of enabled or disabled security controls, and a list of custom parameter values for specified controls. If you provide a list of security controls that are enabled in the configuration policy, Security Hub CSPM disables all other controls (including newly released controls). If you provide a list of security controls that are disabled in the configuration policy, Security Hub CSPM enables all other controls (including newly released controls).
 #' 
-#' When updating a configuration policy, provide a complete list of
-#' standards that you want to enable and a complete list of controls that
-#' you want to enable or disable. The updated configuration replaces the
-#' current configuration.
+#' When updating a configuration policy, provide a complete list of standards that you want to enable and a complete list of controls that you want to enable or disable. The updated configuration replaces the current configuration.
 #'
 #' @return
 #' A list with the following syntax:
@@ -19952,8 +19553,7 @@ securityhub_update_configuration_policy <- function(Identifier, Name = NULL, Des
 #' parameters
 #'
 #' @description
-#' Grants permission to update a connectorV2 based on its id and input
-#' parameters.
+#' Grants permission to update a connectorV2 based on its id and input parameters.
 #'
 #' @usage
 #' securityhub_update_connector_v2(ConnectorId, Description, Provider)
@@ -20010,10 +19610,7 @@ securityhub_update_connector_v2 <- function(ConnectorId, Description = NULL, Pro
 #' @description
 #' The *aggregation Region* is now called the *home Region*.
 #' 
-#' Updates cross-Region aggregation settings. You can use this operation to
-#' update the Region linking mode and the list of included or excluded
-#' Amazon Web Services Regions. However, you can't use this operation to
-#' change the home Region.
+#' Updates cross-Region aggregation settings. You can use this operation to update the Region linking mode and the list of included or excluded Amazon Web Services Regions. However, you can't use this operation to change the home Region.
 #' 
 #' You can invoke this operation from the current home Region only.
 #'
@@ -20021,45 +19618,25 @@ securityhub_update_connector_v2 <- function(ConnectorId, Description = NULL, Pro
 #' securityhub_update_finding_aggregator(FindingAggregatorArn,
 #'   RegionLinkingMode, Regions)
 #'
-#' @param FindingAggregatorArn &#91;required&#93; The ARN of the finding aggregator. To obtain the ARN, use
-#' [`list_finding_aggregators`][securityhub_list_finding_aggregators].
-#' @param RegionLinkingMode &#91;required&#93; Indicates whether to aggregate findings from all of the available
-#' Regions in the current partition. Also determines whether to
-#' automatically aggregate findings from new Regions as Security Hub
-#' supports them and you opt into them.
+#' @param FindingAggregatorArn &#91;required&#93; The ARN of the finding aggregator. To obtain the ARN, use [`list_finding_aggregators`][securityhub_list_finding_aggregators].
+#' @param RegionLinkingMode &#91;required&#93; Indicates whether to aggregate findings from all of the available Regions in the current partition. Also determines whether to automatically aggregate findings from new Regions as Security Hub CSPM supports them and you opt into them.
 #' 
-#' The selected option also determines how to use the Regions provided in
-#' the Regions list.
+#' The selected option also determines how to use the Regions provided in the Regions list.
 #' 
 #' The options are as follows:
 #' 
-#' -   `ALL_REGIONS` - Aggregates findings from all of the Regions where
-#'     Security Hub is enabled. When you choose this option, Security Hub
-#'     also automatically aggregates findings from new Regions as Security
-#'     Hub supports them and you opt into them.
+#' -   `ALL_REGIONS` - Aggregates findings from all of the Regions where Security Hub CSPM is enabled. When you choose this option, Security Hub CSPM also automatically aggregates findings from new Regions as Security Hub CSPM supports them and you opt into them.
 #' 
-#' -   `ALL_REGIONS_EXCEPT_SPECIFIED` - Aggregates findings from all of the
-#'     Regions where Security Hub is enabled, except for the Regions listed
-#'     in the `Regions` parameter. When you choose this option, Security
-#'     Hub also automatically aggregates findings from new Regions as
-#'     Security Hub supports them and you opt into them.
+#' -   `ALL_REGIONS_EXCEPT_SPECIFIED` - Aggregates findings from all of the Regions where Security Hub CSPM is enabled, except for the Regions listed in the `Regions` parameter. When you choose this option, Security Hub CSPM also automatically aggregates findings from new Regions as Security Hub CSPM supports them and you opt into them.
 #' 
-#' -   `SPECIFIED_REGIONS` - Aggregates findings only from the Regions
-#'     listed in the `Regions` parameter. Security Hub does not
-#'     automatically aggregate findings from new Regions.
+#' -   `SPECIFIED_REGIONS` - Aggregates findings only from the Regions listed in the `Regions` parameter. Security Hub CSPM does not automatically aggregate findings from new Regions.
 #' 
-#' -   `NO_REGIONS` - Aggregates no data because no Regions are selected as
-#'     linked Regions.
-#' @param Regions If `RegionLinkingMode` is `ALL_REGIONS_EXCEPT_SPECIFIED`, then this is a
-#' space-separated list of Regions that don't replicate and send findings
-#' to the home Region.
+#' -   `NO_REGIONS` - Aggregates no data because no Regions are selected as linked Regions.
+#' @param Regions If `RegionLinkingMode` is `ALL_REGIONS_EXCEPT_SPECIFIED`, then this is a space-separated list of Regions that don't replicate and send findings to the home Region.
 #' 
-#' If `RegionLinkingMode` is `SPECIFIED_REGIONS`, then this is a
-#' space-separated list of Regions that do replicate and send findings to
-#' the home Region.
+#' If `RegionLinkingMode` is `SPECIFIED_REGIONS`, then this is a space-separated list of Regions that do replicate and send findings to the home Region.
 #' 
-#' An `InvalidInputException` error results if you populate this field
-#' while `RegionLinkingMode` is `NO_REGIONS`.
+#' An `InvalidInputException` error results if you populate this field while `RegionLinkingMode` is `NO_REGIONS`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -20112,28 +19689,16 @@ securityhub_update_finding_aggregator <- function(FindingAggregatorArn, RegionLi
 #' UpdateFindings is a deprecated operation
 #'
 #' @description
-#' [`update_findings`][securityhub_update_findings] is a deprecated
-#' operation. Instead of [`update_findings`][securityhub_update_findings],
-#' use the [`batch_update_findings`][securityhub_batch_update_findings]
-#' operation.
+#' [`update_findings`][securityhub_update_findings] is a deprecated operation. Instead of [`update_findings`][securityhub_update_findings], use the [`batch_update_findings`][securityhub_batch_update_findings] operation.
 #' 
-#' The [`update_findings`][securityhub_update_findings] operation updates
-#' the `Note` and `RecordState` of the Security Hub aggregated findings
-#' that the filter attributes specify. Any member account that can view the
-#' finding can also see the update to the finding.
+#' The [`update_findings`][securityhub_update_findings] operation updates the `Note` and `RecordState` of the Security Hub CSPM aggregated findings that the filter attributes specify. Any member account that can view the finding can also see the update to the finding.
 #' 
-#' Finding updates made with
-#' [`update_findings`][securityhub_update_findings] aren't persisted if the
-#' same finding is later updated by the finding provider through the
-#' [`batch_import_findings`][securityhub_batch_import_findings] operation.
-#' In addition, Security Hub doesn't record updates made with
-#' [`update_findings`][securityhub_update_findings] in the finding history.
+#' Finding updates made with [`update_findings`][securityhub_update_findings] aren't persisted if the same finding is later updated by the finding provider through the [`batch_import_findings`][securityhub_batch_import_findings] operation. In addition, Security Hub CSPM doesn't record updates made with [`update_findings`][securityhub_update_findings] in the finding history.
 #'
 #' @usage
 #' securityhub_update_findings(Filters, Note, RecordState)
 #'
-#' @param Filters &#91;required&#93; A collection of attributes that specify which findings you want to
-#' update.
+#' @param Filters &#91;required&#93; A collection of attributes that specify which findings you want to update.
 #' @param Note The updated note for the finding.
 #' @param RecordState The updated record state for the finding.
 #'
@@ -20186,7 +19751,8 @@ securityhub_update_finding_aggregator <- function(FindingAggregatorArn, RegionLi
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -20196,7 +19762,8 @@ securityhub_update_finding_aggregator <- function(FindingAggregatorArn, RegionLi
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -20206,7 +19773,8 @@ securityhub_update_finding_aggregator <- function(FindingAggregatorArn, RegionLi
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -20216,7 +19784,8 @@ securityhub_update_finding_aggregator <- function(FindingAggregatorArn, RegionLi
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -20440,7 +20009,8 @@ securityhub_update_finding_aggregator <- function(FindingAggregatorArn, RegionLi
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -20450,7 +20020,8 @@ securityhub_update_finding_aggregator <- function(FindingAggregatorArn, RegionLi
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -20478,7 +20049,8 @@ securityhub_update_finding_aggregator <- function(FindingAggregatorArn, RegionLi
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -20577,7 +20149,8 @@ securityhub_update_finding_aggregator <- function(FindingAggregatorArn, RegionLi
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -20617,7 +20190,8 @@ securityhub_update_finding_aggregator <- function(FindingAggregatorArn, RegionLi
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -20651,7 +20225,8 @@ securityhub_update_finding_aggregator <- function(FindingAggregatorArn, RegionLi
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -20716,7 +20291,8 @@ securityhub_update_finding_aggregator <- function(FindingAggregatorArn, RegionLi
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -20871,11 +20447,11 @@ securityhub_update_findings <- function(Filters, Note = NULL, RecordState = NULL
 }
 .securityhub$operations$update_findings <- securityhub_update_findings
 
-#' Updates the Security Hub insight identified by the specified insight ARN
+#' Updates the Security Hub CSPM insight identified by the specified
+#' insight ARN
 #'
 #' @description
-#' Updates the Security Hub insight identified by the specified insight
-#' ARN.
+#' Updates the Security Hub CSPM insight identified by the specified insight ARN.
 #'
 #' @usage
 #' securityhub_update_insight(InsightArn, Name, Filters, GroupByAttribute)
@@ -20936,7 +20512,8 @@ securityhub_update_findings <- function(Filters, Note = NULL, RecordState = NULL
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -20946,7 +20523,8 @@ securityhub_update_findings <- function(Filters, Note = NULL, RecordState = NULL
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -20956,7 +20534,8 @@ securityhub_update_findings <- function(Filters, Note = NULL, RecordState = NULL
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -20966,7 +20545,8 @@ securityhub_update_findings <- function(Filters, Note = NULL, RecordState = NULL
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -21190,7 +20770,8 @@ securityhub_update_findings <- function(Filters, Note = NULL, RecordState = NULL
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -21200,7 +20781,8 @@ securityhub_update_findings <- function(Filters, Note = NULL, RecordState = NULL
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -21228,7 +20810,8 @@ securityhub_update_findings <- function(Filters, Note = NULL, RecordState = NULL
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -21327,7 +20910,8 @@ securityhub_update_findings <- function(Filters, Note = NULL, RecordState = NULL
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -21367,7 +20951,8 @@ securityhub_update_findings <- function(Filters, Note = NULL, RecordState = NULL
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -21401,7 +20986,8 @@ securityhub_update_findings <- function(Filters, Note = NULL, RecordState = NULL
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -21466,7 +21052,8 @@ securityhub_update_findings <- function(Filters, Note = NULL, RecordState = NULL
 #'         End = "string",
 #'         DateRange = list(
 #'           Value = 123,
-#'           Unit = "DAYS"
+#'           Unit = "DAYS",
+#'           Comparison = "WITHIN"|"OLDER_THAN"
 #'         )
 #'       )
 #'     ),
@@ -21617,44 +21204,28 @@ securityhub_update_insight <- function(InsightArn, Name = NULL, Filters = NULL, 
 }
 .securityhub$operations$update_insight <- securityhub_update_insight
 
-#' Updates the configuration of your organization in Security Hub
+#' Updates the configuration of your organization in Security Hub CSPM
 #'
 #' @description
-#' Updates the configuration of your organization in Security Hub. Only the
-#' Security Hub administrator account can invoke this operation.
+#' Updates the configuration of your organization in Security Hub CSPM. Only the Security Hub CSPM administrator account can invoke this operation.
 #'
 #' @usage
 #' securityhub_update_organization_configuration(AutoEnable,
 #'   AutoEnableStandards, OrganizationConfiguration)
 #'
-#' @param AutoEnable &#91;required&#93; Whether to automatically enable Security Hub in new member accounts when
-#' they join the organization.
+#' @param AutoEnable &#91;required&#93; Whether to automatically enable Security Hub CSPM in new member accounts when they join the organization.
 #' 
-#' If set to `true`, then Security Hub is automatically enabled in new
-#' accounts. If set to `false`, then Security Hub isn't enabled in new
-#' accounts automatically. The default value is `false`.
+#' If set to `true`, then Security Hub CSPM is automatically enabled in new accounts. If set to `false`, then Security Hub CSPM isn't enabled in new accounts automatically. The default value is `false`.
 #' 
-#' If the `ConfigurationType` of your organization is set to `CENTRAL`,
-#' then this field is set to `false` and can't be changed in the home
-#' Region and linked Regions. However, in that case, the delegated
-#' administrator can create a configuration policy in which Security Hub is
-#' enabled and associate the policy with new organization accounts.
-#' @param AutoEnableStandards Whether to automatically enable Security Hub [default
-#' standards](https://docs.aws.amazon.com/securityhub/latest/userguide/) in
-#' new member accounts when they join the organization.
+#' If the `ConfigurationType` of your organization is set to `CENTRAL`, then this field is set to `false` and can't be changed in the home Region and linked Regions. However, in that case, the delegated administrator can create a configuration policy in which Security Hub CSPM is enabled and associate the policy with new organization accounts.
+#' @param AutoEnableStandards Whether to automatically enable Security Hub CSPM [default standards](https://docs.aws.amazon.com/securityhub/latest/userguide/) in new member accounts when they join the organization.
 #' 
 #' The default value of this parameter is equal to `DEFAULT`.
 #' 
-#' If equal to `DEFAULT`, then Security Hub default standards are
-#' automatically enabled for new member accounts. If equal to `NONE`, then
-#' default standards are not automatically enabled for new member accounts.
+#' If equal to `DEFAULT`, then Security Hub CSPM default standards are automatically enabled for new member accounts. If equal to `NONE`, then default standards are not automatically enabled for new member accounts.
 #' 
-#' If the `ConfigurationType` of your organization is set to `CENTRAL`,
-#' then this field is set to `NONE` and can't be changed in the home Region
-#' and linked Regions. However, in that case, the delegated administrator
-#' can create a configuration policy in which specific security standards
-#' are enabled and associate the policy with new organization accounts.
-#' @param OrganizationConfiguration 
+#' If the `ConfigurationType` of your organization is set to `CENTRAL`, then this field is set to `NONE` and can't be changed in the home Region and linked Regions. However, in that case, the delegated administrator can create a configuration policy in which specific security standards are enabled and associate the policy with new organization accounts.
+#' @param OrganizationConfiguration Provides information about the way an organization is configured in Security Hub CSPM.
 #'
 #' @return
 #' An empty list.
@@ -21707,9 +21278,7 @@ securityhub_update_organization_configuration <- function(AutoEnable, AutoEnable
 #'
 #' @param SecurityControlId &#91;required&#93; The Amazon Resource Name (ARN) or ID of the control to update.
 #' @param Parameters &#91;required&#93; An object that specifies which security control parameters to update.
-#' @param LastUpdateReason The most recent reason for updating the properties of the security
-#' control. This field accepts alphanumeric characters in addition to white
-#' spaces, dashes, and underscores.
+#' @param LastUpdateReason The most recent reason for updating the properties of the security control. This field accepts alphanumeric characters in addition to white spaces, dashes, and underscores.
 #'
 #' @return
 #' An empty list.
@@ -21767,41 +21336,25 @@ securityhub_update_security_control <- function(SecurityControlId, Parameters, L
 }
 .securityhub$operations$update_security_control <- securityhub_update_security_control
 
-#' Updates configuration options for Security Hub
+#' Updates configuration options for Security Hub CSPM
 #'
 #' @description
-#' Updates configuration options for Security Hub.
+#' Updates configuration options for Security Hub CSPM.
 #'
 #' @usage
 #' securityhub_update_security_hub_configuration(AutoEnableControls,
 #'   ControlFindingGenerator)
 #'
-#' @param AutoEnableControls Whether to automatically enable new controls when they are added to
-#' standards that are enabled.
+#' @param AutoEnableControls Whether to automatically enable new controls when they are added to standards that are enabled.
 #' 
-#' By default, this is set to `true`, and new controls are enabled
-#' automatically. To not automatically enable new controls, set this to
-#' `false`.
+#' By default, this is set to `true`, and new controls are enabled automatically. To not automatically enable new controls, set this to `false`.
 #' 
-#' When you automatically enable new controls, you can interact with the
-#' controls in the console and programmatically immediately after release.
-#' However, automatically enabled controls have a temporary default status
-#' of `DISABLED`. It can take up to several days for Security Hub to
-#' process the control release and designate the control as `ENABLED` in
-#' your account. During the processing period, you can manually enable or
-#' disable a control, and Security Hub will maintain that designation
-#' regardless of whether you have `AutoEnableControls` set to `true`.
-#' @param ControlFindingGenerator Updates whether the calling account has consolidated control findings
-#' turned on. If the value for this field is set to `SECURITY_CONTROL`,
-#' Security Hub generates a single finding for a control check even when
-#' the check applies to multiple enabled standards.
+#' When you automatically enable new controls, you can interact with the controls in the console and programmatically immediately after release. However, automatically enabled controls have a temporary default status of `DISABLED`. It can take up to several days for Security Hub CSPM to process the control release and designate the control as `ENABLED` in your account. During the processing period, you can manually enable or disable a control, and Security Hub CSPM will maintain that designation regardless of whether you have `AutoEnableControls` set to `true`.
+#' @param ControlFindingGenerator Updates whether the calling account has consolidated control findings turned on. If the value for this field is set to `SECURITY_CONTROL`, Security Hub CSPM generates a single finding for a control check even when the check applies to multiple enabled standards.
 #' 
-#' If the value for this field is set to `STANDARD_CONTROL`, Security Hub
-#' generates separate findings for a control check when the check applies
-#' to multiple enabled standards.
+#' If the value for this field is set to `STANDARD_CONTROL`, Security Hub CSPM generates separate findings for a control check when the check applies to multiple enabled standards.
 #' 
-#' For accounts that are part of an organization, this value can only be
-#' updated in the administrator account.
+#' For accounts that are part of an organization, this value can only be updated in the administrator account.
 #'
 #' @return
 #' An empty list.
@@ -21842,12 +21395,9 @@ securityhub_update_security_hub_configuration <- function(AutoEnableControls = N
 #' enabled or disabled
 #'
 #' @description
-#' Used to control whether an individual security standard control is
-#' enabled or disabled.
+#' Used to control whether an individual security standard control is enabled or disabled.
 #' 
-#' Calls to this operation return a `RESOURCE_NOT_FOUND_EXCEPTION` error
-#' when the standard subscription for the control has
-#' `StandardsControlsUpdatable` value `NOT_READY_FOR_UPDATES`.
+#' Calls to this operation return a `RESOURCE_NOT_FOUND_EXCEPTION` error when the standard subscription for the control has `StandardsControlsUpdatable` value `NOT_READY_FOR_UPDATES`.
 #'
 #' @usage
 #' securityhub_update_standards_control(StandardsControlArn, ControlStatus,
@@ -21855,8 +21405,7 @@ securityhub_update_security_hub_configuration <- function(AutoEnableControls = N
 #'
 #' @param StandardsControlArn &#91;required&#93; The ARN of the security standard control to enable or disable.
 #' @param ControlStatus The updated status of the security standard control.
-#' @param DisabledReason A description of the reason why you are disabling a security standard
-#' control. If you are disabling a control, then this is required.
+#' @param DisabledReason A description of the reason why you are disabling a security standard control. If you are disabling a control, then this is required.
 #'
 #' @return
 #' An empty list.

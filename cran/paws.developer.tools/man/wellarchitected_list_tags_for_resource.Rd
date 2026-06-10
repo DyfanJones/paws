@@ -7,7 +7,7 @@
 wellarchitected_list_tags_for_resource(WorkloadArn)
 }
 \arguments{
-\item{WorkloadArn}{[required]}
+\item{WorkloadArn}{[required] The ARN for the workload.}
 }
 \description{
 List the tags for a resource.

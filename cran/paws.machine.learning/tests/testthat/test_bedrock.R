@@ -1,5 +1,9 @@
 svc <- paws::bedrock()
 
+test_that("list_advanced_prompt_optimization_jobs", {
+  expect_error(svc$list_advanced_prompt_optimization_jobs(), NA)
+})
+
 test_that("list_automated_reasoning_policies", {
   expect_error(svc$list_automated_reasoning_policies(), NA)
 })

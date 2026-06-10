@@ -16,26 +16,19 @@ lakeformation_get_temporary_glue_table_credentials(
 )
 }
 \arguments{
-\item{TableArn}{[required] The ARN identifying a table in the Data Catalog for the temporary
-credentials request.}
+\item{TableArn}{[required] The ARN identifying a table in the Data Catalog for the temporary credentials request.}
 
-\item{Permissions}{Filters the request based on the user having been granted a list of
-specified permissions on the requested resource(s).}
+\item{Permissions}{Filters the request based on the user having been granted a list of specified permissions on the requested resource(s).}
 
-\item{DurationSeconds}{The time period, between 900 and 21,600 seconds, for the timeout of the
-temporary credentials.}
+\item{DurationSeconds}{The time period, between 900 and 21,600 seconds, for the timeout of the temporary credentials.}
 
-\item{AuditContext}{A structure representing context to access a resource (column names,
-query ID, etc).}
+\item{AuditContext}{A structure representing context to access a resource (column names, query ID, etc).}
 
-\item{SupportedPermissionTypes}{A list of supported permission types for the table. Valid values are
-\code{COLUMN_PERMISSION} and \code{CELL_FILTER_PERMISSION}.}
+\item{SupportedPermissionTypes}{A list of supported permission types for the table. Valid values are \code{COLUMN_PERMISSION} and \code{CELL_FILTER_PERMISSION}.}
 
 \item{S3Path}{The Amazon S3 path for the table.}
 
-\item{QuerySessionContext}{A structure used as a protocol between query engines and Lake Formation
-or Glue. Contains both a Lake Formation generated authorization
-identifier and information from the request's authorization context.}
+\item{QuerySessionContext}{A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.}
 }
 \description{
 Allows a caller in a secure environment to assume a role with permission to access Amazon S3. In order to vend such credentials, Lake Formation assumes the role associated with a registered location, for example an Amazon S3 bucket, with a scope down policy which restricts the access to a single prefix.

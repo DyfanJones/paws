@@ -12,11 +12,7 @@ identitystore_update_group(IdentityStoreId, GroupId, Operations)
 
 \item{GroupId}{[required] The identifier for a group in the identity store.}
 
-\item{Operations}{[required] A list of \code{AttributeOperation} objects to apply to the requested group.
-These operations might add, replace, or remove an attribute. For more
-information on the attributes that can be added, replaced, or removed,
-see
-\href{https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html}{Group}.}
+\item{Operations}{[required] A list of \code{AttributeOperation} objects to apply to the requested group. These operations might add, replace, or remove an attribute. For more information on the attributes that can be added, replaced, or removed, see \href{https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html}{Group}.}
 }
 \description{
 Updates the specified group metadata and attributes in the specified identity store.

@@ -9,8 +9,7 @@ used for sharing the resource}
 pinpointsmsvoicev2_put_resource_policy(ResourceArn, Policy)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the End User Messaging SMS resource to
-attach the resource-based policy to.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the End User Messaging SMS resource to attach the resource-based policy to.}
 
 \item{Policy}{[required] The JSON formatted resource-based policy to attach.}
 }

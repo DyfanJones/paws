@@ -16,23 +16,15 @@ costexplorer_get_savings_plans_coverage(
 )
 }
 \arguments{
-\item{TimePeriod}{[required] The time period that you want the usage and costs for. The \code{Start} date
-must be within 13 months. The \code{End} date must be after the \code{Start} date,
-and before the current date. Future dates can't be used as an \code{End}
-date.}
+\item{TimePeriod}{[required] The time period that you want the usage and costs for. The \code{Start} date must be within 13 months. The \code{End} date must be after the \code{Start} date, and before the current date. Future dates can't be used as an \code{End} date.}
 
-\item{GroupBy}{You can group the data using the attributes \code{INSTANCE_FAMILY}, \code{REGION},
-or \code{SERVICE}.}
+\item{GroupBy}{You can group the data using the attributes \code{INSTANCE_FAMILY}, \code{REGION}, or \code{SERVICE}.}
 
-\item{Granularity}{The granularity of the Amazon Web Services cost data for your Savings
-Plans. \code{Granularity} can't be set if \code{GroupBy} is set.
+\item{Granularity}{The granularity of the Amazon Web Services cost data for your Savings Plans. \code{Granularity} can't be set if \code{GroupBy} is set.
 
-The
-\code{\link[=costexplorer_get_savings_plans_coverage]{get_savings_plans_coverage}}
-operation supports only \code{DAILY} and \code{MONTHLY} granularities.}
+The \code{\link[=costexplorer_get_savings_plans_coverage]{get_savings_plans_coverage}} operation supports only \code{DAILY} and \code{MONTHLY} granularities.}
 
-\item{Filter}{Filters Savings Plans coverage data by dimensions. You can filter data
-for Savings Plans usage with the following dimensions:
+\item{Filter}{Filters Savings Plans coverage data by dimensions. You can filter data for Savings Plans usage with the following dimensions:
 \itemize{
 \item \code{LINKED_ACCOUNT}
 \item \code{REGION}
@@ -40,24 +32,15 @@ for Savings Plans usage with the following dimensions:
 \item \code{INSTANCE_FAMILY}
 }
 
-\code{\link[=costexplorer_get_savings_plans_coverage]{get_savings_plans_coverage}}
-uses the same
-\href{https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html}{Expression}
-object as the other operations, but only \code{AND} is supported among each
-dimension. If there are multiple values for a dimension, they are OR'd
-together.
+\code{\link[=costexplorer_get_savings_plans_coverage]{get_savings_plans_coverage}} uses the same \href{https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html}{Expression} object as the other operations, but only \code{AND} is supported among each dimension. If there are multiple values for a dimension, they are OR'd together.
 
 Cost category is also supported.}
 
-\item{Metrics}{The measurement that you want your Savings Plans coverage reported in.
-The only valid value is \code{SpendCoveredBySavingsPlans}.}
+\item{Metrics}{The measurement that you want your Savings Plans coverage reported in. The only valid value is \code{SpendCoveredBySavingsPlans}.}
 
-\item{NextToken}{The token to retrieve the next set of results. Amazon Web Services
-provides the token when the response from a previous call has more
-results than the maximum page size.}
+\item{NextToken}{The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.}
 
-\item{MaxResults}{The number of items to be returned in a response. The default is \code{20},
-with a minimum value of \code{1}.}
+\item{MaxResults}{The number of items to be returned in a response. The default is \code{20}, with a minimum value of \code{1}.}
 
 \item{SortBy}{The value that you want to sort the data by.
 

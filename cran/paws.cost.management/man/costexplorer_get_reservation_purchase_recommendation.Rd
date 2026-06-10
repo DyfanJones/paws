@@ -22,30 +22,61 @@ costexplorer_get_reservation_purchase_recommendation(
 
 \item{Service}{[required] The specific service that you want recommendations for.}
 
-\item{Filter}{}
+\item{Filter}{Use \code{Expression} to filter in various Cost Explorer APIs.
 
-\item{AccountScope}{The account scope that you want your recommendations for. Amazon Web
-Services calculates recommendations including the management account and
-member accounts if the value is set to \code{PAYER}. If the value is
-\code{LINKED}, recommendations are calculated for individual member accounts
-only.}
+Not all \code{Expression} types are supported in each API. Refer to the documentation for each specific API to see what is supported.
 
-\item{LookbackPeriodInDays}{The number of previous days that you want Amazon Web Services to
-consider when it calculates your recommendations.}
+There are two patterns:
+\itemize{
+\item Simple dimension values.
+\itemize{
+\item There are three types of simple dimension values: \code{CostCategories}, \code{Tags}, and \code{Dimensions}.
+\itemize{
+\item Specify the \code{CostCategories} field to define a filter that acts on Cost Categories.
+\item Specify the \code{Tags} field to define a filter that acts on Cost Allocation Tags.
+\item Specify the \code{Dimensions} field to define a filter that acts on the \href{https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html}{\code{DimensionValues}} .
+}
+\item For each filter type, you can set the dimension name and values for the filters that you plan to use.
+\itemize{
+\item For example, you can filter for \verb{REGION==us-east-1 OR REGION==us-west-1}. For \code{\link[=costexplorer_get_rightsizing_recommendation]{get_rightsizing_recommendation}}, the Region is a full name (for example, \verb{REGION==US East (N. Virginia)}.
+\item The corresponding \code{Expression} for this example is as follows: \verb{\{ "Dimensions": \{ "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] \} \}}
+\item As shown in the previous example, lists of dimension values are combined with \code{OR} when applying the filter.
+}
+\item You can also set different match options to further control how the filter behaves. Not all APIs support match options. Refer to the documentation for each specific API to see what is supported.
+\itemize{
+\item For example, you can filter for linked account names that start with "a".
+\item The corresponding \code{Expression} for this example is as follows: \verb{\{ "Dimensions": \{ "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a" ] \} \}}
+}
+}
+\item Compound \code{Expression} types with logical operations.
+\itemize{
+\item You can use multiple \code{Expression} types and the logical operators \code{AND/OR/NOT} to create a list of one or more \code{Expression} objects. By doing this, you can filter by more advanced options.
+\item For example, you can filter by \verb{((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)}.
+\item The corresponding \code{Expression} for this example is as follows: \verb{\{ "And": [ \{"Or": [ \{"Dimensions": \{ "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] \}\}, \{"Tags": \{ "Key": "TagName", "Values": ["Value1"] \} \} ]\}, \{"Not": \{"Dimensions": \{ "Key": "USAGE_TYPE", "Values": ["DataTransfer"] \}\}\} ] \} }
+}
+
+Because each \code{Expression} can have only one operator, the service returns an error if more than one is specified. The following example shows an \code{Expression} object that creates an error: \verb{\{ "And": [ ... ], "Dimensions": \{ "Key": "USAGE_TYPE", "Values": [ "DataTransfer" ] \} \}}
+
+The following is an example of the corresponding error message: \code{"Expression has more than one roots. Only one root operator is allowed for each expression: And, Or, Not, Dimensions, Tags, CostCategories"}
+}
+
+For the \code{\link[=costexplorer_get_rightsizing_recommendation]{get_rightsizing_recommendation}} action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to \code{LINKED_ACCOUNT}, \code{REGION}, or \code{RIGHTSIZING_TYPE}.
+
+For the \code{\link[=costexplorer_get_reservation_purchase_recommendation]{get_reservation_purchase_recommendation}} action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to \code{LINKED_ACCOUNT}.}
+
+\item{AccountScope}{The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to \code{PAYER}. If the value is \code{LINKED}, recommendations are calculated for individual member accounts only.}
+
+\item{LookbackPeriodInDays}{The number of previous days that you want Amazon Web Services to consider when it calculates your recommendations.}
 
 \item{TermInYears}{The reservation term that you want recommendations for.}
 
 \item{PaymentOption}{The reservation purchase option that you want recommendations for.}
 
-\item{ServiceSpecification}{The hardware specifications for the service instances that you want
-recommendations for, such as standard or convertible Amazon EC2
-instances.}
+\item{ServiceSpecification}{The hardware specifications for the service instances that you want recommendations for, such as standard or convertible Amazon EC2 instances.}
 
-\item{PageSize}{The number of recommendations that you want returned in a single
-response object.}
+\item{PageSize}{The number of recommendations that you want returned in a single response object.}
 
-\item{NextPageToken}{The pagination token that indicates the next set of results that you
-want to retrieve.}
+\item{NextPageToken}{The pagination token that indicates the next set of results that you want to retrieve.}
 }
 \description{
 Gets recommendations for reservation purchases. These recommendations might help you to reduce your costs. Reservations provide a discounted hourly rate (up to 75\%) compared to On-Demand pricing.

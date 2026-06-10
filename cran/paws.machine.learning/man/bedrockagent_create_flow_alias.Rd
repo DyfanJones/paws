@@ -21,18 +21,13 @@ bedrockagent_create_flow_alias(
 
 \item{routingConfiguration}{[required] Contains information about the version to which to map the alias.}
 
-\item{concurrencyConfiguration}{The configuration that specifies how nodes in the flow are executed in
-parallel.}
+\item{concurrencyConfiguration}{The configuration that specifies how nodes in the flow are executed in parallel.}
 
 \item{flowIdentifier}{[required] The unique identifier of the flow for which to create an alias.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request
-completes no more than one time. If this token matches a previous
-request, Amazon Bedrock ignores the request, but does not return an
-error. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
 
-\item{tags}{Any tags that you want to attach to the alias of the flow. For more
-information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html}{Tagging resources in Amazon Bedrock}.}
+\item{tags}{Any tags that you want to attach to the alias of the flow. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html}{Tagging resources in Amazon Bedrock}.}
 }
 \description{
 Creates an alias of a flow for deployment. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/flows-deploy.html}{Deploy a flow in Amazon Bedrock} in the Amazon Bedrock User Guide.

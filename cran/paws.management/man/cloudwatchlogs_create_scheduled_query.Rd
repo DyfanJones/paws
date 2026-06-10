@@ -23,53 +23,33 @@ cloudwatchlogs_create_scheduled_query(
 )
 }
 \arguments{
-\item{name}{[required] The name of the scheduled query. The name must be unique within your
-account and region. Valid characters are alphanumeric characters,
-hyphens, underscores, and periods. Length must be between 1 and 255
-characters.}
+\item{name}{[required] The name of the scheduled query. The name must be unique within your account and region. Valid characters are alphanumeric characters, hyphens, underscores, and periods. Length must be between 1 and 255 characters.}
 
-\item{description}{An optional description for the scheduled query to help identify its
-purpose and functionality.}
+\item{description}{An optional description for the scheduled query to help identify its purpose and functionality.}
 
-\item{queryLanguage}{[required] The query language to use for the scheduled query. Valid values are
-\code{LogsQL}, \code{PPL}, and \code{SQL}.}
+\item{queryLanguage}{[required] The query language to use for the scheduled query. Valid values are \code{CWLI}, \code{PPL}, and \code{SQL}.}
 
-\item{queryString}{[required] The query string to execute. This is the same query syntax used in
-CloudWatch Logs Insights. Maximum length is 10,000 characters.}
+\item{queryString}{[required] The query string to execute. This is the same query syntax used in CloudWatch Logs Insights. Maximum length is 10,000 characters.}
 
-\item{logGroupIdentifiers}{An array of log group names or ARNs to query. You can specify between 1
-and 50 log groups. Log groups can be identified by name or full ARN.}
+\item{logGroupIdentifiers}{An array of log group names or ARNs to query. You can specify between 1 and 50 log groups. Log groups can be identified by name or full ARN.}
 
-\item{scheduleExpression}{[required] A cron expression that defines when the scheduled query runs. The
-expression uses standard cron syntax and supports minute-level
-precision. Maximum length is 256 characters.}
+\item{scheduleExpression}{[required] A cron expression that defines when the scheduled query runs. The expression uses standard cron syntax and supports minute-level precision. Maximum length is 256 characters.}
 
-\item{timezone}{The timezone for evaluating the schedule expression. This determines
-when the scheduled query executes relative to the specified timezone.}
+\item{timezone}{The timezone for evaluating the schedule expression. This determines when the scheduled query executes relative to the specified timezone.}
 
-\item{startTimeOffset}{The time offset in seconds that defines the lookback period for the
-query. This determines how far back in time the query searches from the
-execution time.}
+\item{startTimeOffset}{The time offset in seconds that defines the lookback period for the query. This determines how far back in time the query searches from the execution time.}
 
-\item{destinationConfiguration}{Configuration for where to deliver query results. Currently supports
-Amazon S3 destinations for storing query output.}
+\item{destinationConfiguration}{Configuration for where to deliver query results. Currently supports Amazon S3 destinations for storing query output.}
 
-\item{scheduleStartTime}{The start time for the scheduled query in Unix epoch format. The query
-will not execute before this time.}
+\item{scheduleStartTime}{The start time for the scheduled query in Unix epoch format. The query will not execute before this time.}
 
-\item{scheduleEndTime}{The end time for the scheduled query in Unix epoch format. The query
-will stop executing after this time.}
+\item{scheduleEndTime}{The end time for the scheduled query in Unix epoch format. The query will stop executing after this time.}
 
-\item{executionRoleArn}{[required] The ARN of the IAM role that grants permissions to execute the query and
-deliver results to the specified destination. The role must have
-permissions to read from the specified log groups and write to the
-destination.}
+\item{executionRoleArn}{[required] The ARN of the IAM role that grants permissions to execute the query and deliver results to the specified destination. The role must have permissions to read from the specified log groups and write to the destination.}
 
-\item{state}{The initial state of the scheduled query. Valid values are \code{ENABLED} and
-\code{DISABLED}. Default is \code{ENABLED}.}
+\item{state}{The initial state of the scheduled query. Valid values are \code{ENABLED} and \code{DISABLED}. Default is \code{ENABLED}.}
 
-\item{tags}{Key-value pairs to associate with the scheduled query for resource
-management and cost allocation.}
+\item{tags}{Key-value pairs to associate with the scheduled query for resource management and cost allocation.}
 }
 \description{
 Creates a scheduled query that runs CloudWatch Logs Insights queries at regular intervals. Scheduled queries enable proactive monitoring by automatically executing queries to detect patterns and anomalies in your log data. Query results can be delivered to Amazon S3 for analysis or further processing.

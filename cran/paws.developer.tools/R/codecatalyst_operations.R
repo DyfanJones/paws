@@ -11,9 +11,7 @@ NULL
 #' See [https://www.paws-r-sdk.com/docs/codecatalyst_create_access_token/](https://www.paws-r-sdk.com/docs/codecatalyst_create_access_token/) for full documentation.
 #'
 #' @param name &#91;required&#93; The friendly name of the personal access token.
-#' @param expiresTime The date and time the personal access token expires, in coordinated
-#' universal time (UTC) timestamp format as specified in [RFC
-#' 3339](https://www.rfc-editor.org/rfc/rfc3339#section-5.6).
+#' @param expiresTime The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in RFC 3339.
 #'
 #' @keywords internal
 #'
@@ -48,33 +46,18 @@ codecatalyst_create_access_token <- function(name, expiresTime = NULL) {
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param projectName &#91;required&#93; The name of the project in the space.
-#' @param repositories The source repository that contains the branch to clone into the Dev
-#' Environment.
-#' @param clientToken A user-specified idempotency token. Idempotency ensures that an API
-#' request completes only once. With an idempotent request, if the original
-#' request completes successfully, the subsequent retries return the result
-#' from the original successful request and have no additional effect.
+#' @param repositories The source repository that contains the branch to clone into the Dev Environment.
+#' @param clientToken A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.
 #' @param alias The user-defined alias for a Dev Environment.
-#' @param ides Information about the integrated development environment (IDE)
-#' configured for a Dev Environment.
+#' @param ides Information about the integrated development environment (IDE) configured for a Dev Environment.
 #' 
-#' An IDE is required to create a Dev Environment. For Dev Environment
-#' creation, this field contains configuration information and must be
-#' provided.
+#' An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided.
 #' @param instanceType &#91;required&#93; The Amazon EC2 instace type to use for the Dev Environment.
-#' @param inactivityTimeoutMinutes The amount of time the Dev Environment will run without any activity
-#' detected before stopping, in minutes. Only whole integers are allowed.
-#' Dev Environments consume compute minutes when running.
-#' @param persistentStorage &#91;required&#93; Information about the amount of storage allocated to the Dev
-#' Environment.
+#' @param inactivityTimeoutMinutes The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.
+#' @param persistentStorage &#91;required&#93; Information about the amount of storage allocated to the Dev Environment.
 #' 
-#' By default, a Dev Environment is configured to have 16GB of persistent
-#' storage when created from the Amazon CodeCatalyst console, but there is
-#' no default when programmatically creating a Dev Environment. Valid
-#' values for persistent storage are based on memory sizes in 16GB
-#' increments. Valid values are 16, 32, and 64.
-#' @param vpcConnectionName The name of the connection that will be used to connect to Amazon VPC,
-#' if any.
+#' By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.
+#' @param vpcConnectionName The name of the connection that will be used to connect to Amazon VPC, if any.
 #'
 #' @keywords internal
 #'
@@ -107,9 +90,7 @@ codecatalyst_create_dev_environment <- function(spaceName, projectName, reposito
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param displayName &#91;required&#93; The friendly name of the project that will be displayed to users.
-#' @param description The description of the project. This description will be displayed to
-#' all users of the project. We recommend providing a brief description of
-#' the project and its intended purpose.
+#' @param description The description of the project. This description will be displayed to all users of the project. We recommend providing a brief description of the project and its intended purpose.
 #'
 #' @keywords internal
 #'
@@ -142,9 +123,7 @@ codecatalyst_create_project <- function(spaceName, displayName, description = NU
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param projectName &#91;required&#93; The name of the project in the space.
-#' @param name &#91;required&#93; The name of the source repository. For more information about name
-#' requirements, see [Quotas for source
-#' repositories](https://docs.aws.amazon.com/codecatalyst/latest/userguide/source-quotas.html).
+#' @param name &#91;required&#93; The name of the source repository. For more information about name requirements, see [Quotas for source repositories](https://docs.aws.amazon.com/codecatalyst/latest/userguide/source-quotas.html).
 #' @param description The description of the source repository.
 #'
 #' @keywords internal
@@ -180,8 +159,7 @@ codecatalyst_create_source_repository <- function(spaceName, projectName, name, 
 #' @param projectName &#91;required&#93; The name of the project in the space.
 #' @param sourceRepositoryName &#91;required&#93; The name of the repository where you want to create a branch.
 #' @param name &#91;required&#93; The name for the branch you're creating.
-#' @param headCommitId The commit ID in an existing branch from which you want to create the
-#' new branch.
+#' @param headCommitId The commit ID in an existing branch from which you want to create the new branch.
 #'
 #' @keywords internal
 #'
@@ -212,9 +190,7 @@ codecatalyst_create_source_repository_branch <- function(spaceName, projectName,
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecatalyst_delete_access_token/](https://www.paws-r-sdk.com/docs/codecatalyst_delete_access_token/) for full documentation.
 #'
-#' @param id &#91;required&#93; The ID of the personal access token to delete. You can find the IDs of
-#' all PATs associated with your Amazon Web Services Builder ID in a space
-#' by calling [`list_access_tokens`][codecatalyst_list_access_tokens].
+#' @param id &#91;required&#93; The ID of the personal access token to delete. You can find the IDs of all PATs associated with your Amazon Web Services Builder ID in a space by calling [`list_access_tokens`][codecatalyst_list_access_tokens].
 #'
 #' @keywords internal
 #'
@@ -247,9 +223,7 @@ codecatalyst_delete_access_token <- function(id) {
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param projectName &#91;required&#93; The name of the project in the space.
-#' @param id &#91;required&#93; The system-generated unique ID of the Dev Environment you want to
-#' delete. To retrieve a list of Dev Environment IDs, use
-#' [`list_dev_environments`][codecatalyst_list_dev_environments].
+#' @param id &#91;required&#93; The system-generated unique ID of the Dev Environment you want to delete. To retrieve a list of Dev Environment IDs, use [`list_dev_environments`][codecatalyst_list_dev_environments].
 #'
 #' @keywords internal
 #'
@@ -281,8 +255,7 @@ codecatalyst_delete_dev_environment <- function(spaceName, projectName, id) {
 #' See [https://www.paws-r-sdk.com/docs/codecatalyst_delete_project/](https://www.paws-r-sdk.com/docs/codecatalyst_delete_project/) for full documentation.
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
-#' @param name &#91;required&#93; The name of the project in the space. To retrieve a list of project
-#' names, use [`list_projects`][codecatalyst_list_projects].
+#' @param name &#91;required&#93; The name of the project in the space. To retrieve a list of project names, use [`list_projects`][codecatalyst_list_projects].
 #'
 #' @keywords internal
 #'
@@ -346,8 +319,7 @@ codecatalyst_delete_source_repository <- function(spaceName, projectName, name) 
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecatalyst_delete_space/](https://www.paws-r-sdk.com/docs/codecatalyst_delete_space/) for full documentation.
 #'
-#' @param name &#91;required&#93; The name of the space. To retrieve a list of space names, use
-#' [`list_spaces`][codecatalyst_list_spaces].
+#' @param name &#91;required&#93; The name of the space. To retrieve a list of space names, use [`list_spaces`][codecatalyst_list_spaces].
 #'
 #' @keywords internal
 #'
@@ -381,9 +353,7 @@ codecatalyst_delete_space <- function(name) {
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param projectName &#91;required&#93; The name of the project in the space.
-#' @param id &#91;required&#93; The system-generated unique ID of the Dev Environment for which you want
-#' to view information. To retrieve a list of Dev Environment IDs, use
-#' [`list_dev_environments`][codecatalyst_list_dev_environments].
+#' @param id &#91;required&#93; The system-generated unique ID of the Dev Environment for which you want to view information. To retrieve a list of Dev Environment IDs, use [`list_dev_environments`][codecatalyst_list_dev_environments].
 #'
 #' @keywords internal
 #'
@@ -609,8 +579,7 @@ codecatalyst_get_user_details <- function(id = NULL, userName = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/codecatalyst_get_workflow/](https://www.paws-r-sdk.com/docs/codecatalyst_get_workflow/) for full documentation.
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
-#' @param id &#91;required&#93; The ID of the workflow. To rerieve a list of workflow IDs, use
-#' [`list_workflows`][codecatalyst_list_workflows].
+#' @param id &#91;required&#93; The ID of the workflow. To rerieve a list of workflow IDs, use [`list_workflows`][codecatalyst_list_workflows].
 #' @param projectName &#91;required&#93; The name of the project in the space.
 #'
 #' @keywords internal
@@ -643,8 +612,7 @@ codecatalyst_get_workflow <- function(spaceName, id, projectName) {
 #' See [https://www.paws-r-sdk.com/docs/codecatalyst_get_workflow_run/](https://www.paws-r-sdk.com/docs/codecatalyst_get_workflow_run/) for full documentation.
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
-#' @param id &#91;required&#93; The ID of the workflow run. To retrieve a list of workflow run IDs, use
-#' [`list_workflow_runs`][codecatalyst_list_workflow_runs].
+#' @param id &#91;required&#93; The ID of the workflow run. To retrieve a list of workflow run IDs, use [`list_workflow_runs`][codecatalyst_list_workflow_runs].
 #' @param projectName &#91;required&#93; The name of the project in the space.
 #'
 #' @keywords internal
@@ -677,12 +645,8 @@ codecatalyst_get_workflow_run <- function(spaceName, id, projectName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecatalyst_list_access_tokens/](https://www.paws-r-sdk.com/docs/codecatalyst_list_access_tokens/) for full documentation.
 #'
-#' @param maxResults The maximum number of results to show in a single call to this API. If
-#' the number of results is larger than the number you specified, the
-#' response will include a `NextToken` element, which you can use to obtain
-#' additional results.
-#' @param nextToken A token returned from a call to this API to indicate the next batch of
-#' results to return, if any.
+#' @param maxResults The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a `NextToken` element, which you can use to obtain additional results.
+#' @param nextToken A token returned from a call to this API to indicate the next batch of results to return, if any.
 #'
 #' @keywords internal
 #'
@@ -716,12 +680,8 @@ codecatalyst_list_access_tokens <- function(maxResults = NULL, nextToken = NULL)
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param projectName &#91;required&#93; The name of the project in the space.
 #' @param devEnvironmentId &#91;required&#93; The system-generated unique ID of the Dev Environment.
-#' @param nextToken A token returned from a call to this API to indicate the next batch of
-#' results to return, if any.
-#' @param maxResults The maximum number of results to show in a single call to this API. If
-#' the number of results is larger than the number you specified, the
-#' response will include a `NextToken` element, which you can use to obtain
-#' additional results.
+#' @param nextToken A token returned from a call to this API to indicate the next batch of results to return, if any.
+#' @param maxResults The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a `NextToken` element, which you can use to obtain additional results.
 #'
 #' @keywords internal
 #'
@@ -754,14 +714,9 @@ codecatalyst_list_dev_environment_sessions <- function(spaceName, projectName, d
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param projectName The name of the project in the space.
-#' @param filters Information about filters to apply to narrow the results returned in the
-#' list.
-#' @param nextToken A token returned from a call to this API to indicate the next batch of
-#' results to return, if any.
-#' @param maxResults The maximum number of results to show in a single call to this API. If
-#' the number of results is larger than the number you specified, the
-#' response will include a `NextToken` element, which you can use to obtain
-#' additional results.
+#' @param filters Information about filters to apply to narrow the results returned in the list.
+#' @param nextToken A token returned from a call to this API to indicate the next batch of results to return, if any.
+#' @param maxResults The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a `NextToken` element, which you can use to obtain additional results.
 #'
 #' @keywords internal
 #'
@@ -794,19 +749,11 @@ codecatalyst_list_dev_environments <- function(spaceName, projectName = NULL, fi
 #' See [https://www.paws-r-sdk.com/docs/codecatalyst_list_event_logs/](https://www.paws-r-sdk.com/docs/codecatalyst_list_event_logs/) for full documentation.
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
-#' @param startTime &#91;required&#93; The date and time when you want to start retrieving events, in
-#' coordinated universal time (UTC) timestamp format as specified in [RFC
-#' 3339](https://www.rfc-editor.org/rfc/rfc3339#section-5.6).
-#' @param endTime &#91;required&#93; The time after which you do not want any events retrieved, in
-#' coordinated universal time (UTC) timestamp format as specified in [RFC
-#' 3339](https://www.rfc-editor.org/rfc/rfc3339#section-5.6).
+#' @param startTime &#91;required&#93; The date and time when you want to start retrieving events, in coordinated universal time (UTC) timestamp format as specified in RFC 3339.
+#' @param endTime &#91;required&#93; The time after which you do not want any events retrieved, in coordinated universal time (UTC) timestamp format as specified in RFC 3339.
 #' @param eventName The name of the event.
-#' @param nextToken A token returned from a call to this API to indicate the next batch of
-#' results to return, if any.
-#' @param maxResults The maximum number of results to show in a single call to this API. If
-#' the number of results is larger than the number you specified, the
-#' response will include a `NextToken` element, which you can use to obtain
-#' additional results.
+#' @param nextToken A token returned from a call to this API to indicate the next batch of results to return, if any.
+#' @param maxResults The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a `NextToken` element, which you can use to obtain additional results.
 #'
 #' @keywords internal
 #'
@@ -838,14 +785,9 @@ codecatalyst_list_event_logs <- function(spaceName, startTime, endTime, eventNam
 #' See [https://www.paws-r-sdk.com/docs/codecatalyst_list_projects/](https://www.paws-r-sdk.com/docs/codecatalyst_list_projects/) for full documentation.
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
-#' @param nextToken A token returned from a call to this API to indicate the next batch of
-#' results to return, if any.
-#' @param maxResults The maximum number of results to show in a single call to this API. If
-#' the number of results is larger than the number you specified, the
-#' response will include a `NextToken` element, which you can use to obtain
-#' additional results.
-#' @param filters Information about filters to apply to narrow the results returned in the
-#' list.
+#' @param nextToken A token returned from a call to this API to indicate the next batch of results to return, if any.
+#' @param maxResults The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a `NextToken` element, which you can use to obtain additional results.
+#' @param filters Information about filters to apply to narrow the results returned in the list.
 #'
 #' @keywords internal
 #'
@@ -878,12 +820,8 @@ codecatalyst_list_projects <- function(spaceName, nextToken = NULL, maxResults =
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param projectName &#91;required&#93; The name of the project in the space.
-#' @param nextToken A token returned from a call to this API to indicate the next batch of
-#' results to return, if any.
-#' @param maxResults The maximum number of results to show in a single call to this API. If
-#' the number of results is larger than the number you specified, the
-#' response will include a `NextToken` element, which you can use to obtain
-#' additional results.
+#' @param nextToken A token returned from a call to this API to indicate the next batch of results to return, if any.
+#' @param maxResults The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a `NextToken` element, which you can use to obtain additional results.
 #'
 #' @keywords internal
 #'
@@ -917,12 +855,8 @@ codecatalyst_list_source_repositories <- function(spaceName, projectName, nextTo
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param projectName &#91;required&#93; The name of the project in the space.
 #' @param sourceRepositoryName &#91;required&#93; The name of the source repository.
-#' @param nextToken A token returned from a call to this API to indicate the next batch of
-#' results to return, if any.
-#' @param maxResults The maximum number of results to show in a single call to this API. If
-#' the number of results is larger than the number you specified, the
-#' response will include a `NextToken` element, which you can use to obtain
-#' additional results.
+#' @param nextToken A token returned from a call to this API to indicate the next batch of results to return, if any.
+#' @param maxResults The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a `NextToken` element, which you can use to obtain additional results.
 #'
 #' @keywords internal
 #'
@@ -953,8 +887,7 @@ codecatalyst_list_source_repository_branches <- function(spaceName, projectName,
 #'
 #' See [https://www.paws-r-sdk.com/docs/codecatalyst_list_spaces/](https://www.paws-r-sdk.com/docs/codecatalyst_list_spaces/) for full documentation.
 #'
-#' @param nextToken A token returned from a call to this API to indicate the next batch of
-#' results to return, if any.
+#' @param nextToken A token returned from a call to this API to indicate the next batch of results to return, if any.
 #'
 #' @keywords internal
 #'
@@ -986,15 +919,10 @@ codecatalyst_list_spaces <- function(nextToken = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/codecatalyst_list_workflow_runs/](https://www.paws-r-sdk.com/docs/codecatalyst_list_workflow_runs/) for full documentation.
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
-#' @param workflowId The ID of the workflow. To retrieve a list of workflow IDs, use
-#' [`list_workflows`][codecatalyst_list_workflows].
+#' @param workflowId The ID of the workflow. To retrieve a list of workflow IDs, use [`list_workflows`][codecatalyst_list_workflows].
 #' @param projectName &#91;required&#93; The name of the project in the space.
-#' @param nextToken A token returned from a call to this API to indicate the next batch of
-#' results to return, if any.
-#' @param maxResults The maximum number of results to show in a single call to this API. If
-#' the number of results is larger than the number you specified, the
-#' response will include a `NextToken` element, which you can use to obtain
-#' additional results.
+#' @param nextToken A token returned from a call to this API to indicate the next batch of results to return, if any.
+#' @param maxResults The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a `NextToken` element, which you can use to obtain additional results.
 #' @param sortBy Information used to sort the items in the returned list.
 #'
 #' @keywords internal
@@ -1028,12 +956,8 @@ codecatalyst_list_workflow_runs <- function(spaceName, workflowId = NULL, projec
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param projectName &#91;required&#93; The name of the project in the space.
-#' @param nextToken A token returned from a call to this API to indicate the next batch of
-#' results to return, if any.
-#' @param maxResults The maximum number of results to show in a single call to this API. If
-#' the number of results is larger than the number you specified, the
-#' response will include a `NextToken` element, which you can use to obtain
-#' additional results.
+#' @param nextToken A token returned from a call to this API to indicate the next batch of results to return, if any.
+#' @param maxResults The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a `NextToken` element, which you can use to obtain additional results.
 #' @param sortBy Information used to sort the items in the returned list.
 #'
 #' @keywords internal
@@ -1068,12 +992,9 @@ codecatalyst_list_workflows <- function(spaceName, projectName, nextToken = NULL
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param projectName &#91;required&#93; The name of the project in the space.
 #' @param id &#91;required&#93; The system-generated unique ID of the Dev Environment.
-#' @param ides Information about the integrated development environment (IDE)
-#' configured for a Dev Environment.
+#' @param ides Information about the integrated development environment (IDE) configured for a Dev Environment.
 #' @param instanceType The Amazon EC2 instace type to use for the Dev Environment.
-#' @param inactivityTimeoutMinutes The amount of time the Dev Environment will run without any activity
-#' detected before stopping, in minutes. Only whole integers are allowed.
-#' Dev Environments consume compute minutes when running.
+#' @param inactivityTimeoutMinutes The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.
 #'
 #' @keywords internal
 #'
@@ -1107,7 +1028,7 @@ codecatalyst_start_dev_environment <- function(spaceName, projectName, id, ides 
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param projectName &#91;required&#93; The name of the project in the space.
 #' @param id &#91;required&#93; The system-generated unique ID of the Dev Environment.
-#' @param sessionConfiguration &#91;required&#93; 
+#' @param sessionConfiguration &#91;required&#93; Information about the configuration of a Dev Environment session.
 #'
 #' @keywords internal
 #'
@@ -1140,12 +1061,8 @@ codecatalyst_start_dev_environment_session <- function(spaceName, projectName, i
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param projectName &#91;required&#93; The name of the project in the space.
-#' @param workflowId &#91;required&#93; The system-generated unique ID of the workflow. To retrieve a list of
-#' workflow IDs, use [`list_workflows`][codecatalyst_list_workflows].
-#' @param clientToken A user-specified idempotency token. Idempotency ensures that an API
-#' request completes only once. With an idempotent request, if the original
-#' request completes successfully, the subsequent retries return the result
-#' from the original successful request and have no additional effect.
+#' @param workflowId &#91;required&#93; The system-generated unique ID of the workflow. To retrieve a list of workflow IDs, use [`list_workflows`][codecatalyst_list_workflows].
+#' @param clientToken A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.
 #'
 #' @keywords internal
 #'
@@ -1211,11 +1128,8 @@ codecatalyst_stop_dev_environment <- function(spaceName, projectName, id) {
 #'
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param projectName &#91;required&#93; The name of the project in the space.
-#' @param id &#91;required&#93; The system-generated unique ID of the Dev Environment. To obtain this
-#' ID, use [`list_dev_environments`][codecatalyst_list_dev_environments].
-#' @param sessionId &#91;required&#93; The system-generated unique ID of the Dev Environment session. This ID
-#' is returned by
-#' [`start_dev_environment_session`][codecatalyst_start_dev_environment_session].
+#' @param id &#91;required&#93; The system-generated unique ID of the Dev Environment. To obtain this ID, use [`list_dev_environments`][codecatalyst_list_dev_environments].
+#' @param sessionId &#91;required&#93; The system-generated unique ID of the Dev Environment session. This ID is returned by [`start_dev_environment_session`][codecatalyst_start_dev_environment_session].
 #'
 #' @keywords internal
 #'
@@ -1249,24 +1163,15 @@ codecatalyst_stop_dev_environment_session <- function(spaceName, projectName, id
 #' @param spaceName &#91;required&#93; The name of the space.
 #' @param projectName &#91;required&#93; The name of the project in the space.
 #' @param id &#91;required&#93; The system-generated unique ID of the Dev Environment.
-#' @param alias The user-specified alias for the Dev Environment. Changing this value
-#' will not cause a restart.
-#' @param ides Information about the integrated development environment (IDE)
-#' configured for a Dev Environment.
+#' @param alias The user-specified alias for the Dev Environment. Changing this value will not cause a restart.
+#' @param ides Information about the integrated development environment (IDE) configured for a Dev Environment.
 #' @param instanceType The Amazon EC2 instace type to use for the Dev Environment.
 #' 
-#' Changing this value will cause a restart of the Dev Environment if it is
-#' running.
-#' @param inactivityTimeoutMinutes The amount of time the Dev Environment will run without any activity
-#' detected before stopping, in minutes. Only whole integers are allowed.
-#' Dev Environments consume compute minutes when running.
+#' Changing this value will cause a restart of the Dev Environment if it is running.
+#' @param inactivityTimeoutMinutes The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.
 #' 
-#' Changing this value will cause a restart of the Dev Environment if it is
-#' running.
-#' @param clientToken A user-specified idempotency token. Idempotency ensures that an API
-#' request completes only once. With an idempotent request, if the original
-#' request completes successfully, the subsequent retries return the result
-#' from the original successful request and have no additional effect.
+#' Changing this value will cause a restart of the Dev Environment if it is running.
+#' @param clientToken A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.
 #'
 #' @keywords internal
 #'

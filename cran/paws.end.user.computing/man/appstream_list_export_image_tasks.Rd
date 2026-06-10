@@ -11,15 +11,11 @@ appstream_list_export_image_tasks(
 )
 }
 \arguments{
-\item{Filters}{Optional filters to apply when listing export image tasks. Filters help
-you narrow down the results based on specific criteria.}
+\item{Filters}{Optional filters to apply when listing export image tasks. Filters help you narrow down the results based on specific criteria.}
 
-\item{MaxResults}{The maximum number of export image tasks to return in a single request.
-The valid range is 1-500, with a default of 50.}
+\item{MaxResults}{The maximum number of export image tasks to return in a single request. The valid range is 1-500, with a default of 50.}
 
-\item{NextToken}{The pagination token from a previous request. Use this to retrieve the
-next page of results when there are more tasks than the MaxResults
-limit.}
+\item{NextToken}{The pagination token from a previous request. Use this to retrieve the next page of results when there are more tasks than the MaxResults limit.}
 }
 \description{
 Lists export image tasks, with optional filtering and pagination. Use this operation to monitor the status of multiple export operations.

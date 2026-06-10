@@ -17,31 +17,19 @@ comprehend_import_model(
 \arguments{
 \item{SourceModelArn}{[required] The Amazon Resource Name (ARN) of the custom model to import.}
 
-\item{ModelName}{The name to assign to the custom model that is created in Amazon
-Comprehend by this import.}
+\item{ModelName}{The name to assign to the custom model that is created in Amazon Comprehend by this import.}
 
-\item{VersionName}{The version name given to the custom model that is created by this
-import. Version names can have a maximum of 256 characters. Alphanumeric
-characters, hyphens (-) and underscores (_) are allowed. The version
-name must be unique among all models with the same classifier name in
-the account/Region.}
+\item{VersionName}{The version name given to the custom model that is created by this import. Version names can have a maximum of 256 characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all models with the same classifier name in the account/Region.}
 
-\item{ModelKmsKeyId}{ID for the KMS key that Amazon Comprehend uses to encrypt trained custom
-models. The ModelKmsKeyId can be either of the following formats:
+\item{ModelKmsKeyId}{ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either of the following formats:
 \itemize{
 \item KMS Key ID: \code{"1234abcd-12ab-34cd-56ef-1234567890ab"}
-\item Amazon Resource Name (ARN) of a KMS Key:
-\code{"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"}
+\item Amazon Resource Name (ARN) of a KMS Key: \code{"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"}
 }}
 
-\item{DataAccessRoleArn}{The Amazon Resource Name (ARN) of the IAM role that grants Amazon
-Comprehend permission to use Amazon Key Management Service (KMS) to
-encrypt or decrypt the custom model.}
+\item{DataAccessRoleArn}{The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend permission to use Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.}
 
-\item{Tags}{Tags to associate with the custom model that is created by this import.
-A tag is a key-value pair that adds as a metadata to a resource used by
-Amazon Comprehend. For example, a tag with "Sales" as the key might be
-added to a resource to indicate its use by the sales department.}
+\item{Tags}{Tags to associate with the custom model that is created by this import. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.}
 }
 \description{
 Creates a new custom model that replicates a source custom model that you import. The source model can be in your Amazon Web Services account or another one.

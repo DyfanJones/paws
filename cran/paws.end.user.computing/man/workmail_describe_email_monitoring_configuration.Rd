@@ -8,8 +8,7 @@ organization}
 workmail_describe_email_monitoring_configuration(OrganizationId)
 }
 \arguments{
-\item{OrganizationId}{[required] The ID of the organization for which the email monitoring configuration
-is described.}
+\item{OrganizationId}{[required] The ID of the organization for which the email monitoring configuration is described.}
 }
 \description{
 Describes the current email monitoring configuration for a specified organization.

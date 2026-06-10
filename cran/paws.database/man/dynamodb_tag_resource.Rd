@@ -7,8 +7,7 @@
 dynamodb_tag_resource(ResourceArn, Tags)
 }
 \arguments{
-\item{ResourceArn}{[required] Identifies the Amazon DynamoDB resource to which tags should be added.
-This value is an Amazon Resource Name (ARN).}
+\item{ResourceArn}{[required] Identifies the Amazon DynamoDB resource to which tags should be added. This value is an Amazon Resource Name (ARN).}
 
 \item{Tags}{[required] The tags to be assigned to the Amazon DynamoDB resource.}
 }

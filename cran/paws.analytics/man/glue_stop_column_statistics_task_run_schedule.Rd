@@ -9,8 +9,7 @@ glue_stop_column_statistics_task_run_schedule(DatabaseName, TableName)
 \arguments{
 \item{DatabaseName}{[required] The name of the database where the table resides.}
 
-\item{TableName}{[required] The name of the table for which to stop a column statistic task run
-schedule.}
+\item{TableName}{[required] The name of the table for which to stop a column statistic task run schedule.}
 }
 \description{
 Stops a column statistics task run schedule.

@@ -44,15 +44,9 @@ vpclattice_batch_update_rule <- function(serviceIdentifier, listenerIdentifier, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/vpclattice_create_access_log_subscription/](https://www.paws-r-sdk.com/docs/vpclattice_create_access_log_subscription/) for full documentation.
 #'
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you retry a request that completed
-#' successfully using the same client token and parameters, the retry
-#' succeeds without performing any actions. If the parameters aren't
-#' identical, the retry fails.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
 #' @param resourceIdentifier &#91;required&#93; The ID or ARN of the service network or service.
-#' @param destinationArn &#91;required&#93; The Amazon Resource Name (ARN) of the destination. The supported
-#' destination types are CloudWatch Log groups, Kinesis Data Firehose
-#' delivery streams, and Amazon S3 buckets.
+#' @param destinationArn &#91;required&#93; The Amazon Resource Name (ARN) of the destination. The supported destination types are CloudWatch Log groups, Kinesis Data Firehose delivery streams, and Amazon S3 buckets.
 #' @param serviceNetworkLogType The type of log that monitors your Amazon VPC Lattice service networks.
 #' @param tags The tags for the access log subscription.
 #'
@@ -86,20 +80,11 @@ vpclattice_create_access_log_subscription <- function(clientToken = NULL, resour
 #' See [https://www.paws-r-sdk.com/docs/vpclattice_create_listener/](https://www.paws-r-sdk.com/docs/vpclattice_create_listener/) for full documentation.
 #'
 #' @param serviceIdentifier &#91;required&#93; The ID or ARN of the service.
-#' @param name &#91;required&#93; The name of the listener. A listener name must be unique within a
-#' service. The valid characters are a-z, 0-9, and hyphens (-). You can't
-#' use a hyphen as the first or last character, or immediately after
-#' another hyphen.
+#' @param name &#91;required&#93; The name of the listener. A listener name must be unique within a service. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
 #' @param protocol &#91;required&#93; The listener protocol.
-#' @param port The listener port. You can specify a value from 1 to 65535. For HTTP,
-#' the default is 80. For HTTPS, the default is 443.
-#' @param defaultAction &#91;required&#93; The action for the default rule. Each listener has a default rule. The
-#' default rule is used if no other rules match.
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you retry a request that completed
-#' successfully using the same client token and parameters, the retry
-#' succeeds without performing any actions. If the parameters aren't
-#' identical, the retry fails.
+#' @param port The listener port. You can specify a value from 1 to 65535. For HTTP, the default is 80. For HTTPS, the default is 443.
+#' @param defaultAction &#91;required&#93; The action for the default rule. Each listener has a default rule. The default rule is used if no other rules match.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
 #' @param tags The tags for the listener.
 #'
 #' @keywords internal
@@ -131,57 +116,32 @@ vpclattice_create_listener <- function(serviceIdentifier, name, protocol, port =
 #'
 #' See [https://www.paws-r-sdk.com/docs/vpclattice_create_resource_configuration/](https://www.paws-r-sdk.com/docs/vpclattice_create_resource_configuration/) for full documentation.
 #'
-#' @param name &#91;required&#93; The name of the resource configuration. The name must be unique within
-#' the account. The valid characters are a-z, 0-9, and hyphens (-). You
-#' can't use a hyphen as the first or last character, or immediately after
-#' another hyphen.
-#' @param type &#91;required&#93; The type of resource configuration. A resource configuration can be one
-#' of the following types:
+#' @param name &#91;required&#93; The name of the resource configuration. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
+#' @param type &#91;required&#93; The type of resource configuration. A resource configuration can be one of the following types:
 #' 
 #' -   **SINGLE** - A single resource.
 #' 
-#' -   **GROUP** - A group of resources. You must create a group resource
-#'     configuration before you create a child resource configuration.
+#' -   **GROUP** - A group of resources. You must create a group resource configuration before you create a child resource configuration.
 #' 
-#' -   **CHILD** - A single resource that is part of a group resource
-#'     configuration.
+#' -   **CHILD** - A single resource that is part of a group resource configuration.
 #' 
 #' -   **ARN** - An Amazon Web Services resource.
-#' @param portRanges (SINGLE, GROUP, CHILD) The TCP port ranges that a consumer can use to
-#' access a resource configuration (for example: 1-65535). You can separate
-#' port ranges using commas (for example: 1,2,22-30).
+#' @param portRanges (SINGLE, GROUP, CHILD) The TCP port ranges that a consumer can use to access a resource configuration (for example: 1-65535). You can separate port ranges using commas (for example: 1,2,22-30).
 #' @param protocol (SINGLE, GROUP) The protocol accepted by the resource configuration.
-#' @param resourceGatewayIdentifier (SINGLE, GROUP, ARN) The ID or ARN of the resource gateway used to
-#' connect to the resource configuration. For a child resource
-#' configuration, this value is inherited from the parent resource
-#' configuration.
-#' @param resourceConfigurationGroupIdentifier (CHILD) The ID or ARN of the parent resource configuration of type
-#' `GROUP`. This is used to associate a child resource configuration with a
-#' group resource configuration.
+#' @param resourceGatewayIdentifier (SINGLE, GROUP, ARN) The ID or ARN of the resource gateway used to connect to the resource configuration. For a child resource configuration, this value is inherited from the parent resource configuration.
+#' @param resourceConfigurationGroupIdentifier (CHILD) The ID or ARN of the parent resource configuration of type `GROUP`. This is used to associate a child resource configuration with a group resource configuration.
 #' @param resourceConfigurationDefinition Identifies the resource configuration in one of the following ways:
 #' 
-#' -   **Amazon Resource Name (ARN)** - Supported resource-types that are
-#'     provisioned by Amazon Web Services services, such as RDS databases,
-#'     can be identified by their ARN.
+#' -   **Amazon Resource Name (ARN)** - Supported resource-types that are provisioned by Amazon Web Services services, such as RDS databases, can be identified by their ARN.
 #' 
 #' -   **Domain name** - Any domain name that is publicly resolvable.
 #' 
-#' -   **IP address** - For IPv4 and IPv6, only IP addresses in the VPC are
-#'     supported.
-#' @param allowAssociationToShareableServiceNetwork (SINGLE, GROUP, ARN) Specifies whether the resource configuration can be
-#' associated with a sharable service network. The default is false.
-#' @param customDomainName A custom domain name for your resource configuration. Additionally,
-#' provide a DomainVerificationID to prove your ownership of a domain.
-#' @param groupDomain (GROUP) The group domain for a group resource configuration. Any domains
-#' that you create for the child resource are subdomains of the group
-#' domain. Child resources inherit the verification status of the domain.
-#' @param domainVerificationIdentifier The domain verification ID of your verified custom domain name. If you
-#' don't provide an ID, you must configure the DNS settings yourself.
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you retry a request that completed
-#' successfully using the same client token and parameters, the retry
-#' succeeds without performing any actions. If the parameters aren't
-#' identical, the retry fails.
+#' -   **IP address** - For IPv4 and IPv6, only IP addresses in the VPC are supported.
+#' @param allowAssociationToShareableServiceNetwork (SINGLE, GROUP, ARN) Specifies whether the resource configuration can be associated with a sharable service network. The default is false.
+#' @param customDomainName A custom domain name for your resource configuration. Additionally, provide a DomainVerificationID to prove your ownership of a domain.
+#' @param groupDomain (GROUP) The group domain for a group resource configuration. Any domains that you create for the child resource are subdomains of the group domain. Child resources inherit the verification status of the domain.
+#' @param domainVerificationIdentifier The domain verification ID of your verified custom domain name. If you don't provide an ID, you must configure the DNS settings yourself.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
 #' @param tags The tags for the resource configuration.
 #'
 #' @keywords internal
@@ -214,44 +174,32 @@ vpclattice_create_resource_configuration <- function(name, type, portRanges = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/vpclattice_create_resource_gateway/](https://www.paws-r-sdk.com/docs/vpclattice_create_resource_gateway/) for full documentation.
 #'
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you retry a request that completed
-#' successfully using the same client token and parameters, the retry
-#' succeeds without performing any actions. If the parameters aren't
-#' identical, the retry fails.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
 #' @param name &#91;required&#93; The name of the resource gateway.
 #' @param vpcIdentifier The ID of the VPC for the resource gateway.
 #' @param subnetIds The IDs of the VPC subnets in which to create the resource gateway.
-#' @param securityGroupIds The IDs of the security groups to apply to the resource gateway. The
-#' security groups must be in the same VPC.
-#' @param ipAddressType A resource gateway can have IPv4, IPv6 or dualstack addresses. The IP
-#' address type of a resource gateway must be compatible with the subnets
-#' of the resource gateway and the IP address type of the resource, as
-#' described here:
+#' @param securityGroupIds The IDs of the security groups to apply to the resource gateway. The security groups must be in the same VPC.
+#' @param ipAddressType A resource gateway can have IPv4, IPv6 or dualstack addresses. The IP address type of a resource gateway must be compatible with the subnets of the resource gateway and the IP address type of the resource, as described here:
 #' 
-#' -   **IPv4**Assign IPv4 addresses to your resource gateway network
-#'     interfaces. This option is supported only if all selected subnets
-#'     have IPv4 address ranges, and the resource also has an IPv4 address.
+#' -   **IPv4**Assign IPv4 addresses to your resource gateway network interfaces. This option is supported only if all selected subnets have IPv4 address ranges, and the resource also has an IPv4 address.
 #' 
-#' -   **IPv6**Assign IPv6 addresses to your resource gateway network
-#'     interfaces. This option is supported only if all selected subnets
-#'     are IPv6 only subnets, and the resource also has an IPv6 address.
+#' -   **IPv6**Assign IPv6 addresses to your resource gateway network interfaces. This option is supported only if all selected subnets are IPv6 only subnets, and the resource also has an IPv6 address.
 #' 
-#' -   **Dualstack**Assign both IPv4 and IPv6 addresses to your resource
-#'     gateway network interfaces. This option is supported only if all
-#'     selected subnets have both IPv4 and IPv6 address ranges, and the
-#'     resource either has an IPv4 or IPv6 address.
+#' -   **Dualstack**Assign both IPv4 and IPv6 addresses to your resource gateway network interfaces. This option is supported only if all selected subnets have both IPv4 and IPv6 address ranges, and the resource either has an IPv4 or IPv6 address.
 #' 
-#' The IP address type of the resource gateway is independent of the IP
-#' address type of the client or the VPC endpoint through which the
-#' resource is accessed.
+#' The IP address type of the resource gateway is independent of the IP address type of the client or the VPC endpoint through which the resource is accessed.
 #' @param ipv4AddressesPerEni The number of IPv4 addresses in each ENI for the resource gateway.
+#' @param resourceConfigDnsResolution Indicates how DNS is resolved for resource configurations associated to this resource gateway. ResourceConfigDnsResolution is set at creation time and cannot be changed.
+#' 
+#' -   `IN_VPC` - DNS resolution occurs privately within the resource gateway's VPC. DNS queries for resources behind this resource gateway resolve using the DNS resolvers defined in the VPC's DHCP option sets. Use this when your resource domain names are hosted in private Route 53 hosted zones or on-premises DNS servers reachable from the VPC.
+#' 
+#' -   `PUBLIC` - DNS resolution occurs against public DNS resolvers. DNS queries for resources behind this resource gateway resolve using standard public DNS. Use this when your resource domain names are publicly resolvable.
 #' @param tags The tags for the resource gateway.
 #'
 #' @keywords internal
 #'
 #' @rdname vpclattice_create_resource_gateway
-vpclattice_create_resource_gateway <- function(clientToken = NULL, name, vpcIdentifier = NULL, subnetIds = NULL, securityGroupIds = NULL, ipAddressType = NULL, ipv4AddressesPerEni = NULL, tags = NULL) {
+vpclattice_create_resource_gateway <- function(clientToken = NULL, name, vpcIdentifier = NULL, subnetIds = NULL, securityGroupIds = NULL, ipAddressType = NULL, ipv4AddressesPerEni = NULL, resourceConfigDnsResolution = NULL, tags = NULL) {
   op <- new_operation(
     name = "CreateResourceGateway",
     http_method = "POST",
@@ -260,7 +208,7 @@ vpclattice_create_resource_gateway <- function(clientToken = NULL, name, vpcIden
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .vpclattice$create_resource_gateway_input(clientToken = clientToken, name = name, vpcIdentifier = vpcIdentifier, subnetIds = subnetIds, securityGroupIds = securityGroupIds, ipAddressType = ipAddressType, ipv4AddressesPerEni = ipv4AddressesPerEni, tags = tags)
+  input <- .vpclattice$create_resource_gateway_input(clientToken = clientToken, name = name, vpcIdentifier = vpcIdentifier, subnetIds = subnetIds, securityGroupIds = securityGroupIds, ipAddressType = ipAddressType, ipv4AddressesPerEni = ipv4AddressesPerEni, resourceConfigDnsResolution = resourceConfigDnsResolution, tags = tags)
   output <- .vpclattice$create_resource_gateway_output()
   config <- get_config()
   svc <- .vpclattice$service(config, op)
@@ -279,19 +227,11 @@ vpclattice_create_resource_gateway <- function(clientToken = NULL, name, vpcIden
 #'
 #' @param serviceIdentifier &#91;required&#93; The ID or ARN of the service.
 #' @param listenerIdentifier &#91;required&#93; The ID or ARN of the listener.
-#' @param name &#91;required&#93; The name of the rule. The name must be unique within the listener. The
-#' valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen
-#' as the first or last character, or immediately after another hyphen.
+#' @param name &#91;required&#93; The name of the rule. The name must be unique within the listener. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
 #' @param match &#91;required&#93; The rule match.
-#' @param priority &#91;required&#93; The priority assigned to the rule. Each rule for a specific listener
-#' must have a unique priority. The lower the priority number the higher
-#' the priority.
+#' @param priority &#91;required&#93; The priority assigned to the rule. Each rule for a specific listener must have a unique priority. The lower the priority number the higher the priority.
 #' @param action &#91;required&#93; The action for the default rule.
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you retry a request that completed
-#' successfully using the same client token and parameters, the retry
-#' succeeds without performing any actions. If the parameters aren't
-#' identical, the retry fails.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
 #' @param tags The tags for the rule.
 #'
 #' @keywords internal
@@ -323,24 +263,16 @@ vpclattice_create_rule <- function(serviceIdentifier, listenerIdentifier, name, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/vpclattice_create_service/](https://www.paws-r-sdk.com/docs/vpclattice_create_service/) for full documentation.
 #'
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you retry a request that completed
-#' successfully using the same client token and parameters, the retry
-#' succeeds without performing any actions. If the parameters aren't
-#' identical, the retry fails.
-#' @param name &#91;required&#93; The name of the service. The name must be unique within the account. The
-#' valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen
-#' as the first or last character, or immediately after another hyphen.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
+#' @param name &#91;required&#93; The name of the service. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
 #' @param tags The tags for the service.
 #' @param customDomainName The custom domain name of the service.
 #' @param certificateArn The Amazon Resource Name (ARN) of the certificate.
 #' @param authType The type of IAM policy.
 #' 
-#' -   `NONE`: The resource does not use an IAM policy. This is the
-#'     default.
+#' -   `NONE`: The resource does not use an IAM policy. This is the default.
 #' 
-#' -   `AWS_IAM`: The resource uses an IAM policy. When this type is used,
-#'     auth is enabled and an auth policy is required.
+#' -   `AWS_IAM`: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.
 #'
 #' @keywords internal
 #'
@@ -371,22 +303,13 @@ vpclattice_create_service <- function(clientToken = NULL, name, tags = NULL, cus
 #'
 #' See [https://www.paws-r-sdk.com/docs/vpclattice_create_service_network/](https://www.paws-r-sdk.com/docs/vpclattice_create_service_network/) for full documentation.
 #'
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you retry a request that completed
-#' successfully using the same client token and parameters, the retry
-#' succeeds without performing any actions. If the parameters aren't
-#' identical, the retry fails.
-#' @param name &#91;required&#93; The name of the service network. The name must be unique to the account.
-#' The valid characters are a-z, 0-9, and hyphens (-). You can't use a
-#' hyphen as the first or last character, or immediately after another
-#' hyphen.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
+#' @param name &#91;required&#93; The name of the service network. The name must be unique to the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
 #' @param authType The type of IAM policy.
 #' 
-#' -   `NONE`: The resource does not use an IAM policy. This is the
-#'     default.
+#' -   `NONE`: The resource does not use an IAM policy. This is the default.
 #' 
-#' -   `AWS_IAM`: The resource uses an IAM policy. When this type is used,
-#'     auth is enabled and an auth policy is required.
+#' -   `AWS_IAM`: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.
 #' @param tags The tags for the service network.
 #' @param sharingConfig Specify if the service network should be enabled for sharing.
 #'
@@ -420,17 +343,10 @@ vpclattice_create_service_network <- function(clientToken = NULL, name, authType
 #'
 #' See [https://www.paws-r-sdk.com/docs/vpclattice_create_service_network_resource_association/](https://www.paws-r-sdk.com/docs/vpclattice_create_service_network_resource_association/) for full documentation.
 #'
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you retry a request that completed
-#' successfully using the same client token and parameters, the retry
-#' succeeds without performing any actions. If the parameters aren't
-#' identical, the retry fails.
-#' @param resourceConfigurationIdentifier &#91;required&#93; The ID of the resource configuration to associate with the service
-#' network.
-#' @param serviceNetworkIdentifier &#91;required&#93; The ID of the service network to associate with the resource
-#' configuration.
-#' @param privateDnsEnabled Indicates if private DNS is enabled for the service network resource
-#' association.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
+#' @param resourceConfigurationIdentifier &#91;required&#93; The ID of the resource configuration to associate with the service network.
+#' @param serviceNetworkIdentifier &#91;required&#93; The ID of the service network to associate with the resource configuration.
+#' @param privateDnsEnabled Indicates if private DNS is enabled for the service network resource association.
 #' @param tags A key-value pair to associate with a resource.
 #'
 #' @keywords internal
@@ -462,14 +378,9 @@ vpclattice_create_service_network_resource_association <- function(clientToken =
 #'
 #' See [https://www.paws-r-sdk.com/docs/vpclattice_create_service_network_service_association/](https://www.paws-r-sdk.com/docs/vpclattice_create_service_network_service_association/) for full documentation.
 #'
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you retry a request that completed
-#' successfully using the same client token and parameters, the retry
-#' succeeds without performing any actions. If the parameters aren't
-#' identical, the retry fails.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
 #' @param serviceIdentifier &#91;required&#93; The ID or ARN of the service.
-#' @param serviceNetworkIdentifier &#91;required&#93; The ID or ARN of the service network. You must use an ARN if the
-#' resources are in different accounts.
+#' @param serviceNetworkIdentifier &#91;required&#93; The ID or ARN of the service network. You must use an ARN if the resources are in different accounts.
 #' @param tags The tags for the association.
 #'
 #' @keywords internal
@@ -501,22 +412,11 @@ vpclattice_create_service_network_service_association <- function(clientToken = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/vpclattice_create_service_network_vpc_association/](https://www.paws-r-sdk.com/docs/vpclattice_create_service_network_vpc_association/) for full documentation.
 #'
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you retry a request that completed
-#' successfully using the same client token and parameters, the retry
-#' succeeds without performing any actions. If the parameters aren't
-#' identical, the retry fails.
-#' @param serviceNetworkIdentifier &#91;required&#93; The ID or ARN of the service network. You must use an ARN if the
-#' resources are in different accounts.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
+#' @param serviceNetworkIdentifier &#91;required&#93; The ID or ARN of the service network. You must use an ARN if the resources are in different accounts.
 #' @param vpcIdentifier &#91;required&#93; The ID of the VPC.
 #' @param privateDnsEnabled Indicates if private DNS is enabled for the VPC association.
-#' @param securityGroupIds The IDs of the security groups. Security groups aren't added by default.
-#' You can add a security group to apply network level controls to control
-#' which resources in a VPC are allowed to access the service network and
-#' its services. For more information, see [Control traffic to resources
-#' using security
-#' groups](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html)
-#' in the *Amazon VPC User Guide*.
+#' @param securityGroupIds The IDs of the security groups. Security groups aren't added by default. You can add a security group to apply network level controls to control which resources in a VPC are allowed to access the service network and its services. For more information, see [Control traffic to resources using security groups](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html) in the *Amazon VPC User Guide*.
 #' @param tags The tags for the association.
 #' @param dnsOptions DNS options for the service network VPC association.
 #'
@@ -549,17 +449,10 @@ vpclattice_create_service_network_vpc_association <- function(clientToken = NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/vpclattice_create_target_group/](https://www.paws-r-sdk.com/docs/vpclattice_create_target_group/) for full documentation.
 #'
-#' @param name &#91;required&#93; The name of the target group. The name must be unique within the
-#' account. The valid characters are a-z, 0-9, and hyphens (-). You can't
-#' use a hyphen as the first or last character, or immediately after
-#' another hyphen.
+#' @param name &#91;required&#93; The name of the target group. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
 #' @param type &#91;required&#93; The type of target group.
 #' @param config The target group configuration.
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you retry a request that completed
-#' successfully using the same client token and parameters, the retry
-#' succeeds without performing any actions. If the parameters aren't
-#' identical, the retry fails.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
 #' @param tags The tags for the target group.
 #'
 #' @keywords internal
@@ -1705,8 +1598,7 @@ vpclattice_list_resource_endpoint_associations <- function(resourceConfiguration
 #' See [https://www.paws-r-sdk.com/docs/vpclattice_list_resource_gateways/](https://www.paws-r-sdk.com/docs/vpclattice_list_resource_gateways/) for full documentation.
 #'
 #' @param maxResults The maximum page size.
-#' @param nextToken If there are additional results, a pagination token for the next page of
-#' results.
+#' @param nextToken If there are additional results, a pagination token for the next page of results.
 #'
 #' @keywords internal
 #'
@@ -1775,10 +1667,8 @@ vpclattice_list_rules <- function(serviceIdentifier, listenerIdentifier, maxResu
 #' @param serviceNetworkIdentifier The ID of the service network.
 #' @param resourceConfigurationIdentifier The ID of the resource configuration.
 #' @param maxResults The maximum page size.
-#' @param nextToken If there are additional results, a pagination token for the next page of
-#' results.
-#' @param includeChildren Include service network resource associations of the child resource
-#' configuration with the grouped resource configuration.
+#' @param nextToken If there are additional results, a pagination token for the next page of results.
+#' @param includeChildren Include service network resource associations of the child resource configuration with the grouped resource configuration.
 #' 
 #' The type is boolean and the default value is false.
 #'
@@ -1881,8 +1771,7 @@ vpclattice_list_service_network_vpc_associations <- function(serviceNetworkIdent
 #'
 #' @param serviceNetworkIdentifier &#91;required&#93; The ID of the service network associated with the VPC endpoint.
 #' @param maxResults The maximum page size.
-#' @param nextToken If there are additional results, a pagination token for the next page of
-#' results.
+#' @param nextToken If there are additional results, a pagination token for the next page of results.
 #'
 #' @keywords internal
 #'
@@ -2077,10 +1966,8 @@ vpclattice_list_targets <- function(targetGroupIdentifier, maxResults = NULL, ne
 #'
 #' See [https://www.paws-r-sdk.com/docs/vpclattice_put_auth_policy/](https://www.paws-r-sdk.com/docs/vpclattice_put_auth_policy/) for full documentation.
 #'
-#' @param resourceIdentifier &#91;required&#93; The ID or ARN of the service network or service for which the policy is
-#' created.
-#' @param policy &#91;required&#93; The auth policy. The policy string in JSON must not contain newlines or
-#' blank lines.
+#' @param resourceIdentifier &#91;required&#93; The ID or ARN of the service network or service for which the policy is created.
+#' @param policy &#91;required&#93; The auth policy. The policy string in JSON must not contain newlines or blank lines.
 #'
 #' @keywords internal
 #'
@@ -2112,10 +1999,8 @@ vpclattice_put_auth_policy <- function(resourceIdentifier, policy) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/vpclattice_put_resource_policy/](https://www.paws-r-sdk.com/docs/vpclattice_put_resource_policy/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The ID or ARN of the service network or service for which the policy is
-#' created.
-#' @param policy &#91;required&#93; An IAM policy. The policy string in JSON must not contain newlines or
-#' blank lines.
+#' @param resourceArn &#91;required&#93; The ID or ARN of the service network or service for which the policy is created.
+#' @param policy &#91;required&#93; An IAM policy. The policy string in JSON must not contain newlines or blank lines.
 #'
 #' @keywords internal
 #'
@@ -2178,11 +2063,7 @@ vpclattice_register_targets <- function(targetGroupIdentifier, targets) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/vpclattice_start_domain_verification/](https://www.paws-r-sdk.com/docs/vpclattice_start_domain_verification/) for full documentation.
 #'
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you retry a request that completed
-#' successfully using the same client token and parameters, the retry
-#' succeeds without performing any actions. If the parameters aren't
-#' identical, the retry fails.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
 #' @param domainName &#91;required&#93; The domain name to verify ownership for.
 #' @param tags The tags for the domain verification.
 #'
@@ -2347,19 +2228,13 @@ vpclattice_update_listener <- function(serviceIdentifier, listenerIdentifier, de
 #' @param resourceConfigurationIdentifier &#91;required&#93; The ID of the resource configuration.
 #' @param resourceConfigurationDefinition Identifies the resource configuration in one of the following ways:
 #' 
-#' -   **Amazon Resource Name (ARN)** - Supported resource-types that are
-#'     provisioned by Amazon Web Services services, such as RDS databases,
-#'     can be identified by their ARN.
+#' -   **Amazon Resource Name (ARN)** - Supported resource-types that are provisioned by Amazon Web Services services, such as RDS databases, can be identified by their ARN.
 #' 
 #' -   **Domain name** - Any domain name that is publicly resolvable.
 #' 
-#' -   **IP address** - For IPv4 and IPv6, only IP addresses in the VPC are
-#'     supported.
-#' @param allowAssociationToShareableServiceNetwork Indicates whether to add the resource configuration to service networks
-#' that are shared with other accounts.
-#' @param portRanges The TCP port ranges that a consumer can use to access a resource
-#' configuration. You can separate port ranges with a comma. Example:
-#' 1-65535 or 1,2,22-30
+#' -   **IP address** - For IPv4 and IPv6, only IP addresses in the VPC are supported.
+#' @param allowAssociationToShareableServiceNetwork Indicates whether to add the resource configuration to service networks that are shared with other accounts.
+#' @param portRanges The TCP port ranges that a consumer can use to access a resource configuration. You can separate port ranges with a comma. Example: 1-65535 or 1,2,22-30
 #'
 #' @keywords internal
 #'
@@ -2426,8 +2301,7 @@ vpclattice_update_resource_gateway <- function(resourceGatewayIdentifier, securi
 #' @param listenerIdentifier &#91;required&#93; The ID or ARN of the listener.
 #' @param ruleIdentifier &#91;required&#93; The ID or ARN of the rule.
 #' @param match The rule match.
-#' @param priority The rule priority. A listener can't have multiple rules with the same
-#' priority.
+#' @param priority The rule priority. A listener can't have multiple rules with the same priority.
 #' @param action Information about the action for the specified listener rule.
 #'
 #' @keywords internal
@@ -2463,11 +2337,9 @@ vpclattice_update_rule <- function(serviceIdentifier, listenerIdentifier, ruleId
 #' @param certificateArn The Amazon Resource Name (ARN) of the certificate.
 #' @param authType The type of IAM policy.
 #' 
-#' -   `NONE`: The resource does not use an IAM policy. This is the
-#'     default.
+#' -   `NONE`: The resource does not use an IAM policy. This is the default.
 #' 
-#' -   `AWS_IAM`: The resource uses an IAM policy. When this type is used,
-#'     auth is enabled and an auth policy is required.
+#' -   `AWS_IAM`: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.
 #'
 #' @keywords internal
 #'
@@ -2501,11 +2373,9 @@ vpclattice_update_service <- function(serviceIdentifier, certificateArn = NULL, 
 #' @param serviceNetworkIdentifier &#91;required&#93; The ID or ARN of the service network.
 #' @param authType &#91;required&#93; The type of IAM policy.
 #' 
-#' -   `NONE`: The resource does not use an IAM policy. This is the
-#'     default.
+#' -   `NONE`: The resource does not use an IAM policy. This is the default.
 #' 
-#' -   `AWS_IAM`: The resource uses an IAM policy. When this type is used,
-#'     auth is enabled and an auth policy is required.
+#' -   `AWS_IAM`: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.
 #'
 #' @keywords internal
 #'

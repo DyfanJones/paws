@@ -7,8 +7,7 @@
 glue_update_connection(CatalogId = NULL, Name, ConnectionInput)
 }
 \arguments{
-\item{CatalogId}{The ID of the Data Catalog in which the connection resides. If none is
-provided, the Amazon Web Services account ID is used by default.}
+\item{CatalogId}{The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.}
 
 \item{Name}{[required] The name of the connection definition to update.}
 

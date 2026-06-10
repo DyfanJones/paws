@@ -50,107 +50,61 @@ Operations section.
 \description{
 \strong{Introduction}
 
-The Amazon IVS Chat control-plane API enables you to create and manage
-Amazon IVS Chat resources. You also need to integrate with the \href{https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/}{Amazon IVS Chat Messaging API}, to
-enable users to interact with chat rooms in real time.
+The Amazon IVS Chat control-plane API enables you to create and manage Amazon IVS Chat resources. You also need to integrate with the \href{https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/}{Amazon IVS Chat Messaging API}, to enable users to interact with chat rooms in real time.
 
-The API is an AWS regional service. For a list of supported regions and
-Amazon IVS Chat HTTPS service endpoints, see the Amazon IVS Chat
-information on the \href{https://docs.aws.amazon.com/general/latest/gr/ivs.html}{Amazon IVS page} in the
-\emph{AWS General Reference}.
+The API is an AWS regional service. For a list of supported regions and Amazon IVS Chat HTTPS service endpoints, see the Amazon IVS Chat information on the \href{https://docs.aws.amazon.com/general/latest/gr/ivs.html}{Amazon IVS page} in the \emph{AWS General Reference}.
 
-This document describes HTTP operations. There is a separate \emph{messaging}
-API for managing Chat resources; see the \href{https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/}{Amazon IVS Chat Messaging API Reference}.
+This document describes HTTP operations. There is a separate \emph{messaging} API for managing Chat resources; see the \href{https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/}{Amazon IVS Chat Messaging API Reference}.
 
 \strong{Notes on terminology:}
 \itemize{
-\item You create service applications using the Amazon IVS Chat API. We
-refer to these as \emph{applications}.
-\item You create front-end client applications (browser and Android/iOS
-apps) using the Amazon IVS Chat Messaging API. We refer to these as
-\emph{clients}.
+\item You create service applications using the Amazon IVS Chat API. We refer to these as \emph{applications}.
+\item You create front-end client applications (browser and Android/iOS apps) using the Amazon IVS Chat Messaging API. We refer to these as \emph{clients}.
 }
 
 \strong{Resources}
 
 The following resources are part of Amazon IVS Chat:
 \itemize{
-\item \strong{LoggingConfiguration} — A configuration that allows customers to
-store and record sent messages in a chat room. See the Logging
-Configuration endpoints for more information.
-\item \strong{Room} — The central Amazon IVS Chat resource through which
-clients connect to and exchange chat messages. See the Room
-endpoints for more information.
+\item \strong{LoggingConfiguration} — A configuration that allows customers to store and record sent messages in a chat room. See the Logging Configuration endpoints for more information.
+\item \strong{Room} — The central Amazon IVS Chat resource through which clients connect to and exchange chat messages. See the Room endpoints for more information.
 }
 
 \strong{Tagging}
 
-A \emph{tag} is a metadata label that you assign to an AWS resource. A tag
-comprises a \emph{key} and a \emph{value}, both set by you. For example, you might
-set a tag as \code{topic:nature} to label a particular video category. See
-\href{https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html}{Best practices and strategies}
-in \emph{Tagging Amazon Web Services Resources and Tag Editor} for details,
-including restrictions that apply to tags and "Tag naming limits and
-requirements"; Amazon IVS Chat has no service-specific constraints
-beyond what is documented there.
+A \emph{tag} is a metadata label that you assign to an AWS resource. A tag comprises a \emph{key} and a \emph{value}, both set by you. For example, you might set a tag as \code{topic:nature} to label a particular video category. See \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html}{Best practices and strategies} in \emph{Tagging Amazon Web Services Resources and Tag Editor} for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no service-specific constraints beyond what is documented there.
 
-Tags can help you identify and organize your AWS resources. For example,
-you can use the same tag for different resources to indicate that they
-are related. You can also use tags to manage access (see \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html}{Access Tags}).
+Tags can help you identify and organize your AWS resources. For example, you can use the same tag for different resources to indicate that they are related. You can also use tags to manage access (see \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html}{Access Tags}).
 
-The Amazon IVS Chat API has these tag-related operations:
-\code{tag_resource},
-\code{untag_resource}, and
-\code{list_tags_for_resource}. The
-following resource supports tagging: Room.
+The Amazon IVS Chat API has these tag-related operations: \code{tag_resource}, \code{untag_resource}, and \code{list_tags_for_resource}. The following resource supports tagging: Room.
 
 At most 50 tags can be applied to a resource.
 
 \strong{API Access Security}
 
-Your Amazon IVS Chat applications (service applications and clients)
-must be authenticated and authorized to access Amazon IVS Chat
-resources. Note the differences between these concepts:
+Your Amazon IVS Chat applications (service applications and clients) must be authenticated and authorized to access Amazon IVS Chat resources. Note the differences between these concepts:
 \itemize{
-\item \emph{Authentication} is about verifying identity. Requests to the Amazon
-IVS Chat API must be signed to verify your identity.
-\item \emph{Authorization} is about granting permissions. Your IAM roles need
-to have permissions for Amazon IVS Chat API requests.
+\item \emph{Authentication} is about verifying identity. Requests to the Amazon IVS Chat API must be signed to verify your identity.
+\item \emph{Authorization} is about granting permissions. Your IAM roles need to have permissions for Amazon IVS Chat API requests.
 }
 
-Users (viewers) connect to a room using secure access tokens that you
-create using the \code{create_chat_token}
-operation through the AWS SDK. You call CreateChatToken for every user’s
-chat session, passing identity and authorization information about the
-user.
+Users (viewers) connect to a room using secure access tokens that you create using the \code{create_chat_token} operation through the AWS SDK. You call CreateChatToken for every user’s chat session, passing identity and authorization information about the user.
 
 \strong{Signing API Requests}
 
-HTTP API requests must be signed with an AWS SigV4 signature using your
-AWS security credentials. The AWS Command Line Interface (CLI) and the
-AWS SDKs take care of signing the underlying API calls for you. However,
-if your application calls the Amazon IVS Chat HTTP API directly, it’s
-your responsibility to sign the requests.
+HTTP API requests must be signed with an AWS SigV4 signature using your AWS security credentials. The AWS Command Line Interface (CLI) and the AWS SDKs take care of signing the underlying API calls for you. However, if your application calls the Amazon IVS Chat HTTP API directly, it’s your responsibility to sign the requests.
 
-You generate a signature using valid AWS credentials for an IAM role
-that has permission to perform the requested action. For example,
-DeleteMessage requests must be made using an IAM role that has the
-\code{ivschat:DeleteMessage} permission.
+You generate a signature using valid AWS credentials for an IAM role that has permission to perform the requested action. For example, DeleteMessage requests must be made using an IAM role that has the \code{ivschat:DeleteMessage} permission.
 
 For more information:
 \itemize{
-\item Authentication and generating signatures — See \href{https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html}{Authenticating Requests (Amazon Web Services Signature Version 4)}
-in the \emph{Amazon Web Services General Reference}.
-\item Managing Amazon IVS permissions — See \href{https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/security-iam.html}{Identity and Access Management}
-on the Security page of the \emph{Amazon IVS User Guide}.
+\item Authentication and generating signatures — See \href{https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html}{Authenticating Requests (Amazon Web Services Signature Version 4)} in the \emph{Amazon Web Services General Reference}.
+\item Managing Amazon IVS permissions — See \href{https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/security-iam.html}{Identity and Access Management} on the Security page of the \emph{Amazon IVS User Guide}.
 }
 
 \strong{Amazon Resource Names (ARNs)}
 
-ARNs uniquely identify AWS resources. An ARN is required when you need
-to specify a resource unambiguously across all of AWS, such as in IAM
-policies and API calls. For more information, see \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html}{Amazon Resource Names}
-in the \emph{AWS General Reference}.
+ARNs uniquely identify AWS resources. An ARN is required when you need to specify a resource unambiguously across all of AWS, such as in IAM policies and API calls. For more information, see \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html}{Amazon Resource Names} in the \emph{AWS General Reference}.
 }
 \section{Service syntax}{
 

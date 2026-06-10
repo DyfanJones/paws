@@ -13,8 +13,7 @@ redshift_create_custom_domain_association(
 \arguments{
 \item{CustomDomainName}{[required] The custom domain name for a custom domain association.}
 
-\item{CustomDomainCertificateArn}{[required] The certificate Amazon Resource Name (ARN) for the custom domain name
-association.}
+\item{CustomDomainCertificateArn}{[required] The certificate Amazon Resource Name (ARN) for the custom domain name association.}
 
 \item{ClusterIdentifier}{[required] The cluster identifier that the custom domain is associated with.}
 }

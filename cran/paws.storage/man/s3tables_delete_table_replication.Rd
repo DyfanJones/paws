@@ -9,8 +9,7 @@ s3tables_delete_table_replication(tableArn, versionToken)
 \arguments{
 \item{tableArn}{[required] The Amazon Resource Name (ARN) of the table.}
 
-\item{versionToken}{[required] A version token from a previous GetTableReplication call. Use this token
-to ensure you're deleting the expected version of the configuration.}
+\item{versionToken}{[required] A version token from a previous GetTableReplication call. Use this token to ensure you're deleting the expected version of the configuration.}
 }
 \description{
 Deletes the replication configuration for a specific table. After deletion, new updates to this table will no longer be replicated to destination tables, though existing replicated copies will remain in destination buckets.

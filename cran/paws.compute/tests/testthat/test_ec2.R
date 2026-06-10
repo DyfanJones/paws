@@ -416,6 +416,14 @@ test_that("describe_ipam_policies", {
   expect_error(svc$describe_ipam_policies(MaxResults = 20), NA)
 })
 
+test_that("describe_ipam_pool_allocations", {
+  expect_error(svc$describe_ipam_pool_allocations(), NA)
+})
+
+test_that("describe_ipam_pool_allocations", {
+  expect_error(svc$describe_ipam_pool_allocations(MaxResults = 20), NA)
+})
+
 test_that("describe_ipam_pools", {
   expect_error(svc$describe_ipam_pools(), NA)
 })
@@ -738,6 +746,30 @@ test_that("describe_scheduled_instances", {
 
 test_that("describe_scheduled_instances", {
   expect_error(svc$describe_scheduled_instances(MaxResults = 20), NA)
+})
+
+test_that("describe_secondary_interfaces", {
+  expect_error(svc$describe_secondary_interfaces(), NA)
+})
+
+test_that("describe_secondary_interfaces", {
+  expect_error(svc$describe_secondary_interfaces(MaxResults = 20), NA)
+})
+
+test_that("describe_secondary_networks", {
+  expect_error(svc$describe_secondary_networks(), NA)
+})
+
+test_that("describe_secondary_networks", {
+  expect_error(svc$describe_secondary_networks(MaxResults = 20), NA)
+})
+
+test_that("describe_secondary_subnets", {
+  expect_error(svc$describe_secondary_subnets(), NA)
+})
+
+test_that("describe_secondary_subnets", {
+  expect_error(svc$describe_secondary_subnets(MaxResults = 20), NA)
 })
 
 test_that("describe_security_group_rules", {

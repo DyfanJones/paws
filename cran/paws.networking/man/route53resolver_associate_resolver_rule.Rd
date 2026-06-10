@@ -7,16 +7,11 @@
 route53resolver_associate_resolver_rule(ResolverRuleId, Name = NULL, VPCId)
 }
 \arguments{
-\item{ResolverRuleId}{[required] The ID of the Resolver rule that you want to associate with the VPC. To
-list the existing Resolver rules, use
-\code{\link[=route53resolver_list_resolver_rules]{list_resolver_rules}}.}
+\item{ResolverRuleId}{[required] The ID of the Resolver rule that you want to associate with the VPC. To list the existing Resolver rules, use \code{\link[=route53resolver_list_resolver_rules]{list_resolver_rules}}.}
 
-\item{Name}{A name for the association that you're creating between a Resolver rule
-and a VPC.
+\item{Name}{A name for the association that you're creating between a Resolver rule and a VPC.
 
-The name can be up to 64 characters long and can contain letters (a-z,
-A-Z), numbers (0-9), hyphens (-), underscores (_), and spaces. The name
-cannot consist of only numbers.}
+The name can be up to 64 characters long and can contain letters (a-z, A-Z), numbers (0-9), hyphens (-), underscores (_), and spaces. The name cannot consist of only numbers.}
 
 \item{VPCId}{[required] The ID of the VPC that you want to associate the Resolver rule with.}
 }

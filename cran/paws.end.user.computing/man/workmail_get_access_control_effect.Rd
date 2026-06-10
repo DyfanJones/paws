@@ -19,8 +19,7 @@ workmail_get_access_control_effect(
 
 \item{IpAddress}{[required] The IPv4 address.}
 
-\item{Action}{[required] The access protocol action. Valid values include \code{ActiveSync},
-\code{AutoDiscover}, \code{EWS}, \code{IMAP}, \code{SMTP}, \code{WindowsOutlook}, and \code{WebMail}.}
+\item{Action}{[required] The access protocol action. Valid values include \code{ActiveSync}, \code{AutoDiscover}, \code{EWS}, \code{IMAP}, \code{SMTP}, \code{WindowsOutlook}, and \code{WebMail}.}
 
 \item{UserId}{The user ID.}
 

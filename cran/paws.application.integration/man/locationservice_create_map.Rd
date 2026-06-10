@@ -17,24 +17,18 @@ locationservice_create_map(
 
 Requirements:
 \itemize{
-\item Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens
-(-), periods (.), and underscores (_).
+\item Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).
 \item Must be a unique map resource name.
 \item No spaces allowed. For example, \code{ExampleMap}.
 }}
 
-\item{Configuration}{[required] Specifies the \code{MapConfiguration}, including the map style, for the map
-resource that you create. The map style defines the look of maps and the
-data provider for your map resource.}
+\item{Configuration}{[required] Specifies the \code{MapConfiguration}, including the map style, for the map resource that you create. The map style defines the look of maps and the data provider for your map resource.}
 
-\item{PricingPlan}{No longer used. If included, the only allowed value is
-\code{RequestBasedUsage}.}
+\item{PricingPlan}{No longer used. If included, the only allowed value is \code{RequestBasedUsage}.}
 
 \item{Description}{An optional description for the map resource.}
 
-\item{Tags}{Applies one or more tags to the map resource. A tag is a key-value pair
-helps manage, identify, search, and filter your resources by labelling
-them.
+\item{Tags}{Applies one or more tags to the map resource. A tag is a key-value pair helps manage, identify, search, and filter your resources by labelling them.
 
 Format: \code{"key" : "value"}
 
@@ -44,8 +38,7 @@ Restrictions:
 \item Each resource tag must be unique with a maximum of one value.
 \item Maximum key length: 128 Unicode characters in UTF-8
 \item Maximum value length: 256 Unicode characters in UTF-8
-\item Can use alphanumeric characters (A–Z, a–z, 0–9), and the following
-characters: + - = . _ : / @.
+\item Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.
 \item Cannot use "aws:" as a prefix for a key.
 }}
 }

@@ -9,8 +9,7 @@ ivsrealtime_list_stage_sessions(stageArn, nextToken = NULL, maxResults = NULL)
 \arguments{
 \item{stageArn}{[required] Stage ARN.}
 
-\item{nextToken}{The first stage session to retrieve. This is used for pagination; see
-the \code{nextToken} response field.}
+\item{nextToken}{The first stage session to retrieve. This is used for pagination; see the \code{nextToken} response field.}
 
 \item{maxResults}{Maximum number of results to return. Default: 50.}
 }

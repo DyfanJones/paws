@@ -2,7 +2,8 @@
 % Please edit documentation in R/dynamodb_operations.R
 \name{dynamodb_list_exports}
 \alias{dynamodb_list_exports}
-\title{Lists completed exports within the past 90 days}
+\title{Lists completed exports within the past 90 days, in reverse alphanumeric
+order of ExportArn}
 \usage{
 dynamodb_list_exports(TableArn = NULL, MaxResults = NULL, NextToken = NULL)
 }
@@ -11,12 +12,10 @@ dynamodb_list_exports(TableArn = NULL, MaxResults = NULL, NextToken = NULL)
 
 \item{MaxResults}{Maximum number of results to return per page.}
 
-\item{NextToken}{An optional string that, if supplied, must be copied from the output of
-a previous call to \code{\link[=dynamodb_list_exports]{list_exports}}. When
-provided in this manner, the API fetches the next page of results.}
+\item{NextToken}{An optional string that, if supplied, must be copied from the output of a previous call to \code{\link[=dynamodb_list_exports]{list_exports}}. When provided in this manner, the API fetches the next page of results.}
 }
 \description{
-Lists completed exports within the past 90 days.
+Lists completed exports within the past 90 days, in reverse alphanumeric order of \code{ExportArn}.
 
 See \url{https://www.paws-r-sdk.com/docs/dynamodb_list_exports/} for full documentation.
 }

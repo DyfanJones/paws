@@ -11,16 +11,11 @@ opensearchservice_describe_packages(
 )
 }
 \arguments{
-\item{Filters}{Only returns packages that match the \code{DescribePackagesFilterList}
-values.}
+\item{Filters}{Only returns packages that match the \code{DescribePackagesFilterList} values.}
 
-\item{MaxResults}{An optional parameter that specifies the maximum number of results to
-return. You can use \code{nextToken} to get the next page of results.}
+\item{MaxResults}{An optional parameter that specifies the maximum number of results to return. You can use \code{nextToken} to get the next page of results.}
 
-\item{NextToken}{If your initial \code{DescribePackageFilters} operation returns a
-\code{nextToken}, you can include the returned \code{nextToken} in subsequent
-\code{DescribePackageFilters} operations, which returns results in the next
-page.}
+\item{NextToken}{If your initial \code{DescribePackageFilters} operation returns a \code{nextToken}, you can include the returned \code{nextToken} in subsequent \code{DescribePackageFilters} operations, which returns results in the next page.}
 }
 \description{
 Describes all packages available to OpenSearch Service. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html}{Custom packages for Amazon OpenSearch Service}.

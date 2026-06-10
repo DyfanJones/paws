@@ -12,22 +12,17 @@ networkfirewall_describe_rule_group_metadata(
 )
 }
 \arguments{
-\item{RuleGroupName}{The descriptive name of the rule group. You can't change the name of a
-rule group after you create it.
+\item{RuleGroupName}{The descriptive name of the rule group. You can't change the name of a rule group after you create it.
 
 You must specify the ARN or the name, and you can specify both.}
 
-\item{RuleGroupArn}{The descriptive name of the rule group. You can't change the name of a
-rule group after you create it.
+\item{RuleGroupArn}{The descriptive name of the rule group. You can't change the name of a rule group after you create it.
 
 You must specify the ARN or the name, and you can specify both.}
 
-\item{Type}{Indicates whether the rule group is stateless or stateful. If the rule
-group is stateless, it contains stateless rules. If it is stateful, it
-contains stateful rules.
+\item{Type}{Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.
 
-This setting is required for requests that do not include the
-\code{RuleGroupARN}.}
+This setting is required for requests that do not include the \code{RuleGroupARN}.}
 }
 \description{
 High-level information about a rule group, returned by operations like create and describe. You can use the information provided in the metadata to retrieve and manage a rule group. You can retrieve all objects for a rule group by calling \code{\link[=networkfirewall_describe_rule_group]{describe_rule_group}}.

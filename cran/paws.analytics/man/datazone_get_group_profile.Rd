@@ -7,8 +7,7 @@
 datazone_get_group_profile(domainIdentifier, groupIdentifier)
 }
 \arguments{
-\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which the group profile
-exists.}
+\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which the group profile exists.}
 
 \item{groupIdentifier}{[required] The identifier of the group profile.}
 }

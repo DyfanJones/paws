@@ -13,16 +13,9 @@ cloudfront_list_invalidations_for_distribution_tenant(
 \arguments{
 \item{Id}{[required] The ID of the distribution tenant.}
 
-\item{Marker}{Use this parameter when paginating results to indicate where to begin in
-your list of invalidation batches. Because the results are returned in
-decreasing order from most recent to oldest, the most recent results are
-on the first page, the second page will contain earlier results, and so
-on. To get the next page of results, set \code{Marker} to the value of the
-\code{NextMarker} from the current page's response. This value is the same as
-the ID of the last invalidation batch on that page.}
+\item{Marker}{Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set \code{Marker} to the value of the \code{NextMarker} from the current page's response. This value is the same as the ID of the last invalidation batch on that page.}
 
-\item{MaxItems}{The maximum number of invalidations to return for the distribution
-tenant.}
+\item{MaxItems}{The maximum number of invalidations to return for the distribution tenant.}
 }
 \description{
 Lists the invalidations for a distribution tenant.

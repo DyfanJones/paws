@@ -22,202 +22,122 @@ dynamodb_update_item(
 )
 }
 \arguments{
-\item{TableName}{[required] The name of the table containing the item to update. You can also
-provide the Amazon Resource Name (ARN) of the table in this parameter.}
+\item{TableName}{[required] The name of the table containing the item to update. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.}
 
-\item{Key}{[required] The primary key of the item to be updated. Each element consists of an
-attribute name and a value for that attribute.
+\item{Key}{[required] The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute.
 
-For the primary key, you must provide all of the attributes. For
-example, with a simple primary key, you only need to provide a value for
-the partition key. For a composite primary key, you must provide values
-for both the partition key and the sort key.}
+For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.}
 
-\item{AttributeUpdates}{This is a legacy parameter. Use \code{UpdateExpression} instead. For more
-information, see
-\href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html}{AttributeUpdates}
-in the \emph{Amazon DynamoDB Developer Guide}.}
+\item{AttributeUpdates}{This is a legacy parameter. Use \code{UpdateExpression} instead. For more information, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html}{AttributeUpdates} in the \emph{Amazon DynamoDB Developer Guide}.}
 
-\item{Expected}{This is a legacy parameter. Use \code{ConditionExpression} instead. For more
-information, see
-\href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html}{Expected}
-in the \emph{Amazon DynamoDB Developer Guide}.}
+\item{Expected}{This is a legacy parameter. Use \code{ConditionExpression} instead. For more information, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html}{Expected} in the \emph{Amazon DynamoDB Developer Guide}.}
 
-\item{ConditionalOperator}{This is a legacy parameter. Use \code{ConditionExpression} instead. For more
-information, see
-\href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html}{ConditionalOperator}
-in the \emph{Amazon DynamoDB Developer Guide}.}
+\item{ConditionalOperator}{This is a legacy parameter. Use \code{ConditionExpression} instead. For more information, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html}{ConditionalOperator} in the \emph{Amazon DynamoDB Developer Guide}.}
 
-\item{ReturnValues}{Use \code{ReturnValues} if you want to get the item attributes as they appear
-before or after they are successfully updated. For
-\code{\link[=dynamodb_update_item]{update_item}}, the valid values are:
+\item{ReturnValues}{Use \code{ReturnValues} if you want to get the item attributes as they appear before or after they are successfully updated. For \code{\link[=dynamodb_update_item]{update_item}}, the valid values are:
 \itemize{
-\item \code{NONE} - If \code{ReturnValues} is not specified, or if its value is
-\code{NONE}, then nothing is returned. (This setting is the default for
-\code{ReturnValues}.)
-\item \code{ALL_OLD} - Returns all of the attributes of the item, as they
-appeared before the UpdateItem operation.
-\item \code{UPDATED_OLD} - Returns only the updated attributes, as they
-appeared before the UpdateItem operation.
-\item \code{ALL_NEW} - Returns all of the attributes of the item, as they
-appear after the UpdateItem operation.
-\item \code{UPDATED_NEW} - Returns only the updated attributes, as they appear
-after the UpdateItem operation.
+\item \code{NONE} - If \code{ReturnValues} is not specified, or if its value is \code{NONE}, then nothing is returned. (This setting is the default for \code{ReturnValues}.)
+\item \code{ALL_OLD} - Returns all of the attributes of the item, as they appeared before the UpdateItem operation.
+\item \code{UPDATED_OLD} - Returns only the updated attributes, as they appeared before the UpdateItem operation.
+\item \code{ALL_NEW} - Returns all of the attributes of the item, as they appear after the UpdateItem operation.
+\item \code{UPDATED_NEW} - Returns only the updated attributes, as they appear after the UpdateItem operation.
 }
 
-There is no additional cost associated with requesting a return value
-aside from the small network and processing overhead of receiving a
-larger response. No read capacity units are consumed.
+There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.
 
 The values returned are strongly consistent.}
 
-\item{ReturnConsumedCapacity}{}
+\item{ReturnConsumedCapacity}{Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:
+\itemize{
+\item \code{INDEXES} - The response includes the aggregate \code{ConsumedCapacity} for the operation, together with \code{ConsumedCapacity} for each table and secondary index that was accessed.
 
-\item{ReturnItemCollectionMetrics}{Determines whether item collection metrics are returned. If set to
-\code{SIZE}, the response includes statistics about item collections, if any,
-that were modified during the operation are returned in the response. If
-set to \code{NONE} (the default), no statistics are returned.}
+Note that some operations, such as \code{\link[=dynamodb_get_item]{get_item}} and \code{\link[=dynamodb_batch_get_item]{batch_get_item}}, do not access any indexes at all. In these cases, specifying \code{INDEXES} will only return \code{ConsumedCapacity} information for table(s).
+\item \code{TOTAL} - The response includes only the aggregate \code{ConsumedCapacity} for the operation.
+\item \code{NONE} - No \code{ConsumedCapacity} details are included in the response.
+}}
 
-\item{UpdateExpression}{An expression that defines one or more attributes to be updated, the
-action to be performed on them, and new values for them.
+\item{ReturnItemCollectionMetrics}{Determines whether item collection metrics are returned. If set to \code{SIZE}, the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to \code{NONE} (the default), no statistics are returned.}
+
+\item{UpdateExpression}{An expression that defines one or more attributes to be updated, the action to be performed on them, and new values for them.
 
 The following action values are available for \code{UpdateExpression}.
 \itemize{
-\item \code{SET} - Adds one or more attributes and values to an item. If any of
-these attributes already exist, they are replaced by the new values.
-You can also use \code{SET} to add or subtract from an attribute that is
-of type Number. For example: \verb{SET myNum = myNum + :val}
+\item \code{SET} - Adds one or more attributes and values to an item. If any of these attributes already exist, they are replaced by the new values. You can also use \code{SET} to add or subtract from an attribute that is of type Number. For example: \verb{SET myNum = myNum + :val}
 
 \code{SET} supports the following functions:
 \itemize{
-\item \code{if_not_exists (path, operand)} - if the item does not contain
-an attribute at the specified path, then \code{if_not_exists}
-evaluates to operand; otherwise, it evaluates to path. You can
-use this function to avoid overwriting an attribute that may
-already be present in the item.
-\item \code{list_append (operand, operand)} - evaluates to a list with a
-new element added to it. You can append the new element to the
-start or the end of the list by reversing the order of the
-operands.
+\item \code{if_not_exists (path, operand)} - if the item does not contain an attribute at the specified path, then \code{if_not_exists} evaluates to operand; otherwise, it evaluates to path. You can use this function to avoid overwriting an attribute that may already be present in the item.
+\item \code{list_append (operand, operand)} - evaluates to a list with a new element added to it. You can append the new element to the start or the end of the list by reversing the order of the operands.
 }
 
 These function names are case-sensitive.
 \item \code{REMOVE} - Removes one or more attributes from an item.
-\item \code{ADD} - Adds the specified value to the item, if the attribute does
-not already exist. If the attribute does exist, then the behavior of
-\code{ADD} depends on the data type of the attribute:
+\item \code{ADD} - Adds the specified value to the item, if the attribute does not already exist. If the attribute does exist, then the behavior of \code{ADD} depends on the data type of the attribute:
 \itemize{
-\item If the existing attribute is a number, and if \code{Value} is also a
-number, then \code{Value} is mathematically added to the existing
-attribute. If \code{Value} is a negative number, then it is
-subtracted from the existing attribute.
+\item If the existing attribute is a number, and if \code{Value} is also a number, then \code{Value} is mathematically added to the existing attribute. If \code{Value} is a negative number, then it is subtracted from the existing attribute.
 
-If you use \code{ADD} to increment or decrement a number value for an
-item that doesn't exist before the update, DynamoDB uses \code{0} as
-the initial value.
+If you use \code{ADD} to increment or decrement a number value for an item that doesn't exist before the update, DynamoDB uses \code{0} as the initial value.
 
-Similarly, if you use \code{ADD} for an existing item to increment or
-decrement an attribute value that doesn't exist before the
-update, DynamoDB uses \code{0} as the initial value. For example,
-suppose that the item you want to update doesn't have an
-attribute named \code{itemcount}, but you decide to \code{ADD} the number
-\code{3} to this attribute anyway. DynamoDB will create the
-\code{itemcount} attribute, set its initial value to \code{0}, and finally
-add \code{3} to it. The result will be a new \code{itemcount} attribute in
-the item, with a value of \code{3}.
-\item If the existing data type is a set and if \code{Value} is also a set,
-then \code{Value} is added to the existing set. For example, if the
-attribute value is the set \verb{[1,2]}, and the \code{ADD} action
-specified \verb{[3]}, then the final attribute value is \verb{[1,2,3]}. An
-error occurs if an \code{ADD} action is specified for a set attribute
-and the attribute type specified does not match the existing set
-type.
+Similarly, if you use \code{ADD} for an existing item to increment or decrement an attribute value that doesn't exist before the update, DynamoDB uses \code{0} as the initial value. For example, suppose that the item you want to update doesn't have an attribute named \code{itemcount}, but you decide to \code{ADD} the number \code{3} to this attribute anyway. DynamoDB will create the \code{itemcount} attribute, set its initial value to \code{0}, and finally add \code{3} to it. The result will be a new \code{itemcount} attribute in the item, with a value of \code{3}.
+\item If the existing data type is a set and if \code{Value} is also a set, then \code{Value} is added to the existing set. For example, if the attribute value is the set \verb{[1,2]}, and the \code{ADD} action specified \verb{[3]}, then the final attribute value is \verb{[1,2,3]}. An error occurs if an \code{ADD} action is specified for a set attribute and the attribute type specified does not match the existing set type.
 
-Both sets must have the same primitive data type. For example,
-if the existing data type is a set of strings, the \code{Value} must
-also be a set of strings.
+Both sets must have the same primitive data type. For example, if the existing data type is a set of strings, the \code{Value} must also be a set of strings.
 }
 
-The \code{ADD} action only supports Number and set data types. In
-addition, \code{ADD} can only be used on top-level attributes, not nested
-attributes.
+The \code{ADD} action only supports Number and set data types.
 \item \code{DELETE} - Deletes an element from a set.
 
-If a set of values is specified, then those values are subtracted
-from the old set. For example, if the attribute value was the set
-\verb{[a,b,c]} and the \code{DELETE} action specifies \verb{[a,c]}, then the final
-attribute value is \verb{[b]}. Specifying an empty set is an error.
+If a set of values is specified, then those values are subtracted from the old set. For example, if the attribute value was the set \verb{[a,b,c]} and the \code{DELETE} action specifies \verb{[a,c]}, then the final attribute value is \verb{[b]}. Specifying an empty set is an error.
 
-The \code{DELETE} action only supports set data types. In addition,
-\code{DELETE} can only be used on top-level attributes, not nested
-attributes.
+The \code{DELETE} action only supports set data types.
 }
 
-You can have many actions in a single expression, such as the following:
-\verb{SET a=:value1, b=:value2 DELETE :value3, :value4, :value5}
+You can have many actions in a single expression, such as the following: \verb{SET a=:value1, b=:value2 DELETE :value3, :value4, :value5}
 
-For more information on update expressions, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.UpdateExpressions.html}{Modifying Items and Attributes}
-in the \emph{Amazon DynamoDB Developer Guide}.}
+For more information on update expressions, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.UpdateExpressions.html}{Modifying Items and Attributes} in the \emph{Amazon DynamoDB Developer Guide}.}
 
-\item{ConditionExpression}{A condition that must be satisfied in order for a conditional update to
-succeed.
+\item{ConditionExpression}{A condition that must be satisfied in order for a conditional update to succeed.
 
 An expression can contain any of the following:
 \itemize{
-\item Functions:
-\code{attribute_exists | attribute_not_exists | attribute_type | contains | begins_with | size}
+\item Functions: \code{attribute_exists | attribute_not_exists | attribute_type | contains | begins_with | size}
 
 These function names are case-sensitive.
 \item Comparison operators: \verb{= | <> | < | > | <= | >= | BETWEEN | IN }
 \item Logical operators: \code{AND | OR | NOT}
 }
 
-For more information about condition expressions, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html}{Specifying Conditions}
-in the \emph{Amazon DynamoDB Developer Guide}.}
+For more information about condition expressions, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html}{Specifying Conditions} in the \emph{Amazon DynamoDB Developer Guide}.}
 
-\item{ExpressionAttributeNames}{One or more substitution tokens for attribute names in an expression.
-The following are some use cases for using \code{ExpressionAttributeNames}:
+\item{ExpressionAttributeNames}{One or more substitution tokens for attribute names in an expression. The following are some use cases for using \code{ExpressionAttributeNames}:
 \itemize{
-\item To access an attribute whose name conflicts with a DynamoDB reserved
-word.
-\item To create a placeholder for repeating occurrences of an attribute
-name in an expression.
-\item To prevent special characters in an attribute name from being
-misinterpreted in an expression.
+\item To access an attribute whose name conflicts with a DynamoDB reserved word.
+\item To create a placeholder for repeating occurrences of an attribute name in an expression.
+\item To prevent special characters in an attribute name from being misinterpreted in an expression.
 }
 
-Use the \strong{#} character in an expression to dereference an attribute
-name. For example, consider the following attribute name:
+Use the \strong{#} character in an expression to dereference an attribute name. For example, consider the following attribute name:
 \itemize{
 \item \code{Percentile}
 }
 
-The name of this attribute conflicts with a reserved word, so it cannot
-be used directly in an expression. (For the complete list of reserved
-words, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html}{Reserved Words}
-in the \emph{Amazon DynamoDB Developer Guide}.) To work around this, you
-could specify the following for \code{ExpressionAttributeNames}:
+The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html}{Reserved Words} in the \emph{Amazon DynamoDB Developer Guide}.) To work around this, you could specify the following for \code{ExpressionAttributeNames}:
 \itemize{
 \item \code{{"#P":"Percentile"}}
 }
 
-You could then use this substitution in an expression, as in this
-example:
+You could then use this substitution in an expression, as in this example:
 \itemize{
 \item \verb{#P = :val}
 }
 
-Tokens that begin with the \strong{:} character are \emph{expression attribute
-values}, which are placeholders for the actual value at runtime.
+Tokens that begin with the \strong{:} character are \emph{expression attribute values}, which are placeholders for the actual value at runtime.
 
-For more information about expression attribute names, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Attributes.html}{Specifying Item Attributes}
-in the \emph{Amazon DynamoDB Developer Guide}.}
+For more information about expression attribute names, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Attributes.html}{Specifying Item Attributes} in the \emph{Amazon DynamoDB Developer Guide}.}
 
 \item{ExpressionAttributeValues}{One or more values that can be substituted in an expression.
 
-Use the \strong{:} (colon) character in an expression to dereference an
-attribute value. For example, suppose that you wanted to check whether
-the value of the \code{ProductStatus} attribute was one of the following:
+Use the \strong{:} (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the \code{ProductStatus} attribute was one of the following:
 
 \code{Available | Backordered | Discontinued}
 
@@ -229,16 +149,11 @@ You could then use these values in an expression, such as this:
 
 \verb{ProductStatus IN (:avail, :back, :disc)}
 
-For more information on expression attribute values, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html}{Condition Expressions}
-in the \emph{Amazon DynamoDB Developer Guide}.}
+For more information on expression attribute values, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html}{Condition Expressions} in the \emph{Amazon DynamoDB Developer Guide}.}
 
-\item{ReturnValuesOnConditionCheckFailure}{An optional parameter that returns the item attributes for an
-\code{\link[=dynamodb_update_item]{update_item}} operation that failed a condition
-check.
+\item{ReturnValuesOnConditionCheckFailure}{An optional parameter that returns the item attributes for an \code{\link[=dynamodb_update_item]{update_item}} operation that failed a condition check.
 
-There is no additional cost associated with requesting a return value
-aside from the small network and processing overhead of receiving a
-larger response. No read capacity units are consumed.}
+There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.}
 }
 \description{
 Edits an existing item's attributes, or adds a new item to the table if it does not already exist. You can put, delete, or add attribute values. You can also perform a conditional update on an existing item (insert a new attribute name-value pair if it doesn't exist, or replace an existing name-value pair if it has certain expected attribute values).

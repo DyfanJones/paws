@@ -14,26 +14,15 @@ NULL
 #'   ScheduleExpression, ScheduleExpressionTimezone, StartDate, State,
 #'   Target)
 #'
-#' @param ActionAfterCompletion Specifies the action that EventBridge Scheduler applies to the schedule
-#' after the schedule completes invoking the target.
-#' @param ClientToken Unique, case-sensitive identifier you provide to ensure the idempotency
-#' of the request. If you do not specify a client token, EventBridge
-#' Scheduler uses a randomly generated token for the request to ensure
-#' idempotency.
+#' @param ActionAfterCompletion Specifies the action that EventBridge Scheduler applies to the schedule after the schedule completes invoking the target.
+#' @param ClientToken Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency.
 #' @param Description The description you specify for the schedule.
-#' @param EndDate The date, in UTC, before which the schedule can invoke its target.
-#' Depending on the schedule's recurrence expression, invocations might
-#' stop on, or before, the `EndDate` you specify. EventBridge Scheduler
-#' ignores `EndDate` for one-time schedules.
-#' @param FlexibleTimeWindow &#91;required&#93; Allows you to configure a time window during which EventBridge Scheduler
-#' invokes the schedule.
-#' @param GroupName The name of the schedule group to associate with this schedule. If you
-#' omit this, the default schedule group is used.
-#' @param KmsKeyArn The Amazon Resource Name (ARN) for the customer managed KMS key that
-#' EventBridge Scheduler will use to encrypt and decrypt your data.
+#' @param EndDate The date, in UTC, before which the schedule can invoke its target. Depending on the schedule's recurrence expression, invocations might stop on, or before, the `EndDate` you specify. EventBridge Scheduler ignores `EndDate` for one-time schedules.
+#' @param FlexibleTimeWindow &#91;required&#93; Allows you to configure a time window during which EventBridge Scheduler invokes the schedule.
+#' @param GroupName The name of the schedule group to associate with this schedule. If you omit this, the default schedule group is used.
+#' @param KmsKeyArn The Amazon Resource Name (ARN) for the customer managed KMS key that EventBridge Scheduler will use to encrypt and decrypt your data.
 #' @param Name &#91;required&#93; The name of the schedule that you are creating.
-#' @param ScheduleExpression &#91;required&#93; The expression that defines when the schedule runs. The following
-#' formats are supported.
+#' @param ScheduleExpression &#91;required&#93; The expression that defines when the schedule runs. The following formats are supported.
 #' 
 #' -   `at` expression - `at(yyyy-mm-ddThh:mm:ss)`
 #' 
@@ -41,30 +30,15 @@ NULL
 #' 
 #' -   `cron` expression - `cron(fields)`
 #' 
-#' You can use `at` expressions to create one-time schedules that invoke a
-#' target once, at the time and in the time zone, that you specify. You can
-#' use `rate` and `cron` expressions to create recurring schedules.
-#' Rate-based schedules are useful when you want to invoke a target at
-#' regular intervals, such as every 15 minutes or every five days.
-#' Cron-based schedules are useful when you want to invoke a target
-#' periodically at a specific time, such as at 8:00 am (UTC+0) every 1st
-#' day of the month.
+#' You can use `at` expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use `rate` and `cron` expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month.
 #' 
-#' A `cron` expression consists of six fields separated by white spaces:
-#' `(minutes hours day_of_month month day_of_week year)`.
+#' A `cron` expression consists of six fields separated by white spaces: `(minutes hours day_of_month month day_of_week year)`.
 #' 
-#' A `rate` expression consists of a *value* as a positive integer, and a
-#' *unit* with the following options: `minute` | `minutes` | `hour` |
-#' `hours` | `day` | `days`
+#' A `rate` expression consists of a *value* as a positive integer, and a *unit* with the following options: `minute` | `minutes` | `hour` | `hours` | `day` | `days`
 #' 
-#' For more information and examples, see [Schedule types on EventBridge
-#' Scheduler](https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html)
-#' in the *EventBridge Scheduler User Guide*.
+#' For more information and examples, see [Schedule types on EventBridge Scheduler](https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html) in the *EventBridge Scheduler User Guide*.
 #' @param ScheduleExpressionTimezone The timezone in which the scheduling expression is evaluated.
-#' @param StartDate The date, in UTC, after which the schedule can begin invoking its
-#' target. Depending on the schedule's recurrence expression, invocations
-#' might occur on, or after, the `StartDate` you specify. EventBridge
-#' Scheduler ignores `StartDate` for one-time schedules.
+#' @param StartDate The date, in UTC, after which the schedule can begin invoking its target. Depending on the schedule's recurrence expression, invocations might occur on, or after, the `StartDate` you specify. EventBridge Scheduler ignores `StartDate` for one-time schedules.
 #' @param State Specifies whether the schedule is enabled or disabled.
 #' @param Target &#91;required&#93; The schedule's target.
 #'
@@ -209,10 +183,7 @@ eventbridgescheduler_create_schedule <- function(ActionAfterCompletion = NULL, C
 #' @usage
 #' eventbridgescheduler_create_schedule_group(ClientToken, Name, Tags)
 #'
-#' @param ClientToken Unique, case-sensitive identifier you provide to ensure the idempotency
-#' of the request. If you do not specify a client token, EventBridge
-#' Scheduler uses a randomly generated token for the request to ensure
-#' idempotency.
+#' @param ClientToken Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency.
 #' @param Name &#91;required&#93; The name of the schedule group that you are creating.
 #' @param Tags The list of tags to associate with the schedule group.
 #'
@@ -270,12 +241,8 @@ eventbridgescheduler_create_schedule_group <- function(ClientToken = NULL, Name,
 #' @usage
 #' eventbridgescheduler_delete_schedule(ClientToken, GroupName, Name)
 #'
-#' @param ClientToken Unique, case-sensitive identifier you provide to ensure the idempotency
-#' of the request. If you do not specify a client token, EventBridge
-#' Scheduler uses a randomly generated token for the request to ensure
-#' idempotency.
-#' @param GroupName The name of the schedule group associated with this schedule. If you
-#' omit this, the default schedule group is used.
+#' @param ClientToken Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency.
+#' @param GroupName The name of the schedule group associated with this schedule. If you omit this, the default schedule group is used.
 #' @param Name &#91;required&#93; The name of the schedule to delete.
 #'
 #' @return
@@ -317,23 +284,14 @@ eventbridgescheduler_delete_schedule <- function(ClientToken = NULL, GroupName =
 #' Deletes the specified schedule group
 #'
 #' @description
-#' Deletes the specified schedule group. Deleting a schedule group results
-#' in EventBridge Scheduler deleting all schedules associated with the
-#' group. When you delete a group, it remains in a `DELETING` state until
-#' all of its associated schedules are deleted. Schedules associated with
-#' the group that are set to run while the schedule group is in the process
-#' of being deleted might continue to invoke their targets until the
-#' schedule group and its associated schedules are deleted.
+#' Deletes the specified schedule group. Deleting a schedule group results in EventBridge Scheduler deleting all schedules associated with the group. When you delete a group, it remains in a `DELETING` state until all of its associated schedules are deleted. Schedules associated with the group that are set to run while the schedule group is in the process of being deleted might continue to invoke their targets until the schedule group and its associated schedules are deleted.
 #' 
 #' This operation is eventually consistent.
 #'
 #' @usage
 #' eventbridgescheduler_delete_schedule_group(ClientToken, Name)
 #'
-#' @param ClientToken Unique, case-sensitive identifier you provide to ensure the idempotency
-#' of the request. If you do not specify a client token, EventBridge
-#' Scheduler uses a randomly generated token for the request to ensure
-#' idempotency.
+#' @param ClientToken Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency.
 #' @param Name &#91;required&#93; The name of the schedule group to delete.
 #'
 #' @return
@@ -379,9 +337,7 @@ eventbridgescheduler_delete_schedule_group <- function(ClientToken = NULL, Name)
 #' @usage
 #' eventbridgescheduler_get_schedule(GroupName, Name)
 #'
-#' @param GroupName The name of the schedule group associated with this schedule. If you
-#' omit this, EventBridge Scheduler assumes that the schedule is associated
-#' with the default group.
+#' @param GroupName The name of the schedule group associated with this schedule. If you omit this, EventBridge Scheduler assumes that the schedule is associated with the default group.
 #' @param Name &#91;required&#93; The name of the schedule to retrieve.
 #'
 #' @return
@@ -590,13 +546,9 @@ eventbridgescheduler_get_schedule_group <- function(Name) {
 #' eventbridgescheduler_list_schedule_groups(MaxResults, NamePrefix,
 #'   NextToken)
 #'
-#' @param MaxResults If specified, limits the number of results returned by this operation.
-#' The operation also returns a `NextToken` which you can use in a
-#' subsequent operation to retrieve the next set of results.
-#' @param NamePrefix The name prefix that you can use to return a filtered list of your
-#' schedule groups.
-#' @param NextToken The token returned by a previous call to retrieve the next set of
-#' results.
+#' @param MaxResults If specified, limits the number of results returned by this operation. The operation also returns a `NextToken` which you can use in a subsequent operation to retrieve the next set of results.
+#' @param NamePrefix The name prefix that you can use to return a filtered list of your schedule groups.
+#' @param NextToken The token returned by a previous call to retrieve the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -661,16 +613,11 @@ eventbridgescheduler_list_schedule_groups <- function(MaxResults = NULL, NamePre
 #' eventbridgescheduler_list_schedules(GroupName, MaxResults, NamePrefix,
 #'   NextToken, State)
 #'
-#' @param GroupName If specified, only lists the schedules whose associated schedule group
-#' matches the given filter.
-#' @param MaxResults If specified, limits the number of results returned by this operation.
-#' The operation also returns a `NextToken` which you can use in a
-#' subsequent operation to retrieve the next set of results.
+#' @param GroupName If specified, only lists the schedules whose associated schedule group matches the given filter.
+#' @param MaxResults If specified, limits the number of results returned by this operation. The operation also returns a `NextToken` which you can use in a subsequent operation to retrieve the next set of results.
 #' @param NamePrefix Schedule name prefix to return the filtered list of resources.
-#' @param NextToken The token returned by a previous call to retrieve the next set of
-#' results.
-#' @param State If specified, only lists the schedules whose current state matches the
-#' given filter.
+#' @param NextToken The token returned by a previous call to retrieve the next set of results.
+#' @param State If specified, only lists the schedules whose current state matches the given filter.
 #'
 #' @return
 #' A list with the following syntax:
@@ -740,8 +687,7 @@ eventbridgescheduler_list_schedules <- function(GroupName = NULL, MaxResults = N
 #' @usage
 #' eventbridgescheduler_list_tags_for_resource(ResourceArn)
 #'
-#' @param ResourceArn &#91;required&#93; The ARN of the EventBridge Scheduler resource for which you want to view
-#' tags.
+#' @param ResourceArn &#91;required&#93; The ARN of the EventBridge Scheduler resource for which you want to view tags.
 #'
 #' @return
 #' A list with the following syntax:
@@ -791,14 +737,12 @@ eventbridgescheduler_list_tags_for_resource <- function(ResourceArn) {
 #' Scheduler resource
 #'
 #' @description
-#' Assigns one or more tags (key-value pairs) to the specified EventBridge
-#' Scheduler resource. You can only assign tags to schedule groups.
+#' Assigns one or more tags (key-value pairs) to the specified EventBridge Scheduler resource. You can only assign tags to schedule groups.
 #'
 #' @usage
 #' eventbridgescheduler_tag_resource(ResourceArn, Tags)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the schedule group that you are adding
-#' tags to.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the schedule group that you are adding tags to.
 #' @param Tags &#91;required&#93; The list of tags to associate with the schedule group.
 #'
 #' @return
@@ -845,14 +789,12 @@ eventbridgescheduler_tag_resource <- function(ResourceArn, Tags) {
 #' schedule group
 #'
 #' @description
-#' Removes one or more tags from the specified EventBridge Scheduler
-#' schedule group.
+#' Removes one or more tags from the specified EventBridge Scheduler schedule group.
 #'
 #' @usage
 #' eventbridgescheduler_untag_resource(ResourceArn, TagKeys)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the schedule group from which you are
-#' removing tags.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the schedule group from which you are removing tags.
 #' @param TagKeys &#91;required&#93; The list of tag keys to remove from the resource.
 #'
 #' @return
@@ -895,17 +837,9 @@ eventbridgescheduler_untag_resource <- function(ResourceArn, TagKeys) {
 #' Updates the specified schedule
 #'
 #' @description
-#' Updates the specified schedule. When you call
-#' [`update_schedule`][eventbridgescheduler_update_schedule], EventBridge
-#' Scheduler uses all values, including empty values, specified in the
-#' request and overrides the existing schedule. This is by design. This
-#' means that if you do not set an optional field in your request, that
-#' field will be set to its system-default value after the update.
+#' Updates the specified schedule. When you call [`update_schedule`][eventbridgescheduler_update_schedule], EventBridge Scheduler uses all values, including empty values, specified in the request and overrides the existing schedule. This is by design. This means that if you do not set an optional field in your request, that field will be set to its system-default value after the update.
 #' 
-#' Before calling this operation, we recommend that you call the
-#' [`get_schedule`][eventbridgescheduler_get_schedule] API operation and
-#' make a note of all optional parameters for your
-#' [`update_schedule`][eventbridgescheduler_update_schedule] call.
+#' Before calling this operation, we recommend that you call the [`get_schedule`][eventbridgescheduler_get_schedule] API operation and make a note of all optional parameters for your [`update_schedule`][eventbridgescheduler_update_schedule] call.
 #'
 #' @usage
 #' eventbridgescheduler_update_schedule(ActionAfterCompletion, ClientToken,
@@ -913,28 +847,15 @@ eventbridgescheduler_untag_resource <- function(ResourceArn, TagKeys) {
 #'   ScheduleExpression, ScheduleExpressionTimezone, StartDate, State,
 #'   Target)
 #'
-#' @param ActionAfterCompletion Specifies the action that EventBridge Scheduler applies to the schedule
-#' after the schedule completes invoking the target.
-#' @param ClientToken Unique, case-sensitive identifier you provide to ensure the idempotency
-#' of the request. If you do not specify a client token, EventBridge
-#' Scheduler uses a randomly generated token for the request to ensure
-#' idempotency.
+#' @param ActionAfterCompletion Specifies the action that EventBridge Scheduler applies to the schedule after the schedule completes invoking the target.
+#' @param ClientToken Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency.
 #' @param Description The description you specify for the schedule.
-#' @param EndDate The date, in UTC, before which the schedule can invoke its target.
-#' Depending on the schedule's recurrence expression, invocations might
-#' stop on, or before, the `EndDate` you specify. EventBridge Scheduler
-#' ignores `EndDate` for one-time schedules.
-#' @param FlexibleTimeWindow &#91;required&#93; Allows you to configure a time window during which EventBridge Scheduler
-#' invokes the schedule.
-#' @param GroupName The name of the schedule group with which the schedule is associated.
-#' You must provide this value in order for EventBridge Scheduler to find
-#' the schedule you want to update. If you omit this value, EventBridge
-#' Scheduler assumes the group is associated to the default group.
-#' @param KmsKeyArn The ARN for the customer managed KMS key that that you want EventBridge
-#' Scheduler to use to encrypt and decrypt your data.
+#' @param EndDate The date, in UTC, before which the schedule can invoke its target. Depending on the schedule's recurrence expression, invocations might stop on, or before, the `EndDate` you specify. EventBridge Scheduler ignores `EndDate` for one-time schedules.
+#' @param FlexibleTimeWindow &#91;required&#93; Allows you to configure a time window during which EventBridge Scheduler invokes the schedule.
+#' @param GroupName The name of the schedule group with which the schedule is associated. You must provide this value in order for EventBridge Scheduler to find the schedule you want to update. If you omit this value, EventBridge Scheduler assumes the group is associated to the default group.
+#' @param KmsKeyArn The ARN for the customer managed KMS key that that you want EventBridge Scheduler to use to encrypt and decrypt your data.
 #' @param Name &#91;required&#93; The name of the schedule that you are updating.
-#' @param ScheduleExpression &#91;required&#93; The expression that defines when the schedule runs. The following
-#' formats are supported.
+#' @param ScheduleExpression &#91;required&#93; The expression that defines when the schedule runs. The following formats are supported.
 #' 
 #' -   `at` expression - `at(yyyy-mm-ddThh:mm:ss)`
 #' 
@@ -942,33 +863,17 @@ eventbridgescheduler_untag_resource <- function(ResourceArn, TagKeys) {
 #' 
 #' -   `cron` expression - `cron(fields)`
 #' 
-#' You can use `at` expressions to create one-time schedules that invoke a
-#' target once, at the time and in the time zone, that you specify. You can
-#' use `rate` and `cron` expressions to create recurring schedules.
-#' Rate-based schedules are useful when you want to invoke a target at
-#' regular intervals, such as every 15 minutes or every five days.
-#' Cron-based schedules are useful when you want to invoke a target
-#' periodically at a specific time, such as at 8:00 am (UTC+0) every 1st
-#' day of the month.
+#' You can use `at` expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use `rate` and `cron` expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month.
 #' 
-#' A `cron` expression consists of six fields separated by white spaces:
-#' `(minutes hours day_of_month month day_of_week year)`.
+#' A `cron` expression consists of six fields separated by white spaces: `(minutes hours day_of_month month day_of_week year)`.
 #' 
-#' A `rate` expression consists of a *value* as a positive integer, and a
-#' *unit* with the following options: `minute` | `minutes` | `hour` |
-#' `hours` | `day` | `days`
+#' A `rate` expression consists of a *value* as a positive integer, and a *unit* with the following options: `minute` | `minutes` | `hour` | `hours` | `day` | `days`
 #' 
-#' For more information and examples, see [Schedule types on EventBridge
-#' Scheduler](https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html)
-#' in the *EventBridge Scheduler User Guide*.
+#' For more information and examples, see [Schedule types on EventBridge Scheduler](https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html) in the *EventBridge Scheduler User Guide*.
 #' @param ScheduleExpressionTimezone The timezone in which the scheduling expression is evaluated.
-#' @param StartDate The date, in UTC, after which the schedule can begin invoking its
-#' target. Depending on the schedule's recurrence expression, invocations
-#' might occur on, or after, the `StartDate` you specify. EventBridge
-#' Scheduler ignores `StartDate` for one-time schedules.
+#' @param StartDate The date, in UTC, after which the schedule can begin invoking its target. Depending on the schedule's recurrence expression, invocations might occur on, or after, the `StartDate` you specify. EventBridge Scheduler ignores `StartDate` for one-time schedules.
 #' @param State Specifies whether the schedule is enabled or disabled.
-#' @param Target &#91;required&#93; The schedule target. You can use this operation to change the target
-#' that your schedule invokes.
+#' @param Target &#91;required&#93; The schedule target. You can use this operation to change the target that your schedule invokes.
 #'
 #' @return
 #' A list with the following syntax:

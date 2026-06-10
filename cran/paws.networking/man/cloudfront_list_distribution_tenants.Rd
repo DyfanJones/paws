@@ -11,7 +11,7 @@ cloudfront_list_distribution_tenants(
 )
 }
 \arguments{
-\item{AssociationFilter}{}
+\item{AssociationFilter}{Filter by the associated distribution ID or connection group ID.}
 
 \item{Marker}{The marker for the next set of results.}
 

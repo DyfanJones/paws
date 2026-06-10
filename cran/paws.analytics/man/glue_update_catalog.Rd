@@ -9,8 +9,7 @@ glue_update_catalog(CatalogId, CatalogInput)
 \arguments{
 \item{CatalogId}{[required] The ID of the catalog.}
 
-\item{CatalogInput}{[required] A \code{CatalogInput} object specifying the new properties of an existing
-catalog.}
+\item{CatalogInput}{[required] A \code{CatalogInput} object specifying the new properties of an existing catalog.}
 }
 \description{
 Updates an existing catalog's properties in the Glue Data Catalog.

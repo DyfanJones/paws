@@ -13,9 +13,15 @@ keyspaces_update_keyspace(
 \arguments{
 \item{keyspaceName}{[required] The name of the keyspace.}
 
-\item{replicationSpecification}{[required]}
+\item{replicationSpecification}{[required] The replication specification of the keyspace includes:
+\itemize{
+\item \code{regionList} - the Amazon Web Services Regions where the keyspace is replicated in.
+\item \code{replicationStrategy} - the required value is \code{SINGLE_REGION} or \code{MULTI_REGION}.
+}}
 
-\item{clientSideTimestamps}{}
+\item{clientSideTimestamps}{The client-side timestamp setting of the table.
+
+For more information, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/}{How it works: Amazon Keyspaces client-side timestamps} in the \emph{Amazon Keyspaces Developer Guide}.}
 }
 \description{
 Adds a new Amazon Web Services Region to the keyspace. You can add a new Region to a keyspace that is either a single or a multi-Region keyspace. Amazon Keyspaces is going to replicate all tables in the keyspace to the new Region. To successfully replicate all tables to the new Region, they must use client-side timestamps for conflict resolution. To enable client-side timestamps, specify \code{clientSideTimestamps.status = enabled} when invoking the API. For more information about client-side timestamps, see \href{https://docs.aws.amazon.com/keyspaces/latest/devguide/client-side-timestamps.html}{Client-side timestamps in Amazon Keyspaces} in the \emph{Amazon Keyspaces Developer Guide}.

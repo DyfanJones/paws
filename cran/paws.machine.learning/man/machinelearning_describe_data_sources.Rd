@@ -22,56 +22,35 @@ machinelearning_describe_data_sources(
 \arguments{
 \item{FilterVariable}{Use one of the following variables to filter a list of \code{DataSource}:
 \itemize{
-\item \code{CreatedAt} - Sets the search criteria to \code{DataSource} creation
-dates.
+\item \code{CreatedAt} - Sets the search criteria to \code{DataSource} creation dates.
 \item \code{Status} - Sets the search criteria to \code{DataSource} statuses.
-\item \code{Name} - Sets the search criteria to the contents of \code{DataSource}
-\code{Name}.
-\item \code{DataUri} - Sets the search criteria to the URI of data files used
-to create the \code{DataSource}. The URI can identify either a file or an
-Amazon Simple Storage Service (Amazon S3) bucket or directory.
-\item \code{IAMUser} - Sets the search criteria to the user account that
-invoked the \code{DataSource} creation.
+\item \code{Name} - Sets the search criteria to the contents of \code{DataSource} \code{Name}.
+\item \code{DataUri} - Sets the search criteria to the URI of data files used to create the \code{DataSource}. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.
+\item \code{IAMUser} - Sets the search criteria to the user account that invoked the \code{DataSource} creation.
 }}
 
-\item{EQ}{The equal to operator. The \code{DataSource} results will have
-\code{FilterVariable} values that exactly match the value specified with
-\code{EQ}.}
+\item{EQ}{The equal to operator. The \code{DataSource} results will have \code{FilterVariable} values that exactly match the value specified with \code{EQ}.}
 
-\item{GT}{The greater than operator. The \code{DataSource} results will have
-\code{FilterVariable} values that are greater than the value specified with
-\code{GT}.}
+\item{GT}{The greater than operator. The \code{DataSource} results will have \code{FilterVariable} values that are greater than the value specified with \code{GT}.}
 
-\item{LT}{The less than operator. The \code{DataSource} results will have
-\code{FilterVariable} values that are less than the value specified with
-\code{LT}.}
+\item{LT}{The less than operator. The \code{DataSource} results will have \code{FilterVariable} values that are less than the value specified with \code{LT}.}
 
-\item{GE}{The greater than or equal to operator. The \code{DataSource} results will
-have \code{FilterVariable} values that are greater than or equal to the value
-specified with \code{GE}.}
+\item{GE}{The greater than or equal to operator. The \code{DataSource} results will have \code{FilterVariable} values that are greater than or equal to the value specified with \code{GE}.}
 
-\item{LE}{The less than or equal to operator. The \code{DataSource} results will have
-\code{FilterVariable} values that are less than or equal to the value
-specified with \code{LE}.}
+\item{LE}{The less than or equal to operator. The \code{DataSource} results will have \code{FilterVariable} values that are less than or equal to the value specified with \code{LE}.}
 
-\item{NE}{The not equal to operator. The \code{DataSource} results will have
-\code{FilterVariable} values not equal to the value specified with \code{NE}.}
+\item{NE}{The not equal to operator. The \code{DataSource} results will have \code{FilterVariable} values not equal to the value specified with \code{NE}.}
 
-\item{Prefix}{A string that is found at the beginning of a variable, such as \code{Name} or
-\code{Id}.
+\item{Prefix}{A string that is found at the beginning of a variable, such as \code{Name} or \code{Id}.
 
-For example, a \code{DataSource} could have the \code{Name}
-\code{2014-09-09-HolidayGiftMailer}. To search for this \code{DataSource}, select
-\code{Name} for the \code{FilterVariable} and any of the following strings for the
-\code{Prefix}:
+For example, a \code{DataSource} could have the \code{Name} \code{2014-09-09-HolidayGiftMailer}. To search for this \code{DataSource}, select \code{Name} for the \code{FilterVariable} and any of the following strings for the \code{Prefix}:
 \itemize{
 \item 2014-09
 \item 2014-09-09
 \item 2014-09-09-Holiday
 }}
 
-\item{SortOrder}{A two-value parameter that determines the sequence of the resulting list
-of \code{DataSource}.
+\item{SortOrder}{A two-value parameter that determines the sequence of the resulting list of \code{DataSource}.
 \itemize{
 \item \code{asc} - Arranges the list in ascending order (A-Z, 0-9).
 \item \code{dsc} - Arranges the list in descending order (Z-A, 9-0).

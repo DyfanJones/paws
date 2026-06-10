@@ -20,19 +20,13 @@ cognitoidentityprovider_update_terms(
 
 \item{TermsName}{The new name that you want to apply to the requested terms documents.}
 
-\item{TermsSource}{This parameter is reserved for future use and currently accepts only one
-value.}
+\item{TermsSource}{This parameter is reserved for future use and currently accepts only one value.}
 
-\item{Enforcement}{This parameter is reserved for future use and currently accepts only one
-value.}
+\item{Enforcement}{This parameter is reserved for future use and currently accepts only one value.}
 
-\item{Links}{A map of URLs to languages. For each localized language that will view
-the requested \code{TermsName}, assign a URL. A selection of
-\code{cognito:default} displays for all languages that don't have a
-language-specific URL.
+\item{Links}{A map of URLs to languages. For each localized language that will view the requested \code{TermsName}, assign a URL. A selection of \code{cognito:default} displays for all languages that don't have a language-specific URL.
 
-For example,
-\verb{"cognito:default": "https://terms.example.com", "cognito:spanish": "https://terms.example.com/es"}.}
+For example, \verb{"cognito:default": "https://terms.example.com", "cognito:spanish": "https://terms.example.com/es"}.}
 }
 \description{
 Modifies existing terms documents for the requested app client. When Terms and conditions and Privacy policy documents are configured, the app client displays links to them in the sign-up page of managed login for the app client.

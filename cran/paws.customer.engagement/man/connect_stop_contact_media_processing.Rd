@@ -7,8 +7,7 @@
 connect_stop_contact_media_processing(InstanceId = NULL, ContactId = NULL)
 }
 \arguments{
-\item{InstanceId}{The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{ContactId}{The identifier of the contact.}
 }

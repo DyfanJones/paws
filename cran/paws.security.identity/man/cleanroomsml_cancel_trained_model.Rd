@@ -13,15 +13,11 @@ cleanroomsml_cancel_trained_model(
 \arguments{
 \item{membershipIdentifier}{[required] The membership ID of the trained model job that you want to cancel.}
 
-\item{trainedModelArn}{[required] The Amazon Resource Name (ARN) of the trained model job that you want to
-cancel.}
+\item{trainedModelArn}{[required] The Amazon Resource Name (ARN) of the trained model job that you want to cancel.}
 
-\item{versionIdentifier}{The version identifier of the trained model to cancel. This parameter
-allows you to specify which version of the trained model you want to
-cancel when multiple versions exist.
+\item{versionIdentifier}{The version identifier of the trained model to cancel. This parameter allows you to specify which version of the trained model you want to cancel when multiple versions exist.
 
-If \code{versionIdentifier} is not specified, the base model will be
-cancelled.}
+If \code{versionIdentifier} is not specified, the base model will be cancelled.}
 }
 \description{
 Submits a request to cancel the trained model job.

@@ -14,12 +14,9 @@ cloudwatchlogs_create_import_task(
 \arguments{
 \item{importSourceArn}{[required] The ARN of the source to import from.}
 
-\item{importRoleArn}{[required] The ARN of the IAM role that grants CloudWatch Logs permission to import
-from the CloudTrail Lake Event Data Store.}
+\item{importRoleArn}{[required] The ARN of the IAM role that grants CloudWatch Logs permission to import from the CloudTrail Lake Event Data Store.}
 
-\item{importFilter}{Optional filters to constrain the import by CloudTrail event time. Times
-are specified in Unix timestamp milliseconds. The range of data being
-imported must be within the specified source's retention period.}
+\item{importFilter}{Optional filters to constrain the import by CloudTrail event time. Times are specified in Unix timestamp milliseconds. The range of data being imported must be within the specified source's retention period.}
 }
 \description{
 Starts an import from a data source to CloudWatch Log and creates a managed log group as the destination for the imported data. Currently, \href{https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html}{CloudTrail Event Data Store} is the only supported data source.

@@ -5,8 +5,7 @@ NULL
 #' AWS License Manager Linux Subscriptions
 #'
 #' @description
-#' With License Manager, you can discover and track your commercial Linux
-#' subscriptions on running Amazon EC2 instances.
+#' With License Manager, you can discover and track your commercial Linux subscriptions on running Amazon EC2 instances.
 #'
 #' @param
 #' config

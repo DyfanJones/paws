@@ -7,8 +7,7 @@
 apigateway_create_usage_plan_key(usagePlanId, keyId, keyType)
 }
 \arguments{
-\item{usagePlanId}{[required] The Id of the UsagePlan resource representing the usage plan containing
-the to-be-created UsagePlanKey resource representing a plan customer.}
+\item{usagePlanId}{[required] The Id of the UsagePlan resource representing the usage plan containing the to-be-created UsagePlanKey resource representing a plan customer.}
 
 \item{keyId}{[required] The identifier of a UsagePlanKey resource for a plan customer.}
 

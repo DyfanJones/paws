@@ -17,25 +17,19 @@ entityresolution_create_id_mapping_workflow(
 )
 }
 \arguments{
-\item{workflowName}{[required] The name of the workflow. There can't be multiple \code{IdMappingWorkflows}
-with the same name.}
+\item{workflowName}{[required] The name of the workflow. There can't be multiple \code{IdMappingWorkflows} with the same name.}
 
 \item{description}{A description of the workflow.}
 
-\item{inputSourceConfig}{[required] A list of \code{InputSource} objects, which have the fields \code{InputSourceARN}
-and \code{SchemaName}.}
+\item{inputSourceConfig}{[required] A list of \code{InputSource} objects, which have the fields \code{InputSourceARN} and \code{SchemaName}.}
 
-\item{outputSourceConfig}{A list of \code{IdMappingWorkflowOutputSource} objects, each of which
-contains fields \code{outputS3Path} and \code{KMSArn}.}
+\item{outputSourceConfig}{A list of \code{IdMappingWorkflowOutputSource} objects, each of which contains fields \code{outputS3Path} and \code{KMSArn}.}
 
-\item{idMappingTechniques}{[required] An object which defines the ID mapping technique and any additional
-configurations.}
+\item{idMappingTechniques}{[required] An object which defines the ID mapping technique and any additional configurations.}
 
 \item{incrementalRunConfig}{The incremental run configuration for the ID mapping workflow.}
 
-\item{roleArn}{The Amazon Resource Name (ARN) of the IAM role. Entity Resolution
-assumes this role to create resources on your behalf as part of workflow
-execution.}
+\item{roleArn}{The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.}
 
 \item{tags}{The tags used to organize, track, or control access for this resource.}
 }

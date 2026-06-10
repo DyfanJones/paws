@@ -13,8 +13,7 @@ You can't delete the default subnet group.
 
 Constraints:
 
-Constraints: Must match the name of an existing DBSubnetGroup. Must not
-be default.
+Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
 
 Example: \code{mySubnetgroup}}
 }

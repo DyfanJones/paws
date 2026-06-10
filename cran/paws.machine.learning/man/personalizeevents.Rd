@@ -53,9 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Amazon Personalize can consume real-time user event data, such as
-\emph{stream} or \emph{click} data, and use it for model training either alone or
-combined with historical data. For more information see \href{https://docs.aws.amazon.com/personalize/latest/dg/recording-item-interaction-events.html}{Recording item interaction events}.
+Amazon Personalize can consume real-time user event data, such as \emph{stream} or \emph{click} data, and use it for model training either alone or combined with historical data. For more information see \href{https://docs.aws.amazon.com/personalize/latest/dg/recording-item-interaction-events.html}{Recording item interaction events}.
 }
 \section{Service syntax}{
 

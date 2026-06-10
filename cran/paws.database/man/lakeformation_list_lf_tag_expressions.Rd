@@ -16,8 +16,7 @@ lakeformation_list_lf_tag_expressions(
 
 \item{MaxResults}{The maximum number of results to return.}
 
-\item{NextToken}{A continuation token, if this is not the first call to retrieve this
-list.}
+\item{NextToken}{A continuation token, if this is not the first call to retrieve this list.}
 }
 \description{
 Returns the LF-Tag expressions in caller’s account filtered based on caller's permissions. Data Lake and read only admins implicitly can see all tag expressions in their account, else caller needs DESCRIBE permissions on tag expression.

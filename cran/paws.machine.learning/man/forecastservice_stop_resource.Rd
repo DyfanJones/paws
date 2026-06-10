@@ -7,10 +7,7 @@
 forecastservice_stop_resource(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) that identifies the resource to stop. The
-supported ARNs are \code{DatasetImportJobArn}, \code{PredictorArn},
-\code{PredictorBacktestExportJobArn}, \code{ForecastArn}, \code{ForecastExportJobArn},
-\code{ExplainabilityArn}, and \code{ExplainabilityExportArn}.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) that identifies the resource to stop. The supported ARNs are \code{DatasetImportJobArn}, \code{PredictorArn}, \code{PredictorBacktestExportJobArn}, \code{ForecastArn}, \code{ForecastExportJobArn}, \code{ExplainabilityArn}, and \code{ExplainabilityExportArn}.}
 }
 \description{
 Stops a resource.

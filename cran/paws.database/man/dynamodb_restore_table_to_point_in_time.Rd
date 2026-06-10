@@ -20,32 +20,25 @@ dynamodb_restore_table_to_point_in_time(
 )
 }
 \arguments{
-\item{SourceTableArn}{The DynamoDB table that will be restored. This value is an Amazon
-Resource Name (ARN).}
+\item{SourceTableArn}{The DynamoDB table that will be restored. This value is an Amazon Resource Name (ARN).}
 
 \item{SourceTableName}{Name of the source table that is being restored.}
 
 \item{TargetTableName}{[required] The name of the new table to which it must be restored to.}
 
-\item{UseLatestRestorableTime}{Restore the table to the latest possible time.
-\code{LatestRestorableDateTime} is typically 5 minutes before the current
-time.}
+\item{UseLatestRestorableTime}{Restore the table to the latest possible time. \code{LatestRestorableDateTime} is typically 5 minutes before the current time.}
 
 \item{RestoreDateTime}{Time in the past to restore the table to.}
 
 \item{BillingModeOverride}{The billing mode of the restored table.}
 
-\item{GlobalSecondaryIndexOverride}{List of global secondary indexes for the restored table. The indexes
-provided should match existing secondary indexes. You can choose to
-exclude some or all of the indexes at the time of restore.}
+\item{GlobalSecondaryIndexOverride}{List of global secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.}
 
-\item{LocalSecondaryIndexOverride}{List of local secondary indexes for the restored table. The indexes
-provided should match existing secondary indexes. You can choose to
-exclude some or all of the indexes at the time of restore.}
+\item{LocalSecondaryIndexOverride}{List of local secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.}
 
 \item{ProvisionedThroughputOverride}{Provisioned throughput settings for the restored table.}
 
-\item{OnDemandThroughputOverride}{}
+\item{OnDemandThroughputOverride}{Overrides the on-demand throughput settings for this replica table. If you don't specify a value for this parameter, it uses the source table's on-demand throughput settings.}
 
 \item{SSESpecificationOverride}{The new server-side encryption settings for the restored table.}
 }

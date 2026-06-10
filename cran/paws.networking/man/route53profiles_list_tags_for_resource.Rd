@@ -7,8 +7,7 @@
 route53profiles_list_tags_for_resource(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) for the resource that you want to list
-the tags for.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) for the resource that you want to list the tags for.}
 }
 \description{
 Lists the tags that you associated with the specified resource.

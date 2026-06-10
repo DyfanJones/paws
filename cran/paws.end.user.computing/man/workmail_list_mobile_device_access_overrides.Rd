@@ -14,22 +14,18 @@ workmail_list_mobile_device_access_overrides(
 )
 }
 \arguments{
-\item{OrganizationId}{[required] The WorkMail organization under which to list mobile device access
-overrides.}
+\item{OrganizationId}{[required] The WorkMail organization under which to list mobile device access overrides.}
 
-\item{UserId}{The WorkMail user under which you list the mobile device access
-overrides. Accepts the following types of user identities:
+\item{UserId}{The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:
 \itemize{
-\item User ID: \code{12345678-1234-1234-1234-123456789012} or
-\code{S-1-1-12-1234567890-123456789-123456789-1234}
+\item User ID: \code{12345678-1234-1234-1234-123456789012} or \code{S-1-1-12-1234567890-123456789-123456789-1234}
 \item Email address: \code{user@domain.tld}
 \item User name: \code{user}
 }}
 
 \item{DeviceId}{The mobile device to which the access override applies.}
 
-\item{NextToken}{The token to use to retrieve the next page of results. The first call
-does not require a token.}
+\item{NextToken}{The token to use to retrieve the next page of results. The first call does not require a token.}
 
 \item{MaxResults}{The maximum number of results to return in a single call.}
 }

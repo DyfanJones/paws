@@ -20,23 +20,17 @@ entityresolution_create_id_namespace(
 
 \item{description}{The description of the ID namespace.}
 
-\item{inputSourceConfig}{A list of \code{InputSource} objects, which have the fields \code{InputSourceARN}
-and \code{SchemaName}.}
+\item{inputSourceConfig}{A list of \code{InputSource} objects, which have the fields \code{InputSourceARN} and \code{SchemaName}.}
 
-\item{idMappingWorkflowProperties}{Determines the properties of \code{IdMappingWorflow} where this \code{IdNamespace}
-can be used as a \code{Source} or a \code{Target}.}
+\item{idMappingWorkflowProperties}{Determines the properties of \code{IdMappingWorflow} where this \code{IdNamespace} can be used as a \code{Source} or a \code{Target}.}
 
 \item{type}{[required] The type of ID namespace. There are two types: \code{SOURCE} and \code{TARGET}.
 
-The \code{SOURCE} contains configurations for \code{sourceId} data that will be
-processed in an ID mapping workflow.
+The \code{SOURCE} contains configurations for \code{sourceId} data that will be processed in an ID mapping workflow.
 
-The \code{TARGET} contains a configuration of \code{targetId} to which all
-\code{sourceIds} will resolve to.}
+The \code{TARGET} contains a configuration of \code{targetId} to which all \code{sourceIds} will resolve to.}
 
-\item{roleArn}{The Amazon Resource Name (ARN) of the IAM role. Entity Resolution
-assumes this role to access the resources defined in this \code{IdNamespace}
-on your behalf as part of the workflow run.}
+\item{roleArn}{The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access the resources defined in this \code{IdNamespace} on your behalf as part of the workflow run.}
 
 \item{tags}{The tags used to organize, track, or control access for this resource.}
 }

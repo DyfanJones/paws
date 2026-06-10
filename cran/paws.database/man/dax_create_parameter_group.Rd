@@ -7,8 +7,7 @@
 dax_create_parameter_group(ParameterGroupName, Description = NULL)
 }
 \arguments{
-\item{ParameterGroupName}{[required] The name of the parameter group to apply to all of the clusters in this
-replication group.}
+\item{ParameterGroupName}{[required] The name of the parameter group to apply to all of the clusters in this replication group.}
 
 \item{Description}{A description of the parameter group.}
 }

@@ -7,8 +7,7 @@
 backupgateway_untag_resource(ResourceARN, TagKeys)
 }
 \arguments{
-\item{ResourceARN}{[required] The Amazon Resource Name (ARN) of the resource from which to remove
-tags.}
+\item{ResourceARN}{[required] The Amazon Resource Name (ARN) of the resource from which to remove tags.}
 
 \item{TagKeys}{[required] The list of tag keys specifying which tags to remove.}
 }

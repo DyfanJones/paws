@@ -8,14 +8,11 @@ available to all users, assigned users only, or none}
 connect_update_workspace_visibility(InstanceId, WorkspaceId, Visibility)
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{WorkspaceId}{[required] The identifier of the workspace.}
 
-\item{Visibility}{[required] The visibility setting for the workspace. Valid values are: \code{ALL}
-(available to all users), \code{ASSIGNED} (available only to assigned users
-and routing profiles), and \code{NONE} (not visible to any users).}
+\item{Visibility}{[required] The visibility setting for the workspace. Valid values are: \code{ALL} (available to all users), \code{ASSIGNED} (available only to assigned users and routing profiles), and \code{NONE} (not visible to any users).}
 }
 \description{
 Updates the visibility setting of a workspace, controlling whether it is available to all users, assigned users only, or none.

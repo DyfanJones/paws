@@ -7,11 +7,9 @@
 memorydb_tag_resource(ResourceArn, Tags)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource to which the tags are to
-be added.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource to which the tags are to be added.}
 
-\item{Tags}{[required] A list of tags to be added to this resource. A tag is a key-value pair.
-A tag key must be accompanied by a tag value, although null is accepted.}
+\item{Tags}{[required] A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.}
 }
 \description{
 Use this operation to add tags to a resource. A tag is a key-value pair where the key and value are case-sensitive. You can use tags to categorize and track all your MemoryDB resources. For more information, see \href{https://docs.aws.amazon.com/memorydb/latest/devguide/}{Tagging your MemoryDB resources}.

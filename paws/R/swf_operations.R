@@ -7,42 +7,27 @@ NULL
 #' that meet the specified filtering criteria
 #'
 #' @description
-#' Returns the number of closed workflow executions within the given domain
-#' that meet the specified filtering criteria.
+#' Returns the number of closed workflow executions within the given domain that meet the specified filtering criteria.
 #' 
-#' This operation is eventually consistent. The results are best effort and
-#' may not exactly reflect recent updates and changes.
+#' This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
-#' -   Constrain the following parameters by using a `Condition` element
-#'     with the appropriate keys.
+#' -   Constrain the following parameters by using a `Condition` element with the appropriate keys.
 #' 
-#'     -   `tagFilter.tag`: String constraint. The key is
-#'         `swf:tagFilter.tag`.
+#'     -   `tagFilter.tag`: String constraint. The key is `swf:tagFilter.tag`.
 #' 
-#'     -   `typeFilter.name`: String constraint. The key is
-#'         `swf:typeFilter.name`.
+#'     -   `typeFilter.name`: String constraint. The key is `swf:typeFilter.name`.
 #' 
-#'     -   `typeFilter.version`: String constraint. The key is
-#'         `swf:typeFilter.version`.
+#'     -   `typeFilter.version`: String constraint. The key is `swf:typeFilter.version`.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_count_closed_workflow_executions(domain, startTimeFilter,
@@ -50,37 +35,24 @@ NULL
 #'   closeStatusFilter)
 #'
 #' @param domain &#91;required&#93; The name of the domain containing the workflow executions to count.
-#' @param startTimeFilter If specified, only workflow executions that meet the start time criteria
-#' of the filter are counted.
+#' @param startTimeFilter If specified, only workflow executions that meet the start time criteria of the filter are counted.
 #' 
-#' `startTimeFilter` and `closeTimeFilter` are mutually exclusive. You must
-#' specify one of these in a request but not both.
-#' @param closeTimeFilter If specified, only workflow executions that meet the close time criteria
-#' of the filter are counted.
+#' `startTimeFilter` and `closeTimeFilter` are mutually exclusive. You must specify one of these in a request but not both.
+#' @param closeTimeFilter If specified, only workflow executions that meet the close time criteria of the filter are counted.
 #' 
-#' `startTimeFilter` and `closeTimeFilter` are mutually exclusive. You must
-#' specify one of these in a request but not both.
-#' @param executionFilter If specified, only workflow executions matching the `WorkflowId` in the
-#' filter are counted.
+#' `startTimeFilter` and `closeTimeFilter` are mutually exclusive. You must specify one of these in a request but not both.
+#' @param executionFilter If specified, only workflow executions matching the `WorkflowId` in the filter are counted.
 #' 
-#' `closeStatusFilter`, `executionFilter`, `typeFilter` and `tagFilter` are
-#' mutually exclusive. You can specify at most one of these in a request.
-#' @param typeFilter If specified, indicates the type of the workflow executions to be
-#' counted.
+#' `closeStatusFilter`, `executionFilter`, `typeFilter` and `tagFilter` are mutually exclusive. You can specify at most one of these in a request.
+#' @param typeFilter If specified, indicates the type of the workflow executions to be counted.
 #' 
-#' `closeStatusFilter`, `executionFilter`, `typeFilter` and `tagFilter` are
-#' mutually exclusive. You can specify at most one of these in a request.
-#' @param tagFilter If specified, only executions that have a tag that matches the filter
-#' are counted.
+#' `closeStatusFilter`, `executionFilter`, `typeFilter` and `tagFilter` are mutually exclusive. You can specify at most one of these in a request.
+#' @param tagFilter If specified, only executions that have a tag that matches the filter are counted.
 #' 
-#' `closeStatusFilter`, `executionFilter`, `typeFilter` and `tagFilter` are
-#' mutually exclusive. You can specify at most one of these in a request.
-#' @param closeStatusFilter If specified, only workflow executions that match this close status are
-#' counted. This filter has an affect only if `executionStatus` is
-#' specified as `CLOSED`.
+#' `closeStatusFilter`, `executionFilter`, `typeFilter` and `tagFilter` are mutually exclusive. You can specify at most one of these in a request.
+#' @param closeStatusFilter If specified, only workflow executions that match this close status are counted. This filter has an affect only if `executionStatus` is specified as `CLOSED`.
 #' 
-#' `closeStatusFilter`, `executionFilter`, `typeFilter` and `tagFilter` are
-#' mutually exclusive. You can specify at most one of these in a request.
+#' `closeStatusFilter`, `executionFilter`, `typeFilter` and `tagFilter` are mutually exclusive. You can specify at most one of these in a request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -155,64 +127,43 @@ swf_count_closed_workflow_executions <- function(domain, startTimeFilter = NULL,
 #' that meet the specified filtering criteria
 #'
 #' @description
-#' Returns the number of open workflow executions within the given domain
-#' that meet the specified filtering criteria.
+#' Returns the number of open workflow executions within the given domain that meet the specified filtering criteria.
 #' 
-#' This operation is eventually consistent. The results are best effort and
-#' may not exactly reflect recent updates and changes.
+#' This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
-#' -   Constrain the following parameters by using a `Condition` element
-#'     with the appropriate keys.
+#' -   Constrain the following parameters by using a `Condition` element with the appropriate keys.
 #' 
-#'     -   `tagFilter.tag`: String constraint. The key is
-#'         `swf:tagFilter.tag`.
+#'     -   `tagFilter.tag`: String constraint. The key is `swf:tagFilter.tag`.
 #' 
-#'     -   `typeFilter.name`: String constraint. The key is
-#'         `swf:typeFilter.name`.
+#'     -   `typeFilter.name`: String constraint. The key is `swf:typeFilter.name`.
 #' 
-#'     -   `typeFilter.version`: String constraint. The key is
-#'         `swf:typeFilter.version`.
+#'     -   `typeFilter.version`: String constraint. The key is `swf:typeFilter.version`.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_count_open_workflow_executions(domain, startTimeFilter, typeFilter,
 #'   tagFilter, executionFilter)
 #'
 #' @param domain &#91;required&#93; The name of the domain containing the workflow executions to count.
-#' @param startTimeFilter &#91;required&#93; Specifies the start time criteria that workflow executions must meet in
-#' order to be counted.
+#' @param startTimeFilter &#91;required&#93; Specifies the start time criteria that workflow executions must meet in order to be counted.
 #' @param typeFilter Specifies the type of the workflow executions to be counted.
 #' 
-#' `executionFilter`, `typeFilter` and `tagFilter` are mutually exclusive.
-#' You can specify at most one of these in a request.
-#' @param tagFilter If specified, only executions that have a tag that matches the filter
-#' are counted.
+#' `executionFilter`, `typeFilter` and `tagFilter` are mutually exclusive. You can specify at most one of these in a request.
+#' @param tagFilter If specified, only executions that have a tag that matches the filter are counted.
 #' 
-#' `executionFilter`, `typeFilter` and `tagFilter` are mutually exclusive.
-#' You can specify at most one of these in a request.
-#' @param executionFilter If specified, only workflow executions matching the `WorkflowId` in the
-#' filter are counted.
+#' `executionFilter`, `typeFilter` and `tagFilter` are mutually exclusive. You can specify at most one of these in a request.
+#' @param executionFilter If specified, only workflow executions matching the `WorkflowId` in the filter are counted.
 #' 
-#' `executionFilter`, `typeFilter` and `tagFilter` are mutually exclusive.
-#' You can specify at most one of these in a request.
+#' `executionFilter`, `typeFilter` and `tagFilter` are mutually exclusive. You can specify at most one of these in a request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -276,33 +227,19 @@ swf_count_open_workflow_executions <- function(domain, startTimeFilter, typeFilt
 #' list
 #'
 #' @description
-#' Returns the estimated number of activity tasks in the specified task
-#' list. The count returned is an approximation and isn't guaranteed to be
-#' exact. If you specify a task list that no activity task was ever
-#' scheduled in then `0` is returned.
+#' Returns the estimated number of activity tasks in the specified task list. The count returned is an approximation and isn't guaranteed to be exact. If you specify a task list that no activity task was ever scheduled in then `0` is returned.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
-#' -   Constrain the `taskList.name` parameter by using a `Condition`
-#'     element with the `swf:taskList.name` key to allow the action to
-#'     access only certain task lists.
+#' -   Constrain the `taskList.name` parameter by using a `Condition` element with the `swf:taskList.name` key to allow the action to access only certain task lists.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_count_pending_activity_tasks(domain, taskList)
@@ -357,33 +294,19 @@ swf_count_pending_activity_tasks <- function(domain, taskList) {
 #' list
 #'
 #' @description
-#' Returns the estimated number of decision tasks in the specified task
-#' list. The count returned is an approximation and isn't guaranteed to be
-#' exact. If you specify a task list that no decision task was ever
-#' scheduled in then `0` is returned.
+#' Returns the estimated number of decision tasks in the specified task list. The count returned is an approximation and isn't guaranteed to be exact. If you specify a task list that no decision task was ever scheduled in then `0` is returned.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
-#' -   Constrain the `taskList.name` parameter by using a `Condition`
-#'     element with the `swf:taskList.name` key to allow the action to
-#'     access only certain task lists.
+#' -   Constrain the `taskList.name` parameter by using a `Condition` element with the `swf:taskList.name` key to allow the action to access only certain task lists.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_count_pending_decision_tasks(domain, taskList)
@@ -441,37 +364,23 @@ swf_count_pending_decision_tasks <- function(domain, taskList) {
 #' 
 #' Note: Prior to deletion, activity types must first be **deprecated**.
 #' 
-#' After an activity type has been deleted, you cannot schedule new
-#' activities of that type. Activities that started before the type was
-#' deleted will continue to run.
+#' After an activity type has been deleted, you cannot schedule new activities of that type. Activities that started before the type was deleted will continue to run.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
-#' -   Constrain the following parameters by using a `Condition` element
-#'     with the appropriate keys.
+#' -   Constrain the following parameters by using a `Condition` element with the appropriate keys.
 #' 
-#'     -   `activityType.name`: String constraint. The key is
-#'         `swf:activityType.name`.
+#'     -   `activityType.name`: String constraint. The key is `swf:activityType.name`.
 #' 
-#'     -   `activityType.version`: String constraint. The key is
-#'         `swf:activityType.version`.
+#'     -   `activityType.version`: String constraint. The key is `swf:activityType.version`.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_delete_activity_type(domain, activityType)
@@ -524,37 +433,23 @@ swf_delete_activity_type <- function(domain, activityType) {
 #' 
 #' Note: Prior to deletion, workflow types must first be **deprecated**.
 #' 
-#' After a workflow type has been deleted, you cannot create new executions
-#' of that type. Executions that started before the type was deleted will
-#' continue to run.
+#' After a workflow type has been deleted, you cannot create new executions of that type. Executions that started before the type was deleted will continue to run.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
-#' -   Constrain the following parameters by using a `Condition` element
-#'     with the appropriate keys.
+#' -   Constrain the following parameters by using a `Condition` element with the appropriate keys.
 #' 
-#'     -   `workflowType.name`: String constraint. The key is
-#'         `swf:workflowType.name`.
+#'     -   `workflowType.name`: String constraint. The key is `swf:workflowType.name`.
 #' 
-#'     -   `workflowType.version`: String constraint. The key is
-#'         `swf:workflowType.version`.
+#'     -   `workflowType.version`: String constraint. The key is `swf:workflowType.version`.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_delete_workflow_type(domain, workflowType)
@@ -603,38 +498,23 @@ swf_delete_workflow_type <- function(domain, workflowType) {
 #' Deprecates the specified activity type
 #'
 #' @description
-#' Deprecates the specified *activity type*. After an activity type has
-#' been deprecated, you cannot create new tasks of that activity type.
-#' Tasks of this type that were scheduled before the type was deprecated
-#' continue to run.
+#' Deprecates the specified *activity type*. After an activity type has been deprecated, you cannot create new tasks of that activity type. Tasks of this type that were scheduled before the type was deprecated continue to run.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
-#' -   Constrain the following parameters by using a `Condition` element
-#'     with the appropriate keys.
+#' -   Constrain the following parameters by using a `Condition` element with the appropriate keys.
 #' 
-#'     -   `activityType.name`: String constraint. The key is
-#'         `swf:activityType.name`.
+#'     -   `activityType.name`: String constraint. The key is `swf:activityType.name`.
 #' 
-#'     -   `activityType.version`: String constraint. The key is
-#'         `swf:activityType.version`.
+#'     -   `activityType.version`: String constraint. The key is `swf:activityType.version`.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_deprecate_activity_type(domain, activityType)
@@ -683,36 +563,21 @@ swf_deprecate_activity_type <- function(domain, activityType) {
 #' Deprecates the specified domain
 #'
 #' @description
-#' Deprecates the specified domain. After a domain has been deprecated it
-#' cannot be used to create new workflow executions or register new types.
-#' However, you can still use visibility actions on this domain.
-#' Deprecating a domain also deprecates all activity and workflow types
-#' registered in the domain. Executions that were started before the domain
-#' was deprecated continues to run.
+#' Deprecates the specified domain. After a domain has been deprecated it cannot be used to create new workflow executions or register new types. However, you can still use visibility actions on this domain. Deprecating a domain also deprecates all activity and workflow types registered in the domain. Executions that were started before the domain was deprecated continues to run.
 #' 
-#' This operation is eventually consistent. The results are best effort and
-#' may not exactly reflect recent updates and changes.
+#' This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
 #' -   You cannot use an IAM policy to constrain this action's parameters.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_deprecate_domain(name)
@@ -756,42 +621,25 @@ swf_deprecate_domain <- function(name) {
 #' Deprecates the specified workflow type
 #'
 #' @description
-#' Deprecates the specified *workflow type*. After a workflow type has been
-#' deprecated, you cannot create new executions of that type. Executions
-#' that were started before the type was deprecated continues to run. A
-#' deprecated workflow type may still be used when calling visibility
-#' actions.
+#' Deprecates the specified *workflow type*. After a workflow type has been deprecated, you cannot create new executions of that type. Executions that were started before the type was deprecated continues to run. A deprecated workflow type may still be used when calling visibility actions.
 #' 
-#' This operation is eventually consistent. The results are best effort and
-#' may not exactly reflect recent updates and changes.
+#' This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
-#' -   Constrain the following parameters by using a `Condition` element
-#'     with the appropriate keys.
+#' -   Constrain the following parameters by using a `Condition` element with the appropriate keys.
 #' 
-#'     -   `workflowType.name`: String constraint. The key is
-#'         `swf:workflowType.name`.
+#'     -   `workflowType.name`: String constraint. The key is `swf:workflowType.name`.
 #' 
-#'     -   `workflowType.version`: String constraint. The key is
-#'         `swf:workflowType.version`.
+#'     -   `workflowType.version`: String constraint. The key is `swf:workflowType.version`.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_deprecate_workflow_type(domain, workflowType)
@@ -840,45 +688,29 @@ swf_deprecate_workflow_type <- function(domain, workflowType) {
 #' Returns information about the specified activity type
 #'
 #' @description
-#' Returns information about the specified activity type. This includes
-#' configuration settings provided when the type was registered and other
-#' general information about the type.
+#' Returns information about the specified activity type. This includes configuration settings provided when the type was registered and other general information about the type.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
-#' -   Constrain the following parameters by using a `Condition` element
-#'     with the appropriate keys.
+#' -   Constrain the following parameters by using a `Condition` element with the appropriate keys.
 #' 
-#'     -   `activityType.name`: String constraint. The key is
-#'         `swf:activityType.name`.
+#'     -   `activityType.name`: String constraint. The key is `swf:activityType.name`.
 #' 
-#'     -   `activityType.version`: String constraint. The key is
-#'         `swf:activityType.version`.
+#'     -   `activityType.version`: String constraint. The key is `swf:activityType.version`.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_describe_activity_type(domain, activityType)
 #'
 #' @param domain &#91;required&#93; The name of the domain in which the activity type is registered.
-#' @param activityType &#91;required&#93; The activity type to get information about. Activity types are
-#' identified by the `name` and `version` that were supplied when the
-#' activity was registered.
+#' @param activityType &#91;required&#93; The activity type to get information about. Activity types are identified by the `name` and `version` that were supplied when the activity was registered.
 #'
 #' @return
 #' A list with the following syntax:
@@ -950,29 +782,19 @@ swf_describe_activity_type <- function(domain, activityType) {
 #' and status
 #'
 #' @description
-#' Returns information about the specified domain, including description
-#' and status.
+#' Returns information about the specified domain, including description and status.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
 #' -   You cannot use an IAM policy to constrain this action's parameters.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_describe_domain(name)
@@ -1030,32 +852,21 @@ swf_describe_domain <- function(name) {
 #' type and some statistics
 #'
 #' @description
-#' Returns information about the specified workflow execution including its
-#' type and some statistics.
+#' Returns information about the specified workflow execution including its type and some statistics.
 #' 
-#' This operation is eventually consistent. The results are best effort and
-#' may not exactly reflect recent updates and changes.
+#' This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
 #' -   You cannot use an IAM policy to constrain this action's parameters.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_describe_workflow_execution(domain, execution)
@@ -1155,37 +966,23 @@ swf_describe_workflow_execution <- function(domain, execution) {
 #' Returns information about the specified workflow type
 #'
 #' @description
-#' Returns information about the specified *workflow type*. This includes
-#' configuration settings specified when the type was registered and other
-#' information such as creation date, current status, etc.
+#' Returns information about the specified *workflow type*. This includes configuration settings specified when the type was registered and other information such as creation date, current status, etc.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
-#' -   Constrain the following parameters by using a `Condition` element
-#'     with the appropriate keys.
+#' -   Constrain the following parameters by using a `Condition` element with the appropriate keys.
 #' 
-#'     -   `workflowType.name`: String constraint. The key is
-#'         `swf:workflowType.name`.
+#'     -   `workflowType.name`: String constraint. The key is `swf:workflowType.name`.
 #' 
-#'     -   `workflowType.version`: String constraint. The key is
-#'         `swf:workflowType.version`.
+#'     -   `workflowType.version`: String constraint. The key is `swf:workflowType.version`.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_describe_workflow_type(domain, workflowType)
@@ -1262,33 +1059,21 @@ swf_describe_workflow_type <- function(domain, workflowType) {
 #' Returns the history of the specified workflow execution
 #'
 #' @description
-#' Returns the history of the specified workflow execution. The results may
-#' be split into multiple pages. To retrieve subsequent pages, make the
-#' call again using the `nextPageToken` returned by the initial call.
+#' Returns the history of the specified workflow execution. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the `nextPageToken` returned by the initial call.
 #' 
-#' This operation is eventually consistent. The results are best effort and
-#' may not exactly reflect recent updates and changes.
+#' This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
 #' -   You cannot use an IAM policy to constrain this action's parameters.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_get_workflow_execution_history(domain, execution, nextPageToken,
@@ -1296,20 +1081,11 @@ swf_describe_workflow_type <- function(domain, workflowType) {
 #'
 #' @param domain &#91;required&#93; The name of the domain containing the workflow execution.
 #' @param execution &#91;required&#93; Specifies the workflow execution for which to return the history.
-#' @param nextPageToken If `NextPageToken` is returned there are more results available. The
-#' value of `NextPageToken` is a unique pagination token for each page.
-#' Make the call again using the returned token to retrieve the next page.
-#' Keep all other arguments unchanged. Each pagination token expires after
-#' 24 hours. Using an expired pagination token will return a `400` error:
-#' "`Specified token has exceeded its maximum lifetime`".
+#' @param nextPageToken If `NextPageToken` is returned there are more results available. The value of `NextPageToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a `400` error: "`Specified token has exceeded its maximum lifetime`".
 #' 
-#' The configured `maximumPageSize` determines how many results can be
-#' returned in a single call.
-#' @param maximumPageSize The maximum number of results that are returned per call. Use
-#' `nextPageToken` to obtain further pages of results.
-#' @param reverseOrder When set to `true`, returns the events in reverse order. By default the
-#' results are returned in ascending order of the `eventTimeStamp` of the
-#' events.
+#' The configured `maximumPageSize` determines how many results can be returned in a single call.
+#' @param maximumPageSize The maximum number of results that are returned per call. Use `nextPageToken` to obtain further pages of results.
+#' @param reverseOrder When set to `true`, returns the events in reverse order. By default the results are returned in ascending order of the `eventTimeStamp` of the events.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1784,33 +1560,19 @@ swf_get_workflow_execution_history <- function(domain, execution, nextPageToken 
 #' domain that match the specified name and registration status
 #'
 #' @description
-#' Returns information about all activities registered in the specified
-#' domain that match the specified name and registration status. The result
-#' includes information like creation date, current status of the activity,
-#' etc. The results may be split into multiple pages. To retrieve
-#' subsequent pages, make the call again using the `nextPageToken` returned
-#' by the initial call.
+#' Returns information about all activities registered in the specified domain that match the specified name and registration status. The result includes information like creation date, current status of the activity, etc. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the `nextPageToken` returned by the initial call.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
 #' -   You cannot use an IAM policy to constrain this action's parameters.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_list_activity_types(domain, name, registrationStatus, nextPageToken,
@@ -1819,20 +1581,11 @@ swf_get_workflow_execution_history <- function(domain, execution, nextPageToken 
 #' @param domain &#91;required&#93; The name of the domain in which the activity types have been registered.
 #' @param name If specified, only lists the activity types that have this name.
 #' @param registrationStatus &#91;required&#93; Specifies the registration status of the activity types to list.
-#' @param nextPageToken If `NextPageToken` is returned there are more results available. The
-#' value of `NextPageToken` is a unique pagination token for each page.
-#' Make the call again using the returned token to retrieve the next page.
-#' Keep all other arguments unchanged. Each pagination token expires after
-#' 24 hours. Using an expired pagination token will return a `400` error:
-#' "`Specified token has exceeded its maximum lifetime`".
+#' @param nextPageToken If `NextPageToken` is returned there are more results available. The value of `NextPageToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a `400` error: "`Specified token has exceeded its maximum lifetime`".
 #' 
-#' The configured `maximumPageSize` determines how many results can be
-#' returned in a single call.
-#' @param maximumPageSize The maximum number of results that are returned per call. Use
-#' `nextPageToken` to obtain further pages of results.
-#' @param reverseOrder When set to `true`, returns the results in reverse order. By default,
-#' the results are returned in ascending alphabetical order by `name` of
-#' the activity types.
+#' The configured `maximumPageSize` determines how many results can be returned in a single call.
+#' @param maximumPageSize The maximum number of results that are returned per call. Use `nextPageToken` to obtain further pages of results.
+#' @param reverseOrder When set to `true`, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by `name` of the activity types.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1898,44 +1651,27 @@ swf_list_activity_types <- function(domain, name = NULL, registrationStatus, nex
 #' that meet the filtering criteria
 #'
 #' @description
-#' Returns a list of closed workflow executions in the specified domain
-#' that meet the filtering criteria. The results may be split into multiple
-#' pages. To retrieve subsequent pages, make the call again using the
-#' nextPageToken returned by the initial call.
+#' Returns a list of closed workflow executions in the specified domain that meet the filtering criteria. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the nextPageToken returned by the initial call.
 #' 
-#' This operation is eventually consistent. The results are best effort and
-#' may not exactly reflect recent updates and changes.
+#' This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
-#' -   Constrain the following parameters by using a `Condition` element
-#'     with the appropriate keys.
+#' -   Constrain the following parameters by using a `Condition` element with the appropriate keys.
 #' 
-#'     -   `tagFilter.tag`: String constraint. The key is
-#'         `swf:tagFilter.tag`.
+#'     -   `tagFilter.tag`: String constraint. The key is `swf:tagFilter.tag`.
 #' 
-#'     -   `typeFilter.name`: String constraint. The key is
-#'         `swf:typeFilter.name`.
+#'     -   `typeFilter.name`: String constraint. The key is `swf:typeFilter.name`.
 #' 
-#'     -   `typeFilter.version`: String constraint. The key is
-#'         `swf:typeFilter.version`.
+#'     -   `typeFilter.version`: String constraint. The key is `swf:typeFilter.version`.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_list_closed_workflow_executions(domain, startTimeFilter,
@@ -1943,54 +1679,29 @@ swf_list_activity_types <- function(domain, name = NULL, registrationStatus, nex
 #'   tagFilter, nextPageToken, maximumPageSize, reverseOrder)
 #'
 #' @param domain &#91;required&#93; The name of the domain that contains the workflow executions to list.
-#' @param startTimeFilter If specified, the workflow executions are included in the returned
-#' results based on whether their start times are within the range
-#' specified by this filter. Also, if this parameter is specified, the
-#' returned results are ordered by their start times.
+#' @param startTimeFilter If specified, the workflow executions are included in the returned results based on whether their start times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their start times.
 #' 
-#' `startTimeFilter` and `closeTimeFilter` are mutually exclusive. You must
-#' specify one of these in a request but not both.
-#' @param closeTimeFilter If specified, the workflow executions are included in the returned
-#' results based on whether their close times are within the range
-#' specified by this filter. Also, if this parameter is specified, the
-#' returned results are ordered by their close times.
+#' `startTimeFilter` and `closeTimeFilter` are mutually exclusive. You must specify one of these in a request but not both.
+#' @param closeTimeFilter If specified, the workflow executions are included in the returned results based on whether their close times are within the range specified by this filter. Also, if this parameter is specified, the returned results are ordered by their close times.
 #' 
-#' `startTimeFilter` and `closeTimeFilter` are mutually exclusive. You must
-#' specify one of these in a request but not both.
-#' @param executionFilter If specified, only workflow executions matching the workflow ID
-#' specified in the filter are returned.
+#' `startTimeFilter` and `closeTimeFilter` are mutually exclusive. You must specify one of these in a request but not both.
+#' @param executionFilter If specified, only workflow executions matching the workflow ID specified in the filter are returned.
 #' 
-#' `closeStatusFilter`, `executionFilter`, `typeFilter` and `tagFilter` are
-#' mutually exclusive. You can specify at most one of these in a request.
-#' @param closeStatusFilter If specified, only workflow executions that match this *close status*
-#' are listed. For example, if TERMINATED is specified, then only
-#' TERMINATED workflow executions are listed.
+#' `closeStatusFilter`, `executionFilter`, `typeFilter` and `tagFilter` are mutually exclusive. You can specify at most one of these in a request.
+#' @param closeStatusFilter If specified, only workflow executions that match this *close status* are listed. For example, if TERMINATED is specified, then only TERMINATED workflow executions are listed.
 #' 
-#' `closeStatusFilter`, `executionFilter`, `typeFilter` and `tagFilter` are
-#' mutually exclusive. You can specify at most one of these in a request.
-#' @param typeFilter If specified, only executions of the type specified in the filter are
-#' returned.
+#' `closeStatusFilter`, `executionFilter`, `typeFilter` and `tagFilter` are mutually exclusive. You can specify at most one of these in a request.
+#' @param typeFilter If specified, only executions of the type specified in the filter are returned.
 #' 
-#' `closeStatusFilter`, `executionFilter`, `typeFilter` and `tagFilter` are
-#' mutually exclusive. You can specify at most one of these in a request.
+#' `closeStatusFilter`, `executionFilter`, `typeFilter` and `tagFilter` are mutually exclusive. You can specify at most one of these in a request.
 #' @param tagFilter If specified, only executions that have the matching tag are listed.
 #' 
-#' `closeStatusFilter`, `executionFilter`, `typeFilter` and `tagFilter` are
-#' mutually exclusive. You can specify at most one of these in a request.
-#' @param nextPageToken If `NextPageToken` is returned there are more results available. The
-#' value of `NextPageToken` is a unique pagination token for each page.
-#' Make the call again using the returned token to retrieve the next page.
-#' Keep all other arguments unchanged. Each pagination token expires after
-#' 24 hours. Using an expired pagination token will return a `400` error:
-#' "`Specified token has exceeded its maximum lifetime`".
+#' `closeStatusFilter`, `executionFilter`, `typeFilter` and `tagFilter` are mutually exclusive. You can specify at most one of these in a request.
+#' @param nextPageToken If `NextPageToken` is returned there are more results available. The value of `NextPageToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a `400` error: "`Specified token has exceeded its maximum lifetime`".
 #' 
-#' The configured `maximumPageSize` determines how many results can be
-#' returned in a single call.
-#' @param maximumPageSize The maximum number of results that are returned per call. Use
-#' `nextPageToken` to obtain further pages of results.
-#' @param reverseOrder When set to `true`, returns the results in reverse order. By default the
-#' results are returned in descending order of the start or the close time
-#' of the executions.
+#' The configured `maximumPageSize` determines how many results can be returned in a single call.
+#' @param maximumPageSize The maximum number of results that are returned per call. Use `nextPageToken` to obtain further pages of results.
+#' @param reverseOrder When set to `true`, returns the results in reverse order. By default the results are returned in descending order of the start or the close time of the executions.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2094,55 +1805,32 @@ swf_list_closed_workflow_executions <- function(domain, startTimeFilter = NULL, 
 #' Returns the list of domains registered in the account
 #'
 #' @description
-#' Returns the list of domains registered in the account. The results may
-#' be split into multiple pages. To retrieve subsequent pages, make the
-#' call again using the nextPageToken returned by the initial call.
+#' Returns the list of domains registered in the account. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the nextPageToken returned by the initial call.
 #' 
-#' This operation is eventually consistent. The results are best effort and
-#' may not exactly reflect recent updates and changes.
+#' This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains. The element must be set to
-#'     `arn:aws:swf::AccountID:domain/*`, where *AccountID* is the account
-#'     ID, with no dashes.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains. The element must be set to `arn:aws:swf::AccountID:domain/*`, where *AccountID* is the account ID, with no dashes.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
 #' -   You cannot use an IAM policy to constrain this action's parameters.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_list_domains(nextPageToken, registrationStatus, maximumPageSize,
 #'   reverseOrder)
 #'
-#' @param nextPageToken If `NextPageToken` is returned there are more results available. The
-#' value of `NextPageToken` is a unique pagination token for each page.
-#' Make the call again using the returned token to retrieve the next page.
-#' Keep all other arguments unchanged. Each pagination token expires after
-#' 24 hours. Using an expired pagination token will return a `400` error:
-#' "`Specified token has exceeded its maximum lifetime`".
+#' @param nextPageToken If `NextPageToken` is returned there are more results available. The value of `NextPageToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a `400` error: "`Specified token has exceeded its maximum lifetime`".
 #' 
-#' The configured `maximumPageSize` determines how many results can be
-#' returned in a single call.
+#' The configured `maximumPageSize` determines how many results can be returned in a single call.
 #' @param registrationStatus &#91;required&#93; Specifies the registration status of the domains to list.
-#' @param maximumPageSize The maximum number of results that are returned per call. Use
-#' `nextPageToken` to obtain further pages of results.
-#' @param reverseOrder When set to `true`, returns the results in reverse order. By default,
-#' the results are returned in ascending alphabetical order by `name` of
-#' the domains.
+#' @param maximumPageSize The maximum number of results that are returned per call. Use `nextPageToken` to obtain further pages of results.
+#' @param reverseOrder When set to `true`, returns the results in reverse order. By default, the results are returned in ascending alphabetical order by `name` of the domains.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2198,44 +1886,27 @@ swf_list_domains <- function(nextPageToken = NULL, registrationStatus, maximumPa
 #' meet the filtering criteria
 #'
 #' @description
-#' Returns a list of open workflow executions in the specified domain that
-#' meet the filtering criteria. The results may be split into multiple
-#' pages. To retrieve subsequent pages, make the call again using the
-#' nextPageToken returned by the initial call.
+#' Returns a list of open workflow executions in the specified domain that meet the filtering criteria. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the nextPageToken returned by the initial call.
 #' 
-#' This operation is eventually consistent. The results are best effort and
-#' may not exactly reflect recent updates and changes.
+#' This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
-#' -   Constrain the following parameters by using a `Condition` element
-#'     with the appropriate keys.
+#' -   Constrain the following parameters by using a `Condition` element with the appropriate keys.
 #' 
-#'     -   `tagFilter.tag`: String constraint. The key is
-#'         `swf:tagFilter.tag`.
+#'     -   `tagFilter.tag`: String constraint. The key is `swf:tagFilter.tag`.
 #' 
-#'     -   `typeFilter.name`: String constraint. The key is
-#'         `swf:typeFilter.name`.
+#'     -   `typeFilter.name`: String constraint. The key is `swf:typeFilter.name`.
 #' 
-#'     -   `typeFilter.version`: String constraint. The key is
-#'         `swf:typeFilter.version`.
+#'     -   `typeFilter.version`: String constraint. The key is `swf:typeFilter.version`.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_list_open_workflow_executions(domain, startTimeFilter, typeFilter,
@@ -2243,36 +1914,21 @@ swf_list_domains <- function(nextPageToken = NULL, registrationStatus, maximumPa
 #'   executionFilter)
 #'
 #' @param domain &#91;required&#93; The name of the domain that contains the workflow executions to list.
-#' @param startTimeFilter &#91;required&#93; Workflow executions are included in the returned results based on
-#' whether their start times are within the range specified by this filter.
-#' @param typeFilter If specified, only executions of the type specified in the filter are
-#' returned.
+#' @param startTimeFilter &#91;required&#93; Workflow executions are included in the returned results based on whether their start times are within the range specified by this filter.
+#' @param typeFilter If specified, only executions of the type specified in the filter are returned.
 #' 
-#' `executionFilter`, `typeFilter` and `tagFilter` are mutually exclusive.
-#' You can specify at most one of these in a request.
+#' `executionFilter`, `typeFilter` and `tagFilter` are mutually exclusive. You can specify at most one of these in a request.
 #' @param tagFilter If specified, only executions that have the matching tag are listed.
 #' 
-#' `executionFilter`, `typeFilter` and `tagFilter` are mutually exclusive.
-#' You can specify at most one of these in a request.
-#' @param nextPageToken If `NextPageToken` is returned there are more results available. The
-#' value of `NextPageToken` is a unique pagination token for each page.
-#' Make the call again using the returned token to retrieve the next page.
-#' Keep all other arguments unchanged. Each pagination token expires after
-#' 24 hours. Using an expired pagination token will return a `400` error:
-#' "`Specified token has exceeded its maximum lifetime`".
+#' `executionFilter`, `typeFilter` and `tagFilter` are mutually exclusive. You can specify at most one of these in a request.
+#' @param nextPageToken If `NextPageToken` is returned there are more results available. The value of `NextPageToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a `400` error: "`Specified token has exceeded its maximum lifetime`".
 #' 
-#' The configured `maximumPageSize` determines how many results can be
-#' returned in a single call.
-#' @param maximumPageSize The maximum number of results that are returned per call. Use
-#' `nextPageToken` to obtain further pages of results.
-#' @param reverseOrder When set to `true`, returns the results in reverse order. By default the
-#' results are returned in descending order of the start time of the
-#' executions.
-#' @param executionFilter If specified, only workflow executions matching the workflow ID
-#' specified in the filter are returned.
+#' The configured `maximumPageSize` determines how many results can be returned in a single call.
+#' @param maximumPageSize The maximum number of results that are returned per call. Use `nextPageToken` to obtain further pages of results.
+#' @param reverseOrder When set to `true`, returns the results in reverse order. By default the results are returned in descending order of the start time of the executions.
+#' @param executionFilter If specified, only workflow executions matching the workflow ID specified in the filter are returned.
 #' 
-#' `executionFilter`, `typeFilter` and `tagFilter` are mutually exclusive.
-#' You can specify at most one of these in a request.
+#' `executionFilter`, `typeFilter` and `tagFilter` are mutually exclusive. You can specify at most one of these in a request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2419,30 +2075,19 @@ swf_list_tags_for_resource <- function(resourceArn) {
 #' Returns information about workflow types in the specified domain
 #'
 #' @description
-#' Returns information about workflow types in the specified domain. The
-#' results may be split into multiple pages that can be retrieved by making
-#' the call repeatedly.
+#' Returns information about workflow types in the specified domain. The results may be split into multiple pages that can be retrieved by making the call repeatedly.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
 #' -   You cannot use an IAM policy to constrain this action's parameters.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_list_workflow_types(domain, name, registrationStatus, nextPageToken,
@@ -2451,20 +2096,11 @@ swf_list_tags_for_resource <- function(resourceArn) {
 #' @param domain &#91;required&#93; The name of the domain in which the workflow types have been registered.
 #' @param name If specified, lists the workflow type with this name.
 #' @param registrationStatus &#91;required&#93; Specifies the registration status of the workflow types to list.
-#' @param nextPageToken If `NextPageToken` is returned there are more results available. The
-#' value of `NextPageToken` is a unique pagination token for each page.
-#' Make the call again using the returned token to retrieve the next page.
-#' Keep all other arguments unchanged. Each pagination token expires after
-#' 24 hours. Using an expired pagination token will return a `400` error:
-#' "`Specified token has exceeded its maximum lifetime`".
+#' @param nextPageToken If `NextPageToken` is returned there are more results available. The value of `NextPageToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a `400` error: "`Specified token has exceeded its maximum lifetime`".
 #' 
-#' The configured `maximumPageSize` determines how many results can be
-#' returned in a single call.
-#' @param maximumPageSize The maximum number of results that are returned per call. Use
-#' `nextPageToken` to obtain further pages of results.
-#' @param reverseOrder When set to `true`, returns the results in reverse order. By default the
-#' results are returned in ascending alphabetical order of the `name` of
-#' the workflow types.
+#' The configured `maximumPageSize` determines how many results can be returned in a single call.
+#' @param maximumPageSize The maximum number of results that are returned per call. Use `nextPageToken` to obtain further pages of results.
+#' @param reverseOrder When set to `true`, returns the results in reverse order. By default the results are returned in ascending alphabetical order of the `name` of the workflow types.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2530,42 +2166,21 @@ swf_list_workflow_types <- function(domain, name = NULL, registrationStatus, nex
 #' taskList
 #'
 #' @description
-#' Used by workers to get an ActivityTask from the specified activity
-#' `taskList`. This initiates a long poll, where the service holds the HTTP
-#' connection open and responds as soon as a task becomes available. The
-#' maximum time the service holds on to the request before responding is 60
-#' seconds. If no task is available within 60 seconds, the poll returns an
-#' empty result. An empty result, in this context, means that an
-#' ActivityTask is returned, but that the value of taskToken is an empty
-#' string. If a task is returned, the worker should use its type to
-#' identify and process it correctly.
+#' Used by workers to get an ActivityTask from the specified activity `taskList`. This initiates a long poll, where the service holds the HTTP connection open and responds as soon as a task becomes available. The maximum time the service holds on to the request before responding is 60 seconds. If no task is available within 60 seconds, the poll returns an empty result. An empty result, in this context, means that an ActivityTask is returned, but that the value of taskToken is an empty string. If a task is returned, the worker should use its type to identify and process it correctly.
 #' 
-#' Workers should set their client side socket timeout to at least 70
-#' seconds (10 seconds higher than the maximum time service may hold the
-#' poll request).
+#' Workers should set their client side socket timeout to at least 70 seconds (10 seconds higher than the maximum time service may hold the poll request).
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
-#' -   Constrain the `taskList.name` parameter by using a `Condition`
-#'     element with the `swf:taskList.name` key to allow the action to
-#'     access only certain task lists.
+#' -   Constrain the `taskList.name` parameter by using a `Condition` element with the `swf:taskList.name` key to allow the action to access only certain task lists.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_poll_for_activity_task(domain, taskList, identity)
@@ -2573,14 +2188,8 @@ swf_list_workflow_types <- function(domain, name = NULL, registrationStatus, nex
 #' @param domain &#91;required&#93; The name of the domain that contains the task lists being polled.
 #' @param taskList &#91;required&#93; Specifies the task list to poll for activity tasks.
 #' 
-#' The specified string must not start or end with whitespace. It must not
-#' contain a `:` (colon), `/` (slash), `|` (vertical bar), or any control
-#' characters (``U+0000`-`U+001f`` | ``U+007f`-`U+009f``). Also, it must *not* be
-#' the literal string `arn`.
-#' @param identity Identity of the worker making the request, recorded in the
-#' `ActivityTaskStarted` event in the workflow history. This enables
-#' diagnostic tracing when problems arise. The form of this identity is
-#' user defined.
+#' The specified string must not start or end with whitespace. It must not contain a `:` (colon), `/` (slash), `|` (vertical bar), or any control characters (``U+0000`-`U+001f`` | ``U+007f`-`U+009f``). Also, it must *not* be the literal string `arn`.
+#' @param identity Identity of the worker making the request, recorded in the `ActivityTaskStarted` event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2640,55 +2249,25 @@ swf_poll_for_activity_task <- function(domain, taskList, identity = NULL) {
 #' taskList
 #'
 #' @description
-#' Used by deciders to get a DecisionTask from the specified decision
-#' `taskList`. A decision task may be returned for any open workflow
-#' execution that is using the specified task list. The task includes a
-#' paginated view of the history of the workflow execution. The decider
-#' should use the workflow type and the history to determine how to
-#' properly handle the task.
+#' Used by deciders to get a DecisionTask from the specified decision `taskList`. A decision task may be returned for any open workflow execution that is using the specified task list. The task includes a paginated view of the history of the workflow execution. The decider should use the workflow type and the history to determine how to properly handle the task.
 #' 
-#' This action initiates a long poll, where the service holds the HTTP
-#' connection open and responds as soon a task becomes available. If no
-#' decision task is available in the specified task list before the timeout
-#' of 60 seconds expires, an empty result is returned. An empty result, in
-#' this context, means that a DecisionTask is returned, but that the value
-#' of taskToken is an empty string.
+#' This action initiates a long poll, where the service holds the HTTP connection open and responds as soon a task becomes available. If no decision task is available in the specified task list before the timeout of 60 seconds expires, an empty result is returned. An empty result, in this context, means that a DecisionTask is returned, but that the value of taskToken is an empty string.
 #' 
-#' Deciders should set their client side socket timeout to at least 70
-#' seconds (10 seconds higher than the timeout).
+#' Deciders should set their client side socket timeout to at least 70 seconds (10 seconds higher than the timeout).
 #' 
-#' Because the number of workflow history events for a single workflow
-#' execution might be very large, the result returned might be split up
-#' across a number of pages. To retrieve subsequent pages, make additional
-#' calls to [`poll_for_decision_task`][swf_poll_for_decision_task] using
-#' the `nextPageToken` returned by the initial call. Note that you do *not*
-#' call
-#' [`get_workflow_execution_history`][swf_get_workflow_execution_history]
-#' with this `nextPageToken`. Instead, call
-#' [`poll_for_decision_task`][swf_poll_for_decision_task] again.
+#' Because the number of workflow history events for a single workflow execution might be very large, the result returned might be split up across a number of pages. To retrieve subsequent pages, make additional calls to [`poll_for_decision_task`][swf_poll_for_decision_task] using the `nextPageToken` returned by the initial call. Note that you do *not* call [`get_workflow_execution_history`][swf_get_workflow_execution_history] with this `nextPageToken`. Instead, call [`poll_for_decision_task`][swf_poll_for_decision_task] again.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
-#' -   Constrain the `taskList.name` parameter by using a `Condition`
-#'     element with the `swf:taskList.name` key to allow the action to
-#'     access only certain task lists.
+#' -   Constrain the `taskList.name` parameter by using a `Condition` element with the `swf:taskList.name` key to allow the action to access only certain task lists.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_poll_for_decision_task(domain, taskList, identity, nextPageToken,
@@ -2697,42 +2276,18 @@ swf_poll_for_activity_task <- function(domain, taskList, identity = NULL) {
 #' @param domain &#91;required&#93; The name of the domain containing the task lists to poll.
 #' @param taskList &#91;required&#93; Specifies the task list to poll for decision tasks.
 #' 
-#' The specified string must not contain a `:` (colon), `/` (slash), `|`
-#' (vertical bar), or any control characters (``U+0000`-`U+001f`` |
-#' ``U+007f`-`U+009f``). Also, it must *not* be the literal string `arn`.
-#' @param identity Identity of the decider making the request, which is recorded in the
-#' DecisionTaskStarted event in the workflow history. This enables
-#' diagnostic tracing when problems arise. The form of this identity is
-#' user defined.
-#' @param nextPageToken If `NextPageToken` is returned there are more results available. The
-#' value of `NextPageToken` is a unique pagination token for each page.
-#' Make the call again using the returned token to retrieve the next page.
-#' Keep all other arguments unchanged. Each pagination token expires after
-#' 24 hours. Using an expired pagination token will return a `400` error:
-#' "`Specified token has exceeded its maximum lifetime`".
+#' The specified string must not contain a `:` (colon), `/` (slash), `|` (vertical bar), or any control characters (``U+0000`-`U+001f`` | ``U+007f`-`U+009f``). Also, it must *not* be the literal string `arn`.
+#' @param identity Identity of the decider making the request, which is recorded in the DecisionTaskStarted event in the workflow history. This enables diagnostic tracing when problems arise. The form of this identity is user defined.
+#' @param nextPageToken If `NextPageToken` is returned there are more results available. The value of `NextPageToken` is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a `400` error: "`Specified token has exceeded its maximum lifetime`".
 #' 
-#' The configured `maximumPageSize` determines how many results can be
-#' returned in a single call.
+#' The configured `maximumPageSize` determines how many results can be returned in a single call.
 #' 
-#' The `nextPageToken` returned by this action cannot be used with
-#' [`get_workflow_execution_history`][swf_get_workflow_execution_history]
-#' to get the next page. You must call
-#' [`poll_for_decision_task`][swf_poll_for_decision_task] again (with the
-#' `nextPageToken`) to retrieve the next page of history records. Calling
-#' [`poll_for_decision_task`][swf_poll_for_decision_task] with a
-#' `nextPageToken` doesn't return a new decision task.
-#' @param maximumPageSize The maximum number of results that are returned per call. Use
-#' `nextPageToken` to obtain further pages of results.
+#' The `nextPageToken` returned by this action cannot be used with [`get_workflow_execution_history`][swf_get_workflow_execution_history] to get the next page. You must call [`poll_for_decision_task`][swf_poll_for_decision_task] again (with the `nextPageToken`) to retrieve the next page of history records. Calling [`poll_for_decision_task`][swf_poll_for_decision_task] with a `nextPageToken` doesn't return a new decision task.
+#' @param maximumPageSize The maximum number of results that are returned per call. Use `nextPageToken` to obtain further pages of results.
 #' 
-#' This is an upper limit only; the actual number of results returned per
-#' call may be fewer than the specified maximum.
-#' @param reverseOrder When set to `true`, returns the events in reverse order. By default the
-#' results are returned in ascending order of the `eventTimestamp` of the
-#' events.
-#' @param startAtPreviousStartedEvent When set to `true`, returns the events with `eventTimestamp` greater
-#' than or equal to `eventTimestamp` of the most recent
-#' `DecisionTaskStarted` event. By default, this parameter is set to
-#' `false`.
+#' This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.
+#' @param reverseOrder When set to `true`, returns the events in reverse order. By default the results are returned in ascending order of the `eventTimestamp` of the events.
+#' @param startAtPreviousStartedEvent When set to `true`, returns the events with `eventTimestamp` greater than or equal to `eventTimestamp` of the most recent `DecisionTaskStarted` event. By default, this parameter is set to `false`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3219,69 +2774,36 @@ swf_poll_for_decision_task <- function(domain, taskList, identity = NULL, nextPa
 #' represented by the specified taskToken is still making progress
 #'
 #' @description
-#' Used by activity workers to report to the service that the ActivityTask
-#' represented by the specified `taskToken` is still making progress. The
-#' worker can also specify details of the progress, for example percent
-#' complete, using the `details` parameter. This action can also be used by
-#' the worker as a mechanism to check if cancellation is being requested
-#' for the activity task. If a cancellation is being attempted for the
-#' specified task, then the boolean `cancelRequested` flag returned by the
-#' service is set to `true`.
+#' Used by activity workers to report to the service that the ActivityTask represented by the specified `taskToken` is still making progress. The worker can also specify details of the progress, for example percent complete, using the `details` parameter. This action can also be used by the worker as a mechanism to check if cancellation is being requested for the activity task. If a cancellation is being attempted for the specified task, then the boolean `cancelRequested` flag returned by the service is set to `true`.
 #' 
-#' This action resets the `taskHeartbeatTimeout` clock. The
-#' `taskHeartbeatTimeout` is specified in
-#' [`register_activity_type`][swf_register_activity_type].
+#' This action resets the `taskHeartbeatTimeout` clock. The `taskHeartbeatTimeout` is specified in [`register_activity_type`][swf_register_activity_type].
 #' 
-#' This action doesn't in itself create an event in the workflow execution
-#' history. However, if the task times out, the workflow execution history
-#' contains a `ActivityTaskTimedOut` event that contains the information
-#' from the last heartbeat generated by the activity worker.
+#' This action doesn't in itself create an event in the workflow execution history. However, if the task times out, the workflow execution history contains a `ActivityTaskTimedOut` event that contains the information from the last heartbeat generated by the activity worker.
 #' 
-#' The `taskStartToCloseTimeout` of an activity type is the maximum
-#' duration of an activity task, regardless of the number of
-#' [`record_activity_task_heartbeat`][swf_record_activity_task_heartbeat]
-#' requests received. The `taskStartToCloseTimeout` is also specified in
-#' [`register_activity_type`][swf_register_activity_type].
+#' The `taskStartToCloseTimeout` of an activity type is the maximum duration of an activity task, regardless of the number of [`record_activity_task_heartbeat`][swf_record_activity_task_heartbeat] requests received. The `taskStartToCloseTimeout` is also specified in [`register_activity_type`][swf_register_activity_type].
 #' 
-#' This operation is only useful for long-lived activities to report
-#' liveliness of the task and to determine if a cancellation is being
-#' attempted.
+#' This operation is only useful for long-lived activities to report liveliness of the task and to determine if a cancellation is being attempted.
 #' 
-#' If the `cancelRequested` flag returns `true`, a cancellation is being
-#' attempted. If the worker can cancel the activity, it should respond with
-#' [`respond_activity_task_canceled`][swf_respond_activity_task_canceled].
-#' Otherwise, it should ignore the cancellation request.
+#' If the `cancelRequested` flag returns `true`, a cancellation is being attempted. If the worker can cancel the activity, it should respond with [`respond_activity_task_canceled`][swf_respond_activity_task_canceled]. Otherwise, it should ignore the cancellation request.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
 #' -   You cannot use an IAM policy to constrain this action's parameters.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_record_activity_task_heartbeat(taskToken, details)
 #'
 #' @param taskToken &#91;required&#93; The `taskToken` of the ActivityTask.
 #' 
-#' `taskToken` is generated by the service and should be treated as an
-#' opaque value. If the task is passed to another process, its `taskToken`
-#' must also be passed. This enables it to provide its progress and respond
-#' with results.
+#' `taskToken` is generated by the service and should be treated as an opaque value. If the task is passed to another process, its `taskToken` must also be passed. This enables it to provide its progress and respond with results.
 #' @param details If specified, contains details about the progress of the task.
 #'
 #' @return
@@ -3328,41 +2850,27 @@ swf_record_activity_task_heartbeat <- function(taskToken, details = NULL) {
 #' the specified domain
 #'
 #' @description
-#' Registers a new *activity type* along with its configuration settings in
-#' the specified domain.
+#' Registers a new *activity type* along with its configuration settings in the specified domain.
 #' 
-#' A `TypeAlreadyExists` fault is returned if the type already exists in
-#' the domain. You cannot change any configuration settings of the type
-#' after its registration, and it must be registered as a new version.
+#' A `TypeAlreadyExists` fault is returned if the type already exists in the domain. You cannot change any configuration settings of the type after its registration, and it must be registered as a new version.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
-#' -   Constrain the following parameters by using a `Condition` element
-#'     with the appropriate keys.
+#' -   Constrain the following parameters by using a `Condition` element with the appropriate keys.
 #' 
-#'     -   `defaultTaskList.name`: String constraint. The key is
-#'         `swf:defaultTaskList.name`.
+#'     -   `defaultTaskList.name`: String constraint. The key is `swf:defaultTaskList.name`.
 #' 
 #'     -   `name`: String constraint. The key is `swf:name`.
 #' 
 #'     -   `version`: String constraint. The key is `swf:version`.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_register_activity_type(domain, name, version, description,
@@ -3373,62 +2881,29 @@ swf_record_activity_task_heartbeat <- function(taskToken, details = NULL) {
 #' @param domain &#91;required&#93; The name of the domain in which this activity is to be registered.
 #' @param name &#91;required&#93; The name of the activity type within the domain.
 #' 
-#' The specified string must not contain a `:` (colon), `/` (slash), `|`
-#' (vertical bar), or any control characters (``U+0000`-`U+001f`` |
-#' ``U+007f`-`U+009f``). Also, it must *not* be the literal string `arn`.
+#' The specified string must not contain a `:` (colon), `/` (slash), `|` (vertical bar), or any control characters (``U+0000`-`U+001f`` | ``U+007f`-`U+009f``). Also, it must *not* be the literal string `arn`.
 #' @param version &#91;required&#93; The version of the activity type.
 #' 
-#' The activity type consists of the name and version, the combination of
-#' which must be unique within the domain.
+#' The activity type consists of the name and version, the combination of which must be unique within the domain.
 #' 
-#' The specified string must not contain a `:` (colon), `/` (slash), `|`
-#' (vertical bar), or any control characters (``U+0000`-`U+001f`` |
-#' ``U+007f`-`U+009f``). Also, it must *not* be the literal string `arn`.
+#' The specified string must not contain a `:` (colon), `/` (slash), `|` (vertical bar), or any control characters (``U+0000`-`U+001f`` | ``U+007f`-`U+009f``). Also, it must *not* be the literal string `arn`.
 #' @param description A textual description of the activity type.
-#' @param defaultTaskStartToCloseTimeout If set, specifies the default maximum duration that a worker can take to
-#' process tasks of this activity type. This default can be overridden when
-#' scheduling an activity task using the `ScheduleActivityTask` Decision.
+#' @param defaultTaskStartToCloseTimeout If set, specifies the default maximum duration that a worker can take to process tasks of this activity type. This default can be overridden when scheduling an activity task using the `ScheduleActivityTask` Decision.
 #' 
-#' The duration is specified in seconds, an integer greater than or equal
-#' to `0`. You can use `NONE` to specify unlimited duration.
-#' @param defaultTaskHeartbeatTimeout If set, specifies the default maximum time before which a worker
-#' processing a task of this type must report progress by calling
-#' [`record_activity_task_heartbeat`][swf_record_activity_task_heartbeat].
-#' If the timeout is exceeded, the activity task is automatically timed
-#' out. This default can be overridden when scheduling an activity task
-#' using the `ScheduleActivityTask` Decision. If the activity worker
-#' subsequently attempts to record a heartbeat or returns a result, the
-#' activity worker receives an `UnknownResource` fault. In this case,
-#' Amazon SWF no longer considers the activity task to be valid; the
-#' activity worker should clean up the activity task.
+#' The duration is specified in seconds, an integer greater than or equal to `0`. You can use `NONE` to specify unlimited duration.
+#' @param defaultTaskHeartbeatTimeout If set, specifies the default maximum time before which a worker processing a task of this type must report progress by calling [`record_activity_task_heartbeat`][swf_record_activity_task_heartbeat]. If the timeout is exceeded, the activity task is automatically timed out. This default can be overridden when scheduling an activity task using the `ScheduleActivityTask` Decision. If the activity worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an `UnknownResource` fault. In this case, Amazon SWF no longer considers the activity task to be valid; the activity worker should clean up the activity task.
 #' 
-#' The duration is specified in seconds, an integer greater than or equal
-#' to `0`. You can use `NONE` to specify unlimited duration.
-#' @param defaultTaskList If set, specifies the default task list to use for scheduling tasks of
-#' this activity type. This default task list is used if a task list isn't
-#' provided when a task is scheduled through the `ScheduleActivityTask`
-#' Decision.
-#' @param defaultTaskPriority The default task priority to assign to the activity type. If not
-#' assigned, then `0` is used. Valid values are integers that range from
-#' Java's `Integer.MIN_VALUE` (-2147483648) to `Integer.MAX_VALUE`
-#' (2147483647). Higher numbers indicate higher priority.
+#' The duration is specified in seconds, an integer greater than or equal to `0`. You can use `NONE` to specify unlimited duration.
+#' @param defaultTaskList If set, specifies the default task list to use for scheduling tasks of this activity type. This default task list is used if a task list isn't provided when a task is scheduled through the `ScheduleActivityTask` Decision.
+#' @param defaultTaskPriority The default task priority to assign to the activity type. If not assigned, then `0` is used. Valid values are integers that range from Java's `Integer.MIN_VALUE` (-2147483648) to `Integer.MAX_VALUE` (2147483647). Higher numbers indicate higher priority.
 #' 
-#' For more information about setting task priority, see [Setting Task
-#' Priority](https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html)
-#' in the *in the Amazon SWF Developer Guide.*.
-#' @param defaultTaskScheduleToStartTimeout If set, specifies the default maximum duration that a task of this
-#' activity type can wait before being assigned to a worker. This default
-#' can be overridden when scheduling an activity task using the
-#' `ScheduleActivityTask` Decision.
+#' For more information about setting task priority, see [Setting Task Priority](https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html) in the *in the Amazon SWF Developer Guide.*.
+#' @param defaultTaskScheduleToStartTimeout If set, specifies the default maximum duration that a task of this activity type can wait before being assigned to a worker. This default can be overridden when scheduling an activity task using the `ScheduleActivityTask` Decision.
 #' 
-#' The duration is specified in seconds, an integer greater than or equal
-#' to `0`. You can use `NONE` to specify unlimited duration.
-#' @param defaultTaskScheduleToCloseTimeout If set, specifies the default maximum duration for a task of this
-#' activity type. This default can be overridden when scheduling an
-#' activity task using the `ScheduleActivityTask` Decision.
+#' The duration is specified in seconds, an integer greater than or equal to `0`. You can use `NONE` to specify unlimited duration.
+#' @param defaultTaskScheduleToCloseTimeout If set, specifies the default maximum duration for a task of this activity type. This default can be overridden when scheduling an activity task using the `ScheduleActivityTask` Decision.
 #' 
-#' The duration is specified in seconds, an integer greater than or equal
-#' to `0`. You can use `NONE` to specify unlimited duration.
+#' The duration is specified in seconds, an integer greater than or equal to `0`. You can use `NONE` to specify unlimited duration.
 #'
 #' @return
 #' An empty list.
@@ -3482,55 +2957,32 @@ swf_register_activity_type <- function(domain, name, version, description = NULL
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   You cannot use an IAM policy to control domain access for this
-#'     action. The name of the domain being registered is available as the
-#'     resource of this action.
+#' -   You cannot use an IAM policy to control domain access for this action. The name of the domain being registered is available as the resource of this action.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
 #' -   You cannot use an IAM policy to constrain this action's parameters.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_register_domain(name, description,
 #'   workflowExecutionRetentionPeriodInDays, tags)
 #'
-#' @param name &#91;required&#93; Name of the domain to register. The name must be unique in the region
-#' that the domain is registered in.
+#' @param name &#91;required&#93; Name of the domain to register. The name must be unique in the region that the domain is registered in.
 #' 
-#' The specified string must not start or end with whitespace. It must not
-#' contain a `:` (colon), `/` (slash), `|` (vertical bar), or any control
-#' characters (``U+0000`-`U+001f`` | ``U+007f`-`U+009f``). Also, it must *not* be
-#' the literal string `arn`.
+#' The specified string must not start or end with whitespace. It must not contain a `:` (colon), `/` (slash), `|` (vertical bar), or any control characters (``U+0000`-`U+001f`` | ``U+007f`-`U+009f``). Also, it must *not* be the literal string `arn`.
 #' @param description A text description of the domain.
-#' @param workflowExecutionRetentionPeriodInDays &#91;required&#93; The duration (in days) that records and histories of workflow executions
-#' on the domain should be kept by the service. After the retention period,
-#' the workflow execution isn't available in the results of visibility
-#' calls.
+#' @param workflowExecutionRetentionPeriodInDays &#91;required&#93; The duration (in days) that records and histories of workflow executions on the domain should be kept by the service. After the retention period, the workflow execution isn't available in the results of visibility calls.
 #' 
-#' If you pass the value `NONE` or `0` (zero), then the workflow execution
-#' history isn't retained. As soon as the workflow execution completes, the
-#' execution record and its history are deleted.
+#' If you pass the value `NONE` or `0` (zero), then the workflow execution history isn't retained. As soon as the workflow execution completes, the execution record and its history are deleted.
 #' 
-#' The maximum workflow execution retention period is 90 days. For more
-#' information about Amazon SWF service limits, see: [Amazon SWF Service
-#' Limits](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html)
-#' in the *Amazon SWF Developer Guide*.
+#' The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service limits, see: [Amazon SWF Service Limits](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html) in the *Amazon SWF Developer Guide*.
 #' @param tags Tags to be added when registering a domain.
 #' 
-#' Tags may only contain unicode letters, digits, whitespace, or these
-#' symbols: `_ . : / = + - @@`.
+#' Tags may only contain unicode letters, digits, whitespace, or these symbols: `_ . : / = + - @@`.
 #'
 #' @return
 #' An empty list.
@@ -3578,44 +3030,29 @@ swf_register_domain <- function(name, description = NULL, workflowExecutionReten
 #' specified domain
 #'
 #' @description
-#' Registers a new *workflow type* and its configuration settings in the
-#' specified domain.
+#' Registers a new *workflow type* and its configuration settings in the specified domain.
 #' 
-#' The retention period for the workflow history is set by the
-#' [`register_domain`][swf_register_domain] action.
+#' The retention period for the workflow history is set by the [`register_domain`][swf_register_domain] action.
 #' 
-#' If the type already exists, then a `TypeAlreadyExists` fault is
-#' returned. You cannot change the configuration settings of a workflow
-#' type once it is registered and it must be registered as a new version.
+#' If the type already exists, then a `TypeAlreadyExists` fault is returned. You cannot change the configuration settings of a workflow type once it is registered and it must be registered as a new version.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
-#' -   Constrain the following parameters by using a `Condition` element
-#'     with the appropriate keys.
+#' -   Constrain the following parameters by using a `Condition` element with the appropriate keys.
 #' 
-#'     -   `defaultTaskList.name`: String constraint. The key is
-#'         `swf:defaultTaskList.name`.
+#'     -   `defaultTaskList.name`: String constraint. The key is `swf:defaultTaskList.name`.
 #' 
 #'     -   `name`: String constraint. The key is `swf:name`.
 #' 
 #'     -   `version`: String constraint. The key is `swf:version`.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_register_workflow_type(domain, name, version, description,
@@ -3626,80 +3063,35 @@ swf_register_domain <- function(name, description = NULL, workflowExecutionReten
 #' @param domain &#91;required&#93; The name of the domain in which to register the workflow type.
 #' @param name &#91;required&#93; The name of the workflow type.
 #' 
-#' The specified string must not contain a `:` (colon), `/` (slash), `|`
-#' (vertical bar), or any control characters (``U+0000`-`U+001f`` |
-#' ``U+007f`-`U+009f``). Also, it must *not* be the literal string `arn`.
+#' The specified string must not contain a `:` (colon), `/` (slash), `|` (vertical bar), or any control characters (``U+0000`-`U+001f`` | ``U+007f`-`U+009f``). Also, it must *not* be the literal string `arn`.
 #' @param version &#91;required&#93; The version of the workflow type.
 #' 
-#' The workflow type consists of the name and version, the combination of
-#' which must be unique within the domain. To get a list of all currently
-#' registered workflow types, use the
-#' [`list_workflow_types`][swf_list_workflow_types] action.
+#' The workflow type consists of the name and version, the combination of which must be unique within the domain. To get a list of all currently registered workflow types, use the [`list_workflow_types`][swf_list_workflow_types] action.
 #' 
-#' The specified string must not contain a `:` (colon), `/` (slash), `|`
-#' (vertical bar), or any control characters (``U+0000`-`U+001f`` |
-#' ``U+007f`-`U+009f``). Also, it must *not* be the literal string `arn`.
+#' The specified string must not contain a `:` (colon), `/` (slash), `|` (vertical bar), or any control characters (``U+0000`-`U+001f`` | ``U+007f`-`U+009f``). Also, it must *not* be the literal string `arn`.
 #' @param description Textual description of the workflow type.
-#' @param defaultTaskStartToCloseTimeout If set, specifies the default maximum duration of decision tasks for
-#' this workflow type. This default can be overridden when starting a
-#' workflow execution using the
-#' [`start_workflow_execution`][swf_start_workflow_execution] action or the
-#' `StartChildWorkflowExecution` Decision.
+#' @param defaultTaskStartToCloseTimeout If set, specifies the default maximum duration of decision tasks for this workflow type. This default can be overridden when starting a workflow execution using the [`start_workflow_execution`][swf_start_workflow_execution] action or the `StartChildWorkflowExecution` Decision.
 #' 
-#' The duration is specified in seconds, an integer greater than or equal
-#' to `0`. You can use `NONE` to specify unlimited duration.
-#' @param defaultExecutionStartToCloseTimeout If set, specifies the default maximum duration for executions of this
-#' workflow type. You can override this default when starting an execution
-#' through the [`start_workflow_execution`][swf_start_workflow_execution]
-#' Action or `StartChildWorkflowExecution` Decision.
+#' The duration is specified in seconds, an integer greater than or equal to `0`. You can use `NONE` to specify unlimited duration.
+#' @param defaultExecutionStartToCloseTimeout If set, specifies the default maximum duration for executions of this workflow type. You can override this default when starting an execution through the [`start_workflow_execution`][swf_start_workflow_execution] Action or `StartChildWorkflowExecution` Decision.
 #' 
-#' The duration is specified in seconds; an integer greater than or equal
-#' to 0. Unlike some of the other timeout parameters in Amazon SWF, you
-#' cannot specify a value of "NONE" for
-#' `defaultExecutionStartToCloseTimeout`; there is a one-year max limit on
-#' the time that a workflow execution can run. Exceeding this limit always
-#' causes the workflow execution to time out.
-#' @param defaultTaskList If set, specifies the default task list to use for scheduling decision
-#' tasks for executions of this workflow type. This default is used only if
-#' a task list isn't provided when starting the execution through the
-#' [`start_workflow_execution`][swf_start_workflow_execution] Action or
-#' `StartChildWorkflowExecution` Decision.
-#' @param defaultTaskPriority The default task priority to assign to the workflow type. If not
-#' assigned, then `0` is used. Valid values are integers that range from
-#' Java's `Integer.MIN_VALUE` (-2147483648) to `Integer.MAX_VALUE`
-#' (2147483647). Higher numbers indicate higher priority.
+#' The duration is specified in seconds; an integer greater than or equal to 0. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for `defaultExecutionStartToCloseTimeout`; there is a one-year max limit on the time that a workflow execution can run. Exceeding this limit always causes the workflow execution to time out.
+#' @param defaultTaskList If set, specifies the default task list to use for scheduling decision tasks for executions of this workflow type. This default is used only if a task list isn't provided when starting the execution through the [`start_workflow_execution`][swf_start_workflow_execution] Action or `StartChildWorkflowExecution` Decision.
+#' @param defaultTaskPriority The default task priority to assign to the workflow type. If not assigned, then `0` is used. Valid values are integers that range from Java's `Integer.MIN_VALUE` (-2147483648) to `Integer.MAX_VALUE` (2147483647). Higher numbers indicate higher priority.
 #' 
-#' For more information about setting task priority, see [Setting Task
-#' Priority](https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html)
-#' in the *Amazon SWF Developer Guide*.
-#' @param defaultChildPolicy If set, specifies the default policy to use for the child workflow
-#' executions when a workflow execution of this type is terminated, by
-#' calling the
-#' [`terminate_workflow_execution`][swf_terminate_workflow_execution]
-#' action explicitly or due to an expired timeout. This default can be
-#' overridden when starting a workflow execution using the
-#' [`start_workflow_execution`][swf_start_workflow_execution] action or the
-#' `StartChildWorkflowExecution` Decision.
+#' For more information about setting task priority, see [Setting Task Priority](https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html) in the *Amazon SWF Developer Guide*.
+#' @param defaultChildPolicy If set, specifies the default policy to use for the child workflow executions when a workflow execution of this type is terminated, by calling the [`terminate_workflow_execution`][swf_terminate_workflow_execution] action explicitly or due to an expired timeout. This default can be overridden when starting a workflow execution using the [`start_workflow_execution`][swf_start_workflow_execution] action or the `StartChildWorkflowExecution` Decision.
 #' 
 #' The supported child policies are:
 #' 
 #' -   `TERMINATE` – The child executions are terminated.
 #' 
-#' -   `REQUEST_CANCEL` – A request to cancel is attempted for each child
-#'     execution by recording a `WorkflowExecutionCancelRequested` event in
-#'     its history. It is up to the decider to take appropriate actions
-#'     when it receives an execution history with this event.
+#' -   `REQUEST_CANCEL` – A request to cancel is attempted for each child execution by recording a `WorkflowExecutionCancelRequested` event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.
 #' 
-#' -   `ABANDON` – No action is taken. The child executions continue to
-#'     run.
+#' -   `ABANDON` – No action is taken. The child executions continue to run.
 #' @param defaultLambdaRole The default IAM role attached to this workflow type.
 #' 
-#' Executions of this workflow type need IAM roles to invoke Lambda
-#' functions. If you don't specify an IAM role when you start this workflow
-#' type, the default Lambda role is attached to the execution. For more
-#' information, see
-#' <https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html>
-#' in the *Amazon SWF Developer Guide*.
+#' Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't specify an IAM role when you start this workflow type, the default Lambda role is attached to the execution. For more information, see <https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html> in the *Amazon SWF Developer Guide*.
 #'
 #' @return
 #' An empty list.
@@ -3751,41 +3143,23 @@ swf_register_workflow_type <- function(domain, name, version, description = NULL
 #' and runId
 #'
 #' @description
-#' Records a `WorkflowExecutionCancelRequested` event in the currently
-#' running workflow execution identified by the given domain, workflowId,
-#' and runId. This logically requests the cancellation of the workflow
-#' execution as a whole. It is up to the decider to take appropriate
-#' actions when it receives an execution history with this event.
+#' Records a `WorkflowExecutionCancelRequested` event in the currently running workflow execution identified by the given domain, workflowId, and runId. This logically requests the cancellation of the workflow execution as a whole. It is up to the decider to take appropriate actions when it receives an execution history with this event.
 #' 
-#' If the runId isn't specified, the `WorkflowExecutionCancelRequested`
-#' event is recorded in the history of the current open workflow execution
-#' with the specified workflowId in the domain.
+#' If the runId isn't specified, the `WorkflowExecutionCancelRequested` event is recorded in the history of the current open workflow execution with the specified workflowId in the domain.
 #' 
-#' Because this action allows the workflow to properly clean up and
-#' gracefully close, it should be used instead of
-#' [`terminate_workflow_execution`][swf_terminate_workflow_execution] when
-#' possible.
+#' Because this action allows the workflow to properly clean up and gracefully close, it should be used instead of [`terminate_workflow_execution`][swf_terminate_workflow_execution] when possible.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
 #' -   You cannot use an IAM policy to constrain this action's parameters.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_request_cancel_workflow_execution(domain, workflowId, runId)
@@ -3834,57 +3208,32 @@ swf_request_cancel_workflow_execution <- function(domain, workflowId, runId = NU
 #' the taskToken was successfully canceled
 #'
 #' @description
-#' Used by workers to tell the service that the ActivityTask identified by
-#' the `taskToken` was successfully canceled. Additional `details` can be
-#' provided using the `details` argument.
+#' Used by workers to tell the service that the ActivityTask identified by the `taskToken` was successfully canceled. Additional `details` can be provided using the `details` argument.
 #' 
-#' These `details` (if provided) appear in the `ActivityTaskCanceled` event
-#' added to the workflow history.
+#' These `details` (if provided) appear in the `ActivityTaskCanceled` event added to the workflow history.
 #' 
-#' Only use this operation if the `canceled` flag of a
-#' [`record_activity_task_heartbeat`][swf_record_activity_task_heartbeat]
-#' request returns `true` and if the activity can be safely undone or
-#' abandoned.
+#' Only use this operation if the `canceled` flag of a [`record_activity_task_heartbeat`][swf_record_activity_task_heartbeat] request returns `true` and if the activity can be safely undone or abandoned.
 #' 
-#' A task is considered open from the time that it is scheduled until it is
-#' closed. Therefore a task is reported as open while a worker is
-#' processing it. A task is closed after it has been specified in a call to
-#' [`respond_activity_task_completed`][swf_respond_activity_task_completed],
-#' RespondActivityTaskCanceled,
-#' [`respond_activity_task_failed`][swf_respond_activity_task_failed], or
-#' the task has [timed
-#' out](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types).
+#' A task is considered open from the time that it is scheduled until it is closed. Therefore a task is reported as open while a worker is processing it. A task is closed after it has been specified in a call to [`respond_activity_task_completed`][swf_respond_activity_task_completed], RespondActivityTaskCanceled, [`respond_activity_task_failed`][swf_respond_activity_task_failed], or the task has [timed out](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types).
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
 #' -   You cannot use an IAM policy to constrain this action's parameters.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_respond_activity_task_canceled(taskToken, details)
 #'
 #' @param taskToken &#91;required&#93; The `taskToken` of the ActivityTask.
 #' 
-#' `taskToken` is generated by the service and should be treated as an
-#' opaque value. If the task is passed to another process, its `taskToken`
-#' must also be passed. This enables it to provide its progress and respond
-#' with results.
+#' `taskToken` is generated by the service and should be treated as an opaque value. If the task is passed to another process, its `taskToken` must also be passed. This enables it to provide its progress and respond with results.
 #' @param details Information about the cancellation.
 #'
 #' @return
@@ -3926,60 +3275,31 @@ swf_respond_activity_task_canceled <- function(taskToken, details = NULL) {
 #' the taskToken completed successfully with a result (if provided)
 #'
 #' @description
-#' Used by workers to tell the service that the ActivityTask identified by
-#' the `taskToken` completed successfully with a `result` (if provided).
-#' The `result` appears in the `ActivityTaskCompleted` event in the
-#' workflow history.
+#' Used by workers to tell the service that the ActivityTask identified by the `taskToken` completed successfully with a `result` (if provided). The `result` appears in the `ActivityTaskCompleted` event in the workflow history.
 #' 
-#' If the requested task doesn't complete successfully, use
-#' [`respond_activity_task_failed`][swf_respond_activity_task_failed]
-#' instead. If the worker finds that the task is canceled through the
-#' `canceled` flag returned by
-#' [`record_activity_task_heartbeat`][swf_record_activity_task_heartbeat],
-#' it should cancel the task, clean up and then call
-#' [`respond_activity_task_canceled`][swf_respond_activity_task_canceled].
+#' If the requested task doesn't complete successfully, use [`respond_activity_task_failed`][swf_respond_activity_task_failed] instead. If the worker finds that the task is canceled through the `canceled` flag returned by [`record_activity_task_heartbeat`][swf_record_activity_task_heartbeat], it should cancel the task, clean up and then call [`respond_activity_task_canceled`][swf_respond_activity_task_canceled].
 #' 
-#' A task is considered open from the time that it is scheduled until it is
-#' closed. Therefore a task is reported as open while a worker is
-#' processing it. A task is closed after it has been specified in a call to
-#' RespondActivityTaskCompleted,
-#' [`respond_activity_task_canceled`][swf_respond_activity_task_canceled],
-#' [`respond_activity_task_failed`][swf_respond_activity_task_failed], or
-#' the task has [timed
-#' out](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types).
+#' A task is considered open from the time that it is scheduled until it is closed. Therefore a task is reported as open while a worker is processing it. A task is closed after it has been specified in a call to RespondActivityTaskCompleted, [`respond_activity_task_canceled`][swf_respond_activity_task_canceled], [`respond_activity_task_failed`][swf_respond_activity_task_failed], or the task has [timed out](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types).
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
 #' -   You cannot use an IAM policy to constrain this action's parameters.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_respond_activity_task_completed(taskToken, result)
 #'
 #' @param taskToken &#91;required&#93; The `taskToken` of the ActivityTask.
 #' 
-#' `taskToken` is generated by the service and should be treated as an
-#' opaque value. If the task is passed to another process, its `taskToken`
-#' must also be passed. This enables it to provide its progress and respond
-#' with results.
-#' @param result The result of the activity task. It is a free form string that is
-#' implementation specific.
+#' `taskToken` is generated by the service and should be treated as an opaque value. If the task is passed to another process, its `taskToken` must also be passed. This enables it to provide its progress and respond with results.
+#' @param result The result of the activity task. It is a free form string that is implementation specific.
 #'
 #' @return
 #' An empty list.
@@ -4020,49 +3340,28 @@ swf_respond_activity_task_completed <- function(taskToken, result = NULL) {
 #' the taskToken has failed with reason (if specified)
 #'
 #' @description
-#' Used by workers to tell the service that the ActivityTask identified by
-#' the `taskToken` has failed with `reason` (if specified). The `reason`
-#' and `details` appear in the `ActivityTaskFailed` event added to the
-#' workflow history.
+#' Used by workers to tell the service that the ActivityTask identified by the `taskToken` has failed with `reason` (if specified). The `reason` and `details` appear in the `ActivityTaskFailed` event added to the workflow history.
 #' 
-#' A task is considered open from the time that it is scheduled until it is
-#' closed. Therefore a task is reported as open while a worker is
-#' processing it. A task is closed after it has been specified in a call to
-#' [`respond_activity_task_completed`][swf_respond_activity_task_completed],
-#' [`respond_activity_task_canceled`][swf_respond_activity_task_canceled],
-#' RespondActivityTaskFailed, or the task has [timed
-#' out](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types).
+#' A task is considered open from the time that it is scheduled until it is closed. Therefore a task is reported as open while a worker is processing it. A task is closed after it has been specified in a call to [`respond_activity_task_completed`][swf_respond_activity_task_completed], [`respond_activity_task_canceled`][swf_respond_activity_task_canceled], RespondActivityTaskFailed, or the task has [timed out](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types).
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
 #' -   You cannot use an IAM policy to constrain this action's parameters.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_respond_activity_task_failed(taskToken, reason, details)
 #'
 #' @param taskToken &#91;required&#93; The `taskToken` of the ActivityTask.
 #' 
-#' `taskToken` is generated by the service and should be treated as an
-#' opaque value. If the task is passed to another process, its `taskToken`
-#' must also be passed. This enables it to provide its progress and respond
-#' with results.
+#' `taskToken` is generated by the service and should be treated as an opaque value. If the task is passed to another process, its `taskToken` must also be passed. This enables it to provide its progress and respond with results.
 #' @param reason Description of the error that may assist in diagnostics.
 #' @param details Detailed information about the failure.
 #'
@@ -4106,26 +3405,13 @@ swf_respond_activity_task_failed <- function(taskToken, reason = NULL, details =
 #' the taskToken has successfully completed
 #'
 #' @description
-#' Used by deciders to tell the service that the DecisionTask identified by
-#' the `taskToken` has successfully completed. The `decisions` argument
-#' specifies the list of decisions made while processing the task.
+#' Used by deciders to tell the service that the DecisionTask identified by the `taskToken` has successfully completed. The `decisions` argument specifies the list of decisions made while processing the task.
 #' 
-#' A `DecisionTaskCompleted` event is added to the workflow history. The
-#' `executionContext` specified is attached to the event in the workflow
-#' execution history.
+#' A `DecisionTaskCompleted` event is added to the workflow history. The `executionContext` specified is attached to the event in the workflow execution history.
 #' 
 #' **Access Control**
 #' 
-#' If an IAM policy grants permission to use
-#' [`respond_decision_task_completed`][swf_respond_decision_task_completed],
-#' it can express permissions for the list of decisions in the `decisions`
-#' parameter. Each of the decisions has one or more parameters, much like a
-#' regular API call. To allow for policies to be as readable as possible,
-#' you can express permissions on decisions as if they were actual API
-#' calls, including applying conditions to some parameters. For more
-#' information, see [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If an IAM policy grants permission to use [`respond_decision_task_completed`][swf_respond_decision_task_completed], it can express permissions for the list of decisions in the `decisions` parameter. Each of the decisions has one or more parameters, much like a regular API call. To allow for policies to be as readable as possible, you can express permissions on decisions as if they were actual API calls, including applying conditions to some parameters. For more information, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_respond_decision_task_completed(taskToken, decisions,
@@ -4133,28 +3419,13 @@ swf_respond_activity_task_failed <- function(taskToken, reason = NULL, details =
 #'
 #' @param taskToken &#91;required&#93; The `taskToken` from the DecisionTask.
 #' 
-#' `taskToken` is generated by the service and should be treated as an
-#' opaque value. If the task is passed to another process, its `taskToken`
-#' must also be passed. This enables it to provide its progress and respond
-#' with results.
-#' @param decisions The list of decisions (possibly empty) made by the decider while
-#' processing this decision task. See the docs for the Decision structure
-#' for details.
+#' `taskToken` is generated by the service and should be treated as an opaque value. If the task is passed to another process, its `taskToken` must also be passed. This enables it to provide its progress and respond with results.
+#' @param decisions The list of decisions (possibly empty) made by the decider while processing this decision task. See the docs for the Decision structure for details.
 #' @param executionContext User defined context to add to workflow execution.
-#' @param taskList The task list to use for the future decision tasks of this workflow
-#' execution. This list overrides the original task list you specified
-#' while starting the workflow execution.
-#' @param taskListScheduleToStartTimeout Specifies a timeout (in seconds) for the task list override. When this
-#' parameter is missing, the task list override is permanent. This
-#' parameter makes it possible to temporarily override the task list. If a
-#' decision task scheduled on the override task list is not started within
-#' the timeout, the decision task will time out. Amazon SWF will revert the
-#' override and schedule a new decision task to the original task list.
+#' @param taskList The task list to use for the future decision tasks of this workflow execution. This list overrides the original task list you specified while starting the workflow execution.
+#' @param taskListScheduleToStartTimeout Specifies a timeout (in seconds) for the task list override. When this parameter is missing, the task list override is permanent. This parameter makes it possible to temporarily override the task list. If a decision task scheduled on the override task list is not started within the timeout, the decision task will time out. Amazon SWF will revert the override and schedule a new decision task to the original task list.
 #' 
-#' If a decision task scheduled on the override task list is started within
-#' the timeout, but not completed within the start-to-close timeout, Amazon
-#' SWF will also revert the override and schedule a new decision task to
-#' the original task list.
+#' If a decision task scheduled on the override task list is started within the timeout, but not completed within the start-to-close timeout, Amazon SWF will also revert the override and schedule a new decision task to the original task list.
 #'
 #' @return
 #' An empty list.
@@ -4301,39 +3572,23 @@ swf_respond_decision_task_completed <- function(taskToken, decisions = NULL, exe
 #' identified by the given domain, workflowId and runId
 #'
 #' @description
-#' Records a `WorkflowExecutionSignaled` event in the workflow execution
-#' history and creates a decision task for the workflow execution
-#' identified by the given domain, workflowId and runId. The event is
-#' recorded with the specified user defined signalName and input (if
-#' provided).
+#' Records a `WorkflowExecutionSignaled` event in the workflow execution history and creates a decision task for the workflow execution identified by the given domain, workflowId and runId. The event is recorded with the specified user defined signalName and input (if provided).
 #' 
-#' If a runId isn't specified, then the `WorkflowExecutionSignaled` event
-#' is recorded in the history of the current open workflow with the
-#' matching workflowId in the domain.
+#' If a runId isn't specified, then the `WorkflowExecutionSignaled` event is recorded in the history of the current open workflow with the matching workflowId in the domain.
 #' 
-#' If the specified workflow execution isn't open, this method fails with
-#' `UnknownResource`.
+#' If the specified workflow execution isn't open, this method fails with `UnknownResource`.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
 #' -   You cannot use an IAM policy to constrain this action's parameters.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_signal_workflow_execution(domain, workflowId, runId, signalName,
@@ -4342,10 +3597,8 @@ swf_respond_decision_task_completed <- function(taskToken, decisions = NULL, exe
 #' @param domain &#91;required&#93; The name of the domain containing the workflow execution to signal.
 #' @param workflowId &#91;required&#93; The workflowId of the workflow execution to signal.
 #' @param runId The runId of the workflow execution to signal.
-#' @param signalName &#91;required&#93; The name of the signal. This name must be meaningful to the target
-#' workflow.
-#' @param input Data to attach to the `WorkflowExecutionSignaled` event in the target
-#' workflow execution's history.
+#' @param signalName &#91;required&#93; The name of the signal. This name must be meaningful to the target workflow.
+#' @param input Data to attach to the `WorkflowExecutionSignaled` event in the target workflow execution's history.
 #'
 #' @return
 #' An empty list.
@@ -4389,24 +3642,19 @@ swf_signal_workflow_execution <- function(domain, workflowId, runId = NULL, sign
 #' the provided workflowId and input data
 #'
 #' @description
-#' Starts an execution of the workflow type in the specified domain using
-#' the provided `workflowId` and input data.
+#' Starts an execution of the workflow type in the specified domain using the provided `workflowId` and input data.
 #' 
 #' This action returns the newly started workflow execution.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
-#' -   Constrain the following parameters by using a `Condition` element
-#'     with the appropriate keys.
+#' -   Constrain the following parameters by using a `Condition` element with the appropriate keys.
 #' 
 #'     -   `tagList.member.0`: The key is `swf:tagList.member.0`.
 #' 
@@ -4420,19 +3668,11 @@ swf_signal_workflow_execution <- function(domain, workflowId, runId = NULL, sign
 #' 
 #'     -   `taskList`: String constraint. The key is `swf:taskList.name`.
 #' 
-#'     -   `workflowType.name`: String constraint. The key is
-#'         `swf:workflowType.name`.
+#'     -   `workflowType.name`: String constraint. The key is `swf:workflowType.name`.
 #' 
-#'     -   `workflowType.version`: String constraint. The key is
-#'         `swf:workflowType.version`.
+#'     -   `workflowType.version`: String constraint. The key is `swf:workflowType.version`.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_start_workflow_execution(domain, workflowId, workflowType, taskList,
@@ -4441,110 +3681,45 @@ swf_signal_workflow_execution <- function(domain, workflowId, runId = NULL, sign
 #'
 #' @param domain &#91;required&#93; The name of the domain in which the workflow execution is created.
 #' 
-#' The specified string must not contain a `:` (colon), `/` (slash), `|`
-#' (vertical bar), or any control characters (``U+0000`-`U+001f`` |
-#' ``U+007f`-`U+009f``). Also, it must *not* be the literal string `arn`.
-#' @param workflowId &#91;required&#93; The user defined identifier associated with the workflow execution. You
-#' can use this to associate a custom identifier with the workflow
-#' execution. You may specify the same identifier if a workflow execution
-#' is logically a *restart* of a previous execution. You cannot have two
-#' open workflow executions with the same `workflowId` at the same time
-#' within the same domain.
+#' The specified string must not contain a `:` (colon), `/` (slash), `|` (vertical bar), or any control characters (``U+0000`-`U+001f`` | ``U+007f`-`U+009f``). Also, it must *not* be the literal string `arn`.
+#' @param workflowId &#91;required&#93; The user defined identifier associated with the workflow execution. You can use this to associate a custom identifier with the workflow execution. You may specify the same identifier if a workflow execution is logically a *restart* of a previous execution. You cannot have two open workflow executions with the same `workflowId` at the same time within the same domain.
 #' 
-#' The specified string must not contain a `:` (colon), `/` (slash), `|`
-#' (vertical bar), or any control characters (``U+0000`-`U+001f`` |
-#' ``U+007f`-`U+009f``). Also, it must *not* be the literal string `arn`.
+#' The specified string must not contain a `:` (colon), `/` (slash), `|` (vertical bar), or any control characters (``U+0000`-`U+001f`` | ``U+007f`-`U+009f``). Also, it must *not* be the literal string `arn`.
 #' @param workflowType &#91;required&#93; The type of the workflow to start.
-#' @param taskList The task list to use for the decision tasks generated for this workflow
-#' execution. This overrides the `defaultTaskList` specified when
-#' registering the workflow type.
+#' @param taskList The task list to use for the decision tasks generated for this workflow execution. This overrides the `defaultTaskList` specified when registering the workflow type.
 #' 
-#' A task list for this workflow execution must be specified either as a
-#' default for the workflow type or through this parameter. If neither this
-#' parameter is set nor a default task list was specified at registration
-#' time then a fault is returned.
+#' A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.
 #' 
-#' The specified string must not contain a `:` (colon), `/` (slash), `|`
-#' (vertical bar), or any control characters (``U+0000`-`U+001f`` |
-#' ``U+007f`-`U+009f``). Also, it must *not* be the literal string `arn`.
-#' @param taskPriority The task priority to use for this workflow execution. This overrides any
-#' default priority that was assigned when the workflow type was
-#' registered. If not set, then the default task priority for the workflow
-#' type is used. Valid values are integers that range from Java's
-#' `Integer.MIN_VALUE` (-2147483648) to `Integer.MAX_VALUE` (2147483647).
-#' Higher numbers indicate higher priority.
+#' The specified string must not contain a `:` (colon), `/` (slash), `|` (vertical bar), or any control characters (``U+0000`-`U+001f`` | ``U+007f`-`U+009f``). Also, it must *not* be the literal string `arn`.
+#' @param taskPriority The task priority to use for this workflow execution. This overrides any default priority that was assigned when the workflow type was registered. If not set, then the default task priority for the workflow type is used. Valid values are integers that range from Java's `Integer.MIN_VALUE` (-2147483648) to `Integer.MAX_VALUE` (2147483647). Higher numbers indicate higher priority.
 #' 
-#' For more information about setting task priority, see [Setting Task
-#' Priority](https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html)
-#' in the *Amazon SWF Developer Guide*.
-#' @param input The input for the workflow execution. This is a free form string which
-#' should be meaningful to the workflow you are starting. This `input` is
-#' made available to the new workflow execution in the
-#' `WorkflowExecutionStarted` history event.
-#' @param executionStartToCloseTimeout The total duration for this workflow execution. This overrides the
-#' defaultExecutionStartToCloseTimeout specified when registering the
-#' workflow type.
+#' For more information about setting task priority, see [Setting Task Priority](https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html) in the *Amazon SWF Developer Guide*.
+#' @param input The input for the workflow execution. This is a free form string which should be meaningful to the workflow you are starting. This `input` is made available to the new workflow execution in the `WorkflowExecutionStarted` history event.
+#' @param executionStartToCloseTimeout The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.
 #' 
-#' The duration is specified in seconds; an integer greater than or equal
-#' to `0`. Exceeding this limit causes the workflow execution to time out.
-#' Unlike some of the other timeout parameters in Amazon SWF, you cannot
-#' specify a value of "NONE" for this timeout; there is a one-year max
-#' limit on the time that a workflow execution can run.
+#' The duration is specified in seconds; an integer greater than or equal to `0`. Exceeding this limit causes the workflow execution to time out. Unlike some of the other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this timeout; there is a one-year max limit on the time that a workflow execution can run.
 #' 
-#' An execution start-to-close timeout must be specified either through
-#' this parameter or as a default when the workflow type is registered. If
-#' neither this parameter nor a default execution start-to-close timeout is
-#' specified, a fault is returned.
-#' @param tagList The list of tags to associate with the workflow execution. You can
-#' specify a maximum of 5 tags. You can list workflow executions with a
-#' specific tag by calling
-#' [`list_open_workflow_executions`][swf_list_open_workflow_executions] or
-#' [`list_closed_workflow_executions`][swf_list_closed_workflow_executions]
-#' and specifying a TagFilter.
-#' @param taskStartToCloseTimeout Specifies the maximum duration of decision tasks for this workflow
-#' execution. This parameter overrides the `defaultTaskStartToCloseTimout`
-#' specified when registering the workflow type using
-#' [`register_workflow_type`][swf_register_workflow_type].
+#' An execution start-to-close timeout must be specified either through this parameter or as a default when the workflow type is registered. If neither this parameter nor a default execution start-to-close timeout is specified, a fault is returned.
+#' @param tagList The list of tags to associate with the workflow execution. You can specify a maximum of 5 tags. You can list workflow executions with a specific tag by calling [`list_open_workflow_executions`][swf_list_open_workflow_executions] or [`list_closed_workflow_executions`][swf_list_closed_workflow_executions] and specifying a TagFilter.
+#' @param taskStartToCloseTimeout Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the `defaultTaskStartToCloseTimout` specified when registering the workflow type using [`register_workflow_type`][swf_register_workflow_type].
 #' 
-#' The duration is specified in seconds, an integer greater than or equal
-#' to `0`. You can use `NONE` to specify unlimited duration.
+#' The duration is specified in seconds, an integer greater than or equal to `0`. You can use `NONE` to specify unlimited duration.
 #' 
-#' A task start-to-close timeout for this workflow execution must be
-#' specified either as a default for the workflow type or through this
-#' parameter. If neither this parameter is set nor a default task
-#' start-to-close timeout was specified at registration time then a fault
-#' is returned.
-#' @param childPolicy If set, specifies the policy to use for the child workflow executions of
-#' this workflow execution if it is terminated, by calling the
-#' [`terminate_workflow_execution`][swf_terminate_workflow_execution]
-#' action explicitly or due to an expired timeout. This policy overrides
-#' the default child policy specified when registering the workflow type
-#' using [`register_workflow_type`][swf_register_workflow_type].
+#' A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.
+#' @param childPolicy If set, specifies the policy to use for the child workflow executions of this workflow execution if it is terminated, by calling the [`terminate_workflow_execution`][swf_terminate_workflow_execution] action explicitly or due to an expired timeout. This policy overrides the default child policy specified when registering the workflow type using [`register_workflow_type`][swf_register_workflow_type].
 #' 
 #' The supported child policies are:
 #' 
 #' -   `TERMINATE` – The child executions are terminated.
 #' 
-#' -   `REQUEST_CANCEL` – A request to cancel is attempted for each child
-#'     execution by recording a `WorkflowExecutionCancelRequested` event in
-#'     its history. It is up to the decider to take appropriate actions
-#'     when it receives an execution history with this event.
+#' -   `REQUEST_CANCEL` – A request to cancel is attempted for each child execution by recording a `WorkflowExecutionCancelRequested` event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.
 #' 
-#' -   `ABANDON` – No action is taken. The child executions continue to
-#'     run.
+#' -   `ABANDON` – No action is taken. The child executions continue to run.
 #' 
-#' A child policy for this workflow execution must be specified either as a
-#' default for the workflow type or through this parameter. If neither this
-#' parameter is set nor a default child policy was specified at
-#' registration time then a fault is returned.
+#' A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.
 #' @param lambdaRole The IAM role to attach to this workflow execution.
 #' 
-#' Executions of this workflow type need IAM roles to invoke Lambda
-#' functions. If you don't attach an IAM role, any attempt to schedule a
-#' Lambda task fails. This results in a `ScheduleLambdaFunctionFailed`
-#' history event. For more information, see
-#' <https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html>
-#' in the *Amazon SWF Developer Guide*.
+#' Executions of this workflow type need IAM roles to invoke Lambda functions. If you don't attach an IAM role, any attempt to schedule a Lambda task fails. This results in a `ScheduleLambdaFunctionFailed` history event. For more information, see <https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html> in the *Amazon SWF Developer Guide*.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4615,8 +3790,7 @@ swf_start_workflow_execution <- function(domain, workflowId, workflowType, taskL
 #' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) for the Amazon SWF domain.
 #' @param tags &#91;required&#93; The list of tags to add to a domain.
 #' 
-#' Tags may only contain unicode letters, digits, whitespace, or these
-#' symbols: `_ . : / = + - @@`.
+#' Tags may only contain unicode letters, digits, whitespace, or these symbols: `_ . : / = + - @@`.
 #'
 #' @return
 #' An empty list.
@@ -4662,45 +3836,25 @@ swf_tag_resource <- function(resourceArn, tags) {
 #' workflow execution identified by the given domain, runId, and workflowId
 #'
 #' @description
-#' Records a `WorkflowExecutionTerminated` event and forces closure of the
-#' workflow execution identified by the given domain, runId, and
-#' workflowId. The child policy, registered with the workflow type or
-#' specified when starting this execution, is applied to any open child
-#' workflow executions of this workflow execution.
+#' Records a `WorkflowExecutionTerminated` event and forces closure of the workflow execution identified by the given domain, runId, and workflowId. The child policy, registered with the workflow type or specified when starting this execution, is applied to any open child workflow executions of this workflow execution.
 #' 
-#' If the identified workflow execution was in progress, it is terminated
-#' immediately.
+#' If the identified workflow execution was in progress, it is terminated immediately.
 #' 
-#' If a runId isn't specified, then the `WorkflowExecutionTerminated` event
-#' is recorded in the history of the current open workflow with the
-#' matching workflowId in the domain.
+#' If a runId isn't specified, then the `WorkflowExecutionTerminated` event is recorded in the history of the current open workflow with the matching workflowId in the domain.
 #' 
-#' You should consider using
-#' [`request_cancel_workflow_execution`][swf_request_cancel_workflow_execution]
-#' action instead because it allows the workflow to gracefully close while
-#' [`terminate_workflow_execution`][swf_terminate_workflow_execution]
-#' doesn't.
+#' You should consider using [`request_cancel_workflow_execution`][swf_request_cancel_workflow_execution] action instead because it allows the workflow to gracefully close while [`terminate_workflow_execution`][swf_terminate_workflow_execution] doesn't.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
 #' -   You cannot use an IAM policy to constrain this action's parameters.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_terminate_workflow_execution(domain, workflowId, runId, reason,
@@ -4711,27 +3865,17 @@ swf_tag_resource <- function(resourceArn, tags) {
 #' @param runId The runId of the workflow execution to terminate.
 #' @param reason A descriptive reason for terminating the workflow execution.
 #' @param details Details for terminating the workflow execution.
-#' @param childPolicy If set, specifies the policy to use for the child workflow executions of
-#' the workflow execution being terminated. This policy overrides the child
-#' policy specified for the workflow execution at registration time or when
-#' starting the execution.
+#' @param childPolicy If set, specifies the policy to use for the child workflow executions of the workflow execution being terminated. This policy overrides the child policy specified for the workflow execution at registration time or when starting the execution.
 #' 
 #' The supported child policies are:
 #' 
 #' -   `TERMINATE` – The child executions are terminated.
 #' 
-#' -   `REQUEST_CANCEL` – A request to cancel is attempted for each child
-#'     execution by recording a `WorkflowExecutionCancelRequested` event in
-#'     its history. It is up to the decider to take appropriate actions
-#'     when it receives an execution history with this event.
+#' -   `REQUEST_CANCEL` – A request to cancel is attempted for each child execution by recording a `WorkflowExecutionCancelRequested` event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.
 #' 
-#' -   `ABANDON` – No action is taken. The child executions continue to
-#'     run.
+#' -   `ABANDON` – No action is taken. The child executions continue to run.
 #' 
-#' A child policy for this workflow execution must be specified either as a
-#' default for the workflow type or through this parameter. If neither this
-#' parameter is set nor a default child policy was specified at
-#' registration time then a fault is returned.
+#' A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.
 #'
 #' @return
 #' An empty list.
@@ -4775,40 +3919,25 @@ swf_terminate_workflow_execution <- function(domain, workflowId, runId = NULL, r
 #' Undeprecates a previously deprecated activity type
 #'
 #' @description
-#' Undeprecates a previously deprecated *activity type*. After an activity
-#' type has been undeprecated, you can create new tasks of that activity
-#' type.
+#' Undeprecates a previously deprecated *activity type*. After an activity type has been undeprecated, you can create new tasks of that activity type.
 #' 
-#' This operation is eventually consistent. The results are best effort and
-#' may not exactly reflect recent updates and changes.
+#' This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
-#' -   Constrain the following parameters by using a `Condition` element
-#'     with the appropriate keys.
+#' -   Constrain the following parameters by using a `Condition` element with the appropriate keys.
 #' 
-#'     -   `activityType.name`: String constraint. The key is
-#'         `swf:activityType.name`.
+#'     -   `activityType.name`: String constraint. The key is `swf:activityType.name`.
 #' 
-#'     -   `activityType.version`: String constraint. The key is
-#'         `swf:activityType.version`.
+#'     -   `activityType.version`: String constraint. The key is `swf:activityType.version`.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_undeprecate_activity_type(domain, activityType)
@@ -4857,33 +3986,21 @@ swf_undeprecate_activity_type <- function(domain, activityType) {
 #' Undeprecates a previously deprecated domain
 #'
 #' @description
-#' Undeprecates a previously deprecated domain. After a domain has been
-#' undeprecated it can be used to create new workflow executions or
-#' register new types.
+#' Undeprecates a previously deprecated domain. After a domain has been undeprecated it can be used to create new workflow executions or register new types.
 #' 
-#' This operation is eventually consistent. The results are best effort and
-#' may not exactly reflect recent updates and changes.
+#' This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
 #' -   You cannot use an IAM policy to constrain this action's parameters.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_undeprecate_domain(name)
@@ -4927,39 +4044,25 @@ swf_undeprecate_domain <- function(name) {
 #' Undeprecates a previously deprecated workflow type
 #'
 #' @description
-#' Undeprecates a previously deprecated *workflow type*. After a workflow
-#' type has been undeprecated, you can create new executions of that type.
+#' Undeprecates a previously deprecated *workflow type*. After a workflow type has been undeprecated, you can create new executions of that type.
 #' 
-#' This operation is eventually consistent. The results are best effort and
-#' may not exactly reflect recent updates and changes.
+#' This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.
 #' 
 #' **Access Control**
 #' 
-#' You can use IAM policies to control this action's access to Amazon SWF
-#' resources as follows:
+#' You can use IAM policies to control this action's access to Amazon SWF resources as follows:
 #' 
-#' -   Use a `Resource` element with the domain name to limit the action to
-#'     only specified domains.
+#' -   Use a `Resource` element with the domain name to limit the action to only specified domains.
 #' 
-#' -   Use an `Action` element to allow or deny permission to call this
-#'     action.
+#' -   Use an `Action` element to allow or deny permission to call this action.
 #' 
-#' -   Constrain the following parameters by using a `Condition` element
-#'     with the appropriate keys.
+#' -   Constrain the following parameters by using a `Condition` element with the appropriate keys.
 #' 
-#'     -   `workflowType.name`: String constraint. The key is
-#'         `swf:workflowType.name`.
+#'     -   `workflowType.name`: String constraint. The key is `swf:workflowType.name`.
 #' 
-#'     -   `workflowType.version`: String constraint. The key is
-#'         `swf:workflowType.version`.
+#'     -   `workflowType.version`: String constraint. The key is `swf:workflowType.version`.
 #' 
-#' If the caller doesn't have sufficient permissions to invoke the action,
-#' or the parameter values fall outside the specified constraints, the
-#' action fails. The associated event attribute's `cause` parameter is set
-#' to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see
-#' [Using IAM to Manage Access to Amazon SWF
-#' Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)
-#' in the *Amazon SWF Developer Guide*.
+#' If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's `cause` parameter is set to `OPERATION_NOT_PERMITTED`. For details and example IAM policies, see [Using IAM to Manage Access to Amazon SWF Workflows](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon SWF Developer Guide*.
 #'
 #' @usage
 #' swf_undeprecate_workflow_type(domain, workflowType)

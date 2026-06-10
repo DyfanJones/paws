@@ -16,13 +16,11 @@ directconnect_update_lag(
 
 \item{lagName}{The name of the LAG.}
 
-\item{minimumLinks}{The minimum number of physical connections that must be operational for
-the LAG itself to be operational.}
+\item{minimumLinks}{The minimum number of physical connections that must be operational for the LAG itself to be operational.}
 
 \item{encryptionMode}{The LAG MAC Security (MACsec) encryption mode.
 
-Amazon Web Services applies the value to all connections which are part
-of the LAG.}
+Amazon Web Services applies the value to all connections which are part of the LAG.}
 }
 \description{
 Updates the attributes of the specified link aggregation group (LAG).

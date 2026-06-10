@@ -13,16 +13,11 @@ prometheusservice_update_workspace_configuration(
 )
 }
 \arguments{
-\item{workspaceId}{[required] The ID of the workspace that you want to update. To find the IDs of your
-workspaces, use the
-\code{\link[=prometheusservice_list_workspaces]{list_workspaces}} operation.}
+\item{workspaceId}{[required] The ID of the workspace that you want to update. To find the IDs of your workspaces, use the \code{\link[=prometheusservice_list_workspaces]{list_workspaces}} operation.}
 
-\item{clientToken}{You can include a token in your operation to make it an idempotent
-opeartion.}
+\item{clientToken}{You can include a token in your operation to make it an idempotent opeartion.}
 
-\item{limitsPerLabelSet}{This is an array of structures, where each structure defines a label set
-for the workspace, and defines the active time series limit for each of
-those label sets. Each label name in a label set must be unique.}
+\item{limitsPerLabelSet}{This is an array of structures, where each structure defines a label set for the workspace, and defines the active time series limit for each of those label sets. Each label name in a label set must be unique.}
 
 \item{retentionPeriodInDays}{Specifies how many days that metrics will be retained in the workspace.}
 }

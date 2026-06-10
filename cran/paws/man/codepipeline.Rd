@@ -57,72 +57,30 @@ CodePipeline
 
 \strong{Overview}
 
-This is the CodePipeline API Reference. This guide provides descriptions
-of the actions and data types for CodePipeline. Some functionality for
-your pipeline can only be configured through the API. For more
-information, see the \href{https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html}{CodePipeline User Guide}.
+This is the CodePipeline API Reference. This guide provides descriptions of the actions and data types for CodePipeline. Some functionality for your pipeline can only be configured through the API. For more information, see the \href{https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html}{CodePipeline User Guide}.
 
-You can use the CodePipeline API to work with pipelines, stages,
-actions, and transitions.
+You can use the CodePipeline API to work with pipelines, stages, actions, and transitions.
 
-\emph{Pipelines} are models of automated release processes. Each pipeline is
-uniquely named, and consists of stages, actions, and transitions.
+\emph{Pipelines} are models of automated release processes. Each pipeline is uniquely named, and consists of stages, actions, and transitions.
 
 You can work with pipelines by calling:
 \itemize{
-\item \code{create_pipeline}, which creates a
-uniquely named pipeline.
-\item \code{delete_pipeline}, which deletes the
-specified pipeline.
-\item \code{get_pipeline}, which returns
-information about the pipeline structure and pipeline metadata,
-including the pipeline Amazon Resource Name (ARN).
-\item \code{get_pipeline_execution},
-which returns information about a specific execution of a pipeline.
-\item \code{get_pipeline_state}, which
-returns information about the current state of the stages and
-actions of a pipeline.
-\item \code{list_action_executions},
-which returns action-level details for past executions. The details
-include full stage and action-level details, including individual
-action duration, status, any errors that occurred during the
-execution, and input and output artifact location details.
-\item \code{list_pipelines}, which gets a
-summary of all of the pipelines associated with your account.
-\item \code{list_pipeline_executions},
-which gets a summary of the most recent executions for a pipeline.
-\item \code{start_pipeline_execution},
-which runs the most recent revision of an artifact through the
-pipeline.
-\item \code{stop_pipeline_execution},
-which stops the specified pipeline execution from continuing through
-the pipeline.
-\item \code{update_pipeline}, which updates a
-pipeline with edits or changes to the structure of the pipeline.
+\item \code{create_pipeline}, which creates a uniquely named pipeline.
+\item \code{delete_pipeline}, which deletes the specified pipeline.
+\item \code{get_pipeline}, which returns information about the pipeline structure and pipeline metadata, including the pipeline Amazon Resource Name (ARN).
+\item \code{get_pipeline_execution}, which returns information about a specific execution of a pipeline.
+\item \code{get_pipeline_state}, which returns information about the current state of the stages and actions of a pipeline.
+\item \code{list_action_executions}, which returns action-level details for past executions. The details include full stage and action-level details, including individual action duration, status, any errors that occurred during the execution, and input and output artifact location details.
+\item \code{list_pipelines}, which gets a summary of all of the pipelines associated with your account.
+\item \code{list_pipeline_executions}, which gets a summary of the most recent executions for a pipeline.
+\item \code{start_pipeline_execution}, which runs the most recent revision of an artifact through the pipeline.
+\item \code{stop_pipeline_execution}, which stops the specified pipeline execution from continuing through the pipeline.
+\item \code{update_pipeline}, which updates a pipeline with edits or changes to the structure of the pipeline.
 }
 
-Pipelines include \emph{stages}. Each stage contains one or more actions that
-must complete before the next stage begins. A stage results in success
-or failure. If a stage fails, the pipeline stops at that stage and
-remains stopped until either a new version of an artifact appears in the
-source location, or a user takes action to rerun the most recent
-artifact through the pipeline. You can call
-\code{get_pipeline_state}, which displays
-the status of a pipeline, including the status of stages in the
-pipeline, or \code{get_pipeline}, which returns
-the entire structure of the pipeline, including the stages of that
-pipeline. For more information about the structure of stages and
-actions, see \href{https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html}{CodePipeline Pipeline Structure Reference}.
+Pipelines include \emph{stages}. Each stage contains one or more actions that must complete before the next stage begins. A stage results in success or failure. If a stage fails, the pipeline stops at that stage and remains stopped until either a new version of an artifact appears in the source location, or a user takes action to rerun the most recent artifact through the pipeline. You can call \code{get_pipeline_state}, which displays the status of a pipeline, including the status of stages in the pipeline, or \code{get_pipeline}, which returns the entire structure of the pipeline, including the stages of that pipeline. For more information about the structure of stages and actions, see \href{https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html}{CodePipeline Pipeline Structure Reference}.
 
-Pipeline stages include \emph{actions} that are categorized into categories
-such as source or build actions performed in a stage of a pipeline. For
-example, you can use a source action to import artifacts into a pipeline
-from a source such as Amazon S3. Like stages, you do not work with
-actions directly in most cases, but you do define and interact with
-actions when working with pipeline operations such as
-\code{create_pipeline} and
-\code{get_pipeline_state}. Valid action
-categories are:
+Pipeline stages include \emph{actions} that are categorized into categories such as source or build actions performed in a stage of a pipeline. For example, you can use a source action to import artifacts into a pipeline from a source such as Amazon S3. Like stages, you do not work with actions directly in most cases, but you do define and interact with actions when working with pipeline operations such as \code{create_pipeline} and \code{get_pipeline_state}. Valid action categories are:
 \itemize{
 \item Source
 \item Build
@@ -133,59 +91,38 @@ categories are:
 \item Compute
 }
 
-Pipelines also include \emph{transitions}, which allow the transition of
-artifacts from one stage to the next in a pipeline after the actions in
-one stage complete.
+Pipelines also include \emph{transitions}, which allow the transition of artifacts from one stage to the next in a pipeline after the actions in one stage complete.
 
 You can work with transitions by calling:
 \itemize{
-\item \code{disable_stage_transition},
-which prevents artifacts from transitioning to the next stage in a
-pipeline.
-\item \code{enable_stage_transition},
-which enables transition of artifacts between stages in a pipeline.
+\item \code{disable_stage_transition}, which prevents artifacts from transitioning to the next stage in a pipeline.
+\item \code{enable_stage_transition}, which enables transition of artifacts between stages in a pipeline.
 }
 
 \strong{Using the API to integrate with CodePipeline}
 
-For third-party integrators or developers who want to create their own
-integrations with CodePipeline, the expected sequence varies from the
-standard API user. To integrate with CodePipeline, developers need to
-work with the following items:
+For third-party integrators or developers who want to create their own integrations with CodePipeline, the expected sequence varies from the standard API user. To integrate with CodePipeline, developers need to work with the following items:
 
-\strong{Jobs}, which are instances of an action. For example, a job for a
-source action might import a revision of an artifact from a source.
+\strong{Jobs}, which are instances of an action. For example, a job for a source action might import a revision of an artifact from a source.
 
 You can work with jobs by calling:
 \itemize{
-\item \code{acknowledge_job}, which confirms
-whether a job worker has received the specified job.
-\item \code{get_job_details}, which returns the
-details of a job.
-\item \code{poll_for_jobs}, which determines
-whether there are any jobs to act on.
-\item \code{put_job_failure_result},
-which provides details of a job failure.
-\item \code{put_job_success_result},
-which provides details of a job success.
+\item \code{acknowledge_job}, which confirms whether a job worker has received the specified job.
+\item \code{get_job_details}, which returns the details of a job.
+\item \code{poll_for_jobs}, which determines whether there are any jobs to act on.
+\item \code{put_job_failure_result}, which provides details of a job failure.
+\item \code{put_job_success_result}, which provides details of a job success.
 }
 
-\strong{Third party jobs}, which are instances of an action created by a
-partner action and integrated into CodePipeline. Partner actions are
-created by members of the Amazon Web Services Partner Network.
+\strong{Third party jobs}, which are instances of an action created by a partner action and integrated into CodePipeline. Partner actions are created by members of the Amazon Web Services Partner Network.
 
 You can work with third party jobs by calling:
 \itemize{
-\item \code{acknowledge_third_party_job},
-which confirms whether a job worker has received the specified job.
-\item \code{get_third_party_job_details},
-which requests the details of a job for a partner action.
-\item \code{poll_for_third_party_jobs},
-which determines whether there are any jobs to act on.
-\item \code{put_third_party_job_failure_result},
-which provides details of a job failure.
-\item \code{put_third_party_job_success_result},
-which provides details of a job success.
+\item \code{acknowledge_third_party_job}, which confirms whether a job worker has received the specified job.
+\item \code{get_third_party_job_details}, which requests the details of a job for a partner action.
+\item \code{poll_for_third_party_jobs}, which determines whether there are any jobs to act on.
+\item \code{put_third_party_job_failure_result}, which provides details of a job failure.
+\item \code{put_third_party_job_success_result}, which provides details of a job success.
 }
 }
 \section{Service syntax}{

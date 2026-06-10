@@ -8,8 +8,7 @@ source, or application}
 opensearchservice_list_tags(ARN)
 }
 \arguments{
-\item{ARN}{[required] Amazon Resource Name (ARN) for the domain, data source, or application
-to view tags for.}
+\item{ARN}{[required] Amazon Resource Name (ARN) for the domain, data source, or application to view tags for.}
 }
 \description{
 Returns all resource tags for an Amazon OpenSearch Service domain, data source, or application. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html}{Tagging Amazon OpenSearch Service resources}.

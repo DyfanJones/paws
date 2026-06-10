@@ -9,9 +9,7 @@ workspaces_deploy_workspace_applications(WorkspaceId, Force = NULL)
 \arguments{
 \item{WorkspaceId}{[required] The identifier of the WorkSpace.}
 
-\item{Force}{Indicates whether the force flag is applied for the specified WorkSpace.
-When the force flag is enabled, it allows previously failed deployments
-to be retried.}
+\item{Force}{Indicates whether the force flag is applied for the specified WorkSpace. When the force flag is enabled, it allows previously failed deployments to be retried.}
 }
 \description{
 Deploys associated applications to the specified WorkSpace

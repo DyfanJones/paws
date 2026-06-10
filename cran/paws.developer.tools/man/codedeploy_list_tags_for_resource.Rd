@@ -8,14 +8,9 @@ Resource Name (ARN)}
 codedeploy_list_tags_for_resource(ResourceArn, NextToken = NULL)
 }
 \arguments{
-\item{ResourceArn}{[required] The ARN of a CodeDeploy resource.
-\code{\link[=codedeploy_list_tags_for_resource]{list_tags_for_resource}} returns
-all the tags associated with the resource that is identified by the
-\code{ResourceArn}.}
+\item{ResourceArn}{[required] The ARN of a CodeDeploy resource. \code{\link[=codedeploy_list_tags_for_resource]{list_tags_for_resource}} returns all the tags associated with the resource that is identified by the \code{ResourceArn}.}
 
-\item{NextToken}{An identifier returned from the previous
-\code{\link[=codedeploy_list_tags_for_resource]{list_tags_for_resource}} call. It
-can be used to return the next set of applications in the list.}
+\item{NextToken}{An identifier returned from the previous \code{\link[=codedeploy_list_tags_for_resource]{list_tags_for_resource}} call. It can be used to return the next set of applications in the list.}
 }
 \description{
 Returns a list of tags for the resource identified by a specified Amazon Resource Name (ARN). Tags are used to organize and categorize your CodeDeploy resources.

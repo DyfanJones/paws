@@ -7,7 +7,7 @@
 frauddetector_delete_rule(rule)
 }
 \arguments{
-\item{rule}{[required]}
+\item{rule}{[required] A rule.}
 }
 \description{
 Deletes the rule. You cannot delete a rule if it is used by an \code{ACTIVE} or \code{INACTIVE} detector version.

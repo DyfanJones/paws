@@ -15,8 +15,7 @@ workspaces_describe_application_associations(
 \arguments{
 \item{MaxResults}{The maximum number of associations to return.}
 
-\item{NextToken}{If you received a \code{NextToken} from a previous call that was paginated,
-provide this token to receive the next set of results.}
+\item{NextToken}{If you received a \code{NextToken} from a previous call that was paginated, provide this token to receive the next set of results.}
 
 \item{ApplicationId}{[required] The identifier of the specified application.}
 

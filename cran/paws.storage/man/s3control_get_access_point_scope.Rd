@@ -7,8 +7,7 @@
 s3control_get_access_point_scope(AccountId, Name)
 }
 \arguments{
-\item{AccountId}{[required] The Amazon Web Services account ID that owns the access point with the
-scope that you want to retrieve.}
+\item{AccountId}{[required] The Amazon Web Services account ID that owns the access point with the scope that you want to retrieve.}
 
 \item{Name}{[required] The name of the access point with the scope you want to retrieve.}
 }

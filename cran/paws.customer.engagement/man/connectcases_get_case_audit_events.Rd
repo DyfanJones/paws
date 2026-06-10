@@ -16,12 +16,9 @@ connectcases_get_case_audit_events(
 
 \item{domainId}{[required] The unique identifier of the Cases domain.}
 
-\item{maxResults}{The maximum number of audit events to return. When no value is provided,
-25 is the default.}
+\item{maxResults}{The maximum number of audit events to return. When no value is provided, 25 is the default.}
 
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 }
 \description{
 Returns the audit history about a specific case if it exists.

@@ -7,8 +7,7 @@
 forecastservice_untag_resource(ResourceArn, TagKeys)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) that identifies the resource for which to
-list the tags.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) that identifies the resource for which to list the tags.}
 
 \item{TagKeys}{[required] The keys of the tags to be removed.}
 }

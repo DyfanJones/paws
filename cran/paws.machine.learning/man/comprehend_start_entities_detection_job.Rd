@@ -24,47 +24,27 @@ comprehend_start_entities_detection_job(
 
 \item{OutputDataConfig}{[required] Specifies where to send the output files.}
 
-\item{DataAccessRoleArn}{[required] The Amazon Resource Name (ARN) of the IAM role that grants Amazon
-Comprehend read access to your input data. For more information, see
-\href{https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions}{Role-based permissions}.}
+\item{DataAccessRoleArn}{[required] The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data. For more information, see \href{https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions}{Role-based permissions}.}
 
 \item{JobName}{The identifier of the job.}
 
-\item{EntityRecognizerArn}{The Amazon Resource Name (ARN) that identifies the specific entity
-recognizer to be used by the
-\code{\link[=comprehend_start_entities_detection_job]{start_entities_detection_job}}.
-This ARN is optional and is only used for a custom entity recognition
-job.}
+\item{EntityRecognizerArn}{The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be used by the \code{\link[=comprehend_start_entities_detection_job]{start_entities_detection_job}}. This ARN is optional and is only used for a custom entity recognition job.}
 
-\item{LanguageCode}{[required] The language of the input documents. All documents must be in the same
-language. You can specify any of the languages supported by Amazon
-Comprehend. If custom entities recognition is used, this parameter is
-ignored and the language used for training the model is used instead.}
+\item{LanguageCode}{[required] The language of the input documents. All documents must be in the same language. You can specify any of the languages supported by Amazon Comprehend. If custom entities recognition is used, this parameter is ignored and the language used for training the model is used instead.}
 
-\item{ClientRequestToken}{A unique identifier for the request. If you don't set the client request
-token, Amazon Comprehend generates one.}
+\item{ClientRequestToken}{A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.}
 
-\item{VolumeKmsKeyId}{ID for the Amazon Web Services Key Management Service (KMS) key that
-Amazon Comprehend uses to encrypt data on the storage volume attached to
-the ML compute instance(s) that process the analysis job. The
-VolumeKmsKeyId can be either of the following formats:
+\item{VolumeKmsKeyId}{ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:
 \itemize{
 \item KMS Key ID: \code{"1234abcd-12ab-34cd-56ef-1234567890ab"}
-\item Amazon Resource Name (ARN) of a KMS Key:
-\code{"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"}
+\item Amazon Resource Name (ARN) of a KMS Key: \code{"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"}
 }}
 
-\item{VpcConfig}{Configuration parameters for an optional private Virtual Private Cloud
-(VPC) containing the resources you are using for your entity detection
-job. For more information, see \href{https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html}{Amazon VPC}.}
+\item{VpcConfig}{Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your entity detection job. For more information, see \href{https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html}{Amazon VPC}.}
 
-\item{Tags}{Tags to associate with the entities detection job. A tag is a key-value
-pair that adds metadata to a resource used by Amazon Comprehend. For
-example, a tag with "Sales" as the key might be added to a resource to
-indicate its use by the sales department.}
+\item{Tags}{Tags to associate with the entities detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.}
 
-\item{FlywheelArn}{The Amazon Resource Number (ARN) of the flywheel associated with the
-model to use.}
+\item{FlywheelArn}{The Amazon Resource Number (ARN) of the flywheel associated with the model to use.}
 }
 \description{
 Starts an asynchronous entity detection job for a collection of documents. Use the operation to track the status of a job.

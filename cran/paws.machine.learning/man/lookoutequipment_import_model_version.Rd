@@ -19,34 +19,25 @@ lookoutequipment_import_model_version(
 \arguments{
 \item{SourceModelVersionArn}{[required] The Amazon Resource Name (ARN) of the model version to import.}
 
-\item{ModelName}{The name for the machine learning model to be created. If the model
-already exists, Amazon Lookout for Equipment creates a new version. If
-you do not specify this field, it is filled with the name of the source
-model.}
+\item{ModelName}{The name for the machine learning model to be created. If the model already exists, Amazon Lookout for Equipment creates a new version. If you do not specify this field, it is filled with the name of the source model.}
 
 \item{DatasetName}{[required] The name of the dataset for the machine learning model being imported.}
 
-\item{LabelsInputConfiguration}{}
+\item{LabelsInputConfiguration}{Contains the configuration information for the S3 location being used to hold label data.}
 
-\item{ClientToken}{[required] A unique identifier for the request. If you do not set the client
-request token, Amazon Lookout for Equipment generates one.}
+\item{ClientToken}{[required] A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.}
 
-\item{RoleArn}{The Amazon Resource Name (ARN) of a role with permission to access the
-data source being used to create the machine learning model.}
+\item{RoleArn}{The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the machine learning model.}
 
-\item{ServerSideKmsKeyId}{Provides the identifier of the KMS key key used to encrypt model data by
-Amazon Lookout for Equipment.}
+\item{ServerSideKmsKeyId}{Provides the identifier of the KMS key key used to encrypt model data by Amazon Lookout for Equipment.}
 
 \item{Tags}{The tags associated with the machine learning model to be created.}
 
-\item{InferenceDataImportStrategy}{Indicates how to import the accumulated inference data when a model
-version is imported. The possible values are as follows:
+\item{InferenceDataImportStrategy}{Indicates how to import the accumulated inference data when a model version is imported. The possible values are as follows:
 \itemize{
 \item NO_IMPORT – Don't import the data.
-\item ADD_WHEN_EMPTY – Only import the data from the source model if there
-is no existing data in the target model.
-\item OVERWRITE – Import the data from the source model and overwrite the
-existing data in the target model.
+\item ADD_WHEN_EMPTY – Only import the data from the source model if there is no existing data in the target model.
+\item OVERWRITE – Import the data from the source model and overwrite the existing data in the target model.
 }}
 }
 \description{

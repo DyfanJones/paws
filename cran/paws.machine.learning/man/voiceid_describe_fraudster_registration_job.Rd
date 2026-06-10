@@ -7,8 +7,7 @@
 voiceid_describe_fraudster_registration_job(DomainId, JobId)
 }
 \arguments{
-\item{DomainId}{[required] The identifier of the domain that contains the fraudster registration
-job.}
+\item{DomainId}{[required] The identifier of the domain that contains the fraudster registration job.}
 
 \item{JobId}{[required] The identifier of the fraudster registration job you are describing.}
 }

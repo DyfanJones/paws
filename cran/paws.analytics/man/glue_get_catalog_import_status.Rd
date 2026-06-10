@@ -7,8 +7,7 @@
 glue_get_catalog_import_status(CatalogId = NULL)
 }
 \arguments{
-\item{CatalogId}{The ID of the catalog to migrate. Currently, this should be the Amazon
-Web Services account ID.}
+\item{CatalogId}{The ID of the catalog to migrate. Currently, this should be the Amazon Web Services account ID.}
 }
 \description{
 Retrieves the status of a migration operation.

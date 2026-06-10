@@ -14,11 +14,9 @@ quicksight_list_folders_for_resource(
 \arguments{
 \item{AwsAccountId}{[required] The ID for the Amazon Web Services account that contains the resource.}
 
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) the resource whose folders you need to
-list.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) the resource whose folders you need to list.}
 
-\item{NextToken}{The token for the next set of results, or null if there are no more
-results.}
+\item{NextToken}{The token for the next set of results, or null if there are no more results.}
 
 \item{MaxResults}{The maximum number of results to be returned per request.}
 }

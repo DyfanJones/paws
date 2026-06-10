@@ -20,8 +20,7 @@ bedrockagent_update_flow_alias(
 
 \item{routingConfiguration}{[required] Contains information about the version to which to map the alias.}
 
-\item{concurrencyConfiguration}{The configuration that specifies how nodes in the flow are executed in
-parallel.}
+\item{concurrencyConfiguration}{The configuration that specifies how nodes in the flow are executed in parallel.}
 
 \item{flowIdentifier}{[required] The unique identifier of the flow.}
 

@@ -12,8 +12,7 @@ voiceid_associate_fraudster(DomainId, FraudsterId, WatchlistId)
 
 \item{FraudsterId}{[required] The identifier of the fraudster to be associated with the watchlist.}
 
-\item{WatchlistId}{[required] The identifier of the watchlist you want to associate with the
-fraudster.}
+\item{WatchlistId}{[required] The identifier of the watchlist you want to associate with the fraudster.}
 }
 \description{
 Associates the fraudsters with the watchlist specified in the same domain.

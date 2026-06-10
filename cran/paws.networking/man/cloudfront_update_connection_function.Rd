@@ -14,10 +14,9 @@ cloudfront_update_connection_function(
 \arguments{
 \item{Id}{[required] The connection function ID.}
 
-\item{IfMatch}{[required] The current version (\code{ETag} value) of the connection function you are
-updating.}
+\item{IfMatch}{[required] The current version (\code{ETag} value) of the connection function you are updating.}
 
-\item{ConnectionFunctionConfig}{[required]}
+\item{ConnectionFunctionConfig}{[required] Contains configuration information about a CloudFront function.}
 
 \item{ConnectionFunctionCode}{[required] The connection function code.}
 }

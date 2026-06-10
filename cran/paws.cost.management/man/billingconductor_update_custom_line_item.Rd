@@ -20,10 +20,9 @@ billingconductor_update_custom_line_item(
 
 \item{Description}{The new line item description of the custom line item.}
 
-\item{ChargeDetails}{A \code{ListCustomLineItemChargeDetails} containing the new charge details
-for the custom line item.}
+\item{ChargeDetails}{A \code{ListCustomLineItemChargeDetails} containing the new charge details for the custom line item.}
 
-\item{BillingPeriodRange}{}
+\item{BillingPeriodRange}{A time range for which the margin summary is effective. The time range can be up to 12 months.}
 }
 \description{
 Update an existing custom line item in the current or previous billing period.

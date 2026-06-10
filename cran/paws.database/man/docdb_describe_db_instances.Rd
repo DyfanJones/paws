@@ -12,9 +12,7 @@ docdb_describe_db_instances(
 )
 }
 \arguments{
-\item{DBInstanceIdentifier}{The user-provided instance identifier. If this parameter is specified,
-information from only the specific instance is returned. This parameter
-isn't case sensitive.
+\item{DBInstanceIdentifier}{The user-provided instance identifier. If this parameter is specified, information from only the specific instance is returned. This parameter isn't case sensitive.
 
 Constraints:
 \itemize{
@@ -25,27 +23,17 @@ Constraints:
 
 Supported filters:
 \itemize{
-\item \code{db-cluster-id} - Accepts cluster identifiers and cluster Amazon
-Resource Names (ARNs). The results list includes only the
-information about the instances that are associated with the
-clusters that are identified by these ARNs.
-\item \code{db-instance-id} - Accepts instance identifiers and instance ARNs.
-The results list includes only the information about the instances
-that are identified by these ARNs.
+\item \code{db-cluster-id} - Accepts cluster identifiers and cluster Amazon Resource Names (ARNs). The results list includes only the information about the instances that are associated with the clusters that are identified by these ARNs.
+\item \code{db-instance-id} - Accepts instance identifiers and instance ARNs. The results list includes only the information about the instances that are identified by these ARNs.
 }}
 
-\item{MaxRecords}{The maximum number of records to include in the response. If more
-records exist than the specified \code{MaxRecords} value, a pagination token
-(marker) is included in the response so that the remaining results can
-be retrieved.
+\item{MaxRecords}{The maximum number of records to include in the response. If more records exist than the specified \code{MaxRecords} value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.
 
 Default: 100
 
 Constraints: Minimum 20, maximum 100.}
 
-\item{Marker}{An optional pagination token provided by a previous request. If this
-parameter is specified, the response includes only records beyond the
-marker, up to the value specified by \code{MaxRecords}.}
+\item{Marker}{An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by \code{MaxRecords}.}
 }
 \description{
 Returns information about provisioned Amazon DocumentDB instances. This API supports pagination.

@@ -13,9 +13,7 @@ cloudfront_create_monitoring_subscription(
 \arguments{
 \item{DistributionId}{[required] The ID of the distribution that you are enabling metrics for.}
 
-\item{MonitoringSubscription}{[required] A monitoring subscription. This structure contains information about
-whether additional CloudWatch metrics are enabled for a given CloudFront
-distribution.}
+\item{MonitoringSubscription}{[required] A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.}
 }
 \description{
 Enables or disables additional Amazon CloudWatch metrics for the specified CloudFront distribution. The additional metrics incur an additional cost.

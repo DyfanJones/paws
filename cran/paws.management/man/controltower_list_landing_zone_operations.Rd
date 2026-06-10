@@ -11,12 +11,9 @@ controltower_list_landing_zone_operations(
 )
 }
 \arguments{
-\item{filter}{An input filter for the
-\code{\link[=controltower_list_landing_zone_operations]{list_landing_zone_operations}}
-API that lets you select the types of landing zone operations to view.}
+\item{filter}{An input filter for the \code{\link[=controltower_list_landing_zone_operations]{list_landing_zone_operations}} API that lets you select the types of landing zone operations to view.}
 
-\item{nextToken}{The token to continue the list from a previous API call with the same
-parameters.}
+\item{nextToken}{The token to continue the list from a previous API call with the same parameters.}
 
 \item{maxResults}{How many results to return per API call.}
 }

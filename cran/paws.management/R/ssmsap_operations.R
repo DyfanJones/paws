@@ -271,9 +271,7 @@ ssmsap_get_resource_permission <- function(ActionType = NULL, ResourceArn) {
 #' See [https://www.paws-r-sdk.com/docs/ssmsap_list_applications/](https://www.paws-r-sdk.com/docs/ssmsap_list_applications/) for full documentation.
 #'
 #' @param NextToken The token for the next page of results.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned nextToken
-#' value.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value.
 #' @param Filters The filter of name, value, and operator.
 #'
 #' @keywords internal
@@ -307,12 +305,9 @@ ssmsap_list_applications <- function(NextToken = NULL, MaxResults = NULL, Filter
 #'
 #' @param ApplicationId The ID of the application.
 #' @param NextToken The token for the next page of results.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned nextToken
-#' value.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value.
 #' 
-#' If you do not specify a value for MaxResults, the request returns 50
-#' items per page by default.
+#' If you do not specify a value for MaxResults, the request returns 50 items per page by default.
 #'
 #' @keywords internal
 #'
@@ -344,9 +339,7 @@ ssmsap_list_components <- function(ApplicationId = NULL, NextToken = NULL, MaxRe
 #'
 #' See [https://www.paws-r-sdk.com/docs/ssmsap_list_configuration_check_definitions/](https://www.paws-r-sdk.com/docs/ssmsap_list_configuration_check_definitions/) for full documentation.
 #'
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned nextToken
-#' value.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value.
 #' @param NextToken The token for the next page of results.
 #'
 #' @keywords internal
@@ -380,17 +373,12 @@ ssmsap_list_configuration_check_definitions <- function(MaxResults = NULL, NextT
 #' See [https://www.paws-r-sdk.com/docs/ssmsap_list_configuration_check_operations/](https://www.paws-r-sdk.com/docs/ssmsap_list_configuration_check_operations/) for full documentation.
 #'
 #' @param ApplicationId &#91;required&#93; The ID of the application.
-#' @param ListMode The mode for listing configuration check operations. Defaults to
-#' "LATEST_PER_CHECK".
+#' @param ListMode The mode for listing configuration check operations. Defaults to "LATEST_PER_CHECK".
 #' 
-#' -   LATEST_PER_CHECK - Will list the latest configuration check
-#'     operation per check type.
+#' -   LATEST_PER_CHECK - Will list the latest configuration check operation per check type.
 #' 
-#' -   ALL_OPERATIONS - Will list all configuration check operations
-#'     performed on the application.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned nextToken
-#' value.
+#' -   ALL_OPERATIONS - Will list all configuration check operations performed on the application.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value.
 #' @param NextToken The token for the next page of results.
 #' @param Filters The filters of an operation.
 #'
@@ -427,10 +415,7 @@ ssmsap_list_configuration_check_operations <- function(ApplicationId, ListMode =
 #' @param ApplicationId The ID of the application.
 #' @param ComponentId The ID of the component.
 #' @param NextToken The token for the next page of results.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned nextToken
-#' value. If you do not specify a value for MaxResults, the request returns
-#' 50 items per page by default.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. If you do not specify a value for MaxResults, the request returns 50 items per page by default.
 #'
 #' @keywords internal
 #'
@@ -462,18 +447,13 @@ ssmsap_list_databases <- function(ApplicationId = NULL, ComponentId = NULL, Next
 #' See [https://www.paws-r-sdk.com/docs/ssmsap_list_operation_events/](https://www.paws-r-sdk.com/docs/ssmsap_list_operation_events/) for full documentation.
 #'
 #' @param OperationId &#91;required&#93; The ID of the operation.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned nextToken
-#' value.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value.
 #' 
-#' If you do not specify a value for `MaxResults`, the request returns 50
-#' items per page by default.
-#' @param NextToken The token to use to retrieve the next page of results. This value is
-#' null when there are no more results to return.
+#' If you do not specify a value for `MaxResults`, the request returns 50 items per page by default.
+#' @param NextToken The token to use to retrieve the next page of results. This value is null when there are no more results to return.
 #' @param Filters Optionally specify filters to narrow the returned operation event items.
 #' 
-#' Valid filter names include `status`, `resourceID`, and `resourceType`.
-#' The valid operator for all three filters is `Equals`.
+#' Valid filter names include `status`, `resourceID`, and `resourceType`. The valid operator for all three filters is `Equals`.
 #'
 #' @keywords internal
 #'
@@ -505,10 +485,7 @@ ssmsap_list_operation_events <- function(OperationId, MaxResults = NULL, NextTok
 #' See [https://www.paws-r-sdk.com/docs/ssmsap_list_operations/](https://www.paws-r-sdk.com/docs/ssmsap_list_operations/) for full documentation.
 #'
 #' @param ApplicationId &#91;required&#93; The ID of the application.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned nextToken
-#' value. If you do not specify a value for MaxResults, the request returns
-#' 50 items per page by default.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. If you do not specify a value for MaxResults, the request returns 50 items per page by default.
 #' @param NextToken The token for the next page of results.
 #' @param Filters The filters of an operation.
 #'
@@ -542,9 +519,7 @@ ssmsap_list_operations <- function(ApplicationId, MaxResults = NULL, NextToken =
 #' See [https://www.paws-r-sdk.com/docs/ssmsap_list_sub_check_results/](https://www.paws-r-sdk.com/docs/ssmsap_list_sub_check_results/) for full documentation.
 #'
 #' @param OperationId &#91;required&#93; The ID of the configuration check operation.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned nextToken
-#' value.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value.
 #' @param NextToken The token for the next page of results.
 #'
 #' @keywords internal
@@ -578,9 +553,7 @@ ssmsap_list_sub_check_results <- function(OperationId, MaxResults = NULL, NextTo
 #' See [https://www.paws-r-sdk.com/docs/ssmsap_list_sub_check_rule_results/](https://www.paws-r-sdk.com/docs/ssmsap_list_sub_check_rule_results/) for full documentation.
 #'
 #' @param SubCheckResultId &#91;required&#93; The ID of the sub check result.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned nextToken
-#' value.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value.
 #' @param NextToken The token for the next page of results.
 #'
 #' @keywords internal
@@ -685,11 +658,9 @@ ssmsap_put_resource_permission <- function(ActionType, SourceResourceArn, Resour
 #' @param Tags The tags to be attached to the SAP application.
 #' @param Credentials The credentials of the SAP application.
 #' @param DatabaseArn The Amazon Resource Name of the SAP HANA database.
-#' @param ComponentsInfo This is an optional parameter for component details to which the SAP
-#' ABAP application is attached, such as Web Dispatcher.
+#' @param ComponentsInfo This is an optional parameter for component details to which the SAP ABAP application is attached, such as Web Dispatcher.
 #' 
-#' This is an array of ApplicationComponent objects. You may input 0 to 5
-#' items.
+#' This is an array of ApplicationComponent objects. You may input 0 to 5 items.
 #'
 #' @keywords internal
 #'
@@ -817,11 +788,8 @@ ssmsap_start_configuration_checks <- function(ApplicationId, ConfigurationCheckI
 #' @param ApplicationId &#91;required&#93; The ID of the application.
 #' @param StopConnectedEntity Specify the `ConnectedEntityType`. Accepted type is `DBMS`.
 #' 
-#' If this parameter is included, the connected DBMS (Database Management
-#' System) will be stopped.
-#' @param IncludeEc2InstanceShutdown Boolean. If included and if set to `True`, the StopApplication operation
-#' will shut down the associated Amazon EC2 instance in addition to the
-#' application.
+#' If this parameter is included, the connected DBMS (Database Management System) will be stopped.
+#' @param IncludeEc2InstanceShutdown Boolean. If included and if set to `True`, the StopApplication operation will shut down the associated Amazon EC2 instance in addition to the application.
 #'
 #' @keywords internal
 #'
@@ -885,8 +853,7 @@ ssmsap_tag_resource <- function(resourceArn, tags) {
 #' See [https://www.paws-r-sdk.com/docs/ssmsap_untag_resource/](https://www.paws-r-sdk.com/docs/ssmsap_untag_resource/) for full documentation.
 #'
 #' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource.
-#' @param tagKeys &#91;required&#93; Adds/updates or removes credentials for applications registered with AWS
-#' Systems Manager for SAP.
+#' @param tagKeys &#91;required&#93; Adds/updates or removes credentials for applications registered with AWS Systems Manager for SAP.
 #'
 #' @keywords internal
 #'
@@ -922,8 +889,7 @@ ssmsap_untag_resource <- function(resourceArn, tagKeys) {
 #' @param CredentialsToAddOrUpdate The credentials to be added or updated.
 #' @param CredentialsToRemove The credentials to be removed.
 #' @param Backint Installation of AWS Backint Agent for SAP HANA.
-#' @param DatabaseArn The Amazon Resource Name of the SAP HANA database that replaces the
-#' current SAP HANA connection with the SAP_ABAP application.
+#' @param DatabaseArn The Amazon Resource Name of the SAP HANA database that replaces the current SAP HANA connection with the SAP_ABAP application.
 #'
 #' @keywords internal
 #'

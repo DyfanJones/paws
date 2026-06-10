@@ -7,11 +7,9 @@
 quicksight_update_key_registration(AwsAccountId, KeyRegistration)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the customer
-managed key registration that you want to update.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the customer managed key registration that you want to update.}
 
-\item{KeyRegistration}{[required] A list of \code{RegisteredCustomerManagedKey} objects to be updated to the
-Quick Sight account.}
+\item{KeyRegistration}{[required] A list of \code{RegisteredCustomerManagedKey} objects to be updated to the Quick Sight account.}
 }
 \description{
 Updates a customer managed key in a Quick Sight account.

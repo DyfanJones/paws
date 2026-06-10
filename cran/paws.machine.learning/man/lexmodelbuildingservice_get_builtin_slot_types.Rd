@@ -14,17 +14,11 @@ lexmodelbuildingservice_get_builtin_slot_types(
 \arguments{
 \item{locale}{A list of locales that the slot type supports.}
 
-\item{signatureContains}{Substring to match in built-in slot type signatures. A slot type will be
-returned if any part of its signature matches the substring. For
-example, "xyz" matches both "xyzabc" and "abcxyz."}
+\item{signatureContains}{Substring to match in built-in slot type signatures. A slot type will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."}
 
-\item{nextToken}{A pagination token that fetches the next page of slot types. If the
-response to this API call is truncated, Amazon Lex returns a pagination
-token in the response. To fetch the next page of slot types, specify the
-pagination token in the next request.}
+\item{nextToken}{A pagination token that fetches the next page of slot types. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of slot types, specify the pagination token in the next request.}
 
-\item{maxResults}{The maximum number of slot types to return in the response. The default
-is 10.}
+\item{maxResults}{The maximum number of slot types to return in the response. The default is 10.}
 }
 \description{
 Gets a list of built-in slot types that meet the specified criteria.

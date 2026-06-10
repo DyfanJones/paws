@@ -36,11 +36,9 @@ neptune_create_db_cluster(
 )
 }
 \arguments{
-\item{AvailabilityZones}{A list of EC2 Availability Zones that instances in the DB cluster can be
-created in.}
+\item{AvailabilityZones}{A list of EC2 Availability Zones that instances in the DB cluster can be created in.}
 
-\item{BackupRetentionPeriod}{The number of days for which automated backups are retained. You must
-specify a minimum value of 1.
+\item{BackupRetentionPeriod}{The number of days for which automated backups are retained. You must specify a minimum value of 1.
 
 Default: 1
 
@@ -51,15 +49,11 @@ Constraints:
 
 \item{CharacterSetName}{\emph{(Not supported by Neptune)}}
 
-\item{CopyTagsToSnapshot}{\emph{If set to true, tags are copied to any snapshot of the DB cluster that
-is created.}}
+\item{CopyTagsToSnapshot}{\emph{If set to true, tags are copied to any snapshot of the DB cluster that is created.}}
 
-\item{DatabaseName}{The name for your database of up to 64 alpha-numeric characters. If you
-do not provide a name, Amazon Neptune will not create a database in the
-DB cluster you are creating.}
+\item{DatabaseName}{The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon Neptune will not create a database in the DB cluster you are creating.}
 
-\item{DBClusterIdentifier}{[required] The DB cluster identifier. This parameter is stored as a lowercase
-string.
+\item{DBClusterIdentifier}{[required] The DB cluster identifier. This parameter is stored as a lowercase string.
 
 Constraints:
 \itemize{
@@ -70,21 +64,18 @@ Constraints:
 
 Example: \code{my-cluster1}}
 
-\item{DBClusterParameterGroupName}{The name of the DB cluster parameter group to associate with this DB
-cluster. If this argument is omitted, the default is used.
+\item{DBClusterParameterGroupName}{The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the default is used.
 
 Constraints:
 \itemize{
-\item If supplied, must match the name of an existing
-DBClusterParameterGroup.
+\item If supplied, must match the name of an existing DBClusterParameterGroup.
 }}
 
 \item{VpcSecurityGroupIds}{A list of EC2 VPC security groups to associate with this DB cluster.}
 
 \item{DBSubnetGroupName}{A DB subnet group to associate with this DB cluster.
 
-Constraints: Must match the name of an existing DBSubnetGroup. Must not
-be default.
+Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
 
 Example: \code{mySubnetgroup}}
 
@@ -96,8 +87,7 @@ Valid Values: \code{neptune}}
 
 Example: \verb{1.2.1.0}}
 
-\item{Port}{The port number on which the instances in the DB cluster accept
-connections.
+\item{Port}{The port number on which the instances in the DB cluster accept connections.
 
 Default: \code{8182}}
 
@@ -107,14 +97,9 @@ Default: \code{8182}}
 
 \item{OptionGroupName}{\emph{(Not supported by Neptune)}}
 
-\item{PreferredBackupWindow}{The daily time range during which automated backups are created if
-automated backups are enabled using the \code{BackupRetentionPeriod}
-parameter.
+\item{PreferredBackupWindow}{The daily time range during which automated backups are created if automated backups are enabled using the \code{BackupRetentionPeriod} parameter.
 
-The default is a 30-minute window selected at random from an 8-hour
-block of time for each Amazon Region. To see the time blocks available,
-see \href{https://docs.aws.amazon.com/neptune/latest/userguide/#manage-console-maintaining-window}{Neptune Maintenance Window}
-in the \emph{Amazon Neptune User Guide.}
+The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region. To see the time blocks available, see \href{https://docs.aws.amazon.com/neptune/latest/userguide/#manage-console-maintaining-window}{Neptune Maintenance Window} in the \emph{Amazon Neptune User Guide.}
 
 Constraints:
 \itemize{
@@ -124,22 +109,17 @@ Constraints:
 \item Must be at least 30 minutes.
 }}
 
-\item{PreferredMaintenanceWindow}{The weekly time range during which system maintenance can occur, in
-Universal Coordinated Time (UTC).
+\item{PreferredMaintenanceWindow}{The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).
 
 Format: \code{ddd:hh24:mi-ddd:hh24:mi}
 
-The default is a 30-minute window selected at random from an 8-hour
-block of time for each Amazon Region, occurring on a random day of the
-week. To see the time blocks available, see \href{https://docs.aws.amazon.com/neptune/latest/userguide/#manage-console-maintaining-window}{Neptune Maintenance Window}
-in the \emph{Amazon Neptune User Guide.}
+The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week. To see the time blocks available, see \href{https://docs.aws.amazon.com/neptune/latest/userguide/#manage-console-maintaining-window}{Neptune Maintenance Window} in the \emph{Amazon Neptune User Guide.}
 
 Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
 
 Constraints: Minimum 30-minute window.}
 
-\item{ReplicationSourceIdentifier}{The Amazon Resource Name (ARN) of the source DB instance or DB cluster
-if this DB cluster is created as a Read Replica.}
+\item{ReplicationSourceIdentifier}{The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a Read Replica.}
 
 \item{Tags}{The tags to assign to the new DB cluster.}
 
@@ -147,71 +127,42 @@ if this DB cluster is created as a Read Replica.}
 
 \item{KmsKeyId}{The Amazon KMS key identifier for an encrypted DB cluster.
 
-The KMS key identifier is the Amazon Resource Name (ARN) for the KMS
-encryption key. If you are creating a DB cluster with the same Amazon
-account that owns the KMS encryption key used to encrypt the new DB
-cluster, then you can use the KMS key alias instead of the ARN for the
-KMS encryption key.
+The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.
 
 If an encryption key is not specified in \code{KmsKeyId}:
 \itemize{
-\item If \code{ReplicationSourceIdentifier} identifies an encrypted source,
-then Amazon Neptune will use the encryption key used to encrypt the
-source. Otherwise, Amazon Neptune will use your default encryption
-key.
-\item If the \code{StorageEncrypted} parameter is true and
-\code{ReplicationSourceIdentifier} is not specified, then Amazon Neptune
-will use your default encryption key.
+\item If \code{ReplicationSourceIdentifier} identifies an encrypted source, then Amazon Neptune will use the encryption key used to encrypt the source. Otherwise, Amazon Neptune will use your default encryption key.
+\item If the \code{StorageEncrypted} parameter is true and \code{ReplicationSourceIdentifier} is not specified, then Amazon Neptune will use your default encryption key.
 }
 
-Amazon KMS creates the default encryption key for your Amazon account.
-Your Amazon account has a different default encryption key for each
-Amazon Region.
+Amazon KMS creates the default encryption key for your Amazon account. Your Amazon account has a different default encryption key for each Amazon Region.
 
-If you create a Read Replica of an encrypted DB cluster in another
-Amazon Region, you must set \code{KmsKeyId} to a KMS key ID that is valid in
-the destination Amazon Region. This key is used to encrypt the Read
-Replica in that Amazon Region.}
+If you create a Read Replica of an encrypted DB cluster in another Amazon Region, you must set \code{KmsKeyId} to a KMS key ID that is valid in the destination Amazon Region. This key is used to encrypt the Read Replica in that Amazon Region.}
 
 \item{PreSignedUrl}{This parameter is not currently supported.}
 
-\item{EnableIAMDatabaseAuthentication}{If set to \code{true}, enables Amazon Identity and Access Management (IAM)
-authentication for the entire DB cluster (this cannot be set at an
-instance level).
+\item{EnableIAMDatabaseAuthentication}{If set to \code{true}, enables Amazon Identity and Access Management (IAM) authentication for the entire DB cluster (this cannot be set at an instance level).
 
 Default: \code{false}.}
 
-\item{EnableCloudwatchLogsExports}{A list of the log types that this DB cluster should export to CloudWatch
-Logs. Valid log types are: \code{audit} (to publish audit logs) and
-\code{slowquery} (to publish slow-query logs). See \href{https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html}{Publishing Neptune logs to Amazon CloudWatch logs}.}
+\item{EnableCloudwatchLogsExports}{A list of the log types that this DB cluster should export to CloudWatch Logs. Valid log types are: \code{audit} (to publish audit logs) and \code{slowquery} (to publish slow-query logs). See \href{https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html}{Publishing Neptune logs to Amazon CloudWatch logs}.}
 
-\item{DeletionProtection}{A value that indicates whether the DB cluster has deletion protection
-enabled. The database can't be deleted when deletion protection is
-enabled. By default, deletion protection is enabled.}
+\item{DeletionProtection}{A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is enabled.}
 
 \item{ServerlessV2ScalingConfiguration}{Contains the scaling configuration of a Neptune Serverless DB cluster.
 
-For more information, see \href{https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html}{Using Amazon Neptune Serverless}
-in the \emph{Amazon Neptune User Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html}{Using Amazon Neptune Serverless} in the \emph{Amazon Neptune User Guide}.}
 
-\item{GlobalClusterIdentifier}{The ID of the Neptune global database to which this new DB cluster
-should be added.}
+\item{GlobalClusterIdentifier}{The ID of the Neptune global database to which this new DB cluster should be added.}
 
 \item{StorageType}{The storage type for the new DB cluster.
 
 Valid Values:
 \itemize{
-\item \strong{\code{standard}}   –   ( \emph{the default} ) Configures cost-effective
-database storage for applications with moderate to small I/O usage.
-When set to \code{standard}, the storage type is not returned in the
-response.
-\item \strong{\code{iopt1}}   –   Enables \href{https://docs.aws.amazon.com/neptune/latest/userguide/storage-types.html#provisioned-iops-storage}{I/O-Optimized storage}
-that's designed to meet the needs of I/O-intensive graph workloads
-that require predictable pricing with low I/O latency and consistent
-I/O throughput.
+\item \strong{\code{standard}}   –   ( \emph{the default} ) Configures cost-effective database storage for applications with moderate to small I/O usage. When set to \code{standard}, the storage type is not returned in the response.
+\item \strong{\code{iopt1}}   –   Enables \href{https://docs.aws.amazon.com/neptune/latest/userguide/storage-types.html#provisioned-iops-storage}{I/O-Optimized storage} that's designed to meet the needs of I/O-intensive graph workloads that require predictable pricing with low I/O latency and consistent I/O throughput.
 
-Neptune I/O-Optimized storage is only available starting with engine
-release 1.3.0.0.
+Neptune I/O-Optimized storage is only available starting with engine release 1.3.0.0.
 }}
 }
 \description{

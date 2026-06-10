@@ -9,12 +9,9 @@ connect_batch_create_data_table_value(InstanceId, DataTableId, Values)
 \arguments{
 \item{InstanceId}{[required] The unique identifier for the Amazon Connect instance.}
 
-\item{DataTableId}{[required] The unique identifier for the data table. Must also accept the table ARN
-with or without a version alias. If no alias is provided, the default
-behavior is identical to providing the $LATEST alias.}
+\item{DataTableId}{[required] The unique identifier for the data table. Must also accept the table ARN with or without a version alias. If no alias is provided, the default behavior is identical to providing the $LATEST alias.}
 
-\item{Values}{[required] A list of values to create. Each value must specify the attribute name
-and optionally primary values if the table has primary attributes.}
+\item{Values}{[required] A list of values to create. Each value must specify the attribute name and optionally primary values if the table has primary attributes.}
 }
 \description{
 Creates values for attributes in a data table. The value may be a default or it may be associated with a primary value. The value must pass all customer defined validation as well as the default validation for the value type. The operation must conform to Batch Operation API Standards. Although the standard specifies that successful and failed entities are listed separately in the response, authorization fails if any primary values or attributes are unauthorized. The combination of primary values and the attribute name serve as the identifier for the individual item request.

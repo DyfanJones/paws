@@ -7,8 +7,7 @@
 datazone_get_form_type(domainIdentifier, formTypeIdentifier, revision = NULL)
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which this metadata form type
-exists.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which this metadata form type exists.}
 
 \item{formTypeIdentifier}{[required] The ID of the metadata form type.}
 

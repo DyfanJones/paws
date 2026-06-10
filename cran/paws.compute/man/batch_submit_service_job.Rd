@@ -12,49 +12,37 @@ batch_submit_service_job(
   serviceRequestPayload,
   serviceJobType,
   shareIdentifier = NULL,
+  quotaShareName = NULL,
+  preemptionConfiguration = NULL,
   timeoutConfig = NULL,
   tags = NULL,
   clientToken = NULL
 )
 }
 \arguments{
-\item{jobName}{[required] The name of the service job. It can be up to 128 characters long. It can
-contain uppercase and lowercase letters, numbers, hyphens (-), and
-underscores (_).}
+\item{jobName}{[required] The name of the service job. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).}
 
-\item{jobQueue}{[required] The job queue into which the service job is submitted. You can specify
-either the name or the ARN of the queue. The job queue must have the
-type \code{SAGEMAKER_TRAINING}.}
+\item{jobQueue}{[required] The job queue into which the service job is submitted. You can specify either the name or the ARN of the queue. The job queue must have the type \code{SAGEMAKER_TRAINING}.}
 
-\item{retryStrategy}{The retry strategy to use for failed service jobs that are submitted
-with this service job request.}
+\item{retryStrategy}{The retry strategy to use for failed service jobs that are submitted with this service job request.}
 
-\item{schedulingPriority}{The scheduling priority of the service job. Valid values are integers
-between 0 and 9999.}
+\item{schedulingPriority}{The scheduling priority of the service job. Valid values are integers between 0 and 9999.}
 
-\item{serviceRequestPayload}{[required] The request, in JSON, for the service that the SubmitServiceJob
-operation is queueing.}
+\item{serviceRequestPayload}{[required] The request, in JSON, for the service that the SubmitServiceJob operation is queueing.}
 
-\item{serviceJobType}{[required] The type of service job. For SageMaker Training jobs, specify
-\code{SAGEMAKER_TRAINING}.}
+\item{serviceJobType}{[required] The type of service job. For SageMaker Training jobs, specify \code{SAGEMAKER_TRAINING}.}
 
-\item{shareIdentifier}{The share identifier for the service job. Don't specify this parameter
-if the job queue doesn't have a fair-share scheduling policy. If the job
-queue has a fair-share scheduling policy, then this parameter must be
-specified.}
+\item{shareIdentifier}{The share identifier for the service job. Don't specify this parameter if the job queue doesn't have a fair-share scheduling policy. If the job queue has a fair-share scheduling policy, then this parameter must be specified.}
 
-\item{timeoutConfig}{The timeout configuration for the service job. If none is specified,
-Batch defers to the default timeout of the underlying service handling
-the job.}
+\item{quotaShareName}{The quota share for the service job. Don't specify this parameter if the job queue doesn't have a quota share scheduling policy. If the job queue has a quota share scheduling policy, then this parameter must be specified.}
 
-\item{tags}{The tags that you apply to the service job request. Each tag consists of
-a key and an optional value. For more information, see \href{https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html}{Tagging your Batch resources}.}
+\item{preemptionConfiguration}{Specifies the service job behavior when preempted.}
 
-\item{clientToken}{A unique identifier for the request. This token is used to ensure
-idempotency of requests. If this parameter is specified and two submit
-requests with identical payloads and \code{clientToken}s are received, these
-requests are considered the same request and the second request is
-rejected.}
+\item{timeoutConfig}{The timeout configuration for the service job. If none is specified, Batch defers to the default timeout of the underlying service handling the job.}
+
+\item{tags}{The tags that you apply to the service job request. Each tag consists of a key and an optional value. For more information, see \href{https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html}{Tagging your Batch resources}.}
+
+\item{clientToken}{A unique identifier for the request. This token is used to ensure idempotency of requests. If this parameter is specified and two submit requests with identical payloads and \code{clientToken}s are received, these requests are considered the same request and the second request is rejected.}
 }
 \description{
 Submits a service job to a specified job queue to run on SageMaker AI. A service job is a unit of work that you submit to Batch for execution on SageMaker AI.

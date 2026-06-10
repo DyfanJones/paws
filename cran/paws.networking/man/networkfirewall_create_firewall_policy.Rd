@@ -15,8 +15,7 @@ networkfirewall_create_firewall_policy(
 )
 }
 \arguments{
-\item{FirewallPolicyName}{[required] The descriptive name of the firewall policy. You can't change the name
-of a firewall policy after you create it.}
+\item{FirewallPolicyName}{[required] The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.}
 
 \item{FirewallPolicy}{[required] The rule groups and policy actions to use in the firewall policy.}
 
@@ -24,22 +23,13 @@ of a firewall policy after you create it.}
 
 \item{Tags}{The key:value pairs to associate with the resource.}
 
-\item{DryRun}{Indicates whether you want Network Firewall to just check the validity
-of the request, rather than run the request.
+\item{DryRun}{Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request.
 
-If set to \code{TRUE}, Network Firewall checks whether the request can run
-successfully, but doesn't actually make the requested changes. The call
-returns the value that the request would return if you ran it with dry
-run set to \code{FALSE}, but doesn't make additions or changes to your
-resources. This option allows you to make sure that you have the
-required permissions to run the request and that your request parameters
-are valid.
+If set to \code{TRUE}, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to \code{FALSE}, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid.
 
-If set to \code{FALSE}, Network Firewall makes the requested changes to your
-resources.}
+If set to \code{FALSE}, Network Firewall makes the requested changes to your resources.}
 
-\item{EncryptionConfiguration}{A complex type that contains settings for encryption of your firewall
-policy resources.}
+\item{EncryptionConfiguration}{A complex type that contains settings for encryption of your firewall policy resources.}
 }
 \description{
 Creates the firewall policy for the firewall according to the specifications.

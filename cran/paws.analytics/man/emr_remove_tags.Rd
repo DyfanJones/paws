@@ -8,8 +8,7 @@ EMR Studio}
 emr_remove_tags(ResourceId, TagKeys)
 }
 \arguments{
-\item{ResourceId}{[required] The Amazon EMR resource identifier from which tags will be removed. For
-example, a cluster identifier or an Amazon EMR Studio ID.}
+\item{ResourceId}{[required] The Amazon EMR resource identifier from which tags will be removed. For example, a cluster identifier or an Amazon EMR Studio ID.}
 
 \item{TagKeys}{[required] A list of tag keys to remove from the resource.}
 }

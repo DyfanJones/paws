@@ -19,51 +19,36 @@ sagemaker_create_processing_job(
 )
 }
 \arguments{
-\item{ProcessingInputs}{An array of inputs configuring the data to download into the processing
-container.}
+\item{ProcessingInputs}{An array of inputs configuring the data to download into the processing container.}
 
 \item{ProcessingOutputConfig}{Output configuration for the processing job.}
 
-\item{ProcessingJobName}{[required] The name of the processing job. The name must be unique within an Amazon
-Web Services Region in the Amazon Web Services account.}
+\item{ProcessingJobName}{[required] The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.}
 
-\item{ProcessingResources}{[required] Identifies the resources, ML compute instances, and ML storage volumes
-to deploy for a processing job. In distributed training, you specify
-more than one instance.}
+\item{ProcessingResources}{[required] Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.}
 
 \item{StoppingCondition}{The time limit for how long the processing job is allowed to run.}
 
 \item{AppSpecification}{[required] Configures the processing job to run a specified Docker container image.}
 
-\item{Environment}{The environment variables to set in the Docker container. Up to 100 key
-and values entries in the map are supported.
+\item{Environment}{The environment variables to set in the Docker container. Up to 100 key and values entries in the map are supported.
 
-Do not include any security-sensitive information including account
-access IDs, secrets, or tokens in any environment fields. As part of the
-shared responsibility model, you are responsible for any potential
-exposure, unauthorized access, or compromise of your sensitive data if
-caused by security-sensitive information included in the request
-environment variable or plain text fields.}
+Do not include any security-sensitive information including account access IDs, secrets, or tokens in any environment fields. As part of the shared responsibility model, you are responsible for any potential exposure, unauthorized access, or compromise of your sensitive data if caused by security-sensitive information included in the request environment variable or plain text fields.}
 
-\item{NetworkConfig}{Networking options for a processing job, such as whether to allow
-inbound and outbound network calls to and from processing containers,
-and the VPC subnets and security groups to use for VPC-enabled
-processing jobs.}
+\item{NetworkConfig}{Networking options for a processing job, such as whether to allow inbound and outbound network calls to and from processing containers, and the VPC subnets and security groups to use for VPC-enabled processing jobs.}
 
-\item{RoleArn}{[required] The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can
-assume to perform tasks on your behalf.}
+\item{RoleArn}{[required] The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.}
 
-\item{Tags}{(Optional) An array of key-value pairs. For more information, see \href{https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL}{Using Cost Allocation Tags}
-in the \emph{Amazon Web Services Billing and Cost Management User Guide}.
+\item{Tags}{(Optional) An array of key-value pairs. For more information, see \href{https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL}{Using Cost Allocation Tags} in the \emph{Amazon Web Services Billing and Cost Management User Guide}.
 
-Do not include any security-sensitive information including account
-access IDs, secrets, or tokens in any tags. As part of the shared
-responsibility model, you are responsible for any potential exposure,
-unauthorized access, or compromise of your sensitive data if caused by
-security-sensitive information included in the request tag variable or
-plain text fields.}
+Do not include any security-sensitive information including account access IDs, secrets, or tokens in any tags. As part of the shared responsibility model, you are responsible for any potential exposure, unauthorized access, or compromise of your sensitive data if caused by security-sensitive information included in the request tag variable or plain text fields.}
 
-\item{ExperimentConfig}{}
+\item{ExperimentConfig}{Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:
+\itemize{
+\item \code{\link[=sagemaker_create_processing_job]{create_processing_job}}
+\item \code{\link[=sagemaker_create_training_job]{create_training_job}}
+\item \code{\link[=sagemaker_create_transform_job]{create_transform_job}}
+}}
 }
 \description{
 Creates a processing job.

@@ -6,12 +6,9 @@ NULL
 #' Describes the status of the StartReportCreation operation
 #'
 #' @description
-#' Describes the status of the
-#' [`start_report_creation`][resourcegroupstaggingapi_start_report_creation]
-#' operation.
+#' Describes the status of the [`start_report_creation`][resourcegroupstaggingapi_start_report_creation] operation.
 #' 
-#' You can call this operation only from the organization's management
-#' account and from the us-east-1 Region.
+#' You can call this operation only from the organization's management account and from the us-east-1 Region.
 #'
 #' @usage
 #' resourcegroupstaggingapi_describe_report_creation()
@@ -61,82 +58,38 @@ resourcegroupstaggingapi_describe_report_creation <- function() {
 #' with their tag policies
 #'
 #' @description
-#' Returns a table that shows counts of resources that are noncompliant
-#' with their tag policies.
+#' Returns a table that shows counts of resources that are noncompliant with their tag policies.
 #' 
-#' For more information on tag policies, see [Tag
-#' Policies](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html)
-#' in the *Organizations User Guide.*
+#' For more information on tag policies, see [Tag Policies](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html) in the *Organizations User Guide.*
 #' 
-#' You can call this operation only from the organization's management
-#' account and from the us-east-1 Region.
+#' You can call this operation only from the organization's management account and from the us-east-1 Region.
 #' 
-#' This operation supports pagination, where the response can be sent in
-#' multiple pages. You should check the `PaginationToken` response
-#' parameter to determine if there are additional results available to
-#' return. Repeat the query, passing the `PaginationToken` response
-#' parameter value as an input to the next request until you recieve a
-#' `null` value. A null value for `PaginationToken` indicates that there
-#' are no more results waiting to be returned.
+#' This operation supports pagination, where the response can be sent in multiple pages. You should check the `PaginationToken` response parameter to determine if there are additional results available to return. Repeat the query, passing the `PaginationToken` response parameter value as an input to the next request until you recieve a `null` value. A null value for `PaginationToken` indicates that there are no more results waiting to be returned.
 #'
 #' @usage
 #' resourcegroupstaggingapi_get_compliance_summary(TargetIdFilters,
 #'   RegionFilters, ResourceTypeFilters, TagKeyFilters, GroupBy, MaxResults,
 #'   PaginationToken)
 #'
-#' @param TargetIdFilters Specifies target identifiers (usually, specific account IDs) to limit
-#' the output by. If you use this parameter, the count of returned
-#' noncompliant resources includes only resources with the specified target
-#' IDs.
-#' @param RegionFilters Specifies a list of Amazon Web Services Regions to limit the output to.
-#' If you use this parameter, the count of returned noncompliant resources
-#' includes only resources in the specified Regions.
-#' @param ResourceTypeFilters Specifies that you want the response to include information for only
-#' resources of the specified types. The format of each resource type is
-#' `service[:resourceType]`. For example, specifying a resource type of
-#' `ec2` returns all Amazon EC2 resources (which includes EC2 instances).
-#' Specifying a resource type of `ec2:instance` returns only EC2 instances.
+#' @param TargetIdFilters Specifies target identifiers (usually, specific account IDs) to limit the output by. If you use this parameter, the count of returned noncompliant resources includes only resources with the specified target IDs.
+#' @param RegionFilters Specifies a list of Amazon Web Services Regions to limit the output to. If you use this parameter, the count of returned noncompliant resources includes only resources in the specified Regions.
+#' @param ResourceTypeFilters Specifies that you want the response to include information for only resources of the specified types. The format of each resource type is `service[:resourceType]`. For example, specifying a resource type of `ec2` returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of `ec2:instance` returns only EC2 instances.
 #' 
-#' The string for each service name and resource type is the same as that
-#' embedded in a resource's Amazon Resource Name (ARN). Consult the *\href{https://docs.aws.amazon.com/general/latest/gr/}{Amazon Web Services General Reference}* for the following:
+#' The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). Consult the \emph{\href{https://docs.aws.amazon.com/general/latest/gr/}{Amazon Web Services General Reference}} for the following:
 #' 
-#' -   For a list of service name strings, see [Amazon Web Services Service
-#'     Namespaces](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html#genref-aws-service-namespaces).
+#' -   For a list of service name strings, see [Amazon Web Services Service Namespaces](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html#genref-aws-service-namespaces).
 #' 
-#' -   For resource type strings, see [Example
-#'     ARNs](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html#arns-syntax).
+#' -   For resource type strings, see [Example ARNs](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html?refid=8a887164-7100-4226-b322-ec08c02bbdaf#arns-syntax).
 #' 
-#' -   For more information about ARNs, see [Amazon Resource Names (ARNs)
-#'     and Amazon Web Services Service
-#'     Namespaces](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html).
+#' -   For more information about ARNs, see [Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html).
 #' 
-#' For the list of services whose resources you can tag using the Resource
-#' Groups Tagging API, see [Services that support the Resource Groups
-#' Tagging
-#' API](https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html).
-#' If an Amazon Web Services service isn't listed on that page, you might
-#' still be able to tag that service's resources by using that service's
-#' native tagging operations instead of using Resource Groups Tagging API
-#' operations. All tagged resources, whether the tagging used the Resource
-#' Groups Tagging API or not, are returned by the `Get*` operation.
+#' For the list of services whose resources you can tag using the Resource Groups Tagging API, see [Services that support the Resource Groups Tagging API](https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html). If an Amazon Web Services service isn't listed on that page, you might still be able to tag that service's resources by using that service's native tagging operations instead of using Resource Groups Tagging API operations. All tagged resources, whether the tagging used the Resource Groups Tagging API or not, are returned by the `Get*` operation.
 #' 
-#' You can specify multiple resource types by using a comma separated
-#' array. The array can include up to 100 items. Note that the length
-#' constraint requirement applies to each resource type filter.
-#' @param TagKeyFilters Specifies that you want the response to include information for only
-#' resources that have tags with the specified tag keys. If you use this
-#' parameter, the count of returned noncompliant resources includes only
-#' resources that have the specified tag keys.
-#' @param GroupBy Specifies a list of attributes to group the counts of noncompliant
-#' resources by. If supplied, the counts are sorted by those attributes.
-#' @param MaxResults Specifies the maximum number of results to be returned in each page. A
-#' query can return fewer than this maximum, even if there are more results
-#' still to return. You should always check the `PaginationToken` response
-#' value to see if there are more results. You can specify a minimum of 1
-#' and a maximum value of 100.
-#' @param PaginationToken Specifies a `PaginationToken` response value from a previous request to
-#' indicate that you want the next page of results. Leave this parameter
-#' empty in your initial request.
+#' You can specify multiple resource types by using a comma separated array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter.
+#' @param TagKeyFilters Specifies that you want the response to include information for only resources that have tags with the specified tag keys. If you use this parameter, the count of returned noncompliant resources includes only resources that have the specified tag keys.
+#' @param GroupBy Specifies a list of attributes to group the counts of noncompliant resources by. If supplied, the counts are sorted by those attributes.
+#' @param MaxResults Specifies the maximum number of results to be returned in each page. A query can return fewer than this maximum, even if there are more results still to return. You should always check the `PaginationToken` response value to see if there are more results. You can specify a minimum of 1 and a maximum value of 100.
+#' @param PaginationToken Specifies a `PaginationToken` response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -207,175 +160,83 @@ resourcegroupstaggingapi_get_compliance_summary <- function(TargetIdFilters = NU
 #' in the specified Amazon Web Services Region for the account
 #'
 #' @description
-#' Returns all the tagged or previously tagged resources that are located
-#' in the specified Amazon Web Services Region for the account.
+#' Returns all the tagged or previously tagged resources that are located in the specified Amazon Web Services Region for the account.
 #' 
-#' Depending on what information you want returned, you can also specify
-#' the following:
+#' Depending on what information you want returned, you can also specify the following:
 #' 
-#' -   *Filters* that specify what tags and resource types you want
-#'     returned. The response includes all tags that are associated with
-#'     the requested resources.
+#' -   *Filters* that specify what tags and resource types you want returned. The response includes all tags that are associated with the requested resources.
 #' 
-#' -   Information about compliance with the account's effective tag
-#'     policy. For more information on tag policies, see [Tag
-#'     Policies](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html)
-#'     in the *Organizations User Guide.*
+#' -   Information about compliance with the account's effective tag policy. For more information on tag policies, see [Tag Policies](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html) in the *Organizations User Guide.*
 #' 
-#' This operation supports pagination, where the response can be sent in
-#' multiple pages. You should check the `PaginationToken` response
-#' parameter to determine if there are additional results available to
-#' return. Repeat the query, passing the `PaginationToken` response
-#' parameter value as an input to the next request until you recieve a
-#' `null` value. A null value for `PaginationToken` indicates that there
-#' are no more results waiting to be returned.
+#' This operation supports pagination, where the response can be sent in multiple pages. You should check the `PaginationToken` response parameter to determine if there are additional results available to return. Repeat the query, passing the `PaginationToken` response parameter value as an input to the next request until you recieve a `null` value. A null value for `PaginationToken` indicates that there are no more results waiting to be returned.
 #' 
-#' [`get_resources`][resourcegroupstaggingapi_get_resources] does not
-#' return untagged resources.
+#' [`get_resources`][resourcegroupstaggingapi_get_resources] does not return untagged resources.
 #' 
-#' To find untagged resources in your account, use Amazon Web Services
-#' Resource Explorer with a query that uses `tag:none`. For more
-#' information, see [Search query syntax reference for Resource
-#' Explorer](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html).
+#' To find untagged resources in your account, use Amazon Web Services Resource Explorer with a query that uses `tag:none`. For more information, see [Search query syntax reference for Resource Explorer](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html).
 #'
 #' @usage
 #' resourcegroupstaggingapi_get_resources(PaginationToken, TagFilters,
 #'   ResourcesPerPage, TagsPerPage, ResourceTypeFilters,
 #'   IncludeComplianceDetails, ExcludeCompliantResources, ResourceARNList)
 #'
-#' @param PaginationToken Specifies a `PaginationToken` response value from a previous request to
-#' indicate that you want the next page of results. Leave this parameter
-#' empty in your initial request.
-#' @param TagFilters Specifies a list of TagFilters (keys and values) to restrict the output
-#' to only those resources that have tags with the specified keys and, if
-#' included, the specified values. Each `TagFilter` must contain a key with
-#' values optional. A request can include up to 50 keys, and each key can
-#' include up to 20 values.
+#' @param PaginationToken Specifies a `PaginationToken` response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.
+#' @param TagFilters Specifies a list of TagFilters (keys and values) to restrict the output to only those resources that have tags with the specified keys and, if included, the specified values. Each `TagFilter` must contain a key with values optional. A request can include up to 50 keys, and each key can include up to 20 values.
 #' 
-#' You can't specify both this parameter and the `ResourceArnList`
-#' parameter in the same request. If you do, you get an `Invalid Parameter`
-#' exception.
+#' You can't specify both this parameter and the `ResourceArnList` parameter in the same request. If you do, you get an `Invalid Parameter` exception.
 #' 
 #' Note the following when deciding how to use TagFilters:
 #' 
-#' -   If you *don't* specify a `TagFilter`, the response includes all
-#'     resources that are currently tagged or ever had a tag. Resources
-#'     that were previously tagged, *but do not currently* have tags, are
-#'     shown with an empty tag set, like this: `"Tags": []`.
+#' -   If you *don't* specify a `TagFilter`, the response includes all resources that are currently tagged or ever had a tag. Resources that were previously tagged, *but do not currently* have tags, are shown with an empty tag set, like this: `"Tags": []`.
 #' 
-#' -   If you specify more than one filter in a single request, the
-#'     response returns only those resources that satisfy all filters.
+#' -   If you specify more than one filter in a single request, the response returns only those resources that satisfy all filters.
 #' 
-#' -   If you specify a filter that contains more than one value for a key,
-#'     the response returns resources that match *any* of the specified
-#'     values for that key.
+#' -   If you specify a filter that contains more than one value for a key, the response returns resources that match *any* of the specified values for that key.
 #' 
-#' -   If you don't specify a value for a key, the response returns all
-#'     resources that are tagged with that key, with any or no value.
+#' -   If you don't specify a value for a key, the response returns all resources that are tagged with that key, with any or no value.
 #' 
-#'     For example, for the following filters: `filter1= {key1,{value1}}`,
-#'     `filter2={key2,{value2,value3,value4}}`, `filter3= {key3}`:
+#'     For example, for the following filters: `filter1= {key1,{value1}}`, `filter2={key2,{value2,value3,value4}}`, `filter3= {key3}`:
 #' 
-#'     -   `GetResources({filter1})` returns resources tagged with
-#'         `key1=value1`
+#'     -   `GetResources({filter1})` returns resources tagged with `key1=value1`
 #' 
-#'     -   `GetResources({filter2})` returns resources tagged with
-#'         `key2=value2` or `key2=value3` or `key2=value4`
+#'     -   `GetResources({filter2})` returns resources tagged with `key2=value2` or `key2=value3` or `key2=value4`
 #' 
-#'     -   `GetResources({filter3})` returns resources tagged with any tag
-#'         with the key `key3`, and with any or no value
+#'     -   `GetResources({filter3})` returns resources tagged with any tag with the key `key3`, and with any or no value
 #' 
-#'     -   `GetResources({filter1,filter2,filter3})` returns resources
-#'         tagged with
-#'         `(key1=value1) and (key2=value2 or key2=value3 or key2=value4) and (key3, any or no value)`
-#' @param ResourcesPerPage Specifies the maximum number of results to be returned in each page. A
-#' query can return fewer than this maximum, even if there are more results
-#' still to return. You should always check the `PaginationToken` response
-#' value to see if there are more results. You can specify a minimum of 1
-#' and a maximum value of 100.
-#' @param TagsPerPage Amazon Web Services recommends using `ResourcesPerPage` instead of this
-#' parameter.
+#'     -   `GetResources({filter1,filter2,filter3})` returns resources tagged with `(key1=value1) and (key2=value2 or key2=value3 or key2=value4) and (key3, any or no value)`
+#' @param ResourcesPerPage Specifies the maximum number of results to be returned in each page. A query can return fewer than this maximum, even if there are more results still to return. You should always check the `PaginationToken` response value to see if there are more results. You can specify a minimum of 1 and a maximum value of 100.
+#' @param TagsPerPage Amazon Web Services recommends using `ResourcesPerPage` instead of this parameter.
 #' 
-#' A limit that restricts the number of tags (key and value pairs) returned
-#' by [`get_resources`][resourcegroupstaggingapi_get_resources] in
-#' paginated output. A resource with no tags is counted as having one tag
-#' (one key and value pair).
+#' A limit that restricts the number of tags (key and value pairs) returned by [`get_resources`][resourcegroupstaggingapi_get_resources] in paginated output. A resource with no tags is counted as having one tag (one key and value pair).
 #' 
-#' [`get_resources`][resourcegroupstaggingapi_get_resources] does not split
-#' a resource and its associated tags across pages. If the specified
-#' `TagsPerPage` would cause such a break, a `PaginationToken` is returned
-#' in place of the affected resource and its tags. Use that token in
-#' another request to get the remaining data. For example, if you specify a
-#' `TagsPerPage` of `100` and the account has 22 resources with 10 tags
-#' each (meaning that each resource has 10 key and value pairs), the output
-#' will consist of three pages. The first page displays the first 10
-#' resources, each with its 10 tags. The second page displays the next 10
-#' resources, each with its 10 tags. The third page displays the remaining
-#' 2 resources, each with its 10 tags.
+#' [`get_resources`][resourcegroupstaggingapi_get_resources] does not split a resource and its associated tags across pages. If the specified `TagsPerPage` would cause such a break, a `PaginationToken` is returned in place of the affected resource and its tags. Use that token in another request to get the remaining data. For example, if you specify a `TagsPerPage` of `100` and the account has 22 resources with 10 tags each (meaning that each resource has 10 key and value pairs), the output will consist of three pages. The first page displays the first 10 resources, each with its 10 tags. The second page displays the next 10 resources, each with its 10 tags. The third page displays the remaining 2 resources, each with its 10 tags.
 #' 
-#' You can set `TagsPerPage` to a minimum of 100 items up to a maximum of
-#' 500 items.
-#' @param ResourceTypeFilters Specifies the resource types that you want included in the response. The
-#' format of each resource type is `service[:resourceType]`. For example,
-#' specifying a service of `ec2` returns all Amazon EC2 resources (which
-#' includes EC2 instances). Specifying a resource type of `ec2:instance`
-#' returns only EC2 instances.
+#' You can set `TagsPerPage` to a minimum of 100 items up to a maximum of 500 items.
+#' @param ResourceTypeFilters Specifies the resource types that you want included in the response. The format of each resource type is `service[:resourceType]`. For example, specifying a service of `ec2` returns all Amazon EC2 resources (which includes EC2 instances). Specifying a resource type of `ec2:instance` returns only EC2 instances.
 #' 
-#' You can't specify both this parameter and the `ResourceArnList`
-#' parameter in the same request. If you do, you get an `Invalid Parameter`
-#' exception.
+#' You can't specify both this parameter and the `ResourceArnList` parameter in the same request. If you do, you get an `Invalid Parameter` exception.
 #' 
-#' The string for each service name and resource type is the same as that
-#' embedded in a resource's Amazon Resource Name (ARN).
+#' The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN).
 #' 
-#' For the list of services whose resources you can tag using the Resource
-#' Groups Tagging API, see [Services that support the Resource Groups
-#' Tagging
-#' API](https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html).
-#' If an Amazon Web Services service isn't listed on that page, you might
-#' still be able to tag that service's resources by using that service's
-#' native tagging operations instead of using Resource Groups Tagging API
-#' operations. All tagged resources, whether the tagging used the Resource
-#' Groups Tagging API or not, are returned by the `Get*` operation.
+#' For the list of services whose resources you can tag using the Resource Groups Tagging API, see [Services that support the Resource Groups Tagging API](https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html). If an Amazon Web Services service isn't listed on that page, you might still be able to tag that service's resources by using that service's native tagging operations instead of using Resource Groups Tagging API operations. All tagged resources, whether the tagging used the Resource Groups Tagging API or not, are returned by the `Get*` operation.
 #' 
-#' You can specify multiple resource types by using an array. The array can
-#' include up to 100 items. Note that the length constraint requirement
-#' applies to each resource type filter. For example, the following string
-#' would limit the response to only Amazon EC2 instances, Amazon S3
-#' buckets, or any Audit Manager resource:
+#' You can specify multiple resource types by using an array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter. For example, the following string would limit the response to only Amazon EC2 instances, Amazon S3 buckets, or any Audit Manager resource:
 #' 
 #' `ec2:instance,s3:bucket,auditmanager`
-#' @param IncludeComplianceDetails Specifies whether to include details regarding the compliance with the
-#' effective tag policy. Set this to `true` to determine whether resources
-#' are compliant with the tag policy and to get details.
-#' @param ExcludeCompliantResources Specifies whether to exclude resources that are compliant with the tag
-#' policy. Set this to `true` if you are interested in retrieving
-#' information on noncompliant resources only.
+#' @param IncludeComplianceDetails Specifies whether to include details regarding the compliance with the effective tag policy. Set this to `true` to determine whether resources are compliant with the tag policy and to get details.
+#' @param ExcludeCompliantResources Specifies whether to exclude resources that are compliant with the tag policy. Set this to `true` if you are interested in retrieving information on noncompliant resources only.
 #' 
-#' You can use this parameter only if the `IncludeComplianceDetails`
-#' parameter is also set to `true`.
-#' @param ResourceARNList Specifies a list of ARNs of resources for which you want to retrieve tag
-#' data.
+#' You can use this parameter only if the `IncludeComplianceDetails` parameter is also set to `true`.
+#' @param ResourceARNList Specifies a list of ARNs of resources for which you want to retrieve tag data.
 #' 
-#' You can't specify both this parameter and the `ResourceTypeFilters`
-#' parameter in the same request. If you do, you get an `Invalid Parameter`
-#' exception.
+#' You can't specify both this parameter and the `ResourceTypeFilters` parameter in the same request. If you do, you get an `Invalid Parameter` exception.
 #' 
-#' You can't specify both this parameter and the `TagFilters` parameter in
-#' the same request. If you do, you get an `Invalid Parameter` exception.
+#' You can't specify both this parameter and the `TagFilters` parameter in the same request. If you do, you get an `Invalid Parameter` exception.
 #' 
-#' You can't specify both this parameter and any of the pagination
-#' parameters (`ResourcesPerPage`, `TagsPerPage`, `PaginationToken`) in the
-#' same request. If you do, you get an `Invalid Parameter` exception.
+#' You can't specify both this parameter and any of the pagination parameters (`ResourcesPerPage`, `TagsPerPage`, `PaginationToken`) in the same request. If you do, you get an `Invalid Parameter` exception.
 #' 
-#' If a resource specified by this parameter doesn't exist, it doesn't
-#' generate an error; it simply isn't included in the response.
+#' If a resource specified by this parameter doesn't exist, it doesn't generate an error; it simply isn't included in the response.
 #' 
-#' An ARN (Amazon Resource Name) uniquely identifies a resource. For more
-#' information, see [Amazon Resource Names (ARNs) and Amazon Web Services
-#' Service
-#' Namespaces](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html)
-#' in the *Amazon Web Services General Reference*.
+#' An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see [Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html) in the *Amazon Web Services General Reference*.
 #'
 #' @return
 #' A list with the following syntax:
@@ -396,6 +257,9 @@ resourcegroupstaggingapi_get_compliance_summary <- function(TargetIdFilters = NU
 #'           "string"
 #'         ),
 #'         KeysWithNoncompliantValues = list(
+#'           "string"
+#'         ),
+#'         MissingTagKeys = list(
 #'           "string"
 #'         ),
 #'         ComplianceStatus = TRUE|FALSE
@@ -458,23 +322,14 @@ resourcegroupstaggingapi_get_resources <- function(PaginationToken = NULL, TagFi
 #' Services Region for the calling account
 #'
 #' @description
-#' Returns all tag keys currently in use in the specified Amazon Web
-#' Services Region for the calling account.
+#' Returns all tag keys currently in use in the specified Amazon Web Services Region for the calling account.
 #' 
-#' This operation supports pagination, where the response can be sent in
-#' multiple pages. You should check the `PaginationToken` response
-#' parameter to determine if there are additional results available to
-#' return. Repeat the query, passing the `PaginationToken` response
-#' parameter value as an input to the next request until you recieve a
-#' `null` value. A null value for `PaginationToken` indicates that there
-#' are no more results waiting to be returned.
+#' This operation supports pagination, where the response can be sent in multiple pages. You should check the `PaginationToken` response parameter to determine if there are additional results available to return. Repeat the query, passing the `PaginationToken` response parameter value as an input to the next request until you recieve a `null` value. A null value for `PaginationToken` indicates that there are no more results waiting to be returned.
 #'
 #' @usage
 #' resourcegroupstaggingapi_get_tag_keys(PaginationToken)
 #'
-#' @param PaginationToken Specifies a `PaginationToken` response value from a previous request to
-#' indicate that you want the next page of results. Leave this parameter
-#' empty in your initial request.
+#' @param PaginationToken Specifies a `PaginationToken` response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -522,26 +377,15 @@ resourcegroupstaggingapi_get_tag_keys <- function(PaginationToken = NULL) {
 #' specified Amazon Web Services Region for the calling account
 #'
 #' @description
-#' Returns all tag values for the specified key that are used in the
-#' specified Amazon Web Services Region for the calling account.
+#' Returns all tag values for the specified key that are used in the specified Amazon Web Services Region for the calling account.
 #' 
-#' This operation supports pagination, where the response can be sent in
-#' multiple pages. You should check the `PaginationToken` response
-#' parameter to determine if there are additional results available to
-#' return. Repeat the query, passing the `PaginationToken` response
-#' parameter value as an input to the next request until you recieve a
-#' `null` value. A null value for `PaginationToken` indicates that there
-#' are no more results waiting to be returned.
+#' This operation supports pagination, where the response can be sent in multiple pages. You should check the `PaginationToken` response parameter to determine if there are additional results available to return. Repeat the query, passing the `PaginationToken` response parameter value as an input to the next request until you recieve a `null` value. A null value for `PaginationToken` indicates that there are no more results waiting to be returned.
 #'
 #' @usage
 #' resourcegroupstaggingapi_get_tag_values(PaginationToken, Key)
 #'
-#' @param PaginationToken Specifies a `PaginationToken` response value from a previous request to
-#' indicate that you want the next page of results. Leave this parameter
-#' empty in your initial request.
-#' @param Key &#91;required&#93; Specifies the tag key for which you want to list all existing values
-#' that are currently used in the specified Amazon Web Services Region for
-#' the calling account.
+#' @param PaginationToken Specifies a `PaginationToken` response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.
+#' @param Key &#91;required&#93; Specifies the tag key for which you want to list all existing values that are currently used in the specified Amazon Web Services Region for the calling account.
 #'
 #' @return
 #' A list with the following syntax:
@@ -590,16 +434,12 @@ resourcegroupstaggingapi_get_tag_values <- function(PaginationToken = NULL, Key)
 #' Services account
 #'
 #' @description
-#' Lists the required tags for supported resource types in an Amazon Web
-#' Services account.
+#' Lists the required tags for supported resource types in an Amazon Web Services account.
 #'
 #' @usage
 #' resourcegroupstaggingapi_list_required_tags(NextToken, MaxResults)
 #'
-#' @param NextToken A token for requesting another page of required tags if the `NextToken`
-#' response element indicates that more required tags are available. Use
-#' the value of the returned `NextToken` element in your request until the
-#' token comes back as null. Pass null if this is the first call.
+#' @param NextToken A token for requesting another page of required tags if the `NextToken` response element indicates that more required tags are available. Use the value of the returned `NextToken` element in your request until the token comes back as null. Pass null if this is the first call.
 #' @param MaxResults The maximum number of required tags.
 #'
 #' @return
@@ -658,44 +498,26 @@ resourcegroupstaggingapi_list_required_tags <- function(NextToken = NULL, MaxRes
 #' with the effective tag policy
 #'
 #' @description
-#' Generates a report that lists all tagged resources in the accounts
-#' across your organization and tells whether each resource is compliant
-#' with the effective tag policy. Compliance data is refreshed daily. The
-#' report is generated asynchronously.
+#' Generates a report that lists all tagged resources in the accounts across your organization and tells whether each resource is compliant with the effective tag policy. Compliance data is refreshed daily. The report is generated asynchronously.
 #' 
 #' The generated report is saved to the following location:
 #' 
 #' `s3://amzn-s3-demo-bucket/AwsTagPolicies/o-exampleorgid/YYYY-MM-ddTHH:mm:ssZ/report.csv`
 #' 
-#' For more information about evaluating resource compliance with tag
-#' policies, including the required permissions, review [Permissions for
-#' evaluating organization-wide
-#' compliance](https://docs.aws.amazon.com/tag-editor/latest/userguide/tag-policies-orgs.html#tag-policies-permissions-org)
-#' in the *Tagging Amazon Web Services Resources and Tag Editor* user
-#' guide.
+#' For more information about evaluating resource compliance with tag policies, including the required permissions, review [Permissions for evaluating organization-wide compliance](https://docs.aws.amazon.com/tag-editor/latest/userguide/tag-policies-orgs.html#tag-policies-permissions-org) in the *Tagging Amazon Web Services Resources and Tag Editor* user guide.
 #' 
-#' You can call this operation only from the organization's management
-#' account and from the us-east-1 Region.
+#' You can call this operation only from the organization's management account and from the us-east-1 Region.
 #' 
-#' If the account associated with the identity used to call
-#' [`start_report_creation`][resourcegroupstaggingapi_start_report_creation]
-#' is different from the account that owns the Amazon S3 bucket, there must
-#' be a bucket policy attached to the bucket to provide access. For more
-#' information, review [Amazon S3 bucket policy for report
-#' storage](https://docs.aws.amazon.com/tag-editor/latest/userguide/tag-policies-orgs.html#bucket-policy)
-#' in the *Tagging Amazon Web Services Resources and Tag Editor* user
-#' guide.
+#' If the account associated with the identity used to call [`start_report_creation`][resourcegroupstaggingapi_start_report_creation] is different from the account that owns the Amazon S3 bucket, there must be a bucket policy attached to the bucket to provide access. For more information, review [Amazon S3 bucket policy for report storage](https://docs.aws.amazon.com/tag-editor/latest/userguide/tag-policies-orgs.html#bucket-policy) in the *Tagging Amazon Web Services Resources and Tag Editor* user guide.
 #'
 #' @usage
 #' resourcegroupstaggingapi_start_report_creation(S3Bucket)
 #'
-#' @param S3Bucket &#91;required&#93; The name of the Amazon S3 bucket where the report will be stored; for
-#' example:
+#' @param S3Bucket &#91;required&#93; The name of the Amazon S3 bucket where the report will be stored; for example:
 #' 
 #' `amzn-s3-demo-bucket`
 #' 
-#' For more information on S3 bucket requirements, including an example
-#' bucket policy, see the example Amazon S3 bucket policy on this page.
+#' For more information on S3 bucket requirements, including an example bucket policy, see the example Amazon S3 bucket policy on this page.
 #'
 #' @return
 #' An empty list.
@@ -736,75 +558,35 @@ resourcegroupstaggingapi_start_report_creation <- function(S3Bucket) {
 #' @description
 #' Applies one or more tags to the specified resources. Note the following:
 #' 
-#' -   Not all resources can have tags. For a list of services with
-#'     resources that support tagging using this operation, see [Services
-#'     that support the Resource Groups Tagging
-#'     API](https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html).
-#'     If the resource doesn't yet support this operation, the resource's
-#'     service might support tagging using its own API operations. For more
-#'     information, refer to the documentation for that service.
+#' -   Not all resources can have tags. For a list of services with resources that support tagging using this operation, see [Services that support the Resource Groups Tagging API](https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html). If the resource doesn't yet support this operation, the resource's service might support tagging using its own API operations. For more information, refer to the documentation for that service.
 #' 
-#' -   Each resource can have up to 50 tags. For other limits, see [Tag
-#'     Naming and Usage
-#'     Conventions](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions)
-#'     in the *Amazon Web Services General Reference.*
+#' -   Each resource can have up to 50 tags. For other limits, see [Tag Naming and Usage Conventions](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions) in the *Amazon Web Services General Reference.*
 #' 
-#' -   You can only tag resources that are located in the specified Amazon
-#'     Web Services Region for the Amazon Web Services account.
+#' -   You can only tag resources that are located in the specified Amazon Web Services Region for the Amazon Web Services account.
 #' 
-#' -   To add tags to a resource, you need the necessary permissions for
-#'     the service that the resource belongs to as well as permissions for
-#'     adding tags. For more information, see the documentation for each
-#'     service.
+#' -   To add tags to a resource, you need the necessary permissions for the service that the resource belongs to as well as permissions for adding tags. For more information, see the documentation for each service.
 #' 
-#' -   When you use the [Amazon Web Services Resource Groups Tagging
-#'     API](https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/overview.html)
-#'     to update tags for Amazon Web Services CloudFormation stack sets,
-#'     Amazon Web Services calls the [Amazon Web Services CloudFormation
-#'     `UpdateStack`](https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStack.html)
-#'     operation. This operation may initiate additional resource property
-#'     updates in addition to the desired tag updates. To avoid unexpected
-#'     resource updates, Amazon Web Services recommends that you only apply
-#'     or update tags to your CloudFormation stack sets using Amazon Web
-#'     Services CloudFormation.
+#' -   When you use the [Amazon Web Services Resource Groups Tagging API](https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/overview.html) to update tags for Amazon Web Services CloudFormation stack sets, Amazon Web Services calls the [Amazon Web Services CloudFormation `UpdateStack`](https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStack.html) operation. This operation may initiate additional resource property updates in addition to the desired tag updates. To avoid unexpected resource updates, Amazon Web Services recommends that you only apply or update tags to your CloudFormation stack sets using Amazon Web Services CloudFormation.
 #' 
-#' Do not store personally identifiable information (PII) or other
-#' confidential or sensitive information in tags. We use tags to provide
-#' you with billing and administration services. Tags are not intended to
-#' be used for private or sensitive data.
+#' Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.
 #' 
 #' **Minimum permissions**
 #' 
-#' In addition to the `tag:TagResources` permission required by this
-#' operation, you must also have the tagging permission defined by the
-#' service that created the resource. For example, to tag an Amazon EC2
-#' instance using the
-#' [`tag_resources`][resourcegroupstaggingapi_tag_resources] operation, you
-#' must have both of the following permissions:
+#' In addition to the `tag:TagResources` permission required by this operation, you must also have the tagging permission defined by the service that created the resource. For example, to tag an Amazon EC2 instance using the [`tag_resources`][resourcegroupstaggingapi_tag_resources] operation, you must have both of the following permissions:
 #' 
 #' -   `tag:TagResources`
 #' 
 #' -   `ec2:CreateTags`
 #' 
-#' In addition, some services might have specific requirements for tagging
-#' some types of resources. For example, to tag an Amazon S3 bucket, you
-#' must also have the `s3:GetBucketTagging` permission. If the expected
-#' minimum permissions don't work, check the documentation for that
-#' service's tagging APIs for more information.
+#' In addition, some services might have specific requirements for tagging some types of resources. For example, to tag an Amazon S3 bucket, you must also have the `s3:GetBucketTagging` permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.
 #'
 #' @usage
 #' resourcegroupstaggingapi_tag_resources(ResourceARNList, Tags)
 #'
-#' @param ResourceARNList &#91;required&#93; Specifies the list of ARNs of the resources that you want to apply tags
-#' to.
+#' @param ResourceARNList &#91;required&#93; Specifies the list of ARNs of the resources that you want to apply tags to.
 #' 
-#' An ARN (Amazon Resource Name) uniquely identifies a resource. For more
-#' information, see [Amazon Resource Names (ARNs) and Amazon Web Services
-#' Service
-#' Namespaces](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html)
-#' in the *Amazon Web Services General Reference*.
-#' @param Tags &#91;required&#93; Specifies a list of tags that you want to add to the specified
-#' resources. A tag consists of a key and a value that you define.
+#' An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see [Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html) in the *Amazon Web Services General Reference*.
+#' @param Tags &#91;required&#93; Specifies a list of tags that you want to add to the specified resources. A tag consists of a key and a value that you define.
 #'
 #' @return
 #' A list with the following syntax:
@@ -859,51 +641,29 @@ resourcegroupstaggingapi_tag_resources <- function(ResourceARNList, Tags) {
 #' Removes the specified tags from the specified resources
 #'
 #' @description
-#' Removes the specified tags from the specified resources. When you
-#' specify a tag key, the action removes both that key and its associated
-#' value. The operation succeeds even if you attempt to remove tags from a
-#' resource that were already removed. Note the following:
+#' Removes the specified tags from the specified resources. When you specify a tag key, the action removes both that key and its associated value. The operation succeeds even if you attempt to remove tags from a resource that were already removed. Note the following:
 #' 
-#' -   To remove tags from a resource, you need the necessary permissions
-#'     for the service that the resource belongs to as well as permissions
-#'     for removing tags. For more information, see the documentation for
-#'     the service whose resource you want to untag.
+#' -   To remove tags from a resource, you need the necessary permissions for the service that the resource belongs to as well as permissions for removing tags. For more information, see the documentation for the service whose resource you want to untag.
 #' 
-#' -   You can only tag resources that are located in the specified Amazon
-#'     Web Services Region for the calling Amazon Web Services account.
+#' -   You can only tag resources that are located in the specified Amazon Web Services Region for the calling Amazon Web Services account.
 #' 
 #' **Minimum permissions**
 #' 
-#' In addition to the `tag:UntagResources` permission required by this
-#' operation, you must also have the remove tags permission defined by the
-#' service that created the resource. For example, to remove the tags from
-#' an Amazon EC2 instance using the
-#' [`untag_resources`][resourcegroupstaggingapi_untag_resources] operation,
-#' you must have both of the following permissions:
+#' In addition to the `tag:UntagResources` permission required by this operation, you must also have the remove tags permission defined by the service that created the resource. For example, to remove the tags from an Amazon EC2 instance using the [`untag_resources`][resourcegroupstaggingapi_untag_resources] operation, you must have both of the following permissions:
 #' 
 #' -   `tag:UntagResources`
 #' 
 #' -   `ec2:DeleteTags`
 #' 
-#' In addition, some services might have specific requirements for
-#' untagging some types of resources. For example, to untag Amazon Web
-#' Services Glue Connection, you must also have the `glue:GetConnection`
-#' permission. If the expected minimum permissions don't work, check the
-#' documentation for that service's tagging APIs for more information.
+#' In addition, some services might have specific requirements for untagging some types of resources. For example, to untag Amazon Web Services Glue Connection, you must also have the `glue:GetConnection` permission. If the expected minimum permissions don't work, check the documentation for that service's tagging APIs for more information.
 #'
 #' @usage
 #' resourcegroupstaggingapi_untag_resources(ResourceARNList, TagKeys)
 #'
-#' @param ResourceARNList &#91;required&#93; Specifies a list of ARNs of the resources that you want to remove tags
-#' from.
+#' @param ResourceARNList &#91;required&#93; Specifies a list of ARNs of the resources that you want to remove tags from.
 #' 
-#' An ARN (Amazon Resource Name) uniquely identifies a resource. For more
-#' information, see [Amazon Resource Names (ARNs) and Amazon Web Services
-#' Service
-#' Namespaces](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html)
-#' in the *Amazon Web Services General Reference*.
-#' @param TagKeys &#91;required&#93; Specifies a list of tag keys that you want to remove from the specified
-#' resources.
+#' An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see [Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html) in the *Amazon Web Services General Reference*.
+#' @param TagKeys &#91;required&#93; Specifies a list of tag keys that you want to remove from the specified resources.
 #'
 #' @return
 #' A list with the following syntax:

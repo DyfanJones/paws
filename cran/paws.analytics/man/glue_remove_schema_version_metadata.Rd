@@ -13,8 +13,7 @@ glue_remove_schema_version_metadata(
 )
 }
 \arguments{
-\item{SchemaId}{A wrapper structure that may contain the schema name and Amazon Resource
-Name (ARN).}
+\item{SchemaId}{A wrapper structure that may contain the schema name and Amazon Resource Name (ARN).}
 
 \item{SchemaVersionNumber}{The version number of the schema.}
 

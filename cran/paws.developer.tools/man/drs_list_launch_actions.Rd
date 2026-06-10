@@ -5,20 +5,20 @@
 \title{Lists resource launch actions}
 \usage{
 drs_list_launch_actions(
+  resourceId,
   filters = NULL,
   maxResults = NULL,
-  nextToken = NULL,
-  resourceId
+  nextToken = NULL
 )
 }
 \arguments{
+\item{resourceId}{[required] Launch configuration template Id or Source Server Id}
+
 \item{filters}{Filters to apply when listing resource launch actions.}
 
 \item{maxResults}{Maximum amount of items to return when listing resource launch actions.}
 
 \item{nextToken}{Next token to use when listing resource launch actions.}
-
-\item{resourceId}{[required]}
 }
 \description{
 Lists resource launch actions.

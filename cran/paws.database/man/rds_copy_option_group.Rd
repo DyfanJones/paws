@@ -33,7 +33,9 @@ Example: \code{my-option-group}}
 
 \item{TargetOptionGroupDescription}{[required] The description for the copied option group.}
 
-\item{Tags}{}
+\item{Tags}{A list of tags.
+
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html}{Tagging Amazon RDS resources} in the \emph{Amazon RDS User Guide} or \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html}{Tagging Amazon Aurora and Amazon RDS resources} in the \emph{Amazon Aurora User Guide}.}
 }
 \description{
 Copies the specified option group.

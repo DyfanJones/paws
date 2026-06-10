@@ -15,38 +15,22 @@ rds_modify_db_snapshot(
 
 \item{EngineVersion}{The engine version to upgrade the DB snapshot to.
 
-The following are the database engines and engine versions that are
-available when you upgrade a DB snapshot.
+The following are the database engines and engine versions that are available when you upgrade a DB snapshot.
 
 \strong{MariaDB}
 
-For the list of engine versions that are available for upgrading a DB
-snapshot, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mariadb-upgrade-snapshot.html}{Upgrading a MariaDB DB snapshot engine version}
-in the \emph{Amazon RDS User Guide.}
+For the list of engine versions that are available for upgrading a DB snapshot, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mariadb-upgrade-snapshot.html}{Upgrading a MariaDB DB snapshot engine version} in the \emph{Amazon RDS User Guide.}
 
 \strong{MySQL}
 
-For the list of engine versions that are available for upgrading a DB
-snapshot, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mysql-upgrade-snapshot.html}{Upgrading a MySQL DB snapshot engine version}
-in the \emph{Amazon RDS User Guide.}
+For the list of engine versions that are available for upgrading a DB snapshot, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mysql-upgrade-snapshot.html}{Upgrading a MySQL DB snapshot engine version} in the \emph{Amazon RDS User Guide.}
 
 \strong{Oracle}
 \itemize{
-\item \verb{21.0.0.0.ru-2025-04.rur-2025-04.r1} (supported for
-21.0.0.0.ru-2022-01.rur-2022-01.r1,
-21.0.0.0.ru-2022-04.rur-2022-04.r1,
-21.0.0.0.ru-2022-07.rur-2022-07.r1,
-21.0.0.0.ru-2022-10.rur-2022-10.r1,
-21.0.0.0.ru-2023-01.rur-2023-01.r1 and
-21.0.0.0.ru-2023-01.rur-2023-01.r2 DB snapshots)
-\item \verb{19.0.0.0.ru-2025-04.rur-2025-04.r1} (supported for
-19.0.0.0.ru-2019-07.rur-2019-07.r1,
-19.0.0.0.ru-2019-10.rur-2019-10.r1 and
-0.0.0.ru-2020-01.rur-2020-01.r1 DB snapshots)
-\item \verb{19.0.0.0.ru-2022-01.rur-2022-01.r1} (supported for 12.2.0.1 DB
-snapshots)
-\item \verb{19.0.0.0.ru-2022-07.rur-2022-07.r1} (supported for 12.1.0.2 DB
-snapshots)
+\item \verb{21.0.0.0.ru-2025-04.rur-2025-04.r1} (supported for 21.0.0.0.ru-2022-01.rur-2022-01.r1, 21.0.0.0.ru-2022-04.rur-2022-04.r1, 21.0.0.0.ru-2022-07.rur-2022-07.r1, 21.0.0.0.ru-2022-10.rur-2022-10.r1, 21.0.0.0.ru-2023-01.rur-2023-01.r1 and 21.0.0.0.ru-2023-01.rur-2023-01.r2 DB snapshots)
+\item \verb{19.0.0.0.ru-2025-04.rur-2025-04.r1} (supported for 19.0.0.0.ru-2019-07.rur-2019-07.r1, 19.0.0.0.ru-2019-10.rur-2019-10.r1 and 0.0.0.ru-2020-01.rur-2020-01.r1 DB snapshots)
+\item \verb{19.0.0.0.ru-2022-01.rur-2022-01.r1} (supported for 12.2.0.1 DB snapshots)
+\item \verb{19.0.0.0.ru-2022-07.rur-2022-07.r1} (supported for 12.1.0.2 DB snapshots)
 \item \verb{12.1.0.2.v8} (supported for 12.1.0.1 DB snapshots)
 \item \verb{11.2.0.4.v12} (supported for 11.2.0.2 DB snapshots)
 \item \verb{11.2.0.4.v11} (supported for 11.2.0.3 DB snapshots)
@@ -54,16 +38,11 @@ snapshots)
 
 \strong{PostgreSQL}
 
-For the list of engine versions that are available for upgrading a DB
-snapshot, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBSnapshot.PostgreSQL.html}{Upgrading a PostgreSQL DB snapshot engine version}
-in the \emph{Amazon RDS User Guide.}}
+For the list of engine versions that are available for upgrading a DB snapshot, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBSnapshot.PostgreSQL.html}{Upgrading a PostgreSQL DB snapshot engine version} in the \emph{Amazon RDS User Guide.}}
 
 \item{OptionGroupName}{The option group to identify with the upgraded DB snapshot.
 
-You can specify this parameter when you upgrade an Oracle DB snapshot.
-The same option group considerations apply when upgrading a DB snapshot
-as when upgrading a DB instance. For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG}{Option group considerations}
-in the \emph{Amazon RDS User Guide.}}
+You can specify this parameter when you upgrade an Oracle DB snapshot. The same option group considerations apply when upgrading a DB snapshot as when upgrading a DB instance. For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG}{Option group considerations} in the \emph{Amazon RDS User Guide.}}
 }
 \description{
 Updates a manual DB snapshot with a new engine version. The snapshot can be encrypted or unencrypted, but not shared or public.

@@ -12,23 +12,15 @@ codegurureviewer_create_code_review(
 )
 }
 \arguments{
-\item{Name}{[required] The name of the code review. The name of each code review in your Amazon
-Web Services account must be unique.}
+\item{Name}{[required] The name of the code review. The name of each code review in your Amazon Web Services account must be unique.}
 
-\item{RepositoryAssociationArn}{[required] The Amazon Resource Name (ARN) of the
-\href{https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html}{RepositoryAssociation}
-object. You can retrieve this ARN by calling
-\code{\link[=codegurureviewer_list_repository_associations]{list_repository_associations}}.
+\item{RepositoryAssociationArn}{[required] The Amazon Resource Name (ARN) of the \href{https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html}{RepositoryAssociation} object. You can retrieve this ARN by calling \code{\link[=codegurureviewer_list_repository_associations]{list_repository_associations}}.
 
-A code review can only be created on an associated repository. This is
-the ARN of the associated repository.}
+A code review can only be created on an associated repository. This is the ARN of the associated repository.}
 
-\item{Type}{[required] The type of code review to create. This is specified using a
-\href{https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html}{CodeReviewType}
-object. You can create a code review only of type \code{RepositoryAnalysis}.}
+\item{Type}{[required] The type of code review to create. This is specified using a \href{https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html}{CodeReviewType} object. You can create a code review only of type \code{RepositoryAnalysis}.}
 
-\item{ClientRequestToken}{Amazon CodeGuru Reviewer uses this value to prevent the accidental
-creation of duplicate code reviews if there are failures and retries.}
+\item{ClientRequestToken}{Amazon CodeGuru Reviewer uses this value to prevent the accidental creation of duplicate code reviews if there are failures and retries.}
 }
 \description{
 Use to create a code review with a \href{https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html}{CodeReviewType} of \code{RepositoryAnalysis}. This type of code review analyzes all code under a specified branch in an associated repository. \code{PullRequest} code reviews are automatically triggered by a pull request.

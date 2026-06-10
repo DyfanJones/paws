@@ -13,18 +13,15 @@ licensemanagerusersubscriptions_update_identity_provider_settings(
 )
 }
 \arguments{
-\item{IdentityProvider}{}
+\item{IdentityProvider}{Refers to an identity provider.}
 
 \item{Product}{The name of the user-based subscription product.
 
-Valid values: \code{VISUAL_STUDIO_ENTERPRISE} | \code{VISUAL_STUDIO_PROFESSIONAL}
-| \code{OFFICE_PROFESSIONAL_PLUS} | \code{REMOTE_DESKTOP_SERVICES}}
+Valid values: \code{VISUAL_STUDIO_ENTERPRISE} | \code{VISUAL_STUDIO_PROFESSIONAL} | \code{OFFICE_PROFESSIONAL_PLUS} | \code{REMOTE_DESKTOP_SERVICES}}
 
 \item{IdentityProviderArn}{The Amazon Resource Name (ARN) of the identity provider to update.}
 
-\item{UpdateSettings}{[required] Updates the registered identity provider’s product related configuration
-settings. You can update any combination of settings in a single
-operation such as the:
+\item{UpdateSettings}{[required] Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:
 \itemize{
 \item Subnets which you want to add to provision VPC endpoints.
 \item Subnets which you want to remove the VPC endpoints from.

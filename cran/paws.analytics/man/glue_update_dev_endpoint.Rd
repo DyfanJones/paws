@@ -26,25 +26,18 @@ glue_update_dev_endpoint(
 
 \item{CustomLibraries}{Custom Python or Java libraries to be loaded in the \code{DevEndpoint}.}
 
-\item{UpdateEtlLibraries}{\code{True} if the list of custom libraries to be loaded in the development
-endpoint needs to be updated, or \code{False} if otherwise.}
+\item{UpdateEtlLibraries}{\code{True} if the list of custom libraries to be loaded in the development endpoint needs to be updated, or \code{False} if otherwise.}
 
-\item{DeleteArguments}{The list of argument keys to be deleted from the map of arguments used
-to configure the \code{DevEndpoint}.}
+\item{DeleteArguments}{The list of argument keys to be deleted from the map of arguments used to configure the \code{DevEndpoint}.}
 
-\item{AddArguments}{The map of arguments to add the map of arguments used to configure the
-\code{DevEndpoint}.
+\item{AddArguments}{The map of arguments to add the map of arguments used to configure the \code{DevEndpoint}.
 
 Valid arguments are:
 \itemize{
 \item \code{"--enable-glue-datacatalog": ""}
 }
 
-You can specify a version of Python support for development endpoints by
-using the \code{Arguments} parameter in the
-\code{\link[=glue_create_dev_endpoint]{create_dev_endpoint}} or
-\code{\link[=glue_update_dev_endpoint]{update_dev_endpoint}} APIs. If no arguments
-are provided, the version defaults to Python 2.}
+You can specify a version of Python support for development endpoints by using the \code{Arguments} parameter in the \code{\link[=glue_create_dev_endpoint]{create_dev_endpoint}} or \code{\link[=glue_update_dev_endpoint]{update_dev_endpoint}} APIs. If no arguments are provided, the version defaults to Python 2.}
 }
 \description{
 Updates a specified development endpoint.

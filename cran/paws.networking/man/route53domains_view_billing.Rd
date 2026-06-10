@@ -13,24 +13,13 @@ route53domains_view_billing(
 )
 }
 \arguments{
-\item{Start}{The beginning date and time for the time period for which you want a
-list of billing records. Specify the date and time in Unix time format
-and Coordinated Universal time (UTC).}
+\item{Start}{The beginning date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).}
 
-\item{End}{The end date and time for the time period for which you want a list of
-billing records. Specify the date and time in Unix time format and
-Coordinated Universal time (UTC).}
+\item{End}{The end date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).}
 
-\item{Marker}{For an initial request for a list of billing records, omit this element.
-If the number of billing records that are associated with the current
-Amazon Web Services account during the specified period is greater than
-the value that you specified for \code{MaxItems}, you can use \code{Marker} to
-return additional billing records. Get the value of \code{NextPageMarker}
-from the previous response, and submit another request that includes the
-value of \code{NextPageMarker} in the \code{Marker} element.
+\item{Marker}{For an initial request for a list of billing records, omit this element. If the number of billing records that are associated with the current Amazon Web Services account during the specified period is greater than the value that you specified for \code{MaxItems}, you can use \code{Marker} to return additional billing records. Get the value of \code{NextPageMarker} from the previous response, and submit another request that includes the value of \code{NextPageMarker} in the \code{Marker} element.
 
-Constraints: The marker must match the value of \code{NextPageMarker} that
-was returned in the previous response.}
+Constraints: The marker must match the value of \code{NextPageMarker} that was returned in the previous response.}
 
 \item{MaxItems}{The number of billing records to be returned.
 

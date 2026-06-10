@@ -15,19 +15,15 @@ bedrockagentruntime_invoke_flow(
 )
 }
 \arguments{
-\item{enableTrace}{Specifies whether to return the trace for the flow or not. Traces track
-inputs and outputs for nodes in the flow. For more information, see
-\href{https://docs.aws.amazon.com/bedrock/latest/userguide/flows-trace.html}{Track each step in your prompt flow by viewing its trace in Amazon Bedrock}.}
+\item{enableTrace}{Specifies whether to return the trace for the flow or not. Traces track inputs and outputs for nodes in the flow. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/flows-trace.html}{Track each step in your prompt flow by viewing its trace in Amazon Bedrock}.}
 
-\item{executionId}{The unique identifier for the current flow execution. If you don't
-provide a value, Amazon Bedrock creates the identifier for you.}
+\item{executionId}{The unique identifier for the current flow execution. If you don't provide a value, Amazon Bedrock creates the identifier for you.}
 
 \item{flowAliasIdentifier}{[required] The unique identifier of the flow alias.}
 
 \item{flowIdentifier}{[required] The unique identifier of the flow.}
 
-\item{inputs}{[required] A list of objects, each containing information about an input into the
-flow.}
+\item{inputs}{[required] A list of objects, each containing information about an input into the flow.}
 
 \item{modelPerformanceConfiguration}{Model performance settings for the request.}
 }

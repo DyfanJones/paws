@@ -7,18 +7,15 @@ NULL
 #' GuardDuty administrator account that sent the invitation
 #'
 #' @description
-#' Accepts the invitation to be a member account and get monitored by a
-#' GuardDuty administrator account that sent the invitation.
+#' Accepts the invitation to be a member account and get monitored by a GuardDuty administrator account that sent the invitation.
 #'
 #' @usage
 #' guardduty_accept_administrator_invitation(DetectorId, AdministratorId,
 #'   InvitationId)
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty member account.
-#' @param AdministratorId &#91;required&#93; The account ID of the GuardDuty administrator account whose invitation
-#' you're accepting.
-#' @param InvitationId &#91;required&#93; The value that is used to validate the administrator account to the
-#' member account.
+#' @param AdministratorId &#91;required&#93; The account ID of the GuardDuty administrator account whose invitation you're accepting.
+#' @param InvitationId &#91;required&#93; The value that is used to validate the administrator account to the member account.
 #'
 #' @return
 #' An empty list.
@@ -41,7 +38,7 @@ guardduty_accept_administrator_invitation <- function(DetectorId, AdministratorI
   op <- new_operation(
     name = "AcceptAdministratorInvitation",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/administrator",
+    http_path = "/detector/{DetectorId}/administrator",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -60,21 +57,16 @@ guardduty_accept_administrator_invitation <- function(DetectorId, AdministratorI
 #' account
 #'
 #' @description
-#' Accepts the invitation to be monitored by a GuardDuty administrator
-#' account.
+#' Accepts the invitation to be monitored by a GuardDuty administrator account.
 #'
 #' @usage
 #' guardduty_accept_invitation(DetectorId, MasterId, InvitationId)
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty member account.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param MasterId &#91;required&#93; The account ID of the GuardDuty administrator account whose invitation
-#' you're accepting.
-#' @param InvitationId &#91;required&#93; The value that is used to validate the administrator account to the
-#' member account.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param MasterId &#91;required&#93; The account ID of the GuardDuty administrator account whose invitation you're accepting.
+#' @param InvitationId &#91;required&#93; The value that is used to validate the administrator account to the member account.
 #'
 #' @return
 #' An empty list.
@@ -97,7 +89,7 @@ guardduty_accept_invitation <- function(DetectorId, MasterId, InvitationId) {
   op <- new_operation(
     name = "AcceptInvitation",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/master",
+    http_path = "/detector/{DetectorId}/master",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -116,21 +108,16 @@ guardduty_accept_invitation <- function(DetectorId, MasterId, InvitationId) {
 #' IDs
 #'
 #' @description
-#' Archives GuardDuty findings that are specified by the list of finding
-#' IDs.
+#' Archives GuardDuty findings that are specified by the list of finding IDs.
 #' 
-#' Only the administrator account can archive findings. Member accounts
-#' don't have permission to archive findings from their accounts.
+#' Only the administrator account can archive findings. Member accounts don't have permission to archive findings from their accounts.
 #'
 #' @usage
 #' guardduty_archive_findings(DetectorId, FindingIds)
 #'
-#' @param DetectorId &#91;required&#93; The ID of the detector that specifies the GuardDuty service whose
-#' findings you want to archive.
+#' @param DetectorId &#91;required&#93; The ID of the detector that specifies the GuardDuty service whose findings you want to archive.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param FindingIds &#91;required&#93; The IDs of the findings that you want to archive.
 #'
 #' @return
@@ -155,7 +142,7 @@ guardduty_archive_findings <- function(DetectorId, FindingIds) {
   op <- new_operation(
     name = "ArchiveFindings",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/findings/archive",
+    http_path = "/detector/{DetectorId}/findings/archive",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -173,31 +160,15 @@ guardduty_archive_findings <- function(DetectorId, FindingIds) {
 #' Creates a single GuardDuty detector
 #'
 #' @description
-#' Creates a single GuardDuty detector. A detector is a resource that
-#' represents the GuardDuty service. To start using GuardDuty, you must
-#' create a detector in each Region where you enable the service. You can
-#' have only one detector per account per Region. All data sources are
-#' enabled in a new detector by default.
+#' Creates a single GuardDuty detector. A detector is a resource that represents the GuardDuty service. To start using GuardDuty, you must create a detector in each Region where you enable the service. You can have only one detector per account per Region. All data sources are enabled in a new detector by default.
 #' 
-#' -   When you don't specify any `features`, with an exception to
-#'     `RUNTIME_MONITORING`, all the optional features are enabled by
-#'     default.
+#' -   When you don't specify any `features`, with an exception to `RUNTIME_MONITORING`, all the optional features are enabled by default.
 #' 
-#' -   When you specify some of the `features`, any feature that is not
-#'     specified in the API call gets enabled by default, with an exception
-#'     to `RUNTIME_MONITORING`.
+#' -   When you specify some of the `features`, any feature that is not specified in the API call gets enabled by default, with an exception to `RUNTIME_MONITORING`.
 #' 
-#' Specifying both EKS Runtime Monitoring (`EKS_RUNTIME_MONITORING`) and
-#' Runtime Monitoring (`RUNTIME_MONITORING`) will cause an error. You can
-#' add only one of these two features because Runtime Monitoring already
-#' includes the threat detection for Amazon EKS resources. For more
-#' information, see [Runtime
-#' Monitoring](https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html).
+#' Specifying both EKS Runtime Monitoring (`EKS_RUNTIME_MONITORING`) and Runtime Monitoring (`RUNTIME_MONITORING`) will cause an error. You can add only one of these two features because Runtime Monitoring already includes the threat detection for Amazon EKS resources. For more information, see [Runtime Monitoring](https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html).
 #' 
-#' There might be regional differences because some data sources might not
-#' be available in all the Amazon Web Services Regions where GuardDuty is
-#' presently supported. For more information, see [Regions and
-#' endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
+#' There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see [Regions and endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
 #'
 #' @usage
 #' guardduty_create_detector(Enable, ClientToken,
@@ -208,10 +179,7 @@ guardduty_archive_findings <- function(DetectorId, FindingIds) {
 #' @param FindingPublishingFrequency A value that specifies how frequently updated findings are exported.
 #' @param DataSources Describes which data sources will be enabled for the detector.
 #' 
-#' There might be regional differences because some data sources might not
-#' be available in all the Amazon Web Services Regions where GuardDuty is
-#' presently supported. For more information, see [Regions and
-#' endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
+#' There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see [Regions and endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
 #' @param Tags The tags to be added to a new detector resource.
 #' @param Features A list of features that will be configured for the detector.
 #'
@@ -260,7 +228,7 @@ guardduty_archive_findings <- function(DetectorId, FindingIds) {
 #'   ),
 #'   Features = list(
 #'     list(
-#'       Name = "S3_DATA_EVENTS"|"EKS_AUDIT_LOGS"|"EBS_MALWARE_PROTECTION"|"RDS_LOGIN_EVENTS"|"EKS_RUNTIME_MONITORING"|"LAMBDA_NETWORK_LOGS"|"RUNTIME_MONITORING",
+#'       Name = "S3_DATA_EVENTS"|"EKS_AUDIT_LOGS"|"EBS_MALWARE_PROTECTION"|"RDS_LOGIN_EVENTS"|"LAMBDA_NETWORK_LOGS"|"EKS_RUNTIME_MONITORING"|"RUNTIME_MONITORING",
 #'       Status = "ENABLED"|"DISABLED",
 #'       AdditionalConfiguration = list(
 #'         list(
@@ -300,90 +268,246 @@ guardduty_create_detector <- function(Enable, ClientToken = NULL, FindingPublish
 #' Creates a filter using the specified finding criteria
 #'
 #' @description
-#' Creates a filter using the specified finding criteria. The maximum
-#' number of saved filters per Amazon Web Services account per Region is
-#' 100. For more information, see [Quotas for
-#' GuardDuty](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_limits.html).
+#' Creates a filter using the specified finding criteria. The maximum number of saved filters per Amazon Web Services account per Region is 100. For more information, see [Quotas for GuardDuty](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_limits.html).
 #'
 #' @usage
 #' guardduty_create_filter(DetectorId, Name, Description, Action, Rank,
 #'   FindingCriteria, ClientToken, Tags)
 #'
-#' @param DetectorId &#91;required&#93; The detector ID associated with the GuardDuty account for which you want
-#' to create a filter.
+#' @param DetectorId &#91;required&#93; The detector ID associated with the GuardDuty account for which you want to create a filter.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param Name &#91;required&#93; The name of the filter. Valid characters include period (.), underscore
-#' (_), dash (-), and alphanumeric characters. A whitespace is considered
-#' to be an invalid character.
-#' @param Description The description of the filter. Valid characters include alphanumeric
-#' characters, and special characters such as hyphen, period, colon,
-#' underscore, parentheses (`{ }`, `[ ]`, and `( )`), forward slash,
-#' horizontal tab, vertical tab, newline, form feed, return, and
-#' whitespace.
-#' @param Action Specifies the action that is to be applied to the findings that match
-#' the filter.
-#' @param Rank Specifies the position of the filter in the list of current filters.
-#' Also specifies the order in which this filter is applied to the
-#' findings.
-#' @param FindingCriteria &#91;required&#93; Represents the criteria to be used in the filter for querying findings.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param Name &#91;required&#93; The name of the filter. Valid characters include period (.), underscore (_), dash (-), and alphanumeric characters. A whitespace is considered to be an invalid character.
+#' @param Description The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (`{ }`, `[ ]`, and `( )`), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.
+#' @param Action Specifies the action that is to be applied to the findings that match the filter.
 #' 
-#' You can only use the following attributes to query findings:
+#' Default: NOOP
+#' @param Rank Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.
+#' @param FindingCriteria &#91;required&#93; Represents the criteria to be used in the filter for querying findings. The following fields are available for filtering:
 #' 
 #' -   accountId
 #' 
+#' -   arn
+#' 
+#' -   associatedAttackSequenceArn
+#' 
+#' -   confidence
+#' 
+#' -   createdAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   description
+#' 
 #' -   id
 #' 
+#' -   partition
+#' 
 #' -   region
-#' 
-#' -   severity
-#' 
-#'     To filter on the basis of severity, the API and CLI use the
-#'     following input list for the
-#'     [FindingCriteria](https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html)
-#'     condition:
-#' 
-#'     -   **Low**: `["1", "2", "3"]`
-#' 
-#'     -   **Medium**: `["4", "5", "6"]`
-#' 
-#'     -   **High**: `["7", "8"]`
-#' 
-#'     -   **Critical**: `["9", "10"]`
-#' 
-#'     For more information, see [Findings severity
-#'     levels](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html)
-#'     in the *Amazon GuardDuty User Guide*.
-#' 
-#' -   type
-#' 
-#' -   updatedAt
-#' 
-#'     Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or
-#'     YYYY-MM-DDTHH:MM:SSZ depending on whether the value contains
-#'     milliseconds.
 #' 
 #' -   resource.accessKeyDetails.accessKeyId
 #' 
 #' -   resource.accessKeyDetails.principalId
 #' 
+#' -   resource.accessKeyDetails.userIdentity.accessKeyId
+#' 
+#' -   resource.accessKeyDetails.userIdentity.accountId
+#' 
+#' -   resource.accessKeyDetails.userIdentity.arn
+#' 
+#' -   resource.accessKeyDetails.userIdentity.principalId
+#' 
+#' -   resource.accessKeyDetails.userIdentity.sessionContext.attributes.mfaAuthenticated
+#' 
+#' -   resource.accessKeyDetails.userIdentity.sessionContext.ec2RoleDelivery
+#' 
+#' -   resource.accessKeyDetails.userIdentity.sessionContext.invokedBy
+#' 
+#' -   resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.accountId
+#' 
+#' -   resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.arn
+#' 
+#' -   resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.principalId
+#' 
+#' -   resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.type
+#' 
+#' -   resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.userName
+#' 
+#' -   resource.accessKeyDetails.userIdentity.sessionContext.sourceIdentity
+#' 
+#' -   resource.accessKeyDetails.userIdentity.sessionContext.webIdFederationData.attributes
+#' 
+#' -   resource.accessKeyDetails.userIdentity.sessionContext.webIdFederationData.federatedProvider
+#' 
+#' -   resource.accessKeyDetails.userIdentity.type
+#' 
+#' -   resource.accessKeyDetails.userIdentity.userName
+#' 
 #' -   resource.accessKeyDetails.userName
 #' 
 #' -   resource.accessKeyDetails.userType
 #' 
+#' -   resource.bedrockGuardrailDetails.guardrailArn
+#' 
+#' -   resource.bedrockGuardrailDetails.guardrailVersion
+#' 
+#' -   resource.containerDetails.containerRuntime
+#' 
+#' -   resource.containerDetails.id
+#' 
+#' -   resource.containerDetails.image
+#' 
+#' -   resource.containerDetails.imagePrefix
+#' 
+#' -   resource.containerDetails.name
+#' 
+#' -   resource.containerDetails.securityContext.allowPrivilegeEscalation
+#' 
+#' -   resource.containerDetails.securityContext.privileged
+#' 
+#' -   resource.containerDetails.volumeMounts.mountPath
+#' 
+#' -   resource.containerDetails.volumeMounts.name
+#' 
+#' -   resource.ebsSnapshotDetails.snapshotArn
+#' 
+#' -   resource.ebsVolumeDetails.scannedVolumeDetails.deviceName
+#' 
+#' -   resource.ebsVolumeDetails.scannedVolumeDetails.encryptionType
+#' 
+#' -   resource.ebsVolumeDetails.scannedVolumeDetails.kmsKeyArn
+#' 
+#' -   resource.ebsVolumeDetails.scannedVolumeDetails.snapshotArn
+#' 
+#' -   resource.ebsVolumeDetails.scannedVolumeDetails.volumeArn
+#' 
+#' -   resource.ebsVolumeDetails.scannedVolumeDetails.volumeSizeInGB
+#' 
+#' -   resource.ebsVolumeDetails.scannedVolumeDetails.volumeType
+#' 
+#' -   resource.ebsVolumeDetails.skippedVolumeDetails.deviceName
+#' 
+#' -   resource.ebsVolumeDetails.skippedVolumeDetails.encryptionType
+#' 
+#' -   resource.ebsVolumeDetails.skippedVolumeDetails.kmsKeyArn
+#' 
+#' -   resource.ebsVolumeDetails.skippedVolumeDetails.snapshotArn
+#' 
+#' -   resource.ebsVolumeDetails.skippedVolumeDetails.volumeArn
+#' 
+#' -   resource.ebsVolumeDetails.skippedVolumeDetails.volumeSizeInGB
+#' 
+#' -   resource.ebsVolumeDetails.skippedVolumeDetails.volumeType
+#' 
+#' -   resource.ec2ImageDetails.imageArn
+#' 
+#' -   resource.ecsClusterDetails.activeServicesCount
+#' 
+#' -   resource.ecsClusterDetails.arn
+#' 
+#' -   resource.ecsClusterDetails.name
+#' 
+#' -   resource.ecsClusterDetails.registeredContainerInstancesCount
+#' 
+#' -   resource.ecsClusterDetails.runningTasksCount
+#' 
+#' -   resource.ecsClusterDetails.status
+#' 
+#' -   resource.ecsClusterDetails.tags.key
+#' 
+#' -   resource.ecsClusterDetails.tags.value
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.arn
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.containers.containerRuntime
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.containers.id
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.containers.image
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.containers.imagePrefix
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.containers.name
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.containers.securityContext.allowPrivilegeEscalation
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.containers.securityContext.privileged
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.containers.volumeMounts.mountPath
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.containers.volumeMounts.name
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.createdAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.definitionArn
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.group
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.launchType
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.startedAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.startedBy
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.tags.key
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.tags.value
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.version
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.volumes.hostPath.path
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.volumes.name
+#' 
+#' -   resource.eksClusterDetails.arn
+#' 
+#' -   resource.eksClusterDetails.createdAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   resource.eksClusterDetails.name
+#' 
+#' -   resource.eksClusterDetails.status
+#' 
+#' -   resource.eksClusterDetails.tags.key
+#' 
+#' -   resource.eksClusterDetails.tags.value
+#' 
+#' -   resource.eksClusterDetails.vpcId
+#' 
+#' -   resource.instanceDetails.availabilityZone
+#' 
+#' -   resource.instanceDetails.iamInstanceProfile.arn
+#' 
 #' -   resource.instanceDetails.iamInstanceProfile.id
+#' 
+#' -   resource.instanceDetails.imageDescription
 #' 
 #' -   resource.instanceDetails.imageId
 #' 
 #' -   resource.instanceDetails.instanceId
 #' 
-#' -   resource.instanceDetails.tags.key
+#' -   resource.instanceDetails.instanceState
 #' 
-#' -   resource.instanceDetails.tags.value
+#' -   resource.instanceDetails.instanceType
+#' 
+#' -   resource.instanceDetails.launchTime
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
 #' 
 #' -   resource.instanceDetails.networkInterfaces.ipv6Addresses
+#' 
+#' -   resource.instanceDetails.networkInterfaces.networkInterfaceId
+#' 
+#' -   resource.instanceDetails.networkInterfaces.privateDnsName
+#' 
+#' -   resource.instanceDetails.networkInterfaces.privateIpAddress
+#' 
+#' -   resource.instanceDetails.networkInterfaces.privateIpAddresses.privateDnsName
 #' 
 #' -   resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress
 #' 
@@ -401,11 +525,205 @@ guardduty_create_detector <- function(Enable, ClientToken = NULL, FindingPublish
 #' 
 #' -   resource.instanceDetails.outpostArn
 #' 
+#' -   resource.instanceDetails.platform
+#' 
+#' -   resource.instanceDetails.productCodes.productCodeId
+#' 
+#' -   resource.instanceDetails.productCodes.productCodeType
+#' 
+#' -   resource.instanceDetails.tags.key
+#' 
+#' -   resource.instanceDetails.tags.value
+#' 
+#' -   resource.kubernetesDetails.kubernetesUserDetails.groups
+#' 
+#' -   resource.kubernetesDetails.kubernetesUserDetails.impersonatedUser.groups
+#' 
+#' -   resource.kubernetesDetails.kubernetesUserDetails.impersonatedUser.username
+#' 
+#' -   resource.kubernetesDetails.kubernetesUserDetails.sessionName
+#' 
+#' -   resource.kubernetesDetails.kubernetesUserDetails.uid
+#' 
+#' -   resource.kubernetesDetails.kubernetesUserDetails.username
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.containers.containerRuntime
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.containers.id
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.containers.image
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.containers.imagePrefix
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.containers.name
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.containers.securityContext.allowPrivilegeEscalation
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.containers.securityContext.privileged
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.containers.volumeMounts.mountPath
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.containers.volumeMounts.name
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.hostIpc
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.hostNetwork
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.hostPid
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.name
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.namespace
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.serviceAccountName
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.type
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.uid
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.volumes.hostPath.path
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.volumes.name
+#' 
+#' -   resource.lambdaDetails.description
+#' 
+#' -   resource.lambdaDetails.functionArn
+#' 
+#' -   resource.lambdaDetails.functionName
+#' 
+#' -   resource.lambdaDetails.functionVersion
+#' 
+#' -   resource.lambdaDetails.lastModifiedAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   resource.lambdaDetails.revisionId
+#' 
+#' -   resource.lambdaDetails.role
+#' 
+#' -   resource.lambdaDetails.tags.key
+#' 
+#' -   resource.lambdaDetails.tags.value
+#' 
+#' -   resource.lambdaDetails.vpcConfig.securityGroups.groupId
+#' 
+#' -   resource.lambdaDetails.vpcConfig.securityGroups.groupName
+#' 
+#' -   resource.lambdaDetails.vpcConfig.subnetIds
+#' 
+#' -   resource.lambdaDetails.vpcConfig.vpcId
+#' 
+#' -   resource.rdsDbInstanceDetails.dbClusterIdentifier
+#' 
+#' -   resource.rdsDbInstanceDetails.dbInstanceArn
+#' 
+#' -   resource.rdsDbInstanceDetails.dbInstanceIdentifier
+#' 
+#' -   resource.rdsDbInstanceDetails.dbSecurityGroups.name
+#' 
+#' -   resource.rdsDbInstanceDetails.dbSecurityGroups.status
+#' 
+#' -   resource.rdsDbInstanceDetails.dbiResourceId
+#' 
+#' -   resource.rdsDbInstanceDetails.engine
+#' 
+#' -   resource.rdsDbInstanceDetails.engineVersion
+#' 
+#' -   resource.rdsDbInstanceDetails.iamDatabaseAuthenticationEnabled
+#' 
+#' -   resource.rdsDbInstanceDetails.publiclyAccessible
+#' 
+#' -   resource.rdsDbInstanceDetails.tags.key
+#' 
+#' -   resource.rdsDbInstanceDetails.tags.value
+#' 
+#' -   resource.rdsDbInstanceDetails.vpcId
+#' 
+#' -   resource.rdsDbInstanceDetails.vpcSecurityGroups.status
+#' 
+#' -   resource.rdsDbInstanceDetails.vpcSecurityGroups.vpcSecurityGroupId
+#' 
+#' -   resource.rdsDbUserDetails.application
+#' 
+#' -   resource.rdsDbUserDetails.authMethod
+#' 
+#' -   resource.rdsDbUserDetails.database
+#' 
+#' -   resource.rdsDbUserDetails.ssl
+#' 
+#' -   resource.rdsDbUserDetails.user
+#' 
+#' -   resource.rdsLimitlessDbDetails.dbClusterIdentifier
+#' 
+#' -   resource.rdsLimitlessDbDetails.dbShardGroupArn
+#' 
+#' -   resource.rdsLimitlessDbDetails.dbShardGroupIdentifier
+#' 
+#' -   resource.rdsLimitlessDbDetails.dbShardGroupResourceId
+#' 
+#' -   resource.rdsLimitlessDbDetails.engine
+#' 
+#' -   resource.rdsLimitlessDbDetails.engineVersion
+#' 
+#' -   resource.rdsLimitlessDbDetails.tags.key
+#' 
+#' -   resource.rdsLimitlessDbDetails.tags.value
+#' 
+#' -   resource.recoveryPointDetails.backupVaultName
+#' 
+#' -   resource.recoveryPointDetails.recoveryPointArn
+#' 
 #' -   resource.resourceType
 #' 
-#' -   resource.s3BucketDetails.publicAccess.effectivePermissions
+#' -   resource.s3BucketDetails.arn
+#' 
+#' -   resource.s3BucketDetails.createdAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   resource.s3BucketDetails.defaultServerSideEncryption.encryptionType
+#' 
+#' -   resource.s3BucketDetails.defaultServerSideEncryption.kmsMasterKeyArn
 #' 
 #' -   resource.s3BucketDetails.name
+#' 
+#' -   resource.s3BucketDetails.owner.id
+#' 
+#' -   resource.s3BucketDetails.publicAccess.effectivePermission
+#' 
+#' -   resource.s3BucketDetails.publicAccess.permissionConfiguration.accountLevelPermissions.blockPublicAccess.blockPublicAcls
+#' 
+#' -   resource.s3BucketDetails.publicAccess.permissionConfiguration.accountLevelPermissions.blockPublicAccess.blockPublicPolicy
+#' 
+#' -   resource.s3BucketDetails.publicAccess.permissionConfiguration.accountLevelPermissions.blockPublicAccess.ignorePublicAcls
+#' 
+#' -   resource.s3BucketDetails.publicAccess.permissionConfiguration.accountLevelPermissions.blockPublicAccess.restrictPublicBuckets
+#' 
+#' -   resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.accessControlList.allowsPublicReadAccess
+#' 
+#' -   resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.accessControlList.allowsPublicWriteAccess
+#' 
+#' -   resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.blockPublicAccess.blockPublicAcls
+#' 
+#' -   resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.blockPublicAccess.blockPublicPolicy
+#' 
+#' -   resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.blockPublicAccess.ignorePublicAcls
+#' 
+#' -   resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.blockPublicAccess.restrictPublicBuckets
+#' 
+#' -   resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.bucketPolicy.allowsPublicReadAccess
+#' 
+#' -   resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.bucketPolicy.allowsPublicWriteAccess
+#' 
+#' -   resource.s3BucketDetails.s3ObjectDetails.eTag
+#' 
+#' -   resource.s3BucketDetails.s3ObjectDetails.hash
+#' 
+#' -   resource.s3BucketDetails.s3ObjectDetails.key
+#' 
+#' -   resource.s3BucketDetails.s3ObjectDetails.objectArn
+#' 
+#' -   resource.s3BucketDetails.s3ObjectDetails.versionId
 #' 
 #' -   resource.s3BucketDetails.tags.key
 #' 
@@ -413,17 +731,35 @@ guardduty_create_detector <- function(Enable, ClientToken = NULL, FindingPublish
 #' 
 #' -   resource.s3BucketDetails.type
 #' 
+#' -   schemaVersion
+#' 
 #' -   service.action.actionType
+#' 
+#' -   service.action.awsApiCallAction.affectedResources
 #' 
 #' -   service.action.awsApiCallAction.api
 #' 
 #' -   service.action.awsApiCallAction.callerType
 #' 
+#' -   service.action.awsApiCallAction.domainDetails.domain
+#' 
 #' -   service.action.awsApiCallAction.errorCode
+#' 
+#' -   service.action.awsApiCallAction.remoteAccountDetails.accountId
+#' 
+#' -   service.action.awsApiCallAction.remoteAccountDetails.affiliated
+#' 
+#' -   service.action.awsApiCallAction.remoteAccountDetails.awsServiceName
 #' 
 #' -   service.action.awsApiCallAction.remoteIpDetails.city.cityName
 #' 
+#' -   service.action.awsApiCallAction.remoteIpDetails.country.countryCode
+#' 
 #' -   service.action.awsApiCallAction.remoteIpDetails.country.countryName
+#' 
+#' -   service.action.awsApiCallAction.remoteIpDetails.geoLocation.lat
+#' 
+#' -   service.action.awsApiCallAction.remoteIpDetails.geoLocation.lon
 #' 
 #' -   service.action.awsApiCallAction.remoteIpDetails.ipAddressV4
 #' 
@@ -433,25 +769,115 @@ guardduty_create_detector <- function(Enable, ClientToken = NULL, FindingPublish
 #' 
 #' -   service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg
 #' 
+#' -   service.action.awsApiCallAction.remoteIpDetails.organization.isp
+#' 
+#' -   service.action.awsApiCallAction.remoteIpDetails.organization.org
+#' 
 #' -   service.action.awsApiCallAction.serviceName
+#' 
+#' -   service.action.awsApiCallAction.userAgent
+#' 
+#' -   service.action.dnsRequestAction.blocked
 #' 
 #' -   service.action.dnsRequestAction.domain
 #' 
 #' -   service.action.dnsRequestAction.domainWithSuffix
 #' 
+#' -   service.action.dnsRequestAction.protocol
+#' 
 #' -   service.action.dnsRequestAction.vpcOwnerAccountId
+#' 
+#' -   service.action.kubernetesApiCallAction.namespace
+#' 
+#' -   service.action.kubernetesApiCallAction.parameters
+#' 
+#' -   service.action.kubernetesApiCallAction.remoteIpDetails.city.cityName
+#' 
+#' -   service.action.kubernetesApiCallAction.remoteIpDetails.country.countryCode
+#' 
+#' -   service.action.kubernetesApiCallAction.remoteIpDetails.country.countryName
+#' 
+#' -   service.action.kubernetesApiCallAction.remoteIpDetails.geoLocation.lat
+#' 
+#' -   service.action.kubernetesApiCallAction.remoteIpDetails.geoLocation.lon
+#' 
+#' -   service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4
+#' 
+#' -   service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6
+#' 
+#' -   service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn
+#' 
+#' -   service.action.kubernetesApiCallAction.remoteIpDetails.organization.asnOrg
+#' 
+#' -   service.action.kubernetesApiCallAction.remoteIpDetails.organization.isp
+#' 
+#' -   service.action.kubernetesApiCallAction.remoteIpDetails.organization.org
+#' 
+#' -   service.action.kubernetesApiCallAction.requestUri
+#' 
+#' -   service.action.kubernetesApiCallAction.resource
+#' 
+#' -   service.action.kubernetesApiCallAction.resourceName
+#' 
+#' -   service.action.kubernetesApiCallAction.sourceIPs
+#' 
+#' -   service.action.kubernetesApiCallAction.statusCode
+#' 
+#' -   service.action.kubernetesApiCallAction.subresource
+#' 
+#' -   service.action.kubernetesApiCallAction.userAgent
+#' 
+#' -   service.action.kubernetesApiCallAction.verb
+#' 
+#' -   service.action.kubernetesPermissionCheckedDetails.allowed
+#' 
+#' -   service.action.kubernetesPermissionCheckedDetails.namespace
+#' 
+#' -   service.action.kubernetesPermissionCheckedDetails.resource
+#' 
+#' -   service.action.kubernetesPermissionCheckedDetails.verb
+#' 
+#' -   service.action.kubernetesRoleBindingDetails.kind
+#' 
+#' -   service.action.kubernetesRoleBindingDetails.name
+#' 
+#' -   service.action.kubernetesRoleBindingDetails.roleRefKind
+#' 
+#' -   service.action.kubernetesRoleBindingDetails.roleRefName
+#' 
+#' -   service.action.kubernetesRoleBindingDetails.uid
+#' 
+#' -   service.action.kubernetesRoleDetails.kind
+#' 
+#' -   service.action.kubernetesRoleDetails.name
+#' 
+#' -   service.action.kubernetesRoleDetails.uid
 #' 
 #' -   service.action.networkConnectionAction.blocked
 #' 
 #' -   service.action.networkConnectionAction.connectionDirection
 #' 
+#' -   service.action.networkConnectionAction.localIpDetails.ipAddressV4
+#' 
+#' -   service.action.networkConnectionAction.localIpDetails.ipAddressV6
+#' 
+#' -   service.action.networkConnectionAction.localNetworkInterface
+#' 
 #' -   service.action.networkConnectionAction.localPortDetails.port
+#' 
+#' -   service.action.networkConnectionAction.localPortDetails.portName
 #' 
 #' -   service.action.networkConnectionAction.protocol
 #' 
 #' -   service.action.networkConnectionAction.remoteIpDetails.city.cityName
 #' 
+#' -   service.action.networkConnectionAction.remoteIpDetails.country.countryCode
+#' 
 #' -   service.action.networkConnectionAction.remoteIpDetails.country.countryName
+#' 
+#' -   service.action.networkConnectionAction.remoteIpDetails.geoLocation.lat
+#' 
+#' -   service.action.networkConnectionAction.remoteIpDetails.geoLocation.lon
 #' 
 #' -   service.action.networkConnectionAction.remoteIpDetails.ipAddressV4
 #' 
@@ -461,89 +887,727 @@ guardduty_create_detector <- function(Enable, ClientToken = NULL, FindingPublish
 #' 
 #' -   service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg
 #' 
+#' -   service.action.networkConnectionAction.remoteIpDetails.organization.isp
+#' 
+#' -   service.action.networkConnectionAction.remoteIpDetails.organization.org
+#' 
 #' -   service.action.networkConnectionAction.remotePortDetails.port
 #' 
-#' -   service.action.awsApiCallAction.remoteAccountDetails.affiliated
+#' -   service.action.networkConnectionAction.remotePortDetails.portName
 #' 
-#' -   service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4
+#' -   service.action.portProbeAction.blocked
 #' 
-#' -   service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6
+#' -   service.action.portProbeAction.portProbeDetails.localIpDetails.ipAddressV4
 #' 
-#' -   service.action.kubernetesApiCallAction.namespace
+#' -   service.action.portProbeAction.portProbeDetails.localIpDetails.ipAddressV6
 #' 
-#' -   service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn
+#' -   service.action.portProbeAction.portProbeDetails.localPortDetails.port
 #' 
-#' -   service.action.kubernetesApiCallAction.requestUri
+#' -   service.action.portProbeAction.portProbeDetails.localPortDetails.portName
 #' 
-#' -   service.action.kubernetesApiCallAction.statusCode
+#' -   service.action.portProbeAction.portProbeDetails.remoteIpDetails.city.cityName
 #' 
-#' -   service.action.networkConnectionAction.localIpDetails.ipAddressV4
+#' -   service.action.portProbeAction.portProbeDetails.remoteIpDetails.country.countryCode
 #' 
-#' -   service.action.networkConnectionAction.localIpDetails.ipAddressV6
+#' -   service.action.portProbeAction.portProbeDetails.remoteIpDetails.country.countryName
 #' 
-#' -   service.action.networkConnectionAction.protocol
+#' -   service.action.portProbeAction.portProbeDetails.remoteIpDetails.geoLocation.lat
 #' 
-#' -   service.action.awsApiCallAction.serviceName
+#' -   service.action.portProbeAction.portProbeDetails.remoteIpDetails.geoLocation.lon
 #' 
-#' -   service.action.awsApiCallAction.remoteAccountDetails.accountId
+#' -   service.action.portProbeAction.portProbeDetails.remoteIpDetails.ipAddressV4
+#' 
+#' -   service.action.portProbeAction.portProbeDetails.remoteIpDetails.ipAddressV6
+#' 
+#' -   service.action.portProbeAction.portProbeDetails.remoteIpDetails.organization.asn
+#' 
+#' -   service.action.portProbeAction.portProbeDetails.remoteIpDetails.organization.asnOrg
+#' 
+#' -   service.action.portProbeAction.portProbeDetails.remoteIpDetails.organization.isp
+#' 
+#' -   service.action.portProbeAction.portProbeDetails.remoteIpDetails.organization.org
+#' 
+#' -   service.action.rdsLoginAttemptAction.loginAttributes.application
+#' 
+#' -   service.action.rdsLoginAttemptAction.loginAttributes.failedLoginAttempts
+#' 
+#' -   service.action.rdsLoginAttemptAction.loginAttributes.successfulLoginAttempts
+#' 
+#' -   service.action.rdsLoginAttemptAction.loginAttributes.user
+#' 
+#' -   service.action.rdsLoginAttemptAction.remoteIpDetails.city.cityName
+#' 
+#' -   service.action.rdsLoginAttemptAction.remoteIpDetails.country.countryCode
+#' 
+#' -   service.action.rdsLoginAttemptAction.remoteIpDetails.country.countryName
+#' 
+#' -   service.action.rdsLoginAttemptAction.remoteIpDetails.geoLocation.lat
+#' 
+#' -   service.action.rdsLoginAttemptAction.remoteIpDetails.geoLocation.lon
+#' 
+#' -   service.action.rdsLoginAttemptAction.remoteIpDetails.ipAddressV4
+#' 
+#' -   service.action.rdsLoginAttemptAction.remoteIpDetails.ipAddressV6
+#' 
+#' -   service.action.rdsLoginAttemptAction.remoteIpDetails.organization.asn
+#' 
+#' -   service.action.rdsLoginAttemptAction.remoteIpDetails.organization.asnOrg
+#' 
+#' -   service.action.rdsLoginAttemptAction.remoteIpDetails.organization.isp
+#' 
+#' -   service.action.rdsLoginAttemptAction.remoteIpDetails.organization.org
+#' 
+#' -   service.additionalInfo.agentDetails.agentId
+#' 
+#' -   service.additionalInfo.agentDetails.agentVersion
+#' 
+#' -   service.additionalInfo.anomalies.anomalousAPIs
+#' 
+#' -   service.additionalInfo.authenticationMethod
+#' 
+#' -   service.additionalInfo.averagePacketSizeIn
+#' 
+#' -   service.additionalInfo.averagePacketSizeOut
+#' 
+#' -   service.additionalInfo.context
+#' 
+#' -   service.additionalInfo.domain
+#' 
+#' -   service.additionalInfo.inBytes
+#' 
+#' -   service.additionalInfo.localNetworkInterfaceOwner
+#' 
+#' -   service.additionalInfo.localPort
+#' 
+#' -   service.additionalInfo.outBytes
+#' 
+#' -   service.additionalInfo.packetsIn
+#' 
+#' -   service.additionalInfo.packetsOut
+#' 
+#' -   service.additionalInfo.policyArn
+#' 
+#' -   service.additionalInfo.policyName
+#' 
+#' -   service.additionalInfo.remotePort
+#' 
+#' -   service.additionalInfo.sample
+#' 
+#' -   service.additionalInfo.scannedPort
+#' 
+#' -   service.additionalInfo.threatFileSha256
 #' 
 #' -   service.additionalInfo.threatListName
 #' 
-#' -   service.resourceRole
+#' -   service.additionalInfo.threatName
 #' 
-#' -   resource.eksClusterDetails.name
+#' -   service.additionalInfo.totalBytesIn
 #' 
-#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.name
+#' -   service.additionalInfo.totalBytesOut
 #' 
-#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.namespace
+#' -   service.additionalInfo.type
 #' 
-#' -   resource.kubernetesDetails.kubernetesUserDetails.username
+#' -   service.additionalInfo.unusual.asnOrg
 #' 
-#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.containers.image
+#' -   service.additionalInfo.unusual.port
 #' 
-#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.containers.imagePrefix
+#' -   service.additionalInfo.unusualProtocol
 #' 
-#' -   service.ebsVolumeScanDetails.scanId
+#' -   service.additionalInfo.userAgent.fullUserAgent
+#' 
+#' -   service.additionalInfo.userAgent.userAgentCategory
+#' 
+#' -   service.additionalInfo.value
+#' 
+#' -   service.additionalInfo.vpcOwnerAccountId
+#' 
+#' -   service.archived
+#' 
+#' -   service.count
+#' 
+#' -   service.detection.anomaly.profiles
+#' 
+#' -   service.detection.anomaly.unusual.behavior
+#' 
+#' -   service.detection.sequence.actors.id
+#' 
+#' -   service.detection.sequence.actors.process.name
+#' 
+#' -   service.detection.sequence.actors.process.path
+#' 
+#' -   service.detection.sequence.actors.process.sha256
+#' 
+#' -   service.detection.sequence.actors.session.createdTime
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.detection.sequence.actors.session.issuer
+#' 
+#' -   service.detection.sequence.actors.session.mfaStatus
+#' 
+#' -   service.detection.sequence.actors.session.uid
+#' 
+#' -   service.detection.sequence.actors.user.account.account
+#' 
+#' -   service.detection.sequence.actors.user.account.uid
+#' 
+#' -   service.detection.sequence.actors.user.credentialUid
+#' 
+#' -   service.detection.sequence.actors.user.name
+#' 
+#' -   service.detection.sequence.actors.user.type
+#' 
+#' -   service.detection.sequence.actors.user.uid
+#' 
+#' -   service.detection.sequence.additionalSequenceTypes
+#' 
+#' -   service.detection.sequence.description
+#' 
+#' -   service.detection.sequence.endpoints.autonomousSystem.name
+#' 
+#' -   service.detection.sequence.endpoints.autonomousSystem.number
+#' 
+#' -   service.detection.sequence.endpoints.connection.direction
+#' 
+#' -   service.detection.sequence.endpoints.domain
+#' 
+#' -   service.detection.sequence.endpoints.id
+#' 
+#' -   service.detection.sequence.endpoints.ip
+#' 
+#' -   service.detection.sequence.endpoints.location.city
+#' 
+#' -   service.detection.sequence.endpoints.location.country
+#' 
+#' -   service.detection.sequence.endpoints.location.lat
+#' 
+#' -   service.detection.sequence.endpoints.location.lon
+#' 
+#' -   service.detection.sequence.endpoints.port
+#' 
+#' -   service.detection.sequence.resources.accountId
+#' 
+#' -   service.detection.sequence.resources.cloudPartition
+#' 
+#' -   service.detection.sequence.resources.data.accessKey.principalId
+#' 
+#' -   service.detection.sequence.resources.data.accessKey.userName
+#' 
+#' -   service.detection.sequence.resources.data.accessKey.userType
+#' 
+#' -   service.detection.sequence.resources.data.autoscalingAutoScalingGroup.ec2InstanceUids
+#' 
+#' -   service.detection.sequence.resources.data.cloudformationStack.ec2InstanceUids
+#' 
+#' -   service.detection.sequence.resources.data.container.image
+#' 
+#' -   service.detection.sequence.resources.data.container.imageUid
+#' 
+#' -   service.detection.sequence.resources.data.ec2Image.ec2InstanceUids
+#' 
+#' -   service.detection.sequence.resources.data.ec2Instance.availabilityZone
+#' 
+#' -   service.detection.sequence.resources.data.ec2Instance.ec2NetworkInterfaceUids
+#' 
+#' -   service.detection.sequence.resources.data.ec2Instance.iamInstanceProfile.arn
+#' 
+#' -   service.detection.sequence.resources.data.ec2Instance.iamInstanceProfile.id
+#' 
+#' -   service.detection.sequence.resources.data.ec2Instance.imageDescription
+#' 
+#' -   service.detection.sequence.resources.data.ec2Instance.instanceState
+#' 
+#' -   service.detection.sequence.resources.data.ec2Instance.instanceType
+#' 
+#' -   service.detection.sequence.resources.data.ec2Instance.outpostArn
+#' 
+#' -   service.detection.sequence.resources.data.ec2Instance.platform
+#' 
+#' -   service.detection.sequence.resources.data.ec2Instance.productCodes.productCodeId
+#' 
+#' -   service.detection.sequence.resources.data.ec2Instance.productCodes.productCodeType
+#' 
+#' -   service.detection.sequence.resources.data.ec2LaunchTemplate.ec2InstanceUids
+#' 
+#' -   service.detection.sequence.resources.data.ec2LaunchTemplate.version
+#' 
+#' -   service.detection.sequence.resources.data.ec2NetworkInterface.ipv6Addresses
+#' 
+#' -   service.detection.sequence.resources.data.ec2NetworkInterface.privateIpAddresses.privateDnsName
+#' 
+#' -   service.detection.sequence.resources.data.ec2NetworkInterface.privateIpAddresses.privateIpAddress
+#' 
+#' -   service.detection.sequence.resources.data.ec2NetworkInterface.publicIp
+#' 
+#' -   service.detection.sequence.resources.data.ec2NetworkInterface.securityGroups.groupId
+#' 
+#' -   service.detection.sequence.resources.data.ec2NetworkInterface.securityGroups.groupName
+#' 
+#' -   service.detection.sequence.resources.data.ec2NetworkInterface.subNetId
+#' 
+#' -   service.detection.sequence.resources.data.ec2NetworkInterface.vpcId
+#' 
+#' -   service.detection.sequence.resources.data.ec2Vpc.ec2InstanceUids
+#' 
+#' -   service.detection.sequence.resources.data.ecsCluster.ec2InstanceUids
+#' 
+#' -   service.detection.sequence.resources.data.ecsCluster.status
+#' 
+#' -   service.detection.sequence.resources.data.ecsTask.containerUids
+#' 
+#' -   service.detection.sequence.resources.data.ecsTask.createdAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.detection.sequence.resources.data.ecsTask.launchType
+#' 
+#' -   service.detection.sequence.resources.data.ecsTask.taskDefinitionArn
+#' 
+#' -   service.detection.sequence.resources.data.eksCluster.arn
+#' 
+#' -   service.detection.sequence.resources.data.eksCluster.createdAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.detection.sequence.resources.data.eksCluster.ec2InstanceUids
+#' 
+#' -   service.detection.sequence.resources.data.eksCluster.status
+#' 
+#' -   service.detection.sequence.resources.data.eksCluster.vpcId
+#' 
+#' -   service.detection.sequence.resources.data.iamInstanceProfile.ec2InstanceUids
+#' 
+#' -   service.detection.sequence.resources.data.iamInstanceProfile.id
+#' 
+#' -   service.detection.sequence.resources.data.kubernetesWorkload.containerUids
+#' 
+#' -   service.detection.sequence.resources.data.kubernetesWorkload.namespace
+#' 
+#' -   service.detection.sequence.resources.data.kubernetesWorkload.type
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.accountPublicAccess.publicAclAccess
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.accountPublicAccess.publicAclIgnoreBehavior
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.accountPublicAccess.publicBucketRestrictBehavior
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.accountPublicAccess.publicPolicyAccess
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.bucketPublicAccess.publicAclAccess
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.bucketPublicAccess.publicAclIgnoreBehavior
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.bucketPublicAccess.publicBucketRestrictBehavior
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.bucketPublicAccess.publicPolicyAccess
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.createdAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.effectivePermission
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.encryptionKeyArn
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.encryptionType
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.ownerId
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.publicReadAccess
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.publicWriteAccess
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.s3ObjectUids
+#' 
+#' -   service.detection.sequence.resources.data.s3Object.eTag
+#' 
+#' -   service.detection.sequence.resources.data.s3Object.key
+#' 
+#' -   service.detection.sequence.resources.data.s3Object.versionId
+#' 
+#' -   service.detection.sequence.resources.name
+#' 
+#' -   service.detection.sequence.resources.region
+#' 
+#' -   service.detection.sequence.resources.resourceType
+#' 
+#' -   service.detection.sequence.resources.service
+#' 
+#' -   service.detection.sequence.resources.tags.key
+#' 
+#' -   service.detection.sequence.resources.tags.value
+#' 
+#' -   service.detection.sequence.resources.uid
+#' 
+#' -   service.detection.sequence.sequenceIndicators.key
+#' 
+#' -   service.detection.sequence.sequenceIndicators.title
+#' 
+#' -   service.detection.sequence.sequenceIndicators.values
+#' 
+#' -   service.detection.sequence.signals.actorIds
+#' 
+#' -   service.detection.sequence.signals.count
+#' 
+#' -   service.detection.sequence.signals.createdAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.detection.sequence.signals.description
+#' 
+#' -   service.detection.sequence.signals.endpointIds
+#' 
+#' -   service.detection.sequence.signals.firstSeenAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.detection.sequence.signals.lastSeenAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.detection.sequence.signals.name
+#' 
+#' -   service.detection.sequence.signals.resourceUids
+#' 
+#' -   service.detection.sequence.signals.severity
+#' 
+#' -   service.detection.sequence.signals.signalIndicators.key
+#' 
+#' -   service.detection.sequence.signals.signalIndicators.title
+#' 
+#' -   service.detection.sequence.signals.signalIndicators.values
+#' 
+#' -   service.detection.sequence.signals.type
+#' 
+#' -   service.detection.sequence.signals.uid
+#' 
+#' -   service.detection.sequence.signals.updatedAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.detection.sequence.uid
+#' 
+#' -   service.detectorId
+#' 
+#' -   service.ebsVolumeScanDetails.scanCompletedAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.highestSeverityThreatDetails.count
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.highestSeverityThreatDetails.severity
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.highestSeverityThreatDetails.threatName
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.scannedItemCount.files
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.scannedItemCount.totalGb
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.scannedItemCount.volumes
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.itemCount
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.shortened
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.fileName
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.filePath
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.hash
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.volumeArn
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.itemCount
 #' 
 #' -   service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.name
 #' 
 #' -   service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.severity
 #' 
-#' -   service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.hash
+#' -   service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.uniqueThreatNameCount
 #' 
-#' -   resource.ecsClusterDetails.name
+#' -   service.ebsVolumeScanDetails.scanDetections.threatsDetectedItemCount.files
 #' 
-#' -   resource.ecsClusterDetails.taskDetails.containers.image
+#' -   service.ebsVolumeScanDetails.scanId
 #' 
-#' -   resource.ecsClusterDetails.taskDetails.definitionArn
+#' -   service.ebsVolumeScanDetails.scanStartedAt
 #' 
-#' -   resource.containerDetails.image
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
 #' 
-#' -   resource.rdsDbInstanceDetails.dbInstanceIdentifier
+#' -   service.ebsVolumeScanDetails.scanType
 #' 
-#' -   resource.rdsDbInstanceDetails.dbClusterIdentifier
+#' -   service.ebsVolumeScanDetails.sources
 #' 
-#' -   resource.rdsDbInstanceDetails.engine
+#' -   service.ebsVolumeScanDetails.triggerFindingId
 #' 
-#' -   resource.rdsDbUserDetails.user
+#' -   service.eventFirstSeen
 #' 
-#' -   resource.rdsDbInstanceDetails.tags.key
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
 #' 
-#' -   resource.rdsDbInstanceDetails.tags.value
+#' -   service.eventLastSeen
 #' 
-#' -   service.runtimeDetails.process.executableSha256
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
 #' 
-#' -   service.runtimeDetails.process.name
+#' -   service.evidence.threatIntelligenceDetails.threatFileSha256
+#' 
+#' -   service.evidence.threatIntelligenceDetails.threatListName
+#' 
+#' -   service.evidence.threatIntelligenceDetails.threatNames
+#' 
+#' -   service.featureName
+#' 
+#' -   service.malwareScanDetails.scanCategory
+#' 
+#' -   service.malwareScanDetails.scanConfiguration.incrementalScanDetails.baselineResourceArn
+#' 
+#' -   service.malwareScanDetails.scanConfiguration.triggerType
+#' 
+#' -   service.malwareScanDetails.scanId
+#' 
+#' -   service.malwareScanDetails.scanType
+#' 
+#' -   service.malwareScanDetails.threats.count
+#' 
+#' -   service.malwareScanDetails.threats.hash
+#' 
+#' -   service.malwareScanDetails.threats.itemDetails.additionalInfo.deviceName
+#' 
+#' -   service.malwareScanDetails.threats.itemDetails.additionalInfo.versionId
+#' 
+#' -   service.malwareScanDetails.threats.itemDetails.hash
+#' 
+#' -   service.malwareScanDetails.threats.itemDetails.itemPath
+#' 
+#' -   service.malwareScanDetails.threats.itemDetails.resourceArn
+#' 
+#' -   service.malwareScanDetails.threats.itemPaths.hash
+#' 
+#' -   service.malwareScanDetails.threats.itemPaths.nestedItemPath
+#' 
+#' -   service.malwareScanDetails.threats.name
+#' 
+#' -   service.malwareScanDetails.threats.source
+#' 
+#' -   service.malwareScanDetails.uniqueThreatCount
+#' 
+#' -   service.resourceRole
+#' 
+#' -   service.runtimeDetails.context.addressFamily
+#' 
+#' -   service.runtimeDetails.context.commandLineExample
+#' 
+#' -   service.runtimeDetails.context.fileOperation
+#' 
+#' -   service.runtimeDetails.context.filePath
+#' 
+#' -   service.runtimeDetails.context.fileSystemType
+#' 
+#' -   service.runtimeDetails.context.flags
+#' 
+#' -   service.runtimeDetails.context.ianaProtocolNumber
+#' 
+#' -   service.runtimeDetails.context.ldPreloadValue
+#' 
+#' -   service.runtimeDetails.context.libraryPath
+#' 
+#' -   service.runtimeDetails.context.memoryRegions
+#' 
+#' -   service.runtimeDetails.context.modifiedAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.euid
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.executablePath
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.executableSha256
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.lineage.euid
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.lineage.executablePath
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.lineage.name
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.lineage.namespacePid
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.lineage.parentUuid
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.lineage.pid
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.lineage.startTime
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.lineage.userId
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.lineage.uuid
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.name
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.namespacePid
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.parentUuid
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.pid
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.pwd
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.startTime
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.user
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.userId
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.uuid
+#' 
+#' -   service.runtimeDetails.context.moduleFilePath
+#' 
+#' -   service.runtimeDetails.context.moduleName
+#' 
+#' -   service.runtimeDetails.context.moduleSha256
+#' 
+#' -   service.runtimeDetails.context.mountSource
+#' 
+#' -   service.runtimeDetails.context.mountTarget
+#' 
+#' -   service.runtimeDetails.context.relatedFilePaths
+#' 
+#' -   service.runtimeDetails.context.releaseAgentPath
+#' 
+#' -   service.runtimeDetails.context.runcBinaryPath
+#' 
+#' -   service.runtimeDetails.context.scriptPath
+#' 
+#' -   service.runtimeDetails.context.serviceName
+#' 
+#' -   service.runtimeDetails.context.shellHistoryFilePath
+#' 
+#' -   service.runtimeDetails.context.socketPath
+#' 
+#' -   service.runtimeDetails.context.targetProcess.euid
+#' 
+#' -   service.runtimeDetails.context.targetProcess.executablePath
+#' 
+#' -   service.runtimeDetails.context.targetProcess.executableSha256
+#' 
+#' -   service.runtimeDetails.context.targetProcess.lineage.euid
+#' 
+#' -   service.runtimeDetails.context.targetProcess.lineage.executablePath
+#' 
+#' -   service.runtimeDetails.context.targetProcess.lineage.name
+#' 
+#' -   service.runtimeDetails.context.targetProcess.lineage.namespacePid
+#' 
+#' -   service.runtimeDetails.context.targetProcess.lineage.parentUuid
+#' 
+#' -   service.runtimeDetails.context.targetProcess.lineage.pid
+#' 
+#' -   service.runtimeDetails.context.targetProcess.lineage.startTime
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.runtimeDetails.context.targetProcess.lineage.userId
+#' 
+#' -   service.runtimeDetails.context.targetProcess.lineage.uuid
+#' 
+#' -   service.runtimeDetails.context.targetProcess.name
+#' 
+#' -   service.runtimeDetails.context.targetProcess.namespacePid
+#' 
+#' -   service.runtimeDetails.context.targetProcess.parentUuid
+#' 
+#' -   service.runtimeDetails.context.targetProcess.pid
+#' 
+#' -   service.runtimeDetails.context.targetProcess.pwd
+#' 
+#' -   service.runtimeDetails.context.targetProcess.startTime
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.runtimeDetails.context.targetProcess.user
+#' 
+#' -   service.runtimeDetails.context.targetProcess.userId
+#' 
+#' -   service.runtimeDetails.context.targetProcess.uuid
+#' 
+#' -   service.runtimeDetails.context.threatFilePath
+#' 
+#' -   service.runtimeDetails.context.toolCategory
+#' 
+#' -   service.runtimeDetails.context.toolName
+#' 
+#' -   service.runtimeDetails.process.euid
 #' 
 #' -   service.runtimeDetails.process.executablePath
 #' 
-#' -   resource.lambdaDetails.functionName
+#' -   service.runtimeDetails.process.executableSha256
 #' 
-#' -   resource.lambdaDetails.functionArn
+#' -   service.runtimeDetails.process.lineage.euid
 #' 
-#' -   resource.lambdaDetails.tags.key
+#' -   service.runtimeDetails.process.lineage.executablePath
 #' 
-#' -   resource.lambdaDetails.tags.value
+#' -   service.runtimeDetails.process.lineage.name
+#' 
+#' -   service.runtimeDetails.process.lineage.namespacePid
+#' 
+#' -   service.runtimeDetails.process.lineage.parentUuid
+#' 
+#' -   service.runtimeDetails.process.lineage.pid
+#' 
+#' -   service.runtimeDetails.process.lineage.startTime
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.runtimeDetails.process.lineage.userId
+#' 
+#' -   service.runtimeDetails.process.lineage.uuid
+#' 
+#' -   service.runtimeDetails.process.name
+#' 
+#' -   service.runtimeDetails.process.namespacePid
+#' 
+#' -   service.runtimeDetails.process.parentUuid
+#' 
+#' -   service.runtimeDetails.process.pid
+#' 
+#' -   service.runtimeDetails.process.pwd
+#' 
+#' -   service.runtimeDetails.process.startTime
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.runtimeDetails.process.user
+#' 
+#' -   service.runtimeDetails.process.userId
+#' 
+#' -   service.runtimeDetails.process.uuid
+#' 
+#' -   service.serviceName
+#' 
+#' -   service.userFeedback
+#' 
+#' -   severity
+#' 
+#'     To configure severity based filters, use the following for the [FindingCriteria](https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html) condition:
+#' 
+#'     -   **Low**: `["1", "2", "3"]`
+#' 
+#'     -   **Medium**: `["4", "5", "6"]`
+#' 
+#'     -   **High**: `["7", "8"]`
+#' 
+#'     -   **Critical**: `["9", "10"]`
+#' 
+#'     For more information, see [Findings severity levels](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html) in the *Amazon GuardDuty User Guide*.
+#' 
+#' -   title
+#' 
+#' -   type
+#' 
+#' -   updatedAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
 #' @param ClientToken The idempotency token for the create request.
 #' @param Tags The tags to be added to a new filter resource.
 #'
@@ -611,7 +1675,7 @@ guardduty_create_filter <- function(DetectorId, Name, Description = NULL, Action
   op <- new_operation(
     name = "CreateFilter",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/filter",
+    http_path = "/detector/{DetectorId}/filter",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -630,35 +1694,24 @@ guardduty_create_filter <- function(DetectorId, Name, Description = NULL, Action
 #' user interface
 #'
 #' @description
-#' Creates a new IPSet, which is called a trusted IP list in the console
-#' user interface. An IPSet is a list of IP addresses that are trusted for
-#' secure communication with Amazon Web Services infrastructure and
-#' applications. GuardDuty doesn't generate findings for IP addresses that
-#' are included in IPSets. Only users from the administrator account can
-#' use this operation.
+#' Creates a new IPSet, which is called a trusted IP list in the console user interface. An IPSet is a list of IP addresses that are trusted for secure communication with Amazon Web Services infrastructure and applications. GuardDuty doesn't generate findings for IP addresses that are included in IPSets. Only users from the administrator account can use this operation.
 #'
 #' @usage
 #' guardduty_create_ip_set(DetectorId, Name, Format, Location, Activate,
 #'   ClientToken, Tags, ExpectedBucketOwner)
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account for which you
-#' want to create an IPSet.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account for which you want to create an IPSet.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param Name &#91;required&#93; The user-friendly name to identify the IPSet.
 #' 
-#' Allowed characters are alphanumeric, whitespace, dash (-), and
-#' underscores (_).
+#' Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).
 #' @param Format &#91;required&#93; The format of the file that contains the IPSet.
 #' @param Location &#91;required&#93; The URI of the file that contains the IPSet.
-#' @param Activate &#91;required&#93; A Boolean value that indicates whether GuardDuty is to start using the
-#' uploaded IPSet.
+#' @param Activate &#91;required&#93; A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.
 #' @param ClientToken The idempotency token for the create request.
 #' @param Tags The tags to be added to a new IP set resource.
-#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket
-#' specified in the **location** parameter.
+#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the **location** parameter.
 #'
 #' @return
 #' A list with the following syntax:
@@ -693,7 +1746,7 @@ guardduty_create_ip_set <- function(DetectorId, Name, Format, Location, Activate
   op <- new_operation(
     name = "CreateIPSet",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/ipset",
+    http_path = "/detector/{DetectorId}/ipset",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -713,24 +1766,16 @@ guardduty_create_ip_set <- function(DetectorId, Name, Format, Location, Activate
 #' @description
 #' Creates a new Malware Protection plan for the protected resource.
 #' 
-#' When you create a Malware Protection plan, the Amazon Web Services
-#' service terms for GuardDuty Malware Protection apply. For more
-#' information, see [Amazon Web Services service terms for GuardDuty
-#' Malware
-#' Protection](https://aws.amazon.com/service-terms/#87._Amazon_GuardDuty).
+#' When you create a Malware Protection plan, the Amazon Web Services service terms for GuardDuty Malware Protection apply. For more information, see [Amazon Web Services service terms for GuardDuty Malware Protection](https://aws.amazon.com/service-terms/#87._Amazon_GuardDuty).
 #'
 #' @usage
 #' guardduty_create_malware_protection_plan(ClientToken, Role,
 #'   ProtectedResource, Actions, Tags)
 #'
 #' @param ClientToken The idempotency token for the create request.
-#' @param Role &#91;required&#93; Amazon Resource Name (ARN) of the IAM role that has the permissions to
-#' scan and add tags to the associated protected resource.
-#' @param ProtectedResource &#91;required&#93; Information about the protected resource that is associated with the
-#' created Malware Protection plan. Presently, `S3Bucket` is the only
-#' supported protected resource.
-#' @param Actions Information about whether the tags will be added to the S3 object after
-#' scanning.
+#' @param Role &#91;required&#93; Amazon Resource Name (ARN) of the IAM role that has the permissions to scan and add tags to the associated protected resource.
+#' @param ProtectedResource &#91;required&#93; Information about the protected resource that is associated with the created Malware Protection plan. Presently, `S3Bucket` is the only supported protected resource.
+#' @param Actions Information about whether the tags will be added to the S3 object after scanning.
 #' @param Tags Tags added to the Malware Protection plan resource.
 #'
 #' @return
@@ -793,49 +1838,23 @@ guardduty_create_malware_protection_plan <- function(ClientToken = NULL, Role, P
 #' specifying a list of Amazon Web Services account IDs
 #'
 #' @description
-#' Creates member accounts of the current Amazon Web Services account by
-#' specifying a list of Amazon Web Services account IDs. This step is a
-#' prerequisite for managing the associated member accounts either by
-#' invitation or through an organization.
+#' Creates member accounts of the current Amazon Web Services account by specifying a list of Amazon Web Services account IDs. This step is a prerequisite for managing the associated member accounts either by invitation or through an organization.
 #' 
-#' As a delegated administrator, using
-#' [`create_members`][guardduty_create_members] will enable GuardDuty in
-#' the added member accounts, with the exception of the organization
-#' delegated administrator account. A delegated administrator must enable
-#' GuardDuty prior to being added as a member.
+#' As a delegated administrator, using [`create_members`][guardduty_create_members] will enable GuardDuty in the added member accounts, with the exception of the organization delegated administrator account. A delegated administrator must enable GuardDuty prior to being added as a member.
 #' 
-#' When you use CreateMembers as an Organizations delegated administrator,
-#' GuardDuty applies your organization's auto-enable settings to the member
-#' accounts in this request, irrespective of the accounts being new or
-#' existing members. For more information about the existing auto-enable
-#' settings for your organization, see
-#' [`describe_organization_configuration`][guardduty_describe_organization_configuration].
+#' When you use CreateMembers as an Organizations delegated administrator, GuardDuty applies your organization's auto-enable settings to the member accounts in this request, irrespective of the accounts being new or existing members. For more information about the existing auto-enable settings for your organization, see [`describe_organization_configuration`][guardduty_describe_organization_configuration].
 #' 
-#' If you disassociate a member account that was added by invitation, the
-#' member account details obtained from this API, including the associated
-#' email addresses, will be retained. This is done so that the delegated
-#' administrator can invoke the
-#' [`invite_members`][guardduty_invite_members] API without the need to
-#' invoke the CreateMembers API again. To remove the details associated
-#' with a member account, the delegated administrator must invoke the
-#' [`delete_members`][guardduty_delete_members] API.
+#' If you disassociate a member account that was added by invitation, the member account details obtained from this API, including the associated email addresses, will be retained. This is done so that the delegated administrator can invoke the [`invite_members`][guardduty_invite_members] API without the need to invoke the CreateMembers API again. To remove the details associated with a member account, the delegated administrator must invoke the [`delete_members`][guardduty_delete_members] API.
 #' 
-#' When the member accounts added through Organizations are later
-#' disassociated, you (administrator) can't invite them by calling the
-#' InviteMembers API. You can create an association with these member
-#' accounts again only by calling the CreateMembers API.
+#' When the member accounts added through Organizations are later disassociated, you (administrator) can't invite them by calling the InviteMembers API. You can create an association with these member accounts again only by calling the CreateMembers API.
 #'
 #' @usage
 #' guardduty_create_members(DetectorId, AccountDetails)
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account for which you
-#' want to associate member accounts.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account for which you want to associate member accounts.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param AccountDetails &#91;required&#93; A list of account ID and email address pairs of the accounts that you
-#' want to associate with the GuardDuty administrator account.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param AccountDetails &#91;required&#93; A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.
 #'
 #' @return
 #' A list with the following syntax:
@@ -872,7 +1891,7 @@ guardduty_create_members <- function(DetectorId, AccountDetails) {
   op <- new_operation(
     name = "CreateMembers",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/member",
+    http_path = "/detector/{DetectorId}/member",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -891,24 +1910,17 @@ guardduty_create_members <- function(DetectorId, AccountDetails) {
 #' findings
 #'
 #' @description
-#' Creates a publishing destination where you can export your GuardDuty
-#' findings. Before you start exporting the findings, the destination
-#' resource must exist.
+#' Creates a publishing destination where you can export your GuardDuty findings. Before you start exporting the findings, the destination resource must exist.
 #'
 #' @usage
 #' guardduty_create_publishing_destination(DetectorId, DestinationType,
 #'   DestinationProperties, ClientToken, Tags)
 #'
-#' @param DetectorId &#91;required&#93; The ID of the GuardDuty detector associated with the publishing
-#' destination.
+#' @param DetectorId &#91;required&#93; The ID of the GuardDuty detector associated with the publishing destination.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param DestinationType &#91;required&#93; The type of resource for the publishing destination. Currently only
-#' Amazon S3 buckets are supported.
-#' @param DestinationProperties &#91;required&#93; The properties of the publishing destination, including the ARNs for the
-#' destination and the KMS key used for encryption.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param DestinationType &#91;required&#93; The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.
+#' @param DestinationProperties &#91;required&#93; The properties of the publishing destination, including the ARNs for the destination and the KMS key used for encryption.
 #' @param ClientToken The idempotency token for the request.
 #' @param Tags The tags to be added to a new publishing destination resource.
 #'
@@ -945,7 +1957,7 @@ guardduty_create_publishing_destination <- function(DetectorId, DestinationType,
   op <- new_operation(
     name = "CreatePublishingDestination",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/publishingDestination",
+    http_path = "/detector/{DetectorId}/publishingDestination",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -964,18 +1976,14 @@ guardduty_create_publishing_destination <- function(DetectorId, DestinationType,
 #' types
 #'
 #' @description
-#' Generates sample findings of types specified by the list of finding
-#' types. If 'NULL' is specified for `findingTypes`, the API generates
-#' sample findings of all supported finding types.
+#' Generates sample findings of types specified by the list of finding types. If 'NULL' is specified for `findingTypes`, the API generates sample findings of all supported finding types.
 #'
 #' @usage
 #' guardduty_create_sample_findings(DetectorId, FindingTypes)
 #'
 #' @param DetectorId &#91;required&#93; The ID of the detector for which you need to create sample findings.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param FindingTypes The types of sample findings to generate.
 #'
 #' @return
@@ -1000,7 +2008,7 @@ guardduty_create_sample_findings <- function(DetectorId, FindingTypes = NULL) {
   op <- new_operation(
     name = "CreateSampleFindings",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/findings/create",
+    http_path = "/detector/{DetectorId}/findings/create",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -1018,39 +2026,22 @@ guardduty_create_sample_findings <- function(DetectorId, FindingTypes = NULL) {
 #' Creates a new threat entity set
 #'
 #' @description
-#' Creates a new threat entity set. In a threat entity set, you can provide
-#' known malicious IP addresses and domains for your Amazon Web Services
-#' environment. GuardDuty generates findings based on the entries in the
-#' threat entity sets. Only users of the administrator account can manage
-#' entity sets, which automatically apply to member accounts.
+#' Creates a new threat entity set. In a threat entity set, you can provide known malicious threat entities for your Amazon Web Services environment. GuardDuty generates findings based on the entries in the threat entity sets. Only users of the administrator account can manage entity sets, which automatically apply to member accounts.
 #'
 #' @usage
 #' guardduty_create_threat_entity_set(DetectorId, Name, Format, Location,
 #'   ExpectedBucketOwner, Activate, ClientToken, Tags)
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account for which you
-#' want to create a threat entity set.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account for which you want to create a threat entity set.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param Name &#91;required&#93; A user-friendly name to identify the threat entity set.
 #' 
-#' The name of your list can include lowercase letters, uppercase letters,
-#' numbers, dash (-), and underscore (_).
+#' The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).
 #' @param Format &#91;required&#93; The format of the file that contains the threat entity set.
-#' @param Location &#91;required&#93; The URI of the file that contains the threat entity set. The format of
-#' the `Location` URL must be a valid Amazon S3 URL format. Invalid URL
-#' formats will result in an error, regardless of whether you activate the
-#' entity set or not. For more information about format of the location
-#' URLs, see [Format of location URL under Step 2: Adding trusted or threat
-#' intelligence
-#' data](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-lists-create-activate.html)
-#' in the *Amazon GuardDuty User Guide*.
-#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket
-#' specified in the **location** parameter.
-#' @param Activate &#91;required&#93; A boolean value that indicates whether GuardDuty should start using the
-#' uploaded threat entity set to generate findings.
+#' @param Location &#91;required&#93; The URI of the file that contains the threat entity set. The format of the `Location` URL must be a valid Amazon S3 URL format. Invalid URL formats will result in an error, regardless of whether you activate the entity set or not. For more information about format of the location URLs, see [Format of location URL under Step 2: Adding trusted or threat intelligence data](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-lists-create-activate.html) in the *Amazon GuardDuty User Guide*.
+#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the **location** parameter.
+#' @param Activate &#91;required&#93; A boolean value that indicates whether GuardDuty should start using the uploaded threat entity set to generate findings.
 #' @param ClientToken The idempotency token for the create request.
 #' @param Tags The tags to be added to a new threat entity set resource.
 #'
@@ -1087,7 +2078,7 @@ guardduty_create_threat_entity_set <- function(DetectorId, Name, Format, Locatio
   op <- new_operation(
     name = "CreateThreatEntitySet",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/threatentityset",
+    http_path = "/detector/{DetectorId}/threatentityset",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -1105,31 +2096,22 @@ guardduty_create_threat_entity_set <- function(DetectorId, Name, Format, Locatio
 #' Creates a new ThreatIntelSet
 #'
 #' @description
-#' Creates a new ThreatIntelSet. ThreatIntelSets consist of known malicious
-#' IP addresses. GuardDuty generates findings based on ThreatIntelSets.
-#' Only users of the administrator account can use this operation.
+#' Creates a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses. GuardDuty generates findings based on ThreatIntelSets. Only users of the administrator account can use this operation.
 #'
 #' @usage
 #' guardduty_create_threat_intel_set(DetectorId, Name, Format, Location,
 #'   Activate, ClientToken, Tags, ExpectedBucketOwner)
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account for which you
-#' want to create a `threatIntelSet`.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account for which you want to create a `threatIntelSet`.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param Name &#91;required&#93; A user-friendly ThreatIntelSet name displayed in all findings that are
-#' generated by activity that involves IP addresses included in this
-#' ThreatIntelSet.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param Name &#91;required&#93; A user-friendly ThreatIntelSet name displayed in all findings that are generated by activity that involves IP addresses included in this ThreatIntelSet.
 #' @param Format &#91;required&#93; The format of the file that contains the ThreatIntelSet.
 #' @param Location &#91;required&#93; The URI of the file that contains the ThreatIntelSet.
-#' @param Activate &#91;required&#93; A Boolean value that indicates whether GuardDuty is to start using the
-#' uploaded ThreatIntelSet.
+#' @param Activate &#91;required&#93; A Boolean value that indicates whether GuardDuty is to start using the uploaded ThreatIntelSet.
 #' @param ClientToken The idempotency token for the create request.
 #' @param Tags The tags to be added to a new threat list resource.
-#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket
-#' specified in the **location** parameter.
+#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the **location** parameter.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1164,7 +2146,7 @@ guardduty_create_threat_intel_set <- function(DetectorId, Name, Format, Location
   op <- new_operation(
     name = "CreateThreatIntelSet",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/threatintelset",
+    http_path = "/detector/{DetectorId}/threatintelset",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -1182,42 +2164,24 @@ guardduty_create_threat_intel_set <- function(DetectorId, Name, Format, Location
 #' Creates a new trusted entity set
 #'
 #' @description
-#' Creates a new trusted entity set. In the trusted entity set, you can
-#' provide IP addresses and domains that you believe are secure for
-#' communication in your Amazon Web Services environment. GuardDuty will
-#' not generate findings for the entries that are specified in a trusted
-#' entity set. At any given time, you can have only one trusted entity set.
+#' Creates a new trusted entity set. In the trusted entity set, you can provide IP addresses and domains that you believe are secure for communication in your Amazon Web Services environment. GuardDuty will not generate findings for the entries that are specified in a trusted entity set. At any given time, you can have only one trusted entity set.
 #' 
-#' Only users of the administrator account can manage the entity sets,
-#' which automatically apply to member accounts.
+#' Only users of the administrator account can manage the entity sets, which automatically apply to member accounts.
 #'
 #' @usage
 #' guardduty_create_trusted_entity_set(DetectorId, Name, Format, Location,
 #'   ExpectedBucketOwner, Activate, ClientToken, Tags)
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account for which you
-#' want to create a trusted entity set.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account for which you want to create a trusted entity set.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param Name &#91;required&#93; A user-friendly name to identify the trusted entity set.
 #' 
-#' The name of your list can include lowercase letters, uppercase letters,
-#' numbers, dash (-), and underscore (_).
+#' The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).
 #' @param Format &#91;required&#93; The format of the file that contains the trusted entity set.
-#' @param Location &#91;required&#93; The URI of the file that contains the threat entity set. The format of
-#' the `Location` URL must be a valid Amazon S3 URL format. Invalid URL
-#' formats will result in an error, regardless of whether you activate the
-#' entity set or not. For more information about format of the location
-#' URLs, see [Format of location URL under Step 2: Adding trusted or threat
-#' intelligence
-#' data](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-lists-create-activate.html)
-#' in the *Amazon GuardDuty User Guide*.
-#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket
-#' specified in the **location** parameter.
-#' @param Activate &#91;required&#93; A boolean value that indicates whether GuardDuty is to start using the
-#' uploaded trusted entity set.
+#' @param Location &#91;required&#93; The URI of the file that contains the threat entity set. The format of the `Location` URL must be a valid Amazon S3 URL format. Invalid URL formats will result in an error, regardless of whether you activate the entity set or not. For more information about format of the location URLs, see [Format of location URL under Step 2: Adding trusted or threat intelligence data](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-lists-create-activate.html) in the *Amazon GuardDuty User Guide*.
+#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the **location** parameter.
+#' @param Activate &#91;required&#93; A boolean value that indicates whether GuardDuty is to start using the uploaded trusted entity set.
 #' @param ClientToken The idempotency token for the create request.
 #' @param Tags The tags to be added to a new trusted entity set resource.
 #'
@@ -1254,7 +2218,7 @@ guardduty_create_trusted_entity_set <- function(DetectorId, Name, Format, Locati
   op <- new_operation(
     name = "CreateTrustedEntitySet",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/trustedentityset",
+    http_path = "/detector/{DetectorId}/trustedentityset",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -1273,15 +2237,12 @@ guardduty_create_trusted_entity_set <- function(DetectorId, Name, Format, Locati
 #' Services accounts specified by their account IDs
 #'
 #' @description
-#' Declines invitations sent to the current member account by Amazon Web
-#' Services accounts specified by their account IDs.
+#' Declines invitations sent to the current member account by Amazon Web Services accounts specified by their account IDs.
 #'
 #' @usage
 #' guardduty_decline_invitations(AccountIds)
 #'
-#' @param AccountIds &#91;required&#93; A list of account IDs of the Amazon Web Services accounts that sent
-#' invitations to the current member account that you want to decline
-#' invitations from.
+#' @param AccountIds &#91;required&#93; A list of account IDs of the Amazon Web Services accounts that sent invitations to the current member account that you want to decline invitations from.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1333,17 +2294,14 @@ guardduty_decline_invitations <- function(AccountIds) {
 #' ID
 #'
 #' @description
-#' Deletes an Amazon GuardDuty detector that is specified by the detector
-#' ID.
+#' Deletes an Amazon GuardDuty detector that is specified by the detector ID.
 #'
 #' @usage
 #' guardduty_delete_detector(DetectorId)
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector that you want to delete.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #'
 #' @return
 #' An empty list.
@@ -1364,7 +2322,7 @@ guardduty_delete_detector <- function(DetectorId) {
   op <- new_operation(
     name = "DeleteDetector",
     http_method = "DELETE",
-    http_path = "/detector/{detectorId}",
+    http_path = "/detector/{DetectorId}",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -1389,9 +2347,7 @@ guardduty_delete_detector <- function(DetectorId) {
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector that is associated with the filter.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param FilterName &#91;required&#93; The name of the filter that you want to delete.
 #'
 #' @return
@@ -1414,7 +2370,7 @@ guardduty_delete_filter <- function(DetectorId, FilterName) {
   op <- new_operation(
     name = "DeleteFilter",
     http_method = "DELETE",
-    http_path = "/detector/{detectorId}/filter/{filterName}",
+    http_path = "/detector/{DetectorId}/filter/{FilterName}",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -1432,17 +2388,14 @@ guardduty_delete_filter <- function(DetectorId, FilterName) {
 #' Deletes the IPSet specified by the ipSetId
 #'
 #' @description
-#' Deletes the IPSet specified by the `ipSetId`. IPSets are called trusted
-#' IP lists in the console user interface.
+#' Deletes the IPSet specified by the `ipSetId`. IPSets are called trusted IP lists in the console user interface.
 #'
 #' @usage
 #' guardduty_delete_ip_set(DetectorId, IpSetId)
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector associated with the IPSet.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param IpSetId &#91;required&#93; The unique ID of the IPSet to delete.
 #'
 #' @return
@@ -1465,7 +2418,7 @@ guardduty_delete_ip_set <- function(DetectorId, IpSetId) {
   op <- new_operation(
     name = "DeleteIPSet",
     http_method = "DELETE",
-    http_path = "/detector/{detectorId}/ipset/{ipSetId}",
+    http_path = "/detector/{DetectorId}/ipset/{IpSetId}",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -1484,15 +2437,12 @@ guardduty_delete_ip_set <- function(DetectorId, IpSetId) {
 #' Services accounts specified by their account IDs
 #'
 #' @description
-#' Deletes invitations sent to the current member account by Amazon Web
-#' Services accounts specified by their account IDs.
+#' Deletes invitations sent to the current member account by Amazon Web Services accounts specified by their account IDs.
 #'
 #' @usage
 #' guardduty_delete_invitations(AccountIds)
 #'
-#' @param AccountIds &#91;required&#93; A list of account IDs of the Amazon Web Services accounts that sent
-#' invitations to the current member account that you want to delete
-#' invitations from.
+#' @param AccountIds &#91;required&#93; A list of account IDs of the Amazon Web Services accounts that sent invitations to the current member account that you want to delete invitations from.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1544,9 +2494,7 @@ guardduty_delete_invitations <- function(AccountIds) {
 #' Protection plan resource
 #'
 #' @description
-#' Deletes the Malware Protection plan ID associated with the Malware
-#' Protection plan resource. Use this API only when you no longer want to
-#' protect the resource associated with this Malware Protection plan ID.
+#' Deletes the Malware Protection plan ID associated with the Malware Protection plan resource. Use this API only when you no longer want to protect the resource associated with this Malware Protection plan ID.
 #'
 #' @usage
 #' guardduty_delete_malware_protection_plan(MalwareProtectionPlanId)
@@ -1572,7 +2520,7 @@ guardduty_delete_malware_protection_plan <- function(MalwareProtectionPlanId) {
   op <- new_operation(
     name = "DeleteMalwareProtectionPlan",
     http_method = "DELETE",
-    http_path = "/malware-protection-plan/{malwareProtectionPlanId}",
+    http_path = "/malware-protection-plan/{MalwareProtectionPlanId}",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -1591,24 +2539,17 @@ guardduty_delete_malware_protection_plan <- function(MalwareProtectionPlanId) {
 #' administrator account) specified by the account IDs
 #'
 #' @description
-#' Deletes GuardDuty member accounts (to the current GuardDuty
-#' administrator account) specified by the account IDs.
+#' Deletes GuardDuty member accounts (to the current GuardDuty administrator account) specified by the account IDs.
 #' 
-#' With `autoEnableOrganizationMembers` configuration for your organization
-#' set to `ALL`, you'll receive an error if you attempt to disable
-#' GuardDuty for a member account in your organization.
+#' With `autoEnableOrganizationMembers` configuration for your organization set to `ALL`, you'll receive an error if you attempt to disable GuardDuty for a member account in your organization.
 #'
 #' @usage
 #' guardduty_delete_members(DetectorId, AccountIds)
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account whose members you
-#' want to delete.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account whose members you want to delete.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param AccountIds &#91;required&#93; A list of account IDs of the GuardDuty member accounts that you want to
-#' delete.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param AccountIds &#91;required&#93; A list of account IDs of the GuardDuty member accounts that you want to delete.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1642,7 +2583,7 @@ guardduty_delete_members <- function(DetectorId, AccountIds) {
   op <- new_operation(
     name = "DeleteMembers",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/member/delete",
+    http_path = "/detector/{DetectorId}/member/delete",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -1665,12 +2606,9 @@ guardduty_delete_members <- function(DetectorId, AccountIds) {
 #' @usage
 #' guardduty_delete_publishing_destination(DetectorId, DestinationId)
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector associated with the publishing destination
-#' to delete.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector associated with the publishing destination to delete.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param DestinationId &#91;required&#93; The ID of the publishing destination to delete.
 #'
 #' @return
@@ -1693,7 +2631,7 @@ guardduty_delete_publishing_destination <- function(DetectorId, DestinationId) {
   op <- new_operation(
     name = "DeletePublishingDestination",
     http_method = "DELETE",
-    http_path = "/detector/{detectorId}/publishingDestination/{destinationId}",
+    http_path = "/detector/{DetectorId}/publishingDestination/{DestinationId}",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -1712,20 +2650,15 @@ guardduty_delete_publishing_destination <- function(DetectorId, DestinationId) {
 #' threatEntitySetId
 #'
 #' @description
-#' Deletes the threat entity set that is associated with the specified
-#' `threatEntitySetId`.
+#' Deletes the threat entity set that is associated with the specified `threatEntitySetId`.
 #'
 #' @usage
 #' guardduty_delete_threat_entity_set(DetectorId, ThreatEntitySetId)
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector associated with the threat entity set
-#' resource.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector associated with the threat entity set resource.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param ThreatEntitySetId &#91;required&#93; The unique ID that helps GuardDuty identify which threat entity set
-#' needs to be deleted.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param ThreatEntitySetId &#91;required&#93; The unique ID that helps GuardDuty identify which threat entity set needs to be deleted.
 #'
 #' @return
 #' An empty list.
@@ -1747,7 +2680,7 @@ guardduty_delete_threat_entity_set <- function(DetectorId, ThreatEntitySetId) {
   op <- new_operation(
     name = "DeleteThreatEntitySet",
     http_method = "DELETE",
-    http_path = "/detector/{detectorId}/threatentityset/{threatEntitySetId}",
+    http_path = "/detector/{DetectorId}/threatentityset/{ThreatEntitySetId}",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -1770,12 +2703,9 @@ guardduty_delete_threat_entity_set <- function(DetectorId, ThreatEntitySetId) {
 #' @usage
 #' guardduty_delete_threat_intel_set(DetectorId, ThreatIntelSetId)
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector that is associated with the
-#' threatIntelSet.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector that is associated with the threatIntelSet.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param ThreatIntelSetId &#91;required&#93; The unique ID of the threatIntelSet that you want to delete.
 #'
 #' @return
@@ -1798,7 +2728,7 @@ guardduty_delete_threat_intel_set <- function(DetectorId, ThreatIntelSetId) {
   op <- new_operation(
     name = "DeleteThreatIntelSet",
     http_method = "DELETE",
-    http_path = "/detector/{detectorId}/threatintelset/{threatIntelSetId}",
+    http_path = "/detector/{DetectorId}/threatintelset/{ThreatIntelSetId}",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -1817,20 +2747,15 @@ guardduty_delete_threat_intel_set <- function(DetectorId, ThreatIntelSetId) {
 #' trustedEntitySetId
 #'
 #' @description
-#' Deletes the trusted entity set that is associated with the specified
-#' `trustedEntitySetId`.
+#' Deletes the trusted entity set that is associated with the specified `trustedEntitySetId`.
 #'
 #' @usage
 #' guardduty_delete_trusted_entity_set(DetectorId, TrustedEntitySetId)
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector associated with the trusted entity set
-#' resource.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector associated with the trusted entity set resource.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param TrustedEntitySetId &#91;required&#93; The unique ID that helps GuardDuty identify which trusted entity set
-#' needs to be deleted.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param TrustedEntitySetId &#91;required&#93; The unique ID that helps GuardDuty identify which trusted entity set needs to be deleted.
 #'
 #' @return
 #' An empty list.
@@ -1852,7 +2777,7 @@ guardduty_delete_trusted_entity_set <- function(DetectorId, TrustedEntitySetId) 
   op <- new_operation(
     name = "DeleteTrustedEntitySet",
     http_method = "DELETE",
-    http_path = "/detector/{detectorId}/trustedentityset/{trustedEntitySetId}",
+    http_path = "/detector/{DetectorId}/trustedentityset/{TrustedEntitySetId}",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -1870,14 +2795,9 @@ guardduty_delete_trusted_entity_set <- function(DetectorId, TrustedEntitySetId) 
 #' Returns a list of malware scans
 #'
 #' @description
-#' Returns a list of malware scans. Each member account can view the
-#' malware scans for their own accounts. An administrator can view the
-#' malware scans for all the member accounts.
+#' Returns a list of malware scans. Each member account can view the malware scans for their own accounts. An administrator can view the malware scans for all the member accounts.
 #' 
-#' There might be regional differences because some data sources might not
-#' be available in all the Amazon Web Services Regions where GuardDuty is
-#' presently supported. For more information, see [Regions and
-#' endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
+#' There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see [Regions and endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
 #'
 #' @usage
 #' guardduty_describe_malware_scans(DetectorId, NextToken, MaxResults,
@@ -1885,21 +2805,11 @@ guardduty_delete_trusted_entity_set <- function(DetectorId, TrustedEntitySetId) 
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector that the request is associated with.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param NextToken You can use this parameter when paginating results. Set the value of
-#' this parameter to null on your first call to the list action. For
-#' subsequent calls to the action, fill nextToken in the request with the
-#' value of NextToken from the previous response to continue listing data.
-#' @param MaxResults You can use this parameter to indicate the maximum number of items that
-#' you want in the response. The default value is 50. The maximum value is
-#' 50.
-#' @param FilterCriteria Represents the criteria to be used in the filter for describing scan
-#' entries.
-#' @param SortCriteria Represents the criteria used for sorting scan entries. The
-#' [`attributeName`](https://docs.aws.amazon.com/guardduty/latest/APIReference/API_SortCriteria.html#guardduty-Type-SortCriteria-attributeName)
-#' is required and it must be `scanStartTime`.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param NextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.
+#' @param MaxResults You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.
+#' @param FilterCriteria Represents the criteria to be used in the filter for describing scan entries.
+#' @param SortCriteria Represents the criteria used for sorting scan entries. The [`attributeName`](https://docs.aws.amazon.com/guardduty/latest/APIReference/API_SortCriteria.html#guardduty-Type-SortCriteria-attributeName) is required and it must be `scanStartTime`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1984,7 +2894,7 @@ guardduty_describe_malware_scans <- function(DetectorId, NextToken = NULL, MaxRe
   op <- new_operation(
     name = "DescribeMalwareScans",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/malware-scans",
+    http_path = "/detector/{DetectorId}/malware-scans",
     host_prefix = "",
     paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "Scans"),
     stream_api = FALSE
@@ -2003,31 +2913,19 @@ guardduty_describe_malware_scans <- function(DetectorId, NextToken = NULL, MaxRe
 #' administrator for GuardDuty
 #'
 #' @description
-#' Returns information about the account selected as the delegated
-#' administrator for GuardDuty.
+#' Returns information about the account selected as the delegated administrator for GuardDuty.
 #' 
-#' There might be regional differences because some data sources might not
-#' be available in all the Amazon Web Services Regions where GuardDuty is
-#' presently supported. For more information, see [Regions and
-#' endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
+#' There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see [Regions and endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
 #'
 #' @usage
 #' guardduty_describe_organization_configuration(DetectorId, MaxResults,
 #'   NextToken)
 #'
-#' @param DetectorId &#91;required&#93; The detector ID of the delegated administrator for which you need to
-#' retrieve the information.
+#' @param DetectorId &#91;required&#93; The detector ID of the delegated administrator for which you need to retrieve the information.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param MaxResults You can use this parameter to indicate the maximum number of items that
-#' you want in the response.
-#' @param NextToken You can use this parameter when paginating results. Set the value of
-#' this parameter to null on your first call to the list action. For
-#' subsequent calls to the action, fill `nextToken` in the request with the
-#' value of `NextToken` from the previous response to continue listing
-#' data.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param MaxResults You can use this parameter to indicate the maximum number of items that you want in the response.
+#' @param NextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill `nextToken` in the request with the value of `NextToken` from the previous response to continue listing data.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2054,7 +2952,7 @@ guardduty_describe_malware_scans <- function(DetectorId, NextToken = NULL, MaxRe
 #'   ),
 #'   Features = list(
 #'     list(
-#'       Name = "S3_DATA_EVENTS"|"EKS_AUDIT_LOGS"|"EBS_MALWARE_PROTECTION"|"RDS_LOGIN_EVENTS"|"EKS_RUNTIME_MONITORING"|"LAMBDA_NETWORK_LOGS"|"RUNTIME_MONITORING",
+#'       Name = "S3_DATA_EVENTS"|"EKS_AUDIT_LOGS"|"EBS_MALWARE_PROTECTION"|"RDS_LOGIN_EVENTS"|"LAMBDA_NETWORK_LOGS"|"EKS_RUNTIME_MONITORING"|"RUNTIME_MONITORING",
 #'       AutoEnable = "NEW"|"NONE"|"ALL",
 #'       AdditionalConfiguration = list(
 #'         list(
@@ -2087,7 +2985,7 @@ guardduty_describe_organization_configuration <- function(DetectorId, MaxResults
   op <- new_operation(
     name = "DescribeOrganizationConfiguration",
     http_method = "GET",
-    http_path = "/detector/{detectorId}/admin",
+    http_path = "/detector/{DetectorId}/admin",
     host_prefix = "",
     paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults"),
     stream_api = FALSE
@@ -2106,18 +3004,14 @@ guardduty_describe_organization_configuration <- function(DetectorId, MaxResults
 #' provided destinationId
 #'
 #' @description
-#' Returns information about the publishing destination specified by the
-#' provided `destinationId`.
+#' Returns information about the publishing destination specified by the provided `destinationId`.
 #'
 #' @usage
 #' guardduty_describe_publishing_destination(DetectorId, DestinationId)
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector associated with the publishing destination
-#' to retrieve.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector associated with the publishing destination to retrieve.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param DestinationId &#91;required&#93; The ID of the publishing destination to retrieve.
 #'
 #' @return
@@ -2155,7 +3049,7 @@ guardduty_describe_publishing_destination <- function(DetectorId, DestinationId)
   op <- new_operation(
     name = "DescribePublishingDestination",
     http_method = "GET",
-    http_path = "/detector/{detectorId}/publishingDestination/{destinationId}",
+    http_path = "/detector/{DetectorId}/publishingDestination/{DestinationId}",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -2174,15 +3068,12 @@ guardduty_describe_publishing_destination <- function(DetectorId, DestinationId)
 #' organization
 #'
 #' @description
-#' Removes the existing GuardDuty delegated administrator of the
-#' organization. Only the organization's management account can run this
-#' API operation.
+#' Removes the existing GuardDuty delegated administrator of the organization. Only the organization's management account can run this API operation.
 #'
 #' @usage
 #' guardduty_disable_organization_admin_account(AdminAccountId)
 #'
-#' @param AdminAccountId &#91;required&#93; The Amazon Web Services Account ID for the organizations account to be
-#' disabled as a GuardDuty delegated administrator.
+#' @param AdminAccountId &#91;required&#93; The Amazon Web Services Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.
 #'
 #' @return
 #' An empty list.
@@ -2222,22 +3113,11 @@ guardduty_disable_organization_admin_account <- function(AdminAccountId) {
 #' administrator account
 #'
 #' @description
-#' Disassociates the current GuardDuty member account from its
-#' administrator account.
+#' Disassociates the current GuardDuty member account from its administrator account.
 #' 
-#' When you disassociate an invited member from a GuardDuty delegated
-#' administrator, the member account details obtained from the
-#' [`create_members`][guardduty_create_members] API, including the
-#' associated email addresses, are retained. This is done so that the
-#' delegated administrator can invoke the
-#' [`invite_members`][guardduty_invite_members] API without the need to
-#' invoke the CreateMembers API again. To remove the details associated
-#' with a member account, the delegated administrator must invoke the
-#' [`delete_members`][guardduty_delete_members] API.
+#' When you disassociate an invited member from a GuardDuty delegated administrator, the member account details obtained from the [`create_members`][guardduty_create_members] API, including the associated email addresses, are retained. This is done so that the delegated administrator can invoke the [`invite_members`][guardduty_invite_members] API without the need to invoke the CreateMembers API again. To remove the details associated with a member account, the delegated administrator must invoke the [`delete_members`][guardduty_delete_members] API.
 #' 
-#' With `autoEnableOrganizationMembers` configuration for your organization
-#' set to `ALL`, you'll receive an error if you attempt to disable
-#' GuardDuty in a member account.
+#' With `autoEnableOrganizationMembers` configuration for your organization set to `ALL`, you'll receive an error if you attempt to disable GuardDuty in a member account.
 #'
 #' @usage
 #' guardduty_disassociate_from_administrator_account(DetectorId)
@@ -2263,7 +3143,7 @@ guardduty_disassociate_from_administrator_account <- function(DetectorId) {
   op <- new_operation(
     name = "DisassociateFromAdministratorAccount",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/administrator/disassociate",
+    http_path = "/detector/{DetectorId}/administrator/disassociate",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -2282,18 +3162,9 @@ guardduty_disassociate_from_administrator_account <- function(DetectorId) {
 #' administrator account
 #'
 #' @description
-#' Disassociates the current GuardDuty member account from its
-#' administrator account.
+#' Disassociates the current GuardDuty member account from its administrator account.
 #' 
-#' When you disassociate an invited member from a GuardDuty delegated
-#' administrator, the member account details obtained from the
-#' [`create_members`][guardduty_create_members] API, including the
-#' associated email addresses, are retained. This is done so that the
-#' delegated administrator can invoke the
-#' [`invite_members`][guardduty_invite_members] API without the need to
-#' invoke the CreateMembers API again. To remove the details associated
-#' with a member account, the delegated administrator must invoke the
-#' [`delete_members`][guardduty_delete_members] API.
+#' When you disassociate an invited member from a GuardDuty delegated administrator, the member account details obtained from the [`create_members`][guardduty_create_members] API, including the associated email addresses, are retained. This is done so that the delegated administrator can invoke the [`invite_members`][guardduty_invite_members] API without the need to invoke the CreateMembers API again. To remove the details associated with a member account, the delegated administrator must invoke the [`delete_members`][guardduty_delete_members] API.
 #'
 #' @usage
 #' guardduty_disassociate_from_master_account(DetectorId)
@@ -2319,7 +3190,7 @@ guardduty_disassociate_from_master_account <- function(DetectorId) {
   op <- new_operation(
     name = "DisassociateFromMasterAccount",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/master/disassociate",
+    http_path = "/detector/{DetectorId}/master/disassociate",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -2338,44 +3209,21 @@ guardduty_disassociate_from_master_account <- function(DetectorId) {
 #' account) specified by the account IDs
 #'
 #' @description
-#' Disassociates GuardDuty member accounts (from the current administrator
-#' account) specified by the account IDs.
+#' Disassociates GuardDuty member accounts (from the current administrator account) specified by the account IDs.
 #' 
-#' When you disassociate an invited member from a GuardDuty delegated
-#' administrator, the member account details obtained from the
-#' [`create_members`][guardduty_create_members] API, including the
-#' associated email addresses, are retained. This is done so that the
-#' delegated administrator can invoke the
-#' [`invite_members`][guardduty_invite_members] API without the need to
-#' invoke the CreateMembers API again. To remove the details associated
-#' with a member account, the delegated administrator must invoke the
-#' [`delete_members`][guardduty_delete_members] API.
+#' When you disassociate an invited member from a GuardDuty delegated administrator, the member account details obtained from the [`create_members`][guardduty_create_members] API, including the associated email addresses, are retained. This is done so that the delegated administrator can invoke the [`invite_members`][guardduty_invite_members] API without the need to invoke the CreateMembers API again. To remove the details associated with a member account, the delegated administrator must invoke the [`delete_members`][guardduty_delete_members] API.
 #' 
-#' With `autoEnableOrganizationMembers` configuration for your organization
-#' set to `ALL`, you'll receive an error if you attempt to disassociate a
-#' member account before removing them from your organization.
+#' With `autoEnableOrganizationMembers` configuration for your organization set to `ALL`, you'll receive an error if you attempt to disassociate a member account before removing them from your organization.
 #' 
-#' If you disassociate a member account that was added by invitation, the
-#' member account details obtained from this API, including the associated
-#' email addresses, will be retained. This is done so that the delegated
-#' administrator can invoke the
-#' [`invite_members`][guardduty_invite_members] API without the need to
-#' invoke the CreateMembers API again. To remove the details associated
-#' with a member account, the delegated administrator must invoke the
-#' [`delete_members`][guardduty_delete_members] API.
+#' If you disassociate a member account that was added by invitation, the member account details obtained from this API, including the associated email addresses, will be retained. This is done so that the delegated administrator can invoke the [`invite_members`][guardduty_invite_members] API without the need to invoke the CreateMembers API again. To remove the details associated with a member account, the delegated administrator must invoke the [`delete_members`][guardduty_delete_members] API.
 #' 
-#' When the member accounts added through Organizations are later
-#' disassociated, you (administrator) can't invite them by calling the
-#' InviteMembers API. You can create an association with these member
-#' accounts again only by calling the CreateMembers API.
+#' When the member accounts added through Organizations are later disassociated, you (administrator) can't invite them by calling the InviteMembers API. You can create an association with these member accounts again only by calling the CreateMembers API.
 #'
 #' @usage
 #' guardduty_disassociate_members(DetectorId, AccountIds)
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account whose members you
-#' want to disassociate from the administrator account.
-#' @param AccountIds &#91;required&#93; A list of account IDs of the GuardDuty member accounts that you want to
-#' disassociate from the administrator account.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the administrator account.
+#' @param AccountIds &#91;required&#93; A list of account IDs of the GuardDuty member accounts that you want to disassociate from the administrator account.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2409,7 +3257,7 @@ guardduty_disassociate_members <- function(DetectorId, AccountIds) {
   op <- new_operation(
     name = "DisassociateMembers",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/member/disassociate",
+    http_path = "/detector/{DetectorId}/member/disassociate",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -2428,15 +3276,12 @@ guardduty_disassociate_members <- function(DetectorId, AccountIds) {
 #' your GuardDuty delegated administrator
 #'
 #' @description
-#' Designates an Amazon Web Services account within the organization as
-#' your GuardDuty delegated administrator. Only the organization's
-#' management account can run this API operation.
+#' Designates an Amazon Web Services account within the organization as your GuardDuty delegated administrator. Only the organization's management account can run this API operation.
 #'
 #' @usage
 #' guardduty_enable_organization_admin_account(AdminAccountId)
 #'
-#' @param AdminAccountId &#91;required&#93; The Amazon Web Services account ID for the organization account to be
-#' enabled as a GuardDuty delegated administrator.
+#' @param AdminAccountId &#91;required&#93; The Amazon Web Services account ID for the organization account to be enabled as a GuardDuty delegated administrator.
 #'
 #' @return
 #' An empty list.
@@ -2476,21 +3321,15 @@ guardduty_enable_organization_admin_account <- function(AdminAccountId) {
 #' with the current GuardDuty member account
 #'
 #' @description
-#' Provides the details of the GuardDuty administrator account associated
-#' with the current GuardDuty member account.
+#' Provides the details of the GuardDuty administrator account associated with the current GuardDuty member account.
 #' 
-#' Based on the type of account that runs this API, the following list
-#' shows how the API behavior varies:
+#' Based on the type of account that runs this API, the following list shows how the API behavior varies:
 #' 
-#' -   When the GuardDuty administrator account runs this API, it will
-#'     return success (`HTTP 200`) but no content.
+#' -   When the GuardDuty administrator account runs this API, it will return success (`HTTP 200`) but no content.
 #' 
-#' -   When a member account runs this API, it will return the details of
-#'     the GuardDuty administrator account that is associated with this
-#'     calling member account.
+#' -   When a member account runs this API, it will return the details of the GuardDuty administrator account that is associated with this calling member account.
 #' 
-#' -   When an individual account (not associated with an organization)
-#'     runs this API, it will return success (`HTTP 200`) but no content.
+#' -   When an individual account (not associated with an organization) runs this API, it will return success (`HTTP 200`) but no content.
 #'
 #' @usage
 #' guardduty_get_administrator_account(DetectorId)
@@ -2526,7 +3365,7 @@ guardduty_get_administrator_account <- function(DetectorId) {
   op <- new_operation(
     name = "GetAdministratorAccount",
     http_method = "GET",
-    http_path = "/detector/{detectorId}/administrator",
+    http_path = "/detector/{DetectorId}/administrator",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -2544,11 +3383,7 @@ guardduty_get_administrator_account <- function(DetectorId) {
 #' Retrieves aggregated statistics for your account
 #'
 #' @description
-#' Retrieves aggregated statistics for your account. If you are a GuardDuty
-#' administrator, you can retrieve the statistics for all the resources
-#' associated with the active member accounts in your organization who have
-#' enabled Runtime Monitoring and have the GuardDuty security agent running
-#' on their resources.
+#' Retrieves aggregated statistics for your account. If you are a GuardDuty administrator, you can retrieve the statistics for all the resources associated with the active member accounts in your organization who have enabled Runtime Monitoring and have the GuardDuty security agent running on their resources.
 #'
 #' @usage
 #' guardduty_get_coverage_statistics(DetectorId, FilterCriteria,
@@ -2556,9 +3391,7 @@ guardduty_get_administrator_account <- function(DetectorId) {
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the GuardDuty detector.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param FilterCriteria Represents the criteria used to filter the coverage statistics.
 #' @param StatisticsType &#91;required&#93; Represents the statistics type used to aggregate the coverage details.
 #'
@@ -2584,7 +3417,7 @@ guardduty_get_administrator_account <- function(DetectorId) {
 #'   FilterCriteria = list(
 #'     FilterCriterion = list(
 #'       list(
-#'         CriterionKey = "ACCOUNT_ID"|"CLUSTER_NAME"|"RESOURCE_TYPE"|"COVERAGE_STATUS"|"ADDON_VERSION"|"MANAGEMENT_TYPE"|"EKS_CLUSTER_NAME"|"ECS_CLUSTER_NAME"|"AGENT_VERSION"|"INSTANCE_ID"|"CLUSTER_ARN",
+#'         CriterionKey = "ACCOUNT_ID"|"RESOURCE_TYPE"|"COVERAGE_STATUS"|"ADDON_VERSION"|"CLUSTER_NAME"|"ECS_CLUSTER_NAME"|"MANAGEMENT_TYPE"|"EKS_CLUSTER_NAME"|"AGENT_VERSION"|"INSTANCE_ID"|"CLUSTER_ARN",
 #'         FilterCondition = list(
 #'           Equals = list(
 #'             "string"
@@ -2611,7 +3444,7 @@ guardduty_get_coverage_statistics <- function(DetectorId, FilterCriteria = NULL,
   op <- new_operation(
     name = "GetCoverageStatistics",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/coverage/statistics",
+    http_path = "/detector/{DetectorId}/coverage/statistics",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -2631,19 +3464,14 @@ guardduty_get_coverage_statistics <- function(DetectorId, FilterCriteria = NULL,
 #' @description
 #' Retrieves a GuardDuty detector specified by the detectorId.
 #' 
-#' There might be regional differences because some data sources might not
-#' be available in all the Amazon Web Services Regions where GuardDuty is
-#' presently supported. For more information, see [Regions and
-#' endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
+#' There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see [Regions and endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
 #'
 #' @usage
 #' guardduty_get_detector(DetectorId)
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector that you want to get.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2687,7 +3515,7 @@ guardduty_get_coverage_statistics <- function(DetectorId, FilterCriteria = NULL,
 #'   ),
 #'   Features = list(
 #'     list(
-#'       Name = "FLOW_LOGS"|"CLOUD_TRAIL"|"DNS_LOGS"|"S3_DATA_EVENTS"|"EKS_AUDIT_LOGS"|"EBS_MALWARE_PROTECTION"|"RDS_LOGIN_EVENTS"|"EKS_RUNTIME_MONITORING"|"LAMBDA_NETWORK_LOGS"|"RUNTIME_MONITORING",
+#'       Name = "FLOW_LOGS"|"CLOUD_TRAIL"|"DNS_LOGS"|"S3_DATA_EVENTS"|"EKS_AUDIT_LOGS"|"EBS_MALWARE_PROTECTION"|"RDS_LOGIN_EVENTS"|"LAMBDA_NETWORK_LOGS"|"EKS_RUNTIME_MONITORING"|"RUNTIME_MONITORING",
 #'       Status = "ENABLED"|"DISABLED",
 #'       UpdatedAt = as.POSIXct(
 #'         "2015-01-01"
@@ -2722,7 +3550,7 @@ guardduty_get_detector <- function(DetectorId) {
   op <- new_operation(
     name = "GetDetector",
     http_method = "GET",
-    http_path = "/detector/{detectorId}",
+    http_path = "/detector/{DetectorId}",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -2747,9 +3575,7 @@ guardduty_get_detector <- function(DetectorId) {
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector that is associated with this filter.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param FilterName &#91;required&#93; The name of the filter you want to get.
 #'
 #' @return
@@ -2815,7 +3641,7 @@ guardduty_get_filter <- function(DetectorId, FilterName) {
   op <- new_operation(
     name = "GetFilter",
     http_method = "GET",
-    http_path = "/detector/{detectorId}/filter/{filterName}",
+    http_path = "/detector/{DetectorId}/filter/{FilterName}",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -2838,12 +3664,9 @@ guardduty_get_filter <- function(DetectorId, FilterName) {
 #' @usage
 #' guardduty_get_findings(DetectorId, FindingIds, SortCriteria)
 #'
-#' @param DetectorId &#91;required&#93; The ID of the detector that specifies the GuardDuty service whose
-#' findings you want to retrieve.
+#' @param DetectorId &#91;required&#93; The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param FindingIds &#91;required&#93; The IDs of the findings that you want to retrieve.
 #' @param SortCriteria Represents the criteria used for sorting findings.
 #'
@@ -3020,6 +3843,7 @@ guardduty_get_filter <- function(DetectorId, FilterName) {
 #'             Uid = "string",
 #'             Namespace = "string",
 #'             HostNetwork = TRUE|FALSE,
+#'             ServiceAccountName = "string",
 #'             Containers = list(
 #'               list(
 #'                 ContainerRuntime = "string",
@@ -3047,7 +3871,6 @@ guardduty_get_filter <- function(DetectorId, FilterName) {
 #'                 )
 #'               )
 #'             ),
-#'             ServiceAccountName = "string",
 #'             HostIPC = TRUE|FALSE,
 #'             HostPID = TRUE|FALSE
 #'           )
@@ -3155,6 +3978,35 @@ guardduty_get_filter <- function(DetectorId, FilterName) {
 #'             AllowPrivilegeEscalation = TRUE|FALSE
 #'           )
 #'         ),
+#'         LambdaDetails = list(
+#'           FunctionArn = "string",
+#'           FunctionName = "string",
+#'           Description = "string",
+#'           LastModifiedAt = as.POSIXct(
+#'             "2015-01-01"
+#'           ),
+#'           RevisionId = "string",
+#'           FunctionVersion = "string",
+#'           Role = "string",
+#'           VpcConfig = list(
+#'             SubnetIds = list(
+#'               "string"
+#'             ),
+#'             VpcId = "string",
+#'             SecurityGroups = list(
+#'               list(
+#'                 GroupId = "string",
+#'                 GroupName = "string"
+#'               )
+#'             )
+#'           ),
+#'           Tags = list(
+#'             list(
+#'               Key = "string",
+#'               Value = "string"
+#'             )
+#'           )
+#'         ),
 #'         RdsDbInstanceDetails = list(
 #'           DbInstanceIdentifier = "string",
 #'           Engine = "string",
@@ -3189,35 +4041,6 @@ guardduty_get_filter <- function(DetectorId, FilterName) {
 #'           Database = "string",
 #'           Ssl = "string",
 #'           AuthMethod = "string"
-#'         ),
-#'         LambdaDetails = list(
-#'           FunctionArn = "string",
-#'           FunctionName = "string",
-#'           Description = "string",
-#'           LastModifiedAt = as.POSIXct(
-#'             "2015-01-01"
-#'           ),
-#'           RevisionId = "string",
-#'           FunctionVersion = "string",
-#'           Role = "string",
-#'           VpcConfig = list(
-#'             SubnetIds = list(
-#'               "string"
-#'             ),
-#'             VpcId = "string",
-#'             SecurityGroups = list(
-#'               list(
-#'                 GroupId = "string",
-#'                 GroupName = "string"
-#'               )
-#'             )
-#'           ),
-#'           Tags = list(
-#'             list(
-#'               Key = "string",
-#'               Value = "string"
-#'             )
-#'           )
 #'         ),
 #'         EbsSnapshotDetails = list(
 #'           SnapshotArn = "string"
@@ -3357,6 +4180,10 @@ guardduty_get_filter <- function(DetectorId, FilterName) {
 #'           KubernetesApiCallAction = list(
 #'             RequestUri = "string",
 #'             Verb = "string",
+#'             Resource = "string",
+#'             Subresource = "string",
+#'             Namespace = "string",
+#'             ResourceName = "string",
 #'             SourceIps = list(
 #'               "string"
 #'             ),
@@ -3383,11 +4210,25 @@ guardduty_get_filter <- function(DetectorId, FilterName) {
 #'               )
 #'             ),
 #'             StatusCode = 123,
-#'             Parameters = "string",
+#'             Parameters = "string"
+#'           ),
+#'           KubernetesPermissionCheckedDetails = list(
+#'             Verb = "string",
 #'             Resource = "string",
-#'             Subresource = "string",
 #'             Namespace = "string",
-#'             ResourceName = "string"
+#'             Allowed = TRUE|FALSE
+#'           ),
+#'           KubernetesRoleBindingDetails = list(
+#'             Kind = "string",
+#'             Name = "string",
+#'             Uid = "string",
+#'             RoleRefName = "string",
+#'             RoleRefKind = "string"
+#'           ),
+#'           KubernetesRoleDetails = list(
+#'             Kind = "string",
+#'             Name = "string",
+#'             Uid = "string"
 #'           ),
 #'           RdsLoginAttemptAction = list(
 #'             RemoteIpDetails = list(
@@ -3419,24 +4260,6 @@ guardduty_get_filter <- function(DetectorId, FilterName) {
 #'                 SuccessfulLoginAttempts = 123
 #'               )
 #'             )
-#'           ),
-#'           KubernetesPermissionCheckedDetails = list(
-#'             Verb = "string",
-#'             Resource = "string",
-#'             Namespace = "string",
-#'             Allowed = TRUE|FALSE
-#'           ),
-#'           KubernetesRoleBindingDetails = list(
-#'             Kind = "string",
-#'             Name = "string",
-#'             Uid = "string",
-#'             RoleRefName = "string",
-#'             RoleRefKind = "string"
-#'           ),
-#'           KubernetesRoleDetails = list(
-#'             Kind = "string",
-#'             Name = "string",
-#'             Uid = "string"
 #'           )
 #'         ),
 #'         Evidence = list(
@@ -3919,7 +4742,7 @@ guardduty_get_filter <- function(DetectorId, FilterName) {
 #'                 ),
 #'                 SignalIndicators = list(
 #'                   list(
-#'                     Key = "SUSPICIOUS_USER_AGENT"|"SUSPICIOUS_NETWORK"|"MALICIOUS_IP"|"TOR_IP"|"ATTACK_TACTIC"|"HIGH_RISK_API"|"ATTACK_TECHNIQUE"|"UNUSUAL_API_FOR_ACCOUNT"|"UNUSUAL_ASN_FOR_ACCOUNT"|"UNUSUAL_ASN_FOR_USER"|"SUSPICIOUS_PROCESS"|"MALICIOUS_DOMAIN"|"MALICIOUS_PROCESS"|"CRYPTOMINING_IP"|"CRYPTOMINING_DOMAIN"|"CRYPTOMINING_PROCESS",
+#'                     Key = "SUSPICIOUS_USER_AGENT"|"SUSPICIOUS_NETWORK"|"MALICIOUS_IP"|"TOR_IP"|"ATTACK_TACTIC"|"HIGH_RISK_API"|"ATTACK_TECHNIQUE"|"UNUSUAL_API_FOR_ACCOUNT"|"UNUSUAL_ASN_FOR_ACCOUNT"|"UNUSUAL_ASN_FOR_USER"|"SUSPICIOUS_PROCESS"|"MALICIOUS_DOMAIN"|"MALICIOUS_PROCESS"|"CRYPTOMINING_IP"|"CRYPTOMINING_DOMAIN"|"CRYPTOMINING_PROCESS"|"MALICIOUS_FILE"|"VULNERABILITY"|"MALICIOUS_PACKAGE"|"MISCONFIGURATION"|"REACHABILITY"|"SENSITIVE_DATA",
 #'                     Values = list(
 #'                       "string"
 #'                     ),
@@ -3930,7 +4753,7 @@ guardduty_get_filter <- function(DetectorId, FilterName) {
 #'             ),
 #'             SequenceIndicators = list(
 #'               list(
-#'                 Key = "SUSPICIOUS_USER_AGENT"|"SUSPICIOUS_NETWORK"|"MALICIOUS_IP"|"TOR_IP"|"ATTACK_TACTIC"|"HIGH_RISK_API"|"ATTACK_TECHNIQUE"|"UNUSUAL_API_FOR_ACCOUNT"|"UNUSUAL_ASN_FOR_ACCOUNT"|"UNUSUAL_ASN_FOR_USER"|"SUSPICIOUS_PROCESS"|"MALICIOUS_DOMAIN"|"MALICIOUS_PROCESS"|"CRYPTOMINING_IP"|"CRYPTOMINING_DOMAIN"|"CRYPTOMINING_PROCESS",
+#'                 Key = "SUSPICIOUS_USER_AGENT"|"SUSPICIOUS_NETWORK"|"MALICIOUS_IP"|"TOR_IP"|"ATTACK_TACTIC"|"HIGH_RISK_API"|"ATTACK_TECHNIQUE"|"UNUSUAL_API_FOR_ACCOUNT"|"UNUSUAL_ASN_FOR_ACCOUNT"|"UNUSUAL_ASN_FOR_USER"|"SUSPICIOUS_PROCESS"|"MALICIOUS_DOMAIN"|"MALICIOUS_PROCESS"|"CRYPTOMINING_IP"|"CRYPTOMINING_DOMAIN"|"CRYPTOMINING_PROCESS"|"MALICIOUS_FILE"|"VULNERABILITY"|"MALICIOUS_PACKAGE"|"MISCONFIGURATION"|"REACHABILITY"|"SENSITIVE_DATA",
 #'                 Values = list(
 #'                   "string"
 #'                 ),
@@ -4013,7 +4836,7 @@ guardduty_get_findings <- function(DetectorId, FindingIds, SortCriteria = NULL) 
   op <- new_operation(
     name = "GetFindings",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/findings/get",
+    http_path = "/detector/{DetectorId}/findings/get",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -4033,14 +4856,9 @@ guardduty_get_findings <- function(DetectorId, FindingIds, SortCriteria = NULL) 
 #' @description
 #' Lists GuardDuty findings statistics for the specified detector ID.
 #' 
-#' You must provide either `findingStatisticTypes` or `groupBy` parameter,
-#' and not both. You can use the `maxResults` and `orderBy` parameters only
-#' when using `groupBy`.
+#' You must provide either `findingStatisticTypes` or `groupBy` parameter, and not both. You can use the `maxResults` and `orderBy` parameters only when using `groupBy`.
 #' 
-#' There might be regional differences because some flags might not be
-#' available in all the Regions where GuardDuty is currently supported. For
-#' more information, see [Regions and
-#' endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
+#' There might be regional differences because some flags might not be available in all the Regions where GuardDuty is currently supported. For more information, see [Regions and endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
 #'
 #' @usage
 #' guardduty_get_findings_statistics(DetectorId, FindingStatisticTypes,
@@ -4048,19 +4866,14 @@ guardduty_get_findings <- function(DetectorId, FindingIds, SortCriteria = NULL) 
 #'
 #' @param DetectorId &#91;required&#93; The ID of the detector whose findings statistics you want to retrieve.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param FindingStatisticTypes The types of finding statistics to retrieve.
 #' @param FindingCriteria Represents the criteria that is used for querying findings.
-#' @param GroupBy Displays the findings statistics grouped by one of the listed valid
-#' values.
-#' @param OrderBy Displays the sorted findings in the requested order. The default value
-#' of `orderBy` is `DESC`.
+#' @param GroupBy Displays the findings statistics grouped by one of the listed valid values.
+#' @param OrderBy Displays the sorted findings in the requested order. The default value of `orderBy` is `DESC`.
 #' 
 #' You can use this parameter only with the `groupBy` parameter.
-#' @param MaxResults The maximum number of results to be returned in the response. The
-#' default value is 25.
+#' @param MaxResults The maximum number of results to be returned in the response. The default value is 25.
 #' 
 #' You can use this parameter only with the `groupBy` parameter.
 #'
@@ -4181,7 +4994,7 @@ guardduty_get_findings_statistics <- function(DetectorId, FindingStatisticTypes 
   op <- new_operation(
     name = "GetFindingsStatistics",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/findings/statistics",
+    http_path = "/detector/{DetectorId}/findings/statistics",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -4206,9 +5019,7 @@ guardduty_get_findings_statistics <- function(DetectorId, FindingStatisticTypes 
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector that is associated with the IPSet.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param IpSetId &#91;required&#93; The unique ID of the IPSet to retrieve.
 #'
 #' @return
@@ -4243,7 +5054,7 @@ guardduty_get_ip_set <- function(DetectorId, IpSetId) {
   op <- new_operation(
     name = "GetIPSet",
     http_method = "GET",
-    http_path = "/detector/{detectorId}/ipset/{ipSetId}",
+    http_path = "/detector/{DetectorId}/ipset/{IpSetId}",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -4262,8 +5073,7 @@ guardduty_get_ip_set <- function(DetectorId, IpSetId) {
 #' to the current member account except the currently accepted invitation
 #'
 #' @description
-#' Returns the count of all GuardDuty membership invitations that were sent
-#' to the current member account except the currently accepted invitation.
+#' Returns the count of all GuardDuty membership invitations that were sent to the current member account except the currently accepted invitation.
 #'
 #' @usage
 #' guardduty_get_invitations_count()
@@ -4311,8 +5121,7 @@ guardduty_get_invitations_count <- function() {
 #' Protection plan ID
 #'
 #' @description
-#' Retrieves the Malware Protection plan details associated with a Malware
-#' Protection plan ID.
+#' Retrieves the Malware Protection plan details associated with a Malware Protection plan ID.
 #'
 #' @usage
 #' guardduty_get_malware_protection_plan(MalwareProtectionPlanId)
@@ -4370,7 +5179,7 @@ guardduty_get_malware_protection_plan <- function(MalwareProtectionPlanId) {
   op <- new_operation(
     name = "GetMalwareProtectionPlan",
     http_method = "GET",
-    http_path = "/malware-protection-plan/{malwareProtectionPlanId}",
+    http_path = "/malware-protection-plan/{MalwareProtectionPlanId}",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -4388,22 +5197,14 @@ guardduty_get_malware_protection_plan <- function(MalwareProtectionPlanId) {
 #' Retrieves the detailed information for a specific malware scan
 #'
 #' @description
-#' Retrieves the detailed information for a specific malware scan. Each
-#' member account can view the malware scan details for their own account.
-#' An administrator can view malware scan details for all accounts in the
-#' organization.
+#' Retrieves the detailed information for a specific malware scan. Each member account can view the malware scan details for their own account. An administrator can view malware scan details for all accounts in the organization.
 #' 
-#' There might be regional differences because some data sources might not
-#' be available in all the Amazon Web Services Regions where GuardDuty is
-#' presently supported. For more information, see [Regions and
-#' endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
+#' There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see [Regions and endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
 #'
 #' @usage
 #' guardduty_get_malware_scan(ScanId)
 #'
-#' @param ScanId &#91;required&#93; A unique identifier that gets generated when you invoke the API without
-#' any error. Each malware scan has a corresponding scan ID. Using this
-#' scan ID, you can monitor the status of your malware scan.
+#' @param ScanId &#91;required&#93; A unique identifier that gets generated when you invoke the API without any error. Each malware scan has a corresponding scan ID. Using this scan ID, you can monitor the status of your malware scan.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4413,16 +5214,16 @@ guardduty_get_malware_protection_plan <- function(MalwareProtectionPlanId) {
 #'   DetectorId = "string",
 #'   AdminDetectorId = "string",
 #'   ResourceArn = "string",
-#'   ResourceType = "EBS_RECOVERY_POINT"|"EBS_SNAPSHOT"|"EBS_VOLUME"|"EC2_AMI"|"EC2_INSTANCE"|"EC2_RECOVERY_POINT"|"S3_RECOVERY_POINT"|"S3_BUCKET",
+#'   ResourceType = "EBS_RECOVERY_POINT"|"EBS_SNAPSHOT"|"EBS_VOLUME"|"EC2_AMI"|"EC2_INSTANCE"|"EC2_RECOVERY_POINT"|"S3_RECOVERY_POINT"|"S3_BUCKET"|"S3_POINT_IN_TIME_RECOVERY",
 #'   ScannedResourcesCount = 123,
 #'   SkippedResourcesCount = 123,
 #'   FailedResourcesCount = 123,
 #'   ScannedResources = list(
 #'     list(
 #'       ScannedResourceArn = "string",
-#'       ScannedResourceType = "EBS_RECOVERY_POINT"|"EBS_SNAPSHOT"|"EBS_VOLUME"|"EC2_AMI"|"EC2_INSTANCE"|"EC2_RECOVERY_POINT"|"S3_RECOVERY_POINT"|"S3_BUCKET",
+#'       ScannedResourceType = "EBS_RECOVERY_POINT"|"EBS_SNAPSHOT"|"EBS_VOLUME"|"EC2_AMI"|"EC2_INSTANCE"|"EC2_RECOVERY_POINT"|"S3_RECOVERY_POINT"|"S3_BUCKET"|"S3_POINT_IN_TIME_RECOVERY",
 #'       ScannedResourceStatus = "RUNNING"|"COMPLETED"|"COMPLETED_WITH_ISSUES"|"FAILED"|"SKIPPED",
-#'       ScanStatusReason = "ACCESS_DENIED"|"RESOURCE_NOT_FOUND"|"SNAPSHOT_SIZE_LIMIT_EXCEEDED"|"RESOURCE_UNAVAILABLE"|"INCONSISTENT_SOURCE"|"INCREMENTAL_NO_DIFFERENCE"|"NO_EBS_VOLUMES_FOUND"|"UNSUPPORTED_PRODUCT_CODE_TYPE"|"AMI_SNAPSHOT_LIMIT_EXCEEDED"|"UNRELATED_RESOURCES"|"BASE_RESOURCE_NOT_SCANNED"|"BASE_CREATED_AFTER_TARGET"|"UNSUPPORTED_FOR_INCREMENTAL"|"UNSUPPORTED_AMI"|"UNSUPPORTED_SNAPSHOT"|"UNSUPPORTED_COMPOSITE_RECOVERY_POINT",
+#'       ScanStatusReason = "ACCESS_DENIED"|"RESOURCE_NOT_FOUND"|"SNAPSHOT_SIZE_LIMIT_EXCEEDED"|"RESOURCE_UNAVAILABLE"|"INCONSISTENT_SOURCE"|"INCREMENTAL_NO_DIFFERENCE"|"NO_EBS_VOLUMES_FOUND"|"UNSUPPORTED_PRODUCT_CODE_TYPE"|"AMI_SNAPSHOT_LIMIT_EXCEEDED"|"UNRELATED_RESOURCES"|"BASE_RESOURCE_NOT_SCANNED"|"BASE_CREATED_AFTER_TARGET"|"UNSUPPORTED_FOR_INCREMENTAL"|"UNSUPPORTED_AMI"|"UNSUPPORTED_SNAPSHOT"|"UNSUPPORTED_COMPOSITE_RECOVERY_POINT"|"ALL_FILES_SKIPPED_OR_FAILED",
 #'       ResourceDetails = list(
 #'         EbsVolume = list(
 #'           VolumeArn = "string",
@@ -4450,12 +5251,20 @@ guardduty_get_malware_protection_plan <- function(MalwareProtectionPlanId) {
 #'       BaselineResourceArn = "string"
 #'     ),
 #'     RecoveryPoint = list(
-#'       BackupVaultName = "string"
+#'       BackupVaultName = "string",
+#'       ContinuousScanDetails = list(
+#'         StartTime = as.POSIXct(
+#'           "2015-01-01"
+#'         ),
+#'         EndTime = as.POSIXct(
+#'           "2015-01-01"
+#'         )
+#'       )
 #'     )
 #'   ),
 #'   ScanCategory = "FULL_SCAN"|"INCREMENTAL_SCAN",
 #'   ScanStatus = "RUNNING"|"COMPLETED"|"COMPLETED_WITH_ISSUES"|"FAILED"|"SKIPPED",
-#'   ScanStatusReason = "ACCESS_DENIED"|"RESOURCE_NOT_FOUND"|"SNAPSHOT_SIZE_LIMIT_EXCEEDED"|"RESOURCE_UNAVAILABLE"|"INCONSISTENT_SOURCE"|"INCREMENTAL_NO_DIFFERENCE"|"NO_EBS_VOLUMES_FOUND"|"UNSUPPORTED_PRODUCT_CODE_TYPE"|"AMI_SNAPSHOT_LIMIT_EXCEEDED"|"UNRELATED_RESOURCES"|"BASE_RESOURCE_NOT_SCANNED"|"BASE_CREATED_AFTER_TARGET"|"UNSUPPORTED_FOR_INCREMENTAL"|"UNSUPPORTED_AMI"|"UNSUPPORTED_SNAPSHOT"|"UNSUPPORTED_COMPOSITE_RECOVERY_POINT",
+#'   ScanStatusReason = "ACCESS_DENIED"|"RESOURCE_NOT_FOUND"|"SNAPSHOT_SIZE_LIMIT_EXCEEDED"|"RESOURCE_UNAVAILABLE"|"INCONSISTENT_SOURCE"|"INCREMENTAL_NO_DIFFERENCE"|"NO_EBS_VOLUMES_FOUND"|"UNSUPPORTED_PRODUCT_CODE_TYPE"|"AMI_SNAPSHOT_LIMIT_EXCEEDED"|"UNRELATED_RESOURCES"|"BASE_RESOURCE_NOT_SCANNED"|"BASE_CREATED_AFTER_TARGET"|"UNSUPPORTED_FOR_INCREMENTAL"|"UNSUPPORTED_AMI"|"UNSUPPORTED_SNAPSHOT"|"UNSUPPORTED_COMPOSITE_RECOVERY_POINT"|"ALL_FILES_SKIPPED_OR_FAILED",
 #'   ScanType = "BACKUP_INITIATED"|"ON_DEMAND"|"GUARDDUTY_INITIATED",
 #'   ScanStartedAt = as.POSIXct(
 #'     "2015-01-01"
@@ -4510,7 +5319,7 @@ guardduty_get_malware_scan <- function(ScanId) {
   op <- new_operation(
     name = "GetMalwareScan",
     http_method = "GET",
-    http_path = "/malware-scan/{scanId}",
+    http_path = "/malware-scan/{ScanId}",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -4530,19 +5339,14 @@ guardduty_get_malware_scan <- function(ScanId) {
 #' @description
 #' Returns the details of the malware scan settings.
 #' 
-#' There might be regional differences because some data sources might not
-#' be available in all the Amazon Web Services Regions where GuardDuty is
-#' presently supported. For more information, see [Regions and
-#' endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
+#' There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see [Regions and endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
 #'
 #' @usage
 #' guardduty_get_malware_scan_settings(DetectorId)
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector that is associated with this scan.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4590,7 +5394,7 @@ guardduty_get_malware_scan_settings <- function(DetectorId) {
   op <- new_operation(
     name = "GetMalwareScanSettings",
     http_method = "GET",
-    http_path = "/detector/{detectorId}/malware-scan-settings",
+    http_path = "/detector/{DetectorId}/malware-scan-settings",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -4609,17 +5413,14 @@ guardduty_get_malware_scan_settings <- function(DetectorId) {
 #' with the current GuardDuty member account
 #'
 #' @description
-#' Provides the details for the GuardDuty administrator account associated
-#' with the current GuardDuty member account.
+#' Provides the details for the GuardDuty administrator account associated with the current GuardDuty member account.
 #'
 #' @usage
 #' guardduty_get_master_account(DetectorId)
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty member account.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4650,7 +5451,7 @@ guardduty_get_master_account <- function(DetectorId) {
   op <- new_operation(
     name = "GetMasterAccount",
     http_method = "GET",
-    http_path = "/detector/{detectorId}/master",
+    http_path = "/detector/{DetectorId}/master",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -4669,22 +5470,16 @@ guardduty_get_master_account <- function(DetectorId) {
 #' detector
 #'
 #' @description
-#' Describes which data sources are enabled for the member account's
-#' detector.
+#' Describes which data sources are enabled for the member account's detector.
 #' 
-#' There might be regional differences because some data sources might not
-#' be available in all the Amazon Web Services Regions where GuardDuty is
-#' presently supported. For more information, see [Regions and
-#' endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
+#' There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see [Regions and endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
 #'
 #' @usage
 #' guardduty_get_member_detectors(DetectorId, AccountIds)
 #'
 #' @param DetectorId &#91;required&#93; The detector ID for the administrator account.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param AccountIds &#91;required&#93; A list of member account IDs.
 #'
 #' @return
@@ -4724,7 +5519,7 @@ guardduty_get_master_account <- function(DetectorId) {
 #'       ),
 #'       Features = list(
 #'         list(
-#'           Name = "S3_DATA_EVENTS"|"EKS_AUDIT_LOGS"|"EBS_MALWARE_PROTECTION"|"RDS_LOGIN_EVENTS"|"EKS_RUNTIME_MONITORING"|"LAMBDA_NETWORK_LOGS"|"RUNTIME_MONITORING",
+#'           Name = "S3_DATA_EVENTS"|"EKS_AUDIT_LOGS"|"EBS_MALWARE_PROTECTION"|"RDS_LOGIN_EVENTS"|"LAMBDA_NETWORK_LOGS"|"EKS_RUNTIME_MONITORING"|"RUNTIME_MONITORING",
 #'           Status = "ENABLED"|"DISABLED",
 #'           UpdatedAt = as.POSIXct(
 #'             "2015-01-01"
@@ -4770,7 +5565,7 @@ guardduty_get_member_detectors <- function(DetectorId, AccountIds) {
   op <- new_operation(
     name = "GetMemberDetectors",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/member/detector/get",
+    http_path = "/detector/{DetectorId}/member/detector/get",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -4789,20 +5584,15 @@ guardduty_get_member_detectors <- function(DetectorId, AccountIds) {
 #' administrator account) specified by the account IDs
 #'
 #' @description
-#' Retrieves GuardDuty member accounts (of the current GuardDuty
-#' administrator account) specified by the account IDs.
+#' Retrieves GuardDuty member accounts (of the current GuardDuty administrator account) specified by the account IDs.
 #'
 #' @usage
 #' guardduty_get_members(DetectorId, AccountIds)
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account whose members you
-#' want to retrieve.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account whose members you want to retrieve.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param AccountIds &#91;required&#93; A list of account IDs of the GuardDuty member accounts that you want to
-#' describe.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param AccountIds &#91;required&#93; A list of account IDs of the GuardDuty member accounts that you want to describe.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4848,7 +5638,7 @@ guardduty_get_members <- function(DetectorId, AccountIds) {
   op <- new_operation(
     name = "GetMembers",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/member/get",
+    http_path = "/detector/{DetectorId}/member/get",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -4867,12 +5657,9 @@ guardduty_get_members <- function(DetectorId, AccountIds) {
 #' within GuardDuty
 #'
 #' @description
-#' Retrieves how many active member accounts have each feature enabled
-#' within GuardDuty. Only a delegated GuardDuty administrator of an
-#' organization can run this API.
+#' Retrieves how many active member accounts have each feature enabled within GuardDuty. Only a delegated GuardDuty administrator of an organization can run this API.
 #' 
-#' When you create a new organization, it might take up to 24 hours to
-#' generate the statistics for the entire organization.
+#' When you create a new organization, it might take up to 24 hours to generate the statistics for the entire organization.
 #'
 #' @usage
 #' guardduty_get_organization_statistics()
@@ -4894,7 +5681,7 @@ guardduty_get_members <- function(DetectorId, AccountIds) {
 #'       EnabledAccountsCount = 123,
 #'       CountByFeature = list(
 #'         list(
-#'           Name = "S3_DATA_EVENTS"|"EKS_AUDIT_LOGS"|"EBS_MALWARE_PROTECTION"|"RDS_LOGIN_EVENTS"|"EKS_RUNTIME_MONITORING"|"LAMBDA_NETWORK_LOGS"|"RUNTIME_MONITORING",
+#'           Name = "S3_DATA_EVENTS"|"EKS_AUDIT_LOGS"|"EBS_MALWARE_PROTECTION"|"RDS_LOGIN_EVENTS"|"LAMBDA_NETWORK_LOGS"|"EKS_RUNTIME_MONITORING"|"RUNTIME_MONITORING",
 #'           EnabledAccountsCount = 123,
 #'           AdditionalConfiguration = list(
 #'             list(
@@ -4939,17 +5726,14 @@ guardduty_get_organization_statistics <- function() {
 #' trial period
 #'
 #' @description
-#' Provides the number of days left for each data source used in the free
-#' trial period.
+#' Provides the number of days left for each data source used in the free trial period.
 #'
 #' @usage
 #' guardduty_get_remaining_free_trial_days(DetectorId, AccountIds)
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty member account.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param AccountIds &#91;required&#93; A list of account identifiers of the GuardDuty member account.
 #'
 #' @return
@@ -4985,7 +5769,7 @@ guardduty_get_organization_statistics <- function() {
 #'       ),
 #'       Features = list(
 #'         list(
-#'           Name = "FLOW_LOGS"|"CLOUD_TRAIL"|"DNS_LOGS"|"S3_DATA_EVENTS"|"EKS_AUDIT_LOGS"|"EBS_MALWARE_PROTECTION"|"RDS_LOGIN_EVENTS"|"EKS_RUNTIME_MONITORING"|"LAMBDA_NETWORK_LOGS"|"FARGATE_RUNTIME_MONITORING"|"EC2_RUNTIME_MONITORING",
+#'           Name = "FLOW_LOGS"|"CLOUD_TRAIL"|"DNS_LOGS"|"S3_DATA_EVENTS"|"EKS_AUDIT_LOGS"|"EBS_MALWARE_PROTECTION"|"RDS_LOGIN_EVENTS"|"LAMBDA_NETWORK_LOGS"|"EKS_RUNTIME_MONITORING"|"EC2_RUNTIME_MONITORING"|"FARGATE_RUNTIME_MONITORING",
 #'           FreeTrialDaysRemaining = 123
 #'         )
 #'       )
@@ -5019,7 +5803,7 @@ guardduty_get_remaining_free_trial_days <- function(DetectorId, AccountIds) {
   op <- new_operation(
     name = "GetRemainingFreeTrialDays",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/freeTrial/daysRemaining",
+    http_path = "/detector/{DetectorId}/freeTrial/daysRemaining",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -5038,18 +5822,14 @@ guardduty_get_remaining_free_trial_days <- function(DetectorId, AccountIds) {
 #' threatEntitySetId
 #'
 #' @description
-#' Retrieves the threat entity set associated with the specified
-#' `threatEntitySetId`.
+#' Retrieves the threat entity set associated with the specified `threatEntitySetId`.
 #'
 #' @usage
 #' guardduty_get_threat_entity_set(DetectorId, ThreatEntitySetId)
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector associated with the threat entity set
-#' resource.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector associated with the threat entity set resource.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param ThreatEntitySetId &#91;required&#93; The unique ID that helps GuardDuty identify the threat entity set.
 #'
 #' @return
@@ -5091,7 +5871,7 @@ guardduty_get_threat_entity_set <- function(DetectorId, ThreatEntitySetId) {
   op <- new_operation(
     name = "GetThreatEntitySet",
     http_method = "GET",
-    http_path = "/detector/{detectorId}/threatentityset/{threatEntitySetId}",
+    http_path = "/detector/{DetectorId}/threatentityset/{ThreatEntitySetId}",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -5114,12 +5894,9 @@ guardduty_get_threat_entity_set <- function(DetectorId, ThreatEntitySetId) {
 #' @usage
 #' guardduty_get_threat_intel_set(DetectorId, ThreatIntelSetId)
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector that is associated with the
-#' threatIntelSet.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector that is associated with the threatIntelSet.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param ThreatIntelSetId &#91;required&#93; The unique ID of the threatIntelSet that you want to get.
 #'
 #' @return
@@ -5154,7 +5931,7 @@ guardduty_get_threat_intel_set <- function(DetectorId, ThreatIntelSetId) {
   op <- new_operation(
     name = "GetThreatIntelSet",
     http_method = "GET",
-    http_path = "/detector/{detectorId}/threatintelset/{threatIntelSetId}",
+    http_path = "/detector/{DetectorId}/threatintelset/{ThreatIntelSetId}",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -5173,14 +5950,12 @@ guardduty_get_threat_intel_set <- function(DetectorId, ThreatIntelSetId) {
 #' trustedEntitySetId
 #'
 #' @description
-#' Retrieves the trusted entity set associated with the specified
-#' `trustedEntitySetId`.
+#' Retrieves the trusted entity set associated with the specified `trustedEntitySetId`.
 #'
 #' @usage
 #' guardduty_get_trusted_entity_set(DetectorId, TrustedEntitySetId)
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the GuardDuty detector associated with this trusted
-#' entity set.
+#' @param DetectorId &#91;required&#93; The unique ID of the GuardDuty detector associated with this trusted entity set.
 #' @param TrustedEntitySetId &#91;required&#93; The unique ID that helps GuardDuty identify the trusted entity set.
 #'
 #' @return
@@ -5222,7 +5997,7 @@ guardduty_get_trusted_entity_set <- function(DetectorId, TrustedEntitySetId) {
   op <- new_operation(
     name = "GetTrustedEntitySet",
     http_method = "GET",
-    http_path = "/detector/{detectorId}/trustedentityset/{trustedEntitySetId}",
+    http_path = "/detector/{DetectorId}/trustedentityset/{TrustedEntitySetId}",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -5241,33 +6016,20 @@ guardduty_get_trusted_entity_set <- function(DetectorId, TrustedEntitySetId) {
 #' specified detector ID
 #'
 #' @description
-#' Lists Amazon GuardDuty usage statistics over the last 30 days for the
-#' specified detector ID. For newly enabled detectors or data sources, the
-#' cost returned will include only the usage so far under 30 days. This may
-#' differ from the cost metrics in the console, which project usage over 30
-#' days to provide a monthly cost estimate. For more information, see
-#' [Understanding How Usage Costs are
-#' Calculated](https://docs.aws.amazon.com/guardduty/latest/ug/monitoring_costs.html#usage-calculations).
+#' Lists Amazon GuardDuty usage statistics over the last 30 days for the specified detector ID. For newly enabled detectors or data sources, the cost returned will include only the usage so far under 30 days. This may differ from the cost metrics in the console, which project usage over 30 days to provide a monthly cost estimate. For more information, see [Understanding How Usage Costs are Calculated](https://docs.aws.amazon.com/guardduty/latest/ug/monitoring_costs.html#usage-calculations).
 #'
 #' @usage
 #' guardduty_get_usage_statistics(DetectorId, UsageStatisticType,
 #'   UsageCriteria, Unit, MaxResults, NextToken)
 #'
-#' @param DetectorId &#91;required&#93; The ID of the detector that specifies the GuardDuty service whose usage
-#' statistics you want to retrieve.
+#' @param DetectorId &#91;required&#93; The ID of the detector that specifies the GuardDuty service whose usage statistics you want to retrieve.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param UsageStatisticType &#91;required&#93; The type of usage statistics to retrieve.
 #' @param UsageCriteria &#91;required&#93; Represents the criteria used for querying usage.
-#' @param Unit The currency unit you would like to view your usage statistics in.
-#' Current valid values are USD.
+#' @param Unit The currency unit you would like to view your usage statistics in. Current valid values are USD.
 #' @param MaxResults The maximum number of results to return in the response.
-#' @param NextToken A token to use for paginating results that are returned in the response.
-#' Set the value of this parameter to null for the first request to a list
-#' action. For subsequent calls, use the NextToken value returned from the
-#' previous request to continue listing results after the first page.
+#' @param NextToken A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5285,7 +6047,7 @@ guardduty_get_trusted_entity_set <- function(DetectorId, TrustedEntitySetId) {
 #'     ),
 #'     TopAccountsByFeature = list(
 #'       list(
-#'         Feature = "FLOW_LOGS"|"CLOUD_TRAIL"|"DNS_LOGS"|"S3_DATA_EVENTS"|"EKS_AUDIT_LOGS"|"EBS_MALWARE_PROTECTION"|"RDS_LOGIN_EVENTS"|"LAMBDA_NETWORK_LOGS"|"EKS_RUNTIME_MONITORING"|"FARGATE_RUNTIME_MONITORING"|"EC2_RUNTIME_MONITORING"|"RDS_DBI_PROTECTION_PROVISIONED"|"RDS_DBI_PROTECTION_SERVERLESS",
+#'         Feature = "FLOW_LOGS"|"CLOUD_TRAIL"|"DNS_LOGS"|"S3_DATA_EVENTS"|"EKS_AUDIT_LOGS"|"EBS_MALWARE_PROTECTION"|"RDS_LOGIN_EVENTS"|"LAMBDA_NETWORK_LOGS"|"EKS_RUNTIME_MONITORING"|"EC2_RUNTIME_MONITORING"|"FARGATE_RUNTIME_MONITORING"|"RDS_DBI_PROTECTION_PROVISIONED"|"RDS_DBI_PROTECTION_SERVERLESS",
 #'         Accounts = list(
 #'           list(
 #'             AccountId = "string",
@@ -5326,7 +6088,7 @@ guardduty_get_trusted_entity_set <- function(DetectorId, TrustedEntitySetId) {
 #'     ),
 #'     SumByFeature = list(
 #'       list(
-#'         Feature = "FLOW_LOGS"|"CLOUD_TRAIL"|"DNS_LOGS"|"S3_DATA_EVENTS"|"EKS_AUDIT_LOGS"|"EBS_MALWARE_PROTECTION"|"RDS_LOGIN_EVENTS"|"LAMBDA_NETWORK_LOGS"|"EKS_RUNTIME_MONITORING"|"FARGATE_RUNTIME_MONITORING"|"EC2_RUNTIME_MONITORING"|"RDS_DBI_PROTECTION_PROVISIONED"|"RDS_DBI_PROTECTION_SERVERLESS",
+#'         Feature = "FLOW_LOGS"|"CLOUD_TRAIL"|"DNS_LOGS"|"S3_DATA_EVENTS"|"EKS_AUDIT_LOGS"|"EBS_MALWARE_PROTECTION"|"RDS_LOGIN_EVENTS"|"LAMBDA_NETWORK_LOGS"|"EKS_RUNTIME_MONITORING"|"EC2_RUNTIME_MONITORING"|"FARGATE_RUNTIME_MONITORING"|"RDS_DBI_PROTECTION_PROVISIONED"|"RDS_DBI_PROTECTION_SERVERLESS",
 #'         Total = list(
 #'           Amount = "string",
 #'           Unit = "string"
@@ -5354,7 +6116,7 @@ guardduty_get_trusted_entity_set <- function(DetectorId, TrustedEntitySetId) {
 #'       "string"
 #'     ),
 #'     Features = list(
-#'       "FLOW_LOGS"|"CLOUD_TRAIL"|"DNS_LOGS"|"S3_DATA_EVENTS"|"EKS_AUDIT_LOGS"|"EBS_MALWARE_PROTECTION"|"RDS_LOGIN_EVENTS"|"LAMBDA_NETWORK_LOGS"|"EKS_RUNTIME_MONITORING"|"FARGATE_RUNTIME_MONITORING"|"EC2_RUNTIME_MONITORING"|"RDS_DBI_PROTECTION_PROVISIONED"|"RDS_DBI_PROTECTION_SERVERLESS"
+#'       "FLOW_LOGS"|"CLOUD_TRAIL"|"DNS_LOGS"|"S3_DATA_EVENTS"|"EKS_AUDIT_LOGS"|"EBS_MALWARE_PROTECTION"|"RDS_LOGIN_EVENTS"|"LAMBDA_NETWORK_LOGS"|"EKS_RUNTIME_MONITORING"|"EC2_RUNTIME_MONITORING"|"FARGATE_RUNTIME_MONITORING"|"RDS_DBI_PROTECTION_PROVISIONED"|"RDS_DBI_PROTECTION_SERVERLESS"
 #'     )
 #'   ),
 #'   Unit = "string",
@@ -5372,7 +6134,7 @@ guardduty_get_usage_statistics <- function(DetectorId, UsageStatisticType, Usage
   op <- new_operation(
     name = "GetUsageStatistics",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/usage/statistics",
+    http_path = "/detector/{DetectorId}/usage/statistics",
     host_prefix = "",
     paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults"),
     stream_api = FALSE
@@ -5392,64 +6154,26 @@ guardduty_get_usage_statistics <- function(DetectorId, UsageStatisticType, Usage
 #' invokes this API
 #'
 #' @description
-#' Invites Amazon Web Services accounts to become members of an
-#' organization administered by the Amazon Web Services account that
-#' invokes this API. If you are using Amazon Web Services Organizations to
-#' manage your GuardDuty environment, this step is not needed. For more
-#' information, see [Managing accounts with
-#' organizations](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_organizations.html).
+#' Invites Amazon Web Services accounts to become members of an organization administered by the Amazon Web Services account that invokes this API. If you are using Amazon Web Services Organizations to manage your GuardDuty environment, this step is not needed. For more information, see [Managing accounts with organizations](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_organizations.html).
 #' 
-#' To invite Amazon Web Services accounts, the first step is to ensure that
-#' GuardDuty has been enabled in the potential member accounts. You can now
-#' invoke this API to add accounts by invitation. The invited accounts can
-#' either accept or decline the invitation from their GuardDuty accounts.
-#' Each invited Amazon Web Services account can choose to accept the
-#' invitation from only one Amazon Web Services account. For more
-#' information, see [Managing GuardDuty accounts by
-#' invitation](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_invitations.html).
+#' To invite Amazon Web Services accounts, the first step is to ensure that GuardDuty has been enabled in the potential member accounts. You can now invoke this API to add accounts by invitation. The invited accounts can either accept or decline the invitation from their GuardDuty accounts. Each invited Amazon Web Services account can choose to accept the invitation from only one Amazon Web Services account. For more information, see [Managing GuardDuty accounts by invitation](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_invitations.html).
 #' 
-#' After the invite has been accepted and you choose to disassociate a
-#' member account (by using
-#' [`disassociate_members`][guardduty_disassociate_members]) from your
-#' account, the details of the member account obtained by invoking
-#' [`create_members`][guardduty_create_members], including the associated
-#' email addresses, will be retained. This is done so that you can invoke
-#' InviteMembers without the need to invoke
-#' [`create_members`][guardduty_create_members] again. To remove the
-#' details associated with a member account, you must also invoke
-#' [`delete_members`][guardduty_delete_members].
+#' After the invite has been accepted and you choose to disassociate a member account (by using [`disassociate_members`][guardduty_disassociate_members]) from your account, the details of the member account obtained by invoking [`create_members`][guardduty_create_members], including the associated email addresses, will be retained. This is done so that you can invoke InviteMembers without the need to invoke [`create_members`][guardduty_create_members] again. To remove the details associated with a member account, you must also invoke [`delete_members`][guardduty_delete_members].
 #' 
-#' If you disassociate a member account that was added by invitation, the
-#' member account details obtained from this API, including the associated
-#' email addresses, will be retained. This is done so that the delegated
-#' administrator can invoke the
-#' [`invite_members`][guardduty_invite_members] API without the need to
-#' invoke the CreateMembers API again. To remove the details associated
-#' with a member account, the delegated administrator must invoke the
-#' [`delete_members`][guardduty_delete_members] API.
+#' If you disassociate a member account that was added by invitation, the member account details obtained from this API, including the associated email addresses, will be retained. This is done so that the delegated administrator can invoke the [`invite_members`][guardduty_invite_members] API without the need to invoke the CreateMembers API again. To remove the details associated with a member account, the delegated administrator must invoke the [`delete_members`][guardduty_delete_members] API.
 #' 
-#' When the member accounts added through Organizations are later
-#' disassociated, you (administrator) can't invite them by calling the
-#' InviteMembers API. You can create an association with these member
-#' accounts again only by calling the CreateMembers API.
+#' When the member accounts added through Organizations are later disassociated, you (administrator) can't invite them by calling the InviteMembers API. You can create an association with these member accounts again only by calling the CreateMembers API.
 #'
 #' @usage
 #' guardduty_invite_members(DetectorId, AccountIds,
 #'   DisableEmailNotification, Message)
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account with which you
-#' want to invite members.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account with which you want to invite members.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param AccountIds &#91;required&#93; A list of account IDs of the accounts that you want to invite to
-#' GuardDuty as members.
-#' @param DisableEmailNotification A Boolean value that specifies whether you want to disable email
-#' notification to the accounts that you are inviting to GuardDuty as
-#' members.
-#' @param Message The invitation message that you want to send to the accounts that you're
-#' inviting to GuardDuty as members.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param AccountIds &#91;required&#93; A list of account IDs of the accounts that you want to invite to GuardDuty as members.
+#' @param DisableEmailNotification A Boolean value that specifies whether you want to disable email notification to the accounts that you are inviting to GuardDuty as members.
+#' @param Message The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5485,7 +6209,7 @@ guardduty_invite_members <- function(DetectorId, AccountIds, DisableEmailNotific
   op <- new_operation(
     name = "InviteMembers",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/member/invite",
+    http_path = "/detector/{DetectorId}/member/invite",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -5503,27 +6227,18 @@ guardduty_invite_members <- function(DetectorId, AccountIds, DisableEmailNotific
 #' Lists coverage details for your GuardDuty account
 #'
 #' @description
-#' Lists coverage details for your GuardDuty account. If you're a GuardDuty
-#' administrator, you can retrieve all resources associated with the active
-#' member accounts in your organization.
+#' Lists coverage details for your GuardDuty account. If you're a GuardDuty administrator, you can retrieve all resources associated with the active member accounts in your organization.
 #' 
-#' Make sure the accounts have Runtime Monitoring enabled and GuardDuty
-#' agent running on their resources.
+#' Make sure the accounts have Runtime Monitoring enabled and GuardDuty agent running on their resources.
 #'
 #' @usage
 #' guardduty_list_coverage(DetectorId, NextToken, MaxResults,
 #'   FilterCriteria, SortCriteria)
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector whose coverage details you want to
-#' retrieve.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector whose coverage details you want to retrieve.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param NextToken A token to use for paginating results that are returned in the response.
-#' Set the value of this parameter to null for the first request to a list
-#' action. For subsequent calls, use the NextToken value returned from the
-#' previous request to continue listing results after the first page.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param NextToken A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.
 #' @param MaxResults The maximum number of results to return in the response.
 #' @param FilterCriteria Represents the criteria used to filter the coverage details.
 #' @param SortCriteria Represents the criteria used to sort the coverage details.
@@ -5548,7 +6263,6 @@ guardduty_invite_members <- function(DetectorId, AccountIds, DisableEmailNotific
 #'           ),
 #'           ManagementType = "AUTO_MANAGED"|"MANUAL"|"DISABLED"
 #'         ),
-#'         ResourceType = "EKS"|"ECS"|"EC2",
 #'         EcsClusterDetails = list(
 #'           ClusterName = "string",
 #'           FargateDetails = list(
@@ -5570,7 +6284,8 @@ guardduty_invite_members <- function(DetectorId, AccountIds, DisableEmailNotific
 #'             Version = "string"
 #'           ),
 #'           ManagementType = "AUTO_MANAGED"|"MANUAL"|"DISABLED"
-#'         )
+#'         ),
+#'         ResourceType = "EKS"|"ECS"|"EC2"
 #'       ),
 #'       CoverageStatus = "HEALTHY"|"UNHEALTHY",
 #'       Issue = "string",
@@ -5592,7 +6307,7 @@ guardduty_invite_members <- function(DetectorId, AccountIds, DisableEmailNotific
 #'   FilterCriteria = list(
 #'     FilterCriterion = list(
 #'       list(
-#'         CriterionKey = "ACCOUNT_ID"|"CLUSTER_NAME"|"RESOURCE_TYPE"|"COVERAGE_STATUS"|"ADDON_VERSION"|"MANAGEMENT_TYPE"|"EKS_CLUSTER_NAME"|"ECS_CLUSTER_NAME"|"AGENT_VERSION"|"INSTANCE_ID"|"CLUSTER_ARN",
+#'         CriterionKey = "ACCOUNT_ID"|"RESOURCE_TYPE"|"COVERAGE_STATUS"|"ADDON_VERSION"|"CLUSTER_NAME"|"ECS_CLUSTER_NAME"|"MANAGEMENT_TYPE"|"EKS_CLUSTER_NAME"|"AGENT_VERSION"|"INSTANCE_ID"|"CLUSTER_ARN",
 #'         FilterCondition = list(
 #'           Equals = list(
 #'             "string"
@@ -5605,7 +6320,7 @@ guardduty_invite_members <- function(DetectorId, AccountIds, DisableEmailNotific
 #'     )
 #'   ),
 #'   SortCriteria = list(
-#'     AttributeName = "ACCOUNT_ID"|"CLUSTER_NAME"|"COVERAGE_STATUS"|"ISSUE"|"ADDON_VERSION"|"UPDATED_AT"|"EKS_CLUSTER_NAME"|"ECS_CLUSTER_NAME"|"INSTANCE_ID",
+#'     AttributeName = "ACCOUNT_ID"|"COVERAGE_STATUS"|"ISSUE"|"ADDON_VERSION"|"UPDATED_AT"|"CLUSTER_NAME"|"EKS_CLUSTER_NAME"|"ECS_CLUSTER_NAME"|"INSTANCE_ID",
 #'     OrderBy = "ASC"|"DESC"
 #'   )
 #' )
@@ -5620,7 +6335,7 @@ guardduty_list_coverage <- function(DetectorId, NextToken = NULL, MaxResults = N
   op <- new_operation(
     name = "ListCoverage",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/coverage",
+    http_path = "/detector/{DetectorId}/coverage",
     host_prefix = "",
     paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "Resources"),
     stream_api = FALSE
@@ -5639,19 +6354,13 @@ guardduty_list_coverage <- function(DetectorId, NextToken = NULL, MaxResults = N
 #' resources
 #'
 #' @description
-#' Lists detectorIds of all the existing Amazon GuardDuty detector
-#' resources.
+#' Lists detectorIds of all the existing Amazon GuardDuty detector resources.
 #'
 #' @usage
 #' guardduty_list_detectors(MaxResults, NextToken)
 #'
-#' @param MaxResults You can use this parameter to indicate the maximum number of items that
-#' you want in the response. The default value is 50. The maximum value is
-#' 50.
-#' @param NextToken You can use this parameter when paginating results. Set the value of
-#' this parameter to null on your first call to the list action. For
-#' subsequent calls to the action, fill nextToken in the request with the
-#' value of NextToken from the previous response to continue listing data.
+#' @param MaxResults You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.
+#' @param NextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5706,16 +6415,9 @@ guardduty_list_detectors <- function(MaxResults = NULL, NextToken = NULL) {
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector that is associated with the filter.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param MaxResults You can use this parameter to indicate the maximum number of items that
-#' you want in the response. The default value is 50. The maximum value is
-#' 50.
-#' @param NextToken You can use this parameter when paginating results. Set the value of
-#' this parameter to null on your first call to the list action. For
-#' subsequent calls to the action, fill nextToken in the request with the
-#' value of NextToken from the previous response to continue listing data.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param MaxResults You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.
+#' @param NextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5746,7 +6448,7 @@ guardduty_list_filters <- function(DetectorId, MaxResults = NULL, NextToken = NU
   op <- new_operation(
     name = "ListFilters",
     http_method = "GET",
-    http_path = "/detector/{detectorId}/filter",
+    http_path = "/detector/{DetectorId}/filter",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "FilterNames"),
     stream_api = FALSE
@@ -5766,23 +6468,16 @@ guardduty_list_filters <- function(DetectorId, MaxResults = NULL, NextToken = NU
 #' @description
 #' Lists GuardDuty findings for the specified detector ID.
 #' 
-#' There might be regional differences because some flags might not be
-#' available in all the Regions where GuardDuty is currently supported. For
-#' more information, see [Regions and
-#' endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
+#' There might be regional differences because some flags might not be available in all the Regions where GuardDuty is currently supported. For more information, see [Regions and endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
 #'
 #' @usage
 #' guardduty_list_findings(DetectorId, FindingCriteria, SortCriteria,
 #'   MaxResults, NextToken)
 #'
-#' @param DetectorId &#91;required&#93; The ID of the detector that specifies the GuardDuty service whose
-#' findings you want to list.
+#' @param DetectorId &#91;required&#93; The ID of the detector that specifies the GuardDuty service whose findings you want to list.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param FindingCriteria Represents the criteria used for querying findings. Valid values
-#' include:
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param FindingCriteria Represents the criteria used for querying findings. Valid values include:
 #' 
 #' -   JSON field name
 #' 
@@ -5874,10 +6569,7 @@ guardduty_list_filters <- function(DetectorId, MaxResults = NULL, NextToken = NU
 #' 
 #' -   service.archived
 #' 
-#'     When this attribute is set to 'true', only archived findings are
-#'     listed. When it's set to 'false', only unarchived findings are
-#'     listed. When this attribute is not set, all existing findings are
-#'     listed.
+#'     When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.
 #' 
 #' -   service.ebsVolumeScanDetails.scanId
 #' 
@@ -5891,12 +6583,8 @@ guardduty_list_filters <- function(DetectorId, MaxResults = NULL, NextToken = NU
 #' 
 #'     Type: Timestamp in Unix Epoch millisecond format: 1486685375000
 #' @param SortCriteria Represents the criteria used for sorting findings.
-#' @param MaxResults You can use this parameter to indicate the maximum number of items you
-#' want in the response. The default value is 50. The maximum value is 50.
-#' @param NextToken You can use this parameter when paginating results. Set the value of
-#' this parameter to null on your first call to the list action. For
-#' subsequent calls to the action, fill nextToken in the request with the
-#' value of NextToken from the previous response to continue listing data.
+#' @param MaxResults You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.
+#' @param NextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5963,7 +6651,7 @@ guardduty_list_findings <- function(DetectorId, FindingCriteria = NULL, SortCrit
   op <- new_operation(
     name = "ListFindings",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/findings",
+    http_path = "/detector/{DetectorId}/findings",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "FindingIds"),
     stream_api = FALSE
@@ -5981,24 +6669,16 @@ guardduty_list_findings <- function(DetectorId, FindingCriteria = NULL, SortCrit
 #' Lists the IPSets of the GuardDuty service specified by the detector ID
 #'
 #' @description
-#' Lists the IPSets of the GuardDuty service specified by the detector ID.
-#' If you use this operation from a member account, the IPSets returned are
-#' the IPSets from the associated administrator account.
+#' Lists the IPSets of the GuardDuty service specified by the detector ID. If you use this operation from a member account, the IPSets returned are the IPSets from the associated administrator account.
 #'
 #' @usage
 #' guardduty_list_ip_sets(DetectorId, MaxResults, NextToken)
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector that is associated with IPSet.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param MaxResults You can use this parameter to indicate the maximum number of items you
-#' want in the response. The default value is 50. The maximum value is 50.
-#' @param NextToken You can use this parameter when paginating results. Set the value of
-#' this parameter to null on your first call to the list action. For
-#' subsequent calls to the action, fill nextToken in the request with the
-#' value of NextToken from the previous response to continue listing data.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param MaxResults You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.
+#' @param NextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6029,7 +6709,7 @@ guardduty_list_ip_sets <- function(DetectorId, MaxResults = NULL, NextToken = NU
   op <- new_operation(
     name = "ListIPSets",
     http_method = "GET",
-    http_path = "/detector/{detectorId}/ipset",
+    http_path = "/detector/{DetectorId}/ipset",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "IpSetIds"),
     stream_api = FALSE
@@ -6048,19 +6728,13 @@ guardduty_list_ip_sets <- function(DetectorId, MaxResults = NULL, NextToken = NU
 #' Amazon Web Services account
 #'
 #' @description
-#' Lists all GuardDuty membership invitations that were sent to the current
-#' Amazon Web Services account.
+#' Lists all GuardDuty membership invitations that were sent to the current Amazon Web Services account.
 #'
 #' @usage
 #' guardduty_list_invitations(MaxResults, NextToken)
 #'
-#' @param MaxResults You can use this parameter to indicate the maximum number of items that
-#' you want in the response. The default value is 50. The maximum value is
-#' 50.
-#' @param NextToken You can use this parameter when paginating results. Set the value of
-#' this parameter to null on your first call to the list action. For
-#' subsequent calls to the action, fill nextToken in the request with the
-#' value of NextToken from the previous response to continue listing data.
+#' @param MaxResults You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.
+#' @param NextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6114,17 +6788,12 @@ guardduty_list_invitations <- function(MaxResults = NULL, NextToken = NULL) {
 #' resources in your Amazon Web Services account
 #'
 #' @description
-#' Lists the Malware Protection plan IDs associated with the protected
-#' resources in your Amazon Web Services account.
+#' Lists the Malware Protection plan IDs associated with the protected resources in your Amazon Web Services account.
 #'
 #' @usage
 #' guardduty_list_malware_protection_plans(NextToken)
 #'
-#' @param NextToken You can use this parameter when paginating results. Set the value of
-#' this parameter to null on your first call to the list action. For
-#' subsequent calls to the action, fill nextToken in the request with the
-#' value of `NextToken` from the previous response to continue listing
-#' data. The default page size is 100 plans.
+#' @param NextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of `NextToken` from the previous response to continue listing data. The default page size is 100 plans.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6173,22 +6842,14 @@ guardduty_list_malware_protection_plans <- function(NextToken = NULL) {
 #' Returns a list of malware scans
 #'
 #' @description
-#' Returns a list of malware scans. Each member account can view the
-#' malware scans for their own accounts. An administrator can view the
-#' malware scans for all of its members' accounts.
+#' Returns a list of malware scans. Each member account can view the malware scans for their own accounts. An administrator can view the malware scans for all of its members' accounts.
 #'
 #' @usage
 #' guardduty_list_malware_scans(MaxResults, NextToken, FilterCriteria,
 #'   SortCriteria)
 #'
-#' @param MaxResults You can use this parameter to indicate the maximum number of items that
-#' you want in the response. The default value is 50. The maximum value is
-#' 50.
-#' @param NextToken You can use this parameter when paginating results. Set the value of
-#' this parameter to null on your first call to the list action. For
-#' subsequent calls to the action, fill nextToken in the request with the
-#' value of NextToken from the previous response to continue listing
-#' results.
+#' @param MaxResults You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.
+#' @param NextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing results.
 #' @param FilterCriteria Represents the criteria used to filter the malware scan entries.
 #' @param SortCriteria Represents the criteria used for sorting malware scan entries.
 #'
@@ -6199,7 +6860,7 @@ guardduty_list_malware_protection_plans <- function(NextToken = NULL) {
 #'   Scans = list(
 #'     list(
 #'       ResourceArn = "string",
-#'       ResourceType = "EBS_RECOVERY_POINT"|"EBS_SNAPSHOT"|"EBS_VOLUME"|"EC2_AMI"|"EC2_INSTANCE"|"EC2_RECOVERY_POINT"|"S3_RECOVERY_POINT"|"S3_BUCKET",
+#'       ResourceType = "EBS_RECOVERY_POINT"|"EBS_SNAPSHOT"|"EBS_VOLUME"|"EC2_AMI"|"EC2_INSTANCE"|"EC2_RECOVERY_POINT"|"S3_RECOVERY_POINT"|"S3_BUCKET"|"S3_POINT_IN_TIME_RECOVERY",
 #'       ScanId = "string",
 #'       ScanStatus = "RUNNING"|"COMPLETED"|"COMPLETED_WITH_ISSUES"|"FAILED"|"SKIPPED",
 #'       ScanResultStatus = "NO_THREATS_FOUND"|"THREATS_FOUND",
@@ -6268,8 +6929,7 @@ guardduty_list_malware_scans <- function(MaxResults = NULL, NextToken = NULL, Fi
 #' administrator account
 #'
 #' @description
-#' Lists details about all member accounts for the current GuardDuty
-#' administrator account.
+#' Lists details about all member accounts for the current GuardDuty administrator account.
 #'
 #' @usage
 #' guardduty_list_members(DetectorId, MaxResults, NextToken,
@@ -6277,21 +6937,10 @@ guardduty_list_malware_scans <- function(MaxResults = NULL, NextToken = NULL, Fi
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector that is associated with the member.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param MaxResults You can use this parameter to indicate the maximum number of items you
-#' want in the response. The default value is 50. The maximum value is 50.
-#' @param NextToken You can use this parameter when paginating results. Set the value of
-#' this parameter to null on your first call to the list action. For
-#' subsequent calls to the action, fill nextToken in the request with the
-#' value of NextToken from the previous response to continue listing data.
-#' @param OnlyAssociated Specifies whether to only return associated members or to return all
-#' members (including members who haven't been invited yet or have been
-#' disassociated). Member accounts must have been previously associated
-#' with the GuardDuty administrator account using
-#' [`Create Members`](https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html)
-#' .
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param MaxResults You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.
+#' @param NextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.
+#' @param OnlyAssociated Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated). Member accounts must have been previously associated with the GuardDuty administrator account using [`Create Members`](https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html) .
 #'
 #' @return
 #' A list with the following syntax:
@@ -6332,7 +6981,7 @@ guardduty_list_members <- function(DetectorId, MaxResults = NULL, NextToken = NU
   op <- new_operation(
     name = "ListMembers",
     http_method = "GET",
-    http_path = "/detector/{detectorId}/member",
+    http_path = "/detector/{DetectorId}/member",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "Members"),
     stream_api = FALSE
@@ -6350,17 +6999,13 @@ guardduty_list_members <- function(DetectorId, MaxResults = NULL, NextToken = NU
 #' Lists the accounts designated as GuardDuty delegated administrators
 #'
 #' @description
-#' Lists the accounts designated as GuardDuty delegated administrators.
-#' Only the organization's management account can run this API operation.
+#' Lists the accounts designated as GuardDuty delegated administrators. Only the organization's management account can run this API operation.
 #'
 #' @usage
 #' guardduty_list_organization_admin_accounts(MaxResults, NextToken)
 #'
 #' @param MaxResults The maximum number of results to return in the response.
-#' @param NextToken A token to use for paginating results that are returned in the response.
-#' Set the value of this parameter to null for the first request to a list
-#' action. For subsequent calls, use the `NextToken` value returned from
-#' the previous request to continue listing results after the first page.
+#' @param NextToken A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the `NextToken` value returned from the previous request to continue listing results after the first page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6412,24 +7057,17 @@ guardduty_list_organization_admin_accounts <- function(MaxResults = NULL, NextTo
 #' detectorId
 #'
 #' @description
-#' Returns a list of publishing destinations associated with the specified
-#' `detectorId`.
+#' Returns a list of publishing destinations associated with the specified `detectorId`.
 #'
 #' @usage
 #' guardduty_list_publishing_destinations(DetectorId, MaxResults,
 #'   NextToken)
 #'
-#' @param DetectorId &#91;required&#93; The detector ID for which you want to retrieve the publishing
-#' destination.
+#' @param DetectorId &#91;required&#93; The detector ID for which you want to retrieve the publishing destination.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param MaxResults The maximum number of results to return in the response.
-#' @param NextToken A token to use for paginating results that are returned in the response.
-#' Set the value of this parameter to null for the first request to a list
-#' action. For subsequent calls, use the `NextToken` value returned from
-#' the previous request to continue listing results after the first page.
+#' @param NextToken A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the `NextToken` value returned from the previous request to continue listing results after the first page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6464,7 +7102,7 @@ guardduty_list_publishing_destinations <- function(DetectorId, MaxResults = NULL
   op <- new_operation(
     name = "ListPublishingDestinations",
     http_method = "GET",
-    http_path = "/detector/{detectorId}/publishingDestination",
+    http_path = "/detector/{DetectorId}/publishingDestination",
     host_prefix = "",
     paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults"),
     stream_api = FALSE
@@ -6482,10 +7120,7 @@ guardduty_list_publishing_destinations <- function(DetectorId, MaxResults = NULL
 #' Lists tags for a resource
 #'
 #' @description
-#' Lists tags for a resource. Tagging is currently supported for detectors,
-#' finding filters, IP sets, threat intel sets, and publishing destination,
-#' with a limit of 50 tags per resource. When invoked, this operation
-#' returns all assigned tags for a given resource.
+#' Lists tags for a resource. Tagging is currently supported for detectors, finding filters, IP sets, threat intel sets, and publishing destination, with a limit of 50 tags per resource. When invoked, this operation returns all assigned tags for a given resource.
 #'
 #' @usage
 #' guardduty_list_tags_for_resource(ResourceArn)
@@ -6518,7 +7153,7 @@ guardduty_list_tags_for_resource <- function(ResourceArn) {
   op <- new_operation(
     name = "ListTagsForResource",
     http_method = "GET",
-    http_path = "/tags/{resourceArn}",
+    http_path = "/tags/{ResourceArn}",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -6537,26 +7172,16 @@ guardduty_list_tags_for_resource <- function(ResourceArn) {
 #' detector ID
 #'
 #' @description
-#' Lists the threat entity sets associated with the specified GuardDuty
-#' detector ID. If you use this operation from a member account, the threat
-#' entity sets that are returned as a response, belong to the administrator
-#' account.
+#' Lists the threat entity sets associated with the specified GuardDuty detector ID. If you use this operation from a member account, the threat entity sets that are returned as a response, belong to the administrator account.
 #'
 #' @usage
 #' guardduty_list_threat_entity_sets(DetectorId, MaxResults, NextToken)
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the GuardDuty detector that is associated with this
-#' threat entity set.
+#' @param DetectorId &#91;required&#93; The unique ID of the GuardDuty detector that is associated with this threat entity set.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param MaxResults You can use this parameter to indicate the maximum number of items you
-#' want in the response. The default value is 50.
-#' @param NextToken You can use this parameter when paginating results. Set the value of
-#' this parameter to null on your first call to the list action. For
-#' subsequent calls to the action, fill nextToken in the request with the
-#' value of NextToken from the previous response to continue listing data.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param MaxResults You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50.
+#' @param NextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6587,7 +7212,7 @@ guardduty_list_threat_entity_sets <- function(DetectorId, MaxResults = NULL, Nex
   op <- new_operation(
     name = "ListThreatEntitySets",
     http_method = "GET",
-    http_path = "/detector/{detectorId}/threatentityset",
+    http_path = "/detector/{DetectorId}/threatentityset",
     host_prefix = "",
     paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "ThreatEntitySetIds"),
     stream_api = FALSE
@@ -6606,27 +7231,16 @@ guardduty_list_threat_entity_sets <- function(DetectorId, MaxResults = NULL, Nex
 #' detector ID
 #'
 #' @description
-#' Lists the ThreatIntelSets of the GuardDuty service specified by the
-#' detector ID. If you use this operation from a member account, the
-#' ThreatIntelSets associated with the administrator account are returned.
+#' Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID. If you use this operation from a member account, the ThreatIntelSets associated with the administrator account are returned.
 #'
 #' @usage
 #' guardduty_list_threat_intel_sets(DetectorId, MaxResults, NextToken)
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector that is associated with the
-#' threatIntelSet.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector that is associated with the threatIntelSet.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param MaxResults You can use this parameter to indicate the maximum number of items that
-#' you want in the response. The default value is 50. The maximum value is
-#' 50.
-#' @param NextToken You can use this parameter to paginate results in the response. Set the
-#' value of this parameter to null on your first call to the list action.
-#' For subsequent calls to the action, fill nextToken in the request with
-#' the value of NextToken from the previous response to continue listing
-#' data.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param MaxResults You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.
+#' @param NextToken You can use this parameter to paginate results in the response. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6657,7 +7271,7 @@ guardduty_list_threat_intel_sets <- function(DetectorId, MaxResults = NULL, Next
   op <- new_operation(
     name = "ListThreatIntelSets",
     http_method = "GET",
-    http_path = "/detector/{detectorId}/threatintelset",
+    http_path = "/detector/{DetectorId}/threatintelset",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "ThreatIntelSetIds"),
     stream_api = FALSE
@@ -6676,26 +7290,16 @@ guardduty_list_threat_intel_sets <- function(DetectorId, MaxResults = NULL, Next
 #' detector ID
 #'
 #' @description
-#' Lists the trusted entity sets associated with the specified GuardDuty
-#' detector ID. If you use this operation from a member account, the
-#' trusted entity sets that are returned as a response, belong to the
-#' administrator account.
+#' Lists the trusted entity sets associated with the specified GuardDuty detector ID. If you use this operation from a member account, the trusted entity sets that are returned as a response, belong to the administrator account.
 #'
 #' @usage
 #' guardduty_list_trusted_entity_sets(DetectorId, MaxResults, NextToken)
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the GuardDuty detector that is associated with this
-#' threat entity set.
+#' @param DetectorId &#91;required&#93; The unique ID of the GuardDuty detector that is associated with this threat entity set.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param MaxResults You can use this parameter to indicate the maximum number of items you
-#' want in the response. The default value is 50.
-#' @param NextToken You can use this parameter when paginating results. Set the value of
-#' this parameter to null on your first call to the list action. For
-#' subsequent calls to the action, fill nextToken in the request with the
-#' value of NextToken from the previous response to continue listing data.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param MaxResults You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50.
+#' @param NextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6726,7 +7330,7 @@ guardduty_list_trusted_entity_sets <- function(DetectorId, MaxResults = NULL, Ne
   op <- new_operation(
     name = "ListTrustedEntitySets",
     http_method = "GET",
-    http_path = "/detector/{detectorId}/trustedentityset",
+    http_path = "/detector/{DetectorId}/trustedentityset",
     host_prefix = "",
     paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "TrustedEntitySetIds"),
     stream_api = FALSE
@@ -6744,20 +7348,14 @@ guardduty_list_trusted_entity_sets <- function(DetectorId, MaxResults = NULL, Ne
 #' Initiates a malware scan for a specific S3 object
 #'
 #' @description
-#' Initiates a malware scan for a specific S3 object. This API allows you
-#' to perform on-demand malware scanning of individual objects in S3
-#' buckets that have Malware Protection for S3 enabled.
+#' Initiates a malware scan for a specific S3 object. This API allows you to perform on-demand malware scanning of individual objects in S3 buckets that have Malware Protection for S3 enabled.
 #' 
-#' When you use this API, the Amazon Web Services service terms for
-#' GuardDuty Malware Protection apply. For more information, see [Amazon
-#' Web Services service terms for GuardDuty Malware
-#' Protection](https://aws.amazon.com/service-terms/#87._Amazon_GuardDuty).
+#' When you use this API, the Amazon Web Services service terms for GuardDuty Malware Protection apply. For more information, see [Amazon Web Services service terms for GuardDuty Malware Protection](https://aws.amazon.com/service-terms/#87._Amazon_GuardDuty).
 #'
 #' @usage
 #' guardduty_send_object_malware_scan(S3Object)
 #'
-#' @param S3Object The S3 object information for the object you want to scan. The bucket
-#' must have a Malware Protection plan configured to use this API.
+#' @param S3Object The S3 object information for the object you want to scan. The bucket must have a Malware Protection plan configured to use this API.
 #'
 #' @return
 #' An empty list.
@@ -6800,31 +7398,19 @@ guardduty_send_object_malware_scan <- function(S3Object = NULL) {
 #' Initiates the malware scan
 #'
 #' @description
-#' Initiates the malware scan. Invoking this API will automatically create
-#' the [Service-linked
-#' role](https://docs.aws.amazon.com/guardduty/latest/ug/slr-permissions-malware-protection.html)
-#' in the corresponding account if the resourceArn belongs to an EC2
-#' instance.
+#' Initiates the malware scan. Invoking this API will automatically create the [Service-linked role](https://docs.aws.amazon.com/guardduty/latest/ug/slr-permissions-malware-protection.html) in the corresponding account if the resourceArn belongs to an EC2 instance.
 #' 
-#' When the malware scan starts, you can use the associated scan ID to
-#' track the status of the scan. For more information, see
-#' [`list_malware_scans`][guardduty_list_malware_scans] and
-#' [`get_malware_scan`][guardduty_get_malware_scan].
+#' When the malware scan starts, you can use the associated scan ID to track the status of the scan. For more information, see [`list_malware_scans`][guardduty_list_malware_scans] and [`get_malware_scan`][guardduty_get_malware_scan].
 #' 
-#' When you use this API, the Amazon Web Services service terms for
-#' GuardDuty Malware Protection apply. For more information, see [Amazon
-#' Web Services service terms for GuardDuty Malware
-#' Protection](https://aws.amazon.com/service-terms/#87._Amazon_GuardDuty).
+#' When you use this API, the Amazon Web Services service terms for GuardDuty Malware Protection apply. For more information, see [Amazon Web Services service terms for GuardDuty Malware Protection](https://aws.amazon.com/service-terms/#87._Amazon_GuardDuty).
 #'
 #' @usage
 #' guardduty_start_malware_scan(ResourceArn, ClientToken,
 #'   ScanConfiguration)
 #'
-#' @param ResourceArn &#91;required&#93; Amazon Resource Name (ARN) of the resource for which you invoked the
-#' API.
+#' @param ResourceArn &#91;required&#93; Amazon Resource Name (ARN) of the resource for which you invoked the API.
 #' @param ClientToken The idempotency token for the create request.
-#' @param ScanConfiguration Contains information about the configuration to be used for the malware
-#' scan.
+#' @param ScanConfiguration Contains information about the configuration to be used for the malware scan.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6845,7 +7431,15 @@ guardduty_send_object_malware_scan <- function(S3Object = NULL) {
 #'       BaselineResourceArn = "string"
 #'     ),
 #'     RecoveryPoint = list(
-#'       BackupVaultName = "string"
+#'       BackupVaultName = "string",
+#'       ContinuousScanDetails = list(
+#'         StartTime = as.POSIXct(
+#'           "2015-01-01"
+#'         ),
+#'         EndTime = as.POSIXct(
+#'           "2015-01-01"
+#'         )
+#'       )
 #'     )
 #'   )
 #' )
@@ -6878,22 +7472,15 @@ guardduty_start_malware_scan <- function(ResourceArn, ClientToken = NULL, ScanCo
 #' Turns on GuardDuty monitoring of the specified member accounts
 #'
 #' @description
-#' Turns on GuardDuty monitoring of the specified member accounts. Use this
-#' operation to restart monitoring of accounts that you stopped monitoring
-#' with the [`stop_monitoring_members`][guardduty_stop_monitoring_members]
-#' operation.
+#' Turns on GuardDuty monitoring of the specified member accounts. Use this operation to restart monitoring of accounts that you stopped monitoring with the [`stop_monitoring_members`][guardduty_stop_monitoring_members] operation.
 #'
 #' @usage
 #' guardduty_start_monitoring_members(DetectorId, AccountIds)
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty administrator account
-#' associated with the member accounts to monitor.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty administrator account associated with the member accounts to monitor.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param AccountIds &#91;required&#93; A list of account IDs of the GuardDuty member accounts to start
-#' monitoring.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param AccountIds &#91;required&#93; A list of account IDs of the GuardDuty member accounts to start monitoring.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6927,7 +7514,7 @@ guardduty_start_monitoring_members <- function(DetectorId, AccountIds) {
   op <- new_operation(
     name = "StartMonitoringMembers",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/member/start",
+    http_path = "/detector/{DetectorId}/member/start",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -6945,23 +7532,16 @@ guardduty_start_monitoring_members <- function(DetectorId, AccountIds) {
 #' Stops GuardDuty monitoring for the specified member accounts
 #'
 #' @description
-#' Stops GuardDuty monitoring for the specified member accounts. Use the
-#' [`start_monitoring_members`][guardduty_start_monitoring_members]
-#' operation to restart monitoring for those accounts.
+#' Stops GuardDuty monitoring for the specified member accounts. Use the [`start_monitoring_members`][guardduty_start_monitoring_members] operation to restart monitoring for those accounts.
 #' 
-#' With `autoEnableOrganizationMembers` configuration for your organization
-#' set to `ALL`, you'll receive an error if you attempt to stop monitoring
-#' the member accounts in your organization.
+#' With `autoEnableOrganizationMembers` configuration for your organization set to `ALL`, you'll receive an error if you attempt to stop monitoring the member accounts in your organization.
 #'
 #' @usage
 #' guardduty_stop_monitoring_members(DetectorId, AccountIds)
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector associated with the GuardDuty
-#' administrator account that is monitoring member accounts.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector associated with the GuardDuty administrator account that is monitoring member accounts.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param AccountIds &#91;required&#93; A list of account IDs for the member accounts to stop monitoring.
 #'
 #' @return
@@ -6996,7 +7576,7 @@ guardduty_stop_monitoring_members <- function(DetectorId, AccountIds) {
   op <- new_operation(
     name = "StopMonitoringMembers",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/member/stop",
+    http_path = "/detector/{DetectorId}/member/stop",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -7019,8 +7599,7 @@ guardduty_stop_monitoring_members <- function(DetectorId, AccountIds) {
 #' @usage
 #' guardduty_tag_resource(ResourceArn, Tags)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) for the GuardDuty resource to apply a tag
-#' to.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) for the GuardDuty resource to apply a tag to.
 #' @param Tags &#91;required&#93; The tags to be added to a resource.
 #'
 #' @return
@@ -7045,7 +7624,7 @@ guardduty_tag_resource <- function(ResourceArn, Tags) {
   op <- new_operation(
     name = "TagResource",
     http_method = "POST",
-    http_path = "/tags/{resourceArn}",
+    http_path = "/tags/{ResourceArn}",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -7070,9 +7649,7 @@ guardduty_tag_resource <- function(ResourceArn, Tags) {
 #'
 #' @param DetectorId &#91;required&#93; The ID of the detector associated with the findings to unarchive.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param FindingIds &#91;required&#93; The IDs of the findings to unarchive.
 #'
 #' @return
@@ -7097,7 +7674,7 @@ guardduty_unarchive_findings <- function(DetectorId, FindingIds) {
   op <- new_operation(
     name = "UnarchiveFindings",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/findings/unarchive",
+    http_path = "/detector/{DetectorId}/findings/unarchive",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -7145,7 +7722,7 @@ guardduty_untag_resource <- function(ResourceArn, TagKeys) {
   op <- new_operation(
     name = "UntagResource",
     http_method = "DELETE",
-    http_path = "/tags/{resourceArn}",
+    http_path = "/tags/{ResourceArn}",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -7165,17 +7742,9 @@ guardduty_untag_resource <- function(ResourceArn, TagKeys) {
 #' @description
 #' Updates the GuardDuty detector specified by the detector ID.
 #' 
-#' Specifying both EKS Runtime Monitoring (`EKS_RUNTIME_MONITORING`) and
-#' Runtime Monitoring (`RUNTIME_MONITORING`) will cause an error. You can
-#' add only one of these two features because Runtime Monitoring already
-#' includes the threat detection for Amazon EKS resources. For more
-#' information, see [Runtime
-#' Monitoring](https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html).
+#' Specifying both EKS Runtime Monitoring (`EKS_RUNTIME_MONITORING`) and Runtime Monitoring (`RUNTIME_MONITORING`) will cause an error. You can add only one of these two features because Runtime Monitoring already includes the threat detection for Amazon EKS resources. For more information, see [Runtime Monitoring](https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html).
 #' 
-#' There might be regional differences because some data sources might not
-#' be available in all the Amazon Web Services Regions where GuardDuty is
-#' presently supported. For more information, see [Regions and
-#' endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
+#' There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see [Regions and endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
 #'
 #' @usage
 #' guardduty_update_detector(DetectorId, Enable,
@@ -7183,18 +7752,12 @@ guardduty_untag_resource <- function(ResourceArn, TagKeys) {
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector to update.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param Enable Specifies whether the detector is enabled or not enabled.
-#' @param FindingPublishingFrequency An enum value that specifies how frequently findings are exported, such
-#' as to CloudWatch Events.
+#' @param FindingPublishingFrequency An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
 #' @param DataSources Describes which data sources will be updated.
 #' 
-#' There might be regional differences because some data sources might not
-#' be available in all the Amazon Web Services Regions where GuardDuty is
-#' presently supported. For more information, see [Regions and
-#' endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
+#' There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see [Regions and endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
 #' @param Features Provides the features that will be updated for the detector.
 #'
 #' @return
@@ -7223,7 +7786,7 @@ guardduty_untag_resource <- function(ResourceArn, TagKeys) {
 #'   ),
 #'   Features = list(
 #'     list(
-#'       Name = "S3_DATA_EVENTS"|"EKS_AUDIT_LOGS"|"EBS_MALWARE_PROTECTION"|"RDS_LOGIN_EVENTS"|"EKS_RUNTIME_MONITORING"|"LAMBDA_NETWORK_LOGS"|"RUNTIME_MONITORING",
+#'       Name = "S3_DATA_EVENTS"|"EKS_AUDIT_LOGS"|"EBS_MALWARE_PROTECTION"|"RDS_LOGIN_EVENTS"|"LAMBDA_NETWORK_LOGS"|"EKS_RUNTIME_MONITORING"|"RUNTIME_MONITORING",
 #'       Status = "ENABLED"|"DISABLED",
 #'       AdditionalConfiguration = list(
 #'         list(
@@ -7245,7 +7808,7 @@ guardduty_update_detector <- function(DetectorId, Enable = NULL, FindingPublishi
   op <- new_operation(
     name = "UpdateDetector",
     http_method = "POST",
-    http_path = "/detector/{detectorId}",
+    http_path = "/detector/{DetectorId}",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -7269,24 +7832,1340 @@ guardduty_update_detector <- function(DetectorId, Enable = NULL, FindingPublishi
 #' guardduty_update_filter(DetectorId, FilterName, Description, Action,
 #'   Rank, FindingCriteria)
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector that specifies the GuardDuty service where
-#' you want to update a filter.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector that specifies the GuardDuty service where you want to update a filter.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param FilterName &#91;required&#93; The name of the filter.
-#' @param Description The description of the filter. Valid characters include alphanumeric
-#' characters, and special characters such as hyphen, period, colon,
-#' underscore, parentheses (`{ }`, `[ ]`, and `( )`), forward slash,
-#' horizontal tab, vertical tab, newline, form feed, return, and
-#' whitespace.
-#' @param Action Specifies the action that is to be applied to the findings that match
-#' the filter.
-#' @param Rank Specifies the position of the filter in the list of current filters.
-#' Also specifies the order in which this filter is applied to the
-#' findings.
-#' @param FindingCriteria Represents the criteria to be used in the filter for querying findings.
+#' @param Description The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (`{ }`, `[ ]`, and `( )`), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.
+#' @param Action Specifies the action that is to be applied to the findings that match the filter.
+#' 
+#' Default: NOOP
+#' @param Rank Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.
+#' @param FindingCriteria Represents the criteria to be used in the filter for querying findings. The following fields are available for filtering:
+#' 
+#' -   accountId
+#' 
+#' -   arn
+#' 
+#' -   associatedAttackSequenceArn
+#' 
+#' -   confidence
+#' 
+#' -   createdAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   description
+#' 
+#' -   id
+#' 
+#' -   partition
+#' 
+#' -   region
+#' 
+#' -   resource.accessKeyDetails.accessKeyId
+#' 
+#' -   resource.accessKeyDetails.principalId
+#' 
+#' -   resource.accessKeyDetails.userIdentity.accessKeyId
+#' 
+#' -   resource.accessKeyDetails.userIdentity.accountId
+#' 
+#' -   resource.accessKeyDetails.userIdentity.arn
+#' 
+#' -   resource.accessKeyDetails.userIdentity.principalId
+#' 
+#' -   resource.accessKeyDetails.userIdentity.sessionContext.attributes.mfaAuthenticated
+#' 
+#' -   resource.accessKeyDetails.userIdentity.sessionContext.ec2RoleDelivery
+#' 
+#' -   resource.accessKeyDetails.userIdentity.sessionContext.invokedBy
+#' 
+#' -   resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.accountId
+#' 
+#' -   resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.arn
+#' 
+#' -   resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.principalId
+#' 
+#' -   resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.type
+#' 
+#' -   resource.accessKeyDetails.userIdentity.sessionContext.sessionIssuer.userName
+#' 
+#' -   resource.accessKeyDetails.userIdentity.sessionContext.sourceIdentity
+#' 
+#' -   resource.accessKeyDetails.userIdentity.sessionContext.webIdFederationData.attributes
+#' 
+#' -   resource.accessKeyDetails.userIdentity.sessionContext.webIdFederationData.federatedProvider
+#' 
+#' -   resource.accessKeyDetails.userIdentity.type
+#' 
+#' -   resource.accessKeyDetails.userIdentity.userName
+#' 
+#' -   resource.accessKeyDetails.userName
+#' 
+#' -   resource.accessKeyDetails.userType
+#' 
+#' -   resource.bedrockGuardrailDetails.guardrailArn
+#' 
+#' -   resource.bedrockGuardrailDetails.guardrailVersion
+#' 
+#' -   resource.containerDetails.containerRuntime
+#' 
+#' -   resource.containerDetails.id
+#' 
+#' -   resource.containerDetails.image
+#' 
+#' -   resource.containerDetails.imagePrefix
+#' 
+#' -   resource.containerDetails.name
+#' 
+#' -   resource.containerDetails.securityContext.allowPrivilegeEscalation
+#' 
+#' -   resource.containerDetails.securityContext.privileged
+#' 
+#' -   resource.containerDetails.volumeMounts.mountPath
+#' 
+#' -   resource.containerDetails.volumeMounts.name
+#' 
+#' -   resource.ebsSnapshotDetails.snapshotArn
+#' 
+#' -   resource.ebsVolumeDetails.scannedVolumeDetails.deviceName
+#' 
+#' -   resource.ebsVolumeDetails.scannedVolumeDetails.encryptionType
+#' 
+#' -   resource.ebsVolumeDetails.scannedVolumeDetails.kmsKeyArn
+#' 
+#' -   resource.ebsVolumeDetails.scannedVolumeDetails.snapshotArn
+#' 
+#' -   resource.ebsVolumeDetails.scannedVolumeDetails.volumeArn
+#' 
+#' -   resource.ebsVolumeDetails.scannedVolumeDetails.volumeSizeInGB
+#' 
+#' -   resource.ebsVolumeDetails.scannedVolumeDetails.volumeType
+#' 
+#' -   resource.ebsVolumeDetails.skippedVolumeDetails.deviceName
+#' 
+#' -   resource.ebsVolumeDetails.skippedVolumeDetails.encryptionType
+#' 
+#' -   resource.ebsVolumeDetails.skippedVolumeDetails.kmsKeyArn
+#' 
+#' -   resource.ebsVolumeDetails.skippedVolumeDetails.snapshotArn
+#' 
+#' -   resource.ebsVolumeDetails.skippedVolumeDetails.volumeArn
+#' 
+#' -   resource.ebsVolumeDetails.skippedVolumeDetails.volumeSizeInGB
+#' 
+#' -   resource.ebsVolumeDetails.skippedVolumeDetails.volumeType
+#' 
+#' -   resource.ec2ImageDetails.imageArn
+#' 
+#' -   resource.ecsClusterDetails.activeServicesCount
+#' 
+#' -   resource.ecsClusterDetails.arn
+#' 
+#' -   resource.ecsClusterDetails.name
+#' 
+#' -   resource.ecsClusterDetails.registeredContainerInstancesCount
+#' 
+#' -   resource.ecsClusterDetails.runningTasksCount
+#' 
+#' -   resource.ecsClusterDetails.status
+#' 
+#' -   resource.ecsClusterDetails.tags.key
+#' 
+#' -   resource.ecsClusterDetails.tags.value
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.arn
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.containers.containerRuntime
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.containers.id
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.containers.image
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.containers.imagePrefix
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.containers.name
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.containers.securityContext.allowPrivilegeEscalation
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.containers.securityContext.privileged
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.containers.volumeMounts.mountPath
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.containers.volumeMounts.name
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.createdAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.definitionArn
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.group
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.launchType
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.startedAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.startedBy
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.tags.key
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.tags.value
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.version
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.volumes.hostPath.path
+#' 
+#' -   resource.ecsClusterDetails.taskDetails.volumes.name
+#' 
+#' -   resource.eksClusterDetails.arn
+#' 
+#' -   resource.eksClusterDetails.createdAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   resource.eksClusterDetails.name
+#' 
+#' -   resource.eksClusterDetails.status
+#' 
+#' -   resource.eksClusterDetails.tags.key
+#' 
+#' -   resource.eksClusterDetails.tags.value
+#' 
+#' -   resource.eksClusterDetails.vpcId
+#' 
+#' -   resource.instanceDetails.availabilityZone
+#' 
+#' -   resource.instanceDetails.iamInstanceProfile.arn
+#' 
+#' -   resource.instanceDetails.iamInstanceProfile.id
+#' 
+#' -   resource.instanceDetails.imageDescription
+#' 
+#' -   resource.instanceDetails.imageId
+#' 
+#' -   resource.instanceDetails.instanceId
+#' 
+#' -   resource.instanceDetails.instanceState
+#' 
+#' -   resource.instanceDetails.instanceType
+#' 
+#' -   resource.instanceDetails.launchTime
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   resource.instanceDetails.networkInterfaces.ipv6Addresses
+#' 
+#' -   resource.instanceDetails.networkInterfaces.networkInterfaceId
+#' 
+#' -   resource.instanceDetails.networkInterfaces.privateDnsName
+#' 
+#' -   resource.instanceDetails.networkInterfaces.privateIpAddress
+#' 
+#' -   resource.instanceDetails.networkInterfaces.privateIpAddresses.privateDnsName
+#' 
+#' -   resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress
+#' 
+#' -   resource.instanceDetails.networkInterfaces.publicDnsName
+#' 
+#' -   resource.instanceDetails.networkInterfaces.publicIp
+#' 
+#' -   resource.instanceDetails.networkInterfaces.securityGroups.groupId
+#' 
+#' -   resource.instanceDetails.networkInterfaces.securityGroups.groupName
+#' 
+#' -   resource.instanceDetails.networkInterfaces.subnetId
+#' 
+#' -   resource.instanceDetails.networkInterfaces.vpcId
+#' 
+#' -   resource.instanceDetails.outpostArn
+#' 
+#' -   resource.instanceDetails.platform
+#' 
+#' -   resource.instanceDetails.productCodes.productCodeId
+#' 
+#' -   resource.instanceDetails.productCodes.productCodeType
+#' 
+#' -   resource.instanceDetails.tags.key
+#' 
+#' -   resource.instanceDetails.tags.value
+#' 
+#' -   resource.kubernetesDetails.kubernetesUserDetails.groups
+#' 
+#' -   resource.kubernetesDetails.kubernetesUserDetails.impersonatedUser.groups
+#' 
+#' -   resource.kubernetesDetails.kubernetesUserDetails.impersonatedUser.username
+#' 
+#' -   resource.kubernetesDetails.kubernetesUserDetails.sessionName
+#' 
+#' -   resource.kubernetesDetails.kubernetesUserDetails.uid
+#' 
+#' -   resource.kubernetesDetails.kubernetesUserDetails.username
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.containers.containerRuntime
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.containers.id
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.containers.image
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.containers.imagePrefix
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.containers.name
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.containers.securityContext.allowPrivilegeEscalation
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.containers.securityContext.privileged
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.containers.volumeMounts.mountPath
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.containers.volumeMounts.name
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.hostIpc
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.hostNetwork
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.hostPid
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.name
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.namespace
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.serviceAccountName
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.type
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.uid
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.volumes.hostPath.path
+#' 
+#' -   resource.kubernetesDetails.kubernetesWorkloadDetails.volumes.name
+#' 
+#' -   resource.lambdaDetails.description
+#' 
+#' -   resource.lambdaDetails.functionArn
+#' 
+#' -   resource.lambdaDetails.functionName
+#' 
+#' -   resource.lambdaDetails.functionVersion
+#' 
+#' -   resource.lambdaDetails.lastModifiedAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   resource.lambdaDetails.revisionId
+#' 
+#' -   resource.lambdaDetails.role
+#' 
+#' -   resource.lambdaDetails.tags.key
+#' 
+#' -   resource.lambdaDetails.tags.value
+#' 
+#' -   resource.lambdaDetails.vpcConfig.securityGroups.groupId
+#' 
+#' -   resource.lambdaDetails.vpcConfig.securityGroups.groupName
+#' 
+#' -   resource.lambdaDetails.vpcConfig.subnetIds
+#' 
+#' -   resource.lambdaDetails.vpcConfig.vpcId
+#' 
+#' -   resource.rdsDbInstanceDetails.dbClusterIdentifier
+#' 
+#' -   resource.rdsDbInstanceDetails.dbInstanceArn
+#' 
+#' -   resource.rdsDbInstanceDetails.dbInstanceIdentifier
+#' 
+#' -   resource.rdsDbInstanceDetails.dbSecurityGroups.name
+#' 
+#' -   resource.rdsDbInstanceDetails.dbSecurityGroups.status
+#' 
+#' -   resource.rdsDbInstanceDetails.dbiResourceId
+#' 
+#' -   resource.rdsDbInstanceDetails.engine
+#' 
+#' -   resource.rdsDbInstanceDetails.engineVersion
+#' 
+#' -   resource.rdsDbInstanceDetails.iamDatabaseAuthenticationEnabled
+#' 
+#' -   resource.rdsDbInstanceDetails.publiclyAccessible
+#' 
+#' -   resource.rdsDbInstanceDetails.tags.key
+#' 
+#' -   resource.rdsDbInstanceDetails.tags.value
+#' 
+#' -   resource.rdsDbInstanceDetails.vpcId
+#' 
+#' -   resource.rdsDbInstanceDetails.vpcSecurityGroups.status
+#' 
+#' -   resource.rdsDbInstanceDetails.vpcSecurityGroups.vpcSecurityGroupId
+#' 
+#' -   resource.rdsDbUserDetails.application
+#' 
+#' -   resource.rdsDbUserDetails.authMethod
+#' 
+#' -   resource.rdsDbUserDetails.database
+#' 
+#' -   resource.rdsDbUserDetails.ssl
+#' 
+#' -   resource.rdsDbUserDetails.user
+#' 
+#' -   resource.rdsLimitlessDbDetails.dbClusterIdentifier
+#' 
+#' -   resource.rdsLimitlessDbDetails.dbShardGroupArn
+#' 
+#' -   resource.rdsLimitlessDbDetails.dbShardGroupIdentifier
+#' 
+#' -   resource.rdsLimitlessDbDetails.dbShardGroupResourceId
+#' 
+#' -   resource.rdsLimitlessDbDetails.engine
+#' 
+#' -   resource.rdsLimitlessDbDetails.engineVersion
+#' 
+#' -   resource.rdsLimitlessDbDetails.tags.key
+#' 
+#' -   resource.rdsLimitlessDbDetails.tags.value
+#' 
+#' -   resource.recoveryPointDetails.backupVaultName
+#' 
+#' -   resource.recoveryPointDetails.recoveryPointArn
+#' 
+#' -   resource.resourceType
+#' 
+#' -   resource.s3BucketDetails.arn
+#' 
+#' -   resource.s3BucketDetails.createdAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   resource.s3BucketDetails.defaultServerSideEncryption.encryptionType
+#' 
+#' -   resource.s3BucketDetails.defaultServerSideEncryption.kmsMasterKeyArn
+#' 
+#' -   resource.s3BucketDetails.name
+#' 
+#' -   resource.s3BucketDetails.owner.id
+#' 
+#' -   resource.s3BucketDetails.publicAccess.effectivePermission
+#' 
+#' -   resource.s3BucketDetails.publicAccess.permissionConfiguration.accountLevelPermissions.blockPublicAccess.blockPublicAcls
+#' 
+#' -   resource.s3BucketDetails.publicAccess.permissionConfiguration.accountLevelPermissions.blockPublicAccess.blockPublicPolicy
+#' 
+#' -   resource.s3BucketDetails.publicAccess.permissionConfiguration.accountLevelPermissions.blockPublicAccess.ignorePublicAcls
+#' 
+#' -   resource.s3BucketDetails.publicAccess.permissionConfiguration.accountLevelPermissions.blockPublicAccess.restrictPublicBuckets
+#' 
+#' -   resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.accessControlList.allowsPublicReadAccess
+#' 
+#' -   resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.accessControlList.allowsPublicWriteAccess
+#' 
+#' -   resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.blockPublicAccess.blockPublicAcls
+#' 
+#' -   resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.blockPublicAccess.blockPublicPolicy
+#' 
+#' -   resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.blockPublicAccess.ignorePublicAcls
+#' 
+#' -   resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.blockPublicAccess.restrictPublicBuckets
+#' 
+#' -   resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.bucketPolicy.allowsPublicReadAccess
+#' 
+#' -   resource.s3BucketDetails.publicAccess.permissionConfiguration.bucketLevelPermissions.bucketPolicy.allowsPublicWriteAccess
+#' 
+#' -   resource.s3BucketDetails.s3ObjectDetails.eTag
+#' 
+#' -   resource.s3BucketDetails.s3ObjectDetails.hash
+#' 
+#' -   resource.s3BucketDetails.s3ObjectDetails.key
+#' 
+#' -   resource.s3BucketDetails.s3ObjectDetails.objectArn
+#' 
+#' -   resource.s3BucketDetails.s3ObjectDetails.versionId
+#' 
+#' -   resource.s3BucketDetails.tags.key
+#' 
+#' -   resource.s3BucketDetails.tags.value
+#' 
+#' -   resource.s3BucketDetails.type
+#' 
+#' -   schemaVersion
+#' 
+#' -   service.action.actionType
+#' 
+#' -   service.action.awsApiCallAction.affectedResources
+#' 
+#' -   service.action.awsApiCallAction.api
+#' 
+#' -   service.action.awsApiCallAction.callerType
+#' 
+#' -   service.action.awsApiCallAction.domainDetails.domain
+#' 
+#' -   service.action.awsApiCallAction.errorCode
+#' 
+#' -   service.action.awsApiCallAction.remoteAccountDetails.accountId
+#' 
+#' -   service.action.awsApiCallAction.remoteAccountDetails.affiliated
+#' 
+#' -   service.action.awsApiCallAction.remoteAccountDetails.awsServiceName
+#' 
+#' -   service.action.awsApiCallAction.remoteIpDetails.city.cityName
+#' 
+#' -   service.action.awsApiCallAction.remoteIpDetails.country.countryCode
+#' 
+#' -   service.action.awsApiCallAction.remoteIpDetails.country.countryName
+#' 
+#' -   service.action.awsApiCallAction.remoteIpDetails.geoLocation.lat
+#' 
+#' -   service.action.awsApiCallAction.remoteIpDetails.geoLocation.lon
+#' 
+#' -   service.action.awsApiCallAction.remoteIpDetails.ipAddressV4
+#' 
+#' -   service.action.awsApiCallAction.remoteIpDetails.ipAddressV6
+#' 
+#' -   service.action.awsApiCallAction.remoteIpDetails.organization.asn
+#' 
+#' -   service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg
+#' 
+#' -   service.action.awsApiCallAction.remoteIpDetails.organization.isp
+#' 
+#' -   service.action.awsApiCallAction.remoteIpDetails.organization.org
+#' 
+#' -   service.action.awsApiCallAction.serviceName
+#' 
+#' -   service.action.awsApiCallAction.userAgent
+#' 
+#' -   service.action.dnsRequestAction.blocked
+#' 
+#' -   service.action.dnsRequestAction.domain
+#' 
+#' -   service.action.dnsRequestAction.domainWithSuffix
+#' 
+#' -   service.action.dnsRequestAction.protocol
+#' 
+#' -   service.action.dnsRequestAction.vpcOwnerAccountId
+#' 
+#' -   service.action.kubernetesApiCallAction.namespace
+#' 
+#' -   service.action.kubernetesApiCallAction.parameters
+#' 
+#' -   service.action.kubernetesApiCallAction.remoteIpDetails.city.cityName
+#' 
+#' -   service.action.kubernetesApiCallAction.remoteIpDetails.country.countryCode
+#' 
+#' -   service.action.kubernetesApiCallAction.remoteIpDetails.country.countryName
+#' 
+#' -   service.action.kubernetesApiCallAction.remoteIpDetails.geoLocation.lat
+#' 
+#' -   service.action.kubernetesApiCallAction.remoteIpDetails.geoLocation.lon
+#' 
+#' -   service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4
+#' 
+#' -   service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6
+#' 
+#' -   service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn
+#' 
+#' -   service.action.kubernetesApiCallAction.remoteIpDetails.organization.asnOrg
+#' 
+#' -   service.action.kubernetesApiCallAction.remoteIpDetails.organization.isp
+#' 
+#' -   service.action.kubernetesApiCallAction.remoteIpDetails.organization.org
+#' 
+#' -   service.action.kubernetesApiCallAction.requestUri
+#' 
+#' -   service.action.kubernetesApiCallAction.resource
+#' 
+#' -   service.action.kubernetesApiCallAction.resourceName
+#' 
+#' -   service.action.kubernetesApiCallAction.sourceIPs
+#' 
+#' -   service.action.kubernetesApiCallAction.statusCode
+#' 
+#' -   service.action.kubernetesApiCallAction.subresource
+#' 
+#' -   service.action.kubernetesApiCallAction.userAgent
+#' 
+#' -   service.action.kubernetesApiCallAction.verb
+#' 
+#' -   service.action.kubernetesPermissionCheckedDetails.allowed
+#' 
+#' -   service.action.kubernetesPermissionCheckedDetails.namespace
+#' 
+#' -   service.action.kubernetesPermissionCheckedDetails.resource
+#' 
+#' -   service.action.kubernetesPermissionCheckedDetails.verb
+#' 
+#' -   service.action.kubernetesRoleBindingDetails.kind
+#' 
+#' -   service.action.kubernetesRoleBindingDetails.name
+#' 
+#' -   service.action.kubernetesRoleBindingDetails.roleRefKind
+#' 
+#' -   service.action.kubernetesRoleBindingDetails.roleRefName
+#' 
+#' -   service.action.kubernetesRoleBindingDetails.uid
+#' 
+#' -   service.action.kubernetesRoleDetails.kind
+#' 
+#' -   service.action.kubernetesRoleDetails.name
+#' 
+#' -   service.action.kubernetesRoleDetails.uid
+#' 
+#' -   service.action.networkConnectionAction.blocked
+#' 
+#' -   service.action.networkConnectionAction.connectionDirection
+#' 
+#' -   service.action.networkConnectionAction.localIpDetails.ipAddressV4
+#' 
+#' -   service.action.networkConnectionAction.localIpDetails.ipAddressV6
+#' 
+#' -   service.action.networkConnectionAction.localNetworkInterface
+#' 
+#' -   service.action.networkConnectionAction.localPortDetails.port
+#' 
+#' -   service.action.networkConnectionAction.localPortDetails.portName
+#' 
+#' -   service.action.networkConnectionAction.protocol
+#' 
+#' -   service.action.networkConnectionAction.remoteIpDetails.city.cityName
+#' 
+#' -   service.action.networkConnectionAction.remoteIpDetails.country.countryCode
+#' 
+#' -   service.action.networkConnectionAction.remoteIpDetails.country.countryName
+#' 
+#' -   service.action.networkConnectionAction.remoteIpDetails.geoLocation.lat
+#' 
+#' -   service.action.networkConnectionAction.remoteIpDetails.geoLocation.lon
+#' 
+#' -   service.action.networkConnectionAction.remoteIpDetails.ipAddressV4
+#' 
+#' -   service.action.networkConnectionAction.remoteIpDetails.ipAddressV6
+#' 
+#' -   service.action.networkConnectionAction.remoteIpDetails.organization.asn
+#' 
+#' -   service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg
+#' 
+#' -   service.action.networkConnectionAction.remoteIpDetails.organization.isp
+#' 
+#' -   service.action.networkConnectionAction.remoteIpDetails.organization.org
+#' 
+#' -   service.action.networkConnectionAction.remotePortDetails.port
+#' 
+#' -   service.action.networkConnectionAction.remotePortDetails.portName
+#' 
+#' -   service.action.portProbeAction.blocked
+#' 
+#' -   service.action.portProbeAction.portProbeDetails.localIpDetails.ipAddressV4
+#' 
+#' -   service.action.portProbeAction.portProbeDetails.localIpDetails.ipAddressV6
+#' 
+#' -   service.action.portProbeAction.portProbeDetails.localPortDetails.port
+#' 
+#' -   service.action.portProbeAction.portProbeDetails.localPortDetails.portName
+#' 
+#' -   service.action.portProbeAction.portProbeDetails.remoteIpDetails.city.cityName
+#' 
+#' -   service.action.portProbeAction.portProbeDetails.remoteIpDetails.country.countryCode
+#' 
+#' -   service.action.portProbeAction.portProbeDetails.remoteIpDetails.country.countryName
+#' 
+#' -   service.action.portProbeAction.portProbeDetails.remoteIpDetails.geoLocation.lat
+#' 
+#' -   service.action.portProbeAction.portProbeDetails.remoteIpDetails.geoLocation.lon
+#' 
+#' -   service.action.portProbeAction.portProbeDetails.remoteIpDetails.ipAddressV4
+#' 
+#' -   service.action.portProbeAction.portProbeDetails.remoteIpDetails.ipAddressV6
+#' 
+#' -   service.action.portProbeAction.portProbeDetails.remoteIpDetails.organization.asn
+#' 
+#' -   service.action.portProbeAction.portProbeDetails.remoteIpDetails.organization.asnOrg
+#' 
+#' -   service.action.portProbeAction.portProbeDetails.remoteIpDetails.organization.isp
+#' 
+#' -   service.action.portProbeAction.portProbeDetails.remoteIpDetails.organization.org
+#' 
+#' -   service.action.rdsLoginAttemptAction.loginAttributes.application
+#' 
+#' -   service.action.rdsLoginAttemptAction.loginAttributes.failedLoginAttempts
+#' 
+#' -   service.action.rdsLoginAttemptAction.loginAttributes.successfulLoginAttempts
+#' 
+#' -   service.action.rdsLoginAttemptAction.loginAttributes.user
+#' 
+#' -   service.action.rdsLoginAttemptAction.remoteIpDetails.city.cityName
+#' 
+#' -   service.action.rdsLoginAttemptAction.remoteIpDetails.country.countryCode
+#' 
+#' -   service.action.rdsLoginAttemptAction.remoteIpDetails.country.countryName
+#' 
+#' -   service.action.rdsLoginAttemptAction.remoteIpDetails.geoLocation.lat
+#' 
+#' -   service.action.rdsLoginAttemptAction.remoteIpDetails.geoLocation.lon
+#' 
+#' -   service.action.rdsLoginAttemptAction.remoteIpDetails.ipAddressV4
+#' 
+#' -   service.action.rdsLoginAttemptAction.remoteIpDetails.ipAddressV6
+#' 
+#' -   service.action.rdsLoginAttemptAction.remoteIpDetails.organization.asn
+#' 
+#' -   service.action.rdsLoginAttemptAction.remoteIpDetails.organization.asnOrg
+#' 
+#' -   service.action.rdsLoginAttemptAction.remoteIpDetails.organization.isp
+#' 
+#' -   service.action.rdsLoginAttemptAction.remoteIpDetails.organization.org
+#' 
+#' -   service.additionalInfo.agentDetails.agentId
+#' 
+#' -   service.additionalInfo.agentDetails.agentVersion
+#' 
+#' -   service.additionalInfo.anomalies.anomalousAPIs
+#' 
+#' -   service.additionalInfo.authenticationMethod
+#' 
+#' -   service.additionalInfo.averagePacketSizeIn
+#' 
+#' -   service.additionalInfo.averagePacketSizeOut
+#' 
+#' -   service.additionalInfo.context
+#' 
+#' -   service.additionalInfo.domain
+#' 
+#' -   service.additionalInfo.inBytes
+#' 
+#' -   service.additionalInfo.localNetworkInterfaceOwner
+#' 
+#' -   service.additionalInfo.localPort
+#' 
+#' -   service.additionalInfo.outBytes
+#' 
+#' -   service.additionalInfo.packetsIn
+#' 
+#' -   service.additionalInfo.packetsOut
+#' 
+#' -   service.additionalInfo.policyArn
+#' 
+#' -   service.additionalInfo.policyName
+#' 
+#' -   service.additionalInfo.remotePort
+#' 
+#' -   service.additionalInfo.sample
+#' 
+#' -   service.additionalInfo.scannedPort
+#' 
+#' -   service.additionalInfo.threatFileSha256
+#' 
+#' -   service.additionalInfo.threatListName
+#' 
+#' -   service.additionalInfo.threatName
+#' 
+#' -   service.additionalInfo.totalBytesIn
+#' 
+#' -   service.additionalInfo.totalBytesOut
+#' 
+#' -   service.additionalInfo.type
+#' 
+#' -   service.additionalInfo.unusual.asnOrg
+#' 
+#' -   service.additionalInfo.unusual.port
+#' 
+#' -   service.additionalInfo.unusualProtocol
+#' 
+#' -   service.additionalInfo.userAgent.fullUserAgent
+#' 
+#' -   service.additionalInfo.userAgent.userAgentCategory
+#' 
+#' -   service.additionalInfo.value
+#' 
+#' -   service.additionalInfo.vpcOwnerAccountId
+#' 
+#' -   service.archived
+#' 
+#' -   service.count
+#' 
+#' -   service.detection.anomaly.profiles
+#' 
+#' -   service.detection.anomaly.unusual.behavior
+#' 
+#' -   service.detection.sequence.actors.id
+#' 
+#' -   service.detection.sequence.actors.process.name
+#' 
+#' -   service.detection.sequence.actors.process.path
+#' 
+#' -   service.detection.sequence.actors.process.sha256
+#' 
+#' -   service.detection.sequence.actors.session.createdTime
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.detection.sequence.actors.session.issuer
+#' 
+#' -   service.detection.sequence.actors.session.mfaStatus
+#' 
+#' -   service.detection.sequence.actors.session.uid
+#' 
+#' -   service.detection.sequence.actors.user.account.account
+#' 
+#' -   service.detection.sequence.actors.user.account.uid
+#' 
+#' -   service.detection.sequence.actors.user.credentialUid
+#' 
+#' -   service.detection.sequence.actors.user.name
+#' 
+#' -   service.detection.sequence.actors.user.type
+#' 
+#' -   service.detection.sequence.actors.user.uid
+#' 
+#' -   service.detection.sequence.additionalSequenceTypes
+#' 
+#' -   service.detection.sequence.description
+#' 
+#' -   service.detection.sequence.endpoints.autonomousSystem.name
+#' 
+#' -   service.detection.sequence.endpoints.autonomousSystem.number
+#' 
+#' -   service.detection.sequence.endpoints.connection.direction
+#' 
+#' -   service.detection.sequence.endpoints.domain
+#' 
+#' -   service.detection.sequence.endpoints.id
+#' 
+#' -   service.detection.sequence.endpoints.ip
+#' 
+#' -   service.detection.sequence.endpoints.location.city
+#' 
+#' -   service.detection.sequence.endpoints.location.country
+#' 
+#' -   service.detection.sequence.endpoints.location.lat
+#' 
+#' -   service.detection.sequence.endpoints.location.lon
+#' 
+#' -   service.detection.sequence.endpoints.port
+#' 
+#' -   service.detection.sequence.resources.accountId
+#' 
+#' -   service.detection.sequence.resources.cloudPartition
+#' 
+#' -   service.detection.sequence.resources.data.accessKey.principalId
+#' 
+#' -   service.detection.sequence.resources.data.accessKey.userName
+#' 
+#' -   service.detection.sequence.resources.data.accessKey.userType
+#' 
+#' -   service.detection.sequence.resources.data.autoscalingAutoScalingGroup.ec2InstanceUids
+#' 
+#' -   service.detection.sequence.resources.data.cloudformationStack.ec2InstanceUids
+#' 
+#' -   service.detection.sequence.resources.data.container.image
+#' 
+#' -   service.detection.sequence.resources.data.container.imageUid
+#' 
+#' -   service.detection.sequence.resources.data.ec2Image.ec2InstanceUids
+#' 
+#' -   service.detection.sequence.resources.data.ec2Instance.availabilityZone
+#' 
+#' -   service.detection.sequence.resources.data.ec2Instance.ec2NetworkInterfaceUids
+#' 
+#' -   service.detection.sequence.resources.data.ec2Instance.iamInstanceProfile.arn
+#' 
+#' -   service.detection.sequence.resources.data.ec2Instance.iamInstanceProfile.id
+#' 
+#' -   service.detection.sequence.resources.data.ec2Instance.imageDescription
+#' 
+#' -   service.detection.sequence.resources.data.ec2Instance.instanceState
+#' 
+#' -   service.detection.sequence.resources.data.ec2Instance.instanceType
+#' 
+#' -   service.detection.sequence.resources.data.ec2Instance.outpostArn
+#' 
+#' -   service.detection.sequence.resources.data.ec2Instance.platform
+#' 
+#' -   service.detection.sequence.resources.data.ec2Instance.productCodes.productCodeId
+#' 
+#' -   service.detection.sequence.resources.data.ec2Instance.productCodes.productCodeType
+#' 
+#' -   service.detection.sequence.resources.data.ec2LaunchTemplate.ec2InstanceUids
+#' 
+#' -   service.detection.sequence.resources.data.ec2LaunchTemplate.version
+#' 
+#' -   service.detection.sequence.resources.data.ec2NetworkInterface.ipv6Addresses
+#' 
+#' -   service.detection.sequence.resources.data.ec2NetworkInterface.privateIpAddresses.privateDnsName
+#' 
+#' -   service.detection.sequence.resources.data.ec2NetworkInterface.privateIpAddresses.privateIpAddress
+#' 
+#' -   service.detection.sequence.resources.data.ec2NetworkInterface.publicIp
+#' 
+#' -   service.detection.sequence.resources.data.ec2NetworkInterface.securityGroups.groupId
+#' 
+#' -   service.detection.sequence.resources.data.ec2NetworkInterface.securityGroups.groupName
+#' 
+#' -   service.detection.sequence.resources.data.ec2NetworkInterface.subNetId
+#' 
+#' -   service.detection.sequence.resources.data.ec2NetworkInterface.vpcId
+#' 
+#' -   service.detection.sequence.resources.data.ec2Vpc.ec2InstanceUids
+#' 
+#' -   service.detection.sequence.resources.data.ecsCluster.ec2InstanceUids
+#' 
+#' -   service.detection.sequence.resources.data.ecsCluster.status
+#' 
+#' -   service.detection.sequence.resources.data.ecsTask.containerUids
+#' 
+#' -   service.detection.sequence.resources.data.ecsTask.createdAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.detection.sequence.resources.data.ecsTask.launchType
+#' 
+#' -   service.detection.sequence.resources.data.ecsTask.taskDefinitionArn
+#' 
+#' -   service.detection.sequence.resources.data.eksCluster.arn
+#' 
+#' -   service.detection.sequence.resources.data.eksCluster.createdAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.detection.sequence.resources.data.eksCluster.ec2InstanceUids
+#' 
+#' -   service.detection.sequence.resources.data.eksCluster.status
+#' 
+#' -   service.detection.sequence.resources.data.eksCluster.vpcId
+#' 
+#' -   service.detection.sequence.resources.data.iamInstanceProfile.ec2InstanceUids
+#' 
+#' -   service.detection.sequence.resources.data.iamInstanceProfile.id
+#' 
+#' -   service.detection.sequence.resources.data.kubernetesWorkload.containerUids
+#' 
+#' -   service.detection.sequence.resources.data.kubernetesWorkload.namespace
+#' 
+#' -   service.detection.sequence.resources.data.kubernetesWorkload.type
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.accountPublicAccess.publicAclAccess
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.accountPublicAccess.publicAclIgnoreBehavior
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.accountPublicAccess.publicBucketRestrictBehavior
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.accountPublicAccess.publicPolicyAccess
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.bucketPublicAccess.publicAclAccess
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.bucketPublicAccess.publicAclIgnoreBehavior
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.bucketPublicAccess.publicBucketRestrictBehavior
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.bucketPublicAccess.publicPolicyAccess
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.createdAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.effectivePermission
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.encryptionKeyArn
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.encryptionType
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.ownerId
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.publicReadAccess
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.publicWriteAccess
+#' 
+#' -   service.detection.sequence.resources.data.s3Bucket.s3ObjectUids
+#' 
+#' -   service.detection.sequence.resources.data.s3Object.eTag
+#' 
+#' -   service.detection.sequence.resources.data.s3Object.key
+#' 
+#' -   service.detection.sequence.resources.data.s3Object.versionId
+#' 
+#' -   service.detection.sequence.resources.name
+#' 
+#' -   service.detection.sequence.resources.region
+#' 
+#' -   service.detection.sequence.resources.resourceType
+#' 
+#' -   service.detection.sequence.resources.service
+#' 
+#' -   service.detection.sequence.resources.tags.key
+#' 
+#' -   service.detection.sequence.resources.tags.value
+#' 
+#' -   service.detection.sequence.resources.uid
+#' 
+#' -   service.detection.sequence.sequenceIndicators.key
+#' 
+#' -   service.detection.sequence.sequenceIndicators.title
+#' 
+#' -   service.detection.sequence.sequenceIndicators.values
+#' 
+#' -   service.detection.sequence.signals.actorIds
+#' 
+#' -   service.detection.sequence.signals.count
+#' 
+#' -   service.detection.sequence.signals.createdAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.detection.sequence.signals.description
+#' 
+#' -   service.detection.sequence.signals.endpointIds
+#' 
+#' -   service.detection.sequence.signals.firstSeenAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.detection.sequence.signals.lastSeenAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.detection.sequence.signals.name
+#' 
+#' -   service.detection.sequence.signals.resourceUids
+#' 
+#' -   service.detection.sequence.signals.severity
+#' 
+#' -   service.detection.sequence.signals.signalIndicators.key
+#' 
+#' -   service.detection.sequence.signals.signalIndicators.title
+#' 
+#' -   service.detection.sequence.signals.signalIndicators.values
+#' 
+#' -   service.detection.sequence.signals.type
+#' 
+#' -   service.detection.sequence.signals.uid
+#' 
+#' -   service.detection.sequence.signals.updatedAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.detection.sequence.uid
+#' 
+#' -   service.detectorId
+#' 
+#' -   service.ebsVolumeScanDetails.scanCompletedAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.highestSeverityThreatDetails.count
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.highestSeverityThreatDetails.severity
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.highestSeverityThreatDetails.threatName
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.scannedItemCount.files
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.scannedItemCount.totalGb
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.scannedItemCount.volumes
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.itemCount
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.shortened
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.fileName
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.filePath
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.hash
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.volumeArn
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.itemCount
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.name
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.severity
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.uniqueThreatNameCount
+#' 
+#' -   service.ebsVolumeScanDetails.scanDetections.threatsDetectedItemCount.files
+#' 
+#' -   service.ebsVolumeScanDetails.scanId
+#' 
+#' -   service.ebsVolumeScanDetails.scanStartedAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.ebsVolumeScanDetails.scanType
+#' 
+#' -   service.ebsVolumeScanDetails.sources
+#' 
+#' -   service.ebsVolumeScanDetails.triggerFindingId
+#' 
+#' -   service.eventFirstSeen
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.eventLastSeen
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.evidence.threatIntelligenceDetails.threatFileSha256
+#' 
+#' -   service.evidence.threatIntelligenceDetails.threatListName
+#' 
+#' -   service.evidence.threatIntelligenceDetails.threatNames
+#' 
+#' -   service.featureName
+#' 
+#' -   service.malwareScanDetails.scanCategory
+#' 
+#' -   service.malwareScanDetails.scanConfiguration.incrementalScanDetails.baselineResourceArn
+#' 
+#' -   service.malwareScanDetails.scanConfiguration.triggerType
+#' 
+#' -   service.malwareScanDetails.scanId
+#' 
+#' -   service.malwareScanDetails.scanType
+#' 
+#' -   service.malwareScanDetails.threats.count
+#' 
+#' -   service.malwareScanDetails.threats.hash
+#' 
+#' -   service.malwareScanDetails.threats.itemDetails.additionalInfo.deviceName
+#' 
+#' -   service.malwareScanDetails.threats.itemDetails.additionalInfo.versionId
+#' 
+#' -   service.malwareScanDetails.threats.itemDetails.hash
+#' 
+#' -   service.malwareScanDetails.threats.itemDetails.itemPath
+#' 
+#' -   service.malwareScanDetails.threats.itemDetails.resourceArn
+#' 
+#' -   service.malwareScanDetails.threats.itemPaths.hash
+#' 
+#' -   service.malwareScanDetails.threats.itemPaths.nestedItemPath
+#' 
+#' -   service.malwareScanDetails.threats.name
+#' 
+#' -   service.malwareScanDetails.threats.source
+#' 
+#' -   service.malwareScanDetails.uniqueThreatCount
+#' 
+#' -   service.resourceRole
+#' 
+#' -   service.runtimeDetails.context.addressFamily
+#' 
+#' -   service.runtimeDetails.context.commandLineExample
+#' 
+#' -   service.runtimeDetails.context.fileOperation
+#' 
+#' -   service.runtimeDetails.context.filePath
+#' 
+#' -   service.runtimeDetails.context.fileSystemType
+#' 
+#' -   service.runtimeDetails.context.flags
+#' 
+#' -   service.runtimeDetails.context.ianaProtocolNumber
+#' 
+#' -   service.runtimeDetails.context.ldPreloadValue
+#' 
+#' -   service.runtimeDetails.context.libraryPath
+#' 
+#' -   service.runtimeDetails.context.memoryRegions
+#' 
+#' -   service.runtimeDetails.context.modifiedAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.euid
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.executablePath
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.executableSha256
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.lineage.euid
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.lineage.executablePath
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.lineage.name
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.lineage.namespacePid
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.lineage.parentUuid
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.lineage.pid
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.lineage.startTime
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.lineage.userId
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.lineage.uuid
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.name
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.namespacePid
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.parentUuid
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.pid
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.pwd
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.startTime
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.user
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.userId
+#' 
+#' -   service.runtimeDetails.context.modifyingProcess.uuid
+#' 
+#' -   service.runtimeDetails.context.moduleFilePath
+#' 
+#' -   service.runtimeDetails.context.moduleName
+#' 
+#' -   service.runtimeDetails.context.moduleSha256
+#' 
+#' -   service.runtimeDetails.context.mountSource
+#' 
+#' -   service.runtimeDetails.context.mountTarget
+#' 
+#' -   service.runtimeDetails.context.relatedFilePaths
+#' 
+#' -   service.runtimeDetails.context.releaseAgentPath
+#' 
+#' -   service.runtimeDetails.context.runcBinaryPath
+#' 
+#' -   service.runtimeDetails.context.scriptPath
+#' 
+#' -   service.runtimeDetails.context.serviceName
+#' 
+#' -   service.runtimeDetails.context.shellHistoryFilePath
+#' 
+#' -   service.runtimeDetails.context.socketPath
+#' 
+#' -   service.runtimeDetails.context.targetProcess.euid
+#' 
+#' -   service.runtimeDetails.context.targetProcess.executablePath
+#' 
+#' -   service.runtimeDetails.context.targetProcess.executableSha256
+#' 
+#' -   service.runtimeDetails.context.targetProcess.lineage.euid
+#' 
+#' -   service.runtimeDetails.context.targetProcess.lineage.executablePath
+#' 
+#' -   service.runtimeDetails.context.targetProcess.lineage.name
+#' 
+#' -   service.runtimeDetails.context.targetProcess.lineage.namespacePid
+#' 
+#' -   service.runtimeDetails.context.targetProcess.lineage.parentUuid
+#' 
+#' -   service.runtimeDetails.context.targetProcess.lineage.pid
+#' 
+#' -   service.runtimeDetails.context.targetProcess.lineage.startTime
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.runtimeDetails.context.targetProcess.lineage.userId
+#' 
+#' -   service.runtimeDetails.context.targetProcess.lineage.uuid
+#' 
+#' -   service.runtimeDetails.context.targetProcess.name
+#' 
+#' -   service.runtimeDetails.context.targetProcess.namespacePid
+#' 
+#' -   service.runtimeDetails.context.targetProcess.parentUuid
+#' 
+#' -   service.runtimeDetails.context.targetProcess.pid
+#' 
+#' -   service.runtimeDetails.context.targetProcess.pwd
+#' 
+#' -   service.runtimeDetails.context.targetProcess.startTime
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.runtimeDetails.context.targetProcess.user
+#' 
+#' -   service.runtimeDetails.context.targetProcess.userId
+#' 
+#' -   service.runtimeDetails.context.targetProcess.uuid
+#' 
+#' -   service.runtimeDetails.context.threatFilePath
+#' 
+#' -   service.runtimeDetails.context.toolCategory
+#' 
+#' -   service.runtimeDetails.context.toolName
+#' 
+#' -   service.runtimeDetails.process.euid
+#' 
+#' -   service.runtimeDetails.process.executablePath
+#' 
+#' -   service.runtimeDetails.process.executableSha256
+#' 
+#' -   service.runtimeDetails.process.lineage.euid
+#' 
+#' -   service.runtimeDetails.process.lineage.executablePath
+#' 
+#' -   service.runtimeDetails.process.lineage.name
+#' 
+#' -   service.runtimeDetails.process.lineage.namespacePid
+#' 
+#' -   service.runtimeDetails.process.lineage.parentUuid
+#' 
+#' -   service.runtimeDetails.process.lineage.pid
+#' 
+#' -   service.runtimeDetails.process.lineage.startTime
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.runtimeDetails.process.lineage.userId
+#' 
+#' -   service.runtimeDetails.process.lineage.uuid
+#' 
+#' -   service.runtimeDetails.process.name
+#' 
+#' -   service.runtimeDetails.process.namespacePid
+#' 
+#' -   service.runtimeDetails.process.parentUuid
+#' 
+#' -   service.runtimeDetails.process.pid
+#' 
+#' -   service.runtimeDetails.process.pwd
+#' 
+#' -   service.runtimeDetails.process.startTime
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
+#' 
+#' -   service.runtimeDetails.process.user
+#' 
+#' -   service.runtimeDetails.process.userId
+#' 
+#' -   service.runtimeDetails.process.uuid
+#' 
+#' -   service.serviceName
+#' 
+#' -   service.userFeedback
+#' 
+#' -   severity
+#' 
+#'     To configure severity based filters, use the following for the [FindingCriteria](https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html) condition:
+#' 
+#'     -   **Low**: `["1", "2", "3"]`
+#' 
+#'     -   **Medium**: `["4", "5", "6"]`
+#' 
+#'     -   **High**: `["7", "8"]`
+#' 
+#'     -   **Critical**: `["9", "10"]`
+#' 
+#'     For more information, see [Findings severity levels](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html) in the *Amazon GuardDuty User Guide*.
+#' 
+#' -   title
+#' 
+#' -   type
+#' 
+#' -   updatedAt
+#' 
+#'     Type: Timestamp in Unix Epoch millisecond format. Ex: 1486685375000
 #'
 #' @return
 #' A list with the following syntax:
@@ -7348,7 +9227,7 @@ guardduty_update_filter <- function(DetectorId, FilterName, Description = NULL, 
   op <- new_operation(
     name = "UpdateFilter",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/filter/{filterName}",
+    http_path = "/detector/{DetectorId}/filter/{FilterName}",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -7372,12 +9251,9 @@ guardduty_update_filter <- function(DetectorId, FilterName, Description = NULL, 
 #' guardduty_update_findings_feedback(DetectorId, FindingIds, Feedback,
 #'   Comments)
 #'
-#' @param DetectorId &#91;required&#93; The ID of the detector that is associated with the findings for which
-#' you want to update the feedback.
+#' @param DetectorId &#91;required&#93; The ID of the detector that is associated with the findings for which you want to update the feedback.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param FindingIds &#91;required&#93; The IDs of the findings that you want to mark as useful or not useful.
 #' @param Feedback &#91;required&#93; The feedback for the finding.
 #' @param Comments Additional feedback about the GuardDuty findings.
@@ -7406,7 +9282,7 @@ guardduty_update_findings_feedback <- function(DetectorId, FindingIds, Feedback,
   op <- new_operation(
     name = "UpdateFindingsFeedback",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/findings/feedback",
+    http_path = "/detector/{DetectorId}/findings/feedback",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -7430,19 +9306,14 @@ guardduty_update_findings_feedback <- function(DetectorId, FindingIds, Feedback,
 #' guardduty_update_ip_set(DetectorId, IpSetId, Name, Location, Activate,
 #'   ExpectedBucketOwner)
 #'
-#' @param DetectorId &#91;required&#93; The detectorID that specifies the GuardDuty service whose IPSet you want
-#' to update.
+#' @param DetectorId &#91;required&#93; The detectorID that specifies the GuardDuty service whose IPSet you want to update.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param IpSetId &#91;required&#93; The unique ID that specifies the IPSet that you want to update.
 #' @param Name The unique ID that specifies the IPSet that you want to update.
 #' @param Location The updated URI of the file that contains the IPSet.
-#' @param Activate The updated Boolean value that specifies whether the IPSet is active or
-#' not.
-#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket
-#' specified in the **location** parameter.
+#' @param Activate The updated Boolean value that specifies whether the IPSet is active or not.
+#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the **location** parameter.
 #'
 #' @return
 #' An empty list.
@@ -7468,7 +9339,7 @@ guardduty_update_ip_set <- function(DetectorId, IpSetId, Name = NULL, Location =
   op <- new_operation(
     name = "UpdateIPSet",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/ipset/{ipSetId}",
+    http_path = "/detector/{DetectorId}/ipset/{IpSetId}",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -7493,13 +9364,9 @@ guardduty_update_ip_set <- function(DetectorId, IpSetId, Name = NULL, Location =
 #'   Actions, ProtectedResource)
 #'
 #' @param MalwareProtectionPlanId &#91;required&#93; A unique identifier associated with the Malware Protection plan.
-#' @param Role Amazon Resource Name (ARN) of the IAM role with permissions to scan and
-#' add tags to the associated protected resource.
-#' @param Actions Information about whether the tags will be added to the S3 object after
-#' scanning.
-#' @param ProtectedResource Information about the protected resource that is associated with the
-#' created Malware Protection plan. Presently, `S3Bucket` is the only
-#' supported protected resource.
+#' @param Role Amazon Resource Name (ARN) of the IAM role with permissions to scan and add tags to the associated protected resource.
+#' @param Actions Information about whether the tags will be added to the S3 object after scanning.
+#' @param ProtectedResource Information about the protected resource that is associated with the created Malware Protection plan. Presently, `S3Bucket` is the only supported protected resource.
 #'
 #' @return
 #' An empty list.
@@ -7533,7 +9400,7 @@ guardduty_update_malware_protection_plan <- function(MalwareProtectionPlanId, Ro
   op <- new_operation(
     name = "UpdateMalwareProtectionPlan",
     http_method = "PATCH",
-    http_path = "/malware-protection-plan/{malwareProtectionPlanId}",
+    http_path = "/malware-protection-plan/{MalwareProtectionPlanId}",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -7553,23 +9420,16 @@ guardduty_update_malware_protection_plan <- function(MalwareProtectionPlanId, Ro
 #' @description
 #' Updates the malware scan settings.
 #' 
-#' There might be regional differences because some data sources might not
-#' be available in all the Amazon Web Services Regions where GuardDuty is
-#' presently supported. For more information, see [Regions and
-#' endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
+#' There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see [Regions and endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
 #'
 #' @usage
 #' guardduty_update_malware_scan_settings(DetectorId, ScanResourceCriteria,
 #'   EbsSnapshotPreservation)
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector that specifies the GuardDuty service where
-#' you want to update scan settings.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector that specifies the GuardDuty service where you want to update scan settings.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param ScanResourceCriteria Represents the criteria to be used in the filter for selecting resources
-#' to scan.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param ScanResourceCriteria Represents the criteria to be used in the filter for selecting resources to scan.
 #' @param EbsSnapshotPreservation An enum value representing possible snapshot preservation settings.
 #'
 #' @return
@@ -7614,7 +9474,7 @@ guardduty_update_malware_scan_settings <- function(DetectorId, ScanResourceCrite
   op <- new_operation(
     name = "UpdateMalwareScanSettings",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/malware-scan-settings",
+    http_path = "/detector/{DetectorId}/malware-scan-settings",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -7634,17 +9494,9 @@ guardduty_update_malware_scan_settings <- function(DetectorId, ScanResourceCrite
 #' @description
 #' Contains information on member accounts to be updated.
 #' 
-#' Specifying both EKS Runtime Monitoring (`EKS_RUNTIME_MONITORING`) and
-#' Runtime Monitoring (`RUNTIME_MONITORING`) will cause an error. You can
-#' add only one of these two features because Runtime Monitoring already
-#' includes the threat detection for Amazon EKS resources. For more
-#' information, see [Runtime
-#' Monitoring](https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html).
+#' Specifying both EKS Runtime Monitoring (`EKS_RUNTIME_MONITORING`) and Runtime Monitoring (`RUNTIME_MONITORING`) will cause an error. You can add only one of these two features because Runtime Monitoring already includes the threat detection for Amazon EKS resources. For more information, see [Runtime Monitoring](https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html).
 #' 
-#' There might be regional differences because some data sources might not
-#' be available in all the Amazon Web Services Regions where GuardDuty is
-#' presently supported. For more information, see [Regions and
-#' endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
+#' There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see [Regions and endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
 #'
 #' @usage
 #' guardduty_update_member_detectors(DetectorId, AccountIds, DataSources,
@@ -7652,13 +9504,10 @@ guardduty_update_malware_scan_settings <- function(DetectorId, ScanResourceCrite
 #'
 #' @param DetectorId &#91;required&#93; The detector ID of the administrator account.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param AccountIds &#91;required&#93; A list of member account IDs to be updated.
 #' @param DataSources Describes which data sources will be updated.
-#' @param Features A list of features that will be updated for the specified member
-#' accounts.
+#' @param Features A list of features that will be updated for the specified member accounts.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7697,7 +9546,7 @@ guardduty_update_malware_scan_settings <- function(DetectorId, ScanResourceCrite
 #'   ),
 #'   Features = list(
 #'     list(
-#'       Name = "S3_DATA_EVENTS"|"EKS_AUDIT_LOGS"|"EBS_MALWARE_PROTECTION"|"RDS_LOGIN_EVENTS"|"EKS_RUNTIME_MONITORING"|"LAMBDA_NETWORK_LOGS"|"RUNTIME_MONITORING",
+#'       Name = "S3_DATA_EVENTS"|"EKS_AUDIT_LOGS"|"EBS_MALWARE_PROTECTION"|"RDS_LOGIN_EVENTS"|"LAMBDA_NETWORK_LOGS"|"EKS_RUNTIME_MONITORING"|"RUNTIME_MONITORING",
 #'       Status = "ENABLED"|"DISABLED",
 #'       AdditionalConfiguration = list(
 #'         list(
@@ -7719,7 +9568,7 @@ guardduty_update_member_detectors <- function(DetectorId, AccountIds, DataSource
   op <- new_operation(
     name = "UpdateMemberDetectors",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/member/detector/update",
+    http_path = "/detector/{DetectorId}/member/detector/update",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -7737,21 +9586,11 @@ guardduty_update_member_detectors <- function(DetectorId, AccountIds, DataSource
 #' Configures the delegated administrator account with the provided values
 #'
 #' @description
-#' Configures the delegated administrator account with the provided values.
-#' You must provide a value for either `autoEnableOrganizationMembers` or
-#' `autoEnable`, but not both.
+#' Configures the delegated administrator account with the provided values. You must provide a value for either `autoEnableOrganizationMembers` or `autoEnable`, but not both.
 #' 
-#' Specifying both EKS Runtime Monitoring (`EKS_RUNTIME_MONITORING`) and
-#' Runtime Monitoring (`RUNTIME_MONITORING`) will cause an error. You can
-#' add only one of these two features because Runtime Monitoring already
-#' includes the threat detection for Amazon EKS resources. For more
-#' information, see [Runtime
-#' Monitoring](https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html).
+#' Specifying both EKS Runtime Monitoring (`EKS_RUNTIME_MONITORING`) and Runtime Monitoring (`RUNTIME_MONITORING`) will cause an error. You can add only one of these two features because Runtime Monitoring already includes the threat detection for Amazon EKS resources. For more information, see [Runtime Monitoring](https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html).
 #' 
-#' There might be regional differences because some data sources might not
-#' be available in all the Amazon Web Services Regions where GuardDuty is
-#' presently supported. For more information, see [Regions and
-#' endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
+#' There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see [Regions and endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
 #'
 #' @usage
 #' guardduty_update_organization_configuration(DetectorId, AutoEnable,
@@ -7759,48 +9598,25 @@ guardduty_update_member_detectors <- function(DetectorId, AccountIds, DataSource
 #'
 #' @param DetectorId &#91;required&#93; The ID of the detector that configures the delegated administrator.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param AutoEnable Represents whether to automatically enable member accounts in the
-#' organization. This applies to only new member accounts, not the existing
-#' member accounts. When a new account joins the organization, the chosen
-#' features will be enabled for them by default.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param AutoEnable Represents whether to automatically enable member accounts in the organization. This applies to only new member accounts, not the existing member accounts. When a new account joins the organization, the chosen features will be enabled for them by default.
 #' 
-#' Even though this is still supported, we recommend using
-#' `AutoEnableOrganizationMembers` to achieve the similar results. You must
-#' provide a value for either `autoEnableOrganizationMembers` or
-#' `autoEnable`.
+#' Even though this is still supported, we recommend using `AutoEnableOrganizationMembers` to achieve the similar results. You must provide a value for either `autoEnableOrganizationMembers` or `autoEnable`.
 #' @param DataSources Describes which data sources will be updated.
 #' @param Features A list of features that will be configured for the organization.
-#' @param AutoEnableOrganizationMembers Indicates the auto-enablement configuration of GuardDuty for the member
-#' accounts in the organization. You must provide a value for either
-#' `autoEnableOrganizationMembers` or `autoEnable`.
+#' @param AutoEnableOrganizationMembers Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization. You must provide a value for either `autoEnableOrganizationMembers` or `autoEnable`.
 #' 
-#' Use one of the following configuration values for
-#' `autoEnableOrganizationMembers`:
+#' Use one of the following configuration values for `autoEnableOrganizationMembers`:
 #' 
-#' -   `NEW`: Indicates that when a new account joins the organization,
-#'     they will have GuardDuty enabled automatically.
+#' -   `NEW`: Indicates that when a new account joins the organization, they will have GuardDuty enabled automatically.
 #' 
-#' -   `ALL`: Indicates that all accounts in the organization have
-#'     GuardDuty enabled automatically. This includes `NEW` accounts that
-#'     join the organization and accounts that may have been suspended or
-#'     removed from the organization in GuardDuty.
+#' -   `ALL`: Indicates that all accounts in the organization have GuardDuty enabled automatically. This includes `NEW` accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.
 #' 
-#'     It may take up to 24 hours to update the configuration for all the
-#'     member accounts.
+#'     It may take up to 24 hours to update the configuration for all the member accounts.
 #' 
-#' -   `NONE`: Indicates that GuardDuty will not be automatically enabled
-#'     for any account in the organization. The administrator must manage
-#'     GuardDuty for each account in the organization individually.
+#' -   `NONE`: Indicates that GuardDuty will not be automatically enabled for any account in the organization. The administrator must manage GuardDuty for each account in the organization individually.
 #' 
-#'     When you update the auto-enable setting from `ALL` or `NEW` to
-#'     `NONE`, this action doesn't disable the corresponding option for
-#'     your existing accounts. This configuration will apply to the new
-#'     accounts that join the organization. After you update the
-#'     auto-enable settings, no new account will have the corresponding
-#'     option as enabled.
+#'     When you update the auto-enable setting from `ALL` or `NEW` to `NONE`, this action doesn't disable the corresponding option for your existing accounts. This configuration will apply to the new accounts that join the organization. After you update the auto-enable settings, no new account will have the corresponding option as enabled.
 #'
 #' @return
 #' An empty list.
@@ -7829,7 +9645,7 @@ guardduty_update_member_detectors <- function(DetectorId, AccountIds, DataSource
 #'   ),
 #'   Features = list(
 #'     list(
-#'       Name = "S3_DATA_EVENTS"|"EKS_AUDIT_LOGS"|"EBS_MALWARE_PROTECTION"|"RDS_LOGIN_EVENTS"|"EKS_RUNTIME_MONITORING"|"LAMBDA_NETWORK_LOGS"|"RUNTIME_MONITORING",
+#'       Name = "S3_DATA_EVENTS"|"EKS_AUDIT_LOGS"|"EBS_MALWARE_PROTECTION"|"RDS_LOGIN_EVENTS"|"LAMBDA_NETWORK_LOGS"|"EKS_RUNTIME_MONITORING"|"RUNTIME_MONITORING",
 #'       AutoEnable = "NEW"|"NONE"|"ALL",
 #'       AdditionalConfiguration = list(
 #'         list(
@@ -7852,7 +9668,7 @@ guardduty_update_organization_configuration <- function(DetectorId, AutoEnable =
   op <- new_operation(
     name = "UpdateOrganizationConfiguration",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/admin",
+    http_path = "/detector/{DetectorId}/admin",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -7871,22 +9687,17 @@ guardduty_update_organization_configuration <- function(DetectorId, AutoEnable =
 #' destinationId
 #'
 #' @description
-#' Updates information about the publishing destination specified by the
-#' `destinationId`.
+#' Updates information about the publishing destination specified by the `destinationId`.
 #'
 #' @usage
 #' guardduty_update_publishing_destination(DetectorId, DestinationId,
 #'   DestinationProperties)
 #'
-#' @param DetectorId &#91;required&#93; The ID of the detector associated with the publishing destinations to
-#' update.
+#' @param DetectorId &#91;required&#93; The ID of the detector associated with the publishing destinations to update.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param DestinationId &#91;required&#93; The ID of the publishing destination to update.
-#' @param DestinationProperties A `DestinationProperties` object that includes the `DestinationArn` and
-#' `KmsKeyArn` of the publishing destination.
+#' @param DestinationProperties A `DestinationProperties` object that includes the `DestinationArn` and `KmsKeyArn` of the publishing destination.
 #'
 #' @return
 #' An empty list.
@@ -7912,7 +9723,7 @@ guardduty_update_publishing_destination <- function(DetectorId, DestinationId, D
   op <- new_operation(
     name = "UpdatePublishingDestination",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/publishingDestination/{destinationId}",
+    http_path = "/detector/{DetectorId}/publishingDestination/{DestinationId}",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -7931,32 +9742,22 @@ guardduty_update_publishing_destination <- function(DetectorId, DestinationId, D
 #' threatEntitySetId
 #'
 #' @description
-#' Updates the threat entity set associated with the specified
-#' `threatEntitySetId`.
+#' Updates the threat entity set associated with the specified `threatEntitySetId`.
 #'
 #' @usage
 #' guardduty_update_threat_entity_set(DetectorId, ThreatEntitySetId, Name,
 #'   Location, ExpectedBucketOwner, Activate)
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the GuardDuty detector associated with the threat
-#' entity set that you want to update.
+#' @param DetectorId &#91;required&#93; The unique ID of the GuardDuty detector associated with the threat entity set that you want to update.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param ThreatEntitySetId &#91;required&#93; The ID returned by GuardDuty after updating the threat entity set
-#' resource.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param ThreatEntitySetId &#91;required&#93; The ID returned by GuardDuty after updating the threat entity set resource.
 #' @param Name A user-friendly name to identify the trusted entity set.
 #' 
-#' The name of your list can include lowercase letters, uppercase letters,
-#' numbers, dash (-), and underscore (_).
+#' The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).
 #' @param Location The URI of the file that contains the trusted entity set.
-#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket
-#' specified in the **location** parameter.
-#' @param Activate A boolean value that indicates whether GuardDuty is to start using this
-#' updated threat entity set. After you update an entity set, you will need
-#' to activate it again. It might take up to 15 minutes for the updated
-#' entity set to be effective.
+#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the **location** parameter.
+#' @param Activate A boolean value that indicates whether GuardDuty is to start using this updated threat entity set. After you update an entity set, you will need to activate it again. It might take up to 15 minutes for the updated entity set to be effective.
 #'
 #' @return
 #' An empty list.
@@ -7982,7 +9783,7 @@ guardduty_update_threat_entity_set <- function(DetectorId, ThreatEntitySetId, Na
   op <- new_operation(
     name = "UpdateThreatEntitySet",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/threatentityset/{threatEntitySetId}",
+    http_path = "/detector/{DetectorId}/threatentityset/{ThreatEntitySetId}",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -8006,19 +9807,14 @@ guardduty_update_threat_entity_set <- function(DetectorId, ThreatEntitySetId, Na
 #' guardduty_update_threat_intel_set(DetectorId, ThreatIntelSetId, Name,
 #'   Location, Activate, ExpectedBucketOwner)
 #'
-#' @param DetectorId &#91;required&#93; The detectorID that specifies the GuardDuty service whose ThreatIntelSet
-#' you want to update.
+#' @param DetectorId &#91;required&#93; The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param ThreatIntelSetId &#91;required&#93; The unique ID that specifies the ThreatIntelSet that you want to update.
 #' @param Name The unique ID that specifies the ThreatIntelSet that you want to update.
 #' @param Location The updated URI of the file that contains the ThreateIntelSet.
-#' @param Activate The updated Boolean value that specifies whether the ThreateIntelSet is
-#' active or not.
-#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket
-#' specified in the **location** parameter.
+#' @param Activate The updated Boolean value that specifies whether the ThreateIntelSet is active or not.
+#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the **location** parameter.
 #'
 #' @return
 #' An empty list.
@@ -8044,7 +9840,7 @@ guardduty_update_threat_intel_set <- function(DetectorId, ThreatIntelSetId, Name
   op <- new_operation(
     name = "UpdateThreatIntelSet",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/threatintelset/{threatIntelSetId}",
+    http_path = "/detector/{DetectorId}/threatintelset/{ThreatIntelSetId}",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE
@@ -8063,32 +9859,22 @@ guardduty_update_threat_intel_set <- function(DetectorId, ThreatIntelSetId, Name
 #' trustedEntitySetId
 #'
 #' @description
-#' Updates the trusted entity set associated with the specified
-#' `trustedEntitySetId`.
+#' Updates the trusted entity set associated with the specified `trustedEntitySetId`.
 #'
 #' @usage
 #' guardduty_update_trusted_entity_set(DetectorId, TrustedEntitySetId,
 #'   Name, Location, ExpectedBucketOwner, Activate)
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the GuardDuty detector associated with the threat
-#' entity set that you want to update.
+#' @param DetectorId &#91;required&#93; The unique ID of the GuardDuty detector associated with the threat entity set that you want to update.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param TrustedEntitySetId &#91;required&#93; The ID returned by GuardDuty after updating the trusted entity set
-#' resource.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param TrustedEntitySetId &#91;required&#93; The ID returned by GuardDuty after updating the trusted entity set resource.
 #' @param Name A user-friendly name to identify the trusted entity set.
 #' 
-#' The name of your list can include lowercase letters, uppercase letters,
-#' numbers, dash (-), and underscore (_).
+#' The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).
 #' @param Location The URI of the file that contains the trusted entity set.
-#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket
-#' specified in the **location** parameter.
-#' @param Activate A boolean value that indicates whether GuardDuty is to start using this
-#' updated trusted entity set. After you update an entity set, you will
-#' need to activate it again. It might take up to 15 minutes for the
-#' updated entity set to be effective.
+#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the **location** parameter.
+#' @param Activate A boolean value that indicates whether GuardDuty is to start using this updated trusted entity set. After you update an entity set, you will need to activate it again. It might take up to 15 minutes for the updated entity set to be effective.
 #'
 #' @return
 #' An empty list.
@@ -8114,7 +9900,7 @@ guardduty_update_trusted_entity_set <- function(DetectorId, TrustedEntitySetId, 
   op <- new_operation(
     name = "UpdateTrustedEntitySet",
     http_method = "POST",
-    http_path = "/detector/{detectorId}/trustedentityset/{trustedEntitySetId}",
+    http_path = "/detector/{DetectorId}/trustedentityset/{TrustedEntitySetId}",
     host_prefix = "",
     paginator = list(),
     stream_api = FALSE

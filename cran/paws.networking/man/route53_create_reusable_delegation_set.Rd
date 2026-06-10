@@ -9,17 +9,9 @@ Services account}
 route53_create_reusable_delegation_set(CallerReference, HostedZoneId = NULL)
 }
 \arguments{
-\item{CallerReference}{[required] A unique string that identifies the request, and that allows you to
-retry failed
-\code{\link[=route53_create_reusable_delegation_set]{create_reusable_delegation_set}}
-requests without the risk of executing the operation twice. You must use
-a unique \code{CallerReference} string every time you submit a
-\code{\link[=route53_create_reusable_delegation_set]{create_reusable_delegation_set}}
-request. \code{CallerReference} can be any unique string, for example a
-date/time stamp.}
+\item{CallerReference}{[required] A unique string that identifies the request, and that allows you to retry failed \code{\link[=route53_create_reusable_delegation_set]{create_reusable_delegation_set}} requests without the risk of executing the operation twice. You must use a unique \code{CallerReference} string every time you submit a \code{\link[=route53_create_reusable_delegation_set]{create_reusable_delegation_set}} request. \code{CallerReference} can be any unique string, for example a date/time stamp.}
 
-\item{HostedZoneId}{If you want to mark the delegation set for an existing hosted zone as
-reusable, the ID for that hosted zone.}
+\item{HostedZoneId}{If you want to mark the delegation set for an existing hosted zone as reusable, the ID for that hosted zone.}
 }
 \description{
 Creates a delegation set (a group of four name servers) that can be reused by multiple hosted zones that were created by the same Amazon Web Services account.

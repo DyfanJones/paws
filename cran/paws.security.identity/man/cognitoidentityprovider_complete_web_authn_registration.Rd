@@ -11,13 +11,9 @@ cognitoidentityprovider_complete_web_authn_registration(
 )
 }
 \arguments{
-\item{AccessToken}{[required] A valid access token that Amazon Cognito issued to the currently
-signed-in user. Must include a scope claim for
-\code{aws.cognito.signin.user.admin}.}
+\item{AccessToken}{[required] A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for \code{aws.cognito.signin.user.admin}.}
 
-\item{Credential}{[required] A
-\href{https://www.w3.org/TR/webauthn-3/#dictdef-registrationresponsejson}{RegistrationResponseJSON}
-public-key credential response from the user's passkey provider.}
+\item{Credential}{[required] A \href{https://www.w3.org/TR/webauthn-3/#dictdef-registrationresponsejson}{RegistrationResponseJSON} public-key credential response from the user's passkey provider.}
 }
 \description{
 Completes registration of a passkey authenticator for the currently signed-in user.

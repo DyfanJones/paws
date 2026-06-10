@@ -14,9 +14,7 @@ emr_list_studio_session_mappings(
 \arguments{
 \item{StudioId}{The ID of the Amazon EMR Studio.}
 
-\item{IdentityType}{Specifies whether to return session mappings for users or groups. If not
-specified, the results include session mapping details for both users
-and groups.}
+\item{IdentityType}{Specifies whether to return session mappings for users or groups. If not specified, the results include session mapping details for both users and groups.}
 
 \item{Marker}{The pagination token that indicates the set of results to retrieve.}
 }

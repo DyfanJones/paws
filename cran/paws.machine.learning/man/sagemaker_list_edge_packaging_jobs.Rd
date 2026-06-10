@@ -19,8 +19,7 @@ sagemaker_list_edge_packaging_jobs(
 )
 }
 \arguments{
-\item{NextToken}{The response from the last list when returning a list large enough to
-need tokening.}
+\item{NextToken}{The response from the last list when returning a list large enough to need tokening.}
 
 \item{MaxResults}{Maximum number of results to select.}
 

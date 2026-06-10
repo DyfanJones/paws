@@ -18,11 +18,7 @@ simpledb_get_attributes(
 
 \item{AttributeNames}{The names of the attributes.}
 
-\item{ConsistentRead}{Determines whether or not strong consistency should be enforced when
-data is read from SimpleDB. If \code{true}, any data previously written to
-SimpleDB will be returned. Otherwise, results will be consistent
-eventually, and the client may not see data that was written immediately
-before your read.}
+\item{ConsistentRead}{Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If \code{true}, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.}
 }
 \description{
 Returns all of the attributes associated with the specified item. Optionally, the attributes returned can be limited to one or more attributes by specifying an attribute name parameter.

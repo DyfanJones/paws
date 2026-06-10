@@ -16,12 +16,9 @@ redshift_revoke_endpoint_access(
 
 \item{Account}{The Amazon Web Services account ID whose access is to be revoked.}
 
-\item{VpcIds}{The virtual private cloud (VPC) identifiers for which access is to be
-revoked.}
+\item{VpcIds}{The virtual private cloud (VPC) identifiers for which access is to be revoked.}
 
-\item{Force}{Indicates whether to force the revoke action. If true, the
-Redshift-managed VPC endpoints associated with the endpoint
-authorization are also deleted.}
+\item{Force}{Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted.}
 }
 \description{
 Revokes access to a cluster.

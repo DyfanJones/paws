@@ -15,11 +15,9 @@ sagemaker_delete_app(
 \arguments{
 \item{DomainId}{[required] The domain ID.}
 
-\item{UserProfileName}{The user profile name. If this value is not set, then \code{SpaceName} must
-be set.}
+\item{UserProfileName}{The user profile name. If this value is not set, then \code{SpaceName} must be set.}
 
-\item{SpaceName}{The name of the space. If this value is not set, then \code{UserProfileName}
-must be set.}
+\item{SpaceName}{The name of the space. If this value is not set, then \code{UserProfileName} must be set.}
 
 \item{AppType}{[required] The type of app.}
 

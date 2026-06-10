@@ -14,11 +14,9 @@ workdocs_create_notification_subscription(
 \arguments{
 \item{OrganizationId}{[required] The ID of the organization.}
 
-\item{Endpoint}{[required] The endpoint to receive the notifications. If the protocol is HTTPS, the
-endpoint is a URL that begins with \code{https}.}
+\item{Endpoint}{[required] The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint is a URL that begins with \code{https}.}
 
-\item{Protocol}{[required] The protocol to use. The supported value is https, which delivers
-JSON-encoded messages using HTTPS POST.}
+\item{Protocol}{[required] The protocol to use. The supported value is https, which delivers JSON-encoded messages using HTTPS POST.}
 
 \item{SubscriptionType}{[required] The notification type.}
 }

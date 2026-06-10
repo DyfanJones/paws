@@ -11,19 +11,15 @@ sesv2_update_reputation_entity_customer_managed_status(
 )
 }
 \arguments{
-\item{ReputationEntityType}{[required] The type of reputation entity. Currently, only \code{RESOURCE} type entities
-are supported.}
+\item{ReputationEntityType}{[required] The type of reputation entity. Currently, only \code{RESOURCE} type entities are supported.}
 
-\item{ReputationEntityReference}{[required] The unique identifier for the reputation entity. For resource-type
-entities, this is the Amazon Resource Name (ARN) of the resource.}
+\item{ReputationEntityReference}{[required] The unique identifier for the reputation entity. For resource-type entities, this is the Amazon Resource Name (ARN) of the resource.}
 
-\item{SendingStatus}{[required] The new customer-managed sending status for the reputation entity. This
-can be one of the following:
+\item{SendingStatus}{[required] The new customer-managed sending status for the reputation entity. This can be one of the following:
 \itemize{
 \item \code{ENABLED} – Allow sending for this entity.
 \item \code{DISABLED} – Prevent sending for this entity.
-\item \code{REINSTATED} – Allow sending even if there are active reputation
-findings.
+\item \code{REINSTATED} – Allow sending even if there are active reputation findings.
 }}
 }
 \description{

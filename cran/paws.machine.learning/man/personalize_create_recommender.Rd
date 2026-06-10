@@ -16,19 +16,13 @@ personalize_create_recommender(
 \arguments{
 \item{name}{[required] The name of the recommender.}
 
-\item{datasetGroupArn}{[required] The Amazon Resource Name (ARN) of the destination domain dataset group
-for the recommender.}
+\item{datasetGroupArn}{[required] The Amazon Resource Name (ARN) of the destination domain dataset group for the recommender.}
 
-\item{recipeArn}{[required] The Amazon Resource Name (ARN) of the recipe that the recommender will
-use. For a recommender, a recipe is a Domain dataset group use case.
-Only Domain dataset group use cases can be used to create a recommender.
-For information about use cases see \href{https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html}{Choosing recommender use cases}.}
+\item{recipeArn}{[required] The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a recommender, a recipe is a Domain dataset group use case. Only Domain dataset group use cases can be used to create a recommender. For information about use cases see \href{https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html}{Choosing recommender use cases}.}
 
 \item{recommenderConfig}{The configuration details of the recommender.}
 
-\item{tags}{A list of
-\href{https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html}{tags}
-to apply to the recommender.}
+\item{tags}{A list of \href{https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html}{tags} to apply to the recommender.}
 }
 \description{
 Creates a recommender with the recipe (a Domain dataset group use case) you specify. You create recommenders for a Domain dataset group and specify the recommender's Amazon Resource Name (ARN) when you make a \href{https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html}{GetRecommendations} request.

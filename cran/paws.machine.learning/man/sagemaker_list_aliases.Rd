@@ -17,14 +17,11 @@ sagemaker_list_aliases(
 
 \item{Alias}{The alias of the image version.}
 
-\item{Version}{The version of the image. If image version is not specified, the aliases
-of all versions of the image are listed.}
+\item{Version}{The version of the image. If image version is not specified, the aliases of all versions of the image are listed.}
 
 \item{MaxResults}{The maximum number of aliases to return.}
 
-\item{NextToken}{If the previous call to \code{\link[=sagemaker_list_aliases]{list_aliases}} didn't
-return the full set of aliases, the call returns a token for retrieving
-the next set of aliases.}
+\item{NextToken}{If the previous call to \code{\link[=sagemaker_list_aliases]{list_aliases}} didn't return the full set of aliases, the call returns a token for retrieving the next set of aliases.}
 }
 \description{
 Lists the aliases of a specified image or image version.

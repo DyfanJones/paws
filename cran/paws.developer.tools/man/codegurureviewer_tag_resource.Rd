@@ -7,20 +7,12 @@
 codegurureviewer_tag_resource(resourceArn, Tags)
 }
 \arguments{
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the
-\href{https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html}{RepositoryAssociation}
-object. You can retrieve this ARN by calling
-\code{\link[=codegurureviewer_list_repository_associations]{list_repository_associations}}.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the \href{https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html}{RepositoryAssociation} object. You can retrieve this ARN by calling \code{\link[=codegurureviewer_list_repository_associations]{list_repository_associations}}.}
 
-\item{Tags}{[required] An array of key-value pairs used to tag an associated repository. A tag
-is a custom attribute label with two parts:
+\item{Tags}{[required] An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:
 \itemize{
-\item A \emph{tag key} (for example, \code{CostCenter}, \code{Environment}, \code{Project}, or
-\code{Secret}). Tag keys are case sensitive.
-\item An optional field known as a \emph{tag value} (for example,
-\code{111122223333}, \code{Production}, or a team name). Omitting the tag
-value is the same as using an empty string. Like tag keys, tag
-values are case sensitive.
+\item A \emph{tag key} (for example, \code{CostCenter}, \code{Environment}, \code{Project}, or \code{Secret}). Tag keys are case sensitive.
+\item An optional field known as a \emph{tag value} (for example, \code{111122223333}, \code{Production}, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.
 }}
 }
 \description{

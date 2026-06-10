@@ -12,8 +12,7 @@ networkfirewall_describe_rule_group(
 )
 }
 \arguments{
-\item{RuleGroupName}{The descriptive name of the rule group. You can't change the name of a
-rule group after you create it.
+\item{RuleGroupName}{The descriptive name of the rule group. You can't change the name of a rule group after you create it.
 
 You must specify the ARN or the name, and you can specify both.}
 
@@ -21,16 +20,11 @@ You must specify the ARN or the name, and you can specify both.}
 
 You must specify the ARN or the name, and you can specify both.}
 
-\item{Type}{Indicates whether the rule group is stateless or stateful. If the rule
-group is stateless, it contains stateless rules. If it is stateful, it
-contains stateful rules.
+\item{Type}{Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.
 
-This setting is required for requests that do not include the
-\code{RuleGroupARN}.}
+This setting is required for requests that do not include the \code{RuleGroupARN}.}
 
-\item{AnalyzeRuleGroup}{Indicates whether you want Network Firewall to analyze the stateless
-rules in the rule group for rule behavior such as asymmetric routing. If
-set to \code{TRUE}, Network Firewall runs the analysis.}
+\item{AnalyzeRuleGroup}{Indicates whether you want Network Firewall to analyze the stateless rules in the rule group for rule behavior such as asymmetric routing. If set to \code{TRUE}, Network Firewall runs the analysis.}
 }
 \description{
 Returns the data objects for the specified rule group.

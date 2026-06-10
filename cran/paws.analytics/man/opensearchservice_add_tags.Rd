@@ -8,8 +8,7 @@ source, or application}
 opensearchservice_add_tags(ARN, TagList)
 }
 \arguments{
-\item{ARN}{[required] Amazon Resource Name (ARN) for the OpenSearch Service domain, data
-source, or application to which you want to attach resource tags.}
+\item{ARN}{[required] Amazon Resource Name (ARN) for the OpenSearch Service domain, data source, or application to which you want to attach resource tags.}
 
 \item{TagList}{[required] List of resource tags.}
 }

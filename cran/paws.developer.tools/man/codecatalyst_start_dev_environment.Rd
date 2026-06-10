@@ -20,14 +20,11 @@ codecatalyst_start_dev_environment(
 
 \item{id}{[required] The system-generated unique ID of the Dev Environment.}
 
-\item{ides}{Information about the integrated development environment (IDE)
-configured for a Dev Environment.}
+\item{ides}{Information about the integrated development environment (IDE) configured for a Dev Environment.}
 
 \item{instanceType}{The Amazon EC2 instace type to use for the Dev Environment.}
 
-\item{inactivityTimeoutMinutes}{The amount of time the Dev Environment will run without any activity
-detected before stopping, in minutes. Only whole integers are allowed.
-Dev Environments consume compute minutes when running.}
+\item{inactivityTimeoutMinutes}{The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.}
 }
 \description{
 Starts a specified Dev Environment and puts it into an active state.

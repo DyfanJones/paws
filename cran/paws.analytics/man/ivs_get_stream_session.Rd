@@ -9,9 +9,7 @@ ivs_get_stream_session(channelArn, streamId = NULL)
 \arguments{
 \item{channelArn}{[required] ARN of the channel resource}
 
-\item{streamId}{Unique identifier for a live or previously live stream in the specified
-channel. If no \code{streamId} is provided, this returns the most recent
-stream session for the channel, if it exists.}
+\item{streamId}{Unique identifier for a live or previously live stream in the specified channel. If no \code{streamId} is provided, this returns the most recent stream session for the channel, if it exists.}
 }
 \description{
 Gets metadata on a specified stream.

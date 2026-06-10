@@ -19,17 +19,13 @@ lakeformation_get_temporary_glue_partition_credentials(
 
 \item{Partition}{[required] A list of partition values identifying a single partition.}
 
-\item{Permissions}{Filters the request based on the user having been granted a list of
-specified permissions on the requested resource(s).}
+\item{Permissions}{Filters the request based on the user having been granted a list of specified permissions on the requested resource(s).}
 
-\item{DurationSeconds}{The time period, between 900 and 21,600 seconds, for the timeout of the
-temporary credentials.}
+\item{DurationSeconds}{The time period, between 900 and 21,600 seconds, for the timeout of the temporary credentials.}
 
-\item{AuditContext}{A structure representing context to access a resource (column names,
-query ID, etc).}
+\item{AuditContext}{A structure representing context to access a resource (column names, query ID, etc).}
 
-\item{SupportedPermissionTypes}{A list of supported permission types for the partition. Valid values are
-\code{COLUMN_PERMISSION} and \code{CELL_FILTER_PERMISSION}.}
+\item{SupportedPermissionTypes}{A list of supported permission types for the partition. Valid values are \code{COLUMN_PERMISSION} and \code{CELL_FILTER_PERMISSION}.}
 }
 \description{
 This API is identical to \code{GetTemporaryTableCredentials} except that this is used when the target Data Catalog resource is of type Partition. Lake Formation restricts the permission of the vended credentials with the same scope down policy which restricts access to a single Amazon S3 prefix.

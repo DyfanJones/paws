@@ -7,8 +7,7 @@
 neptunedata_get_open_cypher_query_status(queryId)
 }
 \arguments{
-\item{queryId}{[required] The unique ID of the openCypher query for which to retrieve the query
-status.}
+\item{queryId}{[required] The unique ID of the openCypher query for which to retrieve the query status.}
 }
 \description{
 Retrieves the status of a specified openCypher query.

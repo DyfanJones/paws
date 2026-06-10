@@ -10,9 +10,9 @@ connectcampaignservicev2_put_instance_communication_limits(
 )
 }
 \arguments{
-\item{connectInstanceId}{[required]}
+\item{connectInstanceId}{[required] Amazon Connect Instance Id}
 
-\item{communicationLimitsConfig}{[required]}
+\item{communicationLimitsConfig}{[required] Instance Communication limits config}
 }
 \description{
 Put the instance communication limits. This API is idempotent.

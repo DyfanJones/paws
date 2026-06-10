@@ -17,27 +17,17 @@ glue_put_resource_policy(
 
 \item{ResourceArn}{Do not use. For internal use only.}
 
-\item{PolicyHashCondition}{The hash value returned when the previous policy was set using
-\code{\link[=glue_put_resource_policy]{put_resource_policy}}. Its purpose is to
-prevent concurrent modifications of a policy. Do not use this parameter
-if no previous policy has been set.}
+\item{PolicyHashCondition}{The hash value returned when the previous policy was set using \code{\link[=glue_put_resource_policy]{put_resource_policy}}. Its purpose is to prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.}
 
-\item{PolicyExistsCondition}{A value of \code{MUST_EXIST} is used to update a policy. A value of
-\code{NOT_EXIST} is used to create a new policy. If a value of \code{NONE} or a
-null value is used, the call does not depend on the existence of a
-policy.}
+\item{PolicyExistsCondition}{A value of \code{MUST_EXIST} is used to update a policy. A value of \code{NOT_EXIST} is used to create a new policy. If a value of \code{NONE} or a null value is used, the call does not depend on the existence of a policy.}
 
-\item{EnableHybrid}{If \code{'TRUE'}, indicates that you are using both methods to grant
-cross-account access to Data Catalog resources:
+\item{EnableHybrid}{If \code{'TRUE'}, indicates that you are using both methods to grant cross-account access to Data Catalog resources:
 \itemize{
 \item By directly updating the resource policy with \code{PutResourePolicy}
-\item By using the \strong{Grant permissions} command on the Amazon Web
-Services Management Console.
+\item By using the \strong{Grant permissions} command on the Amazon Web Services Management Console.
 }
 
-Must be set to \code{'TRUE'} if you have already used the Management Console
-to grant cross-account access, otherwise the call fails. Default is
-'FALSE'.}
+Must be set to \code{'TRUE'} if you have already used the Management Console to grant cross-account access, otherwise the call fails. Default is 'FALSE'.}
 }
 \description{
 Sets the Data Catalog resource policy for access control.

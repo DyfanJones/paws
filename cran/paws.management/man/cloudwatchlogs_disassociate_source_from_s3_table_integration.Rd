@@ -8,8 +8,7 @@ access and deleting all associated data from the integration}
 cloudwatchlogs_disassociate_source_from_s3_table_integration(identifier)
 }
 \arguments{
-\item{identifier}{[required] The unique identifier of the association to remove between the data
-source and S3 Table Integration.}
+\item{identifier}{[required] The unique identifier of the association to remove between the data source and S3 Table Integration.}
 }
 \description{
 Disassociates a data source from an S3 Table Integration, removing query access and deleting all associated data from the integration.

@@ -14,15 +14,15 @@ kinesisanalyticsv2_list_application_operations(
 )
 }
 \arguments{
-\item{ApplicationName}{[required]}
+\item{ApplicationName}{[required] The name of the application.}
 
-\item{Limit}{}
+\item{Limit}{The limit on the number of records to be returned in the response.}
 
-\item{NextToken}{}
+\item{NextToken}{A pagination token that can be used in a subsequent request.}
 
-\item{Operation}{}
+\item{Operation}{The type of operation that is performed on an application.}
 
-\item{OperationStatus}{}
+\item{OperationStatus}{The status of the operation.}
 }
 \description{
 Lists all the operations performed for the specified application such as UpdateApplication, StartApplication etc. The response also includes a summary of the operation.

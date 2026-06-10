@@ -53,124 +53,73 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Welcome to the Amazon CodeCatalyst API reference. This reference
-provides descriptions of operations and data types for Amazon
-CodeCatalyst. You can use the Amazon CodeCatalyst API to work with the
-following objects.
+Welcome to the Amazon CodeCatalyst API reference. This reference provides descriptions of operations and data types for Amazon CodeCatalyst. You can use the Amazon CodeCatalyst API to work with the following objects.
 
 Spaces, by calling the following:
 \itemize{
 \item \code{delete_space}, which deletes a space.
-\item \code{get_space}, which returns information
-about a space.
-\item \code{get_subscription}, which returns
-information about the Amazon Web Services account used for billing
-purposes and the billing plan for the space.
-\item \code{list_spaces}, which retrieves a list of
-spaces.
-\item \code{update_space}, which changes one or
-more values for a space.
+\item \code{get_space}, which returns information about a space.
+\item \code{get_subscription}, which returns information about the Amazon Web Services account used for billing purposes and the billing plan for the space.
+\item \code{list_spaces}, which retrieves a list of spaces.
+\item \code{update_space}, which changes one or more values for a space.
 }
 
 Projects, by calling the following:
 \itemize{
-\item \code{create_project} which creates a
-project in a specified space.
-\item \code{get_project}, which returns information
-about a project.
-\item \code{list_projects}, which retrieves a
-list of projects in a space.
+\item \code{create_project} which creates a project in a specified space.
+\item \code{get_project}, which returns information about a project.
+\item \code{list_projects}, which retrieves a list of projects in a space.
 }
 
 Users, by calling the following:
 \itemize{
-\item \code{get_user_details}, which returns
-information about a user in Amazon CodeCatalyst.
+\item \code{get_user_details}, which returns information about a user in Amazon CodeCatalyst.
 }
 
 Source repositories, by calling the following:
 \itemize{
-\item \code{create_source_repository},
-which creates an empty Git-based source repository in a specified
-project.
-\item \code{create_source_repository_branch},
-which creates a branch in a specified repository where you can work
-on code.
-\item \code{delete_source_repository},
-which deletes a source repository.
-\item \code{get_source_repository}, which
-returns information about a source repository.
-\item \code{get_source_repository_clone_urls},
-which returns information about the URLs that can be used with a Git
-client to clone a source repository.
-\item \code{list_source_repositories},
-which retrieves a list of source repositories in a project.
-\item \code{list_source_repository_branches},
-which retrieves a list of branches in a source repository.
+\item \code{create_source_repository}, which creates an empty Git-based source repository in a specified project.
+\item \code{create_source_repository_branch}, which creates a branch in a specified repository where you can work on code.
+\item \code{delete_source_repository}, which deletes a source repository.
+\item \code{get_source_repository}, which returns information about a source repository.
+\item \code{get_source_repository_clone_urls}, which returns information about the URLs that can be used with a Git client to clone a source repository.
+\item \code{list_source_repositories}, which retrieves a list of source repositories in a project.
+\item \code{list_source_repository_branches}, which retrieves a list of branches in a source repository.
 }
 
-Dev Environments and the Amazon Web Services Toolkits, by calling the
-following:
+Dev Environments and the Amazon Web Services Toolkits, by calling the following:
 \itemize{
-\item \code{create_dev_environment},
-which creates a Dev Environment, where you can quickly work on the
-code stored in the source repositories of your project.
-\item \code{delete_dev_environment},
-which deletes a Dev Environment.
-\item \code{get_dev_environment}, which
-returns information about a Dev Environment.
-\item \code{list_dev_environments}, which
-retrieves a list of Dev Environments in a project.
-\item \code{list_dev_environment_sessions},
-which retrieves a list of active Dev Environment sessions in a
-project.
-\item \code{start_dev_environment}, which
-starts a specified Dev Environment and puts it into an active state.
-\item \code{start_dev_environment_session},
-which starts a session to a specified Dev Environment.
-\item \code{stop_dev_environment}, which
-stops a specified Dev Environment and puts it into an stopped state.
-\item \code{stop_dev_environment_session},
-which stops a session for a specified Dev Environment.
-\item \code{update_dev_environment},
-which changes one or more values for a Dev Environment.
+\item \code{create_dev_environment}, which creates a Dev Environment, where you can quickly work on the code stored in the source repositories of your project.
+\item \code{delete_dev_environment}, which deletes a Dev Environment.
+\item \code{get_dev_environment}, which returns information about a Dev Environment.
+\item \code{list_dev_environments}, which retrieves a list of Dev Environments in a project.
+\item \code{list_dev_environment_sessions}, which retrieves a list of active Dev Environment sessions in a project.
+\item \code{start_dev_environment}, which starts a specified Dev Environment and puts it into an active state.
+\item \code{start_dev_environment_session}, which starts a session to a specified Dev Environment.
+\item \code{stop_dev_environment}, which stops a specified Dev Environment and puts it into an stopped state.
+\item \code{stop_dev_environment_session}, which stops a session for a specified Dev Environment.
+\item \code{update_dev_environment}, which changes one or more values for a Dev Environment.
 }
 
 Workflows, by calling the following:
 \itemize{
-\item \code{get_workflow}, which returns
-information about a workflow.
-\item \code{get_workflow_run}, which returns
-information about a specified run of a workflow.
-\item \code{list_workflow_runs}, which
-retrieves a list of runs of a specified workflow.
-\item \code{list_workflows}, which retrieves a
-list of workflows in a specified project.
-\item \code{start_workflow_run}, which
-starts a run of a specified workflow.
+\item \code{get_workflow}, which returns information about a workflow.
+\item \code{get_workflow_run}, which returns information about a specified run of a workflow.
+\item \code{list_workflow_runs}, which retrieves a list of runs of a specified workflow.
+\item \code{list_workflows}, which retrieves a list of workflows in a specified project.
+\item \code{start_workflow_run}, which starts a run of a specified workflow.
 }
 
-Security, activity, and resource management in Amazon CodeCatalyst, by
-calling the following:
+Security, activity, and resource management in Amazon CodeCatalyst, by calling the following:
 \itemize{
-\item \code{create_access_token}, which
-creates a personal access token (PAT) for the current user.
-\item \code{delete_access_token}, which
-deletes a specified personal access token (PAT).
-\item \code{list_access_tokens}, which lists
-all personal access tokens (PATs) associated with a user.
-\item \code{list_event_logs}, which retrieves a
-list of events that occurred during a specified time period in a
-space.
-\item \code{verify_session}, which verifies
-whether the calling user has a valid Amazon CodeCatalyst login and
-session.
+\item \code{create_access_token}, which creates a personal access token (PAT) for the current user.
+\item \code{delete_access_token}, which deletes a specified personal access token (PAT).
+\item \code{list_access_tokens}, which lists all personal access tokens (PATs) associated with a user.
+\item \code{list_event_logs}, which retrieves a list of events that occurred during a specified time period in a space.
+\item \code{verify_session}, which verifies whether the calling user has a valid Amazon CodeCatalyst login and session.
 }
 
-If you are using the Amazon CodeCatalyst APIs with an SDK or the CLI,
-you must configure your computer to work with Amazon CodeCatalyst and
-single sign-on (SSO). For more information, see \href{https://docs.aws.amazon.com/codecatalyst/latest/userguide/set-up-cli.html}{Setting up to use the CLI with Amazon CodeCatalyst}
-and the SSO documentation for your SDK.
+If you are using the Amazon CodeCatalyst APIs with an SDK or the CLI, you must configure your computer to work with Amazon CodeCatalyst and single sign-on (SSO). For more information, see \href{https://docs.aws.amazon.com/codecatalyst/latest/userguide/set-up-cli.html}{Setting up to use the CLI with Amazon CodeCatalyst} and the SSO documentation for your SDK.
 }
 \section{Service syntax}{
 

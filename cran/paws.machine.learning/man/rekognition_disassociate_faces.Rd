@@ -17,12 +17,7 @@ rekognition_disassociate_faces(
 
 \item{UserId}{[required] ID for the existing UserID.}
 
-\item{ClientRequestToken}{Idempotent token used to identify the request to
-\code{\link[=rekognition_disassociate_faces]{disassociate_faces}}. If you use the
-same token with multiple
-\code{\link[=rekognition_disassociate_faces]{disassociate_faces}} requests, the
-same response is returned. Use ClientRequestToken to prevent the same
-request from being processed more than once.}
+\item{ClientRequestToken}{Idempotent token used to identify the request to \code{\link[=rekognition_disassociate_faces]{disassociate_faces}}. If you use the same token with multiple \code{\link[=rekognition_disassociate_faces]{disassociate_faces}} requests, the same response is returned. Use ClientRequestToken to prevent the same request from being processed more than once.}
 
 \item{FaceIds}{[required] An array of face IDs to disassociate from the UserID.}
 }

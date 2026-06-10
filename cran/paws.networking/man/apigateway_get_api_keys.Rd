@@ -15,16 +15,13 @@ apigateway_get_api_keys(
 \arguments{
 \item{position}{The current pagination position in the paged result set.}
 
-\item{limit}{The maximum number of returned results per page. The default value is 25
-and the maximum value is 500.}
+\item{limit}{The maximum number of returned results per page. The default value is 25 and the maximum value is 500.}
 
 \item{nameQuery}{The name of queried API keys.}
 
-\item{customerId}{The identifier of a customer in Amazon Web Services Marketplace or an
-external system, such as a developer portal.}
+\item{customerId}{The identifier of a customer in Amazon Web Services Marketplace or an external system, such as a developer portal.}
 
-\item{includeValues}{A boolean flag to specify whether (\code{true}) or not (\code{false}) the result
-contains key values.}
+\item{includeValues}{A boolean flag to specify whether (\code{true}) or not (\code{false}) the result contains key values.}
 }
 \description{
 Gets information about the current ApiKeys resource.

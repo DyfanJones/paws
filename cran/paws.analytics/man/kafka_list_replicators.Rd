@@ -11,12 +11,9 @@ kafka_list_replicators(
 )
 }
 \arguments{
-\item{MaxResults}{The maximum number of results to return in the response. If there are
-more results, the response includes a NextToken parameter.}
+\item{MaxResults}{The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.}
 
-\item{NextToken}{If the response of ListReplicators is truncated, it returns a NextToken
-in the response. This NextToken should be sent in the subsequent request
-to ListReplicators.}
+\item{NextToken}{If the response of ListReplicators is truncated, it returns a NextToken in the response. This NextToken should be sent in the subsequent request to ListReplicators.}
 
 \item{ReplicatorNameFilter}{Returns replicators starting with given name.}
 }

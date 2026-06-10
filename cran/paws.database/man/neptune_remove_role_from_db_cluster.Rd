@@ -14,13 +14,9 @@ neptune_remove_role_from_db_cluster(
 \arguments{
 \item{DBClusterIdentifier}{[required] The name of the DB cluster to disassociate the IAM role from.}
 
-\item{RoleArn}{[required] The Amazon Resource Name (ARN) of the IAM role to disassociate from the
-DB cluster, for example
-\verb{arn:aws:iam::123456789012:role/NeptuneAccessRole}.}
+\item{RoleArn}{[required] The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB cluster, for example \verb{arn:aws:iam::123456789012:role/NeptuneAccessRole}.}
 
-\item{FeatureName}{The name of the feature for the DB cluster that the IAM role is to be
-disassociated from. For the list of supported feature names, see
-\code{\link[=neptune_describe_db_engine_versions]{describe_db_engine_versions}}.}
+\item{FeatureName}{The name of the feature for the DB cluster that the IAM role is to be disassociated from. For the list of supported feature names, see \code{\link[=neptune_describe_db_engine_versions]{describe_db_engine_versions}}.}
 }
 \description{
 Disassociates an Identity and Access Management (IAM) role from a DB cluster.

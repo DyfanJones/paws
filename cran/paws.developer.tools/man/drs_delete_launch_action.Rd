@@ -4,12 +4,12 @@
 \alias{drs_delete_launch_action}
 \title{Deletes a resource launch action}
 \usage{
-drs_delete_launch_action(actionId, resourceId)
+drs_delete_launch_action(resourceId, actionId)
 }
 \arguments{
-\item{actionId}{[required]}
+\item{resourceId}{[required] Launch configuration template Id or Source Server Id}
 
-\item{resourceId}{[required]}
+\item{actionId}{[required] Launch action Id.}
 }
 \description{
 Deletes a resource launch action.

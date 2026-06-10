@@ -14,21 +14,15 @@ textract_list_adapter_versions(
 )
 }
 \arguments{
-\item{AdapterId}{A string containing a unique ID for the adapter to match for when
-listing adapter versions.}
+\item{AdapterId}{A string containing a unique ID for the adapter to match for when listing adapter versions.}
 
-\item{AfterCreationTime}{Specifies the lower bound for the ListAdapterVersions operation. Ensures
-ListAdapterVersions returns only adapter versions created after the
-specified creation time.}
+\item{AfterCreationTime}{Specifies the lower bound for the ListAdapterVersions operation. Ensures ListAdapterVersions returns only adapter versions created after the specified creation time.}
 
-\item{BeforeCreationTime}{Specifies the upper bound for the ListAdapterVersions operation. Ensures
-ListAdapterVersions returns only adapter versions created after the
-specified creation time.}
+\item{BeforeCreationTime}{Specifies the upper bound for the ListAdapterVersions operation. Ensures ListAdapterVersions returns only adapter versions created after the specified creation time.}
 
 \item{MaxResults}{The maximum number of results to return when listing adapter versions.}
 
-\item{NextToken}{Identifies the next page of results to return when listing adapter
-versions.}
+\item{NextToken}{Identifies the next page of results to return when listing adapter versions.}
 }
 \description{
 List all version of an adapter that meet the specified filtration criteria.

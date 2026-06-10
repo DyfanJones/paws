@@ -7,19 +7,13 @@
 xray_get_insight_impact_graph(InsightId, StartTime, EndTime, NextToken = NULL)
 }
 \arguments{
-\item{InsightId}{[required] The insight's unique identifier. Use the GetInsightSummaries action to
-retrieve an InsightId.}
+\item{InsightId}{[required] The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.}
 
-\item{StartTime}{[required] The estimated start time of the insight, in Unix time seconds. The
-StartTime is inclusive of the value provided and can't be more than 30
-days old.}
+\item{StartTime}{[required] The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive of the value provided and can't be more than 30 days old.}
 
-\item{EndTime}{[required] The estimated end time of the insight, in Unix time seconds. The EndTime
-is exclusive of the value provided. The time range between the start
-time and end time can't be more than six hours.}
+\item{EndTime}{[required] The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided. The time range between the start time and end time can't be more than six hours.}
 
-\item{NextToken}{Specify the pagination token returned by a previous request to retrieve
-the next page of results.}
+\item{NextToken}{Specify the pagination token returned by a previous request to retrieve the next page of results.}
 }
 \description{
 Retrieves a service graph structure filtered by the specified insight. The service graph is limited to only structural information. For a complete service graph, use this API with the GetServiceGraph API.

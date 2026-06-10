@@ -8,19 +8,9 @@ NULL
 #' @description
 #' Creates a budget and, if included, notifications and subscribers.
 #' 
-#' Only one of `BudgetLimit` or `PlannedBudgetLimits` can be present in the
-#' syntax at one time. Use the syntax that matches your use case. The
-#' Request Syntax section shows the `BudgetLimit` syntax. For
-#' `PlannedBudgetLimits`, see the
-#' [Examples](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_CreateBudget.html#API_CreateBudget_Examples)
-#' section.
+#' Only one of `BudgetLimit` or `PlannedBudgetLimits` can be present in the syntax at one time. Use the syntax that matches your use case. The Request Syntax section shows the `BudgetLimit` syntax. For `PlannedBudgetLimits`, see the [Examples](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_CreateBudget.html#API_CreateBudget_Examples) section.
 #' 
-#' Similarly, only one set of filter and metric selections can be present
-#' in the syntax at one time. Either `FilterExpression` and `Metrics` or
-#' `CostFilters` and `CostTypes`, not both or a different combination. We
-#' recommend using `FilterExpression` and `Metrics` as they provide more
-#' flexible and powerful filtering capabilities. The Request Syntax section
-#' shows the `FilterExpression`/`Metrics` syntax.
+#' Similarly, only one set of filter and metric selections can be present in the syntax at one time. Either `FilterExpression` and `Metrics` or `CostFilters` and `CostTypes`, not both or a different combination. We recommend using `FilterExpression` and `Metrics` as they provide more flexible and powerful filtering capabilities. The Request Syntax section shows the `FilterExpression`/`Metrics` syntax.
 #'
 #' @usage
 #' budgets_create_budget(AccountId, Budget, NotificationsWithSubscribers,
@@ -28,14 +18,8 @@ NULL
 #'
 #' @param AccountId &#91;required&#93; The `accountId` that is associated with the budget.
 #' @param Budget &#91;required&#93; The budget object that you want to create.
-#' @param NotificationsWithSubscribers A notification that you want to associate with a budget. A budget can
-#' have up to five notifications, and each notification can have one SNS
-#' subscriber and up to 10 email subscribers. If you include notifications
-#' and subscribers in your [`create_budget`][budgets_create_budget] call,
-#' Amazon Web Services creates the notifications and subscribers for you.
-#' @param ResourceTags An optional list of tags to associate with the specified budget. Each
-#' tag consists of a key and a value, and each key must be unique for the
-#' resource.
+#' @param NotificationsWithSubscribers A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your [`create_budget`][budgets_create_budget] call, Amazon Web Services creates the notifications and subscribers for you.
+#' @param ResourceTags An optional list of tags to associate with the specified budget. Each tag consists of a key and a value, and each key must be unique for the resource.
 #'
 #' @return
 #' An empty list.
@@ -215,21 +199,18 @@ budgets_create_budget <- function(AccountId, Budget, NotificationsWithSubscriber
 #'   ActionType, ActionThreshold, Definition, ExecutionRoleArn,
 #'   ApprovalModel, Subscribers, ResourceTags)
 #'
-#' @param AccountId &#91;required&#93; 
-#' @param BudgetName &#91;required&#93; 
-#' @param NotificationType &#91;required&#93; 
-#' @param ActionType &#91;required&#93; The type of action. This defines the type of tasks that can be carried
-#' out by this action. This field also determines the format for
-#' definition.
-#' @param ActionThreshold &#91;required&#93; 
-#' @param Definition &#91;required&#93; 
-#' @param ExecutionRoleArn &#91;required&#93; The role passed for action execution and reversion. Roles and actions
-#' must be in the same account.
+#' @param AccountId &#91;required&#93; The account ID of the user. It's a 12-digit number.
+#' @param BudgetName &#91;required&#93; A string that represents the budget name. The ":" and "\\" characters, and the "/action/" substring, aren't allowed.
+#' 
+#' Budget names are validated for content. Names that contain phone numbers, URLs, or email addresses combined with certain terms may be rejected.
+#' @param NotificationType &#91;required&#93; The type of a notification. It must be ACTUAL or FORECASTED.
+#' @param ActionType &#91;required&#93; The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.
+#' @param ActionThreshold &#91;required&#93; The trigger threshold of the action.
+#' @param Definition &#91;required&#93; Specifies all of the type-specific parameters.
+#' @param ExecutionRoleArn &#91;required&#93; The role passed for action execution and reversion. Roles and actions must be in the same account.
 #' @param ApprovalModel &#91;required&#93; This specifies if the action needs manual or automatic approval.
-#' @param Subscribers &#91;required&#93; 
-#' @param ResourceTags An optional list of tags to associate with the specified budget action.
-#' Each tag consists of a key and a value, and each key must be unique for
-#' the resource.
+#' @param Subscribers &#91;required&#93; A list of subscribers.
+#' @param ResourceTags An optional list of tags to associate with the specified budget action. Each tag consists of a key and a value, and each key must be unique for the resource.
 #'
 #' @return
 #' A list with the following syntax:
@@ -323,21 +304,16 @@ budgets_create_budget_action <- function(AccountId, BudgetName, NotificationType
 #' Creates a notification
 #'
 #' @description
-#' Creates a notification. You must create the budget before you create the
-#' associated notification.
+#' Creates a notification. You must create the budget before you create the associated notification.
 #'
 #' @usage
 #' budgets_create_notification(AccountId, BudgetName, Notification,
 #'   Subscribers)
 #'
-#' @param AccountId &#91;required&#93; The `accountId` that is associated with the budget that you want to
-#' create a notification for.
-#' @param BudgetName &#91;required&#93; The name of the budget that you want Amazon Web Services to notify you
-#' about. Budget names must be unique within an account.
+#' @param AccountId &#91;required&#93; The `accountId` that is associated with the budget that you want to create a notification for.
+#' @param BudgetName &#91;required&#93; The name of the budget that you want Amazon Web Services to notify you about. Budget names must be unique within an account.
 #' @param Notification &#91;required&#93; The notification that you want to create.
-#' @param Subscribers &#91;required&#93; A list of subscribers that you want to associate with the notification.
-#' Each notification can have one SNS subscriber and up to 10 email
-#' subscribers.
+#' @param Subscribers &#91;required&#93; A list of subscribers that you want to associate with the notification. Each notification can have one SNS subscriber and up to 10 email subscribers.
 #'
 #' @return
 #' An empty list.
@@ -390,17 +366,14 @@ budgets_create_notification <- function(AccountId, BudgetName, Notification, Sub
 #' Creates a subscriber
 #'
 #' @description
-#' Creates a subscriber. You must create the associated budget and
-#' notification before you create the subscriber.
+#' Creates a subscriber. You must create the associated budget and notification before you create the subscriber.
 #'
 #' @usage
 #' budgets_create_subscriber(AccountId, BudgetName, Notification,
 #'   Subscriber)
 #'
-#' @param AccountId &#91;required&#93; The `accountId` that is associated with the budget that you want to
-#' create a subscriber for.
-#' @param BudgetName &#91;required&#93; The name of the budget that you want to subscribe to. Budget names must
-#' be unique within an account.
+#' @param AccountId &#91;required&#93; The `accountId` that is associated with the budget that you want to create a subscriber for.
+#' @param BudgetName &#91;required&#93; The name of the budget that you want to subscribe to. Budget names must be unique within an account.
 #' @param Notification &#91;required&#93; The notification that you want to create a subscriber for.
 #' @param Subscriber &#91;required&#93; The subscriber that you want to associate with a budget notification.
 #'
@@ -455,14 +428,12 @@ budgets_create_subscriber <- function(AccountId, BudgetName, Notification, Subsc
 #' @description
 #' Deletes a budget. You can delete your budget at any time.
 #' 
-#' Deleting a budget also deletes the notifications and subscribers that
-#' are associated with that budget.
+#' Deleting a budget also deletes the notifications and subscribers that are associated with that budget.
 #'
 #' @usage
 #' budgets_delete_budget(AccountId, BudgetName)
 #'
-#' @param AccountId &#91;required&#93; The `accountId` that is associated with the budget that you want to
-#' delete.
+#' @param AccountId &#91;required&#93; The `accountId` that is associated with the budget that you want to delete.
 #' @param BudgetName &#91;required&#93; The name of the budget that you want to delete.
 #'
 #' @return
@@ -508,8 +479,10 @@ budgets_delete_budget <- function(AccountId, BudgetName) {
 #' @usage
 #' budgets_delete_budget_action(AccountId, BudgetName, ActionId)
 #'
-#' @param AccountId &#91;required&#93; 
-#' @param BudgetName &#91;required&#93; 
+#' @param AccountId &#91;required&#93; The account ID of the user. It's a 12-digit number.
+#' @param BudgetName &#91;required&#93; A string that represents the budget name. The ":" and "\\" characters, and the "/action/" substring, aren't allowed.
+#' 
+#' Budget names are validated for content. Names that contain phone numbers, URLs, or email addresses combined with certain terms may be rejected.
 #' @param ActionId &#91;required&#93; A system-generated universally unique identifier (UUID) for the action.
 #'
 #' @return
@@ -605,14 +578,12 @@ budgets_delete_budget_action <- function(AccountId, BudgetName, ActionId) {
 #' @description
 #' Deletes a notification.
 #' 
-#' Deleting a notification also deletes the subscribers that are associated
-#' with the notification.
+#' Deleting a notification also deletes the subscribers that are associated with the notification.
 #'
 #' @usage
 #' budgets_delete_notification(AccountId, BudgetName, Notification)
 #'
-#' @param AccountId &#91;required&#93; The `accountId` that is associated with the budget whose notification
-#' you want to delete.
+#' @param AccountId &#91;required&#93; The `accountId` that is associated with the budget whose notification you want to delete.
 #' @param BudgetName &#91;required&#93; The name of the budget whose notification you want to delete.
 #' @param Notification &#91;required&#93; The notification that you want to delete.
 #'
@@ -663,15 +634,13 @@ budgets_delete_notification <- function(AccountId, BudgetName, Notification) {
 #' @description
 #' Deletes a subscriber.
 #' 
-#' Deleting the last subscriber to a notification also deletes the
-#' notification.
+#' Deleting the last subscriber to a notification also deletes the notification.
 #'
 #' @usage
 #' budgets_delete_subscriber(AccountId, BudgetName, Notification,
 #'   Subscriber)
 #'
-#' @param AccountId &#91;required&#93; The `accountId` that is associated with the budget whose subscriber you
-#' want to delete.
+#' @param AccountId &#91;required&#93; The `accountId` that is associated with the budget whose subscriber you want to delete.
 #' @param BudgetName &#91;required&#93; The name of the budget whose subscriber you want to delete.
 #' @param Notification &#91;required&#93; The notification whose subscriber you want to delete.
 #' @param Subscriber &#91;required&#93; The subscriber that you want to delete.
@@ -727,21 +696,14 @@ budgets_delete_subscriber <- function(AccountId, BudgetName, Notification, Subsc
 #' @description
 #' Describes a budget.
 #' 
-#' The Request Syntax section shows the `BudgetLimit` syntax. For
-#' `PlannedBudgetLimits`, see the
-#' [Examples](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudget.html#API_DescribeBudget_Examples)
-#' section.
+#' The Request Syntax section shows the `BudgetLimit` syntax. For `PlannedBudgetLimits`, see the [Examples](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudget.html#API_DescribeBudget_Examples) section.
 #'
 #' @usage
 #' budgets_describe_budget(AccountId, BudgetName, ShowFilterExpression)
 #'
-#' @param AccountId &#91;required&#93; The `accountId` that is associated with the budget that you want a
-#' description of.
+#' @param AccountId &#91;required&#93; The `accountId` that is associated with the budget that you want a description of.
 #' @param BudgetName &#91;required&#93; The name of the budget that you want a description of.
-#' @param ShowFilterExpression Specifies whether the response includes the filter expression associated
-#' with the budget. By showing the filter expression, you can see detailed
-#' filtering logic applied to the budget, such as Amazon Web Services
-#' services or tags that are being tracked.
+#' @param ShowFilterExpression Specifies whether the response includes the filter expression associated with the budget. By showing the filter expression, you can see detailed filtering logic applied to the budget, such as Amazon Web Services services or tags that are being tracked.
 #'
 #' @return
 #' A list with the following syntax:
@@ -902,8 +864,10 @@ budgets_describe_budget <- function(AccountId, BudgetName, ShowFilterExpression 
 #' @usage
 #' budgets_describe_budget_action(AccountId, BudgetName, ActionId)
 #'
-#' @param AccountId &#91;required&#93; 
-#' @param BudgetName &#91;required&#93; 
+#' @param AccountId &#91;required&#93; The account ID of the user. It's a 12-digit number.
+#' @param BudgetName &#91;required&#93; A string that represents the budget name. The ":" and "\\" characters, and the "/action/" substring, aren't allowed.
+#' 
+#' Budget names are validated for content. Names that contain phone numbers, URLs, or email addresses combined with certain terms may be rejected.
 #' @param ActionId &#91;required&#93; A system-generated universally unique identifier (UUID) for the action.
 #'
 #' @return
@@ -1003,12 +967,14 @@ budgets_describe_budget_action <- function(AccountId, BudgetName, ActionId) {
 #' budgets_describe_budget_action_histories(AccountId, BudgetName,
 #'   ActionId, TimePeriod, MaxResults, NextToken)
 #'
-#' @param AccountId &#91;required&#93; 
-#' @param BudgetName &#91;required&#93; 
+#' @param AccountId &#91;required&#93; The account ID of the user. It's a 12-digit number.
+#' @param BudgetName &#91;required&#93; A string that represents the budget name. The ":" and "\\" characters, and the "/action/" substring, aren't allowed.
+#' 
+#' Budget names are validated for content. Names that contain phone numbers, URLs, or email addresses combined with certain terms may be rejected.
 #' @param ActionId &#91;required&#93; A system-generated universally unique identifier (UUID) for the action.
-#' @param TimePeriod 
-#' @param MaxResults 
-#' @param NextToken 
+#' @param TimePeriod The period of time that's covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date.
+#' @param MaxResults An integer that represents how many entries a paginated response contains. The maximum is 100.
+#' @param NextToken A generic string.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1128,9 +1094,9 @@ budgets_describe_budget_action_histories <- function(AccountId, BudgetName, Acti
 #' budgets_describe_budget_actions_for_account(AccountId, MaxResults,
 #'   NextToken)
 #'
-#' @param AccountId &#91;required&#93; 
-#' @param MaxResults 
-#' @param NextToken 
+#' @param AccountId &#91;required&#93; The account ID of the user. It's a 12-digit number.
+#' @param MaxResults An integer that represents how many entries a paginated response contains. The maximum is 100.
+#' @param NextToken A generic string.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1230,10 +1196,12 @@ budgets_describe_budget_actions_for_account <- function(AccountId, MaxResults = 
 #' budgets_describe_budget_actions_for_budget(AccountId, BudgetName,
 #'   MaxResults, NextToken)
 #'
-#' @param AccountId &#91;required&#93; 
-#' @param BudgetName &#91;required&#93; 
-#' @param MaxResults 
-#' @param NextToken 
+#' @param AccountId &#91;required&#93; The account ID of the user. It's a 12-digit number.
+#' @param BudgetName &#91;required&#93; A string that represents the budget name. The ":" and "\\" characters, and the "/action/" substring, aren't allowed.
+#' 
+#' Budget names are validated for content. Names that contain phone numbers, URLs, or email addresses combined with certain terms may be rejected.
+#' @param MaxResults An integer that represents how many entries a paginated response contains. The maximum is 100.
+#' @param NextToken A generic string.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1329,17 +1297,15 @@ budgets_describe_budget_actions_for_budget <- function(AccountId, BudgetName, Ma
 #' account
 #'
 #' @description
-#' Lists the budget names and notifications that are associated with an
-#' account.
+#' Lists the budget names and notifications that are associated with an account.
 #'
 #' @usage
 #' budgets_describe_budget_notifications_for_account(AccountId, MaxResults,
 #'   NextToken)
 #'
-#' @param AccountId &#91;required&#93; 
-#' @param MaxResults An integer that represents how many budgets a paginated response
-#' contains. The default is 50.
-#' @param NextToken 
+#' @param AccountId &#91;required&#93; The account ID of the user. It's a 12-digit number.
+#' @param MaxResults An integer that represents how many budgets a paginated response contains. The default is 50.
+#' @param NextToken A generic string.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1399,19 +1365,19 @@ budgets_describe_budget_notifications_for_account <- function(AccountId, MaxResu
 #' Describes the history for DAILY, MONTHLY, and QUARTERLY budgets
 #'
 #' @description
-#' Describes the history for `DAILY`, `MONTHLY`, and `QUARTERLY` budgets.
-#' Budget history isn't available for `ANNUAL` budgets.
+#' Describes the history for `DAILY`, `MONTHLY`, and `QUARTERLY` budgets. Budget history isn't available for `ANNUAL` budgets.
 #'
 #' @usage
 #' budgets_describe_budget_performance_history(AccountId, BudgetName,
 #'   TimePeriod, MaxResults, NextToken)
 #'
-#' @param AccountId &#91;required&#93; 
-#' @param BudgetName &#91;required&#93; 
-#' @param TimePeriod Retrieves how often the budget went into an `ALARM` state for the
-#' specified time period.
-#' @param MaxResults 
-#' @param NextToken 
+#' @param AccountId &#91;required&#93; The account ID of the user. It's a 12-digit number.
+#' @param BudgetName &#91;required&#93; A string that represents the budget name. The ":" and "\\" characters, and the "/action/" substring, aren't allowed.
+#' 
+#' Budget names are validated for content. Names that contain phone numbers, URLs, or email addresses combined with certain terms may be rejected.
+#' @param TimePeriod Retrieves how often the budget went into an `ALARM` state for the specified time period.
+#' @param MaxResults An integer that represents how many entries a paginated response contains. The maximum is 100.
+#' @param NextToken A generic string.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1459,6 +1425,45 @@ budgets_describe_budget_notifications_for_account <- function(AccountId, MaxResu
 #'           )
 #'         )
 #'       )
+#'     ),
+#'     FilterExpression = list(
+#'       Or = list(
+#'         list()
+#'       ),
+#'       And = list(
+#'         list()
+#'       ),
+#'       Not = list(),
+#'       Dimensions = list(
+#'         Key = "AZ"|"INSTANCE_TYPE"|"LINKED_ACCOUNT"|"LINKED_ACCOUNT_NAME"|"OPERATION"|"PURCHASE_TYPE"|"REGION"|"SERVICE"|"SERVICE_CODE"|"USAGE_TYPE"|"USAGE_TYPE_GROUP"|"RECORD_TYPE"|"OPERATING_SYSTEM"|"TENANCY"|"SCOPE"|"PLATFORM"|"SUBSCRIPTION_ID"|"LEGAL_ENTITY_NAME"|"INVOICING_ENTITY"|"DEPLOYMENT_OPTION"|"DATABASE_ENGINE"|"CACHE_ENGINE"|"INSTANCE_TYPE_FAMILY"|"BILLING_ENTITY"|"RESERVATION_ID"|"RESOURCE_ID"|"RIGHTSIZING_TYPE"|"SAVINGS_PLANS_TYPE"|"SAVINGS_PLAN_ARN"|"PAYMENT_OPTION"|"RESERVATION_MODIFIED"|"TAG_KEY"|"COST_CATEGORY_NAME",
+#'         Values = list(
+#'           "string"
+#'         ),
+#'         MatchOptions = list(
+#'           "EQUALS"|"ABSENT"|"STARTS_WITH"|"ENDS_WITH"|"CONTAINS"|"GREATER_THAN_OR_EQUAL"|"CASE_SENSITIVE"|"CASE_INSENSITIVE"
+#'         )
+#'       ),
+#'       Tags = list(
+#'         Key = "string",
+#'         Values = list(
+#'           "string"
+#'         ),
+#'         MatchOptions = list(
+#'           "EQUALS"|"ABSENT"|"STARTS_WITH"|"ENDS_WITH"|"CONTAINS"|"GREATER_THAN_OR_EQUAL"|"CASE_SENSITIVE"|"CASE_INSENSITIVE"
+#'         )
+#'       ),
+#'       CostCategories = list(
+#'         Key = "string",
+#'         Values = list(
+#'           "string"
+#'         ),
+#'         MatchOptions = list(
+#'           "EQUALS"|"ABSENT"|"STARTS_WITH"|"ENDS_WITH"|"CONTAINS"|"GREATER_THAN_OR_EQUAL"|"CASE_SENSITIVE"|"CASE_INSENSITIVE"
+#'         )
+#'       )
+#'     ),
+#'     Metrics = list(
+#'       "BlendedCost"|"UnblendedCost"|"AmortizedCost"|"NetUnblendedCost"|"NetAmortizedCost"|"UsageQuantity"|"NormalizedUsageAmount"|"Hours"
 #'     )
 #'   ),
 #'   NextToken = "string"
@@ -1512,25 +1517,16 @@ budgets_describe_budget_performance_history <- function(AccountId, BudgetName, T
 #' @description
 #' Lists the budgets that are associated with an account.
 #' 
-#' The Request Syntax section shows the `BudgetLimit` syntax. For
-#' `PlannedBudgetLimits`, see the
-#' [Examples](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudgets.html#API_DescribeBudgets_Examples)
-#' section.
+#' The Request Syntax section shows the `BudgetLimit` syntax. For `PlannedBudgetLimits`, see the [Examples](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudgets.html#API_DescribeBudgets_Examples) section.
 #'
 #' @usage
 #' budgets_describe_budgets(AccountId, MaxResults, NextToken,
 #'   ShowFilterExpression)
 #'
-#' @param AccountId &#91;required&#93; The `accountId` that is associated with the budgets that you want to
-#' describe.
-#' @param MaxResults An integer that represents how many budgets a paginated response
-#' contains. The default is 100.
-#' @param NextToken The pagination token that you include in your request to indicate the
-#' next set of results that you want to retrieve.
-#' @param ShowFilterExpression Specifies whether the response includes the filter expression associated
-#' with the budgets. By showing the filter expression, you can see detailed
-#' filtering logic applied to the budgets, such as Amazon Web Services
-#' services or tags that are being tracked.
+#' @param AccountId &#91;required&#93; The `accountId` that is associated with the budgets that you want to describe.
+#' @param MaxResults An integer that represents how many budgets a paginated response contains. The default is 100.
+#' @param NextToken The pagination token that you include in your request to indicate the next set of results that you want to retrieve.
+#' @param ShowFilterExpression Specifies whether the response includes the filter expression associated with the budgets. By showing the filter expression, you can see detailed filtering logic applied to the budgets, such as Amazon Web Services services or tags that are being tracked.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1696,13 +1692,10 @@ budgets_describe_budgets <- function(AccountId, MaxResults = NULL, NextToken = N
 #' budgets_describe_notifications_for_budget(AccountId, BudgetName,
 #'   MaxResults, NextToken)
 #'
-#' @param AccountId &#91;required&#93; The `accountId` that is associated with the budget whose notifications
-#' you want descriptions of.
+#' @param AccountId &#91;required&#93; The `accountId` that is associated with the budget whose notifications you want descriptions of.
 #' @param BudgetName &#91;required&#93; The name of the budget whose notifications you want descriptions of.
-#' @param MaxResults An optional integer that represents how many entries a paginated
-#' response contains.
-#' @param NextToken The pagination token that you include in your request to indicate the
-#' next set of results that you want to retrieve.
+#' @param MaxResults An optional integer that represents how many entries a paginated response contains.
+#' @param NextToken The pagination token that you include in your request to indicate the next set of results that you want to retrieve.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1764,14 +1757,11 @@ budgets_describe_notifications_for_budget <- function(AccountId, BudgetName, Max
 #' budgets_describe_subscribers_for_notification(AccountId, BudgetName,
 #'   Notification, MaxResults, NextToken)
 #'
-#' @param AccountId &#91;required&#93; The `accountId` that is associated with the budget whose subscribers you
-#' want descriptions of.
+#' @param AccountId &#91;required&#93; The `accountId` that is associated with the budget whose subscribers you want descriptions of.
 #' @param BudgetName &#91;required&#93; The name of the budget whose subscribers you want descriptions of.
 #' @param Notification &#91;required&#93; The notification whose subscribers you want to list.
-#' @param MaxResults An optional integer that represents how many entries a paginated
-#' response contains.
-#' @param NextToken The pagination token that you include in your request to indicate the
-#' next set of results that you want to retrieve.
+#' @param MaxResults An optional integer that represents how many entries a paginated response contains.
+#' @param NextToken The pagination token that you include in your request to indicate the next set of results that you want to retrieve.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1837,8 +1827,10 @@ budgets_describe_subscribers_for_notification <- function(AccountId, BudgetName,
 #' budgets_execute_budget_action(AccountId, BudgetName, ActionId,
 #'   ExecutionType)
 #'
-#' @param AccountId &#91;required&#93; 
-#' @param BudgetName &#91;required&#93; 
+#' @param AccountId &#91;required&#93; The account ID of the user. It's a 12-digit number.
+#' @param BudgetName &#91;required&#93; A string that represents the budget name. The ":" and "\\" characters, and the "/action/" substring, aren't allowed.
+#' 
+#' Budget names are validated for content. Names that contain phone numbers, URLs, or email addresses combined with certain terms may be rejected.
 #' @param ActionId &#91;required&#93; A system-generated universally unique identifier (UUID) for the action.
 #' @param ExecutionType &#91;required&#93; The type of execution.
 #'
@@ -2043,30 +2035,16 @@ budgets_untag_resource <- function(ResourceARN, ResourceTagKeys) {
 #' Updates a budget
 #'
 #' @description
-#' Updates a budget. You can change every part of a budget except for the
-#' `budgetName` and the `calculatedSpend`. When you modify a budget, the
-#' `calculatedSpend` drops to zero until Amazon Web Services has new usage
-#' data to use for forecasting.
+#' Updates a budget. You can change every part of a budget except for the `budgetName` and the `calculatedSpend`. When you modify a budget, the `calculatedSpend` drops to zero until Amazon Web Services has new usage data to use for forecasting.
 #' 
-#' Only one of `BudgetLimit` or `PlannedBudgetLimits` can be present in the
-#' syntax at one time. Use the syntax that matches your case. The Request
-#' Syntax section shows the `BudgetLimit` syntax. For
-#' `PlannedBudgetLimits`, see the
-#' [Examples](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_UpdateBudget.html#API_UpdateBudget_Examples)
-#' section.
+#' Only one of `BudgetLimit` or `PlannedBudgetLimits` can be present in the syntax at one time. Use the syntax that matches your case. The Request Syntax section shows the `BudgetLimit` syntax. For `PlannedBudgetLimits`, see the [Examples](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_UpdateBudget.html#API_UpdateBudget_Examples) section.
 #' 
-#' Similarly, only one set of filter and metric selections can be present
-#' in the syntax at one time. Either `FilterExpression` and `Metrics` or
-#' `CostFilters` and `CostTypes`, not both or a different combination. We
-#' recommend using `FilterExpression` and `Metrics` as they provide more
-#' flexible and powerful filtering capabilities. The Request Syntax section
-#' shows the `FilterExpression`/`Metrics` syntax.
+#' Similarly, only one set of filter and metric selections can be present in the syntax at one time. Either `FilterExpression` and `Metrics` or `CostFilters` and `CostTypes`, not both or a different combination. We recommend using `FilterExpression` and `Metrics` as they provide more flexible and powerful filtering capabilities. The Request Syntax section shows the `FilterExpression`/`Metrics` syntax.
 #'
 #' @usage
 #' budgets_update_budget(AccountId, NewBudget)
 #'
-#' @param AccountId &#91;required&#93; The `accountId` that is associated with the budget that you want to
-#' update.
+#' @param AccountId &#91;required&#93; The `accountId` that is associated with the budget that you want to update.
 #' @param NewBudget &#91;required&#93; The budget that you want to update your budget to.
 #'
 #' @return
@@ -2224,16 +2202,17 @@ budgets_update_budget <- function(AccountId, NewBudget) {
 #'   NotificationType, ActionThreshold, Definition, ExecutionRoleArn,
 #'   ApprovalModel, Subscribers)
 #'
-#' @param AccountId &#91;required&#93; 
-#' @param BudgetName &#91;required&#93; 
+#' @param AccountId &#91;required&#93; The account ID of the user. It's a 12-digit number.
+#' @param BudgetName &#91;required&#93; A string that represents the budget name. The ":" and "\\" characters, and the "/action/" substring, aren't allowed.
+#' 
+#' Budget names are validated for content. Names that contain phone numbers, URLs, or email addresses combined with certain terms may be rejected.
 #' @param ActionId &#91;required&#93; A system-generated universally unique identifier (UUID) for the action.
-#' @param NotificationType 
-#' @param ActionThreshold 
-#' @param Definition 
-#' @param ExecutionRoleArn The role passed for action execution and reversion. Roles and actions
-#' must be in the same account.
+#' @param NotificationType The type of a notification. It must be ACTUAL or FORECASTED.
+#' @param ActionThreshold The trigger threshold of the action.
+#' @param Definition Specifies all of the type-specific parameters.
+#' @param ExecutionRoleArn The role passed for action execution and reversion. Roles and actions must be in the same account.
 #' @param ApprovalModel This specifies if the action needs manual or automatic approval.
-#' @param Subscribers 
+#' @param Subscribers A list of subscribers.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2418,8 +2397,7 @@ budgets_update_budget_action <- function(AccountId, BudgetName, ActionId, Notifi
 #' budgets_update_notification(AccountId, BudgetName, OldNotification,
 #'   NewNotification)
 #'
-#' @param AccountId &#91;required&#93; The `accountId` that is associated with the budget whose notification
-#' you want to update.
+#' @param AccountId &#91;required&#93; The `accountId` that is associated with the budget whose notification you want to update.
 #' @param BudgetName &#91;required&#93; The name of the budget whose notification you want to update.
 #' @param OldNotification &#91;required&#93; The previous notification that is associated with a budget.
 #' @param NewNotification &#91;required&#93; The updated notification to be associated with a budget.
@@ -2482,8 +2460,7 @@ budgets_update_notification <- function(AccountId, BudgetName, OldNotification, 
 #' budgets_update_subscriber(AccountId, BudgetName, Notification,
 #'   OldSubscriber, NewSubscriber)
 #'
-#' @param AccountId &#91;required&#93; The `accountId` that is associated with the budget whose subscriber you
-#' want to update.
+#' @param AccountId &#91;required&#93; The `accountId` that is associated with the budget whose subscriber you want to update.
 #' @param BudgetName &#91;required&#93; The name of the budget whose subscriber you want to update.
 #' @param Notification &#91;required&#93; The notification whose subscriber you want to update.
 #' @param OldSubscriber &#91;required&#93; The previous subscriber that is associated with a budget notification.

@@ -14,26 +14,18 @@ rds_failover_global_cluster(
 )
 }
 \arguments{
-\item{GlobalClusterIdentifier}{[required] The identifier of the global database cluster (Aurora global database)
-this operation should apply to. The identifier is the unique key
-assigned by the user when the Aurora global database is created. In
-other words, it's the name of the Aurora global database.
+\item{GlobalClusterIdentifier}{[required] The identifier of the global database cluster (Aurora global database) this operation should apply to. The identifier is the unique key assigned by the user when the Aurora global database is created. In other words, it's the name of the Aurora global database.
 
 Constraints:
 \itemize{
 \item Must match the identifier of an existing global database cluster.
 }}
 
-\item{TargetDbClusterIdentifier}{[required] The identifier of the secondary Aurora DB cluster that you want to
-promote to the primary for the global database cluster. Use the Amazon
-Resource Name (ARN) for the identifier so that Aurora can locate the
-cluster in its Amazon Web Services Region.}
+\item{TargetDbClusterIdentifier}{[required] The identifier of the secondary Aurora DB cluster that you want to promote to the primary for the global database cluster. Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services Region.}
 
-\item{AllowDataLoss}{Specifies whether to allow data loss for this global database cluster
-operation. Allowing data loss triggers a global failover operation.
+\item{AllowDataLoss}{Specifies whether to allow data loss for this global database cluster operation. Allowing data loss triggers a global failover operation.
 
-If you don't specify \code{AllowDataLoss}, the global database cluster
-operation defaults to a switchover.
+If you don't specify \code{AllowDataLoss}, the global database cluster operation defaults to a switchover.
 
 Constraints:
 \itemize{

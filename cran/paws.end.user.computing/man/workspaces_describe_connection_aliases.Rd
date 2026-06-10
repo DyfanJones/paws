@@ -19,8 +19,7 @@ workspaces_describe_connection_aliases(
 
 \item{Limit}{The maximum number of connection aliases to return.}
 
-\item{NextToken}{If you received a \code{NextToken} from a previous call that was paginated,
-provide this token to receive the next set of results.}
+\item{NextToken}{If you received a \code{NextToken} from a previous call that was paginated, provide this token to receive the next set of results.}
 }
 \description{
 Retrieves a list that describes the connection aliases used for cross-Region redirection. For more information, see \href{https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html}{Cross-Region Redirection for Amazon WorkSpaces}.

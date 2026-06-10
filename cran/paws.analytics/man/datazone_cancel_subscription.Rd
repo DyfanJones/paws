@@ -7,8 +7,7 @@
 datazone_cancel_subscription(domainIdentifier, identifier)
 }
 \arguments{
-\item{domainIdentifier}{[required] The unique identifier of the Amazon DataZone domain where the
-subscription request is being cancelled.}
+\item{domainIdentifier}{[required] The unique identifier of the Amazon DataZone domain where the subscription request is being cancelled.}
 
 \item{identifier}{[required] The unique identifier of the subscription that is being cancelled.}
 }

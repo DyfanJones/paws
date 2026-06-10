@@ -20,11 +20,9 @@ frauddetector_update_model_version(
 
 \item{majorVersionNumber}{[required] The major version number.}
 
-\item{externalEventsDetail}{The details of the external events data used for training the model
-version. Required if \code{trainingDataSource} is \code{EXTERNAL_EVENTS}.}
+\item{externalEventsDetail}{The details of the external events data used for training the model version. Required if \code{trainingDataSource} is \code{EXTERNAL_EVENTS}.}
 
-\item{ingestedEventsDetail}{The details of the ingested event used for training the model version.
-Required if your \code{trainingDataSource} is \code{INGESTED_EVENTS}.}
+\item{ingestedEventsDetail}{The details of the ingested event used for training the model version. Required if your \code{trainingDataSource} is \code{INGESTED_EVENTS}.}
 
 \item{tags}{A collection of key and value pairs.}
 }

@@ -11,9 +11,7 @@ personalize_create_schema(name, schema, domain = NULL)
 
 \item{schema}{[required] A schema in Avro JSON format.}
 
-\item{domain}{The domain for the schema. If you are creating a schema for a dataset in
-a Domain dataset group, specify the domain you chose when you created
-the Domain dataset group.}
+\item{domain}{The domain for the schema. If you are creating a schema for a dataset in a Domain dataset group, specify the domain you chose when you created the Domain dataset group.}
 }
 \description{
 Creates an Amazon Personalize schema from the specified schema string. The schema you create must be in Avro JSON format.

@@ -7,9 +7,7 @@ NULL
 #' trusted to assume
 #'
 #' @description
-#' Creates a *profile*, a list of the roles that Roles Anywhere service is
-#' trusted to assume. You use profiles to intersect permissions with IAM
-#' managed policies.
+#' Creates a *profile*, a list of the roles that Roles Anywhere service is trusted to assume. You use profiles to intersect permissions with IAM managed policies.
 #' 
 #' **Required permissions:** `rolesanywhere:CreateProfile`.
 #'
@@ -19,24 +17,14 @@ NULL
 #'   tags, acceptRoleSessionName)
 #'
 #' @param name &#91;required&#93; The name of the profile.
-#' @param requireInstanceProperties Unused, saved for future use. Will likely specify whether instance
-#' properties are required in temporary credential requests with this
-#' profile.
-#' @param sessionPolicy A session policy that applies to the trust boundary of the vended
-#' session credentials.
-#' @param roleArns &#91;required&#93; A list of IAM roles that this profile can assume in a temporary
-#' credential request.
-#' @param managedPolicyArns A list of managed policy ARNs that apply to the vended session
-#' credentials.
-#' @param durationSeconds Used to determine how long sessions vended using this profile are valid
-#' for. See the `Expiration` section of the [CreateSession API
-#' documentation](https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object)
-#' page for more details. In requests, if this value is not provided, the
-#' default value will be 3600.
+#' @param requireInstanceProperties Unused, saved for future use. Will likely specify whether instance properties are required in temporary credential requests with this profile.
+#' @param sessionPolicy A session policy that applies to the trust boundary of the vended session credentials.
+#' @param roleArns &#91;required&#93; A list of IAM roles that this profile can assume in a temporary credential request.
+#' @param managedPolicyArns A list of managed policy ARNs that apply to the vended session credentials.
+#' @param durationSeconds Used to determine how long sessions vended using this profile are valid for. See the `Expiration` section of the [CreateSession API documentation](https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object) page for more details. In requests, if this value is not provided, the default value will be 3600.
 #' @param enabled Specifies whether the profile is enabled.
 #' @param tags The tags to attach to the profile.
-#' @param acceptRoleSessionName Used to determine if a custom role session name will be accepted in a
-#' temporary credential request.
+#' @param acceptRoleSessionName Used to determine if a custom role session name will be accepted in a temporary credential request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -130,12 +118,7 @@ iamrolesanywhere_create_profile <- function(name, requireInstanceProperties = NU
 #' your certificate authority (CA)
 #'
 #' @description
-#' Creates a trust anchor to establish trust between IAM Roles Anywhere and
-#' your certificate authority (CA). You can define a trust anchor as a
-#' reference to an Private Certificate Authority (Private CA) or by
-#' uploading a CA certificate. Your Amazon Web Services workloads can
-#' authenticate with the trust anchor using certificates issued by the CA
-#' in exchange for temporary Amazon Web Services credentials.
+#' Creates a trust anchor to establish trust between IAM Roles Anywhere and your certificate authority (CA). You can define a trust anchor as a reference to an Private Certificate Authority (Private CA) or by uploading a CA certificate. Your Amazon Web Services workloads can authenticate with the trust anchor using certificates issued by the CA in exchange for temporary Amazon Web Services credentials.
 #' 
 #' **Required permissions:** `rolesanywhere:CreateTrustAnchor`.
 #'
@@ -241,8 +224,7 @@ iamrolesanywhere_create_trust_anchor <- function(name, source, enabled = NULL, t
 #' profile
 #'
 #' @description
-#' Delete an entry from the attribute mapping rules enforced by a given
-#' profile.
+#' Delete an entry from the attribute mapping rules enforced by a given profile.
 #'
 #' @usage
 #' iamrolesanywhere_delete_attribute_mapping(profileId, certificateField,
@@ -250,8 +232,7 @@ iamrolesanywhere_create_trust_anchor <- function(name, source, enabled = NULL, t
 #'
 #' @param profileId &#91;required&#93; The unique identifier of the profile.
 #' @param certificateField &#91;required&#93; Fields (x509Subject, x509Issuer and x509SAN) within X.509 certificates.
-#' @param specifiers A list of specifiers of a certificate field; for example, CN, OU, UID
-#' from a Subject.
+#' @param specifiers A list of specifiers of a certificate field; for example, CN, OU, UID from a Subject.
 #'
 #' @return
 #' A list with the following syntax:
@@ -620,8 +601,7 @@ iamrolesanywhere_disable_crl <- function(crlId) {
 #' Disables a profile
 #'
 #' @description
-#' Disables a profile. When disabled, temporary credential requests with
-#' this profile fail.
+#' Disables a profile. When disabled, temporary credential requests with this profile fail.
 #' 
 #' **Required permissions:** `rolesanywhere:DisableProfile`.
 #'
@@ -704,8 +684,7 @@ iamrolesanywhere_disable_profile <- function(profileId) {
 #' Disables a trust anchor
 #'
 #' @description
-#' Disables a trust anchor. When disabled, temporary credential requests
-#' specifying this trust anchor are unauthorized.
+#' Disables a trust anchor. When disabled, temporary credential requests specifying this trust anchor are unauthorized.
 #' 
 #' **Required permissions:** `rolesanywhere:DisableTrustAnchor`.
 #'
@@ -783,8 +762,7 @@ iamrolesanywhere_disable_trust_anchor <- function(trustAnchorId) {
 #' Enables a certificate revocation list (CRL)
 #'
 #' @description
-#' Enables a certificate revocation list (CRL). When enabled, certificates
-#' stored in the CRL are unauthorized to receive session credentials.
+#' Enables a certificate revocation list (CRL). When enabled, certificates stored in the CRL are unauthorized to receive session credentials.
 #' 
 #' **Required permissions:** `rolesanywhere:EnableCrl`.
 #'
@@ -931,8 +909,7 @@ iamrolesanywhere_enable_profile <- function(profileId) {
 #' Enables a trust anchor
 #'
 #' @description
-#' Enables a trust anchor. When enabled, certificates in the trust anchor
-#' chain are authorized for trust validation.
+#' Enables a trust anchor. When enabled, certificates in the trust anchor chain are authorized for trust validation.
 #' 
 #' **Required permissions:** `rolesanywhere:EnableTrustAnchor`.
 #'
@@ -1158,11 +1135,7 @@ iamrolesanywhere_get_profile <- function(profileId) {
 #' authentication attempts
 #'
 #' @description
-#' Gets a *subject*, which associates a certificate identity with
-#' authentication attempts. The subject stores auditing information such as
-#' the status of the last authentication attempt, the certificate data used
-#' in the attempt, and the last time the associated identity attempted
-#' authentication.
+#' Gets a *subject*, which associates a certificate identity with authentication attempts. The subject stores auditing information such as the status of the last authentication attempt, the certificate data used in the attempt, and the last time the associated identity attempted authentication.
 #' 
 #' **Required permissions:** `rolesanywhere:GetSubject`.
 #'
@@ -1328,10 +1301,7 @@ iamrolesanywhere_get_trust_anchor <- function(trustAnchorId) {
 #' Imports the certificate revocation list (CRL)
 #'
 #' @description
-#' Imports the certificate revocation list (CRL). A CRL is a list of
-#' certificates that have been revoked by the issuing certificate Authority
-#' (CA).In order to be properly imported, a CRL must be in PEM format. IAM
-#' Roles Anywhere validates against the CRL before issuing credentials.
+#' Imports the certificate revocation list (CRL). A CRL is a list of certificates that have been revoked by the issuing certificate Authority (CA).In order to be properly imported, a CRL must be in PEM format. IAM Roles Anywhere validates against the CRL before issuing credentials.
 #' 
 #' **Required permissions:** `rolesanywhere:ImportCrl`.
 #'
@@ -1343,8 +1313,7 @@ iamrolesanywhere_get_trust_anchor <- function(trustAnchorId) {
 #' @param crlData &#91;required&#93; The x509 v3 specified certificate revocation list (CRL).
 #' @param enabled Specifies whether the certificate revocation list (CRL) is enabled.
 #' @param tags A list of tags to attach to the certificate revocation list (CRL).
-#' @param trustAnchorArn &#91;required&#93; The ARN of the TrustAnchor the certificate revocation list (CRL) will
-#' provide revocation for.
+#' @param trustAnchorArn &#91;required&#93; The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1411,17 +1380,14 @@ iamrolesanywhere_import_crl <- function(name, crlData, enabled = NULL, tags = NU
 #' account and Amazon Web Services Region
 #'
 #' @description
-#' Lists all certificate revocation lists (CRL) in the authenticated
-#' account and Amazon Web Services Region.
+#' Lists all certificate revocation lists (CRL) in the authenticated account and Amazon Web Services Region.
 #' 
 #' **Required permissions:** `rolesanywhere:ListCrls`.
 #'
 #' @usage
 #' iamrolesanywhere_list_crls(nextToken, pageSize)
 #'
-#' @param nextToken A token that indicates where the output should continue from, if a
-#' previous request did not show all results. To get the next results, make
-#' the request again with this value.
+#' @param nextToken A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.
 #' @param pageSize The number of resources in the paginated list.
 #'
 #' @return
@@ -1484,17 +1450,14 @@ iamrolesanywhere_list_crls <- function(nextToken = NULL, pageSize = NULL) {
 #' Region
 #'
 #' @description
-#' Lists all profiles in the authenticated account and Amazon Web Services
-#' Region.
+#' Lists all profiles in the authenticated account and Amazon Web Services Region.
 #' 
 #' **Required permissions:** `rolesanywhere:ListProfiles`.
 #'
 #' @usage
 #' iamrolesanywhere_list_profiles(nextToken, pageSize)
 #'
-#' @param nextToken A token that indicates where the output should continue from, if a
-#' previous request did not show all results. To get the next results, make
-#' the request again with this value.
+#' @param nextToken A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.
 #' @param pageSize The number of resources in the paginated list.
 #'
 #' @return
@@ -1576,17 +1539,14 @@ iamrolesanywhere_list_profiles <- function(nextToken = NULL, pageSize = NULL) {
 #' Region
 #'
 #' @description
-#' Lists the subjects in the authenticated account and Amazon Web Services
-#' Region.
+#' Lists the subjects in the authenticated account and Amazon Web Services Region.
 #' 
 #' **Required permissions:** `rolesanywhere:ListSubjects`.
 #'
 #' @usage
 #' iamrolesanywhere_list_subjects(nextToken, pageSize)
 #'
-#' @param nextToken A token that indicates where the output should continue from, if a
-#' previous request did not show all results. To get the next results, make
-#' the request again with this value.
+#' @param nextToken A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.
 #' @param pageSize The number of resources in the paginated list.
 #'
 #' @return
@@ -1706,17 +1666,14 @@ iamrolesanywhere_list_tags_for_resource <- function(resourceArn) {
 #' Services Region
 #'
 #' @description
-#' Lists the trust anchors in the authenticated account and Amazon Web
-#' Services Region.
+#' Lists the trust anchors in the authenticated account and Amazon Web Services Region.
 #' 
 #' **Required permissions:** `rolesanywhere:ListTrustAnchors`.
 #'
 #' @usage
 #' iamrolesanywhere_list_trust_anchors(nextToken, pageSize)
 #'
-#' @param nextToken A token that indicates where the output should continue from, if a
-#' previous request did not show all results. To get the next results, make
-#' the request again with this value.
+#' @param nextToken A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.
 #' @param pageSize The number of resources in the paginated list.
 #'
 #' @return
@@ -1793,9 +1750,7 @@ iamrolesanywhere_list_trust_anchors <- function(nextToken = NULL, pageSize = NUL
 #' given profile
 #'
 #' @description
-#' Put an entry in the attribute mapping rules that will be enforced by a
-#' given profile. A mapping specifies a certificate field and one or more
-#' specifiers that have contextual meanings.
+#' Put an entry in the attribute mapping rules that will be enforced by a given profile. A mapping specifies a certificate field and one or more specifiers that have contextual meanings.
 #'
 #' @usage
 #' iamrolesanywhere_put_attribute_mapping(profileId, certificateField,
@@ -1887,9 +1842,7 @@ iamrolesanywhere_put_attribute_mapping <- function(profileId, certificateField, 
 #' @description
 #' Attaches a list of *notification settings* to a trust anchor.
 #' 
-#' A notification setting includes information such as event name,
-#' threshold, status of the notification setting, and the channel to
-#' notify.
+#' A notification setting includes information such as event name, threshold, status of the notification setting, and the channel to notify.
 #' 
 #' **Required permissions:** `rolesanywhere:PutNotificationSettings`.
 #'
@@ -1978,8 +1931,7 @@ iamrolesanywhere_put_notification_settings <- function(trustAnchorId, notificati
 #' setting
 #'
 #' @description
-#' Resets the *custom notification setting* to IAM Roles Anywhere default
-#' setting.
+#' Resets the *custom notification setting* to IAM Roles Anywhere default setting.
 #' 
 #' **Required permissions:** `rolesanywhere:ResetNotificationSettings`.
 #'
@@ -1988,8 +1940,7 @@ iamrolesanywhere_put_notification_settings <- function(trustAnchorId, notificati
 #'   notificationSettingKeys)
 #'
 #' @param trustAnchorId &#91;required&#93; The unique identifier of the trust anchor.
-#' @param notificationSettingKeys &#91;required&#93; A list of notification setting keys to reset. A notification setting key
-#' includes the event and the channel.
+#' @param notificationSettingKeys &#91;required&#93; A list of notification setting keys to reset. A notification setting key includes the event and the channel.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2169,10 +2120,7 @@ iamrolesanywhere_untag_resource <- function(resourceArn, tagKeys) {
 #' Updates the certificate revocation list (CRL)
 #'
 #' @description
-#' Updates the certificate revocation list (CRL). A CRL is a list of
-#' certificates that have been revoked by the issuing certificate authority
-#' (CA). IAM Roles Anywhere validates against the CRL before issuing
-#' credentials.
+#' Updates the certificate revocation list (CRL). A CRL is a list of certificates that have been revoked by the issuing certificate authority (CA). IAM Roles Anywhere validates against the CRL before issuing credentials.
 #' 
 #' **Required permissions:** `rolesanywhere:UpdateCrl`.
 #'
@@ -2241,9 +2189,7 @@ iamrolesanywhere_update_crl <- function(crlId, name = NULL, crlData = NULL) {
 #' is trusted to assume
 #'
 #' @description
-#' Updates a *profile*, a list of the roles that IAM Roles Anywhere service
-#' is trusted to assume. You use profiles to intersect permissions with IAM
-#' managed policies.
+#' Updates a *profile*, a list of the roles that IAM Roles Anywhere service is trusted to assume. You use profiles to intersect permissions with IAM managed policies.
 #' 
 #' **Required permissions:** `rolesanywhere:UpdateProfile`.
 #'
@@ -2253,19 +2199,11 @@ iamrolesanywhere_update_crl <- function(crlId, name = NULL, crlData = NULL) {
 #'
 #' @param profileId &#91;required&#93; The unique identifier of the profile.
 #' @param name The name of the profile.
-#' @param sessionPolicy A session policy that applies to the trust boundary of the vended
-#' session credentials.
-#' @param roleArns A list of IAM roles that this profile can assume in a temporary
-#' credential request.
-#' @param managedPolicyArns A list of managed policy ARNs that apply to the vended session
-#' credentials.
-#' @param durationSeconds Used to determine how long sessions vended using this profile are valid
-#' for. See the `Expiration` section of the [CreateSession API
-#' documentation](https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object)
-#' page for more details. In requests, if this value is not provided, the
-#' default value will be 3600.
-#' @param acceptRoleSessionName Used to determine if a custom role session name will be accepted in a
-#' temporary credential request.
+#' @param sessionPolicy A session policy that applies to the trust boundary of the vended session credentials.
+#' @param roleArns A list of IAM roles that this profile can assume in a temporary credential request.
+#' @param managedPolicyArns A list of managed policy ARNs that apply to the vended session credentials.
+#' @param durationSeconds Used to determine how long sessions vended using this profile are valid for. See the `Expiration` section of the [CreateSession API documentation](https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object) page for more details. In requests, if this value is not provided, the default value will be 3600.
+#' @param acceptRoleSessionName Used to determine if a custom role session name will be accepted in a temporary credential request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2351,13 +2289,7 @@ iamrolesanywhere_update_profile <- function(profileId, name = NULL, sessionPolic
 #' Updates a trust anchor
 #'
 #' @description
-#' Updates a trust anchor. You establish trust between IAM Roles Anywhere
-#' and your certificate authority (CA) by configuring a trust anchor. You
-#' can define a trust anchor as a reference to an Private Certificate
-#' Authority (Private CA) or by uploading a CA certificate. Your Amazon Web
-#' Services workloads can authenticate with the trust anchor using
-#' certificates issued by the CA in exchange for temporary Amazon Web
-#' Services credentials.
+#' Updates a trust anchor. You establish trust between IAM Roles Anywhere and your certificate authority (CA) by configuring a trust anchor. You can define a trust anchor as a reference to an Private Certificate Authority (Private CA) or by uploading a CA certificate. Your Amazon Web Services workloads can authenticate with the trust anchor using certificates issued by the CA in exchange for temporary Amazon Web Services credentials.
 #' 
 #' **Required permissions:** `rolesanywhere:UpdateTrustAnchor`.
 #'

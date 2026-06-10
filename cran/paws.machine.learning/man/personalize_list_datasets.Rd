@@ -11,12 +11,9 @@ personalize_list_datasets(
 )
 }
 \arguments{
-\item{datasetGroupArn}{The Amazon Resource Name (ARN) of the dataset group that contains the
-datasets to list.}
+\item{datasetGroupArn}{The Amazon Resource Name (ARN) of the dataset group that contains the datasets to list.}
 
-\item{nextToken}{A token returned from the previous call to
-\code{\link[=personalize_list_datasets]{list_datasets}} for getting the next set of
-dataset import jobs (if they exist).}
+\item{nextToken}{A token returned from the previous call to \code{\link[=personalize_list_datasets]{list_datasets}} for getting the next set of dataset import jobs (if they exist).}
 
 \item{maxResults}{The maximum number of datasets to return.}
 }

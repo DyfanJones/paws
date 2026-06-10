@@ -11,8 +11,7 @@ voiceid_disassociate_fraudster(DomainId, FraudsterId, WatchlistId)
 
 \item{FraudsterId}{[required] The identifier of the fraudster to be disassociated from the watchlist.}
 
-\item{WatchlistId}{[required] The identifier of the watchlist that you want to disassociate from the
-fraudster.}
+\item{WatchlistId}{[required] The identifier of the watchlist that you want to disassociate from the fraudster.}
 }
 \description{
 Disassociates the fraudsters from the watchlist specified. Voice ID always expects a fraudster to be a part of at least one watchlist. If you try to disassociate a fraudster from its only watchlist, a \code{ValidationException} is thrown.

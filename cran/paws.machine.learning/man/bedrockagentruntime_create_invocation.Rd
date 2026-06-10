@@ -11,14 +11,11 @@ bedrockagentruntime_create_invocation(
 )
 }
 \arguments{
-\item{description}{A description for the interactions in the invocation. For example, "User
-asking about weather in Seattle".}
+\item{description}{A description for the interactions in the invocation. For example, "User asking about weather in Seattle".}
 
 \item{invocationId}{A unique identifier for the invocation in UUID format.}
 
-\item{sessionIdentifier}{[required] The unique identifier for the associated session for the invocation. You
-can specify either the session's \code{sessionId} or its Amazon Resource Name
-(ARN).}
+\item{sessionIdentifier}{[required] The unique identifier for the associated session for the invocation. You can specify either the session's \code{sessionId} or its Amazon Resource Name (ARN).}
 }
 \description{
 Creates a new invocation within a session. An invocation groups the related invocation steps that store the content from a conversation. For more information about sessions, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/sessions.html}{Store and retrieve conversation history and context with Amazon Bedrock sessions}.

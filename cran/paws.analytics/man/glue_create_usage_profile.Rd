@@ -11,8 +11,7 @@ glue_create_usage_profile(Name, Description = NULL, Configuration, Tags = NULL)
 
 \item{Description}{A description of the usage profile.}
 
-\item{Configuration}{[required] A \code{ProfileConfiguration} object specifying the job and session values
-for the profile.}
+\item{Configuration}{[required] A \code{ProfileConfiguration} object specifying the job and session values for the profile.}
 
 \item{Tags}{A list of tags applied to the usage profile.}
 }

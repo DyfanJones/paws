@@ -15,21 +15,11 @@ kinesisanalyticsv2_delete_application_vpc_configuration(
 \arguments{
 \item{ApplicationName}{[required] The name of an existing application.}
 
-\item{CurrentApplicationVersionId}{The current application version ID. You must provide the
-\code{CurrentApplicationVersionId} or the \code{ConditionalToken}. You can
-retrieve the application version ID using
-\code{\link[=kinesisanalyticsv2_describe_application]{describe_application}}. For
-better concurrency support, use the \code{ConditionalToken} parameter instead
-of \code{CurrentApplicationVersionId}.}
+\item{CurrentApplicationVersionId}{The current application version ID. You must provide the \code{CurrentApplicationVersionId} or the \code{ConditionalToken}. You can retrieve the application version ID using \code{\link[=kinesisanalyticsv2_describe_application]{describe_application}}. For better concurrency support, use the \code{ConditionalToken} parameter instead of \code{CurrentApplicationVersionId}.}
 
 \item{VpcConfigurationId}{[required] The ID of the VPC configuration to delete.}
 
-\item{ConditionalToken}{A value you use to implement strong concurrency for application updates.
-You must provide the \code{CurrentApplicationVersionId} or the
-\code{ConditionalToken}. You get the application's current \code{ConditionalToken}
-using \code{\link[=kinesisanalyticsv2_describe_application]{describe_application}}.
-For better concurrency support, use the \code{ConditionalToken} parameter
-instead of \code{CurrentApplicationVersionId}.}
+\item{ConditionalToken}{A value you use to implement strong concurrency for application updates. You must provide the \code{CurrentApplicationVersionId} or the \code{ConditionalToken}. You get the application's current \code{ConditionalToken} using \code{\link[=kinesisanalyticsv2_describe_application]{describe_application}}. For better concurrency support, use the \code{ConditionalToken} parameter instead of \code{CurrentApplicationVersionId}.}
 }
 \description{
 Removes a VPC configuration from a Managed Service for Apache Flink application.

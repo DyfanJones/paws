@@ -14,17 +14,11 @@ ecs_update_capacity_provider(
 \arguments{
 \item{name}{[required] The name of the capacity provider to update.}
 
-\item{cluster}{The name of the cluster that contains the capacity provider to update.
-Managed instances capacity providers are cluster-scoped and can only be
-updated within their associated cluster.}
+\item{cluster}{The name of the cluster that contains the capacity provider to update. Managed instances capacity providers are cluster-scoped and can only be updated within their associated cluster.}
 
-\item{autoScalingGroupProvider}{An object that represent the parameters to update for the Auto Scaling
-group capacity provider.}
+\item{autoScalingGroupProvider}{An object that represent the parameters to update for the Auto Scaling group capacity provider.}
 
-\item{managedInstancesProvider}{The updated configuration for the Amazon ECS Managed Instances provider.
-You can modify the infrastructure role, instance launch template, and
-tag propagation settings. Changes take effect for new instances launched
-after the update.}
+\item{managedInstancesProvider}{The updated configuration for the Amazon ECS Managed Instances provider. You can modify the infrastructure role, instance launch template, and tag propagation settings. Changes take effect for new instances launched after the update.}
 }
 \description{
 Modifies the parameters for a capacity provider.

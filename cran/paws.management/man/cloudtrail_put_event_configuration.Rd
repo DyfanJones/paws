@@ -14,21 +14,15 @@ cloudtrail_put_event_configuration(
 )
 }
 \arguments{
-\item{TrailName}{The name of the trail for which you want to update event configuration
-settings.}
+\item{TrailName}{The name of the trail for which you want to update event configuration settings.}
 
-\item{EventDataStore}{The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data
-store for which event configuration settings are updated.}
+\item{EventDataStore}{The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data store for which event configuration settings are updated.}
 
-\item{MaxEventSize}{The maximum allowed size for events to be stored in the specified event
-data store. If you are using context key selectors, MaxEventSize must be
-set to Large.}
+\item{MaxEventSize}{The maximum allowed size for events to be stored in the specified event data store. If you are using context key selectors, MaxEventSize must be set to Large.}
 
-\item{ContextKeySelectors}{A list of context key selectors that will be included to provide
-enriched event data.}
+\item{ContextKeySelectors}{A list of context key selectors that will be included to provide enriched event data.}
 
-\item{AggregationConfigurations}{The list of aggregation configurations that you want to configure for
-the trail.}
+\item{AggregationConfigurations}{The list of aggregation configurations that you want to configure for the trail.}
 }
 \description{
 Updates the event configuration settings for the specified event data store or trail. This operation supports updating the maximum event size, adding or modifying context key selectors for event data store, and configuring aggregation settings for the trail.

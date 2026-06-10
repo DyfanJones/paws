@@ -7,8 +7,7 @@
 lookoutequipment_delete_resource_policy(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource for which the resource
-policy should be deleted.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource for which the resource policy should be deleted.}
 }
 \description{
 Deletes the resource policy attached to the resource.

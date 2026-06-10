@@ -13,18 +13,12 @@ NULL
 #' @param keyspaceName &#91;required&#93; The name of the keyspace to be created.
 #' @param tags A list of key-value pair tags to be attached to the keyspace.
 #' 
-#' For more information, see [Adding tags and labels to Amazon Keyspaces
-#' resources](https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html)
-#' in the *Amazon Keyspaces Developer Guide*.
+#' For more information, see [Adding tags and labels to Amazon Keyspaces resources](https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html) in the *Amazon Keyspaces Developer Guide*.
 #' @param replicationSpecification The replication specification of the keyspace includes:
 #' 
-#' -   `replicationStrategy` - the required value is `SINGLE_REGION` or
-#'     `MULTI_REGION`.
+#' -   `replicationStrategy` - the required value is `SINGLE_REGION` or `MULTI_REGION`.
 #' 
-#' -   `regionList` - if the `replicationStrategy` is `MULTI_REGION`, the
-#'     `regionList` requires the current Region and at least one additional
-#'     Amazon Web Services Region where the keyspace is going to be
-#'     replicated in.
+#' -   `regionList` - if the `replicationStrategy` is `MULTI_REGION`, the `regionList` requires the current Region and at least one additional Amazon Web Services Region where the keyspace is going to be replicated in.
 #'
 #' @keywords internal
 #'
@@ -63,66 +57,45 @@ keyspaces_create_keyspace <- function(keyspaceName, tags = NULL, replicationSpec
 #' 
 #' -   `name` - The name of the column.
 #' 
-#' -   `type` - An Amazon Keyspaces data type. For more information, see
-#'     [Data
-#'     types](https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types)
-#'     in the *Amazon Keyspaces Developer Guide*.
+#' -   `type` - An Amazon Keyspaces data type. For more information, see [Data types](https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types) in the *Amazon Keyspaces Developer Guide*.
 #' 
 #' The primary key of the table consists of the following columns:
 #' 
-#' -   `partitionKeys` - The partition key can be a single column, or it
-#'     can be a compound value composed of two or more columns. The
-#'     partition key portion of the primary key is required and determines
-#'     how Amazon Keyspaces stores your data.
+#' -   `partitionKeys` - The partition key can be a single column, or it can be a compound value composed of two or more columns. The partition key portion of the primary key is required and determines how Amazon Keyspaces stores your data.
 #' 
 #' -   `name` - The name of each partition key column.
 #' 
-#' -   `clusteringKeys` - The optional clustering column portion of your
-#'     primary key determines how the data is clustered and sorted within
-#'     each partition.
+#' -   `clusteringKeys` - The optional clustering column portion of your primary key determines how the data is clustered and sorted within each partition.
 #' 
 #' -   `name` - The name of the clustering column.
 #' 
-#' -   `orderBy` - Sets the ascendant (`ASC`) or descendant (`DESC`) order
-#'     modifier.
+#' -   `orderBy` - Sets the ascendant (`ASC`) or descendant (`DESC`) order modifier.
 #' 
-#'     To define a column as static use `staticColumns` - Static columns
-#'     store values that are shared by all rows in the same partition:
+#'     To define a column as static use `staticColumns` - Static columns store values that are shared by all rows in the same partition:
 #' 
 #' -   `name` - The name of the column.
 #' 
 #' -   `type` - An Amazon Keyspaces data type.
 #' @param comment This parameter allows to enter a description of the table.
-#' @param capacitySpecification Specifies the read/write throughput capacity mode for the table. The
-#' options are:
+#' @param capacitySpecification Specifies the read/write throughput capacity mode for the table. The options are:
 #' 
 #' -   `throughputMode:PAY_PER_REQUEST` and
 #' 
-#' -   `throughputMode:PROVISIONED` - Provisioned capacity mode requires
-#'     `readCapacityUnits` and `writeCapacityUnits` as input.
+#' -   `throughputMode:PROVISIONED` - Provisioned capacity mode requires `readCapacityUnits` and `writeCapacityUnits` as input.
 #' 
 #' The default is `throughput_mode:PAY_PER_REQUEST`.
 #' 
-#' For more information, see [Read/write capacity
-#' modes](https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html)
-#' in the *Amazon Keyspaces Developer Guide*.
-#' @param encryptionSpecification Specifies how the encryption key for encryption at rest is managed for
-#' the table. You can choose one of the following KMS key (KMS key):
+#' For more information, see [Read/write capacity modes](https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html) in the *Amazon Keyspaces Developer Guide*.
+#' @param encryptionSpecification Specifies how the encryption key for encryption at rest is managed for the table. You can choose one of the following KMS key (KMS key):
 #' 
 #' -   `type:AWS_OWNED_KMS_KEY` - This key is owned by Amazon Keyspaces.
 #' 
-#' -   `type:CUSTOMER_MANAGED_KMS_KEY` - This key is stored in your account
-#'     and is created, owned, and managed by you. This option requires the
-#'     `kms_key_identifier` of the KMS key in Amazon Resource Name (ARN)
-#'     format as input.
+#' -   `type:CUSTOMER_MANAGED_KMS_KEY` - This key is stored in your account and is created, owned, and managed by you. This option requires the `kms_key_identifier` of the KMS key in Amazon Resource Name (ARN) format as input.
 #' 
 #' The default is `type:AWS_OWNED_KMS_KEY`.
 #' 
-#' For more information, see [Encryption at
-#' rest](https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html)
-#' in the *Amazon Keyspaces Developer Guide*.
-#' @param pointInTimeRecovery Specifies if `pointInTimeRecovery` is enabled or disabled for the table.
-#' The options are:
+#' For more information, see [Encryption at rest](https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html) in the *Amazon Keyspaces Developer Guide*.
+#' @param pointInTimeRecovery Specifies if `pointInTimeRecovery` is enabled or disabled for the table. The options are:
 #' 
 #' -   `status=ENABLED`
 #' 
@@ -130,76 +103,50 @@ keyspaces_create_keyspace <- function(keyspaceName, tags = NULL, replicationSpec
 #' 
 #' If it's not specified, the default is `status=DISABLED`.
 #' 
-#' For more information, see [Point-in-time
-#' recovery](https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html)
-#' in the *Amazon Keyspaces Developer Guide*.
+#' For more information, see [Point-in-time recovery](https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html) in the *Amazon Keyspaces Developer Guide*.
 #' @param ttl Enables Time to Live custom settings for the table. The options are:
 #' 
 #' -   `status:enabled`
 #' 
 #' -   `status:disabled`
 #' 
-#' The default is `status:disabled`. After `ttl` is enabled, you can't
-#' disable it for the table.
+#' The default is `status:disabled`. After `ttl` is enabled, you can't disable it for the table.
 #' 
-#' For more information, see [Expiring data by using Amazon Keyspaces Time
-#' to Live
-#' (TTL)](https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html)
-#' in the *Amazon Keyspaces Developer Guide*.
+#' For more information, see [Expiring data by using Amazon Keyspaces Time to Live (TTL)](https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html) in the *Amazon Keyspaces Developer Guide*.
 #' @param defaultTimeToLive The default Time to Live setting in seconds for the table.
 #' 
-#' For more information, see [Setting the default TTL value for a
-#' table](https://docs.aws.amazon.com/keyspaces/latest/devguide/#ttl-howitworks_default_ttl)
-#' in the *Amazon Keyspaces Developer Guide*.
+#' For more information, see [Setting the default TTL value for a table](https://docs.aws.amazon.com/keyspaces/latest/devguide/#ttl-howitworks_default_ttl) in the *Amazon Keyspaces Developer Guide*.
 #' @param tags A list of key-value pair tags to be attached to the resource.
 #' 
-#' For more information, see [Adding tags and labels to Amazon Keyspaces
-#' resources](https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html)
-#' in the *Amazon Keyspaces Developer Guide*.
-#' @param clientSideTimestamps Enables client-side timestamps for the table. By default, the setting is
-#' disabled. You can enable client-side timestamps with the following
-#' option:
+#' For more information, see [Adding tags and labels to Amazon Keyspaces resources](https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html) in the *Amazon Keyspaces Developer Guide*.
+#' @param clientSideTimestamps Enables client-side timestamps for the table. By default, the setting is disabled. You can enable client-side timestamps with the following option:
 #' 
 #' -   `status: "enabled"`
 #' 
-#' Once client-side timestamps are enabled for a table, this setting cannot
-#' be disabled.
-#' @param autoScalingSpecification The optional auto scaling settings for a table in provisioned capacity
-#' mode. Specifies if the service can manage throughput capacity
-#' automatically on your behalf.
+#' Once client-side timestamps are enabled for a table, this setting cannot be disabled.
+#' @param autoScalingSpecification The optional auto scaling settings for a table in provisioned capacity mode. Specifies if the service can manage throughput capacity automatically on your behalf.
 #' 
-#' Auto scaling helps you provision throughput capacity for variable
-#' workloads efficiently by increasing and decreasing your table's read and
-#' write capacity automatically in response to application traffic. For
-#' more information, see [Managing throughput capacity automatically with
-#' Amazon Keyspaces auto
-#' scaling](https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html)
-#' in the *Amazon Keyspaces Developer Guide*.
+#' Auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic. For more information, see [Managing throughput capacity automatically with Amazon Keyspaces auto scaling](https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html) in the *Amazon Keyspaces Developer Guide*.
 #' 
 #' By default, auto scaling is disabled for a table.
-#' @param replicaSpecifications The optional Amazon Web Services Region specific settings of a
-#' multi-Region table. These settings overwrite the general settings of the
-#' table for the specified Region.
+#' @param replicaSpecifications The optional Amazon Web Services Region specific settings of a multi-Region table. These settings overwrite the general settings of the table for the specified Region.
 #' 
-#' For a multi-Region table in provisioned capacity mode, you can configure
-#' the table's read capacity differently for each Region's replica. The
-#' write capacity, however, remains synchronized between all replicas to
-#' ensure that there's enough capacity to replicate writes across all
-#' Regions. To define the read capacity for a table replica in a specific
-#' Region, you can do so by configuring the following parameters.
+#' For a multi-Region table in provisioned capacity mode, you can configure the table's read capacity differently for each Region's replica. The write capacity, however, remains synchronized between all replicas to ensure that there's enough capacity to replicate writes across all Regions. To define the read capacity for a table replica in a specific Region, you can do so by configuring the following parameters.
 #' 
 #' -   `region`: The Region where these settings are applied. (Required)
 #' 
 #' -   `readCapacityUnits`: The provisioned read capacity units. (Optional)
 #' 
-#' -   `readCapacityAutoScaling`: The read capacity auto scaling settings
-#'     for the table. (Optional)
+#' -   `readCapacityAutoScaling`: The read capacity auto scaling settings for the table. (Optional)
 #' @param cdcSpecification The CDC stream settings of the table.
+#' @param warmThroughputSpecification Specifies the warm throughput settings for the table. Pre-warming a table helps you avoid capacity exceeded exceptions by pre-provisioning read and write capacity units to reduce cold start latency when your table receives traffic.
+#' 
+#' For more information about pre-warming in Amazon Keyspaces, see [Pre-warm a table in Amazon Keyspaces](https://docs.aws.amazon.com/keyspaces/latest/devguide/warm-throughput.html) in the *Amazon Keyspaces Developer Guide*.
 #'
 #' @keywords internal
 #'
 #' @rdname keyspaces_create_table
-keyspaces_create_table <- function(keyspaceName, tableName, schemaDefinition, comment = NULL, capacitySpecification = NULL, encryptionSpecification = NULL, pointInTimeRecovery = NULL, ttl = NULL, defaultTimeToLive = NULL, tags = NULL, clientSideTimestamps = NULL, autoScalingSpecification = NULL, replicaSpecifications = NULL, cdcSpecification = NULL) {
+keyspaces_create_table <- function(keyspaceName, tableName, schemaDefinition, comment = NULL, capacitySpecification = NULL, encryptionSpecification = NULL, pointInTimeRecovery = NULL, ttl = NULL, defaultTimeToLive = NULL, tags = NULL, clientSideTimestamps = NULL, autoScalingSpecification = NULL, replicaSpecifications = NULL, cdcSpecification = NULL, warmThroughputSpecification = NULL) {
   op <- new_operation(
     name = "CreateTable",
     http_method = "POST",
@@ -208,7 +155,7 @@ keyspaces_create_table <- function(keyspaceName, tableName, schemaDefinition, co
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .keyspaces$create_table_input(keyspaceName = keyspaceName, tableName = tableName, schemaDefinition = schemaDefinition, comment = comment, capacitySpecification = capacitySpecification, encryptionSpecification = encryptionSpecification, pointInTimeRecovery = pointInTimeRecovery, ttl = ttl, defaultTimeToLive = defaultTimeToLive, tags = tags, clientSideTimestamps = clientSideTimestamps, autoScalingSpecification = autoScalingSpecification, replicaSpecifications = replicaSpecifications, cdcSpecification = cdcSpecification)
+  input <- .keyspaces$create_table_input(keyspaceName = keyspaceName, tableName = tableName, schemaDefinition = schemaDefinition, comment = comment, capacitySpecification = capacitySpecification, encryptionSpecification = encryptionSpecification, pointInTimeRecovery = pointInTimeRecovery, ttl = ttl, defaultTimeToLive = defaultTimeToLive, tags = tags, clientSideTimestamps = clientSideTimestamps, autoScalingSpecification = autoScalingSpecification, replicaSpecifications = replicaSpecifications, cdcSpecification = cdcSpecification, warmThroughputSpecification = warmThroughputSpecification)
   output <- .keyspaces$create_table_output()
   config <- get_config()
   svc <- .keyspaces$service(config, op)
@@ -229,20 +176,12 @@ keyspaces_create_table <- function(keyspaceName, tableName, schemaDefinition, co
 #' @param keyspaceName &#91;required&#93; The name of the keyspace.
 #' @param typeName &#91;required&#93; The name of the user-defined type.
 #' 
-#' UDT names must contain 48 characters or less, must begin with an
-#' alphabetic character, and can only contain alpha-numeric characters and
-#' underscores. Amazon Keyspaces converts upper case characters
-#' automatically into lower case characters.
+#' UDT names must contain 48 characters or less, must begin with an alphabetic character, and can only contain alpha-numeric characters and underscores. Amazon Keyspaces converts upper case characters automatically into lower case characters.
 #' 
-#' Alternatively, you can declare a UDT name in double quotes. When
-#' declaring a UDT name inside double quotes, Amazon Keyspaces preserves
-#' upper casing and allows special characters.
+#' Alternatively, you can declare a UDT name in double quotes. When declaring a UDT name inside double quotes, Amazon Keyspaces preserves upper casing and allows special characters.
 #' 
-#' You can also use double quotes as part of the name when you create the
-#' UDT, but you must escape each double quote character with an additional
-#' double quote character.
-#' @param fieldDefinitions &#91;required&#93; The field definitions, consisting of names and types, that define this
-#' type.
+#' You can also use double quotes as part of the name when you create the UDT, but you must escape each double quote character with an additional double quote character.
+#' @param fieldDefinitions &#91;required&#93; The field definitions, consisting of names and types, that define this type.
 #'
 #' @keywords internal
 #'
@@ -472,10 +411,7 @@ keyspaces_get_table_auto_scaling_settings <- function(keyspaceName, tableName) {
 #' See [https://www.paws-r-sdk.com/docs/keyspaces_get_type/](https://www.paws-r-sdk.com/docs/keyspaces_get_type/) for full documentation.
 #'
 #' @param keyspaceName &#91;required&#93; The name of the keyspace that contains this type.
-#' @param typeName &#91;required&#93; The formatted name of the type. For example, if the name of the type was
-#' created without double quotes, Amazon Keyspaces saved the name in
-#' lower-case characters. If the name was created in double quotes, you
-#' must use double quotes to specify the type name.
+#' @param typeName &#91;required&#93; The formatted name of the type. For example, if the name of the type was created without double quotes, Amazon Keyspaces saved the name in lower-case characters. If the name was created in double quotes, you must use double quotes to specify the type name.
 #'
 #' @keywords internal
 #'
@@ -506,12 +442,8 @@ keyspaces_get_type <- function(keyspaceName, typeName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/keyspaces_list_keyspaces/](https://www.paws-r-sdk.com/docs/keyspaces_list_keyspaces/) for full documentation.
 #'
-#' @param nextToken The pagination token. To resume pagination, provide the `NextToken`
-#' value as argument of a subsequent API invocation.
-#' @param maxResults The total number of keyspaces to return in the output. If the total
-#' number of keyspaces available is more than the value specified, a
-#' `NextToken` is provided in the output. To resume pagination, provide the
-#' `NextToken` value as an argument of a subsequent API invocation.
+#' @param nextToken The pagination token. To resume pagination, provide the `NextToken` value as argument of a subsequent API invocation.
+#' @param maxResults The total number of keyspaces to return in the output. If the total number of keyspaces available is more than the value specified, a `NextToken` is provided in the output. To resume pagination, provide the `NextToken` value as an argument of a subsequent API invocation.
 #'
 #' @keywords internal
 #'
@@ -543,12 +475,8 @@ keyspaces_list_keyspaces <- function(nextToken = NULL, maxResults = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/keyspaces_list_tables/](https://www.paws-r-sdk.com/docs/keyspaces_list_tables/) for full documentation.
 #'
-#' @param nextToken The pagination token. To resume pagination, provide the `NextToken`
-#' value as an argument of a subsequent API invocation.
-#' @param maxResults The total number of tables to return in the output. If the total number
-#' of tables available is more than the value specified, a `NextToken` is
-#' provided in the output. To resume pagination, provide the `NextToken`
-#' value as an argument of a subsequent API invocation.
+#' @param nextToken The pagination token. To resume pagination, provide the `NextToken` value as an argument of a subsequent API invocation.
+#' @param maxResults The total number of tables to return in the output. If the total number of tables available is more than the value specified, a `NextToken` is provided in the output. To resume pagination, provide the `NextToken` value as an argument of a subsequent API invocation.
 #' @param keyspaceName &#91;required&#93; The name of the keyspace.
 #'
 #' @keywords internal
@@ -582,12 +510,8 @@ keyspaces_list_tables <- function(nextToken = NULL, maxResults = NULL, keyspaceN
 #' See [https://www.paws-r-sdk.com/docs/keyspaces_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/keyspaces_list_tags_for_resource/) for full documentation.
 #'
 #' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon Keyspaces resource.
-#' @param nextToken The pagination token. To resume pagination, provide the `NextToken`
-#' value as argument of a subsequent API invocation.
-#' @param maxResults The total number of tags to return in the output. If the total number of
-#' tags available is more than the value specified, a `NextToken` is
-#' provided in the output. To resume pagination, provide the `NextToken`
-#' value as an argument of a subsequent API invocation.
+#' @param nextToken The pagination token. To resume pagination, provide the `NextToken` value as argument of a subsequent API invocation.
+#' @param maxResults The total number of tags to return in the output. If the total number of tags available is more than the value specified, a `NextToken` is provided in the output. To resume pagination, provide the `NextToken` value as an argument of a subsequent API invocation.
 #'
 #' @keywords internal
 #'
@@ -618,12 +542,8 @@ keyspaces_list_tags_for_resource <- function(resourceArn, nextToken = NULL, maxR
 #'
 #' See [https://www.paws-r-sdk.com/docs/keyspaces_list_types/](https://www.paws-r-sdk.com/docs/keyspaces_list_types/) for full documentation.
 #'
-#' @param nextToken The pagination token. To resume pagination, provide the `NextToken`
-#' value as an argument of a subsequent API invocation.
-#' @param maxResults The total number of types to return in the output. If the total number
-#' of types available is more than the value specified, a `NextToken` is
-#' provided in the output. To resume pagination, provide the `NextToken`
-#' value as an argument of a subsequent API invocation.
+#' @param nextToken The pagination token. To resume pagination, provide the `NextToken` value as an argument of a subsequent API invocation.
+#' @param maxResults The total number of types to return in the output. If the total number of types available is more than the value specified, a `NextToken` is provided in the output. To resume pagination, provide the `NextToken` value as an argument of a subsequent API invocation.
 #' @param keyspaceName &#91;required&#93; The name of the keyspace that contains the listed types.
 #'
 #' @keywords internal
@@ -661,36 +581,25 @@ keyspaces_list_types <- function(nextToken = NULL, maxResults = NULL, keyspaceNa
 #' @param targetKeyspaceName &#91;required&#93; The name of the target keyspace.
 #' @param targetTableName &#91;required&#93; The name of the target table.
 #' @param restoreTimestamp The restore timestamp in ISO 8601 format.
-#' @param capacitySpecificationOverride Specifies the read/write throughput capacity mode for the target table.
-#' The options are:
+#' @param capacitySpecificationOverride Specifies the read/write throughput capacity mode for the target table. The options are:
 #' 
 #' -   `throughputMode:PAY_PER_REQUEST`
 #' 
-#' -   `throughputMode:PROVISIONED` - Provisioned capacity mode requires
-#'     `readCapacityUnits` and `writeCapacityUnits` as input.
+#' -   `throughputMode:PROVISIONED` - Provisioned capacity mode requires `readCapacityUnits` and `writeCapacityUnits` as input.
 #' 
 #' The default is `throughput_mode:PAY_PER_REQUEST`.
 #' 
-#' For more information, see [Read/write capacity
-#' modes](https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html)
-#' in the *Amazon Keyspaces Developer Guide*.
-#' @param encryptionSpecificationOverride Specifies the encryption settings for the target table. You can choose
-#' one of the following KMS key (KMS key):
+#' For more information, see [Read/write capacity modes](https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html) in the *Amazon Keyspaces Developer Guide*.
+#' @param encryptionSpecificationOverride Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS key):
 #' 
 #' -   `type:AWS_OWNED_KMS_KEY` - This key is owned by Amazon Keyspaces.
 #' 
-#' -   `type:CUSTOMER_MANAGED_KMS_KEY` - This key is stored in your account
-#'     and is created, owned, and managed by you. This option requires the
-#'     `kms_key_identifier` of the KMS key in Amazon Resource Name (ARN)
-#'     format as input.
+#' -   `type:CUSTOMER_MANAGED_KMS_KEY` - This key is stored in your account and is created, owned, and managed by you. This option requires the `kms_key_identifier` of the KMS key in Amazon Resource Name (ARN) format as input.
 #' 
 #' The default is `type:AWS_OWNED_KMS_KEY`.
 #' 
-#' For more information, see [Encryption at
-#' rest](https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html)
-#' in the *Amazon Keyspaces Developer Guide*.
-#' @param pointInTimeRecoveryOverride Specifies the `pointInTimeRecovery` settings for the target table. The
-#' options are:
+#' For more information, see [Encryption at rest](https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html) in the *Amazon Keyspaces Developer Guide*.
+#' @param pointInTimeRecoveryOverride Specifies the `pointInTimeRecovery` settings for the target table. The options are:
 #' 
 #' -   `status=ENABLED`
 #' 
@@ -698,25 +607,13 @@ keyspaces_list_types <- function(nextToken = NULL, maxResults = NULL, keyspaceNa
 #' 
 #' If it's not specified, the default is `status=DISABLED`.
 #' 
-#' For more information, see [Point-in-time
-#' recovery](https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html)
-#' in the *Amazon Keyspaces Developer Guide*.
+#' For more information, see [Point-in-time recovery](https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html) in the *Amazon Keyspaces Developer Guide*.
 #' @param tagsOverride A list of key-value pair tags to be attached to the restored table.
 #' 
-#' For more information, see [Adding tags and labels to Amazon Keyspaces
-#' resources](https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html)
-#' in the *Amazon Keyspaces Developer Guide*.
-#' @param autoScalingSpecification The optional auto scaling settings for the restored table in provisioned
-#' capacity mode. Specifies if the service can manage throughput capacity
-#' of a provisioned table automatically on your behalf. Amazon Keyspaces
-#' auto scaling helps you provision throughput capacity for variable
-#' workloads efficiently by increasing and decreasing your table's read and
-#' write capacity automatically in response to application traffic.
+#' For more information, see [Adding tags and labels to Amazon Keyspaces resources](https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html) in the *Amazon Keyspaces Developer Guide*.
+#' @param autoScalingSpecification The optional auto scaling settings for the restored table in provisioned capacity mode. Specifies if the service can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic.
 #' 
-#' For more information, see [Managing throughput capacity automatically
-#' with Amazon Keyspaces auto
-#' scaling](https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html)
-#' in the *Amazon Keyspaces Developer Guide*.
+#' For more information, see [Managing throughput capacity automatically with Amazon Keyspaces auto scaling](https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html) in the *Amazon Keyspaces Developer Guide*.
 #' @param replicaSpecifications The optional Region specific settings of a multi-Regional table.
 #'
 #' @keywords internal
@@ -748,8 +645,7 @@ keyspaces_restore_table <- function(sourceKeyspaceName, sourceTableName, targetK
 #'
 #' See [https://www.paws-r-sdk.com/docs/keyspaces_tag_resource/](https://www.paws-r-sdk.com/docs/keyspaces_tag_resource/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon Keyspaces resource to which
-#' to add tags.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon Keyspaces resource to which to add tags.
 #' @param tags &#91;required&#93; The tags to be assigned to the Amazon Keyspaces resource.
 #'
 #' @keywords internal
@@ -781,10 +677,8 @@ keyspaces_tag_resource <- function(resourceArn, tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/keyspaces_untag_resource/](https://www.paws-r-sdk.com/docs/keyspaces_untag_resource/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Keyspaces resource that the tags will be removed from. This
-#' value is an Amazon Resource Name (ARN).
-#' @param tags &#91;required&#93; A list of existing tags to be removed from the Amazon Keyspaces
-#' resource.
+#' @param resourceArn &#91;required&#93; The Amazon Keyspaces resource that the tags will be removed from. This value is an Amazon Resource Name (ARN).
+#' @param tags &#91;required&#93; A list of existing tags to be removed from the Amazon Keyspaces resource.
 #'
 #' @keywords internal
 #'
@@ -816,8 +710,14 @@ keyspaces_untag_resource <- function(resourceArn, tags) {
 #' See [https://www.paws-r-sdk.com/docs/keyspaces_update_keyspace/](https://www.paws-r-sdk.com/docs/keyspaces_update_keyspace/) for full documentation.
 #'
 #' @param keyspaceName &#91;required&#93; The name of the keyspace.
-#' @param replicationSpecification &#91;required&#93; 
-#' @param clientSideTimestamps 
+#' @param replicationSpecification &#91;required&#93; The replication specification of the keyspace includes:
+#' 
+#' -   `regionList` - the Amazon Web Services Regions where the keyspace is replicated in.
+#' 
+#' -   `replicationStrategy` - the required value is `SINGLE_REGION` or `MULTI_REGION`.
+#' @param clientSideTimestamps The client-side timestamp setting of the table.
+#' 
+#' For more information, see [How it works: Amazon Keyspaces client-side timestamps](https://docs.aws.amazon.com/keyspaces/latest/devguide/) in the *Amazon Keyspaces Developer Guide*.
 #'
 #' @keywords internal
 #'
@@ -856,40 +756,26 @@ keyspaces_update_keyspace <- function(keyspaceName, replicationSpecification, cl
 #' 
 #' -   `name` - The name of the column.
 #' 
-#' -   `type` - An Amazon Keyspaces data type. For more information, see
-#'     [Data
-#'     types](https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types)
-#'     in the *Amazon Keyspaces Developer Guide*.
-#' @param capacitySpecification Modifies the read/write throughput capacity mode for the table. The
-#' options are:
+#' -   `type` - An Amazon Keyspaces data type. For more information, see [Data types](https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types) in the *Amazon Keyspaces Developer Guide*.
+#' @param capacitySpecification Modifies the read/write throughput capacity mode for the table. The options are:
 #' 
 #' -   `throughputMode:PAY_PER_REQUEST` and
 #' 
-#' -   `throughputMode:PROVISIONED` - Provisioned capacity mode requires
-#'     `readCapacityUnits` and `writeCapacityUnits` as input.
+#' -   `throughputMode:PROVISIONED` - Provisioned capacity mode requires `readCapacityUnits` and `writeCapacityUnits` as input.
 #' 
 #' The default is `throughput_mode:PAY_PER_REQUEST`.
 #' 
-#' For more information, see [Read/write capacity
-#' modes](https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html)
-#' in the *Amazon Keyspaces Developer Guide*.
-#' @param encryptionSpecification Modifies the encryption settings of the table. You can choose one of the
-#' following KMS key (KMS key):
+#' For more information, see [Read/write capacity modes](https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html) in the *Amazon Keyspaces Developer Guide*.
+#' @param encryptionSpecification Modifies the encryption settings of the table. You can choose one of the following KMS key (KMS key):
 #' 
 #' -   `type:AWS_OWNED_KMS_KEY` - This key is owned by Amazon Keyspaces.
 #' 
-#' -   `type:CUSTOMER_MANAGED_KMS_KEY` - This key is stored in your account
-#'     and is created, owned, and managed by you. This option requires the
-#'     `kms_key_identifier` of the KMS key in Amazon Resource Name (ARN)
-#'     format as input.
+#' -   `type:CUSTOMER_MANAGED_KMS_KEY` - This key is stored in your account and is created, owned, and managed by you. This option requires the `kms_key_identifier` of the KMS key in Amazon Resource Name (ARN) format as input.
 #' 
 #' The default is `AWS_OWNED_KMS_KEY`.
 #' 
-#' For more information, see [Encryption at
-#' rest](https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html)
-#' in the *Amazon Keyspaces Developer Guide*.
-#' @param pointInTimeRecovery Modifies the `pointInTimeRecovery` settings of the table. The options
-#' are:
+#' For more information, see [Encryption at rest](https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html) in the *Amazon Keyspaces Developer Guide*.
+#' @param pointInTimeRecovery Modifies the `pointInTimeRecovery` settings of the table. The options are:
 #' 
 #' -   `status=ENABLED`
 #' 
@@ -897,57 +783,37 @@ keyspaces_update_keyspace <- function(keyspaceName, replicationSpecification, cl
 #' 
 #' If it's not specified, the default is `status=DISABLED`.
 #' 
-#' For more information, see [Point-in-time
-#' recovery](https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html)
-#' in the *Amazon Keyspaces Developer Guide*.
+#' For more information, see [Point-in-time recovery](https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html) in the *Amazon Keyspaces Developer Guide*.
 #' @param ttl Modifies Time to Live custom settings for the table. The options are:
 #' 
 #' -   `status:enabled`
 #' 
 #' -   `status:disabled`
 #' 
-#' The default is `status:disabled`. After `ttl` is enabled, you can't
-#' disable it for the table.
+#' The default is `status:disabled`. After `ttl` is enabled, you can't disable it for the table.
 #' 
-#' For more information, see [Expiring data by using Amazon Keyspaces Time
-#' to Live
-#' (TTL)](https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html)
-#' in the *Amazon Keyspaces Developer Guide*.
+#' For more information, see [Expiring data by using Amazon Keyspaces Time to Live (TTL)](https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html) in the *Amazon Keyspaces Developer Guide*.
 #' @param defaultTimeToLive The default Time to Live setting in seconds for the table.
 #' 
-#' For more information, see [Setting the default TTL value for a
-#' table](https://docs.aws.amazon.com/keyspaces/latest/devguide/#ttl-howitworks_default_ttl)
-#' in the *Amazon Keyspaces Developer Guide*.
-#' @param clientSideTimestamps Enables client-side timestamps for the table. By default, the setting is
-#' disabled. You can enable client-side timestamps with the following
-#' option:
+#' For more information, see [Setting the default TTL value for a table](https://docs.aws.amazon.com/keyspaces/latest/devguide/#ttl-howitworks_default_ttl) in the *Amazon Keyspaces Developer Guide*.
+#' @param clientSideTimestamps Enables client-side timestamps for the table. By default, the setting is disabled. You can enable client-side timestamps with the following option:
 #' 
 #' -   `status: "enabled"`
 #' 
-#' Once client-side timestamps are enabled for a table, this setting cannot
-#' be disabled.
-#' @param autoScalingSpecification The optional auto scaling settings to update for a table in provisioned
-#' capacity mode. Specifies if the service can manage throughput capacity
-#' of a provisioned table automatically on your behalf. Amazon Keyspaces
-#' auto scaling helps you provision throughput capacity for variable
-#' workloads efficiently by increasing and decreasing your table's read and
-#' write capacity automatically in response to application traffic.
+#' Once client-side timestamps are enabled for a table, this setting cannot be disabled.
+#' @param autoScalingSpecification The optional auto scaling settings to update for a table in provisioned capacity mode. Specifies if the service can manage throughput capacity of a provisioned table automatically on your behalf. Amazon Keyspaces auto scaling helps you provision throughput capacity for variable workloads efficiently by increasing and decreasing your table's read and write capacity automatically in response to application traffic.
 #' 
-#' If auto scaling is already enabled for the table, you can use
-#' [`update_table`][keyspaces_update_table] to update the minimum and
-#' maximum values or the auto scaling policy settings independently.
+#' If auto scaling is already enabled for the table, you can use [`update_table`][keyspaces_update_table] to update the minimum and maximum values or the auto scaling policy settings independently.
 #' 
-#' For more information, see [Managing throughput capacity automatically
-#' with Amazon Keyspaces auto
-#' scaling](https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html)
-#' in the *Amazon Keyspaces Developer Guide*.
+#' For more information, see [Managing throughput capacity automatically with Amazon Keyspaces auto scaling](https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html) in the *Amazon Keyspaces Developer Guide*.
 #' @param replicaSpecifications The Region specific settings of a multi-Regional table.
 #' @param cdcSpecification The CDC stream settings of the table.
+#' @param warmThroughputSpecification Modifies the warm throughput settings for the table. You can update the read and write capacity units to adjust the pre-provisioned throughput.
 #'
 #' @keywords internal
 #'
 #' @rdname keyspaces_update_table
-keyspaces_update_table <- function(keyspaceName, tableName, addColumns = NULL, capacitySpecification = NULL, encryptionSpecification = NULL, pointInTimeRecovery = NULL, ttl = NULL, defaultTimeToLive = NULL, clientSideTimestamps = NULL, autoScalingSpecification = NULL, replicaSpecifications = NULL, cdcSpecification = NULL) {
+keyspaces_update_table <- function(keyspaceName, tableName, addColumns = NULL, capacitySpecification = NULL, encryptionSpecification = NULL, pointInTimeRecovery = NULL, ttl = NULL, defaultTimeToLive = NULL, clientSideTimestamps = NULL, autoScalingSpecification = NULL, replicaSpecifications = NULL, cdcSpecification = NULL, warmThroughputSpecification = NULL) {
   op <- new_operation(
     name = "UpdateTable",
     http_method = "POST",
@@ -956,7 +822,7 @@ keyspaces_update_table <- function(keyspaceName, tableName, addColumns = NULL, c
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .keyspaces$update_table_input(keyspaceName = keyspaceName, tableName = tableName, addColumns = addColumns, capacitySpecification = capacitySpecification, encryptionSpecification = encryptionSpecification, pointInTimeRecovery = pointInTimeRecovery, ttl = ttl, defaultTimeToLive = defaultTimeToLive, clientSideTimestamps = clientSideTimestamps, autoScalingSpecification = autoScalingSpecification, replicaSpecifications = replicaSpecifications, cdcSpecification = cdcSpecification)
+  input <- .keyspaces$update_table_input(keyspaceName = keyspaceName, tableName = tableName, addColumns = addColumns, capacitySpecification = capacitySpecification, encryptionSpecification = encryptionSpecification, pointInTimeRecovery = pointInTimeRecovery, ttl = ttl, defaultTimeToLive = defaultTimeToLive, clientSideTimestamps = clientSideTimestamps, autoScalingSpecification = autoScalingSpecification, replicaSpecifications = replicaSpecifications, cdcSpecification = cdcSpecification, warmThroughputSpecification = warmThroughputSpecification)
   output <- .keyspaces$update_table_output()
   config <- get_config()
   svc <- .keyspaces$service(config, op)

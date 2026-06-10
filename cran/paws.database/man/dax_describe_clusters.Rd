@@ -11,16 +11,11 @@ dax_describe_clusters(ClusterNames = NULL, MaxResults = NULL, NextToken = NULL)
 \arguments{
 \item{ClusterNames}{The names of the DAX clusters being described.}
 
-\item{MaxResults}{The maximum number of results to include in the response. If more
-results exist than the specified \code{MaxResults} value, a token is included
-in the response so that the remaining results can be retrieved.
+\item{MaxResults}{The maximum number of results to include in the response. If more results exist than the specified \code{MaxResults} value, a token is included in the response so that the remaining results can be retrieved.
 
 The value for \code{MaxResults} must be between 20 and 100.}
 
-\item{NextToken}{An optional token returned from a prior request. Use this token for
-pagination of results from this action. If this parameter is specified,
-the response includes only results beyond the token, up to the value
-specified by \code{MaxResults}.}
+\item{NextToken}{An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by \code{MaxResults}.}
 }
 \description{
 Returns information about all provisioned DAX clusters if no cluster identifier is specified, or about a specific DAX cluster if a cluster identifier is supplied.

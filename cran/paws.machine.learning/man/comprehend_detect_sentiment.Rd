@@ -10,9 +10,7 @@ comprehend_detect_sentiment(Text, LanguageCode)
 \arguments{
 \item{Text}{[required] A UTF-8 text string. The maximum string size is 5 KB.}
 
-\item{LanguageCode}{[required] The language of the input documents. You can specify any of the primary
-languages supported by Amazon Comprehend. All documents must be in the
-same language.}
+\item{LanguageCode}{[required] The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.}
 }
 \description{
 Inspects text and returns an inference of the prevailing sentiment (\code{POSITIVE}, \code{NEUTRAL}, \code{MIXED}, or \code{NEGATIVE}).

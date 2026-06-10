@@ -88,23 +88,17 @@ bedrockagent_associate_agent_collaborator <- function(agentId, agentVersion, age
 #' Associates a knowledge base with an agent
 #'
 #' @description
-#' Associates a knowledge base with an agent. If a knowledge base is
-#' associated and its `indexState` is set to `Enabled`, the agent queries
-#' the knowledge base for information to augment its response to the user.
+#' Associates a knowledge base with an agent. If a knowledge base is associated and its `indexState` is set to `Enabled`, the agent queries the knowledge base for information to augment its response to the user.
 #'
 #' @usage
 #' bedrockagent_associate_agent_knowledge_base(agentId, agentVersion,
 #'   knowledgeBaseId, description, knowledgeBaseState)
 #'
-#' @param agentId &#91;required&#93; The unique identifier of the agent with which you want to associate the
-#' knowledge base.
-#' @param agentVersion &#91;required&#93; The version of the agent with which you want to associate the knowledge
-#' base.
+#' @param agentId &#91;required&#93; The unique identifier of the agent with which you want to associate the knowledge base.
+#' @param agentVersion &#91;required&#93; The version of the agent with which you want to associate the knowledge base.
 #' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base to associate with the agent.
 #' @param description &#91;required&#93; A description of what the agent should use the knowledge base for.
-#' @param knowledgeBaseState Specifies whether to use the knowledge base or not when sending an
-#' [InvokeAgent](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html)
-#' request.
+#' @param knowledgeBaseState Specifies whether to use the knowledge base or not when sending an [InvokeAgent](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html) request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -166,40 +160,23 @@ bedrockagent_associate_agent_knowledge_base <- function(agentId, agentVersion, k
 #' APIs to carry out tasks to help customers
 #'
 #' @description
-#' Creates an agent that orchestrates interactions between foundation
-#' models, data sources, software applications, user conversations, and
-#' APIs to carry out tasks to help customers.
+#' Creates an agent that orchestrates interactions between foundation models, data sources, software applications, user conversations, and APIs to carry out tasks to help customers.
 #' 
 #' -   Specify the following fields for security purposes.
 #' 
-#'     -   `agentResourceRoleArn` – The Amazon Resource Name (ARN) of the
-#'         role with permissions to invoke API operations on an agent.
+#'     -   `agentResourceRoleArn` – The Amazon Resource Name (ARN) of the role with permissions to invoke API operations on an agent.
 #' 
-#'     -   (Optional) `customerEncryptionKeyArn` – The Amazon Resource Name
-#'         (ARN) of a KMS key to encrypt the creation of the agent.
+#'     -   (Optional) `customerEncryptionKeyArn` – The Amazon Resource Name (ARN) of a KMS key to encrypt the creation of the agent.
 #' 
-#'     -   (Optional) `idleSessionTTLinSeconds` – Specify the number of
-#'         seconds for which the agent should maintain session information.
-#'         After this time expires, the subsequent `InvokeAgent` request
-#'         begins a new session.
+#'     -   (Optional) `idleSessionTTLinSeconds` – Specify the number of seconds for which the agent should maintain session information. After this time expires, the subsequent `InvokeAgent` request begins a new session.
 #' 
-#' -   To enable your agent to retain conversational context across
-#'     multiple sessions, include a `memoryConfiguration` object. For more
-#'     information, see [Configure
-#'     memory](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-configure-memory.html).
+#' -   To enable your agent to retain conversational context across multiple sessions, include a `memoryConfiguration` object. For more information, see [Configure memory](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-configure-memory.html).
 #' 
-#' -   To override the default prompt behavior for agent orchestration and
-#'     to use advanced prompts, include a `promptOverrideConfiguration`
-#'     object. For more information, see [Advanced
-#'     prompts](https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html).
+#' -   To override the default prompt behavior for agent orchestration and to use advanced prompts, include a `promptOverrideConfiguration` object. For more information, see [Advanced prompts](https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html).
 #' 
-#' -   If your agent fails to be created, the response returns a list of
-#'     `failureReasons` alongside a list of `recommendedActions` for you to
-#'     troubleshoot.
+#' -   If your agent fails to be created, the response returns a list of `failureReasons` alongside a list of `recommendedActions` for you to troubleshoot.
 #' 
-#' -   The agent instructions will not be honored if your agent has only
-#'     one knowledge base, uses default prompts, has no action group, and
-#'     user input is disabled.
+#' -   The agent instructions will not be honored if your agent has only one knowledge base, uses default prompts, has no action group, and user input is disabled.
 #'
 #' @usage
 #' bedrockagent_create_agent(agentName, clientToken, instruction,
@@ -209,69 +186,32 @@ bedrockagent_associate_agent_knowledge_base <- function(agentId, agentVersion, k
 #'   memoryConfiguration, agentCollaboration)
 #'
 #' @param agentName &#91;required&#93; A name for the agent that you create.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock ignores the request, but does not return an
-#' error. For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
-#' @param instruction Instructions that tell the agent what it should do and how it should
-#' interact with users.
-#' @param foundationModel The identifier for the model that you want to be used for orchestration
-#' by the agent you create.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param instruction Instructions that tell the agent what it should do and how it should interact with users.
+#' @param foundationModel The identifier for the model that you want to be used for orchestration by the agent you create.
 #' 
-#' The `modelId` to provide depends on the type of model or throughput that
-#' you use:
+#' The `modelId` to provide depends on the type of model or throughput that you use:
 #' 
-#' -   If you use a base model, specify the model ID or its ARN. For a list
-#'     of model IDs for base models, see [Amazon Bedrock base model IDs
-#'     (on-demand
-#'     throughput)](https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html#model-ids-arns)
-#'     in the Amazon Bedrock User Guide.
+#' -   If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see [Amazon Bedrock base model IDs (on-demand throughput)](https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html#model-ids-arns) in the Amazon Bedrock User Guide.
 #' 
-#' -   If you use an inference profile, specify the inference profile ID or
-#'     its ARN. For a list of inference profile IDs, see [Supported Regions
-#'     and models for cross-region
-#'     inference](https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-support.html)
-#'     in the Amazon Bedrock User Guide.
+#' -   If you use an inference profile, specify the inference profile ID or its ARN. For a list of inference profile IDs, see [Supported Regions and models for cross-region inference](https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-support.html) in the Amazon Bedrock User Guide.
 #' 
-#' -   If you use a provisioned model, specify the ARN of the Provisioned
-#'     Throughput. For more information, see [Run inference using a
-#'     Provisioned
-#'     Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html)
-#'     in the Amazon Bedrock User Guide.
+#' -   If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see [Run inference using a Provisioned Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html) in the Amazon Bedrock User Guide.
 #' 
-#' -   If you use a custom model, first purchase Provisioned Throughput for
-#'     it. Then specify the ARN of the resulting provisioned model. For
-#'     more information, see [Use a custom model in Amazon
-#'     Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html)
-#'     in the Amazon Bedrock User Guide.
+#' -   If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the resulting provisioned model. For more information, see [Use a custom model in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html) in the Amazon Bedrock User Guide.
 #' 
-#' -   If you use an [imported
-#'     model](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html),
-#'     specify the ARN of the imported model. You can get the model ARN
-#'     from a successful call to
-#'     [CreateModelImportJob](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelImportJob.html)
-#'     or from the Imported models page in the Amazon Bedrock console.
+#' -   If you use an [imported model](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html), specify the ARN of the imported model. You can get the model ARN from a successful call to [CreateModelImportJob](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelImportJob.html) or from the Imported models page in the Amazon Bedrock console.
 #' @param description A description of the agent.
-#' @param orchestrationType Specifies the type of orchestration strategy for the agent. This is set
-#' to `DEFAULT` orchestration type, by default.
+#' @param orchestrationType Specifies the type of orchestration strategy for the agent. This is set to `DEFAULT` orchestration type, by default.
 #' @param customOrchestration Contains details of the custom orchestration configured for the agent.
-#' @param idleSessionTTLInSeconds The number of seconds for which Amazon Bedrock keeps information about a
-#' user's conversation with the agent.
+#' @param idleSessionTTLInSeconds The number of seconds for which Amazon Bedrock keeps information about a user's conversation with the agent.
 #' 
-#' A user interaction remains active for the amount of time specified. If
-#' no conversation occurs during this time, the session expires and Amazon
-#' Bedrock deletes any data provided before the timeout.
-#' @param agentResourceRoleArn The Amazon Resource Name (ARN) of the IAM role with permissions to
-#' invoke API operations on the agent.
-#' @param customerEncryptionKeyArn The Amazon Resource Name (ARN) of the KMS key with which to encrypt the
-#' agent.
+#' A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Bedrock deletes any data provided before the timeout.
+#' @param agentResourceRoleArn The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations on the agent.
+#' @param customerEncryptionKeyArn The Amazon Resource Name (ARN) of the KMS key with which to encrypt the agent.
 #' @param tags Any tags that you want to attach to the agent.
-#' @param promptOverrideConfiguration Contains configurations to override prompts in different parts of an
-#' agent sequence. For more information, see [Advanced
-#' prompts](https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html).
-#' @param guardrailConfiguration The unique Guardrail configuration assigned to the agent when it is
-#' created.
+#' @param promptOverrideConfiguration Contains configurations to override prompts in different parts of an agent sequence. For more information, see [Advanced prompts](https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html).
+#' @param guardrailConfiguration The unique Guardrail configuration assigned to the agent when it is created.
 #' @param memoryConfiguration Contains the details of the memory configured for the agent.
 #' @param agentCollaboration The agent's collaboration role.
 #'
@@ -441,25 +381,13 @@ bedrockagent_create_agent <- function(agentName, clientToken = NULL, instruction
 #' Creates an action group for an agent
 #'
 #' @description
-#' Creates an action group for an agent. An action group represents the
-#' actions that an agent can carry out for the customer by defining the
-#' APIs that an agent can call and the logic for calling them.
+#' Creates an action group for an agent. An action group represents the actions that an agent can carry out for the customer by defining the APIs that an agent can call and the logic for calling them.
 #' 
-#' To allow your agent to request the user for additional information when
-#' trying to complete a task, add an action group with the
-#' `parentActionGroupSignature` field set to `AMAZON.UserInput`.
+#' To allow your agent to request the user for additional information when trying to complete a task, add an action group with the `parentActionGroupSignature` field set to `AMAZON.UserInput`.
 #' 
-#' To allow your agent to generate, run, and troubleshoot code when trying
-#' to complete a task, add an action group with the
-#' `parentActionGroupSignature` field set to `AMAZON.CodeInterpreter`.
+#' To allow your agent to generate, run, and troubleshoot code when trying to complete a task, add an action group with the `parentActionGroupSignature` field set to `AMAZON.CodeInterpreter`.
 #' 
-#' You must leave the `description`, `apiSchema`, and `actionGroupExecutor`
-#' fields blank for this action group. During orchestration, if your agent
-#' determines that it needs to invoke an API in an action group, but
-#' doesn't have enough information to complete the API request, it will
-#' invoke this action group instead and return an
-#' [Observation](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Observation.html)
-#' reprompting the user for more information.
+#' You must leave the `description`, `apiSchema`, and `actionGroupExecutor` fields blank for this action group. During orchestration, if your agent determines that it needs to invoke an API in an action group, but doesn't have enough information to complete the API request, it will invoke this action group instead and return an [Observation](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Observation.html) reprompting the user for more information.
 #'
 #' @usage
 #' bedrockagent_create_agent_action_group(agentId, agentVersion,
@@ -470,65 +398,30 @@ bedrockagent_create_agent <- function(agentName, clientToken = NULL, instruction
 #' @param agentId &#91;required&#93; The unique identifier of the agent for which to create the action group.
 #' @param agentVersion &#91;required&#93; The version of the agent for which to create the action group.
 #' @param actionGroupName &#91;required&#93; The name to give the action group.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock ignores the request, but does not return an
-#' error. For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
 #' @param description A description of the action group.
-#' @param parentActionGroupSignature Specify a built-in or computer use action for this action group. If you
-#' specify a value, you must leave the `description`, `apiSchema`, and
-#' `actionGroupExecutor` fields empty for this action group.
+#' @param parentActionGroupSignature Specify a built-in or computer use action for this action group. If you specify a value, you must leave the `description`, `apiSchema`, and `actionGroupExecutor` fields empty for this action group.
 #' 
-#' -   To allow your agent to request the user for additional information
-#'     when trying to complete a task, set this field to
-#'     `AMAZON.UserInput`.
+#' -   To allow your agent to request the user for additional information when trying to complete a task, set this field to `AMAZON.UserInput`.
 #' 
-#' -   To allow your agent to generate, run, and troubleshoot code when
-#'     trying to complete a task, set this field to
-#'     `AMAZON.CodeInterpreter`.
+#' -   To allow your agent to generate, run, and troubleshoot code when trying to complete a task, set this field to `AMAZON.CodeInterpreter`.
 #' 
-#' -   To allow your agent to use an Anthropic computer use tool, specify
-#'     one of the following values.
+#' -   To allow your agent to use an Anthropic computer use tool, specify one of the following values.
 #' 
-#'     Computer use is a new Anthropic Claude model capability (in beta)
-#'     available with Anthropic Claude 3.7 Sonnet and Claude 3.5 Sonnet v2
-#'     only. When operating computer use functionality, we recommend taking
-#'     additional security precautions, such as executing computer actions
-#'     in virtual environments with restricted data access and limited
-#'     internet connectivity. For more information, see [Configure an
-#'     Amazon Bedrock Agent to complete tasks with computer use
-#'     tools](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-computer-use.html).
+#'     Computer use is a new Anthropic Claude model capability (in beta) available with Anthropic Claude 3.7 Sonnet and Claude 3.5 Sonnet v2 only. When operating computer use functionality, we recommend taking additional security precautions, such as executing computer actions in virtual environments with restricted data access and limited internet connectivity. For more information, see [Configure an Amazon Bedrock Agent to complete tasks with computer use tools](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-computer-use.html).
 #' 
-#'     -   `ANTHROPIC.Computer` - Gives the agent permission to use the
-#'         mouse and keyboard and take screenshots.
+#'     -   `ANTHROPIC.Computer` - Gives the agent permission to use the mouse and keyboard and take screenshots.
 #' 
-#'     -   `ANTHROPIC.TextEditor` - Gives the agent permission to view,
-#'         create and edit files.
+#'     -   `ANTHROPIC.TextEditor` - Gives the agent permission to view, create and edit files.
 #' 
-#'     -   `ANTHROPIC.Bash` - Gives the agent permission to run commands in
-#'         a bash shell.
+#'     -   `ANTHROPIC.Bash` - Gives the agent permission to run commands in a bash shell.
 #' @param parentActionGroupSignatureParams The configuration settings for a computer use action.
 #' 
-#' Computer use is a new Anthropic Claude model capability (in beta)
-#' available with Anthropic Claude 3.7 Sonnet and Claude 3.5 Sonnet v2
-#' only. For more information, see [Configure an Amazon Bedrock Agent to
-#' complete tasks with computer use
-#' tools](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-computer-use.html).
-#' @param actionGroupExecutor The Amazon Resource Name (ARN) of the Lambda function containing the
-#' business logic that is carried out upon invoking the action or the
-#' custom control method for handling the information elicited from the
-#' user.
-#' @param apiSchema Contains either details about the S3 object containing the OpenAPI
-#' schema for the action group or the JSON or YAML-formatted payload
-#' defining the schema. For more information, see [Action group OpenAPI
-#' schemas](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-api-schema.html).
-#' @param actionGroupState Specifies whether the action group is available for the agent to invoke
-#' or not when sending an
-#' [InvokeAgent](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html)
-#' request.
-#' @param functionSchema Contains details about the function schema for the action group or the
-#' JSON or YAML-formatted payload defining the schema.
+#' Computer use is a new Anthropic Claude model capability (in beta) available with Anthropic Claude 3.7 Sonnet and Claude 3.5 Sonnet v2 only. For more information, see [Configure an Amazon Bedrock Agent to complete tasks with computer use tools](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-computer-use.html).
+#' @param actionGroupExecutor The Amazon Resource Name (ARN) of the Lambda function containing the business logic that is carried out upon invoking the action or the custom control method for handling the information elicited from the user.
+#' @param apiSchema Contains either details about the S3 object containing the OpenAPI schema for the action group or the JSON or YAML-formatted payload defining the schema. For more information, see [Action group OpenAPI schemas](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-api-schema.html).
+#' @param actionGroupState Specifies whether the action group is available for the agent to invoke or not when sending an [InvokeAgent](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html) request.
+#' @param functionSchema Contains details about the function schema for the action group or the JSON or YAML-formatted payload defining the schema.
 #'
 #' @return
 #' A list with the following syntax:
@@ -661,11 +554,7 @@ bedrockagent_create_agent_action_group <- function(agentId, agentVersion, action
 #'
 #' @param agentId &#91;required&#93; The unique identifier of the agent.
 #' @param agentAliasName &#91;required&#93; The name of the alias.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock ignores the request, but does not return an
-#' error. For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
 #' @param description A description of the alias of the agent.
 #' @param routingConfiguration Contains details about the routing configuration of the alias.
 #' @param tags Any tags that you want to attach to the alias of the agent.
@@ -764,25 +653,17 @@ bedrockagent_create_agent_alias <- function(agentId, agentAliasName, clientToken
 #' Connects a knowledge base to a data source
 #'
 #' @description
-#' Connects a knowledge base to a data source. You specify the
-#' configuration for the specific data source service in the
-#' `dataSourceConfiguration` field.
+#' Connects a knowledge base to a data source. You specify the configuration for the specific data source service in the `dataSourceConfiguration` field.
 #' 
-#' You can't change the `chunkingConfiguration` after you create the data
-#' source connector.
+#' You can't change the `chunkingConfiguration` after you create the data source connector.
 #'
 #' @usage
 #' bedrockagent_create_data_source(knowledgeBaseId, clientToken, name,
 #'   description, dataSourceConfiguration, dataDeletionPolicy,
 #'   serverSideEncryptionConfiguration, vectorIngestionConfiguration)
 #'
-#' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base to which to add the data
-#' source.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock ignores the request, but does not return an
-#' error. For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base to which to add the data source.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
 #' @param name &#91;required&#93; The name of the data source.
 #' @param description A description of the data source.
 #' @param dataSourceConfiguration &#91;required&#93; The connection configuration for the data source.
@@ -790,16 +671,9 @@ bedrockagent_create_agent_alias <- function(agentId, agentAliasName, clientToken
 #' 
 #' You can set the data deletion policy to:
 #' 
-#' -   DELETE: Deletes all data from your data source that’s converted into
-#'     vector embeddings upon deletion of a knowledge base or data source
-#'     resource. Note that the **vector store itself is not deleted**, only
-#'     the data. This flag is ignored if an Amazon Web Services account is
-#'     deleted.
+#' -   DELETE: Deletes all data from your data source that’s converted into vector embeddings upon deletion of a knowledge base or data source resource. Note that the **vector store itself is not deleted**, only the data. This flag is ignored if an Amazon Web Services account is deleted.
 #' 
-#' -   RETAIN: Retains all data from your data source that’s converted into
-#'     vector embeddings upon deletion of a knowledge base or data source
-#'     resource. Note that the **vector store itself is not deleted** if
-#'     you delete a knowledge base or data source resource.
+#' -   RETAIN: Retains all data from your data source that’s converted into vector embeddings upon deletion of a knowledge base or data source resource. Note that the **vector store itself is not deleted** if you delete a knowledge base or data source resource.
 #' @param serverSideEncryptionConfiguration Contains details about the server-side encryption for the data source.
 #' @param vectorIngestionConfiguration Contains details about how to ingest the documents in the data source.
 #'
@@ -1228,14 +1102,7 @@ bedrockagent_create_data_source <- function(knowledgeBaseId, clientToken = NULL,
 #' steps to yield an output
 #'
 #' @description
-#' Creates a prompt flow that you can use to send an input through various
-#' steps to yield an output. Configure nodes, each of which corresponds to
-#' a step of the flow, and create connections between the nodes to create
-#' paths to different outputs. For more information, see [How it
-#' works](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-how-it-works.html)
-#' and [Create a flow in Amazon
-#' Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-create.html)
-#' in the Amazon Bedrock User Guide.
+#' Creates a prompt flow that you can use to send an input through various steps to yield an output. Configure nodes, each of which corresponds to a step of the flow, and create connections between the nodes to create paths to different outputs. For more information, see [How it works](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-how-it-works.html) and [Create a flow in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-create.html) in the Amazon Bedrock User Guide.
 #'
 #' @usage
 #' bedrockagent_create_flow(name, description, executionRoleArn,
@@ -1243,21 +1110,11 @@ bedrockagent_create_data_source <- function(knowledgeBaseId, clientToken = NULL,
 #'
 #' @param name &#91;required&#93; A name for the flow.
 #' @param description A description for the flow.
-#' @param executionRoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the service role with permissions to
-#' create and manage a flow. For more information, see [Create a service
-#' role for flows in Amazon
-#' Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-permissions.html)
-#' in the Amazon Bedrock User Guide.
+#' @param executionRoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the service role with permissions to create and manage a flow. For more information, see [Create a service role for flows in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-permissions.html) in the Amazon Bedrock User Guide.
 #' @param customerEncryptionKeyArn The Amazon Resource Name (ARN) of the KMS key to encrypt the flow.
 #' @param definition A definition of the nodes and connections between nodes in the flow.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock ignores the request, but does not return an
-#' error. For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
-#' @param tags Any tags that you want to attach to the flow. For more information, see
-#' [Tagging resources in Amazon
-#' Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html).
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param tags Any tags that you want to attach to the flow. For more information, see [Tagging resources in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -1421,7 +1278,8 @@ bedrockagent_create_data_source <- function(knowledgeBaseId, clientToken = NULL,
 #'                             description = "string",
 #'                             inputSchema = list(
 #'                               json = list()
-#'                             )
+#'                             ),
+#'                             strict = TRUE|FALSE
 #'                           ),
 #'                           cachePoint = list(
 #'                             type = "default"
@@ -1683,7 +1541,8 @@ bedrockagent_create_data_source <- function(knowledgeBaseId, clientToken = NULL,
 #'                             description = "string",
 #'                             inputSchema = list(
 #'                               json = list()
-#'                             )
+#'                             ),
+#'                             strict = TRUE|FALSE
 #'                           ),
 #'                           cachePoint = list(
 #'                             type = "default"
@@ -1825,10 +1684,7 @@ bedrockagent_create_flow <- function(name, description = NULL, executionRoleArn,
 #' Creates an alias of a flow for deployment
 #'
 #' @description
-#' Creates an alias of a flow for deployment. For more information, see
-#' [Deploy a flow in Amazon
-#' Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-deploy.html)
-#' in the Amazon Bedrock User Guide.
+#' Creates an alias of a flow for deployment. For more information, see [Deploy a flow in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-deploy.html) in the Amazon Bedrock User Guide.
 #'
 #' @usage
 #' bedrockagent_create_flow_alias(name, description, routingConfiguration,
@@ -1837,17 +1693,10 @@ bedrockagent_create_flow <- function(name, description = NULL, executionRoleArn,
 #' @param name &#91;required&#93; A name for the alias.
 #' @param description A description for the alias.
 #' @param routingConfiguration &#91;required&#93; Contains information about the version to which to map the alias.
-#' @param concurrencyConfiguration The configuration that specifies how nodes in the flow are executed in
-#' parallel.
+#' @param concurrencyConfiguration The configuration that specifies how nodes in the flow are executed in parallel.
 #' @param flowIdentifier &#91;required&#93; The unique identifier of the flow for which to create an alias.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock ignores the request, but does not return an
-#' error. For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
-#' @param tags Any tags that you want to attach to the alias of the flow. For more
-#' information, see [Tagging resources in Amazon
-#' Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html).
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param tags Any tags that you want to attach to the alias of the flow. For more information, see [Tagging resources in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -1925,10 +1774,7 @@ bedrockagent_create_flow_alias <- function(name, description = NULL, routingConf
 #' Creates a version of the flow that you can deploy
 #'
 #' @description
-#' Creates a version of the flow that you can deploy. For more information,
-#' see [Deploy a flow in Amazon
-#' Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-deploy.html)
-#' in the Amazon Bedrock User Guide.
+#' Creates a version of the flow that you can deploy. For more information, see [Deploy a flow in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-deploy.html) in the Amazon Bedrock User Guide.
 #'
 #' @usage
 #' bedrockagent_create_flow_version(flowIdentifier, description,
@@ -1936,11 +1782,7 @@ bedrockagent_create_flow_alias <- function(name, description = NULL, routingConf
 #'
 #' @param flowIdentifier &#91;required&#93; The unique identifier of the flow that you want to create a version of.
 #' @param description A description of the version of the flow.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock ignores the request, but does not return an
-#' error. For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -2101,7 +1943,8 @@ bedrockagent_create_flow_alias <- function(name, description = NULL, routingConf
 #'                             description = "string",
 #'                             inputSchema = list(
 #'                               json = list()
-#'                             )
+#'                             ),
+#'                             strict = TRUE|FALSE
 #'                           ),
 #'                           cachePoint = list(
 #'                             type = "default"
@@ -2248,65 +2091,37 @@ bedrockagent_create_flow_version <- function(flowIdentifier, description = NULL,
 #' Creates a knowledge base
 #'
 #' @description
-#' Creates a knowledge base. A knowledge base contains your data sources so
-#' that Large Language Models (LLMs) can use your data. To create a
-#' knowledge base, you must first set up your data sources and configure a
-#' supported vector store. For more information, see [Set up a knowledge
-#' base](https://docs.aws.amazon.com/bedrock/latest/userguide/).
+#' Creates a knowledge base. A knowledge base contains your data sources so that Large Language Models (LLMs) can use your data. To create a knowledge base, you must first set up your data sources and configure a supported vector store. For more information, see [Set up a knowledge base](https://docs.aws.amazon.com/bedrock/latest/userguide/).
 #' 
-#' If you prefer to let Amazon Bedrock create and manage a vector store for
-#' you in Amazon OpenSearch Service, use the console. For more information,
-#' see [Create a knowledge
-#' base](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-create.html).
+#' If you prefer to let Amazon Bedrock create and manage a vector store for you in Amazon OpenSearch Service, use the console. For more information, see [Create a knowledge base](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-create.html).
 #' 
 #' -   Provide the `name` and an optional `description`.
 #' 
-#' -   Provide the Amazon Resource Name (ARN) with permissions to create a
-#'     knowledge base in the `roleArn` field.
+#' -   Provide the Amazon Resource Name (ARN) with permissions to create a knowledge base in the `roleArn` field.
 #' 
-#' -   Provide the embedding model to use in the `embeddingModelArn` field
-#'     in the `knowledgeBaseConfiguration` object.
+#' -   Provide the embedding model to use in the `embeddingModelArn` field in the `knowledgeBaseConfiguration` object.
 #' 
-#' -   Provide the configuration for your vector store in the
-#'     `storageConfiguration` object.
+#' -   Provide the configuration for your vector store in the `storageConfiguration` object.
 #' 
-#'     -   For an Amazon OpenSearch Service database, use the
-#'         `opensearchServerlessConfiguration` object. For more
-#'         information, see [Create a vector store in Amazon OpenSearch
-#'         Service](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup.html).
+#'     -   For an Amazon OpenSearch Service database, use the `opensearchServerlessConfiguration` object. For more information, see [Create a vector store in Amazon OpenSearch Service](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup.html).
 #' 
-#'     -   For an Amazon Aurora database, use the `RdsConfiguration`
-#'         object. For more information, see [Create a vector store in
-#'         Amazon
-#'         Aurora](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup.html).
+#'     -   For an Amazon Aurora database, use the `RdsConfiguration` object. For more information, see [Create a vector store in Amazon Aurora](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup.html).
 #' 
-#'     -   For a Pinecone database, use the `pineconeConfiguration` object.
-#'         For more information, see [Create a vector store in
-#'         Pinecone](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup.html).
+#'     -   For a Pinecone database, use the `pineconeConfiguration` object. For more information, see [Create a vector store in Pinecone](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup.html).
 #' 
-#'     -   For a Redis Enterprise Cloud database, use the
-#'         `redisEnterpriseCloudConfiguration` object. For more
-#'         information, see [Create a vector store in Redis Enterprise
-#'         Cloud](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup.html).
+#'     -   For a Redis Enterprise Cloud database, use the `redisEnterpriseCloudConfiguration` object. For more information, see [Create a vector store in Redis Enterprise Cloud](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup.html).
 #'
 #' @usage
 #' bedrockagent_create_knowledge_base(clientToken, name, description,
 #'   roleArn, knowledgeBaseConfiguration, storageConfiguration, tags)
 #'
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock ignores the request, but does not return an
-#' error. For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
 #' @param name &#91;required&#93; A name for the knowledge base.
 #' @param description A description of the knowledge base.
-#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role with permissions to
-#' invoke API operations on the knowledge base.
+#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations on the knowledge base.
 #' @param knowledgeBaseConfiguration &#91;required&#93; Contains details about the embeddings model used for the knowledge base.
-#' @param storageConfiguration Contains details about the configuration of the vector database used for
-#' the knowledge base.
-#' @param tags Specify the key-value pairs for the tags that you want to attach to your
-#' knowledge base in this object.
+#' @param storageConfiguration Contains details about the configuration of the vector database used for the knowledge base.
+#' @param tags Specify the key-value pairs for the tags that you want to attach to your knowledge base in this object.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2732,14 +2547,7 @@ bedrockagent_create_knowledge_base <- function(clientToken = NULL, name, descrip
 #' Creates a prompt in your prompt library that you can add to a flow
 #'
 #' @description
-#' Creates a prompt in your prompt library that you can add to a flow. For
-#' more information, see [Prompt management in Amazon
-#' Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html),
-#' [Create a prompt using Prompt
-#' management](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-create.html)
-#' and [Prompt flows in Amazon
-#' Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/flows.html)
-#' in the Amazon Bedrock User Guide.
+#' Creates a prompt in your prompt library that you can add to a flow. For more information, see [Prompt management in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html), [Create a prompt using Prompt management](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-create.html) and [Prompt flows in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/flows.html) in the Amazon Bedrock User Guide.
 #'
 #' @usage
 #' bedrockagent_create_prompt(name, description, customerEncryptionKeyArn,
@@ -2748,20 +2556,10 @@ bedrockagent_create_knowledge_base <- function(clientToken = NULL, name, descrip
 #' @param name &#91;required&#93; A name for the prompt.
 #' @param description A description for the prompt.
 #' @param customerEncryptionKeyArn The Amazon Resource Name (ARN) of the KMS key to encrypt the prompt.
-#' @param defaultVariant The name of the default variant for the prompt. This value must match
-#' the `name` field in the relevant
-#' [PromptVariant](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptVariant.html)
-#' object.
-#' @param variants A list of objects, each containing details about a variant of the
-#' prompt.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock ignores the request, but does not return an
-#' error. For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
-#' @param tags Any tags that you want to attach to the prompt. For more information,
-#' see [Tagging resources in Amazon
-#' Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html).
+#' @param defaultVariant The name of the default variant for the prompt. This value must match the `name` field in the relevant [PromptVariant](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptVariant.html) object.
+#' @param variants A list of objects, each containing details about a variant of the prompt.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param tags Any tags that you want to attach to the prompt. For more information, see [Tagging resources in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -2822,7 +2620,8 @@ bedrockagent_create_knowledge_base <- function(clientToken = NULL, name, descrip
 #'                   description = "string",
 #'                   inputSchema = list(
 #'                     json = list()
-#'                   )
+#'                   ),
+#'                   strict = TRUE|FALSE
 #'                 ),
 #'                 cachePoint = list(
 #'                   type = "default"
@@ -2934,7 +2733,8 @@ bedrockagent_create_knowledge_base <- function(clientToken = NULL, name, descrip
 #'                   description = "string",
 #'                   inputSchema = list(
 #'                     json = list()
-#'                   )
+#'                   ),
+#'                   strict = TRUE|FALSE
 #'                 ),
 #'                 cachePoint = list(
 #'                   type = "default"
@@ -3011,27 +2811,16 @@ bedrockagent_create_prompt <- function(name, description = NULL, customerEncrypt
 #' production
 #'
 #' @description
-#' Creates a static snapshot of your prompt that can be deployed to
-#' production. For more information, see [Deploy prompts using Prompt
-#' management by creating
-#' versions](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-deploy.html)
-#' in the Amazon Bedrock User Guide.
+#' Creates a static snapshot of your prompt that can be deployed to production. For more information, see [Deploy prompts using Prompt management by creating versions](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-deploy.html) in the Amazon Bedrock User Guide.
 #'
 #' @usage
 #' bedrockagent_create_prompt_version(promptIdentifier, description,
 #'   clientToken, tags)
 #'
-#' @param promptIdentifier &#91;required&#93; The unique identifier of the prompt that you want to create a version
-#' of.
+#' @param promptIdentifier &#91;required&#93; The unique identifier of the prompt that you want to create a version of.
 #' @param description A description for the version of the prompt.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock ignores the request, but does not return an
-#' error. For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
-#' @param tags Any tags that you want to attach to the version of the prompt. For more
-#' information, see [Tagging resources in Amazon
-#' Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html).
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param tags Any tags that you want to attach to the version of the prompt. For more information, see [Tagging resources in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -3092,7 +2881,8 @@ bedrockagent_create_prompt <- function(name, description = NULL, customerEncrypt
 #'                   description = "string",
 #'                   inputSchema = list(
 #'                     json = list()
-#'                   )
+#'                   ),
+#'                   strict = TRUE|FALSE
 #'                 ),
 #'                 cachePoint = list(
 #'                   type = "default"
@@ -3191,9 +2981,7 @@ bedrockagent_create_prompt_version <- function(promptIdentifier, description = N
 #' bedrockagent_delete_agent(agentId, skipResourceInUseCheck)
 #'
 #' @param agentId &#91;required&#93; The unique identifier of the agent to delete.
-#' @param skipResourceInUseCheck By default, this value is `false` and deletion is stopped if the
-#' resource is in use. If you set it to `true`, the resource will be
-#' deleted even if the resource is in use.
+#' @param skipResourceInUseCheck By default, this value is `false` and deletion is stopped if the resource is in use. If you set it to `true`, the resource will be deleted even if the resource is in use.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3248,9 +3036,7 @@ bedrockagent_delete_agent <- function(agentId, skipResourceInUseCheck = NULL) {
 #' @param agentId &#91;required&#93; The unique identifier of the agent that the action group belongs to.
 #' @param agentVersion &#91;required&#93; The version of the agent that the action group belongs to.
 #' @param actionGroupId &#91;required&#93; The unique identifier of the action group to delete.
-#' @param skipResourceInUseCheck By default, this value is `false` and deletion is stopped if the
-#' resource is in use. If you set it to `true`, the resource will be
-#' deleted even if the resource is in use.
+#' @param skipResourceInUseCheck By default, this value is `false` and deletion is stopped if the resource is in use. If you set it to `true`, the resource will be deleted even if the resource is in use.
 #'
 #' @return
 #' An empty list.
@@ -3353,9 +3139,7 @@ bedrockagent_delete_agent_alias <- function(agentId, agentAliasId) {
 #'
 #' @param agentId &#91;required&#93; The unique identifier of the agent that the version belongs to.
 #' @param agentVersion &#91;required&#93; The version of the agent to delete.
-#' @param skipResourceInUseCheck By default, this value is `false` and deletion is stopped if the
-#' resource is in use. If you set it to `true`, the resource will be
-#' deleted even if the resource is in use.
+#' @param skipResourceInUseCheck By default, this value is `false` and deletion is stopped if the resource is in use. If you set it to `true`, the resource will be deleted even if the resource is in use.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3408,8 +3192,7 @@ bedrockagent_delete_agent_version <- function(agentId, agentVersion, skipResourc
 #' @usage
 #' bedrockagent_delete_data_source(knowledgeBaseId, dataSourceId)
 #'
-#' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base from which to delete the
-#' data source.
+#' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base from which to delete the data source.
 #' @param dataSourceId &#91;required&#93; The unique identifier of the data source to delete.
 #'
 #' @return
@@ -3463,9 +3246,7 @@ bedrockagent_delete_data_source <- function(knowledgeBaseId, dataSourceId) {
 #' bedrockagent_delete_flow(flowIdentifier, skipResourceInUseCheck)
 #'
 #' @param flowIdentifier &#91;required&#93; The unique identifier of the flow.
-#' @param skipResourceInUseCheck By default, this value is `false` and deletion is stopped if the
-#' resource is in use. If you set it to `true`, the resource will be
-#' deleted even if the resource is in use.
+#' @param skipResourceInUseCheck By default, this value is `false` and deletion is stopped if the resource is in use. If you set it to `true`, the resource will be deleted even if the resource is in use.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3570,9 +3351,7 @@ bedrockagent_delete_flow_alias <- function(flowIdentifier, aliasIdentifier) {
 #'
 #' @param flowIdentifier &#91;required&#93; The unique identifier of the flow whose version that you want to delete
 #' @param flowVersion &#91;required&#93; The version of the flow that you want to delete.
-#' @param skipResourceInUseCheck By default, this value is `false` and deletion is stopped if the
-#' resource is in use. If you set it to `true`, the resource will be
-#' deleted even if the resource is in use.
+#' @param skipResourceInUseCheck By default, this value is `false` and deletion is stopped if the resource is in use. If you set it to `true`, the resource will be deleted even if the resource is in use.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3619,11 +3398,7 @@ bedrockagent_delete_flow_version <- function(flowIdentifier, flowVersion, skipRe
 #' Deletes a knowledge base
 #'
 #' @description
-#' Deletes a knowledge base. Before deleting a knowledge base, you should
-#' disassociate the knowledge base from any agents that it is associated
-#' with by making a
-#' [`disassociate_agent_knowledge_base`][bedrockagent_disassociate_agent_knowledge_base]
-#' request.
+#' Deletes a knowledge base. Before deleting a knowledge base, you should disassociate the knowledge base from any agents that it is associated with by making a [`disassociate_agent_knowledge_base`][bedrockagent_disassociate_agent_knowledge_base] request.
 #'
 #' @usage
 #' bedrockagent_delete_knowledge_base(knowledgeBaseId)
@@ -3674,26 +3449,16 @@ bedrockagent_delete_knowledge_base <- function(knowledgeBaseId) {
 #' knowledge base that is connected to it
 #'
 #' @description
-#' Deletes documents from a data source and syncs the changes to the
-#' knowledge base that is connected to it. For more information, see
-#' [Ingest changes directly into a knowledge
-#' base](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-direct-ingestion.html)
-#' in the Amazon Bedrock User Guide.
+#' Deletes documents from a data source and syncs the changes to the knowledge base that is connected to it. For more information, see [Ingest changes directly into a knowledge base](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-direct-ingestion.html) in the Amazon Bedrock User Guide.
 #'
 #' @usage
 #' bedrockagent_delete_knowledge_base_documents(knowledgeBaseId,
 #'   dataSourceId, clientToken, documentIdentifiers)
 #'
-#' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base that is connected to the
-#' data source.
+#' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base that is connected to the data source.
 #' @param dataSourceId &#91;required&#93; The unique identifier of the data source that contains the documents.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock ignores the request, but does not return an
-#' error. For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
-#' @param documentIdentifiers &#91;required&#93; A list of objects, each of which contains information to identify a
-#' document to delete.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param documentIdentifiers &#91;required&#93; A list of objects, each of which contains information to identify a document to delete.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3770,20 +3535,13 @@ bedrockagent_delete_knowledge_base_documents <- function(knowledgeBaseId, dataSo
 #' the promptVersion field or not
 #'
 #' @description
-#' Deletes a prompt or a version of it, depending on whether you include
-#' the `promptVersion` field or not. For more information, see [Delete
-#' prompts from the Prompt management
-#' tool](https://docs.aws.amazon.com/bedrock/latest/userguide/#prompt-management-delete.html)
-#' and [Delete a version of a prompt from the Prompt management
-#' tool](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-deploy.html#prompt-management-versions-delete.html)
-#' in the Amazon Bedrock User Guide.
+#' Deletes a prompt or a version of it, depending on whether you include the `promptVersion` field or not. For more information, see [Delete prompts from the Prompt management tool](https://docs.aws.amazon.com/bedrock/latest/userguide/#prompt-management-delete.html) and [Delete a version of a prompt from the Prompt management tool](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-deploy.html#prompt-management-versions-delete.html) in the Amazon Bedrock User Guide.
 #'
 #' @usage
 #' bedrockagent_delete_prompt(promptIdentifier, promptVersion)
 #'
 #' @param promptIdentifier &#91;required&#93; The unique identifier of the prompt.
-#' @param promptVersion The version of the prompt to delete. To delete the prompt, omit this
-#' field.
+#' @param promptVersion The version of the prompt to delete. To delete the prompt, omit this field.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3884,8 +3642,7 @@ bedrockagent_disassociate_agent_collaborator <- function(agentId, agentVersion, 
 #' bedrockagent_disassociate_agent_knowledge_base(agentId, agentVersion,
 #'   knowledgeBaseId)
 #'
-#' @param agentId &#91;required&#93; The unique identifier of the agent from which to disassociate the
-#' knowledge base.
+#' @param agentId &#91;required&#93; The unique identifier of the agent from which to disassociate the knowledge base.
 #' @param agentVersion &#91;required&#93; The version of the agent from which to disassociate the knowledge base.
 #' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base to disassociate.
 #'
@@ -4152,8 +3909,7 @@ bedrockagent_get_agent_action_group <- function(agentId, agentVersion, actionGro
 #' @usage
 #' bedrockagent_get_agent_alias(agentId, agentAliasId)
 #'
-#' @param agentId &#91;required&#93; The unique identifier of the agent to which the alias to get information
-#' belongs.
+#' @param agentId &#91;required&#93; The unique identifier of the agent to which the alias to get information belongs.
 #' @param agentAliasId &#91;required&#93; The unique identifier of the alias for which to get information.
 #'
 #' @return
@@ -4316,8 +4072,7 @@ bedrockagent_get_agent_collaborator <- function(agentId, agentVersion, collabora
 #' bedrockagent_get_agent_knowledge_base(agentId, agentVersion,
 #'   knowledgeBaseId)
 #'
-#' @param agentId &#91;required&#93; The unique identifier of the agent with which the knowledge base is
-#' associated.
+#' @param agentId &#91;required&#93; The unique identifier of the agent with which the knowledge base is associated.
 #' @param agentVersion &#91;required&#93; The version of the agent with which the knowledge base is associated.
 #' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base associated with the agent.
 #'
@@ -4737,10 +4492,7 @@ bedrockagent_get_data_source <- function(knowledgeBaseId, dataSourceId) {
 #' Retrieves information about a flow
 #'
 #' @description
-#' Retrieves information about a flow. For more information, see [Manage a
-#' flow in Amazon
-#' Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/) in the
-#' Amazon Bedrock User Guide.
+#' Retrieves information about a flow. For more information, see [Manage a flow in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/) in the Amazon Bedrock User Guide.
 #'
 #' @usage
 #' bedrockagent_get_flow(flowIdentifier)
@@ -4909,7 +4661,8 @@ bedrockagent_get_data_source <- function(knowledgeBaseId, dataSourceId) {
 #'                             description = "string",
 #'                             inputSchema = list(
 #'                               json = list()
-#'                             )
+#'                             ),
+#'                             strict = TRUE|FALSE
 #'                           ),
 #'                           cachePoint = list(
 #'                             type = "default"
@@ -5176,10 +4929,7 @@ bedrockagent_get_flow <- function(flowIdentifier) {
 #' Retrieves information about a flow
 #'
 #' @description
-#' Retrieves information about a flow. For more information, see [Deploy a
-#' flow in Amazon
-#' Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-deploy.html)
-#' in the Amazon Bedrock User Guide.
+#' Retrieves information about a flow. For more information, see [Deploy a flow in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-deploy.html) in the Amazon Bedrock User Guide.
 #'
 #' @usage
 #' bedrockagent_get_flow_alias(flowIdentifier, aliasIdentifier)
@@ -5249,10 +4999,7 @@ bedrockagent_get_flow_alias <- function(flowIdentifier, aliasIdentifier) {
 #' Retrieves information about a version of a flow
 #'
 #' @description
-#' Retrieves information about a version of a flow. For more information,
-#' see [Deploy a flow in Amazon
-#' Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-deploy.html)
-#' in the Amazon Bedrock User Guide.
+#' Retrieves information about a version of a flow. For more information, see [Deploy a flow in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-deploy.html) in the Amazon Bedrock User Guide.
 #'
 #' @usage
 #' bedrockagent_get_flow_version(flowIdentifier, flowVersion)
@@ -5419,7 +5166,8 @@ bedrockagent_get_flow_alias <- function(flowIdentifier, aliasIdentifier) {
 #'                             description = "string",
 #'                             inputSchema = list(
 #'                               json = list()
-#'                             )
+#'                             ),
+#'                             strict = TRUE|FALSE
 #'                           ),
 #'                           cachePoint = list(
 #'                             type = "default"
@@ -5565,20 +5313,15 @@ bedrockagent_get_flow_version <- function(flowIdentifier, flowVersion) {
 #' Gets information about a data ingestion job
 #'
 #' @description
-#' Gets information about a data ingestion job. Data sources are ingested
-#' into your knowledge base so that Large Language Models (LLMs) can use
-#' your data.
+#' Gets information about a data ingestion job. Data sources are ingested into your knowledge base so that Large Language Models (LLMs) can use your data.
 #'
 #' @usage
 #' bedrockagent_get_ingestion_job(knowledgeBaseId, dataSourceId,
 #'   ingestionJobId)
 #'
-#' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base for the data ingestion job
-#' you want to get information on.
-#' @param dataSourceId &#91;required&#93; The unique identifier of the data source for the data ingestion job you
-#' want to get information on.
-#' @param ingestionJobId &#91;required&#93; The unique identifier of the data ingestion job you want to get
-#' information on.
+#' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base for the data ingestion job you want to get information on.
+#' @param dataSourceId &#91;required&#93; The unique identifier of the data source for the data ingestion job you want to get information on.
+#' @param ingestionJobId &#91;required&#93; The unique identifier of the data ingestion job you want to get information on.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5653,8 +5396,7 @@ bedrockagent_get_ingestion_job <- function(knowledgeBaseId, dataSourceId, ingest
 #' @usage
 #' bedrockagent_get_knowledge_base(knowledgeBaseId)
 #'
-#' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base you want to get information
-#' on.
+#' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base you want to get information on.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5895,21 +5637,15 @@ bedrockagent_get_knowledge_base <- function(knowledgeBaseId) {
 #' knowledge base
 #'
 #' @description
-#' Retrieves specific documents from a data source that is connected to a
-#' knowledge base. For more information, see [Ingest changes directly into
-#' a knowledge
-#' base](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-direct-ingestion.html)
-#' in the Amazon Bedrock User Guide.
+#' Retrieves specific documents from a data source that is connected to a knowledge base. For more information, see [Ingest changes directly into a knowledge base](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-direct-ingestion.html) in the Amazon Bedrock User Guide.
 #'
 #' @usage
 #' bedrockagent_get_knowledge_base_documents(knowledgeBaseId, dataSourceId,
 #'   documentIdentifiers)
 #'
-#' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base that is connected to the
-#' data source.
+#' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base that is connected to the data source.
 #' @param dataSourceId &#91;required&#93; The unique identifier of the data source that contains the documents.
-#' @param documentIdentifiers &#91;required&#93; A list of objects, each of which contains information to identify a
-#' document for which to retrieve information.
+#' @param documentIdentifiers &#91;required&#93; A list of objects, each of which contains information to identify a document for which to retrieve information.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5986,22 +5722,13 @@ bedrockagent_get_knowledge_base_documents <- function(knowledgeBaseId, dataSourc
 #' promptVersion field or not
 #'
 #' @description
-#' Retrieves information about the working draft (`DRAFT` version) of a
-#' prompt or a version of it, depending on whether you include the
-#' `promptVersion` field or not. For more information, see [View
-#' information about prompts using Prompt
-#' management](https://docs.aws.amazon.com/bedrock/latest/userguide/#prompt-management-view.html)
-#' and [View information about a version of your
-#' prompt](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-deploy.html#prompt-management-versions-view.html)
-#' in the Amazon Bedrock User Guide.
+#' Retrieves information about the working draft (`DRAFT` version) of a prompt or a version of it, depending on whether you include the `promptVersion` field or not. For more information, see [View information about prompts using Prompt management](https://docs.aws.amazon.com/bedrock/latest/userguide/#prompt-management-view.html) and [View information about a version of your prompt](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-deploy.html#prompt-management-versions-view.html) in the Amazon Bedrock User Guide.
 #'
 #' @usage
 #' bedrockagent_get_prompt(promptIdentifier, promptVersion)
 #'
 #' @param promptIdentifier &#91;required&#93; The unique identifier of the prompt.
-#' @param promptVersion The version of the prompt about which you want to retrieve information.
-#' Omit this field to return information about the working draft of the
-#' prompt.
+#' @param promptVersion The version of the prompt about which you want to retrieve information. Omit this field to return information about the working draft of the prompt.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6062,7 +5789,8 @@ bedrockagent_get_knowledge_base_documents <- function(knowledgeBaseId, dataSourc
 #'                   description = "string",
 #'                   inputSchema = list(
 #'                     json = list()
-#'                   )
+#'                   ),
+#'                   strict = TRUE|FALSE
 #'                 ),
 #'                 cachePoint = list(
 #'                   type = "default"
@@ -6152,29 +5880,16 @@ bedrockagent_get_prompt <- function(promptIdentifier, promptVersion = NULL) {
 #' the data source
 #'
 #' @description
-#' Ingests documents directly into the knowledge base that is connected to
-#' the data source. The `dataSourceType` specified in the content for each
-#' document must match the type of the data source that you specify in the
-#' header. For more information, see [Ingest changes directly into a
-#' knowledge
-#' base](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-direct-ingestion.html)
-#' in the Amazon Bedrock User Guide.
+#' Ingests documents directly into the knowledge base that is connected to the data source. The `dataSourceType` specified in the content for each document must match the type of the data source that you specify in the header. For more information, see [Ingest changes directly into a knowledge base](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-direct-ingestion.html) in the Amazon Bedrock User Guide.
 #'
 #' @usage
 #' bedrockagent_ingest_knowledge_base_documents(knowledgeBaseId,
 #'   dataSourceId, clientToken, documents)
 #'
-#' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base to ingest the documents
-#' into.
-#' @param dataSourceId &#91;required&#93; The unique identifier of the data source connected to the knowledge base
-#' that you're adding documents to.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock ignores the request, but does not return an
-#' error. For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
-#' @param documents &#91;required&#93; A list of objects, each of which contains information about the
-#' documents to add.
+#' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base to ingest the documents into.
+#' @param dataSourceId &#91;required&#93; The unique identifier of the data source connected to the knowledge base that you're adding documents to.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param documents &#91;required&#93; A list of objects, each of which contains information about the documents to add.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6300,13 +6015,8 @@ bedrockagent_ingest_knowledge_base_documents <- function(knowledgeBaseId, dataSo
 #'
 #' @param agentId &#91;required&#93; The unique identifier of the agent.
 #' @param agentVersion &#91;required&#93; The version of the agent.
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6370,13 +6080,8 @@ bedrockagent_list_agent_action_groups <- function(agentId, agentVersion, maxResu
 #' bedrockagent_list_agent_aliases(agentId, maxResults, nextToken)
 #'
 #' @param agentId &#91;required&#93; The unique identifier of the agent.
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6451,10 +6156,8 @@ bedrockagent_list_agent_aliases <- function(agentId, maxResults = NULL, nextToke
 #'
 #' @param agentId &#91;required&#93; The agent's ID.
 #' @param agentVersion &#91;required&#93; The agent's version.
-#' @param maxResults The maximum number of agent collaborators to return in one page of
-#' results.
-#' @param nextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param maxResults The maximum number of agent collaborators to return in one page of results.
+#' @param nextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6521,24 +6224,16 @@ bedrockagent_list_agent_collaborators <- function(agentId, agentVersion, maxResu
 #' each one
 #'
 #' @description
-#' Lists knowledge bases associated with an agent and information about
-#' each one.
+#' Lists knowledge bases associated with an agent and information about each one.
 #'
 #' @usage
 #' bedrockagent_list_agent_knowledge_bases(agentId, agentVersion,
 #'   maxResults, nextToken)
 #'
-#' @param agentId &#91;required&#93; The unique identifier of the agent for which to return information about
-#' knowledge bases associated with it.
-#' @param agentVersion &#91;required&#93; The version of the agent for which to return information about knowledge
-#' bases associated with it.
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
+#' @param agentId &#91;required&#93; The unique identifier of the agent for which to return information about knowledge bases associated with it.
+#' @param agentVersion &#91;required&#93; The version of the agent for which to return information about knowledge bases associated with it.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6601,13 +6296,8 @@ bedrockagent_list_agent_knowledge_bases <- function(agentId, agentVersion, maxRe
 #' bedrockagent_list_agent_versions(agentId, maxResults, nextToken)
 #'
 #' @param agentId &#91;required&#93; The unique identifier of the agent.
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6672,19 +6362,13 @@ bedrockagent_list_agent_versions <- function(agentId, maxResults = NULL, nextTok
 #' agent
 #'
 #' @description
-#' Lists the agents belonging to an account and information about each
-#' agent.
+#' Lists the agents belonging to an account and information about each agent.
 #'
 #' @usage
 #' bedrockagent_list_agents(maxResults, nextToken)
 #'
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6746,21 +6430,14 @@ bedrockagent_list_agents <- function(maxResults = NULL, nextToken = NULL) {
 #' one
 #'
 #' @description
-#' Lists the data sources in a knowledge base and information about each
-#' one.
+#' Lists the data sources in a knowledge base and information about each one.
 #'
 #' @usage
 #' bedrockagent_list_data_sources(knowledgeBaseId, maxResults, nextToken)
 #'
-#' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base for which to return a list
-#' of information.
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
+#' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base for which to return a list of information.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6824,13 +6501,8 @@ bedrockagent_list_data_sources <- function(knowledgeBaseId, maxResults = NULL, n
 #' bedrockagent_list_flow_aliases(flowIdentifier, maxResults, nextToken)
 #'
 #' @param flowIdentifier &#91;required&#93; The unique identifier of the flow for which aliases are being returned.
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6900,22 +6572,14 @@ bedrockagent_list_flow_aliases <- function(flowIdentifier, maxResults = NULL, ne
 #' Returns a list of information about each flow
 #'
 #' @description
-#' Returns a list of information about each flow. For more information, see
-#' [Deploy a flow in Amazon
-#' Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-deploy.html)
-#' in the Amazon Bedrock User Guide.
+#' Returns a list of information about each flow. For more information, see [Deploy a flow in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-deploy.html) in the Amazon Bedrock User Guide.
 #'
 #' @usage
 #' bedrockagent_list_flow_versions(flowIdentifier, maxResults, nextToken)
 #'
 #' @param flowIdentifier &#91;required&#93; The unique identifier of the flow.
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6972,21 +6636,13 @@ bedrockagent_list_flow_versions <- function(flowIdentifier, maxResults = NULL, n
 #' Returns a list of flows and information about each flow
 #'
 #' @description
-#' Returns a list of flows and information about each flow. For more
-#' information, see [Manage a flow in Amazon
-#' Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/) in the
-#' Amazon Bedrock User Guide.
+#' Returns a list of flows and information about each flow. For more information, see [Manage a flow in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/) in the Amazon Bedrock User Guide.
 #'
 #' @usage
 #' bedrockagent_list_flows(maxResults, nextToken)
 #'
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7047,26 +6703,18 @@ bedrockagent_list_flows <- function(maxResults = NULL, nextToken = NULL) {
 #' Lists the data ingestion jobs for a data source
 #'
 #' @description
-#' Lists the data ingestion jobs for a data source. The list also includes
-#' information about each job.
+#' Lists the data ingestion jobs for a data source. The list also includes information about each job.
 #'
 #' @usage
 #' bedrockagent_list_ingestion_jobs(knowledgeBaseId, dataSourceId, filters,
 #'   sortBy, maxResults, nextToken)
 #'
-#' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base for the list of data
-#' ingestion jobs.
-#' @param dataSourceId &#91;required&#93; The unique identifier of the data source for the list of data ingestion
-#' jobs.
+#' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base for the list of data ingestion jobs.
+#' @param dataSourceId &#91;required&#93; The unique identifier of the data source for the list of data ingestion jobs.
 #' @param filters Contains information about the filters for filtering the data.
 #' @param sortBy Contains details about how to sort the data.
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7151,26 +6799,16 @@ bedrockagent_list_ingestion_jobs <- function(knowledgeBaseId, dataSourceId, filt
 #' to a knowledge base
 #'
 #' @description
-#' Retrieves all the documents contained in a data source that is connected
-#' to a knowledge base. For more information, see [Ingest changes directly
-#' into a knowledge
-#' base](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-direct-ingestion.html)
-#' in the Amazon Bedrock User Guide.
+#' Retrieves all the documents contained in a data source that is connected to a knowledge base. For more information, see [Ingest changes directly into a knowledge base](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-direct-ingestion.html) in the Amazon Bedrock User Guide.
 #'
 #' @usage
 #' bedrockagent_list_knowledge_base_documents(knowledgeBaseId,
 #'   dataSourceId, maxResults, nextToken)
 #'
-#' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base that is connected to the
-#' data source.
+#' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base that is connected to the data source.
 #' @param dataSourceId &#91;required&#93; The unique identifier of the data source that contains the documents.
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7237,19 +6875,13 @@ bedrockagent_list_knowledge_base_documents <- function(knowledgeBaseId, dataSour
 #' Lists the knowledge bases in an account
 #'
 #' @description
-#' Lists the knowledge bases in an account. The list also
-#' includesinformation about each knowledge base.
+#' Lists the knowledge bases in an account. The list also includesinformation about each knowledge base.
 #'
 #' @usage
 #' bedrockagent_list_knowledge_bases(maxResults, nextToken)
 #'
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7308,27 +6940,14 @@ bedrockagent_list_knowledge_bases <- function(maxResults = NULL, nextToken = NUL
 #' not
 #'
 #' @description
-#' Returns either information about the working draft (`DRAFT` version) of
-#' each prompt in an account, or information about of all versions of a
-#' prompt, depending on whether you include the `promptIdentifier` field or
-#' not. For more information, see [View information about prompts using
-#' Prompt
-#' management](https://docs.aws.amazon.com/bedrock/latest/userguide/#prompt-management-view.html)
-#' in the Amazon Bedrock User Guide.
+#' Returns either information about the working draft (`DRAFT` version) of each prompt in an account, or information about of all versions of a prompt, depending on whether you include the `promptIdentifier` field or not. For more information, see [View information about prompts using Prompt management](https://docs.aws.amazon.com/bedrock/latest/userguide/#prompt-management-view.html) in the Amazon Bedrock User Guide.
 #'
 #' @usage
 #' bedrockagent_list_prompts(promptIdentifier, maxResults, nextToken)
 #'
-#' @param promptIdentifier The unique identifier of the prompt for whose versions you want to
-#' return information. Omit this field to list information about all
-#' prompts in an account.
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
+#' @param promptIdentifier The unique identifier of the prompt for whose versions you want to return information. Omit this field to list information about all prompts in an account.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7441,14 +7060,12 @@ bedrockagent_list_tags_for_resource <- function(resourceArn) {
 #' testing
 #'
 #' @description
-#' Creates a `DRAFT` version of the agent that can be used for internal
-#' testing.
+#' Creates a `DRAFT` version of the agent that can be used for internal testing.
 #'
 #' @usage
 #' bedrockagent_prepare_agent(agentId)
 #'
-#' @param agentId &#91;required&#93; The unique identifier of the agent for which to create a `DRAFT`
-#' version.
+#' @param agentId &#91;required&#93; The unique identifier of the agent for which to create a `DRAFT` version.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7497,10 +7114,7 @@ bedrockagent_prepare_agent <- function(agentId) {
 #' Prepares the DRAFT version of a flow so that it can be invoked
 #'
 #' @description
-#' Prepares the `DRAFT` version of a flow so that it can be invoked. For
-#' more information, see [Test a flow in Amazon
-#' Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-test.html)
-#' in the Amazon Bedrock User Guide.
+#' Prepares the `DRAFT` version of a flow so that it can be invoked. For more information, see [Test a flow in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-test.html) in the Amazon Bedrock User Guide.
 #'
 #' @usage
 #' bedrockagent_prepare_flow(flowIdentifier)
@@ -7550,21 +7164,15 @@ bedrockagent_prepare_flow <- function(flowIdentifier) {
 #' Begins a data ingestion job
 #'
 #' @description
-#' Begins a data ingestion job. Data sources are ingested into your
-#' knowledge base so that Large Language Models (LLMs) can use your data.
+#' Begins a data ingestion job. Data sources are ingested into your knowledge base so that Large Language Models (LLMs) can use your data.
 #'
 #' @usage
 #' bedrockagent_start_ingestion_job(knowledgeBaseId, dataSourceId,
 #'   clientToken, description)
 #'
 #' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base for the data ingestion job.
-#' @param dataSourceId &#91;required&#93; The unique identifier of the data source you want to ingest into your
-#' knowledge base.
-#' @param clientToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock ignores the request, but does not return an
-#' error. For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param dataSourceId &#91;required&#93; The unique identifier of the data source you want to ingest into your knowledge base.
+#' @param clientToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
 #' @param description A description of the data ingestion job.
 #'
 #' @return
@@ -7636,18 +7244,14 @@ bedrockagent_start_ingestion_job <- function(knowledgeBaseId, dataSourceId, clie
 #' Stops a currently running data ingestion job
 #'
 #' @description
-#' Stops a currently running data ingestion job. You can send a
-#' [`start_ingestion_job`][bedrockagent_start_ingestion_job] request again
-#' to ingest the rest of your data when you are ready.
+#' Stops a currently running data ingestion job. You can send a [`start_ingestion_job`][bedrockagent_start_ingestion_job] request again to ingest the rest of your data when you are ready.
 #'
 #' @usage
 #' bedrockagent_stop_ingestion_job(knowledgeBaseId, dataSourceId,
 #'   ingestionJobId)
 #'
-#' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base for the data ingestion job
-#' you want to stop.
-#' @param dataSourceId &#91;required&#93; The unique identifier of the data source for the data ingestion job you
-#' want to stop.
+#' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base for the data ingestion job you want to stop.
+#' @param dataSourceId &#91;required&#93; The unique identifier of the data source for the data ingestion job you want to stop.
 #' @param ingestionJobId &#91;required&#93; The unique identifier of the data ingestion job you want to stop.
 #'
 #' @return
@@ -7718,16 +7322,13 @@ bedrockagent_stop_ingestion_job <- function(knowledgeBaseId, dataSourceId, inges
 #' Associate tags with a resource
 #'
 #' @description
-#' Associate tags with a resource. For more information, see [Tagging
-#' resources](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html)
-#' in the Amazon Bedrock User Guide.
+#' Associate tags with a resource. For more information, see [Tagging resources](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html) in the Amazon Bedrock User Guide.
 #'
 #' @usage
 #' bedrockagent_tag_resource(resourceArn, tags)
 #'
 #' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource to tag.
-#' @param tags &#91;required&#93; An object containing key-value pairs that define the tags to attach to
-#' the resource.
+#' @param tags &#91;required&#93; An object containing key-value pairs that define the tags to attach to the resource.
 #'
 #' @return
 #' An empty list.
@@ -7774,8 +7375,7 @@ bedrockagent_tag_resource <- function(resourceArn, tags) {
 #' @usage
 #' bedrockagent_untag_resource(resourceArn, tagKeys)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource from which to remove
-#' tags.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource from which to remove tags.
 #' @param tagKeys &#91;required&#93; A list of keys of the tags to remove from the resource.
 #'
 #' @return
@@ -7829,63 +7429,30 @@ bedrockagent_untag_resource <- function(resourceArn, tagKeys) {
 #'
 #' @param agentId &#91;required&#93; The unique identifier of the agent.
 #' @param agentName &#91;required&#93; Specifies a new name for the agent.
-#' @param instruction Specifies new instructions that tell the agent what it should do and how
-#' it should interact with users.
-#' @param foundationModel &#91;required&#93; The identifier for the model that you want to be used for orchestration
-#' by the agent you create.
+#' @param instruction Specifies new instructions that tell the agent what it should do and how it should interact with users.
+#' @param foundationModel &#91;required&#93; The identifier for the model that you want to be used for orchestration by the agent you create.
 #' 
-#' The `modelId` to provide depends on the type of model or throughput that
-#' you use:
+#' The `modelId` to provide depends on the type of model or throughput that you use:
 #' 
-#' -   If you use a base model, specify the model ID or its ARN. For a list
-#'     of model IDs for base models, see [Amazon Bedrock base model IDs
-#'     (on-demand
-#'     throughput)](https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html#model-ids-arns)
-#'     in the Amazon Bedrock User Guide.
+#' -   If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see [Amazon Bedrock base model IDs (on-demand throughput)](https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html#model-ids-arns) in the Amazon Bedrock User Guide.
 #' 
-#' -   If you use an inference profile, specify the inference profile ID or
-#'     its ARN. For a list of inference profile IDs, see [Supported Regions
-#'     and models for cross-region
-#'     inference](https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-support.html)
-#'     in the Amazon Bedrock User Guide.
+#' -   If you use an inference profile, specify the inference profile ID or its ARN. For a list of inference profile IDs, see [Supported Regions and models for cross-region inference](https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-support.html) in the Amazon Bedrock User Guide.
 #' 
-#' -   If you use a provisioned model, specify the ARN of the Provisioned
-#'     Throughput. For more information, see [Run inference using a
-#'     Provisioned
-#'     Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html)
-#'     in the Amazon Bedrock User Guide.
+#' -   If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see [Run inference using a Provisioned Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html) in the Amazon Bedrock User Guide.
 #' 
-#' -   If you use a custom model, first purchase Provisioned Throughput for
-#'     it. Then specify the ARN of the resulting provisioned model. For
-#'     more information, see [Use a custom model in Amazon
-#'     Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html)
-#'     in the Amazon Bedrock User Guide.
+#' -   If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the resulting provisioned model. For more information, see [Use a custom model in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html) in the Amazon Bedrock User Guide.
 #' 
-#' -   If you use an [imported
-#'     model](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html),
-#'     specify the ARN of the imported model. You can get the model ARN
-#'     from a successful call to
-#'     [CreateModelImportJob](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelImportJob.html)
-#'     or from the Imported models page in the Amazon Bedrock console.
+#' -   If you use an [imported model](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html), specify the ARN of the imported model. You can get the model ARN from a successful call to [CreateModelImportJob](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelImportJob.html) or from the Imported models page in the Amazon Bedrock console.
 #' @param description Specifies a new description of the agent.
-#' @param orchestrationType Specifies the type of orchestration strategy for the agent. This is set
-#' to `DEFAULT` orchestration type, by default.
+#' @param orchestrationType Specifies the type of orchestration strategy for the agent. This is set to `DEFAULT` orchestration type, by default.
 #' @param customOrchestration Contains details of the custom orchestration configured for the agent.
-#' @param idleSessionTTLInSeconds The number of seconds for which Amazon Bedrock keeps information about a
-#' user's conversation with the agent.
+#' @param idleSessionTTLInSeconds The number of seconds for which Amazon Bedrock keeps information about a user's conversation with the agent.
 #' 
-#' A user interaction remains active for the amount of time specified. If
-#' no conversation occurs during this time, the session expires and Amazon
-#' Bedrock deletes any data provided before the timeout.
-#' @param agentResourceRoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role with permissions to
-#' invoke API operations on the agent.
-#' @param customerEncryptionKeyArn The Amazon Resource Name (ARN) of the KMS key with which to encrypt the
-#' agent.
-#' @param promptOverrideConfiguration Contains configurations to override prompts in different parts of an
-#' agent sequence. For more information, see [Advanced
-#' prompts](https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html).
-#' @param guardrailConfiguration The unique Guardrail configuration assigned to the agent when it is
-#' updated.
+#' A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Bedrock deletes any data provided before the timeout.
+#' @param agentResourceRoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations on the agent.
+#' @param customerEncryptionKeyArn The Amazon Resource Name (ARN) of the KMS key with which to encrypt the agent.
+#' @param promptOverrideConfiguration Contains configurations to override prompts in different parts of an agent sequence. For more information, see [Advanced prompts](https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html).
+#' @param guardrailConfiguration The unique Guardrail configuration assigned to the agent when it is updated.
 #' @param memoryConfiguration Specifies the new memory configuration for the agent.
 #' @param agentCollaboration The agent's collaboration role.
 #'
@@ -8061,69 +7628,34 @@ bedrockagent_update_agent <- function(agentId, agentName, instruction = NULL, fo
 #'   apiSchema, functionSchema)
 #'
 #' @param agentId &#91;required&#93; The unique identifier of the agent for which to update the action group.
-#' @param agentVersion &#91;required&#93; The unique identifier of the agent version for which to update the
-#' action group.
+#' @param agentVersion &#91;required&#93; The unique identifier of the agent version for which to update the action group.
 #' @param actionGroupId &#91;required&#93; The unique identifier of the action group.
 #' @param actionGroupName &#91;required&#93; Specifies a new name for the action group.
 #' @param description Specifies a new name for the action group.
-#' @param parentActionGroupSignature Update the built-in or computer use action for this action group. If you
-#' specify a value, you must leave the `description`, `apiSchema`, and
-#' `actionGroupExecutor` fields empty for this action group.
+#' @param parentActionGroupSignature Update the built-in or computer use action for this action group. If you specify a value, you must leave the `description`, `apiSchema`, and `actionGroupExecutor` fields empty for this action group.
 #' 
-#' -   To allow your agent to request the user for additional information
-#'     when trying to complete a task, set this field to
-#'     `AMAZON.UserInput`.
+#' -   To allow your agent to request the user for additional information when trying to complete a task, set this field to `AMAZON.UserInput`.
 #' 
-#' -   To allow your agent to generate, run, and troubleshoot code when
-#'     trying to complete a task, set this field to
-#'     `AMAZON.CodeInterpreter`.
+#' -   To allow your agent to generate, run, and troubleshoot code when trying to complete a task, set this field to `AMAZON.CodeInterpreter`.
 #' 
-#' -   To allow your agent to use an Anthropic computer use tool, specify
-#'     one of the following values.
+#' -   To allow your agent to use an Anthropic computer use tool, specify one of the following values.
 #' 
-#'     Computer use is a new Anthropic Claude model capability (in beta)
-#'     available with Anthropic Claude 3.7 Sonnet and Claude 3.5 Sonnet v2
-#'     only. When operating computer use functionality, we recommend taking
-#'     additional security precautions, such as executing computer actions
-#'     in virtual environments with restricted data access and limited
-#'     internet connectivity. For more information, see [Configure an
-#'     Amazon Bedrock Agent to complete tasks with computer use
-#'     tools](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-computer-use.html).
+#'     Computer use is a new Anthropic Claude model capability (in beta) available with Anthropic Claude 3.7 Sonnet and Claude 3.5 Sonnet v2 only. When operating computer use functionality, we recommend taking additional security precautions, such as executing computer actions in virtual environments with restricted data access and limited internet connectivity. For more information, see [Configure an Amazon Bedrock Agent to complete tasks with computer use tools](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-computer-use.html).
 #' 
-#'     -   `ANTHROPIC.Computer` - Gives the agent permission to use the
-#'         mouse and keyboard and take screenshots.
+#'     -   `ANTHROPIC.Computer` - Gives the agent permission to use the mouse and keyboard and take screenshots.
 #' 
-#'     -   `ANTHROPIC.TextEditor` - Gives the agent permission to view,
-#'         create and edit files.
+#'     -   `ANTHROPIC.TextEditor` - Gives the agent permission to view, create and edit files.
 #' 
-#'     -   `ANTHROPIC.Bash` - Gives the agent permission to run commands in
-#'         a bash shell.
+#'     -   `ANTHROPIC.Bash` - Gives the agent permission to run commands in a bash shell.
 #' 
-#' During orchestration, if your agent determines that it needs to invoke
-#' an API in an action group, but doesn't have enough information to
-#' complete the API request, it will invoke this action group instead and
-#' return an
-#' [Observation](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Observation.html)
-#' reprompting the user for more information.
+#' During orchestration, if your agent determines that it needs to invoke an API in an action group, but doesn't have enough information to complete the API request, it will invoke this action group instead and return an [Observation](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Observation.html) reprompting the user for more information.
 #' @param parentActionGroupSignatureParams The configuration settings for a computer use action.
 #' 
-#' Computer use is a new Anthropic Claude model capability (in beta)
-#' available with Claude 3.7 Sonnet and Claude 3.5 Sonnet v2 only. For more
-#' information, see [Configure an Amazon Bedrock Agent to complete tasks
-#' with computer use
-#' tools](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-computer-use.html).
-#' @param actionGroupExecutor The Amazon Resource Name (ARN) of the Lambda function containing the
-#' business logic that is carried out upon invoking the action.
-#' @param actionGroupState Specifies whether the action group is available for the agent to invoke
-#' or not when sending an
-#' [InvokeAgent](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html)
-#' request.
-#' @param apiSchema Contains either details about the S3 object containing the OpenAPI
-#' schema for the action group or the JSON or YAML-formatted payload
-#' defining the schema. For more information, see [Action group OpenAPI
-#' schemas](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-api-schema.html).
-#' @param functionSchema Contains details about the function schema for the action group or the
-#' JSON or YAML-formatted payload defining the schema.
+#' Computer use is a new Anthropic Claude model capability (in beta) available with Claude 3.7 Sonnet and Claude 3.5 Sonnet v2 only. For more information, see [Configure an Amazon Bedrock Agent to complete tasks with computer use tools](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-computer-use.html).
+#' @param actionGroupExecutor The Amazon Resource Name (ARN) of the Lambda function containing the business logic that is carried out upon invoking the action.
+#' @param actionGroupState Specifies whether the action group is available for the agent to invoke or not when sending an [InvokeAgent](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html) request.
+#' @param apiSchema Contains either details about the S3 object containing the OpenAPI schema for the action group or the JSON or YAML-formatted payload defining the schema. For more information, see [Action group OpenAPI schemas](https://docs.aws.amazon.com/bedrock/latest/userguide/agents-api-schema.html).
+#' @param functionSchema Contains details about the function schema for the action group or the JSON or YAML-formatted payload defining the schema.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8259,12 +7791,7 @@ bedrockagent_update_agent_action_group <- function(agentId, agentVersion, action
 #' @param agentAliasName &#91;required&#93; Specifies a new name for the alias.
 #' @param description Specifies a new description for the alias.
 #' @param routingConfiguration Contains details about the routing configuration of the alias.
-#' @param aliasInvocationState The invocation state for the agent alias. To pause the agent alias, set
-#' the value to `REJECT_INVOCATIONS`. To start the agent alias running
-#' again, set the value to `ACCEPT_INVOCATIONS`. Use the
-#' [`get_agent_alias`][bedrockagent_get_agent_alias], or
-#' [`list_agent_aliases`][bedrockagent_list_agent_aliases], operation to
-#' get the invocation state of an agent alias.
+#' @param aliasInvocationState The invocation state for the agent alias. To pause the agent alias, set the value to `REJECT_INVOCATIONS`. To start the agent alias running again, set the value to `ACCEPT_INVOCATIONS`. Use the [`get_agent_alias`][bedrockagent_get_agent_alias], or [`list_agent_aliases`][bedrockagent_list_agent_aliases], operation to get the invocation state of an agent alias.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8441,25 +7968,17 @@ bedrockagent_update_agent_collaborator <- function(agentId, agentVersion, collab
 #' with an agent
 #'
 #' @description
-#' Updates the configuration for a knowledge base that has been associated
-#' with an agent.
+#' Updates the configuration for a knowledge base that has been associated with an agent.
 #'
 #' @usage
 #' bedrockagent_update_agent_knowledge_base(agentId, agentVersion,
 #'   knowledgeBaseId, description, knowledgeBaseState)
 #'
-#' @param agentId &#91;required&#93; The unique identifier of the agent associated with the knowledge base
-#' that you want to update.
-#' @param agentVersion &#91;required&#93; The version of the agent associated with the knowledge base that you
-#' want to update.
-#' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base that has been associated
-#' with an agent.
-#' @param description Specifies a new description for the knowledge base associated with an
-#' agent.
-#' @param knowledgeBaseState Specifies whether the agent uses the knowledge base or not when sending
-#' an
-#' [InvokeAgent](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html)
-#' request.
+#' @param agentId &#91;required&#93; The unique identifier of the agent associated with the knowledge base that you want to update.
+#' @param agentVersion &#91;required&#93; The version of the agent associated with the knowledge base that you want to update.
+#' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base that has been associated with an agent.
+#' @param description Specifies a new description for the knowledge base associated with an agent.
+#' @param knowledgeBaseState Specifies whether the agent uses the knowledge base or not when sending an [InvokeAgent](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html) request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8521,8 +8040,7 @@ bedrockagent_update_agent_knowledge_base <- function(agentId, agentVersion, know
 #' @description
 #' Updates the configurations for a data source connector.
 #' 
-#' You can't change the `chunkingConfiguration` after you create the data
-#' source connector. Specify the existing `chunkingConfiguration`.
+#' You can't change the `chunkingConfiguration` after you create the data source connector. Specify the existing `chunkingConfiguration`.
 #'
 #' @usage
 #' bedrockagent_update_data_source(knowledgeBaseId, dataSourceId, name,
@@ -8533,8 +8051,7 @@ bedrockagent_update_agent_knowledge_base <- function(agentId, agentVersion, know
 #' @param dataSourceId &#91;required&#93; The unique identifier of the data source.
 #' @param name &#91;required&#93; Specifies a new name for the data source.
 #' @param description Specifies a new description for the data source.
-#' @param dataSourceConfiguration &#91;required&#93; The connection configuration for the data source that you want to
-#' update.
+#' @param dataSourceConfiguration &#91;required&#93; The connection configuration for the data source that you want to update.
 #' @param dataDeletionPolicy The data deletion policy for the data source that you want to update.
 #' @param serverSideEncryptionConfiguration Contains details about server-side encryption of the data source.
 #' @param vectorIngestionConfiguration Contains details about how to ingest the documents in the data source.
@@ -8963,12 +8480,7 @@ bedrockagent_update_data_source <- function(knowledgeBaseId, dataSourceId, name,
 #' Modifies a flow
 #'
 #' @description
-#' Modifies a flow. Include both fields that you want to keep and fields
-#' that you want to change. For more information, see [How it
-#' works](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-how-it-works.html)
-#' and [Create a flow in Amazon
-#' Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-create.html)
-#' in the Amazon Bedrock User Guide.
+#' Modifies a flow. Include both fields that you want to keep and fields that you want to change. For more information, see [How it works](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-how-it-works.html) and [Create a flow in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-create.html) in the Amazon Bedrock User Guide.
 #'
 #' @usage
 #' bedrockagent_update_flow(name, description, executionRoleArn,
@@ -8976,14 +8488,9 @@ bedrockagent_update_data_source <- function(knowledgeBaseId, dataSourceId, name,
 #'
 #' @param name &#91;required&#93; A name for the flow.
 #' @param description A description for the flow.
-#' @param executionRoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the service role with permissions to
-#' create and manage a flow. For more information, see [Create a service
-#' role for flows in Amazon
-#' Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-permissions.html)
-#' in the Amazon Bedrock User Guide.
+#' @param executionRoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the service role with permissions to create and manage a flow. For more information, see [Create a service role for flows in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-permissions.html) in the Amazon Bedrock User Guide.
 #' @param customerEncryptionKeyArn The Amazon Resource Name (ARN) of the KMS key to encrypt the flow.
-#' @param definition A definition of the nodes and the connections between the nodes in the
-#' flow.
+#' @param definition A definition of the nodes and the connections between the nodes in the flow.
 #' @param flowIdentifier &#91;required&#93; The unique identifier of the flow.
 #'
 #' @return
@@ -9148,7 +8655,8 @@ bedrockagent_update_data_source <- function(knowledgeBaseId, dataSourceId, name,
 #'                             description = "string",
 #'                             inputSchema = list(
 #'                               json = list()
-#'                             )
+#'                             ),
+#'                             strict = TRUE|FALSE
 #'                           ),
 #'                           cachePoint = list(
 #'                             type = "default"
@@ -9410,7 +8918,8 @@ bedrockagent_update_data_source <- function(knowledgeBaseId, dataSourceId, name,
 #'                             description = "string",
 #'                             inputSchema = list(
 #'                               json = list()
-#'                             )
+#'                             ),
+#'                             strict = TRUE|FALSE
 #'                           ),
 #'                           cachePoint = list(
 #'                             type = "default"
@@ -9549,11 +9058,7 @@ bedrockagent_update_flow <- function(name, description = NULL, executionRoleArn,
 #' Modifies the alias of a flow
 #'
 #' @description
-#' Modifies the alias of a flow. Include both fields that you want to keep
-#' and ones that you want to change. For more information, see [Deploy a
-#' flow in Amazon
-#' Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-deploy.html)
-#' in the Amazon Bedrock User Guide.
+#' Modifies the alias of a flow. Include both fields that you want to keep and ones that you want to change. For more information, see [Deploy a flow in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-deploy.html) in the Amazon Bedrock User Guide.
 #'
 #' @usage
 #' bedrockagent_update_flow_alias(name, description, routingConfiguration,
@@ -9562,8 +9067,7 @@ bedrockagent_update_flow <- function(name, description = NULL, executionRoleArn,
 #' @param name &#91;required&#93; The name of the alias.
 #' @param description A description for the alias.
 #' @param routingConfiguration &#91;required&#93; Contains information about the version to which to map the alias.
-#' @param concurrencyConfiguration The configuration that specifies how nodes in the flow are executed in
-#' parallel.
+#' @param concurrencyConfiguration The configuration that specifies how nodes in the flow are executed in parallel.
 #' @param flowIdentifier &#91;required&#93; The unique identifier of the flow.
 #' @param aliasIdentifier &#91;required&#93; The unique identifier of the alias.
 #'
@@ -9641,9 +9145,7 @@ bedrockagent_update_flow_alias <- function(name, description = NULL, routingConf
 #' specify
 #'
 #' @description
-#' Updates the configuration of a knowledge base with the fields that you
-#' specify. Because all fields will be overwritten, you must include the
-#' same values for fields that you want to keep the same.
+#' Updates the configuration of a knowledge base with the fields that you specify. Because all fields will be overwritten, you must include the same values for fields that you want to keep the same.
 #' 
 #' You can change the following fields:
 #' 
@@ -9653,11 +9155,7 @@ bedrockagent_update_flow_alias <- function(name, description = NULL, routingConf
 #' 
 #' -   `roleArn`
 #' 
-#' You can't change the `knowledgeBaseConfiguration` or
-#' `storageConfiguration` fields, so you must specify the same
-#' configurations as when you created the knowledge base. You can send a
-#' [`get_knowledge_base`][bedrockagent_get_knowledge_base] request and copy
-#' the same configurations.
+#' You can't change the `knowledgeBaseConfiguration` or `storageConfiguration` fields, so you must specify the same configurations as when you created the knowledge base. You can send a [`get_knowledge_base`][bedrockagent_get_knowledge_base] request and copy the same configurations.
 #'
 #' @usage
 #' bedrockagent_update_knowledge_base(knowledgeBaseId, name, description,
@@ -9666,14 +9164,9 @@ bedrockagent_update_flow_alias <- function(name, description = NULL, routingConf
 #' @param knowledgeBaseId &#91;required&#93; The unique identifier of the knowledge base to update.
 #' @param name &#91;required&#93; Specifies a new name for the knowledge base.
 #' @param description Specifies a new description for the knowledge base.
-#' @param roleArn &#91;required&#93; Specifies a different Amazon Resource Name (ARN) of the IAM role with
-#' permissions to invoke API operations on the knowledge base.
-#' @param knowledgeBaseConfiguration &#91;required&#93; Specifies the configuration for the embeddings model used for the
-#' knowledge base. You must use the same configuration as when the
-#' knowledge base was created.
-#' @param storageConfiguration Specifies the configuration for the vector store used for the knowledge
-#' base. You must use the same configuration as when the knowledge base was
-#' created.
+#' @param roleArn &#91;required&#93; Specifies a different Amazon Resource Name (ARN) of the IAM role with permissions to invoke API operations on the knowledge base.
+#' @param knowledgeBaseConfiguration &#91;required&#93; Specifies the configuration for the embeddings model used for the knowledge base. You must use the same configuration as when the knowledge base was created.
+#' @param storageConfiguration Specifies the configuration for the vector store used for the knowledge base. You must use the same configuration as when the knowledge base was created.
 #'
 #' @return
 #' A list with the following syntax:
@@ -10096,13 +9589,7 @@ bedrockagent_update_knowledge_base <- function(knowledgeBaseId, name, descriptio
 #' Modifies a prompt in your prompt library
 #'
 #' @description
-#' Modifies a prompt in your prompt library. Include both fields that you
-#' want to keep and fields that you want to replace. For more information,
-#' see [Prompt management in Amazon
-#' Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html)
-#' and [Edit prompts in your prompt
-#' library](https://docs.aws.amazon.com/bedrock/latest/userguide/#prompt-management-edit)
-#' in the Amazon Bedrock User Guide.
+#' Modifies a prompt in your prompt library. Include both fields that you want to keep and fields that you want to replace. For more information, see [Prompt management in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html) and [Edit prompts in your prompt library](https://docs.aws.amazon.com/bedrock/latest/userguide/#prompt-management-edit) in the Amazon Bedrock User Guide.
 #'
 #' @usage
 #' bedrockagent_update_prompt(name, description, customerEncryptionKeyArn,
@@ -10111,12 +9598,8 @@ bedrockagent_update_knowledge_base <- function(knowledgeBaseId, name, descriptio
 #' @param name &#91;required&#93; A name for the prompt.
 #' @param description A description for the prompt.
 #' @param customerEncryptionKeyArn The Amazon Resource Name (ARN) of the KMS key to encrypt the prompt.
-#' @param defaultVariant The name of the default variant for the prompt. This value must match
-#' the `name` field in the relevant
-#' [PromptVariant](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptVariant.html)
-#' object.
-#' @param variants A list of objects, each containing details about a variant of the
-#' prompt.
+#' @param defaultVariant The name of the default variant for the prompt. This value must match the `name` field in the relevant [PromptVariant](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptVariant.html) object.
+#' @param variants A list of objects, each containing details about a variant of the prompt.
 #' @param promptIdentifier &#91;required&#93; The unique identifier of the prompt.
 #'
 #' @return
@@ -10178,7 +9661,8 @@ bedrockagent_update_knowledge_base <- function(knowledgeBaseId, name, descriptio
 #'                   description = "string",
 #'                   inputSchema = list(
 #'                     json = list()
-#'                   )
+#'                   ),
+#'                   strict = TRUE|FALSE
 #'                 ),
 #'                 cachePoint = list(
 #'                   type = "default"
@@ -10290,7 +9774,8 @@ bedrockagent_update_knowledge_base <- function(knowledgeBaseId, name, descriptio
 #'                   description = "string",
 #'                   inputSchema = list(
 #'                     json = list()
-#'                   )
+#'                   ),
+#'                   strict = TRUE|FALSE
 #'                 ),
 #'                 cachePoint = list(
 #'                   type = "default"
@@ -10646,7 +10131,8 @@ bedrockagent_update_prompt <- function(name, description = NULL, customerEncrypt
 #'                             description = "string",
 #'                             inputSchema = list(
 #'                               json = list()
-#'                             )
+#'                             ),
+#'                             strict = TRUE|FALSE
 #'                           ),
 #'                           cachePoint = list(
 #'                             type = "default"

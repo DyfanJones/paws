@@ -9,8 +9,7 @@ xray_untag_resource(ResourceARN, TagKeys)
 \arguments{
 \item{ResourceARN}{[required] The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.}
 
-\item{TagKeys}{[required] Keys for one or more tags that you want to remove from an X-Ray group or
-sampling rule.}
+\item{TagKeys}{[required] Keys for one or more tags that you want to remove from an X-Ray group or sampling rule.}
 }
 \description{
 Removes tags from an Amazon Web Services X-Ray group or sampling rule. You cannot edit or delete system tags (those with an \verb{aws:} prefix).

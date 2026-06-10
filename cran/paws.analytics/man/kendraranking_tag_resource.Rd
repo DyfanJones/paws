@@ -9,8 +9,7 @@ kendraranking_tag_resource(ResourceARN, Tags)
 \arguments{
 \item{ResourceARN}{[required] The Amazon Resource Name (ARN) of the rescore execution plan to tag.}
 
-\item{Tags}{[required] A list of tag keys to add to a rescore execution plan. If a tag already
-exists, the existing value is replaced with the new value.}
+\item{Tags}{[required] A list of tag keys to add to a rescore execution plan. If a tag already exists, the existing value is replaced with the new value.}
 }
 \description{
 Adds a specified tag to a specified rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the \code{\link[=kendraranking_rescore]{rescore}} API. If the tag already exists, the existing value is replaced with the new value.

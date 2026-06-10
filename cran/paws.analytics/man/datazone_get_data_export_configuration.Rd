@@ -7,8 +7,7 @@
 datazone_get_data_export_configuration(domainIdentifier)
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the domain where you want to get the data export configuration
-details.}
+\item{domainIdentifier}{[required] The ID of the domain where you want to get the data export configuration details.}
 }
 \description{
 Gets data export configuration details.

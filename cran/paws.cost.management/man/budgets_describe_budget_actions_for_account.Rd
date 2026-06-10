@@ -11,11 +11,11 @@ budgets_describe_budget_actions_for_account(
 )
 }
 \arguments{
-\item{AccountId}{[required]}
+\item{AccountId}{[required] The account ID of the user. It's a 12-digit number.}
 
-\item{MaxResults}{}
+\item{MaxResults}{An integer that represents how many entries a paginated response contains. The maximum is 100.}
 
-\item{NextToken}{}
+\item{NextToken}{A generic string.}
 }
 \description{
 Describes all of the budget actions for an account.

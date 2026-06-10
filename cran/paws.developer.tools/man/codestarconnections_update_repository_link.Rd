@@ -12,13 +12,9 @@ codestarconnections_update_repository_link(
 )
 }
 \arguments{
-\item{ConnectionArn}{The Amazon Resource Name (ARN) of the connection for the repository link
-to be updated. The updated connection ARN must have the same
-providerType (such as GitHub) as the original connection ARN for the
-repo link.}
+\item{ConnectionArn}{The Amazon Resource Name (ARN) of the connection for the repository link to be updated. The updated connection ARN must have the same providerType (such as GitHub) as the original connection ARN for the repo link.}
 
-\item{EncryptionKeyArn}{The Amazon Resource Name (ARN) of the encryption key for the repository
-link to be updated.}
+\item{EncryptionKeyArn}{The Amazon Resource Name (ARN) of the encryption key for the repository link to be updated.}
 
 \item{RepositoryLinkId}{[required] The ID of the repository link to be updated.}
 }

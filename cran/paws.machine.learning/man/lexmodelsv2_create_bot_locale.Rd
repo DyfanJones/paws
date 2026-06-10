@@ -12,6 +12,7 @@ lexmodelsv2_create_bot_locale(
   nluIntentConfidenceThreshold,
   voiceSettings = NULL,
   unifiedSpeechSettings = NULL,
+  audioFillerSettings = NULL,
   speechRecognitionSettings = NULL,
   generativeAISettings = NULL,
   speechDetectionSensitivity = NULL
@@ -20,28 +21,15 @@ lexmodelsv2_create_bot_locale(
 \arguments{
 \item{botId}{[required] The identifier of the bot to create the locale for.}
 
-\item{botVersion}{[required] The version of the bot to create the locale for. This can only be the
-draft version of the bot.}
+\item{botVersion}{[required] The version of the bot to create the locale for. This can only be the draft version of the bot.}
 
-\item{localeId}{[required] The identifier of the language and locale that the bot will be used in.
-The string must match one of the supported locales. All of the intents,
-slot types, and slots used in the bot must have the same locale. For
-more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
+\item{localeId}{[required] The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
 
-\item{description}{A description of the bot locale. Use this to help identify the bot
-locale in lists.}
+\item{description}{A description of the bot locale. Use this to help identify the bot locale in lists.}
 
-\item{nluIntentConfidenceThreshold}{[required] Determines the threshold where Amazon Lex will insert the
-\code{AMAZON.FallbackIntent}, \code{AMAZON.KendraSearchIntent}, or both when
-returning alternative intents. \code{AMAZON.FallbackIntent} and
-\code{AMAZON.KendraSearchIntent} are only inserted if they are configured for
-the bot.
+\item{nluIntentConfidenceThreshold}{[required] Determines the threshold where Amazon Lex will insert the \code{AMAZON.FallbackIntent}, \code{AMAZON.KendraSearchIntent}, or both when returning alternative intents. \code{AMAZON.FallbackIntent} and \code{AMAZON.KendraSearchIntent} are only inserted if they are configured for the bot.
 
-For example, suppose a bot is configured with the confidence threshold
-of 0.80 and the \code{AMAZON.FallbackIntent}. Amazon Lex returns three
-alternative intents with the following confidence scores: IntentA
-(0.70), IntentB (0.60), IntentC (0.50). The response from the
-\code{RecognizeText} operation would be:
+For example, suppose a bot is configured with the confidence threshold of 0.80 and the \code{AMAZON.FallbackIntent}. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the \code{RecognizeText} operation would be:
 \itemize{
 \item AMAZON.FallbackIntent
 \item IntentA
@@ -49,19 +37,17 @@ alternative intents with the following confidence scores: IntentA
 \item IntentC
 }}
 
-\item{voiceSettings}{The Amazon Polly voice ID that Amazon Lex uses for voice interaction
-with the user.}
+\item{voiceSettings}{The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user.}
 
 \item{unifiedSpeechSettings}{Unified speech settings to configure for the new bot locale.}
 
+\item{audioFillerSettings}{Audio filler settings to configure for the new bot locale. When enabled, Amazon Lex plays a brief background audio filler during speech-to-speech interactions to mask processing delays. Requires \code{unifiedSpeechSettings} (speech-to-speech) to be configured on the bot locale.}
+
 \item{speechRecognitionSettings}{Speech-to-text settings to configure for the new bot locale.}
 
-\item{generativeAISettings}{}
+\item{generativeAISettings}{Contains specifications about the generative AI capabilities from Amazon Bedrock that you can turn on for your bot.}
 
-\item{speechDetectionSensitivity}{The sensitivity level for voice activity detection (VAD) in the bot
-locale. This setting helps optimize speech recognition accuracy by
-adjusting how the system responds to background noise during voice
-interactions.}
+\item{speechDetectionSensitivity}{The sensitivity level for voice activity detection (VAD) in the bot locale. This setting helps optimize speech recognition accuracy by adjusting how the system responds to background noise during voice interactions.}
 }
 \description{
 Creates a locale in the bot. The locale contains the intents and slot types that the bot uses in conversations with users in the specified language and locale. You must add a locale to a bot before you can add intents and slot types to the bot.

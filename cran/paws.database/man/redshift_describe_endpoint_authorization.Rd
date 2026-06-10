@@ -15,25 +15,13 @@ redshift_describe_endpoint_authorization(
 \arguments{
 \item{ClusterIdentifier}{The cluster identifier of the cluster to access.}
 
-\item{Account}{The Amazon Web Services account ID of either the cluster owner (grantor)
-or grantee. If \code{Grantee} parameter is true, then the \code{Account} value is
-of the grantor.}
+\item{Account}{The Amazon Web Services account ID of either the cluster owner (grantor) or grantee. If \code{Grantee} parameter is true, then the \code{Account} value is of the grantor.}
 
-\item{Grantee}{Indicates whether to check authorization from a grantor or grantee point
-of view. If true, Amazon Redshift returns endpoint authorizations that
-you've been granted. If false (default), checks authorization from a
-grantor point of view.}
+\item{Grantee}{Indicates whether to check authorization from a grantor or grantee point of view. If true, Amazon Redshift returns endpoint authorizations that you've been granted. If false (default), checks authorization from a grantor point of view.}
 
-\item{MaxRecords}{The maximum number of records to include in the response. If more
-records exist than the specified \code{MaxRecords} value, a pagination token
-called a \code{Marker} is included in the response so that the remaining
-results can be retrieved.}
+\item{MaxRecords}{The maximum number of records to include in the response. If more records exist than the specified \code{MaxRecords} value, a pagination token called a \code{Marker} is included in the response so that the remaining results can be retrieved.}
 
-\item{Marker}{An optional pagination token provided by a previous
-\code{\link[=redshift_describe_endpoint_authorization]{describe_endpoint_authorization}}
-request. If this parameter is specified, the response includes only
-records beyond the marker, up to the value specified by the \code{MaxRecords}
-parameter.}
+\item{Marker}{An optional pagination token provided by a previous \code{\link[=redshift_describe_endpoint_authorization]{describe_endpoint_authorization}} request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the \code{MaxRecords} parameter.}
 }
 \description{
 Describes an endpoint authorization.

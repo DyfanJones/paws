@@ -19,8 +19,7 @@ appstream_describe_app_block_builder_app_block_associations(
 
 \item{MaxResults}{The maximum size of each page of results.}
 
-\item{NextToken}{The pagination token used to retrieve the next page of results for this
-operation.}
+\item{NextToken}{The pagination token used to retrieve the next page of results for this operation.}
 }
 \description{
 Retrieves a list that describes one or more app block builder associations.

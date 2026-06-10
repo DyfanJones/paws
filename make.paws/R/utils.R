@@ -94,34 +94,27 @@ get_url <- function(url, tries = 3) {
     return(NULL)
   }
 
-  update_url <- function(old, new) {
-    old_parsed <- httr::parse_url(old)
-    new_parsed <- httr::parse_url(new)
-    for (name in names(old_parsed)) {
-      if (!is.null(new_parsed[[name]])) {
-        old_parsed[[name]] <- new_parsed[[name]]
-      }
-    }
-    return(httr::build_url(old_parsed))
-  }
-
   cached_expr(list("get_url", url = url), function() {
-    try <- 0
-    while (try < tries) {
-      resp <- tryCatch(httr::HEAD(url, httr::timeout(1)), error = function(e) NULL)
-      if (!is.null(resp)) {
-        if (resp$status_code >= 400) {
-          return(NULL)
-        } else if (300 <= resp$status_code && resp$status_code < 400) {
-          # Check whether the redirect is valid.
-          return(get_url(update_url(url, resp$url), tries = tries - 1))
-        } else {
-          return(update_url(url, resp$url))
-        }
-      }
-      try <- try + 1
+    # Ensure url is live, if not get re-direct
+    resp <- tryCatch(
+      httr2::request(url) |>
+        httr2::req_method("HEAD") |>
+        httr2::req_timeout(5) |>
+        httr2::req_options(followlocation = TRUE) |>
+        httr2::req_error(is_error = \(resp) FALSE) |>
+        httr2::req_retry(max_tries = tries) |>
+        httr2::req_perform(),
+      error = function(e) NULL
+    )
+
+    if (is.null(resp) || httr2::resp_status(resp) >= 400) {
+      return(NULL)
     }
-    return(NULL)
+    
+    # Preserve fragments
+    final_parsed <- httr2::url_parse(resp$url)
+    final_parsed$fragment <- httr2::url_parse(url)$fragment
+    return(httr2::url_build(final_parsed))
   })
 }
 

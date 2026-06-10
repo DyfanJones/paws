@@ -8,11 +8,9 @@ change set)}
 marketplacecatalog_untag_resource(ResourceArn, TagKeys)
 }
 \arguments{
-\item{ResourceArn}{[required] Required. The Amazon Resource Name (ARN) associated with the resource
-you want to remove the tag from.}
+\item{ResourceArn}{[required] Required. The Amazon Resource Name (ARN) associated with the resource you want to remove the tag from.}
 
-\item{TagKeys}{[required] Required. A list of key names of tags to be removed. Number of strings
-allowed: 0-256.}
+\item{TagKeys}{[required] Required. A list of key names of tags to be removed. Number of strings allowed: 0-256.}
 }
 \description{
 Removes a tag or list of tags from a resource (either an \href{https://docs.aws.amazon.com/marketplace/latest/APIReference/catalog-apis.html#catalog-api-entities}{entity} or \href{https://docs.aws.amazon.com/marketplace/latest/APIReference/catalog-apis.html#working-with-change-sets}{change set}).

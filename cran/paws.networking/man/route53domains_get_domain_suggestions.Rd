@@ -12,33 +12,21 @@ route53domains_get_domain_suggestions(
 )
 }
 \arguments{
-\item{DomainName}{[required] A domain name that you want to use as the basis for a list of possible
-domain names. The top-level domain (TLD), such as .com, must be a TLD
-that Route 53 supports. For a list of supported TLDs, see \href{https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html}{Domains that You Can Register with Amazon Route 53}
-in the \emph{Amazon Route 53 Developer Guide}.
+\item{DomainName}{[required] A domain name that you want to use as the basis for a list of possible domain names. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see \href{https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html}{Domains that You Can Register with Amazon Route 53} in the \emph{Amazon Route 53 Developer Guide}.
 
 The domain name can contain only the following characters:
 \itemize{
 \item Letters a through z. Domain names are not case sensitive.
 \item Numbers 0 through 9.
-\item Hyphen (-). You can't specify a hyphen at the beginning or end of a
-label.
-\item Period (.) to separate the labels in the name, such as the \code{.} in
-\code{example.com}.
+\item Hyphen (-). You can't specify a hyphen at the beginning or end of a label.
+\item Period (.) to separate the labels in the name, such as the \code{.} in \code{example.com}.
 }
 
-Internationalized domain names are not supported for some top-level
-domains. To determine whether the TLD that you want to use supports
-internationalized domain names, see \href{https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html}{Domains that You Can Register with Amazon Route 53}.}
+Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see \href{https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html}{Domains that You Can Register with Amazon Route 53}.}
 
-\item{SuggestionCount}{[required] The number of suggested domain names that you want Route 53 to return.
-Specify a value between 1 and 50.}
+\item{SuggestionCount}{[required] The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50. Note that fewer than the requested number might be returned.}
 
-\item{OnlyAvailable}{[required] If \code{OnlyAvailable} is \code{true}, Route 53 returns only domain names that
-are available. If \code{OnlyAvailable} is \code{false}, Route 53 returns domain
-names without checking whether they're available to be registered. To
-determine whether the domain is available, you can call
-\code{checkDomainAvailability} for each suggestion.}
+\item{OnlyAvailable}{[required] If \code{OnlyAvailable} is \code{true}, Route 53 returns only domain names that are available. If \code{OnlyAvailable} is \code{false}, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, you can call \code{checkDomainAvailability} for each suggestion.}
 }
 \description{
 The GetDomainSuggestions operation returns a list of suggested domain names.

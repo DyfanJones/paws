@@ -14,29 +14,19 @@ arczonalshift_update_zonal_shift(
 \arguments{
 \item{zonalShiftId}{[required] The identifier of a zonal shift.}
 
-\item{comment}{A comment that you enter about the zonal shift. Only the latest comment
-is retained; no comment history is maintained. A new comment overwrites
-any existing comment string.}
+\item{comment}{A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. A new comment overwrites any existing comment string.}
 
-\item{expiresIn}{The length of time that you want a zonal shift to be active, which ARC
-converts to an expiry time (expiration time). Zonal shifts are
-temporary. You can set a zonal shift to be active initially for up to
-three days (72 hours).
+\item{expiresIn}{The length of time that you want a zonal shift to be active, which ARC converts to an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal shift to be active initially for up to three days (72 hours).
 
-If you want to still keep traffic away from an Availability Zone, you
-can update the zonal shift and set a new expiration. You can also cancel
-a zonal shift, before it expires, for example, if you're ready to
-restore traffic to the Availability Zone.
+If you want to still keep traffic away from an Availability Zone, you can update the zonal shift and set a new expiration. You can also cancel a zonal shift, before it expires, for example, if you're ready to restore traffic to the Availability Zone.
 
-To set a length of time for a zonal shift to be active, specify a whole
-number, and then one of the following, with no space:
+To set a length of time for a zonal shift to be active, specify a whole number, and then one of the following, with no space:
 \itemize{
 \item \strong{A lowercase letter m:} To specify that the value is in minutes.
 \item \strong{A lowercase letter h:} To specify that the value is in hours.
 }
 
-For example: \verb{20h} means the zonal shift expires in 20 hours. \verb{120m}
-means the zonal shift expires in 120 minutes (2 hours).}
+For example: \verb{20h} means the zonal shift expires in 20 hours. \verb{120m} means the zonal shift expires in 120 minutes (2 hours).}
 }
 \description{
 Update an active zonal shift in Amazon Application Recovery Controller in your Amazon Web Services account. You can update a zonal shift to set a new expiration, or edit or replace the comment for the zonal shift.

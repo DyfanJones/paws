@@ -15,20 +15,15 @@ redshift_create_endpoint_access(
 \arguments{
 \item{ClusterIdentifier}{The cluster identifier of the cluster to access.}
 
-\item{ResourceOwner}{The Amazon Web Services account ID of the owner of the cluster. This is
-only required if the cluster is in another Amazon Web Services account.}
+\item{ResourceOwner}{The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.}
 
 \item{EndpointName}{[required] The Redshift-managed VPC endpoint name.
 
-An endpoint name must contain 1-30 characters. Valid characters are A-Z,
-a-z, 0-9, and hyphen(-). The first character must be a letter. The name
-can't contain two consecutive hyphens or end with a hyphen.}
+An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.}
 
-\item{SubnetGroupName}{[required] The subnet group from which Amazon Redshift chooses the subnet to deploy
-the endpoint.}
+\item{SubnetGroupName}{[required] The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.}
 
-\item{VpcSecurityGroupIds}{The security group that defines the ports, protocols, and sources for
-inbound traffic that you are authorizing into your endpoint.}
+\item{VpcSecurityGroupIds}{The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.}
 }
 \description{
 Creates a Redshift-managed VPC endpoint.

@@ -15,15 +15,11 @@ kendra_submit_feedback(
 \arguments{
 \item{IndexId}{[required] The identifier of the index that was queried.}
 
-\item{QueryId}{[required] The identifier of the specific query for which you are submitting
-feedback. The query ID is returned in the response to the
-\code{\link[=kendra_query]{query}} API.}
+\item{QueryId}{[required] The identifier of the specific query for which you are submitting feedback. The query ID is returned in the response to the \code{\link[=kendra_query]{query}} API.}
 
-\item{ClickFeedbackItems}{Tells Amazon Kendra that a particular search result link was chosen by
-the user.}
+\item{ClickFeedbackItems}{Tells Amazon Kendra that a particular search result link was chosen by the user.}
 
-\item{RelevanceFeedbackItems}{Provides Amazon Kendra with relevant or not relevant feedback for
-whether a particular item was relevant to the search.}
+\item{RelevanceFeedbackItems}{Provides Amazon Kendra with relevant or not relevant feedback for whether a particular item was relevant to the search.}
 }
 \description{
 Enables you to provide feedback to Amazon Kendra to improve the performance of your index.

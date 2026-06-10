@@ -8,15 +8,11 @@ threatEntitySetId}
 guardduty_delete_threat_entity_set(DetectorId, ThreatEntitySetId)
 }
 \arguments{
-\item{DetectorId}{[required] The unique ID of the detector associated with the threat entity set
-resource.
+\item{DetectorId}{[required] The unique ID of the detector associated with the threat entity set resource.
 
-To find the \code{detectorId} in the current Region, see the Settings page in
-the GuardDuty console, or run the
-\code{\link[=guardduty_list_detectors]{list_detectors}} API.}
+To find the \code{detectorId} in the current Region, see the Settings page in the GuardDuty console, or run the \code{\link[=guardduty_list_detectors]{list_detectors}} API.}
 
-\item{ThreatEntitySetId}{[required] The unique ID that helps GuardDuty identify which threat entity set
-needs to be deleted.}
+\item{ThreatEntitySetId}{[required] The unique ID that helps GuardDuty identify which threat entity set needs to be deleted.}
 }
 \description{
 Deletes the threat entity set that is associated with the specified \code{threatEntitySetId}.

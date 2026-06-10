@@ -13,19 +13,13 @@ cloudfront_list_distributions_by_realtime_log_config(
 )
 }
 \arguments{
-\item{Marker}{Use this field when paginating results to indicate where to begin in
-your list of distributions. The response includes distributions in the
-list that occur after the marker. To get the next page of the list, set
-this field's value to the value of \code{NextMarker} from the current page's
-response.}
+\item{Marker}{Use this field when paginating results to indicate where to begin in your list of distributions. The response includes distributions in the list that occur after the marker. To get the next page of the list, set this field's value to the value of \code{NextMarker} from the current page's response.}
 
 \item{MaxItems}{The maximum number of distributions that you want in the response.}
 
-\item{RealtimeLogConfigName}{The name of the real-time log configuration whose associated
-distributions you want to list.}
+\item{RealtimeLogConfigName}{The name of the real-time log configuration whose associated distributions you want to list.}
 
-\item{RealtimeLogConfigArn}{The Amazon Resource Name (ARN) of the real-time log configuration whose
-associated distributions you want to list.}
+\item{RealtimeLogConfigArn}{The Amazon Resource Name (ARN) of the real-time log configuration whose associated distributions you want to list.}
 }
 \description{
 Gets a list of distributions that have a cache behavior that's associated with the specified real-time log configuration.

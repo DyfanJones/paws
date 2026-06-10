@@ -13,17 +13,13 @@ glue_update_schema(
 )
 }
 \arguments{
-\item{SchemaId}{[required] This is a wrapper structure to contain schema identity fields. The
-structure contains:
+\item{SchemaId}{[required] This is a wrapper structure to contain schema identity fields. The structure contains:
 \itemize{
-\item SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema.
-One of \code{SchemaArn} or \code{SchemaName} has to be provided.
-\item SchemaId$SchemaName: The name of the schema. One of \code{SchemaArn} or
-\code{SchemaName} has to be provided.
+\item SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of \code{SchemaArn} or \code{SchemaName} has to be provided.
+\item SchemaId$SchemaName: The name of the schema. One of \code{SchemaArn} or \code{SchemaName} has to be provided.
 }}
 
-\item{SchemaVersionNumber}{Version number required for check pointing. One of \code{VersionNumber} or
-\code{Compatibility} has to be provided.}
+\item{SchemaVersionNumber}{Version number required for check pointing. One of \code{VersionNumber} or \code{Compatibility} has to be provided.}
 
 \item{Compatibility}{The new compatibility setting for the schema.}
 

@@ -9,8 +9,7 @@ bedrockagentruntime_optimize_prompt(input, targetModelId)
 \arguments{
 \item{input}{[required] Contains the prompt to optimize.}
 
-\item{targetModelId}{[required] The unique identifier of the model that you want to optimize the prompt
-for.}
+\item{targetModelId}{[required] The unique identifier of the model that you want to optimize the prompt for.}
 }
 \description{
 Optimizes a prompt for the task that you specify. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-optimize.html}{Optimize a prompt} in the \href{https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html}{Amazon Bedrock User Guide}.

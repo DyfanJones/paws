@@ -15,8 +15,7 @@ customerprofiles_list_upload_jobs(
 
 \item{MaxResults}{The maximum number of upload jobs to return per page.}
 
-\item{NextToken}{The pagination token from the previous call to retrieve the next page of
-results.}
+\item{NextToken}{The pagination token from the previous call to retrieve the next page of results.}
 }
 \description{
 This API retrieves a list of upload jobs for the specified domain.

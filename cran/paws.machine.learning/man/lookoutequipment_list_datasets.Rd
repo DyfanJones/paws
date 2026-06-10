@@ -12,8 +12,7 @@ lookoutequipment_list_datasets(
 )
 }
 \arguments{
-\item{NextToken}{An opaque pagination token indicating where to continue the listing of
-datasets.}
+\item{NextToken}{An opaque pagination token indicating where to continue the listing of datasets.}
 
 \item{MaxResults}{Specifies the maximum number of datasets to list.}
 

@@ -8,9 +8,7 @@ Services Region}
 polly_list_lexicons(NextToken = NULL)
 }
 \arguments{
-\item{NextToken}{An opaque pagination token returned from previous
-\code{\link[=polly_list_lexicons]{list_lexicons}} operation. If present, indicates
-where to continue the list of lexicons.}
+\item{NextToken}{An opaque pagination token returned from previous \code{\link[=polly_list_lexicons]{list_lexicons}} operation. If present, indicates where to continue the list of lexicons.}
 }
 \description{
 Returns a list of pronunciation lexicons stored in an Amazon Web Services Region. For more information, see \href{https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html}{Managing Lexicons}.

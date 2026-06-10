@@ -9,9 +9,7 @@ input/output S3 buckets, and so on}
 translate_describe_text_translation_job(JobId)
 }
 \arguments{
-\item{JobId}{[required] The identifier that Amazon Translate generated for the job. The
-\code{\link[=translate_start_text_translation_job]{start_text_translation_job}}
-operation returns this identifier in its response.}
+\item{JobId}{[required] The identifier that Amazon Translate generated for the job. The \code{\link[=translate_start_text_translation_job]{start_text_translation_job}} operation returns this identifier in its response.}
 }
 \description{
 Gets the properties associated with an asynchronous batch translation job including name, ID, status, source and target languages, input/output S3 buckets, and so on.

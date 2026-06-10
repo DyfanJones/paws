@@ -21,8 +21,7 @@ Constraints:
 
 Default: 300
 
-If the switchover takes longer than the specified duration, then any
-changes are rolled back, and no changes are made to the environments.}
+If the switchover takes longer than the specified duration, then any changes are rolled back, and no changes are made to the environments.}
 }
 \description{
 Switches over a blue/green deployment.

@@ -12,13 +12,11 @@ quicksight_list_identity_propagation_configs(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contain the identity
-propagation configurations of.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contain the identity propagation configurations of.}
 
 \item{MaxResults}{The maximum number of results to be returned.}
 
-\item{NextToken}{The token for the next set of results, or null if there are no more
-results.}
+\item{NextToken}{The token for the next set of results, or null if there are no more results.}
 }
 \description{
 Lists all services and authorized targets that the Quick Sight IAM Identity Center application can access.

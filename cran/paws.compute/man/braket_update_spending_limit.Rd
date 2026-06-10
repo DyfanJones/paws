@@ -14,16 +14,11 @@ braket_update_spending_limit(
 \arguments{
 \item{spendingLimitArn}{[required] The Amazon Resource Name (ARN) of the spending limit to update.}
 
-\item{clientToken}{[required] A unique, case-sensitive identifier to ensure that the operation
-completes no more than one time. If this token matches a previous
-request, Amazon Braket ignores the request, but does not return an
-error.}
+\item{clientToken}{[required] A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Braket ignores the request, but does not return an error.}
 
-\item{spendingLimit}{The new maximum amount that can be spent on the specified device, in
-USD.}
+\item{spendingLimit}{The new maximum amount that can be spent on the specified device, in USD.}
 
-\item{timePeriod}{The new time period during which the spending limit is active, including
-start and end dates.}
+\item{timePeriod}{The new time period during which the spending limit is active, including start and end dates.}
 }
 \description{
 Updates an existing spending limit. You can modify the spending amount or time period. Changes take effect immediately.

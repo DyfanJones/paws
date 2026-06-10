@@ -21,55 +21,29 @@ rds_create_db_proxy(
 )
 }
 \arguments{
-\item{DBProxyName}{[required] The identifier for the proxy. This name must be unique for all proxies
-owned by your Amazon Web Services account in the specified Amazon Web
-Services Region. An identifier must begin with a letter and must contain
-only ASCII letters, digits, and hyphens; it can't end with a hyphen or
-contain two consecutive hyphens.}
+\item{DBProxyName}{[required] The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.}
 
-\item{EngineFamily}{[required] The kinds of databases that the proxy can connect to. This value
-determines which database network protocol the proxy recognizes when it
-interprets network traffic to and from the database. For Aurora MySQL,
-RDS for MariaDB, and RDS for MySQL databases, specify \code{MYSQL}. For
-Aurora PostgreSQL and RDS for PostgreSQL databases, specify
-\code{POSTGRESQL}. For RDS for Microsoft SQL Server, specify \code{SQLSERVER}.}
+\item{EngineFamily}{[required] The kinds of databases that the proxy can connect to. This value determines which database network protocol the proxy recognizes when it interprets network traffic to and from the database. For Aurora MySQL, RDS for MariaDB, and RDS for MySQL databases, specify \code{MYSQL}. For Aurora PostgreSQL and RDS for PostgreSQL databases, specify \code{POSTGRESQL}. For RDS for Microsoft SQL Server, specify \code{SQLSERVER}.}
 
-\item{DefaultAuthScheme}{The default authentication scheme that the proxy uses for client
-connections to the proxy and connections from the proxy to the
-underlying database. Valid values are \code{NONE} and \code{IAM_AUTH}. When set to
-\code{IAM_AUTH}, the proxy uses end-to-end IAM authentication to connect to
-the database. If you don't specify \code{DefaultAuthScheme} or specify this
-parameter as \code{NONE}, you must specify the \code{Auth} option.}
+\item{DefaultAuthScheme}{The default authentication scheme that the proxy uses for client connections to the proxy and connections from the proxy to the underlying database. Valid values are \code{NONE} and \code{IAM_AUTH}. When set to \code{IAM_AUTH}, the proxy uses end-to-end IAM authentication to connect to the database. If you don't specify \code{DefaultAuthScheme} or specify this parameter as \code{NONE}, you must specify the \code{Auth} option.}
 
 \item{Auth}{The authorization mechanism that the proxy uses.}
 
-\item{RoleArn}{[required] The Amazon Resource Name (ARN) of the IAM role that the proxy uses to
-access secrets in Amazon Web Services Secrets Manager.}
+\item{RoleArn}{[required] The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services Secrets Manager.}
 
 \item{VpcSubnetIds}{[required] One or more VPC subnet IDs to associate with the new proxy.}
 
 \item{VpcSecurityGroupIds}{One or more VPC security group IDs to associate with the new proxy.}
 
-\item{RequireTLS}{Specifies whether Transport Layer Security (TLS) encryption is required
-for connections to the proxy. By enabling this setting, you can enforce
-encrypted TLS connections to the proxy.}
+\item{RequireTLS}{Specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy.}
 
-\item{IdleClientTimeout}{The number of seconds that a connection to the proxy can be inactive
-before the proxy disconnects it. You can set this value higher or lower
-than the connection timeout limit for the associated database.}
+\item{IdleClientTimeout}{The number of seconds that a connection to the proxy can be inactive before the proxy disconnects it. You can set this value higher or lower than the connection timeout limit for the associated database.}
 
-\item{DebugLogging}{Specifies whether the proxy logs detailed connection and query
-information. When you enable \code{DebugLogging}, the proxy captures
-connection details and connection pool behavior from your queries. Debug
-logging increases CloudWatch costs and can impact proxy performance.
-Enable this option only when you need to troubleshoot connection or
-performance issues.}
+\item{DebugLogging}{Specifies whether the proxy logs detailed connection and query information. When you enable \code{DebugLogging}, the proxy captures connection details and connection pool behavior from your queries. Debug logging increases CloudWatch costs and can impact proxy performance. Enable this option only when you need to troubleshoot connection or performance issues.}
 
-\item{Tags}{An optional set of key-value pairs to associate arbitrary data of your
-choosing with the proxy.}
+\item{Tags}{An optional set of key-value pairs to associate arbitrary data of your choosing with the proxy.}
 
-\item{EndpointNetworkType}{The network type of the DB proxy endpoint. The network type determines
-the IP version that the proxy endpoint supports.
+\item{EndpointNetworkType}{The network type of the DB proxy endpoint. The network type determines the IP version that the proxy endpoint supports.
 
 Valid values:
 \itemize{
@@ -82,15 +56,11 @@ Default: \code{IPV4}
 
 Constraints:
 \itemize{
-\item If you specify \code{IPV6} or \code{DUAL}, the VPC and all subnets must have
-an IPv6 CIDR block.
-\item If you specify \code{IPV6} or \code{DUAL}, the VPC tenancy cannot be
-\code{dedicated}.
+\item If you specify \code{IPV6} or \code{DUAL}, the VPC and all subnets must have an IPv6 CIDR block.
+\item If you specify \code{IPV6} or \code{DUAL}, the VPC tenancy cannot be \code{dedicated}.
 }}
 
-\item{TargetConnectionNetworkType}{The network type that the proxy uses to connect to the target database.
-The network type determines the IP version that the proxy uses for
-connections to the database.
+\item{TargetConnectionNetworkType}{The network type that the proxy uses to connect to the target database. The network type determines the IP version that the proxy uses for connections to the database.
 
 Valid values:
 \itemize{
@@ -102,10 +72,8 @@ Default: \code{IPV4}
 
 Constraints:
 \itemize{
-\item If you specify \code{IPV6}, the database must support dual-stack mode.
-RDS doesn't support IPv6-only databases.
-\item All targets registered with the proxy must be compatible with the
-specified network type.
+\item If you specify \code{IPV6}, the database must support dual-stack mode. RDS doesn't support IPv6-only databases.
+\item All targets registered with the proxy must be compatible with the specified network type.
 }}
 }
 \description{

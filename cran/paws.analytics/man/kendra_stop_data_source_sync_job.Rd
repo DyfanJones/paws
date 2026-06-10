@@ -7,8 +7,7 @@
 kendra_stop_data_source_sync_job(Id, IndexId)
 }
 \arguments{
-\item{Id}{[required] The identifier of the data source connector for which to stop the
-synchronization jobs.}
+\item{Id}{[required] The identifier of the data source connector for which to stop the synchronization jobs.}
 
 \item{IndexId}{[required] The identifier of the index used with the data source connector.}
 }

@@ -10,8 +10,7 @@ appstream_list_associated_stacks(FleetName, NextToken = NULL)
 \arguments{
 \item{FleetName}{[required] The name of the fleet.}
 
-\item{NextToken}{The pagination token to use to retrieve the next page of results for
-this operation. If this value is null, it retrieves the first page.}
+\item{NextToken}{The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.}
 }
 \description{
 Retrieves the name of the stack with which the specified fleet is associated.

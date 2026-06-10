@@ -12,10 +12,7 @@ kendra_associate_personas_to_entities(Id, IndexId, Personas)
 
 \item{IndexId}{[required] The identifier of the index for your Amazon Kendra experience.}
 
-\item{Personas}{[required] The personas that define the specific permissions of users or groups in
-your IAM Identity Center identity source. The available personas or
-access roles are \code{Owner} and \code{Viewer}. For more information on these
-personas, see \href{https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience}{Providing access to your search page}.}
+\item{Personas}{[required] The personas that define the specific permissions of users or groups in your IAM Identity Center identity source. The available personas or access roles are \code{Owner} and \code{Viewer}. For more information on these personas, see \href{https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience}{Providing access to your search page}.}
 }
 \description{
 Defines the specific permissions of users or groups in your IAM Identity Center identity source with access to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see \href{https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html}{Building a search experience with no code}.

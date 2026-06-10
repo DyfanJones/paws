@@ -6,31 +6,21 @@ NULL
 #' Adds a policy statement object
 #'
 #' @description
-#' Adds a policy statement object. To retrieve a list of existing policy
-#' statements, use the [`get_policy`][entityresolution_get_policy] API.
+#' Adds a policy statement object. To retrieve a list of existing policy statements, use the [`get_policy`][entityresolution_get_policy] API.
 #'
 #' @usage
 #' entityresolution_add_policy_statement(arn, statementId, effect, action,
 #'   principal, condition)
 #'
-#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that will be accessed by
-#' the principal.
-#' @param statementId &#91;required&#93; A statement identifier that differentiates the statement from others in
-#' the same policy.
-#' @param effect &#91;required&#93; Determines whether the permissions specified in the policy are to be
-#' allowed (`Allow`) or denied (`Deny`).
+#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that will be accessed by the principal.
+#' @param statementId &#91;required&#93; A statement identifier that differentiates the statement from others in the same policy.
+#' @param effect &#91;required&#93; Determines whether the permissions specified in the policy are to be allowed (`Allow`) or denied (`Deny`).
 #' 
-#' If you set the value of the `effect` parameter to `Deny` for the
-#' [`add_policy_statement`][entityresolution_add_policy_statement]
-#' operation, you must also set the value of the `effect` parameter in the
-#' `policy` to `Deny` for the [`put_policy`][entityresolution_put_policy]
-#' operation.
+#' If you set the value of the `effect` parameter to `Deny` for the [`add_policy_statement`][entityresolution_add_policy_statement] operation, you must also set the value of the `effect` parameter in the `policy` to `Deny` for the [`put_policy`][entityresolution_put_policy] operation.
 #' @param action &#91;required&#93; The action that the principal can use on the resource.
 #' 
-#' For example, `entityresolution:GetIdMappingJob`,
-#' `entityresolution:GetMatchingJob`.
-#' @param principal &#91;required&#93; The Amazon Web Services service or Amazon Web Services account that can
-#' access the resource defined as ARN.
+#' For example, `entityresolution:GetIdMappingJob`, `entityresolution:GetMatchingJob`.
+#' @param principal &#91;required&#93; The Amazon Web Services service or Amazon Web Services account that can access the resource defined as ARN.
 #' @param condition A set of condition keys that you can use in key policies.
 #'
 #' @return
@@ -157,10 +147,7 @@ entityresolution_batch_delete_unique_id <- function(workflowName, inputSource = 
 #' the data processing job to be run
 #'
 #' @description
-#' Creates an `IdMappingWorkflow` object which stores the configuration of
-#' the data processing job to be run. Each `IdMappingWorkflow` must have a
-#' unique workflow name. To modify an existing workflow, use the
-#' UpdateIdMappingWorkflow API.
+#' Creates an `IdMappingWorkflow` object which stores the configuration of the data processing job to be run. Each `IdMappingWorkflow` must have a unique workflow name. To modify an existing workflow, use the UpdateIdMappingWorkflow API.
 #' 
 #' Incremental processing is not supported for ID mapping workflows.
 #'
@@ -169,19 +156,13 @@ entityresolution_batch_delete_unique_id <- function(workflowName, inputSource = 
 #'   inputSourceConfig, outputSourceConfig, idMappingTechniques,
 #'   incrementalRunConfig, roleArn, tags)
 #'
-#' @param workflowName &#91;required&#93; The name of the workflow. There can't be multiple `IdMappingWorkflows`
-#' with the same name.
+#' @param workflowName &#91;required&#93; The name of the workflow. There can't be multiple `IdMappingWorkflows` with the same name.
 #' @param description A description of the workflow.
-#' @param inputSourceConfig &#91;required&#93; A list of `InputSource` objects, which have the fields `InputSourceARN`
-#' and `SchemaName`.
-#' @param outputSourceConfig A list of `IdMappingWorkflowOutputSource` objects, each of which
-#' contains fields `outputS3Path` and `KMSArn`.
-#' @param idMappingTechniques &#91;required&#93; An object which defines the ID mapping technique and any additional
-#' configurations.
+#' @param inputSourceConfig &#91;required&#93; A list of `InputSource` objects, which have the fields `InputSourceARN` and `SchemaName`.
+#' @param outputSourceConfig A list of `IdMappingWorkflowOutputSource` objects, each of which contains fields `outputS3Path` and `KMSArn`.
+#' @param idMappingTechniques &#91;required&#93; An object which defines the ID mapping technique and any additional configurations.
 #' @param incrementalRunConfig The incremental run configuration for the ID mapping workflow.
-#' @param roleArn The Amazon Resource Name (ARN) of the IAM role. Entity Resolution
-#' assumes this role to create resources on your behalf as part of workflow
-#' execution.
+#' @param roleArn The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.
 #' @param tags The tags used to organize, track, or control access for this resource.
 #'
 #' @return
@@ -313,10 +294,7 @@ entityresolution_create_id_mapping_workflow <- function(workflowName, descriptio
 #' metadata explaining their dataset and how to use it
 #'
 #' @description
-#' Creates an ID namespace object which will help customers provide
-#' metadata explaining their dataset and how to use it. Each ID namespace
-#' must have a unique name. To modify an existing ID namespace, use the
-#' UpdateIdNamespace API.
+#' Creates an ID namespace object which will help customers provide metadata explaining their dataset and how to use it. Each ID namespace must have a unique name. To modify an existing ID namespace, use the UpdateIdNamespace API.
 #'
 #' @usage
 #' entityresolution_create_id_namespace(idNamespaceName, description,
@@ -324,20 +302,14 @@ entityresolution_create_id_mapping_workflow <- function(workflowName, descriptio
 #'
 #' @param idNamespaceName &#91;required&#93; The name of the ID namespace.
 #' @param description The description of the ID namespace.
-#' @param inputSourceConfig A list of `InputSource` objects, which have the fields `InputSourceARN`
-#' and `SchemaName`.
-#' @param idMappingWorkflowProperties Determines the properties of `IdMappingWorflow` where this `IdNamespace`
-#' can be used as a `Source` or a `Target`.
+#' @param inputSourceConfig A list of `InputSource` objects, which have the fields `InputSourceARN` and `SchemaName`.
+#' @param idMappingWorkflowProperties Determines the properties of `IdMappingWorflow` where this `IdNamespace` can be used as a `Source` or a `Target`.
 #' @param type &#91;required&#93; The type of ID namespace. There are two types: `SOURCE` and `TARGET`.
 #' 
-#' The `SOURCE` contains configurations for `sourceId` data that will be
-#' processed in an ID mapping workflow.
+#' The `SOURCE` contains configurations for `sourceId` data that will be processed in an ID mapping workflow.
 #' 
-#' The `TARGET` contains a configuration of `targetId` to which all
-#' `sourceIds` will resolve to.
-#' @param roleArn The Amazon Resource Name (ARN) of the IAM role. Entity Resolution
-#' assumes this role to access the resources defined in this `IdNamespace`
-#' on your behalf as part of the workflow run.
+#' The `TARGET` contains a configuration of `targetId` to which all `sourceIds` will resolve to.
+#' @param roleArn The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access the resources defined in this `IdNamespace` on your behalf as part of the workflow run.
 #' @param tags The tags used to organize, track, or control access for this resource.
 #'
 #' @return
@@ -466,37 +438,24 @@ entityresolution_create_id_namespace <- function(idNamespaceName, description = 
 #' processing job
 #'
 #' @description
-#' Creates a matching workflow that defines the configuration for a data
-#' processing job. The workflow name must be unique. To modify an existing
-#' workflow, use
-#' [`update_matching_workflow`][entityresolution_update_matching_workflow].
+#' Creates a matching workflow that defines the configuration for a data processing job. The workflow name must be unique. To modify an existing workflow, use [`update_matching_workflow`][entityresolution_update_matching_workflow].
 #' 
-#' For workflows where `resolutionType` is `ML_MATCHING` or `PROVIDER`,
-#' incremental processing is not supported.
+#' For workflows where `resolutionType` is `ML_MATCHING` or `PROVIDER`, incremental processing is not supported.
 #'
 #' @usage
 #' entityresolution_create_matching_workflow(workflowName, description,
 #'   inputSourceConfig, outputSourceConfig, resolutionTechniques,
 #'   incrementalRunConfig, roleArn, tags)
 #'
-#' @param workflowName &#91;required&#93; The name of the workflow. There can't be multiple `MatchingWorkflows`
-#' with the same name.
+#' @param workflowName &#91;required&#93; The name of the workflow. There can't be multiple `MatchingWorkflows` with the same name.
 #' @param description A description of the workflow.
-#' @param inputSourceConfig &#91;required&#93; A list of `InputSource` objects, which have the fields `InputSourceARN`
-#' and `SchemaName`.
-#' @param outputSourceConfig &#91;required&#93; A list of `OutputSource` objects, each of which contains fields
-#' `outputS3Path`, `applyNormalization`, `KMSArn`, and `output`.
-#' @param resolutionTechniques &#91;required&#93; An object which defines the `resolutionType` and the
-#' `ruleBasedProperties`.
-#' @param incrementalRunConfig Optional. An object that defines the incremental run type. This object
-#' contains only the `incrementalRunType` field, which appears as
-#' "Automatic" in the console.
+#' @param inputSourceConfig &#91;required&#93; A list of `InputSource` objects, which have the fields `InputSourceARN` and `SchemaName`.
+#' @param outputSourceConfig &#91;required&#93; A list of `OutputSource` objects, each of which contains fields `outputS3Path`, `applyNormalization`, `KMSArn`, and `output`.
+#' @param resolutionTechniques &#91;required&#93; An object which defines the `resolutionType` and the `ruleBasedProperties`.
+#' @param incrementalRunConfig Optional. An object that defines the incremental run type. This object contains only the `incrementalRunType` field, which appears as "Automatic" in the console.
 #' 
-#' For workflows where `resolutionType` is `ML_MATCHING` or `PROVIDER`,
-#' incremental processing is not supported.
-#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role. Entity Resolution
-#' assumes this role to create resources on your behalf as part of workflow
-#' execution.
+#' For workflows where `resolutionType` is `ML_MATCHING` or `PROVIDER`, incremental processing is not supported.
+#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.
 #' @param tags The tags used to organize, track, or control access for this resource.
 #'
 #' @return
@@ -550,6 +509,9 @@ entityresolution_create_id_namespace <- function(idNamespaceName, description = 
 #'           ruleName = "string",
 #'           condition = "string"
 #'         )
+#'       ),
+#'       matchingConfig = list(
+#'         enableTransitiveMatching = TRUE|FALSE
 #'       )
 #'     ),
 #'     providerProperties = list(
@@ -616,6 +578,9 @@ entityresolution_create_id_namespace <- function(idNamespaceName, description = 
 #'           ruleName = "string",
 #'           condition = "string"
 #'         )
+#'       ),
+#'       matchingConfig = list(
+#'         enableTransitiveMatching = TRUE|FALSE
 #'       )
 #'     ),
 #'     providerProperties = list(
@@ -664,21 +629,15 @@ entityresolution_create_matching_workflow <- function(workflowName, description 
 #' records table
 #'
 #' @description
-#' Creates a schema mapping, which defines the schema of the input customer
-#' records table. The `SchemaMapping` also provides Entity Resolution with
-#' some metadata about the table, such as the attribute types of the
-#' columns and which columns to match on.
+#' Creates a schema mapping, which defines the schema of the input customer records table. The `SchemaMapping` also provides Entity Resolution with some metadata about the table, such as the attribute types of the columns and which columns to match on.
 #'
 #' @usage
 #' entityresolution_create_schema_mapping(schemaName, description,
 #'   mappedInputFields, tags)
 #'
-#' @param schemaName &#91;required&#93; The name of the schema. There can't be multiple `SchemaMappings` with
-#' the same name.
+#' @param schemaName &#91;required&#93; The name of the schema. There can't be multiple `SchemaMappings` with the same name.
 #' @param description A description of the schema.
-#' @param mappedInputFields &#91;required&#93; A list of `MappedInputFields`. Each `MappedInputField` corresponds to a
-#' column the source data table, and contains column name plus additional
-#' information that Entity Resolution uses for matching.
+#' @param mappedInputFields &#91;required&#93; A list of `MappedInputFields`. Each `MappedInputField` corresponds to a column the source data table, and contains column name plus additional information that Entity Resolution uses for matching.
 #' @param tags The tags used to organize, track, or control access for this resource.
 #'
 #' @return
@@ -749,8 +708,7 @@ entityresolution_create_schema_mapping <- function(schemaName, description = NUL
 #' Deletes the IdMappingWorkflow with a given name
 #'
 #' @description
-#' Deletes the `IdMappingWorkflow` with a given name. This operation will
-#' succeed even if a workflow with the given name does not exist.
+#' Deletes the `IdMappingWorkflow` with a given name. This operation will succeed even if a workflow with the given name does not exist.
 #'
 #' @usage
 #' entityresolution_delete_id_mapping_workflow(workflowName)
@@ -848,8 +806,7 @@ entityresolution_delete_id_namespace <- function(idNamespaceName) {
 #' Deletes the MatchingWorkflow with a given name
 #'
 #' @description
-#' Deletes the `MatchingWorkflow` with a given name. This operation will
-#' succeed even if a workflow with the given name does not exist.
+#' Deletes the `MatchingWorkflow` with a given name. This operation will succeed even if a workflow with the given name does not exist.
 #'
 #' @usage
 #' entityresolution_delete_matching_workflow(workflowName)
@@ -904,8 +861,7 @@ entityresolution_delete_matching_workflow <- function(workflowName) {
 #' entityresolution_delete_policy_statement(arn, statementId)
 #'
 #' @param arn &#91;required&#93; The ARN of the resource for which the policy need to be deleted.
-#' @param statementId &#91;required&#93; A statement identifier that differentiates the statement from others in
-#' the same policy.
+#' @param statementId &#91;required&#93; A statement identifier that differentiates the statement from others in the same policy.
 #'
 #' @return
 #' A list with the following syntax:
@@ -952,10 +908,7 @@ entityresolution_delete_policy_statement <- function(arn, statementId) {
 #' Deletes the SchemaMapping with a given name
 #'
 #' @description
-#' Deletes the `SchemaMapping` with a given name. This operation will
-#' succeed even if a schema with the given name does not exist. This
-#' operation will fail if there is a `MatchingWorkflow` object that
-#' references the `SchemaMapping` in the workflow's `InputSourceConfig`.
+#' Deletes the `SchemaMapping` with a given name. This operation will succeed even if a schema with the given name does not exist. This operation will fail if there is a `MatchingWorkflow` object that references the `SchemaMapping` in the workflow's `InputSourceConfig`.
 #'
 #' @usage
 #' entityresolution_delete_schema_mapping(schemaName)
@@ -1005,18 +958,9 @@ entityresolution_delete_schema_mapping <- function(schemaName) {
 #' workflow
 #'
 #' @description
-#' Generates or retrieves Match IDs for records using a rule-based matching
-#' workflow. When you call this operation, it processes your records
-#' against the workflow's matching rules to identify potential matches. For
-#' existing records, it retrieves their Match IDs and associated rules. For
-#' records without matches, it generates new Match IDs. The operation saves
-#' results to Amazon S3.
+#' Generates or retrieves Match IDs for records using a rule-based matching workflow. When you call this operation, it processes your records against the workflow's matching rules to identify potential matches. For existing records, it retrieves their Match IDs and associated rules. For records without matches, it generates new Match IDs. The operation saves results to Amazon S3.
 #' 
-#' The processing type (`processingType`) you choose affects both the
-#' accuracy and response time of the operation. Additional charges apply
-#' for each API call, whether made through the Entity Resolution console or
-#' directly via the API. The rule-based matching workflow must exist and be
-#' active before calling this operation.
+#' The processing type (`processingType`) you choose affects both the accuracy and response time of the operation. Additional charges apply for each API call, whether made through the Entity Resolution console or directly via the API. The rule-based matching workflow must exist and be active before calling this operation.
 #'
 #' @usage
 #' entityresolution_generate_match_id(workflowName, records,
@@ -1024,25 +968,15 @@ entityresolution_delete_schema_mapping <- function(schemaName) {
 #'
 #' @param workflowName &#91;required&#93; The name of the rule-based matching workflow.
 #' @param records &#91;required&#93; The records to match.
-#' @param processingType The processing mode that determines how Match IDs are generated and
-#' results are saved. Each mode provides different levels of accuracy,
-#' response time, and completeness of results.
+#' @param processingType The processing mode that determines how Match IDs are generated and results are saved. Each mode provides different levels of accuracy, response time, and completeness of results.
 #' 
 #' If not specified, defaults to `CONSISTENT`.
 #' 
-#' `CONSISTENT`: Performs immediate lookup and matching against all
-#' existing records, with results saved synchronously. Provides highest
-#' accuracy but slower response time.
+#' `CONSISTENT`: Performs immediate lookup and matching against all existing records, with results saved synchronously. Provides highest accuracy but slower response time.
 #' 
-#' `EVENTUAL` (shown as *Background* in the console): Performs initial
-#' match ID lookup or generation immediately, with record updates processed
-#' asynchronously in the background. Offers faster initial response time,
-#' with complete matching results available later in S3.
+#' `EVENTUAL` (shown as *Background* in the console): Performs initial match ID lookup or generation immediately, with record updates processed asynchronously in the background. Offers faster initial response time, with complete matching results available later in S3.
 #' 
-#' `EVENTUAL_NO_LOOKUP` (shown as *Quick ID generation* in the console):
-#' Generates new match IDs without checking existing matches, with updates
-#' processed asynchronously. Provides fastest response time but should only
-#' be used for records known to be unique.
+#' `EVENTUAL_NO_LOOKUP` (shown as *Quick ID generation* in the console): Generates new match IDs without checking existing matches, with updates processed asynchronously. Provides fastest response time but should only be used for records known to be unique.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1115,8 +1049,7 @@ entityresolution_generate_match_id <- function(workflowName, records, processing
 #' associated with a job
 #'
 #' @description
-#' Returns the status, metrics, and errors (if there are any) that are
-#' associated with a job.
+#' Returns the status, metrics, and errors (if there are any) that are associated with a job.
 #'
 #' @usage
 #' entityresolution_get_id_mapping_job(workflowName, jobId)
@@ -1397,21 +1330,16 @@ entityresolution_get_id_namespace <- function(idNamespaceName) {
 #' has been processed in a rule-based matching workflow
 #'
 #' @description
-#' Returns the corresponding Match ID of a customer record if the record
-#' has been processed in a rule-based matching workflow.
+#' Returns the corresponding Match ID of a customer record if the record has been processed in a rule-based matching workflow.
 #' 
-#' You can call this API as a dry run of an incremental load on the
-#' rule-based matching workflow.
+#' You can call this API as a dry run of an incremental load on the rule-based matching workflow.
 #'
 #' @usage
 #' entityresolution_get_match_id(workflowName, record, applyNormalization)
 #'
 #' @param workflowName &#91;required&#93; The name of the workflow.
 #' @param record &#91;required&#93; The record to fetch the Match ID for.
-#' @param applyNormalization Normalizes the attributes defined in the schema in the input data. For
-#' example, if an attribute has an `AttributeType` of `PHONE_NUMBER`, and
-#' the data in the input table is in a format of 1234567890, Entity
-#' Resolution will normalize this field in the output to (123)-456-7890.
+#' @param applyNormalization Normalizes the attributes defined in the schema in the input data. For example, if an attribute has an `AttributeType` of `PHONE_NUMBER`, and the data in the input table is in a format of 1234567890, Entity Resolution will normalize this field in the output to (123)-456-7890.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1461,8 +1389,7 @@ entityresolution_get_match_id <- function(workflowName, record, applyNormalizati
 #' associated with a job
 #'
 #' @description
-#' Returns the status, metrics, and errors (if there are any) that are
-#' associated with a job.
+#' Returns the status, metrics, and errors (if there are any) that are associated with a job.
 #'
 #' @usage
 #' entityresolution_get_matching_job(workflowName, jobId)
@@ -1595,6 +1522,9 @@ entityresolution_get_matching_job <- function(workflowName, jobId) {
 #'           ruleName = "string",
 #'           condition = "string"
 #'         )
+#'       ),
+#'       matchingConfig = list(
+#'         enableTransitiveMatching = TRUE|FALSE
 #'       )
 #'     ),
 #'     providerProperties = list(
@@ -1660,8 +1590,7 @@ entityresolution_get_matching_workflow <- function(workflowName) {
 #' @usage
 #' entityresolution_get_policy(arn)
 #'
-#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which the policy need
-#' to be returned.
+#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which the policy need to be returned.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1713,8 +1642,7 @@ entityresolution_get_policy <- function(arn) {
 #' entityresolution_get_provider_service(providerName, providerServiceName)
 #'
 #' @param providerName &#91;required&#93; The name of the provider. This name is typically the company name.
-#' @param providerServiceName &#91;required&#93; The ARN (Amazon Resource Name) of the product that the provider service
-#' provides.
+#' @param providerServiceName &#91;required&#93; The ARN (Amazon Resource Name) of the product that the provider service provides.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1941,8 +1869,7 @@ entityresolution_list_id_mapping_jobs <- function(workflowName, nextToken = NULL
 #' an Amazon Web Services account
 #'
 #' @description
-#' Returns a list of all the `IdMappingWorkflows` that have been created
-#' for an Amazon Web Services account.
+#' Returns a list of all the `IdMappingWorkflows` that have been created for an Amazon Web Services account.
 #'
 #' @usage
 #' entityresolution_list_id_mapping_workflows(nextToken, maxResults)
@@ -2141,8 +2068,7 @@ entityresolution_list_matching_jobs <- function(workflowName, nextToken = NULL, 
 #' an Amazon Web Services account
 #'
 #' @description
-#' Returns a list of all the `MatchingWorkflows` that have been created for
-#' an Amazon Web Services account.
+#' Returns a list of all the `MatchingWorkflows` that have been created for an Amazon Web Services account.
 #'
 #' @usage
 #' entityresolution_list_matching_workflows(nextToken, maxResults)
@@ -2207,8 +2133,7 @@ entityresolution_list_matching_workflows <- function(nextToken = NULL, maxResult
 #' Amazon Web Services Region
 #'
 #' @description
-#' Returns a list of all the `ProviderServices` that are available in this
-#' Amazon Web Services Region.
+#' Returns a list of all the `ProviderServices` that are available in this Amazon Web Services Region.
 #'
 #' @usage
 #' entityresolution_list_provider_services(nextToken, maxResults,
@@ -2272,8 +2197,7 @@ entityresolution_list_provider_services <- function(nextToken = NULL, maxResults
 #' Amazon Web Services account
 #'
 #' @description
-#' Returns a list of all the `SchemaMappings` that have been created for an
-#' Amazon Web Services account.
+#' Returns a list of all the `SchemaMappings` that have been created for an Amazon Web Services account.
 #'
 #' @usage
 #' entityresolution_list_schema_mappings(nextToken, maxResults)
@@ -2337,9 +2261,7 @@ entityresolution_list_schema_mappings <- function(nextToken = NULL, maxResults =
 #' Displays the tags associated with an Entity Resolution resource
 #'
 #' @description
-#' Displays the tags associated with an Entity Resolution resource. In
-#' Entity Resolution, `SchemaMapping`, and `MatchingWorkflow` can be
-#' tagged.
+#' Displays the tags associated with an Entity Resolution resource. In Entity Resolution, `SchemaMapping`, and `MatchingWorkflow` can be tagged.
 #'
 #' @usage
 #' entityresolution_list_tags_for_resource(resourceArn)
@@ -2395,16 +2317,11 @@ entityresolution_list_tags_for_resource <- function(resourceArn) {
 #' @usage
 #' entityresolution_put_policy(arn, token, policy)
 #'
-#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which the policy
-#' needs to be updated.
+#' @param arn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which the policy needs to be updated.
 #' @param token A unique identifier for the current revision of the policy.
 #' @param policy &#91;required&#93; The resource-based policy.
 #' 
-#' If you set the value of the `effect` parameter in the `policy` to `Deny`
-#' for the [`put_policy`][entityresolution_put_policy] operation, you must
-#' also set the value of the `effect` parameter to `Deny` for the
-#' [`add_policy_statement`][entityresolution_add_policy_statement]
-#' operation.
+#' If you set the value of the `effect` parameter in the `policy` to `Deny` for the [`put_policy`][entityresolution_put_policy] operation, you must also set the value of the `effect` parameter to `Deny` for the [`add_policy_statement`][entityresolution_add_policy_statement] operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2452,10 +2369,7 @@ entityresolution_put_policy <- function(arn, token = NULL, policy) {
 #' Starts the IdMappingJob of a workflow
 #'
 #' @description
-#' Starts the `IdMappingJob` of a workflow. The workflow must have
-#' previously been created using the
-#' [`create_id_mapping_workflow`][entityresolution_create_id_mapping_workflow]
-#' endpoint.
+#' Starts the `IdMappingJob` of a workflow. The workflow must have previously been created using the [`create_id_mapping_workflow`][entityresolution_create_id_mapping_workflow] endpoint.
 #'
 #' @usage
 #' entityresolution_start_id_mapping_job(workflowName, outputSourceConfig,
@@ -2465,19 +2379,11 @@ entityresolution_put_policy <- function(arn, token = NULL, policy) {
 #' @param outputSourceConfig A list of `OutputSource` objects.
 #' @param jobType The job type for the ID mapping job.
 #' 
-#' If the `jobType` value is set to `INCREMENTAL`, only new or changed data
-#' is processed since the last job run. This is the default value if the
-#' [`create_id_mapping_workflow`][entityresolution_create_id_mapping_workflow]
-#' API is configured with an `incrementalRunConfig`.
+#' If the `jobType` value is set to `INCREMENTAL`, only new or changed data is processed since the last job run. This is the default value if the [`create_id_mapping_workflow`][entityresolution_create_id_mapping_workflow] API is configured with an `incrementalRunConfig`.
 #' 
-#' If the `jobType` value is set to `BATCH`, all data is processed from the
-#' input source, regardless of previous job runs. This is the default value
-#' if the
-#' [`create_id_mapping_workflow`][entityresolution_create_id_mapping_workflow]
-#' API isn't configured with an `incrementalRunConfig`.
+#' If the `jobType` value is set to `BATCH`, all data is processed from the input source, regardless of previous job runs. This is the default value if the [`create_id_mapping_workflow`][entityresolution_create_id_mapping_workflow] API isn't configured with an `incrementalRunConfig`.
 #' 
-#' If the `jobType` value is set to `DELETE_ONLY`, only deletion requests
-#' from `BatchDeleteUniqueIds` are processed.
+#' If the `jobType` value is set to `DELETE_ONLY`, only deletion requests from `BatchDeleteUniqueIds` are processed.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2537,10 +2443,7 @@ entityresolution_start_id_mapping_job <- function(workflowName, outputSourceConf
 #' Starts the MatchingJob of a workflow
 #'
 #' @description
-#' Starts the `MatchingJob` of a workflow. The workflow must have
-#' previously been created using the
-#' [`create_matching_workflow`][entityresolution_create_matching_workflow]
-#' endpoint.
+#' Starts the `MatchingJob` of a workflow. The workflow must have previously been created using the [`create_matching_workflow`][entityresolution_create_matching_workflow] endpoint.
 #'
 #' @usage
 #' entityresolution_start_matching_job(workflowName)
@@ -2590,18 +2493,7 @@ entityresolution_start_matching_job <- function(workflowName) {
 #' Resolution resource
 #'
 #' @description
-#' Assigns one or more tags (key-value pairs) to the specified Entity
-#' Resolution resource. Tags can help you organize and categorize your
-#' resources. You can also use them to scope user permissions by granting a
-#' user permission to access or change only resources with certain tag
-#' values. In Entity Resolution, `SchemaMapping` and `MatchingWorkflow` can
-#' be tagged. Tags don't have any semantic meaning to Amazon Web Services
-#' and are interpreted strictly as strings of characters. You can use the
-#' [`tag_resource`][entityresolution_tag_resource] action with a resource
-#' that already has tags. If you specify a new tag key, this tag is
-#' appended to the list of tags associated with the resource. If you
-#' specify a tag key that is already associated with the resource, the new
-#' tag value that you specify replaces the previous value for that tag.
+#' Assigns one or more tags (key-value pairs) to the specified Entity Resolution resource. Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values. In Entity Resolution, `SchemaMapping` and `MatchingWorkflow` can be tagged. Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters. You can use the [`tag_resource`][entityresolution_tag_resource] action with a resource that already has tags. If you specify a new tag key, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag.
 #'
 #' @usage
 #' entityresolution_tag_resource(resourceArn, tags)
@@ -2649,9 +2541,7 @@ entityresolution_tag_resource <- function(resourceArn, tags) {
 #' Removes one or more tags from the specified Entity Resolution resource
 #'
 #' @description
-#' Removes one or more tags from the specified Entity Resolution resource.
-#' In Entity Resolution, `SchemaMapping`, and `MatchingWorkflow` can be
-#' tagged.
+#' Removes one or more tags from the specified Entity Resolution resource. In Entity Resolution, `SchemaMapping`, and `MatchingWorkflow` can be tagged.
 #'
 #' @usage
 #' entityresolution_untag_resource(resourceArn, tagKeys)
@@ -2699,10 +2589,7 @@ entityresolution_untag_resource <- function(resourceArn, tagKeys) {
 #' Updates an existing IdMappingWorkflow
 #'
 #' @description
-#' Updates an existing `IdMappingWorkflow`. This method is identical to
-#' CreateIdMappingWorkflow, except it uses an HTTP `PUT` request instead of
-#' a `POST` request, and the `IdMappingWorkflow` must already exist for the
-#' method to succeed.
+#' Updates an existing `IdMappingWorkflow`. This method is identical to CreateIdMappingWorkflow, except it uses an HTTP `PUT` request instead of a `POST` request, and the `IdMappingWorkflow` must already exist for the method to succeed.
 #' 
 #' Incremental processing is not supported for ID mapping workflows.
 #'
@@ -2713,16 +2600,11 @@ entityresolution_untag_resource <- function(resourceArn, tagKeys) {
 #'
 #' @param workflowName &#91;required&#93; The name of the workflow.
 #' @param description A description of the workflow.
-#' @param inputSourceConfig &#91;required&#93; A list of `InputSource` objects, which have the fields `InputSourceARN`
-#' and `SchemaName`.
-#' @param outputSourceConfig A list of `OutputSource` objects, each of which contains fields
-#' `outputS3Path` and `KMSArn`.
-#' @param idMappingTechniques &#91;required&#93; An object which defines the ID mapping technique and any additional
-#' configurations.
+#' @param inputSourceConfig &#91;required&#93; A list of `InputSource` objects, which have the fields `InputSourceARN` and `SchemaName`.
+#' @param outputSourceConfig A list of `OutputSource` objects, each of which contains fields `outputS3Path` and `KMSArn`.
+#' @param idMappingTechniques &#91;required&#93; An object which defines the ID mapping technique and any additional configurations.
 #' @param incrementalRunConfig The incremental run configuration for the update ID mapping workflow.
-#' @param roleArn The Amazon Resource Name (ARN) of the IAM role. Entity Resolution
-#' assumes this role to access Amazon Web Services resources on your
-#' behalf.
+#' @param roleArn The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access Amazon Web Services resources on your behalf.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2857,13 +2739,9 @@ entityresolution_update_id_mapping_workflow <- function(workflowName, descriptio
 #'
 #' @param idNamespaceName &#91;required&#93; The name of the ID namespace.
 #' @param description The description of the ID namespace.
-#' @param inputSourceConfig A list of `InputSource` objects, which have the fields `InputSourceARN`
-#' and `SchemaName`.
-#' @param idMappingWorkflowProperties Determines the properties of `IdMappingWorkflow` where this
-#' `IdNamespace` can be used as a `Source` or a `Target`.
-#' @param roleArn The Amazon Resource Name (ARN) of the IAM role. Entity Resolution
-#' assumes this role to access the resources defined in this `IdNamespace`
-#' on your behalf as part of a workflow run.
+#' @param inputSourceConfig A list of `InputSource` objects, which have the fields `InputSourceARN` and `SchemaName`.
+#' @param idMappingWorkflowProperties Determines the properties of `IdMappingWorkflow` where this `IdNamespace` can be used as a `Source` or a `Target`.
+#' @param roleArn The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to access the resources defined in this `IdNamespace` on your behalf as part of a workflow run.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2983,11 +2861,9 @@ entityresolution_update_id_namespace <- function(idNamespaceName, description = 
 #' Updates an existing matching workflow
 #'
 #' @description
-#' Updates an existing matching workflow. The workflow must already exist
-#' for this operation to succeed.
+#' Updates an existing matching workflow. The workflow must already exist for this operation to succeed.
 #' 
-#' For workflows where `resolutionType` is `ML_MATCHING` or `PROVIDER`,
-#' incremental processing is not supported.
+#' For workflows where `resolutionType` is `ML_MATCHING` or `PROVIDER`, incremental processing is not supported.
 #'
 #' @usage
 #' entityresolution_update_matching_workflow(workflowName, description,
@@ -2996,21 +2872,13 @@ entityresolution_update_id_namespace <- function(idNamespaceName, description = 
 #'
 #' @param workflowName &#91;required&#93; The name of the workflow to be retrieved.
 #' @param description A description of the workflow.
-#' @param inputSourceConfig &#91;required&#93; A list of `InputSource` objects, which have the fields `InputSourceARN`
-#' and `SchemaName`.
-#' @param outputSourceConfig &#91;required&#93; A list of `OutputSource` objects, each of which contains fields
-#' `outputS3Path`, `applyNormalization`, `KMSArn`, and `output`.
-#' @param resolutionTechniques &#91;required&#93; An object which defines the `resolutionType` and the
-#' `ruleBasedProperties`.
-#' @param incrementalRunConfig Optional. An object that defines the incremental run type. This object
-#' contains only the `incrementalRunType` field, which appears as
-#' "Automatic" in the console.
+#' @param inputSourceConfig &#91;required&#93; A list of `InputSource` objects, which have the fields `InputSourceARN` and `SchemaName`.
+#' @param outputSourceConfig &#91;required&#93; A list of `OutputSource` objects, each of which contains fields `outputS3Path`, `applyNormalization`, `KMSArn`, and `output`.
+#' @param resolutionTechniques &#91;required&#93; An object which defines the `resolutionType` and the `ruleBasedProperties`.
+#' @param incrementalRunConfig Optional. An object that defines the incremental run type. This object contains only the `incrementalRunType` field, which appears as "Automatic" in the console.
 #' 
-#' For workflows where `resolutionType` is `ML_MATCHING` or `PROVIDER`,
-#' incremental processing is not supported.
-#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role. Entity Resolution
-#' assumes this role to create resources on your behalf as part of workflow
-#' execution.
+#' For workflows where `resolutionType` is `ML_MATCHING` or `PROVIDER`, incremental processing is not supported.
+#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role to create resources on your behalf as part of workflow execution.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3062,6 +2930,9 @@ entityresolution_update_id_namespace <- function(idNamespaceName, description = 
 #'           ruleName = "string",
 #'           condition = "string"
 #'         )
+#'       ),
+#'       matchingConfig = list(
+#'         enableTransitiveMatching = TRUE|FALSE
 #'       )
 #'     ),
 #'     providerProperties = list(
@@ -3128,6 +2999,9 @@ entityresolution_update_id_namespace <- function(idNamespaceName, description = 
 #'           ruleName = "string",
 #'           condition = "string"
 #'         )
+#'       ),
+#'       matchingConfig = list(
+#'         enableTransitiveMatching = TRUE|FALSE
 #'       )
 #'     ),
 #'     providerProperties = list(
@@ -3174,19 +3048,15 @@ entityresolution_update_matching_workflow <- function(workflowName, description 
 #' @description
 #' Updates a schema mapping.
 #' 
-#' A schema is immutable if it is being used by a workflow. Therefore, you
-#' can't update a schema mapping if it's associated with a workflow.
+#' A schema is immutable if it is being used by a workflow. Therefore, you can't update a schema mapping if it's associated with a workflow.
 #'
 #' @usage
 #' entityresolution_update_schema_mapping(schemaName, description,
 #'   mappedInputFields)
 #'
-#' @param schemaName &#91;required&#93; The name of the schema. There can't be multiple `SchemaMappings` with
-#' the same name.
+#' @param schemaName &#91;required&#93; The name of the schema. There can't be multiple `SchemaMappings` with the same name.
 #' @param description A description of the schema.
-#' @param mappedInputFields &#91;required&#93; A list of `MappedInputFields`. Each `MappedInputField` corresponds to a
-#' column the source data table, and contains column name plus additional
-#' information that Entity Resolution uses for matching.
+#' @param mappedInputFields &#91;required&#93; A list of `MappedInputFields`. Each `MappedInputField` corresponds to a column the source data table, and contains column name plus additional information that Entity Resolution uses for matching.
 #'
 #' @return
 #' A list with the following syntax:

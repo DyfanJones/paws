@@ -12,15 +12,11 @@ elasticsearchservice_describe_reserved_elasticsearch_instances(
 )
 }
 \arguments{
-\item{ReservedElasticsearchInstanceId}{The reserved instance identifier filter value. Use this parameter to
-show only the reservation that matches the specified reserved
-Elasticsearch instance ID.}
+\item{ReservedElasticsearchInstanceId}{The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved Elasticsearch instance ID.}
 
-\item{MaxResults}{Set this value to limit the number of results returned. If not
-specified, defaults to 100.}
+\item{MaxResults}{Set this value to limit the number of results returned. If not specified, defaults to 100.}
 
-\item{NextToken}{NextToken should be sent in case if earlier API call produced result
-containing NextToken. It is used for pagination.}
+\item{NextToken}{NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.}
 }
 \description{
 Returns information about reserved Elasticsearch instances for this account.

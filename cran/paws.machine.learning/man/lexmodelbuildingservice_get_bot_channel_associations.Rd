@@ -15,21 +15,13 @@ lexmodelbuildingservice_get_bot_channel_associations(
 \arguments{
 \item{botName}{[required] The name of the Amazon Lex bot in the association.}
 
-\item{botAlias}{[required] An alias pointing to the specific version of the Amazon Lex bot to which
-this association is being made.}
+\item{botAlias}{[required] An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.}
 
-\item{nextToken}{A pagination token for fetching the next page of associations. If the
-response to this call is truncated, Amazon Lex returns a pagination
-token in the response. To fetch the next page of associations, specify
-the pagination token in the next request.}
+\item{nextToken}{A pagination token for fetching the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request.}
 
-\item{maxResults}{The maximum number of associations to return in the response. The
-default is 50.}
+\item{maxResults}{The maximum number of associations to return in the response. The default is 50.}
 
-\item{nameContains}{Substring to match in channel association names. An association will be
-returned if any part of its name matches the substring. For example,
-"xyz" matches both "xyzabc" and "abcxyz." To return all bot channel
-associations, use a hyphen ("-") as the \code{nameContains} parameter.}
+\item{nameContains}{Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot channel associations, use a hyphen ("-") as the \code{nameContains} parameter.}
 }
 \description{
 Returns a list of all of the channels associated with the specified bot.

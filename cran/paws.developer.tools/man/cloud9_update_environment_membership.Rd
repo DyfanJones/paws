@@ -8,14 +8,11 @@ development environment}
 cloud9_update_environment_membership(environmentId, userArn, permissions)
 }
 \arguments{
-\item{environmentId}{[required] The ID of the environment for the environment member whose settings you
-want to change.}
+\item{environmentId}{[required] The ID of the environment for the environment member whose settings you want to change.}
 
-\item{userArn}{[required] The Amazon Resource Name (ARN) of the environment member whose settings
-you want to change.}
+\item{userArn}{[required] The Amazon Resource Name (ARN) of the environment member whose settings you want to change.}
 
-\item{permissions}{[required] The replacement type of environment member permissions you want to
-associate with this environment member. Available values include:
+\item{permissions}{[required] The replacement type of environment member permissions you want to associate with this environment member. Available values include:
 \itemize{
 \item \code{read-only}: Has read-only access to the environment.
 \item \code{read-write}: Has read-write access to the environment.

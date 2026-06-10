@@ -8,8 +8,7 @@ registry}
 ecr_deregister_pull_time_update_exclusion(principalArn)
 }
 \arguments{
-\item{principalArn}{[required] The ARN of the IAM principal to remove from the pull time update
-exclusion list.}
+\item{principalArn}{[required] The ARN of the IAM principal to remove from the pull time update exclusion list.}
 }
 \description{
 Removes a principal from the pull time update exclusion list for a registry. Once removed, Amazon ECR will resume updating the pull time if the specified principal pulls an image.

@@ -12,9 +12,7 @@ route53recoverycontrolconfig_create_control_panel(
 )
 }
 \arguments{
-\item{ClientToken}{A unique, case-sensitive string of up to 64 ASCII characters. To make an
-idempotent API request with an action, specify a client token in the
-request.}
+\item{ClientToken}{A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.}
 
 \item{ClusterArn}{[required] The Amazon Resource Name (ARN) of the cluster for the control panel.}
 

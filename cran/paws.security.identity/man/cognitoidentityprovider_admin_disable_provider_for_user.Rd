@@ -8,8 +8,7 @@ social) identity provider (IdP)}
 cognitoidentityprovider_admin_disable_provider_for_user(UserPoolId, User)
 }
 \arguments{
-\item{UserPoolId}{[required] The ID of the user pool where you want to delete the user's linked
-identities.}
+\item{UserPoolId}{[required] The ID of the user pool where you want to delete the user's linked identities.}
 
 \item{User}{[required] The user profile that you want to delete a linked identity from.}
 }

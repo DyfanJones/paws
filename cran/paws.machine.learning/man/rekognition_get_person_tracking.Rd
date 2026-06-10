@@ -13,24 +13,13 @@ rekognition_get_person_tracking(
 )
 }
 \arguments{
-\item{JobId}{[required] The identifier for a job that tracks persons in a video. You get the
-\code{JobId} from a call to
-\code{\link[=rekognition_start_person_tracking]{start_person_tracking}}.}
+\item{JobId}{[required] The identifier for a job that tracks persons in a video. You get the \code{JobId} from a call to \code{\link[=rekognition_start_person_tracking]{start_person_tracking}}.}
 
-\item{MaxResults}{Maximum number of results to return per paginated call. The largest
-value you can specify is 1000. If you specify a value greater than 1000,
-a maximum of 1000 results is returned. The default value is 1000.}
+\item{MaxResults}{Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.}
 
-\item{NextToken}{If the previous response was incomplete (because there are more persons
-to retrieve), Amazon Rekognition Video returns a pagination token in the
-response. You can use this pagination token to retrieve the next set of
-persons.}
+\item{NextToken}{If the previous response was incomplete (because there are more persons to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of persons.}
 
-\item{SortBy}{Sort to use for elements in the \code{Persons} array. Use \code{TIMESTAMP} to sort
-array elements by the time persons are detected. Use \code{INDEX} to sort by
-the tracked persons. If you sort by \code{INDEX}, the array elements for each
-person are sorted by detection confidence. The default sort is by
-\code{TIMESTAMP}.}
+\item{SortBy}{Sort to use for elements in the \code{Persons} array. Use \code{TIMESTAMP} to sort array elements by the time persons are detected. Use \code{INDEX} to sort by the tracked persons. If you sort by \code{INDEX}, the array elements for each person are sorted by detection confidence. The default sort is by \code{TIMESTAMP}.}
 }
 \description{
 \emph{End of support notice:} On October 31, 2025, AWS will discontinue support for Amazon Rekognition People Pathing. After October 31, 2025, you will no longer be able to use the Rekognition People Pathing capability. For more information, visit this \href{https://aws.amazon.com/blogs/machine-learning/transitioning-from-amazon-rekognition-people-pathing-exploring-other-alternatives/}{blog post}.

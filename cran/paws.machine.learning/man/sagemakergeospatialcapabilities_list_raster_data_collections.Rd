@@ -12,8 +12,7 @@ sagemakergeospatialcapabilities_list_raster_data_collections(
 \arguments{
 \item{MaxResults}{The total number of items to return.}
 
-\item{NextToken}{If the previous response was truncated, you receive this token. Use it
-in your next request to receive the next set of results.}
+\item{NextToken}{If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.}
 }
 \description{
 Use this operation to get raster data collections.

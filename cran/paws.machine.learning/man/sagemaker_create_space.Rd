@@ -20,9 +20,7 @@ sagemaker_create_space(
 
 \item{SpaceName}{[required] The name of the space.}
 
-\item{Tags}{Tags to associated with the space. Each tag consists of a key and an
-optional value. Tag keys must be unique for each resource. Tags are
-searchable using the \code{\link[=sagemaker_search]{search}} API.}
+\item{Tags}{Tags to associated with the space. Each tag consists of a key and an optional value. Tag keys must be unique for each resource. Tags are searchable using the \code{\link[=sagemaker_search]{search}} API.}
 
 \item{SpaceSettings}{A collection of space settings.}
 

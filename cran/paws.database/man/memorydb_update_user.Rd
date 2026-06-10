@@ -9,8 +9,7 @@ memorydb_update_user(UserName, AuthenticationMode = NULL, AccessString = NULL)
 \arguments{
 \item{UserName}{[required] The name of the user}
 
-\item{AuthenticationMode}{Denotes the user's authentication properties, such as whether it
-requires a password to authenticate.}
+\item{AuthenticationMode}{Denotes the user's authentication properties, such as whether it requires a password to authenticate.}
 
 \item{AccessString}{Access permissions string used for this user.}
 }

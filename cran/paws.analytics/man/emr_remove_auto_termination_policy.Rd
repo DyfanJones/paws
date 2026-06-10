@@ -7,8 +7,7 @@
 emr_remove_auto_termination_policy(ClusterId)
 }
 \arguments{
-\item{ClusterId}{[required] Specifies the ID of the Amazon EMR cluster from which the
-auto-termination policy will be removed.}
+\item{ClusterId}{[required] Specifies the ID of the Amazon EMR cluster from which the auto-termination policy will be removed.}
 }
 \description{
 Removes an auto-termination policy from an Amazon EMR cluster.

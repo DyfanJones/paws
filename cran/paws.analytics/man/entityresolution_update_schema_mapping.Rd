@@ -11,14 +11,11 @@ entityresolution_update_schema_mapping(
 )
 }
 \arguments{
-\item{schemaName}{[required] The name of the schema. There can't be multiple \code{SchemaMappings} with
-the same name.}
+\item{schemaName}{[required] The name of the schema. There can't be multiple \code{SchemaMappings} with the same name.}
 
 \item{description}{A description of the schema.}
 
-\item{mappedInputFields}{[required] A list of \code{MappedInputFields}. Each \code{MappedInputField} corresponds to a
-column the source data table, and contains column name plus additional
-information that Entity Resolution uses for matching.}
+\item{mappedInputFields}{[required] A list of \code{MappedInputFields}. Each \code{MappedInputField} corresponds to a column the source data table, and contains column name plus additional information that Entity Resolution uses for matching.}
 }
 \description{
 Updates a schema mapping.

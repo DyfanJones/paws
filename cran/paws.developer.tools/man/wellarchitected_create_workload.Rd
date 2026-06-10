@@ -28,38 +28,78 @@ wellarchitected_create_workload(
 )
 }
 \arguments{
-\item{WorkloadName}{[required]}
+\item{WorkloadName}{[required] The name of the workload.
 
-\item{Description}{[required]}
+The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.}
 
-\item{Environment}{[required]}
+\item{Description}{[required] The description for the workload.}
 
-\item{AccountIds}{}
+\item{Environment}{[required] The environment for the workload.}
 
-\item{AwsRegions}{}
+\item{AccountIds}{The list of Amazon Web Services account IDs associated with the workload.}
 
-\item{NonAwsRegions}{}
+\item{AwsRegions}{The list of Amazon Web Services Regions associated with the workload, for example, \code{us-east-2}, or \code{ca-central-1}.}
 
-\item{PillarPriorities}{}
+\item{NonAwsRegions}{The list of non-Amazon Web Services Regions associated with the workload.}
 
-\item{ArchitecturalDesign}{}
+\item{PillarPriorities}{The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its PillarReviewSummary$PillarId.}
 
-\item{ReviewOwner}{}
+\item{ArchitecturalDesign}{The URL of the architectural design for the workload.}
 
-\item{IndustryType}{}
+\item{ReviewOwner}{The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.}
 
-\item{Industry}{}
+\item{IndustryType}{The industry type for the workload.
 
-\item{Lenses}{[required]}
+If specified, must be one of the following:
+\itemize{
+\item \code{Agriculture}
+\item \code{Automobile}
+\item \code{Defense}
+\item \verb{Design and Engineering}
+\item \verb{Digital Advertising}
+\item \code{Education}
+\item \verb{Environmental Protection}
+\item \verb{Financial Services}
+\item \code{Gaming}
+\item \verb{General Public Services}
+\item \code{Healthcare}
+\item \code{Hospitality}
+\item \code{InfoTech}
+\item \verb{Justice and Public Safety}
+\item \verb{Life Sciences}
+\item \code{Manufacturing}
+\item \code{Media & Entertainment}
+\item \code{Mining & Resources}
+\item \code{Oil & Gas}
+\item \code{Power & Utilities}
+\item \verb{Professional Services}
+\item \verb{Real Estate & Construction}
+\item \code{Retail & Wholesale}
+\item \verb{Social Protection}
+\item \code{Telecommunications}
+\item \verb{Travel, Transportation & Logistics}
+\item \code{Other}
+}}
 
-\item{Notes}{}
+\item{Industry}{The industry for the workload.}
 
-\item{ClientRequestToken}{[required]}
+\item{Lenses}{[required] The list of lenses associated with the workload. Each lens is identified by its LensSummary$LensAlias.
+
+If a review template that specifies lenses is applied to the workload, those lenses are applied to the workload in addition to these lenses.}
+
+\item{Notes}{The notes associated with the workload.
+
+For a review template, these are the notes that will be associated with the workload when the template is applied.}
+
+\item{ClientRequestToken}{[required] A unique case-sensitive string used to ensure that this request is idempotent (executes only once).
+
+You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.
+
+This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.}
 
 \item{Tags}{The tags to be associated with the workload.}
 
-\item{DiscoveryConfig}{Well-Architected discovery configuration settings associated to the
-workload.}
+\item{DiscoveryConfig}{Well-Architected discovery configuration settings associated to the workload.}
 
 \item{Applications}{List of AppRegistry application ARNs associated to the workload.}
 

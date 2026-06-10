@@ -53,8 +53,7 @@ neptune_create_db_instance(
 \arguments{
 \item{DBName}{Not supported.}
 
-\item{DBInstanceIdentifier}{[required] The DB instance identifier. This parameter is stored as a lowercase
-string.
+\item{DBInstanceIdentifier}{[required] The DB instance identifier. This parameter is stored as a lowercase string.
 
 Constraints:
 \itemize{
@@ -67,9 +66,7 @@ Example: \code{mydbinstance}}
 
 \item{AllocatedStorage}{Not supported by Neptune.}
 
-\item{DBInstanceClass}{[required] The compute and memory capacity of the DB instance, for example,
-\code{db.m4.large}. Not all DB instance classes are available in all Amazon
-Regions.}
+\item{DBInstanceClass}{[required] The compute and memory capacity of the DB instance, for example, \code{db.m4.large}. Not all DB instance classes are available in all Amazon Regions.}
 
 \item{Engine}{[required] The name of the database engine to be used for this instance.
 
@@ -85,44 +82,33 @@ Default: The default DB security group for the database engine.}
 
 \item{VpcSecurityGroupIds}{A list of EC2 VPC security groups to associate with this DB instance.
 
-Not applicable. The associated list of EC2 VPC security groups is
-managed by the DB cluster. For more information, see
-\code{\link[=neptune_create_db_cluster]{create_db_cluster}}.
+Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster. For more information, see \code{\link[=neptune_create_db_cluster]{create_db_cluster}}.
 
-Default: The default EC2 VPC security group for the DB subnet group's
-VPC.}
+Default: The default EC2 VPC security group for the DB subnet group's VPC.}
 
 \item{AvailabilityZone}{The EC2 Availability Zone that the DB instance is created in
 
-Default: A random, system-chosen Availability Zone in the endpoint's
-Amazon Region.
+Default: A random, system-chosen Availability Zone in the endpoint's Amazon Region.
 
 Example: \verb{us-east-1d}
 
-Constraint: The AvailabilityZone parameter can't be specified if the
-MultiAZ parameter is set to \code{true}. The specified Availability Zone must
-be in the same Amazon Region as the current endpoint.}
+Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to \code{true}. The specified Availability Zone must be in the same Amazon Region as the current endpoint.}
 
 \item{DBSubnetGroupName}{A DB subnet group to associate with this DB instance.
 
 If there is no DB subnet group, then it is a non-VPC DB instance.}
 
-\item{PreferredMaintenanceWindow}{The time range each week during which system maintenance can occur, in
-Universal Coordinated Time (UTC).
+\item{PreferredMaintenanceWindow}{The time range each week during which system maintenance can occur, in Universal Coordinated Time (UTC).
 
 Format: \code{ddd:hh24:mi-ddd:hh24:mi}
 
-The default is a 30-minute window selected at random from an 8-hour
-block of time for each Amazon Region, occurring on a random day of the
-week.
+The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week.
 
 Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
 
 Constraints: Minimum 30-minute window.}
 
-\item{DBParameterGroupName}{The name of the DB parameter group to associate with this DB instance.
-If this argument is omitted, the default DBParameterGroup for the
-specified engine is used.
+\item{DBParameterGroupName}{The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default DBParameterGroup for the specified engine is used.
 
 Constraints:
 \itemize{
@@ -133,9 +119,7 @@ Constraints:
 
 \item{BackupRetentionPeriod}{The number of days for which automated backups are retained.
 
-Not applicable. The retention period for automated backups is managed by
-the DB cluster. For more information, see
-\code{\link[=neptune_create_db_cluster]{create_db_cluster}}.
+Not applicable. The retention period for automated backups is managed by the DB cluster. For more information, see \code{\link[=neptune_create_db_cluster]{create_db_cluster}}.
 
 Default: 1
 
@@ -147,37 +131,29 @@ Constraints:
 
 \item{PreferredBackupWindow}{The daily time range during which automated backups are created.
 
-Not applicable. The daily time range for creating automated backups is
-managed by the DB cluster. For more information, see
-\code{\link[=neptune_create_db_cluster]{create_db_cluster}}.}
+Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more information, see \code{\link[=neptune_create_db_cluster]{create_db_cluster}}.}
 
 \item{Port}{The port number on which the database accepts connections.
 
-Not applicable. The port is managed by the DB cluster. For more
-information, see \code{\link[=neptune_create_db_cluster]{create_db_cluster}}.
+Not applicable. The port is managed by the DB cluster. For more information, see \code{\link[=neptune_create_db_cluster]{create_db_cluster}}.
 
 Default: \code{8182}
 
 Type: Integer}
 
-\item{MultiAZ}{Specifies if the DB instance is a Multi-AZ deployment. You can't set the
-AvailabilityZone parameter if the MultiAZ parameter is set to true.}
+\item{MultiAZ}{Specifies if the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone parameter if the MultiAZ parameter is set to true.}
 
-\item{EngineVersion}{The version number of the database engine to use. Currently, setting
-this parameter has no effect.}
+\item{EngineVersion}{The version number of the database engine to use. Currently, setting this parameter has no effect.}
 
-\item{AutoMinorVersionUpgrade}{Indicates that minor engine upgrades are applied automatically to the DB
-instance during the maintenance window.
+\item{AutoMinorVersionUpgrade}{Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance window.
 
 Default: \code{true}}
 
 \item{LicenseModel}{License model information for this DB instance.
 
-Valid values: \code{license-included} | \code{bring-your-own-license} |
-\code{general-public-license}}
+Valid values: \code{license-included} | \code{bring-your-own-license} | \code{general-public-license}}
 
-\item{Iops}{The amount of Provisioned IOPS (input/output operations per second) to
-be initially allocated for the DB instance.}
+\item{Iops}{The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance.}
 
 \item{OptionGroupName}{\emph{(Not supported by Neptune)}}
 
@@ -185,86 +161,55 @@ be initially allocated for the DB instance.}
 
 \item{PubliclyAccessible}{Indicates whether the DB instance is publicly accessible.
 
-When the DB instance is publicly accessible and you connect from outside
-of the DB instance's virtual private cloud (VPC), its Domain Name System
-(DNS) endpoint resolves to the public IP address. When you connect from
-within the same VPC as the DB instance, the endpoint resolves to the
-private IP address. Access to the DB instance is ultimately controlled
-by the security group it uses. That public access isn't permitted if the
-security group assigned to the DB cluster doesn't permit it.
+When the DB instance is publicly accessible and you connect from outside of the DB instance's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB instance, the endpoint resolves to the private IP address. Access to the DB instance is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.
 
-When the DB instance isn't publicly accessible, it is an internal DB
-instance with a DNS name that resolves to a private IP address.}
+When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.}
 
 \item{Tags}{The tags to assign to the new instance.}
 
 \item{DBClusterIdentifier}{[required] The identifier of the DB cluster that the instance will belong to.
 
-For information on creating a DB cluster, see
-\code{\link[=neptune_create_db_cluster]{create_db_cluster}}.
+For information on creating a DB cluster, see \code{\link[=neptune_create_db_cluster]{create_db_cluster}}.
 
 Type: String}
 
-\item{StorageType}{Not applicable. In Neptune the storage type is managed at the DB Cluster
-level.}
+\item{StorageType}{Not applicable. In Neptune the storage type is managed at the DB Cluster level.}
 
-\item{TdeCredentialArn}{The ARN from the key store with which to associate the instance for TDE
-encryption.}
+\item{TdeCredentialArn}{The ARN from the key store with which to associate the instance for TDE encryption.}
 
-\item{TdeCredentialPassword}{The password for the given ARN from the key store in order to access the
-device.}
+\item{TdeCredentialPassword}{The password for the given ARN from the key store in order to access the device.}
 
 \item{StorageEncrypted}{Specifies whether the DB instance is encrypted.
 
-Not applicable. The encryption for DB instances is managed by the DB
-cluster. For more information, see
-\code{\link[=neptune_create_db_cluster]{create_db_cluster}}.
+Not applicable. The encryption for DB instances is managed by the DB cluster. For more information, see \code{\link[=neptune_create_db_cluster]{create_db_cluster}}.
 
 Default: false}
 
 \item{KmsKeyId}{The Amazon KMS key identifier for an encrypted DB instance.
 
-The KMS key identifier is the Amazon Resource Name (ARN) for the KMS
-encryption key. If you are creating a DB instance with the same Amazon
-account that owns the KMS encryption key used to encrypt the new DB
-instance, then you can use the KMS key alias instead of the ARN for the
-KM encryption key.
+The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB instance with the same Amazon account that owns the KMS encryption key used to encrypt the new DB instance, then you can use the KMS key alias instead of the ARN for the KMS encryption key.
 
-Not applicable. The KMS key identifier is managed by the DB cluster. For
-more information, see \code{\link[=neptune_create_db_cluster]{create_db_cluster}}.
+Not applicable. The KMS key identifier is managed by the DB cluster. For more information, see \code{\link[=neptune_create_db_cluster]{create_db_cluster}}.
 
-If the \code{StorageEncrypted} parameter is true, and you do not specify a
-value for the \code{KmsKeyId} parameter, then Amazon Neptune will use your
-default encryption key. Amazon KMS creates the default encryption key
-for your Amazon account. Your Amazon account has a different default
-encryption key for each Amazon Region.}
+If the \code{StorageEncrypted} parameter is true, and you do not specify a value for the \code{KmsKeyId} parameter, then Amazon Neptune will use your default encryption key. Amazon KMS creates the default encryption key for your Amazon account. Your Amazon account has a different default encryption key for each Amazon Region.}
 
 \item{Domain}{Specify the Active Directory Domain to create the instance in.}
 
-\item{CopyTagsToSnapshot}{True to copy all tags from the DB instance to snapshots of the DB
-instance, and otherwise false. The default is false.}
+\item{CopyTagsToSnapshot}{True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The default is false.}
 
-\item{MonitoringInterval}{The interval, in seconds, between points when Enhanced Monitoring
-metrics are collected for the DB instance. To disable collecting
-Enhanced Monitoring metrics, specify 0. The default is 0.
+\item{MonitoringInterval}{The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.
 
-If \code{MonitoringRoleArn} is specified, then you must also set
-\code{MonitoringInterval} to a value other than 0.
+If \code{MonitoringRoleArn} is specified, then you must also set \code{MonitoringInterval} to a value other than 0.
 
 Valid Values: \verb{0, 1, 5, 10, 15, 30, 60}}
 
-\item{MonitoringRoleArn}{The ARN for the IAM role that permits Neptune to send enhanced
-monitoring metrics to Amazon CloudWatch Logs. For example,
-\code{arn:aws:iam:123456789012:role/emaccess}.
+\item{MonitoringRoleArn}{The ARN for the IAM role that permits Neptune to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, \code{arn:aws:iam:123456789012:role/emaccess}.
 
-If \code{MonitoringInterval} is set to a value other than 0, then you must
-supply a \code{MonitoringRoleArn} value.}
+If \code{MonitoringInterval} is set to a value other than 0, then you must supply a \code{MonitoringRoleArn} value.}
 
-\item{DomainIAMRoleName}{Specify the name of the IAM role to be used when making API calls to the
-Directory Service.}
+\item{DomainIAMRoleName}{Specify the name of the IAM role to be used when making API calls to the Directory Service.}
 
-\item{PromotionTier}{A value that specifies the order in which an Read Replica is promoted to
-the primary instance after a failure of the existing primary instance.
+\item{PromotionTier}{A value that specifies the order in which an Read Replica is promoted to the primary instance after a failure of the existing primary instance.
 
 Default: 1
 
@@ -278,15 +223,11 @@ Valid Values: 0 - 15}
 
 \item{PerformanceInsightsKMSKeyId}{\emph{(Not supported by Neptune)}}
 
-\item{EnableCloudwatchLogsExports}{The list of log types that need to be enabled for exporting to
-CloudWatch Logs.}
+\item{EnableCloudwatchLogsExports}{The list of log types that need to be enabled for exporting to CloudWatch Logs.}
 
-\item{DeletionProtection}{A value that indicates whether the DB instance has deletion protection
-enabled. The database can't be deleted when deletion protection is
-enabled. By default, deletion protection is disabled. See \href{https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html}{Deleting a DB Instance}.
+\item{DeletionProtection}{A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. See \href{https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html}{Deleting a DB Instance}.
 
-DB instances in a DB cluster can be deleted even when deletion
-protection is enabled in their parent DB cluster.}
+DB instances in a DB cluster can be deleted even when deletion protection is enabled in their parent DB cluster.}
 }
 \description{
 Creates a new DB instance.

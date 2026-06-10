@@ -14,29 +14,19 @@ Constraints:
 \item If supplied, must match the name of an existing \code{DBParameterGroup}.
 }}
 
-\item{Parameters}{[required] An array of parameter names, values, and the application methods for the
-parameter update. At least one parameter name, value, and application
-method must be supplied; later arguments are optional. A maximum of 20
-parameters can be modified in a single request.
+\item{Parameters}{[required] An array of parameter names, values, and the application methods for the parameter update. At least one parameter name, value, and application method must be supplied; later arguments are optional. A maximum of 20 parameters can be modified in a single request.
 
 Valid Values (for the application method): \code{immediate | pending-reboot}
 
-You can use the \code{immediate} value with dynamic parameters only. You can
-use the \code{pending-reboot} value for both dynamic and static parameters.
+You can use the \code{immediate} value with dynamic parameters only. You can use the \code{pending-reboot} value for both dynamic and static parameters.
 
-When the application method is \code{immediate}, changes to dynamic
-parameters are applied immediately to the DB instances associated with
-the parameter group.
+When the application method is \code{immediate}, changes to dynamic parameters are applied immediately to the DB instances associated with the parameter group.
 
-When the application method is \code{pending-reboot}, changes to dynamic and
-static parameters are applied after a reboot without failover to the DB
-instances associated with the parameter group.
+When the application method is \code{pending-reboot}, changes to dynamic and static parameters are applied after a reboot without failover to the DB instances associated with the parameter group.
 
-You can't use \code{pending-reboot} with dynamic parameters on RDS for SQL
-Server DB instances. Use \code{immediate}.
+You can't use \code{pending-reboot} with dynamic parameters on RDS for SQL Server DB instances. Use \code{immediate}.
 
-For more information on modifying DB parameters, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html}{Working with DB parameter groups}
-in the \emph{Amazon RDS User Guide}.}
+For more information on modifying DB parameters, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html}{Working with DB parameter groups} in the \emph{Amazon RDS User Guide}.}
 }
 \description{
 Modifies the parameters of a DB parameter group. To modify more than one parameter, submit a list of the following: \code{ParameterName}, \code{ParameterValue}, and \code{ApplyMethod}. A maximum of 20 parameters can be modified in a single request.

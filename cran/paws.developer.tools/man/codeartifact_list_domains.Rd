@@ -10,9 +10,7 @@ codeartifact_list_domains(maxResults = NULL, nextToken = NULL)
 \arguments{
 \item{maxResults}{The maximum number of results to return per page.}
 
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 }
 \description{
 Returns a list of \href{https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html}{DomainSummary} objects for all domains owned by the Amazon Web Services account that makes this call. Each returned \code{DomainSummary} object contains information about a domain.

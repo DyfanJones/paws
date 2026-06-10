@@ -12,13 +12,10 @@ NULL
 #' glue_batch_create_partition(CatalogId, DatabaseName, TableName,
 #'   PartitionInputList)
 #'
-#' @param CatalogId The ID of the catalog in which the partition is to be created.
-#' Currently, this should be the Amazon Web Services account ID.
-#' @param DatabaseName &#91;required&#93; The name of the metadata database in which the partition is to be
-#' created.
+#' @param CatalogId The ID of the catalog in which the partition is to be created. Currently, this should be the Amazon Web Services account ID.
+#' @param DatabaseName &#91;required&#93; The name of the metadata database in which the partition is to be created.
 #' @param TableName &#91;required&#93; The name of the metadata table in which the partition is to be created.
-#' @param PartitionInputList &#91;required&#93; A list of `PartitionInput` structures that define the partitions to be
-#' created.
+#' @param PartitionInputList &#91;required&#93; A list of `PartitionInput` structures that define the partitions to be created.
 #'
 #' @return
 #' A list with the following syntax:
@@ -155,8 +152,7 @@ glue_batch_create_partition <- function(CatalogId = NULL, DatabaseName, TableNam
 #' @usage
 #' glue_batch_delete_connection(CatalogId, ConnectionNameList)
 #'
-#' @param CatalogId The ID of the Data Catalog in which the connections reside. If none is
-#' provided, the Amazon Web Services account ID is used by default.
+#' @param CatalogId The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.
 #' @param ConnectionNameList &#91;required&#93; A list of names of the connections to delete.
 #'
 #' @return
@@ -218,12 +214,10 @@ glue_batch_delete_connection <- function(CatalogId = NULL, ConnectionNameList) {
 #' glue_batch_delete_partition(CatalogId, DatabaseName, TableName,
 #'   PartitionsToDelete)
 #'
-#' @param CatalogId The ID of the Data Catalog where the partition to be deleted resides. If
-#' none is provided, the Amazon Web Services account ID is used by default.
+#' @param CatalogId The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.
 #' @param DatabaseName &#91;required&#93; The name of the catalog database in which the table in question resides.
 #' @param TableName &#91;required&#93; The name of the table that contains the partitions to be deleted.
-#' @param PartitionsToDelete &#91;required&#93; A list of `PartitionInput` structures that define the partitions to be
-#' deleted.
+#' @param PartitionsToDelete &#91;required&#93; A list of `PartitionInput` structures that define the partitions to be deleted.
 #'
 #' @return
 #' A list with the following syntax:
@@ -288,27 +282,16 @@ glue_batch_delete_partition <- function(CatalogId = NULL, DatabaseName, TableNam
 #' @description
 #' Deletes multiple tables at once.
 #' 
-#' After completing this operation, you no longer have access to the table
-#' versions and partitions that belong to the deleted table. Glue deletes
-#' these "orphaned" resources asynchronously in a timely manner, at the
-#' discretion of the service.
+#' After completing this operation, you no longer have access to the table versions and partitions that belong to the deleted table. Glue deletes these "orphaned" resources asynchronously in a timely manner, at the discretion of the service.
 #' 
-#' To ensure the immediate deletion of all related resources, before
-#' calling [`batch_delete_table`][glue_batch_delete_table], use
-#' [`delete_table_version`][glue_delete_table_version] or
-#' [`batch_delete_table_version`][glue_batch_delete_table_version], and
-#' [`delete_partition`][glue_delete_partition] or
-#' [`batch_delete_partition`][glue_batch_delete_partition], to delete any
-#' resources that belong to the table.
+#' To ensure the immediate deletion of all related resources, before calling [`batch_delete_table`][glue_batch_delete_table], use [`delete_table_version`][glue_delete_table_version] or [`batch_delete_table_version`][glue_batch_delete_table_version], and [`delete_partition`][glue_delete_partition] or [`batch_delete_partition`][glue_batch_delete_partition], to delete any resources that belong to the table.
 #'
 #' @usage
 #' glue_batch_delete_table(CatalogId, DatabaseName, TablesToDelete,
 #'   TransactionId)
 #'
-#' @param CatalogId The ID of the Data Catalog where the table resides. If none is provided,
-#' the Amazon Web Services account ID is used by default.
-#' @param DatabaseName &#91;required&#93; The name of the catalog database in which the tables to delete reside.
-#' For Hive compatibility, this name is entirely lowercase.
+#' @param CatalogId The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.
+#' @param DatabaseName &#91;required&#93; The name of the catalog database in which the tables to delete reside. For Hive compatibility, this name is entirely lowercase.
 #' @param TablesToDelete &#91;required&#93; A list of the table to delete.
 #' @param TransactionId The transaction ID at which to delete the table contents.
 #'
@@ -373,14 +356,10 @@ glue_batch_delete_table <- function(CatalogId = NULL, DatabaseName, TablesToDele
 #' glue_batch_delete_table_version(CatalogId, DatabaseName, TableName,
 #'   VersionIds)
 #'
-#' @param CatalogId The ID of the Data Catalog where the tables reside. If none is provided,
-#' the Amazon Web Services account ID is used by default.
-#' @param DatabaseName &#91;required&#93; The database in the catalog in which the table resides. For Hive
-#' compatibility, this name is entirely lowercase.
-#' @param TableName &#91;required&#93; The name of the table. For Hive compatibility, this name is entirely
-#' lowercase.
-#' @param VersionIds &#91;required&#93; A list of the IDs of versions to be deleted. A `VersionId` is a string
-#' representation of an integer. Each version is incremented by 1.
+#' @param CatalogId The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.
+#' @param DatabaseName &#91;required&#93; The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.
+#' @param TableName &#91;required&#93; The name of the table. For Hive compatibility, this name is entirely lowercase.
+#' @param VersionIds &#91;required&#93; A list of the IDs of versions to be deleted. A `VersionId` is a string representation of an integer. Each version is incremented by 1.
 #'
 #' @return
 #' A list with the following syntax:
@@ -445,8 +424,7 @@ glue_batch_delete_table_version <- function(CatalogId = NULL, DatabaseName, Tabl
 #'
 #' @param Names &#91;required&#93; A list of blueprint names.
 #' @param IncludeBlueprint Specifies whether or not to include the blueprint in the response.
-#' @param IncludeParameterSpec Specifies whether or not to include the parameters, as a JSON string,
-#' for the blueprint in the response.
+#' @param IncludeParameterSpec Specifies whether or not to include the parameters, as a JSON string, for the blueprint in the response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -522,17 +500,12 @@ glue_batch_get_blueprints <- function(Names, IncludeBlueprint = NULL, IncludePar
 #' Returns a list of resource metadata for a given list of crawler names
 #'
 #' @description
-#' Returns a list of resource metadata for a given list of crawler names.
-#' After calling the [`list_crawlers`][glue_list_crawlers] operation, you
-#' can call this operation to access the data to which you have been
-#' granted permissions. This operation supports all IAM permissions,
-#' including permission conditions that uses tags.
+#' Returns a list of resource metadata for a given list of crawler names. After calling the [`list_crawlers`][glue_list_crawlers] operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.
 #'
 #' @usage
 #' glue_batch_get_crawlers(CrawlerNames)
 #'
-#' @param CrawlerNames &#91;required&#93; A list of crawler names, which might be the names returned from the
-#' [`list_crawlers`][glue_list_crawlers] operation.
+#' @param CrawlerNames &#91;required&#93; A list of crawler names, which might be the names returned from the [`list_crawlers`][glue_list_crawlers] operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -717,8 +690,7 @@ glue_batch_get_crawlers <- function(CrawlerNames) {
 #' names
 #'
 #' @description
-#' Retrieves the details for the custom patterns specified by a list of
-#' names.
+#' Retrieves the details for the custom patterns specified by a list of names.
 #'
 #' @usage
 #' glue_batch_get_custom_entity_types(Names)
@@ -927,18 +899,12 @@ glue_batch_get_data_quality_result <- function(ResultIds) {
 #' endpoint names
 #'
 #' @description
-#' Returns a list of resource metadata for a given list of development
-#' endpoint names. After calling the
-#' [`list_dev_endpoints`][glue_list_dev_endpoints] operation, you can call
-#' this operation to access the data to which you have been granted
-#' permissions. This operation supports all IAM permissions, including
-#' permission conditions that uses tags.
+#' Returns a list of resource metadata for a given list of development endpoint names. After calling the [`list_dev_endpoints`][glue_list_dev_endpoints] operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.
 #'
 #' @usage
 #' glue_batch_get_dev_endpoints(DevEndpointNames)
 #'
-#' @param DevEndpointNames &#91;required&#93; The list of `DevEndpoint` names, which might be the names returned from
-#' the `ListDevEndpoint` operation.
+#' @param DevEndpointNames &#91;required&#93; The list of `DevEndpoint` names, which might be the names returned from the `ListDevEndpoint` operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1025,17 +991,12 @@ glue_batch_get_dev_endpoints <- function(DevEndpointNames) {
 #' Returns a list of resource metadata for a given list of job names
 #'
 #' @description
-#' Returns a list of resource metadata for a given list of job names. After
-#' calling the [`list_jobs`][glue_list_jobs] operation, you can call this
-#' operation to access the data to which you have been granted permissions.
-#' This operation supports all IAM permissions, including permission
-#' conditions that uses tags.
+#' Returns a list of resource metadata for a given list of job names. After calling the [`list_jobs`][glue_list_jobs] operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.
 #'
 #' @usage
 #' glue_batch_get_jobs(JobNames)
 #'
-#' @param JobNames &#91;required&#93; A list of job names, which might be the names returned from the
-#' [`list_jobs`][glue_list_jobs] operation.
+#' @param JobNames &#91;required&#93; A list of job names, which might be the names returned from the [`list_jobs`][glue_list_jobs] operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2888,13 +2849,14 @@ glue_batch_get_jobs <- function(JobNames) {
 #'
 #' @usage
 #' glue_batch_get_partition(CatalogId, DatabaseName, TableName,
-#'   PartitionsToGet)
+#'   PartitionsToGet, AuditContext, QuerySessionContext)
 #'
-#' @param CatalogId The ID of the Data Catalog where the partitions in question reside. If
-#' none is supplied, the Amazon Web Services account ID is used by default.
+#' @param CatalogId The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.
 #' @param DatabaseName &#91;required&#93; The name of the catalog database where the partitions reside.
 #' @param TableName &#91;required&#93; The name of the partitions' table.
 #' @param PartitionsToGet &#91;required&#93; A list of partition values identifying the partitions to retrieve.
+#' @param AuditContext A structure containing the Lake Formation audit context.
+#' @param QuerySessionContext A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3004,6 +2966,24 @@ glue_batch_get_jobs <- function(JobNames) {
 #'         "string"
 #'       )
 #'     )
+#'   ),
+#'   AuditContext = list(
+#'     AdditionalAuditContext = "string",
+#'     RequestedColumns = list(
+#'       "string"
+#'     ),
+#'     AllColumnsRequested = TRUE|FALSE
+#'   ),
+#'   QuerySessionContext = list(
+#'     QueryId = "string",
+#'     QueryStartTime = as.POSIXct(
+#'       "2015-01-01"
+#'     ),
+#'     ClusterId = "string",
+#'     QueryAuthorizationId = "string",
+#'     AdditionalContext = list(
+#'       "string"
+#'     )
 #'   )
 #' )
 #' ```
@@ -3013,7 +2993,7 @@ glue_batch_get_jobs <- function(JobNames) {
 #' @rdname glue_batch_get_partition
 #'
 #' @aliases glue_batch_get_partition
-glue_batch_get_partition <- function(CatalogId = NULL, DatabaseName, TableName, PartitionsToGet) {
+glue_batch_get_partition <- function(CatalogId = NULL, DatabaseName, TableName, PartitionsToGet, AuditContext = NULL, QuerySessionContext = NULL) {
   op <- new_operation(
     name = "BatchGetPartition",
     http_method = "POST",
@@ -3022,7 +3002,7 @@ glue_batch_get_partition <- function(CatalogId = NULL, DatabaseName, TableName, 
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .glue$batch_get_partition_input(CatalogId = CatalogId, DatabaseName = DatabaseName, TableName = TableName, PartitionsToGet = PartitionsToGet)
+  input <- .glue$batch_get_partition_input(CatalogId = CatalogId, DatabaseName = DatabaseName, TableName = TableName, PartitionsToGet = PartitionsToGet, AuditContext = AuditContext, QuerySessionContext = QuerySessionContext)
   output <- .glue$batch_get_partition_output()
   config <- get_config()
   svc <- .glue$service(config, op)
@@ -3040,8 +3020,7 @@ glue_batch_get_partition <- function(CatalogId = NULL, DatabaseName, TableName, 
 #' @usage
 #' glue_batch_get_table_optimizer(Entries)
 #'
-#' @param Entries &#91;required&#93; A list of `BatchGetTableOptimizerEntry` objects specifying the table
-#' optimizers to retrieve.
+#' @param Entries &#91;required&#93; A list of `BatchGetTableOptimizerEntry` objects specifying the table optimizers to retrieve.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3187,17 +3166,12 @@ glue_batch_get_table_optimizer <- function(Entries) {
 #' Returns a list of resource metadata for a given list of trigger names
 #'
 #' @description
-#' Returns a list of resource metadata for a given list of trigger names.
-#' After calling the [`list_triggers`][glue_list_triggers] operation, you
-#' can call this operation to access the data to which you have been
-#' granted permissions. This operation supports all IAM permissions,
-#' including permission conditions that uses tags.
+#' Returns a list of resource metadata for a given list of trigger names. After calling the [`list_triggers`][glue_list_triggers] operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.
 #'
 #' @usage
 #' glue_batch_get_triggers(TriggerNames)
 #'
-#' @param TriggerNames &#91;required&#93; A list of trigger names, which may be the names returned from the
-#' [`list_triggers`][glue_list_triggers] operation.
+#' @param TriggerNames &#91;required&#93; A list of trigger names, which may be the names returned from the [`list_triggers`][glue_list_triggers] operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3286,19 +3260,13 @@ glue_batch_get_triggers <- function(TriggerNames) {
 #' Returns a list of resource metadata for a given list of workflow names
 #'
 #' @description
-#' Returns a list of resource metadata for a given list of workflow names.
-#' After calling the [`list_workflows`][glue_list_workflows] operation, you
-#' can call this operation to access the data to which you have been
-#' granted permissions. This operation supports all IAM permissions,
-#' including permission conditions that uses tags.
+#' Returns a list of resource metadata for a given list of workflow names. After calling the [`list_workflows`][glue_list_workflows] operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.
 #'
 #' @usage
 #' glue_batch_get_workflows(Names, IncludeGraph)
 #'
-#' @param Names &#91;required&#93; A list of workflow names, which may be the names returned from the
-#' [`list_workflows`][glue_list_workflows] operation.
-#' @param IncludeGraph Specifies whether to include a graph when returning the workflow
-#' resource metadata.
+#' @param Names &#91;required&#93; A list of workflow names, which may be the names returned from the [`list_workflows`][glue_list_workflows] operation.
+#' @param IncludeGraph Specifies whether to include a graph when returning the workflow resource metadata.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3643,19 +3611,13 @@ glue_batch_get_workflows <- function(Names, IncludeGraph = NULL) {
 #' Annotate datapoints over time for a specific data quality statistic
 #'
 #' @description
-#' Annotate datapoints over time for a specific data quality statistic. The
-#' API requires both profileID and statisticID as part of the
-#' InclusionAnnotation input. The API only works for a single statisticId
-#' across multiple profiles.
+#' Annotate datapoints over time for a specific data quality statistic. The API requires both profileID and statisticID as part of the InclusionAnnotation input. The API only works for a single statisticId across multiple profiles.
 #'
 #' @usage
 #' glue_batch_put_data_quality_statistic_annotation(InclusionAnnotations,
 #'   ClientToken)
 #'
-#' @param InclusionAnnotations &#91;required&#93; A list of `DatapointInclusionAnnotation`'s. The InclusionAnnotations
-#' must contain a profileId and statisticId. If there are multiple
-#' InclusionAnnotations, the list must refer to a single statisticId across
-#' multiple profileIds.
+#' @param InclusionAnnotations &#91;required&#93; A list of `DatapointInclusionAnnotation`'s. The InclusionAnnotations must contain a profileId and statisticId. If there are multiple InclusionAnnotations, the list must refer to a single statisticId across multiple profileIds.
 #' @param ClientToken Client Token.
 #'
 #' @return
@@ -3719,8 +3681,7 @@ glue_batch_put_data_quality_statistic_annotation <- function(InclusionAnnotation
 #' glue_batch_stop_job_run(JobName, JobRunIds)
 #'
 #' @param JobName &#91;required&#93; The name of the job definition for which to stop job runs.
-#' @param JobRunIds &#91;required&#93; A list of the `JobRunIds` that should be stopped for that job
-#' definition.
+#' @param JobRunIds &#91;required&#93; A list of the `JobRunIds` that should be stopped for that job definition.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3787,13 +3748,10 @@ glue_batch_stop_job_run <- function(JobName, JobRunIds) {
 #' @usage
 #' glue_batch_update_partition(CatalogId, DatabaseName, TableName, Entries)
 #'
-#' @param CatalogId The ID of the catalog in which the partition is to be updated.
-#' Currently, this should be the Amazon Web Services account ID.
-#' @param DatabaseName &#91;required&#93; The name of the metadata database in which the partition is to be
-#' updated.
+#' @param CatalogId The ID of the catalog in which the partition is to be updated. Currently, this should be the Amazon Web Services account ID.
+#' @param DatabaseName &#91;required&#93; The name of the metadata database in which the partition is to be updated.
 #' @param TableName &#91;required&#93; The name of the metadata table in which the partition is to be updated.
-#' @param Entries &#91;required&#93; A list of up to 100 `BatchUpdatePartitionRequestEntry` objects to
-#' update.
+#' @param Entries &#91;required&#93; A list of up to 100 `BatchUpdatePartitionRequestEntry` objects to update.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3931,8 +3889,7 @@ glue_batch_update_partition <- function(CatalogId = NULL, DatabaseName, TableNam
 #' rules
 #'
 #' @description
-#' Cancels the specified recommendation run that was being used to generate
-#' rules.
+#' Cancels the specified recommendation run that was being used to generate rules.
 #'
 #' @usage
 #' glue_cancel_data_quality_rule_recommendation_run(RunId)
@@ -4020,11 +3977,7 @@ glue_cancel_data_quality_ruleset_evaluation_run <- function(RunId) {
 #' Cancels (stops) a task run
 #'
 #' @description
-#' Cancels (stops) a task run. Machine learning task runs are asynchronous
-#' tasks that Glue runs on your behalf as part of various machine learning
-#' workflows. You can cancel a machine learning task run at any time by
-#' calling [`cancel_ml_task_run`][glue_cancel_ml_task_run] with a task
-#' run's parent transform's `TransformID` and the task run's `TaskRunId`.
+#' Cancels (stops) a task run. Machine learning task runs are asynchronous tasks that Glue runs on your behalf as part of various machine learning workflows. You can cancel a machine learning task run at any time by calling [`cancel_ml_task_run`][glue_cancel_ml_task_run] with a task run's parent transform's `TransformID` and the task run's `TaskRunId`.
 #'
 #' @usage
 #' glue_cancel_ml_task_run(TransformId, TaskRunId)
@@ -4125,16 +4078,12 @@ glue_cancel_statement <- function(SessionId, Id, RequestOrigin = NULL) {
 #' Validates the supplied schema
 #'
 #' @description
-#' Validates the supplied schema. This call has no side effects, it simply
-#' validates using the supplied schema using `DataFormat` as the format.
-#' Since it does not take a schema set name, no compatibility checks are
-#' performed.
+#' Validates the supplied schema. This call has no side effects, it simply validates using the supplied schema using `DataFormat` as the format. Since it does not take a schema set name, no compatibility checks are performed.
 #'
 #' @usage
 #' glue_check_schema_version_validity(DataFormat, SchemaDefinition)
 #'
-#' @param DataFormat &#91;required&#93; The data format of the schema definition. Currently `AVRO`, `JSON` and
-#' `PROTOBUF` are supported.
+#' @param DataFormat &#91;required&#93; The data format of the schema definition. Currently `AVRO`, `JSON` and `PROTOBUF` are supported.
 #' @param SchemaDefinition &#91;required&#93; The definition of the schema that has to be validated.
 #'
 #' @return
@@ -4245,10 +4194,7 @@ glue_create_blueprint <- function(Name, Description = NULL, BlueprintLocation, T
 #'
 #' @param Name &#91;required&#93; The name of the catalog to create.
 #' @param CatalogInput &#91;required&#93; A `CatalogInput` object that defines the metadata for the catalog.
-#' @param Tags A map array of key-value pairs, not more than 50 pairs. Each key is a
-#' UTF-8 string, not less than 1 or more than 128 bytes long. Each value is
-#' a UTF-8 string, not more than 256 bytes long. The tags you assign to the
-#' catalog.
+#' @param Tags A map array of key-value pairs, not more than 50 pairs. Each key is a UTF-8 string, not less than 1 or more than 128 bytes long. Each value is a UTF-8 string, not more than 256 bytes long. The tags you assign to the catalog.
 #'
 #' @return
 #' An empty list.
@@ -4313,7 +4259,8 @@ glue_create_blueprint <- function(Name, Description = NULL, BlueprintLocation, T
 #'         )
 #'       )
 #'     ),
-#'     AllowFullTableExternalDataAccess = "True"|"False"
+#'     AllowFullTableExternalDataAccess = "True"|"False",
+#'     OverwriteChildResourcePermissionsWithDefault = "Accept"|"Deny"
 #'   ),
 #'   Tags = list(
 #'     "string"
@@ -4348,9 +4295,7 @@ glue_create_catalog <- function(Name, CatalogInput, Tags = NULL) {
 #' Creates a classifier in the user's account
 #'
 #' @description
-#' Creates a classifier in the user's account. This can be a
-#' `GrokClassifier`, an `XMLClassifier`, a `JsonClassifier`, or a
-#' `CsvClassifier`, depending on which field of the request is present.
+#' Creates a classifier in the user's account. This can be a `GrokClassifier`, an `XMLClassifier`, a `JsonClassifier`, or a `CsvClassifier`, depending on which field of the request is present.
 #'
 #' @usage
 #' glue_create_classifier(GrokClassifier, XMLClassifier, JsonClassifier,
@@ -4442,8 +4387,7 @@ glue_create_classifier <- function(GrokClassifier = NULL, XMLClassifier = NULL, 
 #' @param ColumnNameList A list of column names for which to run statistics.
 #' @param SampleSize The percentage of data to sample.
 #' @param CatalogID The ID of the Data Catalog in which the database resides.
-#' @param SecurityConfiguration Name of the security configuration that is used to encrypt CloudWatch
-#' logs.
+#' @param SecurityConfiguration Name of the security configuration that is used to encrypt CloudWatch logs.
 #' @param Tags A map of tags.
 #'
 #' @return
@@ -4497,14 +4441,12 @@ glue_create_column_statistics_task_settings <- function(DatabaseName, TableName,
 #' @description
 #' Creates a connection definition in the Data Catalog.
 #' 
-#' Connections used for creating federated resources require the IAM
-#' `glue:PassConnection` permission.
+#' Connections used for creating federated resources require the IAM `glue:PassConnection` permission.
 #'
 #' @usage
 #' glue_create_connection(CatalogId, ConnectionInput, Tags)
 #'
-#' @param CatalogId The ID of the Data Catalog in which to create the connection. If none is
-#' provided, the Amazon Web Services account ID is used by default.
+#' @param CatalogId The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services account ID is used by default.
 #' @param ConnectionInput &#91;required&#93; A `ConnectionInput` object defining the connection to create.
 #' @param Tags The tags you assign to the connection.
 #'
@@ -4618,10 +4560,7 @@ glue_create_connection <- function(CatalogId = NULL, ConnectionInput, Tags = NUL
 #' optional schedule
 #'
 #' @description
-#' Creates a new crawler with specified targets, role, configuration, and
-#' optional schedule. At least one crawl target must be specified, in the
-#' `s3Targets` field, the `jdbcTargets` field, or the `DynamoDBTargets`
-#' field.
+#' Creates a new crawler with specified targets, role, configuration, and optional schedule. At least one crawl target must be specified, in the `s3Targets` field, the `jdbcTargets` field, or the `DynamoDBTargets` field.
 #'
 #' @usage
 #' glue_create_crawler(Name, Role, DatabaseName, Description, Targets,
@@ -4630,38 +4569,20 @@ glue_create_connection <- function(CatalogId = NULL, ConnectionInput, Tags = NUL
 #'   CrawlerSecurityConfiguration, Tags)
 #'
 #' @param Name &#91;required&#93; Name of the new crawler.
-#' @param Role &#91;required&#93; The IAM role or Amazon Resource Name (ARN) of an IAM role used by the
-#' new crawler to access customer resources.
-#' @param DatabaseName The Glue database where results are written, such as:
-#' `arn:aws:daylight:us-east-1::database/sometable/*`.
+#' @param Role &#91;required&#93; The IAM role or Amazon Resource Name (ARN) of an IAM role used by the new crawler to access customer resources.
+#' @param DatabaseName The Glue database where results are written, such as: `arn:aws:daylight:us-east-1::database/sometable/*`.
 #' @param Description A description of the new crawler.
 #' @param Targets &#91;required&#93; A list of collection of targets to crawl.
-#' @param Schedule A `cron` expression used to specify the schedule (see [Time-Based
-#' Schedules for Jobs and
-#' Crawlers](https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html).
-#' For example, to run something every day at 12:15 UTC, you would specify:
-#' `cron(15 12 * * ? *)`.
-#' @param Classifiers A list of custom classifiers that the user has registered. By default,
-#' all built-in classifiers are included in a crawl, but these custom
-#' classifiers always override the default classifiers for a given
-#' classification.
+#' @param Schedule A `cron` expression used to specify the schedule (see [Time-Based Schedules for Jobs and Crawlers](https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html). For example, to run something every day at 12:15 UTC, you would specify: `cron(15 12 * * ? *)`.
+#' @param Classifiers A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.
 #' @param TablePrefix The table prefix used for catalog tables that are created.
 #' @param SchemaChangePolicy The policy for the crawler's update and deletion behavior.
-#' @param RecrawlPolicy A policy that specifies whether to crawl the entire dataset again, or to
-#' crawl only folders that were added since the last crawler run.
+#' @param RecrawlPolicy A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.
 #' @param LineageConfiguration Specifies data lineage configuration settings for the crawler.
 #' @param LakeFormationConfiguration Specifies Lake Formation configuration settings for the crawler.
-#' @param Configuration Crawler configuration information. This versioned JSON string allows
-#' users to specify aspects of a crawler's behavior. For more information,
-#' see [Setting crawler configuration
-#' options](https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html).
-#' @param CrawlerSecurityConfiguration The name of the `SecurityConfiguration` structure to be used by this
-#' crawler.
-#' @param Tags The tags to use with this crawler request. You may use tags to limit
-#' access to the crawler. For more information about tags in Glue, see
-#' [Amazon Web Services Tags in
-#' Glue](https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html) in
-#' the developer guide.
+#' @param Configuration Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see [Setting crawler configuration options](https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html).
+#' @param CrawlerSecurityConfiguration The name of the `SecurityConfiguration` structure to be used by this crawler.
+#' @param Tags The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information about tags in Glue, see [Amazon Web Services Tags in Glue](https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html) in the developer guide.
 #'
 #' @return
 #' An empty list.
@@ -4813,23 +4734,16 @@ glue_create_crawler <- function(Name, Role, DatabaseName = NULL, Description = N
 #' the columns and rows of your structured data
 #'
 #' @description
-#' Creates a custom pattern that is used to detect sensitive data across
-#' the columns and rows of your structured data.
+#' Creates a custom pattern that is used to detect sensitive data across the columns and rows of your structured data.
 #' 
-#' Each custom pattern you create specifies a regular expression and an
-#' optional list of context words. If no context words are passed only a
-#' regular expression is checked.
+#' Each custom pattern you create specifies a regular expression and an optional list of context words. If no context words are passed only a regular expression is checked.
 #'
 #' @usage
 #' glue_create_custom_entity_type(Name, RegexString, ContextWords, Tags)
 #'
-#' @param Name &#91;required&#93; A name for the custom pattern that allows it to be retrieved or deleted
-#' later. This name must be unique per Amazon Web Services account.
-#' @param RegexString &#91;required&#93; A regular expression string that is used for detecting sensitive data in
-#' a custom pattern.
-#' @param ContextWords A list of context words. If none of these context words are found within
-#' the vicinity of the regular expression the data will not be detected as
-#' sensitive data.
+#' @param Name &#91;required&#93; A name for the custom pattern that allows it to be retrieved or deleted later. This name must be unique per Amazon Web Services account.
+#' @param RegexString &#91;required&#93; A regular expression string that is used for detecting sensitive data in a custom pattern.
+#' @param ContextWords A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.
 #' 
 #' If no context words are passed only a regular expression is checked.
 #' @param Tags A list of tags applied to the custom entity type.
@@ -4884,11 +4798,9 @@ glue_create_custom_entity_type <- function(Name, RegexString, ContextWords = NUL
 #' Glue table
 #'
 #' @description
-#' Creates a data quality ruleset with DQDL rules applied to a specified
-#' Glue table.
+#' Creates a data quality ruleset with DQDL rules applied to a specified Glue table.
 #' 
-#' You create the ruleset using the Data Quality Definition Language
-#' (DQDL). For more information, see the Glue developer guide.
+#' You create the ruleset using the Data Quality Definition Language (DQDL). For more information, see the Glue developer guide.
 #'
 #' @usage
 #' glue_create_data_quality_ruleset(Name, Description, Ruleset, Tags,
@@ -4896,15 +4808,11 @@ glue_create_custom_entity_type <- function(Name, RegexString, ContextWords = NUL
 #'
 #' @param Name &#91;required&#93; A unique name for the data quality ruleset.
 #' @param Description A description of the data quality ruleset.
-#' @param Ruleset &#91;required&#93; A Data Quality Definition Language (DQDL) ruleset. For more information,
-#' see the Glue developer guide.
+#' @param Ruleset &#91;required&#93; A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.
 #' @param Tags A list of tags applied to the data quality ruleset.
 #' @param TargetTable A target table associated with the data quality ruleset.
-#' @param DataQualitySecurityConfiguration The name of the security configuration created with the data quality
-#' encryption option.
-#' @param ClientToken Used for idempotency and is recommended to be set to a random ID (such
-#' as a UUID) to avoid creating or starting multiple instances of the same
-#' resource.
+#' @param DataQualitySecurityConfiguration The name of the security configuration created with the data quality encryption option.
+#' @param ClientToken Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4965,8 +4873,7 @@ glue_create_data_quality_ruleset <- function(Name, Description = NULL, Ruleset, 
 #' @usage
 #' glue_create_database(CatalogId, DatabaseInput, Tags)
 #'
-#' @param CatalogId The ID of the Data Catalog in which to create the database. If none is
-#' provided, the Amazon Web Services account ID is used by default.
+#' @param CatalogId The ID of the Data Catalog in which to create the database. If none is provided, the Amazon Web Services account ID is used by default.
 #' @param DatabaseInput &#91;required&#93; The metadata for the database.
 #' @param Tags The tags you assign to the database.
 #'
@@ -5048,80 +4955,38 @@ glue_create_database <- function(CatalogId = NULL, DatabaseInput, Tags = NULL) {
 #'
 #' @param EndpointName &#91;required&#93; The name to be assigned to the new `DevEndpoint`.
 #' @param RoleArn &#91;required&#93; The IAM role for the `DevEndpoint`.
-#' @param SecurityGroupIds Security group IDs for the security groups to be used by the new
-#' `DevEndpoint`.
+#' @param SecurityGroupIds Security group IDs for the security groups to be used by the new `DevEndpoint`.
 #' @param SubnetId The subnet ID for the new `DevEndpoint` to use.
-#' @param PublicKey The public key to be used by this `DevEndpoint` for authentication. This
-#' attribute is provided for backward compatibility because the recommended
-#' attribute to use is public keys.
-#' @param PublicKeys A list of public keys to be used by the development endpoints for
-#' authentication. The use of this attribute is preferred over a single
-#' public key because the public keys allow you to have a different private
-#' key per client.
+#' @param PublicKey The public key to be used by this `DevEndpoint` for authentication. This attribute is provided for backward compatibility because the recommended attribute to use is public keys.
+#' @param PublicKeys A list of public keys to be used by the development endpoints for authentication. The use of this attribute is preferred over a single public key because the public keys allow you to have a different private key per client.
 #' 
-#' If you previously created an endpoint with a public key, you must remove
-#' that key to be able to set a list of public keys. Call the
-#' [`update_dev_endpoint`][glue_update_dev_endpoint] API with the public
-#' key content in the `deletePublicKeys` attribute, and the list of new
-#' keys in the `addPublicKeys` attribute.
-#' @param NumberOfNodes The number of Glue Data Processing Units (DPUs) to allocate to this
-#' `DevEndpoint`.
-#' @param WorkerType The type of predefined worker that is allocated to the development
-#' endpoint. Accepts a value of Standard, G.1X, or G.2X.
+#' If you previously created an endpoint with a public key, you must remove that key to be able to set a list of public keys. Call the [`update_dev_endpoint`][glue_update_dev_endpoint] API with the public key content in the `deletePublicKeys` attribute, and the list of new keys in the `addPublicKeys` attribute.
+#' @param NumberOfNodes The number of Glue Data Processing Units (DPUs) to allocate to this `DevEndpoint`.
+#' @param WorkerType The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard, G.1X, or G.2X.
 #' 
-#' -   For the `Standard` worker type, each worker provides 4 vCPU, 16 GB
-#'     of memory and a 50GB disk, and 2 executors per worker.
+#' -   For the `Standard` worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.
 #' 
-#' -   For the `G.1X` worker type, each worker maps to 1 DPU (4 vCPU, 16 GB
-#'     of memory, 64 GB disk), and provides 1 executor per worker. We
-#'     recommend this worker type for memory-intensive jobs.
+#' -   For the `G.1X` worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
 #' 
-#' -   For the `G.2X` worker type, each worker maps to 2 DPU (8 vCPU, 32 GB
-#'     of memory, 128 GB disk), and provides 1 executor per worker. We
-#'     recommend this worker type for memory-intensive jobs.
+#' -   For the `G.2X` worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
 #' 
-#' Known issue: when a development endpoint is created with the `G.2X`
-#' `WorkerType` configuration, the Spark drivers for the development
-#' endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk.
-#' @param GlueVersion Glue version determines the versions of Apache Spark and Python that
-#' Glue supports. The Python version indicates the version supported for
-#' running your ETL scripts on development endpoints.
+#' Known issue: when a development endpoint is created with the `G.2X` `WorkerType` configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk.
+#' @param GlueVersion Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints.
 #' 
-#' For more information about the available Glue versions and corresponding
-#' Spark and Python versions, see [Glue
-#' version](https://docs.aws.amazon.com/glue/latest/dg/add-job.html) in the
-#' developer guide.
+#' For more information about the available Glue versions and corresponding Spark and Python versions, see [Glue version](https://docs.aws.amazon.com/glue/latest/dg/add-job.html) in the developer guide.
 #' 
-#' Development endpoints that are created without specifying a Glue version
-#' default to Glue 0.9.
+#' Development endpoints that are created without specifying a Glue version default to Glue 0.9.
 #' 
-#' You can specify a version of Python support for development endpoints by
-#' using the `Arguments` parameter in the
-#' [`create_dev_endpoint`][glue_create_dev_endpoint] or
-#' [`update_dev_endpoint`][glue_update_dev_endpoint] APIs. If no arguments
-#' are provided, the version defaults to Python 2.
-#' @param NumberOfWorkers The number of workers of a defined `workerType` that are allocated to
-#' the development endpoint.
+#' You can specify a version of Python support for development endpoints by using the `Arguments` parameter in the [`create_dev_endpoint`][glue_create_dev_endpoint] or [`update_dev_endpoint`][glue_update_dev_endpoint] APIs. If no arguments are provided, the version defaults to Python 2.
+#' @param NumberOfWorkers The number of workers of a defined `workerType` that are allocated to the development endpoint.
 #' 
-#' The maximum number of workers you can define are 299 for `G.1X`, and 149
-#' for `G.2X`.
-#' @param ExtraPythonLibsS3Path The paths to one or more Python libraries in an Amazon S3 bucket that
-#' should be loaded in your `DevEndpoint`. Multiple values must be complete
-#' paths separated by a comma.
+#' The maximum number of workers you can define are 299 for `G.1X`, and 149 for `G.2X`.
+#' @param ExtraPythonLibsS3Path The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in your `DevEndpoint`. Multiple values must be complete paths separated by a comma.
 #' 
-#' You can only use pure Python libraries with a `DevEndpoint`. Libraries
-#' that rely on C extensions, such as the
-#' [pandas](http://pandas.pydata.org/) Python data analysis library, are
-#' not yet supported.
-#' @param ExtraJarsS3Path The path to one or more Java `.jar` files in an S3 bucket that should be
-#' loaded in your `DevEndpoint`.
-#' @param SecurityConfiguration The name of the `SecurityConfiguration` structure to be used with this
-#' `DevEndpoint`.
-#' @param Tags The tags to use with this DevEndpoint. You may use tags to limit access
-#' to the DevEndpoint. For more information about tags in Glue, see [Amazon
-#' Web Services Tags in
-#' Glue](https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html) in
-#' the developer guide.
+#' You can only use pure Python libraries with a `DevEndpoint`. Libraries that rely on C extensions, such as the [pandas](http://pandas.pydata.org/) Python data analysis library, are not yet supported.
+#' @param ExtraJarsS3Path The path to one or more Java `.jar` files in an S3 bucket that should be loaded in your `DevEndpoint`.
+#' @param SecurityConfiguration The name of the `SecurityConfiguration` structure to be used with this `DevEndpoint`.
+#' @param Tags The tags to use with this DevEndpoint. You may use tags to limit access to the DevEndpoint. For more information about tags in Glue, see [Amazon Web Services Tags in Glue](https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html) in the developer guide.
 #' @param Arguments A map of arguments used to configure the `DevEndpoint`.
 #'
 #' @return
@@ -5214,20 +5079,15 @@ glue_create_dev_endpoint <- function(EndpointName, RoleArn, SecurityGroupIds = N
 #' authentication and authorization
 #'
 #' @description
-#' Creates a new Glue Identity Center configuration to enable integration
-#' between Glue and Amazon Web Services IAM Identity Center for
-#' authentication and authorization.
+#' Creates a new Glue Identity Center configuration to enable integration between Glue and Amazon Web Services IAM Identity Center for authentication and authorization.
 #'
 #' @usage
 #' glue_create_glue_identity_center_configuration(InstanceArn, Scopes,
 #'   UserBackgroundSessionsEnabled)
 #'
-#' @param InstanceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Identity Center instance to be
-#' associated with the Glue configuration.
-#' @param Scopes A list of Identity Center scopes that define the permissions and access
-#' levels for the Glue configuration.
-#' @param UserBackgroundSessionsEnabled Specifies whether users can run background sessions when using Identity
-#' Center authentication with Glue services.
+#' @param InstanceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Identity Center instance to be associated with the Glue configuration.
+#' @param Scopes A list of Identity Center scopes that define the permissions and access levels for the Glue configuration.
+#' @param UserBackgroundSessionsEnabled Specifies whether users can run background sessions when using Identity Center authentication with Glue services.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5276,9 +5136,7 @@ glue_create_glue_identity_center_configuration <- function(InstanceArn, Scopes =
 #' resources with Amazon Resource Names (ARNs): the SourceArn and TargetArn
 #'
 #' @description
-#' Creates a Zero-ETL integration in the caller's account between two
-#' resources with Amazon Resource Names (ARNs): the `SourceArn` and
-#' `TargetArn`.
+#' Creates a Zero-ETL integration in the caller's account between two resources with Amazon Resource Names (ARNs): the `SourceArn` and `TargetArn`.
 #'
 #' @usage
 #' glue_create_integration(IntegrationName, SourceArn, TargetArn,
@@ -5291,11 +5149,8 @@ glue_create_glue_identity_center_configuration <- function(InstanceArn, Scopes =
 #' @param Description A description of the integration.
 #' @param DataFilter Selects source tables for the integration using Maxwell filter syntax.
 #' @param KmsKeyId The ARN of a KMS key used for encrypting the channel.
-#' @param AdditionalEncryptionContext An optional set of non-secret key–value pairs that contains additional
-#' contextual information for encryption. This can only be provided if
-#' `KMSKeyId` is provided.
-#' @param Tags Metadata assigned to the resource consisting of a list of key-value
-#' pairs.
+#' @param AdditionalEncryptionContext An optional set of non-secret key–value pairs that contains additional contextual information for encryption. This can only be provided if `KMSKeyId` is provided.
+#' @param Tags Metadata assigned to the resource consisting of a list of key-value pairs.
 #' @param IntegrationConfig The configuration settings.
 #'
 #' @return
@@ -5394,13 +5249,7 @@ glue_create_integration <- function(IntegrationName, SourceArn, TargetArn, Descr
 #' connection (for the source) or Glue database ARN (for the target)
 #'
 #' @description
-#' This API can be used for setting up the `ResourceProperty` of the Glue
-#' connection (for the source) or Glue database ARN (for the target). These
-#' properties can include the role to access the connection or database. To
-#' set both source and target properties the same API needs to be invoked
-#' with the Glue connection ARN as `ResourceArn` with
-#' `SourceProcessingProperties` and the Glue database ARN as `ResourceArn`
-#' with `TargetProcessingProperties` respectively.
+#' This API can be used for setting up the `ResourceProperty` of the Glue connection (for the source) or Glue database ARN (for the target). These properties can include the role to access the connection or database. To set both source and target properties the same API needs to be invoked with the Glue connection ARN as `ResourceArn` with `SourceProcessingProperties` and the Glue database ARN as `ResourceArn` with `TargetProcessingProperties` respectively.
 #'
 #' @usage
 #' glue_create_integration_resource_property(ResourceArn,
@@ -5409,8 +5258,7 @@ glue_create_integration <- function(IntegrationName, SourceArn, TargetArn, Descr
 #' @param ResourceArn &#91;required&#93; The connection ARN of the source, or the database ARN of the target.
 #' @param SourceProcessingProperties The resource properties associated with the integration source.
 #' @param TargetProcessingProperties The resource properties associated with the integration target.
-#' @param Tags Metadata assigned to the resource consisting of a list of key-value
-#' pairs.
+#' @param Tags Metadata assigned to the resource consisting of a list of key-value pairs.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5480,29 +5328,15 @@ glue_create_integration_resource_property <- function(ResourceArn, SourceProcess
 #' tables that need to be replicated
 #'
 #' @description
-#' This API is used to provide optional override properties for the the
-#' tables that need to be replicated. These properties can include
-#' properties for filtering and partitioning for the source and target
-#' tables. To set both source and target properties the same API need to be
-#' invoked with the Glue connection ARN as `ResourceArn` with
-#' `SourceTableConfig`, and the Glue database ARN as `ResourceArn` with
-#' `TargetTableConfig` respectively.
+#' This API is used to provide optional override properties for the the tables that need to be replicated. These properties can include properties for filtering and partitioning for the source and target tables. To set both source and target properties the same API need to be invoked with the Glue connection ARN as `ResourceArn` with `SourceTableConfig`, and the Glue database ARN as `ResourceArn` with `TargetTableConfig` respectively.
 #'
 #' @usage
 #' glue_create_integration_table_properties(ResourceArn, TableName,
 #'   SourceTableConfig, TargetTableConfig)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the target table for which to create
-#' integration table properties. Currently, this API only supports creating
-#' integration table properties for target tables, and the provided ARN
-#' should be the ARN of the target table in the Glue Data Catalog. Support
-#' for creating integration table properties for source connections (using
-#' the connection ARN) is not yet implemented and will be added in a future
-#' release.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the target table for which to create integration table properties. Currently, this API only supports creating integration table properties for target tables, and the provided ARN should be the ARN of the target table in the Glue Data Catalog. Support for creating integration table properties for source connections (using the connection ARN) is not yet implemented and will be added in a future release.
 #' @param TableName &#91;required&#93; The name of the table to be replicated.
-#' @param SourceTableConfig A structure for the source table configuration. See the
-#' `SourceTableConfig` structure to see list of supported source
-#' properties.
+#' @param SourceTableConfig A structure for the source table configuration. See the `SourceTableConfig` structure to see list of supported source properties.
 #' @param TargetTableConfig A structure for the target table configuration.
 #'
 #' @return
@@ -5574,202 +5408,97 @@ glue_create_integration_table_properties <- function(ResourceArn, TableName, Sou
 #'   GlueVersion, NumberOfWorkers, WorkerType, CodeGenConfigurationNodes,
 #'   ExecutionClass, SourceControlDetails, MaintenanceWindow)
 #'
-#' @param Name &#91;required&#93; The name you assign to this job definition. It must be unique in your
-#' account.
+#' @param Name &#91;required&#93; The name you assign to this job definition. It must be unique in your account.
 #' @param JobMode A mode that describes how a job was created. Valid values are:
 #' 
 #' -   `SCRIPT` - The job was created using the Glue Studio script editor.
 #' 
 #' -   `VISUAL` - The job was created using the Glue Studio visual editor.
 #' 
-#' -   `NOTEBOOK` - The job was created using an interactive sessions
-#'     notebook.
+#' -   `NOTEBOOK` - The job was created using an interactive sessions notebook.
 #' 
-#' When the `JobMode` field is missing or null, `SCRIPT` is assigned as the
-#' default value.
-#' @param JobRunQueuingEnabled Specifies whether job run queuing is enabled for the job runs for this
-#' job.
+#' When the `JobMode` field is missing or null, `SCRIPT` is assigned as the default value.
+#' @param JobRunQueuingEnabled Specifies whether job run queuing is enabled for the job runs for this job.
 #' 
-#' A value of true means job run queuing is enabled for the job runs. If
-#' false or not populated, the job runs will not be considered for
-#' queueing.
+#' A value of true means job run queuing is enabled for the job runs. If false or not populated, the job runs will not be considered for queueing.
 #' 
-#' If this field does not match the value set in the job run, then the
-#' value from the job run field will be used.
+#' If this field does not match the value set in the job run, then the value from the job run field will be used.
 #' @param Description Description of the job being defined.
 #' @param LogUri This field is reserved for future use.
-#' @param Role &#91;required&#93; The name or Amazon Resource Name (ARN) of the IAM role associated with
-#' this job.
-#' @param ExecutionProperty An `ExecutionProperty` specifying the maximum number of concurrent runs
-#' allowed for this job.
+#' @param Role &#91;required&#93; The name or Amazon Resource Name (ARN) of the IAM role associated with this job.
+#' @param ExecutionProperty An `ExecutionProperty` specifying the maximum number of concurrent runs allowed for this job.
 #' @param Command &#91;required&#93; The `JobCommand` that runs this job.
-#' @param DefaultArguments The default arguments for every run of this job, specified as name-value
-#' pairs.
+#' @param DefaultArguments The default arguments for every run of this job, specified as name-value pairs.
 #' 
-#' You can specify arguments here that your own job-execution script
-#' consumes, as well as arguments that Glue itself consumes.
+#' You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.
 #' 
-#' Job arguments may be logged. Do not pass plaintext secrets as arguments.
-#' Retrieve secrets from a Glue Connection, Secrets Manager or other secret
-#' management mechanism if you intend to keep them within the Job.
+#' Job arguments may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Secrets Manager or other secret management mechanism if you intend to keep them within the Job.
 #' 
-#' For information about how to specify and consume your own Job arguments,
-#' see the [Calling Glue APIs in
-#' Python](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html)
-#' topic in the developer guide.
+#' For information about how to specify and consume your own Job arguments, see the [Calling Glue APIs in Python](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html) topic in the developer guide.
 #' 
-#' For information about the arguments you can provide to this field when
-#' configuring Spark jobs, see the [Special Parameters Used by
-#' Glue](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html)
-#' topic in the developer guide.
+#' For information about the arguments you can provide to this field when configuring Spark jobs, see the [Special Parameters Used by Glue](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html) topic in the developer guide.
 #' 
-#' For information about the arguments you can provide to this field when
-#' configuring Ray jobs, see [Using job parameters in Ray
-#' jobs](https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html)
-#' in the developer guide.
-#' @param NonOverridableArguments Arguments for this job that are not overridden when providing job
-#' arguments in a job run, specified as name-value pairs.
+#' For information about the arguments you can provide to this field when configuring Ray jobs, see [Using job parameters in Ray jobs](https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html) in the developer guide.
+#' @param NonOverridableArguments Arguments for this job that are not overridden when providing job arguments in a job run, specified as name-value pairs.
 #' @param Connections The connections used for this job.
 #' @param MaxRetries The maximum number of times to retry this job if it fails.
 #' @param AllocatedCapacity This parameter is deprecated. Use `MaxCapacity` instead.
 #' 
-#' The number of Glue data processing units (DPUs) to allocate to this Job.
-#' You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a
-#' relative measure of processing power that consists of 4 vCPUs of compute
-#' capacity and 16 GB of memory. For more information, see the [Glue
-#' pricing page](https://aws.amazon.com/glue/pricing/).
-#' @param Timeout The job timeout in minutes. This is the maximum time that a job run can
-#' consume resources before it is terminated and enters `TIMEOUT` status.
+#' The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the [Glue pricing page](https://aws.amazon.com/glue/pricing/).
+#' @param Timeout The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters `TIMEOUT` status.
 #' 
-#' Jobs must have timeout values less than 7 days or 10080 minutes.
-#' Otherwise, the jobs will throw an exception.
+#' Jobs must have timeout values less than 7 days or 10080 minutes. Otherwise, the jobs will throw an exception.
 #' 
-#' When the value is left blank, the timeout is defaulted to 2880 minutes.
+#' When the value is left blank, the timeout is defaulted to 2,880 minutes for Glue version 4.0 and earlier, or 480 minutes for Glue version 5.0 and later.
 #' 
-#' Any existing Glue jobs that had a timeout value greater than 7 days will
-#' be defaulted to 7 days. For instance if you have specified a timeout of
-#' 20 days for a batch job, it will be stopped on the 7th day.
+#' Any existing Glue jobs that had a timeout value greater than 7 days will be defaulted to 7 days. For instance if you have specified a timeout of 20 days for a batch job, it will be stopped on the 7th day.
 #' 
-#' For streaming jobs, if you have set up a maintenance window, it will be
-#' restarted during the maintenance window after 7 days.
-#' @param MaxCapacity For Glue version 1.0 or earlier jobs, using the standard worker type,
-#' the number of Glue data processing units (DPUs) that can be allocated
-#' when this job runs. A DPU is a relative measure of processing power that
-#' consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-#' information, see the [Glue pricing
-#' page](https://aws.amazon.com/glue/pricing/).
+#' For streaming jobs, if you have set up a maintenance window, it will be restarted during the maintenance window after 7 days.
+#' @param MaxCapacity For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the [Glue pricing page](https://aws.amazon.com/glue/pricing/).
 #' 
-#' For Glue version 2.0+ jobs, you cannot specify a `Maximum capacity`.
-#' Instead, you should specify a `Worker type` and the `Number of workers`.
+#' For Glue version 2.0+ jobs, you cannot specify a `Maximum capacity`. Instead, you should specify a `Worker type` and the `Number of workers`.
 #' 
 #' Do not set `MaxCapacity` if using `WorkerType` and `NumberOfWorkers`.
 #' 
-#' The value that can be allocated for `MaxCapacity` depends on whether you
-#' are running a Python shell job, an Apache Spark ETL job, or an Apache
-#' Spark streaming ETL job:
+#' The value that can be allocated for `MaxCapacity` depends on whether you are running a Python shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL job:
 #' 
-#' -   When you specify a Python shell job
-#'     (`JobCommand.Name`="pythonshell"), you can allocate either 0.0625 or
-#'     1 DPU. The default is 0.0625 DPU.
+#' -   When you specify a Python shell job (`JobCommand.Name`="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.
 #' 
-#' -   When you specify an Apache Spark ETL job
-#'     (`JobCommand.Name`="glueetl") or Apache Spark streaming ETL job
-#'     (`JobCommand.Name`="gluestreaming"), you can allocate from 2 to 100
-#'     DPUs. The default is 10 DPUs. This job type cannot have a fractional
-#'     DPU allocation.
-#' @param SecurityConfiguration The name of the `SecurityConfiguration` structure to be used with this
-#' job.
-#' @param Tags The tags to use with this job. You may use tags to limit access to the
-#' job. For more information about tags in Glue, see [Amazon Web Services
-#' Tags in
-#' Glue](https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html) in
-#' the developer guide.
+#' -   When you specify an Apache Spark ETL job (`JobCommand.Name`="glueetl") or Apache Spark streaming ETL job (`JobCommand.Name`="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
+#' @param SecurityConfiguration The name of the `SecurityConfiguration` structure to be used with this job.
+#' @param Tags The tags to use with this job. You may use tags to limit access to the job. For more information about tags in Glue, see [Amazon Web Services Tags in Glue](https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html) in the developer guide.
 #' @param NotificationProperty Specifies configuration properties of a job notification.
-#' @param GlueVersion In Spark jobs, `GlueVersion` determines the versions of Apache Spark and
-#' Python that Glue available in a job. The Python version indicates the
-#' version supported for jobs of type Spark.
+#' @param GlueVersion In Spark jobs, `GlueVersion` determines the versions of Apache Spark and Python that Glue available in a job. The Python version indicates the version supported for jobs of type Spark.
 #' 
-#' Ray jobs should set `GlueVersion` to `4.0` or greater. However, the
-#' versions of Ray, Python and additional libraries available in your Ray
-#' job are determined by the `Runtime` parameter of the Job command.
+#' Ray jobs should set `GlueVersion` to `4.0` or greater. However, the versions of Ray, Python and additional libraries available in your Ray job are determined by the `Runtime` parameter of the Job command.
 #' 
-#' For more information about the available Glue versions and corresponding
-#' Spark and Python versions, see [Glue
-#' version](https://docs.aws.amazon.com/glue/latest/dg/add-job.html) in the
-#' developer guide.
+#' For more information about the available Glue versions and corresponding Spark and Python versions, see [Glue version](https://docs.aws.amazon.com/glue/latest/dg/add-job.html) in the developer guide.
 #' 
-#' Jobs that are created without specifying a Glue version default to Glue
-#' 0.9.
-#' @param NumberOfWorkers The number of workers of a defined `workerType` that are allocated when
-#' a job runs.
-#' @param WorkerType The type of predefined worker that is allocated when a job runs. Accepts
-#' a value of G.1X, G.2X, G.4X, G.8X or G.025X for Spark jobs. Accepts the
-#' value Z.2X for Ray jobs.
+#' Jobs that are created without specifying a Glue version default to Glue 5.1.
+#' @param NumberOfWorkers The number of workers of a defined `workerType` that are allocated when a job runs.
+#' @param WorkerType The type of predefined worker that is allocated when a job runs. Accepts a value of G.1X, G.2X, G.4X, G.8X or G.025X for Spark jobs. Accepts the value Z.2X for Ray jobs.
 #' 
-#' -   For the `G.1X` worker type, each worker maps to 1 DPU (4 vCPUs, 16
-#'     GB of memory) with 94GB disk, and provides 1 executor per worker. We
-#'     recommend this worker type for workloads such as data transforms,
-#'     joins, and queries, to offers a scalable and cost effective way to
-#'     run most jobs.
+#' -   For the `G.1X` worker type, each worker maps to 1 DPU (4 vCPUs, 16 GB of memory) with 94GB disk, and provides 1 executor per worker. We recommend this worker type for workloads such as data transforms, joins, and queries, to offers a scalable and cost effective way to run most jobs.
 #' 
-#' -   For the `G.2X` worker type, each worker maps to 2 DPU (8 vCPUs, 32
-#'     GB of memory) with 138GB disk, and provides 1 executor per worker.
-#'     We recommend this worker type for workloads such as data transforms,
-#'     joins, and queries, to offers a scalable and cost effective way to
-#'     run most jobs.
+#' -   For the `G.2X` worker type, each worker maps to 2 DPU (8 vCPUs, 32 GB of memory) with 138GB disk, and provides 1 executor per worker. We recommend this worker type for workloads such as data transforms, joins, and queries, to offers a scalable and cost effective way to run most jobs.
 #' 
-#' -   For the `G.4X` worker type, each worker maps to 4 DPU (16 vCPUs, 64
-#'     GB of memory) with 256GB disk, and provides 1 executor per worker.
-#'     We recommend this worker type for jobs whose workloads contain your
-#'     most demanding transforms, aggregations, joins, and queries. This
-#'     worker type is available only for Glue version 3.0 or later Spark
-#'     ETL jobs in the following Amazon Web Services Regions: US East
-#'     (Ohio), US East (N. Virginia), US West (N. California), US West
-#'     (Oregon), Asia Pacific (Mumbai), Asia Pacific (Seoul), Asia Pacific
-#'     (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), Canada
-#'     (Central), Europe (Frankfurt), Europe (Ireland), Europe (London),
-#'     Europe (Spain), Europe (Stockholm), and South America (São Paulo).
+#' -   For the `G.4X` worker type, each worker maps to 4 DPU (16 vCPUs, 64 GB of memory) with 256GB disk, and provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your most demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue version 3.0 or later Spark ETL jobs in the following Amazon Web Services Regions: US East (Ohio), US East (N. Virginia), US West (N. California), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), Canada (Central), Europe (Frankfurt), Europe (Ireland), Europe (London), Europe (Spain), Europe (Stockholm), and South America (São Paulo).
 #' 
-#' -   For the `G.8X` worker type, each worker maps to 8 DPU (32 vCPUs, 128
-#'     GB of memory) with 512GB disk, and provides 1 executor per worker.
-#'     We recommend this worker type for jobs whose workloads contain your
-#'     most demanding transforms, aggregations, joins, and queries. This
-#'     worker type is available only for Glue version 3.0 or later Spark
-#'     ETL jobs, in the same Amazon Web Services Regions as supported for
-#'     the `G.4X` worker type.
+#' -   For the `G.8X` worker type, each worker maps to 8 DPU (32 vCPUs, 128 GB of memory) with 512GB disk, and provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your most demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue version 3.0 or later Spark ETL jobs, in the same Amazon Web Services Regions as supported for the `G.4X` worker type.
 #' 
-#' -   For the `G.025X` worker type, each worker maps to 0.25 DPU (2 vCPUs,
-#'     4 GB of memory) with 84GB disk, and provides 1 executor per worker.
-#'     We recommend this worker type for low volume streaming jobs. This
-#'     worker type is only available for Glue version 3.0 or later
-#'     streaming jobs.
+#' -   For the `G.025X` worker type, each worker maps to 0.25 DPU (2 vCPUs, 4 GB of memory) with 84GB disk, and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 or later streaming jobs.
 #' 
-#' -   For the `Z.2X` worker type, each worker maps to 2 M-DPU (8vCPUs, 64
-#'     GB of memory) with 128 GB disk, and provides up to 8 Ray workers
-#'     based on the autoscaler.
-#' @param CodeGenConfigurationNodes The representation of a directed acyclic graph on which both the Glue
-#' Studio visual component and Glue Studio code generation is based.
-#' @param ExecutionClass Indicates whether the job is run with a standard or flexible execution
-#' class. The standard execution-class is ideal for time-sensitive
-#' workloads that require fast job startup and dedicated resources.
+#' -   For the `Z.2X` worker type, each worker maps to 2 M-DPU (8vCPUs, 64 GB of memory) with 128 GB disk, and provides up to 8 Ray workers based on the autoscaler.
+#' @param CodeGenConfigurationNodes The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.
+#' @param ExecutionClass Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.
 #' 
-#' The flexible execution class is appropriate for time-insensitive jobs
-#' whose start and completion times may vary.
+#' The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary.
 #' 
-#' Only jobs with Glue version 3.0 and above and command type `glueetl`
-#' will be allowed to set `ExecutionClass` to `FLEX`. The flexible
-#' execution class is available for Spark jobs.
-#' @param SourceControlDetails The details for a source control configuration for a job, allowing
-#' synchronization of job artifacts to or from a remote repository.
-#' @param MaintenanceWindow This field specifies a day of the week and hour for a maintenance window
-#' for streaming jobs. Glue periodically performs maintenance activities.
-#' During these maintenance windows, Glue will need to restart your
-#' streaming jobs.
+#' Only jobs with Glue version 3.0 and above and command type `glueetl` will be allowed to set `ExecutionClass` to `FLEX`. The flexible execution class is available for Spark jobs.
+#' @param SourceControlDetails The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.
+#' @param MaintenanceWindow This field specifies a day of the week and hour for a maintenance window for streaming jobs. Glue periodically performs maintenance activities. During these maintenance windows, Glue will need to restart your streaming jobs.
 #' 
-#' Glue will restart the job within 3 hours of the specified maintenance
-#' window. For instance, if you set up the maintenance window for Monday at
-#' 10:00AM GMT, your jobs will be restarted between 10:00AM GMT to 1:00PM
-#' GMT.
+#' Glue will restart the job within 3 hours of the specified maintenance window. For instance, if you set up the maintenance window for Monday at 10:00AM GMT, your jobs will be restarted between 10:00AM GMT to 1:00PM GMT.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7605,20 +7334,11 @@ glue_create_job <- function(Name, JobMode = NULL, JobRunQueuingEnabled = NULL, D
 #' Creates an Glue machine learning transform
 #'
 #' @description
-#' Creates an Glue machine learning transform. This operation creates the
-#' transform and all the necessary parameters to train it.
+#' Creates an Glue machine learning transform. This operation creates the transform and all the necessary parameters to train it.
 #' 
-#' Call this operation as the first step in the process of using a machine
-#' learning transform (such as the `FindMatches` transform) for
-#' deduplicating data. You can provide an optional `Description`, in
-#' addition to the parameters that you want to use for your algorithm.
+#' Call this operation as the first step in the process of using a machine learning transform (such as the `FindMatches` transform) for deduplicating data. You can provide an optional `Description`, in addition to the parameters that you want to use for your algorithm.
 #' 
-#' You must also specify certain parameters for the tasks that Glue runs on
-#' your behalf as part of learning from your data and creating a
-#' high-quality machine learning transform. These parameters include
-#' `Role`, and optionally, `AllocatedCapacity`, `Timeout`, and
-#' `MaxRetries`. For more information, see
-#' [Jobs](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html).
+#' You must also specify certain parameters for the tasks that Glue runs on your behalf as part of learning from your data and creating a high-quality machine learning transform. These parameters include `Role`, and optionally, `AllocatedCapacity`, `Timeout`, and `MaxRetries`. For more information, see [Jobs](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html).
 #'
 #' @usage
 #' glue_create_ml_transform(Name, Description, InputRecordTables,
@@ -7626,99 +7346,54 @@ glue_create_job <- function(Name, JobMode = NULL, JobRunQueuingEnabled = NULL, D
 #'   Timeout, MaxRetries, Tags, TransformEncryption)
 #'
 #' @param Name &#91;required&#93; The unique name that you give the transform when you create it.
-#' @param Description A description of the machine learning transform that is being defined.
-#' The default is an empty string.
+#' @param Description A description of the machine learning transform that is being defined. The default is an empty string.
 #' @param InputRecordTables &#91;required&#93; A list of Glue table definitions used by the transform.
-#' @param Parameters &#91;required&#93; The algorithmic parameters that are specific to the transform type used.
-#' Conditionally dependent on the transform type.
-#' @param Role &#91;required&#93; The name or Amazon Resource Name (ARN) of the IAM role with the required
-#' permissions. The required permissions include both Glue service role
-#' permissions to Glue resources, and Amazon S3 permissions required by the
-#' transform.
+#' @param Parameters &#91;required&#93; The algorithmic parameters that are specific to the transform type used. Conditionally dependent on the transform type.
+#' @param Role &#91;required&#93; The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the transform.
 #' 
-#' -   This role needs Glue service role permissions to allow access to
-#'     resources in Glue. See [Attach a Policy to IAM Users That Access
-#'     Glue](https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html).
+#' -   This role needs Glue service role permissions to allow access to resources in Glue. See [Attach a Policy to IAM Users That Access Glue](https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html).
 #' 
-#' -   This role needs permission to your Amazon Simple Storage Service
-#'     (Amazon S3) sources, targets, temporary directory, scripts, and any
-#'     libraries used by the task run for this transform.
-#' @param GlueVersion This value determines which version of Glue this machine learning
-#' transform is compatible with. Glue 1.0 is recommended for most
-#' customers. If the value is not set, the Glue compatibility defaults to
-#' Glue 0.9. For more information, see [Glue
-#' Versions](https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions)
-#' in the developer guide.
-#' @param MaxCapacity The number of Glue data processing units (DPUs) that are allocated to
-#' task runs for this transform. You can allocate from 2 to 100 DPUs; the
-#' default is 10. A DPU is a relative measure of processing power that
-#' consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-#' information, see the [Glue pricing
-#' page](https://aws.amazon.com/glue/pricing/).
+#' -   This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.
+#' @param GlueVersion This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see [Glue Versions](https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions) in the developer guide.
+#' @param MaxCapacity The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the [Glue pricing page](https://aws.amazon.com/glue/pricing/).
 #' 
-#' `MaxCapacity` is a mutually exclusive option with `NumberOfWorkers` and
-#' `WorkerType`.
+#' `MaxCapacity` is a mutually exclusive option with `NumberOfWorkers` and `WorkerType`.
 #' 
-#' -   If either `NumberOfWorkers` or `WorkerType` is set, then
-#'     `MaxCapacity` cannot be set.
+#' -   If either `NumberOfWorkers` or `WorkerType` is set, then `MaxCapacity` cannot be set.
 #' 
-#' -   If `MaxCapacity` is set then neither `NumberOfWorkers` or
-#'     `WorkerType` can be set.
+#' -   If `MaxCapacity` is set then neither `NumberOfWorkers` or `WorkerType` can be set.
 #' 
-#' -   If `WorkerType` is set, then `NumberOfWorkers` is required (and vice
-#'     versa).
+#' -   If `WorkerType` is set, then `NumberOfWorkers` is required (and vice versa).
 #' 
 #' -   `MaxCapacity` and `NumberOfWorkers` must both be at least 1.
 #' 
-#' When the `WorkerType` field is set to a value other than `Standard`, the
-#' `MaxCapacity` field is set automatically and becomes read-only.
+#' When the `WorkerType` field is set to a value other than `Standard`, the `MaxCapacity` field is set automatically and becomes read-only.
 #' 
-#' When the `WorkerType` field is set to a value other than `Standard`, the
-#' `MaxCapacity` field is set automatically and becomes read-only.
-#' @param WorkerType The type of predefined worker that is allocated when this task runs.
-#' Accepts a value of Standard, G.1X, or G.2X.
+#' When the `WorkerType` field is set to a value other than `Standard`, the `MaxCapacity` field is set automatically and becomes read-only.
+#' @param WorkerType The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.
 #' 
-#' -   For the `Standard` worker type, each worker provides 4 vCPU, 16 GB
-#'     of memory and a 50GB disk, and 2 executors per worker.
+#' -   For the `Standard` worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.
 #' 
-#' -   For the `G.1X` worker type, each worker provides 4 vCPU, 16 GB of
-#'     memory and a 64GB disk, and 1 executor per worker.
+#' -   For the `G.1X` worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.
 #' 
-#' -   For the `G.2X` worker type, each worker provides 8 vCPU, 32 GB of
-#'     memory and a 128GB disk, and 1 executor per worker.
+#' -   For the `G.2X` worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.
 #' 
-#' `MaxCapacity` is a mutually exclusive option with `NumberOfWorkers` and
-#' `WorkerType`.
+#' `MaxCapacity` is a mutually exclusive option with `NumberOfWorkers` and `WorkerType`.
 #' 
-#' -   If either `NumberOfWorkers` or `WorkerType` is set, then
-#'     `MaxCapacity` cannot be set.
+#' -   If either `NumberOfWorkers` or `WorkerType` is set, then `MaxCapacity` cannot be set.
 #' 
-#' -   If `MaxCapacity` is set then neither `NumberOfWorkers` or
-#'     `WorkerType` can be set.
+#' -   If `MaxCapacity` is set then neither `NumberOfWorkers` or `WorkerType` can be set.
 #' 
-#' -   If `WorkerType` is set, then `NumberOfWorkers` is required (and vice
-#'     versa).
+#' -   If `WorkerType` is set, then `NumberOfWorkers` is required (and vice versa).
 #' 
 #' -   `MaxCapacity` and `NumberOfWorkers` must both be at least 1.
-#' @param NumberOfWorkers The number of workers of a defined `workerType` that are allocated when
-#' this task runs.
+#' @param NumberOfWorkers The number of workers of a defined `workerType` that are allocated when this task runs.
 #' 
-#' If `WorkerType` is set, then `NumberOfWorkers` is required (and vice
-#' versa).
-#' @param Timeout The timeout of the task run for this transform in minutes. This is the
-#' maximum time that a task run for this transform can consume resources
-#' before it is terminated and enters `TIMEOUT` status. The default is
-#' 2,880 minutes (48 hours).
-#' @param MaxRetries The maximum number of times to retry a task for this transform after a
-#' task run fails.
-#' @param Tags The tags to use with this machine learning transform. You may use tags
-#' to limit access to the machine learning transform. For more information
-#' about tags in Glue, see [Amazon Web Services Tags in
-#' Glue](https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html) in
-#' the developer guide.
-#' @param TransformEncryption The encryption-at-rest settings of the transform that apply to accessing
-#' user data. Machine learning transforms can access user data encrypted in
-#' Amazon S3 using KMS.
+#' If `WorkerType` is set, then `NumberOfWorkers` is required (and vice versa).
+#' @param Timeout The timeout of the task run for this transform in minutes. This is the maximum time that a task run for this transform can consume resources before it is terminated and enters `TIMEOUT` status. The default is 2,880 minutes (48 hours).
+#' @param MaxRetries The maximum number of times to retry a task for this transform after a task run fails.
+#' @param Tags The tags to use with this machine learning transform. You may use tags to limit access to the machine learning transform. For more information about tags in Glue, see [Amazon Web Services Tags in Glue](https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html) in the developer guide.
+#' @param TransformEncryption The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7806,10 +7481,8 @@ glue_create_ml_transform <- function(Name, Description = NULL, InputRecordTables
 #' glue_create_partition(CatalogId, DatabaseName, TableName,
 #'   PartitionInput)
 #'
-#' @param CatalogId The Amazon Web Services account ID of the catalog in which the partition
-#' is to be created.
-#' @param DatabaseName &#91;required&#93; The name of the metadata database in which the partition is to be
-#' created.
+#' @param CatalogId The Amazon Web Services account ID of the catalog in which the partition is to be created.
+#' @param DatabaseName &#91;required&#93; The name of the metadata database in which the partition is to be created.
 #' @param TableName &#91;required&#93; The name of the metadata table in which the partition is to be created.
 #' @param PartitionInput &#91;required&#93; A `PartitionInput` structure defining the partition to be created.
 #'
@@ -7933,12 +7606,9 @@ glue_create_partition <- function(CatalogId = NULL, DatabaseName, TableName, Par
 #'   PartitionIndex)
 #'
 #' @param CatalogId The catalog ID where the table resides.
-#' @param DatabaseName &#91;required&#93; Specifies the name of a database in which you want to create a partition
-#' index.
-#' @param TableName &#91;required&#93; Specifies the name of a table in which you want to create a partition
-#' index.
-#' @param PartitionIndex &#91;required&#93; Specifies a `PartitionIndex` structure to create a partition index in an
-#' existing table.
+#' @param DatabaseName &#91;required&#93; Specifies the name of a database in which you want to create a partition index.
+#' @param TableName &#91;required&#93; Specifies the name of a table in which you want to create a partition index.
+#' @param PartitionIndex &#91;required&#93; Specifies a `PartitionIndex` structure to create a partition index in an existing table.
 #'
 #' @return
 #' An empty list.
@@ -7985,19 +7655,14 @@ glue_create_partition_index <- function(CatalogId = NULL, DatabaseName, TableNam
 #' Creates a new registry which may be used to hold a collection of schemas
 #'
 #' @description
-#' Creates a new registry which may be used to hold a collection of
-#' schemas.
+#' Creates a new registry which may be used to hold a collection of schemas.
 #'
 #' @usage
 #' glue_create_registry(RegistryName, Description, Tags)
 #'
-#' @param RegistryName &#91;required&#93; Name of the registry to be created of max length of 255, and may only
-#' contain letters, numbers, hyphen, underscore, dollar sign, or hash mark.
-#' No whitespace.
-#' @param Description A description of the registry. If description is not provided, there
-#' will not be any default value for this.
-#' @param Tags Amazon Web Services tags that contain a key value pair and may be
-#' searched by console, command line, or API.
+#' @param RegistryName &#91;required&#93; Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.
+#' @param Description A description of the registry. If description is not provided, there will not be any default value for this.
+#' @param Tags Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8050,82 +7715,38 @@ glue_create_registry <- function(RegistryName, Description = NULL, Tags = NULL) 
 #' Creates a new schema set and registers the schema definition
 #'
 #' @description
-#' Creates a new schema set and registers the schema definition. Returns an
-#' error if the schema set already exists without actually registering the
-#' version.
+#' Creates a new schema set and registers the schema definition. Returns an error if the schema set already exists without actually registering the version.
 #' 
-#' When the schema set is created, a version checkpoint will be set to the
-#' first version. Compatibility mode "DISABLED" restricts any additional
-#' schema versions from being added after the first schema version. For all
-#' other compatibility modes, validation of compatibility settings will be
-#' applied only from the second version onwards when the
-#' [`register_schema_version`][glue_register_schema_version] API is used.
+#' When the schema set is created, a version checkpoint will be set to the first version. Compatibility mode "DISABLED" restricts any additional schema versions from being added after the first schema version. For all other compatibility modes, validation of compatibility settings will be applied only from the second version onwards when the [`register_schema_version`][glue_register_schema_version] API is used.
 #' 
-#' When this API is called without a `RegistryId`, this will create an
-#' entry for a "default-registry" in the registry database tables, if it is
-#' not already present.
+#' When this API is called without a `RegistryId`, this will create an entry for a "default-registry" in the registry database tables, if it is not already present.
 #'
 #' @usage
 #' glue_create_schema(RegistryId, SchemaName, DataFormat, Compatibility,
 #'   Description, Tags, SchemaDefinition)
 #'
-#' @param RegistryId This is a wrapper shape to contain the registry identity fields. If this
-#' is not provided, the default registry will be used. The ARN format for
-#' the same will be:
-#' `arn:aws:glue:us-east-2:<customer id>:registry/default-registry:random-5-letter-id`.
-#' @param SchemaName &#91;required&#93; Name of the schema to be created of max length of 255, and may only
-#' contain letters, numbers, hyphen, underscore, dollar sign, or hash mark.
-#' No whitespace.
-#' @param DataFormat &#91;required&#93; The data format of the schema definition. Currently `AVRO`, `JSON` and
-#' `PROTOBUF` are supported.
+#' @param RegistryId This is a wrapper shape to contain the registry identity fields. If this is not provided, the default registry will be used. The ARN format for the same will be: `arn:aws:glue:us-east-2:<customer id>:registry/default-registry:random-5-letter-id`.
+#' @param SchemaName &#91;required&#93; Name of the schema to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.
+#' @param DataFormat &#91;required&#93; The data format of the schema definition. Currently `AVRO`, `JSON` and `PROTOBUF` are supported.
 #' @param Compatibility The compatibility mode of the schema. The possible values are:
 #' 
-#' -   *NONE*: No compatibility mode applies. You can use this choice in
-#'     development scenarios or if you do not know the compatibility mode
-#'     that you want to apply to schemas. Any new version added will be
-#'     accepted without undergoing a compatibility check.
+#' -   *NONE*: No compatibility mode applies. You can use this choice in development scenarios or if you do not know the compatibility mode that you want to apply to schemas. Any new version added will be accepted without undergoing a compatibility check.
 #' 
-#' -   *DISABLED*: This compatibility choice prevents versioning for a
-#'     particular schema. You can use this choice to prevent future
-#'     versioning of a schema.
+#' -   *DISABLED*: This compatibility choice prevents versioning for a particular schema. You can use this choice to prevent future versioning of a schema.
 #' 
-#' -   *BACKWARD*: This compatibility choice is recommended as it allows
-#'     data receivers to read both the current and one previous schema
-#'     version. This means that for instance, a new schema version cannot
-#'     drop data fields or change the type of these fields, so they can't
-#'     be read by readers using the previous version.
+#' -   *BACKWARD*: This compatibility choice is recommended as it allows data receivers to read both the current and one previous schema version. This means that for instance, a new schema version cannot drop data fields or change the type of these fields, so they can't be read by readers using the previous version.
 #' 
-#' -   *BACKWARD_ALL*: This compatibility choice allows data receivers to
-#'     read both the current and all previous schema versions. You can use
-#'     this choice when you need to delete fields or add optional fields,
-#'     and check compatibility against all previous schema versions.
+#' -   *BACKWARD_ALL*: This compatibility choice allows data receivers to read both the current and all previous schema versions. You can use this choice when you need to delete fields or add optional fields, and check compatibility against all previous schema versions.
 #' 
-#' -   *FORWARD*: This compatibility choice allows data receivers to read
-#'     both the current and one next schema version, but not necessarily
-#'     later versions. You can use this choice when you need to add fields
-#'     or delete optional fields, but only check compatibility against the
-#'     last schema version.
+#' -   *FORWARD*: This compatibility choice allows data receivers to read both the current and one next schema version, but not necessarily later versions. You can use this choice when you need to add fields or delete optional fields, but only check compatibility against the last schema version.
 #' 
-#' -   *FORWARD_ALL*: This compatibility choice allows data receivers to
-#'     read written by producers of any new registered schema. You can use
-#'     this choice when you need to add fields or delete optional fields,
-#'     and check compatibility against all previous schema versions.
+#' -   *FORWARD_ALL*: This compatibility choice allows data receivers to read written by producers of any new registered schema. You can use this choice when you need to add fields or delete optional fields, and check compatibility against all previous schema versions.
 #' 
-#' -   *FULL*: This compatibility choice allows data receivers to read data
-#'     written by producers using the previous or next version of the
-#'     schema, but not necessarily earlier or later versions. You can use
-#'     this choice when you need to add or remove optional fields, but only
-#'     check compatibility against the last schema version.
+#' -   *FULL*: This compatibility choice allows data receivers to read data written by producers using the previous or next version of the schema, but not necessarily earlier or later versions. You can use this choice when you need to add or remove optional fields, but only check compatibility against the last schema version.
 #' 
-#' -   *FULL_ALL*: This compatibility choice allows data receivers to read
-#'     data written by producers using all previous schema versions. You
-#'     can use this choice when you need to add or remove optional fields,
-#'     and check compatibility against all previous schema versions.
-#' @param Description An optional description of the schema. If description is not provided,
-#' there will not be any automatic default value for this.
-#' @param Tags Amazon Web Services tags that contain a key value pair and may be
-#' searched by console, command line, or API. If specified, follows the
-#' Amazon Web Services tags-on-create pattern.
+#' -   *FULL_ALL*: This compatibility choice allows data receivers to read data written by producers using all previous schema versions. You can use this choice when you need to add or remove optional fields, and check compatibility against all previous schema versions.
+#' @param Description An optional description of the schema. If description is not provided, there will not be any automatic default value for this.
+#' @param Tags Amazon Web Services tags that contain a key value pair and may be searched by console, command line, or API. If specified, follows the Amazon Web Services tags-on-create pattern.
 #' @param SchemaDefinition The schema definition using the `DataFormat` setting for `SchemaName`.
 #'
 #' @return
@@ -8269,12 +7890,7 @@ glue_create_script <- function(DagNodes = NULL, DagEdges = NULL, Language = NULL
 #' Creates a new security configuration
 #'
 #' @description
-#' Creates a new security configuration. A security configuration is a set
-#' of security properties that can be used by Glue. You can use a security
-#' configuration to encrypt data at rest. For information about using
-#' security configurations in Glue, see [Encrypting Data Written by
-#' Crawlers, Jobs, and Development
-#' Endpoints](https://docs.aws.amazon.com/glue/latest/dg/encryption-security-configuration.html).
+#' Creates a new security configuration. A security configuration is a set of security properties that can be used by Glue. You can use a security configuration to encrypt data at rest. For information about using security configurations in Glue, see [Encrypting Data Written by Crawlers, Jobs, and Development Endpoints](https://docs.aws.amazon.com/glue/latest/dg/encryption-security-configuration.html).
 #'
 #' @usage
 #' glue_create_security_configuration(Name, EncryptionConfiguration)
@@ -8359,60 +7975,25 @@ glue_create_security_configuration <- function(Name, EncryptionConfiguration) {
 #' @param Description The description of the session.
 #' @param Role &#91;required&#93; The IAM Role ARN
 #' @param Command &#91;required&#93; The `SessionCommand` that runs the job.
-#' @param Timeout The number of minutes before session times out. Default for Spark ETL
-#' jobs is 48 hours (2880 minutes). Consult the documentation for other job
-#' types.
-#' @param IdleTimeout The number of minutes when idle before session times out. Default for
-#' Spark ETL jobs is value of Timeout. Consult the documentation for other
-#' job types.
+#' @param Timeout The number of minutes before session times out. Default for Spark ETL jobs is 48 hours (2880 minutes). Consult the documentation for other job types.
+#' @param IdleTimeout The number of minutes when idle before session times out. Default for Spark ETL jobs is value of Timeout. Consult the documentation for other job types.
 #' @param DefaultArguments A map array of key-value pairs. Max is 75 pairs.
 #' @param Connections The number of connections to use for the session.
-#' @param MaxCapacity The number of Glue data processing units (DPUs) that can be allocated
-#' when the job runs. A DPU is a relative measure of processing power that
-#' consists of 4 vCPUs of compute capacity and 16 GB memory.
+#' @param MaxCapacity The number of Glue data processing units (DPUs) that can be allocated when the job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB memory.
 #' @param NumberOfWorkers The number of workers of a defined `WorkerType` to use for the session.
-#' @param WorkerType The type of predefined worker that is allocated when a job runs. Accepts
-#' a value of G.1X, G.2X, G.4X, or G.8X for Spark jobs. Accepts the value
-#' Z.2X for Ray notebooks.
+#' @param WorkerType The type of predefined worker that is allocated when a job runs. Accepts a value of G.1X, G.2X, G.4X, or G.8X for Spark jobs. Accepts the value Z.2X for Ray notebooks.
 #' 
-#' -   For the `G.1X` worker type, each worker maps to 1 DPU (4 vCPUs, 16
-#'     GB of memory) with 94GB disk, and provides 1 executor per worker. We
-#'     recommend this worker type for workloads such as data transforms,
-#'     joins, and queries, to offers a scalable and cost effective way to
-#'     run most jobs.
+#' -   For the `G.1X` worker type, each worker maps to 1 DPU (4 vCPUs, 16 GB of memory) with 94GB disk, and provides 1 executor per worker. We recommend this worker type for workloads such as data transforms, joins, and queries, to offers a scalable and cost effective way to run most jobs.
 #' 
-#' -   For the `G.2X` worker type, each worker maps to 2 DPU (8 vCPUs, 32
-#'     GB of memory) with 138GB disk, and provides 1 executor per worker.
-#'     We recommend this worker type for workloads such as data transforms,
-#'     joins, and queries, to offers a scalable and cost effective way to
-#'     run most jobs.
+#' -   For the `G.2X` worker type, each worker maps to 2 DPU (8 vCPUs, 32 GB of memory) with 138GB disk, and provides 1 executor per worker. We recommend this worker type for workloads such as data transforms, joins, and queries, to offers a scalable and cost effective way to run most jobs.
 #' 
-#' -   For the `G.4X` worker type, each worker maps to 4 DPU (16 vCPUs, 64
-#'     GB of memory) with 256GB disk, and provides 1 executor per worker.
-#'     We recommend this worker type for jobs whose workloads contain your
-#'     most demanding transforms, aggregations, joins, and queries. This
-#'     worker type is available only for Glue version 3.0 or later Spark
-#'     ETL jobs in the following Amazon Web Services Regions: US East
-#'     (Ohio), US East (N. Virginia), US West (Oregon), Asia Pacific
-#'     (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), Canada
-#'     (Central), Europe (Frankfurt), Europe (Ireland), and Europe
-#'     (Stockholm).
+#' -   For the `G.4X` worker type, each worker maps to 4 DPU (16 vCPUs, 64 GB of memory) with 256GB disk, and provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your most demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue version 3.0 or later Spark ETL jobs in the following Amazon Web Services Regions: US East (Ohio), US East (N. Virginia), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), Canada (Central), Europe (Frankfurt), Europe (Ireland), and Europe (Stockholm).
 #' 
-#' -   For the `G.8X` worker type, each worker maps to 8 DPU (32 vCPUs, 128
-#'     GB of memory) with 512GB disk, and provides 1 executor per worker.
-#'     We recommend this worker type for jobs whose workloads contain your
-#'     most demanding transforms, aggregations, joins, and queries. This
-#'     worker type is available only for Glue version 3.0 or later Spark
-#'     ETL jobs, in the same Amazon Web Services Regions as supported for
-#'     the `G.4X` worker type.
+#' -   For the `G.8X` worker type, each worker maps to 8 DPU (32 vCPUs, 128 GB of memory) with 512GB disk, and provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your most demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue version 3.0 or later Spark ETL jobs, in the same Amazon Web Services Regions as supported for the `G.4X` worker type.
 #' 
-#' -   For the `Z.2X` worker type, each worker maps to 2 M-DPU (8vCPUs, 64
-#'     GB of memory) with 128 GB disk, and provides up to 8 Ray workers
-#'     based on the autoscaler.
-#' @param SecurityConfiguration The name of the SecurityConfiguration structure to be used with the
-#' session
-#' @param GlueVersion The Glue version determines the versions of Apache Spark and Python that
-#' Glue supports. The GlueVersion must be greater than 2.0.
+#' -   For the `Z.2X` worker type, each worker maps to 2 M-DPU (8vCPUs, 64 GB of memory) with 128 GB disk, and provides up to 8 Ray workers based on the autoscaler.
+#' @param SecurityConfiguration The name of the SecurityConfiguration structure to be used with the session
+#' @param GlueVersion The Glue version determines the versions of Apache Spark and Python that Glue supports. The GlueVersion must be greater than 2.0.
 #' @param Tags The map of key value pairs (tags) belonging to the session.
 #' @param RequestOrigin The origin of the request.
 #'
@@ -8523,19 +8104,13 @@ glue_create_session <- function(Id, Description = NULL, Role, Command, Timeout =
 #' glue_create_table(CatalogId, DatabaseName, Name, TableInput,
 #'   PartitionIndexes, TransactionId, OpenTableFormatInput)
 #'
-#' @param CatalogId The ID of the Data Catalog in which to create the `Table`. If none is
-#' supplied, the Amazon Web Services account ID is used by default.
-#' @param DatabaseName &#91;required&#93; The catalog database in which to create the new table. For Hive
-#' compatibility, this name is entirely lowercase.
-#' @param Name The unique identifier for the table within the specified database that
-#' will be created in the Glue Data Catalog.
-#' @param TableInput The `TableInput` object that defines the metadata table to create in the
-#' catalog.
-#' @param PartitionIndexes A list of partition indexes, `PartitionIndex` structures, to create in
-#' the table.
+#' @param CatalogId The ID of the Data Catalog in which to create the `Table`. If none is supplied, the Amazon Web Services account ID is used by default.
+#' @param DatabaseName &#91;required&#93; The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase.
+#' @param Name The unique identifier for the table within the specified database that will be created in the Glue Data Catalog.
+#' @param TableInput The `TableInput` object that defines the metadata table to create in the catalog.
+#' @param PartitionIndexes A list of partition indexes, `PartitionIndex` structures, to create in the table.
 #' @param TransactionId The ID of the transaction.
-#' @param OpenTableFormatInput Specifies an `OpenTableFormatInput` structure when creating an open
-#' format table.
+#' @param OpenTableFormatInput Specifies an `OpenTableFormatInput` structure when creating an open format table.
 #'
 #' @return
 #' An empty list.
@@ -8764,8 +8339,7 @@ glue_create_table <- function(CatalogId = NULL, DatabaseName, Name = NULL, Table
 #' @param DatabaseName &#91;required&#93; The name of the database in the catalog in which the table resides.
 #' @param TableName &#91;required&#93; The name of the table.
 #' @param Type &#91;required&#93; The type of table optimizer.
-#' @param TableOptimizerConfiguration &#91;required&#93; A `TableOptimizerConfiguration` object representing the configuration of
-#' a table optimizer.
+#' @param TableOptimizerConfiguration &#91;required&#93; A `TableOptimizerConfiguration` object representing the configuration of a table optimizer.
 #'
 #' @return
 #' An empty list.
@@ -8838,10 +8412,7 @@ glue_create_table_optimizer <- function(CatalogId, DatabaseName, TableName, Type
 #' @description
 #' Creates a new trigger.
 #' 
-#' Job arguments may be logged. Do not pass plaintext secrets as arguments.
-#' Retrieve secrets from a Glue Connection, Amazon Web Services Secrets
-#' Manager or other secret management mechanism if you intend to keep them
-#' within the Job.
+#' Job arguments may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Amazon Web Services Secrets Manager or other secret management mechanism if you intend to keep them within the Job.
 #'
 #' @usage
 #' glue_create_trigger(Name, WorkflowName, Type, Schedule, Predicate,
@@ -8850,11 +8421,7 @@ glue_create_table_optimizer <- function(CatalogId, DatabaseName, TableName, Type
 #' @param Name &#91;required&#93; The name of the trigger.
 #' @param WorkflowName The name of the workflow associated with the trigger.
 #' @param Type &#91;required&#93; The type of the new trigger.
-#' @param Schedule A `cron` expression used to specify the schedule (see [Time-Based
-#' Schedules for Jobs and
-#' Crawlers](https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html).
-#' For example, to run something every day at 12:15 UTC, you would specify:
-#' `cron(15 12 * * ? *)`.
+#' @param Schedule A `cron` expression used to specify the schedule (see [Time-Based Schedules for Jobs and Crawlers](https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html). For example, to run something every day at 12:15 UTC, you would specify: `cron(15 12 * * ? *)`.
 #' 
 #' This field is required when the trigger type is SCHEDULED.
 #' @param Predicate A predicate to specify when the new trigger should fire.
@@ -8862,15 +8429,9 @@ glue_create_table_optimizer <- function(CatalogId, DatabaseName, TableName, Type
 #' This field is required when the trigger type is `CONDITIONAL`.
 #' @param Actions &#91;required&#93; The actions initiated by this trigger when it fires.
 #' @param Description A description of the new trigger.
-#' @param StartOnCreation Set to `true` to start `SCHEDULED` and `CONDITIONAL` triggers when
-#' created. True is not supported for `ON_DEMAND` triggers.
-#' @param Tags The tags to use with this trigger. You may use tags to limit access to
-#' the trigger. For more information about tags in Glue, see [Amazon Web
-#' Services Tags in
-#' Glue](https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html) in
-#' the developer guide.
-#' @param EventBatchingCondition Batch condition that must be met (specified number of events received or
-#' batch time window expired) before EventBridge event trigger fires.
+#' @param StartOnCreation Set to `true` to start `SCHEDULED` and `CONDITIONAL` triggers when created. True is not supported for `ON_DEMAND` triggers.
+#' @param Tags The tags to use with this trigger. You may use tags to limit access to the trigger. For more information about tags in Glue, see [Amazon Web Services Tags in Glue](https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html) in the developer guide.
+#' @param EventBatchingCondition Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8959,8 +8520,7 @@ glue_create_trigger <- function(Name, WorkflowName = NULL, Type, Schedule = NULL
 #'
 #' @param Name &#91;required&#93; The name of the usage profile.
 #' @param Description A description of the usage profile.
-#' @param Configuration &#91;required&#93; A `ProfileConfiguration` object specifying the job and session values
-#' for the profile.
+#' @param Configuration &#91;required&#93; A `ProfileConfiguration` object specifying the job and session values for the profile.
 #' @param Tags A list of tags applied to the usage profile.
 #'
 #' @return
@@ -9037,11 +8597,9 @@ glue_create_usage_profile <- function(Name, Description = NULL, Configuration, T
 #' glue_create_user_defined_function(CatalogId, DatabaseName,
 #'   FunctionInput)
 #'
-#' @param CatalogId The ID of the Data Catalog in which to create the function. If none is
-#' provided, the Amazon Web Services account ID is used by default.
+#' @param CatalogId The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services account ID is used by default.
 #' @param DatabaseName &#91;required&#93; The name of the catalog database in which to create the function.
-#' @param FunctionInput &#91;required&#93; A `FunctionInput` object that defines the function to create in the Data
-#' Catalog.
+#' @param FunctionInput &#91;required&#93; A `FunctionInput` object that defines the function to create in the Data Catalog.
 #'
 #' @return
 #' An empty list.
@@ -9100,22 +8658,13 @@ glue_create_user_defined_function <- function(CatalogId = NULL, DatabaseName, Fu
 #' glue_create_workflow(Name, Description, DefaultRunProperties, Tags,
 #'   MaxConcurrentRuns)
 #'
-#' @param Name &#91;required&#93; The name to be assigned to the workflow. It should be unique within your
-#' account.
+#' @param Name &#91;required&#93; The name to be assigned to the workflow. It should be unique within your account.
 #' @param Description A description of the workflow.
-#' @param DefaultRunProperties A collection of properties to be used as part of each execution of the
-#' workflow.
+#' @param DefaultRunProperties A collection of properties to be used as part of each execution of the workflow.
 #' 
-#' Run properties may be logged. Do not pass plaintext secrets as
-#' properties. Retrieve secrets from a Glue Connection, Amazon Web Services
-#' Secrets Manager or other secret management mechanism if you intend to
-#' use them within the workflow run.
+#' Run properties may be logged. Do not pass plaintext secrets as properties. Retrieve secrets from a Glue Connection, Amazon Web Services Secrets Manager or other secret management mechanism if you intend to use them within the workflow run.
 #' @param Tags The tags to be used with this workflow.
-#' @param MaxConcurrentRuns You can use this parameter to prevent unwanted multiple updates to data,
-#' to control costs, or in some cases, to prevent exceeding the maximum
-#' number of concurrent runs of any of the component jobs. If you leave
-#' this parameter blank, there is no limit to the number of concurrent
-#' workflow runs.
+#' @param MaxConcurrentRuns You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9218,23 +8767,9 @@ glue_delete_blueprint <- function(Name) {
 #' @description
 #' Removes the specified catalog from the Glue Data Catalog.
 #' 
-#' After completing this operation, you no longer have access to the
-#' databases, tables (and all table versions and partitions that might
-#' belong to the tables) and the user-defined functions in the deleted
-#' catalog. Glue deletes these "orphaned" resources asynchronously in a
-#' timely manner, at the discretion of the service.
+#' After completing this operation, you no longer have access to the databases, tables (and all table versions and partitions that might belong to the tables) and the user-defined functions in the deleted catalog. Glue deletes these "orphaned" resources asynchronously in a timely manner, at the discretion of the service.
 #' 
-#' To ensure the immediate deletion of all related resources before calling
-#' the [`delete_catalog`][glue_delete_catalog] operation, use
-#' [`delete_table_version`][glue_delete_table_version] (or
-#' [`batch_delete_table_version`][glue_batch_delete_table_version]),
-#' [`delete_partition`][glue_delete_partition] (or
-#' [`batch_delete_partition`][glue_batch_delete_partition]),
-#' [`delete_table`][glue_delete_table] (or
-#' [`batch_delete_table`][glue_batch_delete_table]),
-#' [`delete_user_defined_function`][glue_delete_user_defined_function] and
-#' [`delete_database`][glue_delete_database] to delete any resources that
-#' belong to the catalog.
+#' To ensure the immediate deletion of all related resources before calling the [`delete_catalog`][glue_delete_catalog] operation, use [`delete_table_version`][glue_delete_table_version] (or [`batch_delete_table_version`][glue_batch_delete_table_version]), [`delete_partition`][glue_delete_partition] (or [`batch_delete_partition`][glue_batch_delete_partition]), [`delete_table`][glue_delete_table] (or [`batch_delete_table`][glue_batch_delete_table]), [`delete_user_defined_function`][glue_delete_user_defined_function] and [`delete_database`][glue_delete_database] to delete any resources that belong to the catalog.
 #'
 #' @usage
 #' glue_delete_catalog(CatalogId)
@@ -9324,15 +8859,13 @@ glue_delete_classifier <- function(Name) {
 #' @description
 #' Delete the partition column statistics of a column.
 #' 
-#' The Identity and Access Management (IAM) permission required for this
-#' operation is [`delete_partition`][glue_delete_partition].
+#' The Identity and Access Management (IAM) permission required for this operation is [`delete_partition`][glue_delete_partition].
 #'
 #' @usage
 #' glue_delete_column_statistics_for_partition(CatalogId, DatabaseName,
 #'   TableName, PartitionValues, ColumnName)
 #'
-#' @param CatalogId The ID of the Data Catalog where the partitions in question reside. If
-#' none is supplied, the Amazon Web Services account ID is used by default.
+#' @param CatalogId The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.
 #' @param DatabaseName &#91;required&#93; The name of the catalog database where the partitions reside.
 #' @param TableName &#91;required&#93; The name of the partitions' table.
 #' @param PartitionValues &#91;required&#93; A list of partition values identifying the partition.
@@ -9383,15 +8916,13 @@ glue_delete_column_statistics_for_partition <- function(CatalogId = NULL, Databa
 #' @description
 #' Retrieves table statistics of columns.
 #' 
-#' The Identity and Access Management (IAM) permission required for this
-#' operation is [`delete_table`][glue_delete_table].
+#' The Identity and Access Management (IAM) permission required for this operation is [`delete_table`][glue_delete_table].
 #'
 #' @usage
 #' glue_delete_column_statistics_for_table(CatalogId, DatabaseName,
 #'   TableName, ColumnName)
 #'
-#' @param CatalogId The ID of the Data Catalog where the partitions in question reside. If
-#' none is supplied, the Amazon Web Services account ID is used by default.
+#' @param CatalogId The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.
 #' @param DatabaseName &#91;required&#93; The name of the catalog database where the partitions reside.
 #' @param TableName &#91;required&#93; The name of the partitions' table.
 #' @param ColumnName &#91;required&#93; The name of the column.
@@ -9487,8 +9018,7 @@ glue_delete_column_statistics_task_settings <- function(DatabaseName, TableName)
 #' @usage
 #' glue_delete_connection(CatalogId, ConnectionName)
 #'
-#' @param CatalogId The ID of the Data Catalog in which the connection resides. If none is
-#' provided, the Amazon Web Services account ID is used by default.
+#' @param CatalogId The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.
 #' @param ConnectionName &#91;required&#93; The name of the connection to delete.
 #'
 #' @return
@@ -9526,12 +9056,57 @@ glue_delete_connection <- function(CatalogId = NULL, ConnectionName) {
 }
 .glue$operations$delete_connection <- glue_delete_connection
 
+#' Deletes a custom connection type in Glue
+#'
+#' @description
+#' Deletes a custom connection type in Glue.
+#' 
+#' The connection type must exist and be registered before it can be deleted. This operation supports cleanup of connection type resources and helps maintain proper lifecycle management of custom connection types.
+#'
+#' @usage
+#' glue_delete_connection_type(ConnectionType)
+#'
+#' @param ConnectionType &#91;required&#93; The name of the connection type to delete. Must reference an existing registered connection type.
+#'
+#' @return
+#' An empty list.
+#'
+#' @section Request syntax:
+#' ```
+#' svc$delete_connection_type(
+#'   ConnectionType = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname glue_delete_connection_type
+#'
+#' @aliases glue_delete_connection_type
+glue_delete_connection_type <- function(ConnectionType) {
+  op <- new_operation(
+    name = "DeleteConnectionType",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .glue$delete_connection_type_input(ConnectionType = ConnectionType)
+  output <- .glue$delete_connection_type_output()
+  config <- get_config()
+  svc <- .glue$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.glue$operations$delete_connection_type <- glue_delete_connection_type
+
 #' Removes a specified crawler from the Glue Data Catalog, unless the
 #' crawler state is RUNNING
 #'
 #' @description
-#' Removes a specified crawler from the Glue Data Catalog, unless the
-#' crawler state is `RUNNING`.
+#' Removes a specified crawler from the Glue Data Catalog, unless the crawler state is `RUNNING`.
 #'
 #' @usage
 #' glue_delete_crawler(Name)
@@ -9670,30 +9245,15 @@ glue_delete_data_quality_ruleset <- function(Name) {
 #' @description
 #' Removes a specified database from a Data Catalog.
 #' 
-#' After completing this operation, you no longer have access to the tables
-#' (and all table versions and partitions that might belong to the tables)
-#' and the user-defined functions in the deleted database. Glue deletes
-#' these "orphaned" resources asynchronously in a timely manner, at the
-#' discretion of the service.
+#' After completing this operation, you no longer have access to the tables (and all table versions and partitions that might belong to the tables) and the user-defined functions in the deleted database. Glue deletes these "orphaned" resources asynchronously in a timely manner, at the discretion of the service.
 #' 
-#' To ensure the immediate deletion of all related resources, before
-#' calling [`delete_database`][glue_delete_database], use
-#' [`delete_table_version`][glue_delete_table_version] or
-#' [`batch_delete_table_version`][glue_batch_delete_table_version],
-#' [`delete_partition`][glue_delete_partition] or
-#' [`batch_delete_partition`][glue_batch_delete_partition],
-#' [`delete_user_defined_function`][glue_delete_user_defined_function], and
-#' [`delete_table`][glue_delete_table] or
-#' [`batch_delete_table`][glue_batch_delete_table], to delete any resources
-#' that belong to the database.
+#' To ensure the immediate deletion of all related resources, before calling [`delete_database`][glue_delete_database], use [`delete_table_version`][glue_delete_table_version] or [`batch_delete_table_version`][glue_batch_delete_table_version], [`delete_partition`][glue_delete_partition] or [`batch_delete_partition`][glue_batch_delete_partition], [`delete_user_defined_function`][glue_delete_user_defined_function], and [`delete_table`][glue_delete_table] or [`batch_delete_table`][glue_batch_delete_table], to delete any resources that belong to the database.
 #'
 #' @usage
 #' glue_delete_database(CatalogId, Name)
 #'
-#' @param CatalogId The ID of the Data Catalog in which the database resides. If none is
-#' provided, the Amazon Web Services account ID is used by default.
-#' @param Name &#91;required&#93; The name of the database to delete. For Hive compatibility, this must be
-#' all lowercase.
+#' @param CatalogId The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.
+#' @param Name &#91;required&#93; The name of the database to delete. For Hive compatibility, this must be all lowercase.
 #'
 #' @return
 #' An empty list.
@@ -9778,8 +9338,7 @@ glue_delete_dev_endpoint <- function(EndpointName) {
 #' integration between Glue and Amazon Web Services IAM Identity Center
 #'
 #' @description
-#' Deletes the existing Glue Identity Center configuration, removing the
-#' integration between Glue and Amazon Web Services IAM Identity Center.
+#' Deletes the existing Glue Identity Center configuration, removing the integration between Glue and Amazon Web Services IAM Identity Center.
 #'
 #' @usage
 #' glue_delete_glue_identity_center_configuration()
@@ -9896,8 +9455,7 @@ glue_delete_integration <- function(IntegrationIdentifier) {
 #' connection (for the source) or Glue database ARN (for the target)
 #'
 #' @description
-#' This API is used for deleting the `ResourceProperty` of the Glue
-#' connection (for the source) or Glue database ARN (for the target).
+#' This API is used for deleting the `ResourceProperty` of the Glue connection (for the source) or Glue database ARN (for the target).
 #'
 #' @usage
 #' glue_delete_integration_resource_property(ResourceArn)
@@ -9942,8 +9500,7 @@ glue_delete_integration_resource_property <- function(ResourceArn) {
 #' need to be replicated
 #'
 #' @description
-#' Deletes the table properties that have been created for the tables that
-#' need to be replicated.
+#' Deletes the table properties that have been created for the tables that need to be replicated.
 #'
 #' @usage
 #' glue_delete_integration_table_properties(ResourceArn, TableName)
@@ -9989,8 +9546,7 @@ glue_delete_integration_table_properties <- function(ResourceArn, TableName) {
 #' Deletes a specified job definition
 #'
 #' @description
-#' Deletes a specified job definition. If the job definition is not found,
-#' no exception is thrown.
+#' Deletes a specified job definition. If the job definition is not found, no exception is thrown.
 #'
 #' @usage
 #' glue_delete_job(JobName)
@@ -10039,13 +9595,7 @@ glue_delete_job <- function(JobName) {
 #' Deletes an Glue machine learning transform
 #'
 #' @description
-#' Deletes an Glue machine learning transform. Machine learning transforms
-#' are a special type of transform that use machine learning to learn the
-#' details of the transformation to be performed by learning from examples
-#' provided by humans. These transformations are then saved by Glue. If you
-#' no longer need a transform, you can delete it by calling
-#' `DeleteMLTransforms`. However, any Glue jobs that still reference the
-#' deleted transform will no longer succeed.
+#' Deletes an Glue machine learning transform. Machine learning transforms are a special type of transform that use machine learning to learn the details of the transformation to be performed by learning from examples provided by humans. These transformations are then saved by Glue. If you no longer need a transform, you can delete it by calling `DeleteMLTransforms`. However, any Glue jobs that still reference the deleted transform will no longer succeed.
 #'
 #' @usage
 #' glue_delete_ml_transform(TransformId)
@@ -10100,8 +9650,7 @@ glue_delete_ml_transform <- function(TransformId) {
 #' glue_delete_partition(CatalogId, DatabaseName, TableName,
 #'   PartitionValues)
 #'
-#' @param CatalogId The ID of the Data Catalog where the partition to be deleted resides. If
-#' none is provided, the Amazon Web Services account ID is used by default.
+#' @param CatalogId The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.
 #' @param DatabaseName &#91;required&#93; The name of the catalog database in which the table in question resides.
 #' @param TableName &#91;required&#93; The name of the table that contains the partition to be deleted.
 #' @param PartitionValues &#91;required&#93; The values that define the partition.
@@ -10155,10 +9704,8 @@ glue_delete_partition <- function(CatalogId = NULL, DatabaseName, TableName, Par
 #'   IndexName)
 #'
 #' @param CatalogId The catalog ID where the table resides.
-#' @param DatabaseName &#91;required&#93; Specifies the name of a database from which you want to delete a
-#' partition index.
-#' @param TableName &#91;required&#93; Specifies the name of a table from which you want to delete a partition
-#' index.
+#' @param DatabaseName &#91;required&#93; Specifies the name of a database from which you want to delete a partition index.
+#' @param TableName &#91;required&#93; Specifies the name of a table from which you want to delete a partition index.
 #' @param IndexName &#91;required&#93; The name of the partition index to be deleted.
 #'
 #' @return
@@ -10201,20 +9748,12 @@ glue_delete_partition_index <- function(CatalogId = NULL, DatabaseName, TableNam
 #' Delete the entire registry including schema and all of its versions
 #'
 #' @description
-#' Delete the entire registry including schema and all of its versions. To
-#' get the status of the delete operation, you can call the
-#' [`get_registry`][glue_get_registry] API after the asynchronous call.
-#' Deleting a registry will deactivate all online operations for the
-#' registry such as the [`update_registry`][glue_update_registry],
-#' [`create_schema`][glue_create_schema],
-#' [`update_schema`][glue_update_schema], and
-#' [`register_schema_version`][glue_register_schema_version] APIs.
+#' Delete the entire registry including schema and all of its versions. To get the status of the delete operation, you can call the [`get_registry`][glue_get_registry] API after the asynchronous call. Deleting a registry will deactivate all online operations for the registry such as the [`update_registry`][glue_update_registry], [`create_schema`][glue_create_schema], [`update_schema`][glue_update_schema], and [`register_schema_version`][glue_register_schema_version] APIs.
 #'
 #' @usage
 #' glue_delete_registry(RegistryId)
 #'
-#' @param RegistryId &#91;required&#93; This is a wrapper structure that may contain the registry name and
-#' Amazon Resource Name (ARN).
+#' @param RegistryId &#91;required&#93; This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).
 #'
 #' @return
 #' A list with the following syntax:
@@ -10310,19 +9849,12 @@ glue_delete_resource_policy <- function(PolicyHashCondition = NULL, ResourceArn 
 #' versions
 #'
 #' @description
-#' Deletes the entire schema set, including the schema set and all of its
-#' versions. To get the status of the delete operation, you can call
-#' [`get_schema`][glue_get_schema] API after the asynchronous call.
-#' Deleting a registry will deactivate all online operations for the
-#' schema, such as the
-#' [`get_schema_by_definition`][glue_get_schema_by_definition], and
-#' [`register_schema_version`][glue_register_schema_version] APIs.
+#' Deletes the entire schema set, including the schema set and all of its versions. To get the status of the delete operation, you can call [`get_schema`][glue_get_schema] API after the asynchronous call. Deleting a registry will deactivate all online operations for the schema, such as the [`get_schema_by_definition`][glue_get_schema_by_definition], and [`register_schema_version`][glue_register_schema_version] APIs.
 #'
 #' @usage
 #' glue_delete_schema(SchemaId)
 #'
-#' @param SchemaId &#91;required&#93; This is a wrapper structure that may contain the schema name and Amazon
-#' Resource Name (ARN).
+#' @param SchemaId &#91;required&#93; This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).
 #'
 #' @return
 #' A list with the following syntax:
@@ -10372,32 +9904,18 @@ glue_delete_schema <- function(SchemaId) {
 #' Remove versions from the specified schema
 #'
 #' @description
-#' Remove versions from the specified schema. A version number or range may
-#' be supplied. If the compatibility mode forbids deleting of a version
-#' that is necessary, such as BACKWARDS_FULL, an error is returned. Calling
-#' the `GetSchemaVersions` API after this call will list the status of the
-#' deleted versions.
+#' Remove versions from the specified schema. A version number or range may be supplied. If the compatibility mode forbids deleting of a version that is necessary, such as BACKWARDS_FULL, an error is returned. Calling the `GetSchemaVersions` API after this call will list the status of the deleted versions.
 #' 
-#' When the range of version numbers contain check pointed version, the API
-#' will return a 409 conflict and will not proceed with the deletion. You
-#' have to remove the checkpoint first using the `DeleteSchemaCheckpoint`
-#' API before using this API.
+#' When the range of version numbers contain check pointed version, the API will return a 409 conflict and will not proceed with the deletion. You have to remove the checkpoint first using the `DeleteSchemaCheckpoint` API before using this API.
 #' 
-#' You cannot use the
-#' [`delete_schema_versions`][glue_delete_schema_versions] API to delete
-#' the first schema version in the schema set. The first schema version can
-#' only be deleted by the [`delete_schema`][glue_delete_schema] API. This
-#' operation will also delete the attached `SchemaVersionMetadata` under
-#' the schema versions. Hard deletes will be enforced on the database.
+#' You cannot use the [`delete_schema_versions`][glue_delete_schema_versions] API to delete the first schema version in the schema set. The first schema version can only be deleted by the [`delete_schema`][glue_delete_schema] API. This operation will also delete the attached `SchemaVersionMetadata` under the schema versions. Hard deletes will be enforced on the database.
 #' 
-#' If the compatibility mode forbids deleting of a version that is
-#' necessary, such as BACKWARDS_FULL, an error is returned.
+#' If the compatibility mode forbids deleting of a version that is necessary, such as BACKWARDS_FULL, an error is returned.
 #'
 #' @usage
 #' glue_delete_schema_versions(SchemaId, Versions)
 #'
-#' @param SchemaId &#91;required&#93; This is a wrapper structure that may contain the schema name and Amazon
-#' Resource Name (ARN).
+#' @param SchemaId &#91;required&#93; This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).
 #' @param Versions &#91;required&#93; A version range may be supplied which may be of the format:
 #' 
 #' -   a single version number, 5
@@ -10556,28 +10074,16 @@ glue_delete_session <- function(Id, RequestOrigin = NULL) {
 #' @description
 #' Removes a table definition from the Data Catalog.
 #' 
-#' After completing this operation, you no longer have access to the table
-#' versions and partitions that belong to the deleted table. Glue deletes
-#' these "orphaned" resources asynchronously in a timely manner, at the
-#' discretion of the service.
+#' After completing this operation, you no longer have access to the table versions and partitions that belong to the deleted table. Glue deletes these "orphaned" resources asynchronously in a timely manner, at the discretion of the service.
 #' 
-#' To ensure the immediate deletion of all related resources, before
-#' calling [`delete_table`][glue_delete_table], use
-#' [`delete_table_version`][glue_delete_table_version] or
-#' [`batch_delete_table_version`][glue_batch_delete_table_version], and
-#' [`delete_partition`][glue_delete_partition] or
-#' [`batch_delete_partition`][glue_batch_delete_partition], to delete any
-#' resources that belong to the table.
+#' To ensure the immediate deletion of all related resources, before calling [`delete_table`][glue_delete_table], use [`delete_table_version`][glue_delete_table_version] or [`batch_delete_table_version`][glue_batch_delete_table_version], and [`delete_partition`][glue_delete_partition] or [`batch_delete_partition`][glue_batch_delete_partition], to delete any resources that belong to the table.
 #'
 #' @usage
 #' glue_delete_table(CatalogId, DatabaseName, Name, TransactionId)
 #'
-#' @param CatalogId The ID of the Data Catalog where the table resides. If none is provided,
-#' the Amazon Web Services account ID is used by default.
-#' @param DatabaseName &#91;required&#93; The name of the catalog database in which the table resides. For Hive
-#' compatibility, this name is entirely lowercase.
-#' @param Name &#91;required&#93; The name of the table to be deleted. For Hive compatibility, this name
-#' is entirely lowercase.
+#' @param CatalogId The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.
+#' @param DatabaseName &#91;required&#93; The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.
+#' @param Name &#91;required&#93; The name of the table to be deleted. For Hive compatibility, this name is entirely lowercase.
 #' @param TransactionId The transaction ID at which to delete the table contents.
 #'
 #' @return
@@ -10620,8 +10126,7 @@ glue_delete_table <- function(CatalogId = NULL, DatabaseName, Name, TransactionI
 #' Deletes an optimizer and all associated metadata for a table
 #'
 #' @description
-#' Deletes an optimizer and all associated metadata for a table. The
-#' optimization will no longer be performed on the table.
+#' Deletes an optimizer and all associated metadata for a table. The optimization will no longer be performed on the table.
 #'
 #' @usage
 #' glue_delete_table_optimizer(CatalogId, DatabaseName, TableName, Type)
@@ -10676,14 +10181,10 @@ glue_delete_table_optimizer <- function(CatalogId, DatabaseName, TableName, Type
 #' @usage
 #' glue_delete_table_version(CatalogId, DatabaseName, TableName, VersionId)
 #'
-#' @param CatalogId The ID of the Data Catalog where the tables reside. If none is provided,
-#' the Amazon Web Services account ID is used by default.
-#' @param DatabaseName &#91;required&#93; The database in the catalog in which the table resides. For Hive
-#' compatibility, this name is entirely lowercase.
-#' @param TableName &#91;required&#93; The name of the table. For Hive compatibility, this name is entirely
-#' lowercase.
-#' @param VersionId &#91;required&#93; The ID of the table version to be deleted. A `VersionID` is a string
-#' representation of an integer. Each version is incremented by 1.
+#' @param CatalogId The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.
+#' @param DatabaseName &#91;required&#93; The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.
+#' @param TableName &#91;required&#93; The name of the table. For Hive compatibility, this name is entirely lowercase.
+#' @param VersionId &#91;required&#93; The ID of the table version to be deleted. A `VersionID` is a string representation of an integer. Each version is incremented by 1.
 #'
 #' @return
 #' An empty list.
@@ -10725,8 +10226,7 @@ glue_delete_table_version <- function(CatalogId = NULL, DatabaseName, TableName,
 #' Deletes a specified trigger
 #'
 #' @description
-#' Deletes a specified trigger. If the trigger is not found, no exception
-#' is thrown.
+#' Deletes a specified trigger. If the trigger is not found, no exception is thrown.
 #'
 #' @usage
 #' glue_delete_trigger(Name)
@@ -10824,9 +10324,7 @@ glue_delete_usage_profile <- function(Name) {
 #' @usage
 #' glue_delete_user_defined_function(CatalogId, DatabaseName, FunctionName)
 #'
-#' @param CatalogId The ID of the Data Catalog where the function to be deleted is located.
-#' If none is supplied, the Amazon Web Services account ID is used by
-#' default.
+#' @param CatalogId The ID of the Data Catalog where the function to be deleted is located. If none is supplied, the Amazon Web Services account ID is used by default.
 #' @param DatabaseName &#91;required&#93; The name of the catalog database where the function is located.
 #' @param FunctionName &#91;required&#93; The name of the function definition to be deleted.
 #'
@@ -10919,9 +10417,9 @@ glue_delete_workflow <- function(Name) {
 #' options for a given connection type in Glue
 #'
 #' @description
-#' The [`describe_connection_type`][glue_describe_connection_type] API
-#' provides full details of the supported options for a given connection
-#' type in Glue.
+#' The [`describe_connection_type`][glue_describe_connection_type] API provides full details of the supported options for a given connection type in Glue. The response includes authentication configuration details that show supported authentication types and properties, and RestConfiguration for custom REST-based connection types registered via [`register_connection_type`][glue_register_connection_type].
+#' 
+#' See also: [`list_connection_types`][glue_list_connection_types], [`register_connection_type`][glue_register_connection_type], [`delete_connection_type`][glue_delete_connection_type]
 #'
 #' @usage
 #' glue_describe_connection_type(ConnectionType)
@@ -10962,7 +10460,9 @@ glue_delete_workflow <- function(Name) {
 #'       ),
 #'       DataOperationScopes = list(
 #'         "READ"|"WRITE"
-#'       )
+#'       ),
+#'       KeyOverride = "string",
+#'       PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH"
 #'     )
 #'   ),
 #'   ConnectionOptions = list(
@@ -10982,7 +10482,9 @@ glue_delete_workflow <- function(Name) {
 #'       ),
 #'       DataOperationScopes = list(
 #'         "READ"|"WRITE"
-#'       )
+#'       ),
+#'       KeyOverride = "string",
+#'       PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH"
 #'     )
 #'   ),
 #'   AuthenticationConfiguration = list(
@@ -11002,7 +10504,9 @@ glue_delete_workflow <- function(Name) {
 #'       ),
 #'       DataOperationScopes = list(
 #'         "READ"|"WRITE"
-#'       )
+#'       ),
+#'       KeyOverride = "string",
+#'       PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH"
 #'     ),
 #'     SecretArn = list(
 #'       Name = "string",
@@ -11020,7 +10524,9 @@ glue_delete_workflow <- function(Name) {
 #'       ),
 #'       DataOperationScopes = list(
 #'         "READ"|"WRITE"
-#'       )
+#'       ),
+#'       KeyOverride = "string",
+#'       PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH"
 #'     ),
 #'     OAuth2Properties = list(
 #'       list(
@@ -11039,7 +10545,9 @@ glue_delete_workflow <- function(Name) {
 #'         ),
 #'         DataOperationScopes = list(
 #'           "READ"|"WRITE"
-#'         )
+#'         ),
+#'         KeyOverride = "string",
+#'         PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH"
 #'       )
 #'     ),
 #'     BasicAuthenticationProperties = list(
@@ -11059,7 +10567,9 @@ glue_delete_workflow <- function(Name) {
 #'         ),
 #'         DataOperationScopes = list(
 #'           "READ"|"WRITE"
-#'         )
+#'         ),
+#'         KeyOverride = "string",
+#'         PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH"
 #'       )
 #'     ),
 #'     CustomAuthenticationProperties = list(
@@ -11079,7 +10589,9 @@ glue_delete_workflow <- function(Name) {
 #'         ),
 #'         DataOperationScopes = list(
 #'           "READ"|"WRITE"
-#'         )
+#'         ),
+#'         KeyOverride = "string",
+#'         PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH"
 #'       )
 #'     )
 #'   ),
@@ -11108,7 +10620,9 @@ glue_delete_workflow <- function(Name) {
 #'           ),
 #'           DataOperationScopes = list(
 #'             "READ"|"WRITE"
-#'           )
+#'           ),
+#'           KeyOverride = "string",
+#'           PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH"
 #'         )
 #'       ),
 #'       ConnectionPropertyNameOverrides = list(
@@ -11140,7 +10654,9 @@ glue_delete_workflow <- function(Name) {
 #'       ),
 #'       DataOperationScopes = list(
 #'         "READ"|"WRITE"
-#'       )
+#'       ),
+#'       KeyOverride = "string",
+#'       PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH"
 #'     )
 #'   ),
 #'   AthenaConnectionProperties = list(
@@ -11160,7 +10676,9 @@ glue_delete_workflow <- function(Name) {
 #'       ),
 #'       DataOperationScopes = list(
 #'         "READ"|"WRITE"
-#'       )
+#'       ),
+#'       KeyOverride = "string",
+#'       PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH"
 #'     )
 #'   ),
 #'   PythonConnectionProperties = list(
@@ -11180,7 +10698,9 @@ glue_delete_workflow <- function(Name) {
 #'       ),
 #'       DataOperationScopes = list(
 #'         "READ"|"WRITE"
-#'       )
+#'       ),
+#'       KeyOverride = "string",
+#'       PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH"
 #'     )
 #'   ),
 #'   SparkConnectionProperties = list(
@@ -11200,6 +10720,209 @@ glue_delete_workflow <- function(Name) {
 #'       ),
 #'       DataOperationScopes = list(
 #'         "READ"|"WRITE"
+#'       ),
+#'       KeyOverride = "string",
+#'       PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH"
+#'     )
+#'   ),
+#'   RestConfiguration = list(
+#'     GlobalSourceConfiguration = list(
+#'       RequestMethod = "GET"|"POST",
+#'       RequestPath = "string",
+#'       RequestParameters = list(
+#'         list(
+#'           Name = "string",
+#'           KeyOverride = "string",
+#'           Required = TRUE|FALSE,
+#'           DefaultValue = "string",
+#'           AllowedValues = list(
+#'             "string"
+#'           ),
+#'           PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'           PropertyType = "USER_INPUT"|"SECRET"|"READ_ONLY"|"UNUSED"|"SECRET_OR_USER_INPUT"
+#'         )
+#'       ),
+#'       ResponseConfiguration = list(
+#'         ResultPath = "string",
+#'         ErrorPath = "string"
+#'       ),
+#'       PaginationConfiguration = list(
+#'         CursorConfiguration = list(
+#'           NextPage = list(
+#'             Key = "string",
+#'             DefaultValue = "string",
+#'             PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'             Value = list(
+#'               ContentPath = "string",
+#'               HeaderKey = "string"
+#'             )
+#'           ),
+#'           LimitParameter = list(
+#'             Key = "string",
+#'             DefaultValue = "string",
+#'             PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'             Value = list(
+#'               ContentPath = "string",
+#'               HeaderKey = "string"
+#'             )
+#'           )
+#'         ),
+#'         OffsetConfiguration = list(
+#'           OffsetParameter = list(
+#'             Key = "string",
+#'             DefaultValue = "string",
+#'             PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'             Value = list(
+#'               ContentPath = "string",
+#'               HeaderKey = "string"
+#'             )
+#'           ),
+#'           LimitParameter = list(
+#'             Key = "string",
+#'             DefaultValue = "string",
+#'             PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'             Value = list(
+#'               ContentPath = "string",
+#'               HeaderKey = "string"
+#'             )
+#'           )
+#'         )
+#'       )
+#'     ),
+#'     ValidationEndpointConfiguration = list(
+#'       RequestMethod = "GET"|"POST",
+#'       RequestPath = "string",
+#'       RequestParameters = list(
+#'         list(
+#'           Name = "string",
+#'           KeyOverride = "string",
+#'           Required = TRUE|FALSE,
+#'           DefaultValue = "string",
+#'           AllowedValues = list(
+#'             "string"
+#'           ),
+#'           PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'           PropertyType = "USER_INPUT"|"SECRET"|"READ_ONLY"|"UNUSED"|"SECRET_OR_USER_INPUT"
+#'         )
+#'       ),
+#'       ResponseConfiguration = list(
+#'         ResultPath = "string",
+#'         ErrorPath = "string"
+#'       ),
+#'       PaginationConfiguration = list(
+#'         CursorConfiguration = list(
+#'           NextPage = list(
+#'             Key = "string",
+#'             DefaultValue = "string",
+#'             PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'             Value = list(
+#'               ContentPath = "string",
+#'               HeaderKey = "string"
+#'             )
+#'           ),
+#'           LimitParameter = list(
+#'             Key = "string",
+#'             DefaultValue = "string",
+#'             PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'             Value = list(
+#'               ContentPath = "string",
+#'               HeaderKey = "string"
+#'             )
+#'           )
+#'         ),
+#'         OffsetConfiguration = list(
+#'           OffsetParameter = list(
+#'             Key = "string",
+#'             DefaultValue = "string",
+#'             PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'             Value = list(
+#'               ContentPath = "string",
+#'               HeaderKey = "string"
+#'             )
+#'           ),
+#'           LimitParameter = list(
+#'             Key = "string",
+#'             DefaultValue = "string",
+#'             PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'             Value = list(
+#'               ContentPath = "string",
+#'               HeaderKey = "string"
+#'             )
+#'           )
+#'         )
+#'       )
+#'     ),
+#'     EntityConfigurations = list(
+#'       list(
+#'         SourceConfiguration = list(
+#'           RequestMethod = "GET"|"POST",
+#'           RequestPath = "string",
+#'           RequestParameters = list(
+#'             list(
+#'               Name = "string",
+#'               KeyOverride = "string",
+#'               Required = TRUE|FALSE,
+#'               DefaultValue = "string",
+#'               AllowedValues = list(
+#'                 "string"
+#'               ),
+#'               PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'               PropertyType = "USER_INPUT"|"SECRET"|"READ_ONLY"|"UNUSED"|"SECRET_OR_USER_INPUT"
+#'             )
+#'           ),
+#'           ResponseConfiguration = list(
+#'             ResultPath = "string",
+#'             ErrorPath = "string"
+#'           ),
+#'           PaginationConfiguration = list(
+#'             CursorConfiguration = list(
+#'               NextPage = list(
+#'                 Key = "string",
+#'                 DefaultValue = "string",
+#'                 PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'                 Value = list(
+#'                   ContentPath = "string",
+#'                   HeaderKey = "string"
+#'                 )
+#'               ),
+#'               LimitParameter = list(
+#'                 Key = "string",
+#'                 DefaultValue = "string",
+#'                 PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'                 Value = list(
+#'                   ContentPath = "string",
+#'                   HeaderKey = "string"
+#'                 )
+#'               )
+#'             ),
+#'             OffsetConfiguration = list(
+#'               OffsetParameter = list(
+#'                 Key = "string",
+#'                 DefaultValue = "string",
+#'                 PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'                 Value = list(
+#'                   ContentPath = "string",
+#'                   HeaderKey = "string"
+#'                 )
+#'               ),
+#'               LimitParameter = list(
+#'                 Key = "string",
+#'                 DefaultValue = "string",
+#'                 PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'                 Value = list(
+#'                   ContentPath = "string",
+#'                   HeaderKey = "string"
+#'                 )
+#'               )
+#'             )
+#'           )
+#'         ),
+#'         Schema = list(
+#'           list(
+#'             Name = "string",
+#'             FieldDataType = "INT"|"SMALLINT"|"BIGINT"|"FLOAT"|"LONG"|"DATE"|"BOOLEAN"|"MAP"|"ARRAY"|"STRING"|"TIMESTAMP"|"DECIMAL"|"BYTE"|"SHORT"|"DOUBLE"|"STRUCT"|"BINARY"|"UNION"
+#'           )
+#'         )
 #'       )
 #'     )
 #'   )
@@ -11242,9 +10965,7 @@ glue_describe_connection_type <- function(ConnectionType) {
 #' entity
 #'
 #' @description
-#' Provides details regarding the entity used with the connection type,
-#' with a description of the data model for each field in the selected
-#' entity.
+#' Provides details regarding the entity used with the connection type, with a description of the data model for each field in the selected entity.
 #' 
 #' The response includes all the fields which make up the entity.
 #'
@@ -11252,12 +10973,9 @@ glue_describe_connection_type <- function(ConnectionType) {
 #' glue_describe_entity(ConnectionName, CatalogId, EntityName, NextToken,
 #'   DataStoreApiVersion)
 #'
-#' @param ConnectionName &#91;required&#93; The name of the connection that contains the connection type
-#' credentials.
-#' @param CatalogId The catalog ID of the catalog that contains the connection. This can be
-#' null, By default, the Amazon Web Services Account ID is the catalog ID.
-#' @param EntityName &#91;required&#93; The name of the entity that you want to describe from the connection
-#' type.
+#' @param ConnectionName &#91;required&#93; The name of the connection that contains the connection type credentials.
+#' @param CatalogId The catalog ID of the catalog that contains the connection. This can be null, By default, the Amazon Web Services Account ID is the catalog ID.
+#' @param EntityName &#91;required&#93; The name of the entity that you want to describe from the connection type.
 #' @param NextToken A continuation token, included if this is a continuation call.
 #' @param DataStoreApiVersion The version of the API used for the data store.
 #'
@@ -11270,7 +10988,7 @@ glue_describe_connection_type <- function(ConnectionType) {
 #'       FieldName = "string",
 #'       Label = "string",
 #'       Description = "string",
-#'       FieldType = "INT"|"SMALLINT"|"BIGINT"|"FLOAT"|"LONG"|"DATE"|"BOOLEAN"|"MAP"|"ARRAY"|"STRING"|"TIMESTAMP"|"DECIMAL"|"BYTE"|"SHORT"|"DOUBLE"|"STRUCT",
+#'       FieldType = "INT"|"SMALLINT"|"BIGINT"|"FLOAT"|"LONG"|"DATE"|"BOOLEAN"|"MAP"|"ARRAY"|"STRING"|"TIMESTAMP"|"DECIMAL"|"BYTE"|"SHORT"|"DOUBLE"|"STRUCT"|"BINARY"|"UNION",
 #'       IsPrimaryKey = TRUE|FALSE,
 #'       IsNullable = TRUE|FALSE,
 #'       IsRetrievable = TRUE|FALSE,
@@ -11342,11 +11060,9 @@ glue_describe_entity <- function(ConnectionName, CatalogId = NULL, EntityName, N
 #'   TargetArn)
 #'
 #' @param IntegrationArn The Amazon Resource Name (ARN) of the integration.
-#' @param Marker A token to specify where to start paginating. This is the marker from a
-#' previously truncated response.
+#' @param Marker A token to specify where to start paginating. This is the marker from a previously truncated response.
 #' @param MaxRecords The total number of items to return in the output.
-#' @param TargetArn The Amazon Resource Name (ARN) of the target resource in the
-#' integration.
+#' @param TargetArn The Amazon Resource Name (ARN) of the target resource in the integration.
 #'
 #' @return
 #' A list with the following syntax:
@@ -11424,12 +11140,9 @@ glue_describe_inbound_integrations <- function(IntegrationArn = NULL, Marker = N
 #'   Filters)
 #'
 #' @param IntegrationIdentifier The Amazon Resource Name (ARN) for the integration.
-#' @param Marker A value that indicates the starting point for the next set of response
-#' records in a subsequent request.
+#' @param Marker A value that indicates the starting point for the next set of response records in a subsequent request.
 #' @param MaxRecords The total number of items to return in the output.
-#' @param Filters A list of key and values, to filter down the results. Supported keys are
-#' "Status", "IntegrationName", and "SourceArn". IntegrationName is limited
-#' to only one value.
+#' @param Filters A list of key and values, to filter down the results. Supported keys are "Status", "IntegrationName", and "SourceArn". IntegrationName is limited to only one value.
 #'
 #' @return
 #' A list with the following syntax:
@@ -11738,8 +11451,7 @@ glue_get_blueprint_runs <- function(BlueprintName, NextToken = NULL, MaxResults 
 #' @usage
 #' glue_get_catalog(CatalogId)
 #'
-#' @param CatalogId &#91;required&#93; The ID of the parent catalog in which the catalog resides. If none is
-#' provided, the Amazon Web Services Account Number is used by default.
+#' @param CatalogId &#91;required&#93; The ID of the parent catalog in which the catalog resides. If none is provided, the Amazon Web Services Account Number is used by default.
 #'
 #' @return
 #' A list with the following syntax:
@@ -11861,8 +11573,7 @@ glue_get_catalog <- function(CatalogId) {
 #' @usage
 #' glue_get_catalog_import_status(CatalogId)
 #'
-#' @param CatalogId The ID of the catalog to migrate. Currently, this should be the Amazon
-#' Web Services account ID.
+#' @param CatalogId The ID of the catalog to migrate. Currently, this should be the Amazon Web Services account ID.
 #'
 #' @return
 #' A list with the following syntax:
@@ -11912,30 +11623,20 @@ glue_get_catalog_import_status <- function(CatalogId = NULL) {
 #' Retrieves all catalogs defined in a catalog in the Glue Data Catalog
 #'
 #' @description
-#' Retrieves all catalogs defined in a catalog in the Glue Data Catalog.
-#' For a Redshift-federated catalog use case, this operation returns the
-#' list of catalogs mapped to Redshift databases in the Redshift namespace
-#' catalog.
+#' Retrieves all catalogs defined in a catalog in the Glue Data Catalog. For a Redshift-federated catalog use case, this operation returns the list of catalogs mapped to Redshift databases in the Redshift namespace catalog.
 #'
 #' @usage
 #' glue_get_catalogs(ParentCatalogId, NextToken, MaxResults, Recursive,
-#'   IncludeRoot)
+#'   IncludeRoot, HasDatabases)
 #'
-#' @param ParentCatalogId The ID of the parent catalog in which the catalog resides. If none is
-#' provided, the Amazon Web Services Account Number is used by default.
+#' @param ParentCatalogId The ID of the parent catalog in which the catalog resides. If none is provided, the Amazon Web Services Account Number is used by default.
 #' @param NextToken A continuation token, if this is a continuation call.
 #' @param MaxResults The maximum number of catalogs to return in one response.
-#' @param Recursive Whether to list all catalogs across the catalog hierarchy, starting from
-#' the `ParentCatalogId`. Defaults to `false` . When `true`, all catalog
-#' objects in the `ParentCatalogID` hierarchy are enumerated in the
-#' response.
-#' @param IncludeRoot Whether to list the default catalog in the account and region in the
-#' response. Defaults to `false`. When `true` and
-#' `ParentCatalogId = NULL | Amazon Web Services Account ID`, all catalogs
-#' and the default catalog are enumerated in the response.
+#' @param Recursive Whether to list all catalogs across the catalog hierarchy, starting from the `ParentCatalogId`. Defaults to `false` . When `true`, all catalog objects in the `ParentCatalogID` hierarchy are enumerated in the response.
+#' @param IncludeRoot Whether to list the default catalog in the account and region in the response. Defaults to `false`. When `true` and `ParentCatalogId = NULL | Amazon Web Services Account ID`, all catalogs and the default catalog are enumerated in the response.
 #' 
-#' When the `ParentCatalogId` is not equal to null, and this attribute is
-#' passed as `false` or `true`, an `InvalidInputException` is thrown.
+#' When the `ParentCatalogId` is not equal to null, and this attribute is passed as `false` or `true`, an `InvalidInputException` is thrown.
+#' @param HasDatabases When `true`, the response only includes catalogs that can contain databases. Some catalogs are organizational containers that hold only other catalogs, not databases. When this parameter is set to `true`, those container-only catalogs are excluded, and only catalogs capable of containing databases are returned. Defaults to `false`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -12028,7 +11729,8 @@ glue_get_catalog_import_status <- function(CatalogId = NULL) {
 #'   NextToken = "string",
 #'   MaxResults = 123,
 #'   Recursive = TRUE|FALSE,
-#'   IncludeRoot = TRUE|FALSE
+#'   IncludeRoot = TRUE|FALSE,
+#'   HasDatabases = TRUE|FALSE
 #' )
 #' ```
 #'
@@ -12037,7 +11739,7 @@ glue_get_catalog_import_status <- function(CatalogId = NULL) {
 #' @rdname glue_get_catalogs
 #'
 #' @aliases glue_get_catalogs
-glue_get_catalogs <- function(ParentCatalogId = NULL, NextToken = NULL, MaxResults = NULL, Recursive = NULL, IncludeRoot = NULL) {
+glue_get_catalogs <- function(ParentCatalogId = NULL, NextToken = NULL, MaxResults = NULL, Recursive = NULL, IncludeRoot = NULL, HasDatabases = NULL) {
   op <- new_operation(
     name = "GetCatalogs",
     http_method = "POST",
@@ -12046,7 +11748,7 @@ glue_get_catalogs <- function(ParentCatalogId = NULL, NextToken = NULL, MaxResul
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .glue$get_catalogs_input(ParentCatalogId = ParentCatalogId, NextToken = NextToken, MaxResults = MaxResults, Recursive = Recursive, IncludeRoot = IncludeRoot)
+  input <- .glue$get_catalogs_input(ParentCatalogId = ParentCatalogId, NextToken = NextToken, MaxResults = MaxResults, Recursive = Recursive, IncludeRoot = IncludeRoot, HasDatabases = HasDatabases)
   output <- .glue$get_catalogs_output()
   config <- get_config()
   svc <- .glue$service(config, op)
@@ -12284,15 +11986,13 @@ glue_get_classifiers <- function(MaxResults = NULL, NextToken = NULL) {
 #' @description
 #' Retrieves partition statistics of columns.
 #' 
-#' The Identity and Access Management (IAM) permission required for this
-#' operation is [`get_partition`][glue_get_partition].
+#' The Identity and Access Management (IAM) permission required for this operation is [`get_partition`][glue_get_partition].
 #'
 #' @usage
 #' glue_get_column_statistics_for_partition(CatalogId, DatabaseName,
 #'   TableName, PartitionValues, ColumnNames)
 #'
-#' @param CatalogId The ID of the Data Catalog where the partitions in question reside. If
-#' none is supplied, the Amazon Web Services account ID is used by default.
+#' @param CatalogId The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.
 #' @param DatabaseName &#91;required&#93; The name of the catalog database where the partitions reside.
 #' @param TableName &#91;required&#93; The name of the partitions' table.
 #' @param PartitionValues &#91;required&#93; A list of partition values identifying the partition.
@@ -12420,15 +12120,13 @@ glue_get_column_statistics_for_partition <- function(CatalogId = NULL, DatabaseN
 #' @description
 #' Retrieves table statistics of columns.
 #' 
-#' The Identity and Access Management (IAM) permission required for this
-#' operation is [`get_table`][glue_get_table].
+#' The Identity and Access Management (IAM) permission required for this operation is [`get_table`][glue_get_table].
 #'
 #' @usage
 #' glue_get_column_statistics_for_table(CatalogId, DatabaseName, TableName,
 #'   ColumnNames)
 #'
-#' @param CatalogId The ID of the Data Catalog where the partitions in question reside. If
-#' none is supplied, the Amazon Web Services account ID is used by default.
+#' @param CatalogId The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.
 #' @param DatabaseName &#91;required&#93; The name of the catalog database where the partitions reside.
 #' @param TableName &#91;required&#93; The name of the partitions' table.
 #' @param ColumnNames &#91;required&#93; A list of the column names.
@@ -12551,8 +12249,7 @@ glue_get_column_statistics_for_table <- function(CatalogId = NULL, DatabaseName,
 #' ID
 #'
 #' @description
-#' Get the associated metadata/information for a task run, given a task run
-#' ID.
+#' Get the associated metadata/information for a task run, given a task run ID.
 #'
 #' @usage
 #' glue_get_column_statistics_task_run(ColumnStatisticsTaskRunId)
@@ -12631,8 +12328,7 @@ glue_get_column_statistics_task_run <- function(ColumnStatisticsTaskRunId) {
 #' Retrieves information about all runs associated with the specified table
 #'
 #' @description
-#' Retrieves information about all runs associated with the specified
-#' table.
+#' Retrieves information about all runs associated with the specified table.
 #'
 #' @usage
 #' glue_get_column_statistics_task_runs(DatabaseName, TableName,
@@ -12802,17 +12498,10 @@ glue_get_column_statistics_task_settings <- function(DatabaseName, TableName) {
 #' glue_get_connection(CatalogId, Name, HidePassword,
 #'   ApplyOverrideForComputeEnvironment)
 #'
-#' @param CatalogId The ID of the Data Catalog in which the connection resides. If none is
-#' provided, the Amazon Web Services account ID is used by default.
+#' @param CatalogId The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.
 #' @param Name &#91;required&#93; The name of the connection definition to retrieve.
-#' @param HidePassword Allows you to retrieve the connection metadata without returning the
-#' password. For instance, the Glue console uses this flag to retrieve the
-#' connection, and does not display the password. Set this parameter when
-#' the caller might not have permission to use the KMS key to decrypt the
-#' password, but it does have permission to access the rest of the
-#' connection properties.
-#' @param ApplyOverrideForComputeEnvironment For connections that may be used in multiple services, specifies
-#' returning properties for the specified compute environment.
+#' @param HidePassword Allows you to retrieve the connection metadata without returning the password. For instance, the Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.
+#' @param ApplyOverrideForComputeEnvironment For connections that may be used in multiple services, specifies returning properties for the specified compute environment.
 #'
 #' @return
 #' A list with the following syntax:
@@ -12923,15 +12612,9 @@ glue_get_connection <- function(CatalogId = NULL, Name, HidePassword = NULL, App
 #' glue_get_connections(CatalogId, Filter, HidePassword, NextToken,
 #'   MaxResults)
 #'
-#' @param CatalogId The ID of the Data Catalog in which the connections reside. If none is
-#' provided, the Amazon Web Services account ID is used by default.
+#' @param CatalogId The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.
 #' @param Filter A filter that controls which connections are returned.
-#' @param HidePassword Allows you to retrieve the connection metadata without returning the
-#' password. For instance, the Glue console uses this flag to retrieve the
-#' connection, and does not display the password. Set this parameter when
-#' the caller might not have permission to use the KMS key to decrypt the
-#' password, but it does have permission to access the rest of the
-#' connection properties.
+#' @param HidePassword Allows you to retrieve the connection metadata without returning the password. For instance, the Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.
 #' @param NextToken A continuation token, if this is a continuation call.
 #' @param MaxResults The maximum number of connections to return in one response.
 #'
@@ -13542,9 +13225,7 @@ glue_get_custom_entity_type <- function(Name) {
 #' @usage
 #' glue_get_data_catalog_encryption_settings(CatalogId)
 #'
-#' @param CatalogId The ID of the Data Catalog to retrieve the security configuration for.
-#' If none is provided, the Amazon Web Services account ID is used by
-#' default.
+#' @param CatalogId The ID of the Data Catalog to retrieve the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.
 #'
 #' @return
 #' A list with the following syntax:
@@ -13599,8 +13280,7 @@ glue_get_data_catalog_encryption_settings <- function(CatalogId = NULL) {
 #' (CompletedOn, StartedOn, FailureReason)
 #'
 #' @description
-#' Retrieve the training status of the model along with more information
-#' (CompletedOn, StartedOn, FailureReason).
+#' Retrieve the training status of the model along with more information (CompletedOn, StartedOn, FailureReason).
 #'
 #' @usage
 #' glue_get_data_quality_model(StatisticId, ProfileId)
@@ -14013,8 +13693,7 @@ glue_get_data_quality_ruleset <- function(Name) {
 #' source
 #'
 #' @description
-#' Retrieves a specific run where a ruleset is evaluated against a data
-#' source.
+#' Retrieves a specific run where a ruleset is evaluated against a data source.
 #'
 #' @usage
 #' glue_get_data_quality_ruleset_evaluation_run(RunId)
@@ -14053,7 +13732,8 @@ glue_get_data_quality_ruleset <- function(Name) {
 #'   AdditionalRunOptions = list(
 #'     CloudWatchMetricsEnabled = TRUE|FALSE,
 #'     ResultsS3Prefix = "string",
-#'     CompositeRuleEvaluationMethod = "COLUMN"|"ROW"
+#'     CompositeRuleEvaluationMethod = "COLUMN"|"ROW",
+#'     CustomLogGroupPrefix = "string"
 #'   ),
 #'   Status = "STARTING"|"RUNNING"|"STOPPING"|"STOPPED"|"SUCCEEDED"|"FAILED"|"TIMEOUT",
 #'   ErrorString = "string",
@@ -14138,10 +13818,8 @@ glue_get_data_quality_ruleset_evaluation_run <- function(RunId) {
 #' @usage
 #' glue_get_database(CatalogId, Name)
 #'
-#' @param CatalogId The ID of the Data Catalog in which the database resides. If none is
-#' provided, the Amazon Web Services account ID is used by default.
-#' @param Name &#91;required&#93; The name of the database to retrieve. For Hive compatibility, this
-#' should be all lowercase.
+#' @param CatalogId The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.
+#' @param Name &#91;required&#93; The name of the database to retrieve. For Hive compatibility, this should be all lowercase.
 #'
 #' @return
 #' A list with the following syntax:
@@ -14223,24 +13901,17 @@ glue_get_database <- function(CatalogId = NULL, Name) {
 #' glue_get_databases(CatalogId, NextToken, MaxResults, ResourceShareType,
 #'   AttributesToGet)
 #'
-#' @param CatalogId The ID of the Data Catalog from which to retrieve `Databases`. If none
-#' is provided, the Amazon Web Services account ID is used by default.
+#' @param CatalogId The ID of the Data Catalog from which to retrieve `Databases`. If none is provided, the Amazon Web Services account ID is used by default.
 #' @param NextToken A continuation token, if this is a continuation call.
 #' @param MaxResults The maximum number of databases to return in one response.
-#' @param ResourceShareType Allows you to specify that you want to list the databases shared with
-#' your account. The allowable values are `FEDERATED`, `FOREIGN` or `ALL`.
+#' @param ResourceShareType Allows you to specify that you want to list the databases shared with your account. The allowable values are `FEDERATED`, `FOREIGN` or `ALL`.
 #' 
-#' -   If set to `FEDERATED`, will list the federated databases
-#'     (referencing an external entity) shared with your account.
+#' -   If set to `FEDERATED`, will list the federated databases (referencing an external entity) shared with your account.
 #' 
-#' -   If set to `FOREIGN`, will list the databases shared with your
-#'     account.
+#' -   If set to `FOREIGN`, will list the databases shared with your account.
 #' 
-#' -   If set to `ALL`, will list the databases shared with your account,
-#'     as well as the databases in yor local account.
-#' @param AttributesToGet Specifies the database fields returned by the
-#' [`get_databases`][glue_get_databases] call. This parameter doesn’t
-#' accept an empty list. The request must include the `NAME`.
+#' -   If set to `ALL`, will list the databases shared with your account, as well as the databases in yor local account.
+#' @param AttributesToGet Specifies the database fields returned by the [`get_databases`][glue_get_databases] call. This parameter doesn’t accept an empty list. The request must include the `NAME`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -14395,10 +14066,7 @@ glue_get_dataflow_graph <- function(PythonScript = NULL) {
 #' @description
 #' Retrieves information about a specified development endpoint.
 #' 
-#' When you create a development endpoint in a virtual private cloud (VPC),
-#' Glue returns only a private IP address, and the public IP address field
-#' is not populated. When you create a non-VPC development endpoint, Glue
-#' returns only a public IP address.
+#' When you create a development endpoint in a virtual private cloud (VPC), Glue returns only a private IP address, and the public IP address field is not populated. When you create a non-VPC development endpoint, Glue returns only a public IP address.
 #'
 #' @usage
 #' glue_get_dev_endpoint(EndpointName)
@@ -14484,13 +14152,9 @@ glue_get_dev_endpoint <- function(EndpointName) {
 #' account
 #'
 #' @description
-#' Retrieves all the development endpoints in this Amazon Web Services
-#' account.
+#' Retrieves all the development endpoints in this Amazon Web Services account.
 #' 
-#' When you create a development endpoint in a virtual private cloud (VPC),
-#' Glue returns only a private IP address and the public IP address field
-#' is not populated. When you create a non-VPC development endpoint, Glue
-#' returns only a public IP address.
+#' When you create a development endpoint in a virtual private cloud (VPC), Glue returns only a private IP address and the public IP address field is not populated. When you create a non-VPC development endpoint, Glue returns only a public IP address.
 #'
 #' @usage
 #' glue_get_dev_endpoints(MaxResults, NextToken)
@@ -14581,29 +14245,20 @@ glue_get_dev_endpoints <- function(MaxResults = NULL, NextToken = NULL) {
 #' from a native Amazon S3 based Glue Data Catalog
 #'
 #' @description
-#' This API is used to query preview data from a given connection type or
-#' from a native Amazon S3 based Glue Data Catalog.
+#' This API is used to query preview data from a given connection type or from a native Amazon S3 based Glue Data Catalog.
 #' 
-#' Returns records as an array of JSON blobs. Each record is formatted
-#' using Jackson JsonNode based on the field type defined by the
-#' [`describe_entity`][glue_describe_entity] API.
+#' Returns records as an array of JSON blobs. Each record is formatted using Jackson JsonNode based on the field type defined by the [`describe_entity`][glue_describe_entity] API.
 #' 
-#' Spark connectors generate schemas according to the same data type
-#' mapping as in the [`describe_entity`][glue_describe_entity] API. Spark
-#' connectors convert data to the appropriate data types matching the
-#' schema when returning rows.
+#' Spark connectors generate schemas according to the same data type mapping as in the [`describe_entity`][glue_describe_entity] API. Spark connectors convert data to the appropriate data types matching the schema when returning rows.
 #'
 #' @usage
 #' glue_get_entity_records(ConnectionName, CatalogId, EntityName,
 #'   NextToken, DataStoreApiVersion, ConnectionOptions, FilterPredicate,
 #'   Limit, OrderBy, SelectedFields)
 #'
-#' @param ConnectionName The name of the connection that contains the connection type
-#' credentials.
-#' @param CatalogId The catalog ID of the catalog that contains the connection. This can be
-#' null, By default, the Amazon Web Services Account ID is the catalog ID.
-#' @param EntityName &#91;required&#93; Name of the entity that we want to query the preview data from the given
-#' connection type.
+#' @param ConnectionName The name of the connection that contains the connection type credentials.
+#' @param CatalogId The catalog ID of the catalog that contains the connection. This can be null, By default, the Amazon Web Services Account ID is the catalog ID.
+#' @param EntityName &#91;required&#93; Name of the entity that we want to query the preview data from the given connection type.
 #' @param NextToken A continuation token, included if this is a continuation call.
 #' @param DataStoreApiVersion The API version of the SaaS connector.
 #' @param ConnectionOptions Connector options that are required to query the data.
@@ -14672,9 +14327,7 @@ glue_get_entity_records <- function(ConnectionName = NULL, CatalogId = NULL, Ent
 #' information
 #'
 #' @description
-#' Retrieves the current Glue Identity Center configuration details,
-#' including the associated Identity Center instance and application
-#' information.
+#' Retrieves the current Glue Identity Center configuration details, including the associated Identity Center instance and application information.
 #'
 #' @usage
 #' glue_get_glue_identity_center_configuration()
@@ -14727,8 +14380,7 @@ glue_get_glue_identity_center_configuration <- function() {
 #' connection (for the source) or Glue database ARN (for the target)
 #'
 #' @description
-#' This API is used for fetching the `ResourceProperty` of the Glue
-#' connection (for the source) or Glue database ARN (for the target)
+#' This API is used for fetching the `ResourceProperty` of the Glue connection (for the source) or Glue database ARN (for the target)
 #'
 #' @usage
 #' glue_get_integration_resource_property(ResourceArn)
@@ -14788,20 +14440,12 @@ glue_get_integration_resource_property <- function(ResourceArn) {
 #' that need to be replicated
 #'
 #' @description
-#' This API is used to retrieve optional override properties for the tables
-#' that need to be replicated. These properties can include properties for
-#' filtering and partition for source and target tables.
+#' This API is used to retrieve optional override properties for the tables that need to be replicated. These properties can include properties for filtering and partition for source and target tables.
 #'
 #' @usage
 #' glue_get_integration_table_properties(ResourceArn, TableName)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the target table for which to retrieve
-#' integration table properties. Currently, this API only supports
-#' retrieving properties for target tables, and the provided ARN should be
-#' the ARN of the target table in the Glue Data Catalog. Support for
-#' retrieving integration table properties for source connections (using
-#' the connection ARN) is not yet implemented and will be added in a future
-#' release.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the target table for which to retrieve integration table properties. Currently, this API only supports retrieving properties for target tables, and the provided ARN should be the ARN of the target table in the Glue Data Catalog. Support for retrieving integration table properties for source connections (using the connection ARN) is not yet implemented and will be added in a future release.
 #' @param TableName &#91;required&#93; The name of the table to be replicated.
 #'
 #' @return
@@ -16720,14 +16364,11 @@ glue_get_job <- function(JobName) {
 #' 
 #' For more information about enabling and using job bookmarks, see:
 #' 
-#' -   [Tracking processed data using job
-#'     bookmarks](https://docs.aws.amazon.com/glue/latest/dg/monitor-continuations.html)
+#' -   [Tracking processed data using job bookmarks](https://docs.aws.amazon.com/glue/latest/dg/monitor-continuations.html)
 #' 
-#' -   [Job parameters used by
-#'     Glue](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html)
+#' -   [Job parameters used by Glue](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html)
 #' 
-#' -   [Job
-#'     structure](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-Job)
+#' -   [Job structure](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-Job)
 #'
 #' @usage
 #' glue_get_job_bookmark(JobName, RunId)
@@ -16786,8 +16427,7 @@ glue_get_job_bookmark <- function(JobName, RunId = NULL) {
 #' Retrieves the metadata for a given job run
 #'
 #' @description
-#' Retrieves the metadata for a given job run. Job run history is
-#' accessible for 365 days for your workflow and job run.
+#' Retrieves the metadata for a given job run. Job run history is accessible for 365 days for your workflow and job run.
 #'
 #' @usage
 #' glue_get_job_run(JobName, RunId, PredecessorsIncluded)
@@ -16888,8 +16528,7 @@ glue_get_job_run <- function(JobName, RunId, PredecessorsIncluded = NULL) {
 #' @description
 #' Retrieves metadata for all runs of a given job definition.
 #' 
-#' [`get_job_runs`][glue_get_job_runs] returns the job runs in
-#' chronological order, with the newest jobs returned first.
+#' [`get_job_runs`][glue_get_job_runs] returns the job runs in chronological order, with the newest jobs returned first.
 #'
 #' @usage
 #' glue_get_job_runs(JobName, NextToken, MaxResults)
@@ -18843,12 +18482,7 @@ glue_get_jobs <- function(NextToken = NULL, MaxResults = NULL) {
 #' Gets details for a specific task run on a machine learning transform
 #'
 #' @description
-#' Gets details for a specific task run on a machine learning transform.
-#' Machine learning task runs are asynchronous tasks that Glue runs on your
-#' behalf as part of various machine learning workflows. You can check the
-#' stats of any task run by calling
-#' [`get_ml_task_run`][glue_get_ml_task_run] with the `TaskRunID` and its
-#' parent transform's `TransformID`.
+#' Gets details for a specific task run on a machine learning transform. Machine learning task runs are asynchronous tasks that Glue runs on your behalf as part of various machine learning workflows. You can check the stats of any task run by calling [`get_ml_task_run`][glue_get_ml_task_run] with the `TaskRunID` and its parent transform's `TransformID`.
 #'
 #' @usage
 #' glue_get_ml_task_run(TransformId, TaskRunId)
@@ -18931,13 +18565,7 @@ glue_get_ml_task_run <- function(TransformId, TaskRunId) {
 #' Gets a list of runs for a machine learning transform
 #'
 #' @description
-#' Gets a list of runs for a machine learning transform. Machine learning
-#' task runs are asynchronous tasks that Glue runs on your behalf as part
-#' of various machine learning workflows. You can get a sortable,
-#' filterable list of machine learning task runs by calling
-#' [`get_ml_task_runs`][glue_get_ml_task_runs] with their parent
-#' transform's `TransformID` and other optional parameters as documented in
-#' this section.
+#' Gets a list of runs for a machine learning transform. Machine learning task runs are asynchronous tasks that Glue runs on your behalf as part of various machine learning workflows. You can get a sortable, filterable list of machine learning task runs by calling [`get_ml_task_runs`][glue_get_ml_task_runs] with their parent transform's `TransformID` and other optional parameters as documented in this section.
 #' 
 #' This operation returns a list of historic runs and must be paginated.
 #'
@@ -18947,10 +18575,8 @@ glue_get_ml_task_run <- function(TransformId, TaskRunId) {
 #' @param TransformId &#91;required&#93; The unique identifier of the machine learning transform.
 #' @param NextToken A token for pagination of the results. The default is empty.
 #' @param MaxResults The maximum number of results to return.
-#' @param Filter The filter criteria, in the `TaskRunFilterCriteria` structure, for the
-#' task run.
-#' @param Sort The sorting criteria, in the `TaskRunSortCriteria` structure, for the
-#' task run.
+#' @param Filter The filter criteria, in the `TaskRunFilterCriteria` structure, for the task run.
+#' @param Sort The sorting criteria, in the `TaskRunSortCriteria` structure, for the task run.
 #'
 #' @return
 #' A list with the following syntax:
@@ -19048,18 +18674,12 @@ glue_get_ml_task_runs <- function(TransformId, NextToken = NULL, MaxResults = NU
 #' corresponding metadata
 #'
 #' @description
-#' Gets an Glue machine learning transform artifact and all its
-#' corresponding metadata. Machine learning transforms are a special type
-#' of transform that use machine learning to learn the details of the
-#' transformation to be performed by learning from examples provided by
-#' humans. These transformations are then saved by Glue. You can retrieve
-#' their metadata by calling [`get_ml_transform`][glue_get_ml_transform].
+#' Gets an Glue machine learning transform artifact and all its corresponding metadata. Machine learning transforms are a special type of transform that use machine learning to learn the details of the transformation to be performed by learning from examples provided by humans. These transformations are then saved by Glue. You can retrieve their metadata by calling [`get_ml_transform`][glue_get_ml_transform].
 #'
 #' @usage
 #' glue_get_ml_transform(TransformId)
 #'
-#' @param TransformId &#91;required&#93; The unique identifier of the transform, generated at the time that the
-#' transform was created.
+#' @param TransformId &#91;required&#93; The unique identifier of the transform, generated at the time that the transform was created.
 #'
 #' @return
 #' A list with the following syntax:
@@ -19175,12 +18795,7 @@ glue_get_ml_transform <- function(TransformId) {
 #' transforms
 #'
 #' @description
-#' Gets a sortable, filterable list of existing Glue machine learning
-#' transforms. Machine learning transforms are a special type of transform
-#' that use machine learning to learn the details of the transformation to
-#' be performed by learning from examples provided by humans. These
-#' transformations are then saved by Glue, and you can retrieve their
-#' metadata by calling [`get_ml_transforms`][glue_get_ml_transforms].
+#' Gets a sortable, filterable list of existing Glue machine learning transforms. Machine learning transforms are a special type of transform that use machine learning to learn the details of the transformation to be performed by learning from examples provided by humans. These transformations are then saved by Glue, and you can retrieve their metadata by calling [`get_ml_transforms`][glue_get_ml_transforms].
 #'
 #' @usage
 #' glue_get_ml_transforms(NextToken, MaxResults, Filter, Sort)
@@ -19426,19 +19041,97 @@ glue_get_mapping <- function(Source, Sinks = NULL, Location = NULL) {
 }
 .glue$operations$get_mapping <- glue_get_mapping
 
+#' Get the associated metadata/information for a task run, given a task run
+#' ID
+#'
+#' @description
+#' Get the associated metadata/information for a task run, given a task run ID.
+#'
+#' @usage
+#' glue_get_materialized_view_refresh_task_run(CatalogId,
+#'   MaterializedViewRefreshTaskRunId)
+#'
+#' @param CatalogId &#91;required&#93; The ID of the Data Catalog where the table resides. If none is supplied, the account ID is used by default.
+#' @param MaterializedViewRefreshTaskRunId &#91;required&#93; The identifier for the particular materialized view refresh task run.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   MaterializedViewRefreshTaskRun = list(
+#'     CustomerId = "string",
+#'     MaterializedViewRefreshTaskRunId = "string",
+#'     DatabaseName = "string",
+#'     TableName = "string",
+#'     CatalogId = "string",
+#'     Role = "string",
+#'     Status = "STARTING"|"RUNNING"|"SUCCEEDED"|"FAILED"|"STOPPED",
+#'     CreationTime = as.POSIXct(
+#'       "2015-01-01"
+#'     ),
+#'     LastUpdated = as.POSIXct(
+#'       "2015-01-01"
+#'     ),
+#'     StartTime = as.POSIXct(
+#'       "2015-01-01"
+#'     ),
+#'     EndTime = as.POSIXct(
+#'       "2015-01-01"
+#'     ),
+#'     ErrorMessage = "string",
+#'     DPUSeconds = 123.0,
+#'     RefreshType = "FULL"|"INCREMENTAL",
+#'     ProcessedBytes = 123
+#'   )
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$get_materialized_view_refresh_task_run(
+#'   CatalogId = "string",
+#'   MaterializedViewRefreshTaskRunId = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname glue_get_materialized_view_refresh_task_run
+#'
+#' @aliases glue_get_materialized_view_refresh_task_run
+glue_get_materialized_view_refresh_task_run <- function(CatalogId, MaterializedViewRefreshTaskRunId) {
+  op <- new_operation(
+    name = "GetMaterializedViewRefreshTaskRun",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .glue$get_materialized_view_refresh_task_run_input(CatalogId = CatalogId, MaterializedViewRefreshTaskRunId = MaterializedViewRefreshTaskRunId)
+  output <- .glue$get_materialized_view_refresh_task_run_output()
+  config <- get_config()
+  svc <- .glue$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.glue$operations$get_materialized_view_refresh_task_run <- glue_get_materialized_view_refresh_task_run
+
 #' Retrieves information about a specified partition
 #'
 #' @description
 #' Retrieves information about a specified partition.
 #'
 #' @usage
-#' glue_get_partition(CatalogId, DatabaseName, TableName, PartitionValues)
+#' glue_get_partition(CatalogId, DatabaseName, TableName, PartitionValues,
+#'   AuditContext)
 #'
-#' @param CatalogId The ID of the Data Catalog where the partition in question resides. If
-#' none is provided, the Amazon Web Services account ID is used by default.
+#' @param CatalogId The ID of the Data Catalog where the partition in question resides. If none is provided, the Amazon Web Services account ID is used by default.
 #' @param DatabaseName &#91;required&#93; The name of the catalog database where the partition resides.
 #' @param TableName &#91;required&#93; The name of the partition's table.
 #' @param PartitionValues &#91;required&#93; The values that define the partition.
+#' @param AuditContext A structure containing the Lake Formation audit context.
 #'
 #' @return
 #' A list with the following syntax:
@@ -19535,6 +19228,13 @@ glue_get_mapping <- function(Source, Sinks = NULL, Location = NULL) {
 #'   TableName = "string",
 #'   PartitionValues = list(
 #'     "string"
+#'   ),
+#'   AuditContext = list(
+#'     AdditionalAuditContext = "string",
+#'     RequestedColumns = list(
+#'       "string"
+#'     ),
+#'     AllColumnsRequested = TRUE|FALSE
 #'   )
 #' )
 #' ```
@@ -19544,7 +19244,7 @@ glue_get_mapping <- function(Source, Sinks = NULL, Location = NULL) {
 #' @rdname glue_get_partition
 #'
 #' @aliases glue_get_partition
-glue_get_partition <- function(CatalogId = NULL, DatabaseName, TableName, PartitionValues) {
+glue_get_partition <- function(CatalogId = NULL, DatabaseName, TableName, PartitionValues, AuditContext = NULL) {
   op <- new_operation(
     name = "GetPartition",
     http_method = "POST",
@@ -19553,7 +19253,7 @@ glue_get_partition <- function(CatalogId = NULL, DatabaseName, TableName, Partit
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .glue$get_partition_input(CatalogId = CatalogId, DatabaseName = DatabaseName, TableName = TableName, PartitionValues = PartitionValues)
+  input <- .glue$get_partition_input(CatalogId = CatalogId, DatabaseName = DatabaseName, TableName = TableName, PartitionValues = PartitionValues, AuditContext = AuditContext)
   output <- .glue$get_partition_output()
   config <- get_config()
   svc <- .glue$service(config, op)
@@ -19573,10 +19273,8 @@ glue_get_partition <- function(CatalogId = NULL, DatabaseName, TableName, Partit
 #'   NextToken)
 #'
 #' @param CatalogId The catalog ID where the table resides.
-#' @param DatabaseName &#91;required&#93; Specifies the name of a database from which you want to retrieve
-#' partition indexes.
-#' @param TableName &#91;required&#93; Specifies the name of a table for which you want to retrieve the
-#' partition indexes.
+#' @param DatabaseName &#91;required&#93; Specifies the name of a database from which you want to retrieve partition indexes.
+#' @param TableName &#91;required&#93; Specifies the name of a table for which you want to retrieve the partition indexes.
 #' @param NextToken A continuation token, included if this is a continuation call.
 #'
 #' @return
@@ -19653,26 +19351,20 @@ glue_get_partition_indexes <- function(CatalogId = NULL, DatabaseName, TableName
 #' @usage
 #' glue_get_partitions(CatalogId, DatabaseName, TableName, Expression,
 #'   NextToken, Segment, MaxResults, ExcludeColumnSchema, TransactionId,
-#'   QueryAsOfTime)
+#'   QueryAsOfTime, AuditContext)
 #'
-#' @param CatalogId The ID of the Data Catalog where the partitions in question reside. If
-#' none is provided, the Amazon Web Services account ID is used by default.
+#' @param CatalogId The ID of the Data Catalog where the partitions in question reside. If none is provided, the Amazon Web Services account ID is used by default.
 #' @param DatabaseName &#91;required&#93; The name of the catalog database where the partitions reside.
 #' @param TableName &#91;required&#93; The name of the partitions' table.
 #' @param Expression An expression that filters the partitions to be returned.
 #' 
-#' The expression uses SQL syntax similar to the SQL `WHERE` filter clause.
-#' The SQL statement parser
-#' [JSQLParser](https://jsqlparser.sourceforge.net/home.php) parses the
-#' expression.
+#' The expression uses SQL syntax similar to the SQL `WHERE` filter clause. The SQL statement parser [JSQLParser](https://jsqlparser.sourceforge.net/home.php) parses the expression.
 #' 
-#' *Operators*: The following are the operators that you can use in the
-#' `Expression` API call:
+#' *Operators*: The following are the operators that you can use in the `Expression` API call:
 #' 
 #' **=**
 #' 
-#' Checks whether the values of the two operands are equal; if yes, then
-#' the condition becomes true.
+#' Checks whether the values of the two operands are equal; if yes, then the condition becomes true.
 #' 
 #' Example: Assume 'variable a' holds 10 and 'variable b' holds 20.
 #' 
@@ -19680,36 +19372,31 @@ glue_get_partition_indexes <- function(CatalogId = NULL, DatabaseName, TableName
 #' 
 #' **\< \>**
 #' 
-#' Checks whether the values of two operands are equal; if the values are
-#' not equal, then the condition becomes true.
+#' Checks whether the values of two operands are equal; if the values are not equal, then the condition becomes true.
 #' 
 #' Example: (a \< \> b) is true.
 #' 
 #' **\>**
 #' 
-#' Checks whether the value of the left operand is greater than the value
-#' of the right operand; if yes, then the condition becomes true.
+#' Checks whether the value of the left operand is greater than the value of the right operand; if yes, then the condition becomes true.
 #' 
 #' Example: (a \> b) is not true.
 #' 
 #' **\<**
 #' 
-#' Checks whether the value of the left operand is less than the value of
-#' the right operand; if yes, then the condition becomes true.
+#' Checks whether the value of the left operand is less than the value of the right operand; if yes, then the condition becomes true.
 #' 
 #' Example: (a \< b) is true.
 #' 
 #' **\>=**
 #' 
-#' Checks whether the value of the left operand is greater than or equal to
-#' the value of the right operand; if yes, then the condition becomes true.
+#' Checks whether the value of the left operand is greater than or equal to the value of the right operand; if yes, then the condition becomes true.
 #' 
 #' Example: (a \>= b) is not true.
 #' 
 #' **\<=**
 #' 
-#' Checks whether the value of the left operand is less than or equal to
-#' the value of the right operand; if yes, then the condition becomes true.
+#' Checks whether the value of the left operand is less than or equal to the value of the right operand; if yes, then the condition becomes true.
 #' 
 #' Example: (a \<= b) is true.
 #' 
@@ -19717,8 +19404,7 @@ glue_get_partition_indexes <- function(CatalogId = NULL, DatabaseName, TableName
 #' 
 #' Logical operators.
 #' 
-#' *Supported Partition Key Types*: The following are the supported
-#' partition keys.
+#' *Supported Partition Key Types*: The following are the supported partition keys.
 #' 
 #' -   `string`
 #' 
@@ -19740,23 +19426,16 @@ glue_get_partition_indexes <- function(CatalogId = NULL, DatabaseName, TableName
 #' 
 #' If an type is encountered that is not valid, an exception is thrown.
 #' 
-#' The following list shows the valid operators on each type. When you
-#' define a crawler, the `partitionKey` type is created as a `STRING`, to
-#' be compatible with the catalog partitions.
+#' The following list shows the valid operators on each type. When you define a crawler, the `partitionKey` type is created as a `STRING`, to be compatible with the catalog partitions.
 #' 
 #' *Sample API Call*:
-#' @param NextToken A continuation token, if this is not the first call to retrieve these
-#' partitions.
+#' @param NextToken A continuation token, if this is not the first call to retrieve these partitions.
 #' @param Segment The segment of the table's partitions to scan in this request.
 #' @param MaxResults The maximum number of partitions to return in a single response.
-#' @param ExcludeColumnSchema When true, specifies not returning the partition column schema. Useful
-#' when you are interested only in other partition attributes such as
-#' partition values or location. This approach avoids the problem of a
-#' large response by not returning duplicate data.
+#' @param ExcludeColumnSchema When true, specifies not returning the partition column schema. Useful when you are interested only in other partition attributes such as partition values or location. This approach avoids the problem of a large response by not returning duplicate data.
 #' @param TransactionId The transaction ID at which to read the partition contents.
-#' @param QueryAsOfTime The time as of when to read the partition contents. If not set, the most
-#' recent transaction commit time will be used. Cannot be specified along
-#' with `TransactionId`.
+#' @param QueryAsOfTime The time as of when to read the partition contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with `TransactionId`.
+#' @param AuditContext A structure containing the Lake Formation audit context.
 #'
 #' @return
 #' A list with the following syntax:
@@ -19865,6 +19544,13 @@ glue_get_partition_indexes <- function(CatalogId = NULL, DatabaseName, TableName
 #'   TransactionId = "string",
 #'   QueryAsOfTime = as.POSIXct(
 #'     "2015-01-01"
+#'   ),
+#'   AuditContext = list(
+#'     AdditionalAuditContext = "string",
+#'     RequestedColumns = list(
+#'       "string"
+#'     ),
+#'     AllColumnsRequested = TRUE|FALSE
 #'   )
 #' )
 #' ```
@@ -19874,7 +19560,7 @@ glue_get_partition_indexes <- function(CatalogId = NULL, DatabaseName, TableName
 #' @rdname glue_get_partitions
 #'
 #' @aliases glue_get_partitions
-glue_get_partitions <- function(CatalogId = NULL, DatabaseName, TableName, Expression = NULL, NextToken = NULL, Segment = NULL, MaxResults = NULL, ExcludeColumnSchema = NULL, TransactionId = NULL, QueryAsOfTime = NULL) {
+glue_get_partitions <- function(CatalogId = NULL, DatabaseName, TableName, Expression = NULL, NextToken = NULL, Segment = NULL, MaxResults = NULL, ExcludeColumnSchema = NULL, TransactionId = NULL, QueryAsOfTime = NULL, AuditContext = NULL) {
   op <- new_operation(
     name = "GetPartitions",
     http_method = "POST",
@@ -19883,7 +19569,7 @@ glue_get_partitions <- function(CatalogId = NULL, DatabaseName, TableName, Expre
     paginator = list(result_key = "Partitions", output_token = "NextToken", input_token = "NextToken", limit_key = "MaxResults"),
     stream_api = FALSE
   )
-  input <- .glue$get_partitions_input(CatalogId = CatalogId, DatabaseName = DatabaseName, TableName = TableName, Expression = Expression, NextToken = NextToken, Segment = Segment, MaxResults = MaxResults, ExcludeColumnSchema = ExcludeColumnSchema, TransactionId = TransactionId, QueryAsOfTime = QueryAsOfTime)
+  input <- .glue$get_partitions_input(CatalogId = CatalogId, DatabaseName = DatabaseName, TableName = TableName, Expression = Expression, NextToken = NextToken, Segment = Segment, MaxResults = MaxResults, ExcludeColumnSchema = ExcludeColumnSchema, TransactionId = TransactionId, QueryAsOfTime = QueryAsOfTime, AuditContext = AuditContext)
   output <- .glue$get_partitions_output()
   config <- get_config()
   svc <- .glue$service(config, op)
@@ -19911,9 +19597,7 @@ glue_get_partitions <- function(CatalogId = NULL, DatabaseName, TableName, Expre
 #' 
 #' Currently, these key-value pairs are supported:
 #' 
-#' -   `inferSchema`  —  Specifies whether to set `inferSchema` to true or
-#'     false for the default script generated by an Glue job. For example,
-#'     to set `inferSchema` to true, pass the following key value pair:
+#' -   `inferSchema`  —  Specifies whether to set `inferSchema` to true or false for the default script generated by an Glue job. For example, to set `inferSchema` to true, pass the following key value pair:
 #' 
 #'     `--additional-plan-options-map '{"inferSchema":"true"}'`
 #'
@@ -20011,8 +19695,7 @@ glue_get_plan <- function(Mapping, Source, Sinks = NULL, Location = NULL, Langua
 #' @usage
 #' glue_get_registry(RegistryId)
 #'
-#' @param RegistryId &#91;required&#93; This is a wrapper structure that may contain the registry name and
-#' Amazon Resource Name (ARN).
+#' @param RegistryId &#91;required&#93; This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).
 #'
 #' @return
 #' A list with the following syntax:
@@ -20065,13 +19748,9 @@ glue_get_registry <- function(RegistryId) {
 #' Access Manager during cross-account permission grants
 #'
 #' @description
-#' Retrieves the resource policies set on individual resources by Resource
-#' Access Manager during cross-account permission grants. Also retrieves
-#' the Data Catalog resource policy.
+#' Retrieves the resource policies set on individual resources by Resource Access Manager during cross-account permission grants. Also retrieves the Data Catalog resource policy.
 #' 
-#' If you enabled metadata encryption in Data Catalog settings, and you do
-#' not have permission on the KMS key, the operation can't return the Data
-#' Catalog resource policy.
+#' If you enabled metadata encryption in Data Catalog settings, and you do not have permission on the KMS key, the operation can't return the Data Catalog resource policy.
 #'
 #' @usage
 #' glue_get_resource_policies(NextToken, MaxResults)
@@ -20139,12 +19818,7 @@ glue_get_resource_policies <- function(NextToken = NULL, MaxResults = NULL) {
 #' @usage
 #' glue_get_resource_policy(ResourceArn)
 #'
-#' @param ResourceArn The ARN of the Glue resource for which to retrieve the resource policy.
-#' If not supplied, the Data Catalog resource policy is returned. Use
-#' [`get_resource_policies`][glue_get_resource_policies] to view all
-#' existing resource policies. For more information see [Specifying Glue
-#' Resource
-#' ARNs](https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html).
+#' @param ResourceArn The ARN of the Glue resource for which to retrieve the resource policy. If not supplied, the Data Catalog resource policy is returned. Use [`get_resource_policies`][glue_get_resource_policies] to view all existing resource policies. For more information see [Specifying Glue Resource ARNs](https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -20200,15 +19874,11 @@ glue_get_resource_policy <- function(ResourceArn = NULL) {
 #' @usage
 #' glue_get_schema(SchemaId)
 #'
-#' @param SchemaId &#91;required&#93; This is a wrapper structure to contain schema identity fields. The
-#' structure contains:
+#' @param SchemaId &#91;required&#93; This is a wrapper structure to contain schema identity fields. The structure contains:
 #' 
-#' -   SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema.
-#'     Either `SchemaArn` or `SchemaName` and `RegistryName` has to be
-#'     provided.
+#' -   SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either `SchemaArn` or `SchemaName` and `RegistryName` has to be provided.
 #' 
-#' -   SchemaId$SchemaName: The name of the schema. Either `SchemaArn` or
-#'     `SchemaName` and `RegistryName` has to be provided.
+#' -   SchemaId$SchemaName: The name of the schema. Either `SchemaArn` or `SchemaName` and `RegistryName` has to be provided.
 #'
 #' @return
 #' A list with the following syntax:
@@ -20268,24 +19938,16 @@ glue_get_schema <- function(SchemaId) {
 #' Retrieves a schema by the SchemaDefinition
 #'
 #' @description
-#' Retrieves a schema by the `SchemaDefinition`. The schema definition is
-#' sent to the Schema Registry, canonicalized, and hashed. If the hash is
-#' matched within the scope of the `SchemaName` or ARN (or the default
-#' registry, if none is supplied), that schema’s metadata is returned.
-#' Otherwise, a 404 or NotFound error is returned. Schema versions in
-#' `Deleted` statuses will not be included in the results.
+#' Retrieves a schema by the `SchemaDefinition`. The schema definition is sent to the Schema Registry, canonicalized, and hashed. If the hash is matched within the scope of the `SchemaName` or ARN (or the default registry, if none is supplied), that schema’s metadata is returned. Otherwise, a 404 or NotFound error is returned. Schema versions in `Deleted` statuses will not be included in the results.
 #'
 #' @usage
 #' glue_get_schema_by_definition(SchemaId, SchemaDefinition)
 #'
-#' @param SchemaId &#91;required&#93; This is a wrapper structure to contain schema identity fields. The
-#' structure contains:
+#' @param SchemaId &#91;required&#93; This is a wrapper structure to contain schema identity fields. The structure contains:
 #' 
-#' -   SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema.
-#'     One of `SchemaArn` or `SchemaName` has to be provided.
+#' -   SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of `SchemaArn` or `SchemaName` has to be provided.
 #' 
-#' -   SchemaId$SchemaName: The name of the schema. One of `SchemaArn` or
-#'     `SchemaName` has to be provided.
+#' -   SchemaId$SchemaName: The name of the schema. One of `SchemaArn` or `SchemaName` has to be provided.
 #' @param SchemaDefinition &#91;required&#93; The definition of the schema for which schema details are required.
 #'
 #' @return
@@ -20340,25 +20002,17 @@ glue_get_schema_by_definition <- function(SchemaId, SchemaDefinition) {
 #' schema is created or registered
 #'
 #' @description
-#' Get the specified schema by its unique ID assigned when a version of the
-#' schema is created or registered. Schema versions in Deleted status will
-#' not be included in the results.
+#' Get the specified schema by its unique ID assigned when a version of the schema is created or registered. Schema versions in Deleted status will not be included in the results.
 #'
 #' @usage
 #' glue_get_schema_version(SchemaId, SchemaVersionId, SchemaVersionNumber)
 #'
-#' @param SchemaId This is a wrapper structure to contain schema identity fields. The
-#' structure contains:
+#' @param SchemaId This is a wrapper structure to contain schema identity fields. The structure contains:
 #' 
-#' -   SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema.
-#'     Either `SchemaArn` or `SchemaName` and `RegistryName` has to be
-#'     provided.
+#' -   SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either `SchemaArn` or `SchemaName` and `RegistryName` has to be provided.
 #' 
-#' -   SchemaId$SchemaName: The name of the schema. Either `SchemaArn` or
-#'     `SchemaName` and `RegistryName` has to be provided.
-#' @param SchemaVersionId The `SchemaVersionId` of the schema version. This field is required for
-#' fetching by schema ID. Either this or the `SchemaId` wrapper has to be
-#' provided.
+#' -   SchemaId$SchemaName: The name of the schema. Either `SchemaArn` or `SchemaName` and `RegistryName` has to be provided.
+#' @param SchemaVersionId The `SchemaVersionId` of the schema version. This field is required for fetching by schema ID. Either this or the `SchemaId` wrapper has to be provided.
 #' @param SchemaVersionNumber The version number of the schema.
 #'
 #' @return
@@ -20419,24 +20073,19 @@ glue_get_schema_version <- function(SchemaId = NULL, SchemaVersionId = NULL, Sch
 #' between two stored schema versions in the Schema Registry
 #'
 #' @description
-#' Fetches the schema version difference in the specified difference type
-#' between two stored schema versions in the Schema Registry.
+#' Fetches the schema version difference in the specified difference type between two stored schema versions in the Schema Registry.
 #' 
-#' This API allows you to compare two schema versions between two schema
-#' definitions under the same schema.
+#' This API allows you to compare two schema versions between two schema definitions under the same schema.
 #'
 #' @usage
 #' glue_get_schema_versions_diff(SchemaId, FirstSchemaVersionNumber,
 #'   SecondSchemaVersionNumber, SchemaDiffType)
 #'
-#' @param SchemaId &#91;required&#93; This is a wrapper structure to contain schema identity fields. The
-#' structure contains:
+#' @param SchemaId &#91;required&#93; This is a wrapper structure to contain schema identity fields. The structure contains:
 #' 
-#' -   SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema.
-#'     One of `SchemaArn` or `SchemaName` has to be provided.
+#' -   SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of `SchemaArn` or `SchemaName` has to be provided.
 #' 
-#' -   SchemaId$SchemaName: The name of the schema. One of `SchemaArn` or
-#'     `SchemaName` has to be provided.
+#' -   SchemaId$SchemaName: The name of the schema. One of `SchemaArn` or `SchemaName` has to be provided.
 #' @param FirstSchemaVersionNumber &#91;required&#93; The first of the two schema versions to be compared.
 #' @param SecondSchemaVersionNumber &#91;required&#93; The second of the two schema versions to be compared.
 #' @param SchemaDiffType &#91;required&#93; Refers to `SYNTAX_DIFF`, which is the currently supported diff type.
@@ -20806,27 +20455,19 @@ glue_get_statement <- function(SessionId, Id, RequestOrigin = NULL) {
 #' Retrieves the Table definition in a Data Catalog for a specified table
 #'
 #' @description
-#' Retrieves the `Table` definition in a Data Catalog for a specified
-#' table.
+#' Retrieves the `Table` definition in a Data Catalog for a specified table.
 #'
 #' @usage
 #' glue_get_table(CatalogId, DatabaseName, Name, TransactionId,
 #'   QueryAsOfTime, AuditContext, IncludeStatusDetails)
 #'
-#' @param CatalogId The ID of the Data Catalog where the table resides. If none is provided,
-#' the Amazon Web Services account ID is used by default.
-#' @param DatabaseName &#91;required&#93; The name of the database in the catalog in which the table resides. For
-#' Hive compatibility, this name is entirely lowercase.
-#' @param Name &#91;required&#93; The name of the table for which to retrieve the definition. For Hive
-#' compatibility, this name is entirely lowercase.
+#' @param CatalogId The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.
+#' @param DatabaseName &#91;required&#93; The name of the database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.
+#' @param Name &#91;required&#93; The name of the table for which to retrieve the definition. For Hive compatibility, this name is entirely lowercase.
 #' @param TransactionId The transaction ID at which to read the table contents.
-#' @param QueryAsOfTime The time as of when to read the table contents. If not set, the most
-#' recent transaction commit time will be used. Cannot be specified along
-#' with `TransactionId`.
-#' @param AuditContext A structure containing the Lake Formation [audit
-#' context](https://docs.aws.amazon.com/glue/latest/webapi/API_AuditContext.html).
-#' @param IncludeStatusDetails Specifies whether to include status details related to a request to
-#' create or update an Glue Data Catalog view.
+#' @param QueryAsOfTime The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with `TransactionId`.
+#' @param AuditContext A structure containing the Lake Formation [audit context](https://docs.aws.amazon.com/glue/latest/webapi/API_AuditContext.html).
+#' @param IncludeStatusDetails Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.
 #'
 #' @return
 #' A list with the following syntax:
@@ -21055,8 +20696,7 @@ glue_get_table <- function(CatalogId = NULL, DatabaseName, Name, TransactionId =
 #' table
 #'
 #' @description
-#' Returns the configuration of all optimizers associated with a specified
-#' table.
+#' Returns the configuration of all optimizers associated with a specified table.
 #'
 #' @usage
 #' glue_get_table_optimizer(CatalogId, DatabaseName, TableName, Type)
@@ -21193,16 +20833,14 @@ glue_get_table_optimizer <- function(CatalogId, DatabaseName, TableName, Type) {
 #' Retrieves a specified version of a table.
 #'
 #' @usage
-#' glue_get_table_version(CatalogId, DatabaseName, TableName, VersionId)
+#' glue_get_table_version(CatalogId, DatabaseName, TableName, VersionId,
+#'   AuditContext)
 #'
-#' @param CatalogId The ID of the Data Catalog where the tables reside. If none is provided,
-#' the Amazon Web Services account ID is used by default.
-#' @param DatabaseName &#91;required&#93; The database in the catalog in which the table resides. For Hive
-#' compatibility, this name is entirely lowercase.
-#' @param TableName &#91;required&#93; The name of the table. For Hive compatibility, this name is entirely
-#' lowercase.
-#' @param VersionId The ID value of the table version to be retrieved. A `VersionID` is a
-#' string representation of an integer. Each version is incremented by 1.
+#' @param CatalogId The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.
+#' @param DatabaseName &#91;required&#93; The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.
+#' @param TableName &#91;required&#93; The name of the table. For Hive compatibility, this name is entirely lowercase.
+#' @param VersionId The ID value of the table version to be retrieved. A `VersionID` is a string representation of an integer. Each version is incremented by 1.
+#' @param AuditContext A structure containing the Lake Formation audit context.
 #'
 #' @return
 #' A list with the following syntax:
@@ -21391,7 +21029,14 @@ glue_get_table_optimizer <- function(CatalogId, DatabaseName, TableName, Type) {
 #'   CatalogId = "string",
 #'   DatabaseName = "string",
 #'   TableName = "string",
-#'   VersionId = "string"
+#'   VersionId = "string",
+#'   AuditContext = list(
+#'     AdditionalAuditContext = "string",
+#'     RequestedColumns = list(
+#'       "string"
+#'     ),
+#'     AllColumnsRequested = TRUE|FALSE
+#'   )
 #' )
 #' ```
 #'
@@ -21400,7 +21045,7 @@ glue_get_table_optimizer <- function(CatalogId, DatabaseName, TableName, Type) {
 #' @rdname glue_get_table_version
 #'
 #' @aliases glue_get_table_version
-glue_get_table_version <- function(CatalogId = NULL, DatabaseName, TableName, VersionId = NULL) {
+glue_get_table_version <- function(CatalogId = NULL, DatabaseName, TableName, VersionId = NULL, AuditContext = NULL) {
   op <- new_operation(
     name = "GetTableVersion",
     http_method = "POST",
@@ -21409,7 +21054,7 @@ glue_get_table_version <- function(CatalogId = NULL, DatabaseName, TableName, Ve
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .glue$get_table_version_input(CatalogId = CatalogId, DatabaseName = DatabaseName, TableName = TableName, VersionId = VersionId)
+  input <- .glue$get_table_version_input(CatalogId = CatalogId, DatabaseName = DatabaseName, TableName = TableName, VersionId = VersionId, AuditContext = AuditContext)
   output <- .glue$get_table_version_output()
   config <- get_config()
   svc <- .glue$service(config, op)
@@ -21423,21 +21068,18 @@ glue_get_table_version <- function(CatalogId = NULL, DatabaseName, TableName, Ve
 #' specified table
 #'
 #' @description
-#' Retrieves a list of strings that identify available versions of a
-#' specified table.
+#' Retrieves a list of strings that identify available versions of a specified table.
 #'
 #' @usage
 #' glue_get_table_versions(CatalogId, DatabaseName, TableName, NextToken,
-#'   MaxResults)
+#'   MaxResults, AuditContext)
 #'
-#' @param CatalogId The ID of the Data Catalog where the tables reside. If none is provided,
-#' the Amazon Web Services account ID is used by default.
-#' @param DatabaseName &#91;required&#93; The database in the catalog in which the table resides. For Hive
-#' compatibility, this name is entirely lowercase.
-#' @param TableName &#91;required&#93; The name of the table. For Hive compatibility, this name is entirely
-#' lowercase.
+#' @param CatalogId The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.
+#' @param DatabaseName &#91;required&#93; The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.
+#' @param TableName &#91;required&#93; The name of the table. For Hive compatibility, this name is entirely lowercase.
 #' @param NextToken A continuation token, if this is not the first call.
 #' @param MaxResults The maximum number of table versions to return in one response.
+#' @param AuditContext A structure containing the Lake Formation audit context.
 #'
 #' @return
 #' A list with the following syntax:
@@ -21630,7 +21272,14 @@ glue_get_table_version <- function(CatalogId = NULL, DatabaseName, TableName, Ve
 #'   DatabaseName = "string",
 #'   TableName = "string",
 #'   NextToken = "string",
-#'   MaxResults = 123
+#'   MaxResults = 123,
+#'   AuditContext = list(
+#'     AdditionalAuditContext = "string",
+#'     RequestedColumns = list(
+#'       "string"
+#'     ),
+#'     AllColumnsRequested = TRUE|FALSE
+#'   )
 #' )
 #' ```
 #'
@@ -21639,7 +21288,7 @@ glue_get_table_version <- function(CatalogId = NULL, DatabaseName, TableName, Ve
 #' @rdname glue_get_table_versions
 #'
 #' @aliases glue_get_table_versions
-glue_get_table_versions <- function(CatalogId = NULL, DatabaseName, TableName, NextToken = NULL, MaxResults = NULL) {
+glue_get_table_versions <- function(CatalogId = NULL, DatabaseName, TableName, NextToken = NULL, MaxResults = NULL, AuditContext = NULL) {
   op <- new_operation(
     name = "GetTableVersions",
     http_method = "POST",
@@ -21648,7 +21297,7 @@ glue_get_table_versions <- function(CatalogId = NULL, DatabaseName, TableName, N
     paginator = list(result_key = "TableVersions", output_token = "NextToken", input_token = "NextToken", limit_key = "MaxResults"),
     stream_api = FALSE
   )
-  input <- .glue$get_table_versions_input(CatalogId = CatalogId, DatabaseName = DatabaseName, TableName = TableName, NextToken = NextToken, MaxResults = MaxResults)
+  input <- .glue$get_table_versions_input(CatalogId = CatalogId, DatabaseName = DatabaseName, TableName = TableName, NextToken = NextToken, MaxResults = MaxResults, AuditContext = AuditContext)
   output <- .glue$get_table_versions_output()
   config <- get_config()
   svc <- .glue$service(config, op)
@@ -21662,33 +21311,23 @@ glue_get_table_versions <- function(CatalogId = NULL, DatabaseName, TableName, N
 #' Database
 #'
 #' @description
-#' Retrieves the definitions of some or all of the tables in a given
-#' `Database`.
+#' Retrieves the definitions of some or all of the tables in a given `Database`.
 #'
 #' @usage
 #' glue_get_tables(CatalogId, DatabaseName, Expression, NextToken,
 #'   MaxResults, TransactionId, QueryAsOfTime, AuditContext,
 #'   IncludeStatusDetails, AttributesToGet)
 #'
-#' @param CatalogId The ID of the Data Catalog where the tables reside. If none is provided,
-#' the Amazon Web Services account ID is used by default.
-#' @param DatabaseName &#91;required&#93; The database in the catalog whose tables to list. For Hive
-#' compatibility, this name is entirely lowercase.
-#' @param Expression A regular expression pattern. If present, only those tables whose names
-#' match the pattern are returned.
+#' @param CatalogId The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.
+#' @param DatabaseName &#91;required&#93; The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase.
+#' @param Expression A regular expression pattern. If present, only those tables whose names match the pattern are returned.
 #' @param NextToken A continuation token, included if this is a continuation call.
 #' @param MaxResults The maximum number of tables to return in a single response.
 #' @param TransactionId The transaction ID at which to read the table contents.
-#' @param QueryAsOfTime The time as of when to read the table contents. If not set, the most
-#' recent transaction commit time will be used. Cannot be specified along
-#' with `TransactionId`.
-#' @param AuditContext A structure containing the Lake Formation [audit
-#' context](https://docs.aws.amazon.com/glue/latest/webapi/API_AuditContext.html).
-#' @param IncludeStatusDetails Specifies whether to include status details related to a request to
-#' create or update an Glue Data Catalog view.
-#' @param AttributesToGet Specifies the table fields returned by the
-#' [`get_tables`][glue_get_tables] call. This parameter doesn’t accept an
-#' empty list. The request must include `NAME`.
+#' @param QueryAsOfTime The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with `TransactionId`.
+#' @param AuditContext A structure containing the Lake Formation [audit context](https://docs.aws.amazon.com/glue/latest/webapi/API_AuditContext.html).
+#' @param IncludeStatusDetails Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.
+#' @param AttributesToGet Specifies the table fields returned by the [`get_tables`][glue_get_tables] call. This parameter doesn’t accept an empty list. The request must include `NAME`.
 #' 
 #' The following are the valid combinations of values:
 #' 
@@ -21935,8 +21574,7 @@ glue_get_tables <- function(CatalogId = NULL, DatabaseName, Expression = NULL, N
 #' @usage
 #' glue_get_tags(ResourceArn)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which to retrieve
-#' tags.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which to retrieve tags.
 #'
 #' @return
 #' A list with the following syntax:
@@ -22075,9 +21713,7 @@ glue_get_trigger <- function(Name) {
 #' glue_get_triggers(NextToken, DependentJobName, MaxResults)
 #'
 #' @param NextToken A continuation token, if this is a continuation call.
-#' @param DependentJobName The name of the job to retrieve triggers for. The trigger that can start
-#' this job is returned, and if there is no such trigger, all triggers are
-#' returned.
+#' @param DependentJobName The name of the job to retrieve triggers for. The trigger that can start this job is returned, and if there is no such trigger, all triggers are returned.
 #' @param MaxResults The maximum size of the response.
 #'
 #' @return
@@ -22166,28 +21802,23 @@ glue_get_triggers <- function(NextToken = NULL, DependentJobName = NULL, MaxResu
 #' unfiltered metadata
 #'
 #' @description
-#' Retrieves partition metadata from the Data Catalog that contains
-#' unfiltered metadata.
+#' Retrieves partition metadata from the Data Catalog that contains unfiltered metadata.
 #' 
-#' For IAM authorization, the public IAM action associated with this API is
-#' `glue:GetPartition`.
+#' For IAM authorization, the public IAM action associated with this API is `glue:GetPartition`.
 #'
 #' @usage
 #' glue_get_unfiltered_partition_metadata(Region, CatalogId, DatabaseName,
 #'   TableName, PartitionValues, AuditContext, SupportedPermissionTypes,
 #'   QuerySessionContext)
 #'
-#' @param Region Specified only if the base tables belong to a different Amazon Web
-#' Services Region.
+#' @param Region Specified only if the base tables belong to a different Amazon Web Services Region.
 #' @param CatalogId &#91;required&#93; The catalog ID where the partition resides.
 #' @param DatabaseName &#91;required&#93; (Required) Specifies the name of a database that contains the partition.
 #' @param TableName &#91;required&#93; (Required) Specifies the name of a table that contains the partition.
 #' @param PartitionValues &#91;required&#93; (Required) A list of partition key values.
 #' @param AuditContext A structure containing Lake Formation audit context information.
 #' @param SupportedPermissionTypes &#91;required&#93; (Required) A list of supported permission types.
-#' @param QuerySessionContext A structure used as a protocol between query engines and Lake Formation
-#' or Glue. Contains both a Lake Formation generated authorization
-#' identifier and information from the request's authorization context.
+#' @param QuerySessionContext A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.
 #'
 #' @return
 #' A list with the following syntax:
@@ -22342,37 +21973,28 @@ glue_get_unfiltered_partition_metadata <- function(Region = NULL, CatalogId, Dat
 #' unfiltered metadata
 #'
 #' @description
-#' Retrieves partition metadata from the Data Catalog that contains
-#' unfiltered metadata.
+#' Retrieves partition metadata from the Data Catalog that contains unfiltered metadata.
 #' 
-#' For IAM authorization, the public IAM action associated with this API is
-#' `glue:GetPartitions`.
+#' For IAM authorization, the public IAM action associated with this API is `glue:GetPartitions`.
 #'
 #' @usage
 #' glue_get_unfiltered_partitions_metadata(Region, CatalogId, DatabaseName,
 #'   TableName, Expression, AuditContext, SupportedPermissionTypes,
 #'   NextToken, Segment, MaxResults, QuerySessionContext)
 #'
-#' @param Region Specified only if the base tables belong to a different Amazon Web
-#' Services Region.
-#' @param CatalogId &#91;required&#93; The ID of the Data Catalog where the partitions in question reside. If
-#' none is provided, the AWS account ID is used by default.
+#' @param Region Specified only if the base tables belong to a different Amazon Web Services Region.
+#' @param CatalogId &#91;required&#93; The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account ID is used by default.
 #' @param DatabaseName &#91;required&#93; The name of the catalog database where the partitions reside.
 #' @param TableName &#91;required&#93; The name of the table that contains the partition.
 #' @param Expression An expression that filters the partitions to be returned.
 #' 
-#' The expression uses SQL syntax similar to the SQL `WHERE` filter clause.
-#' The SQL statement parser
-#' [JSQLParser](https://jsqlparser.sourceforge.net/home.php) parses the
-#' expression.
+#' The expression uses SQL syntax similar to the SQL `WHERE` filter clause. The SQL statement parser [JSQLParser](https://jsqlparser.sourceforge.net/home.php) parses the expression.
 #' 
-#' *Operators*: The following are the operators that you can use in the
-#' `Expression` API call:
+#' *Operators*: The following are the operators that you can use in the `Expression` API call:
 #' 
 #' **=**
 #' 
-#' Checks whether the values of the two operands are equal; if yes, then
-#' the condition becomes true.
+#' Checks whether the values of the two operands are equal; if yes, then the condition becomes true.
 #' 
 #' Example: Assume 'variable a' holds 10 and 'variable b' holds 20.
 #' 
@@ -22380,36 +22002,31 @@ glue_get_unfiltered_partition_metadata <- function(Region = NULL, CatalogId, Dat
 #' 
 #' **\< \>**
 #' 
-#' Checks whether the values of two operands are equal; if the values are
-#' not equal, then the condition becomes true.
+#' Checks whether the values of two operands are equal; if the values are not equal, then the condition becomes true.
 #' 
 #' Example: (a \< \> b) is true.
 #' 
 #' **\>**
 #' 
-#' Checks whether the value of the left operand is greater than the value
-#' of the right operand; if yes, then the condition becomes true.
+#' Checks whether the value of the left operand is greater than the value of the right operand; if yes, then the condition becomes true.
 #' 
 #' Example: (a \> b) is not true.
 #' 
 #' **\<**
 #' 
-#' Checks whether the value of the left operand is less than the value of
-#' the right operand; if yes, then the condition becomes true.
+#' Checks whether the value of the left operand is less than the value of the right operand; if yes, then the condition becomes true.
 #' 
 #' Example: (a \< b) is true.
 #' 
 #' **\>=**
 #' 
-#' Checks whether the value of the left operand is greater than or equal to
-#' the value of the right operand; if yes, then the condition becomes true.
+#' Checks whether the value of the left operand is greater than or equal to the value of the right operand; if yes, then the condition becomes true.
 #' 
 #' Example: (a \>= b) is not true.
 #' 
 #' **\<=**
 #' 
-#' Checks whether the value of the left operand is less than or equal to
-#' the value of the right operand; if yes, then the condition becomes true.
+#' Checks whether the value of the left operand is less than or equal to the value of the right operand; if yes, then the condition becomes true.
 #' 
 #' Example: (a \<= b) is true.
 #' 
@@ -22417,8 +22034,7 @@ glue_get_unfiltered_partition_metadata <- function(Region = NULL, CatalogId, Dat
 #' 
 #' Logical operators.
 #' 
-#' *Supported Partition Key Types*: The following are the supported
-#' partition keys.
+#' *Supported Partition Key Types*: The following are the supported partition keys.
 #' 
 #' -   `string`
 #' 
@@ -22441,13 +22057,10 @@ glue_get_unfiltered_partition_metadata <- function(Region = NULL, CatalogId, Dat
 #' If an type is encountered that is not valid, an exception is thrown.
 #' @param AuditContext A structure containing Lake Formation audit context information.
 #' @param SupportedPermissionTypes &#91;required&#93; A list of supported permission types.
-#' @param NextToken A continuation token, if this is not the first call to retrieve these
-#' partitions.
+#' @param NextToken A continuation token, if this is not the first call to retrieve these partitions.
 #' @param Segment The segment of the table's partitions to scan in this request.
 #' @param MaxResults The maximum number of partitions to return in a single response.
-#' @param QuerySessionContext A structure used as a protocol between query engines and Lake Formation
-#' or Glue. Contains both a Lake Formation generated authorization
-#' identifier and information from the request's authorization context.
+#' @param QuerySessionContext A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.
 #'
 #' @return
 #' A list with the following syntax:
@@ -22611,69 +22224,38 @@ glue_get_unfiltered_partitions_metadata <- function(Region = NULL, CatalogId, Da
 #' metadata from the Data Catalog
 #'
 #' @description
-#' Allows a third-party analytical engine to retrieve unfiltered table
-#' metadata from the Data Catalog.
+#' Allows a third-party analytical engine to retrieve unfiltered table metadata from the Data Catalog.
 #' 
-#' For IAM authorization, the public IAM action associated with this API is
-#' `glue:GetTable`.
+#' For IAM authorization, the public IAM action associated with this API is `glue:GetTable`.
 #'
 #' @usage
 #' glue_get_unfiltered_table_metadata(Region, CatalogId, DatabaseName,
 #'   Name, AuditContext, SupportedPermissionTypes, ParentResourceArn,
 #'   RootResourceArn, SupportedDialect, Permissions, QuerySessionContext)
 #'
-#' @param Region Specified only if the base tables belong to a different Amazon Web
-#' Services Region.
+#' @param Region Specified only if the base tables belong to a different Amazon Web Services Region.
 #' @param CatalogId &#91;required&#93; The catalog ID where the table resides.
 #' @param DatabaseName &#91;required&#93; (Required) Specifies the name of a database that contains the table.
-#' @param Name &#91;required&#93; (Required) Specifies the name of a table for which you are requesting
-#' metadata.
+#' @param Name &#91;required&#93; (Required) Specifies the name of a table for which you are requesting metadata.
 #' @param AuditContext A structure containing Lake Formation audit context information.
-#' @param SupportedPermissionTypes &#91;required&#93; Indicates the level of filtering a third-party analytical engine is
-#' capable of enforcing when calling the
-#' [`get_unfiltered_table_metadata`][glue_get_unfiltered_table_metadata]
-#' API operation. Accepted values are:
+#' @param SupportedPermissionTypes &#91;required&#93; Indicates the level of filtering a third-party analytical engine is capable of enforcing when calling the [`get_unfiltered_table_metadata`][glue_get_unfiltered_table_metadata] API operation. Accepted values are:
 #' 
-#' -   `COLUMN_PERMISSION` - Column permissions ensure that users can
-#'     access only specific columns in the table. If there are particular
-#'     columns contain sensitive data, data lake administrators can define
-#'     column filters that exclude access to specific columns.
+#' -   `COLUMN_PERMISSION` - Column permissions ensure that users can access only specific columns in the table. If there are particular columns contain sensitive data, data lake administrators can define column filters that exclude access to specific columns.
 #' 
-#' -   `CELL_FILTER_PERMISSION` - Cell-level filtering combines column
-#'     filtering (include or exclude columns) and row filter expressions to
-#'     restrict access to individual elements in the table.
+#' -   `CELL_FILTER_PERMISSION` - Cell-level filtering combines column filtering (include or exclude columns) and row filter expressions to restrict access to individual elements in the table.
 #' 
-#' -   `NESTED_PERMISSION` - Nested permissions combines cell-level
-#'     filtering and nested column filtering to restrict access to columns
-#'     and/or nested columns in specific rows based on row filter
-#'     expressions.
+#' -   `NESTED_PERMISSION` - Nested permissions combines cell-level filtering and nested column filtering to restrict access to columns and/or nested columns in specific rows based on row filter expressions.
 #' 
-#' -   `NESTED_CELL_PERMISSION` - Nested cell permissions combines nested
-#'     permission with nested cell-level filtering. This allows different
-#'     subsets of nested columns to be restricted based on an array of row
-#'     filter expressions.
+#' -   `NESTED_CELL_PERMISSION` - Nested cell permissions combines nested permission with nested cell-level filtering. This allows different subsets of nested columns to be restricted based on an array of row filter expressions.
 #' 
-#' Note: Each of these permission types follows a hierarchical order where
-#' each subsequent permission type includes all permission of the previous
-#' type.
+#' Note: Each of these permission types follows a hierarchical order where each subsequent permission type includes all permission of the previous type.
 #' 
-#' Important: If you provide a supported permission type that doesn't match
-#' the user's level of permissions on the table, then Lake Formation raises
-#' an exception. For example, if the third-party engine calling the
-#' [`get_unfiltered_table_metadata`][glue_get_unfiltered_table_metadata]
-#' operation can enforce only column-level filtering, and the user has
-#' nested cell filtering applied on the table, Lake Formation throws an
-#' exception, and will not return unfiltered table metadata and data access
-#' credentials.
+#' Important: If you provide a supported permission type that doesn't match the user's level of permissions on the table, then Lake Formation raises an exception. For example, if the third-party engine calling the [`get_unfiltered_table_metadata`][glue_get_unfiltered_table_metadata] operation can enforce only column-level filtering, and the user has nested cell filtering applied on the table, Lake Formation throws an exception, and will not return unfiltered table metadata and data access credentials.
 #' @param ParentResourceArn The resource ARN of the view.
 #' @param RootResourceArn The resource ARN of the root view in a chain of nested views.
-#' @param SupportedDialect A structure specifying the dialect and dialect version used by the query
-#' engine.
-#' @param Permissions The Lake Formation data permissions of the caller on the table. Used to
-#' authorize the call when no view context is found.
-#' @param QuerySessionContext A structure used as a protocol between query engines and Lake Formation
-#' or Glue. Contains both a Lake Formation generated authorization
-#' identifier and information from the request's authorization context.
+#' @param SupportedDialect A structure specifying the dialect and dialect version used by the query engine.
+#' @param Permissions The Lake Formation data permissions of the caller on the table. Used to authorize the call when no view context is found.
+#' @param QuerySessionContext A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.
 #'
 #' @return
 #' A list with the following syntax:
@@ -23022,9 +22604,7 @@ glue_get_usage_profile <- function(Name) {
 #' @usage
 #' glue_get_user_defined_function(CatalogId, DatabaseName, FunctionName)
 #'
-#' @param CatalogId The ID of the Data Catalog where the function to be retrieved is
-#' located. If none is provided, the Amazon Web Services account ID is used
-#' by default.
+#' @param CatalogId The ID of the Data Catalog where the function to be retrieved is located. If none is provided, the Amazon Web Services account ID is used by default.
 #' @param DatabaseName &#91;required&#93; The name of the catalog database where the function is located.
 #' @param FunctionName &#91;required&#93; The name of the function.
 #'
@@ -23095,20 +22675,12 @@ glue_get_user_defined_function <- function(CatalogId = NULL, DatabaseName, Funct
 #' glue_get_user_defined_functions(CatalogId, DatabaseName, Pattern,
 #'   FunctionType, NextToken, MaxResults)
 #'
-#' @param CatalogId The ID of the Data Catalog where the functions to be retrieved are
-#' located. If none is provided, the Amazon Web Services account ID is used
-#' by default.
-#' @param DatabaseName The name of the catalog database where the functions are located. If
-#' none is provided, functions from all the databases across the catalog
-#' will be returned.
-#' @param Pattern &#91;required&#93; An optional function-name pattern string that filters the function
-#' definitions returned.
-#' @param FunctionType An optional function-type pattern string that filters the function
-#' definitions returned from Amazon Redshift Federated Permissions Catalog.
+#' @param CatalogId The ID of the Data Catalog where the functions to be retrieved are located. If none is provided, the Amazon Web Services account ID is used by default.
+#' @param DatabaseName The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.
+#' @param Pattern &#91;required&#93; An optional function-name pattern string that filters the function definitions returned.
+#' @param FunctionType An optional function-type pattern string that filters the function definitions returned from Amazon Redshift Federated Permissions Catalog.
 #' 
-#' Specify a value of `REGULAR_FUNCTION` or `STORED_PROCEDURE`. The
-#' `STORED_PROCEDURE` function type is only compatible with Amazon Redshift
-#' Federated Permissions Catalog.
+#' Specify a value of `REGULAR_FUNCTION` or `STORED_PROCEDURE`. The `STORED_PROCEDURE` function type is only compatible with Amazon Redshift Federated Permissions Catalog.
 #' @param NextToken A continuation token, if this is a continuation call.
 #' @param MaxResults The maximum number of functions to return in one response.
 #'
@@ -23185,8 +22757,7 @@ glue_get_user_defined_functions <- function(CatalogId = NULL, DatabaseName = NUL
 #' glue_get_workflow(Name, IncludeGraph)
 #'
 #' @param Name &#91;required&#93; The name of the workflow to retrieve.
-#' @param IncludeGraph Specifies whether to include a graph when returning the workflow
-#' resource metadata.
+#' @param IncludeGraph Specifies whether to include a graph when returning the workflow resource metadata.
 #'
 #' @return
 #' A list with the following syntax:
@@ -23524,8 +23095,7 @@ glue_get_workflow <- function(Name, IncludeGraph = NULL) {
 #' Retrieves the metadata for a given workflow run
 #'
 #' @description
-#' Retrieves the metadata for a given workflow run. Job run history is
-#' accessible for 90 days for your workflow and job run.
+#' Retrieves the metadata for a given workflow run. Job run history is accessible for 90 days for your workflow and job run.
 #'
 #' @usage
 #' glue_get_workflow_run(Name, RunId, IncludeGraph)
@@ -23998,8 +23568,7 @@ glue_get_workflow_runs <- function(Name, IncludeGraph = NULL, NextToken = NULL, 
 #' @usage
 #' glue_import_catalog_to_glue(CatalogId)
 #'
-#' @param CatalogId The ID of the catalog to import. Currently, this should be the Amazon
-#' Web Services account ID.
+#' @param CatalogId The ID of the catalog to import. Currently, this should be the Amazon Web Services account ID.
 #'
 #' @return
 #' An empty list.
@@ -24151,12 +23720,9 @@ glue_list_column_statistics_task_runs <- function(MaxResults = NULL, NextToken =
 #' available connection types in Glue
 #'
 #' @description
-#' The [`list_connection_types`][glue_list_connection_types] API provides a
-#' discovery mechanism to learn available connection types in Glue. The
-#' response contains a list of connection types with high-level details of
-#' what is supported for each connection type. The connection types listed
-#' are the set of supported options for the `ConnectionType` value in the
-#' [`create_connection`][glue_create_connection] API.
+#' The [`list_connection_types`][glue_list_connection_types] API provides a discovery mechanism to learn available connection types in Glue. The response contains a list of connection types with high-level details of what is supported for each connection type, including both built-in connection types and custom connection types registered via [`register_connection_type`][glue_register_connection_type]. The connection types listed are the set of supported options for the `ConnectionType` value in the [`create_connection`][glue_create_connection] API.
+#' 
+#' See also: [`describe_connection_type`][glue_describe_connection_type], [`register_connection_type`][glue_register_connection_type], [`delete_connection_type`][glue_delete_connection_type]
 #'
 #' @usage
 #' glue_list_connection_types(MaxResults, NextToken)
@@ -24239,15 +23805,9 @@ glue_list_connection_types <- function(MaxResults = NULL, NextToken = NULL) {
 #' account, or the resources with the specified tag
 #'
 #' @description
-#' Retrieves the names of all crawler resources in this Amazon Web Services
-#' account, or the resources with the specified tag. This operation allows
-#' you to see which resources are available in your account, and their
-#' names.
+#' Retrieves the names of all crawler resources in this Amazon Web Services account, or the resources with the specified tag. This operation allows you to see which resources are available in your account, and their names.
 #' 
-#' This operation takes the optional `Tags` field, which you can use as a
-#' filter on the response so that tagged resources can be retrieved as a
-#' group. If you choose to use tags filtering, only resources with the tag
-#' are retrieved.
+#' This operation takes the optional `Tags` field, which you can use as a filter on the response so that tagged resources can be retrieved as a group. If you choose to use tags filtering, only resources with the tag are retrieved.
 #'
 #' @usage
 #' glue_list_crawlers(MaxResults, NextToken, Tags)
@@ -24305,32 +23865,24 @@ glue_list_crawlers <- function(MaxResults = NULL, NextToken = NULL, Tags = NULL)
 #' Returns all the crawls of a specified crawler
 #'
 #' @description
-#' Returns all the crawls of a specified crawler. Returns only the crawls
-#' that have occurred since the launch date of the crawler history feature,
-#' and only retains up to 12 months of crawls. Older crawls will not be
-#' returned.
+#' Returns all the crawls of a specified crawler. Returns only the crawls that have occurred since the launch date of the crawler history feature, and only retains up to 12 months of crawls. Older crawls will not be returned.
 #' 
 #' You may use this API to:
 #' 
 #' -   Retrive all the crawls of a specified crawler.
 #' 
-#' -   Retrieve all the crawls of a specified crawler within a limited
-#'     count.
+#' -   Retrieve all the crawls of a specified crawler within a limited count.
 #' 
-#' -   Retrieve all the crawls of a specified crawler in a specific time
-#'     range.
+#' -   Retrieve all the crawls of a specified crawler in a specific time range.
 #' 
-#' -   Retrieve all the crawls of a specified crawler with a particular
-#'     state, crawl ID, or DPU hour value.
+#' -   Retrieve all the crawls of a specified crawler with a particular state, crawl ID, or DPU hour value.
 #'
 #' @usage
 #' glue_list_crawls(CrawlerName, MaxResults, Filters, NextToken)
 #'
 #' @param CrawlerName &#91;required&#93; The name of the crawler whose runs you want to retrieve.
-#' @param MaxResults The maximum number of results to return. The default is 20, and maximum
-#' is 100.
-#' @param Filters Filters the crawls by the criteria you specify in a list of
-#' `CrawlsFilter` objects.
+#' @param MaxResults The maximum number of results to return. The default is 20, and maximum is 100.
+#' @param Filters Filters the crawls by the criteria you specify in a list of `CrawlsFilter` objects.
 #' @param NextToken A continuation token, if this is a continuation call.
 #'
 #' @return
@@ -24693,8 +24245,7 @@ glue_list_data_quality_rule_recommendation_runs <- function(Filter = NULL, NextT
 #' evaluated against a data source
 #'
 #' @description
-#' Lists all the runs meeting the filter criteria, where a ruleset is
-#' evaluated against a data source.
+#' Lists all the runs meeting the filter criteria, where a ruleset is evaluated against a data source.
 #'
 #' @usage
 #' glue_list_data_quality_ruleset_evaluation_runs(Filter, NextToken,
@@ -24772,7 +24323,8 @@ glue_list_data_quality_rule_recommendation_runs <- function(Filter = NULL, NextT
 #'     ),
 #'     StartedAfter = as.POSIXct(
 #'       "2015-01-01"
-#'     )
+#'     ),
+#'     RulesetName = "string"
 #'   ),
 #'   NextToken = "string",
 #'   MaxResults = 123
@@ -24807,8 +24359,7 @@ glue_list_data_quality_ruleset_evaluation_runs <- function(Filter = NULL, NextTo
 #' tables
 #'
 #' @description
-#' Returns a paginated list of rulesets for the specified list of Glue
-#' tables.
+#' Returns a paginated list of rulesets for the specified list of Glue tables.
 #'
 #' @usage
 #' glue_list_data_quality_rulesets(NextToken, MaxResults, Filter, Tags)
@@ -25081,15 +24632,9 @@ glue_list_data_quality_statistics <- function(StatisticId = NULL, ProfileId = NU
 #' Services account, or the resources with the specified tag
 #'
 #' @description
-#' Retrieves the names of all `DevEndpoint` resources in this Amazon Web
-#' Services account, or the resources with the specified tag. This
-#' operation allows you to see which resources are available in your
-#' account, and their names.
+#' Retrieves the names of all `DevEndpoint` resources in this Amazon Web Services account, or the resources with the specified tag. This operation allows you to see which resources are available in your account, and their names.
 #' 
-#' This operation takes the optional `Tags` field, which you can use as a
-#' filter on the response so that tagged resources can be retrieved as a
-#' group. If you choose to use tags filtering, only resources with the tag
-#' are retrieved.
+#' This operation takes the optional `Tags` field, which you can use as a filter on the response so that tagged resources can be retrieved as a group. If you choose to use tags filtering, only resources with the tag are retrieved.
 #'
 #' @usage
 #' glue_list_dev_endpoints(NextToken, MaxResults, Tags)
@@ -25153,13 +24698,9 @@ glue_list_dev_endpoints <- function(NextToken = NULL, MaxResults = NULL, Tags = 
 #' glue_list_entities(ConnectionName, CatalogId, ParentEntityName,
 #'   NextToken, DataStoreApiVersion)
 #'
-#' @param ConnectionName A name for the connection that has required credentials to query any
-#' connection type.
-#' @param CatalogId The catalog ID of the catalog that contains the connection. This can be
-#' null, By default, the Amazon Web Services Account ID is the catalog ID.
-#' @param ParentEntityName Name of the parent entity for which you want to list the children. This
-#' parameter takes a fully-qualified path of the entity in order to list
-#' the child entities.
+#' @param ConnectionName A name for the connection that has required credentials to query any connection type.
+#' @param CatalogId The catalog ID of the catalog that contains the connection. This can be null, By default, the Amazon Web Services Account ID is the catalog ID.
+#' @param ParentEntityName Name of the parent entity for which you want to list the children. This parameter takes a fully-qualified path of the entity in order to list the child entities.
 #' @param NextToken A continuation token, included if this is a continuation call.
 #' @param DataStoreApiVersion The API version of the SaaS connector.
 #'
@@ -25221,8 +24762,7 @@ glue_list_entities <- function(ConnectionName = NULL, CatalogId = NULL, ParentEn
 #' List integration resource properties for a single customer
 #'
 #' @description
-#' List integration resource properties for a single customer. It supports
-#' the filters, maxRecords and markers.
+#' List integration resource properties for a single customer. It supports the filters, maxRecords and markers.
 #'
 #' @usage
 #' glue_list_integration_resource_properties(Marker, Filters, MaxRecords)
@@ -25298,15 +24838,9 @@ glue_list_integration_resource_properties <- function(Marker = NULL, Filters = N
 #' account, or the resources with the specified tag
 #'
 #' @description
-#' Retrieves the names of all job resources in this Amazon Web Services
-#' account, or the resources with the specified tag. This operation allows
-#' you to see which resources are available in your account, and their
-#' names.
+#' Retrieves the names of all job resources in this Amazon Web Services account, or the resources with the specified tag. This operation allows you to see which resources are available in your account, and their names.
 #' 
-#' This operation takes the optional `Tags` field, which you can use as a
-#' filter on the response so that tagged resources can be retrieved as a
-#' group. If you choose to use tags filtering, only resources with the tag
-#' are retrieved.
+#' This operation takes the optional `Tags` field, which you can use as a filter on the response so that tagged resources can be retrieved as a group. If you choose to use tags filtering, only resources with the tag are retrieved.
 #'
 #' @usage
 #' glue_list_jobs(NextToken, MaxResults, Tags)
@@ -25366,20 +24900,14 @@ glue_list_jobs <- function(NextToken = NULL, MaxResults = NULL, Tags = NULL) {
 #' the specified tag
 #'
 #' @description
-#' Retrieves a sortable, filterable list of existing Glue machine learning
-#' transforms in this Amazon Web Services account, or the resources with
-#' the specified tag. This operation takes the optional `Tags` field, which
-#' you can use as a filter of the responses so that tagged resources can be
-#' retrieved as a group. If you choose to use tag filtering, only resources
-#' with the tags are retrieved.
+#' Retrieves a sortable, filterable list of existing Glue machine learning transforms in this Amazon Web Services account, or the resources with the specified tag. This operation takes the optional `Tags` field, which you can use as a filter of the responses so that tagged resources can be retrieved as a group. If you choose to use tag filtering, only resources with the tags are retrieved.
 #'
 #' @usage
 #' glue_list_ml_transforms(NextToken, MaxResults, Filter, Sort, Tags)
 #'
 #' @param NextToken A continuation token, if this is a continuation request.
 #' @param MaxResults The maximum size of a list to return.
-#' @param Filter A `TransformFilterCriteria` used to filter the machine learning
-#' transforms.
+#' @param Filter A `TransformFilterCriteria` used to filter the machine learning transforms.
 #' @param Sort A `TransformSortCriteria` used to sort the machine learning transforms.
 #' @param Tags Specifies to return only these tagged resources.
 #'
@@ -25457,20 +24985,101 @@ glue_list_ml_transforms <- function(NextToken = NULL, MaxResults = NULL, Filter 
 }
 .glue$operations$list_ml_transforms <- glue_list_ml_transforms
 
+#' List all task runs for a particular account
+#'
+#' @description
+#' List all task runs for a particular account.
+#'
+#' @usage
+#' glue_list_materialized_view_refresh_task_runs(CatalogId, DatabaseName,
+#'   TableName, MaxResults, NextToken)
+#'
+#' @param CatalogId &#91;required&#93; The ID of the Data Catalog where the table resides. If none is supplied, the account ID is used by default.
+#' @param DatabaseName The database where the table resides.
+#' @param TableName The name of the table for which statistics is generated.
+#' @param MaxResults The maximum size of the response.
+#' @param NextToken A continuation token, if this is a continuation call.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   MaterializedViewRefreshTaskRuns = list(
+#'     list(
+#'       CustomerId = "string",
+#'       MaterializedViewRefreshTaskRunId = "string",
+#'       DatabaseName = "string",
+#'       TableName = "string",
+#'       CatalogId = "string",
+#'       Role = "string",
+#'       Status = "STARTING"|"RUNNING"|"SUCCEEDED"|"FAILED"|"STOPPED",
+#'       CreationTime = as.POSIXct(
+#'         "2015-01-01"
+#'       ),
+#'       LastUpdated = as.POSIXct(
+#'         "2015-01-01"
+#'       ),
+#'       StartTime = as.POSIXct(
+#'         "2015-01-01"
+#'       ),
+#'       EndTime = as.POSIXct(
+#'         "2015-01-01"
+#'       ),
+#'       ErrorMessage = "string",
+#'       DPUSeconds = 123.0,
+#'       RefreshType = "FULL"|"INCREMENTAL",
+#'       ProcessedBytes = 123
+#'     )
+#'   ),
+#'   NextToken = "string"
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$list_materialized_view_refresh_task_runs(
+#'   CatalogId = "string",
+#'   DatabaseName = "string",
+#'   TableName = "string",
+#'   MaxResults = 123,
+#'   NextToken = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname glue_list_materialized_view_refresh_task_runs
+#'
+#' @aliases glue_list_materialized_view_refresh_task_runs
+glue_list_materialized_view_refresh_task_runs <- function(CatalogId, DatabaseName = NULL, TableName = NULL, MaxResults = NULL, NextToken = NULL) {
+  op <- new_operation(
+    name = "ListMaterializedViewRefreshTaskRuns",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "MaterializedViewRefreshTaskRuns"),
+    stream_api = FALSE
+  )
+  input <- .glue$list_materialized_view_refresh_task_runs_input(CatalogId = CatalogId, DatabaseName = DatabaseName, TableName = TableName, MaxResults = MaxResults, NextToken = NextToken)
+  output <- .glue$list_materialized_view_refresh_task_runs_output()
+  config <- get_config()
+  svc <- .glue$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.glue$operations$list_materialized_view_refresh_task_runs <- glue_list_materialized_view_refresh_task_runs
+
 #' Returns a list of registries that you have created, with minimal
 #' registry information
 #'
 #' @description
-#' Returns a list of registries that you have created, with minimal
-#' registry information. Registries in the `Deleting` status will not be
-#' included in the results. Empty results will be returned if there are no
-#' registries available.
+#' Returns a list of registries that you have created, with minimal registry information. Registries in the `Deleting` status will not be included in the results. Empty results will be returned if there are no registries available.
 #'
 #' @usage
 #' glue_list_registries(MaxResults, NextToken)
 #'
-#' @param MaxResults Maximum number of results required per page. If the value is not
-#' supplied, this will be defaulted to 25 per page.
+#' @param MaxResults Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.
 #' @param NextToken A continuation token, if this is a continuation call.
 #'
 #' @return
@@ -25527,25 +25136,17 @@ glue_list_registries <- function(MaxResults = NULL, NextToken = NULL) {
 #' information
 #'
 #' @description
-#' Returns a list of schema versions that you have created, with minimal
-#' information. Schema versions in Deleted status will not be included in
-#' the results. Empty results will be returned if there are no schema
-#' versions available.
+#' Returns a list of schema versions that you have created, with minimal information. Schema versions in Deleted status will not be included in the results. Empty results will be returned if there are no schema versions available.
 #'
 #' @usage
 #' glue_list_schema_versions(SchemaId, MaxResults, NextToken)
 #'
-#' @param SchemaId &#91;required&#93; This is a wrapper structure to contain schema identity fields. The
-#' structure contains:
+#' @param SchemaId &#91;required&#93; This is a wrapper structure to contain schema identity fields. The structure contains:
 #' 
-#' -   SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema.
-#'     Either `SchemaArn` or `SchemaName` and `RegistryName` has to be
-#'     provided.
+#' -   SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either `SchemaArn` or `SchemaName` and `RegistryName` has to be provided.
 #' 
-#' -   SchemaId$SchemaName: The name of the schema. Either `SchemaArn` or
-#'     `SchemaName` and `RegistryName` has to be provided.
-#' @param MaxResults Maximum number of results required per page. If the value is not
-#' supplied, this will be defaulted to 25 per page.
+#' -   SchemaId$SchemaName: The name of the schema. Either `SchemaArn` or `SchemaName` and `RegistryName` has to be provided.
+#' @param MaxResults Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.
 #' @param NextToken A continuation token, if this is a continuation call.
 #'
 #' @return
@@ -25605,20 +25206,15 @@ glue_list_schema_versions <- function(SchemaId, MaxResults = NULL, NextToken = N
 #' Returns a list of schemas with minimal details
 #'
 #' @description
-#' Returns a list of schemas with minimal details. Schemas in Deleting
-#' status will not be included in the results. Empty results will be
-#' returned if there are no schemas available.
+#' Returns a list of schemas with minimal details. Schemas in Deleting status will not be included in the results. Empty results will be returned if there are no schemas available.
 #' 
-#' When the `RegistryId` is not provided, all the schemas across registries
-#' will be part of the API response.
+#' When the `RegistryId` is not provided, all the schemas across registries will be part of the API response.
 #'
 #' @usage
 #' glue_list_schemas(RegistryId, MaxResults, NextToken)
 #'
-#' @param RegistryId A wrapper structure that may contain the registry name and Amazon
-#' Resource Name (ARN).
-#' @param MaxResults Maximum number of results required per page. If the value is not
-#' supplied, this will be defaulted to 25 per page.
+#' @param RegistryId A wrapper structure that may contain the registry name and Amazon Resource Name (ARN).
+#' @param MaxResults Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.
 #' @param NextToken A continuation token, if this is a continuation call.
 #'
 #' @return
@@ -25684,8 +25280,7 @@ glue_list_schemas <- function(RegistryId = NULL, MaxResults = NULL, NextToken = 
 #' @usage
 #' glue_list_sessions(NextToken, MaxResults, Tags, RequestOrigin)
 #'
-#' @param NextToken The token for the next set of results, or null if there are no more
-#' result.
+#' @param NextToken The token for the next set of results, or null if there are no more result.
 #' @param MaxResults The maximum number of results.
 #' @param Tags Tags belonging to the session.
 #' @param RequestOrigin The origin of the request.
@@ -25962,23 +25557,15 @@ glue_list_table_optimizer_runs <- function(CatalogId, DatabaseName, TableName, T
 #' account, or the resources with the specified tag
 #'
 #' @description
-#' Retrieves the names of all trigger resources in this Amazon Web Services
-#' account, or the resources with the specified tag. This operation allows
-#' you to see which resources are available in your account, and their
-#' names.
+#' Retrieves the names of all trigger resources in this Amazon Web Services account, or the resources with the specified tag. This operation allows you to see which resources are available in your account, and their names.
 #' 
-#' This operation takes the optional `Tags` field, which you can use as a
-#' filter on the response so that tagged resources can be retrieved as a
-#' group. If you choose to use tags filtering, only resources with the tag
-#' are retrieved.
+#' This operation takes the optional `Tags` field, which you can use as a filter on the response so that tagged resources can be retrieved as a group. If you choose to use tags filtering, only resources with the tag are retrieved.
 #'
 #' @usage
 #' glue_list_triggers(NextToken, DependentJobName, MaxResults, Tags)
 #'
 #' @param NextToken A continuation token, if this is a continuation request.
-#' @param DependentJobName The name of the job for which to retrieve triggers. The trigger that can
-#' start this job is returned. If there is no such trigger, all triggers
-#' are returned.
+#' @param DependentJobName The name of the job for which to retrieve triggers. The trigger that can start this job is returned. If there is no such trigger, all triggers are returned.
 #' @param MaxResults The maximum size of a list to return.
 #' @param Tags Specifies to return only these tagged resources.
 #'
@@ -26158,8 +25745,7 @@ glue_list_workflows <- function(NextToken = NULL, MaxResults = NULL) {
 #' @param IntegrationIdentifier &#91;required&#93; The Amazon Resource Name (ARN) for the integration.
 #' @param Description A description of the integration.
 #' @param DataFilter Selects source tables for the integration using Maxwell filter syntax.
-#' @param IntegrationConfig The configuration settings for the integration. Currently, only the
-#' RefreshInterval can be modified.
+#' @param IntegrationConfig The configuration settings for the integration. Currently, only the RefreshInterval can be modified.
 #' @param IntegrationName A unique name for an integration in Glue.
 #'
 #' @return
@@ -26246,16 +25832,13 @@ glue_modify_integration <- function(IntegrationIdentifier, Description = NULL, D
 #' Sets the security configuration for a specified catalog
 #'
 #' @description
-#' Sets the security configuration for a specified catalog. After the
-#' configuration has been set, the specified encryption is applied to every
-#' catalog write thereafter.
+#' Sets the security configuration for a specified catalog. After the configuration has been set, the specified encryption is applied to every catalog write thereafter.
 #'
 #' @usage
 #' glue_put_data_catalog_encryption_settings(CatalogId,
 #'   DataCatalogEncryptionSettings)
 #'
-#' @param CatalogId The ID of the Data Catalog to set the security configuration for. If
-#' none is provided, the Amazon Web Services account ID is used by default.
+#' @param CatalogId The ID of the Data Catalog to set the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.
 #' @param DataCatalogEncryptionSettings &#91;required&#93; The security configuration to set.
 #'
 #' @return
@@ -26360,25 +25943,15 @@ glue_put_data_quality_profile_annotation <- function(ProfileId, InclusionAnnotat
 #'
 #' @param PolicyInJson &#91;required&#93; Contains the policy document to set, in JSON format.
 #' @param ResourceArn Do not use. For internal use only.
-#' @param PolicyHashCondition The hash value returned when the previous policy was set using
-#' [`put_resource_policy`][glue_put_resource_policy]. Its purpose is to
-#' prevent concurrent modifications of a policy. Do not use this parameter
-#' if no previous policy has been set.
-#' @param PolicyExistsCondition A value of `MUST_EXIST` is used to update a policy. A value of
-#' `NOT_EXIST` is used to create a new policy. If a value of `NONE` or a
-#' null value is used, the call does not depend on the existence of a
-#' policy.
-#' @param EnableHybrid If `'TRUE'`, indicates that you are using both methods to grant
-#' cross-account access to Data Catalog resources:
+#' @param PolicyHashCondition The hash value returned when the previous policy was set using [`put_resource_policy`][glue_put_resource_policy]. Its purpose is to prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.
+#' @param PolicyExistsCondition A value of `MUST_EXIST` is used to update a policy. A value of `NOT_EXIST` is used to create a new policy. If a value of `NONE` or a null value is used, the call does not depend on the existence of a policy.
+#' @param EnableHybrid If `'TRUE'`, indicates that you are using both methods to grant cross-account access to Data Catalog resources:
 #' 
 #' -   By directly updating the resource policy with `PutResourePolicy`
 #' 
-#' -   By using the **Grant permissions** command on the Amazon Web
-#'     Services Management Console.
+#' -   By using the **Grant permissions** command on the Amazon Web Services Management Console.
 #' 
-#' Must be set to `'TRUE'` if you have already used the Management Console
-#' to grant cross-account access, otherwise the call fails. Default is
-#' 'FALSE'.
+#' Must be set to `'TRUE'` if you have already used the Management Console to grant cross-account access, otherwise the call fails. Default is 'FALSE'.
 #'
 #' @return
 #' A list with the following syntax:
@@ -26426,9 +25999,7 @@ glue_put_resource_policy <- function(PolicyInJson, ResourceArn = NULL, PolicyHas
 #' Puts the metadata key value pair for a specified schema version ID
 #'
 #' @description
-#' Puts the metadata key value pair for a specified schema version ID. A
-#' maximum of 10 key value pairs will be allowed per schema version. They
-#' can be added over one or more calls.
+#' Puts the metadata key value pair for a specified schema version ID. A maximum of 10 key value pairs will be allowed per schema version. They can be added over one or more calls.
 #'
 #' @usage
 #' glue_put_schema_version_metadata(SchemaId, SchemaVersionNumber,
@@ -26501,22 +26072,16 @@ glue_put_schema_version_metadata <- function(SchemaId = NULL, SchemaVersionNumbe
 #' Puts the specified workflow run properties for the given workflow run
 #'
 #' @description
-#' Puts the specified workflow run properties for the given workflow run.
-#' If a property already exists for the specified run, then it overrides
-#' the value otherwise adds the property to existing properties.
+#' Puts the specified workflow run properties for the given workflow run. If a property already exists for the specified run, then it overrides the value otherwise adds the property to existing properties.
 #'
 #' @usage
 #' glue_put_workflow_run_properties(Name, RunId, RunProperties)
 #'
 #' @param Name &#91;required&#93; Name of the workflow which was run.
-#' @param RunId &#91;required&#93; The ID of the workflow run for which the run properties should be
-#' updated.
+#' @param RunId &#91;required&#93; The ID of the workflow run for which the run properties should be updated.
 #' @param RunProperties &#91;required&#93; The properties to put for the specified run.
 #' 
-#' Run properties may be logged. Do not pass plaintext secrets as
-#' properties. Retrieve secrets from a Glue Connection, Amazon Web Services
-#' Secrets Manager or other secret management mechanism if you intend to
-#' use them within the workflow run.
+#' Run properties may be logged. Do not pass plaintext secrets as properties. Retrieve secrets from a Glue Connection, Amazon Web Services Secrets Manager or other secret management mechanism if you intend to use them within the workflow run.
 #'
 #' @return
 #' An empty list.
@@ -26565,14 +26130,11 @@ glue_put_workflow_run_properties <- function(Name, RunId, RunProperties) {
 #' glue_query_schema_version_metadata(SchemaId, SchemaVersionNumber,
 #'   SchemaVersionId, MetadataList, MaxResults, NextToken)
 #'
-#' @param SchemaId A wrapper structure that may contain the schema name and Amazon Resource
-#' Name (ARN).
+#' @param SchemaId A wrapper structure that may contain the schema name and Amazon Resource Name (ARN).
 #' @param SchemaVersionNumber The version number of the schema.
 #' @param SchemaVersionId The unique version ID of the schema version.
-#' @param MetadataList Search key-value pairs for metadata, if they are not provided all the
-#' metadata information will be fetched.
-#' @param MaxResults Maximum number of results required per page. If the value is not
-#' supplied, this will be defaulted to 25 per page.
+#' @param MetadataList Search key-value pairs for metadata, if they are not provided all the metadata information will be fetched.
+#' @param MaxResults Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.
 #' @param NextToken A continuation token, if this is a continuation call.
 #'
 #' @return
@@ -26644,39 +26206,570 @@ glue_query_schema_version_metadata <- function(SchemaId = NULL, SchemaVersionNum
 }
 .glue$operations$query_schema_version_metadata <- glue_query_schema_version_metadata
 
+#' Registers a custom connection type in Glue based on the configuration
+#' provided
+#'
+#' @description
+#' Registers a custom connection type in Glue based on the configuration provided. This operation enables customers to configure custom connectors for any data source with REST-based APIs, eliminating the need for building custom Lambda connectors.
+#' 
+#' The registered connection type stores details about how requests and responses are interpreted by REST sources, including connection properties, authentication configuration, and REST configuration with entity definitions. Once registered, customers can create connections using this connection type and work with them the same way as natively supported Glue connectors.
+#' 
+#' Supports multiple authentication types including Basic, OAuth2 (Client Credentials, JWT Bearer, Authorization Code), and Custom Auth configurations.
+#'
+#' @usage
+#' glue_register_connection_type(ConnectionType, IntegrationType,
+#'   Description, ConnectionProperties, ConnectorAuthenticationConfiguration,
+#'   RestConfiguration, Tags)
+#'
+#' @param ConnectionType &#91;required&#93; The name of the connection type. Must be between 1 and 255 characters and must be prefixed with "REST-" to indicate it is a REST-based connector.
+#' @param IntegrationType &#91;required&#93; The integration type for the connection. Currently only "REST" protocol is supported.
+#' @param Description A description of the connection type. Can be up to 2048 characters and provides details about the purpose and functionality of the connection type.
+#' @param ConnectionProperties &#91;required&#93; Defines the base URL and additional request parameters needed during connection creation for this connection type.
+#' @param ConnectorAuthenticationConfiguration &#91;required&#93; Defines the supported authentication types and required properties for this connection type, including Basic, OAuth2, and Custom authentication methods.
+#' @param RestConfiguration &#91;required&#93; Defines the HTTP request and response configuration, validation endpoint, and entity configurations for REST API interactions.
+#' @param Tags The tags you assign to the connection type.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   ConnectionTypeArn = "string"
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$register_connection_type(
+#'   ConnectionType = "string",
+#'   IntegrationType = "REST",
+#'   Description = "string",
+#'   ConnectionProperties = list(
+#'     Url = list(
+#'       Name = "string",
+#'       KeyOverride = "string",
+#'       Required = TRUE|FALSE,
+#'       DefaultValue = "string",
+#'       AllowedValues = list(
+#'         "string"
+#'       ),
+#'       PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'       PropertyType = "USER_INPUT"|"SECRET"|"READ_ONLY"|"UNUSED"|"SECRET_OR_USER_INPUT"
+#'     ),
+#'     AdditionalRequestParameters = list(
+#'       list(
+#'         Name = "string",
+#'         KeyOverride = "string",
+#'         Required = TRUE|FALSE,
+#'         DefaultValue = "string",
+#'         AllowedValues = list(
+#'           "string"
+#'         ),
+#'         PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'         PropertyType = "USER_INPUT"|"SECRET"|"READ_ONLY"|"UNUSED"|"SECRET_OR_USER_INPUT"
+#'       )
+#'     )
+#'   ),
+#'   ConnectorAuthenticationConfiguration = list(
+#'     AuthenticationTypes = list(
+#'       "BASIC"|"OAUTH2"|"CUSTOM"|"IAM"
+#'     ),
+#'     OAuth2Properties = list(
+#'       OAuth2GrantType = "CLIENT_CREDENTIALS"|"JWT_BEARER"|"AUTHORIZATION_CODE",
+#'       ClientCredentialsProperties = list(
+#'         TokenUrl = list(
+#'           Name = "string",
+#'           KeyOverride = "string",
+#'           Required = TRUE|FALSE,
+#'           DefaultValue = "string",
+#'           AllowedValues = list(
+#'             "string"
+#'           ),
+#'           PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'           PropertyType = "USER_INPUT"|"SECRET"|"READ_ONLY"|"UNUSED"|"SECRET_OR_USER_INPUT"
+#'         ),
+#'         RequestMethod = "GET"|"POST",
+#'         ContentType = "APPLICATION_JSON"|"URL_ENCODED",
+#'         ClientId = list(
+#'           Name = "string",
+#'           KeyOverride = "string",
+#'           Required = TRUE|FALSE,
+#'           DefaultValue = "string",
+#'           AllowedValues = list(
+#'             "string"
+#'           ),
+#'           PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'           PropertyType = "USER_INPUT"|"SECRET"|"READ_ONLY"|"UNUSED"|"SECRET_OR_USER_INPUT"
+#'         ),
+#'         ClientSecret = list(
+#'           Name = "string",
+#'           KeyOverride = "string",
+#'           Required = TRUE|FALSE,
+#'           DefaultValue = "string",
+#'           AllowedValues = list(
+#'             "string"
+#'           ),
+#'           PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'           PropertyType = "USER_INPUT"|"SECRET"|"READ_ONLY"|"UNUSED"|"SECRET_OR_USER_INPUT"
+#'         ),
+#'         Scope = list(
+#'           Name = "string",
+#'           KeyOverride = "string",
+#'           Required = TRUE|FALSE,
+#'           DefaultValue = "string",
+#'           AllowedValues = list(
+#'             "string"
+#'           ),
+#'           PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'           PropertyType = "USER_INPUT"|"SECRET"|"READ_ONLY"|"UNUSED"|"SECRET_OR_USER_INPUT"
+#'         ),
+#'         TokenUrlParameters = list(
+#'           list(
+#'             Name = "string",
+#'             KeyOverride = "string",
+#'             Required = TRUE|FALSE,
+#'             DefaultValue = "string",
+#'             AllowedValues = list(
+#'               "string"
+#'             ),
+#'             PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'             PropertyType = "USER_INPUT"|"SECRET"|"READ_ONLY"|"UNUSED"|"SECRET_OR_USER_INPUT"
+#'           )
+#'         )
+#'       ),
+#'       JWTBearerProperties = list(
+#'         TokenUrl = list(
+#'           Name = "string",
+#'           KeyOverride = "string",
+#'           Required = TRUE|FALSE,
+#'           DefaultValue = "string",
+#'           AllowedValues = list(
+#'             "string"
+#'           ),
+#'           PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'           PropertyType = "USER_INPUT"|"SECRET"|"READ_ONLY"|"UNUSED"|"SECRET_OR_USER_INPUT"
+#'         ),
+#'         RequestMethod = "GET"|"POST",
+#'         ContentType = "APPLICATION_JSON"|"URL_ENCODED",
+#'         JwtToken = list(
+#'           Name = "string",
+#'           KeyOverride = "string",
+#'           Required = TRUE|FALSE,
+#'           DefaultValue = "string",
+#'           AllowedValues = list(
+#'             "string"
+#'           ),
+#'           PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'           PropertyType = "USER_INPUT"|"SECRET"|"READ_ONLY"|"UNUSED"|"SECRET_OR_USER_INPUT"
+#'         ),
+#'         TokenUrlParameters = list(
+#'           list(
+#'             Name = "string",
+#'             KeyOverride = "string",
+#'             Required = TRUE|FALSE,
+#'             DefaultValue = "string",
+#'             AllowedValues = list(
+#'               "string"
+#'             ),
+#'             PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'             PropertyType = "USER_INPUT"|"SECRET"|"READ_ONLY"|"UNUSED"|"SECRET_OR_USER_INPUT"
+#'           )
+#'         )
+#'       ),
+#'       AuthorizationCodeProperties = list(
+#'         AuthorizationCodeUrl = list(
+#'           Name = "string",
+#'           KeyOverride = "string",
+#'           Required = TRUE|FALSE,
+#'           DefaultValue = "string",
+#'           AllowedValues = list(
+#'             "string"
+#'           ),
+#'           PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'           PropertyType = "USER_INPUT"|"SECRET"|"READ_ONLY"|"UNUSED"|"SECRET_OR_USER_INPUT"
+#'         ),
+#'         AuthorizationCode = list(
+#'           Name = "string",
+#'           KeyOverride = "string",
+#'           Required = TRUE|FALSE,
+#'           DefaultValue = "string",
+#'           AllowedValues = list(
+#'             "string"
+#'           ),
+#'           PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'           PropertyType = "USER_INPUT"|"SECRET"|"READ_ONLY"|"UNUSED"|"SECRET_OR_USER_INPUT"
+#'         ),
+#'         RedirectUri = list(
+#'           Name = "string",
+#'           KeyOverride = "string",
+#'           Required = TRUE|FALSE,
+#'           DefaultValue = "string",
+#'           AllowedValues = list(
+#'             "string"
+#'           ),
+#'           PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'           PropertyType = "USER_INPUT"|"SECRET"|"READ_ONLY"|"UNUSED"|"SECRET_OR_USER_INPUT"
+#'         ),
+#'         TokenUrl = list(
+#'           Name = "string",
+#'           KeyOverride = "string",
+#'           Required = TRUE|FALSE,
+#'           DefaultValue = "string",
+#'           AllowedValues = list(
+#'             "string"
+#'           ),
+#'           PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'           PropertyType = "USER_INPUT"|"SECRET"|"READ_ONLY"|"UNUSED"|"SECRET_OR_USER_INPUT"
+#'         ),
+#'         RequestMethod = "GET"|"POST",
+#'         ContentType = "APPLICATION_JSON"|"URL_ENCODED",
+#'         ClientId = list(
+#'           Name = "string",
+#'           KeyOverride = "string",
+#'           Required = TRUE|FALSE,
+#'           DefaultValue = "string",
+#'           AllowedValues = list(
+#'             "string"
+#'           ),
+#'           PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'           PropertyType = "USER_INPUT"|"SECRET"|"READ_ONLY"|"UNUSED"|"SECRET_OR_USER_INPUT"
+#'         ),
+#'         ClientSecret = list(
+#'           Name = "string",
+#'           KeyOverride = "string",
+#'           Required = TRUE|FALSE,
+#'           DefaultValue = "string",
+#'           AllowedValues = list(
+#'             "string"
+#'           ),
+#'           PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'           PropertyType = "USER_INPUT"|"SECRET"|"READ_ONLY"|"UNUSED"|"SECRET_OR_USER_INPUT"
+#'         ),
+#'         Scope = list(
+#'           Name = "string",
+#'           KeyOverride = "string",
+#'           Required = TRUE|FALSE,
+#'           DefaultValue = "string",
+#'           AllowedValues = list(
+#'             "string"
+#'           ),
+#'           PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'           PropertyType = "USER_INPUT"|"SECRET"|"READ_ONLY"|"UNUSED"|"SECRET_OR_USER_INPUT"
+#'         ),
+#'         Prompt = list(
+#'           Name = "string",
+#'           KeyOverride = "string",
+#'           Required = TRUE|FALSE,
+#'           DefaultValue = "string",
+#'           AllowedValues = list(
+#'             "string"
+#'           ),
+#'           PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'           PropertyType = "USER_INPUT"|"SECRET"|"READ_ONLY"|"UNUSED"|"SECRET_OR_USER_INPUT"
+#'         ),
+#'         TokenUrlParameters = list(
+#'           list(
+#'             Name = "string",
+#'             KeyOverride = "string",
+#'             Required = TRUE|FALSE,
+#'             DefaultValue = "string",
+#'             AllowedValues = list(
+#'               "string"
+#'             ),
+#'             PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'             PropertyType = "USER_INPUT"|"SECRET"|"READ_ONLY"|"UNUSED"|"SECRET_OR_USER_INPUT"
+#'           )
+#'         )
+#'       )
+#'     ),
+#'     BasicAuthenticationProperties = list(
+#'       Username = list(
+#'         Name = "string",
+#'         KeyOverride = "string",
+#'         Required = TRUE|FALSE,
+#'         DefaultValue = "string",
+#'         AllowedValues = list(
+#'           "string"
+#'         ),
+#'         PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'         PropertyType = "USER_INPUT"|"SECRET"|"READ_ONLY"|"UNUSED"|"SECRET_OR_USER_INPUT"
+#'       ),
+#'       Password = list(
+#'         Name = "string",
+#'         KeyOverride = "string",
+#'         Required = TRUE|FALSE,
+#'         DefaultValue = "string",
+#'         AllowedValues = list(
+#'           "string"
+#'         ),
+#'         PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'         PropertyType = "USER_INPUT"|"SECRET"|"READ_ONLY"|"UNUSED"|"SECRET_OR_USER_INPUT"
+#'       )
+#'     ),
+#'     CustomAuthenticationProperties = list(
+#'       AuthenticationParameters = list(
+#'         list(
+#'           Name = "string",
+#'           KeyOverride = "string",
+#'           Required = TRUE|FALSE,
+#'           DefaultValue = "string",
+#'           AllowedValues = list(
+#'             "string"
+#'           ),
+#'           PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'           PropertyType = "USER_INPUT"|"SECRET"|"READ_ONLY"|"UNUSED"|"SECRET_OR_USER_INPUT"
+#'         )
+#'       )
+#'     )
+#'   ),
+#'   RestConfiguration = list(
+#'     GlobalSourceConfiguration = list(
+#'       RequestMethod = "GET"|"POST",
+#'       RequestPath = "string",
+#'       RequestParameters = list(
+#'         list(
+#'           Name = "string",
+#'           KeyOverride = "string",
+#'           Required = TRUE|FALSE,
+#'           DefaultValue = "string",
+#'           AllowedValues = list(
+#'             "string"
+#'           ),
+#'           PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'           PropertyType = "USER_INPUT"|"SECRET"|"READ_ONLY"|"UNUSED"|"SECRET_OR_USER_INPUT"
+#'         )
+#'       ),
+#'       ResponseConfiguration = list(
+#'         ResultPath = "string",
+#'         ErrorPath = "string"
+#'       ),
+#'       PaginationConfiguration = list(
+#'         CursorConfiguration = list(
+#'           NextPage = list(
+#'             Key = "string",
+#'             DefaultValue = "string",
+#'             PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'             Value = list(
+#'               ContentPath = "string",
+#'               HeaderKey = "string"
+#'             )
+#'           ),
+#'           LimitParameter = list(
+#'             Key = "string",
+#'             DefaultValue = "string",
+#'             PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'             Value = list(
+#'               ContentPath = "string",
+#'               HeaderKey = "string"
+#'             )
+#'           )
+#'         ),
+#'         OffsetConfiguration = list(
+#'           OffsetParameter = list(
+#'             Key = "string",
+#'             DefaultValue = "string",
+#'             PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'             Value = list(
+#'               ContentPath = "string",
+#'               HeaderKey = "string"
+#'             )
+#'           ),
+#'           LimitParameter = list(
+#'             Key = "string",
+#'             DefaultValue = "string",
+#'             PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'             Value = list(
+#'               ContentPath = "string",
+#'               HeaderKey = "string"
+#'             )
+#'           )
+#'         )
+#'       )
+#'     ),
+#'     ValidationEndpointConfiguration = list(
+#'       RequestMethod = "GET"|"POST",
+#'       RequestPath = "string",
+#'       RequestParameters = list(
+#'         list(
+#'           Name = "string",
+#'           KeyOverride = "string",
+#'           Required = TRUE|FALSE,
+#'           DefaultValue = "string",
+#'           AllowedValues = list(
+#'             "string"
+#'           ),
+#'           PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'           PropertyType = "USER_INPUT"|"SECRET"|"READ_ONLY"|"UNUSED"|"SECRET_OR_USER_INPUT"
+#'         )
+#'       ),
+#'       ResponseConfiguration = list(
+#'         ResultPath = "string",
+#'         ErrorPath = "string"
+#'       ),
+#'       PaginationConfiguration = list(
+#'         CursorConfiguration = list(
+#'           NextPage = list(
+#'             Key = "string",
+#'             DefaultValue = "string",
+#'             PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'             Value = list(
+#'               ContentPath = "string",
+#'               HeaderKey = "string"
+#'             )
+#'           ),
+#'           LimitParameter = list(
+#'             Key = "string",
+#'             DefaultValue = "string",
+#'             PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'             Value = list(
+#'               ContentPath = "string",
+#'               HeaderKey = "string"
+#'             )
+#'           )
+#'         ),
+#'         OffsetConfiguration = list(
+#'           OffsetParameter = list(
+#'             Key = "string",
+#'             DefaultValue = "string",
+#'             PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'             Value = list(
+#'               ContentPath = "string",
+#'               HeaderKey = "string"
+#'             )
+#'           ),
+#'           LimitParameter = list(
+#'             Key = "string",
+#'             DefaultValue = "string",
+#'             PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'             Value = list(
+#'               ContentPath = "string",
+#'               HeaderKey = "string"
+#'             )
+#'           )
+#'         )
+#'       )
+#'     ),
+#'     EntityConfigurations = list(
+#'       list(
+#'         SourceConfiguration = list(
+#'           RequestMethod = "GET"|"POST",
+#'           RequestPath = "string",
+#'           RequestParameters = list(
+#'             list(
+#'               Name = "string",
+#'               KeyOverride = "string",
+#'               Required = TRUE|FALSE,
+#'               DefaultValue = "string",
+#'               AllowedValues = list(
+#'                 "string"
+#'               ),
+#'               PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'               PropertyType = "USER_INPUT"|"SECRET"|"READ_ONLY"|"UNUSED"|"SECRET_OR_USER_INPUT"
+#'             )
+#'           ),
+#'           ResponseConfiguration = list(
+#'             ResultPath = "string",
+#'             ErrorPath = "string"
+#'           ),
+#'           PaginationConfiguration = list(
+#'             CursorConfiguration = list(
+#'               NextPage = list(
+#'                 Key = "string",
+#'                 DefaultValue = "string",
+#'                 PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'                 Value = list(
+#'                   ContentPath = "string",
+#'                   HeaderKey = "string"
+#'                 )
+#'               ),
+#'               LimitParameter = list(
+#'                 Key = "string",
+#'                 DefaultValue = "string",
+#'                 PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'                 Value = list(
+#'                   ContentPath = "string",
+#'                   HeaderKey = "string"
+#'                 )
+#'               )
+#'             ),
+#'             OffsetConfiguration = list(
+#'               OffsetParameter = list(
+#'                 Key = "string",
+#'                 DefaultValue = "string",
+#'                 PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'                 Value = list(
+#'                   ContentPath = "string",
+#'                   HeaderKey = "string"
+#'                 )
+#'               ),
+#'               LimitParameter = list(
+#'                 Key = "string",
+#'                 DefaultValue = "string",
+#'                 PropertyLocation = "HEADER"|"BODY"|"QUERY_PARAM"|"PATH",
+#'                 Value = list(
+#'                   ContentPath = "string",
+#'                   HeaderKey = "string"
+#'                 )
+#'               )
+#'             )
+#'           )
+#'         ),
+#'         Schema = list(
+#'           list(
+#'             Name = "string",
+#'             FieldDataType = "INT"|"SMALLINT"|"BIGINT"|"FLOAT"|"LONG"|"DATE"|"BOOLEAN"|"MAP"|"ARRAY"|"STRING"|"TIMESTAMP"|"DECIMAL"|"BYTE"|"SHORT"|"DOUBLE"|"STRUCT"|"BINARY"|"UNION"
+#'           )
+#'         )
+#'       )
+#'     )
+#'   ),
+#'   Tags = list(
+#'     "string"
+#'   )
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname glue_register_connection_type
+#'
+#' @aliases glue_register_connection_type
+glue_register_connection_type <- function(ConnectionType, IntegrationType, Description = NULL, ConnectionProperties, ConnectorAuthenticationConfiguration, RestConfiguration, Tags = NULL) {
+  op <- new_operation(
+    name = "RegisterConnectionType",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .glue$register_connection_type_input(ConnectionType = ConnectionType, IntegrationType = IntegrationType, Description = Description, ConnectionProperties = ConnectionProperties, ConnectorAuthenticationConfiguration = ConnectorAuthenticationConfiguration, RestConfiguration = RestConfiguration, Tags = Tags)
+  output <- .glue$register_connection_type_output()
+  config <- get_config()
+  svc <- .glue$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.glue$operations$register_connection_type <- glue_register_connection_type
+
 #' Adds a new version to the existing schema
 #'
 #' @description
-#' Adds a new version to the existing schema. Returns an error if new
-#' version of schema does not meet the compatibility requirements of the
-#' schema set. This API will not create a new schema set and will return a
-#' 404 error if the schema set is not already present in the Schema
-#' Registry.
+#' Adds a new version to the existing schema. Returns an error if new version of schema does not meet the compatibility requirements of the schema set. This API will not create a new schema set and will return a 404 error if the schema set is not already present in the Schema Registry.
 #' 
-#' If this is the first schema definition to be registered in the Schema
-#' Registry, this API will store the schema version and return immediately.
-#' Otherwise, this call has the potential to run longer than other
-#' operations due to compatibility modes. You can call the
-#' [`get_schema_version`][glue_get_schema_version] API with the
-#' `SchemaVersionId` to check compatibility modes.
+#' If this is the first schema definition to be registered in the Schema Registry, this API will store the schema version and return immediately. Otherwise, this call has the potential to run longer than other operations due to compatibility modes. You can call the [`get_schema_version`][glue_get_schema_version] API with the `SchemaVersionId` to check compatibility modes.
 #' 
-#' If the same schema definition is already stored in Schema Registry as a
-#' version, the schema ID of the existing schema is returned to the caller.
+#' If the same schema definition is already stored in Schema Registry as a version, the schema ID of the existing schema is returned to the caller.
 #'
 #' @usage
 #' glue_register_schema_version(SchemaId, SchemaDefinition)
 #'
-#' @param SchemaId &#91;required&#93; This is a wrapper structure to contain schema identity fields. The
-#' structure contains:
+#' @param SchemaId &#91;required&#93; This is a wrapper structure to contain schema identity fields. The structure contains:
 #' 
-#' -   SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema.
-#'     Either `SchemaArn` or `SchemaName` and `RegistryName` has to be
-#'     provided.
+#' -   SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either `SchemaArn` or `SchemaName` and `RegistryName` has to be provided.
 #' 
-#' -   SchemaId$SchemaName: The name of the schema. Either `SchemaArn` or
-#'     `SchemaName` and `RegistryName` has to be provided.
-#' @param SchemaDefinition &#91;required&#93; The schema definition using the `DataFormat` setting for the
-#' `SchemaName`.
+#' -   SchemaId$SchemaName: The name of the schema. Either `SchemaArn` or `SchemaName` and `RegistryName` has to be provided.
+#' @param SchemaDefinition &#91;required&#93; The schema definition using the `DataFormat` setting for the `SchemaName`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -26728,15 +26821,13 @@ glue_register_schema_version <- function(SchemaId, SchemaDefinition) {
 #' specified schema version ID
 #'
 #' @description
-#' Removes a key value pair from the schema version metadata for the
-#' specified schema version ID.
+#' Removes a key value pair from the schema version metadata for the specified schema version ID.
 #'
 #' @usage
 #' glue_remove_schema_version_metadata(SchemaId, SchemaVersionNumber,
 #'   SchemaVersionId, MetadataKeyValue)
 #'
-#' @param SchemaId A wrapper structure that may contain the schema name and Amazon Resource
-#' Name (ARN).
+#' @param SchemaId A wrapper structure that may contain the schema name and Amazon Resource Name (ARN).
 #' @param SchemaVersionNumber The version number of the schema.
 #' @param SchemaVersionId The unique version ID of the schema version.
 #' @param MetadataKeyValue &#91;required&#93; The value of the metadata key.
@@ -26807,14 +26898,11 @@ glue_remove_schema_version_metadata <- function(SchemaId = NULL, SchemaVersionNu
 #' 
 #' For more information about enabling and using job bookmarks, see:
 #' 
-#' -   [Tracking processed data using job
-#'     bookmarks](https://docs.aws.amazon.com/glue/latest/dg/monitor-continuations.html)
+#' -   [Tracking processed data using job bookmarks](https://docs.aws.amazon.com/glue/latest/dg/monitor-continuations.html)
 #' 
-#' -   [Job parameters used by
-#'     Glue](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html)
+#' -   [Job parameters used by Glue](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html)
 #' 
-#' -   [Job
-#'     structure](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-Job)
+#' -   [Job structure](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-Job)
 #'
 #' @usage
 #' glue_reset_job_bookmark(JobName, RunId)
@@ -26874,17 +26962,14 @@ glue_reset_job_bookmark <- function(JobName, RunId = NULL) {
 #' and resumes the workflow run
 #'
 #' @description
-#' Restarts selected nodes of a previous partially completed workflow run
-#' and resumes the workflow run. The selected nodes and all nodes that are
-#' downstream from the selected nodes are run.
+#' Restarts selected nodes of a previous partially completed workflow run and resumes the workflow run. The selected nodes and all nodes that are downstream from the selected nodes are run.
 #'
 #' @usage
 #' glue_resume_workflow_run(Name, RunId, NodeIds)
 #'
 #' @param Name &#91;required&#93; The name of the workflow to resume.
 #' @param RunId &#91;required&#93; The ID of the workflow run to resume.
-#' @param NodeIds &#91;required&#93; A list of the node IDs for the nodes you want to restart. The nodes that
-#' are to be restarted must have a run attempt in the original run.
+#' @param NodeIds &#91;required&#93; A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run attempt in the original run.
 #'
 #' @return
 #' A list with the following syntax:
@@ -26989,17 +27074,9 @@ glue_run_statement <- function(SessionId, Code, RequestOrigin = NULL) {
 #' well as on the parent database
 #'
 #' @description
-#' Searches a set of tables based on properties in the table metadata as
-#' well as on the parent database. You can search against text or filter
-#' conditions.
+#' Searches a set of tables based on properties in the table metadata as well as on the parent database. You can search against text or filter conditions.
 #' 
-#' You can only get tables that you have access to based on the security
-#' policies defined in Lake Formation. You need at least a read-only access
-#' to the table for it to be returned. If you do not have access to all the
-#' columns in the table, these columns will not be searched against when
-#' returning the list of tables back to you. If you have access to the
-#' columns but not the data in the columns, those columns and the
-#' associated metadata for those columns will be included in the search.
+#' You can only get tables that you have access to based on the security policies defined in Lake Formation. You need at least a read-only access to the table for it to be returned. If you do not have access to all the columns in the table, these columns will not be searched against when returning the list of tables back to you. If you have access to the columns but not the data in the columns, those columns and the associated metadata for those columns will be included in the search.
 #'
 #' @usage
 #' glue_search_tables(CatalogId, NextToken, Filters, SearchText,
@@ -27007,35 +27084,20 @@ glue_run_statement <- function(SessionId, Code, RequestOrigin = NULL) {
 #'
 #' @param CatalogId A unique identifier, consisting of ` account_id `.
 #' @param NextToken A continuation token, included if this is a continuation call.
-#' @param Filters A list of key-value pairs, and a comparator used to filter the search
-#' results. Returns all entities matching the predicate.
+#' @param Filters A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.
 #' 
-#' The `Comparator` member of the `PropertyPredicate` struct is used only
-#' for time fields, and can be omitted for other field types. Also, when
-#' comparing string values, such as when `Key=Name`, a fuzzy match
-#' algorithm is used. The `Key` field (for example, the value of the `Name`
-#' field) is split on certain punctuation characters, for example, -, :,
-#' #, etc. into tokens. Then each token is exact-match compared with the
-#' `Value` member of `PropertyPredicate`. For example, if `Key=Name` and
-#' `Value=link`, tables named `customer-link` and `xx-link-yy` are
-#' returned, but `xxlinkyy` is not returned.
+#' The `Comparator` member of the `PropertyPredicate` struct is used only for time fields, and can be omitted for other field types. Also, when comparing string values, such as when `Key=Name`, a fuzzy match algorithm is used. The `Key` field (for example, the value of the `Name` field) is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is exact-match compared with the `Value` member of `PropertyPredicate`. For example, if `Key=Name` and `Value=link`, tables named `customer-link` and `xx-link-yy` are returned, but `xxlinkyy` is not returned.
 #' @param SearchText A string used for a text search.
 #' 
-#' Specifying a value in quotes filters based on an exact match to the
-#' value.
-#' @param SortCriteria A list of criteria for sorting the results by a field name, in an
-#' ascending or descending order.
+#' Specifying a value in quotes filters based on an exact match to the value.
+#' @param SortCriteria A list of criteria for sorting the results by a field name, in an ascending or descending order.
 #' @param MaxResults The maximum number of tables to return in a single response.
-#' @param ResourceShareType Allows you to specify that you want to search the tables shared with
-#' your account. The allowable values are `FOREIGN` or `ALL`.
+#' @param ResourceShareType Allows you to specify that you want to search the tables shared with your account. The allowable values are `FOREIGN` or `ALL`.
 #' 
-#' -   If set to `FOREIGN`, will search the tables shared with your
-#'     account.
+#' -   If set to `FOREIGN`, will search the tables shared with your account.
 #' 
-#' -   If set to `ALL`, will search the tables shared with your account, as
-#'     well as the tables in yor local account.
-#' @param IncludeStatusDetails Specifies whether to include status details related to a request to
-#' create or update an Glue Data Catalog view.
+#' -   If set to `ALL`, will search the tables shared with your account, as well as the tables in yor local account.
+#' @param IncludeStatusDetails Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.
 #'
 #' @return
 #' A list with the following syntax:
@@ -27331,15 +27393,11 @@ glue_start_blueprint_run <- function(BlueprintName, Parameters = NULL, RoleArn) 
 #'
 #' @param DatabaseName &#91;required&#93; The name of the database where the table resides.
 #' @param TableName &#91;required&#93; The name of the table to generate statistics.
-#' @param ColumnNameList A list of the column names to generate statistics. If none is supplied,
-#' all column names for the table will be used by default.
+#' @param ColumnNameList A list of the column names to generate statistics. If none is supplied, all column names for the table will be used by default.
 #' @param Role &#91;required&#93; The IAM role that the service assumes to generate statistics.
-#' @param SampleSize The percentage of rows used to generate statistics. If none is supplied,
-#' the entire table will be used to generate stats.
-#' @param CatalogID The ID of the Data Catalog where the table reside. If none is supplied,
-#' the Amazon Web Services account ID is used by default.
-#' @param SecurityConfiguration Name of the security configuration that is used to encrypt CloudWatch
-#' logs for the column stats task run.
+#' @param SampleSize The percentage of rows used to generate statistics. If none is supplied, the entire table will be used to generate stats.
+#' @param CatalogID The ID of the Data Catalog where the table reside. If none is supplied, the Amazon Web Services account ID is used by default.
+#' @param SecurityConfiguration Name of the security configuration that is used to encrypt CloudWatch logs for the column stats task run.
 #'
 #' @return
 #' A list with the following syntax:
@@ -27397,8 +27455,7 @@ glue_start_column_statistics_task_run <- function(DatabaseName, TableName, Colum
 #' glue_start_column_statistics_task_run_schedule(DatabaseName, TableName)
 #'
 #' @param DatabaseName &#91;required&#93; The name of the database where the table resides.
-#' @param TableName &#91;required&#93; The name of the table for which to start a column statistic task run
-#' schedule.
+#' @param TableName &#91;required&#93; The name of the table for which to start a column statistic task run schedule.
 #'
 #' @return
 #' An empty list.
@@ -27439,9 +27496,7 @@ glue_start_column_statistics_task_run_schedule <- function(DatabaseName, TableNa
 #' scheduled
 #'
 #' @description
-#' Starts a crawl using the specified crawler, regardless of what is
-#' scheduled. If the crawler is already running, returns a
-#' [CrawlerRunningException](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-exceptions.html#aws-glue-api-exceptions-CrawlerRunningException).
+#' Starts a crawl using the specified crawler, regardless of what is scheduled. If the crawler is already running, returns a [CrawlerRunningException](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-exceptions.html#aws-glue-api-exceptions-CrawlerRunningException).
 #'
 #' @usage
 #' glue_start_crawler(Name)
@@ -27487,9 +27542,7 @@ glue_start_crawler <- function(Name) {
 #' SCHEDULED
 #'
 #' @description
-#' Changes the schedule state of the specified crawler to `SCHEDULED`,
-#' unless the crawler is already running or the schedule state is already
-#' `SCHEDULED`.
+#' Changes the schedule state of the specified crawler to `SCHEDULED`, unless the crawler is already running or the schedule state is already `SCHEDULED`.
 #'
 #' @usage
 #' glue_start_crawler_schedule(CrawlerName)
@@ -27534,10 +27587,7 @@ glue_start_crawler_schedule <- function(CrawlerName) {
 #' don't know what rules to write
 #'
 #' @description
-#' Starts a recommendation run that is used to generate rules when you
-#' don't know what rules to write. Glue Data Quality analyzes the data and
-#' comes up with recommendations for a potential ruleset. You can then
-#' triage the ruleset and modify the generated ruleset to your liking.
+#' Starts a recommendation run that is used to generate rules when you don't know what rules to write. Glue Data Quality analyzes the data and comes up with recommendations for a potential ruleset. You can then triage the ruleset and modify the generated ruleset to your liking.
 #' 
 #' Recommendation runs are automatically deleted after 90 days.
 #'
@@ -27549,15 +27599,10 @@ glue_start_crawler_schedule <- function(CrawlerName) {
 #' @param DataSource &#91;required&#93; The data source (Glue table) associated with this run.
 #' @param Role &#91;required&#93; An IAM role supplied to encrypt the results of the run.
 #' @param NumberOfWorkers The number of `G.1X` workers to be used in the run. The default is 5.
-#' @param Timeout The timeout for a run in minutes. This is the maximum time that a run
-#' can consume resources before it is terminated and enters `TIMEOUT`
-#' status. The default is 2,880 minutes (48 hours).
+#' @param Timeout The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters `TIMEOUT` status. The default is 2,880 minutes (48 hours).
 #' @param CreatedRulesetName A name for the ruleset.
-#' @param DataQualitySecurityConfiguration The name of the security configuration created with the data quality
-#' encryption option.
-#' @param ClientToken Used for idempotency and is recommended to be set to a random ID (such
-#' as a UUID) to avoid creating or starting multiple instances of the same
-#' resource.
+#' @param DataQualitySecurityConfiguration The name of the security configuration created with the data quality encryption option.
+#' @param ClientToken Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.
 #'
 #' @return
 #' A list with the following syntax:
@@ -27629,10 +27674,7 @@ glue_start_data_quality_rule_recommendation_run <- function(DataSource, Role, Nu
 #' table)
 #'
 #' @description
-#' Once you have a ruleset definition (either recommended or your own), you
-#' call this operation to evaluate the ruleset against a data source (Glue
-#' table). The evaluation computes results which you can retrieve with the
-#' [`get_data_quality_result`][glue_get_data_quality_result] API.
+#' Once you have a ruleset definition (either recommended or your own), you call this operation to evaluate the ruleset against a data source (Glue table). The evaluation computes results which you can retrieve with the [`get_data_quality_result`][glue_get_data_quality_result] API.
 #'
 #' @usage
 #' glue_start_data_quality_ruleset_evaluation_run(DataSource, Role,
@@ -27642,16 +27684,11 @@ glue_start_data_quality_rule_recommendation_run <- function(DataSource, Role, Nu
 #' @param DataSource &#91;required&#93; The data source (Glue table) associated with this run.
 #' @param Role &#91;required&#93; An IAM role supplied to encrypt the results of the run.
 #' @param NumberOfWorkers The number of `G.1X` workers to be used in the run. The default is 5.
-#' @param Timeout The timeout for a run in minutes. This is the maximum time that a run
-#' can consume resources before it is terminated and enters `TIMEOUT`
-#' status. The default is 2,880 minutes (48 hours).
-#' @param ClientToken Used for idempotency and is recommended to be set to a random ID (such
-#' as a UUID) to avoid creating or starting multiple instances of the same
-#' resource.
+#' @param Timeout The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters `TIMEOUT` status. The default is 2,880 minutes (48 hours).
+#' @param ClientToken Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.
 #' @param AdditionalRunOptions Additional run options you can specify for an evaluation run.
 #' @param RulesetNames &#91;required&#93; A list of ruleset names.
-#' @param AdditionalDataSources A map of reference strings to additional data sources you can specify
-#' for an evaluation run.
+#' @param AdditionalDataSources A map of reference strings to additional data sources you can specify for an evaluation run.
 #'
 #' @return
 #' A list with the following syntax:
@@ -27692,7 +27729,8 @@ glue_start_data_quality_rule_recommendation_run <- function(DataSource, Role, Nu
 #'   AdditionalRunOptions = list(
 #'     CloudWatchMetricsEnabled = TRUE|FALSE,
 #'     ResultsS3Prefix = "string",
-#'     CompositeRuleEvaluationMethod = "COLUMN"|"ROW"
+#'     CompositeRuleEvaluationMethod = "COLUMN"|"ROW",
+#'     CustomLogGroupPrefix = "string"
 #'   ),
 #'   RulesetNames = list(
 #'     "string"
@@ -27751,17 +27789,7 @@ glue_start_data_quality_ruleset_evaluation_run <- function(DataSource, Role, Num
 #' transform
 #'
 #' @description
-#' Begins an asynchronous task to export all labeled data for a particular
-#' transform. This task is the only label-related API call that is not part
-#' of the typical active learning workflow. You typically use
-#' [`start_export_labels_task_run`][glue_start_export_labels_task_run] when
-#' you want to work with all of your existing labels at the same time, such
-#' as when you want to remove or change labels that were previously
-#' submitted as truth. This API operation accepts the `TransformId` whose
-#' labels you want to export and an Amazon Simple Storage Service (Amazon
-#' S3) path to export the labels to. The operation returns a `TaskRunId`.
-#' You can check on the status of your task run by calling the
-#' [`get_ml_task_run`][glue_get_ml_task_run] API.
+#' Begins an asynchronous task to export all labeled data for a particular transform. This task is the only label-related API call that is not part of the typical active learning workflow. You typically use [`start_export_labels_task_run`][glue_start_export_labels_task_run] when you want to work with all of your existing labels at the same time, such as when you want to remove or change labels that were previously submitted as truth. This API operation accepts the `TransformId` whose labels you want to export and an Amazon Simple Storage Service (Amazon S3) path to export the labels to. The operation returns a `TaskRunId`. You can check on the status of your task run by calling the [`get_ml_task_run`][glue_get_ml_task_run] API.
 #'
 #' @usage
 #' glue_start_export_labels_task_run(TransformId, OutputS3Path)
@@ -27813,49 +27841,20 @@ glue_start_export_labels_task_run <- function(TransformId, OutputS3Path) {
 #' to teach the machine learning transform and improve its quality
 #'
 #' @description
-#' Enables you to provide additional labels (examples of truth) to be used
-#' to teach the machine learning transform and improve its quality. This
-#' API operation is generally used as part of the active learning workflow
-#' that starts with the
-#' [`start_ml_labeling_set_generation_task_run`][glue_start_ml_labeling_set_generation_task_run]
-#' call and that ultimately results in improving the quality of your
-#' machine learning transform.
+#' Enables you to provide additional labels (examples of truth) to be used to teach the machine learning transform and improve its quality. This API operation is generally used as part of the active learning workflow that starts with the [`start_ml_labeling_set_generation_task_run`][glue_start_ml_labeling_set_generation_task_run] call and that ultimately results in improving the quality of your machine learning transform.
 #' 
-#' After the
-#' [`start_ml_labeling_set_generation_task_run`][glue_start_ml_labeling_set_generation_task_run]
-#' finishes, Glue machine learning will have generated a series of
-#' questions for humans to answer. (Answering these questions is often
-#' called 'labeling' in the machine learning workflows). In the case of the
-#' `FindMatches` transform, these questions are of the form, “What is the
-#' correct way to group these rows together into groups composed entirely
-#' of matching records?” After the labeling process is finished, users
-#' upload their answers/labels with a call to
-#' [`start_import_labels_task_run`][glue_start_import_labels_task_run].
-#' After
-#' [`start_import_labels_task_run`][glue_start_import_labels_task_run]
-#' finishes, all future runs of the machine learning transform use the new
-#' and improved labels and perform a higher-quality transformation.
+#' After the [`start_ml_labeling_set_generation_task_run`][glue_start_ml_labeling_set_generation_task_run] finishes, Glue machine learning will have generated a series of questions for humans to answer. (Answering these questions is often called 'labeling' in the machine learning workflows). In the case of the `FindMatches` transform, these questions are of the form, “What is the correct way to group these rows together into groups composed entirely of matching records?” After the labeling process is finished, users upload their answers/labels with a call to [`start_import_labels_task_run`][glue_start_import_labels_task_run]. After [`start_import_labels_task_run`][glue_start_import_labels_task_run] finishes, all future runs of the machine learning transform use the new and improved labels and perform a higher-quality transformation.
 #' 
-#' By default,
-#' [`start_ml_labeling_set_generation_task_run`][glue_start_ml_labeling_set_generation_task_run]
-#' continually learns from and combines all labels that you upload unless
-#' you set `Replace` to true. If you set `Replace` to true,
-#' [`start_import_labels_task_run`][glue_start_import_labels_task_run]
-#' deletes and forgets all previously uploaded labels and learns only from
-#' the exact set that you upload. Replacing labels can be helpful if you
-#' realize that you previously uploaded incorrect labels, and you believe
-#' that they are having a negative effect on your transform quality.
+#' By default, [`start_ml_labeling_set_generation_task_run`][glue_start_ml_labeling_set_generation_task_run] continually learns from and combines all labels that you upload unless you set `Replace` to true. If you set `Replace` to true, [`start_import_labels_task_run`][glue_start_import_labels_task_run] deletes and forgets all previously uploaded labels and learns only from the exact set that you upload. Replacing labels can be helpful if you realize that you previously uploaded incorrect labels, and you believe that they are having a negative effect on your transform quality.
 #' 
-#' You can check on the status of your task run by calling the
-#' [`get_ml_task_run`][glue_get_ml_task_run] operation.
+#' You can check on the status of your task run by calling the [`get_ml_task_run`][glue_get_ml_task_run] operation.
 #'
 #' @usage
 #' glue_start_import_labels_task_run(TransformId, InputS3Path,
 #'   ReplaceAllLabels)
 #'
 #' @param TransformId &#91;required&#93; The unique identifier of the machine learning transform.
-#' @param InputS3Path &#91;required&#93; The Amazon Simple Storage Service (Amazon S3) path from where you import
-#' the labels.
+#' @param InputS3Path &#91;required&#93; The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.
 #' @param ReplaceAllLabels Indicates whether to overwrite your existing labels.
 #'
 #' @return
@@ -27913,143 +27912,64 @@ glue_start_import_labels_task_run <- function(TransformId, InputS3Path, ReplaceA
 #' @param JobName &#91;required&#93; The name of the job definition to use.
 #' @param JobRunQueuingEnabled Specifies whether job run queuing is enabled for the job run.
 #' 
-#' A value of true means job run queuing is enabled for the job run. If
-#' false or not populated, the job run will not be considered for queueing.
+#' A value of true means job run queuing is enabled for the job run. If false or not populated, the job run will not be considered for queueing.
 #' @param JobRunId The ID of a previous `JobRun` to retry.
-#' @param Arguments The job arguments associated with this run. For this job run, they
-#' replace the default arguments set in the job definition itself.
+#' @param Arguments The job arguments associated with this run. For this job run, they replace the default arguments set in the job definition itself.
 #' 
-#' You can specify arguments here that your own job-execution script
-#' consumes, as well as arguments that Glue itself consumes.
+#' You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.
 #' 
-#' Job arguments may be logged. Do not pass plaintext secrets as arguments.
-#' Retrieve secrets from a Glue Connection, Secrets Manager or other secret
-#' management mechanism if you intend to keep them within the Job.
+#' Job arguments may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Secrets Manager or other secret management mechanism if you intend to keep them within the Job.
 #' 
-#' For information about how to specify and consume your own Job arguments,
-#' see the [Calling Glue APIs in
-#' Python](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html)
-#' topic in the developer guide.
+#' For information about how to specify and consume your own Job arguments, see the [Calling Glue APIs in Python](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html) topic in the developer guide.
 #' 
-#' For information about the arguments you can provide to this field when
-#' configuring Spark jobs, see the [Special Parameters Used by
-#' Glue](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html)
-#' topic in the developer guide.
+#' For information about the arguments you can provide to this field when configuring Spark jobs, see the [Special Parameters Used by Glue](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html) topic in the developer guide.
 #' 
-#' For information about the arguments you can provide to this field when
-#' configuring Ray jobs, see [Using job parameters in Ray
-#' jobs](https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html)
-#' in the developer guide.
+#' For information about the arguments you can provide to this field when configuring Ray jobs, see [Using job parameters in Ray jobs](https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html) in the developer guide.
 #' @param AllocatedCapacity This field is deprecated. Use `MaxCapacity` instead.
 #' 
-#' The number of Glue data processing units (DPUs) to allocate to this
-#' JobRun. You can allocate a minimum of 2 DPUs; the default is 10. A DPU
-#' is a relative measure of processing power that consists of 4 vCPUs of
-#' compute capacity and 16 GB of memory. For more information, see the
-#' [Glue pricing page](https://aws.amazon.com/glue/pricing/).
-#' @param Timeout The `JobRun` timeout in minutes. This is the maximum time that a job run
-#' can consume resources before it is terminated and enters `TIMEOUT`
-#' status. This value overrides the timeout value set in the parent job.
+#' The number of Glue data processing units (DPUs) to allocate to this JobRun. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the [Glue pricing page](https://aws.amazon.com/glue/pricing/).
+#' @param Timeout The `JobRun` timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters `TIMEOUT` status. This value overrides the timeout value set in the parent job.
 #' 
-#' Jobs must have timeout values less than 7 days or 10080 minutes.
-#' Otherwise, the jobs will throw an exception.
+#' Jobs must have timeout values less than 7 days or 10080 minutes. Otherwise, the jobs will throw an exception.
 #' 
-#' When the value is left blank, the timeout is defaulted to 2880 minutes.
+#' When the value is left blank, the timeout is defaulted to 2,880 minutes for Glue version 4.0 and earlier, or 480 minutes for Glue version 5.0 and later.
 #' 
-#' Any existing Glue jobs that had a timeout value greater than 7 days will
-#' be defaulted to 7 days. For instance if you have specified a timeout of
-#' 20 days for a batch job, it will be stopped on the 7th day.
+#' Any existing Glue jobs that had a timeout value greater than 7 days will be defaulted to 7 days. For instance if you have specified a timeout of 20 days for a batch job, it will be stopped on the 7th day.
 #' 
-#' For streaming jobs, if you have set up a maintenance window, it will be
-#' restarted during the maintenance window after 7 days.
-#' @param MaxCapacity For Glue version 1.0 or earlier jobs, using the standard worker type,
-#' the number of Glue data processing units (DPUs) that can be allocated
-#' when this job runs. A DPU is a relative measure of processing power that
-#' consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-#' information, see the [Glue pricing
-#' page](https://aws.amazon.com/glue/pricing/).
+#' For streaming jobs, if you have set up a maintenance window, it will be restarted during the maintenance window after 7 days.
+#' @param MaxCapacity For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the [Glue pricing page](https://aws.amazon.com/glue/pricing/).
 #' 
-#' For Glue version 2.0+ jobs, you cannot specify a `Maximum capacity`.
-#' Instead, you should specify a `Worker type` and the `Number of workers`.
+#' For Glue version 2.0+ jobs, you cannot specify a `Maximum capacity`. Instead, you should specify a `Worker type` and the `Number of workers`.
 #' 
 #' Do not set `MaxCapacity` if using `WorkerType` and `NumberOfWorkers`.
 #' 
-#' The value that can be allocated for `MaxCapacity` depends on whether you
-#' are running a Python shell job, an Apache Spark ETL job, or an Apache
-#' Spark streaming ETL job:
+#' The value that can be allocated for `MaxCapacity` depends on whether you are running a Python shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL job:
 #' 
-#' -   When you specify a Python shell job
-#'     (`JobCommand.Name`="pythonshell"), you can allocate either 0.0625 or
-#'     1 DPU. The default is 0.0625 DPU.
+#' -   When you specify a Python shell job (`JobCommand.Name`="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.
 #' 
-#' -   When you specify an Apache Spark ETL job
-#'     (`JobCommand.Name`="glueetl") or Apache Spark streaming ETL job
-#'     (`JobCommand.Name`="gluestreaming"), you can allocate from 2 to 100
-#'     DPUs. The default is 10 DPUs. This job type cannot have a fractional
-#'     DPU allocation.
-#' @param SecurityConfiguration The name of the `SecurityConfiguration` structure to be used with this
-#' job run.
+#' -   When you specify an Apache Spark ETL job (`JobCommand.Name`="glueetl") or Apache Spark streaming ETL job (`JobCommand.Name`="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
+#' @param SecurityConfiguration The name of the `SecurityConfiguration` structure to be used with this job run.
 #' @param NotificationProperty Specifies configuration properties of a job run notification.
-#' @param WorkerType The type of predefined worker that is allocated when a job runs. Accepts
-#' a value of G.1X, G.2X, G.4X, G.8X or G.025X for Spark jobs. Accepts the
-#' value Z.2X for Ray jobs.
+#' @param WorkerType The type of predefined worker that is allocated when a job runs. Accepts a value of G.1X, G.2X, G.4X, G.8X or G.025X for Spark jobs. Accepts the value Z.2X for Ray jobs.
 #' 
-#' -   For the `G.1X` worker type, each worker maps to 1 DPU (4 vCPUs, 16
-#'     GB of memory) with 94GB disk, and provides 1 executor per worker. We
-#'     recommend this worker type for workloads such as data transforms,
-#'     joins, and queries, to offers a scalable and cost effective way to
-#'     run most jobs.
+#' -   For the `G.1X` worker type, each worker maps to 1 DPU (4 vCPUs, 16 GB of memory) with 94GB disk, and provides 1 executor per worker. We recommend this worker type for workloads such as data transforms, joins, and queries, to offers a scalable and cost effective way to run most jobs.
 #' 
-#' -   For the `G.2X` worker type, each worker maps to 2 DPU (8 vCPUs, 32
-#'     GB of memory) with 138GB disk, and provides 1 executor per worker.
-#'     We recommend this worker type for workloads such as data transforms,
-#'     joins, and queries, to offers a scalable and cost effective way to
-#'     run most jobs.
+#' -   For the `G.2X` worker type, each worker maps to 2 DPU (8 vCPUs, 32 GB of memory) with 138GB disk, and provides 1 executor per worker. We recommend this worker type for workloads such as data transforms, joins, and queries, to offers a scalable and cost effective way to run most jobs.
 #' 
-#' -   For the `G.4X` worker type, each worker maps to 4 DPU (16 vCPUs, 64
-#'     GB of memory) with 256GB disk, and provides 1 executor per worker.
-#'     We recommend this worker type for jobs whose workloads contain your
-#'     most demanding transforms, aggregations, joins, and queries. This
-#'     worker type is available only for Glue version 3.0 or later Spark
-#'     ETL jobs in the following Amazon Web Services Regions: US East
-#'     (Ohio), US East (N. Virginia), US West (Oregon), Asia Pacific
-#'     (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), Canada
-#'     (Central), Europe (Frankfurt), Europe (Ireland), and Europe
-#'     (Stockholm).
+#' -   For the `G.4X` worker type, each worker maps to 4 DPU (16 vCPUs, 64 GB of memory) with 256GB disk, and provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your most demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue version 3.0 or later Spark ETL jobs in the following Amazon Web Services Regions: US East (Ohio), US East (N. Virginia), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), Canada (Central), Europe (Frankfurt), Europe (Ireland), and Europe (Stockholm).
 #' 
-#' -   For the `G.8X` worker type, each worker maps to 8 DPU (32 vCPUs, 128
-#'     GB of memory) with 512GB disk, and provides 1 executor per worker.
-#'     We recommend this worker type for jobs whose workloads contain your
-#'     most demanding transforms, aggregations, joins, and queries. This
-#'     worker type is available only for Glue version 3.0 or later Spark
-#'     ETL jobs, in the same Amazon Web Services Regions as supported for
-#'     the `G.4X` worker type.
+#' -   For the `G.8X` worker type, each worker maps to 8 DPU (32 vCPUs, 128 GB of memory) with 512GB disk, and provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your most demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue version 3.0 or later Spark ETL jobs, in the same Amazon Web Services Regions as supported for the `G.4X` worker type.
 #' 
-#' -   For the `G.025X` worker type, each worker maps to 0.25 DPU (2 vCPUs,
-#'     4 GB of memory) with 84GB disk, and provides 1 executor per worker.
-#'     We recommend this worker type for low volume streaming jobs. This
-#'     worker type is only available for Glue version 3.0 or later
-#'     streaming jobs.
+#' -   For the `G.025X` worker type, each worker maps to 0.25 DPU (2 vCPUs, 4 GB of memory) with 84GB disk, and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 or later streaming jobs.
 #' 
-#' -   For the `Z.2X` worker type, each worker maps to 2 M-DPU (8vCPUs, 64
-#'     GB of memory) with 128 GB disk, and provides up to 8 Ray workers
-#'     based on the autoscaler.
-#' @param NumberOfWorkers The number of workers of a defined `workerType` that are allocated when
-#' a job runs.
-#' @param ExecutionClass Indicates whether the job is run with a standard or flexible execution
-#' class. The standard execution-class is ideal for time-sensitive
-#' workloads that require fast job startup and dedicated resources.
+#' -   For the `Z.2X` worker type, each worker maps to 2 M-DPU (8vCPUs, 64 GB of memory) with 128 GB disk, and provides up to 8 Ray workers based on the autoscaler.
+#' @param NumberOfWorkers The number of workers of a defined `workerType` that are allocated when a job runs.
+#' @param ExecutionClass Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.
 #' 
-#' The flexible execution class is appropriate for time-insensitive jobs
-#' whose start and completion times may vary.
+#' The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary.
 #' 
-#' Only jobs with Glue version 3.0 and above and command type `glueetl`
-#' will be allowed to set `ExecutionClass` to `FLEX`. The flexible
-#' execution class is available for Spark jobs.
-#' @param ExecutionRoleSessionPolicy This inline session policy to the StartJobRun API allows you to
-#' dynamically restrict the permissions of the specified execution role for
-#' the scope of the job, without requiring the creation of additional IAM
-#' roles.
+#' Only jobs with Glue version 3.0 and above and command type `glueetl` will be allowed to set `ExecutionClass` to `FLEX`. The flexible execution class is available for Spark jobs.
+#' @param ExecutionRoleSessionPolicy This inline session policy to the StartJobRun API allows you to dynamically restrict the permissions of the specified execution role for the scope of the job, without requiring the creation of additional IAM roles.
 #'
 #' @return
 #' A list with the following syntax:
@@ -28111,13 +28031,9 @@ glue_start_job_run <- function(JobName, JobRunQueuingEnabled = NULL, JobRunId = 
 #' @description
 #' Starts a task to estimate the quality of the transform.
 #' 
-#' When you provide label sets as examples of truth, Glue machine learning
-#' uses some of those examples to learn from them. The rest of the labels
-#' are used as a test to estimate quality.
+#' When you provide label sets as examples of truth, Glue machine learning uses some of those examples to learn from them. The rest of the labels are used as a test to estimate quality.
 #' 
-#' Returns a unique identifier for the run. You can call
-#' [`get_ml_task_run`][glue_get_ml_task_run] to get more information about
-#' the stats of the `EvaluationTaskRun`.
+#' Returns a unique identifier for the run. You can call [`get_ml_task_run`][glue_get_ml_task_run] to get more information about the stats of the `EvaluationTaskRun`.
 #'
 #' @usage
 #' glue_start_ml_evaluation_task_run(TransformId)
@@ -28168,39 +28084,22 @@ glue_start_ml_evaluation_task_run <- function(TransformId) {
 #' labels
 #'
 #' @description
-#' Starts the active learning workflow for your machine learning transform
-#' to improve the transform's quality by generating label sets and adding
-#' labels.
+#' Starts the active learning workflow for your machine learning transform to improve the transform's quality by generating label sets and adding labels.
 #' 
-#' When the
-#' [`start_ml_labeling_set_generation_task_run`][glue_start_ml_labeling_set_generation_task_run]
-#' finishes, Glue will have generated a "labeling set" or a set of
-#' questions for humans to answer.
+#' When the [`start_ml_labeling_set_generation_task_run`][glue_start_ml_labeling_set_generation_task_run] finishes, Glue will have generated a "labeling set" or a set of questions for humans to answer.
 #' 
-#' In the case of the `FindMatches` transform, these questions are of the
-#' form, “What is the correct way to group these rows together into groups
-#' composed entirely of matching records?”
+#' In the case of the `FindMatches` transform, these questions are of the form, “What is the correct way to group these rows together into groups composed entirely of matching records?”
 #' 
-#' After the labeling process is finished, you can upload your labels with
-#' a call to
-#' [`start_import_labels_task_run`][glue_start_import_labels_task_run].
-#' After
-#' [`start_import_labels_task_run`][glue_start_import_labels_task_run]
-#' finishes, all future runs of the machine learning transform will use the
-#' new and improved labels and perform a higher-quality transformation.
+#' After the labeling process is finished, you can upload your labels with a call to [`start_import_labels_task_run`][glue_start_import_labels_task_run]. After [`start_import_labels_task_run`][glue_start_import_labels_task_run] finishes, all future runs of the machine learning transform will use the new and improved labels and perform a higher-quality transformation.
 #' 
-#' Note: The role used to write the generated labeling set to the
-#' `OutputS3Path` is the role associated with the Machine Learning
-#' Transform, specified in the
-#' [`create_ml_transform`][glue_create_ml_transform] API.
+#' Note: The role used to write the generated labeling set to the `OutputS3Path` is the role associated with the Machine Learning Transform, specified in the [`create_ml_transform`][glue_create_ml_transform] API.
 #'
 #' @usage
 #' glue_start_ml_labeling_set_generation_task_run(TransformId,
 #'   OutputS3Path)
 #'
 #' @param TransformId &#91;required&#93; The unique identifier of the machine learning transform.
-#' @param OutputS3Path &#91;required&#93; The Amazon Simple Storage Service (Amazon S3) path where you generate
-#' the labeling set.
+#' @param OutputS3Path &#91;required&#93; The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling set.
 #'
 #' @return
 #' A list with the following syntax:
@@ -28242,12 +28141,67 @@ glue_start_ml_labeling_set_generation_task_run <- function(TransformId, OutputS3
 }
 .glue$operations$start_ml_labeling_set_generation_task_run <- glue_start_ml_labeling_set_generation_task_run
 
+#' Starts a materialized view refresh task run, for a specified table and
+#' columns
+#'
+#' @description
+#' Starts a materialized view refresh task run, for a specified table and columns.
+#'
+#' @usage
+#' glue_start_materialized_view_refresh_task_run(CatalogId, DatabaseName,
+#'   TableName, FullRefresh)
+#'
+#' @param CatalogId &#91;required&#93; The ID of the Data Catalog where the table reside. If none is supplied, the account ID is used by default.
+#' @param DatabaseName &#91;required&#93; The name of the database where the table resides.
+#' @param TableName &#91;required&#93; The name of the table to generate run the materialized view refresh task.
+#' @param FullRefresh Specifies whether this is a full refresh of the task run.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   MaterializedViewRefreshTaskRunId = "string"
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$start_materialized_view_refresh_task_run(
+#'   CatalogId = "string",
+#'   DatabaseName = "string",
+#'   TableName = "string",
+#'   FullRefresh = TRUE|FALSE
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname glue_start_materialized_view_refresh_task_run
+#'
+#' @aliases glue_start_materialized_view_refresh_task_run
+glue_start_materialized_view_refresh_task_run <- function(CatalogId, DatabaseName, TableName, FullRefresh = NULL) {
+  op <- new_operation(
+    name = "StartMaterializedViewRefreshTaskRun",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .glue$start_materialized_view_refresh_task_run_input(CatalogId = CatalogId, DatabaseName = DatabaseName, TableName = TableName, FullRefresh = FullRefresh)
+  output <- .glue$start_materialized_view_refresh_task_run_output()
+  config <- get_config()
+  svc <- .glue$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.glue$operations$start_materialized_view_refresh_task_run <- glue_start_materialized_view_refresh_task_run
+
 #' Starts an existing trigger
 #'
 #' @description
-#' Starts an existing trigger. See [Triggering
-#' Jobs](https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html) for
-#' information about how different types of trigger are started.
+#' Starts an existing trigger. See [Triggering Jobs](https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html) for information about how different types of trigger are started.
 #'
 #' @usage
 #' glue_start_trigger(Name)
@@ -28304,10 +28258,7 @@ glue_start_trigger <- function(Name) {
 #' @param Name &#91;required&#93; The name of the workflow to start.
 #' @param RunProperties The workflow run properties for the new workflow run.
 #' 
-#' Run properties may be logged. Do not pass plaintext secrets as
-#' properties. Retrieve secrets from a Glue Connection, Amazon Web Services
-#' Secrets Manager or other secret management mechanism if you intend to
-#' use them within the workflow run.
+#' Run properties may be logged. Do not pass plaintext secrets as properties. Retrieve secrets from a Glue Connection, Amazon Web Services Secrets Manager or other secret management mechanism if you intend to use them within the workflow run.
 #'
 #' @return
 #' A list with the following syntax:
@@ -28406,8 +28357,7 @@ glue_stop_column_statistics_task_run <- function(DatabaseName, TableName) {
 #' glue_stop_column_statistics_task_run_schedule(DatabaseName, TableName)
 #'
 #' @param DatabaseName &#91;required&#93; The name of the database where the table resides.
-#' @param TableName &#91;required&#93; The name of the table for which to stop a column statistic task run
-#' schedule.
+#' @param TableName &#91;required&#93; The name of the table for which to stop a column statistic task run schedule.
 #'
 #' @return
 #' An empty list.
@@ -28492,8 +28442,7 @@ glue_stop_crawler <- function(Name) {
 #' does not stop the crawler if it is already running
 #'
 #' @description
-#' Sets the schedule state of the specified crawler to `NOT_SCHEDULED`, but
-#' does not stop the crawler if it is already running.
+#' Sets the schedule state of the specified crawler to `NOT_SCHEDULED`, but does not stop the crawler if it is already running.
 #'
 #' @usage
 #' glue_stop_crawler_schedule(CrawlerName)
@@ -28533,6 +28482,56 @@ glue_stop_crawler_schedule <- function(CrawlerName) {
   return(response)
 }
 .glue$operations$stop_crawler_schedule <- glue_stop_crawler_schedule
+
+#' Stops a materialized view refresh task run, for a specified table and
+#' columns
+#'
+#' @description
+#' Stops a materialized view refresh task run, for a specified table and columns.
+#'
+#' @usage
+#' glue_stop_materialized_view_refresh_task_run(CatalogId, DatabaseName,
+#'   TableName)
+#'
+#' @param CatalogId &#91;required&#93; The ID of the Data Catalog where the table reside. If none is supplied, the account ID is used by default.
+#' @param DatabaseName &#91;required&#93; The name of the database where the table resides.
+#' @param TableName &#91;required&#93; The name of the table to generate statistics.
+#'
+#' @return
+#' An empty list.
+#'
+#' @section Request syntax:
+#' ```
+#' svc$stop_materialized_view_refresh_task_run(
+#'   CatalogId = "string",
+#'   DatabaseName = "string",
+#'   TableName = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname glue_stop_materialized_view_refresh_task_run
+#'
+#' @aliases glue_stop_materialized_view_refresh_task_run
+glue_stop_materialized_view_refresh_task_run <- function(CatalogId, DatabaseName, TableName) {
+  op <- new_operation(
+    name = "StopMaterializedViewRefreshTaskRun",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .glue$stop_materialized_view_refresh_task_run_input(CatalogId = CatalogId, DatabaseName = DatabaseName, TableName = TableName)
+  output <- .glue$stop_materialized_view_refresh_task_run_output()
+  config <- get_config()
+  svc <- .glue$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.glue$operations$stop_materialized_view_refresh_task_run <- glue_stop_materialized_view_refresh_task_run
 
 #' Stops the session
 #'
@@ -28683,18 +28682,12 @@ glue_stop_workflow_run <- function(Name, RunId) {
 #' Adds tags to a resource
 #'
 #' @description
-#' Adds tags to a resource. A tag is a label you can assign to an Amazon
-#' Web Services resource. In Glue, you can tag only certain resources. For
-#' information about what resources you can tag, see [Amazon Web Services
-#' Tags in
-#' Glue](https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html).
+#' Adds tags to a resource. A tag is a label you can assign to an Amazon Web Services resource. In Glue, you can tag only certain resources. For information about what resources you can tag, see [Amazon Web Services Tags in Glue](https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html).
 #'
 #' @usage
 #' glue_tag_resource(ResourceArn, TagsToAdd)
 #'
-#' @param ResourceArn &#91;required&#93; The ARN of the Glue resource to which to add the tags. For more
-#' information about Glue resource ARNs, see the [Glue ARN string
-#' pattern](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id).
+#' @param ResourceArn &#91;required&#93; The ARN of the Glue resource to which to add the tags. For more information about Glue resource ARNs, see the [Glue ARN string pattern](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id).
 #' @param TagsToAdd &#91;required&#93; Tags to add to this resource.
 #'
 #' @return
@@ -28738,21 +28731,16 @@ glue_tag_resource <- function(ResourceArn, TagsToAdd) {
 #' you provide
 #'
 #' @description
-#' Tests a connection to a service to validate the service credentials that
-#' you provide.
+#' Tests a connection to a service to validate the service credentials that you provide.
 #' 
-#' You can either provide an existing connection name or a
-#' `TestConnectionInput` for testing a non-existing connection input.
-#' Providing both at the same time will cause an error.
+#' You can either provide an existing connection name or a `TestConnectionInput` for testing a non-existing connection input. Providing both at the same time will cause an error.
 #' 
-#' If the action is successful, the service sends back an HTTP 200
-#' response.
+#' If the action is successful, the service sends back an HTTP 200 response.
 #'
 #' @usage
 #' glue_test_connection(ConnectionName, CatalogId, TestConnectionInput)
 #'
-#' @param ConnectionName Optional. The name of the connection to test. If only name is provided,
-#' the operation will get the connection and use that for testing.
+#' @param ConnectionName Optional. The name of the connection to test. If only name is provided, the operation will get the connection and use that for testing.
 #' @param CatalogId The catalog ID where the connection resides.
 #' @param TestConnectionInput A structure that is used to specify testing a connection to a service.
 #'
@@ -28838,8 +28826,7 @@ glue_test_connection <- function(ConnectionName = NULL, CatalogId = NULL, TestCo
 #' @usage
 #' glue_untag_resource(ResourceArn, TagsToRemove)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource from which to remove the
-#' tags.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource from which to remove the tags.
 #' @param TagsToRemove &#91;required&#93; Tags to remove from this resource.
 #'
 #' @return
@@ -28941,8 +28928,7 @@ glue_update_blueprint <- function(Name, Description = NULL, BlueprintLocation) {
 #' glue_update_catalog(CatalogId, CatalogInput)
 #'
 #' @param CatalogId &#91;required&#93; The ID of the catalog.
-#' @param CatalogInput &#91;required&#93; A `CatalogInput` object specifying the new properties of an existing
-#' catalog.
+#' @param CatalogInput &#91;required&#93; A `CatalogInput` object specifying the new properties of an existing catalog.
 #'
 #' @return
 #' An empty list.
@@ -29007,7 +28993,8 @@ glue_update_blueprint <- function(Name, Description = NULL, BlueprintLocation) {
 #'         )
 #'       )
 #'     ),
-#'     AllowFullTableExternalDataAccess = "True"|"False"
+#'     AllowFullTableExternalDataAccess = "True"|"False",
+#'     OverwriteChildResourcePermissionsWithDefault = "Accept"|"Deny"
 #'   )
 #' )
 #' ```
@@ -29040,9 +29027,7 @@ glue_update_catalog <- function(CatalogId, CatalogInput) {
 #' JsonClassifier, or a CsvClassifier, depending on which field is present)
 #'
 #' @description
-#' Modifies an existing classifier (a `GrokClassifier`, an `XMLClassifier`,
-#' a `JsonClassifier`, or a `CsvClassifier`, depending on which field is
-#' present).
+#' Modifies an existing classifier (a `GrokClassifier`, an `XMLClassifier`, a `JsonClassifier`, or a `CsvClassifier`, depending on which field is present).
 #'
 #' @usage
 #' glue_update_classifier(GrokClassifier, XMLClassifier, JsonClassifier,
@@ -29122,15 +29107,13 @@ glue_update_classifier <- function(GrokClassifier = NULL, XMLClassifier = NULL, 
 #' @description
 #' Creates or updates partition statistics of columns.
 #' 
-#' The Identity and Access Management (IAM) permission required for this
-#' operation is [`update_partition`][glue_update_partition].
+#' The Identity and Access Management (IAM) permission required for this operation is [`update_partition`][glue_update_partition].
 #'
 #' @usage
 #' glue_update_column_statistics_for_partition(CatalogId, DatabaseName,
 #'   TableName, PartitionValues, ColumnStatisticsList)
 #'
-#' @param CatalogId The ID of the Data Catalog where the partitions in question reside. If
-#' none is supplied, the Amazon Web Services account ID is used by default.
+#' @param CatalogId The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.
 #' @param DatabaseName &#91;required&#93; The name of the catalog database where the partitions reside.
 #' @param TableName &#91;required&#93; The name of the partitions' table.
 #' @param PartitionValues &#91;required&#93; A list of partition values identifying the partition.
@@ -29314,15 +29297,13 @@ glue_update_column_statistics_for_partition <- function(CatalogId = NULL, Databa
 #' @description
 #' Creates or updates table statistics of columns.
 #' 
-#' The Identity and Access Management (IAM) permission required for this
-#' operation is [`update_table`][glue_update_table].
+#' The Identity and Access Management (IAM) permission required for this operation is [`update_table`][glue_update_table].
 #'
 #' @usage
 #' glue_update_column_statistics_for_table(CatalogId, DatabaseName,
 #'   TableName, ColumnStatisticsList)
 #'
-#' @param CatalogId The ID of the Data Catalog where the partitions in question reside. If
-#' none is supplied, the Amazon Web Services account ID is used by default.
+#' @param CatalogId The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.
 #' @param DatabaseName &#91;required&#93; The name of the catalog database where the partitions reside.
 #' @param TableName &#91;required&#93; The name of the partitions' table.
 #' @param ColumnStatisticsList &#91;required&#93; A list of the column statistics.
@@ -29514,8 +29495,7 @@ glue_update_column_statistics_for_table <- function(CatalogId = NULL, DatabaseNa
 #' @param ColumnNameList A list of column names for which to run statistics.
 #' @param SampleSize The percentage of data to sample.
 #' @param CatalogID The ID of the Data Catalog in which the database resides.
-#' @param SecurityConfiguration Name of the security configuration that is used to encrypt CloudWatch
-#' logs.
+#' @param SecurityConfiguration Name of the security configuration that is used to encrypt CloudWatch logs.
 #'
 #' @return
 #' An empty list.
@@ -29568,8 +29548,7 @@ glue_update_column_statistics_task_settings <- function(DatabaseName, TableName,
 #' @usage
 #' glue_update_connection(CatalogId, Name, ConnectionInput)
 #'
-#' @param CatalogId The ID of the Data Catalog in which the connection resides. If none is
-#' provided, the Amazon Web Services account ID is used by default.
+#' @param CatalogId The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.
 #' @param Name &#91;required&#93; The name of the connection definition to update.
 #' @param ConnectionInput &#91;required&#93; A `ConnectionInput` object that redefines the connection in question.
 #'
@@ -29675,8 +29654,7 @@ glue_update_connection <- function(CatalogId = NULL, Name, ConnectionInput) {
 #' Updates a crawler
 #'
 #' @description
-#' Updates a crawler. If a crawler is running, you must stop it using
-#' [`stop_crawler`][glue_stop_crawler] before updating it.
+#' Updates a crawler. If a crawler is running, you must stop it using [`stop_crawler`][glue_stop_crawler] before updating it.
 #'
 #' @usage
 #' glue_update_crawler(Name, Role, DatabaseName, Description, Targets,
@@ -29685,33 +29663,19 @@ glue_update_connection <- function(CatalogId = NULL, Name, ConnectionInput) {
 #'   CrawlerSecurityConfiguration)
 #'
 #' @param Name &#91;required&#93; Name of the new crawler.
-#' @param Role The IAM role or Amazon Resource Name (ARN) of an IAM role that is used
-#' by the new crawler to access customer resources.
-#' @param DatabaseName The Glue database where results are stored, such as:
-#' `arn:aws:daylight:us-east-1::database/sometable/*`.
+#' @param Role The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler to access customer resources.
+#' @param DatabaseName The Glue database where results are stored, such as: `arn:aws:daylight:us-east-1::database/sometable/*`.
 #' @param Description A description of the new crawler.
 #' @param Targets A list of targets to crawl.
-#' @param Schedule A `cron` expression used to specify the schedule (see [Time-Based
-#' Schedules for Jobs and
-#' Crawlers](https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html).
-#' For example, to run something every day at 12:15 UTC, you would specify:
-#' `cron(15 12 * * ? *)`.
-#' @param Classifiers A list of custom classifiers that the user has registered. By default,
-#' all built-in classifiers are included in a crawl, but these custom
-#' classifiers always override the default classifiers for a given
-#' classification.
+#' @param Schedule A `cron` expression used to specify the schedule (see [Time-Based Schedules for Jobs and Crawlers](https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html). For example, to run something every day at 12:15 UTC, you would specify: `cron(15 12 * * ? *)`.
+#' @param Classifiers A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.
 #' @param TablePrefix The table prefix used for catalog tables that are created.
 #' @param SchemaChangePolicy The policy for the crawler's update and deletion behavior.
-#' @param RecrawlPolicy A policy that specifies whether to crawl the entire dataset again, or to
-#' crawl only folders that were added since the last crawler run.
+#' @param RecrawlPolicy A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.
 #' @param LineageConfiguration Specifies data lineage configuration settings for the crawler.
 #' @param LakeFormationConfiguration Specifies Lake Formation configuration settings for the crawler.
-#' @param Configuration Crawler configuration information. This versioned JSON string allows
-#' users to specify aspects of a crawler's behavior. For more information,
-#' see [Setting crawler configuration
-#' options](https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html).
-#' @param CrawlerSecurityConfiguration The name of the `SecurityConfiguration` structure to be used by this
-#' crawler.
+#' @param Configuration Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see [Setting crawler configuration options](https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html).
+#' @param CrawlerSecurityConfiguration The name of the `SecurityConfiguration` structure to be used by this crawler.
 #'
 #' @return
 #' An empty list.
@@ -29865,11 +29829,7 @@ glue_update_crawler <- function(Name, Role = NULL, DatabaseName = NULL, Descript
 #' glue_update_crawler_schedule(CrawlerName, Schedule)
 #'
 #' @param CrawlerName &#91;required&#93; The name of the crawler whose schedule to update.
-#' @param Schedule The updated `cron` expression used to specify the schedule (see
-#' [Time-Based Schedules for Jobs and
-#' Crawlers](https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html).
-#' For example, to run something every day at 12:15 UTC, you would specify:
-#' `cron(15 12 * * ? *)`.
+#' @param Schedule The updated `cron` expression used to specify the schedule (see [Time-Based Schedules for Jobs and Crawlers](https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html). For example, to run something every day at 12:15 UTC, you would specify: `cron(15 12 * * ? *)`.
 #'
 #' @return
 #' An empty list.
@@ -29916,8 +29876,7 @@ glue_update_crawler_schedule <- function(CrawlerName, Schedule = NULL) {
 #'
 #' @param Name &#91;required&#93; The name of the data quality ruleset.
 #' @param Description A description of the ruleset.
-#' @param Ruleset A Data Quality Definition Language (DQDL) ruleset. For more information,
-#' see the Glue developer guide.
+#' @param Ruleset A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.
 #'
 #' @return
 #' A list with the following syntax:
@@ -29970,12 +29929,9 @@ glue_update_data_quality_ruleset <- function(Name, Description = NULL, Ruleset =
 #' @usage
 #' glue_update_database(CatalogId, Name, DatabaseInput)
 #'
-#' @param CatalogId The ID of the Data Catalog in which the metadata database resides. If
-#' none is provided, the Amazon Web Services account ID is used by default.
-#' @param Name &#91;required&#93; The name of the database to update in the catalog. For Hive
-#' compatibility, this is folded to lowercase.
-#' @param DatabaseInput &#91;required&#93; A `DatabaseInput` object specifying the new definition of the metadata
-#' database in the catalog.
+#' @param CatalogId The ID of the Data Catalog in which the metadata database resides. If none is provided, the Amazon Web Services account ID is used by default.
+#' @param Name &#91;required&#93; The name of the database to update in the catalog. For Hive compatibility, this is folded to lowercase.
+#' @param DatabaseInput &#91;required&#93; A `DatabaseInput` object specifying the new definition of the metadata database in the catalog.
 #'
 #' @return
 #' An empty list.
@@ -30055,22 +30011,15 @@ glue_update_database <- function(CatalogId = NULL, Name, DatabaseInput) {
 #' @param AddPublicKeys The list of public keys for the `DevEndpoint` to use.
 #' @param DeletePublicKeys The list of public keys to be deleted from the `DevEndpoint`.
 #' @param CustomLibraries Custom Python or Java libraries to be loaded in the `DevEndpoint`.
-#' @param UpdateEtlLibraries `True` if the list of custom libraries to be loaded in the development
-#' endpoint needs to be updated, or `False` if otherwise.
-#' @param DeleteArguments The list of argument keys to be deleted from the map of arguments used
-#' to configure the `DevEndpoint`.
-#' @param AddArguments The map of arguments to add the map of arguments used to configure the
-#' `DevEndpoint`.
+#' @param UpdateEtlLibraries `True` if the list of custom libraries to be loaded in the development endpoint needs to be updated, or `False` if otherwise.
+#' @param DeleteArguments The list of argument keys to be deleted from the map of arguments used to configure the `DevEndpoint`.
+#' @param AddArguments The map of arguments to add the map of arguments used to configure the `DevEndpoint`.
 #' 
 #' Valid arguments are:
 #' 
 #' -   `"--enable-glue-datacatalog": ""`
 #' 
-#' You can specify a version of Python support for development endpoints by
-#' using the `Arguments` parameter in the
-#' [`create_dev_endpoint`][glue_create_dev_endpoint] or
-#' [`update_dev_endpoint`][glue_update_dev_endpoint] APIs. If no arguments
-#' are provided, the version defaults to Python 2.
+#' You can specify a version of Python support for development endpoints by using the `Arguments` parameter in the [`create_dev_endpoint`][glue_create_dev_endpoint] or [`update_dev_endpoint`][glue_update_dev_endpoint] APIs. If no arguments are provided, the version defaults to Python 2.
 #'
 #' @return
 #' An empty list.
@@ -30128,17 +30077,14 @@ glue_update_dev_endpoint <- function(EndpointName, PublicKey = NULL, AddPublicKe
 #' modification of scopes and permissions for the integration
 #'
 #' @description
-#' Updates the existing Glue Identity Center configuration, allowing
-#' modification of scopes and permissions for the integration.
+#' Updates the existing Glue Identity Center configuration, allowing modification of scopes and permissions for the integration.
 #'
 #' @usage
 #' glue_update_glue_identity_center_configuration(Scopes,
 #'   UserBackgroundSessionsEnabled)
 #'
-#' @param Scopes A list of Identity Center scopes that define the updated permissions and
-#' access levels for the Glue configuration.
-#' @param UserBackgroundSessionsEnabled Specifies whether users can run background sessions when using Identity
-#' Center authentication with Glue services.
+#' @param Scopes A list of Identity Center scopes that define the updated permissions and access levels for the Glue configuration.
+#' @param UserBackgroundSessionsEnabled Specifies whether users can run background sessions when using Identity Center authentication with Glue services.
 #'
 #' @return
 #' An empty list.
@@ -30181,11 +30127,7 @@ glue_update_glue_identity_center_configuration <- function(Scopes = NULL, UserBa
 #' connection (for the source) or Glue database ARN (for the target)
 #'
 #' @description
-#' This API can be used for updating the `ResourceProperty` of the Glue
-#' connection (for the source) or Glue database ARN (for the target). These
-#' properties can include the role to access the connection or database.
-#' Since the same resource can be used across multiple integrations,
-#' updating resource properties will impact all the integrations using it.
+#' This API can be used for updating the `ResourceProperty` of the Glue connection (for the source) or Glue database ARN (for the target). These properties can include the role to access the connection or database. Since the same resource can be used across multiple integrations, updating resource properties will impact all the integrations using it.
 #'
 #' @usage
 #' glue_update_integration_resource_property(ResourceArn,
@@ -30257,16 +30199,9 @@ glue_update_integration_resource_property <- function(ResourceArn, SourceProcess
 #' that need to be replicated
 #'
 #' @description
-#' This API is used to provide optional override properties for the tables
-#' that need to be replicated. These properties can include properties for
-#' filtering and partitioning for the source and target tables. To set both
-#' source and target properties the same API need to be invoked with the
-#' Glue connection ARN as `ResourceArn` with `SourceTableConfig`, and the
-#' Glue database ARN as `ResourceArn` with `TargetTableConfig`
-#' respectively.
+#' This API is used to provide optional override properties for the tables that need to be replicated. These properties can include properties for filtering and partitioning for the source and target tables. To set both source and target properties the same API need to be invoked with the Glue connection ARN as `ResourceArn` with `SourceTableConfig`, and the Glue database ARN as `ResourceArn` with `TargetTableConfig` respectively.
 #' 
-#' The override will be reflected across all the integrations using same
-#' `ResourceArn` and source table.
+#' The override will be reflected across all the integrations using same `ResourceArn` and source table.
 #'
 #' @usage
 #' glue_update_integration_table_properties(ResourceArn, TableName,
@@ -30336,15 +30271,13 @@ glue_update_integration_table_properties <- function(ResourceArn, TableName, Sou
 #' Updates an existing job definition
 #'
 #' @description
-#' Updates an existing job definition. The previous job definition is
-#' completely overwritten by this information.
+#' Updates an existing job definition. The previous job definition is completely overwritten by this information.
 #'
 #' @usage
 #' glue_update_job(JobName, JobUpdate)
 #'
 #' @param JobName &#91;required&#93; The name of the job definition to update.
-#' @param JobUpdate &#91;required&#93; Specifies the values with which to update the job definition.
-#' Unspecified configuration is removed or reset to default values.
+#' @param JobUpdate &#91;required&#93; Specifies the values with which to update the job definition. Unspecified configuration is removed or reset to default values.
 #'
 #' @return
 #' A list with the following syntax:
@@ -32179,30 +32112,22 @@ glue_update_job <- function(JobName, JobUpdate) {
 #' Synchronizes a job from the source control repository
 #'
 #' @description
-#' Synchronizes a job from the source control repository. This operation
-#' takes the job artifacts that are located in the remote repository and
-#' updates the Glue internal stores with these artifacts.
+#' Synchronizes a job from the source control repository. This operation takes the job artifacts that are located in the remote repository and updates the Glue internal stores with these artifacts.
 #' 
-#' This API supports optional parameters which take in the repository
-#' information.
+#' This API supports optional parameters which take in the repository information.
 #'
 #' @usage
 #' glue_update_job_from_source_control(JobName, Provider, RepositoryName,
 #'   RepositoryOwner, BranchName, Folder, CommitId, AuthStrategy, AuthToken)
 #'
-#' @param JobName The name of the Glue job to be synchronized to or from the remote
-#' repository.
-#' @param Provider The provider for the remote repository. Possible values: GITHUB,
-#' AWS_CODE_COMMIT, GITLAB, BITBUCKET.
-#' @param RepositoryName The name of the remote repository that contains the job artifacts. For
-#' BitBucket providers, `RepositoryName` should include `WorkspaceName`.
-#' Use the format `<WorkspaceName>/<RepositoryName>`.
+#' @param JobName The name of the Glue job to be synchronized to or from the remote repository.
+#' @param Provider The provider for the remote repository. Possible values: GITHUB, AWS_CODE_COMMIT, GITLAB, BITBUCKET.
+#' @param RepositoryName The name of the remote repository that contains the job artifacts. For BitBucket providers, `RepositoryName` should include `WorkspaceName`. Use the format `<WorkspaceName>/<RepositoryName>`.
 #' @param RepositoryOwner The owner of the remote repository that contains the job artifacts.
 #' @param BranchName An optional branch in the remote repository.
 #' @param Folder An optional folder in the remote repository.
 #' @param CommitId A commit ID for a commit in the remote repository.
-#' @param AuthStrategy The type of authentication, which can be an authentication token stored
-#' in Amazon Web Services Secrets Manager, or a personal access token.
+#' @param AuthStrategy The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.
 #' @param AuthToken The value of the authorization token.
 #'
 #' @return
@@ -32255,14 +32180,9 @@ glue_update_job_from_source_control <- function(JobName = NULL, Provider = NULL,
 #' Updates an existing machine learning transform
 #'
 #' @description
-#' Updates an existing machine learning transform. Call this operation to
-#' tune the algorithm parameters to achieve better results.
+#' Updates an existing machine learning transform. Call this operation to tune the algorithm parameters to achieve better results.
 #' 
-#' After calling this operation, you can call the
-#' [`start_ml_evaluation_task_run`][glue_start_ml_evaluation_task_run]
-#' operation to assess how well your new parameters achieved your goals
-#' (such as improving the quality of your machine learning transform, or
-#' making it more cost-effective).
+#' After calling this operation, you can call the [`start_ml_evaluation_task_run`][glue_start_ml_evaluation_task_run] operation to assess how well your new parameters achieved your goals (such as improving the quality of your machine learning transform, or making it more cost-effective).
 #'
 #' @usage
 #' glue_update_ml_transform(TransformId, Name, Description, Parameters,
@@ -32272,44 +32192,22 @@ glue_update_job_from_source_control <- function(JobName = NULL, Provider = NULL,
 #' @param TransformId &#91;required&#93; A unique identifier that was generated when the transform was created.
 #' @param Name The unique name that you gave the transform when you created it.
 #' @param Description A description of the transform. The default is an empty string.
-#' @param Parameters The configuration parameters that are specific to the transform type
-#' (algorithm) used. Conditionally dependent on the transform type.
-#' @param Role The name or Amazon Resource Name (ARN) of the IAM role with the required
-#' permissions.
-#' @param GlueVersion This value determines which version of Glue this machine learning
-#' transform is compatible with. Glue 1.0 is recommended for most
-#' customers. If the value is not set, the Glue compatibility defaults to
-#' Glue 0.9. For more information, see [Glue
-#' Versions](https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions)
-#' in the developer guide.
-#' @param MaxCapacity The number of Glue data processing units (DPUs) that are allocated to
-#' task runs for this transform. You can allocate from 2 to 100 DPUs; the
-#' default is 10. A DPU is a relative measure of processing power that
-#' consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-#' information, see the [Glue pricing
-#' page](https://aws.amazon.com/glue/pricing/).
+#' @param Parameters The configuration parameters that are specific to the transform type (algorithm) used. Conditionally dependent on the transform type.
+#' @param Role The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.
+#' @param GlueVersion This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see [Glue Versions](https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions) in the developer guide.
+#' @param MaxCapacity The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the [Glue pricing page](https://aws.amazon.com/glue/pricing/).
 #' 
-#' When the `WorkerType` field is set to a value other than `Standard`, the
-#' `MaxCapacity` field is set automatically and becomes read-only.
-#' @param WorkerType The type of predefined worker that is allocated when this task runs.
-#' Accepts a value of Standard, G.1X, or G.2X.
+#' When the `WorkerType` field is set to a value other than `Standard`, the `MaxCapacity` field is set automatically and becomes read-only.
+#' @param WorkerType The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.
 #' 
-#' -   For the `Standard` worker type, each worker provides 4 vCPU, 16 GB
-#'     of memory and a 50GB disk, and 2 executors per worker.
+#' -   For the `Standard` worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.
 #' 
-#' -   For the `G.1X` worker type, each worker provides 4 vCPU, 16 GB of
-#'     memory and a 64GB disk, and 1 executor per worker.
+#' -   For the `G.1X` worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.
 #' 
-#' -   For the `G.2X` worker type, each worker provides 8 vCPU, 32 GB of
-#'     memory and a 128GB disk, and 1 executor per worker.
-#' @param NumberOfWorkers The number of workers of a defined `workerType` that are allocated when
-#' this task runs.
-#' @param Timeout The timeout for a task run for this transform in minutes. This is the
-#' maximum time that a task run for this transform can consume resources
-#' before it is terminated and enters `TIMEOUT` status. The default is
-#' 2,880 minutes (48 hours).
-#' @param MaxRetries The maximum number of times to retry a task for this transform after a
-#' task run fails.
+#' -   For the `G.2X` worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.
+#' @param NumberOfWorkers The number of workers of a defined `workerType` that are allocated when this task runs.
+#' @param Timeout The timeout for a task run for this transform in minutes. This is the maximum time that a task run for this transform can consume resources before it is terminated and enters `TIMEOUT` status. The default is 2,880 minutes (48 hours).
+#' @param MaxRetries The maximum number of times to retry a task for this transform after a task run fails.
 #'
 #' @return
 #' A list with the following syntax:
@@ -32377,15 +32275,13 @@ glue_update_ml_transform <- function(TransformId, Name = NULL, Description = NUL
 #' glue_update_partition(CatalogId, DatabaseName, TableName,
 #'   PartitionValueList, PartitionInput)
 #'
-#' @param CatalogId The ID of the Data Catalog where the partition to be updated resides. If
-#' none is provided, the Amazon Web Services account ID is used by default.
+#' @param CatalogId The ID of the Data Catalog where the partition to be updated resides. If none is provided, the Amazon Web Services account ID is used by default.
 #' @param DatabaseName &#91;required&#93; The name of the catalog database in which the table in question resides.
 #' @param TableName &#91;required&#93; The name of the table in which the partition to be updated is located.
 #' @param PartitionValueList &#91;required&#93; List of partition key values that define the partition to update.
 #' @param PartitionInput &#91;required&#93; The new partition object to update the partition to.
 #' 
-#' The `Values` property can't be changed. If you want to change the
-#' partition key values for a partition, delete and recreate the partition.
+#' The `Values` property can't be changed. If you want to change the partition key values for a partition, delete and recreate the partition.
 #'
 #' @return
 #' An empty list.
@@ -32504,17 +32400,13 @@ glue_update_partition <- function(CatalogId = NULL, DatabaseName, TableName, Par
 #' schemas
 #'
 #' @description
-#' Updates an existing registry which is used to hold a collection of
-#' schemas. The updated properties relate to the registry, and do not
-#' modify any of the schemas within the registry.
+#' Updates an existing registry which is used to hold a collection of schemas. The updated properties relate to the registry, and do not modify any of the schemas within the registry.
 #'
 #' @usage
 #' glue_update_registry(RegistryId, Description)
 #'
-#' @param RegistryId &#91;required&#93; This is a wrapper structure that may contain the registry name and
-#' Amazon Resource Name (ARN).
-#' @param Description &#91;required&#93; A description of the registry. If description is not provided, this
-#' field will not be updated.
+#' @param RegistryId &#91;required&#93; This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).
+#' @param Description &#91;required&#93; A description of the registry. If description is not provided, this field will not be updated.
 #'
 #' @return
 #' A list with the following syntax:
@@ -32564,18 +32456,11 @@ glue_update_registry <- function(RegistryId, Description) {
 #' for a schema set
 #'
 #' @description
-#' Updates the description, compatibility setting, or version checkpoint
-#' for a schema set.
+#' Updates the description, compatibility setting, or version checkpoint for a schema set.
 #' 
-#' For updating the compatibility setting, the call will not validate
-#' compatibility for the entire set of schema versions with the new
-#' compatibility setting. If the value for `Compatibility` is provided, the
-#' `VersionNumber` (a checkpoint) is also required. The API will validate
-#' the checkpoint version number for consistency.
+#' For updating the compatibility setting, the call will not validate compatibility for the entire set of schema versions with the new compatibility setting. If the value for `Compatibility` is provided, the `VersionNumber` (a checkpoint) is also required. The API will validate the checkpoint version number for consistency.
 #' 
-#' If the value for the `VersionNumber` (checkpoint) is provided,
-#' `Compatibility` is optional and this can be used to set/reset a
-#' checkpoint for the schema.
+#' If the value for the `VersionNumber` (checkpoint) is provided, `Compatibility` is optional and this can be used to set/reset a checkpoint for the schema.
 #' 
 #' This update will happen only if the schema is in the AVAILABLE state.
 #'
@@ -32583,16 +32468,12 @@ glue_update_registry <- function(RegistryId, Description) {
 #' glue_update_schema(SchemaId, SchemaVersionNumber, Compatibility,
 #'   Description)
 #'
-#' @param SchemaId &#91;required&#93; This is a wrapper structure to contain schema identity fields. The
-#' structure contains:
+#' @param SchemaId &#91;required&#93; This is a wrapper structure to contain schema identity fields. The structure contains:
 #' 
-#' -   SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema.
-#'     One of `SchemaArn` or `SchemaName` has to be provided.
+#' -   SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of `SchemaArn` or `SchemaName` has to be provided.
 #' 
-#' -   SchemaId$SchemaName: The name of the schema. One of `SchemaArn` or
-#'     `SchemaName` has to be provided.
-#' @param SchemaVersionNumber Version number required for check pointing. One of `VersionNumber` or
-#' `Compatibility` has to be provided.
+#' -   SchemaId$SchemaName: The name of the schema. One of `SchemaArn` or `SchemaName` has to be provided.
+#' @param SchemaVersionNumber Version number required for check pointing. One of `VersionNumber` or `Compatibility` has to be provided.
 #' @param Compatibility The new compatibility setting for the schema.
 #' @param Description The new description for the schema.
 #'
@@ -32650,30 +32531,22 @@ glue_update_schema <- function(SchemaId, SchemaVersionNumber = NULL, Compatibili
 #' Synchronizes a job to the source control repository
 #'
 #' @description
-#' Synchronizes a job to the source control repository. This operation
-#' takes the job artifacts from the Glue internal stores and makes a commit
-#' to the remote repository that is configured on the job.
+#' Synchronizes a job to the source control repository. This operation takes the job artifacts from the Glue internal stores and makes a commit to the remote repository that is configured on the job.
 #' 
-#' This API supports optional parameters which take in the repository
-#' information.
+#' This API supports optional parameters which take in the repository information.
 #'
 #' @usage
 #' glue_update_source_control_from_job(JobName, Provider, RepositoryName,
 #'   RepositoryOwner, BranchName, Folder, CommitId, AuthStrategy, AuthToken)
 #'
-#' @param JobName The name of the Glue job to be synchronized to or from the remote
-#' repository.
-#' @param Provider The provider for the remote repository. Possible values: GITHUB,
-#' AWS_CODE_COMMIT, GITLAB, BITBUCKET.
-#' @param RepositoryName The name of the remote repository that contains the job artifacts. For
-#' BitBucket providers, `RepositoryName` should include `WorkspaceName`.
-#' Use the format `<WorkspaceName>/<RepositoryName>`.
+#' @param JobName The name of the Glue job to be synchronized to or from the remote repository.
+#' @param Provider The provider for the remote repository. Possible values: GITHUB, AWS_CODE_COMMIT, GITLAB, BITBUCKET.
+#' @param RepositoryName The name of the remote repository that contains the job artifacts. For BitBucket providers, `RepositoryName` should include `WorkspaceName`. Use the format `<WorkspaceName>/<RepositoryName>`.
 #' @param RepositoryOwner The owner of the remote repository that contains the job artifacts.
 #' @param BranchName An optional branch in the remote repository.
 #' @param Folder An optional folder in the remote repository.
 #' @param CommitId A commit ID for a commit in the remote repository.
-#' @param AuthStrategy The type of authentication, which can be an authentication token stored
-#' in Amazon Web Services Secrets Manager, or a personal access token.
+#' @param AuthStrategy The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.
 #' @param AuthToken The value of the authorization token.
 #'
 #' @return
@@ -32733,26 +32606,16 @@ glue_update_source_control_from_job <- function(JobName = NULL, Provider = NULL,
 #'   SkipArchive, TransactionId, VersionId, ViewUpdateAction, Force,
 #'   UpdateOpenTableFormatInput)
 #'
-#' @param CatalogId The ID of the Data Catalog where the table resides. If none is provided,
-#' the Amazon Web Services account ID is used by default.
-#' @param DatabaseName &#91;required&#93; The name of the catalog database in which the table resides. For Hive
-#' compatibility, this name is entirely lowercase.
-#' @param Name The unique identifier for the table within the specified database that
-#' will be created in the Glue Data Catalog.
-#' @param TableInput An updated `TableInput` object to define the metadata table in the
-#' catalog.
-#' @param SkipArchive By default, [`update_table`][glue_update_table] always creates an
-#' archived version of the table before updating it. However, if
-#' `skipArchive` is set to true, [`update_table`][glue_update_table] does
-#' not create the archived version.
+#' @param CatalogId The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account ID is used by default.
+#' @param DatabaseName &#91;required&#93; The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely lowercase.
+#' @param Name The unique identifier for the table within the specified database that will be created in the Glue Data Catalog.
+#' @param TableInput An updated `TableInput` object to define the metadata table in the catalog.
+#' @param SkipArchive By default, [`update_table`][glue_update_table] always creates an archived version of the table before updating it. However, if `skipArchive` is set to true, [`update_table`][glue_update_table] does not create the archived version.
 #' @param TransactionId The transaction ID at which to update the table contents.
 #' @param VersionId The version ID at which to update the table contents.
 #' @param ViewUpdateAction The operation to be performed when updating the view.
-#' @param Force A flag that can be set to true to ignore matching storage descriptor and
-#' subobject matching requirements.
-#' @param UpdateOpenTableFormatInput Input parameters for updating open table format tables in GlueData
-#' Catalog, serving as a wrapper for format-specific update operations such
-#' as Apache Iceberg.
+#' @param Force A flag that can be set to true to ignore matching storage descriptor and subobject matching requirements.
+#' @param UpdateOpenTableFormatInput Input parameters for updating open table format tables in GlueData Catalog, serving as a wrapper for format-specific update operations such as Apache Iceberg.
 #'
 #' @return
 #' An empty list.
@@ -32989,8 +32852,7 @@ glue_update_table <- function(CatalogId = NULL, DatabaseName, Name = NULL, Table
 #' @param DatabaseName &#91;required&#93; The name of the database in the catalog in which the table resides.
 #' @param TableName &#91;required&#93; The name of the table.
 #' @param Type &#91;required&#93; The type of table optimizer.
-#' @param TableOptimizerConfiguration &#91;required&#93; A `TableOptimizerConfiguration` object representing the configuration of
-#' a table optimizer.
+#' @param TableOptimizerConfiguration &#91;required&#93; A `TableOptimizerConfiguration` object representing the configuration of a table optimizer.
 #'
 #' @return
 #' An empty list.
@@ -33063,10 +32925,7 @@ glue_update_table_optimizer <- function(CatalogId, DatabaseName, TableName, Type
 #' @description
 #' Updates a trigger definition.
 #' 
-#' Job arguments may be logged. Do not pass plaintext secrets as arguments.
-#' Retrieve secrets from a Glue Connection, Amazon Web Services Secrets
-#' Manager or other secret management mechanism if you intend to keep them
-#' within the Job.
+#' Job arguments may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Amazon Web Services Secrets Manager or other secret management mechanism if you intend to keep them within the Job.
 #'
 #' @usage
 #' glue_update_trigger(Name, TriggerUpdate)
@@ -33196,8 +33055,7 @@ glue_update_trigger <- function(Name, TriggerUpdate) {
 #'
 #' @param Name &#91;required&#93; The name of the usage profile.
 #' @param Description A description of the usage profile.
-#' @param Configuration &#91;required&#93; A `ProfileConfiguration` object specifying the job and session values
-#' for the profile.
+#' @param Configuration &#91;required&#93; A `ProfileConfiguration` object specifying the job and session values for the profile.
 #'
 #' @return
 #' A list with the following syntax:
@@ -33270,14 +33128,10 @@ glue_update_usage_profile <- function(Name, Description = NULL, Configuration) {
 #' glue_update_user_defined_function(CatalogId, DatabaseName, FunctionName,
 #'   FunctionInput)
 #'
-#' @param CatalogId The ID of the Data Catalog where the function to be updated is located.
-#' If none is provided, the Amazon Web Services account ID is used by
-#' default.
-#' @param DatabaseName &#91;required&#93; The name of the catalog database where the function to be updated is
-#' located.
+#' @param CatalogId The ID of the Data Catalog where the function to be updated is located. If none is provided, the Amazon Web Services account ID is used by default.
+#' @param DatabaseName &#91;required&#93; The name of the catalog database where the function to be updated is located.
 #' @param FunctionName &#91;required&#93; The name of the function.
-#' @param FunctionInput &#91;required&#93; A `FunctionInput` object that redefines the function in the Data
-#' Catalog.
+#' @param FunctionInput &#91;required&#93; A `FunctionInput` object that redefines the function in the Data Catalog.
 #'
 #' @return
 #' An empty list.
@@ -33339,18 +33193,10 @@ glue_update_user_defined_function <- function(CatalogId = NULL, DatabaseName, Fu
 #'
 #' @param Name &#91;required&#93; Name of the workflow to be updated.
 #' @param Description The description of the workflow.
-#' @param DefaultRunProperties A collection of properties to be used as part of each execution of the
-#' workflow.
+#' @param DefaultRunProperties A collection of properties to be used as part of each execution of the workflow.
 #' 
-#' Run properties may be logged. Do not pass plaintext secrets as
-#' properties. Retrieve secrets from a Glue Connection, Amazon Web Services
-#' Secrets Manager or other secret management mechanism if you intend to
-#' use them within the workflow run.
-#' @param MaxConcurrentRuns You can use this parameter to prevent unwanted multiple updates to data,
-#' to control costs, or in some cases, to prevent exceeding the maximum
-#' number of concurrent runs of any of the component jobs. If you leave
-#' this parameter blank, there is no limit to the number of concurrent
-#' workflow runs.
+#' Run properties may be logged. Do not pass plaintext secrets as properties. Retrieve secrets from a Glue Connection, Amazon Web Services Secrets Manager or other secret management mechanism if you intend to use them within the workflow run.
+#' @param MaxConcurrentRuns You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.
 #'
 #' @return
 #' A list with the following syntax:

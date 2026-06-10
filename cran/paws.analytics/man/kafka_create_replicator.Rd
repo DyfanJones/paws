@@ -10,7 +10,8 @@ kafka_create_replicator(
   ReplicationInfoList,
   ReplicatorName,
   ServiceExecutionRoleArn,
-  Tags = NULL
+  Tags = NULL,
+  LogDelivery = NULL
 )
 }
 \arguments{
@@ -18,16 +19,15 @@ kafka_create_replicator(
 
 \item{KafkaClusters}{[required] Kafka Clusters to use in setting up sources / targets for replication.}
 
-\item{ReplicationInfoList}{[required] A list of replication configurations, where each configuration targets a
-given source cluster to target cluster replication flow.}
+\item{ReplicationInfoList}{[required] A list of replication configurations, where each configuration targets a given source cluster to target cluster replication flow.}
 
-\item{ReplicatorName}{[required] The name of the replicator. Alpha-numeric characters with '-' are
-allowed.}
+\item{ReplicatorName}{[required] The name of the replicator. Alpha-numeric characters with '-' are allowed.}
 
-\item{ServiceExecutionRoleArn}{[required] The ARN of the IAM role used by the replicator to access resources in
-the customer's account (e.g source and target clusters)}
+\item{ServiceExecutionRoleArn}{[required] The ARN of the IAM role used by the replicator to access resources in the customer's account (e.g source and target clusters)}
 
 \item{Tags}{List of tags to attach to created Replicator.}
+
+\item{LogDelivery}{Configuration for delivering replicator logs to customer destinations.}
 }
 \description{
 Creates the replicator.

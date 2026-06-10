@@ -15,7 +15,7 @@ billingconductor_batch_disassociate_resources_from_custom_line_item(
 
 \item{ResourceArns}{[required] A list containing the ARNs of resources to be disassociated.}
 
-\item{BillingPeriodRange}{}
+\item{BillingPeriodRange}{A time range for which the margin summary is effective. The time range can be up to 12 months.}
 }
 \description{
 Disassociates a batch of resources from a percentage custom line item.

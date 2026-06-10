@@ -11,24 +11,17 @@ docdb_switchover_global_cluster(
 )
 }
 \arguments{
-\item{GlobalClusterIdentifier}{[required] The identifier of the Amazon DocumentDB global database cluster to
-switch over. The identifier is the unique key assigned by the user when
-the cluster is created. In other words, it's the name of the global
-cluster. This parameter isn’t case-sensitive.
+\item{GlobalClusterIdentifier}{[required] The identifier of the Amazon DocumentDB global database cluster to switch over. The identifier is the unique key assigned by the user when the cluster is created. In other words, it's the name of the global cluster. This parameter isn’t case-sensitive.
 
 Constraints:
 \itemize{
-\item Must match the identifier of an existing global cluster (Amazon
-DocumentDB global database).
+\item Must match the identifier of an existing global cluster (Amazon DocumentDB global database).
 \item Minimum length of 1. Maximum length of 255.
 }
 
 Pattern: \verb{[A-Za-z][0-9A-Za-z-:._]*}}
 
-\item{TargetDbClusterIdentifier}{[required] The identifier of the secondary Amazon DocumentDB cluster to promote to
-the new primary for the global database cluster. Use the Amazon Resource
-Name (ARN) for the identifier so that Amazon DocumentDB can locate the
-cluster in its Amazon Web Services region.
+\item{TargetDbClusterIdentifier}{[required] The identifier of the secondary Amazon DocumentDB cluster to promote to the new primary for the global database cluster. Use the Amazon Resource Name (ARN) for the identifier so that Amazon DocumentDB can locate the cluster in its Amazon Web Services region.
 
 Constraints:
 \itemize{

@@ -15,22 +15,15 @@ costexplorer_get_anomalies(
 )
 }
 \arguments{
-\item{MonitorArn}{Retrieves all of the cost anomalies detected for a specific cost anomaly
-monitor Amazon Resource Name (ARN).}
+\item{MonitorArn}{Retrieves all of the cost anomalies detected for a specific cost anomaly monitor Amazon Resource Name (ARN).}
 
-\item{DateInterval}{[required] Assigns the start and end dates for retrieving cost anomalies. The
-returned anomaly object will have an \code{AnomalyEndDate} in the specified
-time range.}
+\item{DateInterval}{[required] Assigns the start and end dates for retrieving cost anomalies. The returned anomaly object will have an \code{AnomalyEndDate} in the specified time range.}
 
 \item{Feedback}{Filters anomaly results by the feedback field on the anomaly object.}
 
-\item{TotalImpact}{Filters anomaly results by the total impact field on the anomaly object.
-For example, you can filter anomalies \verb{GREATER_THAN 200.00} to retrieve
-anomalies, with an estimated dollar impact greater than 200.}
+\item{TotalImpact}{Filters anomaly results by the total impact field on the anomaly object. For example, you can filter anomalies \verb{GREATER_THAN 200.00} to retrieve anomalies, with an estimated dollar impact greater than 200.}
 
-\item{NextPageToken}{The token to retrieve the next set of results. Amazon Web Services
-provides the token when the response from a previous call has more
-results than the maximum page size.}
+\item{NextPageToken}{The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.}
 
 \item{MaxResults}{The number of entries a paginated response contains.}
 }

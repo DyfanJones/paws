@@ -19,14 +19,9 @@ rekognition_associate_faces(
 
 \item{FaceIds}{[required] An array of FaceIDs to associate with the UserID.}
 
-\item{UserMatchThreshold}{An optional value specifying the minimum confidence in the UserID match
-to return. The default value is 75.}
+\item{UserMatchThreshold}{An optional value specifying the minimum confidence in the UserID match to return. The default value is 75.}
 
-\item{ClientRequestToken}{Idempotent token used to identify the request to
-\code{\link[=rekognition_associate_faces]{associate_faces}}. If you use the same
-token with multiple \code{\link[=rekognition_associate_faces]{associate_faces}}
-requests, the same response is returned. Use ClientRequestToken to
-prevent the same request from being processed more than once.}
+\item{ClientRequestToken}{Idempotent token used to identify the request to \code{\link[=rekognition_associate_faces]{associate_faces}}. If you use the same token with multiple \code{\link[=rekognition_associate_faces]{associate_faces}} requests, the same response is returned. Use ClientRequestToken to prevent the same request from being processed more than once.}
 }
 \description{
 Associates one or more faces with an existing UserID. Takes an array of \code{FaceIds}. Each \code{FaceId} that are present in the \code{FaceIds} list is associated with the provided UserID. The number of FaceIds that can be used as input in a single request is limited to 100.

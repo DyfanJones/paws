@@ -7,8 +7,7 @@ NULL
 #' configuration errors
 #'
 #' @description
-#' Adds an Amazon CloudWatch log stream to monitor application
-#' configuration errors.
+#' Adds an Amazon CloudWatch log stream to monitor application configuration errors.
 #'
 #' @usage
 #' kinesisanalyticsv2_add_application_cloud_watch_logging_option(
@@ -16,19 +15,9 @@ NULL
 #'   ConditionalToken)
 #'
 #' @param ApplicationName &#91;required&#93; The Kinesis Data Analytics application name.
-#' @param CurrentApplicationVersionId The version ID of the SQL-based Kinesis Data Analytics application. You
-#' must provide the `CurrentApplicationVersionId` or the
-#' `ConditionalToken`.You can retrieve the application version ID using
-#' [`describe_application`][kinesisanalyticsv2_describe_application]. For
-#' better concurrency support, use the `ConditionalToken` parameter instead
-#' of `CurrentApplicationVersionId`.
+#' @param CurrentApplicationVersionId The version ID of the SQL-based Kinesis Data Analytics application. You must provide the `CurrentApplicationVersionId` or the `ConditionalToken`.You can retrieve the application version ID using [`describe_application`][kinesisanalyticsv2_describe_application]. For better concurrency support, use the `ConditionalToken` parameter instead of `CurrentApplicationVersionId`.
 #' @param CloudWatchLoggingOption &#91;required&#93; Provides the Amazon CloudWatch log stream Amazon Resource Name (ARN).
-#' @param ConditionalToken A value you use to implement strong concurrency for application updates.
-#' You must provide the `CurrentApplicationVersionId` or the
-#' `ConditionalToken`. You get the application's current `ConditionalToken`
-#' using [`describe_application`][kinesisanalyticsv2_describe_application].
-#' For better concurrency support, use the `ConditionalToken` parameter
-#' instead of `CurrentApplicationVersionId`.
+#' @param ConditionalToken A value you use to implement strong concurrency for application updates. You must provide the `CurrentApplicationVersionId` or the `ConditionalToken`. You get the application's current `ConditionalToken` using [`describe_application`][kinesisanalyticsv2_describe_application]. For better concurrency support, use the `ConditionalToken` parameter instead of `CurrentApplicationVersionId`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -87,29 +76,18 @@ kinesisanalyticsv2_add_application_cloud_watch_logging_option <- function(Applic
 #' application
 #'
 #' @description
-#' Adds a streaming source to your SQL-based Kinesis Data Analytics
-#' application.
+#' Adds a streaming source to your SQL-based Kinesis Data Analytics application.
 #' 
-#' You can add a streaming source when you create an application, or you
-#' can use this operation to add a streaming source after you create an
-#' application. For more information, see
-#' [`create_application`][kinesisanalyticsv2_create_application].
+#' You can add a streaming source when you create an application, or you can use this operation to add a streaming source after you create an application. For more information, see [`create_application`][kinesisanalyticsv2_create_application].
 #' 
-#' Any configuration update, including adding a streaming source using this
-#' operation, results in a new version of the application. You can use the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation to find the current application version.
+#' Any configuration update, including adding a streaming source using this operation, results in a new version of the application. You can use the [`describe_application`][kinesisanalyticsv2_describe_application] operation to find the current application version.
 #'
 #' @usage
 #' kinesisanalyticsv2_add_application_input(ApplicationName,
 #'   CurrentApplicationVersionId, Input)
 #'
-#' @param ApplicationName &#91;required&#93; The name of your existing application to which you want to add the
-#' streaming source.
-#' @param CurrentApplicationVersionId &#91;required&#93; The current version of your application. You must provide the
-#' `ApplicationVersionID` or the `ConditionalToken`.You can use the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation to find the current application version.
+#' @param ApplicationName &#91;required&#93; The name of your existing application to which you want to add the streaming source.
+#' @param CurrentApplicationVersionId &#91;required&#93; The current version of your application. You must provide the `ApplicationVersionID` or the `ConditionalToken`.You can use the [`describe_application`][kinesisanalyticsv2_describe_application] operation to find the current application version.
 #' @param Input &#91;required&#93; The Input to add.
 #'
 #' @return
@@ -247,30 +225,16 @@ kinesisanalyticsv2_add_application_input <- function(ApplicationName, CurrentApp
 #' Analytics application
 #'
 #' @description
-#' Adds an InputProcessingConfiguration to a SQL-based Kinesis Data
-#' Analytics application. An input processor pre-processes records on the
-#' input stream before the application's SQL code executes. Currently, the
-#' only input processor available is [Amazon
-#' Lambda](https://docs.aws.amazon.com/lambda/).
+#' Adds an InputProcessingConfiguration to a SQL-based Kinesis Data Analytics application. An input processor pre-processes records on the input stream before the application's SQL code executes. Currently, the only input processor available is [Amazon Lambda](https://docs.aws.amazon.com/lambda/).
 #'
 #' @usage
 #' kinesisanalyticsv2_add_application_input_processing_configuration(
 #'   ApplicationName, CurrentApplicationVersionId, InputId,
 #'   InputProcessingConfiguration)
 #'
-#' @param ApplicationName &#91;required&#93; The name of the application to which you want to add the input
-#' processing configuration.
-#' @param CurrentApplicationVersionId &#91;required&#93; The version of the application to which you want to add the input
-#' processing configuration. You can use the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation to get the current application version. If the version
-#' specified is not the current version, the
-#' `ConcurrentModificationException` is returned.
-#' @param InputId &#91;required&#93; The ID of the input configuration to add the input processing
-#' configuration to. You can get a list of the input IDs for an application
-#' using the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation.
+#' @param ApplicationName &#91;required&#93; The name of the application to which you want to add the input processing configuration.
+#' @param CurrentApplicationVersionId &#91;required&#93; The version of the application to which you want to add the input processing configuration. You can use the [`describe_application`][kinesisanalyticsv2_describe_application] operation to get the current application version. If the version specified is not the current version, the `ConcurrentModificationException` is returned.
+#' @param InputId &#91;required&#93; The ID of the input configuration to add the input processing configuration to. You can get a list of the input IDs for an application using the [`describe_application`][kinesisanalyticsv2_describe_application] operation.
 #' @param InputProcessingConfiguration &#91;required&#93; The InputProcessingConfiguration to add to the application.
 #'
 #' @return
@@ -331,43 +295,21 @@ kinesisanalyticsv2_add_application_input_processing_configuration <- function(Ap
 #' application
 #'
 #' @description
-#' Adds an external destination to your SQL-based Kinesis Data Analytics
-#' application.
+#' Adds an external destination to your SQL-based Kinesis Data Analytics application.
 #' 
-#' If you want Kinesis Data Analytics to deliver data from an
-#' in-application stream within your application to an external destination
-#' (such as an Kinesis data stream, a Kinesis Data Firehose delivery
-#' stream, or an Amazon Lambda function), you add the relevant
-#' configuration to your application using this operation. You can
-#' configure one or more outputs for your application. Each output
-#' configuration maps an in-application stream and an external destination.
+#' If you want Kinesis Data Analytics to deliver data from an in-application stream within your application to an external destination (such as an Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), you add the relevant configuration to your application using this operation. You can configure one or more outputs for your application. Each output configuration maps an in-application stream and an external destination.
 #' 
-#' You can use one of the output configurations to deliver data from your
-#' in-application error stream to an external destination so that you can
-#' analyze the errors.
+#' You can use one of the output configurations to deliver data from your in-application error stream to an external destination so that you can analyze the errors.
 #' 
-#' Any configuration update, including adding a streaming source using this
-#' operation, results in a new version of the application. You can use the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation to find the current application version.
+#' Any configuration update, including adding a streaming source using this operation, results in a new version of the application. You can use the [`describe_application`][kinesisanalyticsv2_describe_application] operation to find the current application version.
 #'
 #' @usage
 #' kinesisanalyticsv2_add_application_output(ApplicationName,
 #'   CurrentApplicationVersionId, Output)
 #'
-#' @param ApplicationName &#91;required&#93; The name of the application to which you want to add the output
-#' configuration.
-#' @param CurrentApplicationVersionId &#91;required&#93; The version of the application to which you want to add the output
-#' configuration. You can use the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation to get the current application version. If the version
-#' specified is not the current version, the
-#' `ConcurrentModificationException` is returned.
-#' @param Output &#91;required&#93; An array of objects, each describing one output configuration. In the
-#' output configuration, you specify the name of an in-application stream,
-#' a destination (that is, a Kinesis data stream, a Kinesis Data Firehose
-#' delivery stream, or an Amazon Lambda function), and record the formation
-#' to use when writing to the destination.
+#' @param ApplicationName &#91;required&#93; The name of the application to which you want to add the output configuration.
+#' @param CurrentApplicationVersionId &#91;required&#93; The version of the application to which you want to add the output configuration. You can use the [`describe_application`][kinesisanalyticsv2_describe_application] operation to get the current application version. If the version specified is not the current version, the `ConcurrentModificationException` is returned.
+#' @param Output &#91;required&#93; An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination (that is, a Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), and record the formation to use when writing to the destination.
 #'
 #' @return
 #' A list with the following syntax:
@@ -450,31 +392,17 @@ kinesisanalyticsv2_add_application_output <- function(ApplicationName, CurrentAp
 #' Analytics application
 #'
 #' @description
-#' Adds a reference data source to an existing SQL-based Kinesis Data
-#' Analytics application.
+#' Adds a reference data source to an existing SQL-based Kinesis Data Analytics application.
 #' 
-#' Kinesis Data Analytics reads reference data (that is, an Amazon S3
-#' object) and creates an in-application table within your application. In
-#' the request, you provide the source (S3 bucket name and object key
-#' name), name of the in-application table to create, and the necessary
-#' mapping information that describes how data in an Amazon S3 object maps
-#' to columns in the resulting in-application table.
+#' Kinesis Data Analytics reads reference data (that is, an Amazon S3 object) and creates an in-application table within your application. In the request, you provide the source (S3 bucket name and object key name), name of the in-application table to create, and the necessary mapping information that describes how data in an Amazon S3 object maps to columns in the resulting in-application table.
 #'
 #' @usage
 #' kinesisanalyticsv2_add_application_reference_data_source(
 #'   ApplicationName, CurrentApplicationVersionId, ReferenceDataSource)
 #'
 #' @param ApplicationName &#91;required&#93; The name of an existing application.
-#' @param CurrentApplicationVersionId &#91;required&#93; The version of the application for which you are adding the reference
-#' data source. You can use the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation to get the current application version. If the version
-#' specified is not the current version, the
-#' `ConcurrentModificationException` is returned.
-#' @param ReferenceDataSource &#91;required&#93; The reference data source can be an object in your Amazon S3 bucket.
-#' Kinesis Data Analytics reads the object and copies the data into the
-#' in-application table that is created. You provide an S3 bucket, object
-#' key name, and the resulting in-application table that is created.
+#' @param CurrentApplicationVersionId &#91;required&#93; The version of the application for which you are adding the reference data source. You can use the [`describe_application`][kinesisanalyticsv2_describe_application] operation to get the current application version. If the version specified is not the current version, the `ConcurrentModificationException` is returned.
+#' @param ReferenceDataSource &#91;required&#93; The reference data source can be an object in your Amazon S3 bucket. Kinesis Data Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created.
 #'
 #' @return
 #' A list with the following syntax:
@@ -582,40 +510,22 @@ kinesisanalyticsv2_add_application_reference_data_source <- function(Application
 #' Adds a Virtual Private Cloud (VPC) configuration to the application
 #'
 #' @description
-#' Adds a Virtual Private Cloud (VPC) configuration to the application.
-#' Applications can use VPCs to store and access resources securely.
+#' Adds a Virtual Private Cloud (VPC) configuration to the application. Applications can use VPCs to store and access resources securely.
 #' 
-#' Note the following about VPC configurations for Managed Service for
-#' Apache Flink applications:
+#' Note the following about VPC configurations for Managed Service for Apache Flink applications:
 #' 
 #' -   VPC configurations are not supported for SQL applications.
 #' 
-#' -   When a VPC is added to a Managed Service for Apache Flink
-#'     application, the application can no longer be accessed from the
-#'     Internet directly. To enable Internet access to the application, add
-#'     an Internet gateway to your VPC.
+#' -   When a VPC is added to a Managed Service for Apache Flink application, the application can no longer be accessed from the Internet directly. To enable Internet access to the application, add an Internet gateway to your VPC.
 #'
 #' @usage
 #' kinesisanalyticsv2_add_application_vpc_configuration(ApplicationName,
 #'   CurrentApplicationVersionId, VpcConfiguration, ConditionalToken)
 #'
 #' @param ApplicationName &#91;required&#93; The name of an existing application.
-#' @param CurrentApplicationVersionId The version of the application to which you want to add the VPC
-#' configuration. You must provide the `CurrentApplicationVersionId` or the
-#' `ConditionalToken`. You can use the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation to get the current application version. If the version
-#' specified is not the current version, the
-#' `ConcurrentModificationException` is returned. For better concurrency
-#' support, use the `ConditionalToken` parameter instead of
-#' `CurrentApplicationVersionId`.
+#' @param CurrentApplicationVersionId The version of the application to which you want to add the VPC configuration. You must provide the `CurrentApplicationVersionId` or the `ConditionalToken`. You can use the [`describe_application`][kinesisanalyticsv2_describe_application] operation to get the current application version. If the version specified is not the current version, the `ConcurrentModificationException` is returned. For better concurrency support, use the `ConditionalToken` parameter instead of `CurrentApplicationVersionId`.
 #' @param VpcConfiguration &#91;required&#93; Description of the VPC to add to the application.
-#' @param ConditionalToken A value you use to implement strong concurrency for application updates.
-#' You must provide the `ApplicationVersionID` or the `ConditionalToken`.
-#' You get the application's current `ConditionalToken` using
-#' [`describe_application`][kinesisanalyticsv2_describe_application]. For
-#' better concurrency support, use the `ConditionalToken` parameter instead
-#' of `CurrentApplicationVersionId`.
+#' @param ConditionalToken A value you use to implement strong concurrency for application updates. You must provide the `ApplicationVersionID` or the `ConditionalToken`. You get the application's current `ConditionalToken` using [`describe_application`][kinesisanalyticsv2_describe_application]. For better concurrency support, use the `ConditionalToken` parameter instead of `CurrentApplicationVersionId`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -681,10 +591,7 @@ kinesisanalyticsv2_add_application_vpc_configuration <- function(ApplicationName
 #' Creates a Managed Service for Apache Flink application
 #'
 #' @description
-#' Creates a Managed Service for Apache Flink application. For information
-#' about creating a Managed Service for Apache Flink application, see
-#' [Creating an
-#' Application](https://docs.aws.amazon.com/managed-flink/latest/java/getting-started.html).
+#' Creates a Managed Service for Apache Flink application. For information about creating a Managed Service for Apache Flink application, see [Creating an Application](https://docs.aws.amazon.com/managed-flink/latest/java/getting-started.html).
 #'
 #' @usage
 #' kinesisanalyticsv2_create_application(ApplicationName,
@@ -695,20 +602,11 @@ kinesisanalyticsv2_add_application_vpc_configuration <- function(ApplicationName
 #' @param ApplicationName &#91;required&#93; The name of your application (for example, `sample-app`).
 #' @param ApplicationDescription A summary description of the application.
 #' @param RuntimeEnvironment &#91;required&#93; The runtime environment for the application.
-#' @param ServiceExecutionRole &#91;required&#93; The IAM role used by the application to access Kinesis data streams,
-#' Kinesis Data Firehose delivery streams, Amazon S3 objects, and other
-#' external resources.
+#' @param ServiceExecutionRole &#91;required&#93; The IAM role used by the application to access Kinesis data streams, Kinesis Data Firehose delivery streams, Amazon S3 objects, and other external resources.
 #' @param ApplicationConfiguration Use this parameter to configure the application.
-#' @param CloudWatchLoggingOptions Use this parameter to configure an Amazon CloudWatch log stream to
-#' monitor application configuration errors.
-#' @param Tags A list of one or more tags to assign to the application. A tag is a
-#' key-value pair that identifies an application. Note that the maximum
-#' number of application tags includes system tags. The maximum number of
-#' user-defined application tags is 50. For more information, see [Using
-#' Tagging](https://docs.aws.amazon.com/managed-flink/latest/java/how-tagging.html).
-#' @param ApplicationMode Use the `STREAMING` mode to create a Managed Service for Apache Flink
-#' application. To create a Managed Service for Apache Flink Studio
-#' notebook, use the `INTERACTIVE` mode.
+#' @param CloudWatchLoggingOptions Use this parameter to configure an Amazon CloudWatch log stream to monitor application configuration errors.
+#' @param Tags A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see [Using Tagging](https://docs.aws.amazon.com/managed-flink/latest/java/how-tagging.html).
+#' @param ApplicationMode Use the `STREAMING` mode to create a Managed Service for Apache Flink application. To create a Managed Service for Apache Flink Studio notebook, use the `INTERACTIVE` mode.
 #'
 #' @return
 #' A list with the following syntax:
@@ -718,7 +616,7 @@ kinesisanalyticsv2_add_application_vpc_configuration <- function(ApplicationName
 #'     ApplicationARN = "string",
 #'     ApplicationDescription = "string",
 #'     ApplicationName = "string",
-#'     RuntimeEnvironment = "SQL-1_0"|"FLINK-1_6"|"FLINK-1_8"|"ZEPPELIN-FLINK-1_0"|"FLINK-1_11"|"FLINK-1_13"|"ZEPPELIN-FLINK-2_0"|"FLINK-1_15"|"ZEPPELIN-FLINK-3_0"|"FLINK-1_18"|"FLINK-1_19"|"FLINK-1_20",
+#'     RuntimeEnvironment = "SQL-1_0"|"FLINK-1_6"|"FLINK-1_8"|"ZEPPELIN-FLINK-1_0"|"FLINK-1_11"|"FLINK-1_13"|"ZEPPELIN-FLINK-2_0"|"FLINK-1_15"|"ZEPPELIN-FLINK-3_0"|"FLINK-1_18"|"FLINK-1_19"|"FLINK-1_20"|"FLINK-2_2",
 #'     ServiceExecutionRole = "string",
 #'     ApplicationStatus = "DELETING"|"STARTING"|"STOPPING"|"READY"|"RUNNING"|"UPDATING"|"AUTOSCALING"|"FORCE_STOPPING"|"ROLLING_BACK"|"MAINTENANCE"|"ROLLED_BACK",
 #'     ApplicationVersionId = 123,
@@ -971,7 +869,7 @@ kinesisanalyticsv2_add_application_vpc_configuration <- function(ApplicationName
 #' svc$create_application(
 #'   ApplicationName = "string",
 #'   ApplicationDescription = "string",
-#'   RuntimeEnvironment = "SQL-1_0"|"FLINK-1_6"|"FLINK-1_8"|"ZEPPELIN-FLINK-1_0"|"FLINK-1_11"|"FLINK-1_13"|"ZEPPELIN-FLINK-2_0"|"FLINK-1_15"|"ZEPPELIN-FLINK-3_0"|"FLINK-1_18"|"FLINK-1_19"|"FLINK-1_20",
+#'   RuntimeEnvironment = "SQL-1_0"|"FLINK-1_6"|"FLINK-1_8"|"ZEPPELIN-FLINK-1_0"|"FLINK-1_11"|"FLINK-1_13"|"ZEPPELIN-FLINK-2_0"|"FLINK-1_15"|"ZEPPELIN-FLINK-3_0"|"FLINK-1_18"|"FLINK-1_19"|"FLINK-1_20"|"FLINK-2_2",
 #'   ServiceExecutionRole = "string",
 #'   ApplicationConfiguration = list(
 #'     SqlApplicationConfiguration = list(
@@ -1201,31 +1099,20 @@ kinesisanalyticsv2_create_application <- function(ApplicationName, ApplicationDe
 #' application's extension
 #'
 #' @description
-#' Creates and returns a URL that you can use to connect to an
-#' application's extension.
+#' Creates and returns a URL that you can use to connect to an application's extension.
 #' 
-#' The IAM role or user used to call this API defines the permissions to
-#' access the extension. After the presigned URL is created, no additional
-#' permission is required to access this URL. IAM authorization policies
-#' for this API are also enforced for every HTTP request that attempts to
-#' connect to the extension.
+#' The IAM role or user used to call this API defines the permissions to access the extension. After the presigned URL is created, no additional permission is required to access this URL. IAM authorization policies for this API are also enforced for every HTTP request that attempts to connect to the extension.
 #' 
-#' You control the amount of time that the URL will be valid using the
-#' `SessionExpirationDurationInSeconds` parameter. If you do not provide
-#' this parameter, the returned URL is valid for twelve hours.
+#' You control the amount of time that the URL will be valid using the `SessionExpirationDurationInSeconds` parameter. If you do not provide this parameter, the returned URL is valid for twelve hours.
 #' 
-#' The URL that you get from a call to CreateApplicationPresignedUrl must
-#' be used within 3 minutes to be valid. If you first try to use the URL
-#' after the 3-minute limit expires, the service returns an HTTP 403
-#' Forbidden error.
+#' The URL that you get from a call to CreateApplicationPresignedUrl must be used within 3 minutes to be valid. If you first try to use the URL after the 3-minute limit expires, the service returns an HTTP 403 Forbidden error.
 #'
 #' @usage
 #' kinesisanalyticsv2_create_application_presigned_url(ApplicationName,
 #'   UrlType, SessionExpirationDurationInSeconds)
 #'
 #' @param ApplicationName &#91;required&#93; The name of the application.
-#' @param UrlType &#91;required&#93; The type of the extension for which to create and return a URL.
-#' Currently, the only valid extension URL type is `FLINK_DASHBOARD_URL`.
+#' @param UrlType &#91;required&#93; The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is `FLINK_DASHBOARD_URL`.
 #' @param SessionExpirationDurationInSeconds The duration in seconds for which the returned URL will be valid.
 #'
 #' @return
@@ -1319,16 +1206,13 @@ kinesisanalyticsv2_create_application_snapshot <- function(ApplicationName, Snap
 #' Deletes the specified application
 #'
 #' @description
-#' Deletes the specified application. Managed Service for Apache Flink
-#' halts application execution and deletes the application.
+#' Deletes the specified application. Managed Service for Apache Flink halts application execution and deletes the application.
 #'
 #' @usage
 #' kinesisanalyticsv2_delete_application(ApplicationName, CreateTimestamp)
 #'
 #' @param ApplicationName &#91;required&#93; The name of the application to delete.
-#' @param CreateTimestamp &#91;required&#93; Use the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation to get this value.
+#' @param CreateTimestamp &#91;required&#93; Use the [`describe_application`][kinesisanalyticsv2_describe_application] operation to get this value.
 #'
 #' @return
 #' An empty list.
@@ -1371,8 +1255,7 @@ kinesisanalyticsv2_delete_application <- function(ApplicationName, CreateTimesta
 #' Analytics application
 #'
 #' @description
-#' Deletes an Amazon CloudWatch log stream from an SQL-based Kinesis Data
-#' Analytics application.
+#' Deletes an Amazon CloudWatch log stream from an SQL-based Kinesis Data Analytics application.
 #'
 #' @usage
 #' kinesisanalyticsv2_delete_application_cloud_watch_logging_option(
@@ -1380,22 +1263,9 @@ kinesisanalyticsv2_delete_application <- function(ApplicationName, CreateTimesta
 #'   ConditionalToken)
 #'
 #' @param ApplicationName &#91;required&#93; The application name.
-#' @param CurrentApplicationVersionId The version ID of the application. You must provide the
-#' `CurrentApplicationVersionId` or the `ConditionalToken`. You can
-#' retrieve the application version ID using
-#' [`describe_application`][kinesisanalyticsv2_describe_application]. For
-#' better concurrency support, use the `ConditionalToken` parameter instead
-#' of `CurrentApplicationVersionId`.
-#' @param CloudWatchLoggingOptionId &#91;required&#93; The `CloudWatchLoggingOptionId` of the Amazon CloudWatch logging option
-#' to delete. You can get the `CloudWatchLoggingOptionId` by using the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation.
-#' @param ConditionalToken A value you use to implement strong concurrency for application updates.
-#' You must provide the `CurrentApplicationVersionId` or the
-#' `ConditionalToken`. You get the application's current `ConditionalToken`
-#' using [`describe_application`][kinesisanalyticsv2_describe_application].
-#' For better concurrency support, use the `ConditionalToken` parameter
-#' instead of `CurrentApplicationVersionId`.
+#' @param CurrentApplicationVersionId The version ID of the application. You must provide the `CurrentApplicationVersionId` or the `ConditionalToken`. You can retrieve the application version ID using [`describe_application`][kinesisanalyticsv2_describe_application]. For better concurrency support, use the `ConditionalToken` parameter instead of `CurrentApplicationVersionId`.
+#' @param CloudWatchLoggingOptionId &#91;required&#93; The `CloudWatchLoggingOptionId` of the Amazon CloudWatch logging option to delete. You can get the `CloudWatchLoggingOptionId` by using the [`describe_application`][kinesisanalyticsv2_describe_application] operation.
+#' @param ConditionalToken A value you use to implement strong concurrency for application updates. You must provide the `CurrentApplicationVersionId` or the `ConditionalToken`. You get the application's current `ConditionalToken` using [`describe_application`][kinesisanalyticsv2_describe_application]. For better concurrency support, use the `ConditionalToken` parameter instead of `CurrentApplicationVersionId`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1458,16 +1328,8 @@ kinesisanalyticsv2_delete_application_cloud_watch_logging_option <- function(App
 #'   ApplicationName, CurrentApplicationVersionId, InputId)
 #'
 #' @param ApplicationName &#91;required&#93; The name of the application.
-#' @param CurrentApplicationVersionId &#91;required&#93; The application version. You can use the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation to get the current application version. If the version
-#' specified is not the current version, the
-#' `ConcurrentModificationException` is returned.
-#' @param InputId &#91;required&#93; The ID of the input configuration from which to delete the input
-#' processing configuration. You can get a list of the input IDs for an
-#' application by using the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation.
+#' @param CurrentApplicationVersionId &#91;required&#93; The application version. You can use the [`describe_application`][kinesisanalyticsv2_describe_application] operation to get the current application version. If the version specified is not the current version, the `ConcurrentModificationException` is returned.
+#' @param InputId &#91;required&#93; The ID of the input configuration from which to delete the input processing configuration. You can get a list of the input IDs for an application by using the [`describe_application`][kinesisanalyticsv2_describe_application] operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1515,30 +1377,15 @@ kinesisanalyticsv2_delete_application_input_processing_configuration <- function
 #' Data Analytics application's configuration
 #'
 #' @description
-#' Deletes the output destination configuration from your SQL-based Kinesis
-#' Data Analytics application's configuration. Kinesis Data Analytics will
-#' no longer write data from the corresponding in-application stream to the
-#' external output destination.
+#' Deletes the output destination configuration from your SQL-based Kinesis Data Analytics application's configuration. Kinesis Data Analytics will no longer write data from the corresponding in-application stream to the external output destination.
 #'
 #' @usage
 #' kinesisanalyticsv2_delete_application_output(ApplicationName,
 #'   CurrentApplicationVersionId, OutputId)
 #'
 #' @param ApplicationName &#91;required&#93; The application name.
-#' @param CurrentApplicationVersionId &#91;required&#93; The application version. You can use the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation to get the current application version. If the version
-#' specified is not the current version, the
-#' `ConcurrentModificationException` is returned.
-#' @param OutputId &#91;required&#93; The ID of the configuration to delete. Each output configuration that is
-#' added to the application (either when the application is created or
-#' later) using the
-#' [`add_application_output`][kinesisanalyticsv2_add_application_output]
-#' operation has a unique ID. You need to provide the ID to uniquely
-#' identify the output configuration that you want to delete from the
-#' application configuration. You can use the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation to get the specific `OutputId`.
+#' @param CurrentApplicationVersionId &#91;required&#93; The application version. You can use the [`describe_application`][kinesisanalyticsv2_describe_application] operation to get the current application version. If the version specified is not the current version, the `ConcurrentModificationException` is returned.
+#' @param OutputId &#91;required&#93; The ID of the configuration to delete. Each output configuration that is added to the application (either when the application is created or later) using the [`add_application_output`][kinesisanalyticsv2_add_application_output] operation has a unique ID. You need to provide the ID to uniquely identify the output configuration that you want to delete from the application configuration. You can use the [`describe_application`][kinesisanalyticsv2_describe_application] operation to get the specific `OutputId`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1586,30 +1433,17 @@ kinesisanalyticsv2_delete_application_output <- function(ApplicationName, Curren
 #' SQL-based Kinesis Data Analytics application's configuration
 #'
 #' @description
-#' Deletes a reference data source configuration from the specified
-#' SQL-based Kinesis Data Analytics application's configuration.
+#' Deletes a reference data source configuration from the specified SQL-based Kinesis Data Analytics application's configuration.
 #' 
-#' If the application is running, Kinesis Data Analytics immediately
-#' removes the in-application table that you created using the
-#' [`add_application_reference_data_source`][kinesisanalyticsv2_add_application_reference_data_source]
-#' operation.
+#' If the application is running, Kinesis Data Analytics immediately removes the in-application table that you created using the [`add_application_reference_data_source`][kinesisanalyticsv2_add_application_reference_data_source] operation.
 #'
 #' @usage
 #' kinesisanalyticsv2_delete_application_reference_data_source(
 #'   ApplicationName, CurrentApplicationVersionId, ReferenceId)
 #'
 #' @param ApplicationName &#91;required&#93; The name of an existing application.
-#' @param CurrentApplicationVersionId &#91;required&#93; The current application version. You can use the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation to get the current application version. If the version
-#' specified is not the current version, the
-#' `ConcurrentModificationException` is returned.
-#' @param ReferenceId &#91;required&#93; The ID of the reference data source. When you add a reference data
-#' source to your application using the
-#' [`add_application_reference_data_source`][kinesisanalyticsv2_add_application_reference_data_source],
-#' Kinesis Data Analytics assigns an ID. You can use the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation to get the reference ID.
+#' @param CurrentApplicationVersionId &#91;required&#93; The current application version. You can use the [`describe_application`][kinesisanalyticsv2_describe_application] operation to get the current application version. If the version specified is not the current version, the `ConcurrentModificationException` is returned.
+#' @param ReferenceId &#91;required&#93; The ID of the reference data source. When you add a reference data source to your application using the [`add_application_reference_data_source`][kinesisanalyticsv2_add_application_reference_data_source], Kinesis Data Analytics assigns an ID. You can use the [`describe_application`][kinesisanalyticsv2_describe_application] operation to get the reference ID.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1664,8 +1498,7 @@ kinesisanalyticsv2_delete_application_reference_data_source <- function(Applicat
 #'
 #' @param ApplicationName &#91;required&#93; The name of an existing application.
 #' @param SnapshotName &#91;required&#93; The identifier for the snapshot delete.
-#' @param SnapshotCreationTimestamp &#91;required&#93; The creation timestamp of the application snapshot to delete. You can
-#' retrieve this value using or .
+#' @param SnapshotCreationTimestamp &#91;required&#93; The creation timestamp of the application snapshot to delete. You can retrieve this value using or .
 #'
 #' @return
 #' An empty list.
@@ -1709,27 +1542,16 @@ kinesisanalyticsv2_delete_application_snapshot <- function(ApplicationName, Snap
 #' application
 #'
 #' @description
-#' Removes a VPC configuration from a Managed Service for Apache Flink
-#' application.
+#' Removes a VPC configuration from a Managed Service for Apache Flink application.
 #'
 #' @usage
 #' kinesisanalyticsv2_delete_application_vpc_configuration(ApplicationName,
 #'   CurrentApplicationVersionId, VpcConfigurationId, ConditionalToken)
 #'
 #' @param ApplicationName &#91;required&#93; The name of an existing application.
-#' @param CurrentApplicationVersionId The current application version ID. You must provide the
-#' `CurrentApplicationVersionId` or the `ConditionalToken`. You can
-#' retrieve the application version ID using
-#' [`describe_application`][kinesisanalyticsv2_describe_application]. For
-#' better concurrency support, use the `ConditionalToken` parameter instead
-#' of `CurrentApplicationVersionId`.
+#' @param CurrentApplicationVersionId The current application version ID. You must provide the `CurrentApplicationVersionId` or the `ConditionalToken`. You can retrieve the application version ID using [`describe_application`][kinesisanalyticsv2_describe_application]. For better concurrency support, use the `ConditionalToken` parameter instead of `CurrentApplicationVersionId`.
 #' @param VpcConfigurationId &#91;required&#93; The ID of the VPC configuration to delete.
-#' @param ConditionalToken A value you use to implement strong concurrency for application updates.
-#' You must provide the `CurrentApplicationVersionId` or the
-#' `ConditionalToken`. You get the application's current `ConditionalToken`
-#' using [`describe_application`][kinesisanalyticsv2_describe_application].
-#' For better concurrency support, use the `ConditionalToken` parameter
-#' instead of `CurrentApplicationVersionId`.
+#' @param ConditionalToken A value you use to implement strong concurrency for application updates. You must provide the `CurrentApplicationVersionId` or the `ConditionalToken`. You get the application's current `ConditionalToken` using [`describe_application`][kinesisanalyticsv2_describe_application]. For better concurrency support, use the `ConditionalToken` parameter instead of `CurrentApplicationVersionId`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1779,20 +1601,16 @@ kinesisanalyticsv2_delete_application_vpc_configuration <- function(ApplicationN
 #' application
 #'
 #' @description
-#' Returns information about a specific Managed Service for Apache Flink
-#' application.
+#' Returns information about a specific Managed Service for Apache Flink application.
 #' 
-#' If you want to retrieve a list of all applications in your account, use
-#' the [`list_applications`][kinesisanalyticsv2_list_applications]
-#' operation.
+#' If you want to retrieve a list of all applications in your account, use the [`list_applications`][kinesisanalyticsv2_list_applications] operation.
 #'
 #' @usage
 #' kinesisanalyticsv2_describe_application(ApplicationName,
 #'   IncludeAdditionalDetails)
 #'
 #' @param ApplicationName &#91;required&#93; The name of the application.
-#' @param IncludeAdditionalDetails Displays verbose information about a Managed Service for Apache Flink
-#' application, including the application's job plan.
+#' @param IncludeAdditionalDetails Displays verbose information about a Managed Service for Apache Flink application, including the application's job plan.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1802,7 +1620,7 @@ kinesisanalyticsv2_delete_application_vpc_configuration <- function(ApplicationN
 #'     ApplicationARN = "string",
 #'     ApplicationDescription = "string",
 #'     ApplicationName = "string",
-#'     RuntimeEnvironment = "SQL-1_0"|"FLINK-1_6"|"FLINK-1_8"|"ZEPPELIN-FLINK-1_0"|"FLINK-1_11"|"FLINK-1_13"|"ZEPPELIN-FLINK-2_0"|"FLINK-1_15"|"ZEPPELIN-FLINK-3_0"|"FLINK-1_18"|"FLINK-1_19"|"FLINK-1_20",
+#'     RuntimeEnvironment = "SQL-1_0"|"FLINK-1_6"|"FLINK-1_8"|"ZEPPELIN-FLINK-1_0"|"FLINK-1_11"|"FLINK-1_13"|"ZEPPELIN-FLINK-2_0"|"FLINK-1_15"|"ZEPPELIN-FLINK-3_0"|"FLINK-1_18"|"FLINK-1_19"|"FLINK-1_20"|"FLINK-2_2",
 #'     ServiceExecutionRole = "string",
 #'     ApplicationStatus = "DELETING"|"STARTING"|"STOPPING"|"READY"|"RUNNING"|"UPDATING"|"AUTOSCALING"|"FORCE_STOPPING"|"ROLLING_BACK"|"MAINTENANCE"|"ROLLED_BACK",
 #'     ApplicationVersionId = 123,
@@ -2085,10 +1903,7 @@ kinesisanalyticsv2_describe_application <- function(ApplicationName, IncludeAddi
 #' Provides a detailed description of a specified application operation
 #'
 #' @description
-#' Provides a detailed description of a specified application operation. To
-#' see a list of all the operations of an application, invoke the
-#' [`list_application_operations`][kinesisanalyticsv2_list_application_operations]
-#' operation.
+#' Provides a detailed description of a specified application operation. To see a list of all the operations of an application, invoke the [`list_application_operations`][kinesisanalyticsv2_list_application_operations] operation.
 #' 
 #' This operation is supported only for Managed Service for Apache Flink.
 #'
@@ -2096,8 +1911,8 @@ kinesisanalyticsv2_describe_application <- function(ApplicationName, IncludeAddi
 #' kinesisanalyticsv2_describe_application_operation(ApplicationName,
 #'   OperationId)
 #'
-#' @param ApplicationName &#91;required&#93; 
-#' @param OperationId &#91;required&#93; 
+#' @param ApplicationName &#91;required&#93; The name of the application.
+#' @param OperationId &#91;required&#93; The operation ID of the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2168,8 +1983,7 @@ kinesisanalyticsv2_describe_application_operation <- function(ApplicationName, O
 #'   SnapshotName)
 #'
 #' @param ApplicationName &#91;required&#93; The name of an existing application.
-#' @param SnapshotName &#91;required&#93; The identifier of an application snapshot. You can retrieve this value
-#' using .
+#' @param SnapshotName &#91;required&#93; The identifier of an application snapshot. You can retrieve this value using .
 #'
 #' @return
 #' A list with the following syntax:
@@ -2182,7 +1996,7 @@ kinesisanalyticsv2_describe_application_operation <- function(ApplicationName, O
 #'     SnapshotCreationTimestamp = as.POSIXct(
 #'       "2015-01-01"
 #'     ),
-#'     RuntimeEnvironment = "SQL-1_0"|"FLINK-1_6"|"FLINK-1_8"|"ZEPPELIN-FLINK-1_0"|"FLINK-1_11"|"FLINK-1_13"|"ZEPPELIN-FLINK-2_0"|"FLINK-1_15"|"ZEPPELIN-FLINK-3_0"|"FLINK-1_18"|"FLINK-1_19"|"FLINK-1_20",
+#'     RuntimeEnvironment = "SQL-1_0"|"FLINK-1_6"|"FLINK-1_8"|"ZEPPELIN-FLINK-1_0"|"FLINK-1_11"|"FLINK-1_13"|"ZEPPELIN-FLINK-2_0"|"FLINK-1_15"|"ZEPPELIN-FLINK-3_0"|"FLINK-1_18"|"FLINK-1_19"|"FLINK-1_20"|"FLINK-2_2",
 #'     ApplicationEncryptionConfigurationDescription = list(
 #'       KeyId = "string",
 #'       KeyType = "AWS_OWNED_KEY"|"CUSTOMER_MANAGED_KEY"
@@ -2227,11 +2041,7 @@ kinesisanalyticsv2_describe_application_snapshot <- function(ApplicationName, Sn
 #' application
 #'
 #' @description
-#' Provides a detailed description of a specified version of the
-#' application. To see a list of all the versions of an application, invoke
-#' the
-#' [`list_application_versions`][kinesisanalyticsv2_list_application_versions]
-#' operation.
+#' Provides a detailed description of a specified version of the application. To see a list of all the versions of an application, invoke the [`list_application_versions`][kinesisanalyticsv2_list_application_versions] operation.
 #' 
 #' This operation is supported only for Managed Service for Apache Flink.
 #'
@@ -2239,10 +2049,8 @@ kinesisanalyticsv2_describe_application_snapshot <- function(ApplicationName, Sn
 #' kinesisanalyticsv2_describe_application_version(ApplicationName,
 #'   ApplicationVersionId)
 #'
-#' @param ApplicationName &#91;required&#93; The name of the application for which you want to get the version
-#' description.
-#' @param ApplicationVersionId &#91;required&#93; The ID of the application version for which you want to get the
-#' description.
+#' @param ApplicationName &#91;required&#93; The name of the application for which you want to get the version description.
+#' @param ApplicationVersionId &#91;required&#93; The ID of the application version for which you want to get the description.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2252,7 +2060,7 @@ kinesisanalyticsv2_describe_application_snapshot <- function(ApplicationName, Sn
 #'     ApplicationARN = "string",
 #'     ApplicationDescription = "string",
 #'     ApplicationName = "string",
-#'     RuntimeEnvironment = "SQL-1_0"|"FLINK-1_6"|"FLINK-1_8"|"ZEPPELIN-FLINK-1_0"|"FLINK-1_11"|"FLINK-1_13"|"ZEPPELIN-FLINK-2_0"|"FLINK-1_15"|"ZEPPELIN-FLINK-3_0"|"FLINK-1_18"|"FLINK-1_19"|"FLINK-1_20",
+#'     RuntimeEnvironment = "SQL-1_0"|"FLINK-1_6"|"FLINK-1_8"|"ZEPPELIN-FLINK-1_0"|"FLINK-1_11"|"FLINK-1_13"|"ZEPPELIN-FLINK-2_0"|"FLINK-1_15"|"ZEPPELIN-FLINK-3_0"|"FLINK-1_18"|"FLINK-1_19"|"FLINK-1_20"|"FLINK-2_2",
 #'     ServiceExecutionRole = "string",
 #'     ApplicationStatus = "DELETING"|"STARTING"|"STOPPING"|"READY"|"RUNNING"|"UPDATING"|"AUTOSCALING"|"FORCE_STOPPING"|"ROLLING_BACK"|"MAINTENANCE"|"ROLLED_BACK",
 #'     ApplicationVersionId = 123,
@@ -2538,16 +2346,9 @@ kinesisanalyticsv2_describe_application_version <- function(ApplicationName, App
 #' object
 #'
 #' @description
-#' Infers a schema for a SQL-based Kinesis Data Analytics application by
-#' evaluating sample records on the specified streaming source (Kinesis
-#' data stream or Kinesis Data Firehose delivery stream) or Amazon S3
-#' object. In the response, the operation returns the inferred schema and
-#' also the sample records that the operation used to infer the schema.
+#' Infers a schema for a SQL-based Kinesis Data Analytics application by evaluating sample records on the specified streaming source (Kinesis data stream or Kinesis Data Firehose delivery stream) or Amazon S3 object. In the response, the operation returns the inferred schema and also the sample records that the operation used to infer the schema.
 #' 
-#' You can use the inferred schema when configuring a streaming source for
-#' your application. When you create an application using the Kinesis Data
-#' Analytics console, the console uses this operation to infer a schema and
-#' show it in the console user interface.
+#' You can use the inferred schema when configuring a streaming source for your application. When you create an application using the Kinesis Data Analytics console, the console uses this operation to infer a schema and show it in the console user interface.
 #'
 #' @usage
 #' kinesisanalyticsv2_discover_input_schema(ResourceARN,
@@ -2556,12 +2357,9 @@ kinesisanalyticsv2_describe_application_version <- function(ApplicationName, App
 #'
 #' @param ResourceARN The Amazon Resource Name (ARN) of the streaming source.
 #' @param ServiceExecutionRole &#91;required&#93; The ARN of the role that is used to access the streaming source.
-#' @param InputStartingPositionConfiguration The point at which you want Kinesis Data Analytics to start reading
-#' records from the specified streaming source for discovery purposes.
-#' @param S3Configuration Specify this parameter to discover a schema from data in an Amazon S3
-#' object.
-#' @param InputProcessingConfiguration The InputProcessingConfiguration to use to preprocess the records before
-#' discovering the schema of the records.
+#' @param InputStartingPositionConfiguration The point at which you want Kinesis Data Analytics to start reading records from the specified streaming source for discovery purposes.
+#' @param S3Configuration Specify this parameter to discover a schema from data in an Amazon S3 object.
+#' @param InputProcessingConfiguration The InputProcessingConfiguration to use to preprocess the records before discovering the schema of the records.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2651,13 +2449,9 @@ kinesisanalyticsv2_discover_input_schema <- function(ResourceARN = NULL, Service
 #' UpdateApplication, StartApplication etc
 #'
 #' @description
-#' Lists all the operations performed for the specified application such as
-#' UpdateApplication, StartApplication etc. The response also includes a
-#' summary of the operation.
+#' Lists all the operations performed for the specified application such as UpdateApplication, StartApplication etc. The response also includes a summary of the operation.
 #' 
-#' To get the complete description of a specific operation, invoke the
-#' [`describe_application_operation`][kinesisanalyticsv2_describe_application_operation]
-#' operation.
+#' To get the complete description of a specific operation, invoke the [`describe_application_operation`][kinesisanalyticsv2_describe_application_operation] operation.
 #' 
 #' This operation is supported only for Managed Service for Apache Flink.
 #'
@@ -2665,11 +2459,11 @@ kinesisanalyticsv2_discover_input_schema <- function(ResourceARN = NULL, Service
 #' kinesisanalyticsv2_list_application_operations(ApplicationName, Limit,
 #'   NextToken, Operation, OperationStatus)
 #'
-#' @param ApplicationName &#91;required&#93; 
-#' @param Limit 
-#' @param NextToken 
-#' @param Operation 
-#' @param OperationStatus 
+#' @param ApplicationName &#91;required&#93; The name of the application.
+#' @param Limit The limit on the number of records to be returned in the response.
+#' @param NextToken A pagination token that can be used in a subsequent request.
+#' @param Operation The type of operation that is performed on an application.
+#' @param OperationStatus The status of the operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2738,10 +2532,7 @@ kinesisanalyticsv2_list_application_operations <- function(ApplicationName, Limi
 #'
 #' @param ApplicationName &#91;required&#93; The name of an existing application.
 #' @param Limit The maximum number of application snapshots to list.
-#' @param NextToken Use this parameter if you receive a `NextToken` response in a previous
-#' request that indicates that there is more output available. Set it to
-#' the value of the previous call's `NextToken` response to indicate where
-#' the output should continue from.
+#' @param NextToken Use this parameter if you receive a `NextToken` response in a previous request that indicates that there is more output available. Set it to the value of the previous call's `NextToken` response to indicate where the output should continue from.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2755,7 +2546,7 @@ kinesisanalyticsv2_list_application_operations <- function(ApplicationName, Limi
 #'       SnapshotCreationTimestamp = as.POSIXct(
 #'         "2015-01-01"
 #'       ),
-#'       RuntimeEnvironment = "SQL-1_0"|"FLINK-1_6"|"FLINK-1_8"|"ZEPPELIN-FLINK-1_0"|"FLINK-1_11"|"FLINK-1_13"|"ZEPPELIN-FLINK-2_0"|"FLINK-1_15"|"ZEPPELIN-FLINK-3_0"|"FLINK-1_18"|"FLINK-1_19"|"FLINK-1_20",
+#'       RuntimeEnvironment = "SQL-1_0"|"FLINK-1_6"|"FLINK-1_8"|"ZEPPELIN-FLINK-1_0"|"FLINK-1_11"|"FLINK-1_13"|"ZEPPELIN-FLINK-2_0"|"FLINK-1_15"|"ZEPPELIN-FLINK-3_0"|"FLINK-1_18"|"FLINK-1_19"|"FLINK-1_20"|"FLINK-2_2",
 #'       ApplicationEncryptionConfigurationDescription = list(
 #'         KeyId = "string",
 #'         KeyType = "AWS_OWNED_KEY"|"CUSTOMER_MANAGED_KEY"
@@ -2803,14 +2594,9 @@ kinesisanalyticsv2_list_application_snapshots <- function(ApplicationName, Limit
 #' that were rolled back
 #'
 #' @description
-#' Lists all the versions for the specified application, including versions
-#' that were rolled back. The response also includes a summary of the
-#' configuration associated with each version.
+#' Lists all the versions for the specified application, including versions that were rolled back. The response also includes a summary of the configuration associated with each version.
 #' 
-#' To get the complete description of a specific application version,
-#' invoke the
-#' [`describe_application_version`][kinesisanalyticsv2_describe_application_version]
-#' operation.
+#' To get the complete description of a specific application version, invoke the [`describe_application_version`][kinesisanalyticsv2_describe_application_version] operation.
 #' 
 #' This operation is supported only for Managed Service for Apache Flink.
 #'
@@ -2819,13 +2605,8 @@ kinesisanalyticsv2_list_application_snapshots <- function(ApplicationName, Limit
 #'   NextToken)
 #'
 #' @param ApplicationName &#91;required&#93; The name of the application for which you want to list all versions.
-#' @param Limit The maximum number of versions to list in this invocation of the
-#' operation.
-#' @param NextToken If a previous invocation of this operation returned a pagination token,
-#' pass it into this value to retrieve the next set of results. For more
-#' information about pagination, see [Using the Amazon Command Line
-#' Interface's Pagination
-#' Options](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-pagination.html).
+#' @param Limit The maximum number of versions to list in this invocation of the operation.
+#' @param NextToken If a previous invocation of this operation returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see [Using the Amazon Command Line Interface's Pagination Options](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-pagination.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -2878,21 +2659,15 @@ kinesisanalyticsv2_list_application_versions <- function(ApplicationName, Limit 
 #' account
 #'
 #' @description
-#' Returns a list of Managed Service for Apache Flink applications in your
-#' account. For each application, the response includes the application
-#' name, Amazon Resource Name (ARN), and status.
+#' Returns a list of Managed Service for Apache Flink applications in your account. For each application, the response includes the application name, Amazon Resource Name (ARN), and status.
 #' 
-#' If you want detailed information about a specific application, use
-#' [`describe_application`][kinesisanalyticsv2_describe_application].
+#' If you want detailed information about a specific application, use [`describe_application`][kinesisanalyticsv2_describe_application].
 #'
 #' @usage
 #' kinesisanalyticsv2_list_applications(Limit, NextToken)
 #'
 #' @param Limit The maximum number of applications to list.
-#' @param NextToken If a previous command returned a pagination token, pass it into this
-#' value to retrieve the next set of results. For more information about
-#' pagination, see [Using the Amazon Command Line Interface's Pagination
-#' Options](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-pagination.html).
+#' @param NextToken If a previous command returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see [Using the Amazon Command Line Interface's Pagination Options](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-pagination.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -2904,7 +2679,7 @@ kinesisanalyticsv2_list_application_versions <- function(ApplicationName, Limit 
 #'       ApplicationARN = "string",
 #'       ApplicationStatus = "DELETING"|"STARTING"|"STOPPING"|"READY"|"RUNNING"|"UPDATING"|"AUTOSCALING"|"FORCE_STOPPING"|"ROLLING_BACK"|"MAINTENANCE"|"ROLLED_BACK",
 #'       ApplicationVersionId = 123,
-#'       RuntimeEnvironment = "SQL-1_0"|"FLINK-1_6"|"FLINK-1_8"|"ZEPPELIN-FLINK-1_0"|"FLINK-1_11"|"FLINK-1_13"|"ZEPPELIN-FLINK-2_0"|"FLINK-1_15"|"ZEPPELIN-FLINK-3_0"|"FLINK-1_18"|"FLINK-1_19"|"FLINK-1_20",
+#'       RuntimeEnvironment = "SQL-1_0"|"FLINK-1_6"|"FLINK-1_8"|"ZEPPELIN-FLINK-1_0"|"FLINK-1_11"|"FLINK-1_13"|"ZEPPELIN-FLINK-2_0"|"FLINK-1_15"|"ZEPPELIN-FLINK-3_0"|"FLINK-1_18"|"FLINK-1_19"|"FLINK-1_20"|"FLINK-2_2",
 #'       ApplicationMode = "STREAMING"|"INTERACTIVE"
 #'     )
 #'   ),
@@ -2947,9 +2722,7 @@ kinesisanalyticsv2_list_applications <- function(Limit = NULL, NextToken = NULL)
 #' Retrieves the list of key-value tags assigned to the application
 #'
 #' @description
-#' Retrieves the list of key-value tags assigned to the application. For
-#' more information, see [Using
-#' Tagging](https://docs.aws.amazon.com/managed-flink/latest/java/how-tagging.html).
+#' Retrieves the list of key-value tags assigned to the application. For more information, see [Using Tagging](https://docs.aws.amazon.com/managed-flink/latest/java/how-tagging.html).
 #'
 #' @usage
 #' kinesisanalyticsv2_list_tags_for_resource(ResourceARN)
@@ -3003,25 +2776,18 @@ kinesisanalyticsv2_list_tags_for_resource <- function(ResourceARN) {
 #' Reverts the application to the previous running version
 #'
 #' @description
-#' Reverts the application to the previous running version. You can roll
-#' back an application if you suspect it is stuck in a transient status or
-#' in the running status.
+#' Reverts the application to the previous running version. You can roll back an application if you suspect it is stuck in a transient status or in the running status.
 #' 
-#' You can roll back an application only if it is in the `UPDATING`,
-#' `AUTOSCALING`, or `RUNNING` statuses.
+#' You can roll back an application only if it is in the `UPDATING`, `AUTOSCALING`, or `RUNNING` statuses.
 #' 
-#' When you rollback an application, it loads state data from the last
-#' successful snapshot. If the application has no snapshots, Managed
-#' Service for Apache Flink rejects the rollback request.
+#' When you rollback an application, it loads state data from the last successful snapshot. If the application has no snapshots, Managed Service for Apache Flink rejects the rollback request.
 #'
 #' @usage
 #' kinesisanalyticsv2_rollback_application(ApplicationName,
 #'   CurrentApplicationVersionId)
 #'
 #' @param ApplicationName &#91;required&#93; The name of the application.
-#' @param CurrentApplicationVersionId &#91;required&#93; The current application version ID. You can retrieve the application
-#' version ID using
-#' [`describe_application`][kinesisanalyticsv2_describe_application].
+#' @param CurrentApplicationVersionId &#91;required&#93; The current application version ID. You can retrieve the application version ID using [`describe_application`][kinesisanalyticsv2_describe_application].
 #'
 #' @return
 #' A list with the following syntax:
@@ -3031,7 +2797,7 @@ kinesisanalyticsv2_list_tags_for_resource <- function(ResourceARN) {
 #'     ApplicationARN = "string",
 #'     ApplicationDescription = "string",
 #'     ApplicationName = "string",
-#'     RuntimeEnvironment = "SQL-1_0"|"FLINK-1_6"|"FLINK-1_8"|"ZEPPELIN-FLINK-1_0"|"FLINK-1_11"|"FLINK-1_13"|"ZEPPELIN-FLINK-2_0"|"FLINK-1_15"|"ZEPPELIN-FLINK-3_0"|"FLINK-1_18"|"FLINK-1_19"|"FLINK-1_20",
+#'     RuntimeEnvironment = "SQL-1_0"|"FLINK-1_6"|"FLINK-1_8"|"ZEPPELIN-FLINK-1_0"|"FLINK-1_11"|"FLINK-1_13"|"ZEPPELIN-FLINK-2_0"|"FLINK-1_15"|"ZEPPELIN-FLINK-3_0"|"FLINK-1_18"|"FLINK-1_19"|"FLINK-1_20"|"FLINK-2_2",
 #'     ServiceExecutionRole = "string",
 #'     ApplicationStatus = "DELETING"|"STARTING"|"STOPPING"|"READY"|"RUNNING"|"UPDATING"|"AUTOSCALING"|"FORCE_STOPPING"|"ROLLING_BACK"|"MAINTENANCE"|"ROLLED_BACK",
 #'     ApplicationVersionId = 123,
@@ -3315,16 +3081,13 @@ kinesisanalyticsv2_rollback_application <- function(ApplicationName, CurrentAppl
 #' Starts the specified Managed Service for Apache Flink application
 #'
 #' @description
-#' Starts the specified Managed Service for Apache Flink application. After
-#' creating an application, you must exclusively call this operation to
-#' start your application.
+#' Starts the specified Managed Service for Apache Flink application. After creating an application, you must exclusively call this operation to start your application.
 #'
 #' @usage
 #' kinesisanalyticsv2_start_application(ApplicationName, RunConfiguration)
 #'
 #' @param ApplicationName &#91;required&#93; The name of the application.
-#' @param RunConfiguration Identifies the run configuration (start parameters) of a Managed Service
-#' for Apache Flink application.
+#' @param RunConfiguration Identifies the run configuration (start parameters) of a Managed Service for Apache Flink application.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3385,35 +3148,23 @@ kinesisanalyticsv2_start_application <- function(ApplicationName, RunConfigurati
 #' Stops the application from processing data
 #'
 #' @description
-#' Stops the application from processing data. You can stop an application
-#' only if it is in the running status, unless you set the `Force`
-#' parameter to `true`.
+#' Stops the application from processing data. You can stop an application only if it is in the running status, unless you set the `Force` parameter to `true`.
 #' 
-#' You can use the
-#' [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation to find the application status.
+#' You can use the [`describe_application`][kinesisanalyticsv2_describe_application] operation to find the application status.
 #' 
-#' Managed Service for Apache Flink takes a snapshot when the application
-#' is stopped, unless `Force` is set to `true`.
+#' Managed Service for Apache Flink takes a snapshot when the application is stopped, unless `Force` is set to `true`.
 #'
 #' @usage
 #' kinesisanalyticsv2_stop_application(ApplicationName, Force)
 #'
 #' @param ApplicationName &#91;required&#93; The name of the running application to stop.
-#' @param Force Set to `true` to force the application to stop. If you set `Force` to
-#' `true`, Managed Service for Apache Flink stops the application without
-#' taking a snapshot.
+#' @param Force Set to `true` to force the application to stop. If you set `Force` to `true`, Managed Service for Apache Flink stops the application without taking a snapshot.
 #' 
-#' Force-stopping your application may lead to data loss or duplication. To
-#' prevent data loss or duplicate processing of data during application
-#' restarts, we recommend you to take frequent snapshots of your
-#' application.
+#' Force-stopping your application may lead to data loss or duplication. To prevent data loss or duplicate processing of data during application restarts, we recommend you to take frequent snapshots of your application.
 #' 
-#' You can only force stop a Managed Service for Apache Flink application.
-#' You can't force stop a SQL-based Kinesis Data Analytics application.
+#' You can only force stop a Managed Service for Apache Flink application. You can't force stop a SQL-based Kinesis Data Analytics application.
 #' 
-#' The application must be in the `STARTING`, `UPDATING`, `STOPPING`,
-#' `AUTOSCALING`, or `RUNNING` status.
+#' The application must be in the `STARTING`, `UPDATING`, `STOPPING`, `AUTOSCALING`, or `RUNNING` status.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3459,11 +3210,7 @@ kinesisanalyticsv2_stop_application <- function(ApplicationName, Force = NULL) {
 #' application
 #'
 #' @description
-#' Adds one or more key-value tags to a Managed Service for Apache Flink
-#' application. Note that the maximum number of application tags includes
-#' system tags. The maximum number of user-defined application tags is 50.
-#' For more information, see [Using
-#' Tagging](https://docs.aws.amazon.com/managed-flink/latest/java/how-tagging.html).
+#' Adds one or more key-value tags to a Managed Service for Apache Flink application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see [Using Tagging](https://docs.aws.amazon.com/managed-flink/latest/java/how-tagging.html).
 #'
 #' @usage
 #' kinesisanalyticsv2_tag_resource(ResourceARN, Tags)
@@ -3515,15 +3262,12 @@ kinesisanalyticsv2_tag_resource <- function(ResourceARN, Tags) {
 #' application
 #'
 #' @description
-#' Removes one or more tags from a Managed Service for Apache Flink
-#' application. For more information, see [Using
-#' Tagging](https://docs.aws.amazon.com/managed-flink/latest/java/how-tagging.html).
+#' Removes one or more tags from a Managed Service for Apache Flink application. For more information, see [Using Tagging](https://docs.aws.amazon.com/managed-flink/latest/java/how-tagging.html).
 #'
 #' @usage
 #' kinesisanalyticsv2_untag_resource(ResourceARN, TagKeys)
 #'
-#' @param ResourceARN &#91;required&#93; The ARN of the Managed Service for Apache Flink application from which
-#' to remove the tags.
+#' @param ResourceARN &#91;required&#93; The ARN of the Managed Service for Apache Flink application from which to remove the tags.
 #' @param TagKeys &#91;required&#93; A list of keys of tags to remove from the specified application.
 #'
 #' @return
@@ -3566,12 +3310,9 @@ kinesisanalyticsv2_untag_resource <- function(ResourceARN, TagKeys) {
 #' Updates an existing Managed Service for Apache Flink application
 #'
 #' @description
-#' Updates an existing Managed Service for Apache Flink application. Using
-#' this operation, you can update application code, input configuration,
-#' and output configuration.
+#' Updates an existing Managed Service for Apache Flink application. Using this operation, you can update application code, input configuration, and output configuration.
 #' 
-#' Managed Service for Apache Flink updates the `ApplicationVersionId` each
-#' time you update your application.
+#' Managed Service for Apache Flink updates the `ApplicationVersionId` each time you update your application.
 #'
 #' @usage
 #' kinesisanalyticsv2_update_application(ApplicationName,
@@ -3581,33 +3322,17 @@ kinesisanalyticsv2_untag_resource <- function(ResourceARN, TagKeys) {
 #'   RuntimeEnvironmentUpdate)
 #'
 #' @param ApplicationName &#91;required&#93; The name of the application to update.
-#' @param CurrentApplicationVersionId The current application version ID. You must provide the
-#' `CurrentApplicationVersionId` or the `ConditionalToken`.You can retrieve
-#' the application version ID using
-#' [`describe_application`][kinesisanalyticsv2_describe_application]. For
-#' better concurrency support, use the `ConditionalToken` parameter instead
-#' of `CurrentApplicationVersionId`.
+#' @param CurrentApplicationVersionId The current application version ID. You must provide the `CurrentApplicationVersionId` or the `ConditionalToken`.You can retrieve the application version ID using [`describe_application`][kinesisanalyticsv2_describe_application]. For better concurrency support, use the `ConditionalToken` parameter instead of `CurrentApplicationVersionId`.
 #' @param ApplicationConfigurationUpdate Describes application configuration updates.
 #' @param ServiceExecutionRoleUpdate Describes updates to the service execution role.
 #' @param RunConfigurationUpdate Describes updates to the application's starting parameters.
-#' @param CloudWatchLoggingOptionUpdates Describes application Amazon CloudWatch logging option updates. You can
-#' only update existing CloudWatch logging options with this action. To add
-#' a new CloudWatch logging option, use
-#' [`add_application_cloud_watch_logging_option`][kinesisanalyticsv2_add_application_cloud_watch_logging_option].
-#' @param ConditionalToken A value you use to implement strong concurrency for application updates.
-#' You must provide the `CurrentApplicationVersionId` or the
-#' `ConditionalToken`. You get the application's current `ConditionalToken`
-#' using [`describe_application`][kinesisanalyticsv2_describe_application].
-#' For better concurrency support, use the `ConditionalToken` parameter
-#' instead of `CurrentApplicationVersionId`.
-#' @param RuntimeEnvironmentUpdate Updates the Managed Service for Apache Flink runtime environment used to
-#' run your code. To avoid issues you must:
+#' @param CloudWatchLoggingOptionUpdates Describes application Amazon CloudWatch logging option updates. You can only update existing CloudWatch logging options with this action. To add a new CloudWatch logging option, use [`add_application_cloud_watch_logging_option`][kinesisanalyticsv2_add_application_cloud_watch_logging_option].
+#' @param ConditionalToken A value you use to implement strong concurrency for application updates. You must provide the `CurrentApplicationVersionId` or the `ConditionalToken`. You get the application's current `ConditionalToken` using [`describe_application`][kinesisanalyticsv2_describe_application]. For better concurrency support, use the `ConditionalToken` parameter instead of `CurrentApplicationVersionId`.
+#' @param RuntimeEnvironmentUpdate Updates the Managed Service for Apache Flink runtime environment used to run your code. To avoid issues you must:
 #' 
-#' -   Ensure your new jar and dependencies are compatible with the new
-#'     runtime selected.
+#' -   Ensure your new jar and dependencies are compatible with the new runtime selected.
 #' 
-#' -   Ensure your new code's state is compatible with the snapshot from
-#'     which your application will start
+#' -   Ensure your new code's state is compatible with the snapshot from which your application will start
 #'
 #' @return
 #' A list with the following syntax:
@@ -3617,7 +3342,7 @@ kinesisanalyticsv2_untag_resource <- function(ResourceARN, TagKeys) {
 #'     ApplicationARN = "string",
 #'     ApplicationDescription = "string",
 #'     ApplicationName = "string",
-#'     RuntimeEnvironment = "SQL-1_0"|"FLINK-1_6"|"FLINK-1_8"|"ZEPPELIN-FLINK-1_0"|"FLINK-1_11"|"FLINK-1_13"|"ZEPPELIN-FLINK-2_0"|"FLINK-1_15"|"ZEPPELIN-FLINK-3_0"|"FLINK-1_18"|"FLINK-1_19"|"FLINK-1_20",
+#'     RuntimeEnvironment = "SQL-1_0"|"FLINK-1_6"|"FLINK-1_8"|"ZEPPELIN-FLINK-1_0"|"FLINK-1_11"|"FLINK-1_13"|"ZEPPELIN-FLINK-2_0"|"FLINK-1_15"|"ZEPPELIN-FLINK-3_0"|"FLINK-1_18"|"FLINK-1_19"|"FLINK-1_20"|"FLINK-2_2",
 #'     ServiceExecutionRole = "string",
 #'     ApplicationStatus = "DELETING"|"STARTING"|"STOPPING"|"READY"|"RUNNING"|"UPDATING"|"AUTOSCALING"|"FORCE_STOPPING"|"ROLLING_BACK"|"MAINTENANCE"|"ROLLED_BACK",
 #'     ApplicationVersionId = 123,
@@ -4077,7 +3802,7 @@ kinesisanalyticsv2_untag_resource <- function(ResourceARN, TagKeys) {
 #'     )
 #'   ),
 #'   ConditionalToken = "string",
-#'   RuntimeEnvironmentUpdate = "SQL-1_0"|"FLINK-1_6"|"FLINK-1_8"|"ZEPPELIN-FLINK-1_0"|"FLINK-1_11"|"FLINK-1_13"|"ZEPPELIN-FLINK-2_0"|"FLINK-1_15"|"ZEPPELIN-FLINK-3_0"|"FLINK-1_18"|"FLINK-1_19"|"FLINK-1_20"
+#'   RuntimeEnvironmentUpdate = "SQL-1_0"|"FLINK-1_6"|"FLINK-1_8"|"ZEPPELIN-FLINK-1_0"|"FLINK-1_11"|"FLINK-1_13"|"ZEPPELIN-FLINK-2_0"|"FLINK-1_15"|"ZEPPELIN-FLINK-3_0"|"FLINK-1_18"|"FLINK-1_19"|"FLINK-1_20"|"FLINK-2_2"
 #' )
 #' ```
 #'
@@ -4109,28 +3834,13 @@ kinesisanalyticsv2_update_application <- function(ApplicationName, CurrentApplic
 #' Flink application
 #'
 #' @description
-#' Updates the maintenance configuration of the Managed Service for Apache
-#' Flink application.
+#' Updates the maintenance configuration of the Managed Service for Apache Flink application.
 #' 
-#' You can invoke this operation on an application that is in one of the
-#' two following states: `READY` or `RUNNING`. If you invoke it when the
-#' application is in a state other than these two states, it throws a
-#' `ResourceInUseException`. The service makes use of the updated
-#' configuration the next time it schedules maintenance for the
-#' application. If you invoke this operation after the service schedules
-#' maintenance, the service will apply the configuration update the next
-#' time it schedules maintenance for the application. This means that you
-#' might not see the maintenance configuration update applied to the
-#' maintenance process that follows a successful invocation of this
-#' operation, but to the following maintenance process instead.
+#' You can invoke this operation on an application that is in one of the two following states: `READY` or `RUNNING`. If you invoke it when the application is in a state other than these two states, it throws a `ResourceInUseException`. The service makes use of the updated configuration the next time it schedules maintenance for the application. If you invoke this operation after the service schedules maintenance, the service will apply the configuration update the next time it schedules maintenance for the application. This means that you might not see the maintenance configuration update applied to the maintenance process that follows a successful invocation of this operation, but to the following maintenance process instead.
 #' 
-#' To see the current maintenance configuration of your application, invoke
-#' the [`describe_application`][kinesisanalyticsv2_describe_application]
-#' operation.
+#' To see the current maintenance configuration of your application, invoke the [`describe_application`][kinesisanalyticsv2_describe_application] operation.
 #' 
-#' For information about application maintenance, see [Managed Service for
-#' Apache Flink for Apache Flink
-#' Maintenance](https://docs.aws.amazon.com/managed-flink/latest/java/maintenance.html).
+#' For information about application maintenance, see [Managed Service for Apache Flink for Apache Flink Maintenance](https://docs.aws.amazon.com/managed-flink/latest/java/maintenance.html).
 #' 
 #' This operation is supported only for Managed Service for Apache Flink.
 #'
@@ -4138,8 +3848,7 @@ kinesisanalyticsv2_update_application <- function(ApplicationName, CurrentApplic
 #' kinesisanalyticsv2_update_application_maintenance_configuration(
 #'   ApplicationName, ApplicationMaintenanceConfigurationUpdate)
 #'
-#' @param ApplicationName &#91;required&#93; The name of the application for which you want to update the maintenance
-#' configuration.
+#' @param ApplicationName &#91;required&#93; The name of the application for which you want to update the maintenance configuration.
 #' @param ApplicationMaintenanceConfigurationUpdate &#91;required&#93; Describes the application maintenance configuration update.
 #'
 #' @return

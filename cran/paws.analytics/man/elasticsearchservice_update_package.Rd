@@ -14,12 +14,11 @@ elasticsearchservice_update_package(
 \arguments{
 \item{PackageID}{[required] Unique identifier for the package.}
 
-\item{PackageSource}{[required]}
+\item{PackageSource}{[required] The S3 location for importing the package specified as \code{S3BucketName} and \code{S3Key}}
 
 \item{PackageDescription}{New description of the package.}
 
-\item{CommitMessage}{An info message for the new version which will be shown as part of
-\code{GetPackageVersionHistoryResponse}.}
+\item{CommitMessage}{An info message for the new version which will be shown as part of \code{GetPackageVersionHistoryResponse}.}
 }
 \description{
 Updates a package for use with Amazon ES domains.

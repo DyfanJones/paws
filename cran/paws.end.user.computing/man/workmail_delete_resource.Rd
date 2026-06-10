@@ -7,13 +7,11 @@
 workmail_delete_resource(OrganizationId, ResourceId)
 }
 \arguments{
-\item{OrganizationId}{[required] The identifier associated with the organization from which the resource
-is deleted.}
+\item{OrganizationId}{[required] The identifier associated with the organization from which the resource is deleted.}
 
 \item{ResourceId}{[required] The identifier of the resource to be deleted.
 
-The identifier can accept \emph{ResourceId}, or \emph{Resourcename}. The following
-identity formats are available:
+The identifier can accept \emph{ResourceId}, or \emph{Resourcename}. The following identity formats are available:
 \itemize{
 \item Resource ID: r-0123456789a0123456789b0123456789
 \item Resource name: resource

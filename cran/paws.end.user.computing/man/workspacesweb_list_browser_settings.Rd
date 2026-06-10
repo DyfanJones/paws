@@ -7,8 +7,7 @@
 workspacesweb_list_browser_settings(nextToken = NULL, maxResults = NULL)
 }
 \arguments{
-\item{nextToken}{The pagination token used to retrieve the next page of results for this
-operation.}
+\item{nextToken}{The pagination token used to retrieve the next page of results for this operation.}
 
 \item{maxResults}{The maximum number of results to be included in the next page.}
 }

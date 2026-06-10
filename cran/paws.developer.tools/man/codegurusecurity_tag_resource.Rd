@@ -7,19 +7,12 @@
 codegurusecurity_tag_resource(resourceArn, tags)
 }
 \arguments{
-\item{resourceArn}{[required] The ARN of the \code{ScanName} object. You can retrieve this ARN by calling
-\code{\link[=codegurusecurity_create_scan]{create_scan}},
-\code{\link[=codegurusecurity_list_scans]{list_scans}}, or
-\code{\link[=codegurusecurity_get_scan]{get_scan}}.}
+\item{resourceArn}{[required] The ARN of the \code{ScanName} object. You can retrieve this ARN by calling \code{\link[=codegurusecurity_create_scan]{create_scan}}, \code{\link[=codegurusecurity_list_scans]{list_scans}}, or \code{\link[=codegurusecurity_get_scan]{get_scan}}.}
 
-\item{tags}{[required] An array of key-value pairs used to tag an existing scan. A tag is a
-custom attribute label with two parts:
+\item{tags}{[required] An array of key-value pairs used to tag an existing scan. A tag is a custom attribute label with two parts:
 \itemize{
-\item A tag key. For example, \code{CostCenter}, \code{Environment}, or \code{Secret}.
-Tag keys are case sensitive.
-\item An optional tag value field. For example, \code{111122223333},
-\code{Production}, or a team name. Omitting the tag value is the same as
-using an empty string. Tag values are case sensitive.
+\item A tag key. For example, \code{CostCenter}, \code{Environment}, or \code{Secret}. Tag keys are case sensitive.
+\item An optional tag value field. For example, \code{111122223333}, \code{Production}, or a team name. Omitting the tag value is the same as using an empty string. Tag values are case sensitive.
 }}
 }
 \description{

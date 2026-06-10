@@ -11,8 +11,7 @@ rds_create_db_security_group(
 )
 }
 \arguments{
-\item{DBSecurityGroupName}{[required] The name for the DB security group. This value is stored as a lowercase
-string.
+\item{DBSecurityGroupName}{[required] The name for the DB security group. This value is stored as a lowercase string.
 
 Constraints:
 \itemize{

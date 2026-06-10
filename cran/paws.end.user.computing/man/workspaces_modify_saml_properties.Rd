@@ -11,8 +11,7 @@ workspaces_modify_saml_properties(
 )
 }
 \arguments{
-\item{ResourceId}{[required] The directory identifier for which you want to configure SAML
-properties.}
+\item{ResourceId}{[required] The directory identifier for which you want to configure SAML properties.}
 
 \item{SamlProperties}{The properties for configuring SAML 2.0 authentication.}
 
@@ -21,8 +20,7 @@ properties.}
 Specify one of the following options:
 \itemize{
 \item \code{SAML_PROPERTIES_USER_ACCESS_URL} to delete the user access URL.
-\item \code{SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME} to delete the relay
-state parameter name.
+\item \code{SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME} to delete the relay state parameter name.
 }}
 }
 \description{

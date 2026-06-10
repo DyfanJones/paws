@@ -13,22 +13,15 @@ appfabric_update_app_authorization(
 )
 }
 \arguments{
-\item{appBundleIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-the app bundle to use for the request.}
+\item{appBundleIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.}
 
-\item{appAuthorizationIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-the app authorization to use for the request.}
+\item{appAuthorizationIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.}
 
-\item{credential}{Contains credentials for the application, such as an API key or OAuth2
-client ID and secret.
+\item{credential}{Contains credentials for the application, such as an API key or OAuth2 client ID and secret.
 
-Specify credentials that match the authorization type of the app
-authorization to update. For example, if the authorization type of the
-app authorization is OAuth2 (\code{oauth2}), then you should provide only the
-OAuth2 credentials.}
+Specify credentials that match the authorization type of the app authorization to update. For example, if the authorization type of the app authorization is OAuth2 (\code{oauth2}), then you should provide only the OAuth2 credentials.}
 
-\item{tenant}{Contains information about an application tenant, such as the
-application display name and identifier.}
+\item{tenant}{Contains information about an application tenant, such as the application display name and identifier.}
 }
 \description{
 Updates an app authorization within an app bundle, which allows AppFabric to connect to an application.

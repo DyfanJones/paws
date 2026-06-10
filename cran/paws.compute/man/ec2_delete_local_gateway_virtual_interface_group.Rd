@@ -12,10 +12,7 @@ ec2_delete_local_gateway_virtual_interface_group(
 \arguments{
 \item{LocalGatewayVirtualInterfaceGroupId}{[required] The ID of the local gateway virtual interface group to delete.}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 }
 \description{
 Delete the specified local gateway interface group.

@@ -8,8 +8,7 @@ managed account}
 controltower_list_landing_zones(nextToken = NULL, maxResults = NULL)
 }
 \arguments{
-\item{nextToken}{The token to continue the list from a previous API call with the same
-parameters.}
+\item{nextToken}{The token to continue the list from a previous API call with the same parameters.}
 
 \item{maxResults}{The maximum number of returned landing zone ARNs, which is one.}
 }

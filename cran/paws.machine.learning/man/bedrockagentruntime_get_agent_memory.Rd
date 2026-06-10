@@ -18,18 +18,13 @@ bedrockagentruntime_get_agent_memory(
 
 \item{agentId}{[required] The unique identifier of the agent to which the alias belongs.}
 
-\item{maxItems}{The maximum number of items to return in the response. If the total
-number of results is greater than this value, use the token returned in
-the response in the \code{nextToken} field when making another request to
-return the next batch of results.}
+\item{maxItems}{The maximum number of items to return in the response. If the total number of results is greater than this value, use the token returned in the response in the \code{nextToken} field when making another request to return the next batch of results.}
 
 \item{memoryId}{[required] The unique identifier of the memory.}
 
 \item{memoryType}{[required] The type of memory.}
 
-\item{nextToken}{If the total number of results is greater than the maxItems value
-provided in the request, enter the token returned in the \code{nextToken}
-field in the response in this field to return the next batch of results.}
+\item{nextToken}{If the total number of results is greater than the maxItems value provided in the request, enter the token returned in the \code{nextToken} field in the response in this field to return the next batch of results.}
 }
 \description{
 Gets the sessions stored in the memory of the agent.

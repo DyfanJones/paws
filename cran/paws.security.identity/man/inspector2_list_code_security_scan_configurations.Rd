@@ -10,10 +10,7 @@ inspector2_list_code_security_scan_configurations(
 )
 }
 \arguments{
-\item{nextToken}{A token to use for paginating results that are returned in the response.
-Set the value of this parameter to null for the first request. For
-subsequent calls, use the NextToken value returned from the previous
-request to continue listing results after the first page.}
+\item{nextToken}{A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.}
 
 \item{maxResults}{The maximum number of results to return in a single call.}
 }

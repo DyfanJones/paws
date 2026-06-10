@@ -24,40 +24,25 @@ codecatalyst_create_dev_environment(
 
 \item{projectName}{[required] The name of the project in the space.}
 
-\item{repositories}{The source repository that contains the branch to clone into the Dev
-Environment.}
+\item{repositories}{The source repository that contains the branch to clone into the Dev Environment.}
 
-\item{clientToken}{A user-specified idempotency token. Idempotency ensures that an API
-request completes only once. With an idempotent request, if the original
-request completes successfully, the subsequent retries return the result
-from the original successful request and have no additional effect.}
+\item{clientToken}{A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.}
 
 \item{alias}{The user-defined alias for a Dev Environment.}
 
-\item{ides}{Information about the integrated development environment (IDE)
-configured for a Dev Environment.
+\item{ides}{Information about the integrated development environment (IDE) configured for a Dev Environment.
 
-An IDE is required to create a Dev Environment. For Dev Environment
-creation, this field contains configuration information and must be
-provided.}
+An IDE is required to create a Dev Environment. For Dev Environment creation, this field contains configuration information and must be provided.}
 
 \item{instanceType}{[required] The Amazon EC2 instace type to use for the Dev Environment.}
 
-\item{inactivityTimeoutMinutes}{The amount of time the Dev Environment will run without any activity
-detected before stopping, in minutes. Only whole integers are allowed.
-Dev Environments consume compute minutes when running.}
+\item{inactivityTimeoutMinutes}{The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.}
 
-\item{persistentStorage}{[required] Information about the amount of storage allocated to the Dev
-Environment.
+\item{persistentStorage}{[required] Information about the amount of storage allocated to the Dev Environment.
 
-By default, a Dev Environment is configured to have 16GB of persistent
-storage when created from the Amazon CodeCatalyst console, but there is
-no default when programmatically creating a Dev Environment. Valid
-values for persistent storage are based on memory sizes in 16GB
-increments. Valid values are 16, 32, and 64.}
+By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.}
 
-\item{vpcConnectionName}{The name of the connection that will be used to connect to Amazon VPC,
-if any.}
+\item{vpcConnectionName}{The name of the connection that will be used to connect to Amazon VPC, if any.}
 }
 \description{
 Creates a Dev Environment in Amazon CodeCatalyst, a cloud-based development environment that you can use to quickly work on the code stored in the source repositories of your project.

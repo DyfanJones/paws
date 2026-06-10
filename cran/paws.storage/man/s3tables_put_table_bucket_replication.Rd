@@ -13,12 +13,9 @@ s3tables_put_table_bucket_replication(
 \arguments{
 \item{tableBucketARN}{[required] The Amazon Resource Name (ARN) of the source table bucket.}
 
-\item{versionToken}{A version token from a previous GetTableBucketReplication call. Use this
-token to ensure you're updating the expected version of the
-configuration.}
+\item{versionToken}{A version token from a previous GetTableBucketReplication call. Use this token to ensure you're updating the expected version of the configuration.}
 
-\item{configuration}{[required] The replication configuration to apply, including the IAM role and
-replication rules.}
+\item{configuration}{[required] The replication configuration to apply, including the IAM role and replication rules.}
 }
 \description{
 Creates or updates the replication configuration for a table bucket. This operation defines how tables in the source bucket are replicated to destination buckets. Replication helps ensure data availability and disaster recovery across regions or accounts.

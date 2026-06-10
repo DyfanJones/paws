@@ -7,9 +7,7 @@
 lakeformation_start_transaction(TransactionType = NULL)
 }
 \arguments{
-\item{TransactionType}{Indicates whether this transaction should be read only or read and
-write. Writes made using a read-only transaction ID will be rejected.
-Read-only transactions do not need to be committed.}
+\item{TransactionType}{Indicates whether this transaction should be read only or read and write. Writes made using a read-only transaction ID will be rejected. Read-only transactions do not need to be committed.}
 }
 \description{
 Starts a new transaction and returns its transaction ID. Transaction IDs are opaque objects that you can use to identify a transaction.

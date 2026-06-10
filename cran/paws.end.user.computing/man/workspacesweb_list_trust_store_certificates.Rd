@@ -13,8 +13,7 @@ workspacesweb_list_trust_store_certificates(
 \arguments{
 \item{trustStoreArn}{[required] The ARN of the trust store}
 
-\item{nextToken}{The pagination token used to retrieve the next page of results for this
-operation.}
+\item{nextToken}{The pagination token used to retrieve the next page of results for this operation.}
 
 \item{maxResults}{The maximum number of results to be included in the next page.}
 }

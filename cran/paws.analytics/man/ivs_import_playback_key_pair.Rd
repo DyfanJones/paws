@@ -5,19 +5,14 @@
 \title{Imports the public portion of a new key pair and returns its arn and
 fingerprint}
 \usage{
-ivs_import_playback_key_pair(name = NULL, publicKeyMaterial, tags = NULL)
+ivs_import_playback_key_pair(publicKeyMaterial, name = NULL, tags = NULL)
 }
 \arguments{
-\item{name}{Playback-key-pair name. The value does not need to be unique.}
-
 \item{publicKeyMaterial}{[required] The public portion of a customer-generated key pair.}
 
-\item{tags}{Any tags provided with the request are added to the playback key pair
-tags. See \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html}{Best practices and strategies}
-in \emph{Tagging Amazon Web Services Resources and Tag Editor} for details,
-including restrictions that apply to tags and "Tag naming limits and
-requirements"; Amazon IVS has no service-specific constraints beyond
-what is documented there.}
+\item{name}{Playback-key-pair name. The value does not need to be unique.}
+
+\item{tags}{Any tags provided with the request are added to the playback key pair tags. See \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html}{Best practices and strategies} in \emph{Tagging Amazon Web Services Resources and Tag Editor} for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.}
 }
 \description{
 Imports the public portion of a new key pair and returns its \code{arn} and \code{fingerprint}. The \code{privateKey} can then be used to generate viewer authorization tokens, to grant viewers access to private channels. For more information, see \href{https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels.html}{Setting Up Private Channels} in the \emph{Amazon IVS User Guide}.

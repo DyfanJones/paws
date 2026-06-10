@@ -20,12 +20,9 @@ opensearchserviceserverless_update_vpc_endpoint(
 
 \item{removeSubnetIds}{The unique identifiers of the subnets to remove from the endpoint.}
 
-\item{addSecurityGroupIds}{The unique identifiers of the security groups to add to the endpoint.
-Security groups define the ports, protocols, and sources for inbound
-traffic that you are authorizing into your endpoint.}
+\item{addSecurityGroupIds}{The unique identifiers of the security groups to add to the endpoint. Security groups define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.}
 
-\item{removeSecurityGroupIds}{The unique identifiers of the security groups to remove from the
-endpoint.}
+\item{removeSecurityGroupIds}{The unique identifiers of the security groups to remove from the endpoint.}
 
 \item{clientToken}{Unique, case-sensitive identifier to ensure idempotency of the request.}
 }

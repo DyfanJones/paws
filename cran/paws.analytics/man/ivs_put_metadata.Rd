@@ -7,8 +7,7 @@
 ivs_put_metadata(channelArn, metadata)
 }
 \arguments{
-\item{channelArn}{[required] ARN of the channel into which metadata is inserted. This channel must
-have an active stream.}
+\item{channelArn}{[required] ARN of the channel into which metadata is inserted. This channel must have an active stream.}
 
 \item{metadata}{[required] Metadata to insert into the stream. Maximum: 1 KB per request.}
 }

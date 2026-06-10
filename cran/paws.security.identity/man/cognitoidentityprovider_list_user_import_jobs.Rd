@@ -13,15 +13,9 @@ cognitoidentityprovider_list_user_import_jobs(
 \arguments{
 \item{UserPoolId}{[required] The ID of the user pool where you want to list import jobs.}
 
-\item{MaxResults}{[required] The maximum number of import jobs that you want Amazon Cognito to return
-in the response.}
+\item{MaxResults}{[required] The maximum number of import jobs that you want Amazon Cognito to return in the response.}
 
-\item{PaginationToken}{This API operation returns a limited number of results. The pagination
-token is an identifier that you can present in an additional API request
-with the same parameters. When you include the pagination token, Amazon
-Cognito returns the next set of items after the current list. Subsequent
-requests return a new pagination token. By use of this token, you can
-paginate through the full list of items.}
+\item{PaginationToken}{This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.}
 }
 \description{
 Given a user pool ID, returns user import jobs and their details. Import jobs are retained in user pool configuration so that you can stage, stop, start, review, and delete them. For more information about user import, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-using-import-tool.html}{Importing users from a CSV file}.

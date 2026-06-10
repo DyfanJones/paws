@@ -15,37 +15,25 @@ codedeploy_create_deployment_config(
 \arguments{
 \item{deploymentConfigName}{[required] The name of the deployment configuration to create.}
 
-\item{minimumHealthyHosts}{The minimum number of healthy instances that should be available at any
-time during the deployment. There are two parameters expected in the
-input: type and value.
+\item{minimumHealthyHosts}{The minimum number of healthy instances that should be available at any time during the deployment. There are two parameters expected in the input: type and value.
 
 The type parameter takes either of the following values:
 \itemize{
-\item HOST_COUNT: The value parameter represents the minimum number of
-healthy instances as an absolute value.
-\item FLEET_PERCENT: The value parameter represents the minimum number of
-healthy instances as a percentage of the total number of instances
-in the deployment. If you specify FLEET_PERCENT, at the start of the
-deployment, CodeDeploy converts the percentage to the equivalent
-number of instances and rounds up fractional instances.
+\item HOST_COUNT: The value parameter represents the minimum number of healthy instances as an absolute value.
+\item FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, CodeDeploy converts the percentage to the equivalent number of instances and rounds up fractional instances.
 }
 
 The value parameter takes an integer.
 
-For example, to set a minimum of 95\% healthy instance, specify a type of
-FLEET_PERCENT and a value of 95.}
+For example, to set a minimum of 95\% healthy instance, specify a type of FLEET_PERCENT and a value of 95.}
 
 \item{trafficRoutingConfig}{The configuration that specifies how the deployment traffic is routed.}
 
-\item{computePlatform}{The destination platform type for the deployment (\code{Lambda}, \code{Server}, or
-\code{ECS}).}
+\item{computePlatform}{The destination platform type for the deployment (\code{Lambda}, \code{Server}, or \code{ECS}).}
 
-\item{zonalConfig}{Configure the \code{ZonalConfig} object if you want CodeDeploy to deploy your
-application to one \href{https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones}{Availability Zone}
-at a time, within an Amazon Web Services Region.
+\item{zonalConfig}{Configure the \code{ZonalConfig} object if you want CodeDeploy to deploy your application to one \href{https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones}{Availability Zone} at a time, within an Amazon Web Services Region.
 
-For more information about the zonal configuration feature, see \href{https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config}{zonal configuration}
-in the \emph{CodeDeploy User Guide}.}
+For more information about the zonal configuration feature, see \href{https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-create.html#zonal-config}{zonal configuration} in the \emph{CodeDeploy User Guide}.}
 }
 \description{
 Creates a deployment configuration.

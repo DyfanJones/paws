@@ -18,16 +18,11 @@ rds_create_tenant_database(
 )
 }
 \arguments{
-\item{DBInstanceIdentifier}{[required] The user-supplied DB instance identifier. RDS creates your tenant
-database in this DB instance. This parameter isn't case-sensitive.}
+\item{DBInstanceIdentifier}{[required] The user-supplied DB instance identifier. RDS creates your tenant database in this DB instance. This parameter isn't case-sensitive.}
 
-\item{TenantDBName}{[required] The user-supplied name of the tenant database that you want to create in
-your DB instance. This parameter has the same constraints as \code{DBName} in
-\code{\link[=rds_create_db_instance]{create_db_instance}}.}
+\item{TenantDBName}{[required] The user-supplied name of the tenant database that you want to create in your DB instance. This parameter has the same constraints as \code{DBName} in \code{\link[=rds_create_db_instance]{create_db_instance}}.}
 
-\item{MasterUsername}{[required] The name for the master user account in your tenant database. RDS
-creates this user account in the tenant database and grants privileges
-to the master user. This parameter is case-sensitive.
+\item{MasterUsername}{[required] The name for the master user account in your tenant database. RDS creates this user account in the tenant database and grants privileges to the master user. This parameter is case-sensitive.
 
 Constraints:
 \itemize{
@@ -41,51 +36,36 @@ Constraints:
 Constraints:
 \itemize{
 \item Must be 8 to 30 characters.
-\item Can include any printable ASCII character except forward slash
-(\code{/}), double quote (\verb{\\"}), at symbol (\code{@}), ampersand (\code{&}), or
-single quote (\verb{\\'}).
+\item Can include any printable ASCII character except forward slash (\code{/}), double quote (\verb{\\"}), at symbol (\code{@}), ampersand (\code{&}), or single quote (\verb{\\'}).
 \item Can't be specified when \code{ManageMasterUserPassword} is enabled.
 }}
 
-\item{CharacterSetName}{The character set for your tenant database. If you don't specify a
-value, the character set name defaults to \code{AL32UTF8}.}
+\item{CharacterSetName}{The character set for your tenant database. If you don't specify a value, the character set name defaults to \code{AL32UTF8}.}
 
 \item{NcharCharacterSetName}{The \code{NCHAR} value for the tenant database.}
 
-\item{ManageMasterUserPassword}{Specifies whether to manage the master user password with Amazon Web
-Services Secrets Manager.
+\item{ManageMasterUserPassword}{Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.
 
-For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html}{Password management with Amazon Web Services Secrets Manager}
-in the \emph{Amazon RDS User Guide.}
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html}{Password management with Amazon Web Services Secrets Manager} in the \emph{Amazon RDS User Guide.}
 
 Constraints:
 \itemize{
-\item Can't manage the master user password with Amazon Web Services
-Secrets Manager if \code{MasterUserPassword} is specified.
+\item Can't manage the master user password with Amazon Web Services Secrets Manager if \code{MasterUserPassword} is specified.
 }}
 
-\item{MasterUserSecretKmsKeyId}{The Amazon Web Services KMS key identifier to encrypt a secret that is
-automatically generated and managed in Amazon Web Services Secrets
-Manager.
+\item{MasterUserSecretKmsKeyId}{The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.
 
-This setting is valid only if the master user password is managed by RDS
-in Amazon Web Services Secrets Manager for the DB instance.
+This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance.
 
-The Amazon Web Services KMS key identifier is the key ARN, key ID, alias
-ARN, or alias name for the KMS key. To use a KMS key in a different
-Amazon Web Services account, specify the key ARN or alias ARN.
+The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.
 
-If you don't specify \code{MasterUserSecretKmsKeyId}, then the
-\code{aws/secretsmanager} KMS key is used to encrypt the secret. If the
-secret is in a different Amazon Web Services account, then you can't use
-the \code{aws/secretsmanager} KMS key to encrypt the secret, and you must use
-a customer managed KMS key.
+If you don't specify \code{MasterUserSecretKmsKeyId}, then the \code{aws/secretsmanager} KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the \code{aws/secretsmanager} KMS key to encrypt the secret, and you must use a customer managed KMS key.
 
-There is a default KMS key for your Amazon Web Services account. Your
-Amazon Web Services account has a different default KMS key for each
-Amazon Web Services Region.}
+There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.}
 
-\item{Tags}{}
+\item{Tags}{A list of tags.
+
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html}{Tagging Amazon RDS resources} in the \emph{Amazon RDS User Guide} or \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html}{Tagging Amazon Aurora and Amazon RDS resources} in the \emph{Amazon Aurora User Guide}.}
 }
 \description{
 Creates a tenant database in a DB instance that uses the multi-tenant configuration. Only RDS for Oracle container database (CDB) instances are supported.

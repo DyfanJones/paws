@@ -15,8 +15,7 @@ lookoutequipment_list_data_ingestion_jobs(
 \arguments{
 \item{DatasetName}{The name of the dataset being used for the data ingestion job.}
 
-\item{NextToken}{An opaque pagination token indicating where to continue the listing of
-data ingestion jobs.}
+\item{NextToken}{An opaque pagination token indicating where to continue the listing of data ingestion jobs.}
 
 \item{MaxResults}{Specifies the maximum number of data ingestion jobs to list.}
 

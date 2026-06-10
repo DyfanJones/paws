@@ -7,8 +7,7 @@
 cloudcontrolapi_cancel_resource_request(RequestToken)
 }
 \arguments{
-\item{RequestToken}{[required] The \code{RequestToken} of the \code{ProgressEvent} object returned by the
-resource operation request.}
+\item{RequestToken}{[required] The \code{RequestToken} of the \code{ProgressEvent} object returned by the resource operation request.}
 }
 \description{
 Cancels the specified resource operation request. For more information, see \href{https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html#resource-operations-manage-requests-cancel}{Canceling resource operation requests} in the \emph{Amazon Web Services Cloud Control API User Guide}.

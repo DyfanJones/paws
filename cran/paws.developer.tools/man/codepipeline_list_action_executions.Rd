@@ -12,20 +12,13 @@ codepipeline_list_action_executions(
 )
 }
 \arguments{
-\item{pipelineName}{[required] The name of the pipeline for which you want to list action execution
-history.}
+\item{pipelineName}{[required] The name of the pipeline for which you want to list action execution history.}
 
 \item{filter}{Input information used to filter action execution history.}
 
-\item{maxResults}{The maximum number of results to return in a single call. To retrieve
-the remaining results, make another call with the returned nextToken
-value. Action execution history is retained for up to 12 months, based
-on action execution start times. Default value is 100.}
+\item{maxResults}{The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Action execution history is retained for up to 12 months, based on action execution start times. Default value is 100.}
 
-\item{nextToken}{The token that was returned from the previous
-\code{\link[=codepipeline_list_action_executions]{list_action_executions}} call,
-which can be used to return the next set of action executions in the
-list.}
+\item{nextToken}{The token that was returned from the previous \code{\link[=codepipeline_list_action_executions]{list_action_executions}} call, which can be used to return the next set of action executions in the list.}
 }
 \description{
 Lists the action executions that have occurred in a pipeline.

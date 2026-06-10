@@ -7,13 +7,11 @@
 connect_import_workspace_media(InstanceId, WorkspaceId, MediaType, MediaSource)
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{WorkspaceId}{[required] The identifier of the workspace.}
 
-\item{MediaType}{[required] The type of media. Valid values are: \code{IMAGE_LOGO_FAVICON} and
-\code{IMAGE_LOGO_HORIZONTAL}.}
+\item{MediaType}{[required] The type of media. Valid values are: \code{IMAGE_LOGO_FAVICON} and \code{IMAGE_LOGO_HORIZONTAL}.}
 
 \item{MediaSource}{[required] The media source. Can be an S3 presigned URL or a base64-encoded string.}
 }

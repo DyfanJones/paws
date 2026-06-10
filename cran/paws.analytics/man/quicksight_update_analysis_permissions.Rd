@@ -12,18 +12,13 @@ quicksight_update_analysis_permissions(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the analysis
-whose permissions you're updating. You must be using the Amazon Web
-Services account that the analysis is in.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the analysis whose permissions you're updating. You must be using the Amazon Web Services account that the analysis is in.}
 
-\item{AnalysisId}{[required] The ID of the analysis whose permissions you're updating. The ID is part
-of the analysis URL.}
+\item{AnalysisId}{[required] The ID of the analysis whose permissions you're updating. The ID is part of the analysis URL.}
 
-\item{GrantPermissions}{A structure that describes the permissions to add and the principal to
-add them to.}
+\item{GrantPermissions}{A structure that describes the permissions to add and the principal to add them to.}
 
-\item{RevokePermissions}{A structure that describes the permissions to remove and the principal
-to remove them from.}
+\item{RevokePermissions}{A structure that describes the permissions to remove and the principal to remove them from.}
 }
 \description{
 Updates the read and write permissions for an analysis.

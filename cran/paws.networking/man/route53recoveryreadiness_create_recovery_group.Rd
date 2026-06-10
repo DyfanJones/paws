@@ -15,7 +15,7 @@ route53recoveryreadiness_create_recovery_group(
 
 \item{RecoveryGroupName}{[required] The name of the recovery group to create.}
 
-\item{Tags}{}
+\item{Tags}{A collection of tags associated with a resource.}
 }
 \description{
 Creates a recovery group in an account. A recovery group corresponds to an application and includes a list of the cells that make up the application.

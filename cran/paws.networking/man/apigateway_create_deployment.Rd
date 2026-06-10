@@ -22,23 +22,17 @@ apigateway_create_deployment(
 
 \item{stageName}{The name of the Stage resource for the Deployment resource to create.}
 
-\item{stageDescription}{The description of the Stage resource for the Deployment resource to
-create.}
+\item{stageDescription}{The description of the Stage resource for the Deployment resource to create.}
 
 \item{description}{The description for the Deployment resource to create.}
 
 \item{cacheClusterEnabled}{Enables a cache cluster for the Stage resource specified in the input.}
 
-\item{cacheClusterSize}{The stage's cache capacity in GB. For more information about choosing a
-cache size, see \href{https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html}{Enabling API caching to enhance responsiveness}.}
+\item{cacheClusterSize}{The stage's cache capacity in GB. For more information about choosing a cache size, see \href{https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html}{Enabling API caching to enhance responsiveness}.}
 
-\item{variables}{A map that defines the stage variables for the Stage resource that is
-associated with the new deployment. Variable names can have alphanumeric
-and underscore characters, and the values must match
-\verb{[A-Za-z0-9-._~:/?#&=,]+}.}
+\item{variables}{A map that defines the stage variables for the Stage resource that is associated with the new deployment. Variable names can have alphanumeric and underscore characters, and the values must match \verb{[A-Za-z0-9-._~:/?#&=,]+}.}
 
-\item{canarySettings}{The input configuration for the canary deployment when the deployment is
-a canary release deployment.}
+\item{canarySettings}{The input configuration for the canary deployment when the deployment is a canary release deployment.}
 
 \item{tracingEnabled}{Specifies whether active tracing with X-ray is enabled for the Stage.}
 }

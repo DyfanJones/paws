@@ -414,6 +414,7 @@ build_canonical_headers <- function(ctx, header, ignored_headers) {
     }
   }
 
+  header_names <- names(header)
   for (key in header_names[!(header_names %in% ignored_headers)]) {
     lower_case_key <- tolower(key)
     ctx$signed_header_vals[[lower_case_key]] <- header[[key]]

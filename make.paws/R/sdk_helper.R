@@ -618,11 +618,7 @@ remove_html_span_rd <- function(files) {
 #' @param patterns_before Patterns for gsub
 #' @param patterns_after Replacements for gsub
 #' @export
-paws_post_build_format <- function(
-  root = "..",
-  patterns_before,
-  patterns_after
-) {
+paws_post_build_format <- function(root = "..", patterns_before, patterns_after) {
   log_info <- utils::getFromNamespace("log_info", "paws.common")
 
   # Collect all files
@@ -668,11 +664,7 @@ apply_gsub_patterns <- function(content, patterns_before, patterns_after) {
   for (i in seq_along(patterns_before)) {
     matches <- grep(patterns_before[i], content)
     if (length(matches) > 0) {
-      content[matches] <- gsub(
-        patterns_before[i],
-        patterns_after[i],
-        content[matches]
-      )
+      content[matches] <- gsub(patterns_before[i], patterns_after[i], content[matches])
     }
   }
   content

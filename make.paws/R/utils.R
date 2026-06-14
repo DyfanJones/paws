@@ -110,7 +110,7 @@ get_url <- function(url, tries = 3) {
     if (is.null(resp) || httr2::resp_status(resp) >= 400) {
       return(NULL)
     }
-    
+
     # Preserve fragments
     final_parsed <- httr2::url_parse(resp$url)
     final_parsed$fragment <- httr2::url_parse(url)$fragment

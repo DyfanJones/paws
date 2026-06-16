@@ -55,24 +55,12 @@ restjson_unmarshal_error <- function(request) {
     request$http_response$body <- stream_raw(con$body)
   }
   error <- decode_json(request$http_response$body)
-  code <- request$http_response$header[["X-Amzn-Errortype"]]
-  if (is.null(code)) {
-    code <- error$code
-  }
-  if (is.null(code)) {
-    code <- error$`__type`
-  }
-  if (is.null(code)) {
-    code <- ""
-  } else {
-    code <- strsplit(code, ":")[[1]][1]
-  }
-
-  message <- ""
-  if (!is.null(error$message)) {
-    message <- error$message
-  }
-
+  code <- request$http_response$header[["X-Amzn-Errortype"]] %||%
+    error[["code"]] %||%
+    error[["__type"]] %||%
+    ""
+  code <- strsplit(code, ":")[[1]][1]
+  message <- error[["message"]] %||% error[["Message"]] %||% ""
   request$error <- Error(
     code = code,
     message = message,

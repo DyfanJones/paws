@@ -1,9 +1,5 @@
 test_that("apply_gsub_patterns replaces patterns correctly", {
-  content <- c(
-    "#' This is a test",
-    "#' formed *within*",
-    "#' normal text"
-  )
+  content <- c("#' This is a test", "#' formed *within*", "#' normal text")
 
   patterns_before <- c("\\*within\\*", "test")
   patterns_after <- c("\\\\emph\\{within\\}", "example")
@@ -58,10 +54,7 @@ test_that("fix_html_span returns early when no span tags", {
 })
 
 test_that("fix_html_span fixes R file span tags", {
-  content <- c(
-    "#' <span href=\"https://example.com\">",
-    "#' link text</span>"
-  )
+  content <- c("#' <span href=\"https://example.com\">", "#' link text</span>")
 
   result <- fix_html_span(content, is_rd = FALSE)
 
@@ -114,8 +107,8 @@ test_that("process_file_single_pass returns TRUE and writes when changed", {
 
   expect_true(result)
   modified <- readLines(temp_file, warn = FALSE)
-  expect_equal(modified[1], "#' Test # hash")  # unescape_latex applied
-  expect_equal(modified[2], "#' Test example")  # gsub applied
+  expect_equal(modified[1], "#' Test # hash") # unescape_latex applied
+  expect_equal(modified[2], "#' Test example") # gsub applied
 })
 
 test_that("process_file_single_pass applies all transformations", {
@@ -141,9 +134,9 @@ test_that("process_file_single_pass applies all transformations", {
   modified <- readLines(temp_file, warn = FALSE)
 
   # Check all transformations applied
-  expect_equal(modified[1], "#' Test # escaped")  # LaTeX unescaped
-  expect_true(grepl("changed", modified[2]))  # Pattern replaced
-  expect_true(any(grepl("\\\\href", modified)))  # Span fixed
+  expect_equal(modified[1], "#' Test # escaped") # LaTeX unescaped
+  expect_true(grepl("changed", modified[2])) # Pattern replaced
+  expect_true(any(grepl("\\\\href", modified))) # Span fixed
 })
 
 test_that("paws_post_build_format processes files correctly", {
@@ -166,7 +159,9 @@ test_that("paws_post_build_format processes files correctly", {
 
   # Mock log_info to avoid dependency
   mock_log_info <- function(...) invisible(NULL)
-  mockery::stub(paws_post_build_format, "utils::getFromNamespace", function(...) mock_log_info)
+  mockery::stub(paws_post_build_format, "utils::getFromNamespace", function(...) {
+    mock_log_info
+  })
 
   # Run function
   paws_post_build_format(
@@ -197,16 +192,16 @@ test_that("paws_post_build_format handles empty patterns", {
   writeLines(c("#' Test content"), r_file)
 
   mock_log_info <- function(...) invisible(NULL)
-  mockery::stub(paws_post_build_format, "utils::getFromNamespace", function(...) mock_log_info)
+  mockery::stub(paws_post_build_format, "utils::getFromNamespace", function(...) {
+    mock_log_info
+  })
 
   # Should not error with empty patterns
-  expect_silent(
-    paws_post_build_format(
-      root = temp_root,
-      patterns_before = character(0),
-      patterns_after = character(0)
-    )
-  )
+  expect_silent(paws_post_build_format(
+    root = temp_root,
+    patterns_before = character(0),
+    patterns_after = character(0)
+  ))
 })
 
 test_that("paws_post_build_format reports modified file counts", {
@@ -231,7 +226,9 @@ test_that("paws_post_build_format reports modified file counts", {
     log_calls <<- c(log_calls, list(list(...)))
     invisible(NULL)
   }
-  mockery::stub(paws_post_build_format, "utils::getFromNamespace", function(...) mock_log_info)
+  mockery::stub(paws_post_build_format, "utils::getFromNamespace", function(...) {
+    mock_log_info
+  })
 
   paws_post_build_format(
     root = temp_root,
@@ -240,5 +237,5 @@ test_that("paws_post_build_format reports modified file counts", {
   )
 
   # Check that log_info was called with file counts
-  expect_true(length(log_calls) >= 4)  # Processing + Modified messages for R and Rd files
+  expect_true(length(log_calls) >= 4) # Processing + Modified messages for R and Rd files
 })

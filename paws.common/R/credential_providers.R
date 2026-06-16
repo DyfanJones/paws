@@ -27,7 +27,7 @@ anonymous_provider <- function(anonymous) {
 
 # Retrieve bearer token from environment variables.
 # Bearer tokens can be service-specific (AWS_BEARER_TOKEN_<SERVICE>) or generic (AWS_BEARER_TOKEN).
-bearer_token_env_provider <- function(signing_name=NULL) {
+bearer_token_env_provider <- function(signing_name = NULL) {
   if (nzchar(bearer_token <- get_env("AWS_BEARER_TOKEN"))) {
     expiration <- get_env("AWS_BEARER_TOKEN_EXPIRATION")
     if (nzchar(expiration)) {
@@ -40,7 +40,7 @@ bearer_token_env_provider <- function(signing_name=NULL) {
       expiration = expiration,
       provider_name = "BearerTokenEnvProvider"
     ))
-  } 
+  }
   if (!is.null(signing_name) && signing_name %in% get_bearer_auth_supported_services()) {
     return(get_bearer_token_for_service(signing_name))
   }

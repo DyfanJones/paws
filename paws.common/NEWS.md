@@ -1,5 +1,9 @@
 # paws.common 0.8.10
 * replace `Rf_error` with `Rcpp::stop` in C++ code for proper stack unwinding and memory cleanup (#971). This change prevents memory leaks when errors occur in the populate function and ensures compatibility with future Rcpp versions. Thanks to @Enchufa2 for raising issue.
+* Improved error capture from aws
+* Fix content-length patch to apply to all headers (#988). Thanks to @noamross for raising issue and implementing solution.
+* Add `signing_name` to `locate_credentials` to allow service bearer tokens to be easily found for external packages ([ellmer #1002](https://github.com/tidyverse/ellmer/issues/1002)).
+* Fixed credential handler erroring when service bearer token only provided.
 
 # paws.common 0.8.9
 * fix `populate` function to normalize custom subclasses of any base type to match interface specification. Custom classes (e.g., `fs_path`, `glue`, custom integer/numeric subclasses) are stripped to their base types, while R built-in temporal classes (POSIXct, POSIXt, Date) are preserved for proper serialization. When custom classes inherit from temporal classes, only the temporal portion is retained.

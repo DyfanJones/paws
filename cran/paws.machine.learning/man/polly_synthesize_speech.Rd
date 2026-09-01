@@ -17,7 +17,7 @@ polly_synthesize_speech(
 )
 }
 \arguments{
-\item{Engine}{Specifies the engine (\code{standard}, \code{neural}, \code{long-form}, or \code{generative}) for Amazon Polly to use when processing input text for speech synthesis. Provide an engine that is supported by the voice you select. If you don't provide an engine, the standard engine is selected by default. If a chosen voice isn't supported by the standard engine, this will result in an error. For information on Amazon Polly voices and which voices are available for each engine, see \href{https://docs.aws.amazon.com/polly/latest/dg/available-voices.html}{Available Voices}.}
+\item{Engine}{Specifies the engine (\code{standard}, \code{neural}, \code{long-form}, or \code{generative}) for Amazon Polly to use when processing input text for speech synthesis. Provide an engine that is supported by the voice you select. If you don't provide an engine, the standard engine is selected by default. If a chosen voice isn't supported by the standard engine, this will result in an error. For information on Amazon Polly voices and which voices are available for each engine, see \href{https://docs.aws.amazon.com/polly/latest/dg/available-voices.html?trkcampaign=aws_summit_\%2Basean\%2B_2022/}{Available Voices}.}
 
 \item{LanguageCode}{Optional language code for the Synthesize Speech request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN).
 

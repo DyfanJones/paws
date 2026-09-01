@@ -218,7 +218,7 @@ When you use the CLI or the Amazon Web Services SDKs, for \code{\link[=s3_create
 \item \strong{S3 access points for Amazon FSx} - When accessing data stored in Amazon FSx file systems using S3 access points, the only valid server side encryption option is \code{aws:fsx}. All Amazon FSx file systems have encryption configured by default and are encrypted at rest. Data is automatically encrypted before being written to the file system, and automatically decrypted as it is read. These processes are handled transparently by Amazon FSx.
 }}
 
-\item{StorageClass}{By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. For more information, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html}{Storage Classes} in the \emph{Amazon S3 User Guide}.
+\item{StorageClass}{By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. For more information, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html?refid=ee2b7411-7ae6-46f0-a1f7-c531380cd86a}{Storage Classes} in the \emph{Amazon S3 User Guide}.
 \itemize{
 \item Directory buckets only support \code{EXPRESS_ONEZONE} (the S3 Express One Zone storage class) in Availability Zones and \code{ONEZONE_IA} (the S3 One Zone-Infrequent Access storage class) in Dedicated Local Zones.
 \item Amazon S3 on Outposts only uses the OUTPOSTS Storage Class.

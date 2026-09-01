@@ -22,7 +22,9 @@ elasticsearchservice_update_elasticsearch_domain_config(
   AutoTuneOptions = NULL,
   DryRun = NULL,
   DeploymentStrategyOptions = NULL,
-  AutomatedSnapshotPauseOptions = NULL
+  AutomatedSnapshotPauseOptions = NULL,
+  UseCase = NULL,
+  EngineMode = NULL
 )
 }
 \arguments{
@@ -38,7 +40,7 @@ elasticsearchservice_update_elasticsearch_domain_config(
 
 \item{CognitoOptions}{Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see \if{html}{\out{<a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">}}Amazon Cognito Authentication for Kibana\if{html}{\out{</a>}}.}
 
-\item{AdvancedOptions}{Modifies the advanced option to allow references to indices in an HTTP request body. Must be \code{false} when configuring access to individual sub-resources. By default, the value is \code{true}. See \if{html}{\out{<a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">}}Configuration Advanced Options\if{html}{\out{</a>}} for more information.}
+\item{AdvancedOptions}{Modifies the advanced option to allow references to indices in an HTTP request body. Must be \code{false} when configuring access to individual sub-resources. By default, the value is \code{true}. See \if{html}{\out{<a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html?ref=sysadmins.co.za#es-createdomain-configure-advanced-options" target="_blank">}}Configuration Advanced Options\if{html}{\out{</a>}} for more information.}
 
 \item{AccessPolicies}{IAM access policy as a JSON-formatted string.}
 
@@ -63,6 +65,10 @@ elasticsearchservice_update_elasticsearch_domain_config(
 Suspending snapshots reduces data protection. You cannot restore your domain to points in time when snapshots are suspended. Use this feature only for short-term operational needs such as migrations or maintenance windows.
 
 Maximum suspension duration: 3 days.}
+
+\item{UseCase}{The primary use case for the domain. For valid values, see \code{DomainUseCase}.}
+
+\item{EngineMode}{The engine mode for the domain. For valid values and requirements, see \code{DomainEngineMode}.}
 }
 \description{
 Modifies the cluster configuration of the specified Elasticsearch domain, setting as setting the instance type and the number of instances.

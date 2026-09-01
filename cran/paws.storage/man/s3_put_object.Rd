@@ -79,21 +79,21 @@ Object Lambda access points are not supported by directory buckets.
 
 \item{CacheControl}{Can be used to specify caching behavior along the request/reply chain. For more information, see \href{https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9}{http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9}.}
 
-\item{ContentDisposition}{Specifies presentational information for the object. For more information, see https://www.rfc-editor.org/rfc/rfc6266#section-4.}
+\item{ContentDisposition}{Specifies presentational information for the object. For more information, see \href{https://www.rfc-editor.org/info/rfc6266/#section-4}{https://www.rfc-editor.org/rfc/rfc6266#section-4}.}
 
-\item{ContentEncoding}{Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field. For more information, see https://www.rfc-editor.org/rfc/rfc9110.html#field.content-encoding.}
+\item{ContentEncoding}{Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field. For more information, see \url{https://www.rfc-editor.org/rfc/rfc9110.html#field.content-encoding}.}
 
 \item{ContentLanguage}{The language the content is in.}
 
-\item{ContentLength}{Size of the body in bytes. This parameter is useful when the size of the body cannot be determined automatically. For more information, see https://www.rfc-editor.org/rfc/rfc9110.html#name-content-length.}
+\item{ContentLength}{Size of the body in bytes. This parameter is useful when the size of the body cannot be determined automatically. For more information, see \url{https://www.rfc-editor.org/rfc/rfc9110.html#name-content-length}.}
 
-\item{ContentMD5}{The Base64 encoded 128-bit \code{MD5} digest of the message (without the headers) according to RFC 1864. This header can be used as a message integrity check to verify that the data is the same data that was originally sent. Although it is optional, we recommend using the Content-MD5 mechanism as an end-to-end integrity check. For more information about REST request authentication, see \href{https://docs.aws.amazon.com/AmazonS3/latest/API/RESTAuthentication.html}{REST Authentication}.
+\item{ContentMD5}{The Base64 encoded 128-bit \code{MD5} digest of the message (without the headers) according to RFC 1864. This header can be used as a message integrity check to verify that the data is the same data that was originally sent. Although it is optional, we recommend using the Content-MD5 mechanism as an end-to-end integrity check. For more information about REST request authentication, see \href{https://docs.aws.amazon.com/AmazonS3/latest/API/}{REST Authentication}.
 
 The \code{Content-MD5} or \code{x-amz-sdk-checksum-algorithm} header is required for any request to upload an object with a retention period configured using Amazon S3 Object Lock. For more information, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-managing.html#object-lock-put-object}{Uploading objects to an Object Lock enabled bucket} in the \emph{Amazon S3 User Guide}.
 
 This functionality is not supported for directory buckets.}
 
-\item{ContentType}{A standard MIME type describing the format of the contents. For more information, see https://www.rfc-editor.org/rfc/rfc9110.html#name-content-type.}
+\item{ContentType}{A standard MIME type describing the format of the contents. For more information, see \url{https://www.rfc-editor.org/rfc/rfc9110.html#name-content-type}.}
 
 \item{ChecksumAlgorithm}{Indicates the algorithm used to create the checksum for the object when you use the SDK. This header will not provide any additional functionality if you don't use the SDK. When you send this header, there must be a corresponding \code{x-amz-checksum-algorithm } or \code{x-amz-trailer} header sent. Otherwise, Amazon S3 fails the request with the HTTP status code \verb{400 Bad Request}.
 
@@ -139,7 +139,7 @@ For directory buckets, when you use Amazon Web Services SDKs, \code{CRC32} is th
 
 \item{ChecksumXXHASH128}{This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 128-bit \code{XXHASH128} checksum of the object. For more information, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html}{Checking object integrity in the Amazon S3 User Guide}.}
 
-\item{Expires}{The date and time at which the object is no longer cacheable. For more information, see https://www.rfc-editor.org/rfc/rfc7234#section-5.3.}
+\item{Expires}{The date and time at which the object is no longer cacheable. For more information, see \href{https://www.rfc-editor.org/info/rfc7234/#section-5.3}{https://www.rfc-editor.org/rfc/rfc7234#section-5.3}.}
 
 \item{IfMatch}{Uploads the object only if the ETag (entity tag) value provided during the WRITE operation matches the ETag of the object in S3. If the ETag values do not match, the operation returns a \verb{412 Precondition Failed} error.
 
@@ -200,7 +200,7 @@ When you use the CLI or the Amazon Web Services SDKs, for \code{\link[=s3_create
 \item \strong{S3 access points for Amazon FSx} - When accessing data stored in Amazon FSx file systems using S3 access points, the only valid server side encryption option is \code{aws:fsx}. All Amazon FSx file systems have encryption configured by default and are encrypted at rest. Data is automatically encrypted before being written to the file system, and automatically decrypted as it is read. These processes are handled transparently by Amazon FSx.
 }}
 
-\item{StorageClass}{By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. For more information, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html}{Storage Classes} in the \emph{Amazon S3 User Guide}.
+\item{StorageClass}{By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. For more information, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html?refid=ee2b7411-7ae6-46f0-a1f7-c531380cd86a}{Storage Classes} in the \emph{Amazon S3 User Guide}.
 \itemize{
 \item Directory buckets only support \code{EXPRESS_ONEZONE} (the S3 Express One Zone storage class) in Availability Zones and \code{ONEZONE_IA} (the S3 One Zone-Infrequent Access storage class) in Dedicated Local Zones.
 \item Amazon S3 on Outposts only uses the OUTPOSTS Storage Class.

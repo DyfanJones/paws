@@ -97,7 +97,7 @@ If you don't include the \code{idleSessionTTLInSeconds} element in a \code{\link
 
 The default is 300 seconds (5 minutes).}
 
-\item{voiceId}{The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see \href{https://docs.aws.amazon.com/polly/latest/dg/available-voices.html}{Voices in Amazon Polly} in the \emph{Amazon Polly Developer Guide}.}
+\item{voiceId}{The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see \href{https://docs.aws.amazon.com/polly/latest/dg/available-voices.html?trkcampaign=aws_summit_\%2Basean\%2B_2022/}{Voices in Amazon Polly} in the \emph{Amazon Polly Developer Guide}.}
 
 \item{checksum}{Identifies a specific revision of the \verb{$LATEST} version.
 

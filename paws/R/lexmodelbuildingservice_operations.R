@@ -2665,7 +2665,7 @@ lexmodelbuildingservice_list_tags_for_resource <- function(resourceArn) {
 #' If you don't include the `idleSessionTTLInSeconds` element in a [`put_bot`][lexmodelbuildingservice_put_bot] operation request, Amazon Lex uses the default value. This is also true if the request replaces an existing bot.
 #' 
 #' The default is 300 seconds (5 minutes).
-#' @param voiceId The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see [Voices in Amazon Polly](https://docs.aws.amazon.com/polly/latest/dg/available-voices.html) in the *Amazon Polly Developer Guide*.
+#' @param voiceId The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see [Voices in Amazon Polly](https://docs.aws.amazon.com/polly/latest/dg/available-voices.html?trkcampaign=aws_summit_%2Basean%2B_2022/) in the *Amazon Polly Developer Guide*.
 #' @param checksum Identifies a specific revision of the `$LATEST` version.
 #' 
 #' When you create a new bot, leave the `checksum` field blank. If you specify a checksum you get a `BadRequestException` exception.

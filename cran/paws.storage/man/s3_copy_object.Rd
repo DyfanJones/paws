@@ -29,6 +29,7 @@ s3_copy_object(
   Metadata = NULL,
   MetadataDirective = NULL,
   TaggingDirective = NULL,
+  AnnotationDirective = NULL,
   ServerSideEncryption = NULL,
   StorageClass = NULL,
   WebsiteRedirectLocation = NULL,
@@ -213,6 +214,18 @@ Because only the empty tag-set is supported for directory buckets in a \code{\li
 \item When you attempt to \code{REPLACE} the tag-set of a directory bucket source object and don't set the \code{x-amz-tagging} value of the directory bucket destination object. This is because the default value of \code{x-amz-tagging} is the empty value.
 }}
 
+\item{AnnotationDirective}{Specifies whether you want to copy annotations from the source object or exclude them. If this header isn't specified, \code{COPY} is the default behavior.
+
+Valid Values: \code{COPY | EXCLUDE}
+
+You can specify this directive as either an HTTP header (\code{x-amz-object-annotation-directive}) or as a query string parameter. Use the query string form when generating presigned URLs that need to control annotation copy behavior.
+
+When set to \code{COPY}, you must have \code{s3:GetObjectAnnotation} permission on the source object and \code{s3:PutObjectAnnotation} permission on the destination. Each annotation copied is billed as a separate PUT request. If annotations on the source are modified during the copy, Amazon S3 returns a retryable error.
+
+For directory buckets, annotations are not supported. Use \code{EXCLUDE} to copy objects to directory buckets without errors. If you specify \code{COPY} for a directory bucket, the request returns HTTP 501 (Not Implemented).
+
+When you copy objects using multipart upload (for example, when the Amazon Web Services CLI or Amazon Web Services SDKs use Transfer Manager for objects larger than approximately 8 MB), annotations are not copied by default. To include annotations, specify \verb{--copy-props default} in the Amazon Web Services CLI or the equivalent SDK configuration. With this opt-in, the SDK reads source annotations, completes the multipart upload, and then writes each annotation to the destination. Between the upload completion and the last annotation write, the destination object exists without all its annotations.}
+
 \item{ServerSideEncryption}{The server-side encryption algorithm used when storing this object in Amazon S3. Unrecognized or unsupported values won’t write a destination object and will receive a \verb{400 Bad Request} response.
 
 Amazon S3 automatically encrypts all new objects that are copied to an S3 bucket. When copying an object, if you don't specify encryption information in your copy request, the encryption setting of the target object is set to the default encryption configuration of the destination bucket. By default, all buckets have a base level of encryption configuration that uses server-side encryption with Amazon S3 managed keys (SSE-S3). If the destination bucket has a different default encryption configuration, Amazon S3 uses the corresponding encryption key to encrypt the target object copy.
@@ -238,7 +251,7 @@ With server-side encryption, Amazon S3 encrypts your data as it writes your data
 \item \strong{Amazon S3 on Outposts} - S3 on Outposts only uses the \code{OUTPOSTS} Storage Class.
 }
 
-You can use the \code{\link[=s3_copy_object]{copy_object}} action to change the storage class of an object that is already stored in Amazon S3 by using the \code{x-amz-storage-class} header. For more information, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html}{Storage Classes} in the \emph{Amazon S3 User Guide}.
+You can use the \code{\link[=s3_copy_object]{copy_object}} action to change the storage class of an object that is already stored in Amazon S3 by using the \code{x-amz-storage-class} header. For more information, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html?refid=ee2b7411-7ae6-46f0-a1f7-c531380cd86a}{Storage Classes} in the \emph{Amazon S3 User Guide}.
 
 Before using an object as a source object for the copy operation, you must restore a copy of it if it meets any of the following conditions:
 \itemize{

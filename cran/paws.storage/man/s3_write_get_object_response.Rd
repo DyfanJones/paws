@@ -168,7 +168,7 @@ When accessing data stored in Amazon FSx file systems using S3 access points, th
 
 \item{StorageClass}{Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.
 
-For more information, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html}{Storage Classes}.}
+For more information, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html?refid=ee2b7411-7ae6-46f0-a1f7-c531380cd86a}{Storage Classes}.}
 
 \item{TagCount}{The number of tags, if any, on the object.}
 

@@ -16,7 +16,7 @@ ec2_validate_security_group_quotas_for_interface(
 \item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 }
 \description{
-Validates whether the specified security groups can be associated with a single network interface. The operation checks Amazon Virtual Private Cloud (Amazon VPC) quotas. It checks inbound or outbound rules per security group and security groups per network interface. Only authorized AWS services can call this operation.
+Validates whether the specified security groups can be associated with a single network interface. The operation checks Amazon Virtual Private Cloud (Amazon VPC) quotas. It checks inbound or outbound rules per security group and security groups per network interface. Only authorized Amazon Web Services services can call this operation.
 
 See \url{https://www.paws-r-sdk.com/docs/ec2_validate_security_group_quotas_for_interface/} for full documentation.
 }

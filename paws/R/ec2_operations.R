@@ -57175,7 +57175,7 @@ ec2_get_declarative_policies_report_summary <- function(DryRun = NULL, ReportId)
 #' ```
 #' list(
 #'   InstanceFamilyCreditSpecification = list(
-#'     InstanceFamily = "t2"|"t3"|"t3a"|"t4g",
+#'     InstanceFamily = "t2"|"t3"|"t3a"|"t4g"|"t8i",
 #'     CpuCredits = "string"
 #'   )
 #' )
@@ -57185,7 +57185,7 @@ ec2_get_declarative_policies_report_summary <- function(DryRun = NULL, ReportId)
 #' ```
 #' svc$get_default_credit_specification(
 #'   DryRun = TRUE|FALSE,
-#'   InstanceFamily = "t2"|"t3"|"t3a"|"t4g"
+#'   InstanceFamily = "t2"|"t3"|"t3a"|"t4g"|"t8i"
 #' )
 #' ```
 #'
@@ -64735,7 +64735,7 @@ ec2_modify_client_vpn_endpoint <- function(ClientVpnEndpointId, ServerCertificat
 #' ```
 #' list(
 #'   InstanceFamilyCreditSpecification = list(
-#'     InstanceFamily = "t2"|"t3"|"t3a"|"t4g",
+#'     InstanceFamily = "t2"|"t3"|"t3a"|"t4g"|"t8i",
 #'     CpuCredits = "string"
 #'   )
 #' )
@@ -64745,7 +64745,7 @@ ec2_modify_client_vpn_endpoint <- function(ClientVpnEndpointId, ServerCertificat
 #' ```
 #' svc$modify_default_credit_specification(
 #'   DryRun = TRUE|FALSE,
-#'   InstanceFamily = "t2"|"t3"|"t3a"|"t4g",
+#'   InstanceFamily = "t2"|"t3"|"t3a"|"t4g"|"t8i",
 #'   CpuCredits = "string"
 #' )
 #' ```
@@ -75174,7 +75174,7 @@ ec2_report_instance_status <- function(DryRun = NULL, Instances, Status, StartTi
 #' 
 #' You can specify tags for the Spot Fleet request and instances launched by the fleet. You cannot tag other resource types in a Spot Fleet request because only the `spot-fleet-request` and `instance` resource types are supported.
 #' 
-#' For more information, see [Spot Fleet requests](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-request-type.html?refid=ep_card_main_event_page&trkcampaign=aws-summit) in the *Amazon EC2 User Guide*.
+#' For more information, see [Spot Fleet requests](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-request-type.html) in the *Amazon EC2 User Guide*.
 #' 
 #' We strongly discourage using the RequestSpotFleet API because it is a legacy API with no planned investment. For options for requesting Spot Instances, see [Which is the best Spot request method to use?](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use) in the *Amazon EC2 User Guide*.
 #'
@@ -81413,7 +81413,7 @@ ec2_update_security_group_rule_descriptions_ingress <- function(DryRun = NULL, G
 #' single network interface
 #'
 #' @description
-#' Validates whether the specified security groups can be associated with a single network interface. The operation checks Amazon Virtual Private Cloud (Amazon VPC) quotas. It checks inbound or outbound rules per security group and security groups per network interface. Only authorized AWS services can call this operation.
+#' Validates whether the specified security groups can be associated with a single network interface. The operation checks Amazon Virtual Private Cloud (Amazon VPC) quotas. It checks inbound or outbound rules per security group and security groups per network interface. Only authorized Amazon Web Services services can call this operation.
 #' 
 #' For more information about security group quotas, see [Amazon VPC quotas](https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-security-groups) in the *Amazon VPC User Guide*.
 #'

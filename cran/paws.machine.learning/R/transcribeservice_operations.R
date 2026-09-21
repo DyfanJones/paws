@@ -68,6 +68,7 @@ transcribeservice_create_call_analytics_category <- function(CategoryName, Rules
 #' @param InputDataConfig &#91;required&#93; Contains the Amazon S3 location of the training data you want to use to create a new custom language model, and permissions to access this location.
 #' 
 #' When using `InputDataConfig`, you must include these sub-parameters: `S3Uri`, which is the Amazon S3 location of your training data, and `DataAccessRoleArn`, which is the Amazon Resource Name (ARN) of the role that has permission to access your specified Amazon S3 location. You can optionally include `TuningDataS3Uri`, which is the Amazon S3 location of your tuning data. If you specify different Amazon S3 locations for training and tuning data, the ARN you use must have permissions to access both locations.
+#' @param EncryptionConfiguration Specifies the encryption configuration for your custom language model. Your model artifacts are encrypted with the specified KMS key or with an AWS-owned key if a key is not supplied.
 #' @param Tags Adds one or more custom tags, each in the form of a key:value pair, to a new custom language model at the time you create this new model.
 #' 
 #' To learn more about using tags with Amazon Transcribe, refer to [Tagging resources](https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html).
@@ -75,7 +76,7 @@ transcribeservice_create_call_analytics_category <- function(CategoryName, Rules
 #' @keywords internal
 #'
 #' @rdname transcribeservice_create_language_model
-transcribeservice_create_language_model <- function(LanguageCode, BaseModelName, ModelName, InputDataConfig, Tags = NULL) {
+transcribeservice_create_language_model <- function(LanguageCode, BaseModelName, ModelName, InputDataConfig, EncryptionConfiguration = NULL, Tags = NULL) {
   op <- new_operation(
     name = "CreateLanguageModel",
     http_method = "POST",
@@ -84,7 +85,7 @@ transcribeservice_create_language_model <- function(LanguageCode, BaseModelName,
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .transcribeservice$create_language_model_input(LanguageCode = LanguageCode, BaseModelName = BaseModelName, ModelName = ModelName, InputDataConfig = InputDataConfig, Tags = Tags)
+  input <- .transcribeservice$create_language_model_input(LanguageCode = LanguageCode, BaseModelName = BaseModelName, ModelName = ModelName, InputDataConfig = InputDataConfig, EncryptionConfiguration = EncryptionConfiguration, Tags = Tags)
   output <- .transcribeservice$create_language_model_output()
   config <- get_config()
   svc <- .transcribeservice$service(config, op)
@@ -162,16 +163,17 @@ transcribeservice_create_medical_vocabulary <- function(VocabularyName, Language
 #' @param Tags Adds one or more custom tags, each in the form of a key:value pair, to a new custom vocabulary at the time you create this new custom vocabulary.
 #' 
 #' To learn more about using tags with Amazon Transcribe, refer to [Tagging resources](https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html).
-#' @param DataAccessRoleArn The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary). If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.
+#' @param DataAccessRoleArn The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary). If you include `EncryptionConfiguration` in your request, this role must also have permissions to access the specified KMS key. If the role that you specify doesn’t have the appropriate permissions, your request fails.
 #' 
 #' IAM role ARNs have the format `arn:partition:iam::account:role/role-name-with-path`. For example: `arn:aws:iam::111122223333:role/Admin`.
 #' 
 #' For more information, see [IAM ARNs](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns).
+#' @param EncryptionConfiguration Specifies the encryption configuration for your custom vocabulary. Your vocabulary artifacts are encrypted with the specified KMS key or with an AWS-owned key if a key is not supplied.
 #'
 #' @keywords internal
 #'
 #' @rdname transcribeservice_create_vocabulary
-transcribeservice_create_vocabulary <- function(VocabularyName, LanguageCode, Phrases = NULL, VocabularyFileUri = NULL, Tags = NULL, DataAccessRoleArn = NULL) {
+transcribeservice_create_vocabulary <- function(VocabularyName, LanguageCode, Phrases = NULL, VocabularyFileUri = NULL, Tags = NULL, DataAccessRoleArn = NULL, EncryptionConfiguration = NULL) {
   op <- new_operation(
     name = "CreateVocabulary",
     http_method = "POST",
@@ -180,7 +182,7 @@ transcribeservice_create_vocabulary <- function(VocabularyName, LanguageCode, Ph
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .transcribeservice$create_vocabulary_input(VocabularyName = VocabularyName, LanguageCode = LanguageCode, Phrases = Phrases, VocabularyFileUri = VocabularyFileUri, Tags = Tags, DataAccessRoleArn = DataAccessRoleArn)
+  input <- .transcribeservice$create_vocabulary_input(VocabularyName = VocabularyName, LanguageCode = LanguageCode, Phrases = Phrases, VocabularyFileUri = VocabularyFileUri, Tags = Tags, DataAccessRoleArn = DataAccessRoleArn, EncryptionConfiguration = EncryptionConfiguration)
   output <- .transcribeservice$create_vocabulary_output()
   config <- get_config()
   svc <- .transcribeservice$service(config, op)
@@ -218,16 +220,17 @@ transcribeservice_create_vocabulary <- function(VocabularyName, LanguageCode, Ph
 #' @param Tags Adds one or more custom tags, each in the form of a key:value pair, to a new custom vocabulary filter at the time you create this new vocabulary filter.
 #' 
 #' To learn more about using tags with Amazon Transcribe, refer to [Tagging resources](https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html).
-#' @param DataAccessRoleArn The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary filter). If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.
+#' @param DataAccessRoleArn The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary filter). If you include `EncryptionConfiguration` in your request, this role must also have permissions to access the specified KMS key. If the role that you specify doesn’t have the appropriate permissions, your request fails.
 #' 
 #' IAM role ARNs have the format `arn:partition:iam::account:role/role-name-with-path`. For example: `arn:aws:iam::111122223333:role/Admin`.
 #' 
 #' For more information, see [IAM ARNs](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns).
+#' @param EncryptionConfiguration Specifies the encryption configuration for your custom vocabulary filter. Your vocabulary filter artifacts are encrypted with the specified KMS key or with an AWS-owned key if a key is not supplied.
 #'
 #' @keywords internal
 #'
 #' @rdname transcribeservice_create_vocabulary_filter
-transcribeservice_create_vocabulary_filter <- function(VocabularyFilterName, LanguageCode, Words = NULL, VocabularyFilterFileUri = NULL, Tags = NULL, DataAccessRoleArn = NULL) {
+transcribeservice_create_vocabulary_filter <- function(VocabularyFilterName, LanguageCode, Words = NULL, VocabularyFilterFileUri = NULL, Tags = NULL, DataAccessRoleArn = NULL, EncryptionConfiguration = NULL) {
   op <- new_operation(
     name = "CreateVocabularyFilter",
     http_method = "POST",
@@ -236,7 +239,7 @@ transcribeservice_create_vocabulary_filter <- function(VocabularyFilterName, Lan
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .transcribeservice$create_vocabulary_filter_input(VocabularyFilterName = VocabularyFilterName, LanguageCode = LanguageCode, Words = Words, VocabularyFilterFileUri = VocabularyFilterFileUri, Tags = Tags, DataAccessRoleArn = DataAccessRoleArn)
+  input <- .transcribeservice$create_vocabulary_filter_input(VocabularyFilterName = VocabularyFilterName, LanguageCode = LanguageCode, Words = Words, VocabularyFilterFileUri = VocabularyFilterFileUri, Tags = Tags, DataAccessRoleArn = DataAccessRoleArn, EncryptionConfiguration = EncryptionConfiguration)
   output <- .transcribeservice$create_vocabulary_filter_output()
   config <- get_config()
   svc <- .transcribeservice$service(config, op)
@@ -1584,6 +1587,44 @@ transcribeservice_update_call_analytics_category <- function(CategoryName, Rules
 }
 .transcribeservice$operations$update_call_analytics_category <- transcribeservice_update_call_analytics_category
 
+#' Updates the encryption configuration for an existing custom language
+#' model
+#'
+#' @description
+#' Updates the encryption configuration for an existing custom language model. You can use this operation to change the KMS key used to encrypt your model artifacts. The model artifacts are re-encrypted in place. No model training is required.
+#'
+#' See [https://www.paws-r-sdk.com/docs/transcribeservice_update_language_model/](https://www.paws-r-sdk.com/docs/transcribeservice_update_language_model/) for full documentation.
+#'
+#' @param ModelName &#91;required&#93; The name of the custom language model you want to update. Model names are case sensitive.
+#' @param DataAccessRoleArn The Amazon Resource Name (ARN) of an IAM role. If you include `EncryptionConfiguration` in your request, this role must have permissions to access the specified KMS key. If the role that you specify doesn't have the appropriate permissions, your request fails.
+#' 
+#' IAM role ARNs have the format `arn:partition:iam::account:role/role-name-with-path`. For example: `arn:aws:iam::111122223333:role/Admin`.
+#' 
+#' For more information, see [IAM ARNs](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns).
+#' @param EncryptionConfiguration Specifies the new encryption configuration for your custom language model. The model artifacts are re-encrypted in place using the specified KMS key or with an AWS-owned key if a key is not supplied.
+#'
+#' @keywords internal
+#'
+#' @rdname transcribeservice_update_language_model
+transcribeservice_update_language_model <- function(ModelName, DataAccessRoleArn = NULL, EncryptionConfiguration = NULL) {
+  op <- new_operation(
+    name = "UpdateLanguageModel",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .transcribeservice$update_language_model_input(ModelName = ModelName, DataAccessRoleArn = DataAccessRoleArn, EncryptionConfiguration = EncryptionConfiguration)
+  output <- .transcribeservice$update_language_model_output()
+  config <- get_config()
+  svc <- .transcribeservice$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.transcribeservice$operations$update_language_model <- transcribeservice_update_language_model
+
 #' Updates an existing custom medical vocabulary with new values
 #'
 #' @description
@@ -1642,16 +1683,17 @@ transcribeservice_update_medical_vocabulary <- function(VocabularyName, Language
 #' Here's an example URI path: `s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt`
 #' 
 #' Note that if you include `VocabularyFileUri` in your request, you cannot use the `Phrases` flag; you must choose one or the other.
-#' @param DataAccessRoleArn The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary). If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.
+#' @param DataAccessRoleArn The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary). If you include `EncryptionConfiguration` in your request, this role must also have permissions to access the specified KMS key. If the role that you specify doesn’t have the appropriate permissions, your request fails.
 #' 
 #' IAM role ARNs have the format `arn:partition:iam::account:role/role-name-with-path`. For example: `arn:aws:iam::111122223333:role/Admin`.
 #' 
 #' For more information, see [IAM ARNs](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns).
+#' @param EncryptionConfiguration Specifies the new encryption configuration for your custom vocabulary. The vocabulary artifacts are re-encrypted in place using the specified KMS key or with an AWS-owned key if a key is not supplied.
 #'
 #' @keywords internal
 #'
 #' @rdname transcribeservice_update_vocabulary
-transcribeservice_update_vocabulary <- function(VocabularyName, LanguageCode, Phrases = NULL, VocabularyFileUri = NULL, DataAccessRoleArn = NULL) {
+transcribeservice_update_vocabulary <- function(VocabularyName, LanguageCode, Phrases = NULL, VocabularyFileUri = NULL, DataAccessRoleArn = NULL, EncryptionConfiguration = NULL) {
   op <- new_operation(
     name = "UpdateVocabulary",
     http_method = "POST",
@@ -1660,7 +1702,7 @@ transcribeservice_update_vocabulary <- function(VocabularyName, LanguageCode, Ph
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .transcribeservice$update_vocabulary_input(VocabularyName = VocabularyName, LanguageCode = LanguageCode, Phrases = Phrases, VocabularyFileUri = VocabularyFileUri, DataAccessRoleArn = DataAccessRoleArn)
+  input <- .transcribeservice$update_vocabulary_input(VocabularyName = VocabularyName, LanguageCode = LanguageCode, Phrases = Phrases, VocabularyFileUri = VocabularyFileUri, DataAccessRoleArn = DataAccessRoleArn, EncryptionConfiguration = EncryptionConfiguration)
   output <- .transcribeservice$update_vocabulary_output()
   config <- get_config()
   svc <- .transcribeservice$service(config, op)
@@ -1688,16 +1730,17 @@ transcribeservice_update_vocabulary <- function(VocabularyName, LanguageCode, Ph
 #' Here's an example URI path: `s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt`
 #' 
 #' Note that if you include `VocabularyFilterFileUri` in your request, you cannot use `Words`; you must choose one or the other.
-#' @param DataAccessRoleArn The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary filter). If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.
+#' @param DataAccessRoleArn The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary filter). If you include `EncryptionConfiguration` in your request, this role must also have permissions to access the specified KMS key. If the role that you specify doesn’t have the appropriate permissions, your request fails.
 #' 
 #' IAM role ARNs have the format `arn:partition:iam::account:role/role-name-with-path`. For example: `arn:aws:iam::111122223333:role/Admin`.
 #' 
 #' For more information, see [IAM ARNs](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns).
+#' @param EncryptionConfiguration Specifies the new encryption configuration for your custom vocabulary filter. The vocabulary filter artifacts are re-encrypted in place using the specified KMS key or with an AWS-owned key if a key is not supplied.
 #'
 #' @keywords internal
 #'
 #' @rdname transcribeservice_update_vocabulary_filter
-transcribeservice_update_vocabulary_filter <- function(VocabularyFilterName, Words = NULL, VocabularyFilterFileUri = NULL, DataAccessRoleArn = NULL) {
+transcribeservice_update_vocabulary_filter <- function(VocabularyFilterName, Words = NULL, VocabularyFilterFileUri = NULL, DataAccessRoleArn = NULL, EncryptionConfiguration = NULL) {
   op <- new_operation(
     name = "UpdateVocabularyFilter",
     http_method = "POST",
@@ -1706,7 +1749,7 @@ transcribeservice_update_vocabulary_filter <- function(VocabularyFilterName, Wor
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .transcribeservice$update_vocabulary_filter_input(VocabularyFilterName = VocabularyFilterName, Words = Words, VocabularyFilterFileUri = VocabularyFilterFileUri, DataAccessRoleArn = DataAccessRoleArn)
+  input <- .transcribeservice$update_vocabulary_filter_input(VocabularyFilterName = VocabularyFilterName, Words = Words, VocabularyFilterFileUri = VocabularyFilterFileUri, DataAccessRoleArn = DataAccessRoleArn, EncryptionConfiguration = EncryptionConfiguration)
   output <- .transcribeservice$update_vocabulary_filter_output()
   config <- get_config()
   svc <- .transcribeservice$service(config, op)

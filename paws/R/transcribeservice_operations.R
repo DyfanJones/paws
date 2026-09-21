@@ -267,7 +267,7 @@ transcribeservice_create_call_analytics_category <- function(CategoryName, Rules
 #'
 #' @usage
 #' transcribeservice_create_language_model(LanguageCode, BaseModelName,
-#'   ModelName, InputDataConfig, Tags)
+#'   ModelName, InputDataConfig, EncryptionConfiguration, Tags)
 #'
 #' @param LanguageCode &#91;required&#93; The language code that represents the language of your model. Each custom language model must contain terms in only one language, and the language you select for your custom language model must match the language of your training and tuning data.
 #' 
@@ -283,6 +283,7 @@ transcribeservice_create_call_analytics_category <- function(CategoryName, Rules
 #' @param InputDataConfig &#91;required&#93; Contains the Amazon S3 location of the training data you want to use to create a new custom language model, and permissions to access this location.
 #' 
 #' When using `InputDataConfig`, you must include these sub-parameters: `S3Uri`, which is the Amazon S3 location of your training data, and `DataAccessRoleArn`, which is the Amazon Resource Name (ARN) of the role that has permission to access your specified Amazon S3 location. You can optionally include `TuningDataS3Uri`, which is the Amazon S3 location of your tuning data. If you specify different Amazon S3 locations for training and tuning data, the ARN you use must have permissions to access both locations.
+#' @param EncryptionConfiguration Specifies the encryption configuration for your custom language model. Your model artifacts are encrypted with the specified KMS key or with an AWS-owned key if a key is not supplied.
 #' @param Tags Adds one or more custom tags, each in the form of a key:value pair, to a new custom language model at the time you create this new model.
 #' 
 #' To learn more about using tags with Amazon Transcribe, refer to [Tagging resources](https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html).
@@ -314,6 +315,12 @@ transcribeservice_create_call_analytics_category <- function(CategoryName, Rules
 #'     TuningDataS3Uri = "string",
 #'     DataAccessRoleArn = "string"
 #'   ),
+#'   EncryptionConfiguration = list(
+#'     KMSEncryptionContext = list(
+#'       "string"
+#'     ),
+#'     KMSKey = "string"
+#'   ),
 #'   Tags = list(
 #'     list(
 #'       Key = "string",
@@ -328,7 +335,7 @@ transcribeservice_create_call_analytics_category <- function(CategoryName, Rules
 #' @rdname transcribeservice_create_language_model
 #'
 #' @aliases transcribeservice_create_language_model
-transcribeservice_create_language_model <- function(LanguageCode, BaseModelName, ModelName, InputDataConfig, Tags = NULL) {
+transcribeservice_create_language_model <- function(LanguageCode, BaseModelName, ModelName, InputDataConfig, EncryptionConfiguration = NULL, Tags = NULL) {
   op <- new_operation(
     name = "CreateLanguageModel",
     http_method = "POST",
@@ -337,7 +344,7 @@ transcribeservice_create_language_model <- function(LanguageCode, BaseModelName,
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .transcribeservice$create_language_model_input(LanguageCode = LanguageCode, BaseModelName = BaseModelName, ModelName = ModelName, InputDataConfig = InputDataConfig, Tags = Tags)
+  input <- .transcribeservice$create_language_model_input(LanguageCode = LanguageCode, BaseModelName = BaseModelName, ModelName = ModelName, InputDataConfig = InputDataConfig, EncryptionConfiguration = EncryptionConfiguration, Tags = Tags)
   output <- .transcribeservice$create_language_model_output()
   config <- get_config()
   svc <- .transcribeservice$service(config, op)
@@ -439,7 +446,8 @@ transcribeservice_create_medical_vocabulary <- function(VocabularyName, Language
 #'
 #' @usage
 #' transcribeservice_create_vocabulary(VocabularyName, LanguageCode,
-#'   Phrases, VocabularyFileUri, Tags, DataAccessRoleArn)
+#'   Phrases, VocabularyFileUri, Tags, DataAccessRoleArn,
+#'   EncryptionConfiguration)
 #'
 #' @param VocabularyName &#91;required&#93; A unique name, chosen by you, for your new custom vocabulary.
 #' 
@@ -462,11 +470,12 @@ transcribeservice_create_medical_vocabulary <- function(VocabularyName, Language
 #' @param Tags Adds one or more custom tags, each in the form of a key:value pair, to a new custom vocabulary at the time you create this new custom vocabulary.
 #' 
 #' To learn more about using tags with Amazon Transcribe, refer to [Tagging resources](https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html).
-#' @param DataAccessRoleArn The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary). If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.
+#' @param DataAccessRoleArn The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary). If you include `EncryptionConfiguration` in your request, this role must also have permissions to access the specified KMS key. If the role that you specify doesn’t have the appropriate permissions, your request fails.
 #' 
 #' IAM role ARNs have the format `arn:partition:iam::account:role/role-name-with-path`. For example: `arn:aws:iam::111122223333:role/Admin`.
 #' 
 #' For more information, see [IAM ARNs](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns).
+#' @param EncryptionConfiguration Specifies the encryption configuration for your custom vocabulary. Your vocabulary artifacts are encrypted with the specified KMS key or with an AWS-owned key if a key is not supplied.
 #'
 #' @return
 #' A list with the following syntax:
@@ -497,7 +506,13 @@ transcribeservice_create_medical_vocabulary <- function(VocabularyName, Language
 #'       Value = "string"
 #'     )
 #'   ),
-#'   DataAccessRoleArn = "string"
+#'   DataAccessRoleArn = "string",
+#'   EncryptionConfiguration = list(
+#'     KMSEncryptionContext = list(
+#'       "string"
+#'     ),
+#'     KMSKey = "string"
+#'   )
 #' )
 #' ```
 #'
@@ -506,7 +521,7 @@ transcribeservice_create_medical_vocabulary <- function(VocabularyName, Language
 #' @rdname transcribeservice_create_vocabulary
 #'
 #' @aliases transcribeservice_create_vocabulary
-transcribeservice_create_vocabulary <- function(VocabularyName, LanguageCode, Phrases = NULL, VocabularyFileUri = NULL, Tags = NULL, DataAccessRoleArn = NULL) {
+transcribeservice_create_vocabulary <- function(VocabularyName, LanguageCode, Phrases = NULL, VocabularyFileUri = NULL, Tags = NULL, DataAccessRoleArn = NULL, EncryptionConfiguration = NULL) {
   op <- new_operation(
     name = "CreateVocabulary",
     http_method = "POST",
@@ -515,7 +530,7 @@ transcribeservice_create_vocabulary <- function(VocabularyName, LanguageCode, Ph
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .transcribeservice$create_vocabulary_input(VocabularyName = VocabularyName, LanguageCode = LanguageCode, Phrases = Phrases, VocabularyFileUri = VocabularyFileUri, Tags = Tags, DataAccessRoleArn = DataAccessRoleArn)
+  input <- .transcribeservice$create_vocabulary_input(VocabularyName = VocabularyName, LanguageCode = LanguageCode, Phrases = Phrases, VocabularyFileUri = VocabularyFileUri, Tags = Tags, DataAccessRoleArn = DataAccessRoleArn, EncryptionConfiguration = EncryptionConfiguration)
   output <- .transcribeservice$create_vocabulary_output()
   config <- get_config()
   svc <- .transcribeservice$service(config, op)
@@ -538,7 +553,8 @@ transcribeservice_create_vocabulary <- function(VocabularyName, LanguageCode, Ph
 #'
 #' @usage
 #' transcribeservice_create_vocabulary_filter(VocabularyFilterName,
-#'   LanguageCode, Words, VocabularyFilterFileUri, Tags, DataAccessRoleArn)
+#'   LanguageCode, Words, VocabularyFilterFileUri, Tags, DataAccessRoleArn,
+#'   EncryptionConfiguration)
 #'
 #' @param VocabularyFilterName &#91;required&#93; A unique name, chosen by you, for your new custom vocabulary filter.
 #' 
@@ -561,11 +577,12 @@ transcribeservice_create_vocabulary <- function(VocabularyName, LanguageCode, Ph
 #' @param Tags Adds one or more custom tags, each in the form of a key:value pair, to a new custom vocabulary filter at the time you create this new vocabulary filter.
 #' 
 #' To learn more about using tags with Amazon Transcribe, refer to [Tagging resources](https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html).
-#' @param DataAccessRoleArn The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary filter). If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.
+#' @param DataAccessRoleArn The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary filter). If you include `EncryptionConfiguration` in your request, this role must also have permissions to access the specified KMS key. If the role that you specify doesn’t have the appropriate permissions, your request fails.
 #' 
 #' IAM role ARNs have the format `arn:partition:iam::account:role/role-name-with-path`. For example: `arn:aws:iam::111122223333:role/Admin`.
 #' 
 #' For more information, see [IAM ARNs](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns).
+#' @param EncryptionConfiguration Specifies the encryption configuration for your custom vocabulary filter. Your vocabulary filter artifacts are encrypted with the specified KMS key or with an AWS-owned key if a key is not supplied.
 #'
 #' @return
 #' A list with the following syntax:
@@ -594,7 +611,13 @@ transcribeservice_create_vocabulary <- function(VocabularyName, LanguageCode, Ph
 #'       Value = "string"
 #'     )
 #'   ),
-#'   DataAccessRoleArn = "string"
+#'   DataAccessRoleArn = "string",
+#'   EncryptionConfiguration = list(
+#'     KMSEncryptionContext = list(
+#'       "string"
+#'     ),
+#'     KMSKey = "string"
+#'   )
 #' )
 #' ```
 #'
@@ -603,7 +626,7 @@ transcribeservice_create_vocabulary <- function(VocabularyName, LanguageCode, Ph
 #' @rdname transcribeservice_create_vocabulary_filter
 #'
 #' @aliases transcribeservice_create_vocabulary_filter
-transcribeservice_create_vocabulary_filter <- function(VocabularyFilterName, LanguageCode, Words = NULL, VocabularyFilterFileUri = NULL, Tags = NULL, DataAccessRoleArn = NULL) {
+transcribeservice_create_vocabulary_filter <- function(VocabularyFilterName, LanguageCode, Words = NULL, VocabularyFilterFileUri = NULL, Tags = NULL, DataAccessRoleArn = NULL, EncryptionConfiguration = NULL) {
   op <- new_operation(
     name = "CreateVocabularyFilter",
     http_method = "POST",
@@ -612,7 +635,7 @@ transcribeservice_create_vocabulary_filter <- function(VocabularyFilterName, Lan
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .transcribeservice$create_vocabulary_filter_input(VocabularyFilterName = VocabularyFilterName, LanguageCode = LanguageCode, Words = Words, VocabularyFilterFileUri = VocabularyFilterFileUri, Tags = Tags, DataAccessRoleArn = DataAccessRoleArn)
+  input <- .transcribeservice$create_vocabulary_filter_input(VocabularyFilterName = VocabularyFilterName, LanguageCode = LanguageCode, Words = Words, VocabularyFilterFileUri = VocabularyFilterFileUri, Tags = Tags, DataAccessRoleArn = DataAccessRoleArn, EncryptionConfiguration = EncryptionConfiguration)
   output <- .transcribeservice$create_vocabulary_filter_output()
   config <- get_config()
   svc <- .transcribeservice$service(config, op)
@@ -1054,6 +1077,12 @@ transcribeservice_delete_vocabulary_filter <- function(VocabularyFilterName) {
 #'       S3Uri = "string",
 #'       TuningDataS3Uri = "string",
 #'       DataAccessRoleArn = "string"
+#'     ),
+#'     EncryptionConfiguration = list(
+#'       KMSEncryptionContext = list(
+#'         "string"
+#'       ),
+#'       KMSKey = "string"
 #'     )
 #'   )
 #' )
@@ -1785,7 +1814,14 @@ transcribeservice_get_transcription_job <- function(TranscriptionJobName) {
 #'     "2015-01-01"
 #'   ),
 #'   FailureReason = "string",
-#'   DownloadUri = "string"
+#'   DownloadUri = "string",
+#'   DataAccessRoleArn = "string",
+#'   EncryptionConfiguration = list(
+#'     KMSEncryptionContext = list(
+#'       "string"
+#'     ),
+#'     KMSKey = "string"
+#'   )
 #' )
 #' ```
 #'
@@ -1841,7 +1877,14 @@ transcribeservice_get_vocabulary <- function(VocabularyName) {
 #'   LastModifiedTime = as.POSIXct(
 #'     "2015-01-01"
 #'   ),
-#'   DownloadUri = "string"
+#'   DownloadUri = "string",
+#'   DataAccessRoleArn = "string",
+#'   EncryptionConfiguration = list(
+#'     KMSEncryptionContext = list(
+#'       "string"
+#'     ),
+#'     KMSKey = "string"
+#'   )
 #' )
 #' ```
 #'
@@ -2149,6 +2192,12 @@ transcribeservice_list_call_analytics_jobs <- function(Status = NULL, JobNameCon
 #'         S3Uri = "string",
 #'         TuningDataS3Uri = "string",
 #'         DataAccessRoleArn = "string"
+#'       ),
+#'       EncryptionConfiguration = list(
+#'         KMSEncryptionContext = list(
+#'           "string"
+#'         ),
+#'         KMSKey = "string"
 #'       )
 #'     )
 #'   )
@@ -3964,6 +4013,78 @@ transcribeservice_update_call_analytics_category <- function(CategoryName, Rules
 }
 .transcribeservice$operations$update_call_analytics_category <- transcribeservice_update_call_analytics_category
 
+#' Updates the encryption configuration for an existing custom language
+#' model
+#'
+#' @description
+#' Updates the encryption configuration for an existing custom language model. You can use this operation to change the KMS key used to encrypt your model artifacts. The model artifacts are re-encrypted in place. No model training is required.
+#' 
+#' Your custom language model must not be in the `IN_PROGRESS` state when you call this operation. You cannot submit another update while a previous update is in progress. Use to check the current state of your model.
+#' 
+#' Your custom language model remains available for transcription jobs while the update is being processed.
+#'
+#' @usage
+#' transcribeservice_update_language_model(ModelName, DataAccessRoleArn,
+#'   EncryptionConfiguration)
+#'
+#' @param ModelName &#91;required&#93; The name of the custom language model you want to update. Model names are case sensitive.
+#' @param DataAccessRoleArn The Amazon Resource Name (ARN) of an IAM role. If you include `EncryptionConfiguration` in your request, this role must have permissions to access the specified KMS key. If the role that you specify doesn't have the appropriate permissions, your request fails.
+#' 
+#' IAM role ARNs have the format `arn:partition:iam::account:role/role-name-with-path`. For example: `arn:aws:iam::111122223333:role/Admin`.
+#' 
+#' For more information, see [IAM ARNs](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns).
+#' @param EncryptionConfiguration Specifies the new encryption configuration for your custom language model. The model artifacts are re-encrypted in place using the specified KMS key or with an AWS-owned key if a key is not supplied.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   ModelName = "string",
+#'   ModelStatus = "IN_PROGRESS"|"FAILED"|"COMPLETED",
+#'   LastModifiedTime = as.POSIXct(
+#'     "2015-01-01"
+#'   )
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$update_language_model(
+#'   ModelName = "string",
+#'   DataAccessRoleArn = "string",
+#'   EncryptionConfiguration = list(
+#'     KMSEncryptionContext = list(
+#'       "string"
+#'     ),
+#'     KMSKey = "string"
+#'   )
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname transcribeservice_update_language_model
+#'
+#' @aliases transcribeservice_update_language_model
+transcribeservice_update_language_model <- function(ModelName, DataAccessRoleArn = NULL, EncryptionConfiguration = NULL) {
+  op <- new_operation(
+    name = "UpdateLanguageModel",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .transcribeservice$update_language_model_input(ModelName = ModelName, DataAccessRoleArn = DataAccessRoleArn, EncryptionConfiguration = EncryptionConfiguration)
+  output <- .transcribeservice$update_language_model_output()
+  config <- get_config()
+  svc <- .transcribeservice$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.transcribeservice$operations$update_language_model <- transcribeservice_update_language_model
+
 #' Updates an existing custom medical vocabulary with new values
 #'
 #' @description
@@ -4029,10 +4150,12 @@ transcribeservice_update_medical_vocabulary <- function(VocabularyName, Language
 #'
 #' @description
 #' Updates an existing custom vocabulary with new values. This operation overwrites all existing information with your new values; you cannot append new terms onto an existing custom vocabulary.
+#' 
+#' Your custom vocabulary must be in a terminal state (`READY` or `FAILED`) before you can update it. You must include either `Phrases` or `VocabularyFileUri` in your request.
 #'
 #' @usage
 #' transcribeservice_update_vocabulary(VocabularyName, LanguageCode,
-#'   Phrases, VocabularyFileUri, DataAccessRoleArn)
+#'   Phrases, VocabularyFileUri, DataAccessRoleArn, EncryptionConfiguration)
 #'
 #' @param VocabularyName &#91;required&#93; The name of the custom vocabulary you want to update. Custom vocabulary names are case sensitive.
 #' @param LanguageCode &#91;required&#93; The language code that represents the language of the entries in the custom vocabulary you want to update. Each custom vocabulary must contain terms in only one language.
@@ -4050,11 +4173,12 @@ transcribeservice_update_medical_vocabulary <- function(VocabularyName, Language
 #' Here's an example URI path: `s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt`
 #' 
 #' Note that if you include `VocabularyFileUri` in your request, you cannot use the `Phrases` flag; you must choose one or the other.
-#' @param DataAccessRoleArn The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary). If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.
+#' @param DataAccessRoleArn The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary). If you include `EncryptionConfiguration` in your request, this role must also have permissions to access the specified KMS key. If the role that you specify doesn’t have the appropriate permissions, your request fails.
 #' 
 #' IAM role ARNs have the format `arn:partition:iam::account:role/role-name-with-path`. For example: `arn:aws:iam::111122223333:role/Admin`.
 #' 
 #' For more information, see [IAM ARNs](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns).
+#' @param EncryptionConfiguration Specifies the new encryption configuration for your custom vocabulary. The vocabulary artifacts are re-encrypted in place using the specified KMS key or with an AWS-owned key if a key is not supplied.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4078,7 +4202,13 @@ transcribeservice_update_medical_vocabulary <- function(VocabularyName, Language
 #'     "string"
 #'   ),
 #'   VocabularyFileUri = "string",
-#'   DataAccessRoleArn = "string"
+#'   DataAccessRoleArn = "string",
+#'   EncryptionConfiguration = list(
+#'     KMSEncryptionContext = list(
+#'       "string"
+#'     ),
+#'     KMSKey = "string"
+#'   )
 #' )
 #' ```
 #'
@@ -4087,7 +4217,7 @@ transcribeservice_update_medical_vocabulary <- function(VocabularyName, Language
 #' @rdname transcribeservice_update_vocabulary
 #'
 #' @aliases transcribeservice_update_vocabulary
-transcribeservice_update_vocabulary <- function(VocabularyName, LanguageCode, Phrases = NULL, VocabularyFileUri = NULL, DataAccessRoleArn = NULL) {
+transcribeservice_update_vocabulary <- function(VocabularyName, LanguageCode, Phrases = NULL, VocabularyFileUri = NULL, DataAccessRoleArn = NULL, EncryptionConfiguration = NULL) {
   op <- new_operation(
     name = "UpdateVocabulary",
     http_method = "POST",
@@ -4096,7 +4226,7 @@ transcribeservice_update_vocabulary <- function(VocabularyName, LanguageCode, Ph
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .transcribeservice$update_vocabulary_input(VocabularyName = VocabularyName, LanguageCode = LanguageCode, Phrases = Phrases, VocabularyFileUri = VocabularyFileUri, DataAccessRoleArn = DataAccessRoleArn)
+  input <- .transcribeservice$update_vocabulary_input(VocabularyName = VocabularyName, LanguageCode = LanguageCode, Phrases = Phrases, VocabularyFileUri = VocabularyFileUri, DataAccessRoleArn = DataAccessRoleArn, EncryptionConfiguration = EncryptionConfiguration)
   output <- .transcribeservice$update_vocabulary_output()
   config <- get_config()
   svc <- .transcribeservice$service(config, op)
@@ -4110,10 +4240,12 @@ transcribeservice_update_vocabulary <- function(VocabularyName, LanguageCode, Ph
 #'
 #' @description
 #' Updates an existing custom vocabulary filter with a new list of words. The new list you provide overwrites all previous entries; you cannot append new terms onto an existing custom vocabulary filter.
+#' 
+#' You must include either `Words` or `VocabularyFilterFileUri` in your request.
 #'
 #' @usage
 #' transcribeservice_update_vocabulary_filter(VocabularyFilterName, Words,
-#'   VocabularyFilterFileUri, DataAccessRoleArn)
+#'   VocabularyFilterFileUri, DataAccessRoleArn, EncryptionConfiguration)
 #'
 #' @param VocabularyFilterName &#91;required&#93; The name of the custom vocabulary filter you want to update. Custom vocabulary filter names are case sensitive.
 #' @param Words Use this parameter if you want to update your custom vocabulary filter by including all desired terms, as comma-separated values, within your request. The other option for updating your vocabulary filter is to save your entries in a text file and upload them to an Amazon S3 bucket, then specify the location of your file using the `VocabularyFilterFileUri` parameter.
@@ -4126,11 +4258,12 @@ transcribeservice_update_vocabulary <- function(VocabularyName, LanguageCode, Ph
 #' Here's an example URI path: `s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt`
 #' 
 #' Note that if you include `VocabularyFilterFileUri` in your request, you cannot use `Words`; you must choose one or the other.
-#' @param DataAccessRoleArn The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary filter). If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.
+#' @param DataAccessRoleArn The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary filter). If you include `EncryptionConfiguration` in your request, this role must also have permissions to access the specified KMS key. If the role that you specify doesn’t have the appropriate permissions, your request fails.
 #' 
 #' IAM role ARNs have the format `arn:partition:iam::account:role/role-name-with-path`. For example: `arn:aws:iam::111122223333:role/Admin`.
 #' 
 #' For more information, see [IAM ARNs](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns).
+#' @param EncryptionConfiguration Specifies the new encryption configuration for your custom vocabulary filter. The vocabulary filter artifacts are re-encrypted in place using the specified KMS key or with an AWS-owned key if a key is not supplied.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4152,7 +4285,13 @@ transcribeservice_update_vocabulary <- function(VocabularyName, LanguageCode, Ph
 #'     "string"
 #'   ),
 #'   VocabularyFilterFileUri = "string",
-#'   DataAccessRoleArn = "string"
+#'   DataAccessRoleArn = "string",
+#'   EncryptionConfiguration = list(
+#'     KMSEncryptionContext = list(
+#'       "string"
+#'     ),
+#'     KMSKey = "string"
+#'   )
 #' )
 #' ```
 #'
@@ -4161,7 +4300,7 @@ transcribeservice_update_vocabulary <- function(VocabularyName, LanguageCode, Ph
 #' @rdname transcribeservice_update_vocabulary_filter
 #'
 #' @aliases transcribeservice_update_vocabulary_filter
-transcribeservice_update_vocabulary_filter <- function(VocabularyFilterName, Words = NULL, VocabularyFilterFileUri = NULL, DataAccessRoleArn = NULL) {
+transcribeservice_update_vocabulary_filter <- function(VocabularyFilterName, Words = NULL, VocabularyFilterFileUri = NULL, DataAccessRoleArn = NULL, EncryptionConfiguration = NULL) {
   op <- new_operation(
     name = "UpdateVocabularyFilter",
     http_method = "POST",
@@ -4170,7 +4309,7 @@ transcribeservice_update_vocabulary_filter <- function(VocabularyFilterName, Wor
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .transcribeservice$update_vocabulary_filter_input(VocabularyFilterName = VocabularyFilterName, Words = Words, VocabularyFilterFileUri = VocabularyFilterFileUri, DataAccessRoleArn = DataAccessRoleArn)
+  input <- .transcribeservice$update_vocabulary_filter_input(VocabularyFilterName = VocabularyFilterName, Words = Words, VocabularyFilterFileUri = VocabularyFilterFileUri, DataAccessRoleArn = DataAccessRoleArn, EncryptionConfiguration = EncryptionConfiguration)
   output <- .transcribeservice$update_vocabulary_filter_output()
   config <- get_config()
   svc <- .transcribeservice$service(config, op)

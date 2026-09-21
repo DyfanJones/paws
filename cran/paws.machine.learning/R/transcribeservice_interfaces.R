@@ -396,6 +396,16 @@ NULL
   return(populate(args, .transcribeservice_shapes[["update_call_analytics_category_output"]]))
 }
 
+.transcribeservice$update_language_model_input <- function(...) {
+  args <- c(as.list(environment()), list(...))
+  return(populate(args, .transcribeservice_shapes[["update_language_model_input"]]))
+}
+
+.transcribeservice$update_language_model_output <- function(...) {
+  args <- c(as.list(environment()), list(...))
+  return(populate(args, .transcribeservice_shapes[["update_language_model_output"]]))
+}
+
 .transcribeservice$update_medical_vocabulary_input <- function(...) {
   args <- c(as.list(environment()), list(...))
   return(populate(args, .transcribeservice_shapes[["update_medical_vocabulary_input"]]))

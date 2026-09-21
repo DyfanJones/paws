@@ -1,3 +1,3 @@
-svc <- paws::workdocs()
+svc <- paws.end.user.computing::workdocs()
 
 

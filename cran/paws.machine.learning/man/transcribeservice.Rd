@@ -139,6 +139,7 @@ Amazon Transcribe offers three main types of batch transcription: \strong{Standa
 \link[=transcribeservice_tag_resource]{tag_resource} \tab Adds one or more custom tags, each in the form of a key:value pair, to the specified resource\cr
 \link[=transcribeservice_untag_resource]{untag_resource} \tab Removes the specified tags from the specified Amazon Transcribe resource\cr
 \link[=transcribeservice_update_call_analytics_category]{update_call_analytics_category} \tab Updates the specified Call Analytics category with new rules\cr
+\link[=transcribeservice_update_language_model]{update_language_model} \tab Updates the encryption configuration for an existing custom language model\cr
 \link[=transcribeservice_update_medical_vocabulary]{update_medical_vocabulary} \tab Updates an existing custom medical vocabulary with new values\cr
 \link[=transcribeservice_update_vocabulary]{update_vocabulary} \tab Updates an existing custom vocabulary with new values\cr
 \link[=transcribeservice_update_vocabulary_filter]{update_vocabulary_filter} \tab Updates an existing custom vocabulary filter with a new list of words

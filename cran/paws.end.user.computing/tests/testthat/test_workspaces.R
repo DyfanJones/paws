@@ -1,3 +1,3 @@
-svc <- paws::workspaces()
+svc <- paws.end.user.computing::workspaces()
 
 

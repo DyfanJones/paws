@@ -98,6 +98,13 @@ ivsrealtime_create_encoder_configuration <- function(name = NULL, video = NULL, 
 #' A list with the following syntax:
 #' ```
 #' list(
+#'   accessControlAllowOrigin = "string",
+#'   accessControlExposeHeaders = "string",
+#'   cacheControl = "string",
+#'   contentSecurityPolicy = "string",
+#'   strictTransportSecurity = "string",
+#'   xContentTypeOptions = "string",
+#'   xFrameOptions = "string",
 #'   ingestConfiguration = list(
 #'     name = "string",
 #'     arn = "string",
@@ -2628,6 +2635,13 @@ ivsrealtime_untag_resource <- function(resourceArn, tagKeys) {
 #' A list with the following syntax:
 #' ```
 #' list(
+#'   accessControlAllowOrigin = "string",
+#'   accessControlExposeHeaders = "string",
+#'   cacheControl = "string",
+#'   contentSecurityPolicy = "string",
+#'   strictTransportSecurity = "string",
+#'   xContentTypeOptions = "string",
+#'   xFrameOptions = "string",
 #'   ingestConfiguration = list(
 #'     name = "string",
 #'     arn = "string",

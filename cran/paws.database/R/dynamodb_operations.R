@@ -316,7 +316,7 @@ dynamodb_create_global_table <- function(GlobalTableName, ReplicationGroup) {
 #' 
 #' If you set BillingMode as `PROVISIONED`, you must specify this property. If you set BillingMode as `PAY_PER_REQUEST`, you cannot specify this property.
 #' 
-#' For current minimum and maximum provisioned throughput values, see [Service, Account, and Table Quotas](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ServiceQuotas.html?session=704dae92-23c2-4a76-8f50-f7180d2317d8) in the *Amazon DynamoDB Developer Guide*.
+#' For current minimum and maximum provisioned throughput values, see [Service, Account, and Table Quotas](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ServiceQuotas.html) in the *Amazon DynamoDB Developer Guide*.
 #' @param StreamSpecification The settings for DynamoDB Streams on the table. These settings consist of:
 #' 
 #' -   `StreamEnabled` - Indicates whether DynamoDB Streams is to be enabled (true) or disabled (false).

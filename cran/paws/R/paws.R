@@ -27234,6 +27234,7 @@ textract <- function(config = list(), credentials = list(), endpoint = NULL, reg
 #'  \link[paws.machine.learning:transcribeservice_tag_resource]{tag_resource} \tab Adds one or more custom tags, each in the form of a key:value pair, to the specified resource\cr
 #'  \link[paws.machine.learning:transcribeservice_untag_resource]{untag_resource} \tab Removes the specified tags from the specified Amazon Transcribe resource\cr
 #'  \link[paws.machine.learning:transcribeservice_update_call_analytics_category]{update_call_analytics_category} \tab Updates the specified Call Analytics category with new rules\cr
+#'  \link[paws.machine.learning:transcribeservice_update_language_model]{update_language_model} \tab Updates the encryption configuration for an existing custom language model\cr
 #'  \link[paws.machine.learning:transcribeservice_update_medical_vocabulary]{update_medical_vocabulary} \tab Updates an existing custom medical vocabulary with new values\cr
 #'  \link[paws.machine.learning:transcribeservice_update_vocabulary]{update_vocabulary} \tab Updates an existing custom vocabulary with new values\cr
 #'  \link[paws.machine.learning:transcribeservice_update_vocabulary_filter]{update_vocabulary_filter} \tab Updates an existing custom vocabulary filter with a new list of words
@@ -43389,6 +43390,7 @@ paymentcryptographydataplane <- function(config = list(), credentials = list(), 
 #'  \link[paws.customer.engagement:connect_list_routing_profiles]{list_routing_profiles} \tab Provides summary information about the routing profiles for the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_list_rules]{list_rules} \tab List all rules for the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_list_security_keys]{list_security_keys} \tab This API is in preview release for Connect Customer and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_list_security_profile_ai_agents]{list_security_profile_ai_agents} \tab Returns a list of the allowed AI agents in a specific security profile\cr
 #'  \link[paws.customer.engagement:connect_list_security_profile_applications]{list_security_profile_applications} \tab Returns a list of third-party applications or MCP Servers in a specific security profile\cr
 #'  \link[paws.customer.engagement:connect_list_security_profile_flow_modules]{list_security_profile_flow_modules} \tab A list of Flow Modules an AI Agent can invoke as a tool\cr
 #'  \link[paws.customer.engagement:connect_list_security_profile_permissions]{list_security_profile_permissions} \tab Lists the permissions granted to a security profile\cr

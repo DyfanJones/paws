@@ -2351,6 +2351,16 @@ NULL
   return(populate(args, .connect_shapes[["list_security_keys_output"]]))
 }
 
+.connect$list_security_profile_ai_agents_input <- function(...) {
+  args <- c(as.list(environment()), list(...))
+  return(populate(args, .connect_shapes[["list_security_profile_ai_agents_input"]]))
+}
+
+.connect$list_security_profile_ai_agents_output <- function(...) {
+  args <- c(as.list(environment()), list(...))
+  return(populate(args, .connect_shapes[["list_security_profile_ai_agents_output"]]))
+}
+
 .connect$list_security_profile_applications_input <- function(...) {
   args <- c(as.list(environment()), list(...))
   return(populate(args, .connect_shapes[["list_security_profile_applications_input"]]))

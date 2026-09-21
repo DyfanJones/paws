@@ -3704,12 +3704,13 @@ datazone_create_listing_change_set <- function(domainIdentifier, entityIdentifie
 #'
 #' @usage
 #' datazone_create_notebook(domainIdentifier, owningProjectIdentifier,
-#'   name, description, metadata, parameters, clientToken)
+#'   name, description, type, metadata, parameters, clientToken)
 #'
 #' @param domainIdentifier &#91;required&#93; The identifier of the Amazon SageMaker Unified Studio domain in which to create the notebook.
 #' @param owningProjectIdentifier &#91;required&#93; The identifier of the project that owns the notebook.
 #' @param name &#91;required&#93; The name of the notebook. The name must be between 1 and 256 characters.
 #' @param description The description of the notebook.
+#' @param type The type of the notebook.
 #' @param metadata The metadata for the notebook, specified as key-value pairs. You can specify up to 50 entries, with keys up to 128 characters and values up to 1024 characters.
 #' @param parameters The sensitive parameters for the notebook, specified as key-value pairs. You can specify up to 50 entries, with keys up to 128 characters and values up to 1024 characters.
 #' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the request. This field is automatically populated if not provided.
@@ -3726,6 +3727,7 @@ datazone_create_listing_change_set <- function(domainIdentifier, entityIdentifie
 #'     list()
 #'   ),
 #'   status = "ACTIVE"|"ARCHIVED"|"SYNC_IN_PROGRESS"|"SYNC_FAILED",
+#'   type = "DATA"|"SQL",
 #'   description = "string",
 #'   createdAt = as.POSIXct(
 #'     "2015-01-01"
@@ -3780,6 +3782,7 @@ datazone_create_listing_change_set <- function(domainIdentifier, entityIdentifie
 #'   owningProjectIdentifier = "string",
 #'   name = "string",
 #'   description = "string",
+#'   type = "DATA"|"SQL",
 #'   metadata = list(
 #'     "string"
 #'   ),
@@ -3795,7 +3798,7 @@ datazone_create_listing_change_set <- function(domainIdentifier, entityIdentifie
 #' @rdname datazone_create_notebook
 #'
 #' @aliases datazone_create_notebook
-datazone_create_notebook <- function(domainIdentifier, owningProjectIdentifier, name, description = NULL, metadata = NULL, parameters = NULL, clientToken = NULL) {
+datazone_create_notebook <- function(domainIdentifier, owningProjectIdentifier, name, description = NULL, type = NULL, metadata = NULL, parameters = NULL, clientToken = NULL) {
   op <- new_operation(
     name = "CreateNotebook",
     http_method = "POST",
@@ -3804,7 +3807,7 @@ datazone_create_notebook <- function(domainIdentifier, owningProjectIdentifier, 
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .datazone$create_notebook_input(domainIdentifier = domainIdentifier, owningProjectIdentifier = owningProjectIdentifier, name = name, description = description, metadata = metadata, parameters = parameters, clientToken = clientToken)
+  input <- .datazone$create_notebook_input(domainIdentifier = domainIdentifier, owningProjectIdentifier = owningProjectIdentifier, name = name, description = description, type = type, metadata = metadata, parameters = parameters, clientToken = clientToken)
   output <- .datazone$create_notebook_output()
   config <- get_config()
   svc <- .datazone$service(config, op)
@@ -9233,6 +9236,7 @@ datazone_get_metadata_generation_run <- function(domainIdentifier, identifier, t
 #'     list()
 #'   ),
 #'   status = "ACTIVE"|"ARCHIVED"|"SYNC_IN_PROGRESS"|"SYNC_FAILED",
+#'   type = "DATA"|"SQL",
 #'   description = "string",
 #'   createdAt = as.POSIXct(
 #'     "2015-01-01"
@@ -12506,7 +12510,7 @@ datazone_list_notebook_runs <- function(domainIdentifier, owningProjectIdentifie
 #'
 #' @usage
 #' datazone_list_notebooks(domainIdentifier, owningProjectIdentifier,
-#'   maxResults, sortOrder, sortBy, status, nextToken)
+#'   maxResults, sortOrder, sortBy, status, type, nextToken)
 #'
 #' @param domainIdentifier &#91;required&#93; The identifier of the Amazon SageMaker Unified Studio domain in which to list notebooks.
 #' @param owningProjectIdentifier &#91;required&#93; The identifier of the project that owns the notebooks.
@@ -12514,6 +12518,7 @@ datazone_list_notebook_runs <- function(domainIdentifier, owningProjectIdentifie
 #' @param sortOrder The sort order for the results.
 #' @param sortBy The field to sort the results by.
 #' @param status The status to filter notebooks by.
+#' @param type The type to filter notebooks by.
 #' @param nextToken When the number of notebooks is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of notebooks, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`list_notebooks`][datazone_list_notebooks] to list the next set of notebooks.
 #'
 #' @return
@@ -12527,6 +12532,7 @@ datazone_list_notebook_runs <- function(domainIdentifier, owningProjectIdentifie
 #'       owningProjectId = "string",
 #'       domainId = "string",
 #'       status = "ACTIVE"|"ARCHIVED"|"SYNC_IN_PROGRESS"|"SYNC_FAILED",
+#'       type = "DATA"|"SQL",
 #'       description = "string",
 #'       createdAt = as.POSIXct(
 #'         "2015-01-01"
@@ -12551,6 +12557,7 @@ datazone_list_notebook_runs <- function(domainIdentifier, owningProjectIdentifie
 #'   sortOrder = "ASCENDING"|"DESCENDING",
 #'   sortBy = "CREATED_AT"|"UPDATED_AT",
 #'   status = "ACTIVE"|"ARCHIVED"|"SYNC_IN_PROGRESS"|"SYNC_FAILED",
+#'   type = "DATA"|"SQL",
 #'   nextToken = "string"
 #' )
 #' ```
@@ -12560,7 +12567,7 @@ datazone_list_notebook_runs <- function(domainIdentifier, owningProjectIdentifie
 #' @rdname datazone_list_notebooks
 #'
 #' @aliases datazone_list_notebooks
-datazone_list_notebooks <- function(domainIdentifier, owningProjectIdentifier, maxResults = NULL, sortOrder = NULL, sortBy = NULL, status = NULL, nextToken = NULL) {
+datazone_list_notebooks <- function(domainIdentifier, owningProjectIdentifier, maxResults = NULL, sortOrder = NULL, sortBy = NULL, status = NULL, type = NULL, nextToken = NULL) {
   op <- new_operation(
     name = "ListNotebooks",
     http_method = "GET",
@@ -12569,7 +12576,7 @@ datazone_list_notebooks <- function(domainIdentifier, owningProjectIdentifier, m
     paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults", result_key = "items"),
     stream_api = FALSE
   )
-  input <- .datazone$list_notebooks_input(domainIdentifier = domainIdentifier, owningProjectIdentifier = owningProjectIdentifier, maxResults = maxResults, sortOrder = sortOrder, sortBy = sortBy, status = status, nextToken = nextToken)
+  input <- .datazone$list_notebooks_input(domainIdentifier = domainIdentifier, owningProjectIdentifier = owningProjectIdentifier, maxResults = maxResults, sortOrder = sortOrder, sortBy = sortBy, status = status, type = type, nextToken = nextToken)
   output <- .datazone$list_notebooks_output()
   config <- get_config()
   svc <- .datazone$service(config, op)
@@ -18276,8 +18283,8 @@ datazone_update_group_profile <- function(domainIdentifier, groupIdentifier, sta
 #'
 #' @usage
 #' datazone_update_notebook(domainIdentifier, identifier, description,
-#'   status, name, cellOrder, metadata, parameters, environmentConfiguration,
-#'   clientToken)
+#'   status, name, cellOrder, type, metadata, parameters,
+#'   environmentConfiguration, clientToken)
 #'
 #' @param domainIdentifier &#91;required&#93; The identifier of the Amazon SageMaker Unified Studio domain in which the notebook exists.
 #' @param identifier &#91;required&#93; The identifier of the notebook to update.
@@ -18285,6 +18292,7 @@ datazone_update_group_profile <- function(domainIdentifier, groupIdentifier, sta
 #' @param status The updated status of the notebook.
 #' @param name The updated name of the notebook.
 #' @param cellOrder The updated ordered list of cells in the notebook.
+#' @param type The updated type of the notebook.
 #' @param metadata The updated metadata for the notebook, specified as key-value pairs.
 #' @param parameters The updated sensitive parameters for the notebook, specified as key-value pairs.
 #' @param environmentConfiguration The updated environment configuration for the notebook.
@@ -18302,6 +18310,7 @@ datazone_update_group_profile <- function(domainIdentifier, groupIdentifier, sta
 #'     list()
 #'   ),
 #'   status = "ACTIVE"|"ARCHIVED"|"SYNC_IN_PROGRESS"|"SYNC_FAILED",
+#'   type = "DATA"|"SQL",
 #'   description = "string",
 #'   createdAt = as.POSIXct(
 #'     "2015-01-01"
@@ -18360,6 +18369,7 @@ datazone_update_group_profile <- function(domainIdentifier, groupIdentifier, sta
 #'   cellOrder = list(
 #'     list()
 #'   ),
+#'   type = "DATA"|"SQL",
 #'   metadata = list(
 #'     "string"
 #'   ),
@@ -18382,7 +18392,7 @@ datazone_update_group_profile <- function(domainIdentifier, groupIdentifier, sta
 #' @rdname datazone_update_notebook
 #'
 #' @aliases datazone_update_notebook
-datazone_update_notebook <- function(domainIdentifier, identifier, description = NULL, status = NULL, name = NULL, cellOrder = NULL, metadata = NULL, parameters = NULL, environmentConfiguration = NULL, clientToken = NULL) {
+datazone_update_notebook <- function(domainIdentifier, identifier, description = NULL, status = NULL, name = NULL, cellOrder = NULL, type = NULL, metadata = NULL, parameters = NULL, environmentConfiguration = NULL, clientToken = NULL) {
   op <- new_operation(
     name = "UpdateNotebook",
     http_method = "PATCH",
@@ -18391,7 +18401,7 @@ datazone_update_notebook <- function(domainIdentifier, identifier, description =
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .datazone$update_notebook_input(domainIdentifier = domainIdentifier, identifier = identifier, description = description, status = status, name = name, cellOrder = cellOrder, metadata = metadata, parameters = parameters, environmentConfiguration = environmentConfiguration, clientToken = clientToken)
+  input <- .datazone$update_notebook_input(domainIdentifier = domainIdentifier, identifier = identifier, description = description, status = status, name = name, cellOrder = cellOrder, type = type, metadata = metadata, parameters = parameters, environmentConfiguration = environmentConfiguration, clientToken = clientToken)
   output <- .datazone$update_notebook_output()
   config <- get_config()
   svc <- .datazone$service(config, op)

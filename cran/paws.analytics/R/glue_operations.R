@@ -8727,18 +8727,23 @@ glue_start_crawler_schedule <- function(CrawlerName) {
 #' See [https://www.paws-r-sdk.com/docs/glue_start_data_quality_rule_recommendation_run/](https://www.paws-r-sdk.com/docs/glue_start_data_quality_rule_recommendation_run/) for full documentation.
 #'
 #' @param DataSource &#91;required&#93; The data source (Glue table) associated with this run.
-#' @param Role &#91;required&#93; An IAM role supplied to encrypt the results of the run.
+#' @param Role &#91;required&#93; The IAM role that Glue assumes to access resources for the run.
+#' 
+#' For more information, see [Configure IAM permissions for Glue Data Quality](https://docs.aws.amazon.com/glue/latest/dg/data-quality-authorization.html).
 #' @param NumberOfWorkers The number of `G.1X` workers to be used in the run. The default is 5.
 #' @param Timeout The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters `TIMEOUT` status. The default is 2,880 minutes (48 hours).
 #' @param CreatedRulesetName A name for the ruleset.
 #' @param DataQualitySecurityConfiguration The name of the security configuration created with the data quality encryption option.
 #' @param ClientToken Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.
 #' @param AdditionalRunOptions Additional run options you can specify for a recommendation run.
+#' @param RecommendationMode The mode that Glue Data Quality uses to recommend rules.
+#' 
+#' The default is `BASIC`.
 #'
 #' @keywords internal
 #'
 #' @rdname glue_start_data_quality_rule_recommendation_run
-glue_start_data_quality_rule_recommendation_run <- function(DataSource, Role, NumberOfWorkers = NULL, Timeout = NULL, CreatedRulesetName = NULL, DataQualitySecurityConfiguration = NULL, ClientToken = NULL, AdditionalRunOptions = NULL) {
+glue_start_data_quality_rule_recommendation_run <- function(DataSource, Role, NumberOfWorkers = NULL, Timeout = NULL, CreatedRulesetName = NULL, DataQualitySecurityConfiguration = NULL, ClientToken = NULL, AdditionalRunOptions = NULL, RecommendationMode = NULL) {
   op <- new_operation(
     name = "StartDataQualityRuleRecommendationRun",
     http_method = "POST",
@@ -8747,7 +8752,7 @@ glue_start_data_quality_rule_recommendation_run <- function(DataSource, Role, Nu
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .glue$start_data_quality_rule_recommendation_run_input(DataSource = DataSource, Role = Role, NumberOfWorkers = NumberOfWorkers, Timeout = Timeout, CreatedRulesetName = CreatedRulesetName, DataQualitySecurityConfiguration = DataQualitySecurityConfiguration, ClientToken = ClientToken, AdditionalRunOptions = AdditionalRunOptions)
+  input <- .glue$start_data_quality_rule_recommendation_run_input(DataSource = DataSource, Role = Role, NumberOfWorkers = NumberOfWorkers, Timeout = Timeout, CreatedRulesetName = CreatedRulesetName, DataQualitySecurityConfiguration = DataQualitySecurityConfiguration, ClientToken = ClientToken, AdditionalRunOptions = AdditionalRunOptions, RecommendationMode = RecommendationMode)
   output <- .glue$start_data_quality_rule_recommendation_run_output()
   config <- get_config()
   svc <- .glue$service(config, op)

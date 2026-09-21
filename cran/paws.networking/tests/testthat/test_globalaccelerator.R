@@ -1,3 +1,3 @@
-svc <- paws::globalaccelerator()
+svc <- paws.networking::globalaccelerator()
 
 

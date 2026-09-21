@@ -70,7 +70,7 @@ sagemaker_add_association <- function(SourceArn, DestinationArn, AssociationType
 #' @description
 #' Adds or overwrites one or more tags for the specified SageMaker resource. You can add tags to notebook instances, training jobs, hyperparameter tuning jobs, batch transform jobs, models, labeling jobs, work teams, endpoint configurations, and endpoints.
 #' 
-#' Each tag consists of a key and an optional value. Tag keys must be unique per resource. For more information about tags, see For more information, see Amazon Web Services Tagging Strategies.
+#' Each tag consists of a key and an optional value. Tag keys must be unique per resource. For more information about tags, see For more information, see [Amazon Web Services Tagging Strategies](https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf).
 #' 
 #' Tags that you add to a hyperparameter tuning job by calling this API are also added to any training jobs that the hyperparameter tuning job launches after you call this API, but not to training jobs that the hyperparameter tuning job launched before you called this API. To make sure that the tags associated with a hyperparameter tuning job are also added to all training jobs that the hyperparameter tuning job launches, add the tags when you first create the tuning job by specifying them in the `Tags` parameter of [`create_hyper_parameter_tuning_job`][sagemaker_create_hyper_parameter_tuning_job]
 #' 
@@ -25116,7 +25116,7 @@ sagemaker_get_scaling_configuration_recommendation <- function(InferenceRecommen
 #' @section Request syntax:
 #' ```
 #' svc$get_search_suggestions(
-#'   Resource = "TrainingJob"|"Experiment"|"ExperimentTrial"|"ExperimentTrialComponent"|"Endpoint"|"Model"|"ModelPackage"|"ModelPackageGroup"|"Pipeline"|"PipelineExecution"|"FeatureGroup"|"FeatureMetadata"|"Image"|"ImageVersion"|"Project"|"HyperParameterTuningJob"|"ModelCard"|"PipelineVersion"|"Job",
+#'   Resource = "TrainingJob"|"Experiment"|"ExperimentTrial"|"ExperimentTrialComponent"|"Endpoint"|"Model"|"ModelPackage"|"ModelPackageGroup"|"Pipeline"|"PipelineExecution"|"FeatureGroup"|"FeatureMetadata"|"Image"|"ImageVersion"|"Project"|"HyperParameterTuningJob"|"ModelCard"|"PipelineVersion"|"Job"|"HubContent",
 #'   SuggestionQuery = list(
 #'     PropertyNameQuery = list(
 #'       PropertyNameHint = "string"
@@ -36804,6 +36804,45 @@ sagemaker_retry_pipeline_execution <- function(PipelineExecutionArn, ClientReque
 #'             Value = "string"
 #'           )
 #'         )
+#'       ),
+#'       HubContent = list(
+#'         HubContentName = "string",
+#'         HubContentArn = "string",
+#'         HubContentVersion = "string",
+#'         HubContentType = "Model"|"Notebook"|"ModelReference"|"DataSet"|"JsonDoc",
+#'         DocumentSchemaVersion = "string",
+#'         HubName = "string",
+#'         HubArn = "string",
+#'         HubContentDisplayName = "string",
+#'         HubContentDescription = "string",
+#'         HubContentMarkdown = "string",
+#'         HubContentDocument = "string",
+#'         SageMakerPublicHubContentArn = "string",
+#'         ReferenceMinVersion = "string",
+#'         SupportStatus = "Supported"|"Deprecated"|"Restricted",
+#'         HubContentSearchKeywords = list(
+#'           "string"
+#'         ),
+#'         HubContentDependencies = list(
+#'           list(
+#'             DependencyOriginPath = "string",
+#'             DependencyCopyPath = "string"
+#'           )
+#'         ),
+#'         HubContentStatus = "Available"|"Importing"|"Deleting"|"ImportFailed"|"DeleteFailed"|"PendingImport"|"PendingDelete",
+#'         FailureReason = "string",
+#'         CreationTime = as.POSIXct(
+#'           "2015-01-01"
+#'         ),
+#'         LastModifiedTime = as.POSIXct(
+#'           "2015-01-01"
+#'         ),
+#'         Tags = list(
+#'           list(
+#'             Key = "string",
+#'             Value = "string"
+#'           )
+#'         )
 #'       )
 #'     )
 #'   ),
@@ -36818,7 +36857,7 @@ sagemaker_retry_pipeline_execution <- function(PipelineExecutionArn, ClientReque
 #' @section Request syntax:
 #' ```
 #' svc$search(
-#'   Resource = "TrainingJob"|"Experiment"|"ExperimentTrial"|"ExperimentTrialComponent"|"Endpoint"|"Model"|"ModelPackage"|"ModelPackageGroup"|"Pipeline"|"PipelineExecution"|"FeatureGroup"|"FeatureMetadata"|"Image"|"ImageVersion"|"Project"|"HyperParameterTuningJob"|"ModelCard"|"PipelineVersion"|"Job",
+#'   Resource = "TrainingJob"|"Experiment"|"ExperimentTrial"|"ExperimentTrialComponent"|"Endpoint"|"Model"|"ModelPackage"|"ModelPackageGroup"|"Pipeline"|"PipelineExecution"|"FeatureGroup"|"FeatureMetadata"|"Image"|"ImageVersion"|"Project"|"HyperParameterTuningJob"|"ModelCard"|"PipelineVersion"|"Job"|"HubContent",
 #'   SearchExpression = list(
 #'     Filters = list(
 #'       list(

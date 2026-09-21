@@ -9,6 +9,7 @@ transcribeservice_create_language_model(
   BaseModelName,
   ModelName,
   InputDataConfig,
+  EncryptionConfiguration = NULL,
   Tags = NULL
 )
 }
@@ -30,6 +31,8 @@ This name is case sensitive, cannot contain spaces, and must be unique within an
 \item{InputDataConfig}{[required] Contains the Amazon S3 location of the training data you want to use to create a new custom language model, and permissions to access this location.
 
 When using \code{InputDataConfig}, you must include these sub-parameters: \code{S3Uri}, which is the Amazon S3 location of your training data, and \code{DataAccessRoleArn}, which is the Amazon Resource Name (ARN) of the role that has permission to access your specified Amazon S3 location. You can optionally include \code{TuningDataS3Uri}, which is the Amazon S3 location of your tuning data. If you specify different Amazon S3 locations for training and tuning data, the ARN you use must have permissions to access both locations.}
+
+\item{EncryptionConfiguration}{Specifies the encryption configuration for your custom language model. Your model artifacts are encrypted with the specified KMS key or with an AWS-owned key if a key is not supplied.}
 
 \item{Tags}{Adds one or more custom tags, each in the form of a key:value pair, to a new custom language model at the time you create this new model.
 

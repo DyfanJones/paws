@@ -1,3 +1,3 @@
-svc <- paws::machinelearning()
+svc <- paws.machine.learning::machinelearning()
 
 

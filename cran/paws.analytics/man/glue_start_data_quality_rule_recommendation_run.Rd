@@ -13,13 +13,16 @@ glue_start_data_quality_rule_recommendation_run(
   CreatedRulesetName = NULL,
   DataQualitySecurityConfiguration = NULL,
   ClientToken = NULL,
-  AdditionalRunOptions = NULL
+  AdditionalRunOptions = NULL,
+  RecommendationMode = NULL
 )
 }
 \arguments{
 \item{DataSource}{[required] The data source (Glue table) associated with this run.}
 
-\item{Role}{[required] An IAM role supplied to encrypt the results of the run.}
+\item{Role}{[required] The IAM role that Glue assumes to access resources for the run.
+
+For more information, see \href{https://docs.aws.amazon.com/glue/latest/dg/data-quality-authorization.html}{Configure IAM permissions for Glue Data Quality}.}
 
 \item{NumberOfWorkers}{The number of \code{G.1X} workers to be used in the run. The default is 5.}
 
@@ -32,6 +35,10 @@ glue_start_data_quality_rule_recommendation_run(
 \item{ClientToken}{Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.}
 
 \item{AdditionalRunOptions}{Additional run options you can specify for a recommendation run.}
+
+\item{RecommendationMode}{The mode that Glue Data Quality uses to recommend rules.
+
+The default is \code{BASIC}.}
 }
 \description{
 Starts a recommendation run that is used to generate rules when you don't know what rules to write. Glue Data Quality analyzes the data and comes up with recommendations for a potential ruleset. You can then triage the ruleset and modify the generated ruleset to your liking.

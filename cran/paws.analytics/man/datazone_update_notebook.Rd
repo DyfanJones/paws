@@ -11,6 +11,7 @@ datazone_update_notebook(
   status = NULL,
   name = NULL,
   cellOrder = NULL,
+  type = NULL,
   metadata = NULL,
   parameters = NULL,
   environmentConfiguration = NULL,
@@ -29,6 +30,8 @@ datazone_update_notebook(
 \item{name}{The updated name of the notebook.}
 
 \item{cellOrder}{The updated ordered list of cells in the notebook.}
+
+\item{type}{The updated type of the notebook.}
 
 \item{metadata}{The updated metadata for the notebook, specified as key-value pairs.}
 

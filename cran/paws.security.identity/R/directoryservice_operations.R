@@ -379,7 +379,7 @@ directoryservice_create_conditional_forwarder <- function(DirectoryId, RemoteDom
 #' 
 #' -   Numbers and upper case and special characters (?=.*\\d)(?=.*\[A-Z\])(?=.*\[^A-Za-z0-9\\s\])
 #' 
-#' For additional information about how Active Directory passwords are enforced, see [Password must meet complexity requirements](https://learn.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements) on the Microsoft website.
+#' For additional information about how Active Directory passwords are enforced, see [Password must meet complexity requirements](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements) on the Microsoft website.
 #' @param Description A description for the directory.
 #' @param Size &#91;required&#93; The size of the directory.
 #' @param VpcSettings A DirectoryVpcSettings object that contains additional information for the operation.

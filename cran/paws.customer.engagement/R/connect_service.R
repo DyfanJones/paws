@@ -341,6 +341,7 @@ NULL
 #'  \link[=connect_list_routing_profiles]{list_routing_profiles} \tab Provides summary information about the routing profiles for the specified Connect Customer instance\cr
 #'  \link[=connect_list_rules]{list_rules} \tab List all rules for the specified Connect Customer instance\cr
 #'  \link[=connect_list_security_keys]{list_security_keys} \tab This API is in preview release for Connect Customer and is subject to change\cr
+#'  \link[=connect_list_security_profile_ai_agents]{list_security_profile_ai_agents} \tab Returns a list of the allowed AI agents in a specific security profile\cr
 #'  \link[=connect_list_security_profile_applications]{list_security_profile_applications} \tab Returns a list of third-party applications or MCP Servers in a specific security profile\cr
 #'  \link[=connect_list_security_profile_flow_modules]{list_security_profile_flow_modules} \tab A list of Flow Modules an AI Agent can invoke as a tool\cr
 #'  \link[=connect_list_security_profile_permissions]{list_security_profile_permissions} \tab Lists the permissions granted to a security profile\cr

@@ -5615,7 +5615,7 @@ s3_get_bucket_replication <- function(Bucket, ExpectedBucketOwner = NULL) {
 #' @description
 #' This operation is not supported for directory buckets.
 #' 
-#' Returns the request payment configuration of a bucket. To use this version of the operation, you must be the bucket owner. For more information, see [Requester Pays Buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/RequesterPaysBuckets.html).
+#' Returns the request payment configuration of a bucket. To use this version of the operation, you must be the bucket owner. For more information, see [Requester Pays Buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/RequesterPaysBuckets.html?refid=a1158afe-048d-4d0d-966a-4cf0d8f86d2b&trkcampaign=request_for_gs_webinar).
 #' 
 #' The following operations are related to [`get_bucket_request_payment`][s3_get_bucket_request_payment]:
 #' 
@@ -11351,7 +11351,7 @@ s3_put_bucket_replication <- function(Bucket, ContentMD5 = NULL, ChecksumAlgorit
 #' @description
 #' This operation is not supported for directory buckets.
 #' 
-#' Sets the request payment configuration for a bucket. By default, the bucket owner pays for downloads from the bucket. This configuration parameter enables the bucket owner (only) to specify that the person requesting the download will be charged for the download. For more information, see [Requester Pays Buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/RequesterPaysBuckets.html).
+#' Sets the request payment configuration for a bucket. By default, the bucket owner pays for downloads from the bucket. This configuration parameter enables the bucket owner (only) to specify that the person requesting the download will be charged for the download. For more information, see [Requester Pays Buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/RequesterPaysBuckets.html?refid=a1158afe-048d-4d0d-966a-4cf0d8f86d2b&trkcampaign=request_for_gs_webinar).
 #' 
 #' The following operations are related to [`put_bucket_request_payment`][s3_put_bucket_request_payment]:
 #' 

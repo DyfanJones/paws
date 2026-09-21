@@ -1,3 +1,3 @@
-svc <- paws::budgets()
+svc <- paws.cost.management::budgets()
 
 

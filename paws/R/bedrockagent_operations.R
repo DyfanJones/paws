@@ -7709,7 +7709,7 @@ bedrockagent_stop_ingestion_job <- function(knowledgeBaseId, dataSourceId, inges
 #' Associate tags with a resource
 #'
 #' @description
-#' Associate tags with a resource. For more information, see [Tagging resources](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html) in the Amazon Bedrock User Guide.
+#' Associate tags with a resource. For more information, see [Tagging resources](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html?trkcampaign=podcast_ep46_es) in the Amazon Bedrock User Guide.
 #'
 #' @usage
 #' bedrockagent_tag_resource(resourceArn, tags)

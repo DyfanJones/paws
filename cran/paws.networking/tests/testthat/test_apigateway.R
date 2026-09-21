@@ -1,3 +1,3 @@
-svc <- paws::apigateway()
+svc <- paws.networking::apigateway()
 
 

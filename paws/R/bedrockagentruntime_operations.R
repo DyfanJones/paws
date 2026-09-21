@@ -2816,7 +2816,7 @@ bedrockagentruntime_invoke_agent <- function(agentAliasId, agentId, bedrockModel
 #' the output of each node as a stream
 #'
 #' @description
-#' Invokes an alias of a flow to run the inputs that you specify and return the output of each node as a stream. If there's an error, the error is returned. For more information, see [Test a flow in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-test.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' Invokes an alias of a flow to run the inputs that you specify and return the output of each node as a stream. If there's an error, the error is returned. For more information, see [Test a flow in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/flows-test.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html?trkcampaign=podcast_ep46_es).
 #' 
 #' The CLI doesn't support streaming operations in Amazon Bedrock, including [`invoke_flow`][bedrockagentruntime_invoke_flow].
 #'
@@ -7406,7 +7406,7 @@ bedrockagentruntime_list_tags_for_resource <- function(resourceArn) {
 #' Optimizes a prompt for the task that you specify
 #'
 #' @description
-#' Optimizes a prompt for the task that you specify. For more information, see [Optimize a prompt](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-optimize.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' Optimizes a prompt for the task that you specify. For more information, see [Optimize a prompt](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-optimize.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html?trkcampaign=podcast_ep46_es).
 #'
 #' @usage
 #' bedrockagentruntime_optimize_prompt(input, targetModelId)
@@ -9064,7 +9064,7 @@ bedrockagentruntime_stop_flow_execution <- function(executionIdentifier, flowAli
 #' Associate tags with a resource
 #'
 #' @description
-#' Associate tags with a resource. For more information, see [Tagging resources](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html) in the Amazon Bedrock User Guide.
+#' Associate tags with a resource. For more information, see [Tagging resources](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html?trkcampaign=podcast_ep46_es) in the Amazon Bedrock User Guide.
 #'
 #' @usage
 #' bedrockagentruntime_tag_resource(resourceArn, tags)

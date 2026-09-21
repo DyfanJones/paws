@@ -9,6 +9,7 @@ datazone_create_notebook(
   owningProjectIdentifier,
   name,
   description = NULL,
+  type = NULL,
   metadata = NULL,
   parameters = NULL,
   clientToken = NULL
@@ -22,6 +23,8 @@ datazone_create_notebook(
 \item{name}{[required] The name of the notebook. The name must be between 1 and 256 characters.}
 
 \item{description}{The description of the notebook.}
+
+\item{type}{The type of the notebook.}
 
 \item{metadata}{The metadata for the notebook, specified as key-value pairs. You can specify up to 50 entries, with keys up to 128 characters and values up to 1024 characters.}
 

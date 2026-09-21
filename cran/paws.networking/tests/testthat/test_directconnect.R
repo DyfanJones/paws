@@ -1,3 +1,3 @@
-svc <- paws::directconnect()
+svc <- paws.networking::directconnect()
 
 

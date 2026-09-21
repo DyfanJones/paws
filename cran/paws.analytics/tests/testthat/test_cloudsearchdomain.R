@@ -1,3 +1,3 @@
-svc <- paws::cloudsearchdomain()
+svc <- paws.analytics::cloudsearchdomain()
 
 

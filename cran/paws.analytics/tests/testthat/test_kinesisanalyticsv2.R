@@ -1,3 +1,3 @@
-svc <- paws::kinesisanalyticsv2()
+svc <- paws.analytics::kinesisanalyticsv2()
 
 

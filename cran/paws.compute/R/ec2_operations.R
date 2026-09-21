@@ -32016,7 +32016,7 @@ ec2_update_security_group_rule_descriptions_ingress <- function(DryRun = NULL, G
 #' single network interface
 #'
 #' @description
-#' Validates whether the specified security groups can be associated with a single network interface. The operation checks Amazon Virtual Private Cloud (Amazon VPC) quotas. It checks inbound or outbound rules per security group and security groups per network interface. Only authorized AWS services can call this operation.
+#' Validates whether the specified security groups can be associated with a single network interface. The operation checks Amazon Virtual Private Cloud (Amazon VPC) quotas. It checks inbound or outbound rules per security group and security groups per network interface. Only authorized Amazon Web Services services can call this operation.
 #'
 #' See [https://www.paws-r-sdk.com/docs/ec2_validate_security_group_quotas_for_interface/](https://www.paws-r-sdk.com/docs/ec2_validate_security_group_quotas_for_interface/) for full documentation.
 #'

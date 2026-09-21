@@ -1,3 +1,3 @@
-svc <- paws::mturk()
+svc <- paws.analytics::mturk()
 
 

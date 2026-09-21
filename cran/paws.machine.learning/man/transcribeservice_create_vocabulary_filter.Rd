@@ -10,7 +10,8 @@ transcribeservice_create_vocabulary_filter(
   Words = NULL,
   VocabularyFilterFileUri = NULL,
   Tags = NULL,
-  DataAccessRoleArn = NULL
+  DataAccessRoleArn = NULL,
+  EncryptionConfiguration = NULL
 )
 }
 \arguments{
@@ -40,11 +41,13 @@ Note that if you include \code{VocabularyFilterFileUri} in your request, you can
 
 To learn more about using tags with Amazon Transcribe, refer to \href{https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html}{Tagging resources}.}
 
-\item{DataAccessRoleArn}{The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary filter). If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.
+\item{DataAccessRoleArn}{The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary filter). If you include \code{EncryptionConfiguration} in your request, this role must also have permissions to access the specified KMS key. If the role that you specify doesn’t have the appropriate permissions, your request fails.
 
 IAM role ARNs have the format \code{arn:partition:iam::account:role/role-name-with-path}. For example: \verb{arn:aws:iam::111122223333:role/Admin}.
 
 For more information, see \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns}{IAM ARNs}.}
+
+\item{EncryptionConfiguration}{Specifies the encryption configuration for your custom vocabulary filter. Your vocabulary filter artifacts are encrypted with the specified KMS key or with an AWS-owned key if a key is not supplied.}
 }
 \description{
 Creates a new custom vocabulary filter.

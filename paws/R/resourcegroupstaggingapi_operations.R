@@ -560,7 +560,7 @@ resourcegroupstaggingapi_start_report_creation <- function(S3Bucket) {
 #' 
 #' -   Not all resources can have tags. For a list of services with resources that support tagging using this operation, see [Services that support the Resource Groups Tagging API](https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/). If the resource doesn't yet support this operation, the resource's service might support tagging using its own API operations. For more information, refer to the documentation for that service.
 #' 
-#' -   Each resource can have up to 50 tags. For other limits, see [Tag Naming and Usage Conventions](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html?session=af9df280-2ac5-41a5-b6da-17bdb292e99e#tag-conventions) in the *Amazon Web Services General Reference.*
+#' -   Each resource can have up to 50 tags. For other limits, see [Tag Naming and Usage Conventions](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html#tag-conventions) in the *Amazon Web Services General Reference.*
 #' 
 #' -   You can only tag resources that are located in the specified Amazon Web Services Region for the Amazon Web Services account.
 #' 

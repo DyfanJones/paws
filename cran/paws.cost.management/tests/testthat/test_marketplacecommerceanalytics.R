@@ -1,3 +1,3 @@
-svc <- paws::marketplacecommerceanalytics()
+svc <- paws.cost.management::marketplacecommerceanalytics()
 
 

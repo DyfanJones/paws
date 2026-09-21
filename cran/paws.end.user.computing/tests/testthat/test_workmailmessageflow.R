@@ -1,3 +1,3 @@
-svc <- paws::workmailmessageflow()
+svc <- paws.end.user.computing::workmailmessageflow()
 
 

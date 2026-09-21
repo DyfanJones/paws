@@ -11,6 +11,7 @@ datazone_list_notebooks(
   sortOrder = NULL,
   sortBy = NULL,
   status = NULL,
+  type = NULL,
   nextToken = NULL
 )
 }
@@ -26,6 +27,8 @@ datazone_list_notebooks(
 \item{sortBy}{The field to sort the results by.}
 
 \item{status}{The status to filter notebooks by.}
+
+\item{type}{The type to filter notebooks by.}
 
 \item{nextToken}{When the number of notebooks is greater than the default value for the \code{MaxResults} parameter, or if you explicitly specify a value for \code{MaxResults} that is less than the number of notebooks, the response includes a pagination token named \code{NextToken}. You can specify this \code{NextToken} value in a subsequent call to \code{\link[=datazone_list_notebooks]{list_notebooks}} to list the next set of notebooks.}
 }

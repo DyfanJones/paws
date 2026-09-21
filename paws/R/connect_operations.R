@@ -4749,7 +4749,7 @@ connect_create_rule <- function(InstanceId, Name, TriggerEventSource, Function, 
 #'   Permissions, InstanceId, Tags, AllowedAccessControlTags,
 #'   TagRestrictedResources, Applications, HierarchyRestrictedResources,
 #'   AllowedAccessControlHierarchyGroupId, AllowedFlowModules,
-#'   GranularAccessControlConfiguration)
+#'   AllowedAIAgents, GranularAccessControlConfiguration)
 #'
 #' @param SecurityProfileName &#91;required&#93; The name of the security profile.
 #' @param Description The description of the security profile.
@@ -4762,6 +4762,7 @@ connect_create_rule <- function(InstanceId, Name, TriggerEventSource, Function, 
 #' @param HierarchyRestrictedResources The list of resources that a security profile applies hierarchy restrictions to in Connect Customer. Following are acceptable ResourceNames: `User`.
 #' @param AllowedAccessControlHierarchyGroupId The identifier of the hierarchy group that a security profile uses to restrict access to resources in Connect Customer.
 #' @param AllowedFlowModules A list of Flow Modules an AI Agent can invoke as a tool.
+#' @param AllowedAIAgents A list of AI agents that the security profile will give access to.
 #' @param GranularAccessControlConfiguration The granular access control configuration for the security profile, including data table permissions.
 #'
 #' @return
@@ -4810,6 +4811,12 @@ connect_create_rule <- function(InstanceId, Name, TriggerEventSource, Function, 
 #'       FlowModuleId = "string"
 #'     )
 #'   ),
+#'   AllowedAIAgents = list(
+#'     list(
+#'       Arn = "string",
+#'       Type = "THIRD_PARTY"
+#'     )
+#'   ),
 #'   GranularAccessControlConfiguration = list(
 #'     DataTableAccessControlConfiguration = list(
 #'       PrimaryAttributeAccessControlConfiguration = list(
@@ -4833,7 +4840,7 @@ connect_create_rule <- function(InstanceId, Name, TriggerEventSource, Function, 
 #' @rdname connect_create_security_profile
 #'
 #' @aliases connect_create_security_profile
-connect_create_security_profile <- function(SecurityProfileName, Description = NULL, Permissions = NULL, InstanceId, Tags = NULL, AllowedAccessControlTags = NULL, TagRestrictedResources = NULL, Applications = NULL, HierarchyRestrictedResources = NULL, AllowedAccessControlHierarchyGroupId = NULL, AllowedFlowModules = NULL, GranularAccessControlConfiguration = NULL) {
+connect_create_security_profile <- function(SecurityProfileName, Description = NULL, Permissions = NULL, InstanceId, Tags = NULL, AllowedAccessControlTags = NULL, TagRestrictedResources = NULL, Applications = NULL, HierarchyRestrictedResources = NULL, AllowedAccessControlHierarchyGroupId = NULL, AllowedFlowModules = NULL, AllowedAIAgents = NULL, GranularAccessControlConfiguration = NULL) {
   op <- new_operation(
     name = "CreateSecurityProfile",
     http_method = "PUT",
@@ -4842,7 +4849,7 @@ connect_create_security_profile <- function(SecurityProfileName, Description = N
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .connect$create_security_profile_input(SecurityProfileName = SecurityProfileName, Description = Description, Permissions = Permissions, InstanceId = InstanceId, Tags = Tags, AllowedAccessControlTags = AllowedAccessControlTags, TagRestrictedResources = TagRestrictedResources, Applications = Applications, HierarchyRestrictedResources = HierarchyRestrictedResources, AllowedAccessControlHierarchyGroupId = AllowedAccessControlHierarchyGroupId, AllowedFlowModules = AllowedFlowModules, GranularAccessControlConfiguration = GranularAccessControlConfiguration)
+  input <- .connect$create_security_profile_input(SecurityProfileName = SecurityProfileName, Description = Description, Permissions = Permissions, InstanceId = InstanceId, Tags = Tags, AllowedAccessControlTags = AllowedAccessControlTags, TagRestrictedResources = TagRestrictedResources, Applications = Applications, HierarchyRestrictedResources = HierarchyRestrictedResources, AllowedAccessControlHierarchyGroupId = AllowedAccessControlHierarchyGroupId, AllowedFlowModules = AllowedFlowModules, AllowedAIAgents = AllowedAIAgents, GranularAccessControlConfiguration = GranularAccessControlConfiguration)
   output <- .connect$create_security_profile_output()
   config <- get_config()
   svc <- .connect$service(config, op)
@@ -20357,6 +20364,72 @@ connect_list_security_keys <- function(InstanceId, NextToken = NULL, MaxResults 
 }
 .connect$operations$list_security_keys <- connect_list_security_keys
 
+#' Returns a list of the allowed AI agents in a specific security profile
+#'
+#' @description
+#' Returns a list of the allowed AI agents in a specific security profile.
+#'
+#' @usage
+#' connect_list_security_profile_ai_agents(SecurityProfileId, InstanceId,
+#'   NextToken, MaxResults)
+#'
+#' @param SecurityProfileId &#91;required&#93; The identifier for the security profle.
+#' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
+#' @param NextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+#' @param MaxResults The maximum number of results to return per page.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   AllowedAIAgents = list(
+#'     list(
+#'       Arn = "string",
+#'       Type = "THIRD_PARTY"
+#'     )
+#'   ),
+#'   NextToken = "string",
+#'   LastModifiedTime = as.POSIXct(
+#'     "2015-01-01"
+#'   ),
+#'   LastModifiedRegion = "string"
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$list_security_profile_ai_agents(
+#'   SecurityProfileId = "string",
+#'   InstanceId = "string",
+#'   NextToken = "string",
+#'   MaxResults = 123
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname connect_list_security_profile_ai_agents
+#'
+#' @aliases connect_list_security_profile_ai_agents
+connect_list_security_profile_ai_agents <- function(SecurityProfileId, InstanceId, NextToken = NULL, MaxResults = NULL) {
+  op <- new_operation(
+    name = "ListSecurityProfileAIAgents",
+    http_method = "GET",
+    http_path = "/security-profiles-ai-agents/{InstanceId}/{SecurityProfileId}",
+    host_prefix = "",
+    paginator = list(input_token = "NextToken", limit_key = "MaxResults", non_aggregate_keys = list( "LastModifiedRegion", "LastModifiedTime"), output_token = "NextToken", result_key = "AllowedAIAgents"),
+    stream_api = FALSE
+  )
+  input <- .connect$list_security_profile_ai_agents_input(SecurityProfileId = SecurityProfileId, InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults)
+  output <- .connect$list_security_profile_ai_agents_output()
+  config <- get_config()
+  svc <- .connect$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connect$operations$list_security_profile_ai_agents <- connect_list_security_profile_ai_agents
+
 #' Returns a list of third-party applications or MCP Servers in a specific
 #' security profile
 #'
@@ -31945,7 +32018,7 @@ connect_update_rule <- function(RuleId, InstanceId, Name, Function, Actions, Pub
 #'   SecurityProfileId, InstanceId, AllowedAccessControlTags,
 #'   TagRestrictedResources, Applications, HierarchyRestrictedResources,
 #'   AllowedAccessControlHierarchyGroupId, AllowedFlowModules,
-#'   GranularAccessControlConfiguration)
+#'   AllowedAIAgents, GranularAccessControlConfiguration)
 #'
 #' @param Description The description of the security profile.
 #' @param Permissions The permissions granted to a security profile. For a list of valid permissions, see [List of security profile permissions](https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html).
@@ -31957,6 +32030,7 @@ connect_update_rule <- function(RuleId, InstanceId, Name, Function, Actions, Pub
 #' @param HierarchyRestrictedResources The list of resources that a security profile applies hierarchy restrictions to in Connect Customer. Following are acceptable ResourceNames: `User`.
 #' @param AllowedAccessControlHierarchyGroupId The identifier of the hierarchy group that a security profile uses to restrict access to resources in Connect Customer.
 #' @param AllowedFlowModules A list of Flow Modules an AI Agent can invoke as a tool
+#' @param AllowedAIAgents A list of AI agents that the security profile will give access to.
 #' @param GranularAccessControlConfiguration The granular access control configuration for the security profile, including data table permissions.
 #'
 #' @return
@@ -31996,6 +32070,12 @@ connect_update_rule <- function(RuleId, InstanceId, Name, Function, Actions, Pub
 #'       FlowModuleId = "string"
 #'     )
 #'   ),
+#'   AllowedAIAgents = list(
+#'     list(
+#'       Arn = "string",
+#'       Type = "THIRD_PARTY"
+#'     )
+#'   ),
 #'   GranularAccessControlConfiguration = list(
 #'     DataTableAccessControlConfiguration = list(
 #'       PrimaryAttributeAccessControlConfiguration = list(
@@ -32019,7 +32099,7 @@ connect_update_rule <- function(RuleId, InstanceId, Name, Function, Actions, Pub
 #' @rdname connect_update_security_profile
 #'
 #' @aliases connect_update_security_profile
-connect_update_security_profile <- function(Description = NULL, Permissions = NULL, SecurityProfileId, InstanceId, AllowedAccessControlTags = NULL, TagRestrictedResources = NULL, Applications = NULL, HierarchyRestrictedResources = NULL, AllowedAccessControlHierarchyGroupId = NULL, AllowedFlowModules = NULL, GranularAccessControlConfiguration = NULL) {
+connect_update_security_profile <- function(Description = NULL, Permissions = NULL, SecurityProfileId, InstanceId, AllowedAccessControlTags = NULL, TagRestrictedResources = NULL, Applications = NULL, HierarchyRestrictedResources = NULL, AllowedAccessControlHierarchyGroupId = NULL, AllowedFlowModules = NULL, AllowedAIAgents = NULL, GranularAccessControlConfiguration = NULL) {
   op <- new_operation(
     name = "UpdateSecurityProfile",
     http_method = "POST",
@@ -32028,7 +32108,7 @@ connect_update_security_profile <- function(Description = NULL, Permissions = NU
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .connect$update_security_profile_input(Description = Description, Permissions = Permissions, SecurityProfileId = SecurityProfileId, InstanceId = InstanceId, AllowedAccessControlTags = AllowedAccessControlTags, TagRestrictedResources = TagRestrictedResources, Applications = Applications, HierarchyRestrictedResources = HierarchyRestrictedResources, AllowedAccessControlHierarchyGroupId = AllowedAccessControlHierarchyGroupId, AllowedFlowModules = AllowedFlowModules, GranularAccessControlConfiguration = GranularAccessControlConfiguration)
+  input <- .connect$update_security_profile_input(Description = Description, Permissions = Permissions, SecurityProfileId = SecurityProfileId, InstanceId = InstanceId, AllowedAccessControlTags = AllowedAccessControlTags, TagRestrictedResources = TagRestrictedResources, Applications = Applications, HierarchyRestrictedResources = HierarchyRestrictedResources, AllowedAccessControlHierarchyGroupId = AllowedAccessControlHierarchyGroupId, AllowedFlowModules = AllowedFlowModules, AllowedAIAgents = AllowedAIAgents, GranularAccessControlConfiguration = GranularAccessControlConfiguration)
   output <- .connect$update_security_profile_output()
   config <- get_config()
   svc <- .connect$service(config, op)

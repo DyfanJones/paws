@@ -1,3 +1,3 @@
-svc <- paws::swf()
+svc <- paws.application.integration::swf()
 
 

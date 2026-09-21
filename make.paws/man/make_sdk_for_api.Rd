@@ -4,7 +4,7 @@
 \alias{make_sdk_for_api}
 \title{Add the SDK for a given API}
 \usage{
-make_sdk_for_api(api_name, in_dir)
+make_sdk_for_api(api_name, in_dir, categories)
 }
 \arguments{
 \item{api_name}{Name of the API to make a package for.}
